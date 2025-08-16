@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2024 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2025 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -616,6 +616,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($fieldName = 'weightTransferFunction2') or
                             (($fieldName = 'renderStyle')       and (($parentName='BlendedVolumeStyle') or ($parentName='VolumeData')))     or
                             (($fieldName = 'source')            and ($parentName='Sound'))                                                  or
+                            (($fieldName = 'viewport')          and ($parentName='LayoutLayer'))                                            or
                             (($fieldName = 'texCoord')          and not($parentName='MultiTextureCoordinate'))                              or 
                             (($fieldName = 'texture')           and not(($parentName='ComposedTexture3D') or ($parentName='MultiTexture'))) or
                             (($fieldName = 'textureTransform')  and not($parentName='MultiTextureTransform'))                               or
@@ -967,10 +968,14 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:variable name="debugTrace" select="false()"/><!-- true() false() -->
                 <xsl:if test="$debugTrace">
                     <xsl:message>
-                        <xsl:text>[@* choose type handling] $attributeType=</xsl:text>
-                        <xsl:value-of select="$attributeType"/>
+                        <xsl:text>[@* choose type handling] node=</xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text>, attribute=</xsl:text>
+                        <xsl:value-of select="local-name()"/>
                         <xsl:text>, $normalizedValue=</xsl:text>
                         <xsl:value-of select="$normalizedValue"/>
+                        <xsl:text>, $attributeType=</xsl:text>
+                        <xsl:value-of select="$attributeType"/>
                     </xsl:message>
                 </xsl:if>
 				
@@ -1006,7 +1011,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <!-- debug -->
                         <xsl:if test="$debugTrace">
                             <xsl:message>
-                                <xsl:text>[@* statement SFString handling]</xsl:text>
+                                <xsl:text>[@* statement SFString handling performed]</xsl:text>
                             </xsl:message>
                         </xsl:if>
                         <xsl:text>"</xsl:text>
@@ -1016,8 +1021,8 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:call-template>
                         <xsl:text>"</xsl:text>
                     </xsl:when>
-                    <!-- single string -->
-                    <xsl:when test="not((local-name(..)='NavigationInfo')      and ((local-name()='type') or (local-name()='transitionType'))) and (($attributeType = 'SFString') or
+                    <!-- single string --> <!-- TODO questionable balance of parentheses for SFString handling -->
+                    <xsl:when test="($attributeType = 'SFString') or 
                                     not(local-name() ='url') and not(ends-with(local-name(),'Url')) and
                                        ((local-name()='value') and 
                                        ((contains(local-name(../..),'Proto') or contains(local-name(../../..),'Proto')) and
@@ -1026,13 +1031,16 @@ POSSIBILITY OF SUCH DAMAGE.
                                         (local-name()='fromField')  or (local-name()='fromNode')    or (local-name()='toField')    or (local-name()='toNode')         or
                                         (local-name()='name')       or (local-name()='description') or (local-name()='accessType') or 
                                         (local-name()='marking')    or (local-name()='description') or
-					(local-name()='nodeField')  or (local-name()='protoField')  or
-                                        ((local-name()='type') and not(local-name(..)='NavigationInfo'))))
+                                        (local-name()='nodeField')  or (local-name()='protoField'))
                                      ">
                         <!-- debug -->
                         <xsl:if test="$debugTrace">
                             <xsl:message>
-                                <xsl:text>[@* SFString handling]</xsl:text>
+                                <xsl:text>[@* SFString handling performed, </xsl:text>
+                                <xsl:value-of select="local-name(..)"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>]</xsl:text>
                             </xsl:message>
                         </xsl:if>
                         <xsl:text>"</xsl:text>
@@ -1050,7 +1058,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                      (  ../@name = 'url') or ends-with(  ../@name,  'Url') or (local-name()='geoSystem') or
                                     ((local-name(..)='Text')                and (local-name()='string')) or
                                     ((local-name(..)='Anchor')              and (local-name()='parameter')) or
-                            (contains(local-name(..),'FontStyle')           and ((local-name()='family') or (local-name()='justify'))) or
+                                    (contains(local-name(..),'FontStyle')   and ((local-name()='family') or (local-name()='justify'))) or
                                     ((local-name(..)='MetadataString')      and (local-name()='value')) or
                                     ((local-name(..)='MultiTexture')        and ((local-name()='function') or (local-name()='mode') or (local-name()='source'))) or
                                     ((local-name(..)='NavigationInfo')      and ((local-name()='type') or (local-name()='transitionType'))) or
@@ -1061,11 +1069,11 @@ POSSIBILITY OF SUCH DAMAGE.
                                     ((local-name(..)='CollisionCollection') and (local-name()='appliedParameters')) or
                                     ((local-name(..)='GeoViewpoint')        and (local-name()='navType')) or
                                      (local-name()='objectType')">
-                    <!-- debug fieldValue, Text -->
+                        <!-- debug fieldValue, Text -->
                     <xsl:if test="$debugTrace">
                             <xsl:if test="(local-name(..) = 'fieldValue') and (local-name() = 'value')">
                                 <xsl:message>
-                                    <xsl:text>[@* MFString handling] </xsl:text>
+                                    <xsl:text>[@* MFString handling performed] </xsl:text>
                                     <xsl:value-of select="local-name(..)"/>
                                     <xsl:text>, local-name()=</xsl:text>
                                     <xsl:value-of select="local-name()"/>
@@ -1075,7 +1083,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             </xsl:if>
                             <xsl:if test="(local-name(..) = 'Text') and (local-name() = 'string')">
                                 <xsl:message>
-                                    <xsl:text>[@* MFString handling]</xsl:text>
+                                    <xsl:text>[@* MFString handling performed]</xsl:text>
                                     <xsl:value-of select="local-name(..)"/>
                                     <xsl:text> string=</xsl:text>
                                     <xsl:value-of select="$normalizedValue"/>
@@ -1085,7 +1093,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:value-of select="$normalizedValue"/>
                                 </xsl:message>
                             </xsl:if>
-                    </xsl:if>
+                        </xsl:if>
                         <xsl:text>[</xsl:text>
                         
                         <xsl:variable name="escape-special-characters-quotes-recurse-result">
@@ -3564,16 +3572,6 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        <!-- debug
-        <xsl:message>
-            <xsl:text>[debug] attribute-type start, $parentElementDEF=</xsl:text>
-            <xsl:value-of select="$parentElementDEF"/>
-            <xsl:text>, $attributeNameFull=</xsl:text>
-            <xsl:value-of select="$attributeNameFull"/>
-            <xsl:text>, $parentElementName=</xsl:text>
-            <xsl:value-of select="$parentElementName"/>
-        </xsl:message>
-        -->
         <!-- Note:  these rules are adapted from X3dToVrml97.xslt X3dToJson.xslt X3dToJava.xslt X3dToES5.xslt etc. so be sure to apply any updates in all stylesheets -->
 
         <xsl:variable name="normalizeSpaceValue" select="normalize-space(string(.))"/>
@@ -3666,7 +3664,12 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
-                <xsl:when test="(string-length(normalize-space(../@type)) > 0)"><!-- field -->
+                <xsl:when test="($parentElementName = 'field') and (string-length(normalize-space(../@type)) > 0)"><!-- field -->
+                    <xsl:if test="false()">
+                        <xsl:message>
+                            <xsl:text>*** warning, triggering on "type"</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
                     <xsl:value-of select="normalize-space(../@type)"/>
                 </xsl:when>
                 <xsl:when test="($parentElementName = 'fieldValue')"><!-- fieldValue -->
@@ -3726,6 +3729,19 @@ POSSIBILITY OF SUCH DAMAGE.
             </xsl:choose>
         </xsl:variable>
 
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] attribute-type start, $parentElementDEF=</xsl:text>
+            <xsl:value-of select="$parentElementDEF"/>
+            <xsl:text>, $parentElementName=</xsl:text>
+            <xsl:value-of select="$parentElementName"/>
+            <xsl:text>, $attributeNameFull=</xsl:text>
+            <xsl:value-of select="$attributeNameFull"/>
+            <xsl:text>, $localFieldType=</xsl:text>
+            <xsl:value-of select="$localFieldType"/>
+        </xsl:message>
+        -->
+        
 		<xsl:choose>
                   <!-- Explicitly defined types -->
                   <xsl:when test="(($parentElementName='Script') or ($parentElementName='ProtoInstance') or ($parentElementName='field') or ($parentElementName='fieldValue')) and
@@ -3754,8 +3770,8 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($attributeName='networkMode')        or
                             ($attributeName='oversample')         or
                             ($attributeName='reference')          or
-                            ($attributeName='type')               or
                             ($attributeName='lang')               or ($attributeName='xml:lang') or
+                            (not($parentElementName='NavigationInfo') and ($attributeName='type')) or
                             (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
                             (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
                             (($parentElementName='component')                and not($attributeName='level')) or

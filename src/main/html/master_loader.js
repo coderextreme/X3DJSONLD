@@ -30,9 +30,9 @@ let lastBlobUrl = null;
 let currentX3domUrl = '';
 
 // New function to handle JSON to PLY conversion
-function convertJsonToPly(jsonObj) {
-	const convertX3dToPly = createX3dToPlyConverter();
-	let ply = convertX3dToPly(jsonObj);
+async function convertJsonToPly(jsonObj) {
+	const convertX3dToPly = await createX3dToPlyConverter();
+	let ply = await convertX3dToPly(jsonObj);
 	return ply;
 }
 
@@ -44,7 +44,7 @@ export function prepareForX3DOMReload() {
     }
 }
 
-function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes) {
+async function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes) {
     const sourceFileName = document.getElementById('currentFileName').textContent;
     const baseFileName = sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1);
     // Convert JSON to STL
@@ -57,7 +57,8 @@ function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes) {
             
     // Convert JSON to PLY
     try {
-        $('#ply').val(convertJsonToPly(jsonObj));
+	let ply = await convertJsonToPly(jsonObj);
+        $('#ply').val(ply);
     } catch (e) {
         $('#ply').val("Error converting to PLY: " + e.message);
     }
@@ -108,7 +109,7 @@ async function processPendingXmlToJson() {
             // We have the JSON string, now parse it into an object to use for other conversions.
             const jsonObj = JSON.parse(jsonString);
 	    const sourceFileName = document.getElementById('currentFileName').textContent;
-	    loadSchema(jsonObj, sourceFileName, function() {
+	    loadSchema(jsonObj, sourceFileName, async function() {
 
 		    // Populate the JSON textarea with a prettified version.
 		    $('#json').val(JSON.stringify(jsonObj, null, 2));
@@ -124,7 +125,7 @@ async function processPendingXmlToJson() {
 
 		    // Now, perform all other conversions that depend on the JSON object.
 		    encodeJSON(); // JSON -> EXI
-		    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
+		    await updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
 	    }, function(e) {
 		alert(e);
 	    });
@@ -261,7 +262,7 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
 	    await displayInIframes(effectiveUrlForX3dom, xmlString);
 
 	    encodeJSON();
-	    updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
+	    await updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes);
     }, function(e) {
 	alert(e);
     });

@@ -347,7 +347,8 @@ class ClassPrinter:
                                     allTheSame = False
                 except:
                     pass
-                if allTheSame:  # or an exception was thrown
+                if allTheSame and field.get(namesyn) not in ('align', 'offsetUnits', 'scaleMode', 'sizeUnits'):  # or an exception was thrown
+
                     str += '\t\t\t\t\t\t"items": '
                     str += '{\n'
                     if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
@@ -377,22 +378,50 @@ class ClassPrinter:
                     firstTime = True
                     str += '[\n'
                     if field.get("type") == "MFString":
+                        if enums != []:
+                            enumobjects = []
+                            for en in enums:
+                                sections = en[1:-1].replace("\\", "").split(' ')
+                                for s, sec in enumerate(sections):
+                                    if len(enumobjects) <= s:
+                                        enumobjects.append([])
+                                    enumobjects[s].append(sections[s])
+                        else:
+                            enumobjects = []
                         for item in field.get("default")[1:-1].split('" "'):
-                            if firstTime:
-                                firstTime = False
-                            else:
-                                str += ',\n'
-                            str += '\t\t\t\t\t\t{\n'
+                            if not firstTime and len(enumobjects) <= 1:
+                               str += ',\n'
+                            if len(enumobjects) <= 1:
+                                str += '\t\t\t\t\t\t{\n'
                             if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
                                 str += '\t\t\t\t\t\t\t\t"format":"iri-reference",\n'
-                            if enums != []:
-                                str += '\t\t\t\t\t\t\t"enum": [\n'
-                                str += '\t\t\t\t\t\t\t'
-                                str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
-                                str += '\n\t\t\t\t\t\t\t],\n'
-                            str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
-                            str += self.printTypeMinMax(field)
-                            str += '\t\t\t\t\t\t}'
+                            if enums != [] and firstTime:
+                                if len(enumobjects) > 1:
+                                    for e, en in enumerate(enumobjects):
+                                        # print(f"e = {e}", file=sys.stderr)
+                                        if e > 0:
+                                            str += '\t\t\t\t\t\t\t,\n'
+                                        str += '\t\t\t\t\t\t\t{\n'
+                                        str += '\t\t\t\t\t\t\t\t"enum": [\n'
+                                        str += '\t\t\t\t\t\t\t\t\t'
+                                        str += ',\n\t\t\t\t\t\t\t\t\t'.join(set(en))
+                                        str += '\n\t\t\t\t\t\t\t\t],\n'
+                                        str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
+                                        str += '\t\t'+self.printTypeMinMax(field)
+                                        str += '\t\t\t\t\t\t\t}\n'
+                                else:
+                                    str += '\t\t\t\t\t\t\t"enum": [\n'
+                                    str += '\t\t\t\t\t\t\t\t'
+                                    str += ',\n\t\t\t\t\t\t\t\t'.join(set(enums))
+                                    str += '\n\t\t\t\t\t\t\t],\n'
+                                    str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
+                                    str += self.printTypeMinMax(field)
+                            elif enums == []:
+                                str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
+                                str += self.printTypeMinMax(field)
+                            if len(enumobjects) <= 1:
+                                str += '\t\t\t\t\t\t}'
+                            firstTime = False
                     else:
                         for item in field.get("default").split(' '):
                             if firstTime:
@@ -410,17 +439,21 @@ class ClassPrinter:
                             str += '\t\t\t\t\t\t}\n'
                     str += '\t\t\t\t\t\t],\n'
                     str += '\t\t\t\t\t\t"items": '
-                    if field.get('type').startswith("SF"):
-                        str += 'false\n'
+                    if field.get('type').startswith("SF") or field.get(namesyn) in ('align', 'offsetUnits', 'scaleMode', 'sizeUnits'):
+                        str += 'false'
+                        if field.get(namesyn) in ('align', 'offsetUnits', 'scaleMode', 'sizeUnits'):
+                            str += f',\t\t\t\t\t\t"minItems": {len(enumobjects)}'
+                            str += f',\t\t\t\t\t\t"maxItems": {len(enumobjects)}'
+                        str += '\n'
                     elif field.get('type').startswith("MF"):
                         str += '{\n'
                         str += self.printTypeMinMax(field)
                         if allTheSame:  # or an exception was thrown
                             if firstValue is not None:
                                 if field.get("type") == "MFString":
-                                    str += '\t\t\t\t\t\t\t"default":"'+firstValue+'",\n'
+                                    str += ',\t\t\t\t\t\t\t"default":"'+firstValue+'"\n'
                                 else:
-                                    str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
+                                    str += ',\t\t\t\t\t\t\t"default":'+firstValue+'\n'
                         str += '\t\t\t\t\t\t}'
         if str[-2] == ',':
             str = str[:-2] + '\n' # strip off comma
@@ -445,7 +478,7 @@ class ClassPrinter:
         foundUse = False
         foundChildren = False
         if self.node is not None:
-            foundFieldDeclaration = self.node.findall(".//FieldDeclaration");
+            foundFieldDeclaration = self.node.findall(".//FieldDeclaration")
             fields = self.node.iter("field")
             for field in fields:
                 if field.get("name") == "USE":
