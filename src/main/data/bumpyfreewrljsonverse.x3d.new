@@ -9,7 +9,7 @@
 <component name="Grouping" level="3"></component>
 <component name="Core" level="1"></component>
 <component name="DIS" level="2"></component>
-<!--<component name='Shape' level='4'></component>--><!--Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L--><meta name="title" content="bumpyfreewrljsonverse.x3d"></meta>
+<!--<component name='Shape' level='4'></component>--><!--Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L--><meta name="title" content="bumpyfreewrljsonverse.x3d"></meta>
 <meta name="description" content="*enter description here, short-sentence summaries preferred*"></meta>
 <meta name="creator" content="Doug Sanden, Christoph Valentin, John Carlson"></meta>
 <meta name="translator" content="*if manually translating VRML-to-X3D, enter name of person translating here*"></meta>
@@ -143,10 +143,10 @@ function initialize() {
 }]]></Script>
 <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"></ROUTE>
 <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"></ROUTE>
-<!--DIS multiuser facilities--><DISEntityManager DEF="EntityManager" networkMode="networkReader"><DISEntityTypeMapping readInterval="3" category="77" specific="1" url="&quot;../data/Gramps8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d&quot;"></DISEntityTypeMapping>
-<DISEntityTypeMapping readInterval="3" category="77" specific="2" url="&quot;../data/Leif8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d&quot;"></DISEntityTypeMapping>
-<DISEntityTypeMapping readInterval="3" category="77" specific="3" url="&quot;../data/Lily8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d&quot;"></DISEntityTypeMapping>
-<DISEntityTypeMapping readInterval="3" category="77" specific="4" url="&quot;../data/Tufani8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d&quot;"></DISEntityTypeMapping>
+<!--DIS multiuser facilities--><DISEntityManager DEF="EntityManager"><DISEntityTypeMapping category="77" specific="1" url="&quot;../data/Gramps8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d&quot;"></DISEntityTypeMapping>
+<DISEntityTypeMapping category="77" specific="2" url="&quot;../data/Leif8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d&quot;"></DISEntityTypeMapping>
+<DISEntityTypeMapping category="77" specific="3" url="&quot;../data/Lily8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d&quot;"></DISEntityTypeMapping>
+<DISEntityTypeMapping category="77" specific="4" url="&quot;../data/Tufani8Final.x3d&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d&quot;"></DISEntityTypeMapping>
 </DISEntityManager>
 <Collision enabled="false"><Group DEF="AvatarHolder"></Group>
 </Collision>
@@ -287,7 +287,7 @@ const newTranslation = function(Value) {
 </fieldValue>
 </ProtoInstance>
 <Layout containerField="layout" align="&quot;LEFT&quot; &quot;BOTTOM&quot;" offset="-0.2 0.19" offsetUnits="&quot;WORLD&quot; &quot;WORLD&quot;" scaleMode="&quot;NONE&quot; &quot;NONE&quot;" size="0.4 0.6" sizeUnits="&quot;WORLD&quot; &quot;WORLD&quot;"></Layout>
-<Viewport clipBoundary="0 1 0 1"></Viewport>
+<Viewport containerField="viewport" clipBoundary="0 1 0 1"></Viewport>
 </LayoutLayer>
 </LayerSet>
 </Scene>

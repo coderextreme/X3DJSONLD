@@ -38,25 +38,18 @@
 				<Material
 					diffuseColor="0.699999988079071 0.699999988079071 0.699999988079071"
 					specularColor="0.5 0.5 0.5" />
-				<ComposedCubeMapTexture DEF="texture">
-					<ImageTexture containerField="backTexture"
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' />
-					<ImageTexture containerField="bottomTexture"
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' />
-					<ImageTexture containerField="frontTexture"
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' />
-					<ImageTexture containerField="leftTexture"
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' />
-					<ImageTexture containerField="rightTexture"
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' />
-					<ImageTexture containerField="topTexture"
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' />
-				</ComposedCubeMapTexture>
 				<ComposedShader
 					language="GLSL">
 					<field accessType="initializeOnly" type="SFVec3f" name="chromaticDispertion" value="0.980000019073486 1 1.03299999237061" />
 					<field accessType="initializeOnly" type="SFNode" name="cube">
-					<ComposedCubeMapTexture USE="texture"/>
+					<ComposedCubeMapTexture>
+						<ImageTexture containerField="backTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' />
+						<ImageTexture containerField="bottomTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' />
+						<ImageTexture containerField="frontTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' />
+						<ImageTexture containerField="leftTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' />
+						<ImageTexture containerField="rightTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' />
+						<ImageTexture containerField="topTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' />
+					</ComposedCubeMapTexture>
 					</field>
 					<field accessType="initializeOnly" type="SFFloat" name="bias" value="0.5" />
 					<field accessType="initializeOnly" type="SFFloat" name="scale" value="0.5" />

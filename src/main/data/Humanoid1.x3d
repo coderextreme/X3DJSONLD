@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+<X3D profile="Immersive" version="4.0" xmlns:xsd="https://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
 <head>
   <component level='1' name='HAnim'/>
   <meta content='Humanoid1.x3d' name='title'/>
-  <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d'/>
+  <meta name='identifier' content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d'/>
   <meta name='description' content='An attempt at a standard LOA-4 skeleton'/>
   <meta name='generator' content='h2.pl'/>
   <meta name='modified' content="14 Jan 2023"/>

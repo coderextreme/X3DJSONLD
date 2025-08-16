@@ -12322,7 +12322,8 @@
                 "ProtoInstance":
                 {
       {
-        "@USE":"BehaviorTest1"
+        "@USE":"BehaviorTest1",
+        "@name":"HAnimBehavior"
       }
     },
             }            "fieldValue":

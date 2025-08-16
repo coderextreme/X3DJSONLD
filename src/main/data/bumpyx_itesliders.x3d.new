@@ -8,8 +8,8 @@
 <component name="Rendering" level="1"></component>
 <component name="Grouping" level="3"></component>
 <component name="Core" level="1"></component>
-<!--<component name='Shape' level='4'></component>--><!--<component name='DIS' level='2'></component>--><!--Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L--><meta name="title" content="bumpyx_itesliders.x3d"></meta>
-<meta name="description" content="*enter description here, short-sentence summaries preferred*"></meta>
+<!--<component name='Shape' level='4'></component>--><!--<component name='DIS' level='2'></component>--><meta name="title" content="bumpyx_itesliders.x3d"></meta>
+<meta name="description" content="*Bumpy flower with prototype sliders*"></meta>
 <meta name="creator" content="Doug Sanden, Christoph Valentin, John Carlson"></meta>
 <meta name="identifier" content="https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d"></meta>
 <meta name="generator" content="PSPad, http://www.pspad.com/"></meta>
@@ -73,9 +73,9 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="5"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<ShaderPart url="&quot;../shaders/x_ite_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
-<ShaderPart url="&quot;../shaders/x_ite.fs&quot;" type="FRAGMENT"></ShaderPart>
-<!--TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>--></ComposedShader>
+<ShaderPart url="&quot;../shaders/x_ite_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_ite.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs&quot;" type="FRAGMENT"></ShaderPart>
+<!--TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>--></ComposedShader>
 </Appearance>
 </Shape>
 </Transform>
@@ -150,7 +150,7 @@ function initialize() {
 </IS>
 <Transform DEF="protoTransform" translation="0 0 0.1"><IS><connect nodeField="translation" protoField="sensorTranslation"></connect>
 </IS>
-<PlaneSensor DEF="protoSensor" maxPosition="1 0"></PlaneSensor>
+<PlaneSensor DEF="protoSensor" description="Grab with mouse to adjst slider" maxPosition="1 0"></PlaneSensor>
 <Transform translation="0 0 0"><TouchSensor DEF="protoTS"></TouchSensor>
 </Transform>
 <Transform><Shape><Text DEF="protoText" string="&quot;a=&quot;"><IS><connect nodeField="string" protoField="textString"></connect>
@@ -163,9 +163,9 @@ function initialize() {
 </Transform>
 </Transform>
 </Transform>
-<Script url="&quot;../javascripts/X3DUser.js&quot;" DEF="protoValueTransformerScript" directOutput="true" mustEvaluate="true"><field name="protoScale" accessType="inputOutput" type="SFFloat" value="30"></field>
+<Script url="&quot;../javascripts/X3DUser.js&quot; &quot;https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js&quot;" DEF="protoValueTransformerScript" directOutput="true" mustEvaluate="true"><field name="protoScale" accessType="inputOutput" type="SFFloat"></field>
 <field name="petNames" accessType="inputOutput" type="MFString"></field>
-<field name="protoParameterName" accessType="inputOutput" type="SFString" value="a"></field>
+<field name="protoParameterName" accessType="inputOutput" type="SFString"></field>
 <field name="shader" accessType="inputOutput" type="SFNode"></field>
 <field name="newTranslation" accessType="inputOnly" type="SFVec3f" value="1 1 1"></field>
 <field name="protoValue_changed" accessType="outputOnly" type="SFFloat" value="1"></field>
@@ -242,12 +242,13 @@ function initialize() {
 <fieldValue name="shaderNode"><ComposedShader USE="x_iteShader"></ComposedShader>
 </fieldValue>
 </ProtoInstance>
-<Layout containerField="layout" align="&quot;LEFT&quot; &quot;BOTTOM&quot;" offset="-0.2 0.19" offsetUnits="&quot;WORLD&quot; &quot;WORLD&quot;" scaleMode="&quot;NONE&quot; &quot;NONE&quot;" size="0.4 0.6" sizeUnits="&quot;WORLD&quot; &quot;WORLD&quot;"></Layout>
-<Viewport clipBoundary="0 1 0 1"></Viewport>
+<Layout containerField="layout" align="&quot;LEFT&quot; &quot;BOTTOM&quot;" offset="-0.2 0.19" size="0.4 0.6"></Layout>
+<Viewport containerField="viewport" clipBoundary="0 1 0 1"></Viewport>
 </LayoutLayer>
 <Layer pickable="true" objectType="&quot;ALL&quot;"><Viewpoint description="My Humanoids" fieldOfView="1.570796" position="0 1.75 80"></Viewpoint>
-<Script url="&quot;../javascripts/X3DAvatar.js&quot;" DEF="HumanoidScript" directOutput="true" mustEvaluate="true"></Script>
-<Group DEF="humanoidGroup"></Group>
+<Script url="&quot;../javascripts/X3DAvatar.js&quot; &quot;https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js&quot;" DEF="HumanoidScript" directOutput="true" mustEvaluate="true"></Script>
+<Group DEF="humanoidGroup"><Group></Group>
+</Group>
 </Layer>
 </LayerSet>
 </Scene>

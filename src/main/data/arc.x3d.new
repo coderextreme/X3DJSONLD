@@ -113,23 +113,23 @@
 <ProtoInstance name="point" DEF="G2"></ProtoInstance>
 <ProtoInstance name="point" DEF="G3"></ProtoInstance>
 <ProtoInstance name="point" DEF="G4"></ProtoInstance>
-<ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><ProtoInstance USE="G1"></ProtoInstance>
+<ProtoInstance name="x3dconnector" DEF="connector1"><fieldValue name="startnode"><ProtoInstance name="point" USE="G1"></ProtoInstance>
 </fieldValue>
-<fieldValue name="endnode"><ProtoInstance USE="G2"></ProtoInstance>
-</fieldValue>
-<fieldValue name="set_startpoint"></fieldValue>
-<fieldValue name="set_endpoint"></fieldValue>
-</ProtoInstance>
-<ProtoInstance name="x3dconnector" DEF="connector2"><fieldValue name="startnode"><ProtoInstance USE="G1"></ProtoInstance>
-</fieldValue>
-<fieldValue name="endnode"><ProtoInstance USE="G3"></ProtoInstance>
+<fieldValue name="endnode"><ProtoInstance name="point" USE="G2"></ProtoInstance>
 </fieldValue>
 <fieldValue name="set_startpoint"></fieldValue>
 <fieldValue name="set_endpoint"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="x3dconnector" DEF="connector3"><fieldValue name="startnode"><ProtoInstance USE="G1"></ProtoInstance>
+<ProtoInstance name="x3dconnector" DEF="connector2"><fieldValue name="startnode"><ProtoInstance name="point" USE="G1"></ProtoInstance>
 </fieldValue>
-<fieldValue name="endnode"><ProtoInstance USE="G4"></ProtoInstance>
+<fieldValue name="endnode"><ProtoInstance name="point" USE="G3"></ProtoInstance>
+</fieldValue>
+<fieldValue name="set_startpoint"></fieldValue>
+<fieldValue name="set_endpoint"></fieldValue>
+</ProtoInstance>
+<ProtoInstance name="x3dconnector" DEF="connector3"><fieldValue name="startnode"><ProtoInstance name="point" USE="G1"></ProtoInstance>
+</fieldValue>
+<fieldValue name="endnode"><ProtoInstance name="point" USE="G4"></ProtoInstance>
 </fieldValue>
 <fieldValue name="set_startpoint"></fieldValue>
 <fieldValue name="set_endpoint"></fieldValue>

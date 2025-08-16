@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component level='1' name='HAnim'/>
     <meta content='KoreanCharacterAnnexB01Jin.x3d' name='title'/>
@@ -16,9 +16,9 @@
     <meta content='HAnim 2.0 Part 2: Humanoid animation (HAnim) motion data animation, Annex D (informative) Examples of HAnim motion data animation using a Motion object' name='specificationSection'/>
     <meta content='https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/ExampleKeyframeAnimation.html' name='specificationUrl'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterAnnexB01Jin.x3d' name='identifier'/>
-    <meta content='3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
+    <meta content='3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
     <meta content='Suwon HAnim Converter' name='generator'/>
-    <meta content='Gnu Image Manipulation Program, http://www.gimp.org' name='generator'/>
+    <meta content='Gnu Image Manipulation Program, https://www.gimp.org' name='generator'/>
     <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>
