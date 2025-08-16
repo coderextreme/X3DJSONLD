@@ -85,44 +85,16 @@
       ]
     },
     {
-      "type": "java.lang.Thread",
-      "fields": [
-        {
-          "name": "threadLocalRandomProbe"
-        }
-      ]
-    },
-    {
       "type": "java.security.AlgorithmParametersSpi"
     },
     {
       "type": "java.security.KeyStoreSpi"
     },
     {
-      "type": "java.security.MessageDigestSpi"
-    },
-    {
-      "type": "java.security.interfaces.ECPrivateKey"
-    },
-    {
-      "type": "java.security.interfaces.ECPublicKey"
-    },
-    {
       "type": "java.security.interfaces.RSAPrivateKey"
     },
     {
       "type": "java.security.interfaces.RSAPublicKey"
-    },
-    {
-      "type": "java.util.concurrent.atomic.Striped64",
-      "fields": [
-        {
-          "name": "base"
-        },
-        {
-          "name": "cellsBusy"
-        }
-      ]
     },
     {
       "type": "net.sf.saxon.lib.EntityResolverWrappingResourceResolver",
@@ -2052,7 +2024,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -3213,7 +3185,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4281,7 +4253,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4380,7 +4352,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4479,7 +4451,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4560,7 +4532,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4605,7 +4577,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4689,7 +4661,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4782,7 +4754,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -4851,7 +4823,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -5049,7 +5021,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -5130,7 +5102,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -5271,7 +5243,7 @@
           ]
         },
         {
-          "name": "setHtmlID",
+          "name": "setHtmlId",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -6015,15 +5987,6 @@
       ]
     },
     {
-      "type": "sun.security.rsa.RSASignature$SHA384withRSA",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": []
-        }
-      ]
-    },
-    {
       "type": "sun.security.ssl.KeyManagerFactoryImpl$SunX509",
       "methods": [
         {
@@ -6123,18 +6086,6 @@
       ]
     },
     {
-      "type": "sun.security.x509.IssuerAlternativeNameExtension",
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "java.lang.Boolean",
-            "java.lang.Object"
-          ]
-        }
-      ]
-    },
-    {
       "type": "sun.security.x509.KeyUsageExtension",
       "methods": [
         {
@@ -6204,34 +6155,6 @@
           "parameterTypes": [
             "java.lang.String"
           ]
-        }
-      ]
-    },
-    {
-      "type": "org.web3d.x3d.jsail.CommandLine",
-      "methods": [
-        {
-          "name": "main",
-          "parameterTypes": [
-            "java.lang.String[]"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "sun.launcher.LauncherHelper",
-      "fields": [
-        {
-          "name": "isStaticMain"
-        },
-        {
-          "name": "noArgMain"
-        }
-      ],
-      "methods": [
-        {
-          "name": "getApplicationClass",
-          "parameterTypes": []
         }
       ]
     }

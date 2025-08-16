@@ -2972,7 +2972,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>.set</xsl:text>
                     <xsl:choose>
                         <xsl:when test="(local-name() = 'id')">
-                        <xsl:text>HtmlID</xsl:text><!-- method special case -->
+                        <xsl:text>HtmlId</xsl:text><!-- method special case, maintaining consistent camel case -->
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:if test="(local-name() = 'class') or (local-name() = 'style')">
@@ -4248,8 +4248,8 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($attributeName='networkMode')        or
                             ($attributeName='oversample')         or
                             ($attributeName='reference')          or
-                            ($attributeName='type')               or
                             ($attributeName='lang')               or ($attributeName='xml:lang') or
+                            (not($parentElementName='NavigationInfo') and ($attributeName='type')) or
                             (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
                             (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
                             (($parentElementName='component')                and not($attributeName='level')) or
