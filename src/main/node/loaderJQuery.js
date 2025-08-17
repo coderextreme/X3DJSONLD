@@ -11,7 +11,6 @@ import fieldTypes from "./fieldTypes.js";
 import mapToMethod from "./mapToMethod.js";
 import mapToMethod2 from "./mapToMethod2.js";
 import { Scripts } from './Script.js';
-// import X3D from "https://cdn.jsdelivr.net/npm/x_ite@11.5.11/dist/x_ite.min.mjs";
 
 if (typeof xmldom !== 'undefined') {
 	var DOMImplementation = new xmldom.DOMImplementation();
