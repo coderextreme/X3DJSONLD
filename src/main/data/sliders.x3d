@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Full' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<head>
+    	      <component level='1' name='Scripting'/>
+	      <component name='EnvironmentalEffects' level='3'></component>
+	      <component name='Texturing' level='1'></component>
+	      <component name='Rendering' level='1'></component>
+	      <!--<component name='Shape' level='4'></component>-->
+	      <component name='Grouping' level='3'></component>
+	      <component name='Core' level='1'></component>
+    <meta content='sliders.x3d' name='title'/>
+    <meta content='*Bumpy flower with prototype sliders*' name='description'/>
+    <meta content='Doug Sanden, Christoph Valentin, John Carlson' name='creator'/>
+    <meta content='https://www.coderextreme.net/X3DJSONLD/src/main/data/sliders.x3d' name='identifier'/>
+    <meta content='license.html' name='license'/>
+</head>
+<Scene>
+  <LayerSet activeLayer='1' order='1 2 3' >
+    <Layer pickable='true'>
+      <NavigationInfo headlight="true" type='"EXAMINE"' avatarSize="0.25, 1.75, 0.75"   />
+      <DirectionalLight ambientIntensity=".2" direction="0 -1 -0" />
+      <DirectionalLight ambientIntensity=".2" direction="-1 -.1 -1" />
+      <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60' />
+      <Group>
+        <!-- Arrow X -->
+        <Transform translation="25 0 0" rotation="0 0 -1 1.57">
+          <Shape>
+            <Cylinder DEF="Shaft" radius=".35" height="50" />
+            <Appearance>
+              <Material DEF="RED" diffuseColor="1 0 0" emissiveColor="1 0 0" />
+            </Appearance>
+          </Shape>
+        </Transform>
+        <Transform translation="50 0 0" rotation="0 0 -1 1.57">
+          <Shape>
+            <Cone DEF="Tip" bottomRadius=".8" height="3" />
+            <Appearance>
+              <Material USE="RED" />
+            </Appearance>
+          </Shape>
+        </Transform>
+        <!-- Arrow Y -->
+        <Transform translation="0 25 0" rotation="0 1 0 0">
+          <Shape>
+            <Cylinder USE="Shaft" />
+            <Appearance>
+              <Material DEF="GREEN" diffuseColor="0 1 0" emissiveColor="0 1 0" />
+            </Appearance>
+          </Shape>
+        </Transform>
+        <Transform translation="0 50 0" rotation="0 1 0 0">
+          <Shape>
+            <Cone USE="Tip" />
+            <Appearance>
+              <Material USE="GREEN" />
+            </Appearance>
+          </Shape>
+        </Transform>
+        <!-- Arrow Z -->
+        <Transform translation="0 0 25" rotation="1 0 0 1.57">
+          <Shape>
+            <Cylinder USE="Shaft" />
+            <Appearance>
+              <Material DEF="BLUE" diffuseColor="0 0 1" emissiveColor="0 0 1" />
+            </Appearance>
+          </Shape>
+        </Transform>
+        <Transform translation="0 0 50" rotation="1 0 0 1.57">
+          <Shape>
+            <Cone USE="Tip" />
+            <Appearance>
+              <Material USE="BLUE" />
+            </Appearance>
+          </Shape>
+        </Transform>
+      </Group>
+      <!-- the model that is being reviewed by the users of this scene -->
+      <Transform DEF="FlowerTransform">
+	<Transform>
+	<Shape>
+                <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
+                    <Coordinate DEF="OrbitCoordinates"/>
+                </IndexedFaceSet>
+	  <Appearance>
+          <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
+	  </Appearance>
+	</Shape>
+        </Transform>
+      </Transform>
+			      <Script DEF="OrbitScript">
+				<field name="coordinates" type="MFVec3f" accessType="inputOutput"/>
+				<field name="coordIndexes" type="MFInt32" accessType="inputOutput"/>
+				<field name="e" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name="f" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name="g" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name="h" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+				<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+				<field name="resolution" type="SFInt32" accessType="inputOutput" value="50"/>
+<![CDATA[ecmascript:
+			function initialize() {
+			     generateCoordinates();
+			     var arrIndex = 0;
+			     for (var i = 0; i < resolution-1; i++) {
+				for (var j = 0; j < resolution-1; j++) {
+				     coordIndexes[arrIndex++] = i*resolution+j;
+				     coordIndexes[arrIndex++] = i*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;
+				     coordIndexes[arrIndex++] = (i+1)*resolution+j;
+				     coordIndexes[arrIndex++] = -1;
+				}
+			    }
+			}
+			function set_e(value) {
+				e = value;
+				generateCoordinates();
+			}
+
+			function set_f(value) {
+				f = value;
+				generateCoordinates();
+			}
+
+			function set_g(value) {
+				g = value;
+				generateCoordinates();
+			}
+
+			function set_h(value) {
+				h = value;
+				generateCoordinates();
+			}
+
+			function set_pdelta(value) {
+				pdelta = value;
+				generateCoordinates();
+			}
+
+			function set_tdelta(value) {
+				tdelta = value;
+				generateCoordinates();
+			}
+
+			function resolution(value) {
+				resolution = value;
+				initialize();
+			}
+
+			function generateCoordinates() {
+			     var theta = 0.0;
+			     var phi = 0.0;
+			     var delta = (2 * 3.141592653) / (resolution-1);
+			     var arrIndex = 0;
+			     for (var i = 0; i < resolution; i++) {
+				for (var j = 0; j < resolution; j++) {
+					var rho = e + f * Math.cos(g * theta + tdelta) * Math.cos(h * phi + pdelta);
+					coordinates[arrIndex++] = new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					);
+					theta += delta;
+				}
+				phi += delta;
+			     }
+			}
+
+]]></Script>
+        <ROUTE fromField="coordIndexes" fromNode="OrbitScript"
+               toField="set_coordIndex" toNode="Orbit"/>
+        <ROUTE fromField="coordinates" fromNode="OrbitScript"
+               toField="set_point" toNode="OrbitCoordinates"/>
+    </Layer>
+    <LayoutLayer pickable='true'>
+      <Layout containerField='layout' align='"LEFT" "BOTTOM"' offset='-0.2, 0.19' offsetUnits='"WORLD" "WORLD"' scaleMode='"NONE" "NONE"' size='0.4, 0.6' sizeUnits='"WORLD" "WORLD"'/>
+      <Viewport clipBoundary='0, 1, 0, 1'/>
+      <Transform translation="0 0 -3">
+          <Shape >
+            <Appearance >
+              <Material diffuseColor="0 0 0" emissiveColor="0 0 0" transparency="0.7" />
+            </Appearance>
+            <Box size="100 100 0.02" />
+          </Shape>
+      </Transform>
+          <Transform DEF="equationTransform">
+          <Transform translation="0 0 -20" rotation="0 0 1 0">
+          <Shape>
+            <Text DEF="equation" string='"r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"'>
+	     	<FontStyle horizontal="true" size="0.09"/>
+	    </Text>
+            <Appearance>
+              <Material diffuseColor="1 1 0"/>
+            </Appearance>
+          </Shape>
+          </Transform>
+          </Transform>
+	  <!-- The slider parameters -->
+      <ProtoDeclare name="SliderProto">
+	  <ProtoInterface>
+	      <field accessType='inputOutput' name='sliderTranslation' type='SFVec3f' value='0 0.7 0'/>
+              <field accessType='inputOutput' name='transformTranslation' type='SFVec3f' value='0 0 0.1'/>
+              <field accessType='inputOutput' name='sensorTranslation' type='SFVec3f' value='0 0 0.0'/>
+              <field accessType='inputOutput' name='textString' type='MFString' value='"a="'/>
+              <field accessType='inputOutput' name='parameterScale' type='SFFloat' value='30'/>
+              <field accessType='inputOutput' name='parameterName' type='SFString' value='a'/>
+	      <field accessType='inputOutput' name='orbScript' type='SFNode'/>
+	  </ProtoInterface>
+	  <ProtoBody>
+	    <Group>
+	      <Transform DEF="protoSlider" translation="0 0.7 0">
+		<IS>
+			<connect nodeField="translation" protoField="sliderTranslation"/>
+		</IS>
+		<Transform DEF="protoTransform" translation="0 0 0.1">
+			<IS>
+				<connect nodeField="translation" protoField="transformTranslation"/>
+			</IS>
+		  <PlaneSensor DEF="protoSensor" description="Grab with mouse to adjust slider" minPosition="0 0" maxPosition="1 0"/>
+			<IS>
+				<connect nodeField="translation" protoField="sensorTranslation"/>
+			</IS>
+		  <Transform translation="0 0.0 0">
+		    <TouchSensor description="Maybe start dragging this?" DEF="protoTS"/>
+		  </Transform>
+		  <Transform rotation="0 0 1 0">
+			  <Shape>
+			    <Text DEF="protoText" string='"a="'>
+				<IS>
+					<connect nodeField="string" protoField="textString"/>
+				</IS>
+				<FontStyle horizontal="true" size="0.23"/>
+			    </Text>
+			    <Appearance>
+			      <Material/>
+			    </Appearance>
+			  </Shape>
+		  </Transform>
+		</Transform>
+	      </Transform>
+	      <Script DEF='protoValueTransformerScript'>
+		  <field accessType='inputOutput' name='protoScale' type='SFFloat'/>
+		  <field accessType='inputOutput' name='protoParameterName' type='SFString'/>
+
+		  <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1.0 1.0 1.0'/>
+		  <field accessType='inputOutput' name='protoScript' type='SFNode'/>
+		  <field accessType='inputOutput' name='protoValue' type='SFFloat' value='1.0'/>
+		  <field accessType='inputOutput' name='protoText' type='MFString' value='"1.0"'/>
+<![CDATA[ecmascript:
+function set_protoScale(value) {
+	protoScale = value;
+}
+
+function set_protoParameterName(value) {
+	protoParameterName = value;
+}
+
+function set_protoScript(value) {
+	protoScript = value;
+}
+
+function set_protoValue(value) {
+	protoValue = value;
+}
+
+function set_protoText(value) {
+	protoText = value;
+}
+
+function newTranslation(value) {
+       	set_protoValue(value.x * protoScale);
+       	set_protoText(new MFString(protoParameterName+'='+protoValue.toFixed(2)));
+	protoScript[protoParameterName] = protoValue;
+};
+]]>
+		<IS>
+			<connect nodeField="protoScale" protoField="parameterScale"/>
+			<connect nodeField="protoParameterName" protoField="parameterName"/>
+			<connect nodeField="protoScript" protoField="orbScript"/>
+		</IS>
+	  </Script>
+        <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='set_translation' toNode='protoTransform'/>
+
+        <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='newTranslation' toNode='protoValueTransformerScript'/>
+        <ROUTE fromField='protoText' fromNode='protoValueTransformerScript' toField='string' toNode='protoText'/>
+	    </Group>
+          </ProtoBody>
+      </ProtoDeclare>
+      <ProtoInstance DEF="aPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 0.7 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0'/>
+	      <fieldValue name='textString' value='"a="'/>
+	      <fieldValue name='parameterScale' value='30'/>
+	      <fieldValue name='parameterName' value='a'/>
+	      <fieldValue name='orbScript'>
+	      	<Script USE="OrbitScript"/>
+	      </fieldValue>
+      </ProtoInstance>
+
+      <ProtoInstance DEF="bPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 0.4 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0'/>
+	      <fieldValue name='textString' value='"b="'/>
+	      <fieldValue name='parameterScale' value='30'/>
+	      <fieldValue name='parameterName' value='b'/>
+	      <fieldValue name='orbScript'>
+	      	<Script USE="OrbitScript"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="cPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 0.1 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0'/>
+	      <fieldValue name='textString' value='"c="'/>
+	      <fieldValue name='parameterScale' value='20'/>
+	      <fieldValue name='parameterName' value='c'/>
+	      <fieldValue name='orbScript'>
+	        <Script USE="OrbitScript"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="dPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 -0.2 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0'/>
+	      <fieldValue name='textString' value='"d="'/>
+	      <fieldValue name='parameterScale' value='20'/>
+	      <fieldValue name='parameterName' value='d'/>
+	      <fieldValue name='orbScript'>
+	        <Script USE="OrbitScript"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="tdeltaPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 -0.5 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0'/>
+	      <fieldValue name='textString' value='"tdelta="'/>
+	      <fieldValue name='parameterScale' value='6.28'/>
+	      <fieldValue name='parameterName' value='tdelta'/>
+	      <fieldValue name='orbScript'>
+	        <Script USE="OrbitScript"/>
+	      </fieldValue>
+      </ProtoInstance>
+      <ProtoInstance DEF="pdeltaPI" name="SliderProto">
+	      <fieldValue name='sliderTranslation' value='0 -0.8 0'/>
+	      <fieldValue name='transformTranslation' value='0 0 0.1'/>
+	      <fieldValue name='sensorTranslation' value='0 0 0'/>
+	      <fieldValue name='textString' value='"pdelta="'/>
+	      <fieldValue name='parameterScale' value='6.28'/>
+	      <fieldValue name='parameterName' value='pdelta'/>
+	      <fieldValue name='orbScript'>
+	        <Script USE="OrbitScript"/>
+	      </fieldValue>
+      </ProtoInstance>
+    </LayoutLayer>
+    <Layer>
+            <Viewpoint description='My Humanoids' fieldOfView='1.570796' position='0 1.75 80' />
+    </Layer>
+  </LayerSet>
+</Scene>
+</X3D>
