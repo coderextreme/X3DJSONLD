@@ -617,6 +617,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             (($fieldName = 'renderStyle')       and (($parentName='BlendedVolumeStyle') or ($parentName='VolumeData')))     or
                             (($fieldName = 'source')            and ($parentName='Sound'))                                                  or
                             (($fieldName = 'viewport')          and ($parentName='LayoutLayer'))                                            or
+                            (($fieldName = 'acousticProperties')          and ($parentName='Appearance'))                                  or
                             (($fieldName = 'texCoord')          and not($parentName='MultiTextureCoordinate'))                              or 
                             (($fieldName = 'texture')           and not(($parentName='ComposedTexture3D') or ($parentName='MultiTexture'))) or
                             (($fieldName = 'textureTransform')  and not($parentName='MultiTextureTransform'))                               or
