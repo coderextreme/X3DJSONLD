@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",
@@ -91,7 +91,7 @@
                                     "fieldValue": [
                                       {
                                         "@name":"vertex",
-                                        "@value":["../shaders/x_ite_flowers_plain.vs"]
+                                        "@value":["../shaders/gl_flowers_plain.vs"]
                                       },
                                       {
                                         "@name":"fragment",
