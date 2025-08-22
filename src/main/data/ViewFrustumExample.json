@@ -56,7 +56,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
+            "@content":"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
           },
           {
             "@name":"generator",
@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",

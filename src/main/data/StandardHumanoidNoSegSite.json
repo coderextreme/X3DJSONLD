@@ -18,7 +18,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"http://www.web3d.org/x3d/content/examples/HumanoidAnimation/StandardHumanoidNoSegSite.x3d"
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/StandardHumanoidNoSegSite.x3d"
           },
           {
             "@name":"description",
@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",

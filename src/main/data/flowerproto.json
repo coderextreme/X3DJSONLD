@@ -66,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",
@@ -87,15 +87,15 @@
                   "field": [
                     {
                       "@name":"vertex",
-                      "@accessType":"inputOutput",
+                      "@accessType":"inputOnly",
                       "@type":"MFString",
-                      "@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]
+                      "@value":["../shaders/gl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]
                     },
                     {
                       "@name":"fragment",
-                      "@accessType":"inputOutput",
+                      "@accessType":"inputOnly",
                       "@type":"MFString",
-                      "@value":["https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"]
+                      "@value":["../shaders/pc_flowers.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"]
                     }
                   ]
               },
@@ -164,12 +164,23 @@
                                         {
                                           "@DEF":"shader",
                                           "@language":"GLSL",
+                                          "-children":[
+                                            {
+                                              "#comment":"<field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>"
+                                            }
+                                          ],
                                           "field": [
                                             {
                                               "@name":"cube",
-                                              "@type":"SFInt32",
-                                              "@accessType":"inputOutput",
-                                              "@value":0
+                                              "@type":"SFNode",
+                                              "@accessType":"inputOnly",
+                                              "-children":[
+                                                { "ComposedCubeMapTexture":
+                                                  {
+                                                    "@USE":"texture"
+                                                  }
+                                                }
+                                              ]
                                             },
                                             {
                                               "@name":"chromaticDispertion",
@@ -180,61 +191,56 @@
                                             {
                                               "@name":"bias",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":0.5
                                             },
                                             {
                                               "@name":"scale",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":0.5
                                             },
                                             {
                                               "@name":"power",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":2
                                             },
                                             {
                                               "@name":"a",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":10
                                             },
                                             {
                                               "@name":"b",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":1
                                             },
                                             {
                                               "@name":"c",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":20
                                             },
                                             {
                                               "@name":"d",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":20
                                             },
                                             {
                                               "@name":"tdelta",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":0
                                             },
                                             {
                                               "@name":"pdelta",
                                               "@type":"SFFloat",
-                                              "@accessType":"inputOutput",
+                                              "@accessType":"inputOnly",
                                               "@value":0
-                                            }
-                                          ],
-                                          "-children":[
-                                            {
-                                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
                                             }
                                           ],
                                           "-parts":[
@@ -280,6 +286,7 @@
                           { "Script":
                             {
                               "@DEF":"Animate",
+                              "@directOutput":true,
                               "field": [
                                 {
                                   "@name":"translation",
@@ -289,7 +296,7 @@
                                 },
                                 {
                                   "@name":"velocity",
-                                  "@accessType":"inputOutput",
+                                  "@accessType":"outputOnly",
                                   "@type":"SFVec3f",
                                   "@value":[0,0,0]
                                 },
@@ -301,37 +308,37 @@
                                 {
                                   "@name":"a",
                                   "@type":"SFFloat",
-                                  "@accessType":"inputOutput",
+                                  "@accessType":"outputOnly",
                                   "@value":0.5
                                 },
                                 {
                                   "@name":"b",
                                   "@type":"SFFloat",
-                                  "@accessType":"inputOutput",
+                                  "@accessType":"outputOnly",
                                   "@value":0.5
                                 },
                                 {
                                   "@name":"c",
                                   "@type":"SFFloat",
-                                  "@accessType":"inputOutput",
+                                  "@accessType":"outputOnly",
                                   "@value":3
                                 },
                                 {
                                   "@name":"d",
                                   "@type":"SFFloat",
-                                  "@accessType":"inputOutput",
+                                  "@accessType":"outputOnly",
                                   "@value":3
                                 },
                                 {
                                   "@name":"tdelta",
                                   "@type":"SFFloat",
-                                  "@accessType":"inputOutput",
+                                  "@accessType":"outputOnly",
                                   "@value":0.5
                                 },
                                 {
                                   "@name":"pdelta",
                                   "@type":"SFFloat",
-                                  "@accessType":"inputOutput",
+                                  "@accessType":"outputOnly",
                                   "@value":0.5
                                 }
                               ],

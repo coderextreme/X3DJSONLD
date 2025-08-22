@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"15 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",
@@ -386,37 +386,37 @@
                                               { "ComposedCubeMapTexture":
                                                 {
                                                   "@DEF":"texture",
-                                                  "-back":
+                                                  "-backTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
                                                       }
                                                     },
-                                                  "-bottom":
+                                                  "-bottomTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
                                                       }
                                                     },
-                                                  "-front":
+                                                  "-frontTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
                                                       }
                                                     },
-                                                  "-left":
+                                                  "-leftTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
                                                       }
                                                     },
-                                                  "-right":
+                                                  "-rightTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
                                                       }
                                                     },
-                                                  "-top":
+                                                  "-topTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]

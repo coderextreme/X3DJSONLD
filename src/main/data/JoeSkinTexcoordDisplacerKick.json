@@ -70,7 +70,7 @@
           },
           {
             "@name":"generator",
-            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+            "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
           },
           {
             "@name":"license",
@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",

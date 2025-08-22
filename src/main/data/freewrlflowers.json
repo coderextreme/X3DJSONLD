@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",
@@ -44,6 +44,12 @@
         "-children":[
           { "NavigationInfo":
             {
+            }
+          },
+          { "Viewpoint":
+            {
+              "@description":"Tour Views",
+              "@position":[0,0,50]
             }
           },
           { "Background":
@@ -62,7 +68,7 @@
                 { "ExternProtoDeclare":
                   {
                     "@name":"FlowerProto",
-                    "@url":["../data/flowerproto.x3d#FlowerProto"],
+                    "@url":["../data/flowerprotofreewrl.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"],
                     "field": [
                       {
                         "@name":"vertex",

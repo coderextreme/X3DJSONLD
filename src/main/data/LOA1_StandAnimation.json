@@ -40,19 +40,19 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
+            "@content":"https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
           },
           {
             "@name":"reference",
-            "@content":"http://www.HAnim.org"
+            "@content":"https://www.HAnim.org"
           },
           {
             "@name":"reference",
-            "@content":"http://HAnim.org/Models"
+            "@content":"https://HAnim.org/Models"
           },
           {
             "@name":"reference",
-            "@content":"http://HAnim.org/Nodes"
+            "@content":"https://HAnim.org/Nodes"
           },
           {
             "@name":"subject",
@@ -72,7 +72,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",

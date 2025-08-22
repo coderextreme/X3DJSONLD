@@ -62,7 +62,7 @@
           },
           {
             "@name":"generator",
-            "@content":"3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"
+            "@content":"3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
           },
           {
             "@name":"generator",
@@ -70,7 +70,7 @@
           },
           {
             "@name":"generator",
-            "@content":"Gnu Image Manipulation Program, http://www.gimp.org"
+            "@content":"Gnu Image Manipulation Program, https://www.gimp.org"
           },
           {
             "@name":"generator",
@@ -82,7 +82,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 August 2025"
+            "@content":"16 August 2025"
           },
           {
             "@name":"generator",
