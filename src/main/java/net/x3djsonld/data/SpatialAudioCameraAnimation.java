@@ -117,7 +117,7 @@ public class SpatialAudioCameraAnimation
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("SpatialAudioCameraAnimation.x3d"))
-    .addChild(new NavigationInfo().setHtmlID("NAV"))
+    .addChild(new NavigationInfo().setHtmlId("NAV"))
     .addChild(new Background().setBackUrl(new String[] {"images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"}).setBottomUrl(new String[] {"images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"}).setFrontUrl(new String[] {"images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"}).setLeftUrl(new String[] {"images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"}).setRightUrl(new String[] {"images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"}).setTopUrl(new String[] {"images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"}))
     .addChild(new Viewpoint("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setOrientation(1.0,0.0,0.0,-0.523599).setPosition(0.0,2000.0,3500.0))
     .addChild(new TimeSensor("TIMER").setCycleInterval(33.333332).setLoop(true))
@@ -156,14 +156,14 @@ public class SpatialAudioCameraAnimation
               .setMaterial(new Material().setAmbientIntensity(0.0933).setDiffuseColor(1.0,1.0,1.0).setShininess(0.51).setSpecularColor(0.46,0.46,0.46)))
             .setGeometry(new Text().setString(new String[] {"Saxophone"})
               .setFontStyle(new FontStyle().setUSE("ModelFontStyle")))))))
-    .addChild(new ListenerPointSource().setHtmlID("ListenerPointSource").setTrackCurrentView(true))
-    .addChild(new StreamAudioDestination().setHtmlID("AudioDestination")
-      .addChild(new SpatialSound("Audio1").setHtmlID("SpatialSound1")
-        .addChild(new Gain().setHtmlID("Gain1")
-          .addChild(new AudioClip().setDescription("Violin").setHtmlID("AudioClip1").setLoop(true).setUrl(new String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}))))
-      .addChild(new SpatialSound("Audio2").setHtmlID("SpatialSound2")
-        .addChild(new Gain().setHtmlID("Gain2")
-          .addChild(new AudioClip().setDescription("Saxophone").setHtmlID("AudioClip2").setLoop(true).setUrl(new String[] {"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"}))))));
+    .addChild(new ListenerPointSource().setHtmlId("ListenerPointSource").setTrackCurrentView(true))
+    .addChild(new StreamAudioDestination().setHtmlId("AudioDestination")
+      .addChild(new SpatialSound("Audio1").setHtmlId("SpatialSound1")
+        .addChild(new Gain().setHtmlId("Gain1")
+          .addChild(new AudioClip().setDescription("Violin").setHtmlId("AudioClip1").setLoop(true).setUrl(new String[] {"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}))))
+      .addChild(new SpatialSound("Audio2").setHtmlId("SpatialSound2")
+        .addChild(new Gain().setHtmlId("Gain2")
+          .addChild(new AudioClip().setDescription("Saxophone").setHtmlId("AudioClip2").setLoop(true).setUrl(new String[] {"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"}))))));
             }
             catch (Exception ex)
             {       

@@ -90,7 +90,7 @@ public class bubs2
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("13 March 2016"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType("\"EXAMINE\""))
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
     .addChild(new Viewpoint().setDescription("Bubbles in action").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"}).setBottomUrl(new String[] {"../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"}).setFrontUrl(new String[] {"../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"}).setLeftUrl(new String[] {"../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"}).setRightUrl(new String[] {"../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"}).setTopUrl(new String[] {"../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"}))
     .addChild(new ProtoDeclare("Bubble").setName("Bubble")

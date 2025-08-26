@@ -214,7 +214,7 @@ public class ObliqueStrategies
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("ObliqueStrategies.x3d"))
-    .addChild(new NavigationInfo().setType("\"NONE\""))
+    .addChild(new NavigationInfo().setType(new String[] {"NONE"}))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.419608,0.427451,1.0})))
     .addChild(new Transform().setScale(0.4,0.4,0.4).setTranslation(0.0,1.0,0.0)
       .addChild(new TouchSensor("RandomTextClickedSensor").setDescription("Select to see a new strategy"))

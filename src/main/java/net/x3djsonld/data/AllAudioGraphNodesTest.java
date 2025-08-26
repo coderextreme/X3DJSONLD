@@ -10,7 +10,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working. </p>
- <p> Related links: <a href="../../../AudioSpatialSound/AllAudioGraphNodesTest.java">AllAudioGraphNodesTest.java</a> source, <a href="../../../AudioSpatialSound/AllAudioGraphNodesTestIndex.html" target="_top">AllAudioGraphNodesTest catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: Catalog page <a href="../../../AudioSpatialSound/AllAudioGraphNodesTestIndex.html" target="_blank">AllAudioGraphNodesTest</a>,  source <a href="../../../AudioSpatialSound/AllAudioGraphNodesTest.java">AllAudioGraphNodesTest.java</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -36,7 +36,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 26 November 2021 </td>
+			<td> 17 December 2023 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -44,7 +44,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d" target="_blank">https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -65,8 +65,8 @@ import org.web3d.x3d.jsail.Texturing.*;
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 		stylesheet
-	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
-                is used to create Java source code from an original <code>.x3d</code> model.
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version control</a>)
+                which is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author Don Brutzman
@@ -84,28 +84,29 @@ public class AllAudioGraphNodesTest
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
+    .addComponent(new component().setName("Sound").setLevel(3))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("AllAudioGraphNodesTest.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("25 October 2020"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("26 November 2021"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("17 December 2023"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("Developmental test, no actual 3D model expected"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addChild(new WorldInfo().setTitle("AllAudioGraphNodes.x3d"))
+    .addChild(new WorldInfo().setTitle("AllAudioGraphNodesTest.x3d"))
     .addChild(new Shape()
       .setGeometry(new Box())
       .setAppearance(new Appearance()
         .setAcousticProperties(new AcousticProperties().setDescription("Testing of X3D4 nodes demonstrating W3C Audio API in progress").setDiffuse(0.25).setRefraction(0.5).setSpecular(1))
         .setMaterial(new Material())))
     .addChild(new Sound().setLocation(0.0,1.6,0.0)
-      .setSource(new AudioClip().setDescription("testing").setUrl(new String[] {"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"})))
+      .setSource(new AudioClip().setDescription("testing").setUrl(new String[] {"sound/saxophone.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"})))
     .addChild(new Sound().setLocation(0.0,1.6,0.0)
-      .setSource(new MovieTexture().setDescription("testing").setUrl(new String[] {"bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"})))
+      .setSource(new MovieTexture().setDescription("testing").setUrl(new String[] {"bogus.mpg","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"})))
     .addChild(new SpatialSound()
       .addChild(new Analyser()
         .addChild(new StreamAudioDestination()
@@ -118,12 +119,12 @@ public class AllAudioGraphNodesTest
                       .addChild(new DynamicsCompressor()
                         .addChild(new Gain()
                           .addChild(new StreamAudioDestination()
-                            .addChild(new WaveShaper().setOversample("none")
+                            .addChild(new WaveShaper()
                               .addComments(" The following X3DSoundSourceNode nodes have no audio-graph children ")
                               .addChild(new BufferAudioSource())
                               .addChild(new ListenerPointSource())
                               .addChild(new MicrophoneSource())
-                              .addChild(new OscillatorSource().setFrequency(440.0))
+                              .addChild(new OscillatorSource())
                               .addChild(new StreamAudioSource())))))))))))))));
             }
             catch (Exception ex)
@@ -161,7 +162,7 @@ public class AllAudioGraphNodesTest
      */
     public static void main(String args[])
     {
-        System.out.println("Build this X3D model, showing diagnostics...");
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new AllAudioGraphNodesTest().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -204,10 +205,19 @@ public class AllAudioGraphNodesTest
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.AllAudioGraphNodesTest self-validation test results: ");
+                System.out.print("net.x3djsonld.data.AllAudioGraphNodesTest self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./AllAudioGraphNodesTest_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./AllAudioGraphNodesTest_JavaExport.x3d"; 
+                String filenameX3DV = "./AllAudioGraphNodesTest_JavaExport.x3dv"; 
+                String filenameJSON = "./AllAudioGraphNodesTest_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

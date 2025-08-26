@@ -9,7 +9,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
- * <p> Example scene . </p>
+ * <p> Example scene AllenBox. </p>
  <p> Related links:  source AllenBox.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -72,7 +72,7 @@ public class AllenBox
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("AllenBox.x3d"))
-    .addChild(new NavigationInfo().setAvatarSize(new double[] {0.15,1.53,0.75}).setSpeed(0.5).setType("\"EXAMINE\""))
+    .addChild(new NavigationInfo().setAvatarSize(new double[] {0.15,1.53,0.75}).setSpeed(0.5).setType(new String[] {"EXAMINE"}))
     .addChild(new Transform("Floor").setScale(1.0,0.0125,1.0).setTranslation(0.0,-0.0125,0.0)
       .addChild(new Shape()
         .setGeometry(new Box())

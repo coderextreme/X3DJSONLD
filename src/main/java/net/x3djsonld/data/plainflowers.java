@@ -85,7 +85,7 @@ public class plainflowers
         .setProtoBody(new ProtoBody()
           .addChild(new Group()
             .addChild(new ProtoInstance("FlowerProto").setContainerField("children")
-              .addFieldValue(new fieldValue().setName("vertex").setValue(new String[] {"../shaders/x_ite_flowers_plain.vs"}))
+              .addFieldValue(new fieldValue().setName("vertex").setValue(new String[] {"../shaders/gl_flowers_plain.vs"}))
               .addFieldValue(new fieldValue().setName("fragment").setValue(new String[] {"../shaders/plain.fs"}))))))
       .addChild(new ProtoInstance("flower").setContainerField("children"))
       .addChild(new ProtoInstance("flower").setContainerField("children"))

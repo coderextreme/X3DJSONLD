@@ -69,7 +69,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" target="_blank">http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d</a> </td>
+			<td> <a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d" target="_blank">https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -122,7 +122,7 @@ public class CameraPrototypes
     .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("Camera nodes for Viewpoint navigation control"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("CameraExamples.x3d"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
@@ -166,7 +166,7 @@ public class CameraPrototypes
             .addConnect(new connect().setNodeField("bindTime").setProtoField("bindTime"))
             .addConnect(new connect().setNodeField("isBound").setProtoField("isBound"))))
         .addComments(" NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation ")
-        .addChild(new NavigationInfo("CameraNavInfo").setType("\"EXAMINE\" \"FLY\" \"ANY\"")
+        .addChild(new NavigationInfo("CameraNavInfo").setType(new String[] {"EXAMINE","FLY","ANY"})
           .setIS(new IS()
             .addConnect(new connect().setNodeField("set_bind").setProtoField("set_bind"))
             .addComments(" No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. ")

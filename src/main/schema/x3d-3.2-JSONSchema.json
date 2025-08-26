@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-  "title": "X3D V3.2 JSON Schema, generated 2025/08/24 01:38:02",
+  "title": "X3D V3.2 JSON Schema, generated 2025/08/25 22:37:54",
   "description": "Experimental JSON Schema for X3D V3.2",
   "type": "object",
   "properties": {
@@ -11304,17 +11304,17 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "LEFT",
                     "RIGHT",
-                    "CENTER"
+                    "CENTER",
+                    "LEFT"
                   ],
                   "default": "CENTER",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "CENTER",
                     "BOTTOM",
+                    "CENTER",
                     "TOP"
                   ],
                   "default": "CENTER",
@@ -11372,9 +11372,9 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "STRETCH",
                     "PIXEL",
                     "NONE",
-                    "STRETCH",
                     "FRACTION"
                   ],
                   "default": "NONE",
@@ -11382,9 +11382,9 @@
                 },
                 {
                   "enum": [
+                    "STRETCH",
                     "PIXEL",
                     "NONE",
-                    "STRETCH",
                     "FRACTION"
                   ],
                   "default": "NONE",
@@ -13587,12 +13587,12 @@
                 {
                   "enum": [
                     "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
                     "ANY",
                     "EXPLORE",
-                    "NONE",
-                    "WALK"
+                    "WALK",
+                    "FLY",
+                    "LOOKAT",
+                    "NONE"
                   ],
                   "default": "EXAMINE",
                   "type": "string"

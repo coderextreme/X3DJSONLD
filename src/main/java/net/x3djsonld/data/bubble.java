@@ -78,7 +78,7 @@ public class bubble
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType("\"EXAMINE\""))
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
     .addChild(new Viewpoint().setDescription("Bubble in action").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
     .addChild(new ProtoDeclare("Bubble").setName("Bubble")
       .setProtoBody(new ProtoBody()

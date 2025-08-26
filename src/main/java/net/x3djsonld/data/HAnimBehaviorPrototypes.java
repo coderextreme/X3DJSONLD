@@ -2325,7 +2325,7 @@ public class HAnimBehaviorPrototypes
         .addChild(new HAnimHumanoid("hanim_DiamondManLOA-1").setName("DiamondManLOA-1").setVersion("2.0")))
       .addFieldValue(new fieldValue().setName("whichBody").setValue(0))
       .addFieldValue(new fieldValue().setName("hAnimBehaviorNodes")
-        .addChild(new ProtoInstance().setUSE("BehaviorTest1").setContainerField("children")))
+        .addChild(new ProtoInstance("HAnimBehavior").setUSE("BehaviorTest1").setContainerField("children")))
       .addFieldValue(new fieldValue().setName("enabledBehaviorsArray").setValue(new boolean[] {true}))));
             }
             catch (Exception ex)

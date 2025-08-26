@@ -16,12 +16,12 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model. </p>
- <p> Related links:  source KoreanCharacterAnnexB01Jin.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links:  source KoreanCharacterMotionAnnexB01Jin.java, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.KoreanCharacterAnnexB01Jin&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.KoreanCharacterMotionAnnexB01Jin&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
@@ -78,7 +78,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> 3DS MAX, <a href="http://www.autodesk.com/products/autodesk-3ds-max/overview" target="_blank">http://www.autodesk.com/products/autodesk-3ds-max/overview</a> </td>
+			<td> 3DS MAX, <a href="https://www.autodesk.com/products/autodesk-3ds-max/overview" target="_blank">https://www.autodesk.com/products/autodesk-3ds-max/overview</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -86,7 +86,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> Gnu Image Manipulation Program, <a href="http://www.gimp.org" target="_blank">http://www.gimp.org</a> </td>
+			<td> Gnu Image Manipulation Program, <a href="https://www.gimp.org" target="_blank">https://www.gimp.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -114,10 +114,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Jin Hoon Lee and Min Joo Lee
  */
 
-public class KoreanCharacterAnnexB01Jin
+public class KoreanCharacterMotionAnnexB01Jin
 {
 	/** Default constructor to create this object. */
-	public KoreanCharacterAnnexB01Jin ()
+	public KoreanCharacterMotionAnnexB01Jin ()
 	{
 	  initialize();
 	}
@@ -142,9 +142,9 @@ public class KoreanCharacterAnnexB01Jin
     .addMeta(new meta().setName(meta.NAME_SPECIFICATIONSECTION).setContent("HAnim 2.0 Part 2: Humanoid animation (HAnim) motion data animation, Annex D (informative) Examples of HAnim motion data animation using a Motion object"))
     .addMeta(new meta().setName(meta.NAME_SPECIFICATIONURL).setContent("https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/ExampleKeyframeAnimation.html"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterAnnexB01Jin.x3d"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Suwon HAnim Converter"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Gnu Image Manipulation Program, https://www.gimp.org"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
@@ -996,7 +996,7 @@ public class KoreanCharacterAnnexB01Jin
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return KoreanCharacterAnnexB01Jin model
+	 * @return KoreanCharacterMotionAnnexB01Jin model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -1015,7 +1015,7 @@ public class KoreanCharacterAnnexB01Jin
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new KoreanCharacterAnnexB01Jin().getX3dModel();
+        X3D thisExampleX3dModel = new KoreanCharacterMotionAnnexB01Jin().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -1048,7 +1048,7 @@ public class KoreanCharacterAnnexB01Jin
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.KoreanCharacterAnnexB01Jin\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.KoreanCharacterMotionAnnexB01Jin\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -1057,16 +1057,16 @@ public class KoreanCharacterAnnexB01Jin
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.KoreanCharacterAnnexB01Jin self-validation test confirmation: ");
+                System.out.print("net.x3djsonld.data.KoreanCharacterMotionAnnexB01Jin self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./KoreanCharacterAnnexB01Jin_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./KoreanCharacterAnnexB01Jin_JavaExport.x3d"; 
-                String filenameX3DV = "./KoreanCharacterAnnexB01Jin_JavaExport.x3dv"; 
-                String filenameJSON = "./KoreanCharacterAnnexB01Jin_JavaExport.json";
+                // ./KoreanCharacterMotionAnnexB01Jin_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./KoreanCharacterMotionAnnexB01Jin_JavaExport.x3d"; 
+                String filenameX3DV = "./KoreanCharacterMotionAnnexB01Jin_JavaExport.x3dv"; 
+                String filenameJSON = "./KoreanCharacterMotionAnnexB01Jin_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
