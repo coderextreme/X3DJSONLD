@@ -89,7 +89,7 @@ public class geo
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a sphere")))
   .setScene(new Scene()
-    .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
+    .addChild(new NavigationInfo().setType(new String[] {"ANY","EXAMINE","FLY","LOOKAT"}))
     .addChild(new Viewpoint("Tour").setDescription("Tour Views"))
     .addComments("Viewpoint position='0 0 4' description='sphere in road'/")
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"}).setBottomUrl(new String[] {"../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"}).setFrontUrl(new String[] {"../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"}).setLeftUrl(new String[] {"../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"}).setRightUrl(new String[] {"../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"}).setTopUrl(new String[] {"../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"}))

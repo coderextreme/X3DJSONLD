@@ -46,7 +46,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://en.wikipedia.org/wiki/Hello_world" target="_blank">http://en.wikipedia.org/wiki/Hello_world</a> </td>
+			<td> <a href="https://en.wikipedia.org/wiki/Hello_world" target="_blank">https://en.wikipedia.org/wiki/Hello_world</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -58,11 +58,11 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world" target="_blank">http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world</a> </td>
+			<td> <a href="https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world" target="_blank">https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.HelloWorldExample.net" target="_blank">http://www.HelloWorldExample.net</a> </td>
+			<td> <a href="https://www.HelloWorldExample.net" target="_blank">https://www.HelloWorldExample.net</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -78,11 +78,11 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d</a> </td>
+			<td> <a href="https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d" target="_blank">https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d</a> </td>
+			<td> <a href="https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d" target="_blank">https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -151,16 +151,16 @@ public class HelloWorld
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 October 2019"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("HelloWorld.tall.png"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://en.wikipedia.org/wiki/Hello_world"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/Hello_world"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.HelloWorldExample.net"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.HelloWorldExample.net"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("https://www.web3d.org/x3d/content/examples/license.html"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorld.wrl"))

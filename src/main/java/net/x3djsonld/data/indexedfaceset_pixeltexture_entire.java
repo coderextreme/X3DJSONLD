@@ -69,7 +69,7 @@ import org.web3d.x3d.jsail.Texturing.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+			<td> X3D-Edit 4.0, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -119,7 +119,7 @@ public class indexedfaceset_pixeltexture_entire
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry."))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
   .setScene(new Scene()
     .addChild(new Viewpoint().setDescription("Front View"))
@@ -128,11 +128,12 @@ public class indexedfaceset_pixeltexture_entire
     .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(1.0,0.0,0.0,1.57).setPosition(0.0,-10.0,0.0))
     .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
     .addChild(new Viewpoint().setDescription("Left View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-10.0,0.0,0.0))
-    .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","WALK","FLY","ANY"}))
     .addChild(new Shape()
       .setAppearance(new Appearance()
         .setMaterial(new Material())
-        .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)))
+        .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)
+          .setTextureProperties(new TextureProperties().setMagnificationFilter("NEAREST_PIXEL"))))
       .setGeometry(new IndexedFaceSet().setCoordIndex(new int[] {0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1})
         .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0}))))));
             }

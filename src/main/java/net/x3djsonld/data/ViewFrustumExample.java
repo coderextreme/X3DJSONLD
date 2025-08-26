@@ -67,7 +67,7 @@ import org.web3d.x3d.jsail.Networking.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d" target="_blank">http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d</a> </td>
+			<td> <a href="https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d" target="_blank">https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -121,7 +121,7 @@ public class ViewFrustumExample
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("ViewpointCalculator.png"))
     .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("ViewpointCalculatorComposed.png"))
     .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("view culling frustum"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
@@ -130,7 +130,7 @@ public class ViewFrustumExample
     .addChild(new Viewpoint().setDescription("ViewFrustum from point of view"))
     .addChild(new Viewpoint().setDescription("ViewFrustum behind point of view").setPosition(0.0,0.0,15.0))
     .addChild(new Viewpoint().setDescription("ViewFrustum oblique side view").setOrientation(0.8005,0.5926,0.0898,-0.3743).setPosition(-5.0,5.0,20.0))
-    .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
+    .addChild(new NavigationInfo().setType(new String[] {"EXAMINE","FLY","ANY"}))
     .addChild(new ExternProtoDeclare("ViewFrustum").setName("ViewFrustum").setAppinfo("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes").setUrl(new String[] {"ViewFrustumPrototype.x3d#ViewFrustum"})
       .addField(new field().setName("ViewpointNode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert Viewpoint DEF or USE node for view of interest"))
       .addField(new field().setName("NavigationInfoNode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("required: insert NavigationInfo DEF or USE node of interest"))

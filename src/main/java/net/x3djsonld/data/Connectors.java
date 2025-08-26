@@ -37,7 +37,7 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> Titania V3.0.4, <a href="http://titania.create3000.de" target="_blank">http://titania.create3000.de</a> </td>
+			<td> Titania V3.0.4, <a href="https://titania.create3000.de" target="_blank">https://titania.create3000.de</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
@@ -86,7 +86,7 @@ public class Connectors
     .addMeta(new meta().setName("comment").setContent("World of Titania"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("Fri, 04 Sep 2015 10:19:01 GMT"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Holger Seelig"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Titania V3.0.4, http://titania.create3000.de"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Titania V3.0.4, https://titania.create3000.de"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("Tue, 25 Jul 2017 09:42:17 GMT"))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Connectors")))
@@ -277,9 +277,9 @@ function set_translation ()
           .setIS(new IS()
             .addConnect(new connect().setNodeField("output").setProtoField("output"))
             .addConnect(new connect().setNodeField("input").setProtoField("input"))))))
-    .addChild(new NavigationInfo().setType("\"FLY\" \"ANY\""))
+    .addChild(new NavigationInfo().setType(new String[] {"FLY","ANY"}))
     .addChild(new Background().setSkyColor(new MFColor(new double[] {0.2,0.2,0.2})))
-    .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setCenterOfRotation(-3.13496,-4.19776,0.0).setFieldOfView(0.0,0.0,10.0,10.0).setPosition(-3.13496,-4.19776,10.0))
+    .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setCenterOfRotation(-3.13496,-4.19776,0.0).setFieldOfView(new double[] {0.0,0.0,10.0,10.0}).setPosition(-3.13496,-4.19776,10.0))
     .addChild(new Viewpoint().setDescription("Viewpoint"))
     .addChild(new Transform("Connectors")
       .addChild(new ProtoInstance("Route").setContainerField("children")

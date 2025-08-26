@@ -193,7 +193,7 @@ ecmascript:
                 String filenameJSON = "./text3shapes_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
- 		thisExampleX3dModel.toFileJSON       (filenameJSON);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }

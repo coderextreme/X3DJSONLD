@@ -118,6 +118,7 @@ public class DesignPatternsApparelMedicalSkinLayers
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
+    .addComponent(new component().setName("HAnim").setLevel(3))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("DesignPatternsApparelMedicalSkinLayers.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Design patterns for skin and apparel using HAnim2 standard in X3D4"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))

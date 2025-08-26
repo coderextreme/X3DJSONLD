@@ -18,7 +18,7 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> The Joe model is a Humanoid with textured skin. </p>
- <p> Related links: Catalog page <a href="../../../HumanoidAnimation/JoeSkinTexcoordDisplacerKickIndex.html" target="_blank">JoeSkinTexcoordDisplacerKick</a>,  source <a href="../../../HumanoidAnimation/JoeSkinTexcoordDisplacerKick.java">JoeSkinTexcoordDisplacerKick.java</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: Catalog page <a href="../../../HumanoidAnimation/JoeSkinTexcoordDisplacerKickIndex.html" target="_blank">JoeSkinTexcoordDisplacerKick</a>,  source <a href="../../../HumanoidAnimation/JoeSkinTexcoordDisplacerKickUpdate2.java">JoeSkinTexcoordDisplacerKickUpdate2.java</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -92,10 +92,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Joe Williams
  */
 
-public class JoeSkinTexcoordDisplacerKick
+public class JoeSkinTexcoordDisplacerKickUpdate2
 {
 	/** Default constructor to create this object. */
-	public JoeSkinTexcoordDisplacerKick ()
+	public JoeSkinTexcoordDisplacerKickUpdate2 ()
 	{
 	  initialize();
 	}
@@ -106,7 +106,7 @@ public class JoeSkinTexcoordDisplacerKick
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
-    .addComponent(new component().setName("H-Anim").setLevel(1))
+    .addComponent(new component().setName("HAnim").setLevel(3))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JoeSkinTexcoordDisplacerKick.x3d"))
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("The Joe model is a Humanoid with textured skin."))
@@ -744,7 +744,7 @@ public class JoeSkinTexcoordDisplacerKick
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JoeSkinTexcoordDisplacerKick model
+	 * @return JoeSkinTexcoordDisplacerKickUpdate2 model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -763,7 +763,7 @@ public class JoeSkinTexcoordDisplacerKick
     public static void main(String args[])
     {
         System.out.println("Build this X3D model, showing validation diagnostics...");
-        X3D thisExampleX3dModel = new JoeSkinTexcoordDisplacerKick().getX3dModel();
+        X3D thisExampleX3dModel = new JoeSkinTexcoordDisplacerKickUpdate2().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
         // next handle command line arguments
@@ -796,7 +796,7 @@ public class JoeSkinTexcoordDisplacerKick
                 }
         }
         if      (argumentsLoadNewModel)
-                System.out.println("WARNING: \"net.x3djsonld.data.JoeSkinTexcoordDisplacerKick\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+                System.out.println("WARNING: \"net.x3djsonld.data.JoeSkinTexcoordDisplacerKickUpdate2\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
         else if (hasArguments) // if no arguments provided, this method produces usage warning
                 thisExampleX3dModel.handleArguments(args);
 	
@@ -805,16 +805,16 @@ public class JoeSkinTexcoordDisplacerKick
             //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
             //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
-                System.out.print("net.x3djsonld.data.JoeSkinTexcoordDisplacerKick self-validation test confirmation: ");
+                System.out.print("net.x3djsonld.data.JoeSkinTexcoordDisplacerKickUpdate2 self-validation test confirmation: ");
                 if (!validationResults.equals("success"))
                     System.out.println();
                 System.out.println(validationResults.trim());
 
                 // experimental: test X3DJSAIL output files
-                // ./JoeSkinTexcoordDisplacerKick_JavaExport.* file validation is checked when building X3D Example Archives
-                String filenameX3D  = "./JoeSkinTexcoordDisplacerKick_JavaExport.x3d"; 
-                String filenameX3DV = "./JoeSkinTexcoordDisplacerKick_JavaExport.x3dv"; 
-                String filenameJSON = "./JoeSkinTexcoordDisplacerKick_JavaExport.json";
+                // ./JoeSkinTexcoordDisplacerKickUpdate2_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./JoeSkinTexcoordDisplacerKickUpdate2_JavaExport.x3d"; 
+                String filenameX3DV = "./JoeSkinTexcoordDisplacerKickUpdate2_JavaExport.x3dv"; 
+                String filenameJSON = "./JoeSkinTexcoordDisplacerKickUpdate2_JavaExport.json";
                 thisExampleX3dModel.toFileX3D        (filenameX3D);
                 thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
 // TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);

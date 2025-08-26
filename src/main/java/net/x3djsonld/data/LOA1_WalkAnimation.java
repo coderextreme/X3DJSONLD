@@ -50,19 +50,19 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl" target="_blank">http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl</a> </td>
+			<td> <a href="https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl" target="_blank">https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://HAnim.org/Specifications/HAnim2001" target="_blank">http://HAnim.org/Specifications/HAnim2001</a> </td>
+			<td> <a href="https://HAnim.org/Specifications/HAnim2001" target="_blank">https://HAnim.org/Specifications/HAnim2001</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://HAnim.org/Models" target="_blank">http://HAnim.org/Models</a> </td>
+			<td> <a href="https://HAnim.org/Models" target="_blank">https://HAnim.org/Models</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://HAnim.org/Nodes" target="_blank">http://HAnim.org/Nodes</a> </td>
+			<td> <a href="https://HAnim.org/Nodes" target="_blank">https://HAnim.org/Nodes</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
@@ -119,10 +119,10 @@ public class LOA1_WalkAnimation
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("1 October 2001"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("23 May 2020"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://HAnim.org/Specifications/HAnim2001"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://HAnim.org/Models"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://HAnim.org/Nodes"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://HAnim.org/Specifications/HAnim2001"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://HAnim.org/Models"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://HAnim.org/Nodes"))
     .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("Nancy Walk Animation HAnim 2001"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_WalkAnimation.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))

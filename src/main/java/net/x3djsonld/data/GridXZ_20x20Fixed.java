@@ -11,7 +11,7 @@ import org.web3d.x3d.jsail.Text.*;
 // Javadoc metadata annotations follow, see below for X3DJSAIL Java source code.
 /**
  * <p> Line grid authoring tool to enable precise visual measurement of objects in 3D space - fixed position. Oriented along XZ plane, size 20m by 20m, default block size 1m by 1m. </p>
- <p> Related links: <a href="../../../../Tools/Authoring/GridXZ_20x20Fixed.java">GridXZ_20x20Fixed.java</a> source, <a href="../../../../Tools/Authoring/GridXZ_20x20FixedIndex.html" target="_top">GridXZ_20x20Fixed catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: Catalog page <a href="../../../../Tools/Authoring/GridXZ_20x20FixedIndex.html" target="_blank">GridXZ_20x20Fixed</a>,  source <a href="../../../../Tools/Authoring/GridXZ_20x20Fixed.java">GridXZ_20x20Fixed.java</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
@@ -33,7 +33,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 30 March 2016 </td>
+			<td> 28 November 2019 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -49,7 +49,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d" target="_blank">https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -70,8 +70,8 @@ import org.web3d.x3d.jsail.Text.*;
 		It has been produced using the 
 		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
 		stylesheet
-	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version&amp;nbsp;control</a>)
-                is used to create Java source code from an original <code>.x3d</code> model.
+	       (<a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">version control</a>)
+                which is used to create Java source code from an original <code>.x3d</code> model.
 	</p>
 
 	* @author MV4204 class
@@ -89,19 +89,20 @@ public class GridXZ_20x20Fixed
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("GridXZ_20x20Fixed.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("MV4204 class"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("3 September 2000"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("30 March 2016"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("28 November 2019"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("GridXY_20x20Fixed.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("GridYZ_20x20Fixed.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Line grid authoring tool to enable precise visual measurement of objects in 3D space - fixed position. Oriented along XZ plane, size 20m by 20m, default block size 1m by 1m."))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
   .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("GridXZ_20x20Fixed.x3d"))
     .addChild(new Viewpoint().setDescription("XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)").setOrientation(1.0,0.0,0.0,-0.4).setPosition(0.0,10.0,25.0))
     .addChild(new Transform("GridLocation")
       .addChild(new Group()
@@ -168,16 +169,17 @@ public class GridXZ_20x20Fixed
 	}
 	   
     /** 
-	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
      * @param args array of input parameters, provided as arguments
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
-	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
      */
     public static void main(String args[])
     {
+        System.out.println("Build this X3D model, showing validation diagnostics...");
         X3D thisExampleX3dModel = new GridXZ_20x20Fixed().getX3dModel();
 //      System.out.println("X3D model construction complete.");
 	
@@ -217,11 +219,22 @@ public class GridXZ_20x20Fixed
 	
         if (validate)
         {
-                System.out.print("Java program \"net.x3djsonld.data.GridXZ_20x20Fixed\" self-validation test results: ");
+            //  System.out.println("--- TODO fix duplicated outputs ---"); // omit when duplicated outputs problem is solved/refactored
 		String validationResults = thisExampleX3dModel.validationReport();
-                if (validationResults.length() > 10)
+            //  System.out.println("-----------------------------------"); // omit when duplicated outputs problem is solved/refactored
+                System.out.print("net.x3djsonld.data.GridXZ_20x20Fixed self-validation test confirmation: ");
+                if (!validationResults.equals("success"))
                     System.out.println();
-                System.out.println(validationResults);
+                System.out.println(validationResults.trim());
+
+                // experimental: test X3DJSAIL output files
+                // ./GridXZ_20x20Fixed_JavaExport.* file validation is checked when building X3D Example Archives
+                String filenameX3D  = "./GridXZ_20x20Fixed_JavaExport.x3d"; 
+                String filenameX3DV = "./GridXZ_20x20Fixed_JavaExport.x3dv"; 
+                String filenameJSON = "./GridXZ_20x20Fixed_JavaExport.json";
+                thisExampleX3dModel.toFileX3D        (filenameX3D);
+                thisExampleX3dModel.toFileClassicVRML(filenameX3DV);
+// TODO         thisExampleX3dModel.toFileJSON       (filenameJSON);
         }
     }
 }
