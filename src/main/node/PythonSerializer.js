@@ -41,6 +41,9 @@ PythonSerializer.prototype = {
 		str += "f = open(\""+clazz+".new.python.x3d\", mode=\"w\", encoding=\"utf-8\")\n";
 		str += "f.write("+element.nodeName+stack[0]+".XML())\n";
 		str += "f.close()\n";
+		str += "f = open(\""+clazz+".new.python.x3dv\", mode=\"w\", encoding=\"utf-8\")\n";
+		str += "f.write("+element.nodeName+stack[0]+".VRML())\n";
+		str += "f.close()\n";
 		str += "f = open(\""+clazz+".new.python.json\", mode=\"w\", encoding=\"utf-8\")\n";
 		str += "f.write("+element.nodeName+stack[0]+".JSON())\n";
 		str += "f.close()\n";
@@ -80,7 +83,7 @@ PythonSerializer.prototype = {
 		if (attrType === "MFRotation") {
 			let Dwhole = [];
 			let TupleCount = 4;
-                        for (let i=0; i < len(values); i+=TupleCount) {
+                        for (let i=0; i < values.length; i+=TupleCount) {
 				let Dpart = "(";
 				Dpart += values[i];
 				Dpart += ", ";
@@ -92,7 +95,7 @@ PythonSerializer.prototype = {
 				Dpart += ")";
 				Dwhole[i/TupleCount] = Dpart;
 			}
-			console.log(Dwhole);
+			// console.log("MFRotation", Dwhole);
 			return '['+lead+Dwhole.join(j)+trail+']';
 			// return '('+lead+values.map(a => parseFloat(a).toFixed(4)).join(j)+trail+')';
 		// } else if (attrType === "SFString") {
@@ -101,35 +104,62 @@ PythonSerializer.prototype = {
 		} else if (attrType === "MFVec2f") {
 			let Dwhole = [];
 			let TupleCount = 2;
-                        for (let i=0; i < len(values); i+=TupleCount) {
+                        for (let i=0; i < values.length; i+=TupleCount) {
 				let Dpart = "("+values[i]+", "+values[i+1]+")";
 				Dwhole[i/TupleCount] = Dpart;
 			}
-			console.log(Dwhole);
+			// console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+		} else if (attrType === "MFVec2d") {
+			let Dwhole = [];
+			let TupleCount = 2;
+                        for (let i=0; i < values.length; i+=TupleCount) {
+				let Dpart = "("+values[i]+", "+values[i+1]+")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			// console.log(Dwhole);
 			return '['+lead+Dwhole.join(j)+trail+']';
 		} else if (attrType === "MFVec3d") {
 			let Dwhole = [];
 			let TupleCount = 3;
-                        for (let i=0; i < len(values); i+=TupleCount) {
+                        for (let i=0; i < values.length; i+=TupleCount) {
 				let Dpart = "("+values[i]+", "+values[i+1]+", "+values[i+2]+")";
 				Dwhole[i/TupleCount] = Dpart;
 			}
-			console.log(Dwhole);
+			// console.log(Dwhole);
 			return '['+lead+Dwhole.join(j)+trail+']';
 		} else if (attrType === "MFVec3f") {
 			let Dwhole = [];
 			let TupleCount = 3;
-                        for (let i=0; i < len(values); i+=TupleCount) {
+                        for (let i=0; i < values.length; i+=TupleCount) {
 				let Dpart = "("+values[i]+", "+values[i+1]+", "+values[i+2]+")";
 				Dwhole[i/TupleCount] = Dpart;
 			}
-			console.log(Dwhole);
+			// console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+		} else if (attrType === "MFVec4d") {
+			let Dwhole = [];
+			let TupleCount = 4;
+                        for (let i=0; i < values.length; i+=TupleCount) {
+				let Dpart = "("+values[i]+", "+values[i+1]+", "+values[i+2]+", "+values[i+3]+")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			// console.log(Dwhole);
+			return '['+lead+Dwhole.join(j)+trail+']';
+		} else if (attrType === "MFVec4f") {
+			let Dwhole = [];
+			let TupleCount = 4;
+                        for (let i=0; i < values.length; i+=TupleCount) {
+				let Dpart = "("+values[i]+", "+values[i+1]+", "+values[i+2]+", "+values[i+3]+")";
+				Dwhole[i/TupleCount] = Dpart;
+			}
+			// console.log(Dwhole);
 			return '['+lead+Dwhole.join(j)+trail+']';
 			// return '('+lead+values.map(a => parseFloat(a).toFixed(4)).join(j)+trail+')';
 		} else if (attrType.startsWith("MFColor")) {
 			let Dwhole = [];
 			let TupleCount = attrType.endsWith("RGBA") ? 4 : 3;
-                        for (let i=0; i < len(values); i+=TupleCount) {
+                        for (let i=0; i < values.length; i+=TupleCount) {
 				let Dpart = "(";
 				Dpart += values[i];
 				Dpart += ", ";
@@ -143,7 +173,7 @@ PythonSerializer.prototype = {
 				Dpart += ")";
 				Dwhole[i/TupleCount] = Dpart;
 			}
-			console.log(Dwhole);
+			// console.log(Dwhole);
 			return '['+lead+Dwhole.join(j)+trail+']';
 		} else {
 			return '['+lead+values.join(j)+trail+']';
@@ -213,9 +243,9 @@ PythonSerializer.prototype = {
 		return prepre+addpre+method;
 	},
 	stringValue : function(attrsa, attr, attrType, element, attrs) {
+		// console.log("-2 attr", attr, "attrType", attrType);
 		let strval;
 		let nodeValue = attrsa.nodeValue;
-	retype:
 		if (nodeValue === 'NULL') {
 			strval = "";
 			return strval;
@@ -230,91 +260,97 @@ PythonSerializer.prototype = {
 				}
 			}
 		}
-		if (attrType === "SFString") {
-			if (attr === "accessType") {
-				strval = '"'+nodeValue+'"';
-			} else {
-				strval = '"'+nodeValue.
-					replace(/\\n/g, '\\\\n').
-					replace(/\\?"/g, "\\\"")
-					+'"';
-			}
-		} else if (attrType === "SFInt32") {
-			strval = nodeValue;
-		} else if (attrType === "SFFloat") {
-			strval = nodeValue+FLOAT_SUFFIX;
-		} else if (attrType === "SFDouble") {
-			strval = nodeValue+DOUBLE_SUFFIX;
-		} else if (attrType === "SFBool") {
-			if (nodeValue === 'true') {
-				strval = "True";
-			} else if (nodeValue === 'false') {
-				strval = "False";
-			} else {
+		try {
+			// console.log("-1 attr", attr, "attrType", attrType);
+			if (attrType === "SFString") {
+				if (attr === "accessType") {
+					strval = '"'+nodeValue+'"';
+				} else {
+					strval = '"'+nodeValue.
+						replace(/\\n/g, '\\\\n').
+						replace(/\\?"/g, "\\\"")
+						+'"';
+				}
+			} else if (attrType === "SFInt32") {
 				strval = nodeValue;
+			} else if (attrType === "SFFloat") {
+				strval = nodeValue+FLOAT_SUFFIX;
+			} else if (attrType === "SFDouble") {
+				strval = nodeValue+DOUBLE_SUFFIX;
+			} else if (attrType === "SFBool") {
+				if (nodeValue === 'true') {
+					strval = "True";
+				} else if (nodeValue === 'false') {
+					strval = "False";
+				} else {
+					strval = nodeValue;
+				}
+			} else if (attrType === "SFTime") {
+				strval = nodeValue+DOUBLE_SUFFIX;
+			} else if (attrType === "MFTime") {
+				strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+			} else if (attrType === "MFString") {
+				nodeValue = nodeValue.replace(/^ *(.*) *$/, "$1");
+				strval = this.printSubArray(attrType, "java.lang.String",
+					nodeValue.substr(1, nodeValue.length-2).split(/"[ ,\t\r\n]+"/).
+					map(function(x) {
+						let y = x.
+						       replace(/(\\\\+)/g, '$1$1').
+						       replace(/\\\\"/g, '\\\"').
+						       replace(/""/g, '\\"\\"').
+						       replace(/&quot;&quot;/g, '\\"\\"').
+						       // replace(/&/g, "&amp;").
+						       replace(/\\n/g, '\\n');
+						if (y !== x) {
+						}
+						return y;
+					}), this.codeno, '","', '"', '"');
+			} else if (
+				attrType === "MFInt32"||
+				attrType === "MFImage"||
+				attrType === "SFImage") {
+				strval = this.printSubArray(attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			} else if (
+				attrType === "SFColor"||
+				attrType === "MFColor"||
+				attrType === "SFColorRGBA"||
+				attrType === "MFColorRGBA"||
+				attrType === "SFVec2f"||
+				attrType === "SFVec3f"||
+				attrType === "SFVec4f"||
+				attrType === "MFVec2f"||
+				attrType === "MFVec3f"||
+				attrType === "MFVec4f"||
+				attrType === "SFMatrix3f"||
+				attrType === "SFMatrix4f"||
+				attrType === "MFMatrix3f"||
+				attrType === "MFMatrix4f"||
+				attrType === "SFRotation"||
+				attrType === "MFRotation"||
+				attrType === "MFFloat") {
+				strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
+			} else if (
+				attrType === "SFVec2d"||
+				attrType === "SFVec3d"||
+				attrType === "SFVec4d"||
+				attrType === "MFVec2d"||
+				attrType === "MFVec3d"||
+				attrType === "MFVec4d"||
+				attrType === "SFMatrix3d"||
+				attrType === "SFMatrix4d"||
+				attrType === "MFMatrix3d"||
+				attrType === "MFMatrix4d"||
+				attrType === "MFDouble") {
+				strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
+			} else if (attrType === "MFBool") {
+				strval = this.printSubArray(attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
+			} else {
+				strval = '"'+nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
 			}
-		} else if (attrType === "SFTime") {
-			strval = nodeValue+DOUBLE_SUFFIX;
-		} else if (attrType === "MFTime") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
-		} else if (attrType === "MFString") {
-			nodeValue = nodeValue.replace(/^ *(.*) *$/, "$1");
-			strval = this.printSubArray(attrType, "java.lang.String",
-				nodeValue.substr(1, nodeValue.length-2).split(/"[ ,\t\r\n]+"/).
-				map(function(x) {
-					let y = x.
-					       replace(/(\\\\+)/g, '$1$1').
-					       replace(/\\\\"/g, '\\\"').
-					       replace(/""/g, '\\"\\"').
-					       replace(/&quot;&quot;/g, '\\"\\"').
-					       // replace(/&/g, "&amp;").
-					       replace(/\\n/g, '\\n');
-					if (y !== x) {
-					}
-					return y;
-				}), this.codeno, '","', '"', '"');
-		} else if (
-			attrType === "MFInt32"||
-			attrType === "MFImage"||
-			attrType === "SFImage") {
-			strval = this.printSubArray(attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
-		} else if (
-			attrType === "SFColor"||
-			attrType === "MFColor"||
-			attrType === "SFColorRGBA"||
-			attrType === "MFColorRGBA"||
-			attrType === "SFVec2f"||
-			attrType === "SFVec3f"||
-			attrType === "SFVec4f"||
-			attrType === "MFVec2f"||
-			attrType === "MFVec3f"||
-			attrType === "MFVec4f"||
-			attrType === "SFMatrix3f"||
-			attrType === "SFMatrix4f"||
-			attrType === "MFMatrix3f"||
-			attrType === "MFMatrix4f"||
-			attrType === "SFRotation"||
-			attrType === "MFRotation"||
-			attrType === "MFFloat") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX);
-		} else if (
-			attrType === "SFVec2d"||
-			attrType === "SFVec3d"||
-			attrType === "SFVec4d"||
-			attrType === "MFVec2d"||
-			attrType === "MFVec3d"||
-			attrType === "MFVec4d"||
-			attrType === "SFMatrix3d"||
-			attrType === "SFMatrix4d"||
-			attrType === "MFMatrix3d"||
-			attrType === "MFMatrix4d"||
-			attrType === "MFDouble") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX);
-		} else if (attrType === "MFBool") {
-			strval = this.printSubArray(attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '');
-		} else {
-			strval = '"'+nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\\"")+'"';
+		} catch (e) {
+			console.error(e);
 		}
+		// console.log("0 attr", attr, "attrType", attrType);
 		return strval;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
@@ -356,7 +392,9 @@ PythonSerializer.prototype = {
 					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
 						attrType = fieldTypes[element.nodeName][attr];
 					}
+					// console.log("1 attr", attr, "attrType", attrType);
 					let strval = this.stringValue(attrsa, attr, attrType, element, attrs);
+					// console.log("1.1 attr", attr, "attrType", attrType);
 					let method = attr;
 					if (attr === "class") {
 						method = "cssClass";
@@ -366,6 +404,16 @@ PythonSerializer.prototype = {
 					}
 					str += element.nodeName+stack[0];
 					str += '.'+method+" = "+strval+"\n";
+					// console.log("2 attr", attr, "attrType", attrType);
+					/*
+					if (attr === "keyValue") {
+						console.log("method", method);
+						console.log("Result", strval);
+						console.log("3 attr", attr, "attrType", attrType);
+					} else {
+						console.log("4 attr", attr, "attrType", attrType);
+					}
+					*/
 				}
 			} catch (e) {
 			}
@@ -406,6 +454,8 @@ PythonSerializer.prototype = {
 					method = method.substring(0,1) + method.substring(2);
 				} else if (method === ".shape") {
 				} else if (method.toLowerCase() === ".hanimsite") {
+				} else if (method.toLowerCase() === ".texturetransform") {
+					method = method.substring(0,1) + method.substring(1,2).toLowerCase() + method.substr(2);
 				} else {
 					method = method.substring(0,1) + method.substring(4,5).toLowerCase() + method.substr(5);
 
@@ -418,12 +468,17 @@ PythonSerializer.prototype = {
 					method === ".shape" ||
 					method === ".color" ||
 					method === ".skinCoord" ||
+					method === ".controlPoint" ||
+					(method === ".texCoord" && element.nodeName === "IndexedFaceSet") ||
+					(method === ".texCoord" && element.nodeName !== "MultiTextureCoordinate") ||
+					method === ".skinNormal" ||
 					method === ".coord" ||
-					method === ".texCoord" ||
 					method === ".normal" ||
 					method === ".source" ||
 					method === ".layerSet" ||
-					method === ".textureTransform" ||
+					(method === ".textureTransform" && element.nodeName === "Appearance") ||
+					(method === ".baseTexture" && element.nodeName === "PhysicalMaterial") ||
+  					((method === ".ambientTexture" || method === ".diffuseTexture" || method === ".emissiveTexture" || method === ".normalTexture" || method === ".occlusionTexture" || method === ".shininessTexture" || method === ".specularTexture") && element.nodeName === "Material") ||
 					method === ".acousticProperties" ||
 					method === ".topTexture" ||
 					method === ".bottomTexture" ||
@@ -431,6 +486,10 @@ PythonSerializer.prototype = {
 					method === ".leftTexture" ||
 					method === ".frontTexture" ||
 					method === ".backTexture" ||
+					method === ".diffuseTexture" ||
+					method === ".normalTexture" ||
+					method === ".shininessTexture" ||
+					method === ".specularTexture" ||
 					method === ".texture" ||
 					method === ".fontStyle" ||
 					method === ".fillProperties" ||

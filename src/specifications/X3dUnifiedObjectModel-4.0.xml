@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2025-02-14-08:00 18:39:56.6470403-08:00 -->
+<!-- Generated 2025-08-23-07:00 09:15:12.7342832-07:00 -->
 <X3dUnifiedObjectModel version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
  <SimpleTypeEnumerations>
   <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
@@ -225,11 +225,15 @@
    <enumeration appinfo="parent node is TextureBackground or ComposedCubeMapTexture" value="leftTexture"/>
    <enumeration appinfo="parent node is TextureBackground or ComposedCubeMapTexture" value="rightTexture"/>
    <enumeration appinfo="parent node is TextureBackground or ComposedCubeMapTexture" value="topTexture"/>
+   <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is Material" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#Material" value="ambientTexture"/>
    <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#PhysicalMaterial" value="baseTexture"/>
+   <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is Material" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#Material" value="diffuseTexture"/>
    <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial or UnlitMaterial" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#UnlitMaterial" value="emissiveTexture"/>
    <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#PhysicalMaterial" value="metallicRoughnessTexture"/>
    <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial or UnlitMaterial" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#UnlitMaterial" value="normalTexture"/>
    <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#PhysicalMaterial" value="occlusionTexture"/>
+   <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is Material" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#Material" value="shininessTexture"/>
+   <enumeration appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is Material" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/shape.html#Material" value="specularTexture"/>
   </SimpleType>
   <SimpleType appinfo="Permitted values for SpatialSound distanceModel. X3D enumeration naming conventions are capitalized versions of Web Audio API enumerations, also changing hyphens to underscores. This list is bounded, no additional values are allowed." baseType="SFString" documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/sound.html#SpatialSound" name="distanceModelChoices">
    <enumeration alias="linear" appinfo='X3D version of "linear" in Web Audio API.' documentation="https://www.w3.org/TR/webaudio/#enumdef-distancemodeltype" value="LINEAR"/>
@@ -1948,7 +1952,7 @@
    </InterfaceDefinition>
   </FieldType>
   <FieldType defaultValue="0 0 0" isArray="false" regex="\s*([+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?\s+){2}[+]?[0-4](\s+(0x[0-9a-fA-F]{1,16}|[+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?))*\s*" tupleSize="1" type="SFImage">
-   <InterfaceDefinition appinfo="SFImage specifies a single uncompressed 2-dimensional pixel image. SFImage fields contain three integers representing the width, height and number of components in the image, followed by (width x height) hexadecimal or integer values representing the pixels in the image." specificationUrl="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldsDef.html#SFImageAndMFImage">
+   <InterfaceDefinition appinfo="SFImage specifies a single uncompressed 2-dimensional pixel image. SFImage fields contain three integers representing the width, height, and number of components in the image, followed by (width x height) hexadecimal or integer values representing the pixels in the image." specificationUrl="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/fieldsDef.html#SFImageAndMFImage">
     <Inheritance baseType="xs:string" x3dType="X3DField"/>
    </InterfaceDefinition>
   </FieldType>
@@ -3675,7 +3679,7 @@
    </InterfaceDefinition>
   </ConcreteNode>
   <ConcreteNode name="Analyser">
-   <InterfaceDefinition appinfo="Analyser provides real-time frequency and time-domain analysis information, without any change to the input." specificationUrl="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/sound.html#Analyser">
+   <InterfaceDefinition appinfo="Analyser provides real-time frequency and time-domain analysis information, without any signal-processing change to the audio stream which is passed unprocessed from input to output." specificationUrl="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/sound.html#Analyser">
     <componentInfo level="2" name="Sound"/>
     <Inheritance baseType="X3DSoundProcessingNode"/>
     <field accessType="outputOnly" description="channelCount reports number of channels provided by input nodes." inheritedFrom="X3DSoundProcessingNode" name="channelCount" type="SFInt32"/>
@@ -3694,7 +3698,7 @@
     <field accessType="inputOutput" default="true" description="Enables/disables node operation." inheritedFrom="X3DSoundProcessingNode" name="enabled" type="SFBool"/>
     <field accessType="inputOutput" default="2048" description="fftSize represents size of Fast Fourier Transform (FFT) used to determine frequency domain." minInclusive="0" name="fftSize" type="SFInt32"/>
     <field accessType="inputOutput" default="1024" description="frequencyBinCount is half of fftSize and generally equates to number of data values available for the visualization." minInclusive="0" name="frequencyBinCount" type="SFInt32"/>
-    <field accessType="inputOutput" default="1" description="The gain field is a factor that represents the amount of linear amplification to apply to the output of the node." inheritedFrom="X3DSoundProcessingNode" name="gain" type="SFFloat"/>
+    <field accessType="inputOutput" default="1" description="The gain value only affects analysis, not output signal." inheritedFrom="X3DSoundProcessingNode" name="gain" type="SFFloat"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
     <field accessType="outputOnly" description="isActive true/false events are sent when playback starts/stops." inheritedFrom="X3DTimeDependentNode" name="isActive" type="SFBool"/>
     <field accessType="outputOnly" description="isPaused true/false events are sent when AudioClip is paused/resumed." inheritedFrom="X3DTimeDependentNode" name="isPaused" type="SFBool">
@@ -3873,7 +3877,7 @@
     <field accessType="outputOnly" description="isPaused true/false events are sent when AudioClip is paused/resumed." inheritedFrom="X3DTimeDependentNode" name="isPaused" type="SFBool">
      <componentInfo level="2" name="Time"/>
     </field>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field accessType="inputOutput" default="false" description="Repeat indefinitely when loop=true, repeat only once when loop=false." name="loop" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" default="0" description="When time now &gt;= pauseTime, isPaused becomes true and AudioClip becomes paused." inheritedFrom="X3DTimeDependentNode" name="pauseTime" type="SFTime">
@@ -3920,7 +3924,7 @@
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
     <field accessType="outputOnly" description="isActive true/false events are sent when playback starts/stops." inheritedFrom="X3DSoundDestinationNode" name="isActive" type="SFBool"/>
     <field accessType="inputOutput" default="2" description="[maxChannelCount." minInclusive="0" name="maxChannelCount" type="SFInt32"/>
-    <field accessType="inputOutput" description="mediaDeviceID field provides ID parameter functionality." inheritedFrom="X3DSoundDestinationNode" name="mediaDeviceID" type="SFString"/>
+    <field accessType="inputOutput" description="mediaDeviceID field provides a unique identifier for the active device that corresponds to deviceId functionality defined in W3C Web Audio API." inheritedFrom="X3DSoundDestinationNode" name="mediaDeviceID" type="SFString"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
@@ -4324,7 +4328,7 @@
      <componentInfo level="2" name="Time"/>
     </field>
     <field accessType="outputOnly" minInclusive="0" name="length" type="SFInt32"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field accessType="inputOutput" default="false" description="Repeat indefinitely when loop=true, repeat only once when loop=false." name="loop" type="SFBool"/>
     <field accessType="inputOutput" default="0" description="loopEnd field is optional playhead position where looping ends if loop=true." minInclusive="0" name="loopEnd" type="SFFloat"/>
     <field accessType="inputOutput" default="0" description="loopStart field is optional playhead position where looping begins if loop=true." minInclusive="0" name="loopStart" type="SFFloat"/>
@@ -5424,7 +5428,7 @@
      <enumeration appinfo='X3D version of "discrete" in Web Audio API.' documentation="https://www.w3.org/TR/webaudio/#enumdef-channelinterpretation" value="DISCRETE"/>
     </field>
     <field acceptableNodeTypes="Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper" accessType="inputOutput" description="The children field specifies audio-graph sound sources providing input signals for this node." name="children" type="MFNode"/>
-    <field accessType="inputOutput" default="0" description="delayTime is duration of delay (in seconds) to apply." minInclusive="0" name="delayTime" type="SFTime"/>
+    <field accessType="inputOutput" default="0" description="delayTime is duration of delay applied (in seconds)." minInclusive="0" name="delayTime" type="SFTime"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DTimeDependentNode" name="description" type="SFString"/>
     <field accessType="outputOnly" description="Current elapsed time since AudioClip activated/running, cumulative in seconds, and not counting any paused time." inheritedFrom="X3DTimeDependentNode" minInclusive="0" name="elapsedTime" type="SFTime"/>
     <field accessType="inputOutput" default="true" description="Enables/disables node operation." inheritedFrom="X3DSoundProcessingNode" name="enabled" type="SFBool"/>
@@ -5522,7 +5526,7 @@
     <field accessType="initializeOnly" default="0" description="Any extra information required to describe a particular entity." maxInclusive="255" minInclusive="0" name="extra" type="SFInt32"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
     <field accessType="initializeOnly" default="0" description="Integer enumerations value for whether entity is a PLATFORM, MUNITION, LIFE_FORM, ENVIRONMENTAL, CULTURAL_FEATURE, SUPPLY, RADIO, EXPENDABLE, SENSOR_EMITTER or OTHER." maxInclusive="255" minInclusive="0" name="kind" type="SFInt32"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="initializeOnly" default="0" description="Specific information about an entity based on the subcategory field." maxInclusive="255" minInclusive="0" name="specific" type="SFInt32"/>
     <field accessType="initializeOnly" default="0" description="Integer enumerations value for particular subcategory to which an entity belongs based on the category field." maxInclusive="255" minInclusive="0" name="subcategory" type="SFInt32"/>
@@ -6327,7 +6331,7 @@
     <field acceptableNodeTypes="X3DNode" accessType="inputOutput" description="DEF list of all nodes that implement this data." name="data" type="MFNode"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DUrlObject" name="description" type="SFString"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" description="The summary string array contains a set of keyword/value pairs, with each keyword and its subsequent value contained in separate strings." name="summary" type="MFString"/>
     <field accessType="inputOutput" description="Hypertext link to an external, complete metadata description." inheritedFrom="X3DUrlObject" name="url" type="MFString">
@@ -6730,7 +6734,7 @@
     <field accessType="inputOutput" description="Array of boolean values corresponding to HAnimMotion nodes indicating which can animate the HAnimHumanoid." name="motionsEnabled" type="MFBool"/>
     <field accessType="inputOutput" baseType="xs:NMTOKEN" description="Unique name attribute must be defined so that each HAnimHumanoid node in a scene can be identified at run time for animation purposes." name="name" type="SFString"/>
     <field accessType="inputOutput" default="0 0 1 0" description="Orientation of children relative to local coordinate system." name="rotation" type="SFRotation"/>
-    <field accessType="inputOutput" default="1 1 1" description="Non-uniform x-y-z scale of child coordinate system, adjusted by center and scaleOrientation." name="scale" type="SFVec3f"/>
+    <field accessType="inputOutput" default="1 1 1" description="Non-uniform x-y-z scale of child coordinate system, adjusted by center and scaleOrientation." minExclusive="0" name="scale" type="SFVec3f"/>
     <field accessType="inputOutput" default="0 0 1 0" description="Preliminary rotation of coordinate system before scaling (to allow scaling around arbitrary orientations)." name="scaleOrientation" type="SFRotation"/>
     <field acceptableNodeTypes="HAnimSegment" accessType="inputOutput" description="The segments field contains a list of USE references for all HAnimSegment node instances found within the preceding skeleton hierarchy." name="segments" type="MFNode"/>
     <field acceptableNodeTypes="HAnimSite" accessType="inputOutput" description="sites field contains a list of USE references for all HAnimSite node instances found within the preceding skeleton hierarchy." name="sites" type="MFNode"/>
@@ -7351,7 +7355,7 @@
     <field accessType="inputOutput" default="3600" description="autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur." inheritedFrom="X3DUrlObject" minInclusive="0" name="autoRefreshTimeLimit" type="SFTime"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DTextureNode" name="description" type="SFString"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field acceptableNodeTypes="TextureProperties" accessType="initializeOnly" default="NULL" description="Single contained TextureProperties node that can specify additional visual attributes applied to corresponding texture images." name="textureProperties" type="SFNode"/>
     <field accessType="inputOutput" description="Location and filename of image." inheritedFrom="X3DUrlObject" name="url" type="MFString">
@@ -7379,7 +7383,7 @@
     <field accessType="inputOutput" default="3600" description="autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur." inheritedFrom="X3DUrlObject" minInclusive="0" name="autoRefreshTimeLimit" type="SFTime"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DTextureNode" name="description" type="SFString"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="initializeOnly" default="true" description="Whether to repeat texture along S axis horizontally from left to right." inheritedFrom="X3DTexture2DNode" name="repeatS" type="SFBool"/>
     <field accessType="initializeOnly" default="true" description="Whether to repeat texture along T axis vertically from top to bottom." inheritedFrom="X3DTexture2DNode" name="repeatT" type="SFBool"/>
@@ -7410,7 +7414,7 @@
     <field accessType="inputOutput" default="3600" description="autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur." inheritedFrom="X3DUrlObject" minInclusive="0" name="autoRefreshTimeLimit" type="SFTime"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DTextureNode" name="description" type="SFString"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="initializeOnly" default="false" description="Whether to repeat texture along R axis from front to back." inheritedFrom="X3DTexture3DNode" name="repeatR" type="SFBool"/>
     <field accessType="initializeOnly" default="false" description="Whether to repeat texture along S axis horizontally from left to right." inheritedFrom="X3DTexture3DNode" name="repeatS" type="SFBool"/>
@@ -7652,7 +7656,7 @@
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DUrlObject" name="description" type="SFString"/>
     <field accessType="inputOutput" default="false" description="The global field controls potential external scoping effects of lights found within an Inline scene." name="global" type="SFBool"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" description="Address of X3D world to load Inline with current scene, retrieved either from local system or an online address." inheritedFrom="X3DUrlObject" name="url" type="MFString">
      <componentInfo level="4" name="Networking"/>
@@ -8420,7 +8424,7 @@
     <field accessType="outputOnly" description="isPaused true/false events are sent when AudioClip is paused/resumed." inheritedFrom="X3DTimeDependentNode" name="isPaused" type="SFBool">
      <componentInfo level="2" name="Time"/>
     </field>
-    <field accessType="inputOutput" description="mediaDeviceID field provides ID parameter functionality." name="mediaDeviceID" type="SFString"/>
+    <field accessType="inputOutput" description="mediaDeviceID field provides a unique identifier for the active device that corresponds to deviceId functionality defined in W3C Web Audio API." name="mediaDeviceID" type="SFString"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" default="0" description="When time now &gt;= pauseTime, isPaused becomes true and AudioClip becomes paused." inheritedFrom="X3DTimeDependentNode" name="pauseTime" type="SFTime">
      <componentInfo level="2" name="Time"/>
@@ -8506,7 +8510,7 @@
     <field accessType="outputOnly" description="isPaused true/false events are sent when MovieTexture is paused/resumed." inheritedFrom="X3DTimeDependentNode" name="isPaused" type="SFBool">
      <componentInfo level="2" name="Time"/>
     </field>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field accessType="inputOutput" default="false" description="Repeat indefinitely when loop=true, repeat only once when loop=false." name="loop" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" default="0" description="When time now &gt;= pauseTime, isPaused becomes true and MovieTexture becomes paused." inheritedFrom="X3DTimeDependentNode" name="pauseTime" type="SFTime">
@@ -9232,7 +9236,7 @@
      <enumeration appinfo="OpenGL shading language (GLSL)." value="GLSL"/>
      <enumeration appinfo="Microsoft High Level Shading Language (HLSL)." value="HLSL"/>
     </field>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." name="metadata" type="SFNode"/>
     <field accessType="inputOutput" description="url points to a shader source-code file that may contain a number of shaders and combined effects." inheritedFrom="X3DUrlObject" name="url" type="MFString">
      <componentInfo level="4" name="Networking"/>
@@ -10365,7 +10369,7 @@
     <field accessType="initializeOnly" default="false" description="Set directOutput true if Script has field reference(s) of type SFNode/MFNode, and also uses direct access to modify attributes of a referenced node in the Scene." name="directOutput" type="SFBool"/>
     <field acceptableNodeTypes="field" accessType="inputOutput" description="Include a field statement for each field declaration in this Script node." name="field" type="MFNode"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DScriptNode" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DScriptNode" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="initializeOnly" default="false" description="If mustEvaluate false, then the X3D player may delay sending input events to Script until output events are needed." name="mustEvaluate" type="SFBool"/>
     <field accessType="inputOutput" baseType="xs:string" description="Embedded scripting source code can be contained within the parent node as a plain-text CDATA block, without requiring escaping of special characters." name="sourceCode" type="SFString"/>
@@ -10452,7 +10456,7 @@
     <field accessType="inputOutput" default="3600" description="autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur." inheritedFrom="X3DUrlObject" minInclusive="0" name="autoRefreshTimeLimit" type="SFTime"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DUrlObject" name="description" type="SFString"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" baseType="xs:string" description="Embedded scripting source code can be contained within the parent node as a plain-text CDATA block, without requiring escaping of special characters." name="sourceCode" type="SFString"/>
     <field accessType="initializeOnly" additionalEnumerationValuesAllowed="true" baseType="xs:NMTOKEN" default="VERTEX" description="type indicates whether this ShaderProgram is a vertex or fragment (pixel) shader." name="type" simpleType="shaderPartTypeValues" type="SFString">
@@ -10485,7 +10489,7 @@
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DUrlObject" name="description" type="SFString"/>
     <field acceptableNodeTypes="field" accessType="inputOutput" description="Include a field statement for each field declaration in the ShaderProgram node." name="field" type="MFNode"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
-    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
+    <field accessType="inputOutput" default="true" description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset." inheritedFrom="X3DUrlObject" name="load" type="SFBool"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
     <field accessType="inputOutput" baseType="xs:string" description="Embedded scripting source code can be contained within the parent node as a plain-text CDATA block, without requiring escaping of special characters." name="sourceCode" type="SFString"/>
     <field accessType="initializeOnly" additionalEnumerationValuesAllowed="true" baseType="xs:NMTOKEN" default="VERTEX" description="type indicates whether this ShaderProgram is a vertex or fragment (pixel) shader." name="type" simpleType="shaderPartTypeValues" type="SFString">
@@ -10715,11 +10719,11 @@
     <Inheritance baseType="X3DSoundNode"/>
     <field acceptableNodeTypes="Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper" accessType="inputOutput" description="The children field specifies audio-graph sound sources providing input signals for this node." name="children" type="MFNode"/>
     <field accessType="inputOutput" default="6.2832" description="coneInnerAngle is centered along direction and defines the inner conical volume, inside of which no source gain reduction occurs." maxInclusive="6.2832" minInclusive="0" name="coneInnerAngle" type="SFFloat"/>
-    <field accessType="inputOutput" default="6.2832" description="coneOuterAngle is centered along direction and defines an outer conical volume, within which the sound gain decreases linearly from full gain to coneOuterGain." maxInclusive="6.2832" minInclusive="0" name="coneOuterAngle" type="SFFloat"/>
+    <field accessType="inputOutput" default="6.2832" description="coneOuterAngle is centered along direction and defines an outer conical volume, within which the sound gain decreases from full gain to coneOuterGain." maxInclusive="6.2832" minInclusive="0" name="coneOuterAngle" type="SFFloat"/>
     <field accessType="inputOutput" default="0" description="coneOuterGain is minimum gain value found outside coneOuterAngle." name="coneOuterGain" type="SFFloat"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DSoundNode" name="description" type="SFString"/>
     <field accessType="inputOutput" default="0 0 1" description="direction of sound axis, relative to local coordinate system." name="direction" type="SFVec3f"/>
-    <field accessType="inputOutput" additionalEnumerationValuesAllowed="false" baseType="SFString" default="INVERSE" description="distanceModel determines how field specifies which algorithm to use for sound attenuation, corresponding to distance between an audio source and a listener, as it moves away from the listener." name="distanceModel" simpleType="distanceModelChoices" type="SFString">
+    <field accessType="inputOutput" additionalEnumerationValuesAllowed="false" baseType="SFString" default="INVERSE" description="distanceModel determines which algorithm to use for sound attenuation, corresponding to distance between an audio source and a listener, as it moves away from the listener." name="distanceModel" simpleType="distanceModelChoices" type="SFString">
      <enumeration alias="linear" appinfo='X3D version of "linear" in Web Audio API.' documentation="https://www.w3.org/TR/webaudio/#enumdef-distancemodeltype" value="LINEAR"/>
      <enumeration alias="inverse" appinfo='X3D version of "inverse" in Web Audio API.' documentation="https://www.w3.org/TR/webaudio/#enumdef-distancemodeltype" value="INVERSE"/>
      <enumeration alias="exponential" appinfo='X3D version of "exponential" in Web Audio API.' documentation="https://www.w3.org/TR/webaudio/#enumdef-distancemodeltype" value="EXPONENTIAL"/>
@@ -10965,9 +10969,9 @@
     <field accessType="inputOutput" default="1" description="The gain field is a factor that represents the amount of linear amplification to apply to the output of the node." inheritedFrom="X3DSoundDestinationNode" name="gain" type="SFFloat"/>
     <field acceptableNodeTypes="IS" accessType="inputOutput" default="NULL" inheritedFrom="X3DNode" name="IS" type="SFNode"/>
     <field accessType="outputOnly" description="isActive true/false events are sent when playback starts/stops." inheritedFrom="X3DSoundDestinationNode" name="isActive" type="SFBool"/>
-    <field accessType="inputOutput" description="mediaDeviceID field provides ID parameter functionality." inheritedFrom="X3DSoundDestinationNode" name="mediaDeviceID" type="SFString"/>
+    <field accessType="inputOutput" description="mediaDeviceID field provides a unique identifier for the active device that corresponds to deviceId functionality defined in W3C Web Audio API." inheritedFrom="X3DSoundDestinationNode" name="mediaDeviceID" type="SFString"/>
     <field acceptableNodeTypes="X3DMetadataObject" accessType="inputOutput" default="NULL" description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node." inheritedFrom="X3DNode" name="metadata" type="SFNode"/>
-    <field accessType="inputOutput" description="Stream identification TBD Hint: W3C Media Capture and Streams https://www." name="streamIdentifier" type="SFString"/>
+    <field accessType="inputOutput" description="Stream identification TBD Hint: W3C Media Capture and Streams https://www." name="streamIdentifier" type="MFString"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:NMTOKENS" description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets." inheritedFrom="X3DNode" name="class" type="SFString"/>
@@ -11011,7 +11015,7 @@
     </field>
     <field accessType="inputOutput" default="0" description="Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT." inheritedFrom="X3DTimeDependentNode" name="startTime" type="SFTime"/>
     <field accessType="inputOutput" default="0" description="Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT." inheritedFrom="X3DTimeDependentNode" name="stopTime" type="SFTime"/>
-    <field accessType="inputOutput" description="Stream identification TBD Hint: W3C Media Capture and Streams https://www." name="streamIdentifier" type="SFString"/>
+    <field accessType="inputOutput" description="Stream identification TBD Hint: W3C Media Capture and Streams https://www." name="streamIdentifier" type="MFString"/>
     <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <field accessType="inputOutput" baseType="xs:NMTOKENS" description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets." inheritedFrom="X3DNode" name="class" type="SFString"/>
@@ -12214,6 +12218,7 @@
      <enumeration appinfo='X3D version of "discrete" in Web Audio API.' documentation="https://www.w3.org/TR/webaudio/#enumdef-channelinterpretation" value="DISCRETE"/>
     </field>
     <field acceptableNodeTypes="Analyser|AudioClip|AudioDestination|BiquadFilter|BufferAudioSource|ChannelMerger|ChannelSelector|ChannelSplitter|Convolver|Delay|DynamicsCompressor|Gain|ListenerPointSource|MicrophoneSource|MovieTexture|OscillatorSource|Sound|SpatialSound|StreamAudioDestination|StreamAudioSource|WaveShaper" accessType="inputOutput" description="The children field specifies audio-graph sound sources providing input signals for this node." name="children" type="MFNode"/>
+    <field accessType="inputOutput" description="The curve field is an array of floating-point numbers describing the distortion to apply." name="curve" type="MFFloat"/>
     <field accessType="inputOutput" description="Author-provided prose that describes intended purpose of the url asset." inheritedFrom="X3DTimeDependentNode" name="description" type="SFString"/>
     <field accessType="outputOnly" description="Current elapsed time since AudioClip activated/running, cumulative in seconds, and not counting any paused time." inheritedFrom="X3DTimeDependentNode" minInclusive="0" name="elapsedTime" type="SFTime"/>
     <field accessType="inputOutput" default="true" description="Enables/disables node operation." inheritedFrom="X3DSoundProcessingNode" name="enabled" type="SFBool"/>
