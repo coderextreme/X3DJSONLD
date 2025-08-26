@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-        "title": "X3D V4.0 JSON Schema, generated 2025/08/15 10:17:05",
+        "title": "X3D V4.0 JSON Schema, generated 2025/08/25 22:37:54",
         "description": "Experimental JSON Schema for X3D V4.0",
         "type": "object",
         "properties": {
@@ -12233,6 +12233,7 @@
 						"items": false
 					},
 					"@scale" : {
+						"exclusiveMinimum" : 0,
 						"$comment":"SFVec3f inputOutput",
 						"type":"array",
 						"$comment":"SFVec3f inputOutput",
@@ -12241,6 +12242,7 @@
 						"maxItems" : 3,
 						"items": {
 							"default":1,
+						"exclusiveMinimum" : 0,
 						"type":"number"
 						}					},
 					"@scaleOrientation" : {
@@ -15282,9 +15284,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"LEFT",
+									"CENTER",
 									"RIGHT",
-									"CENTER"
+									"LEFT"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -15292,9 +15294,9 @@
 							,
 							{
 								"enum": [
-									"BOTTOM",
 									"TOP",
-									"CENTER"
+									"CENTER",
+									"BOTTOM"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -15325,9 +15327,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -15335,9 +15337,9 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -15353,10 +15355,10 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
 									"STRETCH",
-									"NONE"
+									"NONE",
+									"PIXEL"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -15364,10 +15366,10 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
 									"STRETCH",
-									"NONE"
+									"NONE",
+									"PIXEL"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -15392,9 +15394,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -15402,9 +15404,9 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -18141,13 +18143,13 @@
 						"prefixItems": [
 						{
 							"enum": [
-								"EXPLORE",
+								"ANY",
+								"NONE",
 								"LOOKAT",
 								"FLY",
-								"EXAMINE",
 								"WALK",
-								"ANY",
-								"NONE"
+								"EXPLORE",
+								"EXAMINE"
 							],
 								"default":"EXAMINE",
 						"type":"string"
@@ -27227,9 +27229,13 @@
 						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
 					},
 					"@streamIdentifier" : {
-						"$comment":"SFString inputOutput",
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"items": {
 						"type":"string"
-					},
+						}					},
 					"@DEF" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
@@ -27348,9 +27354,13 @@
 						"type":"number"
 					},
 					"@streamIdentifier" : {
-						"$comment":"SFString inputOutput",
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"$comment":"MFString inputOutput",
+						"type":"array",
+						"items": {
 						"type":"string"
-					},
+						}					},
 					"@DEF" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
@@ -32227,6 +32237,14 @@
 					"-children" : {
 						"$ref":"#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
 					},
+					"@curve" : {
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"items": {
+						"type":"number"
+						}					},
 					"@description" : {
 						"$comment":"SFString inputOutput",
 						"type":"string"
@@ -35228,9 +35246,6 @@
 					"-X3DTextureTransformNodeSFNode" : {
 							"type": "object",
 							"properties": {
-								"MultiTextureTransform" : {
-									"$ref":"#/$defs/MultiTextureTransform"
-								},
 								"TextureTransform" : {
 									"$ref":"#/$defs/TextureTransform"
 								},
@@ -35239,6 +35254,9 @@
 								},
 								"TextureTransformMatrix3D" : {
 									"$ref":"#/$defs/TextureTransformMatrix3D"
+								},
+								"MultiTextureTransform" : {
+									"$ref":"#/$defs/MultiTextureTransform"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -36448,9 +36466,6 @@
 								"MultiTexture" : {
 									"$ref":"#/$defs/MultiTexture"
 								},
-								"MultiTextureTransform" : {
-									"$ref":"#/$defs/MultiTextureTransform"
-								},
 								"TextureTransform" : {
 									"$ref":"#/$defs/TextureTransform"
 								},
@@ -36459,6 +36474,9 @@
 								},
 								"TextureTransformMatrix3D" : {
 									"$ref":"#/$defs/TextureTransformMatrix3D"
+								},
+								"MultiTextureTransform" : {
+									"$ref":"#/$defs/MultiTextureTransform"
 								},
 								"AcousticProperties" : {
 									"$ref":"#/$defs/AcousticProperties"
@@ -37844,6 +37862,15 @@
 							"properties": {
 								"#comment": {
 									"type": "string"
+								},
+								"TextureTransform" : {
+									"$ref":"#/$defs/TextureTransform"
+								},
+								"TextureTransform3D" : {
+									"$ref":"#/$defs/TextureTransform3D"
+								},
+								"TextureTransformMatrix3D" : {
+									"$ref":"#/$defs/TextureTransformMatrix3D"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"

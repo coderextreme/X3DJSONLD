@@ -10,9 +10,8 @@ import mapToMethod2 from './mapToMethod2.js';
 import fieldTypes from './fieldTypes.js';
 import X3DJSONLD from './X3DJSONLD.js';
 import { Script, LOG } from './Script.js';
-import { replaceX3DJSON, loadSchema, loadX3DJS, doValidate } from "./loadValidateServer.js";
+import { loadX3DJS } from "./loadValidateServer.js";
 import { DOMParser, XMLSerializer, DOMImplementation } from '@xmldom/xmldom';
-
 import AframeSerializer from './AframeSerializer.js';
 import ClojureSerializer from './ClojureSerializer.js';
 import CppFunctionBodySerializer from './CppFunctionBodySerializer.js';
@@ -82,7 +81,7 @@ export default function convertJSON(options) {
 				continue;
 			}
 			var NS = "https://www.web3d.org/specifications/x3d";
-			// console.error("loading", file);
+			console.error("loading", file, "for conversion");
 			loadX3DJS(domImpl, json, file, NS, function(element, xml) {
 				if (typeof element === undefined) {
 					throw ("Undefined element returned from loadX3DJS()")
@@ -109,7 +108,7 @@ export default function convertJSON(options) {
 					let actual_serializer = eval(option.serializer);
 					// console.log(option.serializer, actual_serializer);
 					var co = option.codeOutput+basefile;
-					// console.log("serializing:", co);
+					console.log("serializing:", co);
 					try {
 						str = new actual_serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
 					} catch (e) {
