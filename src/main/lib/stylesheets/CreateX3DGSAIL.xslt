@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     title       : CreateX3DGSAIL.xslt (Go Module Generator)
-    version     : 3.5 (Fixes enum redeclaration with grouping and conditional pointer dereferencing in MarshalXML)
+    version     : 3.6 (Fixes syntax error in xsl:text closing tag)
     created     : 24 May 2024
     creator     : AI Assistant & John Carlson
     description : Stylesheet to process X3dUnifiedObjectModel-#.#.xml and convert it to a Go module for X3D manipulation.
@@ -16,9 +16,6 @@
     <xsl:output method="text"/>
     <xsl:param name="GoPackageDirectory"><xsl:text>./x3d</xsl:text></xsl:param>
 
-    <!-- ======================================================= -->
-    <!-- Custom XSLT Function for Re-use in group-by             -->
-    <!-- ======================================================= -->
     <xsl:function name="my:format-go-identifier">
         <xsl:param name="name" as="xs:string"/>
         <xsl:variable name="result">
@@ -29,18 +26,13 @@
                     <xsl:variable name="sanitized2" select="replace($sanitized1, '\.', ' ')"/>
                     <xsl:variable name="sanitized3" select="replace($sanitized2, '&quot;', '')"/>
                     <xsl:value-of select="upper-case(substring($sanitized3, 1, 1))"/>
-                    <xsl:call-template name="camel-case-recursive">
-                        <xsl:with-param name="string" select="substring($sanitized3, 2)"/>
-                    </xsl:call-template>
+                    <xsl:call-template name="camel-case-recursive"><xsl:with-param name="string" select="substring($sanitized3, 2)"/></xsl:call-template>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         <xsl:sequence select="$result"/>
     </xsl:function>
 
-    <!-- ======================================================= -->
-    <!-- Root Template: Orchestrates generation of all Go files  -->
-    <!-- ======================================================= -->
     <xsl:template match="/">
         <xsl:result-document href="{$GoPackageDirectory}/core.go" method="text" encoding="UTF-8">
             <xsl:call-template name="generate-go-header"><xsl:with-param name="packageName" select="'x3d'"/><xsl:with-param name="imports"><xsl:text>import ("encoding/xml";"errors";"fmt";"strings")</xsl:text></xsl:with-param></xsl:call-template>
@@ -48,17 +40,18 @@
             <xsl:call-template name="generate-go-base-structs"/>
             <xsl:call-template name="generate-go-utility-functions"/>
         </xsl:result-document>
-
         <xsl:result-document href="{$GoPackageDirectory}/enums.go" method="text" encoding="UTF-8">
             <xsl:call-template name="generate-go-header"><xsl:with-param name="packageName" select="'x3d'"/></xsl:call-template>
             <xsl:apply-templates select="//SimpleTypeEnumerations/SimpleType[count(enumeration) > 0 and not(starts-with(@name,'containerField'))]"/>
         </xsl:result-document>
-
+        <xsl:result-document href="{$GoPackageDirectory}/fieldtypes.go" method="text" encoding="UTF-8">
+            <xsl:call-template name="generate-go-header"><xsl:with-param name="packageName" select="'x3d'"/><xsl:with-param name="imports"><xsl:text>import ("strconv";"strings")</xsl:text></xsl:with-param></xsl:call-template>
+            <xsl:apply-templates select="//FieldTypes/FieldType[not(contains(@type, 'String') or contains(@type, 'Bool') or contains(@type, 'Int32') or contains(@type, 'Float') or contains(@type, 'Double') or contains(@type, 'Time') or contains(@type, 'Node'))]"/>
+        </xsl:result-document>
         <xsl:result-document href="{$GoPackageDirectory}/nodes.go" method="text" encoding="UTF-8">
             <xsl:call-template name="generate-go-header"><xsl:with-param name="packageName" select="'x3d'"/><xsl:with-param name="imports"><xsl:text>import ("encoding/xml";"fmt")</xsl:text></xsl:with-param></xsl:call-template>
             <xsl:apply-templates select="//ConcreteNodes/ConcreteNode"/>
         </xsl:result-document>
-
         <xsl:result-document href="{$GoPackageDirectory}/statements.go" method="text" encoding="UTF-8">
             <xsl:call-template name="generate-go-header"><xsl:with-param name="packageName" select="'x3d'"/><xsl:with-param name="imports"><xsl:text>import ("encoding/xml";"fmt")</xsl:text></xsl:with-param></xsl:call-template>
             <xsl:apply-templates select="//Statements/Statement[not(@name='X3D' or @name='head' or @name='Scene')]"/>
@@ -75,20 +68,9 @@
 
     <xsl:template name="generate-go-interfaces">
         <xsl:text><![CDATA[
-type X3DNode interface {
-    GetNodeName() string
-    GetSpecificationURL() string
-    Validate() error
-    MarshalXML(e *xml.Encoder, start xml.StartElement) error
-    GetCore() *CoreX3DNode
-}
-type X3DStatement interface {
-    GetStatementName() string
-    Validate() error
-    MarshalXML(e *xml.Encoder, start xml.StartElement) error
-}
+type X3DNode interface { GetNodeName() string; GetSpecificationURL() string; Validate() error; MarshalXML(e *xml.Encoder, start xml.StartElement) error; GetCore() *CoreX3DNode }
+type X3DStatement interface { GetStatementName() string; Validate() error; MarshalXML(e *xml.Encoder, start xml.StartElement) error }
 type X3DChildNode interface { X3DNode }
-type X3DInfoNode interface { X3DNode }
 type X3DGeometryNode interface { X3DNode }
 type X3DAppearanceChildNode interface { X3DNode }
 ]]> </xsl:text>
@@ -96,81 +78,27 @@ type X3DAppearanceChildNode interface { X3DNode }
 
     <xsl:template name="generate-go-base-structs">
         <xsl:text><![CDATA[
-type CoreX3DNode struct {
-    DEF      *string  `xml:"DEF,attr,omitempty"`
-    USE      *string  `xml:"USE,attr,omitempty"`
-    Class    *string  `xml:"class,attr,omitempty"`
-    ID       *string  `xml:"id,attr,omitempty"`
-    Style    *string  `xml:"style,attr,omitempty"`
-    Metadata X3DNode  `xml:"Metadata,omitempty"`
-}
+type CoreX3DNode struct { DEF *string `xml:"DEF,attr,omitempty"`; USE *string `xml:"USE,attr,omitempty"`; Class *string `xml:"class,attr,omitempty"`; ID *string `xml:"id,attr,omitempty"`; Style *string `xml:"style,attr,omitempty"`; Metadata X3DNode `xml:"Metadata,omitempty"` }
 func (n *CoreX3DNode) GetCore() *CoreX3DNode { return n }
-func (n *CoreX3DNode) Validate() error {
-    if n.DEF != nil && n.USE != nil { return errors.New("DEF and USE attributes are mutually exclusive") }
-    if n.Metadata != nil { if err := n.Metadata.Validate(); err != nil { return fmt.Errorf("metadata validation error: %w", err) } }
-    return nil
-}
-type CoreX3DStatement struct {
-    Class *string `xml:"class,attr,omitempty"`
-    ID    *string `xml:"id,attr,omitempty"`
-    Style *string `xml:"style,attr,omitempty"`
-}
+func (n *CoreX3DNode) Validate() error { if n.DEF != nil && n.USE != nil { return errors.New("DEF and USE attributes are mutually exclusive") }; if n.Metadata != nil { if err := n.Metadata.Validate(); err != nil { return fmt.Errorf("metadata validation error: %w", err) } }; return nil }
+type CoreX3DStatement struct { Class *string `xml:"class,attr,omitempty"`; ID *string `xml:"id,attr,omitempty"`; Style *string `xml:"style,attr,omitempty"` }
 func (s *CoreX3DStatement) Validate() error { return nil }
-type X3D struct {
-    XMLName xml.Name `xml:"X3D"`
-    Profile *string  `xml:"profile,attr"`
-    Version *string  `xml:"version,attr"`
-    Head    *Head    `xml:"head,omitempty"`
-    Scene   *Scene   `xml:"Scene"`
-}
-type Head struct {
-    XMLName    xml.Name      `xml:"head"`
-    Components []*Component `xml:"component,omitempty"`
-    Units      []*Unit      `xml:"unit,omitempty"`
-    Metas      []*Meta      `xml:"meta,omitempty"`
-}
-type Scene struct {
-    CoreX3DNode
-    Children []X3DChildNode `xml:",any"`
-}
+type X3D struct { XMLName xml.Name `xml:"X3D"`; Profile *string `xml:"profile,attr"`; Version *string `xml:"version,attr"`; Head *Head `xml:"head,omitempty"`; Scene *Scene `xml:"Scene"` }
+type Head struct { XMLName xml.Name `xml:"head"`; Components []*Component `xml:"component,omitempty"`; Units []*Unit `xml:"unit,omitempty"`; Metas []*Meta `xml:"meta,omitempty"` }
+type Scene struct { CoreX3DNode; Children []X3DChildNode `xml:",any"` }
 func (n *Scene) GetNodeName() string { return "Scene" }
 func (n *Scene) GetSpecificationURL() string { return "https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/core.html#Scene" }
-func (n *Scene) Validate() error {
-    for _, child := range n.Children {
-        if err := child.Validate(); err != nil { return fmt.Errorf("child node validation error in Scene: %w", err) }
-    }
-    return n.CoreX3DNode.Validate()
-}
-func (n *Scene) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
-    start.Name.Local = n.GetNodeName()
-    if err := e.EncodeToken(start); err != nil { return err }
-    for _, child := range n.Children {
-        if err := e.EncodeElement(child, xml.StartElement{Name: xml.Name{Local: child.GetNodeName()}}); err != nil { return err }
-    }
-    return e.EncodeToken(start.End())
-}
+func (n *Scene) Validate() error { for _, child := range n.Children { if err := child.Validate(); err != nil { return fmt.Errorf("child node validation error in Scene: %w", err) } }; return n.CoreX3DNode.Validate() }
+func (n *Scene) MarshalXML(e *xml.Encoder, start xml.StartElement) error { start.Name.Local = n.GetNodeName(); if err := e.EncodeToken(start); err != nil { return err }; for _, child := range n.Children { if err := e.EncodeElement(child, xml.StartElement{Name: xml.Name{Local: child.GetNodeName()}}); err != nil { return err } }; return e.EncodeToken(start.End()) }
 ]]> </xsl:text>
     </xsl:template>
 
     <xsl:template name="generate-go-utility-functions">
         <xsl:text><![CDATA[
-func validateNonNegative(value float32, fieldName string) error {
-    if value < 0 { return fmt.Errorf("%s must be non-negative, got %f", fieldName, value) }
-    return nil
-}
-func validateZeroToOne(value float32, fieldName string) error {
-    if value < 0.0 || value > 1.0 { return fmt.Errorf("%s must be in range [0, 1], got %f", fieldName, value) }
-    return nil
-}
-func validatePositive(value float32, fieldName string) error {
-    if value <= 0 { return fmt.Errorf("%s must be positive, got %f", fieldName, value) }
-    return nil
-}
-func validateBoundingBox(value [3]float32, fieldName string) error {
-    if value[0] == -1 && value[1] == -1 && value[2] == -1 { return nil }
-    if value[0] < 0 || value[1] < 0 || value[2] < 0 { return fmt.Errorf("%s components must all be non-negative or all be -1, got %v", fieldName, value) }
-    return nil
-}
+func validateNonNegative(value float32, fieldName string) error { if value < 0 { return fmt.Errorf("%s must be non-negative, got %f", fieldName, value) }; return nil }
+func validateZeroToOne(value float32, fieldName string) error { if value < 0.0 || value > 1.0 { return fmt.Errorf("%s must be in range [0, 1], got %f", fieldName, value) }; return nil }
+func validatePositive(value float32, fieldName string) error { if value <= 0 { return fmt.Errorf("%s must be positive, got %f", fieldName, value) }; return nil }
+func validateBoundingBox(value [3]float32, fieldName string) error { if value[0] == -1 && value[1] == -1 && value[2] == -1 { return nil }; if value[0] < 0 || value[1] < 0 || value[2] < 0 { return fmt.Errorf("%s components must all be non-negative or all be -1, got %v", fieldName, value) }; return nil }
 ]]> </xsl:text>
     </xsl:template>
 
@@ -189,10 +117,26 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
         <xsl:text>)&#10;&#10;</xsl:text>
     </xsl:template>
 
+    <xsl:template match="FieldTypes/FieldType">
+        <xsl:variable name="goTypeName" select="@type"/>
+        <xsl:variable name="goUnderlyingType"><xsl:call-template name="map-x3d-type-to-go"><xsl:with-param name="x3dType" select="@type"/></xsl:call-template></xsl:variable>
+        <xsl:text>type </xsl:text><xsl:value-of select="$goTypeName"/><xsl:text> </xsl:text><xsl:value-of select="$goUnderlyingType"/><xsl:text>&#10;&#10;</xsl:text>
+        <xsl:text>func (v </xsl:text><xsl:value-of select="$goTypeName"/><xsl:text>) String() string {&#10;</xsl:text>
+        <xsl:text>    var b strings.Builder&#10;</xsl:text>
+        <xsl:choose>
+            <xsl:when test="starts-with(@type, 'MF')">
+                <xsl:text>    for i, tuple := range v {&#10;        for j, val := range tuple {&#10;            b.WriteString(strconv.FormatFloat(float64(val), 'g', -1, 32))&#10;            if j &lt; len(tuple)-1 { b.WriteString(" ") }&#10;        }&#10;        if i &lt; len(v)-1 { b.WriteString(" ") }&#10;    }&#10;</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>    for i, val := range v {&#10;        b.WriteString(strconv.FormatFloat(float64(val), 'g', -1, 32))&#10;        if i &lt; len(v)-1 { b.WriteString(" ") }&#10;    }&#10;</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:text>    return b.String()&#10;}&#10;&#10;</xsl:text>
+    </xsl:template>
+
     <xsl:template match="ConcreteNode | Statement">
         <xsl:variable name="isNode" select="local-name() = 'ConcreteNode'"/>
         <xsl:variable name="elementName" select="my:format-go-identifier(string(@name))"/>
-
         <xsl:text>// </xsl:text><xsl:value-of select="$elementName"/><xsl:text>: </xsl:text><xsl:value-of select="normalize-space(InterfaceDefinition/@appinfo)"/><xsl:text>&#10;</xsl:text>
         <xsl:text>type </xsl:text><xsl:value-of select="$elementName"/><xsl:text> struct {&#10;</xsl:text>
         <xsl:choose>
@@ -202,13 +146,12 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
         <xsl:for-each select="InterfaceDefinition/field">
             <xsl:variable name="fieldNameGo" select="my:format-go-identifier(string(@name))"/>
             <xsl:if test="not(($isNode and ($fieldNameGo = 'DEF' or $fieldNameGo = 'USE' or $fieldNameGo = 'Class' or $fieldNameGo = 'ID' or $fieldNameGo = 'Style' or $fieldNameGo = 'Metadata')) or (not($isNode) and ($fieldNameGo = 'Class' or $fieldNameGo = 'ID' or $fieldNameGo = 'Style')))">
-                <xsl:variable name="fieldTypeGo"><xsl:call-template name="map-x3d-type-to-go"><xsl:with-param name="x3dType" select="@type"/><xsl:with-param name="acceptableNodeTypes" select="@acceptableNodeTypes"/></xsl:call-template></xsl:variable>
+                <xsl:variable name="fieldTypeGo"><xsl:call-template name="map-x3d-type-to-go-with-custom-types"><xsl:with-param name="x3dType" select="@type"/></xsl:call-template></xsl:variable>
                 <xsl:variable name="xmlTag"><xsl:call-template name="generate-go-xml-tag"><xsl:with-param name="fieldName" select="@name"/><xsl:with-param name="fieldType" select="@type"/></xsl:call-template></xsl:variable>
                 <xsl:text>    </xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> </xsl:text><xsl:value-of select="$fieldTypeGo"/><xsl:text> </xsl:text><xsl:value-of select="$xmlTag"/><xsl:text>&#10;</xsl:text>
             </xsl:if>
         </xsl:for-each>
         <xsl:text>}&#10;&#10;</xsl:text>
-
         <xsl:choose>
             <xsl:when test="$isNode">
                 <xsl:text>func (n *</xsl:text><xsl:value-of select="$elementName"/><xsl:text>) GetNodeName() string { return "</xsl:text><xsl:value-of select="@name"/><xsl:text>" }&#10;</xsl:text>
@@ -218,7 +161,6 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
                  <xsl:text>func (n *</xsl:text><xsl:value-of select="$elementName"/><xsl:text>) GetStatementName() string { return "</xsl:text><xsl:value-of select="@name"/><xsl:text>" }&#10;</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
-
         <xsl:text>func (n *</xsl:text><xsl:value-of select="$elementName"/><xsl:text>) Validate() error {&#10;</xsl:text>
         <xsl:for-each select="InterfaceDefinition/field">
              <xsl:call-template name="generate-go-validation-check"><xsl:with-param name="field" select="."/></xsl:call-template>
@@ -231,39 +173,25 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
         <xsl:call-template name="generate-go-marshalxml"><xsl:with-param name="element" select="."/></xsl:call-template>
     </xsl:template>
 
-    <!-- ======================================================= -->
-    <!-- Helper Templates                                      -->
-    <!-- ======================================================= -->
     <xsl:template name="generate-go-validation-check">
         <xsl:param name="field"/>
         <xsl:variable name="fieldNameGo" select="my:format-go-identifier(string(@name))"/>
-        <xsl:variable name="fieldTypeGo"><xsl:call-template name="map-x3d-type-to-go"><xsl:with-param name="x3dType" select="$field/@type"/></xsl:call-template></xsl:variable>
+        <xsl:variable name="fieldTypeGo"><xsl:call-template name="map-x3d-type-to-go-with-custom-types"><xsl:with-param name="x3dType" select="$field/@type"/></xsl:call-template></xsl:variable>
         <xsl:variable name="isPointer" select="starts-with($fieldTypeGo, '*')"/>
-
         <xsl:if test="$field/@simpleType and ends-with($field/@simpleType, 'Choices')">
             <xsl:variable name="simpleTypeName" select="$field/@simpleType"/>
             <xsl:variable name="enumType" select="//SimpleTypeEnumerations/SimpleType[@name = $simpleTypeName]"/>
             <xsl:text>    if n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> != nil {&#10;</xsl:text>
             <xsl:choose>
                 <xsl:when test="starts-with($field/@type, 'MF')">
-                    <xsl:text>        for _, value := range n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> {&#10;</xsl:text>
-                    <xsl:text>            switch value {&#10;</xsl:text>
-                    <xsl:text>                case </xsl:text>
-                    <xsl:for-each-group select="$enumType/enumeration" group-by="my:format-go-identifier(string(concat($simpleTypeName, '_', @value)))">
-                        <xsl:value-of select="current-grouping-key()"/><xsl:if test="position() != last()">, </xsl:if>
-                    </xsl:for-each-group>
-                    <xsl:text>:&#10;                    // valid&#10;                default:&#10;                    return fmt.Errorf("invalid value in field </xsl:text>
-                    <xsl:value-of select="$field/@name"/><xsl:text>: %s", value)&#10;            }&#10;        }&#10;</xsl:text>
+                    <xsl:text>        for _, value := range </xsl:text><xsl:if test="$isPointer">*</xsl:if><xsl:text>n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> {&#10;            switch value {&#10;            case </xsl:text>
+                    <xsl:for-each-group select="$enumType/enumeration" group-by="my:format-go-identifier(string(concat($simpleTypeName, '_', @value)))"><xsl:value-of select="current-grouping-key()"/><xsl:if test="position() != last()">, </xsl:if></xsl:for-each-group>
+                    <xsl:text>: // valid&#10;            default: return fmt.Errorf("invalid value in field </xsl:text><xsl:value-of select="$field/@name"/><xsl:text>: %s", value)&#10;            }&#10;        }&#10;</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:text>        switch </xsl:text><xsl:if test="$isPointer">*</xsl:if><xsl:text>n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> {&#10;</xsl:text>
-                    <xsl:text>            case </xsl:text>
-                    <xsl:for-each-group select="$enumType/enumeration" group-by="my:format-go-identifier(string(concat($simpleTypeName, '_', @value)))">
-                        <xsl:value-of select="current-grouping-key()"/><xsl:if test="position() != last()">, </xsl:if>
-                    </xsl:for-each-group>
-                    <xsl:text>:&#10;                // valid&#10;            default:&#10;                return fmt.Errorf("invalid value for field </xsl:text>
-                    <xsl:value-of select="$field/@name"/><xsl:text>: %s", </xsl:text>
-                    <xsl:if test="$isPointer">*</xsl:if><xsl:text>n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text>)&#10;        }&#10;</xsl:text>
+                    <xsl:text>        switch </xsl:text><xsl:if test="$isPointer">*</xsl:if><xsl:text>n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> {&#10;        case </xsl:text>
+                    <xsl:for-each-group select="$enumType/enumeration" group-by="my:format-go-identifier(string(concat($simpleTypeName, '_', @value)))"><xsl:value-of select="current-grouping-key()"/><xsl:if test="position() != last()">, </xsl:if></xsl:for-each-group>
+                    <xsl:text>: // valid&#10;        default: return fmt.Errorf("invalid value for field </xsl:text><xsl:value-of select="$field/@name"/><xsl:text>: %s", </xsl:text><xsl:if test="$isPointer">*</xsl:if><xsl:text>n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text>)&#10;        }&#10;</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:text>    }&#10;</xsl:text>
@@ -294,10 +222,9 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
         </xsl:choose>
         <xsl:for-each select="$fields[not(contains(@type, 'Node'))]">
             <xsl:variable name="fieldNameGo" select="my:format-go-identifier(string(@name))"/>
-            <xsl:variable name="fieldTypeGo"><xsl:call-template name="map-x3d-type-to-go"><xsl:with-param name="x3dType" select="@type"/></xsl:call-template></xsl:variable>
+            <xsl:variable name="fieldTypeGo"><xsl:call-template name="map-x3d-type-to-go-with-custom-types"><xsl:with-param name="x3dType" select="@type"/></xsl:call-template></xsl:variable>
             <xsl:variable name="isPointer" select="starts-with($fieldTypeGo, '*')"/>
-            <xsl:text>    if n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> != nil { start.Attr = append(start.Attr, xml.Attr{Name: xml.Name{Local: "</xsl:text><xsl:value-of select="@name"/><xsl:text>"}, Value: fmt.Sprintf("%v", </xsl:text>
-            <xsl:if test="$isPointer">*</xsl:if><xsl:text>n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text>)}) }&#10;</xsl:text>
+	    <xsl:text>    if n.</xsl:text><xsl:value-of select="$fieldNameGo"/><xsl:text> != nil { start.Attr = append(start.Attr, xml.Attr{Name: xml.Name{Local: "</xsl:text><xsl:value-of select="@name"/><xsl:text>"}, Value: fmt.Sprintf("%v", </xsl:text><xsl:if test="$isPointer">*</xsl:if>n.<xsl:value-of select="$fieldNameGo"/><xsl:text>)}) }&#10;</xsl:text>
         </xsl:for-each>
         <xsl:text>    if err := e.EncodeToken(start); err != nil { return err }&#10;</xsl:text>
         <xsl:for-each select="$fields[contains(@type, 'Node')]">
@@ -317,7 +244,7 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
     </xsl:template>
 
     <xsl:template name="map-x3d-type-to-go">
-        <xsl:param name="x3dType"/><xsl:param name="acceptableNodeTypes" select="''"/>
+        <xsl:param name="x3dType"/>
         <xsl:choose>
             <xsl:when test="$x3dType = 'SFBool'"><xsl:text>*bool</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFBool'"><xsl:text>[]bool</xsl:text></xsl:when>
@@ -331,31 +258,41 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
             <xsl:when test="$x3dType = 'MFTime'"><xsl:text>[]float64</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'SFString' or $x3dType = 'xs:NMTOKEN'"><xsl:text>*string</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFString'"><xsl:text>[]string</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFVec2f'"><xsl:text>*[2]float32</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFVec2f'"><xsl:text>[2]float32</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFVec2f'"><xsl:text>[][2]float32</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFVec3f' or $x3dType = 'SFColor'"><xsl:text>*[3]float32</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFVec3f' or $x3dType = 'SFColor'"><xsl:text>[3]float32</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFVec3f' or $x3dType = 'MFColor'"><xsl:text>[][3]float32</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFVec4f' or $x3dType = 'SFRotation' or $x3dType = 'SFColorRGBA'"><xsl:text>*[4]float32</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFVec4f' or $x3dType = 'SFRotation' or $x3dType = 'SFColorRGBA'"><xsl:text>[4]float32</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFVec4f' or $x3dType = 'MFRotation' or $x3dType = 'MFColorRGBA'"><xsl:text>[][4]float32</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFVec2d'"><xsl:text>*[2]float64</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFVec2d'"><xsl:text>[2]float64</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFVec2d'"><xsl:text>[][2]float64</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFVec3d'"><xsl:text>*[3]float64</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFVec3d'"><xsl:text>[3]float64</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFVec3d'"><xsl:text>[][3]float64</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFVec4d'"><xsl:text>*[4]float64</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFVec4d'"><xsl:text>[4]float64</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFVec4d'"><xsl:text>[][4]float64</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFMatrix3f'"><xsl:text>*[9]float32</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFMatrix3f'"><xsl:text>[9]float32</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFMatrix3f'"><xsl:text>[][9]float32</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFMatrix4f'"><xsl:text>*[16]float32</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFMatrix4f'"><xsl:text>[16]float32</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFMatrix4f'"><xsl:text>[][16]float32</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFMatrix3d'"><xsl:text>*[9]float64</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFMatrix3d'"><xsl:text>[9]float64</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFMatrix3d'"><xsl:text>[][9]float64</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFMatrix4d'"><xsl:text>*[16]float64</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFMatrix4d'"><xsl:text>[16]float64</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFMatrix4d'"><xsl:text>[][16]float64</xsl:text></xsl:when>
-            <xsl:when test="$x3dType = 'SFImage'"><xsl:text>*[]int32</xsl:text></xsl:when>
+            <xsl:when test="$x3dType = 'SFImage'"><xsl:text>[]int32</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFImage'"><xsl:text>[][]int32</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'SFNode'"><xsl:text>X3DNode</xsl:text></xsl:when>
             <xsl:when test="$x3dType = 'MFNode'"><xsl:text>[]X3DNode</xsl:text></xsl:when>
             <xsl:otherwise><xsl:message terminate="yes">Error: Unhandled X3D type: <xsl:value-of select="$x3dType"/></xsl:message></xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="map-x3d-type-to-go-with-custom-types">
+        <xsl:param name="x3dType"/>
+        <xsl:variable name="isCustom" select="not(contains($x3dType, 'String') or contains($x3dType, 'Bool') or contains($x3dType, 'Int32') or contains($x3dType, 'Float') or contains($x3dType, 'Double') or contains($x3dType, 'Time') or contains($x3dType, 'Node'))"/>
+        <xsl:choose>
+            <xsl:when test="starts-with($x3dType, 'SF') and $isCustom"><xsl:text>*</xsl:text><xsl:value-of select="$x3dType"/></xsl:when>
+            <xsl:when test="starts-with($x3dType, 'MF') and $isCustom"><xsl:text>*</xsl:text><xsl:value-of select="$x3dType"/></xsl:when>
+            <xsl:otherwise><xsl:call-template name="map-x3d-type-to-go"><xsl:with-param name="x3dType" select="$x3dType"/></xsl:call-template></xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
@@ -378,15 +315,11 @@ func validateBoundingBox(value [3]float32, fieldName string) error {
             <xsl:choose>
                 <xsl:when test="$first-char = ' '">
                      <xsl:value-of select="upper-case(substring($rest, 1, 1))"/>
-                     <xsl:call-template name="camel-case-recursive">
-                        <xsl:with-param name="string" select="substring($rest, 2)"/>
-                    </xsl:call-template>
+                     <xsl:call-template name="camel-case-recursive"><xsl:with-param name="string" select="substring($rest, 2)"/></xsl:call-template>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="$first-char"/>
-                    <xsl:call-template name="camel-case-recursive">
-                        <xsl:with-param name="string" select="$rest"/>
-                    </xsl:call-template>
+                    <xsl:call-template name="camel-case-recursive"><xsl:with-param name="string" select="$rest"/></xsl:call-template>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:if>
