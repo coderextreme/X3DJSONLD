@@ -4,7 +4,7 @@ import X3DJSONLD from '../node/X3DJSONLD.js';
 import JavaScriptSerializer from '../node/JavaScriptSerializer.js';
 import CppFunctionBodySerializer from '../node/CppFunctionBodySerializer.js';
 import ClojureSerializer from '../node/ClojureSerializer.js';
-import JavaSerializer from '../node/JavaSerializer.js';
+import { JavaSerializer } from '../node/JavaSerializer.js';
 import GraalPySerializer from '../node/GraalPySerializer.js';
 import JRubySerializer from '../node/JRubySerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
