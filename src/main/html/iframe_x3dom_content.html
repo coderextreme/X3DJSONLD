@@ -35,8 +35,9 @@
         })();
     </script>
 
-    <X3D id="x3dom_canvas_dynamic_iframe" showProgress="false" showStat="false" showLog="false" backend="webgl">
+    <X3D useGeoCache="false" id="x3dom_canvas_dynamic_iframe" showProgress="false" showStat="false" showLog="false" backend="webgl">
         <Scene>
+	    <Environment id="gamma" gammaCorrectionDefault="none"></Environment>
             <!-- The scene now contains a single Inline node that we will control. -->
             <Inline DEF="dynamicContent" url=""></Inline>
         </Scene>
