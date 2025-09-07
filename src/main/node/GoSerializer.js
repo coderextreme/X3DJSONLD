@@ -2,6 +2,8 @@
 
 const DOUBLE_SUFFIX = '';
 const FLOAT_SUFFIX = '';
+const begin = "{\n";
+const end = "},\n";
 
 export default function GoSerializer () {
 }
@@ -10,6 +12,7 @@ export default function GoSerializer () {
 GoSerializer.prototype = {
 	serializeToString : function(json, parent, clazz, mapToMethod, fieldTypes) {
 		let str = "";
+		let indent = 1;
 		str += `
 package main
 
@@ -30,6 +33,7 @@ import (
 
 // ... (Helper functions remain the same) ...
 func stringPtr(s string) *string { return &s }
+func floatPtr(f float32) *float32 { return &f }
 func boolPtr(b bool) *bool       { return &b }
 func int32Ptr(i int32) *int32    { return &i }
 
@@ -85,9 +89,12 @@ func main() {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
 `
-		str += "    ".repeat(1)+'sceneRoot := &x3d.'+parent.nodeName+'{\n';
-		str += this.subSerializeToString(parent, mapToMethod, fieldTypes, 2).replace(/:  *\&x3d\./g, ": &x3d.");
-		str += `    }
+		str += "    ".repeat(indent)+'sceneRoot := &x3d.'+parent.nodeName+begin;
+		indent++;
+		str += this.subSerializeToString(parent, mapToMethod, fieldTypes, indent, "").replace(/:  *\&x3d\./g, ": &x3d.");
+		indent--;
+		str += "    ".repeat(indent)+"}\n";
+		str += `
 
 	fmt.Println("\\n--- Validating the generated scene (internal logic) ---")
 	err := sceneRoot.Scene.Validate()
@@ -109,7 +116,9 @@ func main() {
 	}
 	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
 	*/
-	filename := "scene.x3d"
+	filename := `;
+		str += '"'+clazz+".new.go.x3d"+'"';
+		str += `
 	err = os.WriteFile(filename, output, 0644)
 	if err != nil {
 		log.Fatalf("Failed to write to file %s: %v", filename, err)
@@ -145,10 +154,33 @@ func main() {
 			}
 		}
 		*/
-		if (attrType === "SFVec3f") {
-			values[0] = values[0];
-			values[1] = values[1];
-			values[2] = values[2];
+                if (type === "float") {
+			for (let v in values) {
+				if (values[v].indexOf('.') < 0) {
+					values[v] = values[v]+".0";
+				}
+			}
+		}
+		if (attrType.indexOf("MFMatrix") >= 0 || attrType.indexOf("MFVec") >= 0) {
+			var grouped = [];
+			var tuple = parseInt(attrType.substring(attrType.length-2, attrType.length-1));
+			if (type === "float") {
+				type = "["+tuple+"]float32";
+			} else if (type === "double") {
+				type = "["+tuple+"]float64";
+			}
+			for (var v = 0; v < values.length; v += tuple) {
+				var group = [];
+				for (var t = 0; t < tuple; t++) {
+					group.push(values[v+t]);
+				}
+				var str = type+'{'+group.join(",")+'}';
+				group = [];
+				grouped.push(str);
+			}
+			var str2 = '{'+grouped.join(",")+'}';
+			grouped = [];
+			return str2;
 		}
 		if (values[0] === "" || values[v] === null) {
 			values.shift();
@@ -354,13 +386,32 @@ func main() {
 		}
 		return strval;
 	},
+	addTrailing : function(childName, options, n, indent) {
+		let str = "";
+		if (options.foundInArray[childName]) {
+			indent--;
+			str += "    ".repeat(n+indent)+end;
+			options.foundInArray[childName] = false;
+		}
+		return str;
+	},
+	ifList : function (childName) {
+		return (
+		childName === "component" ||
+		childName === "unit" ||
+		childName === "field" ||
+		childName === "fieldValue" ||
+		childName === "ShaderPart" ||
+		childName === "HAnimJoint" ||
+		childName === "connect" ||
+		childName === "meta");
+	},
 	processParentChild : function(statementIS, parent, child, cn, mapToMethod, fieldTypes, n, options) {
 		let ch = "";
-		let begin = "{\n";
-		let end = "},\n";
 		let parentName = parent.nodeName;
 		let childName = child.nodeName;
 		let indent = 0;
+		let postIS = "";
 		if (parent.childNodes.hasOwnProperty(cn) && child.nodeType == 1) {
 			let method = this.printParentChild(parent, child, cn, mapToMethod);
 			if (method.startsWith(".set")) {
@@ -370,83 +421,135 @@ func main() {
 			}
 			// console.error(method);
 			if (!statementIS) {
-				if (childName === "meta" && options.firstMeta) {
-					options.foundMeta = true;
-					if (options.firstMeta) {
-						options.firstMeta = false;
-						ch += "    ".repeat(n+indent)+"Metas: []*x3d.Meta"+begin;
-					}
+				if (childName === "unit" && options.firstInArray[childName]) {
+					ch += this.addTrailing("component", options, n, indent)
 				}
-				if (childName === "field" && options.firstField) {
-					options.foundField = true;
-					if (options.firstField) {
-						options.firstField = false;
-						ch += "    ".repeat(n+indent)+"Field: []x3d.X3DNode"+begin;
-					}
+				if (childName === "meta" && options.firstInArray[childName]) {
+					ch += this.addTrailing("component", options, n, indent)
+					ch += this.addTrailing("unit", options, n, indent)
+			        }
+				if (childName === "Scene") {
+					ch += this.addTrailing("component", options, n, indent)
+					ch += this.addTrailing("unit", options, n, indent)
+					ch += this.addTrailing("meta", options, n, indent)
 				}
-				if (childName === "fieldValue" && options.firstFieldValue) {
-					options.foundFieldValue = true;
-					if (options.firstFieldValue) {
-						options.firstFieldValue = false;
-						ch += "    ".repeat(n+indent)+"FieldValue: []x3d.X3DNode"+begin;
-					}
+				if (childName === "ShaderPart" && options.firstInArray[childName]) {
+					ch += this.addTrailing("field", options, n, indent)
 				}
-				if (childName === "connect") {
-					options.foundConnect = true;
-					if (options.firstConnect) {
-						options.firstConnect = false;
-						ch += "    ".repeat(n+indent)+"Connect: []x3d.X3DNode"+begin;
+				if (this.ifList(childName) && options.firstInArray[childName]) {
+					let fieldName = childName.charAt(0).toUpperCase() + childName.slice(1);
+					let typeName = fieldName;
+					let suffix = "s";
+					let ptr = "*";
+					if (fieldName === "Connect") {
+						typeName = "X3DNode";
+						suffix = "";
+						ptr = "";
 					}
+					if (fieldName === "ShaderPart") {
+						fieldName = "Part";
+					}
+					if (fieldName === "HAnimJoint") {
+						typeName = "X3DNode";
+						suffix = "";
+						ptr = "";
+						fieldName = method.slice(4);
+					}
+					if (parentName === 'ComposedShader') {
+						typeName = "X3DNode";
+						ptr = "";
+					}
+					if (fieldName === "Field" || fieldName === 'FieldValue') {
+						typeName = "X3DNode";
+						suffix = "";
+						ptr = "";
+					}
+					ch += "    ".repeat(n+indent)+fieldName+suffix+": []"+ptr+"x3d."+typeName+begin;
+					indent++;
+					options.foundInArray[childName] = true;
 				}
+				// now handle children of field and fieldValue
 				if (parentName === "field" || parentName === "fieldValue") {
 					ch += "    ".repeat(n+indent)+method.slice(4)+": []x3d.X3DNode"+begin;
 					indent++;
 				}
-				if (
-				       (childName === "meta"  && !options.firstMeta) // ||
-				    // (childName === "connect"  && !options.firstConnect) ||
-				    // (childName === "fieldValue"  && !options.firstFieldValue) ||
-				    // (childName === "field" && !options.firstField) ||
-				) {
+				/*
+				if (parentName === 'HAnimHumanoid' && (childName === 'HAnimJoint')) {
+					ch += "    ".repeat(n+indent)+method.slice(4)+": []x3d.X3DNode"+begin;
+					indent++;
+				}
+				*/
+				if (childName === "ComposedShader") { // TODO Add more here
+					ch += "    ".repeat(n+indent)+"Shaders: []x3d.X3DNode"+begin;
+					indent++;
+				}
+				/*
+				if (this.ifList(childName)) {
 					ch += "    ".repeat(n+indent)+begin;
 					indent++;
 				} else {
+				*/
 					ch += "    ".repeat(n+indent)+"&x3d."+childName.charAt(0).toUpperCase() + childName.slice(1)+begin;
 					indent++;
+				/*
 				}
+				*/
 				if (childName === "Scene") {
 					ch += "    ".repeat(n+indent)+"Children: []x3d.X3DChildNode"+begin;
 					indent++;
-				} else if (childName === "Transform") { // TODO Add more here
-					ch += "    ".repeat(n+indent)+"Children: []x3d.X3DNode"+begin;
+				} else if (childName === 'ProtoBody') {
+					postIS += "    ".repeat(n+indent)+"Children: []x3d.X3DNode"+begin;
 					indent++;
-				} else if (childName === "ProtoBody") { // TODO Add more here
-					ch += "    ".repeat(n+indent)+"Children: []x3d.X3DNode"+begin;
+				} else if (childName === 'Group') {
+					postIS += "    ".repeat(n+indent)+"Children: []x3d.X3DNode"+begin;
 					indent++;
-				} else if (childName === "component") {
-					ch += "    ".repeat(n+indent)+"Components: []*x3d.Component"+begin;
+				} else if (childName === 'Transform') {
+					postIS += "    ".repeat(n+indent)+"Children: []x3d.X3DNode"+begin;
 					indent++;
 				}
-				ch += this.subSerializeToString(child, mapToMethod, fieldTypes, n+indent);
+					/*
+				else if (childName === 'HAnimJoint' && method.startsWith(".addChild")) {
+					postIS += "    ".repeat(n+indent)+"Children: []x3d.X3DNode"+begin;
+					indent++;
+				}
+					*/
+				ch += this.subSerializeToString(child, mapToMethod, fieldTypes, n+indent, postIS);
+				if (this.ifList(childName) && options.firstInArray[childName]) {
+					options.firstInArray[childName] = false;
+					indent--;
+				}
+				// Reset flags for Joints field
+				if (method === ".addSkeleton") {
+					options.foundInArray[childName] = false;
+					options.firstInArray[childName] = true;
+				}
 				while (indent > 0) {
 					indent--;
 					ch += "    ".repeat(n+indent)+end;
 				}
 			} else {
 				if (childName === "IS") {
-					ch += "    ".repeat(n)+"IS: &x3d."+childName.charAt(0).toUpperCase() + childName.slice(1)+begin;
-					ch += this.subSerializeToString(child, mapToMethod, fieldTypes, n+1);
-					ch += "    ".repeat(n)+end;
+					ch += "    ".repeat(n+indent)+"IS: &x3d."+childName.charAt(0).toUpperCase() + childName.slice(1)+begin;
+					indent++;
+					ch += this.subSerializeToString(child, mapToMethod, fieldTypes, n+indent, "");
+					indent--;
+					ch += "    ".repeat(n+indent)+end;
+					while (indent > 0) {
+						indent--;
+						ch += "    ".repeat(n+indent)+end;
+					}
 				}
 			}
+			/*
 			options.childrenNodes.push(ch);
+			*/
 		} else if (parent.childNodes.hasOwnProperty(cn) && child.nodeType == 8
 			|| parent.childNodes.hasOwnProperty(cn) && child.nodeType == 4) {
 			// both comments and code are handled the same way
 			if (options.first) {
 				options.first = false;
 			} else if (parent.nodeName !== "X3D") {
-				ch += ",\n"; // no comma after head
+				// ch += ",\n"; // no comma after head
 			}
 			if (ch) {
 				let lastchar = ch.charAt(ch.length - 1);
@@ -457,22 +560,29 @@ func main() {
 			ch += child.nodeValue.split(/\r?\n/).map(function(x) {
 				return x.
 					replace(/\\/g, '\\\\').
-					replace(/^/g, '#');
+					replace(/^/g, '//');
 				}).join('\n')+'\n';
 			options.first = true;
+			/*
 			options.childrenNodes.push(ch);
+			*/
 		} else if (parent.childNodes.hasOwnProperty(cn) && child.nodeType == 3 && child.nodeValue.trim() === '') {
 		} else if (typeof child.nodeType === 'undefined') {
 		} else {
 			console.error("Unhandled", child.nodeType, child.nodeName, child.nodeValue);
 		}
+		/*
 		if (!statementIS) {
+			indent--;
 			ch += "    ".repeat(n+indent)+end;
 		}
+		*/
+		return ch;
 	},
 	processAttributes : function(parent, fieldTypes, n) {
 		let str = "";
 		let attrType = "";
+		let indent = 0;
 		for (let a in parent.attributes) {
 			let attrs = parent.attributes;
 			try {
@@ -488,7 +598,7 @@ func main() {
 						attrs[a].nodeValue === "skin" ||
 						attrs[a].nodeValue === "skinCoord" ||
 						attrs[a].nodeValue === "sites")) {
-						attr = "containerField";
+						attr = "containerField";  // Do Nothing, but avoid continue, below
 					} else if (attr === "xmlns:xsd") {
 						continue;
 					} else if (attr === "xsd:noNamespaceSchemaLocation" ) {
@@ -523,16 +633,38 @@ func main() {
 					if (attr === "class") {
 						method = "CssClass";
 					}
-					if (attrType === 'SFString') {
-						str += "    ".repeat(n)+method.charAt(0).toUpperCase() + method.slice(1)+": stringPtr("+strval+"),\n";
+					if (attr === 'DEF' || attr === 'USE') {
+						str += "    ".repeat(n+indent)+"CoreX3DNode: x3d.CoreX3DNode"+begin;
+						indent++;
+					}
+					if (typeof attrType === 'undefined') {
+						// console.log("Attr", attr, attrs[a].nodeValue);
+					} else if (attrType === 'SFString') {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": stringPtr("+strval+"),\n";
+					} else if (attrType === 'SFInt32') {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": int32Ptr("+strval+"),\n";
+					} else if (attrType === 'SFFloat') {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": floatPtr("+strval+"),\n";
+					} else if (attrType === 'SFBool') {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": boolPtr("+strval+"),\n";
 					} else if (attrType === 'MFString') {
 						
-						str += "    ".repeat(n)+method.charAt(0).toUpperCase() + method.slice(1)+": []string"+strval+",\n";
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": []string"+strval+",\n";
+					} else if (attrType === 'MFInt32') {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": []int32"+strval+",\n";
+						
+					} else if (attrType === 'SFTime') {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": floatPtr("+strval+")"+",\n";
+					} else if (attrType.startsWith('MFFloat')) {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": x3d."+attrType+strval+",\n";
+					} else if (attrType.startsWith('MF') || attrType === "SFRotation" || attrType.startsWith("SFColor") || attrType.startsWith("SFVec") || attrType.startsWith("SFMatrix")) {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": &x3d."+attrType+strval+",\n";
 					} else {
-						str += "    ".repeat(n)+method.charAt(0).toUpperCase() + method.slice(1)+": &x3d."+attrType+strval+",\n";
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": &x3d."+attrType+"("+strval+")"+",\n";
 					}
-					if (attr === 'containerField' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
-						// str += ")"; // for cast
+					if (attr === 'DEF' || attr === 'USE') {
+						indent--;
+						str += "    ".repeat(n+indent)+end;
 					}
 				}
 			} catch (e) {
@@ -542,21 +674,33 @@ func main() {
 		}
 		return str;
 	}, 
-	subSerializeToString : function(parent, mapToMethod, fieldTypes, n) {
+	subSerializeToString : function(parent, mapToMethod, fieldTypes, n, postIS) {
 		let str = "";
 		let options = {
+			/*
 			childrenNodes : [],
-			first : true,
+			*/
 
-			firstMeta : true,
-			foundMeta  : false,
-			firstField : true,
-			foundField  : false,
-			firstFieldValue : true,
-			foundFieldVAlue : false,
-			firstConnect : true,
-			foundConnect : false,
-
+			firstInArray : {
+				"component" : true,
+				"unit" : true,
+				"field" : true,
+				"fieldValue" : true,
+				"HAnimJoint" : true,
+				"ShaderPart" : true,
+				"connect" : true,
+				"meta" : true
+			},
+			foundInArray  : {
+				"component" : false,
+				"unit" : false,
+				"field" : false,
+				"fieldValue" : false,
+				"HAnimJoint" : false,
+				"ShaderPart" : false,
+				"connect" : false,
+				"meta" : false
+			},
 			attributesProcessed : false
 		};
 		if (!options.attributesProcessed) {
@@ -566,15 +710,17 @@ func main() {
 		for (let cn in parent.childNodes) {
 			let child = parent.childNodes[cn];
 			if (child.nodeName === "IS") {
-				this.processParentChild(true, parent, child, cn, mapToMethod, fieldTypes, n, options);
+				str += this.processParentChild(true, parent, child, cn, mapToMethod, fieldTypes, n, options);
 			}
 		}
+		str += postIS;
 		for (let cn in parent.childNodes) {
 			let child = parent.childNodes[cn];
 			if (child.nodeName !== "IS") {
-				this.processParentChild(false, parent, child, cn, mapToMethod, fieldTypes, n, options);
+				str += this.processParentChild(false, parent, child, cn, mapToMethod, fieldTypes, n, options);
 			}
 		}
+		/*
 		let newcn = options.childrenNodes.join("");
 		if (newcn !== "") {
 			str += newcn;
@@ -582,18 +728,27 @@ func main() {
 				str += "\n";
 			}
 		}
-		if (options.foundMeta) {
-			str += "    ".repeat(n)+"},\n";
+		*/
+		if (options.foundInArray["meta"]) {
+			str += "    ".repeat(n)+end;
 		}
-		if (options.foundField) {
-			str += "    ".repeat(n)+"},\n";
+		if (options.foundInArray["field"]) {
+			str += "    ".repeat(n)+end;
 		}
-		if (options.foundFieldValue) {
-			str += "    ".repeat(n)+"},\n";
+		if (options.foundInArray["fieldValue"]) {
+			str += "    ".repeat(n)+end;
 		}
-		if (options.foundConnect) {
-			str += "    ".repeat(n)+"},\n";
+		if (options.foundInArray["connect"]) {
+			str += "    ".repeat(n)+end;
 		}
+		if (options.foundInArray["ShaderPart"]) {
+			str += "    ".repeat(n)+end;
+		}
+		/*
+		if (options.foundInArray["HAnimJoint"]) {
+			str += "    ".repeat(n)+end;
+		}
+		*/
 		return str;
 	}
 };
