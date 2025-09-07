@@ -284,7 +284,7 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 		}
 	}
 	if (typeof containerField !== 'undefined') { // && key.toLowerCase() !== containerField.toLowerCase()) {
-		if (containerField !== 'geometry' && containerField !== 'coord') {
+		if (containerField !== 'children' && containerField !== 'geometry' && containerField !== 'coord') {
 			X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
 		}
 	}
