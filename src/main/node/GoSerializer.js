@@ -436,6 +436,9 @@ func main() {
 				if (childName === "ShaderPart" && options.firstInArray[childName]) {
 					ch += this.addTrailing("field", options, n, indent)
 				}
+				if (childName === "field" && options.firstInArray[childName]) {
+					ch += this.addTrailing("ShaderPart", options, n, indent)
+				}
 				if (this.ifList(childName) && options.firstInArray[childName]) {
 					let fieldName = childName.charAt(0).toUpperCase() + childName.slice(1);
 					let typeName = fieldName;
