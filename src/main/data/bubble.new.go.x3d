@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <meta content="bubble.x3d" name="title"></meta>
+    <meta content="John Carlson" name="creator"></meta>
+    <meta content="Tour around a prismatic sphere" name="description"></meta>
+    <meta content="X3D-Edit, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
+  </head>
+  <Scene>
+    <ProtoDeclare name="Bubble">
+      <ProtoBody>
+        <Transform DEF="transform">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="1 0 0" transparency="0.2"></Material>
+            </Appearance>
+            <Sphere radius="0.25"></Sphere>
+          </Shape>
+          <Script DEF="bounce">
+            <field accessType="inputOutput" name="scale" type="SFVec3f" value="1 1 1"></field>
+            <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+            <field accessType="inputOutput" name="velocity" type="SFVec3f"></field>
+            <field accessType="inputOutput" name="scalvel" type="SFVec3f"></field>
+            <field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+          </Script>
+          <TimeSensor cycleInterval="10" loop="true" DEF="bubbleClock"></TimeSensor>
+        </Transform>
+        <ROUTE fromField="translation_changed" fromNode="bounce" toField="set_translation" toNode="transform"></ROUTE>
+        <ROUTE fromField="scale_changed" fromNode="bounce" toField="set_scale" toNode="transform"></ROUTE>
+        <ROUTE fromField="fraction_changed" fromNode="bubbleClock" toField="set_fraction" toNode="bounce"></ROUTE>
+      </ProtoBody>
+      <ProtoInterface></ProtoInterface>
+    </ProtoDeclare>
+    <NavigationInfo type="&#34;EXAMINE&#34;"></NavigationInfo>
+    <Viewpoint description="Bubble in action" position="0 0 4"></Viewpoint>
+    <ProtoInstance name="Bubble" DEF="bubbleA"></ProtoInstance>
+  </Scene>
+</X3D>

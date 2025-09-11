@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <meta content="John W Carlson" name="creator"></meta>
+    <meta content="December 13 2015" name="created"></meta>
+    <meta content="text3shapes.x3d" name="title"></meta>
+    <meta content="https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d" name="identifier"></meta>
+    <meta content="3 text shapes" name="description"></meta>
+  </head>
+  <Scene>
+    <Transform>
+      <Shape>
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+        <Text string="&#34;Node&#34;&#34;&#34;&#34;">
+          <FontStyle></FontStyle>
+        </Text>
+      </Shape>
+      <Shape>
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+        <Text string="&#34;Node2&#34; &#34;\\&#34; &#34;\\\\&#34; &#34;Node2&#34;">
+          <FontStyle></FontStyle>
+        </Text>
+      </Shape>
+      <Shape>
+        <Appearance>
+          <Material></Material>
+        </Appearance>
+        <Text string="&#34;Node3 \\\\ \\ &#34; &#34;Node3&#34;&#34;&#34;&#34;">
+          <FontStyle></FontStyle>
+        </Text>
+      </Shape>
+      <Script>
+        <field accessType="initializeOnly" name="frontUrls" type="MFString" value="&#34;rnl_front.png&#34; &#34;uffizi_front.png&#34;"></field>
+      </Script>
+    </Transform>
+  </Scene>
+</X3D>

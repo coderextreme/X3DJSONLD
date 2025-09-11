@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <meta content="ifscubeworks.x3d" name="title"></meta>
+    <meta content="http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d" name="identifier"></meta>
+    <meta content="Template for an Indexed Face Set" name="description"></meta>
+    <meta content="John Carlson" name="creator"></meta>
+    <meta content="4 April 2017" name="created"></meta>
+    <meta content="https://www.web3d.org/x3d/content/examples/license.html" name="license"></meta>
+  </head>
+  <Scene>
+    <WorldInfo title="ifscubeworks.x3d"></WorldInfo>
+    <Group>
+      <Shape>
+        <IndexedFaceSet colorIndex="0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1" coordIndex="0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1" normalIndex="0 0 1 2 3 4 5" normalPerVertex="false" DEF="IndexedFaceSet">
+          <Color color="0 1 0"></Color>
+          <Coordinate point="0 0 1 0 1 1 1 1 1 1 0 1"></Coordinate>
+          <Normal vector="1 0 0 -1 0 0 0 1 0 0 0 -1 0 -1 0 0 0 1"></Normal>
+        </IndexedFaceSet>
+      </Shape>
+    </Group>
+  </Scene>
+</X3D>

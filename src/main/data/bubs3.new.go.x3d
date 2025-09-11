@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <meta content="bubs3.x3d" name="title"></meta>
+    <meta content="John Carlson" name="creator"></meta>
+    <meta content="Tour around a prismatic sphere" name="description"></meta>
+    <meta content="X3D-Edit, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
+  </head>
+  <Scene>
+    <NavigationInfo type="&#34;EXAMINE&#34;"></NavigationInfo>
+    <Viewpoint description="Bubbles in action" position="0 0 4"></Viewpoint>
+    <Background backUrl="&#34;../resources/images/BK.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png&#34;" bottomUrl="&#34;../resources/images/BT.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png&#34;" frontUrl="&#34;../resources/images/FR.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png&#34;" leftUrl="&#34;../resources/images/LF.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png&#34;" rightUrl="&#34;../resources/images/RT.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png&#34;" topUrl="&#34;../resources/images/TP.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png&#34;"></Background>
+    <Transform DEF="DECLBubble_bubbleA">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0" transparency="0.2"></Material>
+        </Appearance>
+        <Sphere radius="0.25"></Sphere>
+      </Shape>
+      <Script DEF="DECLBubble_bubbleA_bounce">
+        <field accessType="inputOutput" name="scale" type="SFVec3f" value="1 1 1"></field>
+        <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="velocity" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="scalvel" type="SFVec3f"></field>
+        <field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+      </Script>
+      <TimeSensor cycleInterval="10" loop="true" DEF="DECLBubble_bubbleA_bubbleClock"></TimeSensor>
+    </Transform>
+    <Transform DEF="DECLBubble_bubbleB">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0" transparency="0.2"></Material>
+        </Appearance>
+        <Sphere radius="0.25"></Sphere>
+      </Shape>
+      <Script DEF="DECLBubble_bubbleB_bounce">
+        <field accessType="inputOutput" name="scale" type="SFVec3f" value="1 1 1"></field>
+        <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="velocity" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="scalvel" type="SFVec3f"></field>
+        <field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+      </Script>
+      <TimeSensor cycleInterval="10" loop="true" DEF="DECLBubble_bubbleB_bubbleClock"></TimeSensor>
+    </Transform>
+    <Transform DEF="DECLBubble_bubbleC">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0" transparency="0.2"></Material>
+        </Appearance>
+        <Sphere radius="0.25"></Sphere>
+      </Shape>
+      <Script DEF="DECLBubble_bubbleC_bounce">
+        <field accessType="inputOutput" name="scale" type="SFVec3f" value="1 1 1"></field>
+        <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="velocity" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="scalvel" type="SFVec3f"></field>
+        <field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+      </Script>
+      <TimeSensor cycleInterval="10" loop="true" DEF="DECLBubble_bubbleC_bubbleClock"></TimeSensor>
+    </Transform>
+    <Transform DEF="DECLBubble_bubbleD">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 0 0" transparency="0.2"></Material>
+        </Appearance>
+        <Sphere radius="0.25"></Sphere>
+      </Shape>
+      <Script DEF="DECLBubble_bubbleD_bounce">
+        <field accessType="inputOutput" name="scale" type="SFVec3f" value="1 1 1"></field>
+        <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="velocity" type="SFVec3f"></field>
+        <field accessType="inputOutput" name="scalvel" type="SFVec3f"></field>
+        <field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+      </Script>
+      <TimeSensor cycleInterval="10" loop="true" DEF="DECLBubble_bubbleD_bubbleClock"></TimeSensor>
+    </Transform>
+    <ROUTE fromField="fraction_changed" fromNode="DECLBubble_bubbleA_bubbleClock" toField="set_fraction" toNode="DECLBubble_bubbleA_bounce"></ROUTE>
+    <ROUTE fromField="fraction_changed" fromNode="DECLBubble_bubbleB_bubbleClock" toField="set_fraction" toNode="DECLBubble_bubbleB_bounce"></ROUTE>
+    <ROUTE fromField="fraction_changed" fromNode="DECLBubble_bubbleC_bubbleClock" toField="set_fraction" toNode="DECLBubble_bubbleC_bounce"></ROUTE>
+    <ROUTE fromField="fraction_changed" fromNode="DECLBubble_bubbleD_bubbleClock" toField="set_fraction" toNode="DECLBubble_bubbleD_bounce"></ROUTE>
+  </Scene>
+</X3D>
