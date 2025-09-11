@@ -21,3 +21,5 @@ src/main/node/net/coderextreme/personal/john.js filter=lfs diff=lfs merge=lfs -t
 src/main/node/net/coderextreme/personal/john3.js filter=lfs diff=lfs merge=lfs -text
 src/main/node/net/coderextreme/personal/john2.js filter=lfs diff=lfs merge=lfs -text
 src/main/lib/stylesheets/X3dSchematronValidityChecks.xslt filter=lfs diff=lfs merge=lfs -text
+src/main/go/net/coderextreme/data/GrampsAnimations.go filter=lfs diff=lfs merge=lfs -text
+src/main/go/net/coderextreme/data/walking_man_cc_test.go filter=lfs diff=lfs merge=lfs -text
