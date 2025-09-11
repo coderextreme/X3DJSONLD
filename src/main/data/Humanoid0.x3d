@@ -75,7 +75,7 @@
           <Coordinate USE='TheSkinCoord' containerField='skinCoord'/>
 <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton'>
 </HAnimJoint>
-<HAnimJoint USE='hanim_' containerField='joints'/>
+<HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
 </HAnimHumanoid>
 </Scene>
 </X3D>

@@ -34,6 +34,7 @@ import (
 // ... (Helper functions remain the same) ...
 func stringPtr(s string) *string { return &s }
 func floatPtr(f float32) *float32 { return &f }
+func doublePtr(d float64) *float64 { return &d }
 func boolPtr(b bool) *bool       { return &b }
 func int32Ptr(i int32) *int32    { return &i }
 
@@ -104,6 +105,7 @@ func main() {
 	fmt.Println("✅ Internal scene validation successful!")
 	fmt.Println("\\n--- Serializing scene to XML ---")
 	output, err := xml.MarshalIndent(sceneRoot, "", "  ")
+
 	if err != nil {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
@@ -119,10 +121,27 @@ func main() {
 	filename := `;
 		str += '"'+clazz+".new.go.x3d"+'"';
 		str += `
-	err = os.WriteFile(filename, output, 0644)
+	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
-		log.Fatalf("Failed to write to file %s: %v", filename, err)
+		fmt.Printf("Error opening file: %v\\n", err)
+		return
 	}
+	defer file.Close() // Ensure the file is closed when the function exits
+
+	// Write the string content to the file
+	header := "<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>\\n<!DOCTYPE X3D PUBLIC \\"ISO//Web3D//DTD X3D 4.0//EN\\" \\"https://www.web3d.org/specifications/x3d-4.0.dtd\\">\\n"
+	_, err = file.WriteString(header)
+	if err != nil {
+		fmt.Printf("Error writing header to file: %v\\n", err)
+		return
+	}
+
+	_, err = file.Write(output)
+	if err != nil {
+		fmt.Printf("Error writing bytes to file: %v\\n", err)
+		return
+	}
+
 	fmt.Printf("\\n✅ Scene successfully written to %s\\n", filename)
 	fmt.Printf("   You can view the generated XML below:\\n\\n%s\\n", string(output))
 }`;
@@ -161,9 +180,16 @@ func main() {
 				}
 			}
 		}
-		if (attrType.indexOf("MFMatrix") >= 0 || attrType.indexOf("MFVec") >= 0) {
+		if (attrType.startsWith("MFColor") || attrType.startsWith("MFMatrix") || attrType.startsWith("MFVec")) {
 			var grouped = [];
-			var tuple = parseInt(attrType.substring(attrType.length-2, attrType.length-1));
+			var tuple = null;
+			if (attrType.startsWith("MFMatrix") || attrType.startsWith("MFVec")) {
+				tuple = parseInt(attrType.substring(attrType.length-2, attrType.length-1));
+			} else if (attrType === 'MFColor') {
+				tuple = 3;
+			} else if (attrType === 'MFColorRGBA' || attrType === 'MFRotation') {
+				tuple = 4;
+			}
 			if (type === "float") {
 				type = "["+tuple+"]float32";
 			} else if (type === "double") {
@@ -403,6 +429,7 @@ func main() {
 		childName === "fieldValue" ||
 		childName === "ShaderPart" ||
 		childName === "HAnimJoint" ||
+		childName === "HAnimSegment" ||
 		childName === "connect" ||
 		childName === "meta");
 	},
@@ -452,6 +479,12 @@ func main() {
 					if (fieldName === "ShaderPart") {
 						fieldName = "Part";
 					}
+					if (fieldName === "HAnimSegment") {
+						typeName = "X3DNode";
+						suffix = "";
+						ptr = "";
+						fieldName = method.slice(4);
+					}
 					if (fieldName === "HAnimJoint") {
 						typeName = "X3DNode";
 						suffix = "";
@@ -472,7 +505,8 @@ func main() {
 					options.foundInArray[childName] = true;
 				}
 				// now handle children of field and fieldValue
-				if (parentName === "field" || parentName === "fieldValue") {
+				
+				if (parentName === "field" || parentName === "fieldValue" || parentName === 'Anchor') {
 					ch += "    ".repeat(n+indent)+method.slice(4)+": []x3d.X3DNode"+begin;
 					indent++;
 				}
@@ -482,10 +516,12 @@ func main() {
 					indent++;
 				}
 				*/
+				/*
 				if (childName === "ComposedShader") { // TODO Add more here
 					ch += "    ".repeat(n+indent)+"Shaders: []x3d.X3DNode"+begin;
 					indent++;
 				}
+				*/
 				/*
 				if (this.ifList(childName)) {
 					ch += "    ".repeat(n+indent)+begin;
@@ -646,21 +682,27 @@ func main() {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": stringPtr("+strval+"),\n";
 					} else if (attrType === 'SFInt32') {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": int32Ptr("+strval+"),\n";
+					} else if (attrType === 'SFDouble') {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": doublePtr("+strval+"),\n";
 					} else if (attrType === 'SFFloat') {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": floatPtr("+strval+"),\n";
 					} else if (attrType === 'SFBool') {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": boolPtr("+strval+"),\n";
 					} else if (attrType === 'MFString') {
 						
-						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": []string"+strval+",\n";
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": x3d."+attrType+strval+",\n";
 					} else if (attrType === 'MFInt32') {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": []int32"+strval+",\n";
 						
 					} else if (attrType === 'SFTime') {
-						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": floatPtr("+strval+")"+",\n";
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": doublePtr("+strval+")"+",\n";
 					} else if (attrType.startsWith('MFFloat')) {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": x3d."+attrType+strval+",\n";
-					} else if (attrType.startsWith('MF') || attrType === "SFRotation" || attrType.startsWith("SFColor") || attrType.startsWith("SFVec") || attrType.startsWith("SFMatrix")) {
+					} else if (attrType.startsWith('MFDouble')) {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": x3d."+attrType+strval+",\n";
+					} else if (attrType.startsWith('MFRotation')) {
+						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": x3d."+attrType+strval+",\n";
+					} else if (attrType.startsWith('MF') || attrType === "SFColor" || attrType === "SFImage" || attrType === "SFRotation" || attrType.startsWith("SFVec") || attrType.startsWith("SFMatrix")) {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": &x3d."+attrType+strval+",\n";
 					} else {
 						str += "    ".repeat(n+indent)+method.charAt(0).toUpperCase() + method.slice(1)+": &x3d."+attrType+"("+strval+")"+",\n";
@@ -690,6 +732,7 @@ func main() {
 				"field" : true,
 				"fieldValue" : true,
 				"HAnimJoint" : true,
+				"HAnimSegment" : true,
 				"ShaderPart" : true,
 				"connect" : true,
 				"meta" : true
@@ -700,6 +743,7 @@ func main() {
 				"field" : false,
 				"fieldValue" : false,
 				"HAnimJoint" : false,
+				"HAnimSegment" : false,
 				"ShaderPart" : false,
 				"connect" : false,
 				"meta" : false
