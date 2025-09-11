@@ -4074,7 +4074,7 @@
                               <!-- Shape USE='r_tarsal_distal_phalanx_5_Shape'/ -->
                               <Transform USE='r_tarsal_distal_interphalangeal_5_JointShape'/>
                               <Shape USE='r_tarsal_distal_phalanx_5_Segment'/>
-                              <HAnimSite DEF='hanim_' name='r_tarsal_distal_phalanx_5' translation='-0.125 0.016 0.115'>
+                              <HAnimSite DEF='hanim_r_tarsal_distal_phalanx_5' name='r_tarsal_distal_phalanx_5' translation='-0.125 0.016 0.115'>
                                 <Transform USE='r_tarsal_distal_phalanx_5_tip_SiteShape'/>
                               </HAnimSite>
                               <Shape USE='r_tarsal_distal_interphalangeal_5-to-r_tarsal_distal_phalanx_5_tip'/>

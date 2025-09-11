@@ -1,0 +1,4936 @@
+
+package main
+
+import (
+	"encoding/xml"
+	"fmt"
+	"io"
+	"log"
+	"net/http"
+	"os"
+
+	"gox3d/x3d" // Assumes your module is named x3d-go-tester
+
+	// Imports for the CGo-based libxml2 wrapper
+	"github.com/lestrrat-go/libxml2"
+	"github.com/lestrrat-go/libxml2/xsd"
+)
+
+// ... (Helper functions remain the same) ...
+func stringPtr(s string) *string { return &s }
+func floatPtr(f float32) *float32 { return &f }
+func doublePtr(d float64) *float64 { return &d }
+func boolPtr(b bool) *bool       { return &b }
+func int32Ptr(i int32) *int32    { return &i }
+
+func downloadSchemaIfNotExists(url, filepath string) error {
+	// ... (function is correct, no changes) ...
+	if _, err := os.Stat(filepath); err == nil {
+		fmt.Printf("Schema file '%s' already exists. Skipping download.\n", filepath)
+		return nil
+	}
+	fmt.Printf("Downloading X3D schema from %s to %s...\n", url, filepath)
+	resp, err := http.Get(url)
+	if err != nil { return fmt.Errorf("failed to download schema: %w", err) }
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK { return fmt.Errorf("bad status: %s", resp.Status) }
+	out, err := os.Create(filepath)
+	if err != nil { return fmt.Errorf("failed to create schema file: %w", err) }
+	defer out.Close()
+	_, err = io.Copy(out, resp.Body)
+	if err != nil { return fmt.Errorf("failed to save schema: %w", err) }
+	fmt.Println("Schema downloaded successfully.")
+	return nil
+}
+
+// Updated validation function to print detailed errors
+func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
+	schema, err := xsd.ParseFromFile(schemaPath)
+	if err != nil { return fmt.Errorf("failed to parse schema file %s: %w", schemaPath, err) }
+	defer schema.Free()
+	doc, err := libxml2.Parse(xmlData)
+	if err != nil { return fmt.Errorf("failed to parse XML data: %w", err) }
+	defer doc.Free()
+
+	validationErr := schema.Validate(doc)
+	if validationErr != nil {
+		errorLog := ""
+		if schemaErrors, ok := validationErr.(xsd.SchemaValidationError); ok {
+			for i, e := range schemaErrors.Errors() {
+				errorLog += fmt.Sprintf("Error %d: %s\n", i+1, e.Error())
+			}
+			return fmt.Errorf("schema validation failed with %d errors:\n%s", len(schemaErrors.Errors()), errorLog)
+		}
+		return fmt.Errorf("schema validation failed: %w", validationErr)
+	}
+	return nil
+}
+
+func main() {
+	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
+
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
+	const schemaFilename = "x3d-4.0.xsd"
+	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
+		log.Fatalf("Could not prepare schema file: %v", err)
+	}
+    sceneRoot := &x3d.X3D{
+        Profile: stringPtr("Immersive"),
+        Version: stringPtr("4.0"),
+        Head: &x3d.Head{
+            Components: []*x3d.Component{
+                &x3d.Component{
+                    Name: stringPtr("HAnim"),
+                    Level: int32Ptr(1),
+            },
+        },
+            Metas: []*x3d.Meta{
+                &x3d.Meta{
+                    Name: stringPtr("title"),
+                    Content: stringPtr("DiamondManLOA_2.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("description"),
+                Content: stringPtr("hanim skeletal structure at level of articulation two, one diamond at the base node for the structure"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("creator"),
+                Content: stringPtr("Matthew T. Beitler"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("translator"),
+                Content: stringPtr("Joel S. Pawloski"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("translator"),
+                Content: stringPtr("Don Brutzman"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("created"),
+                Content: stringPtr("12 November 2001"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("modified"),
+                Content: stringPtr("Tue, 09 Sep 2025 19:37:54 GMT"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("reference"),
+                Content: stringPtr("../Templates/DiamondManLOA_2.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("reference"),
+                Content: stringPtr("The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("error"),
+                Content: stringPtr("Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("Image"),
+                Content: stringPtr("DiamondManLOA_2.png"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("Image"),
+                Content: stringPtr("images/BonesAllSkeletonFrontViewLOA2.png"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("motto"),
+                Content: stringPtr("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""),
+            },
+            &x3d.Meta{
+                Name: stringPtr("subject"),
+                Content: stringPtr("human animation, x3d, vrml, animation"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA_2.x3d"),
+            },
+            },
+        },
+        Scene: &x3d.Scene{
+            Children: []x3d.X3DChildNode{
+                &x3d.WorldInfo{
+                    Title: stringPtr("HANIM 1.1 Default Joint Centers, LOA1"),
+                    Info: x3d.MFString{"HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 2 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"},
+                },
+                &x3d.NavigationInfo{
+                    Speed: floatPtr(1.5),
+                },
+                &x3d.Viewpoint{
+                    Description: stringPtr("Diamond Man, LOA 2"),
+                    Position: &x3d.SFVec3f{0.0, 1.0, 3.0},
+                    CenterOfRotation: &x3d.SFVec3f{0.0, 1.0, 0.0},
+                },
+                &x3d.Transform{
+                        Translation: &x3d.SFVec3f{1.0, 1.5, 0.0},
+                    Children: []x3d.X3DNode{
+                        &x3d.Billboard{
+                            &x3d.Shape{
+                                Appearance: &x3d.Appearance{
+                                    Material: &x3d.Material{
+                                        CoreX3DNode: x3d.CoreX3DNode{
+                                            DEF: stringPtr("TextMaterial"),
+                                        },
+                                        DiffuseColor: &x3d.SFColor{0.9, 0.9, 0.9},
+                                    },
+                                },
+                                Geometry: &x3d.Text{
+                                    String: x3d.MFString{"Diamond Man Key"},
+                                    FontStyle: &x3d.FontStyle{
+                                        Family: x3d.MFString{"SANS"},
+                                        Size: floatPtr(0.1),
+                                    },
+                                },
+                            },
+                            &x3d.Transform{
+                                    Translation: &x3d.SFVec3f{0.0, -0.3, 0.0},
+                                Children: []x3d.X3DNode{
+                                    &x3d.Shape{
+                                        Appearance: &x3d.Appearance{
+                                            Material: &x3d.Material{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("MIN_COLOR"),
+                                                },
+                                                DiffuseColor: &x3d.SFColor{1.0, 0.0, 0.0},
+                                            },
+                                        },
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.08),
+                                        },
+                                    },
+                                    &x3d.Transform{
+                                            Translation: &x3d.SFVec3f{0.2, 0.0, 0.0},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.Shape{
+                                                Appearance: &x3d.Appearance{
+                                                    Material: &x3d.Material{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            USE: stringPtr("TextMaterial"),
+                                                        },
+                                                    },
+                                                },
+                                                Geometry: &x3d.Text{
+                                                    String: x3d.MFString{"Minimal Humanoid Joints"},
+                                                    FontStyle: &x3d.FontStyle{
+                                                        Family: x3d.MFString{"SANS"},
+                                                        Size: floatPtr(0.1),
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            &x3d.Transform{
+                                    Translation: &x3d.SFVec3f{0.0, -0.5, 0.0},
+                                Children: []x3d.X3DNode{
+                                    &x3d.Shape{
+                                        Appearance: &x3d.Appearance{
+                                            Material: &x3d.Material{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("JOINT_COLOR"),
+                                                },
+                                                DiffuseColor: &x3d.SFColor{1.0, 1.0, 0.0},
+                                            },
+                                        },
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.08),
+                                        },
+                                    },
+                                    &x3d.Transform{
+                                            Translation: &x3d.SFVec3f{0.2, 0.0, 0.0},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.Shape{
+                                                Appearance: &x3d.Appearance{
+                                                    Material: &x3d.Material{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            USE: stringPtr("TextMaterial"),
+                                                        },
+                                                    },
+                                                },
+                                                Geometry: &x3d.Text{
+                                                    String: x3d.MFString{"Humanoid Joints"},
+                                                    FontStyle: &x3d.FontStyle{
+                                                        Family: x3d.MFString{"SANS"},
+                                                        Size: floatPtr(0.1),
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            &x3d.Transform{
+                                    Translation: &x3d.SFVec3f{0.0, -0.7, 0.0},
+                                Children: []x3d.X3DNode{
+                                    &x3d.Shape{
+                                        Appearance: &x3d.Appearance{
+                                            Material: &x3d.Material{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("REC_SPINAL_COLOR"),
+                                                },
+                                                DiffuseColor: &x3d.SFColor{1.0, 0.0, 1.0},
+                                            },
+                                        },
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.08),
+                                        },
+                                    },
+                                    &x3d.Transform{
+                                            Translation: &x3d.SFVec3f{0.2, 0.0, 0.0},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.Shape{
+                                                Appearance: &x3d.Appearance{
+                                                    Material: &x3d.Material{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            USE: stringPtr("TextMaterial"),
+                                                        },
+                                                    },
+                                                },
+                                                Geometry: &x3d.Text{
+                                                    String: x3d.MFString{"Recommended Spinal Joints"},
+                                                    FontStyle: &x3d.FontStyle{
+                                                        Family: x3d.MFString{"SANS"},
+                                                        Size: floatPtr(0.1),
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            &x3d.Transform{
+                                    Translation: &x3d.SFVec3f{0.0, -0.9, 0.0},
+                                Children: []x3d.X3DNode{
+                                    &x3d.Shape{
+                                        Appearance: &x3d.Appearance{
+                                            Material: &x3d.Material{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("SPINAL_COLOR"),
+                                                },
+                                                DiffuseColor: &x3d.SFColor{0.0, 1.0, 0.0},
+                                            },
+                                        },
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.08),
+                                        },
+                                    },
+                                    &x3d.Transform{
+                                            Translation: &x3d.SFVec3f{0.2, 0.0, 0.0},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.Shape{
+                                                Appearance: &x3d.Appearance{
+                                                    Material: &x3d.Material{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            USE: stringPtr("TextMaterial"),
+                                                        },
+                                                    },
+                                                },
+                                                Geometry: &x3d.Text{
+                                                    String: x3d.MFString{"Spinal Joints"},
+                                                    FontStyle: &x3d.FontStyle{
+                                                        Family: x3d.MFString{"SANS"},
+                                                        Size: floatPtr(0.1),
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            &x3d.Transform{
+                                    Translation: &x3d.SFVec3f{0.0, -1.3, 0.0},
+                                Children: []x3d.X3DNode{
+                                    &x3d.Shape{
+                                        Appearance: &x3d.Appearance{
+                                            Material: &x3d.Material{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("SITE_COLOR"),
+                                                },
+                                                DiffuseColor: &x3d.SFColor{0.0, 0.0, 1.0},
+                                            },
+                                        },
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.08),
+                                        },
+                                    },
+                                    &x3d.Transform{
+                                            Translation: &x3d.SFVec3f{0.2, 0.0, 0.0},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.Shape{
+                                                Appearance: &x3d.Appearance{
+                                                    Material: &x3d.Material{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            USE: stringPtr("TextMaterial"),
+                                                        },
+                                                    },
+                                                },
+                                                Geometry: &x3d.Text{
+                                                    String: x3d.MFString{"Humanoid Sites"},
+                                                    FontStyle: &x3d.FontStyle{
+                                                        Family: x3d.MFString{"SANS"},
+                                                        Size: floatPtr(0.1),
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                            &x3d.Transform{
+                                    Translation: &x3d.SFVec3f{0.0, -1.1, 0.0},
+                                Children: []x3d.X3DNode{
+                                    &x3d.Shape{
+                                        Appearance: &x3d.Appearance{
+                                            Material: &x3d.Material{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("HAND_FEET_COLOR"),
+                                                },
+                                                DiffuseColor: &x3d.SFColor{0.0, 1.0, 1.0},
+                                            },
+                                        },
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.08),
+                                        },
+                                    },
+                                    &x3d.Transform{
+                                            Translation: &x3d.SFVec3f{0.2, 0.0, 0.0},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.Shape{
+                                                Appearance: &x3d.Appearance{
+                                                    Material: &x3d.Material{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            USE: stringPtr("TextMaterial"),
+                                                        },
+                                                    },
+                                                },
+                                                Geometry: &x3d.Text{
+                                                    String: x3d.MFString{"Hand & Feet Joints"},
+                                                    FontStyle: &x3d.FontStyle{
+                                                        Family: x3d.MFString{"SANS"},
+                                                        Size: floatPtr(0.1),
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+                &x3d.HAnimHumanoid{
+                    CoreX3DNode: x3d.CoreX3DNode{
+                        DEF: stringPtr("hanim_humanoid"),
+                    },
+                    Name: stringPtr("humanoid"),
+                    Version: stringPtr("1.0"),
+                    Metadata: &x3d.MetadataSet{
+                        Name: stringPtr("HAnimHumanoid.info"),
+                        Reference: stringPtr("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
+                        &x3d.MetadataString{
+                            Name: stringPtr("authorName"),
+                        },
+                    },
+                    Skeleton: []x3d.X3DNode{
+                        &x3d.HAnimJoint{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                DEF: stringPtr("hanim_HumanoidRoot"),
+                            },
+                            Name: stringPtr("humanoid_root"),
+                            Center: &x3d.SFVec3f{0.0, 0.824, 0.0277},
+                            Children: []x3d.X3DNode{
+                                &x3d.HAnimSegment{
+                                    CoreX3DNode: x3d.CoreX3DNode{
+                                        DEF: stringPtr("hanim_sacrum"),
+                                    },
+                                    Name: stringPtr("sacrum"),
+                                    &x3d.Transform{
+                                            Translation: &x3d.SFVec3f{0.0, 0.824, 0.0277},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.Shape{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("DiamondShape"),
+                                                },
+                                                Appearance: &x3d.Appearance{
+                                                    Material: &x3d.Material{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("ROOT_COLOR"),
+                                                        },
+                                                        DiffuseColor: &x3d.SFColor{1.0, 1.0, 1.0},
+                                                    },
+                                                },
+                                                Geometry: &x3d.IndexedFaceSet{
+                                                    CreaseAngle: floatPtr(0.5),
+                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                    Coord: &x3d.Coordinate{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("points"),
+                                                        },
+                                                        Point: &x3d.MFVec3f{[3]float32{0.0,0.01,0.0},[3]float32{-0.01,0.0,0.0},[3]float32{0.0,0.0,0.01},[3]float32{0.01,0.0,0.0},[3]float32{0.0,0.0,-0.01},[3]float32{0.0,-0.01,0.0}},
+                                                    },
+                                                },
+                                            },
+                                            &x3d.Transform{
+                                                    Translation: &x3d.SFVec3f{0.0, 0.01, 0.0},
+                                                Children: []x3d.X3DNode{
+                                                    &x3d.Billboard{
+                                                        &x3d.Shape{
+                                                            Appearance: &x3d.Appearance{
+                                                                Material: &x3d.Material{
+                                                                    DiffuseColor: &x3d.SFColor{0.039216, 1.0, 0.568627},
+                                                                },
+                                                            },
+                                                            Geometry: &x3d.Text{
+                                                                String: x3d.MFString{"Humanoid Root"},
+                                                                FontStyle: &x3d.FontStyle{
+                                                                    Family: x3d.MFString{"SANS"},
+                                                                    Style: stringPtr("ITALIC"),
+                                                                    Size: floatPtr(0.01),
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    },
+                            },
+                            Children: []x3d.X3DNode{
+                                &x3d.HAnimJoint{
+                                    CoreX3DNode: x3d.CoreX3DNode{
+                                        DEF: stringPtr("hanim_sacroiliac"),
+                                    },
+                                    Name: stringPtr("sacroiliac"),
+                                    Center: &x3d.SFVec3f{0.0, 0.9149, 0.0016},
+                                    Children: []x3d.X3DNode{
+                                        &x3d.HAnimSegment{
+                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                DEF: stringPtr("hanim_pelvis"),
+                                            },
+                                            Name: stringPtr("pelvis"),
+                                            &x3d.Transform{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("sacroiliacPos"),
+                                                    },
+                                                    Translation: &x3d.SFVec3f{0.0, 0.9149, 0.0016},
+                                                Children: []x3d.X3DNode{
+                                                    &x3d.Shape{
+                                                        Appearance: &x3d.Appearance{
+                                                            Material: &x3d.Material{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("MIN_COLOR"),
+                                                                },
+                                                            },
+                                                        },
+                                                        Geometry: &x3d.IndexedFaceSet{
+                                                            CreaseAngle: floatPtr(0.5),
+                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                            Coord: &x3d.Coordinate{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("points"),
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_r_iliocristale_pt"),
+                                                },
+                                                Name: stringPtr("r_iliocristale_pt"),
+                                                Translation: &x3d.SFVec3f{-0.1525, 1.0628, 0.0035},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_r_trochanterion_pt"),
+                                                },
+                                                Name: stringPtr("r_trochanterion_pt"),
+                                                Translation: &x3d.SFVec3f{-0.1689, 0.8419, 0.0352},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_l_iliocristale_pt"),
+                                                },
+                                                Name: stringPtr("l_iliocristale_pt"),
+                                                Translation: &x3d.SFVec3f{0.1612, 1.0537, 0.0008},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_l_trochanterion_pt"),
+                                                },
+                                                Name: stringPtr("l_trochanterion_pt"),
+                                                Translation: &x3d.SFVec3f{0.1677, 0.8336, 0.0303},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_r_asis_pt"),
+                                                },
+                                                Name: stringPtr("r_asis_pt"),
+                                                Translation: &x3d.SFVec3f{-0.0887, 1.0021, 0.1112},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_l_asis_pt"),
+                                                },
+                                                Name: stringPtr("l_asis_pt"),
+                                                Translation: &x3d.SFVec3f{0.0925, 0.9983, 0.1052},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_r_psis_pt"),
+                                                },
+                                                Name: stringPtr("r_psis_pt"),
+                                                Translation: &x3d.SFVec3f{-0.0716, 1.019, -0.1138},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_l_psis_pt"),
+                                                },
+                                                Name: stringPtr("l_psis_pt"),
+                                                Translation: &x3d.SFVec3f{0.0774, 1.019, -0.1151},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                            &x3d.HAnimSite{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_crotch_pt"),
+                                                },
+                                                Name: stringPtr("crotch_pt"),
+                                                Translation: &x3d.SFVec3f{0.0034, 0.8266, 0.0257},
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("SITE_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                    },
+                                    Children: []x3d.X3DNode{
+                                        &x3d.HAnimJoint{
+                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                DEF: stringPtr("hanim_l_hip"),
+                                            },
+                                            Name: stringPtr("l_hip"),
+                                            Center: &x3d.SFVec3f{0.0961, 0.9124, -0.0001},
+                                            Children: []x3d.X3DNode{
+                                                &x3d.HAnimSegment{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("hanim_l_thigh"),
+                                                    },
+                                                    Name: stringPtr("l_thigh"),
+                                                    &x3d.Transform{
+                                                            Translation: &x3d.SFVec3f{0.0961, 0.9124, -0.0001},
+                                                        Children: []x3d.X3DNode{
+                                                            &x3d.Shape{
+                                                                Appearance: &x3d.Appearance{
+                                                                    Material: &x3d.Material{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            USE: stringPtr("MIN_COLOR"),
+                                                                        },
+                                                                    },
+                                                                },
+                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                    CreaseAngle: floatPtr(0.5),
+                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                    Coord: &x3d.Coordinate{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            USE: stringPtr("points"),
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                    &x3d.HAnimSite{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("hanim_l_knee_crease_pt"),
+                                                        },
+                                                        Name: stringPtr("l_knee_crease_pt"),
+                                                        Translation: &x3d.SFVec3f{0.0993, 0.4881, -0.0309},
+                                                        &x3d.Shape{
+                                                            Appearance: &x3d.Appearance{
+                                                                Material: &x3d.Material{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                    },
+                                                                },
+                                                            },
+                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                CreaseAngle: floatPtr(0.5),
+                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                Coord: &x3d.Coordinate{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("points"),
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                    &x3d.HAnimSite{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("hanim_l_femoral_lateral_epicn_pt"),
+                                                        },
+                                                        Name: stringPtr("l_femoral_lateral_epicn_pt"),
+                                                        Translation: &x3d.SFVec3f{0.1598, 0.4967, 0.0297},
+                                                        &x3d.Shape{
+                                                            Appearance: &x3d.Appearance{
+                                                                Material: &x3d.Material{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                    },
+                                                                },
+                                                            },
+                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                CreaseAngle: floatPtr(0.5),
+                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                Coord: &x3d.Coordinate{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("points"),
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                    &x3d.HAnimSite{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("hanim_l_femoral_medial_epicn_pt"),
+                                                        },
+                                                        Name: stringPtr("l_femoral_medial_epicn_pt"),
+                                                        Translation: &x3d.SFVec3f{0.0398, 0.4946, 0.0303},
+                                                        &x3d.Shape{
+                                                            Appearance: &x3d.Appearance{
+                                                                Material: &x3d.Material{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                    },
+                                                                },
+                                                            },
+                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                CreaseAngle: floatPtr(0.5),
+                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                Coord: &x3d.Coordinate{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("points"),
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                            },
+                                            Children: []x3d.X3DNode{
+                                                &x3d.HAnimJoint{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("hanim_l_knee"),
+                                                    },
+                                                    Name: stringPtr("l_knee"),
+                                                    Center: &x3d.SFVec3f{0.104, 0.4867, 0.0308},
+                                                    Children: []x3d.X3DNode{
+                                                        &x3d.HAnimSegment{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                DEF: stringPtr("hanim_l_calf"),
+                                                            },
+                                                            Name: stringPtr("l_calf"),
+                                                            &x3d.Transform{
+                                                                    Translation: &x3d.SFVec3f{0.104, 0.4867, 0.0308},
+                                                                Children: []x3d.X3DNode{
+                                                                    &x3d.Shape{
+                                                                        Appearance: &x3d.Appearance{
+                                                                            Material: &x3d.Material{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("MIN_COLOR"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                            CreaseAngle: floatPtr(0.5),
+                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                            Coord: &x3d.Coordinate{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("points"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                    },
+                                                    Children: []x3d.X3DNode{
+                                                        &x3d.HAnimJoint{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                DEF: stringPtr("hanim_l_ankle"),
+                                                            },
+                                                            Name: stringPtr("l_ankle"),
+                                                            Center: &x3d.SFVec3f{0.1101, 0.0656, -0.0736},
+                                                            Children: []x3d.X3DNode{
+                                                                &x3d.HAnimSegment{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        DEF: stringPtr("hanim_l_hindfoot"),
+                                                                    },
+                                                                    Name: stringPtr("l_hindfoot"),
+                                                                    &x3d.Transform{
+                                                                            Translation: &x3d.SFVec3f{0.1101, 0.0656, -0.0736},
+                                                                        Children: []x3d.X3DNode{
+                                                                            &x3d.Shape{
+                                                                                Appearance: &x3d.Appearance{
+                                                                                    Material: &x3d.Material{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("MIN_COLOR"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                    Coord: &x3d.Coordinate{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("points"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                    &x3d.HAnimSite{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            DEF: stringPtr("hanim_l_lateral_malleolus_pt"),
+                                                                        },
+                                                                        Name: stringPtr("l_lateral_malleolus_pt"),
+                                                                        Translation: &x3d.SFVec3f{0.1308, 0.0597, -0.1032},
+                                                                        &x3d.Shape{
+                                                                            Appearance: &x3d.Appearance{
+                                                                                Material: &x3d.Material{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                Coord: &x3d.Coordinate{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("points"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                    &x3d.HAnimSite{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            DEF: stringPtr("hanim_l_medial_malleolus_pt"),
+                                                                        },
+                                                                        Name: stringPtr("l_medial_malleolus_pt"),
+                                                                        Translation: &x3d.SFVec3f{0.089, 0.0716, -0.0881},
+                                                                        &x3d.Shape{
+                                                                            Appearance: &x3d.Appearance{
+                                                                                Material: &x3d.Material{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                Coord: &x3d.Coordinate{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("points"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                    &x3d.HAnimSite{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            DEF: stringPtr("hanim_l_sphyrion_pt"),
+                                                                        },
+                                                                        Name: stringPtr("l_sphyrion_pt"),
+                                                                        Translation: &x3d.SFVec3f{0.089, 0.0575, -0.0943},
+                                                                        &x3d.Shape{
+                                                                            Appearance: &x3d.Appearance{
+                                                                                Material: &x3d.Material{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                Coord: &x3d.Coordinate{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("points"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                    &x3d.HAnimSite{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            DEF: stringPtr("hanim_l_calcaneous_post_pt"),
+                                                                        },
+                                                                        Name: stringPtr("l_calcaneous_post_pt"),
+                                                                        Translation: &x3d.SFVec3f{0.0974, 0.0259, -0.1171},
+                                                                        &x3d.Shape{
+                                                                            Appearance: &x3d.Appearance{
+                                                                                Material: &x3d.Material{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                Coord: &x3d.Coordinate{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("points"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                            },
+                                                            Children: []x3d.X3DNode{
+                                                                &x3d.HAnimJoint{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        DEF: stringPtr("hanim_l_subtalar"),
+                                                                    },
+                                                                    Name: stringPtr("l_subtalar"),
+                                                                    Center: &x3d.SFVec3f{0.1086, 0.0001, -0.0368},
+                                                                    Children: []x3d.X3DNode{
+                                                                        &x3d.HAnimSegment{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                DEF: stringPtr("hanim_midproximal"),
+                                                                            },
+                                                                            Name: stringPtr("midproximal"),
+                                                                            &x3d.Transform{
+                                                                                    Translation: &x3d.SFVec3f{0.1086, 0.0001, -0.0368},
+                                                                                Children: []x3d.X3DNode{
+                                                                                    &x3d.Shape{
+                                                                                        Appearance: &x3d.Appearance{
+                                                                                            Material: &x3d.Material{
+                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                    USE: stringPtr("MIN_COLOR"),
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                            Coord: &x3d.Coordinate{
+                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                    USE: stringPtr("points"),
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                    },
+                                                                    Children: []x3d.X3DNode{
+                                                                        &x3d.HAnimJoint{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                DEF: stringPtr("hanim_l_midtarsal"),
+                                                                            },
+                                                                            Name: stringPtr("l_midtarsal"),
+                                                                            Center: &x3d.SFVec3f{0.1086, 0.0001, 0.0368},
+                                                                            Children: []x3d.X3DNode{
+                                                                                &x3d.HAnimSegment{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        DEF: stringPtr("hanim_l_middistal"),
+                                                                                    },
+                                                                                    Name: stringPtr("l_middistal"),
+                                                                                    &x3d.Transform{
+                                                                                            Translation: &x3d.SFVec3f{0.1086, 0.0001, 0.0368},
+                                                                                        Children: []x3d.X3DNode{
+                                                                                            &x3d.Shape{
+                                                                                                Appearance: &x3d.Appearance{
+                                                                                                    Material: &x3d.Material{
+                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                            USE: stringPtr("JOINT_COLOR"),
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                            USE: stringPtr("points"),
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                    &x3d.HAnimSite{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            DEF: stringPtr("hanim_l_middistal_tip"),
+                                                                                        },
+                                                                                        Name: stringPtr("l_middistal_tip"),
+                                                                                        Translation: &x3d.SFVec3f{0.1354, 0.0016, 0.1476},
+                                                                                        &x3d.Shape{
+                                                                                            Appearance: &x3d.Appearance{
+                                                                                                Material: &x3d.Material{
+                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                        USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                Coord: &x3d.Coordinate{
+                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                        USE: stringPtr("points"),
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                    &x3d.HAnimSite{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            DEF: stringPtr("hanim_l_metatarsal_pha1_pt"),
+                                                                                        },
+                                                                                        Name: stringPtr("l_metatarsal_pha1_pt"),
+                                                                                        Translation: &x3d.SFVec3f{0.0816, 0.0232, 0.0106},
+                                                                                        &x3d.Shape{
+                                                                                            Appearance: &x3d.Appearance{
+                                                                                                Material: &x3d.Material{
+                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                        USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                Coord: &x3d.Coordinate{
+                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                        USE: stringPtr("points"),
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                            },
+                                                                            Children: []x3d.X3DNode{
+                                                                                &x3d.HAnimJoint{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        DEF: stringPtr("hanim_l_metatarsal"),
+                                                                                    },
+                                                                                    Name: stringPtr("l_metatarsal"),
+                                                                                    Center: &x3d.SFVec3f{0.1086, 0.0, 0.0762},
+                                                                                    Children: []x3d.X3DNode{
+                                                                                        &x3d.HAnimSegment{
+                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                DEF: stringPtr("hanim_l_forefoot"),
+                                                                                            },
+                                                                                            Name: stringPtr("l_forefoot"),
+                                                                                            &x3d.Transform{
+                                                                                                    Translation: &x3d.SFVec3f{0.1086, 0.0, 0.0762},
+                                                                                                Children: []x3d.X3DNode{
+                                                                                                    &x3d.Shape{
+                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                            Material: &x3d.Material{
+                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                    USE: stringPtr("JOINT_COLOR"),
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                    USE: stringPtr("points"),
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                            &x3d.HAnimSite{
+                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                    DEF: stringPtr("hanim_l_forefoot_tip"),
+                                                                                                },
+                                                                                                Name: stringPtr("l_forefoot_tip"),
+                                                                                                Translation: &x3d.SFVec3f{0.1354, 0.0016, 0.1476},
+                                                                                                &x3d.Shape{
+                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                        Material: &x3d.Material{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("points"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                            &x3d.HAnimSite{
+                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                    DEF: stringPtr("hanim_l_metatarsal_pha5_pt"),
+                                                                                                },
+                                                                                                Name: stringPtr("l_metatarsal_pha5_pt"),
+                                                                                                Translation: &x3d.SFVec3f{0.1825, 0.007, 0.0928},
+                                                                                                &x3d.Shape{
+                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                        Material: &x3d.Material{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("points"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                            &x3d.HAnimSite{
+                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                    DEF: stringPtr("hanim_l_digit2_pt"),
+                                                                                                },
+                                                                                                Name: stringPtr("l_digit2_pt"),
+                                                                                                Translation: &x3d.SFVec3f{0.1195, 0.0079, 0.1433},
+                                                                                                &x3d.Shape{
+                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                        Material: &x3d.Material{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("points"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                    },
+                                                                            },
+                                                                    },
+                                                            },
+                                                    },
+                                            },
+                                    },
+                                    &x3d.HAnimJoint{
+                                        CoreX3DNode: x3d.CoreX3DNode{
+                                            DEF: stringPtr("hanim_r_hip"),
+                                        },
+                                        Name: stringPtr("r_hip"),
+                                        Center: &x3d.SFVec3f{-0.095, 0.9171, 0.0029},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.HAnimSegment{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_r_thigh"),
+                                                },
+                                                Name: stringPtr("r_thigh"),
+                                                &x3d.Transform{
+                                                        Translation: &x3d.SFVec3f{-0.095, 0.9171, 0.0029},
+                                                    Children: []x3d.X3DNode{
+                                                        &x3d.Shape{
+                                                            Appearance: &x3d.Appearance{
+                                                                Material: &x3d.Material{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("MIN_COLOR"),
+                                                                    },
+                                                                },
+                                                            },
+                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                CreaseAngle: floatPtr(0.5),
+                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                Coord: &x3d.Coordinate{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("points"),
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                                &x3d.HAnimSite{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("hanim_r_knee_crease_pt"),
+                                                    },
+                                                    Name: stringPtr("r_knee_crease_pt"),
+                                                    Translation: &x3d.SFVec3f{-0.0825, 0.4932, -0.0326},
+                                                    &x3d.Shape{
+                                                        Appearance: &x3d.Appearance{
+                                                            Material: &x3d.Material{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                },
+                                                            },
+                                                        },
+                                                        Geometry: &x3d.IndexedFaceSet{
+                                                            CreaseAngle: floatPtr(0.5),
+                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                            Coord: &x3d.Coordinate{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("points"),
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                                &x3d.HAnimSite{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("hanim_r_femoral_lateral_epicn_pt"),
+                                                    },
+                                                    Name: stringPtr("r_femoral_lateral_epicn_pt"),
+                                                    Translation: &x3d.SFVec3f{-0.1421, 0.4992, 0.031},
+                                                    &x3d.Shape{
+                                                        Appearance: &x3d.Appearance{
+                                                            Material: &x3d.Material{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                },
+                                                            },
+                                                        },
+                                                        Geometry: &x3d.IndexedFaceSet{
+                                                            CreaseAngle: floatPtr(0.5),
+                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                            Coord: &x3d.Coordinate{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("points"),
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                                &x3d.HAnimSite{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("hanim_r_femoral_medial_epicn_pt"),
+                                                    },
+                                                    Name: stringPtr("r_femoral_medial_epicn_pt"),
+                                                    Translation: &x3d.SFVec3f{-0.0221, 0.5014, 0.0289},
+                                                    &x3d.Shape{
+                                                        Appearance: &x3d.Appearance{
+                                                            Material: &x3d.Material{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                },
+                                                            },
+                                                        },
+                                                        Geometry: &x3d.IndexedFaceSet{
+                                                            CreaseAngle: floatPtr(0.5),
+                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                            Coord: &x3d.Coordinate{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("points"),
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                        },
+                                        Children: []x3d.X3DNode{
+                                            &x3d.HAnimJoint{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_r_knee"),
+                                                },
+                                                Name: stringPtr("r_knee"),
+                                                Center: &x3d.SFVec3f{-0.0867, 0.4913, 0.0318},
+                                                Children: []x3d.X3DNode{
+                                                    &x3d.HAnimSegment{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("hanim_r_calf"),
+                                                        },
+                                                        Name: stringPtr("r_calf"),
+                                                        &x3d.Transform{
+                                                                Translation: &x3d.SFVec3f{-0.0867, 0.4913, 0.0318},
+                                                            Children: []x3d.X3DNode{
+                                                                &x3d.Shape{
+                                                                    Appearance: &x3d.Appearance{
+                                                                        Material: &x3d.Material{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                USE: stringPtr("SITE_COLOR"),
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                        CreaseAngle: floatPtr(0.5),
+                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                        Coord: &x3d.Coordinate{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                USE: stringPtr("points"),
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                },
+                                                Children: []x3d.X3DNode{
+                                                    &x3d.HAnimJoint{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("hanim_r_ankle"),
+                                                        },
+                                                        Name: stringPtr("r_ankle"),
+                                                        Center: &x3d.SFVec3f{-0.0801, 0.0712, -0.0766},
+                                                        Children: []x3d.X3DNode{
+                                                            &x3d.HAnimSegment{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    DEF: stringPtr("hanim_r_hindfoot"),
+                                                                },
+                                                                Name: stringPtr("r_hindfoot"),
+                                                                &x3d.Transform{
+                                                                        Translation: &x3d.SFVec3f{-0.0801, 0.0712, -0.0766},
+                                                                    Children: []x3d.X3DNode{
+                                                                        &x3d.Shape{
+                                                                            Appearance: &x3d.Appearance{
+                                                                                Material: &x3d.Material{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("MIN_COLOR"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                Coord: &x3d.Coordinate{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("points"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                &x3d.HAnimSite{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        DEF: stringPtr("hanim_r_lateral_malleolus_pt"),
+                                                                    },
+                                                                    Name: stringPtr("r_lateral_malleolus_pt"),
+                                                                    Translation: &x3d.SFVec3f{-0.1006, 0.0658, -0.1075},
+                                                                    &x3d.Shape{
+                                                                        Appearance: &x3d.Appearance{
+                                                                            Material: &x3d.Material{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                            CreaseAngle: floatPtr(0.5),
+                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                            Coord: &x3d.Coordinate{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("points"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                &x3d.HAnimSite{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        DEF: stringPtr("hanim_r_medial_malleolus_pt"),
+                                                                    },
+                                                                    Name: stringPtr("r_medial_malleolus_pt"),
+                                                                    Translation: &x3d.SFVec3f{-0.0591, 0.076, -0.0928},
+                                                                    &x3d.Shape{
+                                                                        Appearance: &x3d.Appearance{
+                                                                            Material: &x3d.Material{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                            CreaseAngle: floatPtr(0.5),
+                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                            Coord: &x3d.Coordinate{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("points"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                &x3d.HAnimSite{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        DEF: stringPtr("hanim_r_sphyrion_pt"),
+                                                                    },
+                                                                    Name: stringPtr("r_sphyrion_pt"),
+                                                                    Translation: &x3d.SFVec3f{-0.0603, 0.061, -0.1002},
+                                                                    &x3d.Shape{
+                                                                        Appearance: &x3d.Appearance{
+                                                                            Material: &x3d.Material{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                            CreaseAngle: floatPtr(0.5),
+                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                            Coord: &x3d.Coordinate{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("points"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                                &x3d.HAnimSite{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        DEF: stringPtr("hanim_r_calcaneous_post_pt"),
+                                                                    },
+                                                                    Name: stringPtr("r_calcaneous_post_pt"),
+                                                                    Translation: &x3d.SFVec3f{-0.0692, 0.0297, -0.1221},
+                                                                    &x3d.Shape{
+                                                                        Appearance: &x3d.Appearance{
+                                                                            Material: &x3d.Material{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                            CreaseAngle: floatPtr(0.5),
+                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                            Coord: &x3d.Coordinate{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    USE: stringPtr("points"),
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                        },
+                                                        Children: []x3d.X3DNode{
+                                                            &x3d.HAnimJoint{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    DEF: stringPtr("hanim_r_midtarsal"),
+                                                                },
+                                                                Name: stringPtr("r_midtarsal"),
+                                                                Center: &x3d.SFVec3f{-0.0801, 0.0, 0.0368},
+                                                                Children: []x3d.X3DNode{
+                                                                    &x3d.HAnimSegment{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            DEF: stringPtr("hanim_r_middistal"),
+                                                                        },
+                                                                        Name: stringPtr("r_middistal"),
+                                                                        &x3d.Transform{
+                                                                                Translation: &x3d.SFVec3f{-0.0801, 0.0, 0.0368},
+                                                                            Children: []x3d.X3DNode{
+                                                                                &x3d.Shape{
+                                                                                    Appearance: &x3d.Appearance{
+                                                                                        Material: &x3d.Material{
+                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                USE: stringPtr("JOINT_COLOR"),
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                        Coord: &x3d.Coordinate{
+                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                USE: stringPtr("points"),
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        &x3d.HAnimSite{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                DEF: stringPtr("hanim_r_middistal_tip"),
+                                                                            },
+                                                                            Name: stringPtr("r_middistal_tip"),
+                                                                            Translation: &x3d.SFVec3f{-0.1043, -0.0227, 0.145},
+                                                                            &x3d.Shape{
+                                                                                Appearance: &x3d.Appearance{
+                                                                                    Material: &x3d.Material{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                    Coord: &x3d.Coordinate{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("points"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        &x3d.HAnimSite{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                DEF: stringPtr("hanim_r_metatarsal_pha5_pt"),
+                                                                            },
+                                                                            Name: stringPtr("r_metatarsal_pha5_pt"),
+                                                                            Translation: &x3d.SFVec3f{-0.1523, 0.0166, 0.0895},
+                                                                            &x3d.Shape{
+                                                                                Appearance: &x3d.Appearance{
+                                                                                    Material: &x3d.Material{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                    Coord: &x3d.Coordinate{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("points"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        &x3d.HAnimSite{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                DEF: stringPtr("hanim_r_metatarsal_pha1_pt"),
+                                                                            },
+                                                                            Name: stringPtr("r_metatarsal_pha1_pt"),
+                                                                            Translation: &x3d.SFVec3f{-0.0521, 0.026, 0.0127},
+                                                                            &x3d.Shape{
+                                                                                Appearance: &x3d.Appearance{
+                                                                                    Material: &x3d.Material{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                    Coord: &x3d.Coordinate{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("points"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                        &x3d.HAnimSite{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                DEF: stringPtr("hanim_r_digit2_pt"),
+                                                                            },
+                                                                            Name: stringPtr("r_digit2_pt"),
+                                                                            Translation: &x3d.SFVec3f{-0.0883, 0.0134, 0.1383},
+                                                                            &x3d.Shape{
+                                                                                Appearance: &x3d.Appearance{
+                                                                                    Material: &x3d.Material{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                    Coord: &x3d.Coordinate{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            USE: stringPtr("points"),
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                },
+                                                        },
+                                                },
+                                        },
+                                    },
+                            },
+                            &x3d.HAnimJoint{
+                                CoreX3DNode: x3d.CoreX3DNode{
+                                    DEF: stringPtr("hanim_vl5"),
+                                },
+                                Name: stringPtr("vl5"),
+                                Center: &x3d.SFVec3f{0.0028, 1.0568, -0.0776},
+                                Children: []x3d.X3DNode{
+                                    &x3d.HAnimSegment{
+                                        CoreX3DNode: x3d.CoreX3DNode{
+                                            DEF: stringPtr("hanim_l5"),
+                                        },
+                                        Name: stringPtr("l5"),
+                                        &x3d.Transform{
+                                                Translation: &x3d.SFVec3f{0.0028, 1.0568, -0.0776},
+                                            Children: []x3d.X3DNode{
+                                                &x3d.Shape{
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("REC_SPINAL_COLOR"),
+                                                            },
+                                                        },
+                                                    },
+                                                    Geometry: &x3d.IndexedFaceSet{
+                                                        CreaseAngle: floatPtr(0.5),
+                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                        Coord: &x3d.Coordinate{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("points"),
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                            },
+                                        },
+                                },
+                                Children: []x3d.X3DNode{
+                                    &x3d.HAnimJoint{
+                                        CoreX3DNode: x3d.CoreX3DNode{
+                                            DEF: stringPtr("hanim_vl4"),
+                                        },
+                                        Name: stringPtr("vl4"),
+                                        Center: &x3d.SFVec3f{0.0035, 1.0925, -0.0787},
+                                        Children: []x3d.X3DNode{
+                                            &x3d.HAnimSegment{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_l4"),
+                                                },
+                                                Name: stringPtr("l4"),
+                                                &x3d.Transform{
+                                                        Translation: &x3d.SFVec3f{0.0035, 1.0925, -0.0787},
+                                                    Children: []x3d.X3DNode{
+                                                        &x3d.Shape{
+                                                            Appearance: &x3d.Appearance{
+                                                                Material: &x3d.Material{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("SPINAL_COLOR"),
+                                                                    },
+                                                                },
+                                                            },
+                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                CreaseAngle: floatPtr(0.5),
+                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                Coord: &x3d.Coordinate{
+                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                        USE: stringPtr("points"),
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
+                                                },
+                                        },
+                                        Children: []x3d.X3DNode{
+                                            &x3d.HAnimJoint{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("hanim_vl3"),
+                                                },
+                                                Name: stringPtr("vl3"),
+                                                Center: &x3d.SFVec3f{0.0041, 1.1276, -0.0796},
+                                                Children: []x3d.X3DNode{
+                                                    &x3d.HAnimSegment{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("hanim_l3"),
+                                                        },
+                                                        Name: stringPtr("l3"),
+                                                        &x3d.Transform{
+                                                                Translation: &x3d.SFVec3f{0.0041, 1.1276, -0.0796},
+                                                            Children: []x3d.X3DNode{
+                                                                &x3d.Shape{
+                                                                    Appearance: &x3d.Appearance{
+                                                                        Material: &x3d.Material{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                USE: stringPtr("REC_SPINAL_COLOR"),
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                        CreaseAngle: floatPtr(0.5),
+                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                        Coord: &x3d.Coordinate{
+                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                USE: stringPtr("points"),
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+                                                },
+                                                Children: []x3d.X3DNode{
+                                                    &x3d.HAnimJoint{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("hanim_vl2"),
+                                                        },
+                                                        Name: stringPtr("vl2"),
+                                                        Center: &x3d.SFVec3f{0.0045, 1.1546, -0.08},
+                                                        Children: []x3d.X3DNode{
+                                                            &x3d.HAnimSegment{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    DEF: stringPtr("hanim_l2"),
+                                                                },
+                                                                Name: stringPtr("l2"),
+                                                                &x3d.Transform{
+                                                                        Translation: &x3d.SFVec3f{0.0045, 1.1546, -0.08},
+                                                                    Children: []x3d.X3DNode{
+                                                                        &x3d.Shape{
+                                                                            Appearance: &x3d.Appearance{
+                                                                                Material: &x3d.Material{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("SPINAL_COLOR"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                Coord: &x3d.Coordinate{
+                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                        USE: stringPtr("points"),
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                    },
+                                                                },
+                                                        },
+                                                        Children: []x3d.X3DNode{
+                                                            &x3d.HAnimJoint{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    DEF: stringPtr("hanim_vl1"),
+                                                                },
+                                                                Name: stringPtr("vl1"),
+                                                                Center: &x3d.SFVec3f{0.0048, 1.1912, -0.0805},
+                                                                Children: []x3d.X3DNode{
+                                                                    &x3d.HAnimSegment{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            DEF: stringPtr("hanim_l1"),
+                                                                        },
+                                                                        Name: stringPtr("l1"),
+                                                                        &x3d.Transform{
+                                                                                Translation: &x3d.SFVec3f{0.0048, 1.1912, -0.0805},
+                                                                            Children: []x3d.X3DNode{
+                                                                                &x3d.Shape{
+                                                                                    Appearance: &x3d.Appearance{
+                                                                                        Material: &x3d.Material{
+                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                USE: stringPtr("REC_SPINAL_COLOR"),
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                        Coord: &x3d.Coordinate{
+                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                USE: stringPtr("points"),
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                            },
+                                                                        },
+                                                                },
+                                                                Children: []x3d.X3DNode{
+                                                                    &x3d.HAnimJoint{
+                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                            DEF: stringPtr("hanim_vt12"),
+                                                                        },
+                                                                        Name: stringPtr("vt12"),
+                                                                        Center: &x3d.SFVec3f{0.0051, 1.2278, -0.0808},
+                                                                        Children: []x3d.X3DNode{
+                                                                            &x3d.HAnimSegment{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    DEF: stringPtr("hanim_t12"),
+                                                                                },
+                                                                                Name: stringPtr("t12"),
+                                                                                &x3d.Transform{
+                                                                                        Translation: &x3d.SFVec3f{0.0051, 1.2278, -0.0808},
+                                                                                    Children: []x3d.X3DNode{
+                                                                                        &x3d.Shape{
+                                                                                            Appearance: &x3d.Appearance{
+                                                                                                Material: &x3d.Material{
+                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                        USE: stringPtr("SPINAL_COLOR"),
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                Coord: &x3d.Coordinate{
+                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                        USE: stringPtr("points"),
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                    },
+                                                                                },
+                                                                        },
+                                                                        Children: []x3d.X3DNode{
+                                                                            &x3d.HAnimJoint{
+                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                    DEF: stringPtr("hanim_vt11"),
+                                                                                },
+                                                                                Name: stringPtr("vt11"),
+                                                                                Center: &x3d.SFVec3f{0.0053, 1.2679, -0.081},
+                                                                                Children: []x3d.X3DNode{
+                                                                                    &x3d.HAnimSegment{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            DEF: stringPtr("hanim_t11"),
+                                                                                        },
+                                                                                        Name: stringPtr("t11"),
+                                                                                        &x3d.Transform{
+                                                                                                Translation: &x3d.SFVec3f{0.0053, 1.2679, -0.081},
+                                                                                            Children: []x3d.X3DNode{
+                                                                                                &x3d.Shape{
+                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                        Material: &x3d.Material{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("SPINAL_COLOR"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                USE: stringPtr("points"),
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                            },
+                                                                                        },
+                                                                                },
+                                                                                Children: []x3d.X3DNode{
+                                                                                    &x3d.HAnimJoint{
+                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                            DEF: stringPtr("hanim_vt10"),
+                                                                                        },
+                                                                                        Name: stringPtr("vt10"),
+                                                                                        Center: &x3d.SFVec3f{0.0056, 1.2848, -0.0822},
+                                                                                        Children: []x3d.X3DNode{
+                                                                                            &x3d.HAnimSegment{
+                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                    DEF: stringPtr("hanim_t10"),
+                                                                                                },
+                                                                                                Name: stringPtr("t10"),
+                                                                                                &x3d.Transform{
+                                                                                                        Translation: &x3d.SFVec3f{0.0056, 1.2848, -0.0822},
+                                                                                                    Children: []x3d.X3DNode{
+                                                                                                        &x3d.Shape{
+                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                Material: &x3d.Material{
+                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                        USE: stringPtr("REC_SPINAL_COLOR"),
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                        USE: stringPtr("points"),
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                    },
+                                                                                                },
+                                                                                        },
+                                                                                        Children: []x3d.X3DNode{
+                                                                                            &x3d.HAnimJoint{
+                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                    DEF: stringPtr("hanim_vt9"),
+                                                                                                },
+                                                                                                Name: stringPtr("vt9"),
+                                                                                                Center: &x3d.SFVec3f{0.0057, 1.3126, -0.0838},
+                                                                                                Children: []x3d.X3DNode{
+                                                                                                    &x3d.HAnimSegment{
+                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                            DEF: stringPtr("hanim_t9"),
+                                                                                                        },
+                                                                                                        Name: stringPtr("t9"),
+                                                                                                        &x3d.Transform{
+                                                                                                                Translation: &x3d.SFVec3f{0.0057, 1.3126, -0.0838},
+                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                &x3d.Shape{
+                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                        Material: &x3d.Material{
+                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                USE: stringPtr("points"),
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                            },
+                                                                                                        },
+                                                                                                },
+                                                                                                Children: []x3d.X3DNode{
+                                                                                                    &x3d.HAnimJoint{
+                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                            DEF: stringPtr("hanim_vt8"),
+                                                                                                        },
+                                                                                                        Name: stringPtr("vt8"),
+                                                                                                        Center: &x3d.SFVec3f{0.0057, 1.3382, -0.0845},
+                                                                                                        Children: []x3d.X3DNode{
+                                                                                                            &x3d.HAnimSegment{
+                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                    DEF: stringPtr("hanim_t8"),
+                                                                                                                },
+                                                                                                                Name: stringPtr("t8"),
+                                                                                                                &x3d.Transform{
+                                                                                                                        Translation: &x3d.SFVec3f{0.0057, 1.3382, -0.0845},
+                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                        &x3d.Shape{
+                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                Material: &x3d.Material{
+                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                        USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                    },
+                                                                                                                },
+                                                                                                        },
+                                                                                                        Children: []x3d.X3DNode{
+                                                                                                            &x3d.HAnimJoint{
+                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                    DEF: stringPtr("hanim_vt7"),
+                                                                                                                },
+                                                                                                                Name: stringPtr("vt7"),
+                                                                                                                Center: &x3d.SFVec3f{0.0058, 1.3625, -0.0833},
+                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                    &x3d.HAnimSegment{
+                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                            DEF: stringPtr("hanim_t7"),
+                                                                                                                        },
+                                                                                                                        Name: stringPtr("t7"),
+                                                                                                                        &x3d.Transform{
+                                                                                                                                Translation: &x3d.SFVec3f{0.0058, 1.3625, -0.0833},
+                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                &x3d.Shape{
+                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                            },
+                                                                                                                        },
+                                                                                                                },
+                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                    &x3d.HAnimJoint{
+                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                            DEF: stringPtr("hanim_vt6"),
+                                                                                                                        },
+                                                                                                                        Name: stringPtr("vt6"),
+                                                                                                                        Center: &x3d.SFVec3f{0.0059, 1.3866, -0.08},
+                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                            &x3d.HAnimSegment{
+                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                    DEF: stringPtr("hanim_t6"),
+                                                                                                                                },
+                                                                                                                                Name: stringPtr("t6"),
+                                                                                                                                &x3d.Transform{
+                                                                                                                                        Translation: &x3d.SFVec3f{0.0059, 1.3866, -0.08},
+                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                        &x3d.Shape{
+                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                        USE: stringPtr("REC_SPINAL_COLOR"),
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                    },
+                                                                                                                                },
+                                                                                                                        },
+                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                            &x3d.HAnimJoint{
+                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                    DEF: stringPtr("hanim_vt5"),
+                                                                                                                                },
+                                                                                                                                Name: stringPtr("vt5"),
+                                                                                                                                Center: &x3d.SFVec3f{0.006, 1.4102, -0.0745},
+                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                    &x3d.HAnimSegment{
+                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                            DEF: stringPtr("hanim_t5"),
+                                                                                                                                        },
+                                                                                                                                        Name: stringPtr("t5"),
+                                                                                                                                        &x3d.Transform{
+                                                                                                                                                Translation: &x3d.SFVec3f{0.006, 1.4102, -0.0745},
+                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                &x3d.Shape{
+                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                            },
+                                                                                                                                        },
+                                                                                                                                },
+                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                    &x3d.HAnimJoint{
+                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                            DEF: stringPtr("hanim_vt4"),
+                                                                                                                                        },
+                                                                                                                                        Name: stringPtr("vt4"),
+                                                                                                                                        Center: &x3d.SFVec3f{0.0061, 1.432, -0.0675},
+                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                            &x3d.HAnimSegment{
+                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                    DEF: stringPtr("hanim_t4"),
+                                                                                                                                                },
+                                                                                                                                                Name: stringPtr("t4"),
+                                                                                                                                                &x3d.Transform{
+                                                                                                                                                        Translation: &x3d.SFVec3f{0.0061, 1.432, -0.0675},
+                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                        USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                    },
+                                                                                                                                                },
+                                                                                                                                        },
+                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                            &x3d.HAnimJoint{
+                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                    DEF: stringPtr("hanim_vt3"),
+                                                                                                                                                },
+                                                                                                                                                Name: stringPtr("vt3"),
+                                                                                                                                                Center: &x3d.SFVec3f{0.0062, 1.4583, -0.057},
+                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                    &x3d.HAnimSegment{
+                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                            DEF: stringPtr("hanim_t3"),
+                                                                                                                                                        },
+                                                                                                                                                        Name: stringPtr("t3"),
+                                                                                                                                                        &x3d.Transform{
+                                                                                                                                                                Translation: &x3d.SFVec3f{0.0062, 1.4583, -0.057},
+                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                            },
+                                                                                                                                                        },
+                                                                                                                                                },
+                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                    &x3d.HAnimJoint{
+                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                            DEF: stringPtr("hanim_vt2"),
+                                                                                                                                                        },
+                                                                                                                                                        Name: stringPtr("vt2"),
+                                                                                                                                                        Center: &x3d.SFVec3f{0.0063, 1.4761, -0.0484},
+                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                            &x3d.HAnimSegment{
+                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                    DEF: stringPtr("hanim_t2"),
+                                                                                                                                                                },
+                                                                                                                                                                Name: stringPtr("t2"),
+                                                                                                                                                                &x3d.Transform{
+                                                                                                                                                                        Translation: &x3d.SFVec3f{0.0063, 1.4761, -0.0484},
+                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                        },
+                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                            &x3d.HAnimJoint{
+                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                    DEF: stringPtr("hanim_vt1"),
+                                                                                                                                                                },
+                                                                                                                                                                Name: stringPtr("vt1"),
+                                                                                                                                                                Center: &x3d.SFVec3f{0.0065, 1.4951, -0.0387},
+                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                    &x3d.HAnimSegment{
+                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                            DEF: stringPtr("hanim_t1"),
+                                                                                                                                                                        },
+                                                                                                                                                                        Name: stringPtr("t1"),
+                                                                                                                                                                        &x3d.Transform{
+                                                                                                                                                                                Translation: &x3d.SFVec3f{0.0065, 1.4951, -0.0387},
+                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                USE: stringPtr("REC_SPINAL_COLOR"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                        },
+                                                                                                                                                                },
+                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                    &x3d.HAnimJoint{
+                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                            DEF: stringPtr("hanim_l_shoulder"),
+                                                                                                                                                                        },
+                                                                                                                                                                        Name: stringPtr("l_shoulder"),
+                                                                                                                                                                        Center: &x3d.SFVec3f{0.2029, 1.4376, -0.0387},
+                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                            &x3d.HAnimSegment{
+                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                    DEF: stringPtr("hanim_l_upperarm"),
+                                                                                                                                                                                },
+                                                                                                                                                                                Name: stringPtr("l_upperarm"),
+                                                                                                                                                                                &x3d.Transform{
+                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.2029, 1.4376, -0.0387},
+                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("MIN_COLOR"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                                &x3d.Transform{
+                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                            DEF: stringPtr("l_upperarm_adjust"),
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.2029, 1.4376, -0.0387},
+                                                                                                                                                                                        Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 0.119},
+                                                                                                                                                                                        Center: &x3d.SFVec3f{0.182, 1.22, -0.047},
+                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                                &x3d.HAnimSite{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        DEF: stringPtr("hanim_l_humeral_lateral_epicn_pt"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Name: stringPtr("l_humeral_lateral_epicn_pt"),
+                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.228, 1.1482, -0.11},
+                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                        },
+                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                            &x3d.HAnimJoint{
+                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                    DEF: stringPtr("hanim_l_elbow"),
+                                                                                                                                                                                },
+                                                                                                                                                                                Name: stringPtr("l_elbow"),
+                                                                                                                                                                                Center: &x3d.SFVec3f{0.2014, 1.1357, -0.0682},
+                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                    &x3d.HAnimSegment{
+                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                            DEF: stringPtr("hanim_l_forearm"),
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Name: stringPtr("l_forearm"),
+                                                                                                                                                                                        &x3d.Transform{
+                                                                                                                                                                                                Translation: &x3d.SFVec3f{0.2014, 1.1357, -0.0682},
+                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("MIN_COLOR"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        &x3d.Transform{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("l_forearm_adjust"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Translation: &x3d.SFVec3f{0.2014, 1.1357, -0.0682},
+                                                                                                                                                                                                Rotation: &x3d.SFRotation{-1.0, 0.0, 0.0, 0.1},
+                                                                                                                                                                                                Center: &x3d.SFVec3f{0.198, 0.961, -0.0405},
+                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        &x3d.HAnimSite{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_l_radial_styloid_pt"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("l_radial_styloid_pt"),
+                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.1901, 0.8645, -0.0415},
+                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        &x3d.HAnimSite{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_l_olecranon_pt"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("l_olecranon_pt"),
+                                                                                                                                                                                            Translation: &x3d.SFVec3f{-0.1962, 1.1375, -0.1123},
+                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        &x3d.HAnimSite{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_l_humeral_medial_epicn_pt"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("l_humeral_medial_epicn_pt"),
+                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.1735, 1.1272, -0.1113},
+                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        &x3d.HAnimSite{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_l_radiale_pt"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("l_radiale_pt"),
+                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.2182, 1.1212, -0.1167},
+                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                },
+                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                    &x3d.HAnimJoint{
+                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                            DEF: stringPtr("hanim_l_wrist"),
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Name: stringPtr("l_wrist"),
+                                                                                                                                                                                        Center: &x3d.SFVec3f{0.1984, 0.8663, -0.0583},
+                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                            &x3d.HAnimSegment{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("hanim_l_hand"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Name: stringPtr("l_hand"),
+                                                                                                                                                                                                &x3d.Transform{
+                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.1984, 0.8663, -0.0583},
+                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                        USE: stringPtr("MIN_COLOR"),
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                &x3d.Transform{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            DEF: stringPtr("l_hand_adjust"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.1984, 0.8663, -0.0583},
+                                                                                                                                                                                                        Rotation: &x3d.SFRotation{-0.06361, -0.9967, 0.04988, 1.333},
+                                                                                                                                                                                                        Center: &x3d.SFVec3f{0.213, 0.811, -0.0338},
+                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                &x3d.HAnimSite{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_l_hand_tip"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("l_hand_tip"),
+                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.208, 0.6731, -0.0491},
+                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                &x3d.HAnimSite{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_l_metacarpal_pha2_pt"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("l_metacarpal_pha2_pt"),
+                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.2009, 0.8139, -0.0237},
+                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                &x3d.HAnimSite{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_l_dactylion_pt"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("l_dactylion_pt"),
+                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.2056, 0.6743, -0.0482},
+                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                &x3d.HAnimSite{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_l_ulnar_styloid_pt"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("l_ulnar_styloid_pt"),
+                                                                                                                                                                                                    Translation: &x3d.SFVec3f{-0.2142, 0.8529, -0.0648},
+                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                &x3d.HAnimSite{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_l_metacarpal_pha5_pt"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("l_metacarpal_pha5_pt"),
+                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.1929, 0.786, -0.1122},
+                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                            &x3d.HAnimJoint{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("hanim_l_thumb1"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Name: stringPtr("l_thumb1"),
+                                                                                                                                                                                                Center: &x3d.SFVec3f{0.1924, 0.8472, -0.0534},
+                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                    &x3d.HAnimSegment{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            DEF: stringPtr("hanim_l_thumb_metacarpal"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Name: stringPtr("l_thumb_metacarpal"),
+                                                                                                                                                                                                        &x3d.Transform{
+                                                                                                                                                                                                                Translation: &x3d.SFVec3f{0.1924, 0.8472, -0.0534},
+                                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                USE: stringPtr("JOINT_COLOR"),
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                    &x3d.HAnimJoint{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            DEF: stringPtr("hanim_l_thumb2"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Name: stringPtr("l_thumb2"),
+                                                                                                                                                                                                        Center: &x3d.SFVec3f{0.1951, 0.8226, 0.0246},
+                                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                                            &x3d.HAnimSegment{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    DEF: stringPtr("hanim_l_thumb_proximal"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                                Name: stringPtr("l_thumb_proximal"),
+                                                                                                                                                                                                                &x3d.Transform{
+                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.1951, 0.8226, 0.0246},
+                                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                        USE: stringPtr("JOINT_COLOR"),
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                                            &x3d.HAnimJoint{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    DEF: stringPtr("hanim_l_thumb3"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                                Name: stringPtr("l_thumb3"),
+                                                                                                                                                                                                                Center: &x3d.SFVec3f{0.1955, 0.8159, 0.0464},
+                                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                                    &x3d.HAnimSegment{
+                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                            DEF: stringPtr("hanim_l_thumb_distal"),
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                        Name: stringPtr("l_thumb_distal"),
+                                                                                                                                                                                                                        &x3d.Transform{
+                                                                                                                                                                                                                                Translation: &x3d.SFVec3f{0.1955, 0.8159, 0.0464},
+                                                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                USE: stringPtr("JOINT_COLOR"),
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                        &x3d.HAnimSite{
+                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                DEF: stringPtr("hanim_l_thumb_distal_tip"),
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                            Name: stringPtr("l_thumb_distal_tip"),
+                                                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.1982, 0.8061, 0.0759},
+                                                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        &x3d.HAnimJoint{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_l_index0"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("l_index0"),
+                                                                                                                                                                                            Center: &x3d.SFVec3f{0.1983, 0.8024, -0.028},
+                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                &x3d.HAnimSegment{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_l_index_metacarpal"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("l_index_metacarpal"),
+                                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.1983, 0.8024, -0.028},
+                                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                            USE: stringPtr("JOINT_COLOR"),
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_l_index1"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("l_index1"),
+                                                                                                                                                                                                    Center: &x3d.SFVec3f{0.1983, 0.7815, -0.028},
+                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                DEF: stringPtr("hanim_l_index_proximal"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                            Name: stringPtr("l_index_proximal"),
+                                                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.1983, 0.7815, -0.028},
+                                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                    USE: stringPtr("JOINT_COLOR"),
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                        &x3d.HAnimJoint{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                DEF: stringPtr("hanim_l_index2"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                            Name: stringPtr("l_index2"),
+                                                                                                                                                                                                            Center: &x3d.SFVec3f{0.2017, 0.7363, -0.0248},
+                                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                                &x3d.HAnimSegment{
+                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                        DEF: stringPtr("hanim_l_index_middle"),
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                    Name: stringPtr("l_index_middle"),
+                                                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.2017, 0.7363, -0.0248},
+                                                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            USE: stringPtr("JOINT_COLOR"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                        DEF: stringPtr("hanim_l_index3"),
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                    Name: stringPtr("l_index3"),
+                                                                                                                                                                                                                    Center: &x3d.SFVec3f{0.2028, 0.7139, -0.0236},
+                                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                DEF: stringPtr("hanim_l_index_distal"),
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                            Name: stringPtr("l_index_distal"),
+                                                                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.2028, 0.7139, -0.0236},
+                                                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                    USE: stringPtr("JOINT_COLOR"),
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                            &x3d.HAnimSite{
+                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                    DEF: stringPtr("hanim_l_index_distal_tip"),
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                Name: stringPtr("l_index_distal_tip"),
+                                                                                                                                                                                                                                Translation: &x3d.SFVec3f{0.2089, 0.6858, -0.0245},
+                                                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                USE: stringPtr("HAND_FEET_COLOR"),
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                },
+                                                                                                                                                                        },
+                                                                                                                                                                },
+                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                        DEF: stringPtr("hanim_r_shoulder"),
+                                                                                                                                                                    },
+                                                                                                                                                                    Name: stringPtr("r_shoulder"),
+                                                                                                                                                                    Center: &x3d.SFVec3f{-0.1907, 1.4407, -0.0325},
+                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                DEF: stringPtr("hanim_r_upperarm"),
+                                                                                                                                                                            },
+                                                                                                                                                                            Name: stringPtr("r_upperarm"),
+                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                    Translation: &x3d.SFVec3f{-0.1907, 1.4407, -0.0325},
+                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    USE: stringPtr("MIN_COLOR"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        DEF: stringPtr("r_upperarm_adjust"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Translation: &x3d.SFVec3f{-0.1907, 1.4407, -0.0325},
+                                                                                                                                                                                    Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 0.0836},
+                                                                                                                                                                                    Center: &x3d.SFVec3f{-0.182, 1.22, -0.047},
+                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                            &x3d.HAnimSite{
+                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                    DEF: stringPtr("hanim_r_humeral_lateral_epicn_pt"),
+                                                                                                                                                                                },
+                                                                                                                                                                                Name: stringPtr("r_humeral_lateral_epicn_pt"),
+                                                                                                                                                                                Translation: &x3d.SFVec3f{-0.2224, 1.1517, -0.1033},
+                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                    },
+                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                        &x3d.HAnimJoint{
+                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                DEF: stringPtr("hanim_r_elbow"),
+                                                                                                                                                                            },
+                                                                                                                                                                            Name: stringPtr("r_elbow"),
+                                                                                                                                                                            Center: &x3d.SFVec3f{-0.1949, 1.1388, -0.062},
+                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                &x3d.HAnimSegment{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        DEF: stringPtr("hanim_r_forearm"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Name: stringPtr("r_forearm"),
+                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                            Translation: &x3d.SFVec3f{-0.1949, 1.1388, -0.062},
+                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("MIN_COLOR"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("r_forearm_adjust"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Translation: &x3d.SFVec3f{-0.1949, 1.1388, -0.062},
+                                                                                                                                                                                            Rotation: &x3d.SFRotation{-1.0, 0.0, 0.0, 0.1254},
+                                                                                                                                                                                            Center: &x3d.SFVec3f{-0.198, 0.961, -0.0397},
+                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                            DEF: stringPtr("hanim_r_radial_styloid_pt"),
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Name: stringPtr("r_radial_styloid_pt"),
+                                                                                                                                                                                        Translation: &x3d.SFVec3f{-0.1884, 0.8676, -0.036},
+                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                            DEF: stringPtr("hanim_r_olecranon_pt"),
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Name: stringPtr("r_olecranon_pt"),
+                                                                                                                                                                                        Translation: &x3d.SFVec3f{-0.1907, 1.1405, -0.1065},
+                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                            DEF: stringPtr("hanim_r_humeral_medial_epicn_pt"),
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Name: stringPtr("r_humeral_medial_epicn_pt"),
+                                                                                                                                                                                        Translation: &x3d.SFVec3f{-0.168, 1.1298, -0.1062},
+                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                            DEF: stringPtr("hanim_r_radiale_pt"),
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Name: stringPtr("r_radiale_pt"),
+                                                                                                                                                                                        Translation: &x3d.SFVec3f{-0.213, 1.1305, -0.1091},
+                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                            },
+                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        DEF: stringPtr("hanim_r_wrist"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Name: stringPtr("r_wrist"),
+                                                                                                                                                                                    Center: &x3d.SFVec3f{-0.1959, 0.8694, -0.0521},
+                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_r_hand"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("r_hand"),
+                                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                                    Translation: &x3d.SFVec3f{-0.1959, 0.8694, -0.0521},
+                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("MIN_COLOR"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("r_hand_adjust"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Rotation: &x3d.SFRotation{-0.09024, 0.994, -0.0624, 1.216},
+                                                                                                                                                                                                    Center: &x3d.SFVec3f{-0.217, 0.811, -0.0338},
+                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            &x3d.HAnimSite{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("hanim_r_hand_tip"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Name: stringPtr("r_hand_tip"),
+                                                                                                                                                                                                Translation: &x3d.SFVec3f{-0.1969, 0.6758, -0.0427},
+                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            &x3d.HAnimSite{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("hanim_r_metacarpal_pha2_pt"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Name: stringPtr("r_metacarpal_pha2_pt"),
+                                                                                                                                                                                                Translation: &x3d.SFVec3f{-0.1977, 0.8169, -0.0177},
+                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            &x3d.HAnimSite{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("hanim_r_dactylion_pt"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Name: stringPtr("r_dactylion_pt"),
+                                                                                                                                                                                                Translation: &x3d.SFVec3f{-0.1941, 0.6772, -0.0423},
+                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            &x3d.HAnimSite{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("hanim_r_ulnar_styloid_pt"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Name: stringPtr("r_ulnar_styloid_pt"),
+                                                                                                                                                                                                Translation: &x3d.SFVec3f{-0.2117, 0.8562, -0.0584},
+                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            &x3d.HAnimSite{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    DEF: stringPtr("hanim_r_metacarpal_pha5_pt"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Name: stringPtr("r_metacarpal_pha5_pt"),
+                                                                                                                                                                                                Translation: &x3d.SFVec3f{-0.1929, 0.789, -0.1064},
+                                                                                                                                                                                                &x3d.Shape{
+                                                                                                                                                                                                    Appearance: &x3d.Appearance{
+                                                                                                                                                                                                        Material: &x3d.Material{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                        CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                        CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                        Coord: &x3d.Coordinate{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                USE: stringPtr("points"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                    },
+                                                                                                                                                                            },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                        DEF: stringPtr("hanim_vc7"),
+                                                                                                                                                                    },
+                                                                                                                                                                    Name: stringPtr("vc7"),
+                                                                                                                                                                    Center: &x3d.SFVec3f{0.0066, 1.5132, -0.0301},
+                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                DEF: stringPtr("hanim_c7"),
+                                                                                                                                                                            },
+                                                                                                                                                                            Name: stringPtr("c7"),
+                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.0066, 1.5132, -0.0301},
+                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                                },
+                                                                                                                                                                            },
+                                                                                                                                                                    },
+                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                        &x3d.HAnimJoint{
+                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                DEF: stringPtr("hanim_vc6"),
+                                                                                                                                                                            },
+                                                                                                                                                                            Name: stringPtr("vc6"),
+                                                                                                                                                                            Center: &x3d.SFVec3f{0.0066, 1.5357, -0.0143},
+                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                &x3d.HAnimSegment{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        DEF: stringPtr("hanim_c6"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Name: stringPtr("c6"),
+                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.0066, 1.5357, -0.0143},
+                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                        },
+                                                                                                                                                                                    },
+                                                                                                                                                                            },
+                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                        DEF: stringPtr("hanim_vc5"),
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Name: stringPtr("vc5"),
+                                                                                                                                                                                    Center: &x3d.SFVec3f{0.0066, 1.552, -0.0082},
+                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_c5"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("c5"),
+                                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.0066, 1.552, -0.0082},
+                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                },
+                                                                                                                                                                                            },
+                                                                                                                                                                                    },
+                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                        &x3d.HAnimJoint{
+                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                DEF: stringPtr("hanim_vc4"),
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Name: stringPtr("vc4"),
+                                                                                                                                                                                            Center: &x3d.SFVec3f{0.0066, 1.5662, -0.0084},
+                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                &x3d.HAnimSegment{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_c4"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("c4"),
+                                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.0066, 1.5662, -0.0084},
+                                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                            USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                        },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                            },
+                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                        DEF: stringPtr("hanim_vc3"),
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Name: stringPtr("vc3"),
+                                                                                                                                                                                                    Center: &x3d.SFVec3f{0.0066, 1.58, -0.0103},
+                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                DEF: stringPtr("hanim_c3"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                            Name: stringPtr("c3"),
+                                                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.0066, 1.58, -0.0103},
+                                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                    USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                        &x3d.HAnimJoint{
+                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                DEF: stringPtr("hanim_vc2"),
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                            Name: stringPtr("vc2"),
+                                                                                                                                                                                                            Center: &x3d.SFVec3f{0.0066, 1.5928, -0.0103},
+                                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                                &x3d.HAnimSegment{
+                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                        DEF: stringPtr("hanim_c2"),
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                    Name: stringPtr("c2"),
+                                                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.0066, 1.5928, -0.0103},
+                                                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            USE: stringPtr("REC_SPINAL_COLOR"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                                &x3d.HAnimJoint{
+                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                        DEF: stringPtr("hanim_vc1"),
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                    Name: stringPtr("vc1"),
+                                                                                                                                                                                                                    Center: &x3d.SFVec3f{0.0066, 1.6144, -0.0034},
+                                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                                        &x3d.HAnimSegment{
+                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                DEF: stringPtr("hanim_c1"),
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                            Name: stringPtr("c1"),
+                                                                                                                                                                                                                            &x3d.Transform{
+                                                                                                                                                                                                                                    Translation: &x3d.SFVec3f{0.0066, 1.6144, -0.0034},
+                                                                                                                                                                                                                                Children: []x3d.X3DNode{
+                                                                                                                                                                                                                                    &x3d.Shape{
+                                                                                                                                                                                                                                        Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                            Material: &x3d.Material{
+                                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                    USE: stringPtr("SPINAL_COLOR"),
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                            CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                            CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                            Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                    USE: stringPtr("points"),
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                    Children: []x3d.X3DNode{
+                                                                                                                                                                                                                        &x3d.HAnimJoint{
+                                                                                                                                                                                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                DEF: stringPtr("hanim_skullbase"),
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                            Name: stringPtr("skullbase"),
+                                                                                                                                                                                                                            Center: &x3d.SFVec3f{0.0044, 1.6209, 0.0236},
+                                                                                                                                                                                                                            Children: []x3d.X3DNode{
+                                                                                                                                                                                                                                &x3d.HAnimSegment{
+                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                        DEF: stringPtr("hanim_skull"),
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    Name: stringPtr("skull"),
+                                                                                                                                                                                                                                    &x3d.Transform{
+                                                                                                                                                                                                                                            Translation: &x3d.SFVec3f{0.0044, 1.6209, 0.0236},
+                                                                                                                                                                                                                                        Children: []x3d.X3DNode{
+                                                                                                                                                                                                                                            &x3d.Shape{
+                                                                                                                                                                                                                                                Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                    Material: &x3d.Material{
+                                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                            USE: stringPtr("MIN_COLOR"),
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                    CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                    CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                    Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                            USE: stringPtr("points"),
+                                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_skull_tip"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("skull_tip"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.005, 1.7504, 0.0055},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_sellion_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("sellion_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.0058, 1.6316, 0.0852},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_r_infraorbitale_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("r_infraorbitale_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{-0.0237, 1.6171, 0.0752},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_l_infraorbitale_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("l_infraorbitale_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.0341, 1.6171, 0.0752},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_supramenton_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("supramenton_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.0061, 1.541, 0.0805},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_r_tragion_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("r_tragion_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{-0.0646, 1.6347, 0.0302},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_r_gonion_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("r_gonion_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{-0.052, 1.5529, 0.0347},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_l_tragion_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("l_tragion_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.0739, 1.6348, 0.0282},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_l_gonion_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("l_gonion_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.0631, 1.553, 0.033},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                    &x3d.HAnimSite{
+                                                                                                                                                                                                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                            DEF: stringPtr("hanim_nuchale_pt"),
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                        Name: stringPtr("nuchale_pt"),
+                                                                                                                                                                                                                                        Translation: &x3d.SFVec3f{0.0039, 1.5972, -0.0796},
+                                                                                                                                                                                                                                        &x3d.Shape{
+                                                                                                                                                                                                                                            Appearance: &x3d.Appearance{
+                                                                                                                                                                                                                                                Material: &x3d.Material{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("SITE_COLOR"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                            Geometry: &x3d.IndexedFaceSet{
+                                                                                                                                                                                                                                                CreaseAngle: floatPtr(0.5),
+                                                                                                                                                                                                                                                CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
+                                                                                                                                                                                                                                                Coord: &x3d.Coordinate{
+                                                                                                                                                                                                                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                                                                                                                                                                                                                        USE: stringPtr("points"),
+                                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                                        },
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            },
+                                                                                                                                                                                                                    },
+                                                                                                                                                                                                            },
+                                                                                                                                                                                                    },
+                                                                                                                                                                                            },
+                                                                                                                                                                                    },
+                                                                                                                                                                            },
+                                                                                                                                                                    },
+                                                                                                                                                                },
+                                                                                                                                                        },
+                                                                                                                                                },
+                                                                                                                                        },
+                                                                                                                                },
+                                                                                                                        },
+                                                                                                                },
+                                                                                                        },
+                                                                                                },
+                                                                                        },
+                                                                                },
+                                                                        },
+                                                                },
+                                                        },
+                                                },
+                                        },
+                                },
+                            },
+                    },
+                    Joints: []x3d.X3DNode{
+                        &x3d.HAnimJoint{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                USE: stringPtr("hanim_HumanoidRoot"),
+                            },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_sacroiliac"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vl1"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vc4"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_skullbase"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vl5"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vl4"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vl3"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vl2"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt12"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt11"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt10"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt9"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt8"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt7"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt6"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt5"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt4"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt3"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt2"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vt1"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vc7"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vc6"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vc5"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vc3"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vc2"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_vc1"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_ankle"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_ankle"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_elbow"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_elbow"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_hip"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_hip"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index0"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index1"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index2"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index3"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_knee"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_knee"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_metatarsal"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_midtarsal"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_midtarsal"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_shoulder"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_shoulder"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_subtalar"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thumb1"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thumb2"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thumb3"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_wrist"),
+                        },
+                    },
+                    &x3d.HAnimJoint{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_wrist"),
+                        },
+                    },
+                    Segments: []x3d.X3DNode{
+                        &x3d.HAnimSegment{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                USE: stringPtr("hanim_pelvis"),
+                            },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_c7"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_c4"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_skull"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_sacrum"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_midproximal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l5"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l4"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l3"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l2"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l1"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t12"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t11"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t10"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t9"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t8"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t7"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t6"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t5"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t4"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t3"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t2"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_t1"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_c6"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_c5"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_c3"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_c2"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_c1"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_calf"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_calf"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_forearm"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_forearm"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_forefoot"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_hand"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_hand"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_hindfoot"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_hindfoot"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index_distal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index_metacarpal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index_middle"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index_proximal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_middistal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_middistal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thigh"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_thigh"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thumb_distal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thumb_metacarpal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thumb_proximal"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_upperarm"),
+                        },
+                    },
+                    &x3d.HAnimSegment{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_upperarm"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_crotch_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_skull_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_sellion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_supramenton_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_nuchale_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_asis_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_asis_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_calcaneous_post_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_calcaneous_post_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_dactylion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_dactylion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_digit2_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_digit2_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_femoral_lateral_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_femoral_lateral_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_femoral_medial_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_femoral_medial_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_forefoot_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_gonion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_gonion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_hand_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_hand_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_humeral_lateral_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_humeral_lateral_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_humeral_medial_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_humeral_medial_epicn_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_iliocristale_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_iliocristale_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_index_distal_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_infraorbitale_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_infraorbitale_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_knee_crease_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_knee_crease_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_lateral_malleolus_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_lateral_malleolus_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_medial_malleolus_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_medial_malleolus_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_metacarpal_pha2_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_metacarpal_pha2_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_metacarpal_pha5_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_metacarpal_pha5_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_metatarsal_pha1_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_metatarsal_pha1_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_metatarsal_pha5_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_metatarsal_pha5_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_middistal_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_middistal_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_olecranon_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_olecranon_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_psis_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_psis_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_radial_styloid_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_radial_styloid_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_radiale_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_radiale_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_sphyrion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_sphyrion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_thumb_distal_tip"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_tragion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_tragion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_trochanterion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_trochanterion_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_l_ulnar_styloid_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            USE: stringPtr("hanim_r_ulnar_styloid_pt"),
+                        },
+                    },
+                    &x3d.HAnimSite{
+                        CoreX3DNode: x3d.CoreX3DNode{
+                            DEF: stringPtr("hanim_DiamondManLOA_2_view"),
+                        },
+                        Name: stringPtr("DiamondManLOA_2_view"),
+                        &x3d.Viewpoint{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                DEF: stringPtr("FrontView"),
+                            },
+                            Description: stringPtr("Front View"),
+                            Position: &x3d.SFVec3f{0.35, 0.854, 2.57665},
+                        },
+                        &x3d.Viewpoint{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                DEF: stringPtr("SideView"),
+                            },
+                            Description: stringPtr("Side View"),
+                            Position: &x3d.SFVec3f{2.0, 0.854, 0.0},
+                            Orientation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57079},
+                        },
+                        &x3d.Viewpoint{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                DEF: stringPtr("TopView"),
+                            },
+                            Description: stringPtr("Top View"),
+                            Position: &x3d.SFVec3f{0.0, 3.4495, 0.0},
+                            Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.57079},
+                        },
+                        &x3d.Viewpoint{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                DEF: stringPtr("RootView"),
+                            },
+                            Description: stringPtr("Humanoid Root View"),
+                            Position: &x3d.SFVec3f{0.0, 0.824, 0.277},
+                        },
+                        &x3d.Viewpoint{
+                            CoreX3DNode: x3d.CoreX3DNode{
+                                DEF: stringPtr("InclinedView"),
+                            },
+                            Description: stringPtr("Inclined View"),
+                            Position: &x3d.SFVec3f{1.62, 1.05, 2.06},
+                            Orientation: &x3d.SFRotation{-0.113, 0.993, 0.0347, 0.671},
+                        },
+                    },
+                },
+            },
+        },
+    }
+
+
+	fmt.Println("\n--- Validating the generated scene (internal logic) ---")
+	err := sceneRoot.Scene.Validate()
+	if err != nil {
+		log.Fatalf("Scene validation failed: %v", err)
+	}
+	fmt.Println("✅ Internal scene validation successful!")
+	fmt.Println("\n--- Serializing scene to XML ---")
+	output, err := xml.MarshalIndent(sceneRoot, "", "  ")
+
+	if err != nil {
+		log.Fatalf("XML Marshaling failed: %v", err)
+	}
+	/*
+	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	err = validateXMLWithSchema(output, schemaFilename)
+	if err != nil {
+		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
+		log.Fatalf("Schema validation failed for generated XML: %v", err)
+	}
+	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	*/
+	filename := "../data/DiamondManLOA_2.new.go.x3d"
+	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		fmt.Printf("Error opening file: %v\n", err)
+		return
+	}
+	defer file.Close() // Ensure the file is closed when the function exits
+
+	// Write the string content to the file
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	_, err = file.WriteString(header)
+	if err != nil {
+		fmt.Printf("Error writing header to file: %v\n", err)
+		return
+	}
+
+	_, err = file.Write(output)
+	if err != nil {
+		fmt.Printf("Error writing bytes to file: %v\n", err)
+		return
+	}
+
+	fmt.Printf("\n✅ Scene successfully written to %s\n", filename)
+	fmt.Printf("   You can view the generated XML below:\n\n%s\n", string(output))
+}

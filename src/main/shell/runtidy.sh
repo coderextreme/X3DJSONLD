@@ -2,13 +2,5 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-for i in "$@"
-do
-	export IN=`pwd`/"$i" 
-	export OUT=`pwd`/`dirname "$i"`/`basename "$i" .x3d`.x3dj
-	export FINAL=`pwd`/`dirname "$i"`/`basename "$i" .x3d`.json
-	echo "npx --yes x3d-tidy -i $IN -o $OUT" >&2
-	npx x3d-tidy -f -i "$IN" -o "$OUT"
-	cp "$OUT" "$FINAL"
-	echo ../data/`basename "$FINAL"`
-done
+echo "npx --yes x3d-tidy@latest -g -e .x3dj -i \"$@\" | sed -e 's/.*data/..\/data/' -e 's/\\/\//'" 1>&2
+npx --yes x3d-tidy@latest -g -e .x3dj -i "$@" | sed -e 's/.*data/..\/data/' -e 's/\\/\//'
