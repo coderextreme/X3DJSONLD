@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <meta content="qq3.x3d" name="title"></meta>
+    <meta content="John Carlson" name="creator"></meta>
+    <meta content="John Carlson" name="translator"></meta>
+    <meta content="11 Jan 2015" name="created"></meta>
+    <meta content="Mon, 08 Sep 2025 01:48:41 GMT" name="modified"></meta>
+    <meta content="12 extrusions" name="description"></meta>
+  </head>
+  <Scene>
+    <ProtoDeclare name="Process">
+      <ProtoBody>
+        <Group>
+          <Transform scale="0.5 0.5 0.5">
+            <Shape DEF="ShapeLeftDown">
+              <Appearance>
+                <Material diffuseColor="0.7 1 0"></Material>
+              </Appearance>
+              <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -2 0 0 -1.5 0 0"></Extrusion>
+            </Shape>
+          </Transform>
+          <Transform scale="0.5 0.5 0.5">
+            <Shape DEF="ShapeUpRight">
+              <Appearance>
+                <Material diffuseColor="0 0.7 1"></Material>
+              </Appearance>
+              <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2 0 0 2.5 0 0"></Extrusion>
+            </Shape>
+          </Transform>
+          <Transform scale="0.5 0.5 0.5">
+            <Shape USE="ShapeUpRight"></Shape>
+          </Transform>
+          <Transform scale="0.5 0.5 0.5">
+            <Shape USE="ShapeLeftDown"></Shape>
+          </Transform>
+        </Group>
+      </ProtoBody>
+      <ProtoInterface></ProtoInterface>
+    </ProtoDeclare>
+    <Viewpoint description="Process pipes" orientation="1 0 0 -0.4" position="0 5 12"></Viewpoint>
+    <Transform translation="0 -2.5 0">
+      <ProtoInstance name="Process"></ProtoInstance>
+    </Transform>
+    <Transform>
+      <ProtoInstance name="Process"></ProtoInstance>
+    </Transform>
+    <Transform translation="0 2.5 0">
+      <ProtoInstance name="Process"></ProtoInstance>
+    </Transform>
+  </Scene>
+</X3D>

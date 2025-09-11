@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Interchange" version="4.0">
+  <head>
+    <component level="1" name="Scripting"></component>
+    <meta content="asphere.x3d" name="title"></meta>
+    <meta content="John Carlson" name="creator"></meta>
+    <meta content="manual" name="generator"></meta>
+    <meta content="x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy" name="generator"></meta>
+  </head>
+  <Scene>
+    <Group>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 1 1"></Material>
+        </Appearance>
+        <Sphere></Sphere>
+      </Shape>
+    </Group>
+  </Scene>
+</X3D>

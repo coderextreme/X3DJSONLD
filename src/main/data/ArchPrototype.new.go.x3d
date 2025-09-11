@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <meta content="ArchPrototype.x3d" name="title"></meta>
+    <meta content="Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js." name="description"></meta>
+    <meta content="Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information." name="description"></meta>
+    <meta content="Michele Foti, Don Brutzman" name="creator"></meta>
+    <meta content="15 December 2014" name="created"></meta>
+    <meta content="Mon, 08 Sep 2025 00:42:03 GMT" name="modified"></meta>
+    <meta content="ArchModelingDiagrams.pdf" name="reference"></meta>
+    <meta content="https://en.wikipedia.org/wiki/Arch" name="reference"></meta>
+    <meta content="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d" name="identifier"></meta>
+  </head>
+  <Scene>
+    <ProtoDeclare name="ArchPrototype">
+      <ProtoBody>
+        <Transform DEF="ArchTransform">
+          <Shape DEF="Arch">
+            <Appearance>
+              <Material DEF="MaterialNode">
+                <IS>
+                  <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
+                  <connect nodeField="emissiveColor" protoField="emissiveColor"></connect>
+                </IS>
+              </Material>
+            </Appearance>
+            <IndexedFaceSet convex="false" solid="false" DEF="ArchIndex">
+              <Coordinate DEF="ArchChord"></Coordinate>
+            </IndexedFaceSet>
+          </Shape>
+        </Transform>
+        <Script url="&#34;../node/ArchPrototypeScript.js&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js&#34;" DEF="ArchPrototypeScript">
+          <field accessType="initializeOnly" name="clearSpanWidth" type="SFFloat"></field>
+          <field accessType="initializeOnly" name="riseHeight" type="SFFloat"></field>
+          <field accessType="initializeOnly" name="depth" type="SFFloat"></field>
+          <field accessType="initializeOnly" name="topAbutmentHeight" type="SFFloat"></field>
+          <field accessType="initializeOnly" name="pierWidth" type="SFFloat"></field>
+          <field accessType="initializeOnly" name="pierHeight" type="SFFloat"></field>
+          <field accessType="initializeOnly" name="archHalf" type="SFBool"></field>
+          <field accessType="initializeOnly" name="archHalfExtensionWidth" type="SFFloat"></field>
+          <field accessType="initializeOnly" name="onlyIntrados" type="SFBool"></field>
+          <field accessType="initializeOnly" name="archFilled" type="SFBool"></field>
+          <field accessType="initializeOnly" name="archHalfFilled" type="SFBool"></field>
+          <field accessType="initializeOnly" name="lintel" type="SFBool"></field>
+          <field accessType="outputOnly" name="computedScale" type="SFVec3f"></field>
+          <field accessType="outputOnly" name="pointOut" type="MFVec3f"></field>
+          <field accessType="outputOnly" name="indexOut" type="MFInt32"></field>
+          <IS>
+            <connect nodeField="clearSpanWidth" protoField="clearSpanWidth"></connect>
+            <connect nodeField="riseHeight" protoField="riseHeight"></connect>
+            <connect nodeField="depth" protoField="depth"></connect>
+            <connect nodeField="topAbutmentHeight" protoField="topAbutmentHeight"></connect>
+            <connect nodeField="pierWidth" protoField="pierWidth"></connect>
+            <connect nodeField="pierHeight" protoField="pierHeight"></connect>
+            <connect nodeField="archHalf" protoField="archHalf"></connect>
+            <connect nodeField="archHalfExtensionWidth" protoField="archHalfExtensionWidth"></connect>
+            <connect nodeField="onlyIntrados" protoField="onlyIntrados"></connect>
+            <connect nodeField="archFilled" protoField="archFilled"></connect>
+            <connect nodeField="archHalfFilled" protoField="archHalfFilled"></connect>
+            <connect nodeField="lintel" protoField="lintel"></connect>
+          </IS>
+        </Script>
+        <ROUTE fromField="computedScale" fromNode="ArchPrototypeScript" toField="set_scale" toNode="ArchTransform"></ROUTE>
+        <ROUTE fromField="pointOut" fromNode="ArchPrototypeScript" toField="set_point" toNode="ArchChord"></ROUTE>
+        <ROUTE fromField="indexOut" fromNode="ArchPrototypeScript" toField="set_coordIndex" toNode="ArchIndex"></ROUTE>
+      </ProtoBody>
+      <ProtoInterface>
+        <field accessType="inputOutput" name="diffuseColor" type="SFColor" value="0.2 0.8 0.8"></field>
+        <field accessType="inputOutput" name="emissiveColor" type="SFColor" value="0.2 0.8 0.8"></field>
+        <field accessType="initializeOnly" name="clearSpanWidth" type="SFFloat" value="4"></field>
+        <field accessType="initializeOnly" name="riseHeight" type="SFFloat" value="2"></field>
+        <field accessType="initializeOnly" name="depth" type="SFFloat" value="3"></field>
+        <field accessType="initializeOnly" name="topAbutmentHeight" type="SFFloat" value="0.5"></field>
+        <field accessType="initializeOnly" name="pierWidth" type="SFFloat" value="0.5"></field>
+        <field accessType="initializeOnly" name="pierHeight" type="SFFloat" value="1"></field>
+        <field accessType="initializeOnly" name="archHalf" type="SFBool"></field>
+        <field accessType="initializeOnly" name="archHalfExtensionWidth" type="SFFloat"></field>
+        <field accessType="initializeOnly" name="onlyIntrados" type="SFBool"></field>
+        <field accessType="initializeOnly" name="archFilled" type="SFBool"></field>
+        <field accessType="initializeOnly" name="archHalfFilled" type="SFBool"></field>
+        <field accessType="initializeOnly" name="lintel" type="SFBool"></field>
+      </ProtoInterface>
+    </ProtoDeclare>
+    <ProtoInstance name="ArchPrototype" DEF="ArchInstance">
+      <fieldValue name="diffuseColor" value="0.5 0.3 0.6"></fieldValue>
+      <fieldValue name="emissiveColor" value="0.5 0.3 0.6"></fieldValue>
+      <fieldValue name="clearSpanWidth" value="5"></fieldValue>
+      <fieldValue name="riseHeight" value="2.5"></fieldValue>
+      <fieldValue name="depth" value="2"></fieldValue>
+      <fieldValue name="topAbutmentHeight" value="0.6"></fieldValue>
+      <fieldValue name="pierWidth" value="1"></fieldValue>
+      <fieldValue name="pierHeight" value="2"></fieldValue>
+    </ProtoInstance>
+    <Inline url="&#34;../data/CoordinateAxes.x3d&#34;" DEF="CoordinateAxes"></Inline>
+  </Scene>
+</X3D>

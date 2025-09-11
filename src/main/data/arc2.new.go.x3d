@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <meta content="arc2.x3d" name="title"></meta>
+    <meta content="Lost, Doug Sanden I think" name="creator"></meta>
+    <meta content="manual" name="generator"></meta>
+    <meta content="x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy" name="generator"></meta>
+  </head>
+  <Scene>
+    <Viewpoint description="Only Viewpoint" position="0 0 5"></Viewpoint>
+    <Background skyColor="0.4 0.4 0.4"></Background>
+    <Transform DEF="G1">
+      <Transform translation="0 1.223333 0" DEF="DECLpoint_INSTANCE_node">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="1 0 0"></Material>
+          </Appearance>
+          <Sphere radius="0.1"></Sphere>
+        </Shape>
+        <PositionInterpolator key="0 1" keyValue="0 0 0 0 5 0" DEF="DECLpoint_INSTANCE_PI1"></PositionInterpolator>
+        <Script DEF="DECLpoint_INSTANCE_MB1">
+          <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+          <field accessType="inputOutput" name="old" type="SFVec3f"></field>
+          <field accessType="inputOnly" name="set_location" type="SFTime"></field>
+          <field accessType="inputOutput" name="keyValue" type="MFVec3f" value="0 0 0 0 5 0"></field>
+        </Script>
+        <TimeSensor cycleInterval="3" loop="true" DEF="DECLpoint_INSTANCE_CL1"></TimeSensor>
+      </Transform>
+    </Transform>
+    <Transform DEF="G2">
+      <Transform translation="0 1.223333 0" DEF="DECLpoint_INSTANCE1000_node">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="1 0 0"></Material>
+          </Appearance>
+          <Sphere radius="0.1"></Sphere>
+        </Shape>
+        <PositionInterpolator key="0 1" keyValue="0 0 0 0 5 0" DEF="DECLpoint_INSTANCE1000_PI1"></PositionInterpolator>
+        <Script DEF="DECLpoint_INSTANCE1000_MB1">
+          <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+          <field accessType="inputOutput" name="old" type="SFVec3f"></field>
+          <field accessType="inputOnly" name="set_location" type="SFTime"></field>
+          <field accessType="inputOutput" name="keyValue" type="MFVec3f" value="0 0 0 0 5 0"></field>
+        </Script>
+        <TimeSensor cycleInterval="3" loop="true" DEF="DECLpoint_INSTANCE1000_CL1"></TimeSensor>
+      </Transform>
+    </Transform>
+    <Transform DEF="transC1">
+      <Transform DEF="rotscaleC1">
+        <Shape>
+          <Appearance>
+            <Material diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
+          </Appearance>
+          <Cylinder radius="0.05"></Cylinder>
+        </Shape>
+      </Transform>
+    </Transform>
+    <Script DEF="DECLx3dconnector_connector1_S1">
+      <field accessType="initializeOnly" name="startnode" type="SFNode">
+        <Transform USE="G1"></Transform>
+      </field>
+      <field accessType="initializeOnly" name="endnode" type="SFNode">
+        <Transform USE="G2"></Transform>
+      </field>
+      <field accessType="initializeOnly" name="transC1" type="SFNode">
+        <Transform USE="transC1"></Transform>
+      </field>
+      <field accessType="initializeOnly" name="rotscaleC1" type="SFNode">
+        <Transform USE="rotscaleC1"></Transform>
+      </field>
+      <field accessType="inputOnly" name="set_startpoint" type="SFVec3f"></field>
+      <field accessType="inputOnly" name="set_endpoint" type="SFVec3f"></field>
+    </Script>
+    <ROUTE fromField="cycleTime" fromNode="DECLpoint_INSTANCE_CL1" toField="set_location" toNode="DECLpoint_INSTANCE_MB1"></ROUTE>
+    <ROUTE fromField="fraction_changed" fromNode="DECLpoint_INSTANCE_CL1" toField="set_fraction" toNode="DECLpoint_INSTANCE_PI1"></ROUTE>
+    <ROUTE fromField="keyValue_changed" fromNode="DECLpoint_INSTANCE_MB1" toField="set_keyValue" toNode="DECLpoint_INSTANCE_PI1"></ROUTE>
+    <ROUTE fromField="value_changed" fromNode="DECLpoint_INSTANCE_PI1" toField="set_translation" toNode="DECLpoint_INSTANCE_node"></ROUTE>
+    <ROUTE fromField="translation_changed" fromNode="DECLpoint_INSTANCE_MB1" toField="set_translation" toNode="DECLpoint_INSTANCE_node"></ROUTE>
+    <ROUTE fromField="cycleTime" fromNode="DECLpoint_INSTANCE1000_CL1" toField="set_location" toNode="DECLpoint_INSTANCE1000_MB1"></ROUTE>
+    <ROUTE fromField="fraction_changed" fromNode="DECLpoint_INSTANCE1000_CL1" toField="set_fraction" toNode="DECLpoint_INSTANCE1000_PI1"></ROUTE>
+    <ROUTE fromField="keyValue_changed" fromNode="DECLpoint_INSTANCE1000_MB1" toField="set_keyValue" toNode="DECLpoint_INSTANCE1000_PI1"></ROUTE>
+    <ROUTE fromField="value_changed" fromNode="DECLpoint_INSTANCE1000_PI1" toField="set_translation" toNode="DECLpoint_INSTANCE1000_node"></ROUTE>
+    <ROUTE fromField="translation_changed" fromNode="DECLpoint_INSTANCE1000_MB1" toField="set_translation" toNode="DECLpoint_INSTANCE1000_node"></ROUTE>
+    <ROUTE fromField="translation_changed" fromNode="G1" toField="set_startpoint" toNode="DECLx3dconnector_connector1_S1"></ROUTE>
+    <ROUTE fromField="translation_changed" fromNode="G2" toField="set_endpoint" toNode="DECLx3dconnector_connector1_S1"></ROUTE>
+  </Scene>
+</X3D>

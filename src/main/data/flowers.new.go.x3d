@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <head>
+    <component level="3" name="EnvironmentalEffects"></component>
+    <component level="1" name="Shaders"></component>
+    <component level="1" name="CubeMapTexturing"></component>
+    <component level="4" name="Shape"></component>
+    <component level="3" name="Grouping"></component>
+    <meta content="flowers.x3d" name="title"></meta>
+    <meta content="John Carlson" name="creator"></meta>
+    <meta content="5 or more prismatic flowers" name="description"></meta>
+    <meta content="X3D-Edit, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
+  </head>
+  <Scene>
+    <ProtoDeclare name="flower">
+      <ProtoBody>
+        <Transform DEF="animate_transform">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+              <ComposedShader language="GLSL" DEF="x_ite">
+                <field accessType="inputOutput" name="cube" type="SFNode">
+                  <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+                </field>
+                <field accessType="initializeOnly" name="chromaticDispertion" type="SFVec3f" value="0.98 1 1.033"></field>
+                <field accessType="inputOnly" name="bias" type="SFFloat"></field>
+                <field accessType="inputOnly" name="scale" type="SFFloat"></field>
+                <field accessType="inputOnly" name="power" type="SFFloat"></field>
+                <field accessType="inputOnly" name="a" type="SFFloat"></field>
+                <field accessType="inputOnly" name="b" type="SFFloat"></field>
+                <field accessType="inputOnly" name="c" type="SFFloat"></field>
+                <field accessType="inputOnly" name="d" type="SFFloat"></field>
+                <field accessType="inputOnly" name="tdelta" type="SFFloat"></field>
+                <field accessType="inputOnly" name="pdelta" type="SFFloat"></field>
+                <ShaderPart url="&#34;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs&#34;"></ShaderPart>
+                <ShaderPart type="FRAGMENT" url="&#34;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs&#34;"></ShaderPart>
+              </ComposedShader>
+              <ComposedCubeMapTexture DEF="texture">
+                <ImageTexture url="&#34;../resources/images/all_probes/stpeters_cross/stpeters_back.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&#34;"></ImageTexture>
+                <ImageTexture url="&#34;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&#34;"></ImageTexture>
+                <ImageTexture url="&#34;../resources/images/all_probes/stpeters_cross/stpeters_front.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&#34;"></ImageTexture>
+                <ImageTexture url="&#34;../resources/images/all_probes/stpeters_cross/stpeters_left.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&#34;"></ImageTexture>
+                <ImageTexture url="&#34;../resources/images/all_probes/stpeters_cross/stpeters_right.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&#34;"></ImageTexture>
+                <ImageTexture url="&#34;../resources/images/all_probes/stpeters_cross/stpeters_top.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&#34;"></ImageTexture>
+              </ComposedCubeMapTexture>
+            </Appearance>
+            <Sphere></Sphere>
+          </Shape>
+        </Transform>
+        <Script DEF="Animate">
+          <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+          <field accessType="inputOutput" name="velocity" type="SFVec3f"></field>
+          <field accessType="inputOnly" name="set_fraction" type="SFFloat"></field>
+          <field accessType="inputOutput" name="a" type="SFFloat" value="0.5"></field>
+          <field accessType="inputOutput" name="b" type="SFFloat" value="0.5"></field>
+          <field accessType="inputOutput" name="c" type="SFFloat" value="3"></field>
+          <field accessType="inputOutput" name="d" type="SFFloat" value="3"></field>
+          <field accessType="inputOutput" name="tdelta" type="SFFloat" value="0.5"></field>
+          <field accessType="inputOutput" name="pdelta" type="SFFloat" value="0.5"></field>
+        </Script>
+        <TimeSensor cycleInterval="5" loop="true" DEF="TourTime"></TimeSensor>
+        <ROUTE fromField="fraction_changed" fromNode="TourTime" toField="set_fraction" toNode="Animate"></ROUTE>
+        <ROUTE fromField="translation_changed" fromNode="Animate" toField="set_translation" toNode="animate_transform"></ROUTE>
+        <ROUTE fromField="a_changed" fromNode="Animate" toField="a" toNode="x_ite"></ROUTE>
+        <ROUTE fromField="b_changed" fromNode="Animate" toField="b" toNode="x_ite"></ROUTE>
+        <ROUTE fromField="c_changed" fromNode="Animate" toField="c" toNode="x_ite"></ROUTE>
+        <ROUTE fromField="d_changed" fromNode="Animate" toField="d" toNode="x_ite"></ROUTE>
+        <ROUTE fromField="pdelta_changed" fromNode="Animate" toField="pdelta" toNode="x_ite"></ROUTE>
+        <ROUTE fromField="tdelta_changed" fromNode="Animate" toField="tdelta" toNode="x_ite"></ROUTE>
+      </ProtoBody>
+      <ProtoInterface></ProtoInterface>
+    </ProtoDeclare>
+    <NavigationInfo></NavigationInfo>
+    <Background backUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_back.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&#34;" bottomUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&#34;" frontUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_front.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&#34;" leftUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_left.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&#34;" rightUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_right.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&#34;" topUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_top.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&#34;"></Background>
+    <ProtoInstance name="flower"></ProtoInstance>
+    <ProtoInstance name="flower"></ProtoInstance>
+    <ProtoInstance name="flower"></ProtoInstance>
+  </Scene>
+</X3D>

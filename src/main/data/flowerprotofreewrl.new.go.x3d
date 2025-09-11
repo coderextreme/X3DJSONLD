@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Full" version="4.0">
+  <head>
+    <meta content="flowerproto.x3d" name="title"></meta>
+    <meta content="John Carlson" name="creator"></meta>
+    <meta content="A flower proto with configurable shaders" name="description"></meta>
+    <meta content="X3D-Edit, https://savage.nps.edu/X3D-Edit" name="generator"></meta>
+  </head>
+  <Scene>
+    <ProtoDeclare name="FlowerProto">
+      <ProtoBody>
+        <Transform DEF="transform">
+          <Shape>
+            <Appearance>
+              <Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+              <ComposedShader language="GLSL" DEF="shader">
+                <field accessType="inputOutput" name="fw_textureCoordGenType" type="SFInt32"></field>
+                <field accessType="initializeOnly" name="chromaticDispertion" type="SFVec3f" value="0.98 1 1.033"></field>
+                <field accessType="inputOutput" name="bias" type="SFFloat" value="0.5"></field>
+                <field accessType="inputOutput" name="scale" type="SFFloat" value="0.5"></field>
+                <field accessType="inputOutput" name="power" type="SFFloat" value="2"></field>
+                <field accessType="inputOutput" name="a" type="SFFloat" value="5"></field>
+                <field accessType="inputOutput" name="b" type="SFFloat" value="5"></field>
+                <field accessType="inputOutput" name="c" type="SFFloat" value="20"></field>
+                <field accessType="inputOutput" name="d" type="SFFloat" value="20"></field>
+                <field accessType="inputOutput" name="tdelta" type="SFFloat"></field>
+                <field accessType="inputOutput" name="pdelta" type="SFFloat"></field>
+                <ShaderPart>
+                  <IS>
+                    <connect nodeField="url" protoField="vertex"></connect>
+                  </IS>
+                </ShaderPart>
+                <ShaderPart type="FRAGMENT">
+                  <IS>
+                    <connect nodeField="url" protoField="fragment"></connect>
+                  </IS>
+                </ShaderPart>
+              </ComposedShader>
+              <ComposedCubeMapTexture DEF="texture"></ComposedCubeMapTexture>
+            </Appearance>
+            <Sphere radius="5"></Sphere>
+          </Shape>
+          <Script directOutput="true" DEF="Animate">
+            <field accessType="inputOutput" name="translation" type="SFVec3f"></field>
+            <field accessType="inputOutput" name="velocity" type="SFVec3f"></field>
+            <field accessType="inputOutput" name="set_fraction" type="SFFloat"></field>
+            <field accessType="inputOutput" name="a" type="SFFloat" value="0.5"></field>
+            <field accessType="inputOutput" name="b" type="SFFloat" value="0.5"></field>
+            <field accessType="inputOutput" name="c" type="SFFloat" value="3"></field>
+            <field accessType="inputOutput" name="d" type="SFFloat" value="3"></field>
+            <field accessType="inputOutput" name="tdelta" type="SFFloat" value="0.5"></field>
+            <field accessType="inputOutput" name="pdelta" type="SFFloat" value="0.5"></field>
+          </Script>
+          <TimeSensor cycleInterval="5" loop="true" DEF="TourTime"></TimeSensor>
+        </Transform>
+        <ROUTE fromField="fraction_changed" fromNode="TourTime" toField="set_set_fraction" toNode="Animate"></ROUTE>
+        <ROUTE fromField="translation_changed" fromNode="Animate" toField="set_translation" toNode="transform"></ROUTE>
+        <ROUTE fromField="a_changed" fromNode="Animate" toField="set_a" toNode="shader"></ROUTE>
+        <ROUTE fromField="b_changed" fromNode="Animate" toField="set_b" toNode="shader"></ROUTE>
+        <ROUTE fromField="c_changed" fromNode="Animate" toField="set_c" toNode="shader"></ROUTE>
+        <ROUTE fromField="d_changed" fromNode="Animate" toField="set_d" toNode="shader"></ROUTE>
+        <ROUTE fromField="tdelta_changed" fromNode="Animate" toField="set_tdelta" toNode="shader"></ROUTE>
+        <ROUTE fromField="pdelta_changed" fromNode="Animate" toField="set_pdelta" toNode="shader"></ROUTE>
+      </ProtoBody>
+      <ProtoInterface>
+        <field accessType="inputOnly" name="vertex" type="MFString"></field>
+        <field accessType="inputOnly" name="fragment" type="MFString"></field>
+      </ProtoInterface>
+    </ProtoDeclare>
+    <NavigationInfo></NavigationInfo>
+    <Viewpoint description="Tour Views" position="0 0 50"></Viewpoint>
+    <Background backUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_back.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&#34;" bottomUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&#34;" frontUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_front.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&#34;" leftUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_left.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&#34;" rightUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_right.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&#34;" topUrl="&#34;../resources/images/all_probes/stpeters_cross/stpeters_top.png&#34; &#34;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&#34;"></Background>
+    <ProtoInstance name="FlowerProto"></ProtoInstance>
+  </Scene>
+</X3D>
