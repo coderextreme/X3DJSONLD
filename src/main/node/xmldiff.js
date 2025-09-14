@@ -2,7 +2,8 @@
 
 import { parseString } from "xml2js";
 import fs from "fs";
-//const { glob, globSync } = require('glob');
+import { globSync } from 'node:fs';
+import { glob } from 'node:fs/promises';
 
 var program = process.argv[1];
 

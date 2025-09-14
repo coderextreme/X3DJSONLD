@@ -3,7 +3,6 @@
 if (typeof window === 'undefined') {
   var fs = await import('fs');
 }
-import mkdirp from 'node-mkdirp';
 import mapToMethod from './mapToMethod.js';
 import config from './config.js';
 import mapToMethod2 from './mapToMethod2.js';
@@ -130,7 +129,7 @@ export default function convertJSON(options) {
 							outfile = option.folder+basefile+"/"+basefile+option.extension
 						}
 						try {
-							mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
+							fs.mkdirSync(outfile.substr(0, outfile.lastIndexOf("/")), { recursive: true });
 							// console.log("Writing", outfile);
 							if (typeof fs === 'object') {
 								fs.writeFileSync(outfile, str);

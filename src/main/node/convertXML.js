@@ -3,7 +3,6 @@
 if (typeof window === 'undefined') {
   var fs = await import('fs');
 }
-import mkdirp from 'node-mkdirp';
 import mapToMethod from './mapToMethod.js';
 import mapToMethod2 from './mapToMethod2.js';
 import fieldTypes from './fieldTypes.js';
@@ -95,7 +94,7 @@ export default function convertXML(options) {
 			}
 			if (str2) {
 				var outfile = option.folder+basefile+option.extension
-				mkdirp(outfile.substr(0, outfile.lastIndexOf("/")));
+				fs.mkdirSync(outfile.substr(0, outfile.lastIndexOf("/")), { recursive: true });
 				if (typeof fs === 'object') {
 					fs.writeFileSync(outfile, str2);
 				}
