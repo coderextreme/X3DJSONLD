@@ -536,6 +536,9 @@ func main() {
 				if (childName === "Scene") {
 					ch += "    ".repeat(n+indent)+"Children: []x3d.X3DChildNode"+begin;
 					indent++;
+				} else if (childName === "Layer") {
+					ch += "    ".repeat(n+indent)+"Children: []x3d.X3DChildNode"+begin;
+					indent++;
 				} else if (childName === 'ProtoBody') {
 					postIS += "    ".repeat(n+indent)+"Children: []x3d.X3DNode"+begin;
 					indent++;

@@ -3,7 +3,8 @@
 if (typeof window === 'undefined') {
   var fs = await import('fs');
 }
-import { glob, globSync } from 'glob';
+import { globSync } from 'node:fs';
+import { glob } from 'node:fs/promises';
 
 function parseString(string, callback) {
 	try {
