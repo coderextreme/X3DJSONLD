@@ -1,8 +1,13 @@
-const path = require('path');
-var webpack = require("webpack");
-module.exports = {
+import path from 'path';
+import webpack from "webpack";
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
   mode: 'development',
-  entry: './src/main/node/entry.mjs',
+  entry: './src/main/node/json2sai.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'loader-bundle.mjs',
