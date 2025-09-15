@@ -1,3 +1,5 @@
+// --- START OF FILE app.js ---
+
 var port = process.env.PORT || 3000;
 
 import config from "./src/main/node/config.js";
@@ -110,7 +112,7 @@ app.post("/convert", function(req, res, next) {
 
 /*
 app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
-	var url = req._parsedUrl.pathname;
+	var url = req.path;
 	var hash = url.indexOf("#");
 	var infile = url;
 	if (hash > 0) {
@@ -123,7 +125,7 @@ app.get("/X3dGraphics.com/*.x3d", function(req, res, next) {
 	convertX3dToJson(res, infile, outfile, next);
 });
 app.get("/www.web3d.org/*.x3d", function(req, res, next) {
-	var url = req._parsedUrl.pathname;
+	var url = req.path;
 	var hash = url.indexOf("#");
 	var infile = url;
 	if (hash > 0) {
@@ -137,8 +139,9 @@ app.get("/www.web3d.org/*.x3d", function(req, res, next) {
 });
 */
 
-app.get("/www.web3d.org/*.wrl", async function(req, res, next) {
-	var url = req._parsedUrl.pathname;
+// EXPRESS 5 FIX: Changed glob-like path to a regular expression.
+app.get(/\/www\.web3d\.org\/.*\.wrl$/, async function(req, res, next) {
+	var url = req.path;
 	var hash = url.indexOf("#");
 	var infile = url;
 	if (hash > 0) {
@@ -151,7 +154,7 @@ app.get("/www.web3d.org/*.wrl", async function(req, res, next) {
 
 /*
 app.get("/data/*.x3d*", function(req, res, next) {
-	var url = req._parsedUrl.pathname;
+	var url = req.path;
 	var hash = url.indexOf("#");
 	var infile = url;
 	if (hash > 0) {
@@ -164,55 +167,25 @@ app.get("/data/*.x3d*", function(req, res, next) {
 */
 
 app.get("/files", function(req, res, next) {
-	var test = req._parsedUrl.query;
-	// var test = req._parsedUrl.pathname;
+	var test = Object.keys(req.query)[0] || '';
+	
 	while (test.startsWith("/")) {
 		test = test.substr(1);
 	}
 	console.log("here's the file search query", test);
 	var json = [];
 
-//	globSync(www+'/**/*.wrl', function( err, files ) {
-//		if (err) return;
-//		files.forEach(function(file) {
-//			if (new RegExp(test).test(file)) {
-//				json.push(file.substr(www.length, file.length-www.length));
-//				console.error(file);
-//			}
-//		});
-//      });
-//	globSync(www+'/**/*.x3d', function( err, files ) {
-//		if (err) return;
-//		files.forEach(function(file) {
-//			if (new RegExp(test).test(file)) {
-//				json.push(file.substr(www.length, file.length-www.length));
-//				console.error(file);
-//			}
-//		});
-//      });
-//	globSync(www+'/**/*.json', function( err, files ) {
-//		if (err) return;
-//		files.forEach(function(file) {
-//			if (new RegExp(test).test(file)) {
-//				json.push(file.substr(www.length, file.length-www.length));
-//				console.error(file);
-//			}
-//		});
-//      });
 	let dirs = ['src/main/Library/**', 'src/main/data/**','src/main/personal/**', 'src/main/wrl/**', 'src/main/ply/**', 'src/main/stl/**'];
-	for (let dir in dirs) {
-		let files = globSync(dirs[dir]);
-		console.log("searching", dirs[dir]);
+	for (let dir of dirs) { // Use 'of' for iterating over array values
+		let files = globSync(dir); // globSync is fine with this pattern
+		console.log("searching", dir);
 		files.forEach(function(file) {
-			// console.log(file, "matching", test);
 			if (new RegExp(test).test(file)) {
 				console.log(file, "matches", test);
 				file = file.replace(/src[\/\\]main/, '..');
 				file = file.replace(/\\/g, '/');
 				json.push(file);
 				console.log("returning", file);
-			} else {
-				// console.log(file, "does not match", test);
 			}
 		});
 	}
@@ -221,17 +194,10 @@ app.get("/files", function(req, res, next) {
 });
 
 function magic(path, type) {
-    let query = path.indexOf("?");
-    if (query >= 0) {
-	    path = path.substr(query);
-    }
-    var hash = path.indexOf("#");
-    if (hash > 0) {
-		path = path.substr(hash);
-    }
+    // The path argument to magic() is now a regular expression, so string operations are not needed.
     app.get(path, async function(req, res, next) {
-	res.setHeader('Content-Type', type); // Explicitly set without charset
-	var url = req._parsedUrl.pathname;
+	res.setHeader('Content-Type', type);
+	var url = req.path;
 	try {
 		while (url.startsWith("/")) {
 			url = url.substr(1);
@@ -263,71 +229,46 @@ function magic(path, type) {
     });
 }
 
-/*
-function processX3d(req, res, next) {
-	var url = req._parsedUrl.pathname.substr(1);
-	console.error("X3D url", url);
-	var hash = url.indexOf("#");
-	var infile = url;
-	if (hash > 0) {
-	       infile = url.substring(0, hash);
-	}
-	infile = www + "/" + infile;
-	console.error("=========== converting == ", infile);
-	var outfile = infile.substr(0, infile.lastIndexOf("."))+".json";
-	convertX3dToJson(res, infile, outfile, next);
-}
+// EXPRESS 5 FIX: All 'magic' calls and app.get calls below now use Regular Expressions for routing.
+magic(/.*\.gif$/i, "image/gif");
+magic(/.*\.jpg$/i, "image/jpeg");
+magic(/.*\.jpeg$/i, "image/jpeg");
+magic(/.*\.png$/i, "image/png");
+magic(/.*\.mpg$/i, "video/mpeg");
+magic(/.*\.mp4$/i, "video/mp4");
+magic(/.*\.ogv$/i, "video/ogg");
+magic(/.*\.wav$/i, "audio/wav");
+magic(/.*\.mp3$/i, "audio/mpeg3");
+magic(/.*\.ply$/i, "application/octet-stream");
+magic(/.*\.stl$/i, "application/octet-stream");
+magic(/.*\.rb$/i, "application/octet-stream");
+magic(/.*\.clj$/i, "application/octet-stream");
+magic(/.*\.vs$/i, "x-shader/x-vertex");
+magic(/.*\.fs$/i, "x-shader/x-fragment");
+magic(/.*\.js$/i, "text/javascript");
+magic(/.*\.py$/i, "text/python");
+magic(/\/dist\/.*\.mjs$/i, "text/javascript");
+magic(/\/src\/main\/node\/.*\.mjs$/i, "text/javascript");
+magic(/.*\.js\.map$/i, "application/json");
+magic(/.*\.csv$/i, "text/csv");
+magic(/.*\.xhtml$/i, "application/xhtml+xml");
+magic(/.*\.xsd$/i, "application/xml");
+magic(/.*\.html$/i, "text/html");
+magic(/.*\.xslt$/i, "text/xsl");
+magic(/.*\.css$/i, "text/css");
+magic(/.*\.swf$/i, "application/x-shockwave-flash");
+magic(/.*\/schema\/.*\.json$/i, "text/json");
+magic(/.*\.x3d$/i, "model/x3d+xml");
+magic(/.*\.x3dv$/i, "model/x3d+vrml");
+magic(/.*\.wrl$/i, "model/vrml");
+magic(/.*\.gltf$/i, "text/json");
+magic(/.*\.glb$/i, "application/octet-stream");
+magic(/.*\.bin$/i, "application/octet-stream");
+magic(/.*\.zip$/i, "application/zip");
+magic(/.*\.wasm$/i, "application/octet-stream");
 
-app.get("*.x3d#*", processX3d);
-app.get("*.x3d", processX3d);
-*/
-
-magic("*.gif", "image/gif");
-magic("*.jpg", "image/jpeg");
-magic("*.JPG", "image/jpeg");
-magic("*.jpeg", "image/jpeg");
-magic("*.png", "image/png");
-magic("*.mpg", "video/mpeg");
-magic("*.mp4", "video/mp4");
-magic("*.ogv", "video/ogg");
-magic("*.wav", "audio/wav");
-magic("*.mp3", "audio/mpeg3");
-magic("*.ply", "application/octet-stream");
-magic("*.stl", "application/octet-stream");
-magic("*.rb", "application/octet-stream");
-magic("*.clj", "application/octet-stream");
-magic("*.vs", "x-shader/x-vertex");
-magic("*.fs", "x-shader/x-fragment");
-// magic("*.vs", "text/plain");//"x-shader/x-vertex");
-// magic("*.fs", "text/plain");//"x-shader/x-fragment");
-magic("*.js", "text/javascript");
-magic("*.py", "text/python");
-magic("/dist/*.mjs", "text/javascript");
-magic("/src/main/node/*.mjs", "text/javascript");
-magic("*.js.map", "application/json");
-magic("*.csv", "text/csv");
-magic("/*.xhtml", "application/xhtml+xml");
-magic("/*.xsd", "application/xml");
-magic("/*.html", "text/html");
-magic("*.xslt", "text/xsl");
-magic("*.css", "text/css");
-magic("*.swf", "application/x-shockwave-flash");
-magic("/**/schema/*.json", "text/json");
-magic("*.x3d", "model/x3d+xml");
-magic("*.x3dv", "model/x3d+vrml");
-magic("*.wrl", "model/vrml");
-magic("*.gltf", "text/json");
-magic("*.glb", "application/octet-stream");
-magic("*.bin", "application/octet-stream");
-magic("*.zip", "application/zip");
-magic("*.wasm", "application/octet-stream");
-/*
-magic("*.xml", "text/xml");
-*/
-
-
-app.get("*.json", async function(req, res, next) {
-	var url = req._parsedUrl.pathname.substr(1);
+app.get(/.*\.json$/, async function(req, res, next) {
+	var url = req.path.substr(1);
 	console.log(req.ip+":  Requested JSON File", url);
 	var file = url;
 	var hash = url.indexOf("#");
@@ -343,30 +284,17 @@ app.get("*.json", async function(req, res, next) {
 		if (url.startsWith(".wellknown")) {
 			throw ".wellknown not supported by server.  See app.js";
 		}
-	/*
-	if (fs.existsSync(outfile)) {
-	*/
 		var data = await fs.promises.readFile(outfile);
-		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
-		// console.error(JSON.stringify(json));
-		// console.error(JSON.stringify(json));
-                send(res, json, "text/json", next, outfile);
-	/*
-	} else {
-		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
-		infile = www + "/" + infile;
-		convertX3dToJson(res, infile, outfile, next);
-	}
-	*/
+        send(res, json, "text/json", next, outfile);
 	} catch (e) {
 		console.error("Couldn't read JSON, ", outfile, ".  Consider creating a JSON file", url, e);
 		next();
 	}
 });
 
-app.get("*.x3dj", async function(req, res, next) {
-	var url = req._parsedUrl.pathname.substr(1);
+app.get(/.*\.x3dj$/, async function(req, res, next) {
+	var url = req.path.substr(1);
 	console.log(req.ip+":  Requested JSON File", url);
 	var file = url;
 	var hash = url.indexOf("#");
@@ -382,21 +310,9 @@ app.get("*.x3dj", async function(req, res, next) {
 		if (url.startsWith(".wellknown")) {
 			throw ".wellknown not supported by server.  See app.js";
 		}
-	/*
-	if (fs.existsSync(outfile)) {
-	*/
 		var data = await fs.promises.readFile(outfile);
-		// console.error("Data", data.toString());
 		var json = JSON.parse(data.toString());
-		// console.error(JSON.stringify(json));
-                send(res, json, "text/json", next, outfile);
-	/*
-	} else {
-		var infile = file.substr(0, file.lastIndexOf("."))+".x3d";
-		infile = www + "/" + infile;
-		convertX3dToJson(res, infile, outfile, next);
-	}
-	*/
+        send(res, json, "text/json", next, outfile);
 	} catch (e) {
 		console.error("Couldn't read JSON.  Consider creating a JSON file", url);
 		next();
