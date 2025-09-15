@@ -1,7 +1,5 @@
 "use strict";
 
-// var jsonlint = require("jsonlint");
-
 export default function DOM2JSONSerializer() {
 	var fieldTypeMapping = {};
 	var DEFMapping = {};
