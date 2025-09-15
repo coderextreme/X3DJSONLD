@@ -20,31 +20,12 @@
             padding: 0;
             height: 100%;
             font-family: Arial, sans-serif;
-            font-size: 14px; /* Slightly larger base font */
+            font-size: 14px;
         }
         .container {
             display: flex;
             flex-direction: row; /* Default for desktop */
-            height: 100vh; /* Full viewport height */
-        }
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            height: 100%;
-            overflow: hidden; /* Prevent body scrollbars */
-        }
-        .page-header {
-            padding: 10px;
-            background-color: #e9e9e9;
-            border-bottom: 1px solid #ccc;
-            display: none; /* Hidden on desktop */
-        }
-        #toggleMenuBtn {
-            padding: 8px 12px;
-            font-size: 14px;
-            cursor: pointer;
-            width: 100%;
+            height: 100vh;
         }
         .content-area {
             flex-grow: 1;
@@ -54,43 +35,25 @@
             overflow-y: auto; /* scroll if content overflows */
         }
         .menu-panel {
-            width: 350px; /* Fixed width for menu */
+            width: 350px;
             min-width: 250px;
             background-color: #f0f0f0;
             padding: 10px;
-            overflow-y: auto; /* Scroll for long menus */
+            overflow-y: auto;
             border-left: 1px solid #ccc;
             box-sizing: border-box;
         }
-        .control-panel table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .control-panel td {
-            vertical-align: top;
-            padding: 5px;
-            border: 1px solid #eee;
-        }
+        .control-panel table { width: 100%; border-collapse: collapse; }
+        .control-panel td { vertical-align: top; padding: 5px; border: 1px solid #eee; }
         .iframes-container {
             display: flex;
-            flex-grow: 1; /* Takes up remaining space */
-            gap: 10px; /* Space between iframes */
-            min-height: 250px; /* Ensure iframes have some height */
+            flex-grow: 1;
+            gap: 10px;
+            min-height: 250px;
         }
-        .iframes-container iframe {
-            flex: 1; /* Each iframe takes half of the container space */
-            border: 1px solid #ccc;
-        }
-        textarea {
-            width: 98%;
-            box-sizing: border-box;
-        }
-        #image {
-            background: #000;
-            display: block; /* To respect width/height */
-            max-width: 100%;
-            height: auto;
-        }
+        .iframes-container iframe { flex: 1; border: 1px solid #ccc; }
+        textarea { width: 98%; box-sizing: border-box; }
+        #image { background: #000; display: block; max-width: 100%; height: auto; }
 
         /* Menu Styles */
         .menu-panel ul { list-style-type: none; padding-left: 0; }
@@ -102,18 +65,10 @@
         .menu-panel .folder.open > ul { display: block; }
         .menu-panel .file-item { cursor: pointer; color: blue; text-decoration: underline; word-break: break-all; }
         .menu-panel .file-item:hover { color: hotpink; }
-        #filterMenu, #filter {
-            width: 95%;
-            margin-bottom: 10px;
-            padding: 5px;
-            box-sizing: border-box;
-        }
+        #filterMenu, #filter { width: 95%; margin-bottom: 10px; padding: 5px; box-sizing: border-box; }
 
-         /* Link styles from original */
-        a:link { color: red; }
-        a:visited { color: green; }
-        a:hover { color: hotpink; }
-        a:active { color: blue; }
+        /* Link styles */
+        a:link { color: red; } a:visited { color: green; } a:hover { color: hotpink; } a:active { color: blue; }
 
         /* Tabbed Code View Styles */
         .code-tabs-container { border: 1px solid #ccc; background-color: #f9f9f9; }
@@ -127,366 +82,184 @@
         .tab-bar .tab-button.active { background-color: #fff; border-bottom: 1px solid #fff; font-weight: bold; }
         .tab-content-area .tab-pane { display: none; padding: 6px 12px; border-top: none; }
         .tab-content-area .tab-pane.active { display: block; }
-        .tab-content-area textarea {
-            width: 100%;
-            box-sizing: border-box;
-            height: 150px;
-            font-family: monospace;
+        .tab-content-area textarea { width: 100%; box-sizing: border-box; height: 150px; font-family: monospace; }
+
+        /* --- MOBILE HEADER & OVERLAY (hidden on desktop) --- */
+        .mobile-header, #menu-overlay {
+            display: none;
         }
 
-        /* --- RESPONSIVE STYLES FOR MOBILE --- */
+        /* --- RESPONSIVE STYLES FOR MOBILE (iPhone) --- */
         @media (max-width: 768px) {
-            body, html {
-                font-size: 16px; /* Better readability on mobile */
+            body { font-size: 16px; }
+            body.menu-open { overflow: hidden; } /* Prevent background scroll when menu is open */
+
+            /* -- Prominent Mobile Header -- */
+            .mobile-header {
+                display: flex;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 50px;
+                background-color: #2c3e50; /* A more modern color */
+                color: white;
+                padding: 0 15px;
+                z-index: 1002;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            #toggleMenuBtn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 28px; /* Larger icon */
+                cursor: pointer;
+                padding: 0 10px 0 0;
+            }
+            .header-title {
+                font-weight: bold;
+                font-size: 18px;
             }
             .container {
-                flex-direction: column; /* Stack main content and menu */
-                height: auto;
-                min-height: 100vh;
+                flex-direction: column;
+                height: 100%;
             }
-            .main-wrapper {
-                order: 1; /* Show content first */
-                height: auto;
-            }
-            .page-header {
-                display: block; /* Show the header with the toggle button */
-                order: 2; /* Position header below content */
-            }
-            .menu-panel {
-                order: 3; /* Show menu at the very bottom */
-                width: 100%; /* Full width */
-                border-left: none;
-                border-top: 1px solid #ccc;
-                max-height: 50vh; /* Limit height to 50% of screen */
-                display: none; /* Hide by default on mobile */
-            }
-            .menu-panel.visible {
-                display: block; /* Show when toggled */
+            .content-area {
+                padding-top: 60px; /* Push content below the fixed header */
             }
 
-            .iframes-container {
-                flex-direction: column; /* Stack iframes vertically */
-                min-height: 600px; /* Give them more vertical space */
+            /* -- Off-Canvas Menu -- */
+            .menu-panel {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 280px;
+                max-width: 80%;
+                z-index: 1001;
+                border-left: none;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+                transform: translateX(-100%); /* Hide it off-screen */
+                transition: transform 0.3s ease-in-out;
+                background-color: #f5f5f5;
             }
-            .iframes-container iframe {
-                min-height: 300px;
+            .menu-panel.visible {
+                transform: translateX(0); /* Slide it into view */
             }
-            /* Make table cells stack for controls and textareas */
-            .control-panel td {
-                display: block;
-                width: auto;
-                border-bottom: 1px solid #ddd;
+
+            /* -- Menu Overlay -- */
+            #menu-overlay {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1000;
             }
-            .control-panel tr:last-child td:last-child {
-                 border-bottom: none;
+            body.menu-open #menu-overlay {
+                display: block; /* Show overlay when menu is open */
             }
+
+            /* -- General Mobile Layout Adjustments -- */
+            .iframes-container { flex-direction: column; min-height: 600px; }
+            .iframes-container iframe { min-height: 300px; }
+            .control-panel td { display: block; width: auto; border-bottom: 1px solid #ddd; }
+            .control-panel tr:last-child td:last-child { border-bottom: none; }
             textarea, input[type="text"], select {
-                width: 100%; /* Make form elements full-width */
-                box-sizing: border-box;
-                padding: 8px;
-                font-size: 16px;
+                width: 100%; box-sizing: border-box; padding: 8px; font-size: 16px;
             }
-            .tab-bar .tab-button {
-                font-size: 12px; /* Slightly smaller to fit more tabs */
-                padding: 8px 10px;
-            }
+            .tab-bar .tab-button { font-size: 12px; padding: 8px 10px; }
         }
     </style>
 </head>
-<body>
-    <script type="module" src="../node/ajv2020.js"></script>
-    <script type="module" src="../node/ajvAddFormats.js"></script>
-    <script type="module" src="https://cdn.socket.io/4.8.1/socket.io.esm.min.js"></script>
-    <script type="module">
-      import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
-      import initialFileData from "./filedata.js";
-      import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
-                 prepareForX3DOMReload,
-                 setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
-        } from './master_loader.js';
+<body class=""> <!-- Class 'menu-open' will be added here via JS -->
 
-    // CORRECTED CONNECTION:
-    let socket = io("http://localhost:3000", {
-        cors: {
-              origin: "*",
-              methods: ["GET", "POST"]
-        },
-        maxHttpBufferSize: 1e8,
-        pingTimeout: 60000
-    });
+    <!-- MOBILE-ONLY ELEMENTS -->
+    <div class="mobile-header">
+        <button id="toggleMenuBtn">&#9776;</button> <!-- Hamburger Icon -->
+        <span class="header-title">X3D Viewer</span>
+    </div>
+    <div id="menu-overlay"></div>
 
-    socket.on("connect", function() {
-        console.log("Socket.IO client connected successfully to the server!");
-    });
-
-        async function simulateFetchFilesFlatList(args) {
-            console.log("Simulating server fetch for pattern (flat list output):", args);
-            let allFilePaths = [];
-            function collectAllFilePathsRecursive(dataArray) {
-                if (typeof dataArray.forEach !== 'undefined') {
-                        dataArray.forEach(item => {
-                            if (item.files && Array.isArray(item.files)) {
-                                collectAllFilePathsRecursive(item.files);
-                            } else if (typeof item === 'string') {
-                                console.log("item", JSON.stringify(item));
-                                allFilePaths.push(item);
-                            }
-                        });
-                } else if (typeof dataArray === 'string') {
-                        console.log("STRINGY", JSON.stringify(dataArray));
-                        allFilePaths.push(dataArray);
-                } else {
-                        console.log("NOT STRINGY", JSON.stringify(dataArray));
-                        collectAllFilePathsRecursive(dataArray[0]);
-                }
-            }
-            collectAllFilePathsRecursive(args[0]);
-            return Promise.resolve([...new Set(allFilePaths)]);
-        }
-
-        function groupFilteredFilesIntoInitialCategories(flatFilteredFiles, originalFullHierarchy) {
-            const newHierarchicalData = [];
-            const filesProcessedForGrouping = new Set();
-
-            originalFullHierarchy.forEach(category => {
-                const newCategoryFiles = [];
-                if (category.files && Array.isArray(category.files)) {
-                    category.files.forEach(originalFilePath => {
-                        if (flatFilteredFiles.includes(originalFilePath) && !filesProcessedForGrouping.has(originalFilePath)) {
-                            newCategoryFiles.push(originalFilePath);
-                            filesProcessedForGrouping.add(originalFilePath);
-                        }
-                    });
-                }
-                if (newCategoryFiles.length > 0) {
-                    newHierarchicalData.push({ name: category.name, files: newCategoryFiles });
-                }
-            });
-
-            const remainingUncategorized = flatFilteredFiles.filter(f => !filesProcessedForGrouping.has(f));
-            if (remainingUncategorized.length > 0) {
-                 newHierarchicalData.push({ name: "Other Matched Files (from Server Filter)", files: remainingUncategorized });
-            }
-            return newHierarchicalData;
-        }
-
-        function buildMenu(dataArray, parentUlElement) {
-            dataArray.forEach(item => {
-                const li = document.createElement('li');
-                if (item && typeof item.name === 'string' && Array.isArray(item.files)) {
-                    li.classList.add('folder');
-                    const span = document.createElement('span');
-                    span.textContent = item.name;
-                    span.onclick = function() {
-                        li.classList.toggle('open');
-                        if (li.classList.contains('open')) li.classList.add('manually-opened');
-                        else li.classList.remove('manually-opened');
-                    };
-                    li.appendChild(span);
-
-                    const subUl = document.createElement('ul');
-                    buildMenu(item.files, subUl);
-                    li.appendChild(subUl);
-
-                } else if (typeof item === 'string') {
-                    const filePath = item;
-                    const fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
-                    const fileSpan = document.createElement('span'); // Use a span for better styling control
-                    fileSpan.textContent = fileName;
-                    li.appendChild(fileSpan);
-                    li.title = filePath;
-                    li.classList.add('file-item');
-                    li.onclick = function() {
-                        document.getElementById('currentFileName').textContent = filePath;
-                        loadX3DFile(filePath);
-                        // On mobile, hide the menu after selecting a file
-                        if (window.innerWidth <= 768) {
-                            $('.menu-panel').removeClass('visible');
-                        }
-                    };
-                }
-                parentUlElement.appendChild(li);
-            });
-        }
-
-
-        function filterMenuTree() {
-            const filterText = document.getElementById('filterMenu').value.toLowerCase();
-            let menuContainer = document.getElementById('fileMenuContainer');
-            const items = menuContainer.querySelectorAll('.file-item');
-            items.forEach(item => {
-                const match = item.textContent.toLowerCase().includes(filterText) ||
-                              (item.title && item.title.toLowerCase().includes(filterText));
-                item.style.display = match ? '' : 'none';
-            });
-
-            menuContainer.querySelectorAll('.folder').forEach(folderElement => {
-                const subItems = folderElement.querySelectorAll('.file-item');
-                let hasVisibleChild = false;
-                subItems.forEach(subItem => {
-                    if (subItem.style.display !== 'none') hasVisibleChild = true;
-                });
-                folderElement.style.display = hasVisibleChild ? '' : 'none';
-                if (hasVisibleChild && filterText && !folderElement.classList.contains('manually-opened')) {
-                    folderElement.classList.add('open');
-                }
-            });
-        };
-
-        window.fetchAndUpdateHierarchicalMenu = async function(event) {
-            const pattern = event.target.value;
-            console.log("Searching for", pattern);
-            if (!pattern && event.type === 'change') {
-                let menuContainer = document.getElementById('fileMenuContainer');
-                menuContainer.innerHTML = '';
-                const topUl = document.createElement('ul');
-                menuContainer.appendChild(topUl);
-                buildMenu(initialFileData, topUl);
-                if (document.getElementById('filterMenu').value) filterMenuTree();
-                return;
-            }
-            if (!pattern && event.type !== 'change') return;
-
-            try {
-                console.log("clientsearch", pattern);
-                socket.emit('clientsearch', pattern);
-                socket.on('serverresults', async function() {
-                    console.log("Got results", arguments);
-                    const flatFilteredListFromServer = await simulateFetchFilesFlatList(arguments);
-                    const newHierarchicalMenuData = groupFilteredFilesIntoInitialCategories(flatFilteredListFromServer, initialFileData);
-
-                    let menuContainer = document.getElementById('fileMenuContainer');
-                    menuContainer.innerHTML = '';
-                    const topUl = document.createElement('ul');
-                    menuContainer.appendChild(topUl);
-                    buildMenu(newHierarchicalMenuData, topUl);
-
-                    if (document.getElementById('filterMenu').value) filterMenuTree();
-                });
-
-            } catch (error) {
-                console.error("Error fetching or building menu:", error);
-                let menuContainer = document.getElementById('fileMenuContainer');
-                menuContainer.innerHTML = `<li>Error loading file list: ${error.message}</li>`;
-            }
-        };
-
-        $(document).ready(function() {
-            const topUl = document.createElement('ul');
-            let menuContainer = document.getElementById('fileMenuContainer');
-            menuContainer.appendChild(topUl);
-            buildMenu(initialFileData, topUl);
-
-            setXITEIFrame(document.getElementById('xite_iframe_id'));
-            setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
-
-            document.getElementById('filterMenu').addEventListener('keyup', filterMenuTree);
-
-            // NEW: Mobile menu toggle logic
-            $('#toggleMenuBtn').on('click', function() {
-                $('.menu-panel').toggleClass('visible');
-            });
-
-            // Code Tabs Logic
-            $('.tab-bar .tab-button').on('click', function() {
-                var tabId = $(this).data('tab');
-                $('.tab-pane').removeClass('active');
-                $('.tab-button').removeClass('active');
-                $('#tab-content-' + tabId).addClass('active');
-                $(this).addClass('active');
-            });
-
-            window.reloadX3DOM();
-        });
-	    </script>
+    <!-- MAIN APPLICATION CONTAINER -->
     <div class="container">
-        <div class="main-wrapper">
-            <div class="content-area">
-                <div class="control-panel">
-                    <table>
-                        <tr>
-                            <td>
-                                Current File: <strong id="currentFileName">None</strong><br>
-                                Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event);return false;" placeholder="e.g., *.json or personal/*">
-                            </td>
-                            <td>
-                                X3DOM Version:
-                                <select id="x3domVersion" onchange="window.reloadX3DOM()">
-                                    <option value="https://x3dom.org/download/1.8.3/">X3DOM Prod (stable)</option>
-                                    <option value="https://cdn.jsdelivr.net/gh/x3dom/x3dom-dev/dist/">JSDelivr (preferred)</option>
-                                    <option value="https://x3dom.github.io/x3dom-dev/dist/">GitHub Dev</option>
-                                    <option value="https://andreasplesch.github.io/x3dom/dist/">Andreas Plesch Fork</option>
-                                    <option value="https://www.x3dom.org/download/dev/">X3DOM Dev (not updated)</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Click <a href="#" onclick='window.doJsonActions(); return false;'>here</a> to load JSON from textarea.</td>
-                            <td>Click <a href="#" onclick='window.doXmlActions(); return false;'>here</a> to load XML from textarea.</td>
-                            <td>Click <a href="#" onclick='window.doExiActions(); return false;'>here</a> to convert EXI to JSON.</td>
-                        </tr>
-                        <tr>
-                            <td>Click <a href="#" onclick='window.doStlActions(); return false;'>here</a> to load STL from textarea.</td>
-                            <td>Click <a href="#" onclick='window.doPlyActions(); return false;'>here</a> to load PLY from textarea.</td>
-                            <td></td>
-                        </tr>
-                    </table>
-                     <table>
-                        <tr>
-                            <td>JSON:<br><textarea id="json" rows="8"></textarea></td>
-                            <td>XML:<br><textarea id="xml" rows="8"></textarea></td>
-                            <td>EXI:<br><textarea id="exi" rows="8"></textarea></td>
-                        </tr>
-                         <tr>
-                            <td>STL:<br><textarea id="stl" rows="8"></textarea></td>
-                            <td>PLY:<br><textarea id="ply" rows="8"></textarea></td>
-                            <td>
-                                Image:<br><img id="image" src="" alt="Snapshot">
-                                <br><button onclick="captureSnapshot()">Capture Snapshot (X3DOM)</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <div class="code-tabs-container">
-                                    <div class="tab-bar">
-                                        <button class="tab-button active" data-tab="javascript">JS</button>
-                                        <button class="tab-button" data-tab="python">Py</button>
-                                        <button class="tab-button" data-tab="java">Java</button>
-                                        <button class="tab-button" data-tab="cpp">C++</button>
-                                        <button class="tab-button" data-tab="clojure">Clojure</button>
-                                        <button class="tab-button" data-tab="jruby">JRuby</button>
-                                    </div>
-                                    <div class="tab-content-area">
-                                        <div id="tab-content-javascript" class="tab-pane active">
-                                            <a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a><br>
-                                            <textarea id="javascript"></textarea>
-                                        </div>
-                                        <div id="tab-content-python" class="tab-pane">
-                                            <a href="../graalpy/net/coderextreme/data/x3dpsail.py">x3dpsail.py</a><br>
-                                            <textarea id="python"></textarea>
-                                        </div>
-                                        <div id="tab-content-java" class="tab-pane"><textarea id="java"></textarea></div>
-                                        <div id="tab-content-cpp" class="tab-pane"><textarea id="cpp"></textarea></div>
-                                        <div id="tab-content-clojure" class="tab-pane"><textarea id="clojure"></textarea></div>
-                                        <div id="tab-content-jruby" class="tab-pane"><textarea id="jruby"></textarea></div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
 
-                <div class="iframes-container">
-                    <iframe id="xite_iframe_id" src="iframe_xite_content.html" title="X_ITE Viewer"></iframe>
-                    <iframe id="x3dom_iframe_id" src="iframe_x3dom_content.html" title="X3DOM Viewer"></iframe>
-                </div>
+        <!-- CONTENT AREA (Main section) -->
+        <div class="content-area">
+            <div class="control-panel">
+                <table>
+                    <tr>
+                        <td>
+                            Current File: <strong id="currentFileName">None</strong><br>
+                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event);return false;" placeholder="e.g., *.json or personal/*">
+                        </td>
+                        <td>
+                            X3DOM Version:
+                            <select id="x3domVersion" onchange="window.reloadX3DOM()">
+                                <option value="https://x3dom.org/download/1.8.3/">X3DOM Prod (stable)</option>
+                                <option value="https://cdn.jsdelivr.net/gh/x3dom/x3dom-dev/dist/">JSDelivr (preferred)</option>
+                                <option value="https://x3dom.github.io/x3dom-dev/dist/">GitHub Dev</option>
+                                <option value="https://andreasplesch.github.io/x3dom/dist/">Andreas Plesch Fork</option>
+                                <option value="https://www.x3dom.org/download/dev/">X3DOM Dev (not updated)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Click <a href="#" onclick='window.doJsonActions(); return false;'>here</a> to load JSON from textarea.</td>
+                        <td>Click <a href="#" onclick='window.doXmlActions(); return false;'>here</a> to load XML from textarea.</td>
+                        <td>Click <a href="#" onclick='window.doExiActions(); return false;'>here</a> to convert EXI to JSON.</td>
+                    </tr>
+                    <tr>
+                        <td>Click <a href="#" onclick='window.doStlActions(); return false;'>here</a> to load STL from textarea.</td>
+                        <td>Click <a href="#" onclick='window.doPlyActions(); return false;'>here</a> to load PLY from textarea.</td>
+                        <td></td>
+                    </tr>
+                </table>
+                 <table>
+                    <tr>
+                        <td>JSON:<br><textarea id="json" rows="8"></textarea></td>
+                        <td>XML:<br><textarea id="xml" rows="8"></textarea></td>
+                        <td>EXI:<br><textarea id="exi" rows="8"></textarea></td>
+                    </tr>
+                     <tr>
+                        <td>STL:<br><textarea id="stl" rows="8"></textarea></td>
+                        <td>PLY:<br><textarea id="ply" rows="8"></textarea></td>
+                        <td>
+                            Image:<br><img id="image" src="" alt="Snapshot">
+                            <br><button onclick="captureSnapshot()">Capture Snapshot (X3DOM)</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="code-tabs-container">
+                                <div class="tab-bar">
+                                    <button class="tab-button active" data-tab="javascript">JS</button>
+                                    <button class="tab-button" data-tab="python">Py</button>
+                                    <button class="tab-button" data-tab="java">Java</button>
+                                    <button class="tab-button" data-tab="cpp">C++</button>
+                                    <button class="tab-button" data-tab="clojure">Clojure</button>
+                                    <button class="tab-button" data-tab="jruby">JRuby</button>
+                                </div>
+                                <div class="tab-content-area">
+                                    <div id="tab-content-javascript" class="tab-pane active"><a href="../graaljs/net/coderextreme/data/X3Dautoclass.js">X3Dautoclass.js</a><br><textarea id="javascript"></textarea></div>
+                                    <div id="tab-content-python" class="tab-pane"><a href="../graalpy/net/coderextreme/data/x3dpsail.py">x3dpsail.py</a><br><textarea id="python"></textarea></div>
+                                    <div id="tab-content-java" class="tab-pane"><textarea id="java"></textarea></div>
+                                    <div id="tab-content-cpp" class="tab-pane"><textarea id="cpp"></textarea></div>
+                                    <div id="tab-content-clojure" class="tab-pane"><textarea id="clojure"></textarea></div>
+                                    <div id="tab-content-jruby" class="tab-pane"><textarea id="jruby"></textarea></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <!-- NEW: Header for mobile menu button -->
-            <div class="page-header">
-                <button id="toggleMenuBtn">Show / Hide File Menu</button>
+
+            <div class="iframes-container">
+                <iframe id="xite_iframe_id" src="iframe_xite_content.html" title="X_ITE Viewer"></iframe>
+                <iframe id="x3dom_iframe_id" src="iframe_x3dom_content.html" title="X3DOM Viewer"></iframe>
             </div>
         </div>
 
+        <!-- MENU PANEL -->
         <div class="menu-panel">
             <h3>Select File</h3>
             <input type="text" id="filterMenu" placeholder="Filter current tree...">
@@ -494,14 +267,17 @@
         </div>
     </div>
 
-    <!-- Module Scripts -->
+    <!-- SCRIPT IMPORTS -->
+    <script type="module" src="../node/ajv2020.js"></script>
+    <script type="module" src="../node/ajvAddFormats.js"></script>
+    <script type="module" src="https://cdn.socket.io/4.8.1/socket.io.esm.min.js"></script>
     <script type="module" src="../node/config.js"></script>
     <script type="module" src="../node/fieldTypes.js"></script>
     <script type="module" src="../node/X3DJSONLD.js"></script>
     <script type="module" src="../node/matrix.js"></script>
     <script type="module" src="../node/convertJsonToStl.js"></script>
     <script type="module" src="../node/convertPlyToJson.js"></script>
-    <script type="module"src="../node/convertStlToJson.js"></script>
+    <script type="module" src="../node/convertStlToJson.js"></script>
     <script type="module" src="../node/JavaScriptSerializer.js"></script>
     <script type="module" src="../node/mapToMethod.js"></script>
     <script type="module" src="../node/mapToMethod2.js"></script>
@@ -511,60 +287,98 @@
     <script type="module" src="../node/DOM2JSONSerializer.js"></script>
     <script type="module" src="../node/loadValidate.js"></script>
 
+    <!-- MAIN SCRIPT LOGIC -->
     <script type="module">
-	import { decodeJSON } from './exi.js';
-        import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly,
-                 prepareForX3DOMReload,
-                 setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame
-        } from './master_loader.js';
+      import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
+      import initialFileData from "./filedata.js";
+      import { loadX3DFile, updateFromJson, updateFromXml, updateFromStl, updateFromPly, prepareForX3DOMReload, setX3DOMIFrame, setXITEIFrame, getX3DOMIFrame, getXITEIFrame } from './master_loader.js';
+      import { decodeJSON } from './exi.js';
 
-        window.reloadX3DOM = function() {
-            const x3domIframe = getX3DOMIFrame();
-            if (x3domIframe) {
-                prepareForX3DOMReload();
-                const selectedUrl = document.getElementById('x3domVersion').value;
-                x3domIframe.src = `iframe_x3dom_content.html?x3dom_url=${encodeURIComponent(selectedUrl)}`;
+    // Socket.IO connection
+    let socket = io("http://localhost:3000", { cors: { origin: "*", methods: ["GET", "POST"] }, maxHttpBufferSize: 1e8, pingTimeout: 60000 });
+    socket.on("connect", () => console.log("Socket.IO client connected!"));
+
+    // --- File search and menu building logic (unchanged but included for completeness) ---
+    async function simulateFetchFilesFlatList(args) { let allFilePaths = []; function collect(data) { if (Array.isArray(data)) { data.forEach(item => collect(item)); } else if (typeof data === 'object' && data !== null && data.files) { collect(data.files); } else if (typeof data === 'string') { allFilePaths.push(data); } } collect(args[0]); return [...new Set(allFilePaths)]; }
+    function groupFilteredFilesIntoInitialCategories(flatFilteredFiles, originalFullHierarchy) { const newHierarchicalData = []; const filesProcessed = new Set(); originalFullHierarchy.forEach(cat => { const newFiles = []; if (cat.files) { cat.files.forEach(path => { if (flatFilteredFiles.includes(path) && !filesProcessed.has(path)) { newFiles.push(path); filesProcessed.add(path); } }); } if (newFiles.length > 0) newHierarchicalData.push({ name: cat.name, files: newFiles }); }); const remaining = flatFilteredFiles.filter(f => !filesProcessed.has(f)); if (remaining.length > 0) newHierarchicalData.push({ name: "Other Matched Files", files: remaining }); return newHierarchicalData; }
+
+    function buildMenu(dataArray, parentUlElement) {
+        parentUlElement.innerHTML = ''; // Clear previous menu
+        dataArray.forEach(item => {
+            const li = document.createElement('li');
+            if (item && typeof item.name === 'string' && Array.isArray(item.files)) {
+                li.classList.add('folder');
+                const span = document.createElement('span');
+                span.textContent = item.name;
+                span.onclick = () => li.classList.toggle('open');
+                li.appendChild(span);
+                const subUl = document.createElement('ul');
+                buildMenu(item.files, subUl);
+                li.appendChild(subUl);
+            } else if (typeof item === 'string') {
+                const filePath = item;
+                const fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
+                li.textContent = fileName;
+                li.title = filePath;
+                li.classList.add('file-item');
+                li.onclick = function() {
+                    document.getElementById('currentFileName').textContent = filePath;
+                    loadX3DFile(filePath);
+                    if (window.innerWidth <= 768) { // Auto-close menu on mobile
+                        toggleMenu(false);
+                    }
+                };
             }
-        };
+            parentUlElement.appendChild(li);
+        });
+    }
 
-        window.doJsonActions = async () => {
-            const jsonText = document.getElementById('json').value;
-            if (jsonText) {
-                try {
-                    const jsonObj = JSON.parse(jsonText);
-                    await updateFromJson(jsonObj, document.getElementById('currentFileName').textContent || "from_textarea.json");
-                } catch (e) { alert("Invalid JSON in textarea."); console.error(e); }
-            } else { alert("JSON textarea is empty."); }
-        };
-        window.doXmlActions = async () => {
-             const xmlText = document.getElementById('xml').value;
-             if (xmlText) { await updateFromXml(xmlText, document.getElementById('currentFileName').textContent || "from_textarea.xml"); }
-             else { alert("XML textarea is empty."); }
-        };
-         window.doExiActions = () => {
-            decodeJSON();
-            setTimeout(window.doJsonActions, 150);
-        };
-        window.doStlActions = async () => {
-            const stlText = document.getElementById('stl').value;
-            if (stlText) { await updateFromStl(stlText, "from_textarea.stl"); }
-            else { alert("STL textarea is empty."); }
-        };
-        window.doPlyActions = async () => {
-            const plyText = document.getElementById('ply').value;
-            if (plyText) { await updateFromPly(plyText, "from_textarea.ply"); }
-            else { alert("PLY textarea is empty."); }
-        };
-        window.captureSnapshot = function() {
-            const x3domIframeEl = getX3DOMIFrame();
-            if (x3domIframeEl && x3domIframeEl.contentWindow) {
-                const x3domCanvas = x3domIframeEl.contentWindow.document.querySelector("canvas");
-                if (x3domCanvas) {
-                    try { document.getElementById('image').src = x3domCanvas.toDataURL('image/png'); }
-                    catch (e) { alert("Snapshot failed. This might be a security restriction. " + e.message); console.error("Snapshot error:", e); }
-                } else { alert("X3DOM canvas not found in iframe."); }
-            } else { alert("X3DOM iframe not found or not loaded."); }
-        };
+    function filterMenuTree() { const filterText = document.getElementById('filterMenu').value.toLowerCase(); document.querySelectorAll('#fileMenuContainer .file-item').forEach(item => { const match = item.textContent.toLowerCase().includes(filterText) || (item.title && item.title.toLowerCase().includes(filterText)); item.style.display = match ? '' : 'none'; }); document.querySelectorAll('#fileMenuContainer .folder').forEach(folder => { const hasVisibleChild = folder.querySelector('.file-item[style*="display: block"], .file-item:not([style])'); folder.style.display = hasVisibleChild ? '' : 'none'; if (hasVisibleChild && filterText) folder.classList.add('open'); }); };
+    window.fetchAndUpdateHierarchicalMenu = async (event) => { const pattern = event.target.value; const menuContainer = document.getElementById('fileMenuContainer'); const topUl = menuContainer.querySelector('ul') || document.createElement('ul'); if (!menuContainer.hasChildNodes()) menuContainer.appendChild(topUl); if (!pattern && event.type === 'change') { buildMenu(initialFileData, topUl); if (document.getElementById('filterMenu').value) filterMenuTree(); return; } if (!pattern) return; try { socket.emit('clientsearch', pattern); socket.on('serverresults', async function(results) { const flatList = await simulateFetchFilesFlatList(results); const newHierarchicalData = groupFilteredFilesIntoInitialCategories(flatList, initialFileData); buildMenu(newHierarchicalData, topUl); if (document.getElementById('filterMenu').value) filterMenuTree(); }); } catch (error) { console.error("Error fetching menu:", error); topUl.innerHTML = `<li>Error: ${error.message}</li>`; } };
+
+    // --- Page Actions ---
+    window.reloadX3DOM = () => { const iframe = getX3DOMIFrame(); if (iframe) { prepareForX3DOMReload(); const url = document.getElementById('x3domVersion').value; iframe.src = `iframe_x3dom_content.html?x3dom_url=${encodeURIComponent(url)}`; } };
+    window.doJsonActions = async () => { const text = $('#json').val(); if(text) { try { await updateFromJson(JSON.parse(text), $('#currentFileName').text() || "from_textarea.json"); } catch(e) { alert("Invalid JSON"); console.error(e); } } else { alert("JSON textarea empty."); } };
+    window.doXmlActions = async () => { const text = $('#xml').val(); if(text) { await updateFromXml(text, $('#currentFileName').text() || "from_textarea.xml"); } else { alert("XML textarea empty."); } };
+    window.doExiActions = () => { decodeJSON(); setTimeout(window.doJsonActions, 150); };
+    window.doStlActions = async () => { const text = $('#stl').val(); if(text) { await updateFromStl(text, "from_textarea.stl"); } else { alert("STL textarea empty."); } };
+    window.doPlyActions = async () => { const text = $('#ply').val(); if(text) { await updateFromPly(text, "from_textarea.ply"); } else { alert("PLY textarea empty."); } };
+    window.captureSnapshot = () => { const iframe = getX3DOMIFrame(); if (iframe && iframe.contentWindow) { const canvas = iframe.contentWindow.document.querySelector("canvas"); if (canvas) { try { $('#image').attr('src', canvas.toDataURL('image/png')); } catch (e) { alert("Snapshot failed: " + e.message); console.error(e); } } else { alert("X3DOM canvas not found."); } } else { alert("X3DOM iframe not found."); } };
+
+    // --- NEW Mobile Menu Toggle Logic ---
+    function toggleMenu(forceState) {
+        const body = $('body');
+        const menu = $('.menu-panel');
+        const shouldBeOpen = typeof forceState === 'boolean' ? forceState : !body.hasClass('menu-open');
+
+        if (shouldBeOpen) {
+            body.addClass('menu-open');
+            menu.addClass('visible');
+        } else {
+            body.removeClass('menu-open');
+            menu.removeClass('visible');
+        }
+    }
+
+    $(document).ready(function() {
+        // Initial Setup
+        setXITEIFrame(document.getElementById('xite_iframe_id'));
+        setX3DOMIFrame(document.getElementById('x3dom_iframe_id'));
+        buildMenu(initialFileData, document.getElementById('fileMenuContainer'));
+
+        // Event Listeners
+        document.getElementById('filterMenu').addEventListener('keyup', filterMenuTree);
+        $('#toggleMenuBtn, #menu-overlay').on('click', () => toggleMenu());
+        $('.tab-bar .tab-button').on('click', function() {
+            var tabId = $(this).data('tab');
+            $('.tab-pane, .tab-button').removeClass('active');
+            $('#tab-content-' + tabId).addClass('active');
+            $(this).addClass('active');
+        });
+
+        // Initial Load
+        window.reloadX3DOM();
+    });
     </script>
 </body>
 </html>
