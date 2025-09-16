@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta name='title' content='Bobble Spheres Full Animation (Final Working)'/>
     <meta name='description' content='Full scene with corrected Script nodes that use the initialize() function to safely reference nodes and prevent race conditions.'/>
@@ -12,14 +12,14 @@
 
     <NavigationInfo type='"EXAMINE" "ANY"'/>
     <Background skyAngle='1.57' skyColor='0.15 0.25 0.8, 0.9 0.9 0.9'/>
-    <Viewpoint description='Initial Camera' position='13 2 3' orientation='0.147 0.989 0.005 -1.82' fieldOfView='0.349'/>
+    <Viewpoint description='Initial Camera' position='-70 15 -25' orientation='0.147 0.989 0.005 -1.82' fieldOfView='0.349'/>
     <DirectionalLight direction='-0.5 -1 -0.5' intensity='2'/>
 
     <!-- Static objects -->
-    <Transform translation='0 -1000 -1'><Shape><Appearance><PhysicalMaterial baseColorFactor='0.5 0.5 0.5' roughnessFactor='1.0'/></Appearance><Sphere radius='1000'/></Shape></Transform>
-    <Transform translation='0 1 0'><Shape><Appearance><PhysicalMaterial baseColorFactor='0.9 0.9 0.9' transmissionFactor='0.9' roughnessFactor='0.0' indexOfRefraction='1.5'/></Appearance><Sphere radius='1'/></Shape></Transform>
-    <Transform translation='-4 1 0'><Shape><Appearance><PhysicalMaterial baseColorFactor='1.0 0.95 0.9' transmissionFactor='0.8' roughnessFactor='0.05' indexOfRefraction='1.1'/></Appearance><Sphere radius='1'/></Shape></Transform>
-    <Transform translation='4 1 0'><Shape><Appearance><PhysicalMaterial baseColorFactor='0.7 0.6 0.5' metallicFactor='1.0' roughnessFactor='0.1'/></Appearance><Sphere radius='1'/></Shape></Transform>
+    <Transform translation='0 -1000 -1'><Shape><Appearance><PhysicalMaterial baseColor='0.5 0.5 0.5' roughness='1.0'/></Appearance><Sphere radius='1000'/></Shape></Transform>
+    <Transform translation='0 1 0'><Shape><Appearance><PhysicalMaterial baseColor='0.9 0.9 0.9' transmissionFactor='0.9' roughness='0.0' indexOfRefraction='1.5'/></Appearance><Sphere radius='1'/></Shape></Transform>
+    <Transform translation='-4 1 0'><Shape><Appearance><PhysicalMaterial baseColor='1.0 0.95 0.9' transmissionFactor='0.8' roughness='0.05' indexOfRefraction='1.1'/></Appearance><Sphere radius='1'/></Shape></Transform>
+    <Transform translation='4 1 0'><Shape><Appearance><PhysicalMaterial baseColor='0.7 0.6 0.5' metallic='1.0' roughness='0.1'/></Appearance><Sphere radius='1'/></Shape></Transform>
 
     <!-- === DYNAMICALLY GENERATED SPHERES === -->
 
@@ -27,7 +27,7 @@
     <Transform DEF='T_0' translation='-10.871 0.2 -10.453'>
       <Shape>
         <Appearance>
-          <PhysicalMaterial DEF='M_0' baseColorFactor='0.627 0.003 0.165' roughnessFactor='1.0'/>
+          <PhysicalMaterial DEF='M_0' baseColor='0.627 0.003 0.165' roughness='1.0'/>
         </Appearance>
         <Sphere radius='0.2'/>
       </Shape>
@@ -54,12 +54,12 @@
 
         function set_color(value, timestamp) {
           if (matNode) { // Check if the node reference was stored
-            matNode.baseColorFactor = value;
+            matNode.baseColor = value;
           }
         }
         function set_roughness(value, timestamp) {
           if (matNode) {
-            matNode.roughnessFactor = value;
+            matNode.roughness = value;
           }
         }
       ]]>
@@ -75,7 +75,7 @@
     <Transform DEF='T_1' translation='-10.411 0.2 -9.160'>
       <Shape>
         <Appearance>
-          <PhysicalMaterial DEF='M_1' baseColorFactor='0.707 0.888 0.536' metallicFactor='1.0' roughnessFactor='0.2'/>
+          <PhysicalMaterial DEF='M_1' baseColor='0.707 0.888 0.536' metallic='1.0' roughness='0.2'/>
         </Appearance>
         <Sphere radius='0.2'/>
       </Shape>
@@ -98,7 +98,7 @@
 
         function set_roughness(value, timestamp) {
           if (matNode) {
-            matNode.roughnessFactor = value;
+            matNode.roughness = value;
           }
         }
       ]]>
@@ -109,9 +109,9 @@
     <ROUTE fromNode='SI_1' fromField='value_changed' toNode='Animator_1' toField='set_roughness'/>
 
     <!-- The extension-based spheres were already correct and need no changes -->
-    <Transform DEF='T_2' translation='-10.155 0.2 -8.324'><Shape><Appearance><PhysicalMaterial transmissionFactor='0.95' roughnessFactor='0.05'><IORMaterialExtension DEF='IOR_2' indexOfRefraction='1.5'/></PhysicalMaterial></Appearance><Sphere radius='0.2'/></Shape></Transform>
+    <Transform DEF='T_2' translation='-10.155 0.2 -8.324'><Shape><Appearance><PhysicalMaterial transmissionFactor='0.95' roughness='0.05'><IORMaterialExtension DEF='IOR_2' indexOfRefraction='1.5'/></PhysicalMaterial></Appearance><Sphere radius='0.2'/></Shape></Transform>
     <TimeSensor DEF='C_2' cycleInterval='3.88' loop='true'/><PositionInterpolator DEF='PI_2' key='0 0.5 1' keyValue='-10.155 0.2 -8.324, -10.155 0.6 -8.324, -10.155 0.2 -8.324'/><ScalarInterpolator DEF='SI_2' key='0 0.5 1' keyValue='1.4 1.7 1.4'/><ROUTE fromNode='C_2' fromField='fraction_changed' toNode='PI_2' toField='set_fraction'/><ROUTE fromNode='PI_2' fromField='value_changed' toNode='T_2' toField='set_translation'/><ROUTE fromNode='C_2' fromField='fraction_changed' toNode='SI_2' toField='set_fraction'/><ROUTE fromNode='SI_2' fromField='value_changed' toNode='IOR_2' toField='set_indexOfRefraction'/>
-    <Transform DEF='T_3' translation='-10.518 0.2 -7.283'><Shape><Appearance><PhysicalMaterial transmissionFactor='0.95' roughnessFactor='0.05' indexOfRefraction='1.33'><IridescenceMaterialExtension DEF='IRI_3' iridescence='1.0' iridescenceIndexOfRefraction='1.3' iridescenceThicknessMinimum='100'/></PhysicalMaterial></Appearance><Sphere radius='0.2'/></Shape></Transform>
+    <Transform DEF='T_3' translation='-10.518 0.2 -7.283'><Shape><Appearance><PhysicalMaterial transmissionFactor='0.95' roughness='0.05' indexOfRefraction='1.33'><IridescenceMaterialExtension DEF='IRI_3' iridescence='1.0' iridescenceIndexOfRefraction='1.3' iridescenceThicknessMinimum='100'/></PhysicalMaterial></Appearance><Sphere radius='0.2'/></Shape></Transform>
     <TimeSensor DEF='C_3' cycleInterval='6.0' loop='true'/><PositionInterpolator DEF='PI_3' key='0 0.5 1' keyValue='-10.518 0.2 -7.283, -10.518 0.6 -7.283, -10.518 0.2 -7.283'/><ScalarInterpolator DEF='SI_3' key='0 0.5 1' keyValue='100 700 100'/><ROUTE fromNode='C_3' fromField='fraction_changed' toNode='PI_3' toField='set_fraction'/><ROUTE fromNode='PI_3' fromField='value_changed' toNode='T_3' toField='set_translation'/><ROUTE fromNode='C_3' fromField='fraction_changed' toNode='SI_3' toField='set_fraction'/><ROUTE fromNode='SI_3' fromField='value_changed' toNode='IRI_3' toField='set_iridescenceThicknessMaximum'/>
 
   </Scene>
