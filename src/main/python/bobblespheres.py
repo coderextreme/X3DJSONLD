@@ -5,7 +5,10 @@ import random
 import time
 from matplotlib.backend_bases import TimerBase
 
-if anari.has_cuda_capable_gpu():
+def has_method(o, name):
+    return callable(getattr(o, name, None))
+
+if has_method(anari, "has_cuda_capable_gpu") and  anari.has_cuda_capable_gpu():
    print('@pynari: detected cuda-capable GPU; using higher res and sample count')
    fb_size = (1600,800)
    num_paths_per_pixel = 8
