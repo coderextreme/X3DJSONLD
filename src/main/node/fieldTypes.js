@@ -3804,6 +3804,7 @@ let fieldTypes = {"X3DNode" : {
 	"isPaused" : "SFBool",
 	"metadata" : "SFNode",
 	"pauseTime" : "SFTime",
+	"periodicWave" : "SFNode",
 	"resumeTime" : "SFTime",
 	"startTime" : "SFTime",
 	"stopTime" : "SFTime",
@@ -5725,6 +5726,8 @@ let fieldTypes = {"X3DNode" : {
 "IORMaterialExtension" : {
 	"metadata" : "SFNode",
 	"indexOfRefraction" : "SFFloat",
+	"DEF" : "SFString",
+	"USE" : "SFString",
 },
 "InstancedShape" : {
 	"metadata" : "SFNode",
@@ -5752,6 +5755,8 @@ let fieldTypes = {"X3DNode" : {
 	"iridescenceThicknessMaximum" : "SFFloat",
 	"iridescenceThicknessTextureMapping" : "SFString",
 	"iridescenceThicknessTexture" : "SFNode",
+	"DEF" : "SFString",
+	"USE" : "SFString",
 },
 "SheenMaterialExtension" : {
 	"metadata" : "SFNode",

@@ -44,7 +44,7 @@ PythonSerializer.prototype = {
 		str += "f = open(\""+clazz+".new.python.x3dv\", mode=\"w\", encoding=\"utf-8\")\n";
 		str += "f.write("+element.nodeName+stack[0]+".VRML())\n";
 		str += "f.close()\n";
-		str += "f = open(\""+clazz+".new.python.json\", mode=\"w\", encoding=\"utf-8\")\n";
+		str += "f = open(\""+clazz+".new.python.x3dj\", mode=\"w\", encoding=\"utf-8\")\n";
 		str += "f.write("+element.nodeName+stack[0]+".JSON())\n";
 		str += "f.close()\n";
 		stack.shift();

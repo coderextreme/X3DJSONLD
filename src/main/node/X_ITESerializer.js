@@ -44,7 +44,7 @@ X_ITESerializer.prototype = {
 			}
 		}
 		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.x_ite.x3d\");\n";
-		str += "    "+element.nodeName+0+".toFileJSON(\""+clazz+".new.x_ite.json\");\n";
+		str += "    "+element.nodeName+0+".toFileJSON(\""+clazz+".new.x_ite.x3dj\");\n";
 
 		return str;
 	},
