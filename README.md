@@ -11,7 +11,7 @@ git clone https://github.com/coderextreme/X3DJSONLD
 cd X3DJSONLD
 ```
 
-* set environmental variables (Windows 10 here)
+* set environmental variables (Windows 11 here)
 ```
 edit src/main/shell/classpath
 ```
