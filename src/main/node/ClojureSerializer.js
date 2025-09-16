@@ -44,7 +44,7 @@ ClojureSerializer.prototype = {
 
 		str += bodystr;
 		str += "(.toFileX3D "+element.nodeName+stack[0]+" \"../../../../"+clazz+".new.clojure.x3d\")\n";
-		str += "(.toFileJSON "+element.nodeName+stack[0]+" \"../../../../"+clazz+".new.clojure.json\")\n";
+		str += "(.toFileJSON "+element.nodeName+stack[0]+" \"../../../../"+clazz+".new.clojure.x3dj\")\n";
 		str += "(defn -main []\n";
   		str += '(println "Hello from your main function!"))';
 		stack.shift();

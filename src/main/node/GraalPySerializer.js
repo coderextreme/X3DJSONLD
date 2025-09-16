@@ -35,7 +35,7 @@ GraalPySerializer.prototype = {
 
 		str += bodystr;
 		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+".new.graalpy.x3d\")\n";
-		str += element.nodeName+stack[0]+".toFileJSON(\""+clazz+".new.graalpy.json\")\n";
+		str += element.nodeName+stack[0]+".toFileJSON(\""+clazz+".new.graalpy.x3dj\")\n";
 		stack.shift();
 		return str;
 	},

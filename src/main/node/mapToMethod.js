@@ -1,5 +1,4 @@
 let mapToMethod;
-
 export default mapToMethod = {"X3DNode" : {
 	"IS" : "setIS",
 	"IS" : "setIS",
@@ -22541,6 +22540,16 @@ export default mapToMethod = {"X3DNode" : {
 	"MetadataSet" : "setMetadata",
 	"MetadataString" : "setMetadata",
 	"X3DMetadataObject" : "setMetadata",
+	"PeriodicWave" : "setPeriodicWave",
+	"PeriodicWave" : "setPeriodicWave",
+	"X3DConcreteNode" : "setPeriodicWave",
+	"X3DChildNode" : "setPeriodicWave",
+	"X3DNode" : "setPeriodicWave",
+	"X3DSoundNode" : "setPeriodicWave",
+	"X3DChildNode" : "setPeriodicWave",
+	"X3DNode" : "setPeriodicWave",
+	"X3DNode" : "setPeriodicWave",
+	"X3DNode" : "setPeriodicWave",
 },
 "PackagedShader" : {
 	"field" : "addField",

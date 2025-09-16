@@ -31,7 +31,7 @@ JRubySerializer.prototype = {
 
 		str += bodystr;
 		str += enn+stack[0]+".toFileX3D \""+clazz+".new.jruby.x3d\"\n";
-		str += enn+stack[0]+".toFileJSON \""+clazz+".new.jruby.json\"\n";
+		str += enn+stack[0]+".toFileJSON \""+clazz+".new.jruby.x3dj\"\n";
 		stack.shift();
 		return str;
 	},
