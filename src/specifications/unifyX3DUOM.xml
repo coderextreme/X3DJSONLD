@@ -12548,6 +12548,8 @@
     <field accessType="inputOutput" default="400" description="The maximum thickness of the thin-film layer given in nanometers." minInclusive="0" name="iridescenceThicknessMaximum" type="SFFloat"/>
     <field accessType="inputOutput" default="" description="Input/Output field iridescenceThicknessTextureMapping." name="iridescenceThicknessTextureMapping" type="SFString"/>
     <field acceptableNodeTypes="X3DSingleTextureNode" accessType="inputOutput" default="NULL" description="The thickness texture of the thin-film layer." name="iridescenceThicknessTexture" type="SFNode"/>
+    <field accessType="inputOutput" baseType="xs:ID" description="DEF defines a unique ID name for this node, referenceable by other nodes." inheritedFrom="X3DNode" name="DEF" type="SFString"/>
+    <field accessType="inputOutput" baseType="xs:IDREF" description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)." inheritedFrom="X3DNode" name="USE" type="SFString"/>
     <containerField default="extensions" type="xs:NMTOKEN"/>
    </InterfaceDefinition>
   </ConcreteNode>

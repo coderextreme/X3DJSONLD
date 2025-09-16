@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-        "title": "X3D V4.0 JSON Schema, generated 2025/09/13 20:44:37",
+        "title": "X3D V4.0 JSON Schema, generated 2025/09/16 01:04:45",
         "description": "Experimental JSON Schema for X3D V4.0",
         "type": "object",
         "properties": {
@@ -15285,8 +15285,8 @@
 							{
 								"enum": [
 									"RIGHT",
-									"CENTER",
-									"LEFT"
+									"LEFT",
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -15294,9 +15294,9 @@
 							,
 							{
 								"enum": [
-									"CENTER",
 									"BOTTOM",
-									"TOP"
+									"TOP",
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -15328,8 +15328,8 @@
 							{
 								"enum": [
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -15338,8 +15338,8 @@
 							{
 								"enum": [
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -15356,9 +15356,9 @@
 							{
 								"enum": [
 									"FRACTION",
-									"NONE",
+									"PIXEL",
 									"STRETCH",
-									"PIXEL"
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -15367,9 +15367,9 @@
 							{
 								"enum": [
 									"FRACTION",
-									"NONE",
+									"PIXEL",
 									"STRETCH",
-									"PIXEL"
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -15395,8 +15395,8 @@
 							{
 								"enum": [
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -15405,8 +15405,8 @@
 							{
 								"enum": [
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -18144,12 +18144,12 @@
 						{
 							"enum": [
 								"FLY",
-								"EXAMINE",
 								"ANY",
-								"NONE",
+								"EXPLORE",
 								"LOOKAT",
+								"EXAMINE",
 								"WALK",
-								"EXPLORE"
+								"NONE"
 							],
 								"default":"EXAMINE",
 						"type":"string"
@@ -33123,6 +33123,37 @@
 				"additionalProperties": false
 		},
 		"IORMaterialExtension" : {
+			"type": "object",
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@class": {
+                            "$comment": "SFString inputOutput",
+                            "type": "string"
+                        },
+                           "@USE": {
+                              "$comment": "SFString inputOutput",
+                               "type": "string"
+                            },
+                            "-children": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                    "#comment": { "type": "string", "$comment": "#comment statements are the only allowed in -children node when using a USE field" }
+                                            },
+                                            "additionalProperties": false
+                                    }
+                            }
+                    },
+                    "required": [
+                        "@USE"
+                    ],
+					"additionalProperties": false
+				},
+				{
                                  "type": "object",
                                  "properties": {
                                 "-children": {
@@ -33136,9 +33167,15 @@
 						"default":1.5,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
+					},
+					"@DEF" : {
+						"$comment":"SFString inputOutput",
+						"type":"string"
 					}
 				},
 				"additionalProperties": false
+			}
+		]
 		},
 		"InstancedShape" : {
                                  "type": "object",
@@ -33248,6 +33285,37 @@
 				"additionalProperties": false
 		},
 		"IridescenceMaterialExtension" : {
+			"type": "object",
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"@class": {
+                            "$comment": "SFString inputOutput",
+                            "type": "string"
+                        },
+                           "@USE": {
+                              "$comment": "SFString inputOutput",
+                               "type": "string"
+                            },
+                            "-children": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                    "#comment": { "type": "string", "$comment": "#comment statements are the only allowed in -children node when using a USE field" }
+                                            },
+                                            "additionalProperties": false
+                                    }
+                            }
+                    },
+                    "required": [
+                        "@USE"
+                    ],
+					"additionalProperties": false
+				},
+				{
                                  "type": "object",
                                  "properties": {
                                 "-children": {
@@ -33295,9 +33363,15 @@
 					},
 					"-iridescenceThicknessTexture" : {
 						"$ref":"#/$defs/-X3DSingleTextureNodeSFNode"
+					},
+					"@DEF" : {
+						"$comment":"SFString inputOutput",
+						"type":"string"
 					}
 				},
 				"additionalProperties": false
+			}
+		]
 		},
 		"SheenMaterialExtension" : {
                                  "type": "object",

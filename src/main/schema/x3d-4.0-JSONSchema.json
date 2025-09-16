@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2025/09/13 20:44:37",
+  "title": "X3D V4.0 JSON Schema, generated 2025/09/16 01:04:45",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -15303,17 +15303,17 @@
                 {
                   "enum": [
                     "RIGHT",
-                    "CENTER",
-                    "LEFT"
+                    "LEFT",
+                    "CENTER"
                   ],
                   "default": "CENTER",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "CENTER",
                     "BOTTOM",
-                    "TOP"
+                    "TOP",
+                    "CENTER"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -15344,8 +15344,8 @@
                 {
                   "enum": [
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "FRACTION",
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -15353,8 +15353,8 @@
                 {
                   "enum": [
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "FRACTION",
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -15371,9 +15371,9 @@
                 {
                   "enum": [
                     "FRACTION",
-                    "NONE",
+                    "PIXEL",
                     "STRETCH",
-                    "PIXEL"
+                    "NONE"
                   ],
                   "default": "NONE",
                   "type": "string"
@@ -15381,9 +15381,9 @@
                 {
                   "enum": [
                     "FRACTION",
-                    "NONE",
+                    "PIXEL",
                     "STRETCH",
-                    "PIXEL"
+                    "NONE"
                   ],
                   "default": "NONE",
                   "type": "string"
@@ -15408,8 +15408,8 @@
                 {
                   "enum": [
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "FRACTION",
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -15417,8 +15417,8 @@
                 {
                   "enum": [
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "FRACTION",
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -18210,12 +18210,12 @@
                 {
                   "enum": [
                     "FLY",
-                    "EXAMINE",
                     "ANY",
-                    "NONE",
+                    "EXPLORE",
                     "LOOKAT",
+                    "EXAMINE",
                     "WALK",
-                    "EXPLORE"
+                    "NONE"
                   ],
                   "default": "EXAMINE",
                   "type": "string"
@@ -33214,21 +33214,61 @@
     },
     "IORMaterialExtension": {
       "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
         },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@indexOfRefraction": {
-          "minimum": 1,
-          "default": 1.5,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@indexOfRefraction": {
+              "minimum": 1,
+              "default": 1.5,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
         }
-      },
-      "additionalProperties": false
+      ]
     },
     "InstancedShape": {
       "type": "object",
@@ -33332,55 +33372,95 @@
     },
     "IridescenceMaterialExtension": {
       "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
         },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@iridescence": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@iridescenceTextureMapping": {
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-iridescenceTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@iridescenceIndexOfRefraction": {
-          "minimum": 1,
-          "default": 1.3,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@iridescenceThicknessMinimum": {
-          "minimum": 0,
-          "default": 100,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@iridescenceThicknessMaximum": {
-          "minimum": 0,
-          "default": 400,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@iridescenceThicknessTextureMapping": {
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-iridescenceThicknessTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@iridescence": {
+              "minimum": 0,
+              "default": 0,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@iridescenceTextureMapping": {
+              "default": "",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-iridescenceTexture": {
+              "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
+            },
+            "@iridescenceIndexOfRefraction": {
+              "minimum": 1,
+              "default": 1.3,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@iridescenceThicknessMinimum": {
+              "minimum": 0,
+              "default": 100,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@iridescenceThicknessMaximum": {
+              "minimum": 0,
+              "default": 400,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@iridescenceThicknessTextureMapping": {
+              "default": "",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-iridescenceThicknessTexture": {
+              "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
         }
-      },
-      "additionalProperties": false
+      ]
     },
     "SheenMaterialExtension": {
       "type": "object",

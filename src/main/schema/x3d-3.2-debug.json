@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-        "title": "X3D V3.2 JSON Schema, generated 2025/09/13 20:44:37",
+        "title": "X3D V3.2 JSON Schema, generated 2025/09/16 01:04:45",
         "description": "Experimental JSON Schema for X3D V3.2",
         "type": "object",
         "properties": {
@@ -11345,9 +11345,9 @@
 						"prefixItems": [
 							{
 								"enum": [
+									"FRACTION",
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11355,9 +11355,9 @@
 							,
 							{
 								"enum": [
+									"FRACTION",
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11373,10 +11373,10 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"NONE",
-									"STRETCH",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"NONE",
+									"STRETCH"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -11384,10 +11384,10 @@
 							,
 							{
 								"enum": [
-									"NONE",
-									"STRETCH",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"NONE",
+									"STRETCH"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -11412,9 +11412,9 @@
 						"prefixItems": [
 							{
 								"enum": [
+									"FRACTION",
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11422,9 +11422,9 @@
 							,
 							{
 								"enum": [
+									"FRACTION",
 									"WORLD",
-									"PIXEL",
-									"FRACTION"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -13526,11 +13526,11 @@
 						{
 							"enum": [
 								"ANY",
-								"FLY",
-								"WALK",
-								"LOOKAT",
-								"EXAMINE",
 								"EXPLORE",
+								"EXAMINE",
+								"LOOKAT",
+								"WALK",
+								"FLY",
 								"NONE"
 							],
 								"default":"EXAMINE",

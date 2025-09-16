@@ -885,6 +885,20 @@
 					acceptableNodeTypes="X3DSingleTextureNode"
 					description="The thickness texture of the thin-film layer."
 				/>
+				<field name="DEF"
+					type="SFString"
+					accessType="inputOutput"
+					inheritedFrom="X3DNode"
+					baseType="xs:ID"
+					description="DEF defines a unique ID name for this node, referenceable by other nodes."
+				></field>
+				<field name="USE"
+					type="SFString"
+					accessType="inputOutput"
+					inheritedFrom="X3DNode"
+					baseType="xs:IDREF"
+					description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."
+				></field>
 				<containerField default="extensions" type="xs:NMTOKEN" />
 			</InterfaceDefinition>
 		</ConcreteNode>
