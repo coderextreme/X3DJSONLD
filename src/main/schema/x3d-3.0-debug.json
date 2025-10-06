@@ -1,8 +1,9 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.0-JSONSchema.json",
-        "title": "X3D V3.0 JSON Schema, generated 2025/09/16 01:04:44",
+        "title": "X3D V3.0 JSON Schema, generated 2025/10/06 13:35:03",
         "description": "Experimental JSON Schema for X3D V3.0",
+        "license": "Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
                 "X3D": {
@@ -9018,13 +9019,13 @@
 						"prefixItems": [
 						{
 							"enum": [
+								"NONE",
+								"LOOKAT",
 								"FLY",
-								"WALK",
-								"EXPLORE",
 								"EXAMINE",
 								"ANY",
-								"LOOKAT",
-								"NONE"
+								"EXPLORE",
+								"WALK"
 							],
 								"default":"EXAMINE",
 						"type":"string"
