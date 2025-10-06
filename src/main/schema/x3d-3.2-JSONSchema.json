@@ -1,8 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-  "title": "X3D V3.2 JSON Schema, generated 2025/09/16 01:04:45",
+  "title": "X3D V3.2 JSON Schema, generated 2025/10/06 13:35:03",
   "description": "Experimental JSON Schema for X3D V3.2",
+  "license": "Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
   "properties": {
     "X3D": {
@@ -11304,9 +11305,9 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "RIGHT",
+                    "CENTER",
                     "LEFT",
-                    "CENTER"
+                    "RIGHT"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -11314,8 +11315,8 @@
                 {
                   "enum": [
                     "TOP",
-                    "BOTTOM",
-                    "CENTER"
+                    "CENTER",
+                    "BOTTOM"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -11346,8 +11347,8 @@
                 {
                   "enum": [
                     "FRACTION",
-                    "WORLD",
-                    "PIXEL"
+                    "PIXEL",
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -11355,8 +11356,8 @@
                 {
                   "enum": [
                     "FRACTION",
-                    "WORLD",
-                    "PIXEL"
+                    "PIXEL",
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -11372,9 +11373,9 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "NONE",
                     "PIXEL",
                     "FRACTION",
-                    "NONE",
                     "STRETCH"
                   ],
                   "default": "NONE",
@@ -11382,9 +11383,9 @@
                 },
                 {
                   "enum": [
+                    "NONE",
                     "PIXEL",
                     "FRACTION",
-                    "NONE",
                     "STRETCH"
                   ],
                   "default": "NONE",
@@ -11410,8 +11411,8 @@
                 {
                   "enum": [
                     "FRACTION",
-                    "WORLD",
-                    "PIXEL"
+                    "PIXEL",
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -11419,8 +11420,8 @@
                 {
                   "enum": [
                     "FRACTION",
-                    "WORLD",
-                    "PIXEL"
+                    "PIXEL",
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -13587,11 +13588,11 @@
                 {
                   "enum": [
                     "ANY",
-                    "EXPLORE",
-                    "EXAMINE",
-                    "LOOKAT",
                     "WALK",
+                    "EXPLORE",
                     "FLY",
+                    "LOOKAT",
+                    "EXAMINE",
                     "NONE"
                   ],
                   "default": "EXAMINE",

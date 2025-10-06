@@ -99,7 +99,9 @@ class ClassPrinter:
         self.printed = True
         return str
 
-code = "var mapToMethod = {"
+code = "let mapToMethod;\n"
+
+code += "export default mapToMethod = {"
 
 soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
 
@@ -138,8 +140,6 @@ for k,v in classes.items():
     code += v.printClass()
 
 code += "}\n"
-
-code += "module.exports = mapToMethod;\n"
 
 f = open("../node/mapToMethod.js", "w")
 f.write(code)
