@@ -360,7 +360,7 @@ JavaSerializer.prototype = {
 									return y;
 								}), this.codeno, '","', '"', '"');
 							*/
-							console.error("chopped rejoined", strval);
+							console.log("chopped rejoined", strval);
 						} else if (attrs[a].nodeValue !== "VERTEX" && attrs[a].nodeValue !== "FRAGMENT") {
 							strval = '"'+attrs[a].nodeValue+'"';
 						} else {
