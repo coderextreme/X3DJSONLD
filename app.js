@@ -350,5 +350,8 @@ if (metaServer != null) {
 new Multiplayer(io, metaServer);
 
 server.listen(port, '127.0.0.1', function () {
-  console.log('Example app listening on port', port, "! Go to http://localhost:"+port+"/src/main/html/main_viewer.html");
+  console.log('Example app listening on port', port, "!");
+  console.log("Go to http://localhost:"+port+"/src/main/html/main_viewer.html");
+  console.log("Go to http://localhost:"+port+"/src/main/html/responsive.html");
+  console.log("Go to http://localhost:"+port+"/src/main/html/sliders.html");
 });
