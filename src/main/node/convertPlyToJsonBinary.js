@@ -143,24 +143,24 @@ export default async function convertPlyToJsonBinary(data) {
 	}
 }
 
+function readfloat(name, view) {
+	const f = view.getFloat32(offset, true); offset += 4;
+	// console.log(name, f);
+	return f;
+}
+
 function read3float(name, view) {
-	const x = view.getFloat32(offset, true); offset += 4;
-	const y = view.getFloat32(offset, true); offset += 4;
-	const z = view.getFloat32(offset, true); offset += 4;
-	if (name === 'normal') {
-  		//console.log(name, x, y, z);
-	}
+	const x = readfloat("x", view);
+	const y = readfloat("y", view);
+	const z = readfloat("z", view);
 	return [x, y, z];
 }
 
 function read4float(name, view) {
-	const r = view.getFloat32(offset, true); offset += 4;
-	const g = view.getFloat32(offset, true); offset += 4;
-	const b = view.getFloat32(offset, true); offset += 4;
-	const a = view.getFloat32(offset, true); offset += 4;
-	if (name === 'color') {
-  		// console.log(name, r, g, b, a);
-	}
+	const r = readfloat("r", view);
+	const g = readfloat("g", view);
+	const b = readfloat("b", view);
+	const a = readfloat("a", view);
 	return [r, g, b, a];
 }
 
@@ -176,32 +176,38 @@ function transformToPS(elements, view) {
 		const properties = elements[e].property;
 		const number = elements[e].number;
 		for (let i = 0; i < number; i++) {
-			let pi = 0;
-			// point is 3 flaots, 12 bytee
-			let xyz = read3float("point", view);
-			point.push(...xyz);
-			pi += 3;
-
-			// normals are 3 floats, 12 bytes
-			let nxnynz = read3float("normal", view);
-			normal.push(...nxnynz);
-			pi += 3;
-
-			// color are 4 floats, 16 bytes
-			let rgba = read4float("color", view);
-			color.push(...rgba);
-			pi += 4;
-
-			// scales are 3 floats, 12 bytes
-			let sxsysz = read3float("scale", view);
-			scale.push(...sxsysz);
-			pi += 3;
-
-			// rotations are 4 floats, 16 bytes
-			let rxryrzra = read4float("rotation", view);
-			color.push(...rxryrzra);
-			pi += 4;
-
+			for (let pi = 0; pi < properties.length; pi++) {
+				let f = readfloat(properties[pi].name, view);
+				switch (properties[pi].name) {
+				case 'x':
+				case 'y':
+				case 'z':
+					point.push(f);
+					break;
+				case 'nx':
+				case 'ny':
+				case 'nz':
+					normal.push(f);
+					break;
+				case 'f_dc_0':
+				case 'f_dc_1':
+				case 'f_dc_2':
+				case 'opacity':
+					color.push(f);
+					break;
+				case 'scale_0':
+				case 'scale_1':
+				case 'scale_2':
+					scale.push(f);
+					break;
+				case 'rot_0':
+				case 'rot_1':
+				case 'rot_2':
+				case 'rot_3':
+					rotation.push(f);
+					break;
+				}
+			}
 		}
 	}
 
