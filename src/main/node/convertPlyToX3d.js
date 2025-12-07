@@ -43,8 +43,8 @@ async function parsePlyBuffer(buffer) {
 }
 
 function parseHeader(header) {
-	var elements = [];
-	var dispatchTable = {
+	let elements = [];
+	let dispatchTable = {
 		ply : function (line) {
 			elements.push({
 				ply : "ply",
@@ -84,15 +84,15 @@ function parseHeader(header) {
 		end_header : function(line) {
 		}
 	}
-	var lines = header.split(/[\r\n]+/g);
+	let lines = header.split(/[\r\n]+/g);
 	lines.push("end_header");
-	for (var u = 0; u < lines.length; u++) {
-		var command = lines[u].trim();
+	for (let u = 0; u < lines.length; u++) {
+		let command = lines[u].trim();
 		if (!command) continue;
 
-		var processed = command.split(/[ \t]*{/);
-		var main_command = processed[0].trim();
-		var line = main_command.split(/\s+/);
+		let processed = command.split(/[ \t]*{/);
+		let main_command = processed[0].trim();
+		let line = main_command.split(/\s+/);
 
 		if (typeof dispatchTable[line[0]] !== 'undefined') {
 			dispatchTable[line[0]](line);
@@ -101,42 +101,35 @@ function parseHeader(header) {
 	return elements;
 }
 
-export default async function convertPlyToJsonBinary(data) {
+export default async function convertPlyToX3d(data) {
 	const buf = await data.arrayBuffer();
 	const [header, view] = await parsePlyBuffer(buf);
 	let elements = parseHeader(header);
 	console.log(elements);
 	offset = 0;
 
-	const shapes = [];
-	const psGeometry = transformToPS(elements, view);
-	if (psGeometry && Object.keys(psGeometry).length > 0) {
-		shapes.push({ "Shape": { "-geometry": psGeometry } });
-	}
-
+	const shapes = transformToPointSetShapes(elements, view);
 	if (shapes.length > 0) {
-		var x3d = { "X3D": {
-		    "encoding":"UTF-8",
-		    "@profile":"Interchange",
-		    "@version":"4.0",
-		    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
-		    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-		    "head": {
-			"meta": [
-			  { "@name":"title", "@content":"template.x3dj" },
-			  { "@name":"description", "@content":"Template for an Point Set" },
-			  { "@name":"creator", "@content":"John Carlson" },
-			  { "@name":"created", "@content":"6 December 2025" },
-			  { "@name":"generator", "@content":"https://coderextreme.net/X3DJSONLD/src/main/node/ConvertPlyToJsonBinary.js" },
-			  { "@name":"license", "@content":"../license.html" },
-			  { "@name":"identifier", "@content":"https://coderextreme.net/X3DJSONLD/src/main/node/template.x3dj" },
-			]
-		    },
-		    "Scene": {
-			"-children":[ { "Group": { "-children": shapes } } ]
-		    }
-		  }
-		};
+let x3d = `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta name='title' content='template.x3dj'/>
+    <meta name='description' content='Template for an Point Set'/>
+    <meta name='creator' content='John Carlson'/>
+    <meta name='created' content='6 December 2025'/>
+    <meta name='generator' content='x3d-tidy V2.2.16, https://www.npmjs.com/package/x3d-tidy'/>
+    <meta name='generator' content='https://coderextreme.net/X3DJSONLD/src/main/node/ConvertPlyToX3d.js'/>
+    <meta name='license' content='../license.html'/>
+    <meta name='identifier' content='https://coderextreme.net/X3DJSONLD/src/main/node/template.x3dj'/>
+    <meta name='modified' content='Sun, 07 Dec 2025 08:11:36 GMT'/>
+  </head>
+  <Scene>
+    <Group>
+`+shapes+`
+    </Group>
+  </Scene>
+</X3D>`
 		return x3d;
 	} else {
 		return null;
@@ -164,60 +157,69 @@ function read4float(name, view) {
 	return [r, g, b, a];
 }
 
-function transformToPS(elements, view) {
-	var point = [];
-	var normal = [];
-	var color = [];
-	var scale = [];
-	var rotation = [];
-	var PS = {};
-	for (let e in elements) {
-		const type = elements[e].type;
-		const properties = elements[e].property;
-		const number = elements[e].number;
-		for (let i = 0; i < number; i++) {
-			for (let pi = 0; pi < properties.length; pi++) {
-				let f = readfloat(properties[pi].name, view);
-				switch (properties[pi].name) {
-				case 'x':
-				case 'y':
-				case 'z':
-					point.push(f);
-					break;
-				case 'nx':
-				case 'ny':
-				case 'nz':
-					normal.push(f);
-					break;
-				case 'f_dc_0':
-				case 'f_dc_1':
-				case 'f_dc_2':
-				case 'opacity':
-					color.push(f);
-					break;
-				case 'scale_0':
-				case 'scale_1':
-				case 'scale_2':
-					scale.push(f);
-					break;
-				case 'rot_0':
-				case 'rot_1':
-				case 'rot_2':
-				case 'rot_3':
-					rotation.push(f);
-					break;
-				}
+function transformToPointSetShape(element, view) {
+	const type = element.type;
+	const properties = element.property;
+	const number = element.number;
+	let point = [];
+	let normal = [];
+	let color = [];
+	let scale = [];
+	let maxscale = 0;
+	let rotation = [];
+	for (let n = 0; n < number; n++) {
+		for (let pi = 0; pi < properties.length; pi++) {
+			let f = readfloat(properties[pi].name, view).toPrecision(6);
+			switch (properties[pi].name) {
+			case 'x':
+			case 'y':
+			case 'z':
+				point.push(f);
+				break;
+			case 'nx':
+			case 'ny':
+			case 'nz':
+				normal.push(f);
+				break;
+			case 'f_dc_0':
+			case 'f_dc_1':
+			case 'f_dc_2':
+			case 'opacity':
+				color.push(f);
+				break;
+			case 'scale_0':
+			case 'scale_1':
+			case 'scale_2':
+				scale.push(f);
+				maxscale = Math.max(maxscale, f);
+				break;
+			case 'rot_0':
+			case 'rot_1':
+			case 'rot_2':
+			case 'rot_3':
+				rotation.push(f);
+				break;
 			}
 		}
 	}
+	return (number > 0 ?
+`      <Shape>
+        <PointSet>
+          <ColorRGBA color="`+color+`"></ColorRGBA>
+          <Coordinate point="`+point+`"></Coordinate>
+        </PointSet>
+	<!--
+        <Appearance>
+          <PointProperties pointSizeScaleFactor="`+maxscale+`"></PointProperties>
+        </Appearance>
+	-->
+      </Shape>` : "");
+}
 
-	if (typeof PS["PointSet"] === "undefined") {
-		PS["PointSet" ] = {};
+function transformToPointSetShapes(elements, view) {
+	let shapes = "";
+	for (let e in elements) {
+		shapes += transformToPointSetShape(elements[e], view);
 	}
-	PS["PointSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
-
-	if (color.length > 0) {
-		PS["PointSet" ]["-color"] = { "ColorRGBA" : { "@color" : color }};
-	}
-	return PS;
+	return shapes;
 }
