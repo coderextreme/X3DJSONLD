@@ -1,190 +1,117 @@
-function colorComponentParseFloat(cc) {
-	if (isNaN(cc)) {
-		return 255.0;
-	}
-	return parseFloat(cc);
+let offset = 0;
+
+function findEndOfHeader(buffer) {
+  const view = new Uint8Array(buffer);
+  const searchString = "end_header";
+  const searchBytes = new TextEncoder().encode(searchString);
+
+  for (let i = 0; i < view.length - searchBytes.length; i++) {
+    let match = true;
+    for (let j = 0; j < searchBytes.length; j++) {
+      if (view[i + j] !== searchBytes[j]) {
+        match = false;
+        break;
+      }
+    }
+
+    if (match) {
+      let offset = i + searchBytes.length;
+      while (offset < view.length && (view[offset] === 10 || view[offset] === 13)) {
+        offset++;
+      }
+      return offset;
+    }
+  }
+
+  return -1;
 }
 
-function colorComponentParseInt(cc) {
-	if (isNaN(cc)) {
-		return 1;
-	}
-	return parseInt(cc);
+async function parsePlyBuffer(buffer) {
+  const binaryStart = findEndOfHeader(buffer);
+
+  if (binaryStart === -1) {
+    throw new Error("Could not find end_header");
+  }
+
+  console.log(`Binary data starts at byte ${binaryStart}`);
+  const header = new DataView(buffer, 0);
+  const decoder = new TextDecoder('utf-8');
+  const header_text = decoder.decode(new DataView(header.buffer, 0, binaryStart));
+
+  const view = new DataView(buffer, binaryStart);
+  return [header_text, view];
 }
 
-function characterToColor(chr) {
-	return chr.codePointAt(0) % 256;
-}
-
-export default async function convertPlyToJson(buf) {
+function parseHeader(header) {
 	var elements = [];
-	var e;
-	var o;
 	var dispatchTable = {
-		values: function (unprocessed) {
-			/*
-			console.log(unprocessed);
-			*/
-			if (typeof unprocessed === 'undefined' || !unprocessed.length) {
-				return;
-			}
-			while (typeof elements[e].type === 'undefined' ||
-				(typeof elements[e].number !== 'undefined' && o >= elements[e].number)) {
-				e++;
-				o = 0;
-				if (e >= elements.length) return;
-			}
-
-			const currentObject = [];
-			const properties = elements[e].property;
-			const hasList = properties.some(p => p.type[0] === 'list');
-
-			if (hasList) {
-				for (let i = 0; i < unprocessed.length; i++) {
-					currentObject[i] = unprocessed[i];
-				}
-			} else {
-				for (let i = 0; i < properties.length; i++) {
-					if (i < unprocessed.length) {
-						currentObject[i] = unprocessed[i];
-					}
-				}
-			}
-
-			elements[e][o] = currentObject;
-			elements[e][o]["comments"] = comments;
-			o++;
-			/*
-			console.log(o);
-			*/
-			return unprocessed.substring(currentObject.length);
-		},
-		ply : function (line, comments) {
-			/*
-			console.log(line);
-			*/
+		ply : function (line) {
 			elements.push({
 				ply : "ply",
-				comments : comments
 			});
 		},
-		format : function(line, comments) {
-			/*
-			console.log(line);
-			*/
+		format : function(line) {
 			elements.push({
 				encoding : "json",
 				charset :  line[1],
 				version : line[2],
-				comments : comments
 			});
 		},
-		comment : function(line, comments) {
-			/*
-			console.log(line);
-			*/
+		comment : function(line) {
 			elements.push({
 				comment : line.slice(1).join(" "),
-				comments : comments
 			});
 		},
-		element : function(line, comments) {
-			/*
-			console.log(line);
-			*/
+		element : function(line) {
 			elements.push({
 				type : line[1],
-				number : line[2],
+				number : parseInt(line[2]),
 				property : [],
-				comments : comments
 			});
 		},
-		property : function(line, comments) {
-			/*
-			console.log(line);
-			*/
+		property : function(line) {
 			for (let eind = elements.length; eind >= 1; eind--) {
 				if (typeof elements[eind-1].property !== 'undefined') {
 					elements[eind-1].property.push({
 						name : line[line.length-1],
 						type : line.splice(1, line.length-2),
-						comments : comments
 					});
 					// just add a property to the last one
 					break;
 				}
 			}
 		},
-		end_header : function(line, comments) {
-			/*
-			console.log(line);
-			*/
-			e = 0;
-			o = 0;
-			elements.push({
-				comments : comments
-			});
+		end_header : function(line) {
 		}
 	}
-	let unprocessed = null;
-	/*
-	console.log(buf, "RESPONSE");
-	*/
-	const codec = new TextDecoder('utf-8');
-	const data = codec.decode(buf);
-	if (typeof data.trim === 'function') {
-		unprocessed = await data.trim().split(/end_header[\r\n]+/);
-	} else {
-		unprocessed = await data.split(/end_header[\r\n]+/);
-	}
-	/*
-	console.log(unprocessed);
-	console.log(0, unprocessed[0]);
-	console.log(1, unprocessed[1]);
-	*/
-	var header = await unprocessed[0].split(/[\r\n]+/g);
-	/*
-	console.log(header.length, header);
-	*/
-	header.push("end_header");
-	unprocessed = unprocessed[1];
-	for (var u = 0; u < header.length; u++) {
-		var command = await header[u].trim();
-		/*
-		console.log(u, command);
-		*/
+	var lines = header.split(/[\r\n]+/g);
+	lines.push("end_header");
+	for (var u = 0; u < lines.length; u++) {
+		var command = lines[u].trim();
 		if (!command) continue;
 
-		var processed = await command.split(/[ \t]*{/);
-		var main_command = await processed[0].trim();
-		var comments = processed[1];
-		var line = await main_command.split(/\s+/);
+		var processed = command.split(/[ \t]*{/);
+		var main_command = processed[0].trim();
+		var line = main_command.split(/\s+/);
 
 		if (typeof dispatchTable[line[0]] !== 'undefined') {
-			dispatchTable[line[0]](line, typeof comments === 'undefined' ? undefined :"{"+comments);
+			dispatchTable[line[0]](line);
 		}
 	}
-	do {
-		unprocessed = dispatchTable.values(unprocessed);
-	} while (typeof unprocessed !== 'undefined' && unprocessed.length > 0);
+	return elements;
+}
+
+export default async function convertPlyToJsonBinary(data) {
+	const buf = await data.arrayBuffer();
+	const [header, view] = await parsePlyBuffer(buf);
+	let elements = parseHeader(header);
+	console.log(elements);
+	offset = 0;
 
 	const shapes = [];
-
-	/*
-	const ifsGeometry = transformToIFS(elements);
-	if (ifsGeometry && Object.keys(ifsGeometry).length > 0) {
-		shapes.push({ "Shape": { "-geometry": ifsGeometry } });
-	}
-
-	const ilsGeometry = transformToILS(elements);
-	if (ilsGeometry && Object.keys(ilsGeometry).length > 0) {
-		shapes.push({ "Shape": { "-geometry": ilsGeometry } });
-	}
-	*/
-
-	const itsGeometry = transformToITS(elements);
-	if (itsGeometry && Object.keys(itsGeometry).length > 0) {
-		shapes.push({ "Shape": { "-geometry": itsGeometry } });
+	const psGeometry = transformToPS(elements, view);
+	if (psGeometry && Object.keys(psGeometry).length > 0) {
+		shapes.push({ "Shape": { "-geometry": psGeometry } });
 	}
 
 	if (shapes.length > 0) {
@@ -197,13 +124,12 @@ export default async function convertPlyToJson(buf) {
 		    "head": {
 			"meta": [
 			  { "@name":"title", "@content":"template.x3dj" },
-			  { "@name":"description", "@content":"Template for an Indexed Face Set" },
+			  { "@name":"description", "@content":"Template for an Point Set" },
 			  { "@name":"creator", "@content":"John Carlson" },
-			  { "@name":"created", "@content":"9 April 2017" },
-			  { "@name":"generator", "@content":"ConvertPlyToJson.js" },
+			  { "@name":"created", "@content":"6 December 2025" },
+			  { "@name":"generator", "@content":"https://coderextreme.net/X3DJSONLD/src/main/node/ConvertPlyToJsonBinary.js" },
 			  { "@name":"license", "@content":"../license.html" },
-			  { "@name":"identifier", "@content":"https://coderextreme.net/X3DJSONLD/template.x3dj" },
-			  { "@name":"modified", "@content":"10 April 2017" }
+			  { "@name":"identifier", "@content":"https://coderextreme.net/X3DJSONLD/src/main/node/template.x3dj" },
 			]
 		    },
 		    "Scene": {
@@ -217,375 +143,75 @@ export default async function convertPlyToJson(buf) {
 	}
 }
 
-function transformToILS(elements) {
-	var ILS = {};
+function read3float(name, view) {
+	const x = view.getFloat32(offset, true); offset += 4;
+	const y = view.getFloat32(offset, true); offset += 4;
+	const z = view.getFloat32(offset, true); offset += 4;
+	if (name === 'normal') {
+  		//console.log(name, x, y, z);
+	}
+	return [x, y, z];
+}
+
+function read4float(name, view) {
+	const r = view.getFloat32(offset, true); offset += 4;
+	const g = view.getFloat32(offset, true); offset += 4;
+	const b = view.getFloat32(offset, true); offset += 4;
+	const a = view.getFloat32(offset, true); offset += 4;
+	if (name === 'color') {
+  		// console.log(name, r, g, b, a);
+	}
+	return [r, g, b, a];
+}
+
+function transformToPS(elements, view) {
+	var point = [];
+	var normal = [];
 	var color = [];
-	var hasEdges = false;
+	var scale = [];
+	var rotation = [];
+	var PS = {};
+	for (let e in elements) {
+		const type = elements[e].type;
+		const properties = elements[e].property;
+		const number = elements[e].number;
+		for (let i = 0; i < number; i++) {
+			let pi = 0;
+			// point is 3 flaots, 12 bytee
+			let xyz = read3float("point", view);
+			point.push(...xyz);
+			pi += 3;
 
-	var dispatchTable = {
-		edge : function(element, ILS, charset) {
-			hasEdges = true;
-			if (typeof ILS["IndexedLineSet"] === "undefined") {
-				ILS["IndexedLineSet" ] = {};
-			}
-			var array = [];
-			for (var o in element) {
-				try {
-					var index = NaN;
-					if (charset == 'binary_little_endian') {
-						index = o;
-					} else if (charset == 'ascii') {
-						index = parseInt(o);
-					}
-					if (!isNaN(index)) {
-						if (charset == 'binary_little_endian') {
-							array.push(element[index][0]);
-							array.push(element[index][1]);
-							array.push(-1);
-							for (var c = 2; c < 5; c++) {
-								color.push(characterToColor(element[index][c])/255.0);
-							}
-						} else if (charset == 'ascii') {
-							array.push(parseInt(element[index][0]));
-							array.push(parseInt(element[index][1]));
-							array.push(-1);
-							for (var c = 2; c < 5; c++) {
-								color.push(colorComponentParseFloat(element[index][c])/255.0);
-							}
-						}
-					}
-				} catch (e) { console.error(e); }
-			}
+			// normals are 3 floats, 12 bytes
+			let nxnynz = read3float("normal", view);
+			normal.push(...nxnynz);
+			pi += 3;
 
-			if (color.length > 0) {
-				ILS["IndexedLineSet" ]["-color"] = { "Color" : { "@color" : color }};
-				// THIS IS THE FIX: Apply color per line segment, not per vertex, to prevent gradients.
-				ILS["IndexedLineSet" ]["@colorPerVertex"] = false;
-			}
+			// color are 4 floats, 16 bytes
+			let rgba = read4float("color", view);
+			color.push(...rgba);
+			pi += 4;
 
-			ILS["IndexedLineSet" ]["@coordIndex"] = array;
-			return ILS;
-		},
-		vertex : function(element, ILS, charset) {
-			var point = [];
-			for (var o in element) {
-				try {
-					var index = NaN;
-					if (charset == 'binary_little_endian') {
-						index = o;
-					} else if (charset == 'ascii') {
-						index = parseInt(o);
-					}
-					if (!isNaN(index)) {
-						if (charset == 'binary_little_endian') {
-							for (let p = 0; p < 3; p++) {
-								let pt = bytesToFloat(
-									element[index][p][0],
-									element[index][p][1],
-									element[index][p][2],
-									element[index][p][3]);
-								point.push(pt);
-							}
-						} else if (charset == 'ascii') {
-							for (let p = 0; p < 3; p++) {
-								point.push(parseFloat(element[index][p]));
-							}
-						}
-					}
-				} catch (e) { console.error(e); }
-			}
-			if (typeof ILS["IndexedLineSet"] === "undefined") {
-				ILS["IndexedLineSet" ] = {};
-			}
-			ILS["IndexedLineSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
-			return ILS;
-		}
-	}
-	let charset;
-	for (var e in elements) {
-		if (typeof charset === 'undefined' || typeof elements[e].charset !== 'undefined') {
-			charset = elements[e].charset;
-		}
-		var table = dispatchTable[elements[e].type];
-		if (typeof table !== 'undefined') {
-			ILS = table(elements[e], ILS, charset);
-		}
-	}
-	if (!hasEdges) {
-		// return {};
-	}
-	return ILS;
-}
+			// scales are 3 floats, 12 bytes
+			let sxsysz = read3float("scale", view);
+			scale.push(...sxsysz);
+			pi += 3;
 
-// TODO read directluy from file
-function  bytesToFloat(byte0, byte1, byte2, byte3) {
-  let buf = new ArrayBuffer(4);
-  let v = new DataView(buf);
-  v.setUint8(0, byte0);
-  v.setUint8(1, byte1);
-  v.setUint8(2, byte2);
-  v.setUint8(3, byte3);
-  let float32 = v.getFloat32(0, true);
+			// rotations are 4 floats, 16 bytes
+			let rxryrzra = read4float("rotation", view);
+			color.push(...rxryrzra);
+			pi += 4;
 
-  return float32;
-}
-
-function transformToIFS(elements) {
-	var IFS = {};
-	var hasFaces = false;
-
-	var dispatchTable = {
-		face : function(element, IFS, charset) {
-			hasFaces = true;
-			var coordIndexArray = [];
-			var isDefinitelyConvex = true;
-
-			for (var o in element) {
-				try {
-					var index = NaN;
-					if (charset == 'binary_little_endian') {
-						index = o;
-					} else if (charset == 'ascii') {
-						index = parseInt(o);
-					}
-					if (isNaN(index)) continue;
-
-					const singleFaceIndices = [];
-					for (const key in element[o]) {
-						if (charset == 'binary_little_endian') {
-							if (!isNaN(key)) {
-								singleFaceIndices.push(element[o][key]);
-							}
-						} else if (charset == 'ascii') {
-							if (!isNaN(parseInt(key))) {
-								singleFaceIndices.push(parseInt(element[o][key]));
-							}
-						}
-					}
-
-					if (singleFaceIndices.length === 0) continue;
-					if (singleFaceIndices.length > 3) {
-						isDefinitelyConvex = false;
-					}
-
-					coordIndexArray.push(...singleFaceIndices, -1);
-				} catch (e) {
-					console.error("Error processing face: ", o, element[o], e);
-				}
-			}
-
-			if (coordIndexArray.length === 0) return IFS;
-
-			if (typeof IFS["IndexedFaceSet"] === "undefined") {
-				IFS["IndexedFaceSet"] = {};
-			}
-
-			if (!isDefinitelyConvex) {
-				IFS["IndexedFaceSet"]["@convex"] = false;
-			}
-
-			if (coordIndexArray[coordIndexArray.length - 1] === -1) {
-				coordIndexArray.pop();
-			}
-
-			IFS["IndexedFaceSet"]["@coordIndex"] = coordIndexArray;
-			IFS["IndexedFaceSet"]["@colorIndex"] = coordIndexArray;
-			return IFS;
-		},
-		vertex : function(element, IFS, charset) {
-			var point = [];
-			var color = [];
-			for (var o in element) {
-				try {
-					var index = NaN;
-					if (charset == 'binary_little_endian') {
-						index = o;
-					} else if (charset == 'ascii') {
-						index = parseInt(o);
-					}
-					if (!isNaN(index)) {
-						if (charset == 'binary_little_endian') {
-							for (let p = 0; p < 3; p++) {
-								let pt = bytesToFloat(
-									element[index][p][0],
-									element[index][p][1],
-									element[index][p][2],
-									element[index][p][3]);
-								point.push(pt);
-							}
-							if (element[index][3] !== undefined) {
-								for (var c = 3; c < 6; c++) {
-									color.push(characterToColor(element[index][c])/255.0);
-								}
-							}
-						} else if (charset == 'ascii') {
-							for (let p = 0; p < 3; p++) {
-								point.push(parseFloat(element[index][p]));
-							}
-							if (element[index][3] !== undefined) {
-								let r = colorComponentParseFloat(element[index][3])/255.0;
-								let g = colorComponentParseFloat(element[index][4])/255.0;
-								let b = colorComponentParseFloat(element[index][5])/255.0;
-								color.push(r, g, b);
-							}
-						}
-					}
-				} catch (e) { console.error(e); }
-			}
-			if (typeof IFS["IndexedFaceSet"] === "undefined") {
-				IFS["IndexedFaceSet" ] = {};
-			}
-			IFS["IndexedFaceSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
-
-			if (color.length > 0) {
-				IFS["IndexedFaceSet" ]["-color"] = { "Color" : { "@color" : color }};
-			}
-			return IFS;
-		}
-	};
-	let charset;
-	for (var e in elements) {
-		if (typeof charset === 'undefined' || typeof elements[e].charset !== 'undefined') {
-			charset = elements[e].charset;
-		}
-		var table = dispatchTable[elements[e].type];
-		if (typeof table !== 'undefined') {
-			IFS = table(elements[e], IFS, charset);
 		}
 	}
 
-	if (!hasFaces) {
-		// return {};
+	if (typeof PS["PointSet"] === "undefined") {
+		PS["PointSet" ] = {};
 	}
-	return IFS;
-}
+	PS["PointSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
 
-function transformToITS(elements) {
-	var ITS = {};
-	var hasTris = false;
-
-	var dispatchTable = {
-		face : function(element, ITS, charset) {
-			hasTris = true;
-			var coordIndexArray = [];
-			var isDefinitelyConvex = true;
-
-			for (var o in element) {
-				try {
-					var index = NaN;
-					if (charset == 'binary_little_endian') {
-						index = o;
-					} else if (charset == 'ascii') {
-						index = parseInt(o);
-					}
-					if (isNaN(index)) continue;
-
-					const singleTriIndices = [];
-					for (const key in element[o]) {
-						if (charset == 'binary_little_endian') {
-							if (!isNaN(key)) {
-								singleTriIndices.push(element[o][key]);
-							}
-						} else if (charset == 'ascii') {
-							if (!isNaN(parseInt(key))) {
-								singleTriIndices.push(parseInt(element[o][key]));
-							}
-						}
-					}
-
-					if (singleTriIndices.length === 0) continue;
-					if (singleTriIndices.length > 3) {
-						isDefinitelyConvex = false;
-					}
-
-					coordIndexArray.push(...singleTriIndices, -1);
-				} catch (e) {
-					console.error("Error processing face: ", o, element[o], e);
-				}
-			}
-
-			if (coordIndexArray.length === 0) return ITS;
-
-			if (typeof ITS["IndexedTriangleSet"] === "undefined") {
-				ITS["IndexedTriangleSet"] = {};
-			}
-
-			if (!isDefinitelyConvex) {
-				ITS["IndexedTriangleSet"]["@convex"] = false;
-			}
-
-			if (coordIndexArray[coordIndexArray.length - 1] === -1) {
-				coordIndexArray.pop();
-			}
-
-			ITS["IndexedTriangleSet"]["@coordIndex"] = coordIndexArray;
-			ITS["IndexedTriangleSet"]["@colorIndex"] = coordIndexArray;
-			return ITS;
-		},
-		vertex : function(element, ITS, charset) {
-			var point = [];
-			var color = [];
-			for (var o in element) {
-				try {
-					var index = NaN;
-					if (charset == 'binary_little_endian') {
-						index = o;
-					} else if (charset == 'ascii') {
-						index = parseInt(o);
-					}
-					if (!isNaN(index)) {
-						if (charset == 'binary_little_endian') {
-							for (let p = 0; p < 3; p++) {
-								let pt = bytesToFloat(
-									element[index][p][0],
-									element[index][p][1],
-									element[index][p][2],
-									element[index][p][3]);
-								point.push(pt);
-							}
-							if (element[index][3] !== undefined) {
-								for (var c = 3; c < 6; c++) {
-									color.push(characterToColor(element[index][c])/255.0);
-								}
-							}
-						} else if (charset == 'ascii') {
-							for (let p = 0; p < 3; p++) {
-								point.push(parseFloat(element[index][p]));
-							}
-							if (element[index][3] !== undefined) {
-								let r = colorComponentParseFloat(element[index][3])/255.0;
-								let g = colorComponentParseFloat(element[index][4])/255.0;
-								let b = colorComponentParseFloat(element[index][5])/255.0;
-								color.push(r, g, b);
-							}
-						}
-					}
-				} catch (e) { console.error(e); }
-			}
-			if (typeof ITS["IndexedTriangleSet"] === "undefined") {
-				ITS["IndexedTriangleSet" ] = {};
-			}
-			ITS["IndexedTriangleSet" ]["-coord"] = { "Coordinate" : { "@point" : point }};
-
-			if (color.length > 0) {
-				ITS["IndexedTriangleSet" ]["-color"] = { "Color" : { "@color" : color }};
-			}
-			return ITS;
-		}
-	};
-	let charset;
-	for (var e in elements) {
-		if (typeof charset === 'undefined' || typeof elements[e].charset !== 'undefined') {
-			charset = elements[e].charset;
-		}
-		var table = dispatchTable[elements[e].type];
-		if (typeof table !== 'undefined') {
-			ITS = table(elements[e], ITS, charset);
-		}
+	if (color.length > 0) {
+		PS["PointSet" ]["-color"] = { "ColorRGBA" : { "@color" : color }};
 	}
-
-	if (!hasTris) {
-		// return {};
-	}
-	return ITS;
+	return PS;
 }
