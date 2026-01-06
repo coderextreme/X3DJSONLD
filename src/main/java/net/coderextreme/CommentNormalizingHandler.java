@@ -29,7 +29,9 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         this.writer = writer;
     }
 
-    // --- DTD Handling ---
+    // --------------------------------------------------------------------------------
+    // DTD Handling
+    // --------------------------------------------------------------------------------
 
     @Override
     public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
@@ -39,16 +41,19 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
 
     @Override
     public void startDTD(String name, String publicId, String systemId) throws SAXException {
-        // Mark that we are inside the DTD so we can ignore comments from it
+        // Mark entry into DTD to suppress DTD comments
         insideDTD = true;
     }
 
     @Override
     public void endDTD() throws SAXException {
+        // Mark exit from DTD
         insideDTD = false;
     }
 
-    // --- Content Writing ---
+    // --------------------------------------------------------------------------------
+    // Content Writing
+    // --------------------------------------------------------------------------------
 
     @Override
     public void startDocument() throws SAXException {
@@ -61,46 +66,37 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
 
     @Override
     public void comment(char[] ch, int start, int length) throws SAXException {
-        // 1. IGNORE comments if we are inside the DTD (fixes the "DTD is still there" issue)
         if (insideDTD) {
             return;
         }
 
         try {
-            // 2. Indent before the comment
-            writeIndent();
-
             String commentText = new String(ch, start, length);
 
-            // 3. User logic: Normalize tag newlines inside comments
-            if (containsTagWithNewlines(commentText)) {
-                String normalized = normalizeTagNewlines(commentText);
-                String[] lines = normalized.split("\\n");
-                for (String line : lines) {
-                    String trimmed = line.trim();
-                    if (!trimmed.isEmpty()) {
-                        writer.write("<!--");
-                        writer.write(trimmed);
-                        writer.write("-->");
-                        // If we split into multiple comments, ensure newline/indent between them
-                         if (!line.equals(lines[lines.length-1])) {
-                             writeIndent();
-                         }
-                    }
-                }
-            } else {
-                String[] lines = commentText.split("\\n");
-                for (String line : lines) {
-                    String trimmed = line.trim();
-                    if (!trimmed.isEmpty()) {
-                        writer.write("<!--");
-                        writer.write(trimmed);
-                        writer.write("-->");
-                    }
-                }
+            // 1. Normalize logic:
+            // Find any tag-like structures <...> and replace newlines INSIDE them with spaces.
+            String normalizedTags = normalizeTagNewlines(commentText);
+
+            // 2. Split logic:
+            // Split by remaining newlines using limit -1 to preserve trailing empty strings.
+            // This ensures that an input like "\n<TAG>\n" results in 3 segments.
+            String[] lines = normalizedTags.split("\\n", -1);
+
+            for (String line : lines) {
+                // Trim the line to handle indentation inside the comment
+                String trimmed = line.trim();
+
+                // Note: We deliberately do NOT skip empty trimmed lines.
+                // An empty line in the source means a "newline inside a comment",
+                // which requires terminating the previous comment and starting a new one.
+                writeIndent();
+                writer.write("<!-- ");
+                writer.write(trimmed);
+                writer.write(" -->");
             }
 
             lastEventWasCharacter = false;
+
         } catch (IOException e) {
             throw new SAXException("Error writing comment", e);
         }
@@ -109,7 +105,6 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         try {
-            // Newline and indent
             writeIndent();
 
             writer.write("<");
@@ -137,7 +132,7 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         try {
             depth--;
 
-            // Only indent if the content wasn't just text (keeps <tag>text</tag> on one line)
+            // Only indent if we didn't just write text (keeps <tag>text</tag> compact)
             if (!lastEventWasCharacter) {
                 writeIndent();
             }
@@ -157,7 +152,7 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         try {
             String text = new String(ch, start, length);
 
-            // If text is purely whitespace, ignore it to prevent weird gaps (unless you want to preserve whitespace)
+            // Ignore pure whitespace text nodes to maintain control over indentation
             if (text.trim().isEmpty()) {
                 return;
             }
@@ -186,7 +181,9 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         }
     }
 
-    // --- Helpers ---
+    // --------------------------------------------------------------------------------
+    // Helpers
+    // --------------------------------------------------------------------------------
 
     private void writeIndent() throws IOException {
         writer.write("\n");
@@ -203,45 +200,40 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
             .replace("\"", "&quot;");
     }
 
-    private boolean containsTagWithNewlines(String text) {
-        Pattern startTagPattern = Pattern.compile("<[^/>][^>]*\\n[^>]*>", Pattern.DOTALL);
-        if (startTagPattern.matcher(text).find()) return true;
-        Pattern endTagPattern = Pattern.compile("</[^>]*\\n[^>]*>");
-        return endTagPattern.matcher(text).find();
-    }
-
+    /**
+     * Finds substrings starting with < and ending with >,
+     * and replaces newlines within those substrings with spaces.
+     */
     private String normalizeTagNewlines(String text) {
-        Pattern startTagPattern = Pattern.compile("<([^/>][^>]*)>", Pattern.DOTALL);
-        Matcher startMatcher = startTagPattern.matcher(text);
+        // Pattern matches < followed by anything that isn't > (including newlines), ending with >
+        Pattern tagPattern = Pattern.compile("<[^>]+>");
+        Matcher matcher = tagPattern.matcher(text);
         StringBuffer sb = new StringBuffer();
-        while (startMatcher.find()) {
-            String tagContent = startMatcher.group(1);
-            String normalized = tagContent.replaceAll("\\s*\\n\\s*", " ");
-            startMatcher.appendReplacement(sb, "<" + Matcher.quoteReplacement(normalized) + ">");
-        }
-        startMatcher.appendTail(sb);
 
-        Pattern endTagPattern = Pattern.compile("<(/[^>]*)>");
-        Matcher endMatcher = endTagPattern.matcher(sb.toString());
-        StringBuffer sb2 = new StringBuffer();
-        while (endMatcher.find()) {
-            String tagContent = endMatcher.group(1);
+        while (matcher.find()) {
+            String tagContent = matcher.group();
+            // Replace newlines (and surrounding whitespace) with a single space inside the tag
             String normalized = tagContent.replaceAll("\\s*\\n\\s*", " ");
-            endMatcher.appendReplacement(sb2, "<" + Matcher.quoteReplacement(normalized) + ">");
+            matcher.appendReplacement(sb, Matcher.quoteReplacement(normalized));
         }
-        endMatcher.appendTail(sb2);
-        return sb2.toString();
+        matcher.appendTail(sb);
+
+        return sb.toString();
     }
+
+    // --------------------------------------------------------------------------------
+    // Main
+    // --------------------------------------------------------------------------------
 
     public static void main(String argv[]) throws Exception {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         factory.setNamespaceAware(true);
 
-        // Disable DTD loading features for performance, though our Handler also catches it
+        // Suppress external DTD loading if possible via factory features
         try {
             factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
         } catch (Exception e) {
-            // Feature not supported by this parser, ignore
+            // Feature might not be supported, handled by resolveEntity as backup
         }
 
         SAXParser saxParser = factory.newSAXParser();
@@ -250,13 +242,15 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         StringWriter writer = new StringWriter();
         CommentNormalizingHandler handler = new CommentNormalizingHandler(writer);
 
-        // Register handler for Content, Lexical, and Entity resolution
+        // Register the handler for all necessary roles
         reader.setContentHandler(handler);
         reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
         reader.setEntityResolver(handler);
 
+        // Parse Standard Input
         reader.parse(new InputSource(System.in));
 
+        // Output Result
         System.out.println(writer.toString());
     }
 }
