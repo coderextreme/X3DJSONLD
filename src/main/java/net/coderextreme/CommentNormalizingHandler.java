@@ -13,197 +13,250 @@ import org.xml.sax.SAXException;
 import org.xml.sax.ext.DefaultHandler2;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.parsers.SAXParser;
-// import javax.xml.transform.sax.SAXSource;
-// import javax.xml.transform.stream.StreamSource;
-// import javax.xml.transform.stream.StreamResult;
-// import javax.xml.transform.OutputKeys;
-// import javax.xml.transform.Transformer;
-// import javax.xml.transform.TransformerFactory;
 
 public class CommentNormalizingHandler extends DefaultHandler2 {
-	private Writer writer;
+    private Writer writer;
 
-	public CommentNormalizingHandler(Writer writer) {
-		this.writer = writer;
-	}
+    // Formatting state
+    private int depth = 0;
+    private static final String INDENT_STRING = "  "; // 2 spaces
+    private boolean lastEventWasCharacter = false;
 
-	@Override
-	public void comment(char[] ch, int start, int length) throws SAXException {
-		try {
-			String commentText = new String(ch, start, length);
+    // DTD suppression state
+    private boolean insideDTD = false;
 
-			// Check if comment contains XML tag-like structures with newlines
-			if (containsTagWithNewlines(commentText)) {
-				// Normalize newlines within tags but keep multi-line structure outside tags
-				String normalized = normalizeTagNewlines(commentText);
+    public CommentNormalizingHandler(Writer writer) {
+        this.writer = writer;
+    }
 
-				// Now split by remaining newlines (those outside tags)
-				String[] lines = normalized.split("\\n");
-				for (String line : lines) {
-					String trimmed = line.trim();
-					if (!trimmed.isEmpty()) {
-						writer.write("<!--");
-						writer.write(trimmed);
-						writer.write("-->");
-					}
-				}
-			} else {
-				// No tags with newlines - safe to split normally
-				String[] lines = commentText.split("\\n");
-				for (String line : lines) {
-					String trimmed = line.trim();
-					if (!trimmed.isEmpty()) {
-						writer.write("<!--");
-						writer.write(trimmed);
-						writer.write("-->");
-					}
-				}
-			}
-		} catch (IOException e) {
-			throw new SAXException("Error writing comment", e);
-		}
-	}
+    // --- DTD Handling ---
 
-	private boolean containsTagWithNewlines(String text) {
-		// Check for start tags with newlines: <tag...newline...>
-		Pattern startTagPattern = Pattern.compile("<[^/>][^>]*\\n[^>]*>", Pattern.DOTALL);
-		if (startTagPattern.matcher(text).find()) {
-			return true;
-		}
+    @Override
+    public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
+        // Return empty source to prevent downloading external DTDs
+        return new InputSource(new StringReader(""));
+    }
 
-		// Check for end tags with newlines: </tag...newline...>
-		Pattern endTagPattern = Pattern.compile("</[^>]*\\n[^>]*>");
-		if (endTagPattern.matcher(text).find()) {
-			return true;
-		}
+    @Override
+    public void startDTD(String name, String publicId, String systemId) throws SAXException {
+        // Mark that we are inside the DTD so we can ignore comments from it
+        insideDTD = true;
+    }
 
-		return false;
-	}
+    @Override
+    public void endDTD() throws SAXException {
+        insideDTD = false;
+    }
 
-	private String normalizeTagNewlines(String text) {
-		// Replace newlines within start tags (between < and >)
-		Pattern startTagPattern = Pattern.compile("<([^/>][^>]*)>", Pattern.DOTALL);
-		Matcher startMatcher = startTagPattern.matcher(text);
-		StringBuffer sb = new StringBuffer();
+    // --- Content Writing ---
 
-		while (startMatcher.find()) {
-			String tagContent = startMatcher.group(1);
-			String normalized = tagContent.replaceAll("\\s*\\n\\s*", " ");
-			startMatcher.appendReplacement(sb, "<" + Matcher.quoteReplacement(normalized) + ">");
-		}
-		startMatcher.appendTail(sb);
+    @Override
+    public void startDocument() throws SAXException {
+        try {
+            writer.write("<?xml version='1.0' encoding='UTF-8'?>");
+        } catch (IOException e) {
+            throw new SAXException("Error writing start document", e);
+        }
+    }
 
-		// Replace newlines within end tags
-		Pattern endTagPattern = Pattern.compile("<(/[^>]*)>");
-		Matcher endMatcher = endTagPattern.matcher(sb.toString());
-		StringBuffer sb2 = new StringBuffer();
+    @Override
+    public void comment(char[] ch, int start, int length) throws SAXException {
+        // 1. IGNORE comments if we are inside the DTD (fixes the "DTD is still there" issue)
+        if (insideDTD) {
+            return;
+        }
 
-		while (endMatcher.find()) {
-			String tagContent = endMatcher.group(1);
-			String normalized = tagContent.replaceAll("\\s*\\n\\s*", " ");
-			endMatcher.appendReplacement(sb2, "<" + Matcher.quoteReplacement(normalized) + ">");
-		}
-		endMatcher.appendTail(sb2);
+        try {
+            // 2. Indent before the comment
+            writeIndent();
 
-		return sb2.toString();
+            String commentText = new String(ch, start, length);
 
-	}
+            // 3. User logic: Normalize tag newlines inside comments
+            if (containsTagWithNewlines(commentText)) {
+                String normalized = normalizeTagNewlines(commentText);
+                String[] lines = normalized.split("\\n");
+                for (String line : lines) {
+                    String trimmed = line.trim();
+                    if (!trimmed.isEmpty()) {
+                        writer.write("<!--");
+                        writer.write(trimmed);
+                        writer.write("-->");
+                        // If we split into multiple comments, ensure newline/indent between them
+                         if (!line.equals(lines[lines.length-1])) {
+                             writeIndent();
+                         }
+                    }
+                }
+            } else {
+                String[] lines = commentText.split("\\n");
+                for (String line : lines) {
+                    String trimmed = line.trim();
+                    if (!trimmed.isEmpty()) {
+                        writer.write("<!--");
+                        writer.write(trimmed);
+                        writer.write("-->");
+                    }
+                }
+            }
 
-	@Override
-	public void startElement(String uri, String localName, String qName, org.xml.sax.Attributes attributes) throws SAXException {
-		try {
-			writer.write("<");
-			writer.write(qName);
+            lastEventWasCharacter = false;
+        } catch (IOException e) {
+            throw new SAXException("Error writing comment", e);
+        }
+    }
 
-			for (int i = 0; i < attributes.getLength(); i++) {
-				writer.write(" ");
-				writer.write(attributes.getQName(i));
-				writer.write("='");
-				writer.write(escapeXml(attributes.getValue(i)));
-				writer.write("'");
-			}
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        try {
+            // Newline and indent
+            writeIndent();
 
-			writer.write(">");
-		} catch (IOException e) {
-			throw new SAXException("Error writing start element", e);
-		}
-	}
+            writer.write("<");
+            writer.write(qName);
 
-	@Override
-	public void endElement(String uri, String localName, String qName) throws SAXException {
-		try {
-			writer.write("</");
-			writer.write(qName);
-			writer.write(">");
-		} catch (IOException e) {
-			throw new SAXException("Error writing end element", e);
-		}
-	}
+            for (int i = 0; i < attributes.getLength(); i++) {
+                writer.write(" ");
+                writer.write(attributes.getQName(i));
+                writer.write("='");
+                writer.write(escapeXml(attributes.getValue(i)));
+                writer.write("'");
+            }
 
-	@Override
-	public void characters(char[] ch, int start, int length) throws SAXException {
-		try {
-			writer.write(escapeXml(new String(ch, start, length)));
-		} catch (IOException e) {
-			throw new SAXException("Error writing characters", e);
-		}
-	}
+            writer.write(">");
 
-	@Override
-	public void startDocument() throws SAXException {
-		try {
-			writer.write("<?xml version='1.0' encoding='UTF-8'?>");
-		} catch (IOException e) {
-			throw new SAXException("Error writing start document", e);
-		}
-	}
+            depth++;
+            lastEventWasCharacter = false;
+        } catch (IOException e) {
+            throw new SAXException("Error writing start element", e);
+        }
+    }
 
-	@Override
-	public void processingInstruction(String target, String data) throws SAXException {
-		try {
-			writer.write("<?");
-			writer.write(target);
-			if (data != null && !data.isEmpty()) {
-				writer.write(" ");
-				writer.write(data);
-			}
-			writer.write("?>");
-		} catch (IOException e) {
-			throw new SAXException("Error writing processing instruction", e);
-		}
-	}
+    @Override
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+        try {
+            depth--;
 
-	private String escapeXml(String text) {
-		return text.replace("&", "&amp;")
-			.replace("<", "&lt;")
-			.replace(">", "&gt;")
-			.replace("'", "&apos;")
-			.replace("\"", "&quot;");
-	}
-	public static void main (String argv []) throws Exception {
-		// TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		// Transformer transformer = transformerFactory.newTransformer();
-		// transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-		// transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		// transformer.setOutputProperty(OutputKeys.STANDALONE, "no");
-		// transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-		// transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-		// transformer.setOutputProperty(OutputKeys.VERSION, "1.0");
-		// transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "");
-		// transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, "");
-		// transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            // Only indent if the content wasn't just text (keeps <tag>text</tag> on one line)
+            if (!lastEventWasCharacter) {
+                writeIndent();
+            }
 
-		SAXParserFactory factory = SAXParserFactory.newInstance();
-		SAXParser      saxParser = factory.newSAXParser();
-		XMLReader reader = saxParser.getXMLReader();
-		StringWriter writer = new StringWriter();
-		CommentNormalizingHandler handler   = new CommentNormalizingHandler(writer);
-		reader.setContentHandler(handler);
-		reader.setProperty("http://xml.org/sax/properties/lexical-handler",
-		      handler); 
-		reader.setEntityResolver(handler);
-		// transformer.transform(new SAXSource(reader, new InputSource(System.in)), new StreamResult(writer));
-		reader.parse(new InputSource(System.in));
-		System.out.println(writer.toString());
-	}
+            writer.write("</");
+            writer.write(qName);
+            writer.write(">");
+
+            lastEventWasCharacter = false;
+        } catch (IOException e) {
+            throw new SAXException("Error writing end element", e);
+        }
+    }
+
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        try {
+            String text = new String(ch, start, length);
+
+            // If text is purely whitespace, ignore it to prevent weird gaps (unless you want to preserve whitespace)
+            if (text.trim().isEmpty()) {
+                return;
+            }
+
+            writer.write(escapeXml(text));
+            lastEventWasCharacter = true;
+        } catch (IOException e) {
+            throw new SAXException("Error writing characters", e);
+        }
+    }
+
+    @Override
+    public void processingInstruction(String target, String data) throws SAXException {
+        try {
+            writeIndent();
+            writer.write("<?");
+            writer.write(target);
+            if (data != null && !data.isEmpty()) {
+                writer.write(" ");
+                writer.write(data);
+            }
+            writer.write("?>");
+            lastEventWasCharacter = false;
+        } catch (IOException e) {
+            throw new SAXException("Error writing processing instruction", e);
+        }
+    }
+
+    // --- Helpers ---
+
+    private void writeIndent() throws IOException {
+        writer.write("\n");
+        for (int i = 0; i < depth; i++) {
+            writer.write(INDENT_STRING);
+        }
+    }
+
+    private String escapeXml(String text) {
+        return text.replace("&", "&amp;")
+            .replace("<", "&lt;")
+            .replace(">", "&gt;")
+            .replace("'", "&apos;")
+            .replace("\"", "&quot;");
+    }
+
+    private boolean containsTagWithNewlines(String text) {
+        Pattern startTagPattern = Pattern.compile("<[^/>][^>]*\\n[^>]*>", Pattern.DOTALL);
+        if (startTagPattern.matcher(text).find()) return true;
+        Pattern endTagPattern = Pattern.compile("</[^>]*\\n[^>]*>");
+        return endTagPattern.matcher(text).find();
+    }
+
+    private String normalizeTagNewlines(String text) {
+        Pattern startTagPattern = Pattern.compile("<([^/>][^>]*)>", Pattern.DOTALL);
+        Matcher startMatcher = startTagPattern.matcher(text);
+        StringBuffer sb = new StringBuffer();
+        while (startMatcher.find()) {
+            String tagContent = startMatcher.group(1);
+            String normalized = tagContent.replaceAll("\\s*\\n\\s*", " ");
+            startMatcher.appendReplacement(sb, "<" + Matcher.quoteReplacement(normalized) + ">");
+        }
+        startMatcher.appendTail(sb);
+
+        Pattern endTagPattern = Pattern.compile("<(/[^>]*)>");
+        Matcher endMatcher = endTagPattern.matcher(sb.toString());
+        StringBuffer sb2 = new StringBuffer();
+        while (endMatcher.find()) {
+            String tagContent = endMatcher.group(1);
+            String normalized = tagContent.replaceAll("\\s*\\n\\s*", " ");
+            endMatcher.appendReplacement(sb2, "<" + Matcher.quoteReplacement(normalized) + ">");
+        }
+        endMatcher.appendTail(sb2);
+        return sb2.toString();
+    }
+
+    public static void main(String argv[]) throws Exception {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        factory.setNamespaceAware(true);
+
+        // Disable DTD loading features for performance, though our Handler also catches it
+        try {
+            factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+        } catch (Exception e) {
+            // Feature not supported by this parser, ignore
+        }
+
+        SAXParser saxParser = factory.newSAXParser();
+        XMLReader reader = saxParser.getXMLReader();
+
+        StringWriter writer = new StringWriter();
+        CommentNormalizingHandler handler = new CommentNormalizingHandler(writer);
+
+        // Register handler for Content, Lexical, and Entity resolution
+        reader.setContentHandler(handler);
+        reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
+        reader.setEntityResolver(handler);
+
+        reader.parse(new InputSource(System.in));
+
+        System.out.println(writer.toString());
+    }
 }
