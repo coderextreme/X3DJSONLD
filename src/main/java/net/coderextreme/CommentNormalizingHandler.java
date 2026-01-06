@@ -78,21 +78,21 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
             String normalizedTags = normalizeTagNewlines(commentText);
 
             // 2. Split logic:
-            // Split by remaining newlines using limit -1 to preserve trailing empty strings.
-            // This ensures that an input like "\n<TAG>\n" results in 3 segments.
-            String[] lines = normalizedTags.split("\\n", -1);
+            // Split by remaining newlines.
+            String[] lines = normalizedTags.split("\\n");
 
             for (String line : lines) {
-                // Trim the line to handle indentation inside the comment
                 String trimmed = line.trim();
 
-                // Note: We deliberately do NOT skip empty trimmed lines.
-                // An empty line in the source means a "newline inside a comment",
-                // which requires terminating the previous comment and starting a new one.
-                writeIndent();
-                writer.write("<!-- ");
-                writer.write(trimmed);
-                writer.write(" -->");
+                // 3. Filter Logic:
+                // Only write the comment if it actually contains text.
+                // This deletes <!-- --> and <!--   -->.
+                if (!trimmed.isEmpty()) {
+                    writeIndent();
+                    writer.write("<!-- ");
+                    writer.write(trimmed);
+                    writer.write(" -->");
+                }
             }
 
             lastEventWasCharacter = false;
@@ -200,19 +200,13 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
             .replace("\"", "&quot;");
     }
 
-    /**
-     * Finds substrings starting with < and ending with >,
-     * and replaces newlines within those substrings with spaces.
-     */
     private String normalizeTagNewlines(String text) {
-        // Pattern matches < followed by anything that isn't > (including newlines), ending with >
         Pattern tagPattern = Pattern.compile("<[^>]+>");
         Matcher matcher = tagPattern.matcher(text);
         StringBuffer sb = new StringBuffer();
 
         while (matcher.find()) {
             String tagContent = matcher.group();
-            // Replace newlines (and surrounding whitespace) with a single space inside the tag
             String normalized = tagContent.replaceAll("\\s*\\n\\s*", " ");
             matcher.appendReplacement(sb, Matcher.quoteReplacement(normalized));
         }
@@ -229,7 +223,6 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         factory.setNamespaceAware(true);
 
-        // Suppress external DTD loading if possible via factory features
         try {
             factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
         } catch (Exception e) {
@@ -242,15 +235,12 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         StringWriter writer = new StringWriter();
         CommentNormalizingHandler handler = new CommentNormalizingHandler(writer);
 
-        // Register the handler for all necessary roles
         reader.setContentHandler(handler);
         reader.setProperty("http://xml.org/sax/properties/lexical-handler", handler);
         reader.setEntityResolver(handler);
 
-        // Parse Standard Input
         reader.parse(new InputSource(System.in));
 
-        // Output Result
         System.out.println(writer.toString());
     }
 }
