@@ -35,19 +35,44 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
 
     @Override
     public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
-        // Return empty source to prevent downloading external DTDs
+        // Return empty source to prevent downloading/parsing the external DTD file content.
+        // This prevents comments *inside* the DTD file from appearing in the output.
         return new InputSource(new StringReader(""));
     }
 
     @Override
     public void startDTD(String name, String publicId, String systemId) throws SAXException {
-        // Mark entry into DTD to suppress DTD comments
-        insideDTD = true;
+        try {
+            // Write the DOCTYPE declaration exactly as it appears in the source
+            writer.write("\n"); // Ensure newline after XML declaration
+            writer.write("<!DOCTYPE ");
+            writer.write(name);
+
+            if (publicId != null) {
+                writer.write(" PUBLIC \"");
+                writer.write(publicId);
+                writer.write("\" \"");
+                if (systemId != null) {
+                    writer.write(systemId);
+                }
+                writer.write("\"");
+            } else if (systemId != null) {
+                writer.write(" SYSTEM \"");
+                writer.write(systemId);
+                writer.write("\"");
+            }
+            writer.write(">");
+
+            // Mark entry into DTD to suppress any comments that might appear
+            // in an internal subset (between [ and ])
+            insideDTD = true;
+        } catch (IOException e) {
+            throw new SAXException("Error writing DTD", e);
+        }
     }
 
     @Override
     public void endDTD() throws SAXException {
-        // Mark exit from DTD
         insideDTD = false;
     }
 
@@ -85,8 +110,7 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
                 String trimmed = line.trim();
 
                 // 3. Filter Logic:
-                // Only write the comment if it actually contains text.
-                // This deletes <!-- --> and <!--   -->.
+                // Only write non-empty comments
                 if (!trimmed.isEmpty()) {
                     writeIndent();
                     writer.write("<!-- ");
@@ -152,7 +176,6 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         try {
             String text = new String(ch, start, length);
 
-            // Ignore pure whitespace text nodes to maintain control over indentation
             if (text.trim().isEmpty()) {
                 return;
             }
