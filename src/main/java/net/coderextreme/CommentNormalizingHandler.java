@@ -20,8 +20,29 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     // DTD suppression state
     private boolean insideDTD = false;
 
+    // Self-closing tag logic
+    private String pendingStartTag = null;
+
     public CommentNormalizingHandler(Writer writer) {
         this.writer = writer;
+    }
+
+    // --------------------------------------------------------------------------------
+    // Helper: Flush Pending Start Tag
+    // --------------------------------------------------------------------------------
+
+    private void flushPendingStartTag() throws SAXException {
+        if (pendingStartTag != null) {
+            try {
+                // Flushing means the element has content (text or children).
+                // Close the start tag with ">"
+                writer.write(pendingStartTag);
+                writer.write(">");
+                pendingStartTag = null;
+            } catch (IOException e) {
+                throw new SAXException("Error flushing pending start tag", e);
+            }
+        }
     }
 
     // --------------------------------------------------------------------------------
@@ -30,14 +51,12 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
 
     @Override
     public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
-        // Return empty source to prevent downloading/parsing external DTDs
         return new InputSource(new StringReader(""));
     }
 
     @Override
     public void startDTD(String name, String publicId, String systemId) throws SAXException {
         try {
-            // Preserve the DOCTYPE declaration
             writer.write("<!DOCTYPE ");
             writer.write(name);
 
@@ -55,8 +74,6 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
                 writer.write("\"");
             }
             writer.write(">");
-
-            // Mark entry into DTD to suppress internal subset comments
             insideDTD = true;
         } catch (IOException e) {
             throw new SAXException("Error writing DTD", e);
@@ -69,92 +86,54 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     }
 
     // --------------------------------------------------------------------------------
-    // Content Writing - Pass-through mode
+    // Content Writing
     // --------------------------------------------------------------------------------
 
     @Override
     public void startDocument() throws SAXException {
         try {
             writer.write("<?xml version='1.0' encoding='UTF-8'?>");
-            // We do NOT add a newline here explicitly.
-            // The SAX parser will usually send a 'characters' event with the newline
-            // if it exists in the source.
         } catch (IOException e) {
             throw new SAXException("Error writing start document", e);
         }
     }
 
     @Override
-    public void comment(char[] ch, int start, int length) throws SAXException {
-        if (insideDTD) {
-            return;
-        }
-
-        try {
-            String commentText = new String(ch, start, length);
-
-            // 1. Normalize logic:
-            // Find tag-like structures <...> and replace newlines INSIDE them with spaces.
-            String normalizedTags = normalizeTagNewlines(commentText);
-
-            // 2. Split logic:
-            // Split by remaining newlines.
-            String[] lines = normalizedTags.split("\\n");
-
-            // 3. Write logic
-            // We track if we have written a comment to handle newlines between splits
-            boolean first = true;
-
-            for (String line : lines) {
-                String trimmed = line.trim();
-
-                // Filter out empty comments
-                if (!trimmed.isEmpty()) {
-                    if (!first) {
-                        // If we split a multi-line comment into chunks,
-                        // we add a newline to separate them.
-                        writer.write("\n");
-                    }
-
-                    writer.write("<!-- ");
-                    writer.write(trimmed);
-                    writer.write(" -->");
-                    first = false;
-                }
-            }
-        } catch (IOException e) {
-            throw new SAXException("Error writing comment", e);
-        }
-    }
-
-    @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        // Parent had a child, so flush parent's opening tag
+        flushPendingStartTag();
+
         try {
-            // No custom indentation. Write exactly what triggered this event.
-            writer.write("<");
-            writer.write(qName);
+            StringBuilder sb = new StringBuilder();
+            sb.append("<").append(qName);
 
             for (int i = 0; i < attributes.getLength(); i++) {
-                writer.write(" ");
-                writer.write(attributes.getQName(i));
-                writer.write("='");
-                writer.write(escapeXml(attributes.getValue(i)));
-                writer.write("'");
+                // Use smart quoting logic to avoid unnecessary escaping
+                appendAttribute(sb, attributes.getQName(i), attributes.getValue(i));
             }
 
-            writer.write(">");
-        } catch (IOException e) {
-            throw new SAXException("Error writing start element", e);
+            // Store partial tag. We wait to see if it closes immediately.
+            pendingStartTag = sb.toString();
+
+        } catch (Exception e) {
+            throw new SAXException("Error preparing start element", e);
         }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         try {
-            // No custom indentation.
-            writer.write("</");
-            writer.write(qName);
-            writer.write(">");
+            if (pendingStartTag != null) {
+                // Immediate close after open -> Self-closing
+                writer.write(pendingStartTag);
+                writer.write("/>");
+                pendingStartTag = null;
+            } else {
+                // Standard closing
+                writer.write("</");
+                writer.write(qName);
+                writer.write(">");
+            }
         } catch (IOException e) {
             throw new SAXException("Error writing end element", e);
         }
@@ -162,11 +141,12 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
+        flushPendingStartTag();
+
         try {
-            // Write exact characters (whitespace, newlines, text) as received.
-            // Do NOT trim.
             String text = new String(ch, start, length);
-            writer.write(escapeXml(text));
+            // Escape special chars for content, but do NOT escape quotes as it's not needed in PCDATA
+            writer.write(escapeXmlContent(text));
         } catch (IOException e) {
             throw new SAXException("Error writing characters", e);
         }
@@ -174,12 +154,13 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
 
     @Override
     public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
-        // Treat ignorable whitespace (formatting from validation) exactly like content characters.
         characters(ch, start, length);
     }
 
     @Override
     public void processingInstruction(String target, String data) throws SAXException {
+        flushPendingStartTag();
+
         try {
             writer.write("<?");
             writer.write(target);
@@ -193,16 +174,96 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         }
     }
 
+    @Override
+    public void comment(char[] ch, int start, int length) throws SAXException {
+        if (insideDTD) {
+            return;
+        }
+
+        flushPendingStartTag();
+
+        try {
+            String commentText = new String(ch, start, length);
+
+            // 1. Normalize logic
+            String normalizedTags = normalizeTagNewlines(commentText);
+
+            // 2. Split logic
+            String[] lines = normalizedTags.split("\\n");
+
+            // 3. Write logic
+            boolean first = true;
+            for (String line : lines) {
+                String trimmed = line.trim();
+
+                if (!trimmed.isEmpty()) {
+                    if (!first) {
+                        writer.write("\n");
+                    }
+                    writer.write("<!-- ");
+                    writer.write(trimmed);
+                    writer.write(" -->");
+                    first = false;
+                }
+            }
+        } catch (IOException e) {
+            throw new SAXException("Error writing comment", e);
+        }
+    }
+
     // --------------------------------------------------------------------------------
     // Helpers
     // --------------------------------------------------------------------------------
 
-    private String escapeXml(String text) {
+    /**
+     * Appends an attribute with smart quote handling.
+     * Strategies:
+     * 1. If value has " but no ', use ' delimiters. Don't escape ".
+     * 2. If value has ' but no ", use " delimiters. Don't escape '.
+     * 3. Else (Neither or Both), use " delimiters. Escape " to &quot;, leave ' alone.
+     */
+    private void appendAttribute(StringBuilder sb, String name, String value) {
+        sb.append(" ").append(name).append("=");
+
+        // Base escape: only & < > (newlines preserved)
+        // We do NOT escape quotes yet.
+        String baseSafe = value.replace("&", "&amp;")
+                               .replace("<", "&lt;")
+                               .replace(">", "&gt;");
+
+        boolean hasDouble = baseSafe.contains("\"");
+        boolean hasSingle = baseSafe.contains("'");
+
+        if (hasDouble && !hasSingle) {
+            // Case: value="foo"bar" -> use single quotes -> 'foo"bar'
+            // No changes to content necessary.
+            sb.append("'").append(baseSafe).append("'");
+        } else if (hasSingle && !hasDouble) {
+            // Case: value='foo'bar' -> use double quotes -> "foo'bar"
+            // No changes to content necessary.
+            sb.append("\"").append(baseSafe).append("\"");
+        } else if (!hasSingle && !hasDouble) {
+            sb.append("'").append(baseSafe).append("'");
+        } else {
+            // Case: neither (e.g. key="123") or both (e.g. "foo'bar"baz").
+            // Default to double quotes.
+            // If both are present, we must escape the double quote.
+            if (hasDouble) {
+                baseSafe = baseSafe.replace("\"", "&quot;");
+            }
+            sb.append("\"").append(baseSafe).append("\"");
+        }
+    }
+
+    /**
+     * Escape for Element Content (PCDATA).
+     * Strictly minimal escaping.
+     * Quotes (" and ') are valid in PCDATA and are NOT escaped.
+     */
+    private String escapeXmlContent(String text) {
         return text.replace("&", "&amp;")
-            .replace("<", "&lt;")
-            .replace(">", "&gt;")
-            .replace("'", "&apos;")
-            .replace("\"", "&quot;");
+                   .replace("<", "&lt;")
+                   .replace(">", "&gt;");
     }
 
     private String normalizeTagNewlines(String text) {
