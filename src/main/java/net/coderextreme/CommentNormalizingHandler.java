@@ -17,11 +17,6 @@ import javax.xml.parsers.SAXParser;
 public class CommentNormalizingHandler extends DefaultHandler2 {
     private Writer writer;
 
-    // Formatting state
-    private int depth = 0;
-    private static final String INDENT_STRING = "  "; // 2 spaces
-    private boolean lastEventWasCharacter = false;
-
     // DTD suppression state
     private boolean insideDTD = false;
 
@@ -35,16 +30,14 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
 
     @Override
     public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
-        // Return empty source to prevent downloading/parsing the external DTD file content.
-        // This prevents comments *inside* the DTD file from appearing in the output.
+        // Return empty source to prevent downloading/parsing external DTDs
         return new InputSource(new StringReader(""));
     }
 
     @Override
     public void startDTD(String name, String publicId, String systemId) throws SAXException {
         try {
-            // Write the DOCTYPE declaration exactly as it appears in the source
-            writer.write("\n"); // Ensure newline after XML declaration
+            // Preserve the DOCTYPE declaration
             writer.write("<!DOCTYPE ");
             writer.write(name);
 
@@ -63,8 +56,7 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
             }
             writer.write(">");
 
-            // Mark entry into DTD to suppress any comments that might appear
-            // in an internal subset (between [ and ])
+            // Mark entry into DTD to suppress internal subset comments
             insideDTD = true;
         } catch (IOException e) {
             throw new SAXException("Error writing DTD", e);
@@ -77,13 +69,16 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     }
 
     // --------------------------------------------------------------------------------
-    // Content Writing
+    // Content Writing - Pass-through mode
     // --------------------------------------------------------------------------------
 
     @Override
     public void startDocument() throws SAXException {
         try {
             writer.write("<?xml version='1.0' encoding='UTF-8'?>");
+            // We do NOT add a newline here explicitly.
+            // The SAX parser will usually send a 'characters' event with the newline
+            // if it exists in the source.
         } catch (IOException e) {
             throw new SAXException("Error writing start document", e);
         }
@@ -99,28 +94,34 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
             String commentText = new String(ch, start, length);
 
             // 1. Normalize logic:
-            // Find any tag-like structures <...> and replace newlines INSIDE them with spaces.
+            // Find tag-like structures <...> and replace newlines INSIDE them with spaces.
             String normalizedTags = normalizeTagNewlines(commentText);
 
             // 2. Split logic:
             // Split by remaining newlines.
             String[] lines = normalizedTags.split("\\n");
 
+            // 3. Write logic
+            // We track if we have written a comment to handle newlines between splits
+            boolean first = true;
+
             for (String line : lines) {
                 String trimmed = line.trim();
 
-                // 3. Filter Logic:
-                // Only write non-empty comments
+                // Filter out empty comments
                 if (!trimmed.isEmpty()) {
-                    writeIndent();
+                    if (!first) {
+                        // If we split a multi-line comment into chunks,
+                        // we add a newline to separate them.
+                        writer.write("\n");
+                    }
+
                     writer.write("<!-- ");
                     writer.write(trimmed);
                     writer.write(" -->");
+                    first = false;
                 }
             }
-
-            lastEventWasCharacter = false;
-
         } catch (IOException e) {
             throw new SAXException("Error writing comment", e);
         }
@@ -129,8 +130,7 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         try {
-            writeIndent();
-
+            // No custom indentation. Write exactly what triggered this event.
             writer.write("<");
             writer.write(qName);
 
@@ -143,9 +143,6 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
             }
 
             writer.write(">");
-
-            depth++;
-            lastEventWasCharacter = false;
         } catch (IOException e) {
             throw new SAXException("Error writing start element", e);
         }
@@ -154,18 +151,10 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         try {
-            depth--;
-
-            // Only indent if we didn't just write text (keeps <tag>text</tag> compact)
-            if (!lastEventWasCharacter) {
-                writeIndent();
-            }
-
+            // No custom indentation.
             writer.write("</");
             writer.write(qName);
             writer.write(">");
-
-            lastEventWasCharacter = false;
         } catch (IOException e) {
             throw new SAXException("Error writing end element", e);
         }
@@ -174,23 +163,24 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         try {
+            // Write exact characters (whitespace, newlines, text) as received.
+            // Do NOT trim.
             String text = new String(ch, start, length);
-
-            if (text.trim().isEmpty()) {
-                return;
-            }
-
             writer.write(escapeXml(text));
-            lastEventWasCharacter = true;
         } catch (IOException e) {
             throw new SAXException("Error writing characters", e);
         }
     }
 
     @Override
+    public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
+        // Treat ignorable whitespace (formatting from validation) exactly like content characters.
+        characters(ch, start, length);
+    }
+
+    @Override
     public void processingInstruction(String target, String data) throws SAXException {
         try {
-            writeIndent();
             writer.write("<?");
             writer.write(target);
             if (data != null && !data.isEmpty()) {
@@ -198,7 +188,6 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
                 writer.write(data);
             }
             writer.write("?>");
-            lastEventWasCharacter = false;
         } catch (IOException e) {
             throw new SAXException("Error writing processing instruction", e);
         }
@@ -207,13 +196,6 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
     // --------------------------------------------------------------------------------
     // Helpers
     // --------------------------------------------------------------------------------
-
-    private void writeIndent() throws IOException {
-        writer.write("\n");
-        for (int i = 0; i < depth; i++) {
-            writer.write(INDENT_STRING);
-        }
-    }
 
     private String escapeXml(String text) {
         return text.replace("&", "&amp;")
@@ -249,7 +231,7 @@ public class CommentNormalizingHandler extends DefaultHandler2 {
         try {
             factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
         } catch (Exception e) {
-            // Feature might not be supported, handled by resolveEntity as backup
+            // Feature might not be supported
         }
 
         SAXParser saxParser = factory.newSAXParser();
