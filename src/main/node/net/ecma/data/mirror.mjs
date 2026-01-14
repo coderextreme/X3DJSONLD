@@ -40,6 +40,7 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          /*<component name='Shape' level='4'></component>*/
           component : new SFNode(
             new component({
               name : new SFString("Scripting"),
@@ -72,7 +73,6 @@ var X3D0 =  new X3D({
             new component({
               name : new SFString("Core"),
               level : new SFInt32(1)})),
-          /*<component name='Shape' level='4'></component>*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),

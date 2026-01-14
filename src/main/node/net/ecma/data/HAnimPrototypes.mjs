@@ -16,25 +16,24 @@ var ProtoInterface = require('./x3d.mjs');
 var field = require('./x3d.mjs');
 var ProtoBody = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
+var Group = require('./x3d.mjs');
 var IS = require('./x3d.mjs');
 var connect = require('./x3d.mjs');
-var Group = require('./x3d.mjs');
 var WorldInfo = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
-var Text = require('./x3d.mjs');
-var FontStyle = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var SFFloat = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
+var Text = require('./x3d.mjs');
+var FontStyle = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       head : new SFNode(
         new head({
-          /*Originally these fundamental prototypes were defined in InterchangableActorsViaDynamicRoutingPrototypes.x3d*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -70,7 +69,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("23 May 2020")}),
+              content : new SFString("Mon, 15 Sep 2025 05:20:09 GMT")}),
 
             new meta({
               name : new SFString("TODO"),
@@ -110,18 +109,9 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d")})])})),
       Scene : new SFNode(
         new Scene({
-          /***********Human Model Protypes**********/
           children : new MFNode([
             new ProtoDeclare({
               name : new SFString("Humanoid1_1"),
@@ -129,159 +119,121 @@ var X3D0 =  new X3D({
               documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
-                  /*HAnim v1.1 field definitions*/
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFSTRING,
-                      name : new SFString("name"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("name")}),
 
                     new field({
                       type : field.TYPE_SFSTRING,
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       name : new SFString("version"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("legal values: 1.1 or 2.0"),
-                      value : new SFString("1.1")}),
+                      value : new SFString("1.1"),
+                      appinfo : new SFString("legal values: 1.1 or 2.0")}),
 
                     new field({
                       type : field.TYPE_SFSTRING,
-                      name : new SFString("humanoidVersion"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("humanoidVersion"),
                       appinfo : new SFString("Version of the humanoid being modeled. Hint: HAnim version 2.0")}),
 
                     new field({
                       type : field.TYPE_MFSTRING,
-                      name : new SFString("info"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("info")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("translation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("translation")}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      name : new SFString("rotation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 1 0")}),
+                      name : new SFString("rotation")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("center"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("center")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       name : new SFString("scale"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
                       value : new SFString("1 1 1")}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      name : new SFString("scaleOrientation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 1 0")}),
+                      name : new SFString("scaleOrientation")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("bboxCenter"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("bboxCenter")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       name : new SFString("bboxSize"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("-1 -1 -1")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("humanoidBody"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("humanoidBody"),
                       appinfo : new SFString("HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton."),
                       documentation : new SFString("http://HAnim.org/Specifications/HAnim1.1/#humanoid")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("skeleton"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("skeleton"),
                       appinfo : new SFString("HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody"),
                       documentation : new SFString("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("joints"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("joints"),
                       appinfo : new SFString("Container field for Joint nodes")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("segments"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("segments"),
                       appinfo : new SFString("Container field for Segment nodes")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("sites"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("sites"),
                       appinfo : new SFString("Container field for Site nodes")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("viewpoints"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("viewpoints"),
                       appinfo : new SFString("Container field for Viewpoint nodes")}),
 
                     new field({
                       type : field.TYPE_SFNODE,
-                      name : new SFString("skinCoord"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("Hint: HAnim version 2.0"),
-                      /*NULL*/}),
+                      name : new SFString("skinCoord"),
+                      appinfo : new SFString("Hint: HAnim version 2.0")}),
 
                     new field({
                       type : field.TYPE_SFNODE,
-                      name : new SFString("skinNormal"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("Hint: HAnim version 2.0"),
-                      /*NULL*/})])})),
+                      name : new SFString("skinNormal"),
+                      appinfo : new SFString("Hint: HAnim version 2.0")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
                     new Transform({
                       DEF : new SFString("HumanoidTransform"),
-                      IS : new SFNode(
-                        new IS({
-                          connect : new MFNode([
-                            new connect({
-                              nodeField : new SFString("translation"),
-                              protoField : new SFString("translation")}),
-
-                            new connect({
-                              nodeField : new SFString("rotation"),
-                              protoField : new SFString("rotation")}),
-
-                            new connect({
-                              nodeField : new SFString("center"),
-                              protoField : new SFString("center")}),
-
-                            new connect({
-                              nodeField : new SFString("scale"),
-                              protoField : new SFString("scale")}),
-
-                            new connect({
-                              nodeField : new SFString("scaleOrientation"),
-                              protoField : new SFString("scaleOrientation")}),
-
-                            new connect({
-                              nodeField : new SFString("bboxCenter"),
-                              protoField : new SFString("bboxCenter")}),
-
-                            new connect({
-                              nodeField : new SFString("bboxSize"),
-                              protoField : new SFString("bboxSize")})])})),
                       children : new MFNode([
                         new Group({
                           DEF : new SFString("HumanoidGroup1"),
@@ -308,7 +260,37 @@ var X3D0 =  new X3D({
                               connect : new MFNode([
                                 new connect({
                                   nodeField : new SFString("children"),
-                                  protoField : new SFString("viewpoints")})])}))})])})])}))}),
+                                  protoField : new SFString("viewpoints")})])}))}),
+                      IS : new SFNode(
+                        new IS({
+                          connect : new MFNode([
+                            new connect({
+                              nodeField : new SFString("translation"),
+                              protoField : new SFString("translation")}),
+
+                            new connect({
+                              nodeField : new SFString("rotation"),
+                              protoField : new SFString("rotation")}),
+
+                            new connect({
+                              nodeField : new SFString("scale"),
+                              protoField : new SFString("scale")}),
+
+                            new connect({
+                              nodeField : new SFString("scaleOrientation"),
+                              protoField : new SFString("scaleOrientation")}),
+
+                            new connect({
+                              nodeField : new SFString("center"),
+                              protoField : new SFString("center")}),
+
+                            new connect({
+                              nodeField : new SFString("bboxSize"),
+                              protoField : new SFString("bboxSize")}),
+
+                            new connect({
+                              nodeField : new SFString("bboxCenter"),
+                              protoField : new SFString("bboxCenter")})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("Joint"),
@@ -319,97 +301,91 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFSTRING,
-                      name : new SFString("name"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("name")}),
 
                     new field({
                       type : field.TYPE_MFFLOAT,
-                      name : new SFString("ulimit"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("ulimit")}),
 
                     new field({
                       type : field.TYPE_MFFLOAT,
-                      name : new SFString("llimit"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("llimit")}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      name : new SFString("limitOrientation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 1 0")}),
+                      name : new SFString("limitOrientation")}),
 
                     new field({
                       type : field.TYPE_MFINT32,
-                      name : new SFString("skinCoordIndex"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
-
-                    new field({
-                      type : field.TYPE_MFFLOAT,
-                      name : new SFString("skinCoordWeight"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
-
-                    new field({
-                      type : field.TYPE_MFFLOAT,
-                      name : new SFString("stiffness"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("skinCoordIndex")}),
+
+                    new field({
+                      type : field.TYPE_MFFLOAT,
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("skinCoordWeight")}),
+
+                    new field({
+                      type : field.TYPE_MFFLOAT,
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("stiffness"),
                       value : new SFString("0 0 0")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("translation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("translation")}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      name : new SFString("rotation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 1 0")}),
+                      name : new SFString("rotation")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("scale"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("scale"),
                       value : new SFString("1 1 1")}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      name : new SFString("scaleOrientation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 1 0")}),
+                      name : new SFString("scaleOrientation")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("center"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("center")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("bboxCenter"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("bboxCenter")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       name : new SFString("bboxSize"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("-1 -1 -1")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("children"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("children")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("addChildren"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      name : new SFString("addChildren")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("removeChildren"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])})),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      name : new SFString("removeChildren")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -427,10 +403,6 @@ var X3D0 =  new X3D({
                               protoField : new SFString("rotation")}),
 
                             new connect({
-                              nodeField : new SFString("center"),
-                              protoField : new SFString("center")}),
-
-                            new connect({
                               nodeField : new SFString("scale"),
                               protoField : new SFString("scale")}),
 
@@ -439,16 +411,16 @@ var X3D0 =  new X3D({
                               protoField : new SFString("scaleOrientation")}),
 
                             new connect({
-                              nodeField : new SFString("bboxCenter"),
-                              protoField : new SFString("bboxCenter")}),
+                              nodeField : new SFString("center"),
+                              protoField : new SFString("center")}),
 
                             new connect({
                               nodeField : new SFString("bboxSize"),
                               protoField : new SFString("bboxSize")}),
 
                             new connect({
-                              nodeField : new SFString("children"),
-                              protoField : new SFString("children")}),
+                              nodeField : new SFString("bboxCenter"),
+                              protoField : new SFString("bboxCenter")}),
 
                             new connect({
                               nodeField : new SFString("addChildren"),
@@ -456,7 +428,11 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("removeChildren"),
-                              protoField : new SFString("removeChildren")})])}))})])}))}),
+                              protoField : new SFString("removeChildren")}),
+
+                            new connect({
+                              nodeField : new SFString("children"),
+                              protoField : new SFString("children")})])}))})])}))}),
 
             new ProtoDeclare({
               name : new SFString("Segment"),
@@ -467,65 +443,61 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFSTRING,
-                      name : new SFString("name"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("name")}),
 
                     new field({
                       type : field.TYPE_SFFLOAT,
-                      name : new SFString("mass"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0")}),
+                      name : new SFString("mass")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("centerOfMass"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("centerOfMass")}),
 
                     new field({
                       type : field.TYPE_MFFLOAT,
-                      name : new SFString("momentsOfInertia"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("momentsOfInertia"),
                       value : new SFString("0 0 0 0 0 0 0 0 0")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("bboxCenter"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("bboxCenter")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("bboxSize"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
+                      name : new SFString("bboxSize"),
                       value : new SFString("-1 -1 -1")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("children"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("children")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("addChildren"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      name : new SFString("addChildren")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("removeChildren"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      name : new SFString("removeChildren")}),
 
                     new field({
                       type : field.TYPE_SFNODE,
-                      name : new SFString("coord"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      appinfo : new SFString("contains Coordinate nodes"),
-                      /*NULL*/}),
+                      name : new SFString("coord"),
+                      appinfo : new SFString("contains Coordinate nodes")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("displacers"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("displacers"),
                       appinfo : new SFString("contains Displacer nodes")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
@@ -536,16 +508,12 @@ var X3D0 =  new X3D({
                         new IS({
                           connect : new MFNode([
                             new connect({
-                              nodeField : new SFString("bboxCenter"),
-                              protoField : new SFString("bboxCenter")}),
-
-                            new connect({
                               nodeField : new SFString("bboxSize"),
                               protoField : new SFString("bboxSize")}),
 
                             new connect({
-                              nodeField : new SFString("children"),
-                              protoField : new SFString("children")}),
+                              nodeField : new SFString("bboxCenter"),
+                              protoField : new SFString("bboxCenter")}),
 
                             new connect({
                               nodeField : new SFString("addChildren"),
@@ -553,7 +521,11 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("removeChildren"),
-                              protoField : new SFString("removeChildren")})])}))})])}))}),
+                              protoField : new SFString("removeChildren")}),
+
+                            new connect({
+                              nodeField : new SFString("children"),
+                              protoField : new SFString("children")})])}))})])}))}),
 
             new ProtoDeclare({
               name : new SFString("Site"),
@@ -564,65 +536,60 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFSTRING,
-                      name : new SFString("name"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("name")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("translation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("translation")}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      name : new SFString("rotation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 1 0")}),
+                      name : new SFString("rotation")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("scale"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("scale"),
                       value : new SFString("1 1 1")}),
 
                     new field({
                       type : field.TYPE_SFROTATION,
-                      name : new SFString("scaleOrientation"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 1 0")}),
+                      name : new SFString("scaleOrientation")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("center"),
                       accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("center")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
-                      name : new SFString("bboxCenter"),
                       accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
-                      value : new SFString("0 0 0")}),
+                      name : new SFString("bboxCenter")}),
 
                     new field({
                       type : field.TYPE_SFVEC3F,
+                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       name : new SFString("bboxSize"),
-                      accessType : new SFString(field.ACCESSTYPE_INITIALIZEONLY),
                       value : new SFString("-1 -1 -1")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("children"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("children")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("addChildren"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      name : new SFString("addChildren")}),
 
                     new field({
                       type : field.TYPE_MFNODE,
-                      name : new SFString("removeChildren"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY)})])})),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      name : new SFString("removeChildren")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -640,10 +607,6 @@ var X3D0 =  new X3D({
                               protoField : new SFString("rotation")}),
 
                             new connect({
-                              nodeField : new SFString("center"),
-                              protoField : new SFString("center")}),
-
-                            new connect({
                               nodeField : new SFString("scale"),
                               protoField : new SFString("scale")}),
 
@@ -652,16 +615,16 @@ var X3D0 =  new X3D({
                               protoField : new SFString("scaleOrientation")}),
 
                             new connect({
-                              nodeField : new SFString("bboxCenter"),
-                              protoField : new SFString("bboxCenter")}),
+                              nodeField : new SFString("center"),
+                              protoField : new SFString("center")}),
 
                             new connect({
                               nodeField : new SFString("bboxSize"),
                               protoField : new SFString("bboxSize")}),
 
                             new connect({
-                              nodeField : new SFString("children"),
-                              protoField : new SFString("children")}),
+                              nodeField : new SFString("bboxCenter"),
+                              protoField : new SFString("bboxCenter")}),
 
                             new connect({
                               nodeField : new SFString("addChildren"),
@@ -669,7 +632,11 @@ var X3D0 =  new X3D({
 
                             new connect({
                               nodeField : new SFString("removeChildren"),
-                              protoField : new SFString("removeChildren")})])}))})])}))}),
+                              protoField : new SFString("removeChildren")}),
+
+                            new connect({
+                              nodeField : new SFString("children"),
+                              protoField : new SFString("children")})])}))})])}))}),
 
             new ProtoDeclare({
               name : new SFString("Displacer"),
@@ -680,18 +647,18 @@ var X3D0 =  new X3D({
                   field : new MFNode([
                     new field({
                       type : field.TYPE_SFSTRING,
-                      name : new SFString("name"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("name")}),
 
                     new field({
                       type : field.TYPE_MFINT32,
-                      name : new SFString("coordIndex"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("coordIndex")}),
 
                     new field({
                       type : field.TYPE_MFVEC3F,
-                      name : new SFString("displacements"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)})])})),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                      name : new SFString("displacements")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -699,19 +666,18 @@ var X3D0 =  new X3D({
                       info : new MFString(["null body node"])})])}))}),
 
             new Shape({
-              geometry : new SFNode(
-                new Text({
-                  string : new MFString(["Humanoid Animation","(HAnim) prototype","implementations"]),
-                  fontStyle : new SFNode(
-                    new FontStyle({
-                      justify : new MFString(["MIDDLE","MIDDLE"])}))})),
               appearance : new SFNode(
                 new Appearance({
                   material : new SFNode(
                     new Material({
                       ambientIntensity : new SFFloat(0.25),
                       diffuseColor : new SFColor([0.795918,0.505869,0.093315]),
-                      shininess : new SFFloat(0.39),
                       specularColor : new SFColor([0.923469,0.428866,0.006369]),
-                      /*Universal Media Library: Autumn 9*/}))}))})])}))});
+                      shininess : new SFFloat(0.39)}))})),
+              geometry : new SFNode(
+                new Text({
+                  string : new MFString(["Humanoid Animation","(HAnim) prototype","implementations"]),
+                  fontStyle : new SFNode(
+                    new FontStyle({
+                      justify : new MFString(["MIDDLE","MIDDLE"])}))}))})])}))});
 console.log(X3D0.toXMLNode());

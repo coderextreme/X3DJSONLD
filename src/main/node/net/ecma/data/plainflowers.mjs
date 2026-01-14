@@ -88,7 +88,7 @@ var X3D0 =  new X3D({
                               fieldValue : new MFNode([
                                 new fieldValue({
                                   name : new SFString("vertex"),
-                                  value : new SFString("\"../shaders/x_ite_flowers_plain.vs\"")}),
+                                  value : new SFString("\"../shaders/gl_flowers_plain.vs\"")}),
 
                                 new fieldValue({
                                   name : new SFString("fragment"),

@@ -40,7 +40,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("creator"),
-              content : new SFString("YOO Kwan Hee and Don Brutzman")}),
+              content : new SFString("Kwan Hee YOO and Don Brutzman")}),
 
             new meta({
               name : new SFString("created"),
@@ -48,7 +48,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("8 March 2021")}),
+              content : new SFString("Mon, 15 Sep 2025 05:20:09 GMT")}),
 
             new meta({
               name : new SFString("warning"),
@@ -80,7 +80,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html")}),
+              content : new SFString("https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/hanim.html")}),
 
             new meta({
               name : new SFString("subject"),
@@ -88,15 +88,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
@@ -115,7 +107,6 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Inline({
                   url : new MFString(["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"])}),
-              /*Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model*/
 
                 new Transform({
                   DEF : new SFString("GridXY_20x20Fixed_AdjustScale"),
@@ -123,7 +114,7 @@ var X3D0 =  new X3D({
                   children : new MFNode([
                     new Inline({
                       DEF : new SFString("GridXY_20x20Fixed"),
-                      url : new MFString(["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"])})])})])}),
+                      url : new MFString(["../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"])})])})])}),
 
             new Transform({
               translation : new SFVec3f([1,1,0]),
@@ -136,7 +127,6 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([-1,-1,0]),
-              /*rotation='0 0 1 3.141593'*/
               children : new MFNode([
                 new Inline({
                   url : new MFString(["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"])}),
@@ -146,7 +136,6 @@ var X3D0 =  new X3D({
 
             new Transform({
               translation : new SFVec3f([1,-1,0]),
-              /*rotation='0 0 1 3.141593'*/
               children : new MFNode([
                 new Inline({
                   url : new MFString(["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"])}),

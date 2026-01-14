@@ -8,10 +8,10 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
-var MFNode = require('./x3d.mjs');
-var meta = require('./x3d.mjs');
 var component = require('./x3d.mjs');
 var SFInt32 = require('./x3d.mjs');
+var MFNode = require('./x3d.mjs');
+var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
@@ -41,6 +41,10 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -68,11 +72,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")}),
-          component : new SFNode(
-            new component({
-              name : new SFString("Scripting"),
-              level : new SFInt32(1)})])})),
+              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

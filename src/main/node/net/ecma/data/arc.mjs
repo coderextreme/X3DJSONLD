@@ -350,12 +350,14 @@ ecmascript:eval (0
                   name : new SFString("startnode"),
                   children : new MFNode([
                     new ProtoInstance({
+                      name : new SFString("point"),
                       USE : new SFString("G1")})])}),
 
                 new fieldValue({
                   name : new SFString("endnode"),
                   children : new MFNode([
                     new ProtoInstance({
+                      name : new SFString("point"),
                       USE : new SFString("G2")})])}),
 
                 new fieldValue({
@@ -372,12 +374,14 @@ ecmascript:eval (0
                   name : new SFString("startnode"),
                   children : new MFNode([
                     new ProtoInstance({
+                      name : new SFString("point"),
                       USE : new SFString("G1")})])}),
 
                 new fieldValue({
                   name : new SFString("endnode"),
                   children : new MFNode([
                     new ProtoInstance({
+                      name : new SFString("point"),
                       USE : new SFString("G3")})])}),
 
                 new fieldValue({
@@ -394,12 +398,14 @@ ecmascript:eval (0
                   name : new SFString("startnode"),
                   children : new MFNode([
                     new ProtoInstance({
+                      name : new SFString("point"),
                       USE : new SFString("G1")})])}),
 
                 new fieldValue({
                   name : new SFString("endnode"),
                   children : new MFNode([
                     new ProtoInstance({
+                      name : new SFString("point"),
                       USE : new SFString("G4")})])}),
 
                 new fieldValue({

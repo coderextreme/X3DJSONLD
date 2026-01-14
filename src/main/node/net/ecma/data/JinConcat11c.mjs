@@ -136,7 +136,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),
@@ -8901,7 +8901,7 @@ var X3D0 =  new X3D({
 
                                                                 new HAnimSite({
                                                                   name : new SFString("r_tarsal_distal_phalanx_5"),
-                                                                  DEF : new SFString("hanim_"),
+                                                                  DEF : new SFString("hanim_r_tarsal_distal_phalanx_5"),
                                                                   translation : new SFVec3f([-0.125,0.016,0.115]),
                                                                   children : new MFNode([
                                                                     new Transform({

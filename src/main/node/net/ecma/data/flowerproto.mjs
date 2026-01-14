@@ -31,9 +31,9 @@ var IS = require('./x3d.mjs');
 var connect = require('./x3d.mjs');
 var Sphere = require('./x3d.mjs');
 var Script = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
 var TimeSensor = require('./x3d.mjs');
 var SFTime = require('./x3d.mjs');
-var SFBool = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
@@ -108,14 +108,14 @@ var X3D0 =  new X3D({
                     new field({
                       type : field.TYPE_MFSTRING,
                       name : new SFString("vertex"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\"")}),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      value : new SFString("\"../shaders/gl_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\"")}),
 
                     new field({
                       type : field.TYPE_MFSTRING,
                       name : new SFString("fragment"),
-                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                      value : new SFString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"")})])})),
+                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                      value : new SFString("\"../shaders/pc_flowers.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"")})])})),
               ProtoBody : new SFNode(
                 new ProtoBody({
                   children : new MFNode([
@@ -154,12 +154,15 @@ var X3D0 =  new X3D({
                                 new ComposedShader({
                                   DEF : new SFString("shader"),
                                   language : new SFString("GLSL"),
+                                  /*<field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>*/
                                   field : new MFNode([
                                     new field({
-                                      type : field.TYPE_SFINT32,
+                                      type : field.TYPE_SFNODE,
                                       name : new SFString("cube"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
-                                      value : new SFString("0")}),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                                      children : new MFNode([
+                                        new ComposedCubeMapTexture({
+                                          USE : new SFString("texture")})])}),
 
                                     new field({
                                       type : field.TYPE_SFVEC3F,
@@ -170,57 +173,56 @@ var X3D0 =  new X3D({
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("bias"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("0.5")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("scale"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("0.5")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("power"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("2")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("a"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("10")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("b"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("1")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("c"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("20")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("d"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("20")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("tdelta"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("0")}),
 
                                     new field({
                                       type : field.TYPE_SFFLOAT,
                                       name : new SFString("pdelta"),
-                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
                                       value : new SFString("0")}),
-                                  /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
                                   parts : new SFNode(
                                     new ShaderPart({
                                       type : "VERTEX",
@@ -244,6 +246,7 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Script({
                           DEF : new SFString("Animate"),
+                          directOutput : new SFBool(true),
                           field : new MFNode([
                             new field({
                               type : field.TYPE_SFVEC3F,
@@ -254,7 +257,7 @@ var X3D0 =  new X3D({
                             new field({
                               type : field.TYPE_SFVEC3F,
                               name : new SFString("velocity"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
                               value : new SFString("0 0 0")}),
 
                             new field({
@@ -265,37 +268,37 @@ var X3D0 =  new X3D({
                             new field({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("a"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
                               value : new SFString("0.5")}),
 
                             new field({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("b"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
                               value : new SFString("0.5")}),
 
                             new field({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("c"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
                               value : new SFString("3")}),
 
                             new field({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("d"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
                               value : new SFString("3")}),
 
                             new field({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("tdelta"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
                               value : new SFString("0.5")}),
 
                             new field({
                               type : field.TYPE_SFFLOAT,
                               name : new SFString("pdelta"),
-                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
                               value : new SFString("0.5")}),
                           ]),
 ecmascript:eval (0

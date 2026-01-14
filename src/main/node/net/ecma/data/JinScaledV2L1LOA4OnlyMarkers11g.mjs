@@ -60,6 +60,8 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          /*Scaled 1:1, Added Animations*/
+          /*Added Sites*/
           component : new SFNode(
             new component({
               name : new SFString("HAnim"),
@@ -135,13 +137,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("../license.html")}),
-          /*Scaled 1:1, Added Animations*/
-          /*Added Sites*/])})),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           /*https://www.web3d.org/documents/specifications/19774/V2.0/index.html*/

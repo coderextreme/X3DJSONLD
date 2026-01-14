@@ -8,6 +8,8 @@ console.log("Problems loading fs. On browser?",e);
 var SFString = require('./x3d.mjs');
 var SFNode = require('./x3d.mjs');
 var head = require('./x3d.mjs');
+var component = require('./x3d.mjs');
+var SFInt32 = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
@@ -42,10 +44,14 @@ var OscillatorSource = require('./x3d.mjs');
 var StreamAudioSource = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
-      profile : new SFString("Full"),
+      profile : new SFString("Immersive"),
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Sound"),
+              level : new SFInt32(3)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -65,7 +71,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("26 November 2021")}),
+              content : new SFString("Mon, 15 Sep 2025 05:18:43 GMT")}),
 
             new meta({
               name : new SFString("warning"),
@@ -73,16 +79,12 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d")}),
-
-            new meta({
-              name : new SFString("generator"),
-              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")})])})),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
             new WorldInfo({
-              title : new SFString("AllAudioGraphNodes.x3d")}),
+              title : new SFString("AllAudioGraphNodesTest.x3d")}),
 
             new Shape({
               appearance : new SFNode(
@@ -90,9 +92,9 @@ var X3D0 =  new X3D({
                   acousticProperties : new SFNode(
                     new AcousticProperties({
                       description : new SFString("Testing of X3D4 nodes demonstrating W3C Audio API in progress"),
-                      refraction : new SFFloat(0.5),
                       diffuse : new SFFloat(0.25),
-                      specular : new SFFloat(1)})),
+                      specular : new SFFloat(1),
+                      refraction : new SFFloat(0.5)})),
                   material : new SFNode(
                     new Material({}))})),
               geometry : new SFNode(
@@ -103,14 +105,14 @@ var X3D0 =  new X3D({
               source : new SFNode(
                 new AudioClip({
                   description : new SFString("testing"),
-                  url : new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])}))}),
+                  url : new MFString(["sound/saxophone.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])}))}),
 
             new Sound({
               location : new SFVec3f([0,1.6,0]),
               source : new SFNode(
                 new MovieTexture({
                   description : new SFString("testing"),
-                  url : new MFString(["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])}))}),
+                  url : new MFString(["bogus.mpg","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])}))}),
 
             new SpatialSound({
               children : new MFNode([
