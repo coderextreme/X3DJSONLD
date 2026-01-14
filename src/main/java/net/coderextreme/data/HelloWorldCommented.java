@@ -43,12 +43,12 @@ public class HelloWorldCommented implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new HelloWorldCommented().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/HelloWorldCommented.new.java.x3d");
-    model.toFileJSON("../data/HelloWorldCommented.new.java.json");
+    model.toFileJSON("../data/HelloWorldCommented.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -77,9 +77,9 @@ public class HelloWorldCommented implements X3DRoots {
         .addComments(new CommentsBlock("WorldInfo complete, Group begin"))
         .addChild(new Group()
           .addComments(new CommentsBlock("Viewpoint begin"))
-          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new double[] {0f,-1f,0f}).setDescription("Hello world!").setPosition(new double[] {0f,-1f,7f}))
+          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new float[] {0f ,-1f ,0f }).setDescription("Hello world!").setPosition(new float[] {0f ,-1f ,7f }))
           .addComments(new CommentsBlock("Viewpoint complete, Transform begin"))
-          .addChild(new Transform().setRotation(new double[] {0f,1f,0f,3f})
+          .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,3f })
             .addComments(new CommentsBlock("Shape begin"))
             .addChild(new Shape()
               .addComments(new CommentsBlock("Sphere begin"))
@@ -90,11 +90,11 @@ public class HelloWorldCommented implements X3DRoots {
                 .addComments(new CommentsBlock("Material begin"))
                 .addComments(new CommentsBlock("Material complete, ImageTexture begin"))
                 .addComments(new CommentsBlock("ImageTexture complete"))
-                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new double[] {0.1f,0.5f,1f}))
+                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {0.1f ,0.5f ,1f }))
                 .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new MFString0().getArray()))))
             .addComments(new CommentsBlock("Shape complete")))
           .addComments(new CommentsBlock("Transform complete, Transform begin"))
-          .addChild(new Transform().setTranslation(new double[] {0f,-2f,0f})
+          .addChild(new Transform().setTranslation(new float[] {0f ,-2f ,0f })
             .addComments(new CommentsBlock("Shape begin"))
             .addChild(new Shape()
               .addComments(new CommentsBlock("Text begin"))

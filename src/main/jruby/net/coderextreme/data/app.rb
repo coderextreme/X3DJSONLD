@@ -73,6 +73,7 @@ DynamicsCompressor = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Sound.Dy
 EaseInEaseOut = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Interpolation.EaseInEaseOut")
 EdgeEnhancementVolumeStyle = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.VolumeRendering.EdgeEnhancementVolumeStyle")
 ElevationGrid = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Geometry3D.ElevationGrid")
+EnvironmentLight = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Lighting.EnvironmentLight")
 EspduTransform = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.DIS.EspduTransform")
 ExplosionEmitter = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.ParticleSystems.ExplosionEmitter")
 Extrusion = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Geometry3D.Extrusion")
@@ -80,6 +81,7 @@ FillProperties = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Shape.FillPr
 FloatVertexAttribute = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Shaders.FloatVertexAttribute")
 Fog = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.EnvironmentalEffects.Fog")
 FogCoordinate = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.EnvironmentalEffects.FogCoordinate")
+FontLibrary = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Text.FontLibrary")
 FontStyle = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Text.FontStyle")
 ForcePhysicsModel = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.ParticleSystems.ForcePhysicsModel")
 Gain = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Sound.Gain")
@@ -100,6 +102,7 @@ HAnimDisplacer = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.HAnim.HAnimD
 HAnimHumanoid = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.HAnim.HAnimHumanoid")
 HAnimJoint = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.HAnim.HAnimJoint")
 HAnimMotion = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.HAnim.HAnimMotion")
+HAnimPose = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.HAnim.HAnimPose")
 HAnimSegment = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.HAnim.HAnimSegment")
 HAnimSite = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.HAnim.HAnimSite")
 ImageCubeMapTexture = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.CubeMapTexturing.ImageCubeMapTexture")
@@ -225,6 +228,7 @@ StreamAudioSource = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Sound.Str
 StringSensor = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.KeyDeviceSensor.StringSensor")
 SurfaceEmitter = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.ParticleSystems.SurfaceEmitter")
 Switch = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Grouping.Switch")
+Tangent = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Rendering.Tangent")
 TexCoordChaser2D = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Followers.TexCoordChaser2D")
 TexCoordDamper2D = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Followers.TexCoordDamper2D")
 Text = JavaUtilities.get_proxy_class("org.web3d.x3d.jsail.Text.Text")
@@ -366,4 +370,4 @@ x3D0 = X3D.new
         )
     )
 x3D0.toFileX3D "../data/app.new.jruby.x3d"
-x3D0.toFileJSON "../data/app.new.jruby.json"
+x3D0.toFileJSON "../data/app.new.jruby.x3dj"

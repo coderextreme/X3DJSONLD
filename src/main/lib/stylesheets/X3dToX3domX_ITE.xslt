@@ -10,7 +10,7 @@
   </head>
 
 Recommended tools:
-- X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit
+- X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit
 - SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
 - XML Spy https://www.altova.com
 
@@ -515,8 +515,77 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                 </script>
                 <xsl:text>&#10;</xsl:text>
             </head>
-            <body id="htmlBody" onload="toggleFullscreen ();">
+            <body id="htmlBody" onload="toggleFullscreen();">
                 <xsl:text>&#10;</xsl:text>
+                
+        <xsl:variable name="titleString">
+            <xsl:choose>
+                <xsl:when test="(string-length(//meta[@name = 'title']/@content) > 0)">
+                    <xsl:value-of select="//meta[@name = 'title']/@content"/>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="identifier" select="//meta[@name = 'identifier']/@content"/>
+        <xsl:variable name="publishedInX3dModelArchives" 
+                    select="(string-length($identifier) > 0) and ends-with($identifier,'.x3d') and
+                             starts-with($identifier,'https://www.web3d.org/x3d/content/examples/')"/>
+        <xsl:variable name="shortcutIconUrl">
+            <xsl:choose>
+                <xsl:when test="$publishedInX3dModelArchives">
+                    <xsl:value-of select="concat(substring-before($identifier,'.x3d'),'Index.html')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>https://www.web3d.org/x3d/content/examples/X3dResources.html</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="shortcutIconTooltip">
+            <xsl:choose>
+                <xsl:when test="$publishedInX3dModelArchives">
+                    <xsl:text>go to X3D Example Archives model page</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>go to X3D Resources page</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="shortcutIconTarget">
+            <xsl:choose>
+                <xsl:when test="$publishedInX3dModelArchives">
+                    <xsl:text>_top</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>_blank</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[debug] insert-title-bar: titleString=</xsl:text>
+            <xsl:value-of select="$titleString"/>
+        </xsl:message> -->
+        <xsl:if test="(string-length($shortcutIconUrl) > 0)">
+                <!-- add shortcut link to upper right corner of page -->
+                <span style="position: relative; float: right; margin-right: 10px; font-size: smaller">
+                    <xsl:element name="a">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="$shortcutIconUrl"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_top</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="$shortcutIconTooltip"/>
+                        </xsl:attribute>
+                        <!-- useing firefox for conversion: Inspector > Copy > Image-Data-URL -->
+                        <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
+                        <!-- X3DtextIcon16.png -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>
+                    </xsl:element>
+                </span>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:if>
+
 
 <xsl:choose>
     <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
@@ -545,7 +614,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <span class="references">
                                     <button title="Maximize Frame"
                                             class="maximize"
-                                            onclick="toggleFullscreen ();">
+                                            onclick="toggleFullscreen();">
                                        <img alt="Maximize Frame"
                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QQNFQk1i7oCawAAALhJREFUGJWV0TFKA2EQBeBn1iqptBJvEFsVjxR0LyB4txQSRCzEeAexsLCJydr4WWQWwjbGBwPzv3nDP/Mm+EBXscAhggb3xW/wGaxt8Y2rEvZxWTx0wWqn4R3HJTzCW/FrbEZJnpKcJ3lJcpLkOlvMkpwmeU1ykeSxny0Yox2M0WLS73CA7ItRkqbycZJ2UL9JMqm8CeaY4rmWuatvb+u9xBnm/3Ij+PrD527X5178g4fBBRfFQ/cL8YlBv40R0JoAAAAASUVORK5CYII="/>
                                     </button>
@@ -583,6 +652,31 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                        </xsl:otherwise>
                                    </xsl:choose>
                                </span>
+                                <!-- duplicated button block -->
+                                <xsl:if test="(string-length($shortcutIconUrl) > 0)">
+                                           <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
+                                           <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
+                                           <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
+                                      <!-- add shortcut link to upper right corner of page -->
+                                      <span style="position: relative; float: right; margin-right: 10px; font-size: smaller">
+                                          <xsl:element name="a">
+                                              <xsl:attribute name="href">
+                                                  <xsl:value-of select="$shortcutIconUrl"/>
+                                              </xsl:attribute>
+                                              <xsl:attribute name="target">
+                                                  <xsl:text>_top</xsl:text>
+                                              </xsl:attribute>
+                                              <xsl:attribute name="title">
+                                                  <xsl:value-of select="$shortcutIconTooltip"/>
+                                              </xsl:attribute>
+                                              <!-- useing firefox for conversion: Inspector > Copy > Image-Data-URL -->
+                                              <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
+                                              <!-- X3DtextIcon16.png -->
+                                              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>
+                                          </xsl:element>
+                                      </span>
+                                  <xsl:text>&#10;</xsl:text>
+                              </xsl:if>
                            </td>
                        </tr>
                    </table>
@@ -830,7 +924,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             <tr style="background-color:silver; border-color:silver;">
                                 <td style="text-align:right;color:green;">
                                     <i>
-                                        <xsl:text>Examples Archive</xsl:text>
+                                        <xsl:text>X3D Examples Archive</xsl:text>
                                     </i>
                                 </td>
                                 <td>
@@ -915,6 +1009,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                                         contains($attributeContent, '.midi') or
                                                         contains($attributeContent, '.mp3')  or
                                                         contains($attributeContent, '.mp4')  or
+                                                        contains($attributeContent, '.m4a')  or
                                                         contains($attributeContent, '.mpeg') or
                                                         contains($attributeContent, '.rdf')  or
                                                         contains($attributeContent, '.owl')  or
@@ -1749,6 +1844,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
+                      not((local-name()='containerField' and string(.)='tangent')          and (local-name(..)='Tangent')) and
                       not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D' or local-name(..)='GeneratedCubeMapTexture')) and
                       not((local-name()='containerField' and string(.)='fontStyle')        and (local-name(..)='FontStyle')) and
                       not((local-name()='containerField' and string(.)='texCoord')         and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
@@ -2572,6 +2668,7 @@ function toggleShowDebugLogs()
  ($nodename='SpotLight') or
  ($nodename='StaticGroup') or
  ($nodename='Switch') or
+ ($nodename='Tangent') or
  ($nodename='TexCoordDamper2D') or
  ($nodename='Text') or
  ($nodename='TextureCoordinate') or

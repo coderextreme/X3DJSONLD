@@ -92,7 +92,7 @@ public class fwparticleflowers
     .addChild(new Background().setBackUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
     .addChild(new Transform()
       .addChild(new ParticleSystem().setGeometryType("GEOMETRY").setMaxParticles(20)
-        .addPhysics(new BoundedPhysicsModel()
+        .setPhysics(new BoundedPhysicsModel()
           .setGeometry(new Sphere().setRadius(100)))
         .setEmitter(new ExplosionEmitter().setSpeed(2).setVariation(0.75))
         .setGeometry(new Sphere())

@@ -43,12 +43,12 @@ public class CADPartChildNoTransformation implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new CADPartChildNoTransformation().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/CADPartChildNoTransformation.new.java.x3d");
-    model.toFileJSON("../data/CADPartChildNoTransformation.new.java.json");
+    model.toFileJSON("../data/CADPartChildNoTransformation.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -74,20 +74,20 @@ public class CADPartChildNoTransformation implements X3DRoots {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("CADPartChildNoTransformation.x3d"))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("Hello CAD bushing").setOrientation(new double[] {1f,0f,0f,-0.321751f}).setPosition(new double[] {0f,5f,15f}))
+        .addChild(new Viewpoint().setDescription("Hello CAD bushing").setOrientation(new float[] {1f ,0f ,0f ,-0.321751f }).setPosition(new float[] {0f ,5f ,15f }))
         .addChild(new CADAssembly().setName("DesignPatternAssembly")
           .addChild(new CADPart().setName("CADPartExample")
             .addComments(new CommentsBlock("the rotation and translation attributes serve to position the bushing within the assembly"))
             .addChild(new CADFace().setName("outerSurface")
               .setShape(new Shape()
                 .addComments(new CommentsBlock("note solid='true' and so one-sided external rendering only"))
-                .setGeometry(new Cylinder().setBottom(false).setHeight(3f).setRadius(2f).setTop(false))
+                .setGeometry(new Cylinder().setBottom(false).setHeight(3f ).setRadius(2f ).setTop(false))
                 .setAppearance(new Appearance().setDEF("AppearanceGrey")
                   .setMaterial(new Material()))))
             .addChild(new CADFace().setName("innerSurface")
               .setShape(new Shape()
                 .addComments(new CommentsBlock("note solid='false' and so two-sided internal + external rendering"))
-                .setGeometry(new Cylinder().setBottom(false).setHeight(3f).setSolid(false).setTop(false))
+                .setGeometry(new Cylinder().setBottom(false).setHeight(3f ).setSolid(false).setTop(false))
                 .setAppearance(new Appearance().setUSE("AppearanceGrey"))))
             .addChild(new CADFace().setName("topCap")
               .setShape(new Shape()
@@ -103,7 +103,7 @@ public class CADPartChildNoTransformation implements X3DRoots {
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.9607843f,1f,0.9607843f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.9607843f ,1f ,0.9607843f });
   }
 }
 private class MFInt321 {
@@ -113,7 +113,7 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2f,1.5f,0f,1f,1.5f,0f,1.9616f,1.5f,0.3902f,0.9808f,1.5f,0.1951f,1.8478f,1.5f,0.7654f,0.9239f,1.5f,0.3827f,1.6629f,1.5f,1.1111f,0.8315f,1.5f,0.5556f,1.4142f,1.5f,1.4142f,0.7071f,1.5f,0.7071f,1.1111f,1.5f,1.6629f,0.5556f,1.5f,0.8315f,0.7654f,1.5f,1.8478f,0.3827f,1.5f,0.9239f,0.3902f,1.5f,1.9616f,0.1951f,1.5f,0.9808f,0f,1.5f,2f,0f,1.5f,1f,-0.3902f,1.5f,1.9616f,-0.1951f,1.5f,0.9808f,-0.7654f,1.5f,1.8478f,-0.3827f,1.5f,0.9239f,-1.1111f,1.5f,1.6629f,-0.5556f,1.5f,0.8315f,-1.4142f,1.5f,1.4142f,-0.7071f,1.5f,0.7071f,-1.6629f,1.5f,1.1111f,-0.8315f,1.5f,0.5556f,-1.8478f,1.5f,0.7654f,-0.9239f,1.5f,0.3827f,-1.9616f,1.5f,0.3902f,-0.9808f,1.5f,0.1951f,-2f,1.5f,0f,-1f,1.5f,0f,-1.9616f,1.5f,-0.3902f,-0.9808f,1.5f,-0.1951f,-1.8478f,1.5f,-0.7654f,-0.9239f,1.5f,-0.3827f,-1.6629f,1.5f,-1.1111f,-0.8315f,1.5f,-0.5556f,-1.4142f,1.5f,-1.4142f,-0.7071f,1.5f,-0.7071f,-1.1111f,1.5f,-1.6629f,-0.5556f,1.5f,-0.8315f,-0.7654f,1.5f,-1.8478f,-0.3827f,1.5f,-0.9239f,-0.3902f,1.5f,-1.9616f,-0.1951f,1.5f,-0.9808f,0f,1.5f,-2f,0f,1.5f,-1f,0.3902f,1.5f,-1.9616f,0.1951f,1.5f,-0.9808f,0.7654f,1.5f,-1.8478f,0.3827f,1.5f,-0.9239f,1.1111f,1.5f,-1.6629f,0.5556f,1.5f,-0.8315f,1.4142f,1.5f,-1.4142f,0.7071f,1.5f,-0.7071f,1.6629f,1.5f,-1.1111f,0.8315f,1.5f,-0.5556f,1.8478f,1.5f,-0.7654f,0.9239f,1.5f,-0.3827f,1.9616f,1.5f,-0.3902f,0.9808f,1.5f,-0.1951f,2f,1.5f,0f,1f,1.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {2f ,1.5f ,0f ,1f ,1.5f ,0f ,1.9616f ,1.5f ,0.3902f ,0.9808f ,1.5f ,0.1951f ,1.8478f ,1.5f ,0.7654f ,0.9239f ,1.5f ,0.3827f ,1.6629f ,1.5f ,1.1111f ,0.8315f ,1.5f ,0.5556f ,1.4142f ,1.5f ,1.4142f ,0.7071f ,1.5f ,0.7071f ,1.1111f ,1.5f ,1.6629f ,0.5556f ,1.5f ,0.8315f ,0.7654f ,1.5f ,1.8478f ,0.3827f ,1.5f ,0.9239f ,0.3902f ,1.5f ,1.9616f ,0.1951f ,1.5f ,0.9808f ,0f ,1.5f ,2f ,0f ,1.5f ,1f ,-0.3902f ,1.5f ,1.9616f ,-0.1951f ,1.5f ,0.9808f ,-0.7654f ,1.5f ,1.8478f ,-0.3827f ,1.5f ,0.9239f ,-1.1111f ,1.5f ,1.6629f ,-0.5556f ,1.5f ,0.8315f ,-1.4142f ,1.5f ,1.4142f ,-0.7071f ,1.5f ,0.7071f ,-1.6629f ,1.5f ,1.1111f ,-0.8315f ,1.5f ,0.5556f ,-1.8478f ,1.5f ,0.7654f ,-0.9239f ,1.5f ,0.3827f ,-1.9616f ,1.5f ,0.3902f ,-0.9808f ,1.5f ,0.1951f ,-2f ,1.5f ,0f ,-1f ,1.5f ,0f ,-1.9616f ,1.5f ,-0.3902f ,-0.9808f ,1.5f ,-0.1951f ,-1.8478f ,1.5f ,-0.7654f ,-0.9239f ,1.5f ,-0.3827f ,-1.6629f ,1.5f ,-1.1111f ,-0.8315f ,1.5f ,-0.5556f ,-1.4142f ,1.5f ,-1.4142f ,-0.7071f ,1.5f ,-0.7071f ,-1.1111f ,1.5f ,-1.6629f ,-0.5556f ,1.5f ,-0.8315f ,-0.7654f ,1.5f ,-1.8478f ,-0.3827f ,1.5f ,-0.9239f ,-0.3902f ,1.5f ,-1.9616f ,-0.1951f ,1.5f ,-0.9808f ,0f ,1.5f ,-2f ,0f ,1.5f ,-1f ,0.3902f ,1.5f ,-1.9616f ,0.1951f ,1.5f ,-0.9808f ,0.7654f ,1.5f ,-1.8478f ,0.3827f ,1.5f ,-0.9239f ,1.1111f ,1.5f ,-1.6629f ,0.5556f ,1.5f ,-0.8315f ,1.4142f ,1.5f ,-1.4142f ,0.7071f ,1.5f ,-0.7071f ,1.6629f ,1.5f ,-1.1111f ,0.8315f ,1.5f ,-0.5556f ,1.8478f ,1.5f ,-0.7654f ,0.9239f ,1.5f ,-0.3827f ,1.9616f ,1.5f ,-0.3902f ,0.9808f ,1.5f ,-0.1951f ,2f ,1.5f ,0f ,1f ,1.5f ,0f });
   }
 }
 private class MFInt323 {
@@ -123,7 +123,7 @@ private class MFInt323 {
 }
 private class MFVec3f4 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {2f,-1.5f,0f,1f,-1.5f,0f,1.9616f,-1.5f,-0.3902f,0.9808f,-1.5f,-0.1951f,1.8478f,-1.5f,-0.7654f,0.9239f,-1.5f,-0.3827f,1.6629f,-1.5f,-1.1111f,0.8315f,-1.5f,-0.5556f,1.4142f,-1.5f,-1.4142f,0.7071f,-1.5f,-0.7071f,1.1111f,-1.5f,-1.6629f,0.5556f,-1.5f,-0.8315f,0.7654f,-1.5f,-1.8478f,0.3827f,-1.5f,-0.9239f,0.3902f,-1.5f,-1.9616f,0.1951f,-1.5f,-0.9808f,0f,-1.5f,-2f,0f,-1.5f,-1f,-0.3902f,-1.5f,-1.9616f,-0.1951f,-1.5f,-0.9808f,-0.7654f,-1.5f,-1.8478f,-0.3827f,-1.5f,-0.9239f,-1.1111f,-1.5f,-1.6629f,-0.5556f,-1.5f,-0.8315f,-1.4142f,-1.5f,-1.4142f,-0.7071f,-1.5f,-0.7071f,-1.6629f,-1.5f,-1.1111f,-0.8315f,-1.5f,-0.5556f,-1.8478f,-1.5f,-0.7654f,-0.9239f,-1.5f,-0.3827f,-1.9616f,-1.5f,-0.3902f,-0.9808f,-1.5f,-0.1951f,-2f,-1.5f,0f,-1f,-1.5f,0f,-1.9616f,-1.5f,0.3902f,-0.9808f,-1.5f,0.1951f,-1.8478f,-1.5f,0.7654f,-0.9239f,-1.5f,0.3827f,-1.6629f,-1.5f,1.1111f,-0.8315f,-1.5f,0.5556f,-1.4142f,-1.5f,1.4142f,-0.7071f,-1.5f,0.7071f,-1.1111f,-1.5f,1.6629f,-0.5556f,-1.5f,0.8315f,-0.7654f,-1.5f,1.8478f,-0.3827f,-1.5f,0.9239f,-0.3902f,-1.5f,1.9616f,-0.1951f,-1.5f,0.9808f,0f,-1.5f,2f,0f,-1.5f,1f,0.3902f,-1.5f,1.9616f,0.1951f,-1.5f,0.9808f,0.7654f,-1.5f,1.8478f,0.3827f,-1.5f,0.9239f,1.1111f,-1.5f,1.6629f,0.5556f,-1.5f,0.8315f,1.4142f,-1.5f,1.4142f,0.7071f,-1.5f,0.7071f,1.6629f,-1.5f,1.1111f,0.8315f,-1.5f,0.5556f,1.8478f,-1.5f,0.7654f,0.9239f,-1.5f,0.3827f,1.9616f,-1.5f,0.3902f,0.9808f,-1.5f,0.1951f,2f,-1.5f,0f,1f,-1.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {2f ,-1.5f ,0f ,1f ,-1.5f ,0f ,1.9616f ,-1.5f ,-0.3902f ,0.9808f ,-1.5f ,-0.1951f ,1.8478f ,-1.5f ,-0.7654f ,0.9239f ,-1.5f ,-0.3827f ,1.6629f ,-1.5f ,-1.1111f ,0.8315f ,-1.5f ,-0.5556f ,1.4142f ,-1.5f ,-1.4142f ,0.7071f ,-1.5f ,-0.7071f ,1.1111f ,-1.5f ,-1.6629f ,0.5556f ,-1.5f ,-0.8315f ,0.7654f ,-1.5f ,-1.8478f ,0.3827f ,-1.5f ,-0.9239f ,0.3902f ,-1.5f ,-1.9616f ,0.1951f ,-1.5f ,-0.9808f ,0f ,-1.5f ,-2f ,0f ,-1.5f ,-1f ,-0.3902f ,-1.5f ,-1.9616f ,-0.1951f ,-1.5f ,-0.9808f ,-0.7654f ,-1.5f ,-1.8478f ,-0.3827f ,-1.5f ,-0.9239f ,-1.1111f ,-1.5f ,-1.6629f ,-0.5556f ,-1.5f ,-0.8315f ,-1.4142f ,-1.5f ,-1.4142f ,-0.7071f ,-1.5f ,-0.7071f ,-1.6629f ,-1.5f ,-1.1111f ,-0.8315f ,-1.5f ,-0.5556f ,-1.8478f ,-1.5f ,-0.7654f ,-0.9239f ,-1.5f ,-0.3827f ,-1.9616f ,-1.5f ,-0.3902f ,-0.9808f ,-1.5f ,-0.1951f ,-2f ,-1.5f ,0f ,-1f ,-1.5f ,0f ,-1.9616f ,-1.5f ,0.3902f ,-0.9808f ,-1.5f ,0.1951f ,-1.8478f ,-1.5f ,0.7654f ,-0.9239f ,-1.5f ,0.3827f ,-1.6629f ,-1.5f ,1.1111f ,-0.8315f ,-1.5f ,0.5556f ,-1.4142f ,-1.5f ,1.4142f ,-0.7071f ,-1.5f ,0.7071f ,-1.1111f ,-1.5f ,1.6629f ,-0.5556f ,-1.5f ,0.8315f ,-0.7654f ,-1.5f ,1.8478f ,-0.3827f ,-1.5f ,0.9239f ,-0.3902f ,-1.5f ,1.9616f ,-0.1951f ,-1.5f ,0.9808f ,0f ,-1.5f ,2f ,0f ,-1.5f ,1f ,0.3902f ,-1.5f ,1.9616f ,0.1951f ,-1.5f ,0.9808f ,0.7654f ,-1.5f ,1.8478f ,0.3827f ,-1.5f ,0.9239f ,1.1111f ,-1.5f ,1.6629f ,0.5556f ,-1.5f ,0.8315f ,1.4142f ,-1.5f ,1.4142f ,0.7071f ,-1.5f ,0.7071f ,1.6629f ,-1.5f ,1.1111f ,0.8315f ,-1.5f ,0.5556f ,1.8478f ,-1.5f ,0.7654f ,0.9239f ,-1.5f ,0.3827f ,1.9616f ,-1.5f ,0.3902f ,0.9808f ,-1.5f ,0.1951f ,2f ,-1.5f ,0f ,1f ,-1.5f ,0f });
   }
 }
 }

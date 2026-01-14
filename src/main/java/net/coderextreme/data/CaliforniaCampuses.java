@@ -43,12 +43,12 @@ public class CaliforniaCampuses implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new CaliforniaCampuses().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/CaliforniaCampuses.new.java.x3d");
-    model.toFileJSON("../data/CaliforniaCampuses.new.java.json");
+    model.toFileJSON("../data/CaliforniaCampuses.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -90,41 +90,41 @@ ProtoInstance ProtoInstance2 = null;
           .addComments(new CommentsBlock("<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d\"'/>")))
         .addChild(new NavigationInfo().setTransitionType(new MFString1().getArray()))
         .addChild(new Group().setDEF("PlacemarkGroup")
-          .addChild(new GeoViewpoint().setDEF("View01").setDescription("Naval Postgraduate School").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {36.595599d,-121.877148d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View02").setDescription("University of California Davis").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {38.53650615157984d,-121.7489628616831d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View03").setDescription("University of California Berkeley").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {37.86963434512325d,-122.2593873127355d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View04").setDescription("University of California San Francisco").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {37.76340647188392d,-122.4582475377715d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View05").setDescription("University of California Santa Cruz").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {36.99628443046043d,-122.0534325473795d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View06").setDescription("University of California Merced").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {37.365508575977d,-120.4252597059142d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View07").setDescription("University of California Santa Barbara").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {34.41124450961521d,-119.8479940053906d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View08").setDescription("University of California Los Angeles").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {34.07224474392262d,-118.4408472225642d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View09").setDescription("University of California Irvine").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {33.64623283675919d,-117.8427064139082d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View10").setDescription("University of California Riverside").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {33.97350567066717d,-117.3281649569839d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View11").setDescription("University of California San Diego").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {32.87612136607509d,-117.2367298240259d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View12").setDescription("Humboldt State University").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {40.87630235623448d,-124.0785789217266d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View13").setDescription("California State University, Chico").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {39.73031527724385d,-121.8453722745223d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View14").setDescription("California State University Sacramento").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {38.5626517618963d,-121.4244636520556d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View15").setDescription("Sonoma State University").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {38.33922929793606d,-122.6744333530031d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View16").setDescription("California Maritime Academy").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {38.06907065059484d,-122.2309147135222d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View17").setDescription("San Francisco State University").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {37.722876d,-122.4781512190666d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View18").setDescription("California State University, East Bay").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {37.65707914139907d,-122.0569190659761d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View19").setDescription("California State University Stanislaus").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {37.52552478005697d,-120.8563508560606d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View20").setDescription("San Jose State University").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {37.33580940527095d,-121.8815343755784d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View21").setDescription("California State University, Monterey Bay").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {36.6538071781493d,-121.7984465276711d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View22").setDescription("Fresno State University").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {36.812166d,-119.7451552005852d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View23").setDescription("California State University, Bakersfield").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {35.350804d,-119.1043226128032d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View24").setDescription("California Polytechnic State University").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {35.30115692599171d,-120.6595761796351d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View25").setDescription("California State University, Channel Islands").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {34.1624126428852d,-119.0425264841287d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View26").setDescription("California State University, Northridge").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {34.23959265263849d,-118.5284272400904d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View27").setDescription("California State University, Los Angeles").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {34.06645996626264d,-118.1682050902557d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View28").setDescription("California State Polytechnic University, Pomona").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {34.05727150000314d,-117.8215320234812d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View29").setDescription("California State University, San Bernardino").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {34.18180116432101d,-117.3243676664719d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View30").setDescription("California State University, Fullerton").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {33.882522d,-117.8868367869023d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View31").setDescription("California State University Dominguez Hills").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {33.86463396857103d,-118.2553596272055d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View32").setDescription("California State University, Long Beach").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {33.78196696470824d,-118.112678253688d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View33").setDescription("California State University, San Marcos").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {33.12837619265174d,-117.1600194071002d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View34").setDescription("San Diego State University").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {32.77593126586385d,-117.0722876242553d,250000d}))
-          .addChild(new GeoViewpoint().setDEF("View35").setDescription("CENIC").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {33.879947d,-118.027903d,250000d})))
+          .addChild(new GeoViewpoint().setDEF("View01").setDescription("Naval Postgraduate School").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {36.595599d,-121.877148d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View02").setDescription("University of California Davis").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {38.53650615157984d,-121.7489628616831d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View03").setDescription("University of California Berkeley").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {37.86963434512325d,-122.2593873127355d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View04").setDescription("University of California San Francisco").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {37.76340647188392d,-122.4582475377715d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View05").setDescription("University of California Santa Cruz").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {36.99628443046043d,-122.0534325473795d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View06").setDescription("University of California Merced").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {37.365508575977d,-120.4252597059142d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View07").setDescription("University of California Santa Barbara").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {34.41124450961521d,-119.8479940053906d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View08").setDescription("University of California Los Angeles").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {34.07224474392262d,-118.4408472225642d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View09").setDescription("University of California Irvine").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {33.64623283675919d,-117.8427064139082d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View10").setDescription("University of California Riverside").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {33.97350567066717d,-117.3281649569839d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View11").setDescription("University of California San Diego").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {32.87612136607509d,-117.2367298240259d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View12").setDescription("Humboldt State University").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {40.87630235623448d,-124.0785789217266d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View13").setDescription("California State University, Chico").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {39.73031527724385d,-121.8453722745223d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View14").setDescription("California State University Sacramento").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {38.5626517618963d,-121.4244636520556d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View15").setDescription("Sonoma State University").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {38.33922929793606d,-122.6744333530031d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View16").setDescription("California Maritime Academy").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {38.06907065059484d,-122.2309147135222d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View17").setDescription("San Francisco State University").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {37.722876d,-122.4781512190666d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View18").setDescription("California State University, East Bay").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {37.65707914139907d,-122.0569190659761d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View19").setDescription("California State University Stanislaus").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {37.52552478005697d,-120.8563508560606d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View20").setDescription("San Jose State University").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {37.33580940527095d,-121.8815343755784d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View21").setDescription("California State University, Monterey Bay").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {36.6538071781493d,-121.7984465276711d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View22").setDescription("Fresno State University").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {36.812166d,-119.7451552005852d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View23").setDescription("California State University, Bakersfield").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {35.350804d,-119.1043226128032d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View24").setDescription("California Polytechnic State University").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {35.30115692599171d,-120.6595761796351d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View25").setDescription("California State University, Channel Islands").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {34.1624126428852d,-119.0425264841287d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View26").setDescription("California State University, Northridge").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {34.23959265263849d,-118.5284272400904d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View27").setDescription("California State University, Los Angeles").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {34.06645996626264d,-118.1682050902557d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View28").setDescription("California State Polytechnic University, Pomona").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {34.05727150000314d,-117.8215320234812d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View29").setDescription("California State University, San Bernardino").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {34.18180116432101d,-117.3243676664719d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View30").setDescription("California State University, Fullerton").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {33.882522d,-117.8868367869023d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View31").setDescription("California State University Dominguez Hills").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {33.86463396857103d,-118.2553596272055d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View32").setDescription("California State University, Long Beach").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {33.78196696470824d,-118.112678253688d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View33").setDescription("California State University, San Marcos").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {33.12837619265174d,-117.1600194071002d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View34").setDescription("San Diego State University").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {32.77593126586385d,-117.0722876242553d,250000d}))
+          .addChild(new GeoViewpoint().setDEF("View35").setDescription("CENIC").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new double[] {33.879947d,-118.027903d,250000d})))
         .addComments(new CommentsBlock("===================="))
         .addChild(new ExternProtoDeclare().setName("CrossHair").setAppinfo("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point").setUrl(new MFString2().getArray())
           .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("whether CrossHair prototype is enabled or not"))
@@ -155,12 +155,12 @@ ProtoInstance ProtoInstance2 = null;
           .addComments(new CommentsBlock("initially enabled is off, scene provides selectable text to activate")))
         .addComments(new CommentsBlock("===================="))
         .addChild(new GeoLocation().setGeoCoords(new double[] {36.595599d,-121.877148d,624990d})
-          .addChild(new Billboard().setAxisOfRotation(new double[] {0f,0f,0f})
+          .addChild(new Billboard().setAxisOfRotation(new float[] {0f ,0f ,0f })
             .addChild(new Shape()
               .setGeometry(new Text().setString(new MFString5().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString6().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setAmbientIntensity(0.25f).setDiffuseColor(new double[] {0.795918f,0.505869f,0.093315f}).setShininess(0.39f).setSpecularColor(new double[] {0.923469f,0.428866f,0.006369f})))))
+                .setMaterial(new Material().setAmbientIntensity(0.25f ).setDiffuseColor(new float[] {0.795918f ,0.505869f ,0.093315f }).setShininess(0.39f ).setSpecularColor(new float[] {0.923469f ,0.428866f ,0.006369f })))))
           .addChild(new TouchSensor().setDEF("TourTouch").setDescription("Touch text to turn tour on/off"))
           .addChild(new BooleanToggle().setDEF("TourToggle"))
           .addChild(new ROUTE().setFromField("isActive").setFromNode("TourTouch").setToField("set_boolean").setToNode("TourToggle"))
@@ -226,7 +226,7 @@ ProtoInstance1
             .addChild(new GeoViewpoint().setUSE("View33"))
             .addChild(new GeoViewpoint().setUSE("View34"))
             .addChild(new GeoViewpoint().setUSE("View35"))
-            .addChild(new Viewpoint().setDEF("View4").setDescription("View four (-X axis)").setOrientation(new double[] {0f,1f,0f,-1.57f}).setPosition(new double[] {-10f,0f,0f})));
+            .addChild(new Viewpoint().setDEF("View4").setDescription("View four (-X axis)").setOrientation(new float[] {0f ,1f ,0f ,-1.57f }).setPosition(new float[] {-10f ,0f ,0f })));
 ProtoInstance2
           .addFieldValue(new fieldValue().setName("enabled").setValue("false"));
     return X3D0;

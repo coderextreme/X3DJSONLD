@@ -43,12 +43,12 @@ public class ThreeDTexture implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ThreeDTexture().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/ThreeDTexture.new.java.x3d");
-    model.toFileJSON("../data/ThreeDTexture.new.java.json");
+    model.toFileJSON("../data/ThreeDTexture.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -75,7 +75,7 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("description").setContent("a kind of ThreeDTexture cube with spheres")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(new double[] {0f,0f,12f}))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(new float[] {0f ,0f ,12f }))
         .addChild(new ProtoDeclare().setName("sphereproto")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
@@ -86,7 +86,7 @@ ProtoInstance ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f})))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))))))
         .addChild(new ProtoDeclare().setName("three")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))

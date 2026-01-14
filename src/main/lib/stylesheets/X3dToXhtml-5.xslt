@@ -11,7 +11,7 @@
   </head>
 
 Recommended tools:
-- X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit
+- X3D-Edit 3.2, https://www.web3d.org/x3d/tools/X3D-Edit
 - SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
 - XML Spy https://www.xmlspy.com
 --> 

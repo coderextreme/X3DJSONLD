@@ -43,12 +43,12 @@ public class HAnimBehaviorPrototypes implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new HAnimBehaviorPrototypes().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/HAnimBehaviorPrototypes.new.java.x3d");
-    model.toFileJSON("../data/HAnimBehaviorPrototypes.new.java.json");
+    model.toFileJSON("../data/HAnimBehaviorPrototypes.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -2282,7 +2282,7 @@ ProtoInstance1
           .addFieldValue(new fieldValue().setName("whichBody").setValue("0"));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("hAnimBehaviorNodes")
-            .addChild(ProtoInstance2 = new ProtoInstance().setUSE("BehaviorTest1")));
+            .addChild(ProtoInstance2 = new ProtoInstance().setName("HAnimBehavior").setUSE("BehaviorTest1")));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("enabledBehaviorsArray").setValue("true"));
     return X3D0;

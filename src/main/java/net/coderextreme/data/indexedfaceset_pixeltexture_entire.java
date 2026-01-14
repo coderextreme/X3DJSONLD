@@ -43,12 +43,12 @@ public class indexedfaceset_pixeltexture_entire implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new indexedfaceset_pixeltexture_entire().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/indexedfaceset_pixeltexture_entire.new.java.x3d");
-    model.toFileJSON("../data/indexedfaceset_pixeltexture_entire.new.java.json");
+    model.toFileJSON("../data/indexedfaceset_pixeltexture_entire.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -70,20 +70,22 @@ public class indexedfaceset_pixeltexture_entire implements X3DRoots {
         .addMeta(new meta().setName("description").setContent("Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d"))
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDescription("Front View"))
-        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(new double[] {0f,1f,0f,3.14f}).setPosition(new double[] {0f,0f,-10f}))
-        .addChild(new Viewpoint().setDescription("Top View").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {0f,10f,0f}))
-        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new double[] {1f,0f,0f,1.57f}).setPosition(new double[] {0f,-10f,0f}))
-        .addChild(new Viewpoint().setDescription("Right View").setOrientation(new double[] {0f,1f,0f,1.57f}).setPosition(new double[] {10f,0f,0f}))
-        .addChild(new Viewpoint().setDescription("Left View").setOrientation(new double[] {0f,1f,0f,-1.57f}).setPosition(new double[] {-10f,0f,0f}))
+        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(new float[] {0f ,1f ,0f ,3.14f }).setPosition(new float[] {0f ,0f ,-10f }))
+        .addChild(new Viewpoint().setDescription("Top View").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new float[] {0f ,10f ,0f }))
+        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new float[] {1f ,0f ,0f ,1.57f }).setPosition(new float[] {0f ,-10f ,0f }))
+        .addChild(new Viewpoint().setDescription("Right View").setOrientation(new float[] {0f ,1f ,0f ,1.57f }).setPosition(new float[] {10f ,0f ,0f }))
+        .addChild(new Viewpoint().setDescription("Left View").setOrientation(new float[] {0f ,1f ,0f ,-1.57f }).setPosition(new float[] {-10f ,0f ,0f }))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
+        .addComments(new CommentsBlock("<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)))
+            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF}).setRepeatS(false).setRepeatT(false)
+              .setTextureProperties(new TextureProperties().setMagnificationFilter("NEAREST_PIXEL"))))
           .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt320().getArray())
             .setCoord(new Coordinate().setPoint(new MFVec3f1().getArray())))));
     return X3D0;
@@ -95,7 +97,7 @@ private class MFInt320 {
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2f,1.5f,1f,-2f,-1.5f,1f,2f,1.5f,1f,2f,-1.5f,1f,2f,1.5f,-1f,2f,-1.5f,-1f,-2f,1.5f,-1f,-2f,-1.5f,-1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2f ,1.5f ,1f ,-2f ,-1.5f ,1f ,2f ,1.5f ,1f ,2f ,-1.5f ,1f ,2f ,1.5f ,-1f ,2f ,-1.5f ,-1f ,-2f ,1.5f ,-1f ,-2f ,-1.5f ,-1f });
   }
 }
 }

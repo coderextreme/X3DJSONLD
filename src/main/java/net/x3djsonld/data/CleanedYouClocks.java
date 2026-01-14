@@ -33,11 +33,11 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/CleanedYouClocks.x3d">CleanedYouClocks.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/ManyClocks.x3d">ManyClocks.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/CleanedYouClocks.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/CleanedYouClocks.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/ManyClocks.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/ManyClocks.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -92,8 +92,8 @@ public class CleanedYouClocks
     .addComponent(new component().setName("Grouping").setLevel(1))
     .addComponent(new component().setName("Layering").setLevel(1))
     .addComponent(new component().setName("Text").setLevel(1))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("CleanedYouClocks.x3d"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/CleanedYouClocks.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("ManyClocks.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/ManyClocks.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("X3D scene with multiple facial animations controlled by a multi-selection menu"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("12 December 2024"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("13 December 2024"))

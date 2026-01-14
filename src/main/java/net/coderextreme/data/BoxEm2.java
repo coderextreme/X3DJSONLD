@@ -43,12 +43,12 @@ public class BoxEm2 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new BoxEm2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/BoxEm2.new.java.x3d");
-    model.toFileJSON("../data/BoxEm2.new.java.json");
+    model.toFileJSON("../data/BoxEm2.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -69,7 +69,7 @@ ProtoInstance ProtoInstance3 = null;
         .addMeta(new meta().setName("description").setContent("3 boxes")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Cubes on Fire").setPosition(new double[] {0f,0f,12f}))
+        .addChild(new Viewpoint().setDescription("Cubes on Fire").setPosition(new float[] {0f ,0f ,12f }))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -77,7 +77,7 @@ ProtoInstance ProtoInstance3 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f}))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -90,7 +90,7 @@ ProtoInstance ProtoInstance3 = null;
               .addChild(new Shape()
                 .setGeometry(new Cylinder())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f}))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -105,7 +105,7 @@ ProtoInstance ProtoInstance3 = null;
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
         .addChild(ProtoInstance3 = new ProtoInstance().setName("three").setDEF("threepi"))
-        .addChild(new Transform().setTranslation(new double[] {0f,2f,0f})
+        .addChild(new Transform().setTranslation(new float[] {0f ,2f ,0f })
           .addChild(new Shape().setUSE("box"))));
 ProtoInstance0
                 .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
@@ -118,9 +118,9 @@ ProtoInstance3
 ProtoInstance3
           .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Shape().setDEF("box")
-              .setGeometry(new Box().setSize(new double[] {1f,1f,1f}))
+              .setGeometry(new Box().setSize(new float[] {1f ,1f ,1f }))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new double[] {0f,1f,0f})))));
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f ,1f ,0f })))));
     return X3D0;
     }
 }

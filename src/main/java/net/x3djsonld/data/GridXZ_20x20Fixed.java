@@ -89,7 +89,7 @@ public class GridXZ_20x20Fixed
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("GridXZ_20x20Fixed.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("MV4204 class"))

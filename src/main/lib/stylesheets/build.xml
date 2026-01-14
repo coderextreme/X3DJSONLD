@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2000-2025 held by the author(s).  All rights reserved.
+  Copyright (c) 2000-2026 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -214,7 +214,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <java jar="java/jars/${jsai.full.archive.jar.name}" fork="${fork}">
             <arg value="-version" description="log report"/>
         </java>
-        <echo>Further detail on configuration settings:  https://savage.nps.edu/Savage/developers.html</echo>
+        <echo>Further detail on configuration settings:  https://www.web3d.org/x3d/content/examples/X3dDevelopersGuide.html</echo>
         <!-- DEBUG: in order to show all environment and local properties, add
         <echoproperties/> -->
         <!-- TODO NetBeans version -->
@@ -228,26 +228,31 @@ POSSIBILITY OF SUCH DAMAGE.
         <dtd    publicId="ISO//Web3D//DTD X3D 3.2//EN"                                   location="../../../../specifications/x3d-3.2.dtd"/>
         <dtd    publicId="ISO//Web3D//DTD X3D 3.3//EN"                                   location="../../../../specifications/x3d-3.3.dtd"/>
         <dtd    publicId="ISO//Web3D//DTD X3D 4.0//EN"                                   location="../../../../specifications/x3d-4.0.dtd"/>
+        <dtd    publicId="ISO//Web3D//DTD X3D 4.1//EN"                                   location="../../../../specifications/x3d-4.1.dtd"/>
         <dtd    publicId="http://www.web3D.org/specifications/x3d-3.0.dtd"               location="../../../../specifications/x3d-3.0.dtd"/>
         <dtd    publicId="http://www.web3D.org/specifications/x3d-3.1.dtd"               location="../../../../specifications/x3d-3.1.dtd"/>
         <dtd    publicId="http://www.web3D.org/specifications/x3d-3.2.dtd"               location="../../../../specifications/x3d-3.2.dtd"/>
         <dtd    publicId="http://www.web3D.org/specifications/x3d-3.3.dtd"               location="../../../../specifications/x3d-3.3.dtd"/>
         <dtd    publicId="http://www.web3D.org/specifications/x3d-4.0.dtd"               location="../../../../specifications/x3d-4.0.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-4.1.dtd"               location="../../../../specifications/x3d-4.1.dtd"/>
         <entity publicId="http://www.web3D.org/specifications/x3d-3.0.xsd"               location="../../../../specifications/x3d-3.0.xsd"/>
         <entity publicId="http://www.web3D.org/specifications/x3d-3.1.xsd"               location="../../../../specifications/x3d-3.1.xsd"/>
         <entity publicId="http://www.web3D.org/specifications/x3d-3.2.xsd"               location="../../../../specifications/x3d-3.2.xsd"/>
         <entity publicId="http://www.web3D.org/specifications/x3d-3.3.xsd"               location="../../../../specifications/x3d-3.3.xsd"/>
-        <entity publicId="http://www.web3D.org/specifications/x3d-4.0.xsd"               location="../../../../specifications/x3d-4.0.xsd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-4.0.dtd"               location="../../../../specifications/x3d-4.0.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-4.1.dtd"               location="../../../../specifications/x3d-4.1.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.0.dtd"              location="../../../../specifications/x3d-3.0.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.1.dtd"              location="../../../../specifications/x3d-3.1.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.2.dtd"              location="../../../../specifications/x3d-3.2.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.3.dtd"              location="../../../../specifications/x3d-3.3.dtd"/>
-        <dtd    publicId="https://www.web3D.org/specifications/x3d-4.0.dtd"              location="../../../../specifications/x3d-4.0.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-4.0.dtd"               location="../../../../specifications/x3d-4.0.dtd"/>
+        <dtd    publicId="http://www.web3D.org/specifications/x3d-4.1.dtd"               location="../../../../specifications/x3d-4.1.dtd"/>
         <entity publicId="https://www.web3D.org/specifications/x3d-3.0.xsd"              location="../../../../specifications/x3d-3.0.xsd"/>
         <entity publicId="https://www.web3D.org/specifications/x3d-3.1.xsd"              location="../../../../specifications/x3d-3.1.xsd"/>
         <entity publicId="https://www.web3D.org/specifications/x3d-3.2.xsd"              location="../../../../specifications/x3d-3.2.xsd"/>
         <entity publicId="https://www.web3D.org/specifications/x3d-3.3.xsd"              location="../../../../specifications/x3d-3.3.xsd"/>
         <entity publicId="https://www.web3D.org/specifications/x3d-4.0.xsd"              location="../../../../specifications/x3d-4.0.xsd"/>
+        <entity publicId="https://www.web3D.org/specifications/x3d-4.1.xsd"              location="../../../../specifications/x3d-4.1.xsd"/>
         <!-- Transitional DTD, versions 3.1 and 3.1 only -->
         <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.0.dtd"  location="../../../../specifications/x3d-3.0.dtd"/>
         <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd"  location="../../../../specifications/x3d-3.1.dtd"/>
@@ -257,20 +262,23 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="semantics.dir"      location="../../semantics"/>
     <property name="specifications.dir" location="../../specifications"/>
     <property name="X3dDtdsSchemas.dir" location="../../specifications"/>
-    <!-- Current official X3D Schema source file is version 3.3, development testing underway for 4.0 -->
-    <property name="X3dSchemaSource"    value="x3d-4.0.xsd"/>
+    <!-- Current official X3D Schema source file is version 4.0, development testing underway for 4.1 -->
+    <property name="X3dSchemaSource"    value="x3d-4.1.xsd"/>
+    <property name="X3dSchemaSource4.1" value="x3d-4.1.xsd"/>
     <property name="X3dSchemaSource4.0" value="x3d-4.0.xsd"/>
     <property name="X3dSchemaSource3.3" value="x3d-3.3.xsd"/>
     <property name="X3dSchemaSource3.2" value="x3d-3.2.xsd"/>
     <property name="X3dSchemaSource3.1" value="x3d-3.1.xsd"/>
     <property name="X3dSchemaSource3.0" value="x3d-3.0.xsd"/>
-    <!-- Current official X3D Unified Object Model (X3DUOM) source file is version 3.3, development testing underway for 4.0 -->
-    <property name="X3dUnifiedObjectModel"    value="X3dUnifiedObjectModel-4.0.xml"/><!-- default for X3DJSAIL -->
-    <property name="X3dUnifiedObjectModel4.0" value="X3dUnifiedObjectModel-4.0.xml"/><!-- matches X3D 4.0 spec -->
+    <!-- Current official X3D Unified Object Model (X3DUOM) source file is version 4.0, development testing underway for 4.1 -->
+    <property name="X3dUnifiedObjectModel"    value="X3dUnifiedObjectModel-4.1.xml"/><!-- default for X3DJSAIL -->
+    <property name="X3dUnifiedObjectModel4.1" value="X3dUnifiedObjectModel-4.1.xml"/>
+    <property name="X3dUnifiedObjectModel4.0" value="X3dUnifiedObjectModel-4.0.xml"/>
     <property name="X3dUnifiedObjectModel3.3" value="X3dUnifiedObjectModel-3.3.xml"/>
     <property name="X3dUnifiedObjectModel3.2" value="X3dUnifiedObjectModel-3.2.xml"/>
     <property name="X3dUnifiedObjectModel3.1" value="X3dUnifiedObjectModel-3.1.xml"/>
     <property name="X3dUnifiedObjectModel3.0" value="X3dUnifiedObjectModel-3.0.xml"/>
+    <property name="X3duomGlossary4.1" value="glossary"/><!-- add .xml .xsd .html; matches X3D 4.1 spec -->
     <property name="X3duomGlossary4.0" value="glossary"/><!-- add .xml .xsd .html; matches X3D 4.0 spec -->
 
     <!-- target tasks ===================================================================== -->
@@ -336,13 +344,13 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="src.org.web3d.x3d.util.exi"    value="${X3DJSAIL.src.dir}/org/web3d/x3d/util/exi"/>   <!-- utilities EXI -->
     <property name="src.org.web3d.x3d.util.x3duom" value="${X3DJSAIL.src.dir}/org/web3d/x3d/util/x3duom"/><!-- JAXB-generated classes and X3DUOM classes -->
     <property name="jsai.classes.archive.jar.name" value="X3DJSAIL.4.0.classes.jar"/>
-    <property name=   "jsail.full.archive.jar.name" value="X3DJSAIL.4.0.full.jar"/>
+    <property name=  "jsail.full.archive.jar.name" value="X3DJSAIL.4.0.full.jar"/>
 	
     <property name="javadoc.additionalparam" value=""/>
     <property name="javadoc.author"          value="Don Brutzman don.brutzman@gmail.com"/>
     <property name="javadoc.dir"             value="${X3DJSAIL.relative.dir}/javadoc"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;2005-2024 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org;don.brutzman@gmail.com?subject=X3DJSAIL%20Javadoc%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;2005-2026 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:x3d-public@web3D.org;don.brutzman@gmail.com?subject=X3DJSAIL%20Javadoc%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
@@ -352,7 +360,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.breakiterator"   value="true"/>
     <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
     <property name="javadoc.version"         value="true"/>
-    <property name="javadoc.windowtitle"     value="X3DJSAIL, X3D Java Scene Access Interface Library"/>
+    <property name="javadoc.windowtitle"     value="X3DJSAIL Javadoc, X3D Java Scene Access Interface Library"/>
     <property name="javadoc.doctitle"        value="${javadoc.windowtitle}"/>
 	
     <property name="junit5.dir"              location="${X3DJSAIL.relative.dir}/lib/support"   description="do not create local copies of junit for project"/>
@@ -507,7 +515,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </copy>
         <echo message="System environment variable $env.CLASSPATH=${env.CLASSPATH}"/>
         <echo message="create autogenerated Java source code for X3DUOM using JAXB:"/>
-        <antcall target="create.X3DUOM.JAXB.schema"/>
+        <antcall target="create.X3DUOM.JAXB.schema" inheritAll="true"/>
         <echo message="create autogenerated Java source code:"/>
         <!-- https://stackoverflow.com/questions/51916221/javax-xml-bind-jaxbexception-implementation-of-jaxb-api-has-not-been-found-on-mo -->
         <!-- https://stackoverflow.com/questions/48204141/replacements-for-deprecated-jpms-modules-with-java-ee-apis/48279048#48279048 -->
@@ -1289,6 +1297,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="Check X3DUOM well-formed XML for all X3D versions..."/>
         <xmlvalidate failonerror="false" warn="true" lenient="true">
             <fileset dir=".">
+                <include name="${X3dUnifiedObjectModel4.1}"/>
                 <include name="${X3dUnifiedObjectModel4.0}"/>
                 <include name="${X3dUnifiedObjectModel3.3}"/>
                 <include name="${X3dUnifiedObjectModel3.2}"/>
@@ -1300,6 +1309,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <schemavalidate failonerror="false" warn="true" lenient="false" disableDTD="true"
                         fullchecking="false" noNamespaceFile="../../specifications/X3dUnifiedObjectModel.xsd">
             <fileset dir=".">
+                <include name="${X3dUnifiedObjectModel4.1}"/>
                 <include name="${X3dUnifiedObjectModel4.0}"/>
                 <include name="${X3dUnifiedObjectModel3.3}"/>
                 <include name="${X3dUnifiedObjectModel3.2}"/>
@@ -1311,6 +1321,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <schemavalidate failonerror="false" warn="true" lenient="false" disableDTD="true"
                         fullchecking="true" noNamespaceFile="../../specifications/X3dUnifiedObjectModel.xsd">
             <fileset dir=".">
+                <include name="${X3dUnifiedObjectModel4.1}"/>
                 <include name="${X3dUnifiedObjectModel4.0}"/>
                 <include name="${X3dUnifiedObjectModel3.3}"/>
                 <include name="${X3dUnifiedObjectModel3.2}"/>
@@ -1424,7 +1435,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:HAnimLOA4HierarchyTable.txt" description="output-doc"/>
-            <arg value="-s:${X3dUnifiedObjectModel4.0}" description="source-doc"/>
+            <arg value="-s:${X3dUnifiedObjectModel4.1}" description="source-doc"/>
             <arg value="-xsl:X3duomToHAnimLOA4HierarchyTable.xslt" description="style-doc"/>
         </java>
         <echo />
@@ -1481,6 +1492,27 @@ POSSIBILITY OF SUCH DAMAGE.
         <antcall target="BuildX3dUnifiedObjectModel.validate"/>
     </target>
 
+    <target name="BuildX3dUnifiedObjectModel.saxon.v4.1" depends="" description="Build  X3D v4.1 object model files in XML format, used in API autogeneration">
+        <echo message="Build X3D Unified Object Model (X3DUOM) version 4.1"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+
+            <!-- arg value="-t" description="timing information"/ -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
+            <arg value="-s:${specifications.dir}/${X3dSchemaSource4.1}" description="source-doc"/>
+            <arg value="-xsl:BuildX3dUnifiedObjectModelXmlFile.xslt"/> <!-- stylesheet-doc -->
+        </java>
+        <copy file="${X3dUnifiedObjectModel4.1}" todir="../../specifications/" verbose="true" failonerror="false"/>
+        <copy file="${X3dUnifiedObjectModel4.1}" todir="java/lib/specifications/" verbose="true" failonerror="false"/>
+        <antcall target="BuildX3dUnifiedObjectModel.validate"/>
+    </target>
+
     <target name="BuildX3dOntologyFromX3duom.saxon" depends="" description="Build X3D Ontology from X3D Unified Object Model (X3DUOM)" >
         <echo message="Following output is for X3D ontology version 4.0 in Terse Triple Language (Turtle)"/>
         <!-- TODO other versions of X3D -->
@@ -1493,7 +1525,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
-            <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.0}" description="source-doc"/>
+            <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.1}" description="source-doc"/>
             <arg value="-xsl:X3duomToX3dOntology.xslt" description="style-doc"/>
             <arg value="-o:X3dOntology4.0.ttl" description="output-doc"/>
         </java>
@@ -1502,10 +1534,10 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="X3dOntology4.0.ttl" todir="../../semantics/ontologies" verbose="true" failonerror="false"/>
         <!-- copy to URI directory, where it is also kept on web3d.orgl -->
         <copy file="X3dOntology4.0.ttl" todir="../specifications" verbose="true" failonerror="false"/>
-        <!-- TODO automate validation -->
-        <echo message="OWL validation available at"/>
-        <echo message="  http://mowl-power.cs.man.ac.uk:8080/validator (Profile OWL 2, Report syntax: Manchester Owl Syntax)"/>
-        <echo message="  http://visualdataweb.de/validator"/>
+        <echo message="OWL validation performed using Protege"/>
+        <!-- TODO automate validation
+        <echo message="  http://mowl-power.cs.man.ac.uk:8080/validator (Profile OWL 2, Report syntax: Manchester Owl Syntax)"/> -->
+        <echo message="Available at"/>
         <echo message="  https://www.web3d.org/x3d/specifications/X3dOntology4.0.ttl"/>
         <echo message="  https://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology4.0.ttl"/>
     </target>
@@ -1514,7 +1546,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="X3dPackageDirectory" value="python"/>
 
     <target name="BuildX3dPythonPackageFromX3duom.saxon" depends="" description="Build Python X3D Package from X3D Unified Object Model (X3DUOM)" >
-        <echo message="Following output is for X3D version 4.0 in X3dPackageDirectory=${X3dPackageDirectory}"/><!-- TODO other versions of X3D -->
+        <echo message="Following log is for X3D version 4.0 in X3dPackageDirectory=${X3dPackageDirectory} and also"/>
+        <echo message="includes support for X3D version 4.1 development via latest X3dUnifiedObjectModel-4.1.xml"/>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
             <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
             <!-- https://ant.apache.org/manual/Tasks/java.html -->
@@ -1525,7 +1558,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         
             <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
-            <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.0}" description="source-doc"/>
+            <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.1}" description="source-doc"/>
             <arg value="-xsl:X3duomToX3dPythonPackage.xslt" description="style-doc"/>
             <arg value="X3dPackageDirectory=${X3dPackageDirectory}"/> <!-- stylesheet parameter -->
             <!-- stylesheet output goes to X3dPackageDirectory -->
@@ -1607,6 +1640,22 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- TODO add other X3D versions -->
         <!-- ========================================= -->
         <echo message="stylesheet AllX3dElementsAttributesTextTemplate.xslt conversion"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <jvmarg value="-Djdk.xml.entityExpansionLimit=120000"/>
+            <jvmarg value="-Djdk.xml.totalEntitySizeLimit=50000000"/>
+            <!-- arg value="-t" description="timing information"/ -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-o:AllX3dElementsAttributes4.1.txt" description="output-doc"/>
+            <arg value="-s:AllX3dElementsAttributes4.1.xml" description="source-doc"/>
+            <arg value="-xsl:AllX3dElementsAttributesTextTemplate.xslt" description="style-doc"/>
+        </java>
+        <copy file="AllX3dElementsAttributes4.1.txt"         todir="../../specifications/"  verbose="true" failonerror="false"/>
+        <copy file="AllX3dElementsAttributes4.1.xml"         todir="../../specifications/"  verbose="true" failonerror="false"/>
+        <!-- ========================================= -->
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
             <!-- https://ant.apache.org/manual/Tasks/java.html -->
@@ -1762,7 +1811,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <fileset dir="${src.org.web3d.x3d.util.exi}">
                 <exclude name="SerializeEXISchema.java"/>
             </fileset>
-            <fileset dir="${src.org.web3d.x3d.util.x3duom}">
+            <fileset dir="${src.org.web3d.x3d.util.x3duom}" includes="**/*">
                 <exclude name="X3DUnifiedObjectModel40.java"/>
             </fileset>
             <fileset dir="${X3DJSAIL.src.dir}">
@@ -1793,8 +1842,26 @@ POSSIBILITY OF SUCH DAMAGE.
             <fileset dir="." includes="*.xslt"/>
         </xmlvalidate>
         <echo message="stylesheets validate complete"/>
-        <xmlvalidate failonerror="true" warn="true" lenient="true" file="${examples.dir}/HelloWorld.x3d"/>
-        <xmlvalidate failonerror="true" warn="true" lenient="true" file="${examples.dir}/Basic/course/ExtrusionHeart.x3d"/>
+        <xmlvalidate failonerror="true" warn="true" lenient="true" file="${examples.dir}/HelloWorld.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        </xmlvalidate>
+        <xmlvalidate failonerror="true" warn="true" lenient="true" file="${examples.dir}/Basic/course/ExtrusionHeart.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        </xmlvalidate>
         <echo message="HelloWorld.x3d, ExtrusionHeart.x3d validate complete"/>
     </target>
     
@@ -2296,8 +2363,26 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
         <echo message="==========================================="/>
         <echo message="SmokeTestProgramOutput.x3d"/>
-        <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput.x3d"/>
-        <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput.x3d"/>
+        <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        </xmlvalidate>
+        <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        </xmlvalidate>
         <echo message="==========================================="/>
         <echo>ClassicVRML validation: ${castle-model-converter.exe} ${X3DJSAIL.examples.dir}/SmokeTestProgramOutput.x3dv --validate --enable-downloads</echo>
         <exec executable="${castle-model-viewer.dir}/${castle-model-converter.exe}" vmlauncher="false"><!-- vmlauncher switch needed for netbeans invocation -->
@@ -2307,9 +2392,27 @@ POSSIBILITY OF SUCH DAMAGE.
         </exec>
         <echo message="==========================================="/>
         <echo message="SmokeTestProgramOutput_CommandLine.x3d"/>
-        <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_CommandLine.x3d"/>
-        <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_CommandLine.x3d"/>
+        <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_CommandLine.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        </xmlvalidate>
+        <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_CommandLine.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
         <!-- https://stackoverflow.com/questions/6282542/ant-how-to-compare-contents-of-two-files -->
+        </xmlvalidate>
         <condition property="CommandLine.match" value="true">
             <filesmatch file1="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput.x3d"
                                 file2="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_CommandLine.x3d"/>
@@ -2330,8 +2433,26 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="matches SmokeTestProgramOutput.x3d: ${X3DXML.match}"/>
         <echo message="==========================================="/>
         <echo message="SmokeTestProgramOutput_ReloadedDOM.x3d"/>
-        <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_ReloadedDOM.x3d"/>
-        <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_ReloadedDOM.x3d"/>
+        <xmlvalidate lenient="yes" warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_ReloadedDOM.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        </xmlvalidate>
+        <xmlvalidate lenient="no"  warn="yes" file="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_ReloadedDOM.x3d">
+            <!-- https://stackoverflow.com/questions/19322484/java-entityexpansionlimit-where-do-i-set-this -->
+            <!-- https://ant.apache.org/manual/Tasks/java.html -->
+            <!-- https://docs.oracle.com/javase/tutorial/jaxp/limits/limits.html -->
+            <!-- also needs to be set in netbeans.conf and NetBeans Tools Options Java Ant Properties entityExpansionLimit=120000 -->
+            <property name="jdk.xml.entityExpansionLimit" value="120000"/>
+            <property name="jdk.xml.totalEntitySizeLimit" value="50000000"/>
+            <property name="jdk.xml.maxGeneralEntitySizeLimit" value="50000000"/>
+        <!-- https://www.saxonica.com/documentation12/index.html#!using-xsl/commandline -->
+        </xmlvalidate>
         <condition property="ReloadedDOM.match" value="true">
             <filesmatch file1="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput.x3d"
                                 file2="${X3DJSAIL.examples.dir}/SmokeTestProgramOutput_ReloadedDOM.x3d"/>
@@ -3396,6 +3517,10 @@ POSSIBILITY OF SUCH DAMAGE.
         <ant antfile="java/build.xml" target="view.javadoc.online"/>
     </target>
 
+    <target name="upload.X3DPSAIL" depends="">
+        <ant antfile="python/build.xml" target="upload.web3d" inheritall="false"/>
+    </target>
+
     <target name="upload.SpecificationInterfaces" depends="scp.upload.XmlEncodingSpecificationInterfaces.web3d"/>
 
     <!-- ensure that you have already connected to this host via ssh and saved the server key -->
@@ -3438,7 +3563,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
         <echo  message="scp (sftp) upload CreateX3dSceneAccessInterfaceJava.xslt stylesheets to ${sftpServer.web3d}${sftpDirectory.web3d.stylesheets}"/>
         <echo  message="  https://www.web3D.org/x3d/stylesheets/CreateX3dSceneAccessInterfaceJava.xslt"/>
-        <!-- upload stylesheets -->
+        <!-- upload stylesheet and build script -->
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.stylesheets}" password="${password.web3d}"
                trust="yes"
              verbose="true" failonerror="false">
@@ -3475,7 +3600,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="test.bat"/>
                 <include name="${X3DJSAIL.relative.dir}/.htaccess"/>
                 <include name="${X3DJSAIL.relative.dir}/README.txt"/>
-                <include name="${X3DJSAIL.relative.dir}/javadoc/*"/>
+                <include name="${X3DJSAIL.relative.dir}/javadoc/*"/><!-- not dist! -->
                 <include name="${X3DJSAIL.relative.dir}/**/*"/>
                 <include name="${X3DJSAIL.lib.dir}/*"/>
                 <include name="${X3DJSAIL.src.dir}/*"/>
@@ -3571,6 +3696,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="setup.py"/>
                 <include name="__init__.py"/>
                 <include name="x3d.py"/>
+                <include name="x3d.html"/><!-- pydoc -->
                 <include name="examples/*"/>
                 <include name="images/*"/>
                 <include name="jupyter/*"/>
@@ -3765,6 +3891,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
     
     <!-- JAXB 2.3.1 (pre-Eclipse) https://javaee.github.io/jaxb-v2 -->
+    <!-- https://javaee.github.io/jaxb-v2/doc/user-guide/ch04.html#tools-xjc-ant-task -->
     <!-- https://javaee.github.io/jaxb-v2 -->
     <!-- https://dzone.com/articles/using-jaxb-for-xml-with-java -->
     <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
@@ -3776,7 +3903,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="create.X3DUOM.JAXB.schema" description="build X3DUOM JAXB bindings">
         <echo message="Netbeans 11+ (Java 12+) prerequisite is to include following in your netbeans.conf file:"/>
         <echo message="  -J-Djavax.xml.bind.context.factory=com.sun.xml.bind.v2.ContextFactory"/>
-        <echo message="  see https://savage.nps.edu/Savage/developers.html#NetBeans"/>
+        <echo message="  see https://www.web3d.org/x3d/content/examples/X3dDevelopersGuide.html#NetBeans"/>
         <echo message="  see https://github.com/javaee/jaxb-v2"/>
         
         <echo message="  $jaxb.dir=${jaxb.dir}"/>
@@ -3784,12 +3911,22 @@ POSSIBILITY OF SUCH DAMAGE.
         <property   name="property.jaxb.contents" refid="jaxb.contents"/>
         <echo message="  $property.jaxb.contents=${property.jaxb.contents}"/>
 
-        <delete failonerror="false">
-            <fileset dir="${src.org.web3d.x3d.util.x3duom}"/><!-- includes JAXB-generated files -->
+        <delete failonerror="false" verbose="true">
+            <fileset dir="${src.org.web3d.x3d.util.x3duom}" includes="**/*"/><!-- includes JAXB-generated files -->
         </delete>
+        <mkdir dir="${src.org.web3d.x3d.util.x3duom}"/>
+        
+        <!-- TODO problem: directory becomes readonly, has to be reset manually, following tasks are not working -->
+        <echo message="Ant chmod g+w $jaxb.dir=${jaxb.dir}"/>
+        <chmod dir="${jaxb.dir}" perm="g+w" includes="**/*" type="both" verbose="true"/>
+        <echo message="Ant chmod g+w $src.org.web3d.x3d.util.x3duom=${src.org.web3d.x3d.util.x3duom}"/>
+        <chmod dir="${src.org.web3d.x3d.util.x3duom}" perm="g+w" includes="**/*" type="both" verbose="true"/>
+        <echo message="if permissions fail, set the following directory to writeable:"/>
+        <echo message="  C:\x3d-code\www.web3d.org\x3d\stylesheets\java\src\org\web3d\x3d\util\x3duom"/>
+        
         <echo message="Ant xjc with classpath=${jaxb.dir}/*.jar"/>
         <xjc schema="../../specifications/X3dUnifiedObjectModel.xsd" package="org.web3d.x3d.util.x3duom"
-             destdir="java/src" header="true" readonly="true">
+             destdir="java/src" header="true" readonly="true"> <!-- no verbose attribute provided -->
             <classpath>
                 <fileset dir="${jaxb.dir}" includes="*.jar"/>
             </classpath>

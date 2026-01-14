@@ -9,7 +9,7 @@
   </head>
 
 Recommended tools:
-- X3D-Edit, https://savage.nps.edu/X3D-Edit
+- X3D-Edit, https://www.web3d.org/x3d/tools/X3D-Edit
 - X3DJSAIL, https://www.web3d.org/specifications/java/X3DJSAIL.html
 - SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
 - XML Spy https://www.xmlspy.com

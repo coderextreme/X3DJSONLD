@@ -216,25 +216,42 @@ Recommended tool:
                                 <xsl:variable  name="attributeDefault"     select="@default"/>
                                 <xsl:variable  name="attributeIndex"       select="../xs:attribute[@name='index']/@fixed"/>
                                 <xsl:variable  name="attributeParent"      select="../xs:attribute[@name='parent']/@fixed"/>
-                                <!-- debug
-                                <xsl:message>
-                                    <xsl:value-of select="$simpleTypeName"/>
-                                    <xsl:text> enumeration </xsl:text>
-                                    <xsl:value-of select="$enumerationName"/>
-                                    <xsl:text>, annotation/appinfo/attribute </xsl:text>
-                                    <xsl:value-of select="$attributeName"/>
-                                    <xsl:text>='</xsl:text>
-                                    <xsl:value-of select="$attributeValue"/>
-                                    <xsl:text>' type='</xsl:text>
-                                    <xsl:value-of select="$attributeType"/>>
-                                    <xsl:text>' parent='</xsl:text>
-                                    <xsl:value-of select="$attributeParent"/>
-                                    <xsl:text>' index#</xsl:text>
-                                    <xsl:value-of select="$attributeIndex"/>
-                                    <xsl:text> priorIndex#</xsl:text>
-                                    <xsl:value-of select="$priorIndex"/>
-                                    <xsl:text> </xsl:text>
-                                </xsl:message> -->
+                                <xsl:variable  name="attributeParentLOA3"  select="../xs:attribute[@name='parentLOA3']/@fixed"/>
+                                <xsl:variable  name="attributeParentLOA2"  select="../xs:attribute[@name='parentLOA2']/@fixed"/>
+                                <xsl:variable  name="attributeParentLOA1"  select="../xs:attribute[@name='parentLOA1']/@fixed"/>
+                                <!-- debug -->
+                                <xsl:if test="(string-length($attributeParentLOA3) > 0) or (string-length($attributeParentLOA2) > 0) or (string-length($attributeParentLOA1) > 0)">
+                                    <xsl:message>
+                                        <xsl:value-of select="$simpleTypeName"/>
+                                        <xsl:text> enumeration </xsl:text>
+                                        <xsl:value-of select="$enumerationName"/>
+                                        <xsl:text>, annotation/appinfo/attribute </xsl:text>
+                                        <xsl:value-of select="$attributeName"/>
+                                        <xsl:text>='</xsl:text>
+                                        <xsl:value-of select="$attributeValue"/>
+                                        <xsl:text>' type='</xsl:text>
+                                        <xsl:value-of select="$attributeType"/>>
+                                        <xsl:text>' parent='</xsl:text>
+                                        <xsl:value-of select="$attributeParent"/>
+                                        <xsl:if test="(string-length($attributeParentLOA3) > 0)">
+                                            <xsl:text>' parentLOA3='</xsl:text>
+                                            <xsl:value-of select="$attributeParentLOA3"/>
+                                        </xsl:if>
+                                        <xsl:if test="(string-length($attributeParentLOA2) > 0)">
+                                            <xsl:text>' parentLOA2='</xsl:text>
+                                            <xsl:value-of select="$attributeParentLOA2"/>
+                                        </xsl:if>
+                                        <xsl:if test="(string-length($attributeParentLOA1) > 0)">
+                                            <xsl:text>' parentLOA1='</xsl:text>
+                                            <xsl:value-of select="$attributeParentLOA1"/>
+                                        </xsl:if>
+                                        <xsl:text>' index#</xsl:text>
+                                        <xsl:value-of select="$attributeIndex"/>
+                                        <xsl:text> priorIndex#</xsl:text>
+                                        <xsl:value-of select="$priorIndex"/>
+                                        <xsl:text> </xsl:text>
+                                    </xsl:message>
+                                </xsl:if>
                                 <xsl:choose>
                                     <xsl:when test="($attributeName = 'alias') and (string-length(normalize-space($attributeValue)) > 0) and
                                                     (count(../xs:attribute[@name='alias']) > 1)">

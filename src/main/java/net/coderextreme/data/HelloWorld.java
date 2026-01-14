@@ -43,12 +43,12 @@ public class HelloWorld implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new HelloWorld().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/HelloWorld.new.java.x3d");
-    model.toFileJSON("../data/HelloWorld.new.java.json");
+    model.toFileJSON("../data/HelloWorld.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -65,16 +65,16 @@ public class HelloWorld implements X3DRoots {
         .addMeta(new meta().setName("modified").setContent("20 October 2019"))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
         .addMeta(new meta().setName("Image").setContent("HelloWorld.tall.png"))
-        .addMeta(new meta().setName("reference").setContent("http://en.wikipedia.org/wiki/Hello_world"))
+        .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Hello_world"))
         .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
         .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
-        .addMeta(new meta().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
-        .addMeta(new meta().setName("reference").setContent("http://www.HelloWorldExample.net"))
+        .addMeta(new meta().setName("reference").setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
+        .addMeta(new meta().setName("reference").setContent("https://www.HelloWorldExample.net"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-        .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
+        .addMeta(new meta().setName("reference").setContent("https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.wrl"))
@@ -86,14 +86,14 @@ public class HelloWorld implements X3DRoots {
         .addComments(new CommentsBlock("Example scene to illustrate X3D nodes and fields (XML elements and attributes)"))
         .addChild(new WorldInfo().setInfo(new MFString0().getArray()).setTitle("Hello World!"))
         .addChild(new Group()
-          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new double[] {0f,-1f,0f}).setDescription("Hello world!").setPosition(new double[] {0f,-1f,7f}))
-          .addChild(new Transform().setRotation(new double[] {0f,1f,0f,3f})
+          .addChild(new Viewpoint().setDEF("ViewUpClose").setCenterOfRotation(new float[] {0f ,-1f ,0f }).setDescription("Hello world!").setPosition(new float[] {0f ,-1f ,7f }))
+          .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,3f })
             .addChild(new Shape()
               .setGeometry(new Sphere())
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new double[] {0.1f,0.5f,1f}))
+                .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {0.1f ,0.5f ,1f }))
                 .setTexture(new ImageTexture().setDEF("ImageCloudlessEarth").setUrl(new MFString1().getArray())))))
-          .addChild(new Transform().setTranslation(new double[] {0f,-2f,0f})
+          .addChild(new Transform().setTranslation(new float[] {0f ,-2f ,0f })
             .addChild(new Shape()
               .setGeometry(new Text().setDEF("TextMessage").setString(new MFString2().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString3().getArray())))

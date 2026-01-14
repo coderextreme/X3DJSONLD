@@ -48,7 +48,7 @@ public class gridBack implements X3DRoots {
     X3D model = new gridBack().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/gridBack.new.java.x3d");
-    model.toFileJSON("../data/gridBack.new.java.json");
+    model.toFileJSON("../data/gridBack.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -72,7 +72,7 @@ public class gridBack implements X3DRoots {
       .setScene(new Scene()
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setAmbientIntensity(0.01f).setDiffuseColor(new double[] {1f,1f,1f}).setShininess(0.05f)))
+            .setMaterial(new Material().setAmbientIntensity(0.01f ).setDiffuseColor(new float[] {1f ,1f ,1f }).setShininess(0.05f )))
           .setGeometry(new IndexedFaceSet().setColorIndex(new MFInt320().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt321().getArray()).setNormalPerVertex(false)
             .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray()))
             .setColor(new Color().setColor(new MFColor3().getArray())))));
@@ -90,12 +90,12 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-5.25f,5.25f,0f,-3.75f,5.25f,0f,-2.25f,5.25f,0f,-0.75f,5.25f,0f,0.75f,5.25f,0f,2.25f,5.25f,0f,3.75f,5.25f,0f,5.25f,5.25f,0f,-5.25f,3.75f,0f,-3.75f,3.75f,0f,-2.25f,3.75f,0f,-0.75f,3.75f,0f,0.75f,3.75f,0f,2.25f,3.75f,0f,3.75f,3.75f,0f,5.25f,3.75f,0f,-5.25f,2.25f,0f,-3.75f,2.25f,0f,-2.25f,2.25f,0f,-0.75f,2.25f,0f,0.75f,2.25f,0f,2.25f,2.25f,0f,3.75f,2.25f,0f,5.25f,2.25f,0f,-5.25f,0.75f,0f,-3.75f,0.75f,0f,-2.25f,0.75f,0f,-0.75f,0.75f,0f,0.75f,0.75f,0f,2.25f,0.75f,0f,3.75f,0.75f,0f,5.25f,0.75f,0f,-5.25f,-0.75f,0f,-3.75f,-0.75f,0f,-2.25f,-0.75f,0f,-0.75f,-0.75f,0f,0.75f,-0.75f,0f,2.25f,-0.75f,0f,3.75f,-0.75f,0f,5.25f,-0.75f,0f,-5.25f,-2.25f,0f,-3.75f,-2.25f,0f,-2.25f,-2.25f,0f,-0.75f,-2.25f,0f,0.75f,-2.25f,0f,2.25f,-2.25f,0f,3.75f,-2.25f,0f,5.25f,-2.25f,0f,-5.25f,-3.75f,0f,-3.75f,-3.75f,0f,-2.25f,-3.75f,0f,-0.75f,-3.75f,0f,0.75f,-3.75f,0f,2.25f,-3.75f,0f,3.75f,-3.75f,0f,5.25f,-3.75f,0f,-5.25f,-5.25f,0f,-3.75f,-5.25f,0f,-2.25f,-5.25f,0f,-0.75f,-5.25f,0f,0.75f,-5.25f,0f,2.25f,-5.25f,0f,3.75f,-5.25f,0f,5.25f,-5.25f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.25f ,5.25f ,0f ,-3.75f ,5.25f ,0f ,-2.25f ,5.25f ,0f ,-0.75f ,5.25f ,0f ,0.75f ,5.25f ,0f ,2.25f ,5.25f ,0f ,3.75f ,5.25f ,0f ,5.25f ,5.25f ,0f ,-5.25f ,3.75f ,0f ,-3.75f ,3.75f ,0f ,-2.25f ,3.75f ,0f ,-0.75f ,3.75f ,0f ,0.75f ,3.75f ,0f ,2.25f ,3.75f ,0f ,3.75f ,3.75f ,0f ,5.25f ,3.75f ,0f ,-5.25f ,2.25f ,0f ,-3.75f ,2.25f ,0f ,-2.25f ,2.25f ,0f ,-0.75f ,2.25f ,0f ,0.75f ,2.25f ,0f ,2.25f ,2.25f ,0f ,3.75f ,2.25f ,0f ,5.25f ,2.25f ,0f ,-5.25f ,0.75f ,0f ,-3.75f ,0.75f ,0f ,-2.25f ,0.75f ,0f ,-0.75f ,0.75f ,0f ,0.75f ,0.75f ,0f ,2.25f ,0.75f ,0f ,3.75f ,0.75f ,0f ,5.25f ,0.75f ,0f ,-5.25f ,-0.75f ,0f ,-3.75f ,-0.75f ,0f ,-2.25f ,-0.75f ,0f ,-0.75f ,-0.75f ,0f ,0.75f ,-0.75f ,0f ,2.25f ,-0.75f ,0f ,3.75f ,-0.75f ,0f ,5.25f ,-0.75f ,0f ,-5.25f ,-2.25f ,0f ,-3.75f ,-2.25f ,0f ,-2.25f ,-2.25f ,0f ,-0.75f ,-2.25f ,0f ,0.75f ,-2.25f ,0f ,2.25f ,-2.25f ,0f ,3.75f ,-2.25f ,0f ,5.25f ,-2.25f ,0f ,-5.25f ,-3.75f ,0f ,-3.75f ,-3.75f ,0f ,-2.25f ,-3.75f ,0f ,-0.75f ,-3.75f ,0f ,0.75f ,-3.75f ,0f ,2.25f ,-3.75f ,0f ,3.75f ,-3.75f ,0f ,5.25f ,-3.75f ,0f ,-5.25f ,-5.25f ,0f ,-3.75f ,-5.25f ,0f ,-2.25f ,-5.25f ,0f ,-0.75f ,-5.25f ,0f ,0.75f ,-5.25f ,0f ,2.25f ,-5.25f ,0f ,3.75f ,-5.25f ,0f ,5.25f ,-5.25f ,0f });
   }
 }
 private class MFColor3 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.5f,0.5f,0.5f,0.75f,0.75f,0.75f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.5f ,0.5f ,0.5f ,0.75f ,0.75f ,0.75f });
   }
 }
 }

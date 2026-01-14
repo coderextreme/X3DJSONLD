@@ -43,12 +43,12 @@ public class flower implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new flower().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/flower.new.java.x3d");
-    model.toFileJSON("../data/flower.new.java.json");
+    model.toFileJSON("../data/flower.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -65,13 +65,13 @@ public class flower implements X3DRoots {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(new double[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
+        .addChild(new DirectionalLight().setDirection(new float[] {0f ,-0.8f ,-0.2f }).setIntensity(0.5f ))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new double[] {0f,0f,50f}))
-        .addChild(new Transform().setTranslation(new double[] {0f,-1f,1f}).setRotation(new double[] {0f,1f,0f,3.1415926f}).setScale(new double[] {1.5f,1.5f,1.5f})
+        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f ,0f ,50f }))
+        .addChild(new Transform().setTranslation(new float[] {0f ,-1f ,1f }).setRotation(new float[] {0f ,1f ,0f ,3.1415926f }).setScale(new float[] {1.5f ,1.5f ,1.5f })
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.1f).setDiffuseColor(new double[] {0.9f,0.3f,0.3f}).setSpecularColor(new double[] {0.8f,0.8f,0.8f}).setShininess(0.145f)))
+              .setMaterial(new Material().setTransparency(0.1f ).setDiffuseColor(new float[] {0.9f ,0.3f ,0.3f }).setSpecularColor(new float[] {0.8f ,0.8f ,0.8f }).setShininess(0.145f )))
             .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f2().getArray())))))
         .addChild(new Script().setDEF("OrbitScript")
@@ -163,7 +163,7 @@ public class flower implements X3DRoots {
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,1f ,1f });
   }
 }
 private class MFInt321 {
@@ -173,7 +173,7 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f });
   }
 }
 }

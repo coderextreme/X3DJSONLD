@@ -137,7 +137,7 @@ public class Humanoid0
       .addComments(" </LOD> ")
       .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
       .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0}))
-      .addJoints(new HAnimJoint().setUSE("hanim_"))));
+      .addJoints(new HAnimJoint().setUSE("hanim_humanoid_root"))));
             }
             catch (Exception ex)
             {       

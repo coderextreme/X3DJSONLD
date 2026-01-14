@@ -43,12 +43,12 @@ public class jumpcut_loadurl implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new jumpcut_loadurl().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/jumpcut_loadurl.new.java.x3d");
-    model.toFileJSON("../data/jumpcut_loadurl.new.java.json");
+    model.toFileJSON("../data/jumpcut_loadurl.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -77,7 +77,7 @@ public class jumpcut_loadurl implements X3DRoots {
         .addChild(new Background().setGroundAngle(new MFFloat0().getArray()).setGroundColor(new MFColor1().getArray()).setSkyColor(new MFColor2().getArray()))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
         .addChild(new Viewpoint().setDEF("Front_View").setDescription("Front View"))
-        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {0f,10f,0f}))
+        .addChild(new Viewpoint().setDEF("Top_View").setDescription("Top View").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new float[] {0f ,10f ,0f }))
         .addChild(new TouchSensor().setDEF("STARTER").setDescription("touch to activate"))
         .addChild(new Transform().setDEF("ROOT")
           .addChild(new Shape()
@@ -93,17 +93,17 @@ public class jumpcut_loadurl implements X3DRoots {
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {1.57f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.57f });
   }
 }
 private class MFColor1 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,0.5f,0f,0f,0.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,0.5f ,0f ,0f ,0.5f ,0f });
   }
 }
 private class MFColor2 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,0f ,1f });
   }
 }
 private class MFString3 {

@@ -43,12 +43,12 @@ public class bumpyfreewrljsonverse implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new bumpyfreewrljsonverse().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/bumpyfreewrljsonverse.new.java.x3d");
-    model.toFileJSON("../data/bumpyfreewrljsonverse.new.java.json");
+    model.toFileJSON("../data/bumpyfreewrljsonverse.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -64,6 +64,8 @@ ProtoInstance ProtoInstance4 = null;
 ProtoInstance ProtoInstance5 = null;
       X3D X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
+        .addComments(new CommentsBlock("Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"))
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -73,8 +75,6 @@ ProtoInstance ProtoInstance5 = null;
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
         .addComponent(new component().setName("DIS").setLevel(2))
-        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
-        .addComments(new CommentsBlock("Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"))
         .addMeta(new meta().setName("title").setContent("bumpyfreewrljsonverse.x3d"))
         .addMeta(new meta().setName("description").setContent("*enter description here, short-sentence summaries preferred*"))
         .addMeta(new meta().setName("creator").setContent("Doug Sanden, Christoph Valentin, John Carlson"))
@@ -99,9 +99,9 @@ ProtoInstance ProtoInstance5 = null;
       .setScene(new Scene()
         .addComments(new CommentsBlock("basic nodes, which might be present in any scene"))
         .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat0().getArray()))
-        .addChild(new DirectionalLight().setAmbientIntensity(0.2f).setDirection(new double[] {0f,-1f,0f}))
-        .addChild(new DirectionalLight().setAmbientIntensity(0.2f).setDirection(new double[] {-1f,-0.1f,-1f}))
-        .addChild(new Viewpoint().setDescription("My Overview").setFieldOfView(1.570796f).setPosition(new double[] {0f,1.75f,60f}))
+        .addChild(new DirectionalLight().setAmbientIntensity(0.2f ).setDirection(new float[] {0f ,-1f ,0f }))
+        .addChild(new DirectionalLight().setAmbientIntensity(0.2f ).setDirection(new float[] {-1f ,-0.1f ,-1f }))
+        .addChild(new Viewpoint().setDescription("My Overview").setFieldOfView(1.570796f ).setPosition(new float[] {0f ,1.75f ,60f }))
         .addComments(new CommentsBlock("LayerSet with two layers, navigation happens in layer 1"))
         .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(new MFInt321().getArray())
           .addComments(new CommentsBlock("the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""))
@@ -110,34 +110,34 @@ ProtoInstance ProtoInstance5 = null;
             .addComments(new CommentsBlock("this group contains the red/green/blue 3D crosshair"))
             .addChild(new Group()
               .addComments(new CommentsBlock("Arrow X"))
-              .addChild(new Transform().setTranslation(new double[] {25f,0f,0f}).setRotation(new double[] {0f,0f,-1f,1.57f})
+              .addChild(new Transform().setTranslation(new float[] {25f ,0f ,0f }).setRotation(new float[] {0f ,0f ,-1f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setDEF("Shaft").setRadius(0.35f).setHeight(50f))
+                  .setGeometry(new Cylinder().setDEF("Shaft").setRadius(0.35f ).setHeight(50f ))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("RED").setDiffuseColor(new double[] {1f,0f,0f}).setEmissiveColor(new double[] {1f,0f,0f})))))
-              .addChild(new Transform().setTranslation(new double[] {50f,0f,0f}).setRotation(new double[] {0f,0f,-1f,1.57f})
+                    .setMaterial(new Material().setDEF("RED").setDiffuseColor(new float[] {1f ,0f ,0f }).setEmissiveColor(new float[] {1f ,0f ,0f })))))
+              .addChild(new Transform().setTranslation(new float[] {50f ,0f ,0f }).setRotation(new float[] {0f ,0f ,-1f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setDEF("Tip").setBottomRadius(0.8f).setHeight(3f))
+                  .setGeometry(new Cone().setDEF("Tip").setBottomRadius(0.8f ).setHeight(3f ))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("RED")))))
               .addComments(new CommentsBlock("Arrow Y"))
-              .addChild(new Transform().setTranslation(new double[] {0f,25f,0f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,25f ,0f })
                 .addChild(new Shape()
                   .setGeometry(new Cylinder().setUSE("Shaft"))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("GREEN").setDiffuseColor(new double[] {0f,1f,0f}).setEmissiveColor(new double[] {0f,1f,0f})))))
-              .addChild(new Transform().setTranslation(new double[] {0f,50f,0f})
+                    .setMaterial(new Material().setDEF("GREEN").setDiffuseColor(new float[] {0f ,1f ,0f }).setEmissiveColor(new float[] {0f ,1f ,0f })))))
+              .addChild(new Transform().setTranslation(new float[] {0f ,50f ,0f })
                 .addChild(new Shape()
                   .setGeometry(new Cone().setUSE("Tip"))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setUSE("GREEN")))))
               .addComments(new CommentsBlock("Arrow Z"))
-              .addChild(new Transform().setTranslation(new double[] {0f,0f,25f}).setRotation(new double[] {1f,0f,0f,1.57f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,0f ,25f }).setRotation(new float[] {1f ,0f ,0f ,1.57f })
                 .addChild(new Shape()
                   .setGeometry(new Cylinder().setUSE("Shaft"))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("BLUE").setDiffuseColor(new double[] {0f,0f,1f}).setEmissiveColor(new double[] {0f,0f,1f})))))
-              .addChild(new Transform().setTranslation(new double[] {0f,0f,50f}).setRotation(new double[] {1f,0f,0f,1.57f})
+                    .setMaterial(new Material().setDEF("BLUE").setDiffuseColor(new float[] {0f ,0f ,1f }).setEmissiveColor(new float[] {0f ,0f ,1f })))))
+              .addChild(new Transform().setTranslation(new float[] {0f ,0f ,50f }).setRotation(new float[] {1f ,0f ,0f ,1.57f })
                 .addChild(new Shape()
                   .setGeometry(new Cone().setUSE("Tip"))
                   .setAppearance(new Appearance()
@@ -153,7 +153,7 @@ ProtoInstance ProtoInstance5 = null;
                   .setGeometry(new IndexedFaceSet().setConvex(false).setDEF("Orbit")
                     .setCoord(new Coordinate().setDEF("OrbitCoordinates")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))
                     .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                       .setBackTexture(new ImageTexture().setUrl(new MFString9().getArray()))
                       .setBottomTexture(new ImageTexture().setUrl(new MFString10().getArray()))
@@ -227,11 +227,11 @@ ProtoInstance ProtoInstance5 = null;
             .addChild(new ROUTE().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
             .addChild(new ROUTE().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
             .addComments(new CommentsBlock("DIS multiuser facilities"))
-            .addChild(new DISEntityManager().setDEF("EntityManager").setNetworkMode("networkReader")
-              .addChild(new DISEntityTypeMapping().setReadInterval(new SFTime(3d)).setCategory(77).setSpecific(1).setUrl(new MFString17().getArray()))
-              .addChild(new DISEntityTypeMapping().setReadInterval(new SFTime(3d)).setCategory(77).setSpecific(2).setUrl(new MFString18().getArray()))
-              .addChild(new DISEntityTypeMapping().setReadInterval(new SFTime(3d)).setCategory(77).setSpecific(3).setUrl(new MFString19().getArray()))
-              .addChild(new DISEntityTypeMapping().setReadInterval(new SFTime(3d)).setCategory(77).setSpecific(4).setUrl(new MFString20().getArray())))
+            .addChild(new DISEntityManager().setDEF("EntityManager")
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new MFString17().getArray()))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new MFString18().getArray()))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(3).setUrl(new MFString19().getArray()))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(4).setUrl(new MFString20().getArray())))
             .addChild(new Collision().setEnabled(false)
               .addChild(new Group().setDEF("AvatarHolder")))
             .addChild(new ROUTE().setFromField("addedEntities").setFromNode("EntityManager").setToField("addChildren").setToNode("AvatarHolder"))
@@ -241,18 +241,18 @@ ProtoInstance ProtoInstance5 = null;
             .addComments(new CommentsBlock("clipping the LayoutLayer"))
             .addComments(new CommentsBlock("the content (children) of the LayoutLayer"))
             .addComments(new CommentsBlock("first, the slider for scaling the model"))
-            .addChild(new Transform().setTranslation(new double[] {0f,0f,-3f})
+            .addChild(new Transform().setTranslation(new float[] {0f ,0f ,-3f })
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0f,0f,0f}).setTransparency(0.7f)))
-                .setGeometry(new Box().setSize(new double[] {100f,100f,0.02f}))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f }).setTransparency(0.7f )))
+                .setGeometry(new Box().setSize(new float[] {100f ,100f ,0.02f }))))
             .addChild(new Transform().setDEF("equationTransform")
-              .addChild(new Transform().setTranslation(new double[] {0f,0f,-20f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,0f ,-20f })
                 .addChild(new Shape()
                   .setGeometry(new Text().setDEF("equation").setString(new MFString22().getArray())
-                    .setFontStyle(new FontStyle().setSize(0.09f)))
+                    .setFontStyle(new FontStyle().setSize(0.09f )))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,0f}))))))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,0f }))))))
             .addChild(new ProtoDeclare().setName("SliderProto")
               .setProtoInterface(new ProtoInterface()
                 .addField(new field().setType("SFVec3f").setName("sliderTranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0.7 0"))
@@ -264,21 +264,21 @@ ProtoInstance ProtoInstance5 = null;
                 .addField(new field().setType("SFNode").setName("shaderNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
               .setProtoBody(new ProtoBody()
                 .addChild(new Group()
-                  .addChild(new Transform().setDEF("protoSlider").setTranslation(new double[] {0f,0.7f,0f})
+                  .addChild(new Transform().setDEF("protoSlider").setTranslation(new float[] {0f ,0.7f ,0f })
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("translation").setProtoField("sliderTranslation")))
-                    .addChild(new Transform().setDEF("protoTransform").setTranslation(new double[] {0f,0f,0.1f})
+                    .addChild(new Transform().setDEF("protoTransform").setTranslation(new float[] {0f ,0f ,0.1f })
                       .setIS(new IS()
                         .addConnect(new connect().setNodeField("translation").setProtoField("sensorTranslation")))
-                      .addChild(new PlaneSensor().setDEF("protoSensor").setMaxPosition(new double[] {1f,0f}))
-                      .addChild(new Transform().setTranslation(new double[] {0f,0f,0f})
+                      .addChild(new PlaneSensor().setDEF("protoSensor").setMaxPosition(new float[] {1f ,0f }))
+                      .addChild(new Transform().setTranslation(new float[] {0f ,0f ,0f })
                         .addChild(new TouchSensor().setDEF("protoTS")))
                       .addChild(new Transform()
                         .addChild(new Shape()
                           .setGeometry(new Text().setDEF("protoText").setString(new MFString23().getArray())
                             .setIS(new IS()
                               .addConnect(new connect().setNodeField("string").setProtoField("textString")))
-                            .setFontStyle(new FontStyle().setSize(0.23f)))
+                            .setFontStyle(new FontStyle().setSize(0.23f )))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material()))))))
                   .addChild(new Script().setDEF("protoValueTransformerScript").setDirectOutput(true).setMustEvaluate(true)
@@ -423,7 +423,7 @@ ProtoInstance5
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.25f,1.75f,0.75f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.25f ,1.75f ,0.75f });
   }
 }
 private class MFInt321 {
@@ -548,7 +548,7 @@ private class MFString24 {
 }
 private class MFFloat25 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {-0.2f,0.19f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {-0.2f ,0.19f });
   }
 }
 private class MFString26 {
@@ -563,7 +563,7 @@ private class MFString27 {
 }
 private class MFFloat28 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.4f,0.6f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.4f ,0.6f });
   }
 }
 private class MFString29 {
@@ -573,7 +573,7 @@ private class MFString29 {
 }
 private class MFFloat30 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,1f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,1f ,0f ,1f });
   }
 }
 }

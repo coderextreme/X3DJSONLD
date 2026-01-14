@@ -101,18 +101,18 @@ POSSIBILITY OF SUCH DAMAGE.
 
 ###############################################
 
-# OWL validation available at
-#   http://mowl-power.cs.man.ac.uk:8080/validator (Profile OWL 2, Report syntax: Manchester Owl Syntax)
-#   http://visualdataweb.de/validator
-#
+# OWL validation performed using
 # Protege Ontology Editor
 #   https://protege.stanford.edu
+#
+# Independent validation originally performed using
+#   http://mowl-power.cs.man.ac.uk:8080/validator (Profile OWL 2, Report syntax: Manchester Owl Syntax)
+#   http://visualdataweb.de/validator
 
 ###############################################
             
-# Design Plan
-
-# - Show current work and plans at Web3D 2019 for discussion and comment
+# Work Plan
+# - Show current work and plans at Web3D Conferences for discussion and comment
 # - Continue testing X3D Ontology with SPARQL queries
 # - Show interesting inferencing within/among X3D models
 # - Consider adding semantic metadata to models in X3D Examples Archive
