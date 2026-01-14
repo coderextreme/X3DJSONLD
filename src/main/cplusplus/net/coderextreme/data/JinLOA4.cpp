@@ -96,7 +96,7 @@ head1.addMeta(&meta16);
 
 meta& meta17 =  meta();
 meta17.setName(CString("generator"));
-meta17.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta17.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta17);
 
 meta& meta18 =  meta();
@@ -7953,7 +7953,7 @@ OrientationInterpolator1791.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator1791.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
 Group1783.addChild(&OrientationInterpolator1791);
 
-//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 OrientationInterpolator& OrientationInterpolator1792 =  OrientationInterpolator();
 OrientationInterpolator1792.setDEF(CString("Stop_l_metatarsal_RotationInterpolator"));
 OrientationInterpolator1792.setKey(new float[]{0,0.5,1}, 3);
@@ -7984,7 +7984,7 @@ OrientationInterpolator1796.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator1796.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
 Group1783.addChild(&OrientationInterpolator1796);
 
-//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 OrientationInterpolator& OrientationInterpolator1797 =  OrientationInterpolator();
 OrientationInterpolator1797.setDEF(CString("Stop_r_metatarsal_RotationInterpolator"));
 OrientationInterpolator1797.setKey(new float[]{0,0.5,1}, 3);

@@ -97,16 +97,16 @@ ProtoDeclare17.setName(CString("FlowerProto"));
 ProtoInterface& ProtoInterface18 =  ProtoInterface();
 field& field19 =  field();
 field19.setName(CString("vertex"));
-field19.setAccessType(CString("inputOutput"));
+field19.setAccessType(CString("inputOnly"));
 field19.setType(CString("MFString"));
-field19.setValue(CString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\""));
+field19.setValue(CString("\"../shaders/gl_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\""));
 ProtoInterface18.addChild(&field19);
 
 field& field20 =  field();
 field20.setName(CString("fragment"));
-field20.setAccessType(CString("inputOutput"));
+field20.setAccessType(CString("inputOnly"));
 field20.setType(CString("MFString"));
-field20.setValue(CString("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\""));
+field20.setValue(CString("\"../shaders/pc_flowers.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\""));
 ProtoInterface18.addChild(&field20);
 
 ProtoDeclare17.addChild(&ProtoInterface18);
@@ -152,183 +152,187 @@ Appearance24.addChild(&ComposedCubeMapTexture26);
 ComposedShader& ComposedShader33 =  ComposedShader();
 ComposedShader33.setDEF(CString("shader"));
 ComposedShader33.setLanguage(CString("GLSL"));
+//<field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
 field& field34 =  field();
 field34.setName(CString("cube"));
-field34.setType(CString("SFInt32"));
-field34.setAccessType(CString("inputOutput"));
-field34.setValue(CString("0"));
+field34.setType(CString("SFNode"));
+field34.setAccessType(CString("inputOnly"));
+ComposedCubeMapTexture& ComposedCubeMapTexture35 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture35.setUSE(CString("texture"));
+field34.addChild(&ComposedCubeMapTexture35);
+
 ComposedShader33.addChild(&field34);
 
-field& field35 =  field();
-field35.setName(CString("chromaticDispertion"));
-field35.setAccessType(CString("initializeOnly"));
-field35.setType(CString("SFVec3f"));
-field35.setValue(CString("0.98 1 1.033"));
-ComposedShader33.addChild(&field35);
-
 field& field36 =  field();
-field36.setName(CString("bias"));
-field36.setType(CString("SFFloat"));
-field36.setAccessType(CString("inputOutput"));
-field36.setValue(CString("0.5"));
+field36.setName(CString("chromaticDispertion"));
+field36.setAccessType(CString("initializeOnly"));
+field36.setType(CString("SFVec3f"));
+field36.setValue(CString("0.98 1 1.033"));
 ComposedShader33.addChild(&field36);
 
 field& field37 =  field();
-field37.setName(CString("scale"));
+field37.setName(CString("bias"));
 field37.setType(CString("SFFloat"));
-field37.setAccessType(CString("inputOutput"));
+field37.setAccessType(CString("inputOnly"));
 field37.setValue(CString("0.5"));
 ComposedShader33.addChild(&field37);
 
 field& field38 =  field();
-field38.setName(CString("power"));
+field38.setName(CString("scale"));
 field38.setType(CString("SFFloat"));
-field38.setAccessType(CString("inputOutput"));
-field38.setValue(CString("2"));
+field38.setAccessType(CString("inputOnly"));
+field38.setValue(CString("0.5"));
 ComposedShader33.addChild(&field38);
 
 field& field39 =  field();
-field39.setName(CString("a"));
+field39.setName(CString("power"));
 field39.setType(CString("SFFloat"));
-field39.setAccessType(CString("inputOutput"));
-field39.setValue(CString("10"));
+field39.setAccessType(CString("inputOnly"));
+field39.setValue(CString("2"));
 ComposedShader33.addChild(&field39);
 
 field& field40 =  field();
-field40.setName(CString("b"));
+field40.setName(CString("a"));
 field40.setType(CString("SFFloat"));
-field40.setAccessType(CString("inputOutput"));
-field40.setValue(CString("1"));
+field40.setAccessType(CString("inputOnly"));
+field40.setValue(CString("10"));
 ComposedShader33.addChild(&field40);
 
 field& field41 =  field();
-field41.setName(CString("c"));
+field41.setName(CString("b"));
 field41.setType(CString("SFFloat"));
-field41.setAccessType(CString("inputOutput"));
-field41.setValue(CString("20"));
+field41.setAccessType(CString("inputOnly"));
+field41.setValue(CString("1"));
 ComposedShader33.addChild(&field41);
 
 field& field42 =  field();
-field42.setName(CString("d"));
+field42.setName(CString("c"));
 field42.setType(CString("SFFloat"));
-field42.setAccessType(CString("inputOutput"));
+field42.setAccessType(CString("inputOnly"));
 field42.setValue(CString("20"));
 ComposedShader33.addChild(&field42);
 
 field& field43 =  field();
-field43.setName(CString("tdelta"));
+field43.setName(CString("d"));
 field43.setType(CString("SFFloat"));
-field43.setAccessType(CString("inputOutput"));
-field43.setValue(CString("0"));
+field43.setAccessType(CString("inputOnly"));
+field43.setValue(CString("20"));
 ComposedShader33.addChild(&field43);
 
 field& field44 =  field();
-field44.setName(CString("pdelta"));
+field44.setName(CString("tdelta"));
 field44.setType(CString("SFFloat"));
-field44.setAccessType(CString("inputOutput"));
+field44.setAccessType(CString("inputOnly"));
 field44.setValue(CString("0"));
 ComposedShader33.addChild(&field44);
 
-//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
-ShaderPart& ShaderPart45 =  ShaderPart();
-ShaderPart45.setType(CString("VERTEX"));
-IS& IS46 =  IS();
-Connect& connect47 =  Connect();
-connect47.setNodeField(CString("url"));
-connect47.setProtoField(CString("vertex"));
-IS46.addChild(&connect47);
+field& field45 =  field();
+field45.setName(CString("pdelta"));
+field45.setType(CString("SFFloat"));
+field45.setAccessType(CString("inputOnly"));
+field45.setValue(CString("0"));
+ComposedShader33.addChild(&field45);
 
-ShaderPart45.addChild(&IS46);
+ShaderPart& ShaderPart46 =  ShaderPart();
+ShaderPart46.setType(CString("VERTEX"));
+IS& IS47 =  IS();
+Connect& connect48 =  Connect();
+connect48.setNodeField(CString("url"));
+connect48.setProtoField(CString("vertex"));
+IS47.addChild(&connect48);
 
-ComposedShader33.setParts(&ShaderPart45);
+ShaderPart46.addChild(&IS47);
 
-ShaderPart& ShaderPart48 =  ShaderPart();
-ShaderPart48.setType(CString("FRAGMENT"));
-IS& IS49 =  IS();
-Connect& connect50 =  Connect();
-connect50.setNodeField(CString("url"));
-connect50.setProtoField(CString("fragment"));
-IS49.addChild(&connect50);
+ComposedShader33.setParts(&ShaderPart46);
 
-ShaderPart48.addChild(&IS49);
+ShaderPart& ShaderPart49 =  ShaderPart();
+ShaderPart49.setType(CString("FRAGMENT"));
+IS& IS50 =  IS();
+Connect& connect51 =  Connect();
+connect51.setNodeField(CString("url"));
+connect51.setProtoField(CString("fragment"));
+IS50.addChild(&connect51);
 
-ComposedShader33.setParts(&ShaderPart48);
+ShaderPart49.addChild(&IS50);
+
+ComposedShader33.setParts(&ShaderPart49);
 
 Appearance24.addChild(&ComposedShader33);
 
 Shape23.addChild(&Appearance24);
 
-Sphere& Sphere51 =  Sphere();
-Shape23.setGeometry(&Sphere51);
+Sphere& Sphere52 =  Sphere();
+Shape23.setGeometry(&Sphere52);
 
 Transform22.addChild(&Shape23);
 
-Script& Script52 =  Script();
-Script52.setDEF(CString("Animate"));
-field& field53 =  field();
-field53.setName(CString("translation"));
-field53.setAccessType(CString("inputOutput"));
-field53.setType(CString("SFVec3f"));
-field53.setValue(CString("0 0 0"));
-Script52.addChild(&field53);
-
+Script& Script53 =  Script();
+Script53.setDEF(CString("Animate"));
+Script53.setDirectOutput(True);
 field& field54 =  field();
-field54.setName(CString("velocity"));
+field54.setName(CString("translation"));
 field54.setAccessType(CString("inputOutput"));
 field54.setType(CString("SFVec3f"));
 field54.setValue(CString("0 0 0"));
-Script52.addChild(&field54);
+Script53.addChild(&field54);
 
 field& field55 =  field();
-field55.setName(CString("set_fraction"));
-field55.setAccessType(CString("inputOnly"));
-field55.setType(CString("SFFloat"));
-Script52.addChild(&field55);
+field55.setName(CString("velocity"));
+field55.setAccessType(CString("outputOnly"));
+field55.setType(CString("SFVec3f"));
+field55.setValue(CString("0 0 0"));
+Script53.addChild(&field55);
 
 field& field56 =  field();
-field56.setName(CString("a"));
+field56.setName(CString("set_fraction"));
+field56.setAccessType(CString("inputOnly"));
 field56.setType(CString("SFFloat"));
-field56.setAccessType(CString("inputOutput"));
-field56.setValue(CString("0.5"));
-Script52.addChild(&field56);
+Script53.addChild(&field56);
 
 field& field57 =  field();
-field57.setName(CString("b"));
+field57.setName(CString("a"));
 field57.setType(CString("SFFloat"));
-field57.setAccessType(CString("inputOutput"));
+field57.setAccessType(CString("outputOnly"));
 field57.setValue(CString("0.5"));
-Script52.addChild(&field57);
+Script53.addChild(&field57);
 
 field& field58 =  field();
-field58.setName(CString("c"));
+field58.setName(CString("b"));
 field58.setType(CString("SFFloat"));
-field58.setAccessType(CString("inputOutput"));
-field58.setValue(CString("3"));
-Script52.addChild(&field58);
+field58.setAccessType(CString("outputOnly"));
+field58.setValue(CString("0.5"));
+Script53.addChild(&field58);
 
 field& field59 =  field();
-field59.setName(CString("d"));
+field59.setName(CString("c"));
 field59.setType(CString("SFFloat"));
-field59.setAccessType(CString("inputOutput"));
+field59.setAccessType(CString("outputOnly"));
 field59.setValue(CString("3"));
-Script52.addChild(&field59);
+Script53.addChild(&field59);
 
 field& field60 =  field();
-field60.setName(CString("tdelta"));
+field60.setName(CString("d"));
 field60.setType(CString("SFFloat"));
-field60.setAccessType(CString("inputOutput"));
-field60.setValue(CString("0.5"));
-Script52.addChild(&field60);
+field60.setAccessType(CString("outputOnly"));
+field60.setValue(CString("3"));
+Script53.addChild(&field60);
 
 field& field61 =  field();
-field61.setName(CString("pdelta"));
+field61.setName(CString("tdelta"));
 field61.setType(CString("SFFloat"));
-field61.setAccessType(CString("inputOutput"));
+field61.setAccessType(CString("outputOnly"));
 field61.setValue(CString("0.5"));
-Script52.addChild(&field61);
+Script53.addChild(&field61);
+
+field& field62 =  field();
+field62.setName(CString("pdelta"));
+field62.setType(CString("SFFloat"));
+field62.setAccessType(CString("outputOnly"));
+field62.setValue(CString("0.5"));
+Script53.addChild(&field62);
 
 
-Script52.setSourceCode(CString("ecmascript:")+
+Script53.setSourceCode(CString("ecmascript:")+
 _T("			function initialize() {")+
 _T("			    translation = new SFVec3f(0, 0, 0);")+
 _T("			    velocity = new SFVec3f(")+
@@ -393,69 +397,69 @@ _T("				if (d > 10) {")+
 _T("					d = 4;")+
 _T("				}")+
 _T("			}"));
-Transform22.addChild(&Script52);
+Transform22.addChild(&Script53);
 
-TimeSensor& TimeSensor62 =  TimeSensor();
-TimeSensor62.setDEF(CString("TourTime"));
-TimeSensor62.setCycleInterval(5);
-TimeSensor62.setLoop(True);
-Transform22.addChild(&TimeSensor62);
-
-ROUTE& ROUTE63 =  ROUTE();
-ROUTE63.setFromNode(CString("TourTime"));
-ROUTE63.setFromField(CString("fraction_changed"));
-ROUTE63.setToNode(CString("Animate"));
-ROUTE63.setToField(CString("set_fraction"));
-Transform22.addChild(&ROUTE63);
+TimeSensor& TimeSensor63 =  TimeSensor();
+TimeSensor63.setDEF(CString("TourTime"));
+TimeSensor63.setCycleInterval(5);
+TimeSensor63.setLoop(True);
+Transform22.addChild(&TimeSensor63);
 
 ROUTE& ROUTE64 =  ROUTE();
-ROUTE64.setFromNode(CString("Animate"));
-ROUTE64.setFromField(CString("translation_changed"));
-ROUTE64.setToNode(CString("transform"));
-ROUTE64.setToField(CString("set_translation"));
+ROUTE64.setFromNode(CString("TourTime"));
+ROUTE64.setFromField(CString("fraction_changed"));
+ROUTE64.setToNode(CString("Animate"));
+ROUTE64.setToField(CString("set_fraction"));
 Transform22.addChild(&ROUTE64);
 
 ROUTE& ROUTE65 =  ROUTE();
 ROUTE65.setFromNode(CString("Animate"));
-ROUTE65.setFromField(CString("a"));
-ROUTE65.setToNode(CString("shader"));
-ROUTE65.setToField(CString("a"));
+ROUTE65.setFromField(CString("translation_changed"));
+ROUTE65.setToNode(CString("transform"));
+ROUTE65.setToField(CString("set_translation"));
 Transform22.addChild(&ROUTE65);
 
 ROUTE& ROUTE66 =  ROUTE();
 ROUTE66.setFromNode(CString("Animate"));
-ROUTE66.setFromField(CString("b"));
+ROUTE66.setFromField(CString("a"));
 ROUTE66.setToNode(CString("shader"));
-ROUTE66.setToField(CString("b"));
+ROUTE66.setToField(CString("a"));
 Transform22.addChild(&ROUTE66);
 
 ROUTE& ROUTE67 =  ROUTE();
 ROUTE67.setFromNode(CString("Animate"));
-ROUTE67.setFromField(CString("c"));
+ROUTE67.setFromField(CString("b"));
 ROUTE67.setToNode(CString("shader"));
-ROUTE67.setToField(CString("c"));
+ROUTE67.setToField(CString("b"));
 Transform22.addChild(&ROUTE67);
 
 ROUTE& ROUTE68 =  ROUTE();
 ROUTE68.setFromNode(CString("Animate"));
-ROUTE68.setFromField(CString("d"));
+ROUTE68.setFromField(CString("c"));
 ROUTE68.setToNode(CString("shader"));
-ROUTE68.setToField(CString("d"));
+ROUTE68.setToField(CString("c"));
 Transform22.addChild(&ROUTE68);
 
 ROUTE& ROUTE69 =  ROUTE();
 ROUTE69.setFromNode(CString("Animate"));
-ROUTE69.setFromField(CString("tdelta"));
+ROUTE69.setFromField(CString("d"));
 ROUTE69.setToNode(CString("shader"));
-ROUTE69.setToField(CString("tdelta"));
+ROUTE69.setToField(CString("d"));
 Transform22.addChild(&ROUTE69);
 
 ROUTE& ROUTE70 =  ROUTE();
 ROUTE70.setFromNode(CString("Animate"));
-ROUTE70.setFromField(CString("pdelta"));
+ROUTE70.setFromField(CString("tdelta"));
 ROUTE70.setToNode(CString("shader"));
-ROUTE70.setToField(CString("pdelta"));
+ROUTE70.setToField(CString("tdelta"));
 Transform22.addChild(&ROUTE70);
+
+ROUTE& ROUTE71 =  ROUTE();
+ROUTE71.setFromNode(CString("Animate"));
+ROUTE71.setFromField(CString("pdelta"));
+ROUTE71.setToNode(CString("shader"));
+ROUTE71.setToField(CString("pdelta"));
+Transform22.addChild(&ROUTE71);
 
 ProtoBody21.addChild(&Transform22);
 

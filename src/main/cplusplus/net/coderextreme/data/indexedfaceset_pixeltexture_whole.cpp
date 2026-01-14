@@ -165,6 +165,7 @@ NavigationInfo& NavigationInfo30 =  NavigationInfo();
 NavigationInfo30.setType(new CString[]{CString("EXAMINE")}, 1);
 Scene23.addChild(&NavigationInfo30);
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 Shape& Shape31 =  Shape();
 Appearance& Appearance32 =  Appearance();
 Material& Material33 =  Material();
@@ -172,28 +173,32 @@ Appearance32.addChild(&Material33);
 
 PixelTexture& PixelTexture34 =  PixelTexture();
 PixelTexture34.setImage(CString("2 2 4 4278190335 16711935 4294967295 4294902015"));
+TextureProperties& TextureProperties35 =  TextureProperties();
+TextureProperties35.setMagnificationFilter(CString("NEAREST_PIXEL"));
+PixelTexture34.setTextureProperties(TextureProperties35);
+
 Appearance32.addChild(&PixelTexture34);
 
 Shape31.addChild(&Appearance32);
 
-IndexedFaceSet& IndexedFaceSet35 =  IndexedFaceSet();
-IndexedFaceSet35.setColorPerVertex(False);
-IndexedFaceSet35.setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
-IndexedFaceSet35.setCreaseAngle(0.5);
-IndexedFaceSet35.setTexCoordIndex(new int32_t[]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
-CColor& Color36 =  CColor();
-Color36.setColor(new float[]{0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0}, 18);
-IndexedFaceSet35.setColor(&Color36);
+IndexedFaceSet& IndexedFaceSet36 =  IndexedFaceSet();
+IndexedFaceSet36.setColorPerVertex(False);
+IndexedFaceSet36.setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
+IndexedFaceSet36.setCreaseAngle(0.5);
+IndexedFaceSet36.setTexCoordIndex(new int32_t[]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
+CColor& Color37 =  CColor();
+Color37.setColor(new float[]{0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0}, 18);
+IndexedFaceSet36.setColor(&Color37);
 
-Coordinate& Coordinate37 =  Coordinate();
-Coordinate37.setPoint(new float[]{-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1}, 24);
-IndexedFaceSet35.setCoord(&Coordinate37);
+Coordinate& Coordinate38 =  Coordinate();
+Coordinate38.setPoint(new float[]{-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1}, 24);
+IndexedFaceSet36.setCoord(&Coordinate38);
 
-TextureCoordinate& TextureCoordinate38 =  TextureCoordinate();
-TextureCoordinate38.setPoint(new float[]{0,1,0,0,1,1,1,0}, 8);
-IndexedFaceSet35.setTexCoord(&TextureCoordinate38);
+TextureCoordinate& TextureCoordinate39 =  TextureCoordinate();
+TextureCoordinate39.setPoint(new float[]{0,1,0,0,1,1,1,0}, 8);
+IndexedFaceSet36.setTexCoord(&TextureCoordinate39);
 
-Shape31.setGeometry(&IndexedFaceSet35);
+Shape31.setGeometry(&IndexedFaceSet36);
 
 Scene23.addChild(&Shape31);
 

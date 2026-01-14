@@ -422,6 +422,7 @@ ProtoInstance77.setDEF(CString("connector1"));
 fieldValue& fieldValue78 =  fieldValue();
 fieldValue78.setName(CString("startnode"));
 ProtoInstance& ProtoInstance79 =  ProtoInstance();
+ProtoInstance79.setName(CString("point"));
 ProtoInstance79.setUSE(CString("G1"));
 fieldValue78.addChild(&ProtoInstance79);
 
@@ -430,6 +431,7 @@ ProtoInstance77.addChild(&fieldValue78);
 fieldValue& fieldValue80 =  fieldValue();
 fieldValue80.setName(CString("endnode"));
 ProtoInstance& ProtoInstance81 =  ProtoInstance();
+ProtoInstance81.setName(CString("point"));
 ProtoInstance81.setUSE(CString("G2"));
 fieldValue80.addChild(&ProtoInstance81);
 
@@ -459,6 +461,7 @@ ProtoInstance86.setDEF(CString("connector2"));
 fieldValue& fieldValue87 =  fieldValue();
 fieldValue87.setName(CString("startnode"));
 ProtoInstance& ProtoInstance88 =  ProtoInstance();
+ProtoInstance88.setName(CString("point"));
 ProtoInstance88.setUSE(CString("G1"));
 fieldValue87.addChild(&ProtoInstance88);
 
@@ -467,6 +470,7 @@ ProtoInstance86.addChild(&fieldValue87);
 fieldValue& fieldValue89 =  fieldValue();
 fieldValue89.setName(CString("endnode"));
 ProtoInstance& ProtoInstance90 =  ProtoInstance();
+ProtoInstance90.setName(CString("point"));
 ProtoInstance90.setUSE(CString("G3"));
 fieldValue89.addChild(&ProtoInstance90);
 
@@ -496,6 +500,7 @@ ProtoInstance95.setDEF(CString("connector3"));
 fieldValue& fieldValue96 =  fieldValue();
 fieldValue96.setName(CString("startnode"));
 ProtoInstance& ProtoInstance97 =  ProtoInstance();
+ProtoInstance97.setName(CString("point"));
 ProtoInstance97.setUSE(CString("G1"));
 fieldValue96.addChild(&ProtoInstance97);
 
@@ -504,6 +509,7 @@ ProtoInstance95.addChild(&fieldValue96);
 fieldValue& fieldValue98 =  fieldValue();
 fieldValue98.setName(CString("endnode"));
 ProtoInstance& ProtoInstance99 =  ProtoInstance();
+ProtoInstance99.setName(CString("point"));
 ProtoInstance99.setUSE(CString("G4"));
 fieldValue98.addChild(&ProtoInstance99);
 

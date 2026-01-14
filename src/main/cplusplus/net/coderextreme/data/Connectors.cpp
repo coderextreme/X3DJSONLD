@@ -36,7 +36,7 @@ head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
 meta5.setName(CString("generator"));
-meta5.setContent(CString("Titania V3.0.4, http://titania.create3000.de"));
+meta5.setContent(CString("Titania V3.0.4, https://titania.create3000.de"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();

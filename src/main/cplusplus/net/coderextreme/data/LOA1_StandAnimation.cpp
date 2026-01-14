@@ -61,22 +61,22 @@ head1.addMeta(&meta9);
 
 meta& meta10 =  meta();
 meta10.setName(CString("reference"));
-meta10.setContent(CString("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"));
+meta10.setContent(CString("https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"));
 head1.addMeta(&meta10);
 
 meta& meta11 =  meta();
 meta11.setName(CString("reference"));
-meta11.setContent(CString("http://www.HAnim.org"));
+meta11.setContent(CString("https://www.HAnim.org"));
 head1.addMeta(&meta11);
 
 meta& meta12 =  meta();
 meta12.setName(CString("reference"));
-meta12.setContent(CString("http://HAnim.org/Models"));
+meta12.setContent(CString("https://HAnim.org/Models"));
 head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
 meta13.setName(CString("reference"));
-meta13.setContent(CString("http://HAnim.org/Nodes"));
+meta13.setContent(CString("https://HAnim.org/Nodes"));
 head1.addMeta(&meta13);
 
 meta& meta14 =  meta();

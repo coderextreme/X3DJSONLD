@@ -50,82 +50,87 @@ Scene& Scene7 =  Scene();
 NavigationInfo& NavigationInfo8 =  NavigationInfo();
 Scene7.addChild(&NavigationInfo8);
 
-Background& Background9 =  Background();
-Background9.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
-Background9.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
-Background9.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
-Background9.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
-Background9.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
-Background9.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
-Scene7.addChild(&Background9);
+Viewpoint& Viewpoint9 =  Viewpoint();
+Viewpoint9.setDescription(CString("Tour Views"));
+Viewpoint9.setPosition(new float[]{0,0,50});
+Scene7.addChild(&Viewpoint9);
 
-Group& Group10 =  Group();
-ExternProtoDeclare& ExternProtoDeclare11 =  ExternProtoDeclare();
-ExternProtoDeclare11.setName(CString("FlowerProto"));
-ExternProtoDeclare11.setUrl(new CString[]{CString("../data/flowerproto.x3d#FlowerProto")}, 1);
-field& field12 =  field();
-field12.setName(CString("vertex"));
-field12.setAccessType(CString("inputOutput"));
-field12.setType(CString("MFString"));
-ExternProtoDeclare11.addChild(&field12);
+Background& Background10 =  Background();
+Background10.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+Background10.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+Background10.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+Background10.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+Background10.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+Background10.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
+Scene7.addChild(&Background10);
 
+Group& Group11 =  Group();
+ExternProtoDeclare& ExternProtoDeclare12 =  ExternProtoDeclare();
+ExternProtoDeclare12.setName(CString("FlowerProto"));
+ExternProtoDeclare12.setUrl(new CString[]{CString("../data/flowerprotofreewrl.x3d#FlowerProto"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto")}, 2);
 field& field13 =  field();
-field13.setName(CString("fragment"));
+field13.setName(CString("vertex"));
 field13.setAccessType(CString("inputOutput"));
 field13.setType(CString("MFString"));
-ExternProtoDeclare11.addChild(&field13);
+ExternProtoDeclare12.addChild(&field13);
 
-Group10.addChild(&ExternProtoDeclare11);
+field& field14 =  field();
+field14.setName(CString("fragment"));
+field14.setAccessType(CString("inputOutput"));
+field14.setType(CString("MFString"));
+ExternProtoDeclare12.addChild(&field14);
 
-ProtoDeclare& ProtoDeclare14 =  ProtoDeclare();
-ProtoDeclare14.setName(CString("flower"));
-ProtoBody& ProtoBody15 =  ProtoBody();
-Group& Group16 =  Group();
-ProtoInstance& ProtoInstance17 =  ProtoInstance();
-ProtoInstance17.setName(CString("FlowerProto"));
-fieldValue& fieldValue18 =  fieldValue();
-fieldValue18.setName(CString("vertex"));
-fieldValue18.setValue(CString("\"../shaders/freewrl_flowers_chromatic.vs\""));
-ProtoInstance17.addChild(&fieldValue18);
+Group11.addChild(&ExternProtoDeclare12);
 
+ProtoDeclare& ProtoDeclare15 =  ProtoDeclare();
+ProtoDeclare15.setName(CString("flower"));
+ProtoBody& ProtoBody16 =  ProtoBody();
+Group& Group17 =  Group();
+ProtoInstance& ProtoInstance18 =  ProtoInstance();
+ProtoInstance18.setName(CString("FlowerProto"));
 fieldValue& fieldValue19 =  fieldValue();
-fieldValue19.setName(CString("fragment"));
-fieldValue19.setValue(CString("\"../shaders/freewrl.fs\""));
-ProtoInstance17.addChild(&fieldValue19);
+fieldValue19.setName(CString("vertex"));
+fieldValue19.setValue(CString("\"../shaders/freewrl_flowers_chromatic.vs\""));
+ProtoInstance18.addChild(&fieldValue19);
 
-Group16.addChild(&ProtoInstance17);
+fieldValue& fieldValue20 =  fieldValue();
+fieldValue20.setName(CString("fragment"));
+fieldValue20.setValue(CString("\"../shaders/freewrl.fs\""));
+ProtoInstance18.addChild(&fieldValue20);
 
-ProtoBody15.addChild(&Group16);
+Group17.addChild(&ProtoInstance18);
 
-ProtoDeclare14.addChild(&ProtoBody15);
+ProtoBody16.addChild(&Group17);
 
-Group10.addChild(&ProtoDeclare14);
+ProtoDeclare15.addChild(&ProtoBody16);
 
-ProtoInstance& ProtoInstance20 =  ProtoInstance();
-ProtoInstance20.setName(CString("flower"));
-Group10.addChild(&ProtoInstance20);
+Group11.addChild(&ProtoDeclare15);
 
 ProtoInstance& ProtoInstance21 =  ProtoInstance();
 ProtoInstance21.setName(CString("flower"));
-Group10.addChild(&ProtoInstance21);
+Group11.addChild(&ProtoInstance21);
 
 ProtoInstance& ProtoInstance22 =  ProtoInstance();
 ProtoInstance22.setName(CString("flower"));
-Group10.addChild(&ProtoInstance22);
+Group11.addChild(&ProtoInstance22);
 
 ProtoInstance& ProtoInstance23 =  ProtoInstance();
 ProtoInstance23.setName(CString("flower"));
-Group10.addChild(&ProtoInstance23);
+Group11.addChild(&ProtoInstance23);
 
 ProtoInstance& ProtoInstance24 =  ProtoInstance();
 ProtoInstance24.setName(CString("flower"));
-Group10.addChild(&ProtoInstance24);
+Group11.addChild(&ProtoInstance24);
 
 ProtoInstance& ProtoInstance25 =  ProtoInstance();
 ProtoInstance25.setName(CString("flower"));
-Group10.addChild(&ProtoInstance25);
+Group11.addChild(&ProtoInstance25);
 
-Scene7.addChild(&Group10);
+ProtoInstance& ProtoInstance26 =  ProtoInstance();
+ProtoInstance26.setName(CString("flower"));
+Group11.addChild(&ProtoInstance26);
+
+Scene7.addChild(&Group11);
 
 X3D0.setScene(&Scene7);
 

@@ -70,7 +70,7 @@ head1.addMeta(&meta13);
 
 meta& meta14 =  meta();
 meta14.setName(CString("generator"));
-meta14.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta14.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta14);
 
 meta& meta15 =  meta();
@@ -119,6 +119,7 @@ NavigationInfo& NavigationInfo23 =  NavigationInfo();
 NavigationInfo23.setType(new CString[]{CString("EXAMINE"), CString("WALK"), CString("FLY"), CString("ANY")}, 4);
 Scene16.addChild(&NavigationInfo23);
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 Shape& Shape24 =  Shape();
 Appearance& Appearance25 =  Appearance();
 Material& Material26 =  Material();
@@ -128,17 +129,21 @@ PixelTexture& PixelTexture27 =  PixelTexture();
 PixelTexture27.setImage(CString("2 2 4 4278190335 16711935 4294967295 4294902015"));
 PixelTexture27.setRepeatS(false);
 PixelTexture27.setRepeatT(false);
+TextureProperties& TextureProperties28 =  TextureProperties();
+TextureProperties28.setMagnificationFilter(CString("NEAREST_PIXEL"));
+PixelTexture27.setTextureProperties(TextureProperties28);
+
 Appearance25.addChild(&PixelTexture27);
 
 Shape24.addChild(&Appearance25);
 
-IndexedFaceSet& IndexedFaceSet28 =  IndexedFaceSet();
-IndexedFaceSet28.setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
-Coordinate& Coordinate29 =  Coordinate();
-Coordinate29.setPoint(new float[]{-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0}, 24);
-IndexedFaceSet28.setCoord(&Coordinate29);
+IndexedFaceSet& IndexedFaceSet29 =  IndexedFaceSet();
+IndexedFaceSet29.setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
+Coordinate& Coordinate30 =  Coordinate();
+Coordinate30.setPoint(new float[]{-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0}, 24);
+IndexedFaceSet29.setCoord(&Coordinate30);
 
-Shape24.setGeometry(&IndexedFaceSet28);
+Shape24.setGeometry(&IndexedFaceSet29);
 
 Scene16.addChild(&Shape24);
 

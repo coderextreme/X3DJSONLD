@@ -19,6 +19,8 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
+//<component name='Shape' level='4'></component>
+//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 component& component2 =  component();
 component2.setName(CString("Scripting"));
 component2.setLevel(1);
@@ -64,8 +66,6 @@ component10.setName(CString("DIS"));
 component10.setLevel(2);
 head1.addChild(&component10);
 
-//<component name='Shape' level='4'></component>
-//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 meta& meta11 =  meta();
 meta11.setName(CString("title"));
 meta11.setContent(CString("bumpyfreewrljsonverse.x3d"));
@@ -604,30 +604,25 @@ Layer37.addChild(&ROUTE108);
 //DIS multiuser facilities
 DISEntityManager& DISEntityManager109 =  DISEntityManager();
 DISEntityManager109.setDEF(CString("EntityManager"));
-DISEntityManager109.setNetworkMode("networkReader");
 DISEntityTypeMapping& DISEntityTypeMapping110 =  DISEntityTypeMapping();
-DISEntityTypeMapping110.setReadInterval("3");
 DISEntityTypeMapping110.setCategory(77);
 DISEntityTypeMapping110.setSpecific(1);
 DISEntityTypeMapping110.setUrl(new CString[]{CString("../data/Gramps8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")}, 2);
 DISEntityManager109.setMapping(&DISEntityTypeMapping110);
 
 DISEntityTypeMapping& DISEntityTypeMapping111 =  DISEntityTypeMapping();
-DISEntityTypeMapping111.setReadInterval("3");
 DISEntityTypeMapping111.setCategory(77);
 DISEntityTypeMapping111.setSpecific(2);
 DISEntityTypeMapping111.setUrl(new CString[]{CString("../data/Leif8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")}, 2);
 DISEntityManager109.setMapping(&DISEntityTypeMapping111);
 
 DISEntityTypeMapping& DISEntityTypeMapping112 =  DISEntityTypeMapping();
-DISEntityTypeMapping112.setReadInterval("3");
 DISEntityTypeMapping112.setCategory(77);
 DISEntityTypeMapping112.setSpecific(3);
 DISEntityTypeMapping112.setUrl(new CString[]{CString("../data/Lily8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")}, 2);
 DISEntityManager109.setMapping(&DISEntityTypeMapping112);
 
 DISEntityTypeMapping& DISEntityTypeMapping113 =  DISEntityTypeMapping();
-DISEntityTypeMapping113.setReadInterval("3");
 DISEntityTypeMapping113.setCategory(77);
 DISEntityTypeMapping113.setSpecific(4);
 DISEntityTypeMapping113.setUrl(new CString[]{CString("../data/Tufani8Final.x3d"), CString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")}, 2);

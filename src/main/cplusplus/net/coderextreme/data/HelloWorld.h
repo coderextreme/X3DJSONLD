@@ -41,7 +41,7 @@ head1.addMeta(&meta7);
 
 meta& meta8 =  meta();
 meta8.setName(CString("reference"));
-meta8.setContent(CString("http://en.wikipedia.org/wiki/Hello_world"));
+meta8.setContent(CString("https://en.wikipedia.org/wiki/Hello_world"));
 head1.addMeta(&meta8);
 
 meta& meta9 =  meta();
@@ -56,12 +56,12 @@ head1.addMeta(&meta10);
 
 meta& meta11 =  meta();
 meta11.setName(CString("reference"));
-meta11.setContent(CString("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"));
+meta11.setContent(CString("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"));
 head1.addMeta(&meta11);
 
 meta& meta12 =  meta();
 meta12.setName(CString("reference"));
-meta12.setContent(CString("http://www.HelloWorldExample.net"));
+meta12.setContent(CString("https://www.HelloWorldExample.net"));
 head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
@@ -81,12 +81,12 @@ head1.addMeta(&meta15);
 
 meta& meta16 =  meta();
 meta16.setName(CString("reference"));
-meta16.setContent(CString("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"));
+meta16.setContent(CString("https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"));
 head1.addMeta(&meta16);
 
 meta& meta17 =  meta();
 meta17.setName(CString("identifier"));
-meta17.setContent(CString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"));
+meta17.setContent(CString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"));
 head1.addMeta(&meta17);
 
 meta& meta18 =  meta();

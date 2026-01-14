@@ -19,6 +19,8 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
+//Scaled 1:1, Added Animations
+//Added Sites
 component& component2 =  component();
 component2.setName(CString("HAnim"));
 component2.setLevel(1);
@@ -111,7 +113,7 @@ head1.addMeta(&meta19);
 
 meta& meta20 =  meta();
 meta20.setName(CString("generator"));
-meta20.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta20.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta20);
 
 meta& meta21 =  meta();
@@ -119,8 +121,6 @@ meta21.setName(CString("license"));
 meta21.setContent(CString("../license.html"));
 head1.addMeta(&meta21);
 
-//Scaled 1:1, Added Animations
-//Added Sites
 X3D0.setHead(&head1);
 
 Scene& Scene22 =  Scene();

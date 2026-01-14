@@ -70,7 +70,7 @@ head1.addMeta(&meta13);
 
 meta& meta14 =  meta();
 meta14.setName(CString("identifier"));
-meta14.setContent(CString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"));
+meta14.setContent(CString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"));
 head1.addMeta(&meta14);
 
 meta& meta15 =  meta();

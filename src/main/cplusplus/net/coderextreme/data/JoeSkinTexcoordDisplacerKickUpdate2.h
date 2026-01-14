@@ -8,6 +8,7 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
+//BS studio translation from .x3dv by Joe using BS Contact
 component& component2 =  component();
 component2.setName(CString("H-Anim"));
 component2.setLevel(1);
@@ -73,7 +74,6 @@ meta14.setName(CString("license"));
 meta14.setContent(CString("../license.html"));
 head1.addMeta(&meta14);
 
-//BS studio translation from .x3dv by Joe using BS Contact
 X3D0.setHead(&head1);
 
 Scene& Scene15 =  Scene();

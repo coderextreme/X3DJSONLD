@@ -9906,6 +9906,7 @@ ProtoInstance1811.addChild(&fieldValue1814);
 fieldValue& fieldValue1815 =  fieldValue();
 fieldValue1815.setName(CString("hAnimBehaviorNodes"));
 ProtoInstance& ProtoInstance1816 =  ProtoInstance();
+ProtoInstance1816.setName(CString("HAnimBehavior"));
 ProtoInstance1816.setUSE(CString("BehaviorTest1"));
 fieldValue1815.addChild(&ProtoInstance1816);
 

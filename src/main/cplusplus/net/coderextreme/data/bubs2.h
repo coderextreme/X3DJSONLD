@@ -8,45 +8,45 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
-meta& meta2 =  meta();
-meta2.setName(CString("title"));
-meta2.setContent(CString("bubs2.x3d"));
-head1.addMeta(&meta2);
+component& component2 =  component();
+component2.setName(CString("Scripting"));
+component2.setLevel(1);
+head1.addChild(&component2);
 
 meta& meta3 =  meta();
-meta3.setName(CString("creator"));
-meta3.setContent(CString("John Carlson"));
+meta3.setName(CString("title"));
+meta3.setContent(CString("bubs2.x3d"));
 head1.addMeta(&meta3);
 
 meta& meta4 =  meta();
-meta4.setName(CString("description"));
-meta4.setContent(CString("Tour around a prismatic sphere"));
+meta4.setName(CString("creator"));
+meta4.setContent(CString("John Carlson"));
 head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
-meta5.setName(CString("generator"));
-meta5.setContent(CString("X3D-Edit, https://savage.nps.edu/X3D-Edit"));
+meta5.setName(CString("description"));
+meta5.setContent(CString("Tour around a prismatic sphere"));
 head1.addMeta(&meta5);
 
 meta& meta6 =  meta();
-meta6.setName(CString("identifier"));
-meta6.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"));
+meta6.setName(CString("generator"));
+meta6.setContent(CString("X3D-Edit, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta6);
 
 meta& meta7 =  meta();
-meta7.setName(CString("translated"));
-meta7.setContent(CString("13 March 2016"));
+meta7.setName(CString("identifier"));
+meta7.setContent(CString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"));
 head1.addMeta(&meta7);
 
 meta& meta8 =  meta();
-meta8.setName(CString("generator"));
-meta8.setContent(CString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"));
+meta8.setName(CString("translated"));
+meta8.setContent(CString("13 March 2016"));
 head1.addMeta(&meta8);
 
-component& component9 =  component();
-component9.setName(CString("Scripting"));
-component9.setLevel(1);
-head1.addChild(&component9);
+meta& meta9 =  meta();
+meta9.setName(CString("generator"));
+meta9.setContent(CString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"));
+head1.addMeta(&meta9);
 
 X3D0.setHead(&head1);
 

@@ -70,7 +70,7 @@ head1.addMeta(&meta13);
 
 meta& meta14 =  meta();
 meta14.setName(CString("generator"));
-meta14.setContent(CString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"));
+meta14.setContent(CString("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"));
 head1.addMeta(&meta14);
 
 meta& meta15 =  meta();
@@ -80,7 +80,7 @@ head1.addMeta(&meta15);
 
 meta& meta16 =  meta();
 meta16.setName(CString("generator"));
-meta16.setContent(CString("Gnu Image Manipulation Program, http://www.gimp.org"));
+meta16.setContent(CString("Gnu Image Manipulation Program, https://www.gimp.org"));
 head1.addMeta(&meta16);
 
 meta& meta17 =  meta();

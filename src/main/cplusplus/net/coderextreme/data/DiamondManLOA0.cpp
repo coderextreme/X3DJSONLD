@@ -1,3 +1,13 @@
+#ifndef WIN32
+#define WINAPI
+#define AFX_EXT_CLASS
+#define EXPORT32
+#define WINGDIAPI
+#define APIENTRY
+#endif
+#define FALSE false
+#define TRUE true
+#define BOOL bool
 #define False false
 #define True true
 #include "C:/Users/jcarl/www.web3d.org/x3d/languages/cpp/Examples_X3DForWebAuthors/Chapter06/IndexedFaceSetExample/IndexedFaceSetExample/pch.h"
@@ -41,7 +51,7 @@ head1.addMeta(&meta7);
 
 meta& meta8 =  meta();
 meta8.setName(CString("modified"));
-meta8.setContent(CString("23 December 2021"));
+meta8.setContent(CString("Mon, 15 Sep 2025 05:18:46 GMT"));
 head1.addMeta(&meta8);
 
 meta& meta9 =  meta();
@@ -119,162 +129,144 @@ meta23.setName(CString("identifier"));
 meta23.setContent(CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA0.x3d"));
 head1.addMeta(&meta23);
 
-meta& meta24 =  meta();
-meta24.setName(CString("generator"));
-meta24.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
-head1.addMeta(&meta24);
-
-meta& meta25 =  meta();
-meta25.setName(CString("license"));
-meta25.setContent(CString("../license.html"));
-head1.addMeta(&meta25);
-
 X3D0.setHead(&head1);
 
-Scene& Scene26 =  Scene();
-WorldInfo& WorldInfo27 =  WorldInfo();
-WorldInfo27.setInfo(new CString[]{CString("HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf")}, 1);
-WorldInfo27.setTitle(CString("HANIM 2.0 Default Joint Centers, LOA0"));
-Scene26.addChild(&WorldInfo27);
+Scene& Scene24 =  Scene();
+WorldInfo& WorldInfo25 =  WorldInfo();
+WorldInfo25.setTitle(CString("HANIM 2.0 Default Joint Centers, LOA0"));
+WorldInfo25.setInfo(new CString[]{CString("HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf")}, 1);
+Scene24.addChild(&WorldInfo25);
 
-NavigationInfo& NavigationInfo28 =  NavigationInfo();
-NavigationInfo28.setSpeed(1.5);
-Scene26.addChild(&NavigationInfo28);
+NavigationInfo& NavigationInfo26 =  NavigationInfo();
+NavigationInfo26.setSpeed(1.5);
+Scene24.addChild(&NavigationInfo26);
 
-Viewpoint& Viewpoint29 =  Viewpoint();
-Viewpoint29.setCenterOfRotation(new float[]{0,1,0});
-Viewpoint29.setDescription(CString("Diamond Man, LOA 0"));
-Viewpoint29.setPosition(new float[]{0,1,3});
-Scene26.addChild(&Viewpoint29);
+Viewpoint& Viewpoint27 =  Viewpoint();
+Viewpoint27.setDescription(CString("Diamond Man, LOA 0"));
+Viewpoint27.setPosition(new float[]{0,1,3});
+Viewpoint27.setCenterOfRotation(new float[]{0,1,0});
+Scene24.addChild(&Viewpoint27);
 
-HAnimHumanoid& HAnimHumanoid30 =  HAnimHumanoid();
-HAnimHumanoid30.X3DNode::setName(CString("humanoid"));
-HAnimHumanoid30.setDEF(CString("hanim_humanoid"));
-HAnimHumanoid30.setLoa(0);
-HAnimHumanoid30.setVersion(CString("2.0"));
-//original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'
-MetadataSet& MetadataSet31 =  MetadataSet();
-MetadataSet31.X3DNode::setName(CString("HAnimHumanoid.info"));
-MetadataSet31.X3DNode::setReference(CString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"));
+HAnimHumanoid& HAnimHumanoid28 =  HAnimHumanoid();
+HAnimHumanoid28.setDEF(CString("hanim_humanoid"));
+HAnimHumanoid28.X3DNode::setName(CString("humanoid"));
+HAnimHumanoid28.setLoa(0);
+MetadataSet& MetadataSet29 =  MetadataSet();
+MetadataSet29.X3DNode::setName(CString("HAnimHumanoid.info"));
+MetadataSet29.X3DNode::setReference(CString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"));
+MetadataString& MetadataString30 =  MetadataString();
+MetadataString30.X3DNode::setName(CString("authorEmail"));
+MetadataSet29.setValue((X3DNode *)&MetadataString30);
+
+MetadataString& MetadataString31 =  MetadataString();
+MetadataString31.X3DNode::setName(CString("authorName"));
+MetadataSet29.setValue((X3DNode *)&MetadataString31);
+
 MetadataString& MetadataString32 =  MetadataString();
-MetadataString32.X3DNode::setName(CString("authorEmail"));
-MetadataString32.setValue(new CString[]{CString("beitler@graphics.cis.upenn.edu beitler@acm.org")}, 1);
-MetadataSet31.setValue((X3DNode *)&MetadataString32);
+MetadataString32.X3DNode::setName(CString("copyright"));
+MetadataSet29.setValue((X3DNode *)&MetadataString32);
 
 MetadataString& MetadataString33 =  MetadataString();
-MetadataString33.X3DNode::setName(CString("authorName"));
-MetadataString33.setValue(new CString[]{CString("Matthew T. Beitler")}, 1);
-MetadataSet31.setValue((X3DNode *)&MetadataString33);
+MetadataString33.X3DNode::setName(CString("creationDate"));
+MetadataSet29.setValue((X3DNode *)&MetadataString33);
 
 MetadataString& MetadataString34 =  MetadataString();
-MetadataString34.X3DNode::setName(CString("copyright"));
-MetadataString34.setValue(new CString[]{CString("Copyright 1999 Matthew T. Beitler")}, 1);
-MetadataSet31.setValue((X3DNode *)&MetadataString34);
+MetadataString34.X3DNode::setName(CString("humanoidVersion"));
+MetadataSet29.setValue((X3DNode *)&MetadataString34);
 
 MetadataString& MetadataString35 =  MetadataString();
-MetadataString35.X3DNode::setName(CString("creationDate"));
-MetadataString35.setValue(new CString[]{CString("05/12/99")}, 1);
-MetadataSet31.setValue((X3DNode *)&MetadataString35);
+MetadataString35.X3DNode::setName(CString("usageRestrictions"));
+MetadataSet29.setValue((X3DNode *)&MetadataString35);
 
-MetadataString& MetadataString36 =  MetadataString();
-MetadataString36.X3DNode::setName(CString("humanoidVersion"));
-MetadataString36.setValue(new CString[]{CString("JointCenters 1.1 LOA0")}, 1);
-MetadataSet31.setValue((X3DNode *)&MetadataString36);
+HAnimHumanoid28.setMetadata(&MetadataSet29);
 
-MetadataString& MetadataString37 =  MetadataString();
-MetadataString37.X3DNode::setName(CString("usageRestrictions"));
-MetadataString37.setValue(new CString[]{CString("PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.")}, 1);
-MetadataSet31.setValue((X3DNode *)&MetadataString37);
+HAnimJoint& HAnimJoint36 =  HAnimJoint();
+HAnimJoint36.setDEF(CString("hanim_humanoid_root"));
+HAnimJoint36.X3DNode::setName(CString("humanoid_root"));
+HAnimJoint36.setCenter(new float[]{0,0.824,0.0277});
+HAnimJoint& HAnimJoint37 =  HAnimJoint();
+HAnimJoint37.setDEF(CString("hanim_sacroiliac"));
+HAnimJoint37.X3DNode::setName(CString("sacroiliac"));
+HAnimJoint37.setCenter(new float[]{0,0.9149,0.0016});
+HAnimSegment& HAnimSegment38 =  HAnimSegment();
+HAnimSegment38.setDEF(CString("hanim_pelvis"));
+HAnimSegment38.X3DNode::setName(CString("pelvis"));
+Transform& Transform39 =  Transform();
+Transform39.setTranslation(new float[]{0,0.9149,0.0016});
+Shape& Shape40 =  Shape();
+Shape40.setDEF(CString("DiamondShape"));
+Appearance& Appearance41 =  Appearance();
+Material& Material42 =  Material();
+Material42.setDiffuseColor(new float[]{1,1,0});
+Appearance41.addChild(&Material42);
 
-HAnimHumanoid30.setMetadata(&MetadataSet31);
+Shape40.addChild(&Appearance41);
 
-HAnimJoint& HAnimJoint38 =  HAnimJoint();
-HAnimJoint38.X3DNode::setName(CString("humanoid_root"));
-HAnimJoint38.setDEF(CString("hanim_humanoid_root"));
-HAnimJoint38.setCenter(new float[]{0,0.824,0.0277});
-HAnimJoint& HAnimJoint39 =  HAnimJoint();
-HAnimJoint39.X3DNode::setName(CString("sacroiliac"));
-HAnimJoint39.setDEF(CString("hanim_sacroiliac"));
-HAnimJoint39.setCenter(new float[]{0,0.9149,0.0016});
-HAnimSegment& HAnimSegment40 =  HAnimSegment();
-HAnimSegment40.X3DNode::setName(CString("pelvis"));
-HAnimSegment40.setDEF(CString("hanim_pelvis"));
-Transform& Transform41 =  Transform();
-Transform41.setTranslation(new float[]{0,0.9149,0.0016});
-Shape& Shape42 =  Shape();
-Shape42.setDEF(CString("DiamondShape"));
 IndexedFaceSet& IndexedFaceSet43 =  IndexedFaceSet();
-IndexedFaceSet43.setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 IndexedFaceSet43.setCreaseAngle(0.5);
+IndexedFaceSet43.setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1}, 32);
 Coordinate& Coordinate44 =  Coordinate();
 Coordinate44.setPoint(new float[]{0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0}, 18);
 IndexedFaceSet43.setCoord(&Coordinate44);
 
-Shape42.setGeometry(&IndexedFaceSet43);
+Shape40.setGeometry(&IndexedFaceSet43);
 
-Appearance& Appearance45 =  Appearance();
-Material& Material46 =  Material();
-Material46.setDiffuseColor(new float[]{1,1,0});
-Appearance45.addChild(&Material46);
+Transform39.addChild(&Shape40);
 
-Shape42.addChild(&Appearance45);
+HAnimSegment38.addChild(&Transform39);
 
-Transform41.addChild(&Shape42);
+HAnimJoint37.addChildren(&HAnimSegment38);
 
-HAnimSegment40.addChild(&Transform41);
+HAnimJoint36.addChildren(&HAnimJoint37);
 
-HAnimJoint39.addChildren(&HAnimSegment40);
+HAnimHumanoid28.setSkeleton(&HAnimJoint36);
 
-HAnimJoint38.addChildren(&HAnimJoint39);
+HAnimJoint& HAnimJoint45 =  HAnimJoint();
+HAnimJoint45.setUSE(CString("hanim_humanoid_root"));
+HAnimHumanoid28.setJoints(&HAnimJoint45);
 
-HAnimHumanoid30.setSkeleton(&HAnimJoint38);
+HAnimJoint& HAnimJoint46 =  HAnimJoint();
+HAnimJoint46.setUSE(CString("hanim_sacroiliac"));
+HAnimHumanoid28.setJoints(&HAnimJoint46);
 
-HAnimSite& HAnimSite47 =  HAnimSite();
-HAnimSite47.X3DNode::setName(CString("site_view"));
-HAnimSite47.setDEF(CString("hanim_site_view"));
-Viewpoint& Viewpoint48 =  Viewpoint();
-Viewpoint48.setDEF(CString("InclinedView"));
-Viewpoint48.setDescription(CString("Inclined View"));
-Viewpoint48.setOrientation(new float[]{-0.113,0.993,0.0347,0.671});
-Viewpoint48.setPosition(new float[]{1.62,1.05,2.06});
-HAnimSite47.addChild(&Viewpoint48);
+HAnimSegment& HAnimSegment47 =  HAnimSegment();
+HAnimSegment47.setUSE(CString("hanim_pelvis"));
+HAnimHumanoid28.setSegments(&HAnimSegment47);
 
+HAnimSite& HAnimSite48 =  HAnimSite();
+HAnimSite48.setDEF(CString("hanim_site_view"));
+HAnimSite48.X3DNode::setName(CString("site_view"));
 Viewpoint& Viewpoint49 =  Viewpoint();
-Viewpoint49.setDEF(CString("FrontView"));
-Viewpoint49.setDescription(CString("Front View"));
-Viewpoint49.setPosition(new float[]{0,0.854,2.57665});
-HAnimSite47.addChild(&Viewpoint49);
+Viewpoint49.setDEF(CString("InclinedView"));
+Viewpoint49.setDescription(CString("Inclined View"));
+Viewpoint49.setPosition(new float[]{1.62,1.05,2.06});
+Viewpoint49.setOrientation(new float[]{-0.113,0.993,0.0347,0.671});
+HAnimSite48.addChild(&Viewpoint49);
 
 Viewpoint& Viewpoint50 =  Viewpoint();
-Viewpoint50.setDEF(CString("SideView"));
-Viewpoint50.setDescription(CString("Side View"));
-Viewpoint50.setOrientation(new float[]{0,1,0,1.57079});
-Viewpoint50.setPosition(new float[]{2.5929,0.854,0});
-HAnimSite47.addChild(&Viewpoint50);
+Viewpoint50.setDEF(CString("FrontView"));
+Viewpoint50.setDescription(CString("Front View"));
+Viewpoint50.setPosition(new float[]{0,0.854,2.57665});
+HAnimSite48.addChild(&Viewpoint50);
 
 Viewpoint& Viewpoint51 =  Viewpoint();
-Viewpoint51.setDEF(CString("TopView"));
-Viewpoint51.setDescription(CString("Top View"));
-Viewpoint51.setOrientation(new float[]{1,0,0,-1.57079});
-Viewpoint51.setPosition(new float[]{0,3.4495,0});
-HAnimSite47.addChild(&Viewpoint51);
+Viewpoint51.setDEF(CString("SideView"));
+Viewpoint51.setDescription(CString("Side View"));
+Viewpoint51.setPosition(new float[]{2.5929,0.854,0});
+Viewpoint51.setOrientation(new float[]{0,1,0,1.57079});
+HAnimSite48.addChild(&Viewpoint51);
 
-HAnimHumanoid30.setViewpoints(&HAnimSite47);
+Viewpoint& Viewpoint52 =  Viewpoint();
+Viewpoint52.setDEF(CString("TopView"));
+Viewpoint52.setDescription(CString("Top View"));
+Viewpoint52.setPosition(new float[]{0,3.4495,0});
+Viewpoint52.setOrientation(new float[]{1,0,0,-1.57079});
+HAnimSite48.addChild(&Viewpoint52);
 
-HAnimJoint& HAnimJoint52 =  HAnimJoint();
-HAnimJoint52.setUSE(CString("hanim_humanoid_root"));
-HAnimHumanoid30.setJoints(&HAnimJoint52);
+HAnimHumanoid28.setViewpoints(&HAnimSite48);
 
-HAnimJoint& HAnimJoint53 =  HAnimJoint();
-HAnimJoint53.setUSE(CString("hanim_sacroiliac"));
-HAnimHumanoid30.setJoints(&HAnimJoint53);
+Scene24.addChild(&HAnimHumanoid28);
 
-HAnimSegment& HAnimSegment54 =  HAnimSegment();
-HAnimSegment54.setUSE(CString("hanim_pelvis"));
-HAnimHumanoid30.setSegments(&HAnimSegment54);
-
-Scene26.addChild(&HAnimHumanoid30);
-
-X3D0.setScene(&Scene26);
+X3D0.setScene(&Scene24);
 
 }
