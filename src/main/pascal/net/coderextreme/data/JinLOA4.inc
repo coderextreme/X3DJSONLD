@@ -2233,7 +2233,7 @@ X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidA
 X3D0.Meta['generator'] := '3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview';
 X3D0.Meta['generator'] := 'Suwon HAnim Converter';
 X3D0.Meta['generator'] := 'Gnu Image Manipulation Program, http://www.gimp.org';
-X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := 'license.html';
 Group19 := TGroupNode.Create;
 WorldInfo20 := TWorldInfoNode.Create;
@@ -9779,7 +9779,7 @@ OrientationInterpolator1791.SetKey([0,0.5,1]);
 OrientationInterpolator1791.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
 Group1783.AddChildren([OrientationInterpolator1791]);
-{ <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/> }
+{ <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/> }
 OrientationInterpolator1792 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator1792.SetKey([0,0.5,1]);
 OrientationInterpolator1792.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
@@ -9805,7 +9805,7 @@ OrientationInterpolator1796.SetKey([0,0.5,1]);
 OrientationInterpolator1796.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
 Group1783.AddChildren([OrientationInterpolator1796]);
-{ <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/> }
+{ <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/> }
 OrientationInterpolator1797 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator1797.SetKey([0,0.5,1]);
 OrientationInterpolator1797.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);

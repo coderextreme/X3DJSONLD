@@ -197,6 +197,8 @@ X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
+{ <component name='Shape' level='4'></component> }
+{ Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L }
 X3D0.Components['Scripting'] := 1;
 X3D0.Components['EnvironmentalEffects'] := 3;
 X3D0.Components['Shaders'] := 1;
@@ -206,8 +208,6 @@ X3D0.Components['Rendering'] := 1;
 X3D0.Components['Grouping'] := 3;
 X3D0.Components['Core'] := 1;
 X3D0.Components['DIS'] := 2;
-{ <component name='Shape' level='4'></component> }
-{ Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L }
 X3D0.Meta['title'] := 'bumpyfreewrljsonverse.x3d';
 X3D0.Meta['description'] := '*enter description here, short-sentence summaries preferred*';
 X3D0.Meta['creator'] := 'Doug Sanden, Christoph Valentin, John Carlson';
@@ -644,30 +644,25 @@ Layer37.AddRoute(Script98.FdCoordinates, Coordinate74.EventSet_point);
 { .AddX3DRoute }
 { DIS multiuser facilities }
 DISEntityManager109 := TDISEntityManagerNode.Create;
-DISEntityManager109.NetworkMode := 'networkReader';
 DISEntityTypeMapping110 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping110.ReadInterval := '3';
 DISEntityTypeMapping110.Category := 77;
 DISEntityTypeMapping110.Specific := 1;
 DISEntityTypeMapping110.SetUrl(['../data/Gramps8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d']);
 { .AddChildren }
 DISEntityManager109.AddChildren([DISEntityTypeMapping110]);
 DISEntityTypeMapping111 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping111.ReadInterval := '3';
 DISEntityTypeMapping111.Category := 77;
 DISEntityTypeMapping111.Specific := 2;
 DISEntityTypeMapping111.SetUrl(['../data/Leif8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d']);
 { .AddChildren }
 DISEntityManager109.AddChildren([DISEntityTypeMapping111]);
 DISEntityTypeMapping112 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping112.ReadInterval := '3';
 DISEntityTypeMapping112.Category := 77;
 DISEntityTypeMapping112.Specific := 3;
 DISEntityTypeMapping112.SetUrl(['../data/Lily8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d']);
 { .AddChildren }
 DISEntityManager109.AddChildren([DISEntityTypeMapping112]);
 DISEntityTypeMapping113 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping113.ReadInterval := '3';
 DISEntityTypeMapping113.Category := 77;
 DISEntityTypeMapping113.Specific := 4;
 DISEntityTypeMapping113.SetUrl(['../data/Tufani8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d']);

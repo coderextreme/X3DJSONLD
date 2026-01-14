@@ -108,7 +108,7 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/rub
 X3D0.Meta['description'] := 'a green rubik cube';
 Group7 := TGroupNode.Create;
 NavigationInfo8 := TNavigationInfoNode.Create;
-NavigationInfo8.SetType(['EXAMINE']);
+NavigationInfo8.SetType(['ANY','EXAMINE','WALK','FLY','LOOKAT']);
 { .AddChildren }
 Group7.AddChildren([NavigationInfo8]);
 Viewpoint9 := TViewpointNode.Create;
