@@ -43,8 +43,8 @@ int main(int argc, char ** argv)
 
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
-SoSceneManager0->setVersion(QString("4.0"));
 SoSceneManager0->setProfile(QString("Immersive"));
+SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
 Someta* Someta2 = new Someta();
 Someta2->setName(QString("title"));

@@ -79,7 +79,7 @@ Sohead1->addMeta(*Someta7);
 
 Someta* Someta8 = new Someta();
 Someta8->setName(QString("reference"));
-Someta8->setContent(QString("http://en.wikipedia.org/wiki/Hello_world"));
+Someta8->setContent(QString("https://en.wikipedia.org/wiki/Hello_world"));
 Sohead1->addMeta(*Someta8);
 
 Someta* Someta9 = new Someta();
@@ -94,12 +94,12 @@ Sohead1->addMeta(*Someta10);
 
 Someta* Someta11 = new Someta();
 Someta11->setName(QString("reference"));
-Someta11->setContent(QString("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"));
+Someta11->setContent(QString("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"));
 Sohead1->addMeta(*Someta11);
 
 Someta* Someta12 = new Someta();
 Someta12->setName(QString("reference"));
-Someta12->setContent(QString("http://www.HelloWorldExample.net"));
+Someta12->setContent(QString("https://www.HelloWorldExample.net"));
 Sohead1->addMeta(*Someta12);
 
 Someta* Someta13 = new Someta();
@@ -119,12 +119,12 @@ Sohead1->addMeta(*Someta15);
 
 Someta* Someta16 = new Someta();
 Someta16->setName(QString("reference"));
-Someta16->setContent(QString("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"));
+Someta16->setContent(QString("https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"));
 Sohead1->addMeta(*Someta16);
 
 Someta* Someta17 = new Someta();
 Someta17->setName(QString("identifier"));
-Someta17->setContent(QString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"));
+Someta17->setContent(QString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"));
 Sohead1->addMeta(*Someta17);
 
 Someta* Someta18 = new Someta();

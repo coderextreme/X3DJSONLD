@@ -123,7 +123,7 @@ Sohead1->addMeta(*Someta16);
 
 Someta* Someta17 = new Someta();
 Someta17->setName(QString("generator"));
-Someta17->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Someta17->setContent(QString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 Sohead1->addMeta(*Someta17);
 
 Someta* Someta18 = new Someta();

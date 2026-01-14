@@ -77,82 +77,87 @@ SoNode* SoNode7 = new SoNode();
 SoNavigationInfo* SoNavigationInfo8 = new SoNavigationInfo();
 SoNode7->addChild(*SoNavigationInfo8);
 
-SoBackground* SoBackground9 = new SoBackground();
-SoBackground9->setBackUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
-SoBackground9->setBottomUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
-SoBackground9->setFrontUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
-SoBackground9->setLeftUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
-SoBackground9->setRightUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
-SoBackground9->setTopUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
-SoNode7->addChild(*SoBackground9);
+SoViewpoint* SoViewpoint9 = new SoViewpoint();
+SoViewpoint9->setDescription(QString("Tour Views"));
+SoViewpoint9->setPosition(new float[]{0.0,0.0,50.0});
+SoNode7->addChild(*SoViewpoint9);
 
-SoGroup* SoGroup10 = new SoGroup();
-SoExternProtoDeclare* SoExternProtoDeclare11 = new SoExternProtoDeclare();
-SoExternProtoDeclare11->setName(QString("FlowerProto"));
-SoExternProtoDeclare11->setUrl(new QString[]{QString("../data/flowerproto.x3d#FlowerProto")}, 1);
-Sofield* Sofield12 = new Sofield();
-Sofield12->setName(QString("vertex"));
-Sofield12->setAccessType(QString("inputOutput"));
-Sofield12->setType(QString("MFString"));
-SoExternProtoDeclare11->addChild(*Sofield12);
+SoBackground* SoBackground10 = new SoBackground();
+SoBackground10->setBackUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+SoBackground10->setBottomUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+SoBackground10->setFrontUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+SoBackground10->setLeftUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+SoBackground10->setRightUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+SoBackground10->setTopUrl(new QString[]{QString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), QString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
+SoNode7->addChild(*SoBackground10);
 
+SoGroup* SoGroup11 = new SoGroup();
+SoExternProtoDeclare* SoExternProtoDeclare12 = new SoExternProtoDeclare();
+SoExternProtoDeclare12->setName(QString("FlowerProto"));
+SoExternProtoDeclare12->setUrl(new QString[]{QString("../data/flowerprotofreewrl.x3d#FlowerProto"), QString("https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto")}, 2);
 Sofield* Sofield13 = new Sofield();
-Sofield13->setName(QString("fragment"));
+Sofield13->setName(QString("vertex"));
 Sofield13->setAccessType(QString("inputOutput"));
 Sofield13->setType(QString("MFString"));
-SoExternProtoDeclare11->addChild(*Sofield13);
+SoExternProtoDeclare12->addChild(*Sofield13);
 
-SoGroup10->addChild(*SoExternProtoDeclare11);
+Sofield* Sofield14 = new Sofield();
+Sofield14->setName(QString("fragment"));
+Sofield14->setAccessType(QString("inputOutput"));
+Sofield14->setType(QString("MFString"));
+SoExternProtoDeclare12->addChild(*Sofield14);
 
-SoProtoDeclare* SoProtoDeclare14 = new SoProtoDeclare();
-SoProtoDeclare14->setName(QString("flower"));
-SoProtoBody* SoProtoBody15 = new SoProtoBody();
-SoGroup* SoGroup16 = new SoGroup();
-SoProtoInstance* SoProtoInstance17 = new SoProtoInstance();
-SoProtoInstance17->setName(QString("FlowerProto"));
-SoField* SoField18 = new SoField();
-SoField18->setName(QString("vertex"));
-SoField18->setValue(QString("\"../shaders/freewrl_flowers_chromatic.vs\""));
-SoProtoInstance17->addChild(*SoField18);
+SoGroup11->addChild(*SoExternProtoDeclare12);
 
+SoProtoDeclare* SoProtoDeclare15 = new SoProtoDeclare();
+SoProtoDeclare15->setName(QString("flower"));
+SoProtoBody* SoProtoBody16 = new SoProtoBody();
+SoGroup* SoGroup17 = new SoGroup();
+SoProtoInstance* SoProtoInstance18 = new SoProtoInstance();
+SoProtoInstance18->setName(QString("FlowerProto"));
 SoField* SoField19 = new SoField();
-SoField19->setName(QString("fragment"));
-SoField19->setValue(QString("\"../shaders/freewrl.fs\""));
-SoProtoInstance17->addChild(*SoField19);
+SoField19->setName(QString("vertex"));
+SoField19->setValue(QString("\"../shaders/freewrl_flowers_chromatic.vs\""));
+SoProtoInstance18->addChild(*SoField19);
 
-SoGroup16->addChild(*SoProtoInstance17);
+SoField* SoField20 = new SoField();
+SoField20->setName(QString("fragment"));
+SoField20->setValue(QString("\"../shaders/freewrl.fs\""));
+SoProtoInstance18->addChild(*SoField20);
 
-SoProtoBody15->addChild(*SoGroup16);
+SoGroup17->addChild(*SoProtoInstance18);
 
-SoProtoDeclare14->addChild(*SoProtoBody15);
+SoProtoBody16->addChild(*SoGroup17);
 
-SoGroup10->addChild(*SoProtoDeclare14);
+SoProtoDeclare15->addChild(*SoProtoBody16);
 
-SoProtoInstance* SoProtoInstance20 = new SoProtoInstance();
-SoProtoInstance20->setName(QString("flower"));
-SoGroup10->addChild(*SoProtoInstance20);
+SoGroup11->addChild(*SoProtoDeclare15);
 
 SoProtoInstance* SoProtoInstance21 = new SoProtoInstance();
 SoProtoInstance21->setName(QString("flower"));
-SoGroup10->addChild(*SoProtoInstance21);
+SoGroup11->addChild(*SoProtoInstance21);
 
 SoProtoInstance* SoProtoInstance22 = new SoProtoInstance();
 SoProtoInstance22->setName(QString("flower"));
-SoGroup10->addChild(*SoProtoInstance22);
+SoGroup11->addChild(*SoProtoInstance22);
 
 SoProtoInstance* SoProtoInstance23 = new SoProtoInstance();
 SoProtoInstance23->setName(QString("flower"));
-SoGroup10->addChild(*SoProtoInstance23);
+SoGroup11->addChild(*SoProtoInstance23);
 
 SoProtoInstance* SoProtoInstance24 = new SoProtoInstance();
 SoProtoInstance24->setName(QString("flower"));
-SoGroup10->addChild(*SoProtoInstance24);
+SoGroup11->addChild(*SoProtoInstance24);
 
 SoProtoInstance* SoProtoInstance25 = new SoProtoInstance();
 SoProtoInstance25->setName(QString("flower"));
-SoGroup10->addChild(*SoProtoInstance25);
+SoGroup11->addChild(*SoProtoInstance25);
 
-SoNode7->addChild(*SoGroup10);
+SoProtoInstance* SoProtoInstance26 = new SoProtoInstance();
+SoProtoInstance26->setName(QString("flower"));
+SoGroup11->addChild(*SoProtoInstance26);
+
+SoNode7->addChild(*SoGroup11);
 
 SoSceneManager0->setSceneGraph(*SoNode7);
 

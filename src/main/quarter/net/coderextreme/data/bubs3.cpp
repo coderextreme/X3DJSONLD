@@ -94,7 +94,7 @@ SoBackground10->setTopUrl(new QString[]{QString("../resources/images/TP.png"), Q
 SoNode7->addChild(*SoBackground10);
 
 SoTransform* SoTransform11 = new SoTransform();
-SoTransform11->setDEF(QString("DECLBubble_bubbleA"));
+SoTransform11->setDEF(QString("DECLBubble_transformA"));
 SoShape* SoShape12 = new SoShape();
 SoSphere* SoSphere13 = new SoSphere();
 SoSphere13->setRadius(0.25);
@@ -195,14 +195,14 @@ SoTransform11->addChild(*SoTimeSensor22);
 SoROUTE* SoROUTE23 = new SoROUTE();
 SoROUTE23->setFromNode(QString("DECLBubble_bubbleA_bounce"));
 SoROUTE23->setFromField(QString("translation_changed"));
-SoROUTE23->setToNode(QString("DECLBubble_transform"));
+SoROUTE23->setToNode(QString("DECLBubble_transformA"));
 SoROUTE23->setToField(QString("set_translation"));
 SoTransform11->addChild(*SoROUTE23);
 
 SoROUTE* SoROUTE24 = new SoROUTE();
 SoROUTE24->setFromNode(QString("DECLBubble_bubbleA_bounce"));
 SoROUTE24->setFromField(QString("scale_changed"));
-SoROUTE24->setToNode(QString("DECLBubble_transform"));
+SoROUTE24->setToNode(QString("DECLBubble_transformA"));
 SoROUTE24->setToField(QString("set_scale"));
 SoTransform11->addChild(*SoROUTE24);
 
@@ -216,7 +216,7 @@ SoTransform11->addChild(*SoROUTE25);
 SoNode7->addChild(*SoTransform11);
 
 SoTransform* SoTransform26 = new SoTransform();
-SoTransform26->setDEF(QString("DECLBubble_bubbleB"));
+SoTransform26->setDEF(QString("DECLBubble_transformB"));
 SoShape* SoShape27 = new SoShape();
 SoSphere* SoSphere28 = new SoSphere();
 SoSphere28->setRadius(0.25);
@@ -317,14 +317,14 @@ SoTransform26->addChild(*SoTimeSensor37);
 SoROUTE* SoROUTE38 = new SoROUTE();
 SoROUTE38->setFromNode(QString("DECLBubble_bubbleB_bounce"));
 SoROUTE38->setFromField(QString("translation_changed"));
-SoROUTE38->setToNode(QString("DECLBubble_transform"));
+SoROUTE38->setToNode(QString("DECLBubble_transformB"));
 SoROUTE38->setToField(QString("set_translation"));
 SoTransform26->addChild(*SoROUTE38);
 
 SoROUTE* SoROUTE39 = new SoROUTE();
 SoROUTE39->setFromNode(QString("DECLBubble_bubbleB_bounce"));
 SoROUTE39->setFromField(QString("scale_changed"));
-SoROUTE39->setToNode(QString("DECLBubble_transform"));
+SoROUTE39->setToNode(QString("DECLBubble_transformB"));
 SoROUTE39->setToField(QString("set_scale"));
 SoTransform26->addChild(*SoROUTE39);
 
@@ -338,7 +338,7 @@ SoTransform26->addChild(*SoROUTE40);
 SoNode7->addChild(*SoTransform26);
 
 SoTransform* SoTransform41 = new SoTransform();
-SoTransform41->setDEF(QString("DECLBubble_bubbleC"));
+SoTransform41->setDEF(QString("DECLBubble_transformC"));
 SoShape* SoShape42 = new SoShape();
 SoSphere* SoSphere43 = new SoSphere();
 SoSphere43->setRadius(0.25);
@@ -439,14 +439,14 @@ SoTransform41->addChild(*SoTimeSensor52);
 SoROUTE* SoROUTE53 = new SoROUTE();
 SoROUTE53->setFromNode(QString("DECLBubble_bubbleC_bounce"));
 SoROUTE53->setFromField(QString("translation_changed"));
-SoROUTE53->setToNode(QString("DECLBubble_transform"));
+SoROUTE53->setToNode(QString("DECLBubble_transformC"));
 SoROUTE53->setToField(QString("set_translation"));
 SoTransform41->addChild(*SoROUTE53);
 
 SoROUTE* SoROUTE54 = new SoROUTE();
 SoROUTE54->setFromNode(QString("DECLBubble_bubbleC_bounce"));
 SoROUTE54->setFromField(QString("scale_changed"));
-SoROUTE54->setToNode(QString("DECLBubble_transform"));
+SoROUTE54->setToNode(QString("DECLBubble_transformC"));
 SoROUTE54->setToField(QString("set_scale"));
 SoTransform41->addChild(*SoROUTE54);
 
@@ -460,7 +460,7 @@ SoTransform41->addChild(*SoROUTE55);
 SoNode7->addChild(*SoTransform41);
 
 SoTransform* SoTransform56 = new SoTransform();
-SoTransform56->setDEF(QString("DECLBubble_bubbleD"));
+SoTransform56->setDEF(QString("DECLBubble_transformD"));
 SoShape* SoShape57 = new SoShape();
 SoSphere* SoSphere58 = new SoSphere();
 SoSphere58->setRadius(0.25);
@@ -561,14 +561,14 @@ SoTransform56->addChild(*SoTimeSensor67);
 SoROUTE* SoROUTE68 = new SoROUTE();
 SoROUTE68->setFromNode(QString("DECLBubble_bubbleD_bounce"));
 SoROUTE68->setFromField(QString("translation_changed"));
-SoROUTE68->setToNode(QString("DECLBubble_transform"));
+SoROUTE68->setToNode(QString("DECLBubble_transformD"));
 SoROUTE68->setToField(QString("set_translation"));
 SoTransform56->addChild(*SoROUTE68);
 
 SoROUTE* SoROUTE69 = new SoROUTE();
 SoROUTE69->setFromNode(QString("DECLBubble_bubbleD_bounce"));
 SoROUTE69->setFromField(QString("scale_changed"));
-SoROUTE69->setToNode(QString("DECLBubble_transform"));
+SoROUTE69->setToNode(QString("DECLBubble_transformD"));
 SoROUTE69->setToField(QString("set_scale"));
 SoTransform56->addChild(*SoROUTE69);
 

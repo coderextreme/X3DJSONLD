@@ -46,6 +46,7 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
+//BS studio translation from .x3dv by Joe using BS Contact
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("H-Anim"));
 Socomponent2->setLevel(1);
@@ -111,7 +112,6 @@ Someta14->setName(QString("license"));
 Someta14->setContent(QString("../license.html"));
 Sohead1->addMeta(*Someta14);
 
-//BS studio translation from .x3dv by Joe using BS Contact
 SoSceneManager0->setHead(*Sohead1);
 
 SoNode* SoNode15 = new SoNode();

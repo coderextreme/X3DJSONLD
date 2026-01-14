@@ -140,7 +140,7 @@ Sohead1->addMeta(*Someta19);
 
 Someta* Someta20 = new Someta();
 Someta20->setName(QString("generator"));
-Someta20->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Someta20->setContent(QString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 Sohead1->addMeta(*Someta20);
 
 Someta* Someta21 = new Someta();
@@ -11552,7 +11552,7 @@ SoHAnimSegment2690->addChild(*SoShape2692);
 
 SoHAnimSite* SoHAnimSite2693 = new SoHAnimSite();
 SoHAnimSite2693->X3DNode::setName(QString("r_tarsal_distal_phalanx_5"));
-SoHAnimSite2693->setDEF(QString("hanim_"));
+SoHAnimSite2693->setDEF(QString("hanim_r_tarsal_distal_phalanx_5"));
 SoHAnimSite2693->setTranslation(new float[]{-0.125,0.016,0.115});
 SoTransform* SoTransform2694 = new SoTransform();
 SoTransform2694->setUSE(QString("r_tarsal_distal_phalanx_5_tip_SiteShape"));

@@ -112,7 +112,7 @@ SoProtoInstance* SoProtoInstance17 = new SoProtoInstance();
 SoProtoInstance17->setName(QString("FlowerProto"));
 SoField* SoField18 = new SoField();
 SoField18->setName(QString("vertex"));
-SoField18->setValue(QString("\"../shaders/x_ite_flowers_plain.vs\""));
+SoField18->setValue(QString("\"../shaders/gl_flowers_plain.vs\""));
 SoProtoInstance17->addChild(*SoField18);
 
 SoField* SoField19 = new SoField();

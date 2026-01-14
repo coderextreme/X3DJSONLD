@@ -58,7 +58,7 @@ Sohead1->addMeta(*Someta3);
 
 Someta* Someta4 = new Someta();
 Someta4->setName(QString("identifier"));
-Someta4->setContent(QString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d"));
+Someta4->setContent(QString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d"));
 Sohead1->addMeta(*Someta4);
 
 Someta* Someta5 = new Someta();
