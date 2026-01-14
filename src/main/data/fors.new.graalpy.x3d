@@ -3,19 +3,16 @@
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
     <meta content='John W Carlson' name='creator'/>
     <meta content='December 13 2015' name='created'/>
-    <meta content='July 14 2025' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:24 GMT' name='modified'/>
     <meta content='fors.x3d' name='title'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d' name='identifier'/>
-    <meta content='beginnings of a force directed graph in 3D' name='description'/>
-    <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='node'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -43,7 +40,7 @@
           <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0'/>
           <Script DEF='MoveBall'>
             <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
-            <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='old' accessType='inputOutput' type='SFVec3f'/>
             <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
             <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
 <![CDATA[
@@ -56,16 +53,16 @@ ecmascript:
 ]]>
           </Script>
           <TimeSensor DEF='nodeClock' cycleInterval='3.0' loop='true'/>
-          <ROUTE fromField='cycleTime' fromNode='nodeClock' toField='set_cycle' toNode='MoveBall'/>
-          <ROUTE fromField='fraction_changed' fromNode='nodeClock' toField='set_fraction' toNode='NodePosition'/>
-          <ROUTE fromField='keyValue' fromNode='MoveBall' toField='keyValue' toNode='NodePosition'/>
-          <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
         </Group>
+        <ROUTE fromField='cycleTime' fromNode='nodeClock' toField='set_cycle' toNode='MoveBall'/>
+        <ROUTE fromField='fraction_changed' fromNode='nodeClock' toField='set_fraction' toNode='NodePosition'/>
+        <ROUTE fromField='keyValue' fromNode='MoveBall' toField='set_keyValue' toNode='NodePosition'/>
+        <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
       </ProtoBody>
     </ProtoDeclare>
     <ProtoDeclare name='cyl'>
       <ProtoInterface>
-        <field name='set_positionA' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='set_positionA' accessType='inputOutput' type='SFVec3f'/>
         <field name='set_positionB' accessType='inputOutput' type='SFVec3f' value='50 50 50'/>
       </ProtoInterface>
       <ProtoBody>
@@ -78,8 +75,8 @@ ecmascript:
           </Shape>
           <Script DEF='MoveCylinder'>
             <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
-            <field name='endA' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='endB' accessType='inputOutput' type='SFVec3f' value='50 50 50'/>
+            <field name='endA' accessType='inputOutput' type='SFVec3f'/>
+            <field name='endB' accessType='inputOutput' type='SFVec3f'/>
             <IS>
               <connect nodeField='endA' protoField='set_positionA'/>
               <connect nodeField='endB' protoField='set_positionB'/>
@@ -95,24 +92,26 @@ ecmascript:
 			}
 ]]>
           </Script>
-          <ROUTE fromField='spine' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
         </Group>
+        <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
       </ProtoBody>
     </ProtoDeclare>
     <Transform DEF='HoldsContent' scale='0.1 0.1 0.1'>
       <PlaneSensor DEF='clickGenerator' description='click on background to add nodes, click on nodes to add links' maxPosition='50 50' minPosition='-50 -50'/>
       <ProtoInstance DEF='nodeA' name='node'>
-        <fieldValue name='position' value='0 0 0'/>
+        <fieldValue name='position' value='0 0.7699996 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='nodeB' name='node'>
-        <fieldValue name='position' value='50 50 50'/>
+        <fieldValue name='position' value='0 0.7699996 0'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkA' name='cyl'/>
+      <ProtoInstance DEF='linkA' name='cyl'>
+        <fieldValue name='set_positionA' value='0 0.7699996 0'/>
+        <fieldValue name='set_positionB' value='0 0.7699996 0'/>
+      </ProtoInstance>
     </Transform>
     <Script DEF='clickHandler'>
-      <!-- <field accessType="outputOnly" name="node_changed" type="SFNode"/> <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field> -->
-      <field name='counter' accessType='inputOutput' type='SFInt32' value='0'/>
-      <field name='add_node' accessType='inputOnly' type='SFBool' value='false'/>
+      <field name='counter' accessType='inputOutput' type='SFInt32'/>
+      <field name='add_node' accessType='inputOnly' type='SFBool'/>
 <![CDATA[
 ecmascript:
 	function add_node(value) {
@@ -130,12 +129,12 @@ ecmascript:
 				  ]
 				}
 			});
-
+                
         }
 ]]>
     </Script>
     <ROUTE fromField='isActive' fromNode='clickGenerator' toField='add_node' toNode='clickHandler'/>
-    <ROUTE fromField='position' fromNode='nodeA' toField='set_positionA' toNode='linkA'/>
-    <ROUTE fromField='position' fromNode='nodeB' toField='set_positionB' toNode='linkA'/>
+    <ROUTE fromField='position_changed' fromNode='nodeA' toField='set_set_positionA' toNode='linkA'/>
+    <ROUTE fromField='position_changed' fromNode='nodeB' toField='set_set_positionB' toNode='linkA'/>
   </Scene>
 </X3D>

@@ -5,17 +5,14 @@
     <meta content='rubikFurnace.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d' name='identifier'/>
-    <meta content='a green rubik cube' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
-    <NavigationInfo type='"ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"'/>
-    <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='xtranslation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='xtranslation' type='SFVec3f'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape>
+          <Shape DEF='_1'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -34,9 +31,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='ytranslation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='ytranslation' type='SFVec3f'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape>
+          <Shape DEF='_2'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -53,7 +50,6 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
-            <fieldValue name='xtranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='anyShape'>
             <IS>
@@ -72,9 +68,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='nine'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='ztranslation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='ztranslation' type='SFVec3f'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape>
+          <Shape DEF='_3'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -91,7 +87,6 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
-            <fieldValue name='ytranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='three'>
             <IS>
@@ -110,9 +105,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='twentyseven'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='ttranslation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='ttranslation' type='SFVec3f'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape>
+          <Shape DEF='_4'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -129,7 +124,6 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
-            <fieldValue name='ztranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='nine'>
             <IS>
@@ -146,10 +140,11 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo type='"ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"'/>
+    <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
     <ProtoInstance name='twentyseven'>
-      <fieldValue name='ttranslation' value='0 0 0'/>
       <fieldValue name='myShape'>
-        <Shape>
+        <Shape DEF='_5'>
           <Appearance>
             <Material diffuseColor='0 1 0'/>
           </Appearance>

@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 August 2025"
+            "@content":"09 December 2025"
           },
           {
             "@name":"generator",
@@ -66,7 +66,7 @@
           },
           { "Transform":
             {
-              "@DEF":"DECLBubble_bubbleA",
+              "@DEF":"DECLBubble_transformA",
               "-children":[
                 { "Shape":
                   {
@@ -183,7 +183,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleA_bounce",
                     "@fromField":"translation_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformA",
                     "@toField":"set_translation"
                   }
                 },
@@ -191,7 +191,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleA_bounce",
                     "@fromField":"scale_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformA",
                     "@toField":"set_scale"
                   }
                 },
@@ -208,7 +208,7 @@
           },
           { "Transform":
             {
-              "@DEF":"DECLBubble_bubbleB",
+              "@DEF":"DECLBubble_transformB",
               "-children":[
                 { "Shape":
                   {
@@ -325,7 +325,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleB_bounce",
                     "@fromField":"translation_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformB",
                     "@toField":"set_translation"
                   }
                 },
@@ -333,7 +333,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleB_bounce",
                     "@fromField":"scale_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformB",
                     "@toField":"set_scale"
                   }
                 },
@@ -350,7 +350,7 @@
           },
           { "Transform":
             {
-              "@DEF":"DECLBubble_bubbleC",
+              "@DEF":"DECLBubble_transformC",
               "-children":[
                 { "Shape":
                   {
@@ -467,7 +467,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleC_bounce",
                     "@fromField":"translation_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformC",
                     "@toField":"set_translation"
                   }
                 },
@@ -475,7 +475,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleC_bounce",
                     "@fromField":"scale_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformC",
                     "@toField":"set_scale"
                   }
                 },
@@ -492,7 +492,7 @@
           },
           { "Transform":
             {
-              "@DEF":"DECLBubble_bubbleD",
+              "@DEF":"DECLBubble_transformD",
               "-children":[
                 { "Shape":
                   {
@@ -609,7 +609,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleD_bounce",
                     "@fromField":"translation_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformD",
                     "@toField":"set_translation"
                   }
                 },
@@ -617,7 +617,7 @@
                   {
                     "@fromNode":"DECLBubble_bubbleD_bounce",
                     "@fromField":"scale_changed",
-                    "@toNode":"DECLBubble_transform",
+                    "@toNode":"DECLBubble_transformD",
                     "@toField":"set_scale"
                   }
                 },

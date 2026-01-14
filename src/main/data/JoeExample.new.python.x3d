@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'>
-  <head>
-    <meta content='Scripting.x3d' name='title'/>
-  </head>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <Scene>
     <Script DEF='OpenVault'>
-      <field name='openVault' accessType='inputOnly' type='SFTime'/>
-      <field name='combinationEntered' accessType='inputOnly' type='SFBool'/>
-      <field name='vaultUnlocked' accessType='outputOnly' type='SFTime'/>
-      <field name='unlocked' accessType='initializeOnly' type='SFBool' value='false'/>
-<![CDATA[
-ecmascript:
+      <field accessType='inputOnly' name='openVault' type='SFTime'/>
+      <field accessType='inputOnly' name='combinationEntered' type='SFBool'/>
+      <field accessType='outputOnly' name='vaultUnlocked' type='SFTime'/>
+      <field accessType='initializeOnly' name='unlocked' type='SFBool'/>
+    <![CDATA[ecmascript:
 "+
 "
 "+
@@ -36,8 +31,7 @@ ecmascript:
 "+
 "
 "+
-"      }
-]]>
+"      }]]>
     </Script>
     <Shape>
       <Appearance>
@@ -45,12 +39,12 @@ ecmascript:
       </Appearance>
       <Sphere/>
     </Shape>
-    <Sound maxBack='1000.0' maxFront='1000.0' minBack='1000.0' minFront='1000.0'>
-      <AudioClip DEF='Click' description='clicking sound' stopTime='1.0' url='"../resources/chandubabamusic1.wav"'/>
+    <Sound maxBack='1000' maxFront='1000' minBack='1000' minFront='1000'>
+      <AudioClip DEF='Click' description='clicking sound' stopTime='1' url='"../resources/chandubabamusic1.wav"'/>
     </Sound>
     <TouchSensor DEF='TS'/>
     <ROUTE fromField='isOver' fromNode='TS' toField='combinationEntered' toNode='OpenVault'/>
     <ROUTE fromField='touchTime' fromNode='TS' toField='openVault' toNode='OpenVault'/>
-    <ROUTE fromField='vaultUnlocked' fromNode='OpenVault' toField='startTime' toNode='Click'/>
+    <ROUTE fromField='vaultUnlocked' fromNode='OpenVault' toField='set_startTime' toNode='Click'/>
   </Scene>
 </X3D>

@@ -6,16 +6,12 @@
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
     <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
     <component name='ParticleSystems' level='3'/>
     <meta content='particleflowers.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower particle system' name='description'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d' name='identifier'/>
-    <meta content='Vim' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='particleflowers.x3d'/>
@@ -38,8 +34,8 @@
             <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
             <field name='c' accessType='inputOutput' type='SFFloat' value='5.0'/>
             <field name='d' accessType='inputOutput' type='SFFloat' value='5.0'/>
-            <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-            <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <field name='tdelta' accessType='inputOutput' type='SFFloat'/>
+            <field name='pdelta' accessType='inputOutput' type='SFFloat'/>
             <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs" "../shaders/x_ite_flower_particles.vs"'/>
             <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs" "../shaders/commonnew.fs"'/>
           </ComposedShader>
@@ -59,8 +55,8 @@
         </BoundedPhysicsModel>
       </ParticleSystem>
       <Script DEF='Animate'>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
         <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
         <field name='a' accessType='inputOutput' type='SFFloat' value='0.5'/>
         <field name='b' accessType='inputOutput' type='SFFloat' value='0.5'/>
@@ -139,13 +135,13 @@ ecmascript:
 ]]>
       </Script>
       <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
-      <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
-      <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
-      <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>
-      <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x_ite'/>
-      <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x_ite'/>
-      <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
-      <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
     </Group>
+    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+    <ROUTE fromField='a_changed' fromNode='Animate' toField='set_a' toNode='x_ite'/>
+    <ROUTE fromField='b_changed' fromNode='Animate' toField='set_b' toNode='x_ite'/>
+    <ROUTE fromField='c_changed' fromNode='Animate' toField='set_c' toNode='x_ite'/>
+    <ROUTE fromField='d_changed' fromNode='Animate' toField='set_d' toNode='x_ite'/>
+    <ROUTE fromField='pdelta_changed' fromNode='Animate' toField='set_pdelta' toNode='x_ite'/>
+    <ROUTE fromField='tdelta_changed' fromNode='Animate' toField='set_tdelta' toNode='x_ite'/>
   </Scene>
 </X3D>

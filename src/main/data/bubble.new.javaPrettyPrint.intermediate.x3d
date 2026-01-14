@@ -7,12 +7,10 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='Tour around a prismatic sphere' name='description'/>
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d' name='identifier'/>
   </head>
   <Scene>
-    <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Bubble in action' orientation='1 0 0 0' position='0 0 4'/>
     <ProtoDeclare name='Bubble'>
+      <ProtoInterface/>
       <ProtoBody>
         <Transform DEF='transform'>
           <Shape>
@@ -23,9 +21,9 @@
           </Shape>
           <Script DEF='bounce'>
             <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-            <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='scalvel' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+            <field name='translation' accessType='inputOutput' type='SFVec3f'/>
+            <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
+            <field name='scalvel' accessType='inputOutput' type='SFVec3f'/>
             <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
 <![CDATA[
 ecmascript:
@@ -76,12 +74,14 @@ function set_fraction(value) {
 ]]>
           </Script>
           <TimeSensor DEF='bubbleClock' cycleInterval='10.0' loop='true'/>
-          <ROUTE fromField='translation_changed' fromNode='bounce' toField='set_translation' toNode='transform'/>
-          <ROUTE fromField='scale_changed' fromNode='bounce' toField='set_scale' toNode='transform'/>
-          <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce'/>
         </Transform>
+        <ROUTE fromField='translation_changed' fromNode='bounce' toField='set_translation' toNode='transform'/>
+        <ROUTE fromField='scale_changed' fromNode='bounce' toField='set_scale' toNode='transform'/>
+        <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce'/>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Bubble in action' position='0 0 4'/>
     <ProtoInstance DEF='bubbleA' name='Bubble'/>
   </Scene>
 </X3D>

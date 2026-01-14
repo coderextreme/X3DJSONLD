@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Full' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='SplitChannels.x3d' name='title'/>
     <meta content='This X3D scene includes a simple sound source which can be moved right and left. Depending on the position of the sound source, the user can hear the produced sound from the corresponding output speaker. Accordingly, there is a source that can be passed through a SpatialSound for the spatialization of the input audio. The approach is based on the relative position of the source and the listener, in comparison to the panner.' name='description'/>
@@ -15,6 +14,7 @@
     <meta content='https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d' name='identifier'/>
     <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='SplitChannels.x3d'/>

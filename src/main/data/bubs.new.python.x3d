@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
     <meta content='bubs.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='Tour around a prismatic sphere' name='description'/>
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d' name='identifier'/>
   </head>
   <Scene>
-    <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Bubbles in action' orientation='1 0 0 0' position='0 0 4'/>
-    <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'/>
     <ProtoDeclare name='Bubble'>
+      <ProtoInterface/>
       <ProtoBody>
         <Transform DEF='body_trans'>
           <Shape>
@@ -24,13 +19,12 @@
             <Sphere radius='0.25'/>
           </Shape>
           <Script DEF='bounce1'>
-            <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-            <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='scalvel' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
-<![CDATA[
-ecmascript:
+            <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+            <field accessType='inputOutput' name='translation' type='SFVec3f'/>
+            <field accessType='inputOutput' name='velocity' type='SFVec3f'/>
+            <field accessType='inputOutput' name='scalvel' type='SFVec3f'/>
+            <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+          <![CDATA[ecmascript:
 "+
 "function initialize() {
 "+
@@ -106,16 +100,18 @@ ecmascript:
 "+
 "    }
 "+
-"}
-]]>
+"}]]>
           </Script>
-          <TimeSensor DEF='bubbleClock' cycleInterval='10.0' loop='true'/>
-          <ROUTE fromField='translation_changed' fromNode='bounce1' toField='set_translation' toNode='body_trans'/>
-          <ROUTE fromField='scale_changed' fromNode='bounce1' toField='set_scale' toNode='body_trans'/>
-          <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce1'/>
+          <TimeSensor DEF='bubbleClock' cycleInterval='10' loop='true'/>
         </Transform>
+        <ROUTE fromField='translation_changed' fromNode='bounce1' toField='set_translation' toNode='body_trans'/>
+        <ROUTE fromField='scale_changed' fromNode='bounce1' toField='set_scale' toNode='body_trans'/>
+        <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce1'/>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Bubbles in action' position='0 0 4'/>
+    <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'/>
     <ProtoInstance DEF='bubbleA' name='Bubble'/>
     <ProtoInstance DEF='bubbleB' name='Bubble'/>
     <ProtoInstance DEF='bubbleC' name='Bubble'/>

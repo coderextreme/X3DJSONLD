@@ -9,7 +9,7 @@
     <meta content='Don Brutzman' name='translator'/>
     <meta content='24 November 2005' name='created'/>
     <meta content='2 JAN 2025' name='translated'/>
-    <meta content='2 JAN 2025' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:08 GMT' name='modified'/>
     <meta content='Oxytocin.xml' name='reference'/>
     <meta content='CML sources https://www.xml-cml.org' name='reference'/>
     <meta content='Wikipedia https://en.wikipedia.org/wiki/Chemical_Markup_Language' name='reference'/>
@@ -18,13 +18,11 @@
     <meta content='Polys.StylesheetTransformationsInteractiveVisualization.Web3d2003Symposium.pdf' name='reference'/>
     <meta content='Originally Published in Proceedings of Web3D 2003, ACM Press' name='reference'/>
     <meta content='CmlToX3d.xslt' name='generator'/>
-    <meta content='https://www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Oxytocin.x3d' name='identifier'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <ProtoDeclare name='Carbon'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -57,7 +55,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Hydrogen'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -90,7 +88,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Nitrogen'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -123,7 +121,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Oxygen'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -156,7 +154,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Fluorine'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -189,7 +187,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Silicon'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -222,7 +220,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Phosphorus'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -255,7 +253,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Sulphur'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -288,7 +286,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Chlorine'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -321,7 +319,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Bromine'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -354,7 +352,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='Iodine'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -387,7 +385,7 @@
     </ProtoDeclare>
     <ProtoDeclare name='unknown'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='position' accessType='inputOutput' type='SFVec3f'/>
         <field name='materialTransparency' accessType='inputOutput' type='SFFloat' value='0.6'/>
       </ProtoInterface>
       <ProtoBody>
@@ -515,8 +513,6 @@
     <PointLight ambientIntensity='1.0' location='0 0 5' radius='30.0'/>
     <NavigationInfo type='"EXAMINE" "FLY" "ANY"'/>
     <Viewpoint description='Inspect Oxytocin' position='0 2 20'/>
-    <!-- Copyright by the U.S. Sec. Commerce on behalf of U.S.A. All rights reserved. -->
-    <!-- type="3D" <date day="23" month="11" year="1995"/> -->
     <Transform DEF='infogroupa' translation='-8 2 -4'>
       <Transform translation='0 6 0'>
         <Viewpoint description='title billboard' position='6 -2 10'/>
@@ -907,7 +903,7 @@
         <fieldValue name='bond_set' value='-4.669 0.8473 0 -4.1785 -0.6132 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b10_2' name='line'>
-        <fieldValue name='bond_set' value='-4.6290000000000004 0.8473 0 -4.1385000000000005 -0.6132 0'/>
+        <fieldValue name='bond_set' value='-4.629 0.8473 0 -4.1385 -0.6132 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b11' name='line'>
         <fieldValue name='bond_set' value='0.2341 0.4905 0 0.4905 2.0402 0'/>
@@ -949,7 +945,7 @@
         <fieldValue name='bond_set' value='-8.7271 0.3568 0 -9.2288 1.8507 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b22_2' name='line'>
-        <fieldValue name='bond_set' value='-8.687100000000001 0.3568 0 -9.1888 1.8507 0'/>
+        <fieldValue name='bond_set' value='-8.6871 0.3568 0 -9.1888 1.8507 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b23' name='line'>
         <fieldValue name='bond_set' value='-6.7226 -1.4382 0 -7.7483 -2.5753 0'/>
@@ -988,10 +984,10 @@
         <fieldValue name='bond_set' value='5.2064 5.4405 0 6.7561 5.1841 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b35' name='line'>
-        <fieldValue name='bond_set' value='5.186400000000001 5.4405 0 5.2199 6.9791 0'/>
+        <fieldValue name='bond_set' value='5.1864 5.4405 0 5.2199 6.9791 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b35_2' name='line'>
-        <fieldValue name='bond_set' value='5.2264 5.4405 0 5.259899999999999 6.9791 0'/>
+        <fieldValue name='bond_set' value='5.2264 5.4405 0 5.2599 6.9791 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b36' name='line'>
         <fieldValue name='bond_set' value='2.0291 7.1797 0 1.126 8.4507 0'/>
@@ -1012,7 +1008,7 @@
         <fieldValue name='bond_set' value='-12.3304 -1.6054 0 -13.8466 -1.2709 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b41' name='line'>
-        <fieldValue name='bond_set' value='-12.350399999999999 -1.6054 0 -11.8822 -3.0659 0'/>
+        <fieldValue name='bond_set' value='-12.3504 -1.6054 0 -11.8822 -3.0659 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b41_2' name='line'>
         <fieldValue name='bond_set' value='-12.3104 -1.6054 0 -11.8422 -3.0659 0'/>
@@ -1030,7 +1026,7 @@
         <fieldValue name='bond_set' value='6.7026 -4.2253 0 7.182 -5.7193 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b45_2' name='line'>
-        <fieldValue name='bond_set' value='6.7425999999999995 -4.2253 0 7.2219999999999995 -5.7193 0'/>
+        <fieldValue name='bond_set' value='6.7426 -4.2253 0 7.222 -5.7193 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b46' name='line'>
         <fieldValue name='bond_set' value='8.1385 4.4706 0 9.2422 3.3669 0'/>
@@ -1048,7 +1044,7 @@
         <fieldValue name='bond_set' value='9.2222 3.3669 0 10.4597 4.3034 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b50_2' name='line'>
-        <fieldValue name='bond_set' value='9.2622 3.3669 0 10.499699999999999 4.3034 0'/>
+        <fieldValue name='bond_set' value='9.2622 3.3669 0 10.4997 4.3034 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b51' name='line'>
         <fieldValue name='bond_set' value='8.7406 6.9791 0 9.2422 8.4507 0'/>
@@ -1093,10 +1089,10 @@
         <fieldValue name='bond_set' value='10.3237 -4.8943 0 8.8855 -5.5297 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b63' name='line'>
-        <fieldValue name='bond_set' value='10.303700000000001 -4.8943 0 11.5412 -5.8085 0'/>
+        <fieldValue name='bond_set' value='10.3037 -4.8943 0 11.5412 -5.8085 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b63_2' name='line'>
-        <fieldValue name='bond_set' value='10.3437 -4.8943 0 11.581199999999999 -5.8085 0'/>
+        <fieldValue name='bond_set' value='10.3437 -4.8943 0 11.5812 -5.8085 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b64' name='line'>
         <fieldValue name='bond_set' value='12.5534 1.427 0 14.0473 1.9064 0'/>
@@ -1105,7 +1101,7 @@
         <fieldValue name='bond_set' value='8.8655 -5.5297 0 8.6983 -7.0794 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b65_2' name='line'>
-        <fieldValue name='bond_set' value='8.9055 -5.5297 0 8.738299999999999 -7.0794 0'/>
+        <fieldValue name='bond_set' value='8.9055 -5.5297 0 8.7383 -7.0794 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='b66' name='line'>
         <fieldValue name='bond_set' value='11.5612 -5.8085 0 11.3939 -7.347 0'/>

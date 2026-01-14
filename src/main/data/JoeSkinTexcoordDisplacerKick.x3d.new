@@ -15,7 +15,7 @@
 <meta name="info" content="modified to correct root and vc7 hierarchies"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d"></meta>
 <meta name="generator" content="BS studio translation from .x3dv by Joe using BS Contact"></meta>
-<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="generator" content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo info="&quot;X3D Humanoid V1 LOA3 skeleton&quot; &quot;skin from hanim sites, surface features, and some added points&quot; &quot;390 points&quot;" title="X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"></WorldInfo>

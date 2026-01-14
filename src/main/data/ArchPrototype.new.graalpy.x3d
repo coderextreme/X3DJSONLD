@@ -8,20 +8,14 @@
     <meta content='Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information.' name='description'/>
     <meta content='Michele Foti, Don Brutzman' name='creator'/>
     <meta content='15 December 2014' name='created'/>
-    <meta content='27 November 2015' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:46:17 GMT' name='modified'/>
     <meta content='ArchModelingDiagrams.pdf' name='reference'/>
     <meta content='https://en.wikipedia.org/wiki/Arch' name='reference'/>
     <meta content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d' name='identifier'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <ProtoDeclare name='ArchPrototype' appinfo='Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.'>
       <ProtoInterface>
-        <!-- COLOR OF ARCH -->
-        <!-- INPUT PARAMETERS -->
-        <!-- General parameters: measures in meters -->
-        <!-- Parameters to create to create shapes related to arch: put true to apply -->
         <field name='diffuseColor' accessType='inputOutput' appinfo='color of arch' type='SFColor' value='0.2 0.8 0.8'/>
         <field name='emissiveColor' accessType='inputOutput' appinfo='color of arch' type='SFColor' value='0.2 0.8 0.8'/>
         <field name='clearSpanWidth' accessType='initializeOnly' appinfo='clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference' type='SFFloat' value='4.0'/>
@@ -30,24 +24,21 @@
         <field name='topAbutmentHeight' accessType='initializeOnly' appinfo='topAbutmentHeight:topAbutmentHeight=0 means no topAbutment' type='SFFloat' value='0.5'/>
         <field name='pierWidth' accessType='initializeOnly' appinfo='pierWidth:pierWidtht=0 means no pierWidth' type='SFFloat' value='0.5'/>
         <field name='pierHeight' accessType='initializeOnly' appinfo='pierHeight: pierHeight=0 means no pierHeight' type='SFFloat' value='1.0'/>
-        <field name='archHalf' accessType='initializeOnly' appinfo='archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width' type='SFBool' value='false'/>
-        <field name='archHalfExtensionWidth' accessType='initializeOnly' appinfo='archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.' type='SFFloat' value='0.0'/>
-        <field name='onlyIntrados' accessType='initializeOnly' appinfo='onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.' type='SFBool' value='false'/>
-        <field name='archFilled' accessType='initializeOnly' appinfo='archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.' type='SFBool' value='false'/>
-        <field name='archHalfFilled' accessType='initializeOnly' appinfo='archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.' type='SFBool' value='false'/>
-        <field name='lintel' accessType='initializeOnly' appinfo='lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.' type='SFBool' value='false'/>
+        <field name='archHalf' accessType='initializeOnly' appinfo='archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width' type='SFBool'/>
+        <field name='archHalfExtensionWidth' accessType='initializeOnly' appinfo='archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.' type='SFFloat'/>
+        <field name='onlyIntrados' accessType='initializeOnly' appinfo='onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.' type='SFBool'/>
+        <field name='archFilled' accessType='initializeOnly' appinfo='archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose.' type='SFBool'/>
+        <field name='archHalfFilled' accessType='initializeOnly' appinfo='archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.' type='SFBool'/>
+        <field name='lintel' accessType='initializeOnly' appinfo='lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
-        <!-- First node determines node type of this prototype -->
-        <!-- IndexedFaceset creates arch -->
         <Transform DEF='ArchTransform'>
           <Shape DEF='Arch'>
-            <!-- note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly -->
             <Appearance>
               <Material DEF='MaterialNode'>
                 <IS>
-                  <connect nodeField='emissiveColor' protoField='emissiveColor'/>
                   <connect nodeField='diffuseColor' protoField='diffuseColor'/>
+                  <connect nodeField='emissiveColor' protoField='emissiveColor'/>
                 </IS>
               </Material>
             </Appearance>
@@ -56,13 +47,7 @@
             </IndexedFaceSet>
           </Shape>
         </Transform>
-        <!-- Subsequent nodes do not render, but still must be a valid X3D subgraph -->
-        <!-- This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs -->
         <Script DEF='ArchPrototypeScript' url='"../node/ArchPrototypeScript.js" "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"'>
-          <!-- INPUT PARAMETERS -->
-          <!-- General parameters -->
-          <!-- Parameters to create to create shapes related to arch: put true to apply -->
-          <!-- OUTPUT PARAMETERS -->
           <field name='clearSpanWidth' accessType='initializeOnly' appinfo='user or default input for clearSpanWidth parameter' type='SFFloat'/>
           <field name='riseHeight' accessType='initializeOnly' appinfo='user or default input for riseHeight parameter' type='SFFloat'/>
           <field name='depth' accessType='initializeOnly' appinfo='user or default input for depth parameter' type='SFFloat'/>
@@ -82,8 +67,8 @@
             <connect nodeField='clearSpanWidth' protoField='clearSpanWidth'/>
             <connect nodeField='riseHeight' protoField='riseHeight'/>
             <connect nodeField='depth' protoField='depth'/>
-            <connect nodeField='pierWidth' protoField='pierWidth'/>
             <connect nodeField='topAbutmentHeight' protoField='topAbutmentHeight'/>
+            <connect nodeField='pierWidth' protoField='pierWidth'/>
             <connect nodeField='pierHeight' protoField='pierHeight'/>
             <connect nodeField='archHalf' protoField='archHalf'/>
             <connect nodeField='archHalfExtensionWidth' protoField='archHalfExtensionWidth'/>
@@ -93,8 +78,8 @@
             <connect nodeField='lintel' protoField='lintel'/>
           </IS>
         </Script>
-        <ROUTE fromField='computedScale' fromNode='ArchPrototypeScript' toField='scale' toNode='ArchTransform'/>
-        <ROUTE fromField='pointOut' fromNode='ArchPrototypeScript' toField='point' toNode='ArchChord'/>
+        <ROUTE fromField='computedScale' fromNode='ArchPrototypeScript' toField='set_scale' toNode='ArchTransform'/>
+        <ROUTE fromField='pointOut' fromNode='ArchPrototypeScript' toField='set_point' toNode='ArchChord'/>
         <ROUTE fromField='indexOut' fromNode='ArchPrototypeScript' toField='set_coordIndex' toNode='ArchIndex'/>
       </ProtoBody>
     </ProtoDeclare>
@@ -108,7 +93,6 @@
       <fieldValue name='pierWidth' value='1.0'/>
       <fieldValue name='pierHeight' value='2.0'/>
     </ProtoInstance>
-    <!-- Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) -->
     <Inline DEF='CoordinateAxes' url='"../data/CoordinateAxes.x3d"'/>
   </Scene>
 </X3D>

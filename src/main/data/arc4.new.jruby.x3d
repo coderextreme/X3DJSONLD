@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='arc4.x3d' name='title'/>
     <meta content='Lost, Doug Sanden I think' name='creator'/>
     <meta content='manual' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d' name='identifier'/>
     <meta content='a generic proto to connect two objects' name='description'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <Viewpoint description='Only Viewpoint' position='0 0 5'/>
@@ -21,10 +21,10 @@
       </Shape>
       <PositionInterpolator DEF='DECLpoint_G1_PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
       <Script DEF='DECLpoint_G1_MB1'>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='set_location' accessType='inputOnly' type='SFTime'/>
-        <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='old' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOnly' name='set_location' type='SFTime'/>
+        <field accessType='inputOutput' name='keyValue' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
 ecmascript:
 		function set_location(value) {
@@ -50,10 +50,10 @@ ecmascript:
       </Shape>
       <PositionInterpolator DEF='DECLpoint_G2_PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
       <Script DEF='DECLpoint_G2_MB1'>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='set_location' accessType='inputOnly' type='SFTime'/>
-        <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='old' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOnly' name='set_location' type='SFTime'/>
+        <field accessType='inputOutput' name='keyValue' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
 ecmascript:
 		function set_location(value) {
@@ -82,16 +82,16 @@ ecmascript:
         </Transform>
       </Transform>
       <Script DEF='DECLx3dconnector_connector1_S1'>
-        <field name='startnode' accessType='initializeOnly' type='SFNode'/>
-        <field name='endnode' accessType='initializeOnly' type='SFNode'/>
-        <field name='position' accessType='inputOutput' type='SFNode'>
+        <field accessType='initializeOnly' name='startnode' type='SFNode'/>
+        <field accessType='initializeOnly' name='endnode' type='SFNode'/>
+        <field accessType='inputOutput' name='position' type='SFNode'>
           <Transform USE='DECLx3dconnector_connector1_trans'/>
         </field>
-        <field name='rotscale' accessType='inputOutput' type='SFNode'>
+        <field accessType='inputOutput' name='rotscale' type='SFNode'>
           <Transform USE='DECLx3dconnector_connector1_rotscale'/>
         </field>
-        <field name='set_startpoint' accessType='inputOnly' type='SFVec3f'/>
-        <field name='set_endpoint' accessType='inputOnly' type='SFVec3f'/>
+        <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
+        <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
 <![CDATA[
 ecmascript:
         function recompute(startpoint,endpoint){

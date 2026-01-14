@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='SplitChannels.x3d' name='title'/>
@@ -8,13 +7,11 @@
     <meta content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.' name='info'/>
     <meta content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman' name='creator'/>
     <meta content='28 October 2020' name='created'/>
-    <meta content='23 April 2023' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:10 GMT' name='modified'/>
     <meta content='CHANGELOG.txt' name='reference'/>
-    <meta content='credit for audio files' name='TODO'/>
     <meta content='http://www.medialab.hmu.gr/minipages/x3domAudio' name='reference'/>
+    <meta content='credit for audio files' name='TODO'/>
     <meta content='https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d' name='identifier'/>
-    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='SplitChannels.x3d'/>
@@ -45,7 +42,7 @@
             <Material ambientIntensity='0.0933' diffuseColor='0.345 0.345 0.882' shininess='0.51' specularColor='0.46 0.46 0.46'/>
           </Appearance>
           <Text string='"Right Channel Volume"'>
-            <FontStyle DEF='VolumeFontStyle' family='"Times" "SERIF"' style='BOLD'/>
+            <FontStyle DEF='VolumeFontStyle' family='"Times" "SERIF"'/>
           </Text>
         </Shape>
       </Transform>
@@ -92,10 +89,10 @@
       <Gain>
         <ChannelMerger>
           <ChannelSelector>
-            <Gain USE='ChannelSplitter'/>
+            <Gain/>
           </ChannelSelector>
           <ChannelSelector channelSelection='1'>
-            <Gain USE='ChannelSplitter'/>
+            <Gain/>
           </ChannelSelector>
         </ChannelMerger>
       </Gain>

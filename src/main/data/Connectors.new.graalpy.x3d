@@ -6,10 +6,8 @@
     <meta content='World of Titania' name='comment'/>
     <meta content='Fri, 04 Sep 2015 10:19:01 GMT' name='created'/>
     <meta content='Holger Seelig' name='creator'/>
-    <meta content='Titania V3.0.4, http://titania.create3000.de' name='generator'/>
-    <meta content='file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d' name='identifier'/>
-    <meta content='Tue, 25 Jul 2017 09:42:17 GMT' name='modified'/>
-    <meta content='Connectors' name='title'/>
+    <meta content='Titania V3.0.4, https://titania.create3000.de' name='generator'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='RoundedRectangle2D'>

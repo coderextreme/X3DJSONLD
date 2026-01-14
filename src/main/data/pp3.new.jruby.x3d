@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='pp3.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
@@ -11,6 +10,7 @@
     <meta content='A process pipeline between three spheres (try typing on spheres and blue' name='description'/>
     <meta content='https://coderextreme.net/x3d/pp3.x3d' name='identifier'/>
     <meta content='manual' name='generator'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='Process'>
@@ -95,8 +95,8 @@
           </Transform>
         </Group>
         <Script DEF='RightSingleToMultiString'>
-          <field name='set_rightstring' accessType='inputOnly' type='SFString'/>
-          <field name='rightlines' accessType='outputOnly' type='MFString'/>
+          <field accessType='inputOnly' name='set_rightstring' type='SFString'/>
+          <field accessType='outputOnly' name='rightlines' type='MFString'/>
 <![CDATA[
 ecmascript:
 
@@ -110,8 +110,8 @@ function set_rightstring(rightstr) {
 ]]>
         </Script>
         <Script DEF='UpSingleToMultiString'>
-          <field name='set_upstring' accessType='inputOnly' type='SFString'/>
-          <field name='uplines' accessType='outputOnly' type='MFString'/>
+          <field accessType='inputOnly' name='set_upstring' type='SFString'/>
+          <field accessType='outputOnly' name='uplines' type='MFString'/>
 <![CDATA[
 ecmascript:
 
@@ -125,8 +125,8 @@ function set_upstring(upstr) {
 ]]>
         </Script>
         <Script DEF='CenterSingleToMultiString'>
-          <field name='set_centerstring' accessType='inputOnly' type='SFString'/>
-          <field name='centerlines' accessType='outputOnly' type='MFString'/>
+          <field accessType='inputOnly' name='set_centerstring' type='SFString'/>
+          <field accessType='outputOnly' name='centerlines' type='MFString'/>
 <![CDATA[
 ecmascript:
 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
+    <component level='1' name='Scripting'/>
     <meta content='John W Carlson' name='creator'/>
     <meta content='December 13 2015' name='created'/>
     <meta content='July 14 2025' name='modified'/>
@@ -12,11 +11,12 @@
     <meta content='beginnings of a force directed graph in 3D' name='description'/>
     <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='node'>
       <ProtoInterface>
-        <field name='position' accessType='inputOutput' type='SFVec3f'/>
+        <field accessType='inputOutput' name='position' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -43,10 +43,10 @@
           </Transform>
           <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0'/>
           <Script DEF='MoveBall'>
-            <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
-            <field name='old' accessType='inputOutput' type='SFVec3f'/>
-            <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
-            <field name='keyValue' accessType='outputOnly' type='MFVec3f'/>
+            <field accessType='inputOutput' name='translation' type='SFVec3f' value='50 50 0'/>
+            <field accessType='inputOutput' name='old' type='SFVec3f'/>
+            <field accessType='inputOnly' name='set_cycle' type='SFTime'/>
+            <field accessType='outputOnly' name='keyValue' type='MFVec3f'/>
 <![CDATA[
 ecmascript:
 		function set_cycle(value) {
@@ -66,8 +66,8 @@ ecmascript:
     </ProtoDeclare>
     <ProtoDeclare name='cyl'>
       <ProtoInterface>
-        <field name='set_positionA' accessType='inputOutput' type='SFVec3f'/>
-        <field name='set_positionB' accessType='inputOutput' type='SFVec3f'/>
+        <field accessType='inputOutput' name='set_positionA' type='SFVec3f'/>
+        <field accessType='inputOutput' name='set_positionB' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -78,9 +78,9 @@ ecmascript:
             <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 0 0 0 50 0'/>
           </Shape>
           <Script DEF='MoveCylinder'>
-            <field name='spine' accessType='inputOutput' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
-            <field name='endA' accessType='inputOutput' type='SFVec3f'/>
-            <field name='endB' accessType='inputOutput' type='SFVec3f'/>
+            <field accessType='inputOutput' name='spine' type='MFVec3f' value='0 -50 0 0 0 0 0 50 0'/>
+            <field accessType='inputOutput' name='endA' type='SFVec3f'/>
+            <field accessType='inputOutput' name='endB' type='SFVec3f'/>
             <IS>
               <connect nodeField='endA' protoField='set_positionA'/>
               <connect nodeField='endB' protoField='set_positionB'/>
@@ -120,9 +120,9 @@ ecmascript:
       <ProtoInstance DEF='linkC' name='cyl'/>
     </Transform>
     <Script DEF='clickHandler'>
-      <field name='counter' accessType='inputOutput' type='SFInt32'/>
-      <field name='node_changed' accessType='outputOnly' type='SFNode'/>
-      <field name='add_node' accessType='inputOnly' type='SFBool'/>
+      <field accessType='inputOutput' name='counter' type='SFInt32'/>
+      <field accessType='outputOnly' name='node_changed' type='SFNode'/>
+      <field accessType='inputOnly' name='add_node' type='SFBool'/>
 <![CDATA[
 ecmascript:
 	function add_node(value) {

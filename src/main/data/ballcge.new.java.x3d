@@ -5,16 +5,12 @@
   <head>
     <component name='Shaders' level='1'/>
     <component name='EnvironmentalEffects' level='3'/>
-    <component name='Rendering' level='1'/>
-    <component name='Texturing' level='1'/>
     <component name='Grouping' level='3'/>
     <component name='CubeMapTexturing' level='1'/>
-    <component name='Core' level='1'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d' name='identifier'/>
     <meta content='ball.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='a prismatic sphere' name='description'/>
   </head>
   <Scene>
     <WorldInfo title='ball.x3d'/>
@@ -28,7 +24,14 @@
           <ComposedShader language='GLSL'>
             <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
             <field name='cube' accessType='initializeOnly' type='SFNode'>
-              <ComposedCubeMapTexture USE='texture'/>
+              <ComposedCubeMapTexture>
+                <ImageTexture containerField='backTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+                <ImageTexture containerField='bottomTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                <ImageTexture containerField='frontTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+                <ImageTexture containerField='leftTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+                <ImageTexture containerField='rightTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+                <ImageTexture containerField='topTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+              </ComposedCubeMapTexture>
             </field>
             <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>
             <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>
@@ -36,14 +39,6 @@
             <ShaderPart url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"'/>
             <ShaderPart DEF='commonfs' type='FRAGMENT' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"'/>
           </ComposedShader>
-          <ComposedCubeMapTexture DEF='texture'>
-            <ImageTexture containerField='backTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
-            <ImageTexture containerField='bottomTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
-            <ImageTexture containerField='frontTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
-            <ImageTexture containerField='leftTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
-            <ImageTexture containerField='rightTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
-            <ImageTexture containerField='topTexture' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
-          </ComposedCubeMapTexture>
         </Appearance>
         <Sphere/>
       </Shape>

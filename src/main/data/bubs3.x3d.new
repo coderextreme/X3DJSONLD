@@ -9,7 +9,7 @@
 <Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
 <Background backUrl="&quot;../resources/images/BK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png&quot;" bottomUrl="&quot;../resources/images/BT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png&quot;" frontUrl="&quot;../resources/images/FR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png&quot;" leftUrl="&quot;../resources/images/LF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png&quot;" rightUrl="&quot;../resources/images/RT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png&quot;" topUrl="&quot;../resources/images/TP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png&quot;"></Background>
-<Transform DEF="DECLBubble_bubbleA"><Shape><Sphere radius="0.25"></Sphere>
+<Transform DEF="DECLBubble_transformA"><Shape><Sphere radius="0.25"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
@@ -58,11 +58,11 @@ function set_fraction(value) {
     }
 }]]></Script>
 <TimeSensor DEF="DECLBubble_bubbleA_bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
-<ROUTE fromNode="DECLBubble_bubbleA_bounce" fromField="translation_changed" toNode="DECLBubble_transform" toField="set_translation"></ROUTE>
-<ROUTE fromNode="DECLBubble_bubbleA_bounce" fromField="scale_changed" toNode="DECLBubble_transform" toField="set_scale"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleA_bounce" fromField="translation_changed" toNode="DECLBubble_transformA" toField="set_translation"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleA_bounce" fromField="scale_changed" toNode="DECLBubble_transformA" toField="set_scale"></ROUTE>
 <ROUTE fromNode="DECLBubble_bubbleA_bubbleClock" fromField="fraction_changed" toNode="DECLBubble_bubbleA_bounce" toField="set_fraction"></ROUTE>
 </Transform>
-<Transform DEF="DECLBubble_bubbleB"><Shape><Sphere radius="0.25"></Sphere>
+<Transform DEF="DECLBubble_transformB"><Shape><Sphere radius="0.25"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
@@ -111,11 +111,11 @@ function set_fraction(value) {
     }
 }]]></Script>
 <TimeSensor DEF="DECLBubble_bubbleB_bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
-<ROUTE fromNode="DECLBubble_bubbleB_bounce" fromField="translation_changed" toNode="DECLBubble_transform" toField="set_translation"></ROUTE>
-<ROUTE fromNode="DECLBubble_bubbleB_bounce" fromField="scale_changed" toNode="DECLBubble_transform" toField="set_scale"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleB_bounce" fromField="translation_changed" toNode="DECLBubble_transformB" toField="set_translation"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleB_bounce" fromField="scale_changed" toNode="DECLBubble_transformB" toField="set_scale"></ROUTE>
 <ROUTE fromNode="DECLBubble_bubbleB_bubbleClock" fromField="fraction_changed" toNode="DECLBubble_bubbleB_bounce" toField="set_fraction"></ROUTE>
 </Transform>
-<Transform DEF="DECLBubble_bubbleC"><Shape><Sphere radius="0.25"></Sphere>
+<Transform DEF="DECLBubble_transformC"><Shape><Sphere radius="0.25"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
@@ -164,11 +164,11 @@ function set_fraction(value) {
     }
 }]]></Script>
 <TimeSensor DEF="DECLBubble_bubbleC_bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
-<ROUTE fromNode="DECLBubble_bubbleC_bounce" fromField="translation_changed" toNode="DECLBubble_transform" toField="set_translation"></ROUTE>
-<ROUTE fromNode="DECLBubble_bubbleC_bounce" fromField="scale_changed" toNode="DECLBubble_transform" toField="set_scale"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleC_bounce" fromField="translation_changed" toNode="DECLBubble_transformC" toField="set_translation"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleC_bounce" fromField="scale_changed" toNode="DECLBubble_transformC" toField="set_scale"></ROUTE>
 <ROUTE fromNode="DECLBubble_bubbleC_bubbleClock" fromField="fraction_changed" toNode="DECLBubble_bubbleC_bounce" toField="set_fraction"></ROUTE>
 </Transform>
-<Transform DEF="DECLBubble_bubbleD"><Shape><Sphere radius="0.25"></Sphere>
+<Transform DEF="DECLBubble_transformD"><Shape><Sphere radius="0.25"></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
 </Shape>
@@ -217,8 +217,8 @@ function set_fraction(value) {
     }
 }]]></Script>
 <TimeSensor DEF="DECLBubble_bubbleD_bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
-<ROUTE fromNode="DECLBubble_bubbleD_bounce" fromField="translation_changed" toNode="DECLBubble_transform" toField="set_translation"></ROUTE>
-<ROUTE fromNode="DECLBubble_bubbleD_bounce" fromField="scale_changed" toNode="DECLBubble_transform" toField="set_scale"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleD_bounce" fromField="translation_changed" toNode="DECLBubble_transformD" toField="set_translation"></ROUTE>
+<ROUTE fromNode="DECLBubble_bubbleD_bounce" fromField="scale_changed" toNode="DECLBubble_transformD" toField="set_scale"></ROUTE>
 <ROUTE fromNode="DECLBubble_bubbleD_bubbleClock" fromField="fraction_changed" toNode="DECLBubble_bubbleD_bounce" toField="set_fraction"></ROUTE>
 </Transform>
 </Scene>

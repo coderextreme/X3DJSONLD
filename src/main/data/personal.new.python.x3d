@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='personal.x3d' name='title'/>
     <meta content='https://someAddress/somePath/personal.x3d' name='identifier'/>
     <meta content='John&apos;s Portfolio' name='description'/>
-    <meta content='vim and X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
   </head>
   <Scene>
     <Viewpoint description='Tour Views' position='0 0 12'/>

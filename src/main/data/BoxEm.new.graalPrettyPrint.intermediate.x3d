@@ -6,17 +6,14 @@
     <meta content='BoxEm.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d' name='identifier'/>
-    <meta content='3 boxes' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
-    <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Cubes on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field name='xtranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='xtranslation' accessType='inputOutput' type='SFVec3f'/>
         <field name='myShape' accessType='inputOutput' type='MFNode'>
-          <Shape>
+          <Shape DEF='_1'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -35,9 +32,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field name='ytranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='ytranslation' accessType='inputOutput' type='SFVec3f'/>
         <field name='myShape' accessType='inputOutput' type='MFNode'>
-          <Shape>
+          <Shape DEF='_2'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -51,7 +48,6 @@
             <connect nodeField='translation' protoField='ytranslation'/>
           </IS>
           <ProtoInstance name='anyShape'>
-            <fieldValue name='xtranslation' value='0 0 0'/>
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
@@ -71,8 +67,9 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Cubes on Fire' position='0 0 12'/>
     <ProtoInstance DEF='threepi' name='three'>
-      <fieldValue name='ytranslation' value='0 0 0'/>
       <fieldValue name='myShape'>
         <Shape DEF='box'>
           <Appearance>

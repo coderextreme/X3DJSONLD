@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" profile="Immersive" version="4.0" ><head><meta name="title" content="bubs2.x3d"></meta>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" profile="Immersive" version="4.0" ><head><component name="Scripting" level="1"></component>
+<meta name="title" content="bubs2.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="Tour around a prismatic sphere"></meta>
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"></meta>
 <meta name="translated" content="13 March 2016"></meta>
 <meta name="generator" content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"></meta>
-<component name="Scripting" level="1"></component>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 <Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>

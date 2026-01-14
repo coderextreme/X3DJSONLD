@@ -3,25 +3,18 @@
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <!-- <component name='Shape' level='4'></component> -->
-    <component name='Scripting' level='1'/>
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
     <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
     <meta content='geo.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d' name='identifier'/>
-    <meta content='a sphere' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
     <Viewpoint DEF='Tour' description='Tour Views'/>
-    <!-- Viewpoint position='0 0 4' description='sphere in road'/ -->
     <Background backUrl='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' bottomUrl='"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' frontUrl='"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' leftUrl='"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' rightUrl='"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' topUrl='"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
     <Transform>
       <Shape>

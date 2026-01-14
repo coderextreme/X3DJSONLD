@@ -7,32 +7,25 @@
     <meta content='Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype.' name='description'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='16 August 2008' name='translated'/>
-    <meta content='20 October 2019' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:14 GMT' name='modified'/>
     <meta content='ViewFrustumExample.x3d' name='reference'/>
     <meta content='ViewFrustumComputation.png' name='drawing'/>
     <meta content='ViewFrustumOverheadView.png' name='Image'/>
     <meta content='ViewFrustumObliqueView.png' name='Image'/>
     <meta content='view culling frustum' name='subject'/>
-    <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d' name='identifier'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
+    <meta content='https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d' name='identifier'/>
   </head>
   <Scene>
-    <WorldInfo title='ViewFrustumPrototype.x3d'/>
     <ProtoDeclare name='ViewFrustum' appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes'>
       <ProtoInterface>
-        <field name='ViewpointNode' accessType='initializeOnly' appinfo='required: insert Viewpoint DEF or USE node for view of interest' type='SFNode'>
-          <!-- NULL node, ProtoInstance must provide -->
-        </field>
-        <field name='NavigationInfoNode' accessType='initializeOnly' appinfo='required: insert NavigationInfo DEF or USE node of interest' type='SFNode'>
-          <!-- NULL node, ProtoInstance must provide -->
-        </field>
+        <field name='ViewpointNode' accessType='initializeOnly' appinfo='required: insert Viewpoint DEF or USE node for view of interest' type='SFNode'/>
+        <field name='NavigationInfoNode' accessType='initializeOnly' appinfo='required: insert NavigationInfo DEF or USE node of interest' type='SFNode'/>
         <field name='visible' accessType='inputOutput' appinfo='whether or not frustum geometry is rendered' type='SFBool' value='true'/>
         <field name='lineColor' accessType='inputOutput' appinfo='RGB color of ViewFrustum outline, default value 0.9 0.9 0.9' type='SFColor' value='0.9 0.9 0.9'/>
         <field name='frustumColor' accessType='inputOutput' appinfo='RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8' type='SFColor' value='0.8 0.8 0.8'/>
         <field name='transparency' accessType='inputOutput' appinfo='transparency of ViewFrustum hull geometry, default value 0.5' type='SFFloat' value='0.5'/>
         <field name='aspectRatio' accessType='inputOutput' appinfo='assumed ratio height/width, default value 0.75' type='SFFloat' value='0.75'/>
-        <field name='trace' accessType='initializeOnly' appinfo='debug support, default false' type='SFBool' value='false'/>
+        <field name='trace' accessType='initializeOnly' appinfo='debug support, default false' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
         <Switch DEF='VisibilitySwitch'>
@@ -71,12 +64,8 @@
         <Script DEF='GeometryComputationScript' directOutput='true' url='"ViewFrustumPrototypeScript.js"'>
           <field name='visible' accessType='inputOutput' appinfo='Whether or not frustum geometry is rendered' type='SFBool'/>
           <field name='visibilitySwitchSelection' accessType='outputOnly' appinfo='Adjust Switch selection to make geometry visible or not' type='SFInt32'/>
-          <field name='ViewpointNode' accessType='initializeOnly' type='SFNode'>
-            <!-- initialization node (if any) goes here -->
-          </field>
-          <field name='NavigationInfoNode' accessType='initializeOnly' type='SFNode'>
-            <!-- initialization node (if any) goes here -->
-          </field>
+          <field name='ViewpointNode' accessType='initializeOnly' type='SFNode'/>
+          <field name='NavigationInfoNode' accessType='initializeOnly' type='SFNode'/>
           <field name='FrustumCoordinate' accessType='initializeOnly' type='SFNode'>
             <Coordinate USE='FrustumCoordinate'/>
           </field>
@@ -99,15 +88,15 @@
             <connect nodeField='trace' protoField='trace'/>
           </IS>
         </Script>
-        <ROUTE fromField='visibilitySwitchSelection' fromNode='GeometryComputationScript' toField='whichChoice' toNode='VisibilitySwitch'/>
-        <ROUTE fromField='position_changed' fromNode='GeometryComputationScript' toField='translation' toNode='PositionTransform'/>
-        <ROUTE fromField='orientation_changed' fromNode='GeometryComputationScript' toField='rotation' toNode='OrientationTransform'/>
+        <ROUTE fromField='visibilitySwitchSelection' fromNode='GeometryComputationScript' toField='set_whichChoice' toNode='VisibilitySwitch'/>
+        <ROUTE fromField='position_changed' fromNode='GeometryComputationScript' toField='set_translation' toNode='PositionTransform'/>
+        <ROUTE fromField='orientation_changed' fromNode='GeometryComputationScript' toField='set_rotation' toNode='OrientationTransform'/>
         <ROUTE fromField='spine_changed' fromNode='GeometryComputationScript' toField='set_spine' toNode='FrustumExtrusion'/>
         <ROUTE fromField='scale_changed' fromNode='GeometryComputationScript' toField='set_scale' toNode='FrustumExtrusion'/>
-        <ROUTE fromField='point_changed' fromNode='GeometryComputationScript' toField='point' toNode='FrustumCoordinate'/>
+        <ROUTE fromField='point_changed' fromNode='GeometryComputationScript' toField='set_point' toNode='FrustumCoordinate'/>
       </ProtoBody>
     </ProtoDeclare>
-    <!-- Example use is in separate scene -->
+    <WorldInfo title='ViewFrustumPrototype.x3d'/>
     <Anchor description='ViewFrustum Example' url='"ViewFrustumExample.x3d"'>
       <Shape>
         <Appearance>
