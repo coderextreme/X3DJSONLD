@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -45,22 +45,22 @@ meta8.setContent("23 May 2020")
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("reference")
-meta9.setContent("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl")
+meta9.setContent("https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
 meta10.setName("reference")
-meta10.setContent("http://www.HAnim.org")
+meta10.setContent("https://www.HAnim.org")
 
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("reference")
-meta11.setContent("http://HAnim.org/Models")
+meta11.setContent("https://HAnim.org/Models")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
 meta12.setName("reference")
-meta12.setContent("http://HAnim.org/Nodes")
+meta12.setContent("https://HAnim.org/Nodes")
 
 head1.addMeta(meta12)
 meta13 = x3d.meta()
@@ -706,9 +706,9 @@ ProtoDeclare19.setProtoBody(ProtoBody47)
 
 Scene17.addChild(ProtoDeclare19)
 
-Scene17.addComments(x3d.CommentsBlock('''======================================'''))
+Scene17.addComments(x3d.CommentsBlock("""======================================"""))
 
-Scene17.addComments(x3d.CommentsBlock('''Point to example use in case someone inspects this file'''))
+Scene17.addComments(x3d.CommentsBlock("""Point to example use in case someone inspects this file"""))
 Anchor134 = x3d.Anchor()
 Anchor134.setDescription("InterchangableActorsViaDynamicRouting")
 Anchor134.setParameter(["target=_blank"])
@@ -737,4 +737,4 @@ Scene17.addChild(Anchor134)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/LOA1_StopAnimation.new.graalpy.x3d")
-X3D0.toFileJSON("../data/LOA1_StopAnimation.new.graalpy.json")
+X3D0.toFileJSON("../data/LOA1_StopAnimation.new.graalpy.x3dj")

@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -40,17 +40,17 @@ meta7.setContent("not yet tested, need to compare with NancyDivingExample interp
 head1.addMeta(meta7)
 meta8 = x3d.meta()
 meta8.setName("reference")
-meta8.setContent("http://www.HAnim.org")
+meta8.setContent("https://www.HAnim.org")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("reference")
-meta9.setContent("http://HAnim.org/Models")
+meta9.setContent("https://HAnim.org/Models")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
 meta10.setName("reference")
-meta10.setContent("http://HAnim.org/Nodes")
+meta10.setContent("https://HAnim.org/Nodes")
 
 head1.addMeta(meta10)
 meta11 = x3d.meta()
@@ -320,7 +320,7 @@ OrientationInterpolator59.setIS(IS60)
 
 Group46.addChild(OrientationInterpolator59)
 
-Group46.addComments(x3d.CommentsBlock('''no SACROILIAC_ANIMATOR'''))
+Group46.addComments(x3d.CommentsBlock("""no SACROILIAC_ANIMATOR"""))
 OrientationInterpolator62 = x3d.OrientationInterpolator()
 OrientationInterpolator62.setDEF("L_HIP_ANIMATOR")
 OrientationInterpolator62.setKey(x3d.doubleToFloat([0,0.25,0.375,0.6667,0.7917,0.9167,1]))
@@ -364,7 +364,7 @@ OrientationInterpolator68.setIS(IS69)
 
 Group46.addChild(OrientationInterpolator68)
 
-Group46.addComments(x3d.CommentsBlock('''no L_MIDTARSAL_ANIMATOR'''))
+Group46.addComments(x3d.CommentsBlock("""no L_MIDTARSAL_ANIMATOR"""))
 OrientationInterpolator71 = x3d.OrientationInterpolator()
 OrientationInterpolator71.setDEF("R_HIP_ANIMATOR")
 OrientationInterpolator71.setKey(x3d.doubleToFloat([0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1]))
@@ -408,7 +408,7 @@ OrientationInterpolator77.setIS(IS78)
 
 Group46.addChild(OrientationInterpolator77)
 
-Group46.addComments(x3d.CommentsBlock('''no L_MIDTARSAL_ANIMATOR'''))
+Group46.addComments(x3d.CommentsBlock("""no L_MIDTARSAL_ANIMATOR"""))
 OrientationInterpolator80 = x3d.OrientationInterpolator()
 OrientationInterpolator80.setDEF("VL5_ANIMATOR")
 OrientationInterpolator80.setKey(x3d.doubleToFloat([0,0.2083,0.375,0.75,0.8333,1]))
@@ -672,4 +672,4 @@ Scene15.addChild(Anchor121)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/LOA1_SwimmingFlutterKickAnimation.new.graalpy.x3d")
-X3D0.toFileJSON("../data/LOA1_SwimmingFlutterKickAnimation.new.graalpy.json")
+X3D0.toFileJSON("../data/LOA1_SwimmingFlutterKickAnimation.new.graalpy.x3dj")

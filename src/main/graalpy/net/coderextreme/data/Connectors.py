@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
 X3D0.setVersion("4.0")
@@ -25,7 +25,7 @@ meta4.setContent("Holger Seelig")
 head1.addMeta(meta4)
 meta5 = x3d.meta()
 meta5.setName("generator")
-meta5.setContent("Titania V3.0.4, http://titania.create3000.de")
+meta5.setContent("Titania V3.0.4, https://titania.create3000.de")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
@@ -936,4 +936,4 @@ Scene9.addChild(Transform121)
 
 X3D0.setScene(Scene9)
 X3D0.toFileX3D("../data/Connectors.new.graalpy.x3d")
-X3D0.toFileJSON("../data/Connectors.new.graalpy.json")
+X3D0.toFileJSON("../data/Connectors.new.graalpy.x3dj")

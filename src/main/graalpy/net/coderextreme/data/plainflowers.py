@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -74,7 +74,7 @@ ProtoInstance17 = x3d.ProtoInstance()
 ProtoInstance17.setName("FlowerProto")
 fieldValue18 = x3d.fieldValue()
 fieldValue18.setName("vertex")
-fieldValue18.setValue("\"../shaders/x_ite_flowers_plain.vs\"")
+fieldValue18.setValue("\"../shaders/gl_flowers_plain.vs\"")
 
 ProtoInstance17.addFieldValue(fieldValue18)
 fieldValue19 = x3d.fieldValue()
@@ -119,4 +119,4 @@ Scene7.addChild(Group10)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/plainflowers.new.graalpy.x3d")
-X3D0.toFileJSON("../data/plainflowers.new.graalpy.json")
+X3D0.toFileJSON("../data/plainflowers.new.graalpy.x3dj")

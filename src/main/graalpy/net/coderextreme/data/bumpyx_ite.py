@@ -1,13 +1,15 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
+
+head1.addComments(x3d.CommentsBlock("""<component name='Shape' level='4'></component>"""))
 component2 = x3d.component()
 component2.setName("Scripting")
 component2.setLevel(1)
@@ -48,8 +50,6 @@ component9.setName("Core")
 component9.setLevel(1)
 
 head1.addComponent(component9)
-
-head1.addComments(x3d.CommentsBlock('''<component name='Shape' level='4'></component>'''))
 meta10 = x3d.meta()
 meta10.setName("title")
 meta10.setContent("bumpyx_ite.x3d")
@@ -92,7 +92,7 @@ Viewpoint18.setDescription("Transparent rose")
 
 Scene15.addChild(Viewpoint18)
 
-Scene15.addComments(x3d.CommentsBlock('''Images courtesy of Paul Debevec's Light Probe Image Gallery'''))
+Scene15.addComments(x3d.CommentsBlock("""Images courtesy of Paul Debevec's Light Probe Image Gallery"""))
 Background19 = x3d.Background()
 Background19.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
 Background19.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
@@ -236,7 +236,7 @@ ShaderPart46.setType("FRAGMENT")
 
 ComposedShader32.addParts(ShaderPart46)
 
-ComposedShader32.addComments(x3d.CommentsBlock('''TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>'''))
+ComposedShader32.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance23.addShaders(ComposedShader32)
 
@@ -248,4 +248,4 @@ Scene15.addChild(Transform20)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/bumpyx_ite.new.graalpy.x3d")
-X3D0.toFileJSON("../data/bumpyx_ite.new.graalpy.json")
+X3D0.toFileJSON("../data/bumpyx_ite.new.graalpy.x3dj")

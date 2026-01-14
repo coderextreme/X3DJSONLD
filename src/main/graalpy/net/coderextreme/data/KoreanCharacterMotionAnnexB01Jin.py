@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -80,7 +80,7 @@ meta15.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/
 head1.addMeta(meta15)
 meta16 = x3d.meta()
 meta16.setName("generator")
-meta16.setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview")
+meta16.setContent("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview")
 
 head1.addMeta(meta16)
 meta17 = x3d.meta()
@@ -90,7 +90,7 @@ meta17.setContent("Suwon HAnim Converter")
 head1.addMeta(meta17)
 meta18 = x3d.meta()
 meta18.setName("generator")
-meta18.setContent("Gnu Image Manipulation Program, http://www.gimp.org")
+meta18.setContent("Gnu Image Manipulation Program, https://www.gimp.org")
 
 head1.addMeta(meta18)
 meta19 = x3d.meta()
@@ -1329,4 +1329,4 @@ Scene21.addChild(Group205)
 
 X3D0.setScene(Scene21)
 X3D0.toFileX3D("../data/KoreanCharacterMotionAnnexB01Jin.new.graalpy.x3d")
-X3D0.toFileJSON("../data/KoreanCharacterMotionAnnexB01Jin.new.graalpy.json")
+X3D0.toFileJSON("../data/KoreanCharacterMotionAnnexB01Jin.new.graalpy.x3dj")

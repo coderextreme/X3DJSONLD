@@ -1,53 +1,53 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
-meta2 = x3d.meta()
-meta2.setName("title")
-meta2.setContent("bubs2.x3d")
+component2 = x3d.component()
+component2.setName("Scripting")
+component2.setLevel(1)
 
-head1.addMeta(meta2)
+head1.addComponent(component2)
 meta3 = x3d.meta()
-meta3.setName("creator")
-meta3.setContent("John Carlson")
+meta3.setName("title")
+meta3.setContent("bubs2.x3d")
 
 head1.addMeta(meta3)
 meta4 = x3d.meta()
-meta4.setName("description")
-meta4.setContent("Tour around a prismatic sphere")
+meta4.setName("creator")
+meta4.setContent("John Carlson")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
-meta5.setName("generator")
-meta5.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
+meta5.setName("description")
+meta5.setContent("Tour around a prismatic sphere")
 
 head1.addMeta(meta5)
 meta6 = x3d.meta()
-meta6.setName("identifier")
-meta6.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d")
+meta6.setName("generator")
+meta6.setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta6)
 meta7 = x3d.meta()
-meta7.setName("translated")
-meta7.setContent("13 March 2016")
+meta7.setName("identifier")
+meta7.setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d")
 
 head1.addMeta(meta7)
 meta8 = x3d.meta()
-meta8.setName("generator")
-meta8.setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")
+meta8.setName("translated")
+meta8.setContent("13 March 2016")
 
 head1.addMeta(meta8)
-component9 = x3d.component()
-component9.setName("Scripting")
-component9.setLevel(1)
+meta9 = x3d.meta()
+meta9.setName("generator")
+meta9.setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")
 
-head1.addComponent(component9)
+head1.addMeta(meta9)
 
 X3D0.setHead(head1)
 Scene10 = x3d.Scene()
@@ -236,4 +236,4 @@ Scene10.addChild(ProtoInstance34)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/bubs2.new.graalpy.x3d")
-X3D0.toFileJSON("../data/bubs2.new.graalpy.json")
+X3D0.toFileJSON("../data/bubs2.new.graalpy.x3dj")

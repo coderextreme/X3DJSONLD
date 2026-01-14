@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -20,7 +20,7 @@ meta3.setContent("DonHumanoid.x3d")
 head1.addMeta(meta3)
 meta4 = x3d.meta()
 meta4.setName("identifier")
-meta4.setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d")
+meta4.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/DonHumanoid.x3d")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
@@ -58,11 +58,11 @@ X3D0.setHead(head1)
 Scene11 = x3d.Scene()
 Transform12 = x3d.Transform()
 
-Transform12.addComments(x3d.CommentsBlock('''DEF for markerfor XYZ axes'''))
+Transform12.addComments(x3d.CommentsBlock("""DEF for markerfor XYZ axes"""))
 Shape13 = x3d.Shape()
 Shape13.setDEF("AxisLinesShape")
 
-Shape13.addComments(x3d.CommentsBlock('''RGB lines showing XYZ axes'''))
+Shape13.addComments(x3d.CommentsBlock("""RGB lines showing XYZ axes"""))
 IndexedLineSet14 = x3d.IndexedLineSet()
 IndexedLineSet14.setColorIndex([0,1,2])
 IndexedLineSet14.setColorPerVertex(False)
@@ -83,7 +83,7 @@ Transform12.addChild(Shape13)
 Scene11.addChild(Transform12)
 Group17 = x3d.Group()
 
-Group17.addComments(x3d.CommentsBlock('''DEFS for markers of skeleton joints, segments, and sites'''))
+Group17.addComments(x3d.CommentsBlock("""DEFS for markers of skeleton joints, segments, and sites"""))
 Transform18 = x3d.Transform()
 Transform19 = x3d.Transform()
 Transform19.setTranslation(x3d.doubleToFloat([0,2.1,0]))
@@ -178,9 +178,9 @@ HAnimHumanoid38.setDEF("hanim_HAnim")
 HAnimHumanoid38.setInfo(["humanoidVersion=2.0"])
 HAnimHumanoid38.setVersion("2.0")
 
-HAnimHumanoid38.addComments(x3d.CommentsBlock('''<LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene)'''))
+HAnimHumanoid38.addComments(x3d.CommentsBlock("""<LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene)"""))
 
-HAnimHumanoid38.addComments(x3d.CommentsBlock('''</LOD>'''))
+HAnimHumanoid38.addComments(x3d.CommentsBlock("""</LOD>"""))
 Shape39 = x3d.Shape()
 Shape39.setDEF("SkinShape")
 Shape39.setContainerFieldOverride("skin")
@@ -237,7 +237,7 @@ Transform49 = x3d.Transform()
 Transform49.setTranslation(x3d.doubleToFloat([0,0.824,0.0277]))
 Transform50 = x3d.Transform()
 
-Transform50.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform50.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape51 = x3d.Shape()
 Shape51.setUSE("HAnimJointShape")
 
@@ -254,7 +254,7 @@ Coordinate54.setPoint(x3d.doubleToFloat([0,0.824,0.0277,0,0.9149,0.0016]))
 
 LineSet53.setCoord(Coordinate54)
 
-LineSet53.addComments(x3d.CommentsBlock('''from humanoid_root to sacroiliac vertices 2'''))
+LineSet53.addComments(x3d.CommentsBlock("""from humanoid_root to sacroiliac vertices 2"""))
 ColorRGBA55 = x3d.ColorRGBA()
 ColorRGBA55.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -271,7 +271,7 @@ Coordinate58.setPoint(x3d.doubleToFloat([0,0.824,0.0277,0.0028,1.0568,-0.0776]))
 
 LineSet57.setCoord(Coordinate58)
 
-LineSet57.addComments(x3d.CommentsBlock('''from humanoid_root to vl5 vertices 2'''))
+LineSet57.addComments(x3d.CommentsBlock("""from humanoid_root to vl5 vertices 2"""))
 ColorRGBA59 = x3d.ColorRGBA()
 ColorRGBA59.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -295,7 +295,7 @@ Transform62 = x3d.Transform()
 Transform62.setTranslation(x3d.doubleToFloat([0,0.9149,0.0016]))
 Transform63 = x3d.Transform()
 
-Transform63.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform63.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape64 = x3d.Shape()
 Shape64.setUSE("HAnimJointShape")
 
@@ -312,7 +312,7 @@ Coordinate67.setPoint(x3d.doubleToFloat([0,0.9149,0.0016,0.0961,0.9124,-0.0001])
 
 LineSet66.setCoord(Coordinate67)
 
-LineSet66.addComments(x3d.CommentsBlock('''from sacroiliac to l_hip vertices 2'''))
+LineSet66.addComments(x3d.CommentsBlock("""from sacroiliac to l_hip vertices 2"""))
 ColorRGBA68 = x3d.ColorRGBA()
 ColorRGBA68.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -608,7 +608,7 @@ Coordinate141.setPoint(x3d.doubleToFloat([0,0.9149,0.0016,-0.095,0.9171,0.0029])
 
 LineSet140.setCoord(Coordinate141)
 
-LineSet140.addComments(x3d.CommentsBlock('''from sacroiliac to r_hip vertices 2'''))
+LineSet140.addComments(x3d.CommentsBlock("""from sacroiliac to r_hip vertices 2"""))
 ColorRGBA142 = x3d.ColorRGBA()
 ColorRGBA142.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -632,7 +632,7 @@ Transform145 = x3d.Transform()
 Transform145.setTranslation(x3d.doubleToFloat([0.0961,0.9124,-0.0001]))
 Transform146 = x3d.Transform()
 
-Transform146.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform146.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape147 = x3d.Shape()
 Shape147.setUSE("HAnimJointShape")
 
@@ -649,7 +649,7 @@ Coordinate150.setPoint(x3d.doubleToFloat([0.0961,0.9124,-0.0001,0.104,0.4867,0.0
 
 LineSet149.setCoord(Coordinate150)
 
-LineSet149.addComments(x3d.CommentsBlock('''from l_hip to l_knee vertices 2'''))
+LineSet149.addComments(x3d.CommentsBlock("""from l_hip to l_knee vertices 2"""))
 ColorRGBA151 = x3d.ColorRGBA()
 ColorRGBA151.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -784,7 +784,7 @@ Transform182 = x3d.Transform()
 Transform182.setTranslation(x3d.doubleToFloat([0.104,0.4867,0.0308]))
 Transform183 = x3d.Transform()
 
-Transform183.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform183.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape184 = x3d.Shape()
 Shape184.setUSE("HAnimJointShape")
 
@@ -801,7 +801,7 @@ Coordinate187.setPoint(x3d.doubleToFloat([0.104,0.4867,0.0308,0.1101,0.0656,-0.0
 
 LineSet186.setCoord(Coordinate187)
 
-LineSet186.addComments(x3d.CommentsBlock('''from l_knee to l_talocrural vertices 2'''))
+LineSet186.addComments(x3d.CommentsBlock("""from l_knee to l_talocrural vertices 2"""))
 ColorRGBA188 = x3d.ColorRGBA()
 ColorRGBA188.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -909,10 +909,10 @@ Transform212.setScale(x3d.doubleToFloat([0.15,0.15,0.15]))
 Transform212.setTranslation(x3d.doubleToFloat([0.08,0.06,-0.025]))
 Transform212.setRotation(x3d.doubleToFloat([1,0,0,-1.57]))
 
-Transform212.addComments(x3d.CommentsBlock('''Transform left foot'''))
+Transform212.addComments(x3d.CommentsBlock("""Transform left foot"""))
 Transform213 = x3d.Transform()
 
-Transform213.addComments(x3d.CommentsBlock('''Empty Transform left foot'''))
+Transform213.addComments(x3d.CommentsBlock("""Empty Transform left foot"""))
 Shape214 = x3d.Shape()
 Shape214.setUSE("HAnimJointShape")
 
@@ -929,7 +929,7 @@ Coordinate217.setPoint(x3d.doubleToFloat([0.1101,0.0656,-0.0736,0.0781,0.0283,-0
 
 LineSet216.setCoord(Coordinate217)
 
-LineSet216.addComments(x3d.CommentsBlock('''from l_talocrural to l_talocalcaneonavicular vertices 2'''))
+LineSet216.addComments(x3d.CommentsBlock("""from l_talocrural to l_talocalcaneonavicular vertices 2"""))
 ColorRGBA218 = x3d.ColorRGBA()
 ColorRGBA218.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1002,7 +1002,7 @@ Coordinate235.setPoint(x3d.doubleToFloat([0.1101,0.0656,-0.0736,0.0889,0.0494,-0
 
 LineSet234.setCoord(Coordinate235)
 
-LineSet234.addComments(x3d.CommentsBlock('''from l_talocrural to l_calcaneocuboid vertices 2'''))
+LineSet234.addComments(x3d.CommentsBlock("""from l_talocrural to l_calcaneocuboid vertices 2"""))
 ColorRGBA236 = x3d.ColorRGBA()
 ColorRGBA236.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1026,7 +1026,7 @@ Transform239 = x3d.Transform()
 Transform239.setTranslation(x3d.doubleToFloat([0.0781,0.0283,-0.097]))
 Transform240 = x3d.Transform()
 
-Transform240.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform240.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape241 = x3d.Shape()
 Shape241.setUSE("HAnimJointShape")
 
@@ -1043,7 +1043,7 @@ Coordinate244.setPoint(x3d.doubleToFloat([0.0781,0.0283,-0.097,0.0672,0.0235,-0.
 
 LineSet243.setCoord(Coordinate244)
 
-LineSet243.addComments(x3d.CommentsBlock('''from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2'''))
+LineSet243.addComments(x3d.CommentsBlock("""from l_talocalcaneonavicular to l_cuneonavicular_1 vertices 2"""))
 ColorRGBA245 = x3d.ColorRGBA()
 ColorRGBA245.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1060,7 +1060,7 @@ Coordinate248.setPoint(x3d.doubleToFloat([0.0781,0.0283,-0.097,0.0812,0.025,-0.0
 
 LineSet247.setCoord(Coordinate248)
 
-LineSet247.addComments(x3d.CommentsBlock('''from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2'''))
+LineSet247.addComments(x3d.CommentsBlock("""from l_talocalcaneonavicular to l_cuneonavicular_2 vertices 2"""))
 ColorRGBA249 = x3d.ColorRGBA()
 ColorRGBA249.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1077,7 +1077,7 @@ Coordinate252.setPoint(x3d.doubleToFloat([0.0781,0.0283,-0.097,0.0928,0.0248,-0.
 
 LineSet251.setCoord(Coordinate252)
 
-LineSet251.addComments(x3d.CommentsBlock('''from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2'''))
+LineSet251.addComments(x3d.CommentsBlock("""from l_talocalcaneonavicular to l_cuneonavicular_3 vertices 2"""))
 ColorRGBA253 = x3d.ColorRGBA()
 ColorRGBA253.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1101,7 +1101,7 @@ Transform256 = x3d.Transform()
 Transform256.setTranslation(x3d.doubleToFloat([0.0672,0.0235,-0.0835]))
 Transform257 = x3d.Transform()
 
-Transform257.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform257.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape258 = x3d.Shape()
 Shape258.setUSE("HAnimJointShape")
 
@@ -1118,7 +1118,7 @@ Coordinate261.setPoint(x3d.doubleToFloat([0.0672,0.0235,-0.0835,0.0644,0.0147,-0
 
 LineSet260.setCoord(Coordinate261)
 
-LineSet260.addComments(x3d.CommentsBlock('''from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2'''))
+LineSet260.addComments(x3d.CommentsBlock("""from l_cuneonavicular_1 to l_tarsometatarsal_1 vertices 2"""))
 ColorRGBA262 = x3d.ColorRGBA()
 ColorRGBA262.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1142,7 +1142,7 @@ Transform265 = x3d.Transform()
 Transform265.setTranslation(x3d.doubleToFloat([0.0644,0.0147,-0.0577]))
 Transform266 = x3d.Transform()
 
-Transform266.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform266.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape267 = x3d.Shape()
 Shape267.setUSE("HAnimJointShape")
 
@@ -1159,7 +1159,7 @@ Coordinate270.setPoint(x3d.doubleToFloat([0.0644,0.0147,-0.0577,0.0619,0.0059,-0
 
 LineSet269.setCoord(Coordinate270)
 
-LineSet269.addComments(x3d.CommentsBlock('''from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2'''))
+LineSet269.addComments(x3d.CommentsBlock("""from l_tarsometatarsal_1 to l_metatarsophalangeal_1 vertices 2"""))
 ColorRGBA271 = x3d.ColorRGBA()
 ColorRGBA271.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1183,7 +1183,7 @@ Transform274 = x3d.Transform()
 Transform274.setTranslation(x3d.doubleToFloat([0.0619,0.0059,-0.0083]))
 Transform275 = x3d.Transform()
 
-Transform275.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform275.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape276 = x3d.Shape()
 Shape276.setUSE("HAnimJointShape")
 
@@ -1200,7 +1200,7 @@ Coordinate279.setPoint(x3d.doubleToFloat([0.0619,0.0059,-0.0083,0.0619,0.0059,-0
 
 LineSet278.setCoord(Coordinate279)
 
-LineSet278.addComments(x3d.CommentsBlock('''from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2'''))
+LineSet278.addComments(x3d.CommentsBlock("""from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 vertices 2"""))
 ColorRGBA280 = x3d.ColorRGBA()
 ColorRGBA280.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1264,7 +1264,7 @@ Transform291 = x3d.Transform()
 Transform291.setTranslation(x3d.doubleToFloat([0.0812,0.025,-0.0805]))
 Transform292 = x3d.Transform()
 
-Transform292.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform292.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape293 = x3d.Shape()
 Shape293.setUSE("HAnimJointShape")
 
@@ -1281,7 +1281,7 @@ Coordinate296.setPoint(x3d.doubleToFloat([0.0812,0.025,-0.0805,0.08,0.0175,-0.06
 
 LineSet295.setCoord(Coordinate296)
 
-LineSet295.addComments(x3d.CommentsBlock('''from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2'''))
+LineSet295.addComments(x3d.CommentsBlock("""from l_cuneonavicular_2 to l_tarsometatarsal_2 vertices 2"""))
 ColorRGBA297 = x3d.ColorRGBA()
 ColorRGBA297.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1305,7 +1305,7 @@ Transform300 = x3d.Transform()
 Transform300.setTranslation(x3d.doubleToFloat([0.08,0.0175,-0.0608]))
 Transform301 = x3d.Transform()
 
-Transform301.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform301.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape302 = x3d.Shape()
 Shape302.setUSE("HAnimJointShape")
 
@@ -1322,7 +1322,7 @@ Coordinate305.setPoint(x3d.doubleToFloat([0.08,0.0175,-0.0608,0.0824,0.0064,-0.0
 
 LineSet304.setCoord(Coordinate305)
 
-LineSet304.addComments(x3d.CommentsBlock('''from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2'''))
+LineSet304.addComments(x3d.CommentsBlock("""from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2"""))
 ColorRGBA306 = x3d.ColorRGBA()
 ColorRGBA306.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1346,7 +1346,7 @@ Transform309 = x3d.Transform()
 Transform309.setTranslation(x3d.doubleToFloat([0.0824,0.0064,-0.004]))
 Transform310 = x3d.Transform()
 
-Transform310.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform310.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape311 = x3d.Shape()
 Shape311.setUSE("HAnimJointShape")
 
@@ -1363,7 +1363,7 @@ Coordinate314.setPoint(x3d.doubleToFloat([0.0824,0.0064,-0.004,0.0841,0.0041,0.0
 
 LineSet313.setCoord(Coordinate314)
 
-LineSet313.addComments(x3d.CommentsBlock('''from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2'''))
+LineSet313.addComments(x3d.CommentsBlock("""from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 vertices 2"""))
 ColorRGBA315 = x3d.ColorRGBA()
 ColorRGBA315.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1387,7 +1387,7 @@ Transform318 = x3d.Transform()
 Transform318.setTranslation(x3d.doubleToFloat([0.0841,0.0041,0.0121]))
 Transform319 = x3d.Transform()
 
-Transform319.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform319.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape320 = x3d.Shape()
 Shape320.setUSE("HAnimJointShape")
 
@@ -1404,7 +1404,7 @@ Coordinate323.setPoint(x3d.doubleToFloat([0.0841,0.0041,0.0121,0.0841,0.0013,0.0
 
 LineSet322.setCoord(Coordinate323)
 
-LineSet322.addComments(x3d.CommentsBlock('''from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2'''))
+LineSet322.addComments(x3d.CommentsBlock("""from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 vertices 2"""))
 ColorRGBA324 = x3d.ColorRGBA()
 ColorRGBA324.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1444,7 +1444,7 @@ Transform328 = x3d.Transform()
 Transform328.setTranslation(x3d.doubleToFloat([0.0928,0.0248,-0.0821]))
 Transform329 = x3d.Transform()
 
-Transform329.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform329.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape330 = x3d.Shape()
 Shape330.setUSE("HAnimJointShape")
 
@@ -1461,7 +1461,7 @@ Coordinate333.setPoint(x3d.doubleToFloat([0.0928,0.0248,-0.0821,0.0944,0.0175,-0
 
 LineSet332.setCoord(Coordinate333)
 
-LineSet332.addComments(x3d.CommentsBlock('''from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2'''))
+LineSet332.addComments(x3d.CommentsBlock("""from l_cuneonavicular_3 to l_tarsometatarsal_3 vertices 2"""))
 ColorRGBA334 = x3d.ColorRGBA()
 ColorRGBA334.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1485,7 +1485,7 @@ Transform337 = x3d.Transform()
 Transform337.setTranslation(x3d.doubleToFloat([0.0944,0.0175,-0.0625]))
 Transform338 = x3d.Transform()
 
-Transform338.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform338.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape339 = x3d.Shape()
 Shape339.setUSE("HAnimJointShape")
 
@@ -1502,7 +1502,7 @@ Coordinate342.setPoint(x3d.doubleToFloat([0.0944,0.0175,-0.0625,0.0963,0.0065,-0
 
 LineSet341.setCoord(Coordinate342)
 
-LineSet341.addComments(x3d.CommentsBlock('''from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 2'''))
+LineSet341.addComments(x3d.CommentsBlock("""from l_tarsometatarsal_3 to l_metatarsophalangeal_3 vertices 2"""))
 ColorRGBA343 = x3d.ColorRGBA()
 ColorRGBA343.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1526,7 +1526,7 @@ Transform346 = x3d.Transform()
 Transform346.setTranslation(x3d.doubleToFloat([0.0963,0.0065,-0.0065]))
 Transform347 = x3d.Transform()
 
-Transform347.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform347.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape348 = x3d.Shape()
 Shape348.setUSE("HAnimJointShape")
 
@@ -1543,7 +1543,7 @@ Coordinate351.setPoint(x3d.doubleToFloat([0.0963,0.0065,-0.0065,0.0987,0.0034,0.
 
 LineSet350.setCoord(Coordinate351)
 
-LineSet350.addComments(x3d.CommentsBlock('''from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2'''))
+LineSet350.addComments(x3d.CommentsBlock("""from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 vertices 2"""))
 ColorRGBA352 = x3d.ColorRGBA()
 ColorRGBA352.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1567,7 +1567,7 @@ Transform355 = x3d.Transform()
 Transform355.setTranslation(x3d.doubleToFloat([0.0987,0.0034,0.0086]))
 Transform356 = x3d.Transform()
 
-Transform356.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform356.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape357 = x3d.Shape()
 Shape357.setUSE("HAnimJointShape")
 
@@ -1584,7 +1584,7 @@ Coordinate360.setPoint(x3d.doubleToFloat([0.0987,0.0034,0.0086,0.1002,0.0013,0.0
 
 LineSet359.setCoord(Coordinate360)
 
-LineSet359.addComments(x3d.CommentsBlock('''from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2'''))
+LineSet359.addComments(x3d.CommentsBlock("""from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 vertices 2"""))
 ColorRGBA361 = x3d.ColorRGBA()
 ColorRGBA361.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1626,7 +1626,7 @@ Transform365 = x3d.Transform()
 Transform365.setTranslation(x3d.doubleToFloat([0.0889,0.0494,-0.1278]))
 Transform366 = x3d.Transform()
 
-Transform366.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform366.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape367 = x3d.Shape()
 Shape367.setUSE("HAnimJointShape")
 
@@ -1643,7 +1643,7 @@ Coordinate370.setPoint(x3d.doubleToFloat([0.0889,0.0494,-0.1278,0.1105,0.0267,-0
 
 LineSet369.setCoord(Coordinate370)
 
-LineSet369.addComments(x3d.CommentsBlock('''from l_calcaneocuboid to l_transversetarsal vertices 2'''))
+LineSet369.addComments(x3d.CommentsBlock("""from l_calcaneocuboid to l_transversetarsal vertices 2"""))
 ColorRGBA371 = x3d.ColorRGBA()
 ColorRGBA371.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1667,7 +1667,7 @@ Transform374 = x3d.Transform()
 Transform374.setTranslation(x3d.doubleToFloat([0.1105,0.0267,-0.0998]))
 Transform375 = x3d.Transform()
 
-Transform375.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform375.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape376 = x3d.Shape()
 Shape376.setUSE("HAnimJointShape")
 
@@ -1684,7 +1684,7 @@ Coordinate379.setPoint(x3d.doubleToFloat([0.1105,0.0267,-0.0998,0.1063,0.016,-0.
 
 LineSet378.setCoord(Coordinate379)
 
-LineSet378.addComments(x3d.CommentsBlock('''from l_transversetarsal to l_tarsometatarsal_4 vertices 2'''))
+LineSet378.addComments(x3d.CommentsBlock("""from l_transversetarsal to l_tarsometatarsal_4 vertices 2"""))
 ColorRGBA380 = x3d.ColorRGBA()
 ColorRGBA380.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1701,7 +1701,7 @@ Coordinate383.setPoint(x3d.doubleToFloat([0.1105,0.0267,-0.0998,0.1206,0.0124,-0
 
 LineSet382.setCoord(Coordinate383)
 
-LineSet382.addComments(x3d.CommentsBlock('''from l_transversetarsal to l_tarsometatarsal_5 vertices 2'''))
+LineSet382.addComments(x3d.CommentsBlock("""from l_transversetarsal to l_tarsometatarsal_5 vertices 2"""))
 ColorRGBA384 = x3d.ColorRGBA()
 ColorRGBA384.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1725,7 +1725,7 @@ Transform387 = x3d.Transform()
 Transform387.setTranslation(x3d.doubleToFloat([0.1063,0.016,-0.0634]))
 Transform388 = x3d.Transform()
 
-Transform388.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform388.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape389 = x3d.Shape()
 Shape389.setUSE("HAnimJointShape")
 
@@ -1742,7 +1742,7 @@ Coordinate392.setPoint(x3d.doubleToFloat([0.1063,0.016,-0.0634,0.1097,0.0058,-0.
 
 LineSet391.setCoord(Coordinate392)
 
-LineSet391.addComments(x3d.CommentsBlock('''from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2'''))
+LineSet391.addComments(x3d.CommentsBlock("""from l_tarsometatarsal_4 to l_metatarsophalangeal_4 vertices 2"""))
 ColorRGBA393 = x3d.ColorRGBA()
 ColorRGBA393.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1766,7 +1766,7 @@ Transform396 = x3d.Transform()
 Transform396.setTranslation(x3d.doubleToFloat([0.1097,0.0058,-0.0107]))
 Transform397 = x3d.Transform()
 
-Transform397.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform397.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape398 = x3d.Shape()
 Shape398.setUSE("HAnimJointShape")
 
@@ -1783,7 +1783,7 @@ Coordinate401.setPoint(x3d.doubleToFloat([0.1097,0.0058,-0.0107,0.114,0.0037,0.0
 
 LineSet400.setCoord(Coordinate401)
 
-LineSet400.addComments(x3d.CommentsBlock('''from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2'''))
+LineSet400.addComments(x3d.CommentsBlock("""from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 vertices 2"""))
 ColorRGBA402 = x3d.ColorRGBA()
 ColorRGBA402.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1807,7 +1807,7 @@ Transform405 = x3d.Transform()
 Transform405.setTranslation(x3d.doubleToFloat([0.114,0.0037,0.0044]))
 Transform406 = x3d.Transform()
 
-Transform406.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform406.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape407 = x3d.Shape()
 Shape407.setUSE("HAnimJointShape")
 
@@ -1824,7 +1824,7 @@ Coordinate410.setPoint(x3d.doubleToFloat([0.114,0.0037,0.0044,0.1155,0.0008,0.01
 
 LineSet409.setCoord(Coordinate410)
 
-LineSet409.addComments(x3d.CommentsBlock('''from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2'''))
+LineSet409.addComments(x3d.CommentsBlock("""from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 vertices 2"""))
 ColorRGBA411 = x3d.ColorRGBA()
 ColorRGBA411.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1862,7 +1862,7 @@ Transform415 = x3d.Transform()
 Transform415.setTranslation(x3d.doubleToFloat([0.1206,0.0124,-0.0671]))
 Transform416 = x3d.Transform()
 
-Transform416.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform416.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape417 = x3d.Shape()
 Shape417.setUSE("HAnimJointShape")
 
@@ -1879,7 +1879,7 @@ Coordinate420.setPoint(x3d.doubleToFloat([0.1206,0.0124,-0.0671,0.1239,0.0051,-0
 
 LineSet419.setCoord(Coordinate420)
 
-LineSet419.addComments(x3d.CommentsBlock('''from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2'''))
+LineSet419.addComments(x3d.CommentsBlock("""from l_tarsometatarsal_5 to l_metatarsophalangeal_5 vertices 2"""))
 ColorRGBA421 = x3d.ColorRGBA()
 ColorRGBA421.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1903,7 +1903,7 @@ Transform424 = x3d.Transform()
 Transform424.setTranslation(x3d.doubleToFloat([0.1239,0.0051,-0.0153]))
 Transform425 = x3d.Transform()
 
-Transform425.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform425.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape426 = x3d.Shape()
 Shape426.setUSE("HAnimJointShape")
 
@@ -1920,7 +1920,7 @@ Coordinate429.setPoint(x3d.doubleToFloat([0.1239,0.0051,-0.0153,0.1262,0.0023,-0
 
 LineSet428.setCoord(Coordinate429)
 
-LineSet428.addComments(x3d.CommentsBlock('''from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2'''))
+LineSet428.addComments(x3d.CommentsBlock("""from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 vertices 2"""))
 ColorRGBA430 = x3d.ColorRGBA()
 ColorRGBA430.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1971,7 +1971,7 @@ Transform440 = x3d.Transform()
 Transform440.setTranslation(x3d.doubleToFloat([0.1262,0.0023,-0.0077]))
 Transform441 = x3d.Transform()
 
-Transform441.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform441.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape442 = x3d.Shape()
 Shape442.setUSE("HAnimJointShape")
 
@@ -1988,7 +1988,7 @@ Coordinate445.setPoint(x3d.doubleToFloat([0.1262,0.0023,-0.0077,0.1271,0,0]))
 
 LineSet444.setCoord(Coordinate445)
 
-LineSet444.addComments(x3d.CommentsBlock('''from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2'''))
+LineSet444.addComments(x3d.CommentsBlock("""from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 vertices 2"""))
 ColorRGBA446 = x3d.ColorRGBA()
 ColorRGBA446.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2036,7 +2036,7 @@ Transform450 = x3d.Transform()
 Transform450.setTranslation(x3d.doubleToFloat([-0.095,0.9171,0.0029]))
 Transform451 = x3d.Transform()
 
-Transform451.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform451.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape452 = x3d.Shape()
 Shape452.setUSE("HAnimJointShape")
 
@@ -2053,7 +2053,7 @@ Coordinate455.setPoint(x3d.doubleToFloat([-0.095,0.9171,0.0029,-0.0867,0.4913,0.
 
 LineSet454.setCoord(Coordinate455)
 
-LineSet454.addComments(x3d.CommentsBlock('''from r_hip to r_knee vertices 2'''))
+LineSet454.addComments(x3d.CommentsBlock("""from r_hip to r_knee vertices 2"""))
 ColorRGBA456 = x3d.ColorRGBA()
 ColorRGBA456.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2188,7 +2188,7 @@ Transform487 = x3d.Transform()
 Transform487.setTranslation(x3d.doubleToFloat([-0.0867,0.4913,0.0318]))
 Transform488 = x3d.Transform()
 
-Transform488.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform488.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape489 = x3d.Shape()
 Shape489.setUSE("HAnimJointShape")
 
@@ -2205,7 +2205,7 @@ Coordinate492.setPoint(x3d.doubleToFloat([-0.0867,0.4913,0.0318,-0.0801,0.0712,-
 
 LineSet491.setCoord(Coordinate492)
 
-LineSet491.addComments(x3d.CommentsBlock('''from r_knee to r_talocrural vertices 2'''))
+LineSet491.addComments(x3d.CommentsBlock("""from r_knee to r_talocrural vertices 2"""))
 ColorRGBA493 = x3d.ColorRGBA()
 ColorRGBA493.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2313,10 +2313,10 @@ Transform517.setScale(x3d.doubleToFloat([0.15,0.15,0.15]))
 Transform517.setTranslation(x3d.doubleToFloat([-0.05,0.06,-0.025]))
 Transform517.setRotation(x3d.doubleToFloat([1,0,0,-1.57]))
 
-Transform517.addComments(x3d.CommentsBlock('''Transform right foot'''))
+Transform517.addComments(x3d.CommentsBlock("""Transform right foot"""))
 Transform518 = x3d.Transform()
 
-Transform518.addComments(x3d.CommentsBlock('''Empty Transform right foot'''))
+Transform518.addComments(x3d.CommentsBlock("""Empty Transform right foot"""))
 Shape519 = x3d.Shape()
 Shape519.setUSE("HAnimJointShape")
 
@@ -2333,7 +2333,7 @@ Coordinate522.setPoint(x3d.doubleToFloat([-0.0801,0.0712,-0.0766,-0.0781,0.0283,
 
 LineSet521.setCoord(Coordinate522)
 
-LineSet521.addComments(x3d.CommentsBlock('''from r_talocrural to r_talocalcaneonavicular vertices 2'''))
+LineSet521.addComments(x3d.CommentsBlock("""from r_talocrural to r_talocalcaneonavicular vertices 2"""))
 ColorRGBA523 = x3d.ColorRGBA()
 ColorRGBA523.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2406,7 +2406,7 @@ Coordinate540.setPoint(x3d.doubleToFloat([-0.0801,0.0712,-0.0766,-0.0889,0.0494,
 
 LineSet539.setCoord(Coordinate540)
 
-LineSet539.addComments(x3d.CommentsBlock('''from r_talocrural to r_calcaneocuboid vertices 2'''))
+LineSet539.addComments(x3d.CommentsBlock("""from r_talocrural to r_calcaneocuboid vertices 2"""))
 ColorRGBA541 = x3d.ColorRGBA()
 ColorRGBA541.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2430,7 +2430,7 @@ Transform544 = x3d.Transform()
 Transform544.setTranslation(x3d.doubleToFloat([-0.0781,0.0283,-0.097]))
 Transform545 = x3d.Transform()
 
-Transform545.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform545.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape546 = x3d.Shape()
 Shape546.setUSE("HAnimJointShape")
 
@@ -2447,7 +2447,7 @@ Coordinate549.setPoint(x3d.doubleToFloat([-0.0781,0.0283,-0.097,-0.0672,0.0235,-
 
 LineSet548.setCoord(Coordinate549)
 
-LineSet548.addComments(x3d.CommentsBlock('''from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2'''))
+LineSet548.addComments(x3d.CommentsBlock("""from r_talocalcaneonavicular to r_cuneonavicular_1 vertices 2"""))
 ColorRGBA550 = x3d.ColorRGBA()
 ColorRGBA550.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2464,7 +2464,7 @@ Coordinate553.setPoint(x3d.doubleToFloat([-0.0781,0.0283,-0.097,-0.0812,0.025,-0
 
 LineSet552.setCoord(Coordinate553)
 
-LineSet552.addComments(x3d.CommentsBlock('''from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2'''))
+LineSet552.addComments(x3d.CommentsBlock("""from r_talocalcaneonavicular to r_cuneonavicular_2 vertices 2"""))
 ColorRGBA554 = x3d.ColorRGBA()
 ColorRGBA554.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2481,7 +2481,7 @@ Coordinate557.setPoint(x3d.doubleToFloat([-0.0781,0.0283,-0.097,-0.0928,0.0248,-
 
 LineSet556.setCoord(Coordinate557)
 
-LineSet556.addComments(x3d.CommentsBlock('''from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2'''))
+LineSet556.addComments(x3d.CommentsBlock("""from r_talocalcaneonavicular to r_cuneonavicular_3 vertices 2"""))
 ColorRGBA558 = x3d.ColorRGBA()
 ColorRGBA558.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2505,7 +2505,7 @@ Transform561 = x3d.Transform()
 Transform561.setTranslation(x3d.doubleToFloat([-0.0672,0.0235,-0.0835]))
 Transform562 = x3d.Transform()
 
-Transform562.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform562.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape563 = x3d.Shape()
 Shape563.setUSE("HAnimJointShape")
 
@@ -2522,7 +2522,7 @@ Coordinate566.setPoint(x3d.doubleToFloat([-0.0672,0.0235,-0.0835,-0.0644,0.0147,
 
 LineSet565.setCoord(Coordinate566)
 
-LineSet565.addComments(x3d.CommentsBlock('''from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2'''))
+LineSet565.addComments(x3d.CommentsBlock("""from r_cuneonavicular_1 to r_tarsometatarsal_1 vertices 2"""))
 ColorRGBA567 = x3d.ColorRGBA()
 ColorRGBA567.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2546,7 +2546,7 @@ Transform570 = x3d.Transform()
 Transform570.setTranslation(x3d.doubleToFloat([-0.0644,0.0147,-0.0577]))
 Transform571 = x3d.Transform()
 
-Transform571.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform571.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape572 = x3d.Shape()
 Shape572.setUSE("HAnimJointShape")
 
@@ -2563,7 +2563,7 @@ Coordinate575.setPoint(x3d.doubleToFloat([-0.0644,0.0147,-0.0577,-0.0619,0.0059,
 
 LineSet574.setCoord(Coordinate575)
 
-LineSet574.addComments(x3d.CommentsBlock('''from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2'''))
+LineSet574.addComments(x3d.CommentsBlock("""from r_tarsometatarsal_1 to r_metatarsophalangeal_1 vertices 2"""))
 ColorRGBA576 = x3d.ColorRGBA()
 ColorRGBA576.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2587,7 +2587,7 @@ Transform579 = x3d.Transform()
 Transform579.setTranslation(x3d.doubleToFloat([-0.0619,0.0059,-0.0083]))
 Transform580 = x3d.Transform()
 
-Transform580.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform580.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape581 = x3d.Shape()
 Shape581.setUSE("HAnimJointShape")
 
@@ -2604,7 +2604,7 @@ Coordinate584.setPoint(x3d.doubleToFloat([-0.0619,0.0059,-0.0083,-0.0619,0.0059,
 
 LineSet583.setCoord(Coordinate584)
 
-LineSet583.addComments(x3d.CommentsBlock('''from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2'''))
+LineSet583.addComments(x3d.CommentsBlock("""from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 vertices 2"""))
 ColorRGBA585 = x3d.ColorRGBA()
 ColorRGBA585.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2668,7 +2668,7 @@ Transform596 = x3d.Transform()
 Transform596.setTranslation(x3d.doubleToFloat([-0.0812,0.025,-0.0805]))
 Transform597 = x3d.Transform()
 
-Transform597.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform597.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape598 = x3d.Shape()
 Shape598.setUSE("HAnimJointShape")
 
@@ -2685,7 +2685,7 @@ Coordinate601.setPoint(x3d.doubleToFloat([-0.0812,0.025,-0.0805,-0.08,0.0175,-0.
 
 LineSet600.setCoord(Coordinate601)
 
-LineSet600.addComments(x3d.CommentsBlock('''from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2'''))
+LineSet600.addComments(x3d.CommentsBlock("""from r_cuneonavicular_2 to r_tarsometatarsal_2 vertices 2"""))
 ColorRGBA602 = x3d.ColorRGBA()
 ColorRGBA602.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2709,7 +2709,7 @@ Transform605 = x3d.Transform()
 Transform605.setTranslation(x3d.doubleToFloat([-0.08,0.0175,-0.0608]))
 Transform606 = x3d.Transform()
 
-Transform606.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform606.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape607 = x3d.Shape()
 Shape607.setUSE("HAnimJointShape")
 
@@ -2726,7 +2726,7 @@ Coordinate610.setPoint(x3d.doubleToFloat([-0.08,0.0175,-0.0608,-0.0823,0.0064,-0
 
 LineSet609.setCoord(Coordinate610)
 
-LineSet609.addComments(x3d.CommentsBlock('''from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2'''))
+LineSet609.addComments(x3d.CommentsBlock("""from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2"""))
 ColorRGBA611 = x3d.ColorRGBA()
 ColorRGBA611.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2750,7 +2750,7 @@ Transform614 = x3d.Transform()
 Transform614.setTranslation(x3d.doubleToFloat([-0.0823,0.0064,-0.004]))
 Transform615 = x3d.Transform()
 
-Transform615.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform615.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape616 = x3d.Shape()
 Shape616.setUSE("HAnimJointShape")
 
@@ -2767,7 +2767,7 @@ Coordinate619.setPoint(x3d.doubleToFloat([-0.0823,0.0064,-0.004,-0.0841,0.0041,0
 
 LineSet618.setCoord(Coordinate619)
 
-LineSet618.addComments(x3d.CommentsBlock('''from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2'''))
+LineSet618.addComments(x3d.CommentsBlock("""from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 vertices 2"""))
 ColorRGBA620 = x3d.ColorRGBA()
 ColorRGBA620.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2791,7 +2791,7 @@ Transform623 = x3d.Transform()
 Transform623.setTranslation(x3d.doubleToFloat([-0.0841,0.0041,0.0121]))
 Transform624 = x3d.Transform()
 
-Transform624.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform624.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape625 = x3d.Shape()
 Shape625.setUSE("HAnimJointShape")
 
@@ -2808,7 +2808,7 @@ Coordinate628.setPoint(x3d.doubleToFloat([-0.0841,0.0041,0.0121,-0.0841,0.0013,0
 
 LineSet627.setCoord(Coordinate628)
 
-LineSet627.addComments(x3d.CommentsBlock('''from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2'''))
+LineSet627.addComments(x3d.CommentsBlock("""from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 vertices 2"""))
 ColorRGBA629 = x3d.ColorRGBA()
 ColorRGBA629.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2848,7 +2848,7 @@ Transform633 = x3d.Transform()
 Transform633.setTranslation(x3d.doubleToFloat([-0.0928,0.0248,-0.0821]))
 Transform634 = x3d.Transform()
 
-Transform634.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform634.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape635 = x3d.Shape()
 Shape635.setUSE("HAnimJointShape")
 
@@ -2865,7 +2865,7 @@ Coordinate638.setPoint(x3d.doubleToFloat([-0.0928,0.0248,-0.0821,-0.0944,0.0175,
 
 LineSet637.setCoord(Coordinate638)
 
-LineSet637.addComments(x3d.CommentsBlock('''from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2'''))
+LineSet637.addComments(x3d.CommentsBlock("""from r_cuneonavicular_3 to r_tarsometatarsal_3 vertices 2"""))
 ColorRGBA639 = x3d.ColorRGBA()
 ColorRGBA639.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2889,7 +2889,7 @@ Transform642 = x3d.Transform()
 Transform642.setTranslation(x3d.doubleToFloat([-0.0944,0.0175,-0.0625]))
 Transform643 = x3d.Transform()
 
-Transform643.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform643.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape644 = x3d.Shape()
 Shape644.setUSE("HAnimJointShape")
 
@@ -2906,7 +2906,7 @@ Coordinate647.setPoint(x3d.doubleToFloat([-0.0944,0.0175,-0.0625,-0.0963,0.0065,
 
 LineSet646.setCoord(Coordinate647)
 
-LineSet646.addComments(x3d.CommentsBlock('''from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 2'''))
+LineSet646.addComments(x3d.CommentsBlock("""from r_tarsometatarsal_3 to r_metatarsophalangeal_3 vertices 2"""))
 ColorRGBA648 = x3d.ColorRGBA()
 ColorRGBA648.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2930,7 +2930,7 @@ Transform651 = x3d.Transform()
 Transform651.setTranslation(x3d.doubleToFloat([-0.0963,0.0065,-0.0065]))
 Transform652 = x3d.Transform()
 
-Transform652.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform652.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape653 = x3d.Shape()
 Shape653.setUSE("HAnimJointShape")
 
@@ -2947,7 +2947,7 @@ Coordinate656.setPoint(x3d.doubleToFloat([-0.0963,0.0065,-0.0065,-0.0987,0.0034,
 
 LineSet655.setCoord(Coordinate656)
 
-LineSet655.addComments(x3d.CommentsBlock('''from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2'''))
+LineSet655.addComments(x3d.CommentsBlock("""from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 vertices 2"""))
 ColorRGBA657 = x3d.ColorRGBA()
 ColorRGBA657.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2971,7 +2971,7 @@ Transform660 = x3d.Transform()
 Transform660.setTranslation(x3d.doubleToFloat([-0.0987,0.0034,0.0086]))
 Transform661 = x3d.Transform()
 
-Transform661.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform661.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape662 = x3d.Shape()
 Shape662.setUSE("HAnimJointShape")
 
@@ -2988,7 +2988,7 @@ Coordinate665.setPoint(x3d.doubleToFloat([-0.0987,0.0034,0.0086,-0.1002,0.0013,0
 
 LineSet664.setCoord(Coordinate665)
 
-LineSet664.addComments(x3d.CommentsBlock('''from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2'''))
+LineSet664.addComments(x3d.CommentsBlock("""from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 vertices 2"""))
 ColorRGBA666 = x3d.ColorRGBA()
 ColorRGBA666.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3030,7 +3030,7 @@ Transform670 = x3d.Transform()
 Transform670.setTranslation(x3d.doubleToFloat([-0.0889,0.0494,-0.1278]))
 Transform671 = x3d.Transform()
 
-Transform671.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform671.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape672 = x3d.Shape()
 Shape672.setUSE("HAnimJointShape")
 
@@ -3047,7 +3047,7 @@ Coordinate675.setPoint(x3d.doubleToFloat([-0.0889,0.0494,-0.1278,-0.1105,0.0267,
 
 LineSet674.setCoord(Coordinate675)
 
-LineSet674.addComments(x3d.CommentsBlock('''from r_calcaneocuboid to r_transversetarsal vertices 2'''))
+LineSet674.addComments(x3d.CommentsBlock("""from r_calcaneocuboid to r_transversetarsal vertices 2"""))
 ColorRGBA676 = x3d.ColorRGBA()
 ColorRGBA676.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3071,7 +3071,7 @@ Transform679 = x3d.Transform()
 Transform679.setTranslation(x3d.doubleToFloat([-0.1105,0.0267,-0.0998]))
 Transform680 = x3d.Transform()
 
-Transform680.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform680.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape681 = x3d.Shape()
 Shape681.setUSE("HAnimJointShape")
 
@@ -3088,7 +3088,7 @@ Coordinate684.setPoint(x3d.doubleToFloat([-0.1105,0.0267,-0.0998,-0.1063,0.016,-
 
 LineSet683.setCoord(Coordinate684)
 
-LineSet683.addComments(x3d.CommentsBlock('''from r_transversetarsal to r_tarsometatarsal_4 vertices 2'''))
+LineSet683.addComments(x3d.CommentsBlock("""from r_transversetarsal to r_tarsometatarsal_4 vertices 2"""))
 ColorRGBA685 = x3d.ColorRGBA()
 ColorRGBA685.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3105,7 +3105,7 @@ Coordinate688.setPoint(x3d.doubleToFloat([-0.1105,0.0267,-0.0998,-0.1206,0.0124,
 
 LineSet687.setCoord(Coordinate688)
 
-LineSet687.addComments(x3d.CommentsBlock('''from r_transversetarsal to r_tarsometatarsal_5 vertices 2'''))
+LineSet687.addComments(x3d.CommentsBlock("""from r_transversetarsal to r_tarsometatarsal_5 vertices 2"""))
 ColorRGBA689 = x3d.ColorRGBA()
 ColorRGBA689.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3129,7 +3129,7 @@ Transform692 = x3d.Transform()
 Transform692.setTranslation(x3d.doubleToFloat([-0.1063,0.016,-0.0634]))
 Transform693 = x3d.Transform()
 
-Transform693.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform693.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape694 = x3d.Shape()
 Shape694.setUSE("HAnimJointShape")
 
@@ -3146,7 +3146,7 @@ Coordinate697.setPoint(x3d.doubleToFloat([-0.1063,0.016,-0.0634,-0.1097,0.0058,-
 
 LineSet696.setCoord(Coordinate697)
 
-LineSet696.addComments(x3d.CommentsBlock('''from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2'''))
+LineSet696.addComments(x3d.CommentsBlock("""from r_tarsometatarsal_4 to r_metatarsophalangeal_4 vertices 2"""))
 ColorRGBA698 = x3d.ColorRGBA()
 ColorRGBA698.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3170,7 +3170,7 @@ Transform701 = x3d.Transform()
 Transform701.setTranslation(x3d.doubleToFloat([-0.1097,0.0058,-0.0107]))
 Transform702 = x3d.Transform()
 
-Transform702.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform702.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape703 = x3d.Shape()
 Shape703.setUSE("HAnimJointShape")
 
@@ -3187,7 +3187,7 @@ Coordinate706.setPoint(x3d.doubleToFloat([-0.1097,0.0058,-0.0107,-0.114,0.0037,0
 
 LineSet705.setCoord(Coordinate706)
 
-LineSet705.addComments(x3d.CommentsBlock('''from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2'''))
+LineSet705.addComments(x3d.CommentsBlock("""from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 vertices 2"""))
 ColorRGBA707 = x3d.ColorRGBA()
 ColorRGBA707.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3211,7 +3211,7 @@ Transform710 = x3d.Transform()
 Transform710.setTranslation(x3d.doubleToFloat([-0.114,0.0037,0.0044]))
 Transform711 = x3d.Transform()
 
-Transform711.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform711.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape712 = x3d.Shape()
 Shape712.setUSE("HAnimJointShape")
 
@@ -3228,7 +3228,7 @@ Coordinate715.setPoint(x3d.doubleToFloat([-0.114,0.0037,0.0044,-0.1155,0.0008,0.
 
 LineSet714.setCoord(Coordinate715)
 
-LineSet714.addComments(x3d.CommentsBlock('''from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2'''))
+LineSet714.addComments(x3d.CommentsBlock("""from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 vertices 2"""))
 ColorRGBA716 = x3d.ColorRGBA()
 ColorRGBA716.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3266,7 +3266,7 @@ Transform720 = x3d.Transform()
 Transform720.setTranslation(x3d.doubleToFloat([-0.1206,0.0124,-0.0671]))
 Transform721 = x3d.Transform()
 
-Transform721.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform721.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape722 = x3d.Shape()
 Shape722.setUSE("HAnimJointShape")
 
@@ -3283,7 +3283,7 @@ Coordinate725.setPoint(x3d.doubleToFloat([-0.1206,0.0124,-0.0671,-0.1239,0.0051,
 
 LineSet724.setCoord(Coordinate725)
 
-LineSet724.addComments(x3d.CommentsBlock('''from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2'''))
+LineSet724.addComments(x3d.CommentsBlock("""from r_tarsometatarsal_5 to r_metatarsophalangeal_5 vertices 2"""))
 ColorRGBA726 = x3d.ColorRGBA()
 ColorRGBA726.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3307,7 +3307,7 @@ Transform729 = x3d.Transform()
 Transform729.setTranslation(x3d.doubleToFloat([-0.1239,0.0051,-0.0153]))
 Transform730 = x3d.Transform()
 
-Transform730.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform730.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape731 = x3d.Shape()
 Shape731.setUSE("HAnimJointShape")
 
@@ -3324,7 +3324,7 @@ Coordinate734.setPoint(x3d.doubleToFloat([-0.1239,0.0051,-0.0153,-0.1262,0.0023,
 
 LineSet733.setCoord(Coordinate734)
 
-LineSet733.addComments(x3d.CommentsBlock('''from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2'''))
+LineSet733.addComments(x3d.CommentsBlock("""from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 vertices 2"""))
 ColorRGBA735 = x3d.ColorRGBA()
 ColorRGBA735.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3375,7 +3375,7 @@ Transform745 = x3d.Transform()
 Transform745.setTranslation(x3d.doubleToFloat([-0.1262,0.0023,-0.0077]))
 Transform746 = x3d.Transform()
 
-Transform746.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform746.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape747 = x3d.Shape()
 Shape747.setUSE("HAnimJointShape")
 
@@ -3392,7 +3392,7 @@ Coordinate750.setPoint(x3d.doubleToFloat([-0.1262,0.0023,-0.0077,-0.1271,0,0]))
 
 LineSet749.setCoord(Coordinate750)
 
-LineSet749.addComments(x3d.CommentsBlock('''from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2'''))
+LineSet749.addComments(x3d.CommentsBlock("""from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 vertices 2"""))
 ColorRGBA751 = x3d.ColorRGBA()
 ColorRGBA751.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3442,7 +3442,7 @@ Transform755 = x3d.Transform()
 Transform755.setTranslation(x3d.doubleToFloat([0.0028,1.0568,-0.0776]))
 Transform756 = x3d.Transform()
 
-Transform756.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform756.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape757 = x3d.Shape()
 Shape757.setUSE("HAnimJointShape")
 
@@ -3459,7 +3459,7 @@ Coordinate760.setPoint(x3d.doubleToFloat([0.0028,1.0568,-0.0776,0.0035,1.0925,-0
 
 LineSet759.setCoord(Coordinate760)
 
-LineSet759.addComments(x3d.CommentsBlock('''from vl5 to vl4 vertices 2'''))
+LineSet759.addComments(x3d.CommentsBlock("""from vl5 to vl4 vertices 2"""))
 ColorRGBA761 = x3d.ColorRGBA()
 ColorRGBA761.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3566,7 +3566,7 @@ Transform785 = x3d.Transform()
 Transform785.setTranslation(x3d.doubleToFloat([0.0035,1.0925,-0.0787]))
 Transform786 = x3d.Transform()
 
-Transform786.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform786.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape787 = x3d.Shape()
 Shape787.setUSE("HAnimJointShape")
 
@@ -3583,7 +3583,7 @@ Coordinate790.setPoint(x3d.doubleToFloat([0.0035,1.0925,-0.0787,0.0041,1.1276,-0
 
 LineSet789.setCoord(Coordinate790)
 
-LineSet789.addComments(x3d.CommentsBlock('''from vl4 to vl3 vertices 2'''))
+LineSet789.addComments(x3d.CommentsBlock("""from vl4 to vl3 vertices 2"""))
 ColorRGBA791 = x3d.ColorRGBA()
 ColorRGBA791.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3607,7 +3607,7 @@ Transform794 = x3d.Transform()
 Transform794.setTranslation(x3d.doubleToFloat([0.0041,1.1276,-0.0796]))
 Transform795 = x3d.Transform()
 
-Transform795.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform795.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape796 = x3d.Shape()
 Shape796.setUSE("HAnimJointShape")
 
@@ -3624,7 +3624,7 @@ Coordinate799.setPoint(x3d.doubleToFloat([0.0041,1.1276,-0.0796,0.0045,1.1546,-0
 
 LineSet798.setCoord(Coordinate799)
 
-LineSet798.addComments(x3d.CommentsBlock('''from vl3 to vl2 vertices 2'''))
+LineSet798.addComments(x3d.CommentsBlock("""from vl3 to vl2 vertices 2"""))
 ColorRGBA800 = x3d.ColorRGBA()
 ColorRGBA800.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3648,7 +3648,7 @@ Transform803 = x3d.Transform()
 Transform803.setTranslation(x3d.doubleToFloat([0.0045,1.1546,-0.08]))
 Transform804 = x3d.Transform()
 
-Transform804.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform804.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape805 = x3d.Shape()
 Shape805.setUSE("HAnimJointShape")
 
@@ -3665,7 +3665,7 @@ Coordinate808.setPoint(x3d.doubleToFloat([0.0045,1.1546,-0.08,0.0048,1.1912,-0.0
 
 LineSet807.setCoord(Coordinate808)
 
-LineSet807.addComments(x3d.CommentsBlock('''from vl2 to vl1 vertices 2'''))
+LineSet807.addComments(x3d.CommentsBlock("""from vl2 to vl1 vertices 2"""))
 ColorRGBA809 = x3d.ColorRGBA()
 ColorRGBA809.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3772,7 +3772,7 @@ Transform833 = x3d.Transform()
 Transform833.setTranslation(x3d.doubleToFloat([0.0048,1.1912,-0.0805]))
 Transform834 = x3d.Transform()
 
-Transform834.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform834.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape835 = x3d.Shape()
 Shape835.setUSE("HAnimJointShape")
 
@@ -3789,7 +3789,7 @@ Coordinate838.setPoint(x3d.doubleToFloat([0.0048,1.1912,-0.0805,0.0051,1.2278,-0
 
 LineSet837.setCoord(Coordinate838)
 
-LineSet837.addComments(x3d.CommentsBlock('''from vl1 to vt12 vertices 2'''))
+LineSet837.addComments(x3d.CommentsBlock("""from vl1 to vt12 vertices 2"""))
 ColorRGBA839 = x3d.ColorRGBA()
 ColorRGBA839.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3813,7 +3813,7 @@ Transform842 = x3d.Transform()
 Transform842.setTranslation(x3d.doubleToFloat([0.0051,1.2278,-0.0808]))
 Transform843 = x3d.Transform()
 
-Transform843.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform843.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape844 = x3d.Shape()
 Shape844.setUSE("HAnimJointShape")
 
@@ -3830,7 +3830,7 @@ Coordinate847.setPoint(x3d.doubleToFloat([0.0051,1.2278,-0.0808,0.0053,1.2679,-0
 
 LineSet846.setCoord(Coordinate847)
 
-LineSet846.addComments(x3d.CommentsBlock('''from vt12 to vt11 vertices 2'''))
+LineSet846.addComments(x3d.CommentsBlock("""from vt12 to vt11 vertices 2"""))
 ColorRGBA848 = x3d.ColorRGBA()
 ColorRGBA848.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3854,7 +3854,7 @@ Transform851 = x3d.Transform()
 Transform851.setTranslation(x3d.doubleToFloat([0.0053,1.2679,-0.081]))
 Transform852 = x3d.Transform()
 
-Transform852.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform852.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape853 = x3d.Shape()
 Shape853.setUSE("HAnimJointShape")
 
@@ -3871,7 +3871,7 @@ Coordinate856.setPoint(x3d.doubleToFloat([0.0053,1.2679,-0.081,0.0056,1.2848,-0.
 
 LineSet855.setCoord(Coordinate856)
 
-LineSet855.addComments(x3d.CommentsBlock('''from vt11 to vt10 vertices 2'''))
+LineSet855.addComments(x3d.CommentsBlock("""from vt11 to vt10 vertices 2"""))
 ColorRGBA857 = x3d.ColorRGBA()
 ColorRGBA857.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3895,7 +3895,7 @@ Transform860 = x3d.Transform()
 Transform860.setTranslation(x3d.doubleToFloat([0.0056,1.2848,-0.0822]))
 Transform861 = x3d.Transform()
 
-Transform861.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform861.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape862 = x3d.Shape()
 Shape862.setUSE("HAnimJointShape")
 
@@ -3912,7 +3912,7 @@ Coordinate865.setPoint(x3d.doubleToFloat([0.0056,1.2848,-0.0822,0.0057,1.3126,-0
 
 LineSet864.setCoord(Coordinate865)
 
-LineSet864.addComments(x3d.CommentsBlock('''from vt10 to vt9 vertices 2'''))
+LineSet864.addComments(x3d.CommentsBlock("""from vt10 to vt9 vertices 2"""))
 ColorRGBA866 = x3d.ColorRGBA()
 ColorRGBA866.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3964,7 +3964,7 @@ Transform876 = x3d.Transform()
 Transform876.setTranslation(x3d.doubleToFloat([0.0057,1.3126,-0.0838]))
 Transform877 = x3d.Transform()
 
-Transform877.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform877.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape878 = x3d.Shape()
 Shape878.setUSE("HAnimJointShape")
 
@@ -3981,7 +3981,7 @@ Coordinate881.setPoint(x3d.doubleToFloat([0.0057,1.3126,-0.0838,0.0057,1.3382,-0
 
 LineSet880.setCoord(Coordinate881)
 
-LineSet880.addComments(x3d.CommentsBlock('''from vt9 to vt8 vertices 2'''))
+LineSet880.addComments(x3d.CommentsBlock("""from vt9 to vt8 vertices 2"""))
 ColorRGBA882 = x3d.ColorRGBA()
 ColorRGBA882.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4061,7 +4061,7 @@ Transform899 = x3d.Transform()
 Transform899.setTranslation(x3d.doubleToFloat([0.0057,1.3382,-0.0845]))
 Transform900 = x3d.Transform()
 
-Transform900.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform900.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape901 = x3d.Shape()
 Shape901.setUSE("HAnimJointShape")
 
@@ -4078,7 +4078,7 @@ Coordinate904.setPoint(x3d.doubleToFloat([0.0057,1.3382,-0.0845,0.0058,1.3625,-0
 
 LineSet903.setCoord(Coordinate904)
 
-LineSet903.addComments(x3d.CommentsBlock('''from vt8 to vt7 vertices 2'''))
+LineSet903.addComments(x3d.CommentsBlock("""from vt8 to vt7 vertices 2"""))
 ColorRGBA905 = x3d.ColorRGBA()
 ColorRGBA905.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4102,7 +4102,7 @@ Transform908 = x3d.Transform()
 Transform908.setTranslation(x3d.doubleToFloat([0.0058,1.3625,-0.0833]))
 Transform909 = x3d.Transform()
 
-Transform909.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform909.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape910 = x3d.Shape()
 Shape910.setUSE("HAnimJointShape")
 
@@ -4119,7 +4119,7 @@ Coordinate913.setPoint(x3d.doubleToFloat([0.0058,1.3625,-0.0833,0.0059,1.3866,-0
 
 LineSet912.setCoord(Coordinate913)
 
-LineSet912.addComments(x3d.CommentsBlock('''from vt7 to vt6 vertices 2'''))
+LineSet912.addComments(x3d.CommentsBlock("""from vt7 to vt6 vertices 2"""))
 ColorRGBA914 = x3d.ColorRGBA()
 ColorRGBA914.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4143,7 +4143,7 @@ Transform917 = x3d.Transform()
 Transform917.setTranslation(x3d.doubleToFloat([0.0059,1.3866,-0.08]))
 Transform918 = x3d.Transform()
 
-Transform918.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform918.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape919 = x3d.Shape()
 Shape919.setUSE("HAnimJointShape")
 
@@ -4160,7 +4160,7 @@ Coordinate922.setPoint(x3d.doubleToFloat([0.0059,1.3866,-0.08,0.006,1.4102,-0.07
 
 LineSet921.setCoord(Coordinate922)
 
-LineSet921.addComments(x3d.CommentsBlock('''from vt6 to vt5 vertices 2'''))
+LineSet921.addComments(x3d.CommentsBlock("""from vt6 to vt5 vertices 2"""))
 ColorRGBA923 = x3d.ColorRGBA()
 ColorRGBA923.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4292,7 +4292,7 @@ Transform954 = x3d.Transform()
 Transform954.setTranslation(x3d.doubleToFloat([0.006,1.4102,-0.0745]))
 Transform955 = x3d.Transform()
 
-Transform955.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform955.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape956 = x3d.Shape()
 Shape956.setUSE("HAnimJointShape")
 
@@ -4309,7 +4309,7 @@ Coordinate959.setPoint(x3d.doubleToFloat([0.006,1.4102,-0.0745,0.0061,1.432,-0.0
 
 LineSet958.setCoord(Coordinate959)
 
-LineSet958.addComments(x3d.CommentsBlock('''from vt5 to vt4 vertices 2'''))
+LineSet958.addComments(x3d.CommentsBlock("""from vt5 to vt4 vertices 2"""))
 ColorRGBA960 = x3d.ColorRGBA()
 ColorRGBA960.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4360,7 +4360,7 @@ Transform970 = x3d.Transform()
 Transform970.setTranslation(x3d.doubleToFloat([0.0061,1.432,-0.0675]))
 Transform971 = x3d.Transform()
 
-Transform971.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform971.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape972 = x3d.Shape()
 Shape972.setUSE("HAnimJointShape")
 
@@ -4377,7 +4377,7 @@ Coordinate975.setPoint(x3d.doubleToFloat([0.0061,1.432,-0.0675,0.0062,1.4583,-0.
 
 LineSet974.setCoord(Coordinate975)
 
-LineSet974.addComments(x3d.CommentsBlock('''from vt4 to vt3 vertices 2'''))
+LineSet974.addComments(x3d.CommentsBlock("""from vt4 to vt3 vertices 2"""))
 ColorRGBA976 = x3d.ColorRGBA()
 ColorRGBA976.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4401,7 +4401,7 @@ Transform979 = x3d.Transform()
 Transform979.setTranslation(x3d.doubleToFloat([0.0062,1.4583,-0.057]))
 Transform980 = x3d.Transform()
 
-Transform980.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform980.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape981 = x3d.Shape()
 Shape981.setUSE("HAnimJointShape")
 
@@ -4418,7 +4418,7 @@ Coordinate984.setPoint(x3d.doubleToFloat([0.0062,1.4583,-0.057,0.0063,1.4761,-0.
 
 LineSet983.setCoord(Coordinate984)
 
-LineSet983.addComments(x3d.CommentsBlock('''from vt3 to vt2 vertices 2'''))
+LineSet983.addComments(x3d.CommentsBlock("""from vt3 to vt2 vertices 2"""))
 ColorRGBA985 = x3d.ColorRGBA()
 ColorRGBA985.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4442,7 +4442,7 @@ Transform988 = x3d.Transform()
 Transform988.setTranslation(x3d.doubleToFloat([0.0063,1.4761,-0.0484]))
 Transform989 = x3d.Transform()
 
-Transform989.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform989.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape990 = x3d.Shape()
 Shape990.setUSE("HAnimJointShape")
 
@@ -4459,7 +4459,7 @@ Coordinate993.setPoint(x3d.doubleToFloat([0.0063,1.4761,-0.0484,0.0065,1.4951,-0
 
 LineSet992.setCoord(Coordinate993)
 
-LineSet992.addComments(x3d.CommentsBlock('''from vt2 to vt1 vertices 2'''))
+LineSet992.addComments(x3d.CommentsBlock("""from vt2 to vt1 vertices 2"""))
 ColorRGBA994 = x3d.ColorRGBA()
 ColorRGBA994.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4483,7 +4483,7 @@ Transform997 = x3d.Transform()
 Transform997.setTranslation(x3d.doubleToFloat([0.0065,1.4951,-0.0387]))
 Transform998 = x3d.Transform()
 
-Transform998.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform998.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape999 = x3d.Shape()
 Shape999.setUSE("HAnimJointShape")
 
@@ -4500,7 +4500,7 @@ Coordinate1002.setPoint(x3d.doubleToFloat([0.0065,1.4951,-0.0387,0.0066,1.5132,-
 
 LineSet1001.setCoord(Coordinate1002)
 
-LineSet1001.addComments(x3d.CommentsBlock('''from vt1 to vc7 vertices 2'''))
+LineSet1001.addComments(x3d.CommentsBlock("""from vt1 to vc7 vertices 2"""))
 ColorRGBA1003 = x3d.ColorRGBA()
 ColorRGBA1003.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4573,7 +4573,7 @@ Coordinate1020.setPoint(x3d.doubleToFloat([0.0065,1.4951,-0.0387,0.082,1.4488,-0
 
 LineSet1019.setCoord(Coordinate1020)
 
-LineSet1019.addComments(x3d.CommentsBlock('''from vt1 to l_sternoclavicular vertices 2'''))
+LineSet1019.addComments(x3d.CommentsBlock("""from vt1 to l_sternoclavicular vertices 2"""))
 ColorRGBA1021 = x3d.ColorRGBA()
 ColorRGBA1021.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4590,7 +4590,7 @@ Coordinate1024.setPoint(x3d.doubleToFloat([0.0065,1.4951,-0.0387,-0.0694,1.46,-0
 
 LineSet1023.setCoord(Coordinate1024)
 
-LineSet1023.addComments(x3d.CommentsBlock('''from vt1 to r_sternoclavicular vertices 2'''))
+LineSet1023.addComments(x3d.CommentsBlock("""from vt1 to r_sternoclavicular vertices 2"""))
 ColorRGBA1025 = x3d.ColorRGBA()
 ColorRGBA1025.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4614,7 +4614,7 @@ Transform1028 = x3d.Transform()
 Transform1028.setTranslation(x3d.doubleToFloat([0.0066,1.5132,-0.0301]))
 Transform1029 = x3d.Transform()
 
-Transform1029.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1029.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1030 = x3d.Shape()
 Shape1030.setUSE("HAnimJointShape")
 
@@ -4631,7 +4631,7 @@ Coordinate1033.setPoint(x3d.doubleToFloat([0.0066,1.5132,-0.0301,0.0066,1.5357,-
 
 LineSet1032.setCoord(Coordinate1033)
 
-LineSet1032.addComments(x3d.CommentsBlock('''from vc7 to vc6 vertices 2'''))
+LineSet1032.addComments(x3d.CommentsBlock("""from vc7 to vc6 vertices 2"""))
 ColorRGBA1034 = x3d.ColorRGBA()
 ColorRGBA1034.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4711,7 +4711,7 @@ Transform1051 = x3d.Transform()
 Transform1051.setTranslation(x3d.doubleToFloat([0.0066,1.5357,-0.0143]))
 Transform1052 = x3d.Transform()
 
-Transform1052.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1052.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1053 = x3d.Shape()
 Shape1053.setUSE("HAnimJointShape")
 
@@ -4728,7 +4728,7 @@ Coordinate1056.setPoint(x3d.doubleToFloat([0.0066,1.5357,-0.0143,0.0066,1.552,-0
 
 LineSet1055.setCoord(Coordinate1056)
 
-LineSet1055.addComments(x3d.CommentsBlock('''from vc6 to vc5 vertices 2'''))
+LineSet1055.addComments(x3d.CommentsBlock("""from vc6 to vc5 vertices 2"""))
 ColorRGBA1057 = x3d.ColorRGBA()
 ColorRGBA1057.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4752,7 +4752,7 @@ Transform1060 = x3d.Transform()
 Transform1060.setTranslation(x3d.doubleToFloat([0.0066,1.552,-0.0082]))
 Transform1061 = x3d.Transform()
 
-Transform1061.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1061.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1062 = x3d.Shape()
 Shape1062.setUSE("HAnimJointShape")
 
@@ -4769,7 +4769,7 @@ Coordinate1065.setPoint(x3d.doubleToFloat([0.0066,1.552,-0.0082,0.0066,1.5662,-0
 
 LineSet1064.setCoord(Coordinate1065)
 
-LineSet1064.addComments(x3d.CommentsBlock('''from vc5 to vc4 vertices 2'''))
+LineSet1064.addComments(x3d.CommentsBlock("""from vc5 to vc4 vertices 2"""))
 ColorRGBA1066 = x3d.ColorRGBA()
 ColorRGBA1066.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4793,7 +4793,7 @@ Transform1069 = x3d.Transform()
 Transform1069.setTranslation(x3d.doubleToFloat([0.0066,1.5662,-0.0084]))
 Transform1070 = x3d.Transform()
 
-Transform1070.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1070.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1071 = x3d.Shape()
 Shape1071.setUSE("HAnimJointShape")
 
@@ -4810,7 +4810,7 @@ Coordinate1074.setPoint(x3d.doubleToFloat([0.0066,1.5662,-0.0084,0.0066,1.58,-0.
 
 LineSet1073.setCoord(Coordinate1074)
 
-LineSet1073.addComments(x3d.CommentsBlock('''from vc4 to vc3 vertices 2'''))
+LineSet1073.addComments(x3d.CommentsBlock("""from vc4 to vc3 vertices 2"""))
 ColorRGBA1075 = x3d.ColorRGBA()
 ColorRGBA1075.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4834,7 +4834,7 @@ Transform1078 = x3d.Transform()
 Transform1078.setTranslation(x3d.doubleToFloat([0.0066,1.58,-0.0103]))
 Transform1079 = x3d.Transform()
 
-Transform1079.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1079.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1080 = x3d.Shape()
 Shape1080.setUSE("HAnimJointShape")
 
@@ -4851,7 +4851,7 @@ Coordinate1083.setPoint(x3d.doubleToFloat([0.0066,1.58,-0.0103,0.0066,1.5928,-0.
 
 LineSet1082.setCoord(Coordinate1083)
 
-LineSet1082.addComments(x3d.CommentsBlock('''from vc3 to vc2 vertices 2'''))
+LineSet1082.addComments(x3d.CommentsBlock("""from vc3 to vc2 vertices 2"""))
 ColorRGBA1084 = x3d.ColorRGBA()
 ColorRGBA1084.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4875,7 +4875,7 @@ Transform1087 = x3d.Transform()
 Transform1087.setTranslation(x3d.doubleToFloat([0.0066,1.5928,-0.0103]))
 Transform1088 = x3d.Transform()
 
-Transform1088.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1088.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1089 = x3d.Shape()
 Shape1089.setUSE("HAnimJointShape")
 
@@ -4892,7 +4892,7 @@ Coordinate1092.setPoint(x3d.doubleToFloat([0.0066,1.5928,-0.0103,0.0066,1.6144,-
 
 LineSet1091.setCoord(Coordinate1092)
 
-LineSet1091.addComments(x3d.CommentsBlock('''from vc2 to vc1 vertices 2'''))
+LineSet1091.addComments(x3d.CommentsBlock("""from vc2 to vc1 vertices 2"""))
 ColorRGBA1093 = x3d.ColorRGBA()
 ColorRGBA1093.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4943,7 +4943,7 @@ Transform1103 = x3d.Transform()
 Transform1103.setTranslation(x3d.doubleToFloat([0.0066,1.6144,-0.0034]))
 Transform1104 = x3d.Transform()
 
-Transform1104.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1104.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1105 = x3d.Shape()
 Shape1105.setUSE("HAnimJointShape")
 
@@ -4960,7 +4960,7 @@ Coordinate1108.setPoint(x3d.doubleToFloat([0.0066,1.6144,-0.0034,0.0044,1.6209,0
 
 LineSet1107.setCoord(Coordinate1108)
 
-LineSet1107.addComments(x3d.CommentsBlock('''from vc1 to skullbase vertices 2'''))
+LineSet1107.addComments(x3d.CommentsBlock("""from vc1 to skullbase vertices 2"""))
 ColorRGBA1109 = x3d.ColorRGBA()
 ColorRGBA1109.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -4984,7 +4984,7 @@ Transform1112 = x3d.Transform()
 Transform1112.setTranslation(x3d.doubleToFloat([0.0044,1.6209,0.0236]))
 Transform1113 = x3d.Transform()
 
-Transform1113.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1113.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1114 = x3d.Shape()
 Shape1114.setUSE("HAnimJointShape")
 
@@ -5001,7 +5001,7 @@ Coordinate1117.setPoint(x3d.doubleToFloat([0.0044,1.6209,0.0236,0.0503,1.4157,-0
 
 LineSet1116.setCoord(Coordinate1117)
 
-LineSet1116.addComments(x3d.CommentsBlock('''from skullbase to l_eyelid_joint vertices 2'''))
+LineSet1116.addComments(x3d.CommentsBlock("""from skullbase to l_eyelid_joint vertices 2"""))
 ColorRGBA1118 = x3d.ColorRGBA()
 ColorRGBA1118.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5322,7 +5322,7 @@ Coordinate1198.setPoint(x3d.doubleToFloat([0.0044,1.6209,0.0236,-0.0507,1.4157,-
 
 LineSet1197.setCoord(Coordinate1198)
 
-LineSet1197.addComments(x3d.CommentsBlock('''from skullbase to r_eyelid_joint vertices 2'''))
+LineSet1197.addComments(x3d.CommentsBlock("""from skullbase to r_eyelid_joint vertices 2"""))
 ColorRGBA1199 = x3d.ColorRGBA()
 ColorRGBA1199.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5339,7 +5339,7 @@ Coordinate1202.setPoint(x3d.doubleToFloat([0.0044,1.6209,0.0236,0.0479,1.3963,-0
 
 LineSet1201.setCoord(Coordinate1202)
 
-LineSet1201.addComments(x3d.CommentsBlock('''from skullbase to l_eyeball_joint vertices 2'''))
+LineSet1201.addComments(x3d.CommentsBlock("""from skullbase to l_eyeball_joint vertices 2"""))
 ColorRGBA1203 = x3d.ColorRGBA()
 ColorRGBA1203.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5356,7 +5356,7 @@ Coordinate1206.setPoint(x3d.doubleToFloat([0.0044,1.6209,0.0236,-0.0483,1.3963,-
 
 LineSet1205.setCoord(Coordinate1206)
 
-LineSet1205.addComments(x3d.CommentsBlock('''from skullbase to r_eyeball_joint vertices 2'''))
+LineSet1205.addComments(x3d.CommentsBlock("""from skullbase to r_eyeball_joint vertices 2"""))
 ColorRGBA1207 = x3d.ColorRGBA()
 ColorRGBA1207.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5373,7 +5373,7 @@ Coordinate1210.setPoint(x3d.doubleToFloat([0.0044,1.6209,0.0236,0.0216,1.4053,0.
 
 LineSet1209.setCoord(Coordinate1210)
 
-LineSet1209.addComments(x3d.CommentsBlock('''from skullbase to l_eyebrow_joint vertices 2'''))
+LineSet1209.addComments(x3d.CommentsBlock("""from skullbase to l_eyebrow_joint vertices 2"""))
 ColorRGBA1211 = x3d.ColorRGBA()
 ColorRGBA1211.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5390,7 +5390,7 @@ Coordinate1214.setPoint(x3d.doubleToFloat([0.0044,1.6209,0.0236,-0.0219,1.4053,0
 
 LineSet1213.setCoord(Coordinate1214)
 
-LineSet1213.addComments(x3d.CommentsBlock('''from skullbase to r_eyebrow_joint vertices 2'''))
+LineSet1213.addComments(x3d.CommentsBlock("""from skullbase to r_eyebrow_joint vertices 2"""))
 ColorRGBA1215 = x3d.ColorRGBA()
 ColorRGBA1215.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5407,7 +5407,7 @@ Coordinate1218.setPoint(x3d.doubleToFloat([0.0044,1.6209,0.0236,-0.0002,1.3043,-
 
 LineSet1217.setCoord(Coordinate1218)
 
-LineSet1217.addComments(x3d.CommentsBlock('''from skullbase to temporomandibular vertices 2'''))
+LineSet1217.addComments(x3d.CommentsBlock("""from skullbase to temporomandibular vertices 2"""))
 ColorRGBA1219 = x3d.ColorRGBA()
 ColorRGBA1219.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5503,7 +5503,7 @@ Transform1229 = x3d.Transform()
 Transform1229.setTranslation(x3d.doubleToFloat([0.082,1.4488,-0.0353]))
 Transform1230 = x3d.Transform()
 
-Transform1230.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1230.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1231 = x3d.Shape()
 Shape1231.setUSE("HAnimJointShape")
 
@@ -5520,7 +5520,7 @@ Coordinate1234.setPoint(x3d.doubleToFloat([0.082,1.4488,-0.0353,0.0962,1.4269,-0
 
 LineSet1233.setCoord(Coordinate1234)
 
-LineSet1233.addComments(x3d.CommentsBlock('''from l_sternoclavicular to l_acromioclavicular vertices 2'''))
+LineSet1233.addComments(x3d.CommentsBlock("""from l_sternoclavicular to l_acromioclavicular vertices 2"""))
 ColorRGBA1235 = x3d.ColorRGBA()
 ColorRGBA1235.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5683,7 +5683,7 @@ Transform1273 = x3d.Transform()
 Transform1273.setTranslation(x3d.doubleToFloat([0.0962,1.4269,-0.0424]))
 Transform1274 = x3d.Transform()
 
-Transform1274.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1274.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1275 = x3d.Shape()
 Shape1275.setUSE("HAnimJointShape")
 
@@ -5700,7 +5700,7 @@ Coordinate1278.setPoint(x3d.doubleToFloat([0.0962,1.4269,-0.0424,0.2029,1.4376,-
 
 LineSet1277.setCoord(Coordinate1278)
 
-LineSet1277.addComments(x3d.CommentsBlock('''from l_acromioclavicular to l_shoulder vertices 2'''))
+LineSet1277.addComments(x3d.CommentsBlock("""from l_acromioclavicular to l_shoulder vertices 2"""))
 ColorRGBA1279 = x3d.ColorRGBA()
 ColorRGBA1279.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5724,7 +5724,7 @@ Transform1282 = x3d.Transform()
 Transform1282.setTranslation(x3d.doubleToFloat([0.2029,1.4376,-0.0387]))
 Transform1283 = x3d.Transform()
 
-Transform1283.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1283.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1284 = x3d.Shape()
 Shape1284.setUSE("HAnimJointShape")
 
@@ -5741,7 +5741,7 @@ Coordinate1287.setPoint(x3d.doubleToFloat([0.2029,1.4376,-0.0387,0.2014,1.1357,-
 
 LineSet1286.setCoord(Coordinate1287)
 
-LineSet1286.addComments(x3d.CommentsBlock('''from l_shoulder to l_elbow vertices 2'''))
+LineSet1286.addComments(x3d.CommentsBlock("""from l_shoulder to l_elbow vertices 2"""))
 ColorRGBA1288 = x3d.ColorRGBA()
 ColorRGBA1288.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5820,7 +5820,7 @@ Transform1305 = x3d.Transform()
 Transform1305.setTranslation(x3d.doubleToFloat([0.2014,1.1357,-0.0682]))
 Transform1306 = x3d.Transform()
 
-Transform1306.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1306.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1307 = x3d.Shape()
 Shape1307.setUSE("HAnimJointShape")
 
@@ -5837,7 +5837,7 @@ Coordinate1310.setPoint(x3d.doubleToFloat([0.2014,1.1357,-0.0682,0.1984,0.8663,-
 
 LineSet1309.setCoord(Coordinate1310)
 
-LineSet1309.addComments(x3d.CommentsBlock('''from l_elbow to l_radiocarpal vertices 2'''))
+LineSet1309.addComments(x3d.CommentsBlock("""from l_elbow to l_radiocarpal vertices 2"""))
 ColorRGBA1311 = x3d.ColorRGBA()
 ColorRGBA1311.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -5974,11 +5974,11 @@ Transform1342.setScale(x3d.doubleToFloat([0.2,0.2,0.2]))
 Transform1342.setTranslation(x3d.doubleToFloat([0.2,0.85,-0.05]))
 Transform1342.setRotation(x3d.doubleToFloat([0,0,1,-3.14]))
 
-Transform1342.addComments(x3d.CommentsBlock('''Transform left hand'''))
+Transform1342.addComments(x3d.CommentsBlock("""Transform left hand"""))
 Transform1343 = x3d.Transform()
 Transform1343.setRotation(x3d.doubleToFloat([0,1,0,-1.57]))
 
-Transform1343.addComments(x3d.CommentsBlock('''Transform left hand'''))
+Transform1343.addComments(x3d.CommentsBlock("""Transform left hand"""))
 Shape1344 = x3d.Shape()
 Shape1344.setUSE("HAnimJointShape")
 
@@ -5995,7 +5995,7 @@ Coordinate1347.setPoint(x3d.doubleToFloat([0.1984,0.8663,-0.0583,0.1811,0.6975,-
 
 LineSet1346.setCoord(Coordinate1347)
 
-LineSet1346.addComments(x3d.CommentsBlock('''from l_radiocarpal to l_midcarpal_1 vertices 2'''))
+LineSet1346.addComments(x3d.CommentsBlock("""from l_radiocarpal to l_midcarpal_1 vertices 2"""))
 ColorRGBA1348 = x3d.ColorRGBA()
 ColorRGBA1348.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6040,7 +6040,7 @@ Coordinate1358.setPoint(x3d.doubleToFloat([0.1984,0.8663,-0.0583,0.1811,0.6984,-
 
 LineSet1357.setCoord(Coordinate1358)
 
-LineSet1357.addComments(x3d.CommentsBlock('''from l_radiocarpal to l_midcarpal_2 vertices 2'''))
+LineSet1357.addComments(x3d.CommentsBlock("""from l_radiocarpal to l_midcarpal_2 vertices 2"""))
 ColorRGBA1359 = x3d.ColorRGBA()
 ColorRGBA1359.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6057,7 +6057,7 @@ Coordinate1362.setPoint(x3d.doubleToFloat([0.1984,0.8663,-0.0583,0.1809,0.7,-0.1
 
 LineSet1361.setCoord(Coordinate1362)
 
-LineSet1361.addComments(x3d.CommentsBlock('''from l_radiocarpal to l_midcarpal_3 vertices 2'''))
+LineSet1361.addComments(x3d.CommentsBlock("""from l_radiocarpal to l_midcarpal_3 vertices 2"""))
 ColorRGBA1363 = x3d.ColorRGBA()
 ColorRGBA1363.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6074,7 +6074,7 @@ Coordinate1366.setPoint(x3d.doubleToFloat([0.1984,0.8663,-0.0583,0.1809,0.6973,-
 
 LineSet1365.setCoord(Coordinate1366)
 
-LineSet1365.addComments(x3d.CommentsBlock('''from l_radiocarpal to l_midcarpal_4_5 vertices 2'''))
+LineSet1365.addComments(x3d.CommentsBlock("""from l_radiocarpal to l_midcarpal_4_5 vertices 2"""))
 ColorRGBA1367 = x3d.ColorRGBA()
 ColorRGBA1367.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6098,7 +6098,7 @@ Transform1370 = x3d.Transform()
 Transform1370.setTranslation(x3d.doubleToFloat([0.1811,0.6975,-0.0826]))
 Transform1371 = x3d.Transform()
 
-Transform1371.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1371.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1372 = x3d.Shape()
 Shape1372.setUSE("HAnimJointShape")
 
@@ -6115,7 +6115,7 @@ Coordinate1375.setPoint(x3d.doubleToFloat([0.1811,0.6975,-0.0826,0.1924,0.8472,-
 
 LineSet1374.setCoord(Coordinate1375)
 
-LineSet1374.addComments(x3d.CommentsBlock('''from l_midcarpal_1 to l_carpometacarpal_1 vertices 2'''))
+LineSet1374.addComments(x3d.CommentsBlock("""from l_midcarpal_1 to l_carpometacarpal_1 vertices 2"""))
 ColorRGBA1376 = x3d.ColorRGBA()
 ColorRGBA1376.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6139,7 +6139,7 @@ Transform1379 = x3d.Transform()
 Transform1379.setTranslation(x3d.doubleToFloat([0.1924,0.8472,-0.0534]))
 Transform1380 = x3d.Transform()
 
-Transform1380.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1380.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1381 = x3d.Shape()
 Shape1381.setUSE("HAnimJointShape")
 
@@ -6156,7 +6156,7 @@ Coordinate1384.setPoint(x3d.doubleToFloat([0.1924,0.8472,-0.0534,0.1951,0.8226,0
 
 LineSet1383.setCoord(Coordinate1384)
 
-LineSet1383.addComments(x3d.CommentsBlock('''from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2'''))
+LineSet1383.addComments(x3d.CommentsBlock("""from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2"""))
 ColorRGBA1385 = x3d.ColorRGBA()
 ColorRGBA1385.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6180,7 +6180,7 @@ Transform1388 = x3d.Transform()
 Transform1388.setTranslation(x3d.doubleToFloat([0.1951,0.8226,0.0246]))
 Transform1389 = x3d.Transform()
 
-Transform1389.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1389.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1390 = x3d.Shape()
 Shape1390.setUSE("HAnimJointShape")
 
@@ -6197,7 +6197,7 @@ Coordinate1393.setPoint(x3d.doubleToFloat([0.1951,0.8226,0.0246,0.1955,0.8159,0.
 
 LineSet1392.setCoord(Coordinate1393)
 
-LineSet1392.addComments(x3d.CommentsBlock('''from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2'''))
+LineSet1392.addComments(x3d.CommentsBlock("""from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2"""))
 ColorRGBA1394 = x3d.ColorRGBA()
 ColorRGBA1394.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6235,7 +6235,7 @@ Transform1398 = x3d.Transform()
 Transform1398.setTranslation(x3d.doubleToFloat([0.1811,0.6984,-0.0935]))
 Transform1399 = x3d.Transform()
 
-Transform1399.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1399.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1400 = x3d.Shape()
 Shape1400.setUSE("HAnimJointShape")
 
@@ -6252,7 +6252,7 @@ Coordinate1403.setPoint(x3d.doubleToFloat([0.1811,0.6984,-0.0935,0.1983,0.8024,-
 
 LineSet1402.setCoord(Coordinate1403)
 
-LineSet1402.addComments(x3d.CommentsBlock('''from l_midcarpal_2 to l_carpometacarpal_2 vertices 2'''))
+LineSet1402.addComments(x3d.CommentsBlock("""from l_midcarpal_2 to l_carpometacarpal_2 vertices 2"""))
 ColorRGBA1404 = x3d.ColorRGBA()
 ColorRGBA1404.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6276,7 +6276,7 @@ Transform1407 = x3d.Transform()
 Transform1407.setTranslation(x3d.doubleToFloat([0.1983,0.8024,-0.028]))
 Transform1408 = x3d.Transform()
 
-Transform1408.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1408.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1409 = x3d.Shape()
 Shape1409.setUSE("HAnimJointShape")
 
@@ -6293,7 +6293,7 @@ Coordinate1412.setPoint(x3d.doubleToFloat([0.1983,0.8024,-0.028,0.1983,0.7815,-0
 
 LineSet1411.setCoord(Coordinate1412)
 
-LineSet1411.addComments(x3d.CommentsBlock('''from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2'''))
+LineSet1411.addComments(x3d.CommentsBlock("""from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2"""))
 ColorRGBA1413 = x3d.ColorRGBA()
 ColorRGBA1413.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6345,7 +6345,7 @@ Transform1423 = x3d.Transform()
 Transform1423.setTranslation(x3d.doubleToFloat([0.1983,0.7815,-0.028]))
 Transform1424 = x3d.Transform()
 
-Transform1424.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1424.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1425 = x3d.Shape()
 Shape1425.setUSE("HAnimJointShape")
 
@@ -6362,7 +6362,7 @@ Coordinate1428.setPoint(x3d.doubleToFloat([0.1983,0.7815,-0.028,0.2017,0.7363,-0
 
 LineSet1427.setCoord(Coordinate1428)
 
-LineSet1427.addComments(x3d.CommentsBlock('''from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2'''))
+LineSet1427.addComments(x3d.CommentsBlock("""from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2"""))
 ColorRGBA1429 = x3d.ColorRGBA()
 ColorRGBA1429.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6386,7 +6386,7 @@ Transform1432 = x3d.Transform()
 Transform1432.setTranslation(x3d.doubleToFloat([0.2017,0.7363,-0.0248]))
 Transform1433 = x3d.Transform()
 
-Transform1433.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1433.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1434 = x3d.Shape()
 Shape1434.setUSE("HAnimJointShape")
 
@@ -6403,7 +6403,7 @@ Coordinate1437.setPoint(x3d.doubleToFloat([0.2017,0.7363,-0.0248,0.2028,0.7139,-
 
 LineSet1436.setCoord(Coordinate1437)
 
-LineSet1436.addComments(x3d.CommentsBlock('''from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2'''))
+LineSet1436.addComments(x3d.CommentsBlock("""from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2"""))
 ColorRGBA1438 = x3d.ColorRGBA()
 ColorRGBA1438.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6443,7 +6443,7 @@ Transform1442 = x3d.Transform()
 Transform1442.setTranslation(x3d.doubleToFloat([0.1809,0.7,-0.1067]))
 Transform1443 = x3d.Transform()
 
-Transform1443.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1443.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1444 = x3d.Shape()
 Shape1444.setUSE("HAnimJointShape")
 
@@ -6460,7 +6460,7 @@ Coordinate1447.setPoint(x3d.doubleToFloat([0.1809,0.7,-0.1067,0.1987,0.8029,-0.0
 
 LineSet1446.setCoord(Coordinate1447)
 
-LineSet1446.addComments(x3d.CommentsBlock('''from l_midcarpal_3 to l_carpometacarpal_3 vertices 2'''))
+LineSet1446.addComments(x3d.CommentsBlock("""from l_midcarpal_3 to l_carpometacarpal_3 vertices 2"""))
 ColorRGBA1448 = x3d.ColorRGBA()
 ColorRGBA1448.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6484,7 +6484,7 @@ Transform1451 = x3d.Transform()
 Transform1451.setTranslation(x3d.doubleToFloat([0.1987,0.8029,-0.053]))
 Transform1452 = x3d.Transform()
 
-Transform1452.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1452.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1453 = x3d.Shape()
 Shape1453.setUSE("HAnimJointShape")
 
@@ -6501,7 +6501,7 @@ Coordinate1456.setPoint(x3d.doubleToFloat([0.1987,0.8029,-0.053,0.1987,0.7818,-0
 
 LineSet1455.setCoord(Coordinate1456)
 
-LineSet1455.addComments(x3d.CommentsBlock('''from l_carpometacarpal_3 to l_metacarpophalangeal_3 vertices 2'''))
+LineSet1455.addComments(x3d.CommentsBlock("""from l_carpometacarpal_3 to l_metacarpophalangeal_3 vertices 2"""))
 ColorRGBA1457 = x3d.ColorRGBA()
 ColorRGBA1457.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6552,7 +6552,7 @@ Transform1467 = x3d.Transform()
 Transform1467.setTranslation(x3d.doubleToFloat([0.1987,0.7818,-0.053]))
 Transform1468 = x3d.Transform()
 
-Transform1468.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1468.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1469 = x3d.Shape()
 Shape1469.setUSE("HAnimJointShape")
 
@@ -6569,7 +6569,7 @@ Coordinate1472.setPoint(x3d.doubleToFloat([0.1987,0.7818,-0.053,0.2013,0.7273,-0
 
 LineSet1471.setCoord(Coordinate1472)
 
-LineSet1471.addComments(x3d.CommentsBlock('''from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2'''))
+LineSet1471.addComments(x3d.CommentsBlock("""from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2"""))
 ColorRGBA1473 = x3d.ColorRGBA()
 ColorRGBA1473.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6593,7 +6593,7 @@ Transform1476 = x3d.Transform()
 Transform1476.setTranslation(x3d.doubleToFloat([0.2013,0.7273,-0.0503]))
 Transform1477 = x3d.Transform()
 
-Transform1477.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1477.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1478 = x3d.Shape()
 Shape1478.setUSE("HAnimJointShape")
 
@@ -6610,7 +6610,7 @@ Coordinate1481.setPoint(x3d.doubleToFloat([0.2013,0.7273,-0.0503,0.2026,0.7011,-
 
 LineSet1480.setCoord(Coordinate1481)
 
-LineSet1480.addComments(x3d.CommentsBlock('''from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2'''))
+LineSet1480.addComments(x3d.CommentsBlock("""from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2"""))
 ColorRGBA1482 = x3d.ColorRGBA()
 ColorRGBA1482.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6650,7 +6650,7 @@ Transform1486 = x3d.Transform()
 Transform1486.setTranslation(x3d.doubleToFloat([0.1809,0.6973,-0.1276]))
 Transform1487 = x3d.Transform()
 
-Transform1487.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1487.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1488 = x3d.Shape()
 Shape1488.setUSE("HAnimJointShape")
 
@@ -6667,7 +6667,7 @@ Coordinate1491.setPoint(x3d.doubleToFloat([0.1809,0.6973,-0.1276,0.1956,0.8019,-
 
 LineSet1490.setCoord(Coordinate1491)
 
-LineSet1490.addComments(x3d.CommentsBlock('''from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2'''))
+LineSet1490.addComments(x3d.CommentsBlock("""from l_midcarpal_4_5 to l_carpometacarpal_4 vertices 2"""))
 ColorRGBA1492 = x3d.ColorRGBA()
 ColorRGBA1492.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6684,7 +6684,7 @@ Coordinate1495.setPoint(x3d.doubleToFloat([0.1809,0.6973,-0.1276,0.1925,0.8066,-
 
 LineSet1494.setCoord(Coordinate1495)
 
-LineSet1494.addComments(x3d.CommentsBlock('''from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2'''))
+LineSet1494.addComments(x3d.CommentsBlock("""from l_midcarpal_4_5 to l_carpometacarpal_5 vertices 2"""))
 ColorRGBA1496 = x3d.ColorRGBA()
 ColorRGBA1496.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6708,7 +6708,7 @@ Transform1499 = x3d.Transform()
 Transform1499.setTranslation(x3d.doubleToFloat([0.1956,0.8019,-0.0794]))
 Transform1500 = x3d.Transform()
 
-Transform1500.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1500.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1501 = x3d.Shape()
 Shape1501.setUSE("HAnimJointShape")
 
@@ -6725,7 +6725,7 @@ Coordinate1504.setPoint(x3d.doubleToFloat([0.1956,0.8019,-0.0794,0.1956,0.7815,-
 
 LineSet1503.setCoord(Coordinate1504)
 
-LineSet1503.addComments(x3d.CommentsBlock('''from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2'''))
+LineSet1503.addComments(x3d.CommentsBlock("""from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2"""))
 ColorRGBA1505 = x3d.ColorRGBA()
 ColorRGBA1505.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6749,7 +6749,7 @@ Transform1508 = x3d.Transform()
 Transform1508.setTranslation(x3d.doubleToFloat([0.1956,0.7815,-0.0794]))
 Transform1509 = x3d.Transform()
 
-Transform1509.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1509.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1510 = x3d.Shape()
 Shape1510.setUSE("HAnimJointShape")
 
@@ -6766,7 +6766,7 @@ Coordinate1513.setPoint(x3d.doubleToFloat([0.1956,0.7815,-0.0794,0.1973,0.7287,-
 
 LineSet1512.setCoord(Coordinate1513)
 
-LineSet1512.addComments(x3d.CommentsBlock('''from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2'''))
+LineSet1512.addComments(x3d.CommentsBlock("""from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2"""))
 ColorRGBA1514 = x3d.ColorRGBA()
 ColorRGBA1514.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6790,7 +6790,7 @@ Transform1517 = x3d.Transform()
 Transform1517.setTranslation(x3d.doubleToFloat([0.1973,0.7287,-0.0777]))
 Transform1518 = x3d.Transform()
 
-Transform1518.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1518.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1519 = x3d.Shape()
 Shape1519.setUSE("HAnimJointShape")
 
@@ -6807,7 +6807,7 @@ Coordinate1522.setPoint(x3d.doubleToFloat([0.1973,0.7287,-0.0777,0.1983,0.7045,-
 
 LineSet1521.setCoord(Coordinate1522)
 
-LineSet1521.addComments(x3d.CommentsBlock('''from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2'''))
+LineSet1521.addComments(x3d.CommentsBlock("""from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2"""))
 ColorRGBA1523 = x3d.ColorRGBA()
 ColorRGBA1523.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6845,7 +6845,7 @@ Transform1527 = x3d.Transform()
 Transform1527.setTranslation(x3d.doubleToFloat([0.1925,0.8066,-0.1036]))
 Transform1528 = x3d.Transform()
 
-Transform1528.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1528.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1529 = x3d.Shape()
 Shape1529.setUSE("HAnimJointShape")
 
@@ -6862,7 +6862,7 @@ Coordinate1532.setPoint(x3d.doubleToFloat([0.1925,0.8066,-0.1036,0.1925,0.7866,-
 
 LineSet1531.setCoord(Coordinate1532)
 
-LineSet1531.addComments(x3d.CommentsBlock('''from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2'''))
+LineSet1531.addComments(x3d.CommentsBlock("""from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2"""))
 ColorRGBA1533 = x3d.ColorRGBA()
 ColorRGBA1533.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6914,7 +6914,7 @@ Transform1543 = x3d.Transform()
 Transform1543.setTranslation(x3d.doubleToFloat([0.1925,0.7866,-0.1036]))
 Transform1544 = x3d.Transform()
 
-Transform1544.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1544.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1545 = x3d.Shape()
 Shape1545.setUSE("HAnimJointShape")
 
@@ -6931,7 +6931,7 @@ Coordinate1548.setPoint(x3d.doubleToFloat([0.1925,0.7866,-0.1036,0.1938,0.7452,-
 
 LineSet1547.setCoord(Coordinate1548)
 
-LineSet1547.addComments(x3d.CommentsBlock('''from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2'''))
+LineSet1547.addComments(x3d.CommentsBlock("""from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2"""))
 ColorRGBA1549 = x3d.ColorRGBA()
 ColorRGBA1549.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -6955,7 +6955,7 @@ Transform1552 = x3d.Transform()
 Transform1552.setTranslation(x3d.doubleToFloat([0.1938,0.7452,-0.1024]))
 Transform1553 = x3d.Transform()
 
-Transform1553.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1553.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1554 = x3d.Shape()
 Shape1554.setUSE("HAnimJointShape")
 
@@ -6972,7 +6972,7 @@ Coordinate1557.setPoint(x3d.doubleToFloat([0.1938,0.7452,-0.1024,0.1948,0.7277,-
 
 LineSet1556.setCoord(Coordinate1557)
 
-LineSet1556.addComments(x3d.CommentsBlock('''from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2'''))
+LineSet1556.addComments(x3d.CommentsBlock("""from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2"""))
 ColorRGBA1558 = x3d.ColorRGBA()
 ColorRGBA1558.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7022,7 +7022,7 @@ Transform1562 = x3d.Transform()
 Transform1562.setTranslation(x3d.doubleToFloat([-0.0694,1.46,-0.033]))
 Transform1563 = x3d.Transform()
 
-Transform1563.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1563.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1564 = x3d.Shape()
 Shape1564.setUSE("HAnimJointShape")
 
@@ -7039,7 +7039,7 @@ Coordinate1567.setPoint(x3d.doubleToFloat([-0.0694,1.46,-0.033,-0.0836,1.4281,-0
 
 LineSet1566.setCoord(Coordinate1567)
 
-LineSet1566.addComments(x3d.CommentsBlock('''from r_sternoclavicular to r_acromioclavicular vertices 2'''))
+LineSet1566.addComments(x3d.CommentsBlock("""from r_sternoclavicular to r_acromioclavicular vertices 2"""))
 ColorRGBA1568 = x3d.ColorRGBA()
 ColorRGBA1568.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7202,7 +7202,7 @@ Transform1606 = x3d.Transform()
 Transform1606.setTranslation(x3d.doubleToFloat([-0.0836,1.4281,-0.0401]))
 Transform1607 = x3d.Transform()
 
-Transform1607.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1607.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1608 = x3d.Shape()
 Shape1608.setUSE("HAnimJointShape")
 
@@ -7219,7 +7219,7 @@ Coordinate1611.setPoint(x3d.doubleToFloat([-0.0836,1.4281,-0.0401,-0.1907,1.4407
 
 LineSet1610.setCoord(Coordinate1611)
 
-LineSet1610.addComments(x3d.CommentsBlock('''from r_acromioclavicular to r_shoulder vertices 2'''))
+LineSet1610.addComments(x3d.CommentsBlock("""from r_acromioclavicular to r_shoulder vertices 2"""))
 ColorRGBA1612 = x3d.ColorRGBA()
 ColorRGBA1612.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7243,7 +7243,7 @@ Transform1615 = x3d.Transform()
 Transform1615.setTranslation(x3d.doubleToFloat([-0.1907,1.4407,-0.0325]))
 Transform1616 = x3d.Transform()
 
-Transform1616.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1616.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1617 = x3d.Shape()
 Shape1617.setUSE("HAnimJointShape")
 
@@ -7260,7 +7260,7 @@ Coordinate1620.setPoint(x3d.doubleToFloat([-0.1907,1.4407,-0.0325,-0.1949,1.1388
 
 LineSet1619.setCoord(Coordinate1620)
 
-LineSet1619.addComments(x3d.CommentsBlock('''from r_shoulder to r_elbow vertices 2'''))
+LineSet1619.addComments(x3d.CommentsBlock("""from r_shoulder to r_elbow vertices 2"""))
 ColorRGBA1621 = x3d.ColorRGBA()
 ColorRGBA1621.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7339,7 +7339,7 @@ Transform1638 = x3d.Transform()
 Transform1638.setTranslation(x3d.doubleToFloat([-0.1949,1.1388,-0.062]))
 Transform1639 = x3d.Transform()
 
-Transform1639.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1639.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1640 = x3d.Shape()
 Shape1640.setUSE("HAnimJointShape")
 
@@ -7356,7 +7356,7 @@ Coordinate1643.setPoint(x3d.doubleToFloat([-0.1949,1.1388,-0.062,-0.1959,0.8694,
 
 LineSet1642.setCoord(Coordinate1643)
 
-LineSet1642.addComments(x3d.CommentsBlock('''from r_elbow to r_radiocarpal vertices 2'''))
+LineSet1642.addComments(x3d.CommentsBlock("""from r_elbow to r_radiocarpal vertices 2"""))
 ColorRGBA1644 = x3d.ColorRGBA()
 ColorRGBA1644.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7493,11 +7493,11 @@ Transform1675.setScale(x3d.doubleToFloat([0.2,0.2,0.2]))
 Transform1675.setTranslation(x3d.doubleToFloat([-0.2,0.85,-0.05]))
 Transform1675.setRotation(x3d.doubleToFloat([0,0,1,-3.14]))
 
-Transform1675.addComments(x3d.CommentsBlock('''Transform right hand'''))
+Transform1675.addComments(x3d.CommentsBlock("""Transform right hand"""))
 Transform1676 = x3d.Transform()
 Transform1676.setRotation(x3d.doubleToFloat([0,1,0,1.57]))
 
-Transform1676.addComments(x3d.CommentsBlock('''Transform right hand'''))
+Transform1676.addComments(x3d.CommentsBlock("""Transform right hand"""))
 Shape1677 = x3d.Shape()
 Shape1677.setUSE("HAnimJointShape")
 
@@ -7514,7 +7514,7 @@ Coordinate1680.setPoint(x3d.doubleToFloat([-0.1959,0.8694,-0.0521,-0.1811,0.6975
 
 LineSet1679.setCoord(Coordinate1680)
 
-LineSet1679.addComments(x3d.CommentsBlock('''from r_radiocarpal to r_midcarpal_1 vertices 2'''))
+LineSet1679.addComments(x3d.CommentsBlock("""from r_radiocarpal to r_midcarpal_1 vertices 2"""))
 ColorRGBA1681 = x3d.ColorRGBA()
 ColorRGBA1681.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7559,7 +7559,7 @@ Coordinate1691.setPoint(x3d.doubleToFloat([-0.1959,0.8694,-0.0521,-0.1811,0.6984
 
 LineSet1690.setCoord(Coordinate1691)
 
-LineSet1690.addComments(x3d.CommentsBlock('''from r_radiocarpal to r_midcarpal_2 vertices 2'''))
+LineSet1690.addComments(x3d.CommentsBlock("""from r_radiocarpal to r_midcarpal_2 vertices 2"""))
 ColorRGBA1692 = x3d.ColorRGBA()
 ColorRGBA1692.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7576,7 +7576,7 @@ Coordinate1695.setPoint(x3d.doubleToFloat([-0.1959,0.8694,-0.0521,-0.1809,0.7,-0
 
 LineSet1694.setCoord(Coordinate1695)
 
-LineSet1694.addComments(x3d.CommentsBlock('''from r_radiocarpal to r_midcarpal_3 vertices 2'''))
+LineSet1694.addComments(x3d.CommentsBlock("""from r_radiocarpal to r_midcarpal_3 vertices 2"""))
 ColorRGBA1696 = x3d.ColorRGBA()
 ColorRGBA1696.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7593,7 +7593,7 @@ Coordinate1699.setPoint(x3d.doubleToFloat([-0.1959,0.8694,-0.0521,-0.1809,0.6973
 
 LineSet1698.setCoord(Coordinate1699)
 
-LineSet1698.addComments(x3d.CommentsBlock('''from r_radiocarpal to r_midcarpal_4_5 vertices 2'''))
+LineSet1698.addComments(x3d.CommentsBlock("""from r_radiocarpal to r_midcarpal_4_5 vertices 2"""))
 ColorRGBA1700 = x3d.ColorRGBA()
 ColorRGBA1700.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7617,7 +7617,7 @@ Transform1703 = x3d.Transform()
 Transform1703.setTranslation(x3d.doubleToFloat([-0.1811,0.6975,-0.0826]))
 Transform1704 = x3d.Transform()
 
-Transform1704.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1704.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1705 = x3d.Shape()
 Shape1705.setUSE("HAnimJointShape")
 
@@ -7634,7 +7634,7 @@ Coordinate1708.setPoint(x3d.doubleToFloat([-0.1811,0.6975,-0.0826,-0.1899,0.8502
 
 LineSet1707.setCoord(Coordinate1708)
 
-LineSet1707.addComments(x3d.CommentsBlock('''from r_midcarpal_1 to r_carpometacarpal_1 vertices 2'''))
+LineSet1707.addComments(x3d.CommentsBlock("""from r_midcarpal_1 to r_carpometacarpal_1 vertices 2"""))
 ColorRGBA1709 = x3d.ColorRGBA()
 ColorRGBA1709.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7658,7 +7658,7 @@ Transform1712 = x3d.Transform()
 Transform1712.setTranslation(x3d.doubleToFloat([-0.1899,0.8502,-0.0473]))
 Transform1713 = x3d.Transform()
 
-Transform1713.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1713.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1714 = x3d.Shape()
 Shape1714.setUSE("HAnimJointShape")
 
@@ -7675,7 +7675,7 @@ Coordinate1717.setPoint(x3d.doubleToFloat([-0.1899,0.8502,-0.0473,-0.1874,0.8256
 
 LineSet1716.setCoord(Coordinate1717)
 
-LineSet1716.addComments(x3d.CommentsBlock('''from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2'''))
+LineSet1716.addComments(x3d.CommentsBlock("""from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2"""))
 ColorRGBA1718 = x3d.ColorRGBA()
 ColorRGBA1718.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7699,7 +7699,7 @@ Transform1721 = x3d.Transform()
 Transform1721.setTranslation(x3d.doubleToFloat([-0.1874,0.8256,0.0306]))
 Transform1722 = x3d.Transform()
 
-Transform1722.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1722.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1723 = x3d.Shape()
 Shape1723.setUSE("HAnimJointShape")
 
@@ -7716,7 +7716,7 @@ Coordinate1726.setPoint(x3d.doubleToFloat([-0.1874,0.8256,0.0306,-0.1864,0.819,0
 
 LineSet1725.setCoord(Coordinate1726)
 
-LineSet1725.addComments(x3d.CommentsBlock('''from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2'''))
+LineSet1725.addComments(x3d.CommentsBlock("""from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2"""))
 ColorRGBA1727 = x3d.ColorRGBA()
 ColorRGBA1727.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7754,7 +7754,7 @@ Transform1731 = x3d.Transform()
 Transform1731.setTranslation(x3d.doubleToFloat([-0.1811,0.6984,-0.0935]))
 Transform1732 = x3d.Transform()
 
-Transform1732.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1732.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1733 = x3d.Shape()
 Shape1733.setUSE("HAnimJointShape")
 
@@ -7771,7 +7771,7 @@ Coordinate1736.setPoint(x3d.doubleToFloat([-0.1811,0.6984,-0.0935,-0.1961,0.8055
 
 LineSet1735.setCoord(Coordinate1736)
 
-LineSet1735.addComments(x3d.CommentsBlock('''from r_midcarpal_2 to r_carpometacarpal_2 vertices 2'''))
+LineSet1735.addComments(x3d.CommentsBlock("""from r_midcarpal_2 to r_carpometacarpal_2 vertices 2"""))
 ColorRGBA1737 = x3d.ColorRGBA()
 ColorRGBA1737.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7795,7 +7795,7 @@ Transform1740 = x3d.Transform()
 Transform1740.setTranslation(x3d.doubleToFloat([-0.1961,0.8055,-0.0218]))
 Transform1741 = x3d.Transform()
 
-Transform1741.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1741.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1742 = x3d.Shape()
 Shape1742.setUSE("HAnimJointShape")
 
@@ -7812,7 +7812,7 @@ Coordinate1745.setPoint(x3d.doubleToFloat([-0.1961,0.8055,-0.0218,-0.1961,0.7846
 
 LineSet1744.setCoord(Coordinate1745)
 
-LineSet1744.addComments(x3d.CommentsBlock('''from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2'''))
+LineSet1744.addComments(x3d.CommentsBlock("""from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2"""))
 ColorRGBA1746 = x3d.ColorRGBA()
 ColorRGBA1746.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7864,7 +7864,7 @@ Transform1756 = x3d.Transform()
 Transform1756.setTranslation(x3d.doubleToFloat([-0.1961,0.7846,-0.0218]))
 Transform1757 = x3d.Transform()
 
-Transform1757.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1757.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1758 = x3d.Shape()
 Shape1758.setUSE("HAnimJointShape")
 
@@ -7881,7 +7881,7 @@ Coordinate1761.setPoint(x3d.doubleToFloat([-0.1961,0.7846,-0.0218,-0.1954,0.7393
 
 LineSet1760.setCoord(Coordinate1761)
 
-LineSet1760.addComments(x3d.CommentsBlock('''from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2'''))
+LineSet1760.addComments(x3d.CommentsBlock("""from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2"""))
 ColorRGBA1762 = x3d.ColorRGBA()
 ColorRGBA1762.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7905,7 +7905,7 @@ Transform1765 = x3d.Transform()
 Transform1765.setTranslation(x3d.doubleToFloat([-0.1954,0.7393,-0.0185]))
 Transform1766 = x3d.Transform()
 
-Transform1766.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1766.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1767 = x3d.Shape()
 Shape1767.setUSE("HAnimJointShape")
 
@@ -7922,7 +7922,7 @@ Coordinate1770.setPoint(x3d.doubleToFloat([-0.1954,0.7393,-0.0185,-0.1945,0.7169
 
 LineSet1769.setCoord(Coordinate1770)
 
-LineSet1769.addComments(x3d.CommentsBlock('''from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2'''))
+LineSet1769.addComments(x3d.CommentsBlock("""from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2"""))
 ColorRGBA1771 = x3d.ColorRGBA()
 ColorRGBA1771.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -7962,7 +7962,7 @@ Transform1775 = x3d.Transform()
 Transform1775.setTranslation(x3d.doubleToFloat([-0.1809,0.7,-0.1067]))
 Transform1776 = x3d.Transform()
 
-Transform1776.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1776.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1777 = x3d.Shape()
 Shape1777.setUSE("HAnimJointShape")
 
@@ -7979,7 +7979,7 @@ Coordinate1780.setPoint(x3d.doubleToFloat([-0.1809,0.7,-0.1067,-0.1972,0.806,-0.
 
 LineSet1779.setCoord(Coordinate1780)
 
-LineSet1779.addComments(x3d.CommentsBlock('''from r_midcarpal_3 to r_carpometacarpal_3 vertices 2'''))
+LineSet1779.addComments(x3d.CommentsBlock("""from r_midcarpal_3 to r_carpometacarpal_3 vertices 2"""))
 ColorRGBA1781 = x3d.ColorRGBA()
 ColorRGBA1781.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8003,7 +8003,7 @@ Transform1784 = x3d.Transform()
 Transform1784.setTranslation(x3d.doubleToFloat([-0.1972,0.806,-0.0468]))
 Transform1785 = x3d.Transform()
 
-Transform1785.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1785.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1786 = x3d.Shape()
 Shape1786.setUSE("HAnimJointShape")
 
@@ -8020,7 +8020,7 @@ Coordinate1789.setPoint(x3d.doubleToFloat([-0.1972,0.806,-0.0468,-0.1972,0.7849,
 
 LineSet1788.setCoord(Coordinate1789)
 
-LineSet1788.addComments(x3d.CommentsBlock('''from r_carpometacarpal_3 to r_metacarpophalangeal_3 vertices 2'''))
+LineSet1788.addComments(x3d.CommentsBlock("""from r_carpometacarpal_3 to r_metacarpophalangeal_3 vertices 2"""))
 ColorRGBA1790 = x3d.ColorRGBA()
 ColorRGBA1790.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8071,7 +8071,7 @@ Transform1800 = x3d.Transform()
 Transform1800.setTranslation(x3d.doubleToFloat([-0.1972,0.7849,-0.0468]))
 Transform1801 = x3d.Transform()
 
-Transform1801.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1801.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1802 = x3d.Shape()
 Shape1802.setUSE("HAnimJointShape")
 
@@ -8088,7 +8088,7 @@ Coordinate1805.setPoint(x3d.doubleToFloat([-0.1972,0.7849,-0.0468,-0.195,0.7304,
 
 LineSet1804.setCoord(Coordinate1805)
 
-LineSet1804.addComments(x3d.CommentsBlock('''from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2'''))
+LineSet1804.addComments(x3d.CommentsBlock("""from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2"""))
 ColorRGBA1806 = x3d.ColorRGBA()
 ColorRGBA1806.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8112,7 +8112,7 @@ Transform1809 = x3d.Transform()
 Transform1809.setTranslation(x3d.doubleToFloat([-0.195,0.7304,-0.0441]))
 Transform1810 = x3d.Transform()
 
-Transform1810.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1810.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1811 = x3d.Shape()
 Shape1811.setUSE("HAnimJointShape")
 
@@ -8129,7 +8129,7 @@ Coordinate1814.setPoint(x3d.doubleToFloat([-0.195,0.7304,-0.0441,-0.1939,0.7042,
 
 LineSet1813.setCoord(Coordinate1814)
 
-LineSet1813.addComments(x3d.CommentsBlock('''from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2'''))
+LineSet1813.addComments(x3d.CommentsBlock("""from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2"""))
 ColorRGBA1815 = x3d.ColorRGBA()
 ColorRGBA1815.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8169,7 +8169,7 @@ Transform1819 = x3d.Transform()
 Transform1819.setTranslation(x3d.doubleToFloat([-0.1809,0.6973,-0.1276]))
 Transform1820 = x3d.Transform()
 
-Transform1820.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1820.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1821 = x3d.Shape()
 Shape1821.setUSE("HAnimJointShape")
 
@@ -8186,7 +8186,7 @@ Coordinate1824.setPoint(x3d.doubleToFloat([-0.1809,0.6973,-0.1276,-0.1951,0.8049
 
 LineSet1823.setCoord(Coordinate1824)
 
-LineSet1823.addComments(x3d.CommentsBlock('''from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2'''))
+LineSet1823.addComments(x3d.CommentsBlock("""from r_midcarpal_4_5 to r_carpometacarpal_4 vertices 2"""))
 ColorRGBA1825 = x3d.ColorRGBA()
 ColorRGBA1825.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8203,7 +8203,7 @@ Coordinate1828.setPoint(x3d.doubleToFloat([-0.1809,0.6973,-0.1276,-0.1926,0.8096
 
 LineSet1827.setCoord(Coordinate1828)
 
-LineSet1827.addComments(x3d.CommentsBlock('''from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2'''))
+LineSet1827.addComments(x3d.CommentsBlock("""from r_midcarpal_4_5 to r_carpometacarpal_5 vertices 2"""))
 ColorRGBA1829 = x3d.ColorRGBA()
 ColorRGBA1829.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8227,7 +8227,7 @@ Transform1832 = x3d.Transform()
 Transform1832.setTranslation(x3d.doubleToFloat([-0.1951,0.8049,-0.0732]))
 Transform1833 = x3d.Transform()
 
-Transform1833.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1833.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1834 = x3d.Shape()
 Shape1834.setUSE("HAnimJointShape")
 
@@ -8244,7 +8244,7 @@ Coordinate1837.setPoint(x3d.doubleToFloat([-0.1951,0.8049,-0.0732,-0.1951,0.7845
 
 LineSet1836.setCoord(Coordinate1837)
 
-LineSet1836.addComments(x3d.CommentsBlock('''from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2'''))
+LineSet1836.addComments(x3d.CommentsBlock("""from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2"""))
 ColorRGBA1838 = x3d.ColorRGBA()
 ColorRGBA1838.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8268,7 +8268,7 @@ Transform1841 = x3d.Transform()
 Transform1841.setTranslation(x3d.doubleToFloat([-0.1951,0.7845,-0.0732]))
 Transform1842 = x3d.Transform()
 
-Transform1842.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1842.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1843 = x3d.Shape()
 Shape1843.setUSE("HAnimJointShape")
 
@@ -8285,7 +8285,7 @@ Coordinate1846.setPoint(x3d.doubleToFloat([-0.1951,0.7845,-0.0732,-0.192,0.7318,
 
 LineSet1845.setCoord(Coordinate1846)
 
-LineSet1845.addComments(x3d.CommentsBlock('''from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2'''))
+LineSet1845.addComments(x3d.CommentsBlock("""from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2"""))
 ColorRGBA1847 = x3d.ColorRGBA()
 ColorRGBA1847.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8309,7 +8309,7 @@ Transform1850 = x3d.Transform()
 Transform1850.setTranslation(x3d.doubleToFloat([-0.192,0.7318,-0.0716]))
 Transform1851 = x3d.Transform()
 
-Transform1851.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1851.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1852 = x3d.Shape()
 Shape1852.setUSE("HAnimJointShape")
 
@@ -8326,7 +8326,7 @@ Coordinate1855.setPoint(x3d.doubleToFloat([-0.192,0.7318,-0.0716,-0.1908,0.7077,
 
 LineSet1854.setCoord(Coordinate1855)
 
-LineSet1854.addComments(x3d.CommentsBlock('''from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2'''))
+LineSet1854.addComments(x3d.CommentsBlock("""from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2"""))
 ColorRGBA1856 = x3d.ColorRGBA()
 ColorRGBA1856.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8364,7 +8364,7 @@ Transform1860 = x3d.Transform()
 Transform1860.setTranslation(x3d.doubleToFloat([-0.1926,0.8096,-0.0975]))
 Transform1861 = x3d.Transform()
 
-Transform1861.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1861.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1862 = x3d.Shape()
 Shape1862.setUSE("HAnimJointShape")
 
@@ -8381,7 +8381,7 @@ Coordinate1865.setPoint(x3d.doubleToFloat([-0.1926,0.8096,-0.0975,-0.1926,0.7896
 
 LineSet1864.setCoord(Coordinate1865)
 
-LineSet1864.addComments(x3d.CommentsBlock('''from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2'''))
+LineSet1864.addComments(x3d.CommentsBlock("""from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2"""))
 ColorRGBA1866 = x3d.ColorRGBA()
 ColorRGBA1866.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8433,7 +8433,7 @@ Transform1876 = x3d.Transform()
 Transform1876.setTranslation(x3d.doubleToFloat([-0.1926,0.7896,-0.0975]))
 Transform1877 = x3d.Transform()
 
-Transform1877.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1877.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1878 = x3d.Shape()
 Shape1878.setUSE("HAnimJointShape")
 
@@ -8450,7 +8450,7 @@ Coordinate1881.setPoint(x3d.doubleToFloat([-0.1926,0.7896,-0.0975,-0.1902,0.7483
 
 LineSet1880.setCoord(Coordinate1881)
 
-LineSet1880.addComments(x3d.CommentsBlock('''from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2'''))
+LineSet1880.addComments(x3d.CommentsBlock("""from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2"""))
 ColorRGBA1882 = x3d.ColorRGBA()
 ColorRGBA1882.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -8474,7 +8474,7 @@ Transform1885 = x3d.Transform()
 Transform1885.setTranslation(x3d.doubleToFloat([-0.1902,0.7483,-0.0963]))
 Transform1886 = x3d.Transform()
 
-Transform1886.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform1886.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape1887 = x3d.Shape()
 Shape1887.setUSE("HAnimJointShape")
 
@@ -8491,7 +8491,7 @@ Coordinate1890.setPoint(x3d.doubleToFloat([-0.1902,0.7483,-0.0963,-0.1908,0.754,
 
 LineSet1889.setCoord(Coordinate1890)
 
-LineSet1889.addComments(x3d.CommentsBlock('''from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2'''))
+LineSet1889.addComments(x3d.CommentsBlock("""from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2"""))
 ColorRGBA1891 = x3d.ColorRGBA()
 ColorRGBA1891.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -10354,4 +10354,4 @@ Scene11.addChild(HAnimHumanoid38)
 
 X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/DonHumanoid.new.graalpy.x3d")
-X3D0.toFileJSON("../data/DonHumanoid.new.graalpy.json")
+X3D0.toFileJSON("../data/DonHumanoid.new.graalpy.x3dj")

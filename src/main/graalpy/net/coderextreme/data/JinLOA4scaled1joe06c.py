@@ -1,13 +1,17 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
+
+head1.addComments(x3d.CommentsBlock("""Scaled 1:1, Added Animations"""))
+
+head1.addComments(x3d.CommentsBlock("""Added Sites"""))
 component2 = x3d.component()
 component2.setName("HAnim")
 component2.setLevel(1)
@@ -100,7 +104,7 @@ meta19.setContent("Gnu Image Manipulation Program, http://www.gimp.org")
 head1.addMeta(meta19)
 meta20 = x3d.meta()
 meta20.setName("generator")
-meta20.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta20.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta20)
 meta21 = x3d.meta()
@@ -108,10 +112,6 @@ meta21.setName("license")
 meta21.setContent("../license.html")
 
 head1.addMeta(meta21)
-
-head1.addComments(x3d.CommentsBlock('''Scaled 1:1, Added Animations'''))
-
-head1.addComments(x3d.CommentsBlock('''Added Sites'''))
 
 X3D0.setHead(head1)
 Scene22 = x3d.Scene()
@@ -221,9 +221,10 @@ Shape38.setGeometry(IndexedFaceSet42)
 
 HAnimSegment37.addChild(Shape38)
 HAnimSite45 = x3d.HAnimSite()
+HAnimSite45.setName("sacrum")
 HAnimSite45.setDEF("sacrum_Sites")
 
-HAnimSite45.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite45.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment37.addChild(HAnimSite45)
 
@@ -267,9 +268,10 @@ Shape48.setGeometry(IndexedFaceSet52)
 
 HAnimSegment47.addChild(Shape48)
 HAnimSite55 = x3d.HAnimSite()
+HAnimSite55.setName("pelvis")
 HAnimSite55.setDEF("pelvis_Sites")
 
-HAnimSite55.addComments(x3d.CommentsBlock('''(r_iliocristale -0.1525 1.0628 0.0035) (r_trochanterion -0.1689 0.8419 0.0352) (l_iliocristale 0.1612 1.0537 0.0008) (l_trochanterion 0.1677 0.8336 0.0303) (r_asis -0.0887 1.0021 0.1112) (l_asis 0.0774 1.0190 -0.1151) (r_psis -0.0716 1.0190 -0.1138) (l_psis 0.0774 1.0190 -0.1151) (crotch 0.0034 0.8266 0.0257)'''))
+HAnimSite55.addComments(x3d.CommentsBlock("""(r_iliocristale -0.1525 1.0628 0.0035) (r_trochanterion -0.1689 0.8419 0.0352) (l_iliocristale 0.1612 1.0537 0.0008) (l_trochanterion 0.1677 0.8336 0.0303) (r_asis -0.0887 1.0021 0.1112) (l_asis 0.0774 1.0190 -0.1151) (r_psis -0.0716 1.0190 -0.1138) (l_psis 0.0774 1.0190 -0.1151) (crotch 0.0034 0.8266 0.0257)"""))
 
 HAnimSegment47.addChild(HAnimSite55)
 
@@ -313,9 +315,10 @@ Shape58.setGeometry(IndexedFaceSet62)
 
 HAnimSegment57.addChild(Shape58)
 HAnimSite65 = x3d.HAnimSite()
+HAnimSite65.setName("l_thigh")
 HAnimSite65.setDEF("l_thigh_Sites")
 
-HAnimSite65.addComments(x3d.CommentsBlock('''(l_knee_crease 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella x y z)'''))
+HAnimSite65.addComments(x3d.CommentsBlock("""(l_knee_crease 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella x y z)"""))
 
 HAnimSegment57.addChild(HAnimSite65)
 
@@ -359,9 +362,10 @@ Shape68.setGeometry(IndexedFaceSet72)
 
 HAnimSegment67.addChild(Shape68)
 HAnimSite75 = x3d.HAnimSite()
+HAnimSite75.setName("l_calf")
 HAnimSite75.setDEF("l_calf_Sites")
 
-HAnimSite75.addComments(x3d.CommentsBlock('''(l_tibiale x y z) (l_medial_malleolus 0.0890 0.0716 -0.0881) (l_lateral_malleolus 0.1308 0.0597 -0.1032)'''))
+HAnimSite75.addComments(x3d.CommentsBlock("""(l_tibiale x y z) (l_medial_malleolus 0.0890 0.0716 -0.0881) (l_lateral_malleolus 0.1308 0.0597 -0.1032)"""))
 
 HAnimSegment67.addChild(HAnimSite75)
 
@@ -405,9 +409,10 @@ Shape78.setGeometry(IndexedFaceSet82)
 
 HAnimSegment77.addChild(Shape78)
 HAnimSite85 = x3d.HAnimSite()
+HAnimSite85.setName("l_talus")
 HAnimSite85.setDEF("l_talus_Sites")
 
-HAnimSite85.addComments(x3d.CommentsBlock('''(l_sphyrion 0.0890 0.0575 -0.0943) (l_calcaneous_posterior 0.0974 0.0259 -0.1171)'''))
+HAnimSite85.addComments(x3d.CommentsBlock("""(l_sphyrion 0.0890 0.0575 -0.0943) (l_calcaneous_posterior 0.0974 0.0259 -0.1171)"""))
 
 HAnimSegment77.addChild(HAnimSite85)
 
@@ -451,9 +456,10 @@ Shape88.setGeometry(IndexedFaceSet92)
 
 HAnimSegment87.addChild(Shape88)
 HAnimSite95 = x3d.HAnimSite()
+HAnimSite95.setName("l_navicular")
 HAnimSite95.setDEF("l_navicular_Sites")
 
-HAnimSite95.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite95.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment87.addChild(HAnimSite95)
 
@@ -497,9 +503,10 @@ Shape98.setGeometry(IndexedFaceSet102)
 
 HAnimSegment97.addChild(Shape98)
 HAnimSite105 = x3d.HAnimSite()
+HAnimSite105.setName("l_cuneiform_1")
 HAnimSite105.setDEF("l_cuneiform_1_Sites")
 
-HAnimSite105.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite105.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment97.addChild(HAnimSite105)
 
@@ -543,9 +550,10 @@ Shape108.setGeometry(IndexedFaceSet112)
 
 HAnimSegment107.addChild(Shape108)
 HAnimSite115 = x3d.HAnimSite()
+HAnimSite115.setName("l_metatarsal_1")
 HAnimSite115.setDEF("l_metatarsal_1_Sites")
 
-HAnimSite115.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite115.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment107.addChild(HAnimSite115)
 
@@ -589,9 +597,10 @@ Shape118.setGeometry(IndexedFaceSet122)
 
 HAnimSegment117.addChild(Shape118)
 HAnimSite125 = x3d.HAnimSite()
+HAnimSite125.setName("l_tarsal_proximal_phalanx_1")
 HAnimSite125.setDEF("l_tarsal_proximal_phalanx_1_Sites")
 
-HAnimSite125.addComments(x3d.CommentsBlock('''(l_metatarsal_phalanx_1 0.0816 0.0232 0.0106)'''))
+HAnimSite125.addComments(x3d.CommentsBlock("""(l_metatarsal_phalanx_1 0.0816 0.0232 0.0106)"""))
 
 HAnimSegment117.addChild(HAnimSite125)
 
@@ -635,9 +644,10 @@ Shape128.setGeometry(IndexedFaceSet132)
 
 HAnimSegment127.addChild(Shape128)
 HAnimSite135 = x3d.HAnimSite()
+HAnimSite135.setName("l_tarsal_distal_phalanx_1")
 HAnimSite135.setDEF("l_tarsal_distal_phalanx_1_Sites")
 
-HAnimSite135.addComments(x3d.CommentsBlock('''(l_tarsal_distal_phalanx_1_tip 0.090 0.012 0.188)'''))
+HAnimSite135.addComments(x3d.CommentsBlock("""(l_tarsal_distal_phalanx_1_tip 0.090 0.012 0.188)"""))
 
 HAnimSegment127.addChild(HAnimSite135)
 
@@ -689,9 +699,10 @@ Shape138.setGeometry(IndexedFaceSet142)
 
 HAnimSegment137.addChild(Shape138)
 HAnimSite145 = x3d.HAnimSite()
+HAnimSite145.setName("l_cuneiform_2")
 HAnimSite145.setDEF("l_cuneiform_2_Sites")
 
-HAnimSite145.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite145.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment137.addChild(HAnimSite145)
 
@@ -735,9 +746,10 @@ Shape148.setGeometry(IndexedFaceSet152)
 
 HAnimSegment147.addChild(Shape148)
 HAnimSite155 = x3d.HAnimSite()
+HAnimSite155.setName("l_metatarsal_2")
 HAnimSite155.setDEF("l_metatarsal_2_Sites")
 
-HAnimSite155.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite155.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment147.addChild(HAnimSite155)
 
@@ -781,9 +793,10 @@ Shape158.setGeometry(IndexedFaceSet162)
 
 HAnimSegment157.addChild(Shape158)
 HAnimSite165 = x3d.HAnimSite()
+HAnimSite165.setName("l_tarsal_proximal_phalanx_2")
 HAnimSite165.setDEF("l_tarsal_proximal_phalanx_2_Sites")
 
-HAnimSite165.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite165.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment157.addChild(HAnimSite165)
 
@@ -827,9 +840,10 @@ Shape168.setGeometry(IndexedFaceSet172)
 
 HAnimSegment167.addChild(Shape168)
 HAnimSite175 = x3d.HAnimSite()
+HAnimSite175.setName("l_tarsal_middle_phalanx_2")
 HAnimSite175.setDEF("l_tarsal_middle_phalanx_2_Sites")
 
-HAnimSite175.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite175.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment167.addChild(HAnimSite175)
 
@@ -873,9 +887,10 @@ Shape178.setGeometry(IndexedFaceSet182)
 
 HAnimSegment177.addChild(Shape178)
 HAnimSite185 = x3d.HAnimSite()
-HAnimSite185.setDEF("l_tarsal_distal_phalanx_2")
+HAnimSite185.setName("l_tarsal_distal_phalanx_2")
+HAnimSite185.setDEF("l_tarsal_distal_phalanx_2_Sites")
 
-HAnimSite185.addComments(x3d.CommentsBlock('''(l_tarsal_distal_phalanx_2_tip 0.110 0.011 0.19)'''))
+HAnimSite185.addComments(x3d.CommentsBlock("""(l_tarsal_distal_phalanx_2_tip 0.110 0.011 0.19)"""))
 
 HAnimSegment177.addChild(HAnimSite185)
 
@@ -929,9 +944,10 @@ Shape188.setGeometry(IndexedFaceSet192)
 
 HAnimSegment187.addChild(Shape188)
 HAnimSite195 = x3d.HAnimSite()
+HAnimSite195.setName("l_cuneiform_3")
 HAnimSite195.setDEF("l_cuneiform_3_Sites")
 
-HAnimSite195.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite195.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment187.addChild(HAnimSite195)
 
@@ -975,9 +991,10 @@ Shape198.setGeometry(IndexedFaceSet202)
 
 HAnimSegment197.addChild(Shape198)
 HAnimSite205 = x3d.HAnimSite()
+HAnimSite205.setName("l_metatarsal_3")
 HAnimSite205.setDEF("l_metatarsal_3_Sites")
 
-HAnimSite205.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite205.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment197.addChild(HAnimSite205)
 
@@ -1021,9 +1038,10 @@ Shape208.setGeometry(IndexedFaceSet212)
 
 HAnimSegment207.addChild(Shape208)
 HAnimSite215 = x3d.HAnimSite()
+HAnimSite215.setName("l_tarsal_proximal_phalanx_3")
 HAnimSite215.setDEF("l_tarsal_proximal_phalanx_3_Sites")
 
-HAnimSite215.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite215.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment207.addChild(HAnimSite215)
 
@@ -1067,9 +1085,10 @@ Shape218.setGeometry(IndexedFaceSet222)
 
 HAnimSegment217.addChild(Shape218)
 HAnimSite225 = x3d.HAnimSite()
+HAnimSite225.setName("l_tarsal_middle_phalanx_3")
 HAnimSite225.setDEF("l_tarsal_middle_phalanx_3_Sites")
 
-HAnimSite225.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite225.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment217.addChild(HAnimSite225)
 
@@ -1113,9 +1132,10 @@ Shape228.setGeometry(IndexedFaceSet232)
 
 HAnimSegment227.addChild(Shape228)
 HAnimSite235 = x3d.HAnimSite()
+HAnimSite235.setName("l_tarsal_distal_phalanx_3")
 HAnimSite235.setDEF("l_tarsal_distal_phalanx_3_Sites")
 
-HAnimSite235.addComments(x3d.CommentsBlock('''(l_tarsal_distal_phalanx_3_tip 0.128 0.011 0.185)'''))
+HAnimSite235.addComments(x3d.CommentsBlock("""(l_tarsal_distal_phalanx_3_tip 0.128 0.011 0.185)"""))
 
 HAnimSegment227.addChild(HAnimSite235)
 
@@ -1171,9 +1191,10 @@ Shape238.setGeometry(IndexedFaceSet242)
 
 HAnimSegment237.addChild(Shape238)
 HAnimSite245 = x3d.HAnimSite()
+HAnimSite245.setName("l_calcaneus")
 HAnimSite245.setDEF("l_calcaneus_Sites")
 
-HAnimSite245.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite245.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment237.addChild(HAnimSite245)
 
@@ -1217,9 +1238,10 @@ Shape248.setGeometry(IndexedFaceSet252)
 
 HAnimSegment247.addChild(Shape248)
 HAnimSite255 = x3d.HAnimSite()
+HAnimSite255.setName("l_cuboid")
 HAnimSite255.setDEF("l_cuboid_Sites")
 
-HAnimSite255.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite255.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment247.addChild(HAnimSite255)
 
@@ -1263,9 +1285,10 @@ Shape258.setGeometry(IndexedFaceSet262)
 
 HAnimSegment257.addChild(Shape258)
 HAnimSite265 = x3d.HAnimSite()
+HAnimSite265.setName("l_metatarsal_4")
 HAnimSite265.setDEF("l_metatarsal_4_Sites")
 
-HAnimSite265.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite265.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment257.addChild(HAnimSite265)
 
@@ -1309,9 +1332,10 @@ Shape268.setGeometry(IndexedFaceSet272)
 
 HAnimSegment267.addChild(Shape268)
 HAnimSite275 = x3d.HAnimSite()
+HAnimSite275.setName("l_tarsal_proximal_phalanx_4")
 HAnimSite275.setDEF("l_tarsal_proximal_phalanx_4_Sites")
 
-HAnimSite275.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite275.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment267.addChild(HAnimSite275)
 
@@ -1355,9 +1379,10 @@ Shape278.setGeometry(IndexedFaceSet282)
 
 HAnimSegment277.addChild(Shape278)
 HAnimSite285 = x3d.HAnimSite()
+HAnimSite285.setName("l_tarsal_middle_phalanx_4")
 HAnimSite285.setDEF("l_tarsal_middle_phalanx_4_Sites")
 
-HAnimSite285.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite285.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment277.addChild(HAnimSite285)
 
@@ -1401,9 +1426,10 @@ Shape288.setGeometry(IndexedFaceSet292)
 
 HAnimSegment287.addChild(Shape288)
 HAnimSite295 = x3d.HAnimSite()
+HAnimSite295.setName("l_tarsal_distal_phalanx_4")
 HAnimSite295.setDEF("l_tarsal_distal_phalanx_4_Sites")
 
-HAnimSite295.addComments(x3d.CommentsBlock('''(l_tarsal_distal_phalanx_4_tip 0.142 0.011 0.178)'''))
+HAnimSite295.addComments(x3d.CommentsBlock("""(l_tarsal_distal_phalanx_4_tip 0.142 0.011 0.178)"""))
 
 HAnimSegment287.addChild(HAnimSite295)
 
@@ -1455,9 +1481,10 @@ Shape298.setGeometry(IndexedFaceSet302)
 
 HAnimSegment297.addChild(Shape298)
 HAnimSite305 = x3d.HAnimSite()
+HAnimSite305.setName("l_metatarsal_5")
 HAnimSite305.setDEF("l_metatarsal_5_Sites")
 
-HAnimSite305.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite305.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment297.addChild(HAnimSite305)
 
@@ -1501,9 +1528,10 @@ Shape308.setGeometry(IndexedFaceSet312)
 
 HAnimSegment307.addChild(Shape308)
 HAnimSite315 = x3d.HAnimSite()
+HAnimSite315.setName("l_tarsal_proximal_phalanx_5")
 HAnimSite315.setDEF("l_tarsal_proximal_phalanx_5_Sites")
 
-HAnimSite315.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite315.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment307.addChild(HAnimSite315)
 
@@ -1547,9 +1575,10 @@ Shape318.setGeometry(IndexedFaceSet322)
 
 HAnimSegment317.addChild(Shape318)
 HAnimSite325 = x3d.HAnimSite()
+HAnimSite325.setName("l_tarsal_middle_phalanx_5")
 HAnimSite325.setDEF("l_tarsal_middle_phalanx_5_Sites")
 
-HAnimSite325.addComments(x3d.CommentsBlock('''(l_metatarsal_phalanx_5 0.1825 0.0070 0.0928)'''))
+HAnimSite325.addComments(x3d.CommentsBlock("""(l_metatarsal_phalanx_5 0.1825 0.0070 0.0928)"""))
 
 HAnimSegment317.addChild(HAnimSite325)
 
@@ -1593,9 +1622,10 @@ Shape328.setGeometry(IndexedFaceSet332)
 
 HAnimSegment327.addChild(Shape328)
 HAnimSite335 = x3d.HAnimSite()
+HAnimSite335.setName("l_tarsal_distal_phalanx_5")
 HAnimSite335.setDEF("l_tarsal_distal_phalanx_5_Sites")
 
-HAnimSite335.addComments(x3d.CommentsBlock('''(l_tarsal_distal_phalanx_5_tip 0.154 0.010 0.168)'''))
+HAnimSite335.addComments(x3d.CommentsBlock("""(l_tarsal_distal_phalanx_5_tip 0.154 0.010 0.168)"""))
 
 HAnimSegment327.addChild(HAnimSite335)
 
@@ -1657,9 +1687,10 @@ Shape338.setGeometry(IndexedFaceSet342)
 
 HAnimSegment337.addChild(Shape338)
 HAnimSite345 = x3d.HAnimSite()
+HAnimSite345.setName("r_thigh")
 HAnimSite345.setDEF("r_thigh_Sites")
 
-HAnimSite345.addComments(x3d.CommentsBlock('''(r_knee_crease -0.0825 0.4932 -0.0326) (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) (r_femoral_medial_epicn -0.0221 0.5014 0.0289) (r_suprapatella x y z)'''))
+HAnimSite345.addComments(x3d.CommentsBlock("""(r_knee_crease -0.0825 0.4932 -0.0326) (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) (r_femoral_medial_epicn -0.0221 0.5014 0.0289) (r_suprapatella x y z)"""))
 
 HAnimSegment337.addChild(HAnimSite345)
 
@@ -1703,9 +1734,10 @@ Shape348.setGeometry(IndexedFaceSet352)
 
 HAnimSegment347.addChild(Shape348)
 HAnimSite355 = x3d.HAnimSite()
+HAnimSite355.setName("r_calf")
 HAnimSite355.setDEF("r_calf_Sites")
 
-HAnimSite355.addComments(x3d.CommentsBlock('''(r_tibiale x y z) (r_medial_malleolus -0.0591 0.0760 -0.0928) (r_lateral_malleolus -0.1006 0.0658 -0.1075)'''))
+HAnimSite355.addComments(x3d.CommentsBlock("""(r_tibiale x y z) (r_medial_malleolus -0.0591 0.0760 -0.0928) (r_lateral_malleolus -0.1006 0.0658 -0.1075)"""))
 
 HAnimSegment347.addChild(HAnimSite355)
 
@@ -1749,9 +1781,10 @@ Shape358.setGeometry(IndexedFaceSet362)
 
 HAnimSegment357.addChild(Shape358)
 HAnimSite365 = x3d.HAnimSite()
+HAnimSite365.setName("r_talus")
 HAnimSite365.setDEF("r_talus_Sites")
 
-HAnimSite365.addComments(x3d.CommentsBlock('''(r_sphyrion -0.0603 0.0610 -0.1002) (r_calcaneous_posterior -0.0692 0.0297 -0.1221)'''))
+HAnimSite365.addComments(x3d.CommentsBlock("""(r_sphyrion -0.0603 0.0610 -0.1002) (r_calcaneous_posterior -0.0692 0.0297 -0.1221)"""))
 
 HAnimSegment357.addChild(HAnimSite365)
 
@@ -1795,9 +1828,10 @@ Shape368.setGeometry(IndexedFaceSet372)
 
 HAnimSegment367.addChild(Shape368)
 HAnimSite375 = x3d.HAnimSite()
+HAnimSite375.setName("r_navicular")
 HAnimSite375.setDEF("r_navicular_Sites")
 
-HAnimSite375.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite375.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment367.addChild(HAnimSite375)
 
@@ -1841,9 +1875,10 @@ Shape378.setGeometry(IndexedFaceSet382)
 
 HAnimSegment377.addChild(Shape378)
 HAnimSite385 = x3d.HAnimSite()
+HAnimSite385.setName("r_cuneiform_1")
 HAnimSite385.setDEF("r_cuneiform_1_Sites")
 
-HAnimSite385.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite385.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment377.addChild(HAnimSite385)
 
@@ -1887,9 +1922,10 @@ Shape388.setGeometry(IndexedFaceSet392)
 
 HAnimSegment387.addChild(Shape388)
 HAnimSite395 = x3d.HAnimSite()
+HAnimSite395.setName("r_metatarsal_1")
 HAnimSite395.setDEF("r_metatarsal_1_Sites")
 
-HAnimSite395.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite395.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment387.addChild(HAnimSite395)
 
@@ -1933,9 +1969,10 @@ Shape398.setGeometry(IndexedFaceSet402)
 
 HAnimSegment397.addChild(Shape398)
 HAnimSite405 = x3d.HAnimSite()
+HAnimSite405.setName("r_tarsal_proximal_phalanx_1")
 HAnimSite405.setDEF("r_tarsal_proximal_phalanx_1_Sites")
 
-HAnimSite405.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite405.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment397.addChild(HAnimSite405)
 
@@ -1979,9 +2016,10 @@ Shape408.setGeometry(IndexedFaceSet412)
 
 HAnimSegment407.addChild(Shape408)
 HAnimSite415 = x3d.HAnimSite()
+HAnimSite415.setName("r_tarsal_distal_phalanx_1")
 HAnimSite415.setDEF("r_tarsal_distal_phalanx_1_Sites")
 
-HAnimSite415.addComments(x3d.CommentsBlock('''(r_metatarsal_phalanx_1 x y z) (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)'''))
+HAnimSite415.addComments(x3d.CommentsBlock("""(r_metatarsal_phalanx_1 x y z) (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)"""))
 
 HAnimSegment407.addChild(HAnimSite415)
 
@@ -2033,9 +2071,10 @@ Shape418.setGeometry(IndexedFaceSet422)
 
 HAnimSegment417.addChild(Shape418)
 HAnimSite425 = x3d.HAnimSite()
+HAnimSite425.setName("r_cuneiform_2")
 HAnimSite425.setDEF("r_cuneiform_2_Sites")
 
-HAnimSite425.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite425.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment417.addChild(HAnimSite425)
 
@@ -2079,9 +2118,10 @@ Shape428.setGeometry(IndexedFaceSet432)
 
 HAnimSegment427.addChild(Shape428)
 HAnimSite435 = x3d.HAnimSite()
+HAnimSite435.setName("r_metatarsal_2")
 HAnimSite435.setDEF("r_metatarsal_2_Sites")
 
-HAnimSite435.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite435.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment427.addChild(HAnimSite435)
 
@@ -2125,9 +2165,10 @@ Shape438.setGeometry(IndexedFaceSet442)
 
 HAnimSegment437.addChild(Shape438)
 HAnimSite445 = x3d.HAnimSite()
+HAnimSite445.setName("r_tarsal_proximal_phalanx_2")
 HAnimSite445.setDEF("r_tarsal_proximal_phalanx_2_Sites")
 
-HAnimSite445.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite445.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment437.addChild(HAnimSite445)
 
@@ -2171,9 +2212,10 @@ Shape448.setGeometry(IndexedFaceSet452)
 
 HAnimSegment447.addChild(Shape448)
 HAnimSite455 = x3d.HAnimSite()
+HAnimSite455.setName("r_tarsal_middle_phalanx_2")
 HAnimSite455.setDEF("r_tarsal_middle_phalanx_2_Sites")
 
-HAnimSite455.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite455.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment447.addChild(HAnimSite455)
 
@@ -2217,9 +2259,10 @@ Shape458.setGeometry(IndexedFaceSet462)
 
 HAnimSegment457.addChild(Shape458)
 HAnimSite465 = x3d.HAnimSite()
+HAnimSite465.setName("r_tarsal_distal_phalanx_2")
 HAnimSite465.setDEF("r_tarsal_distal_phalanx_2_Sites")
 
-HAnimSite465.addComments(x3d.CommentsBlock('''(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19)'''))
+HAnimSite465.addComments(x3d.CommentsBlock("""(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19)"""))
 
 HAnimSegment457.addChild(HAnimSite465)
 
@@ -2273,9 +2316,10 @@ Shape468.setGeometry(IndexedFaceSet472)
 
 HAnimSegment467.addChild(Shape468)
 HAnimSite475 = x3d.HAnimSite()
+HAnimSite475.setName("r_cuneiform_3")
 HAnimSite475.setDEF("r_cuneiform_3_Sites")
 
-HAnimSite475.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite475.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment467.addChild(HAnimSite475)
 
@@ -2319,9 +2363,10 @@ Shape478.setGeometry(IndexedFaceSet482)
 
 HAnimSegment477.addChild(Shape478)
 HAnimSite485 = x3d.HAnimSite()
+HAnimSite485.setName("r_metatarsal_3")
 HAnimSite485.setDEF("r_metatarsal_3_Sites")
 
-HAnimSite485.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite485.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment477.addChild(HAnimSite485)
 
@@ -2365,9 +2410,10 @@ Shape488.setGeometry(IndexedFaceSet492)
 
 HAnimSegment487.addChild(Shape488)
 HAnimSite495 = x3d.HAnimSite()
+HAnimSite495.setName("r_tarsal_proximal_phalanx_3")
 HAnimSite495.setDEF("r_tarsal_proximal_phalanx_3_Sites")
 
-HAnimSite495.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite495.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment487.addChild(HAnimSite495)
 
@@ -2411,9 +2457,10 @@ Shape498.setGeometry(IndexedFaceSet502)
 
 HAnimSegment497.addChild(Shape498)
 HAnimSite505 = x3d.HAnimSite()
+HAnimSite505.setName("r_tarsal_middle_phalanx_3")
 HAnimSite505.setDEF("r_tarsal_middle_phalanx_3_Sites")
 
-HAnimSite505.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite505.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment497.addChild(HAnimSite505)
 
@@ -2457,9 +2504,10 @@ Shape508.setGeometry(IndexedFaceSet512)
 
 HAnimSegment507.addChild(Shape508)
 HAnimSite515 = x3d.HAnimSite()
+HAnimSite515.setName("r_tarsal_distal_phalanx_3")
 HAnimSite515.setDEF("r_tarsal_distal_phalanx_3_Sites")
 
-HAnimSite515.addComments(x3d.CommentsBlock('''(r_tarsal_distal_phalanx_3_tip -0.128 0.011 0.185)'''))
+HAnimSite515.addComments(x3d.CommentsBlock("""(r_tarsal_distal_phalanx_3_tip -0.128 0.011 0.185)"""))
 
 HAnimSegment507.addChild(HAnimSite515)
 
@@ -2515,9 +2563,10 @@ Shape518.setGeometry(IndexedFaceSet522)
 
 HAnimSegment517.addChild(Shape518)
 HAnimSite525 = x3d.HAnimSite()
+HAnimSite525.setName("r_calcaneus")
 HAnimSite525.setDEF("r_calcaneus_Sites")
 
-HAnimSite525.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite525.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment517.addChild(HAnimSite525)
 
@@ -2561,9 +2610,10 @@ Shape528.setGeometry(IndexedFaceSet532)
 
 HAnimSegment527.addChild(Shape528)
 HAnimSite535 = x3d.HAnimSite()
+HAnimSite535.setName("r_cuboid")
 HAnimSite535.setDEF("r_cuboid_Sites")
 
-HAnimSite535.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite535.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment527.addChild(HAnimSite535)
 
@@ -2607,9 +2657,10 @@ Shape538.setGeometry(IndexedFaceSet542)
 
 HAnimSegment537.addChild(Shape538)
 HAnimSite545 = x3d.HAnimSite()
+HAnimSite545.setName("r_metatarsal_4")
 HAnimSite545.setDEF("r_metatarsal_4_Sites")
 
-HAnimSite545.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite545.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment537.addChild(HAnimSite545)
 
@@ -2653,9 +2704,10 @@ Shape548.setGeometry(IndexedFaceSet552)
 
 HAnimSegment547.addChild(Shape548)
 HAnimSite555 = x3d.HAnimSite()
+HAnimSite555.setName("r_tarsal_proximal_phalanx_4")
 HAnimSite555.setDEF("r_tarsal_proximal_phalanx_4_Sites")
 
-HAnimSite555.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite555.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment547.addChild(HAnimSite555)
 
@@ -2699,9 +2751,10 @@ Shape558.setGeometry(IndexedFaceSet562)
 
 HAnimSegment557.addChild(Shape558)
 HAnimSite565 = x3d.HAnimSite()
+HAnimSite565.setName("r_tarsal_middle_phalanx_4")
 HAnimSite565.setDEF("r_tarsal_middle_phalanx_4_Sites")
 
-HAnimSite565.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite565.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment557.addChild(HAnimSite565)
 
@@ -2745,9 +2798,10 @@ Shape568.setGeometry(IndexedFaceSet572)
 
 HAnimSegment567.addChild(Shape568)
 HAnimSite575 = x3d.HAnimSite()
+HAnimSite575.setName("r_tarsal_distal_phalanx_4")
 HAnimSite575.setDEF("r_tarsal_distal_phalanx_4_Sites")
 
-HAnimSite575.addComments(x3d.CommentsBlock('''(r_tarsal_distal_phalanx_4_tip -0.142 0.011 0.178)'''))
+HAnimSite575.addComments(x3d.CommentsBlock("""(r_tarsal_distal_phalanx_4_tip -0.142 0.011 0.178)"""))
 
 HAnimSegment567.addChild(HAnimSite575)
 
@@ -2799,9 +2853,10 @@ Shape578.setGeometry(IndexedFaceSet582)
 
 HAnimSegment577.addChild(Shape578)
 HAnimSite585 = x3d.HAnimSite()
+HAnimSite585.setName("r_metatarsal_")
 HAnimSite585.setDEF("r_metatarsal__Sites")
 
-HAnimSite585.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite585.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment577.addChild(HAnimSite585)
 
@@ -2845,9 +2900,10 @@ Shape588.setGeometry(IndexedFaceSet592)
 
 HAnimSegment587.addChild(Shape588)
 HAnimSite595 = x3d.HAnimSite()
+HAnimSite595.setName("r_tarsal_proximal_phalanx_5")
 HAnimSite595.setDEF("r_tarsal_proximal_phalanx_5_Sites")
 
-HAnimSite595.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite595.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment587.addChild(HAnimSite595)
 
@@ -2891,9 +2947,10 @@ Shape598.setGeometry(IndexedFaceSet602)
 
 HAnimSegment597.addChild(Shape598)
 HAnimSite605 = x3d.HAnimSite()
+HAnimSite605.setName("r_tarsal_middle_phalanx_5")
 HAnimSite605.setDEF("r_tarsal_middle_phalanx_5_Sites")
 
-HAnimSite605.addComments(x3d.CommentsBlock('''(r_metatarsal_phalanx_5 x y z)'''))
+HAnimSite605.addComments(x3d.CommentsBlock("""(r_metatarsal_phalanx_5 x y z)"""))
 
 HAnimSegment597.addChild(HAnimSite605)
 
@@ -2937,9 +2994,10 @@ Shape608.setGeometry(IndexedFaceSet612)
 
 HAnimSegment607.addChild(Shape608)
 HAnimSite615 = x3d.HAnimSite()
+HAnimSite615.setName("r_tarsal_distal_phalanx_5")
 HAnimSite615.setDEF("r_tarsal_distal_phalanx_5_Sites")
 
-HAnimSite615.addComments(x3d.CommentsBlock('''(r_tarsal_distal_phalanx_5_tip -0.154 0.010 0.168)'''))
+HAnimSite615.addComments(x3d.CommentsBlock("""(r_tarsal_distal_phalanx_5_tip -0.154 0.010 0.168)"""))
 
 HAnimSegment607.addChild(HAnimSite615)
 
@@ -3001,9 +3059,10 @@ Shape618.setGeometry(IndexedFaceSet622)
 
 HAnimSegment617.addChild(Shape618)
 HAnimSite625 = x3d.HAnimSite()
+HAnimSite625.setName("l5")
 HAnimSite625.setDEF("l5_Sites")
 
-HAnimSite625.addComments(x3d.CommentsBlock('''(spine_2_lower_back x y z) (waist_preferred_anterior x y z) (waist_preferred_posterior 0.2900 1.0915 -0.1091)'''))
+HAnimSite625.addComments(x3d.CommentsBlock("""(spine_2_lower_back x y z) (waist_preferred_anterior x y z) (waist_preferred_posterior 0.2900 1.0915 -0.1091)"""))
 
 HAnimSegment617.addChild(HAnimSite625)
 
@@ -3047,9 +3106,10 @@ Shape628.setGeometry(IndexedFaceSet632)
 
 HAnimSegment627.addChild(Shape628)
 HAnimSite635 = x3d.HAnimSite()
+HAnimSite635.setName("l4")
 HAnimSite635.setDEF("l4_Sites")
 
-HAnimSite635.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite635.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment627.addChild(HAnimSite635)
 
@@ -3093,9 +3153,10 @@ Shape638.setGeometry(IndexedFaceSet642)
 
 HAnimSegment637.addChild(Shape638)
 HAnimSite645 = x3d.HAnimSite()
+HAnimSite645.setName("l3")
 HAnimSite645.setDEF("l3_Sites")
 
-HAnimSite645.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite645.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment637.addChild(HAnimSite645)
 
@@ -3139,9 +3200,10 @@ Shape648.setGeometry(IndexedFaceSet652)
 
 HAnimSegment647.addChild(Shape648)
 HAnimSite655 = x3d.HAnimSite()
+HAnimSite655.setName("l2")
 HAnimSite655.setDEF("l2_Sites")
 
-HAnimSite655.addComments(x3d.CommentsBlock('''(l_rib_10 0.0871 1.1925 0.0992) (r_rib_10 -0.0711 1.1941 0.1016) (rib_10_midspine 0.0049 1.1908 -0.1113)'''))
+HAnimSite655.addComments(x3d.CommentsBlock("""(l_rib_10 0.0871 1.1925 0.0992) (r_rib_10 -0.0711 1.1941 0.1016) (rib_10_midspine 0.0049 1.1908 -0.1113)"""))
 
 HAnimSegment647.addChild(HAnimSite655)
 
@@ -3185,9 +3247,10 @@ Shape658.setGeometry(IndexedFaceSet662)
 
 HAnimSegment657.addChild(Shape658)
 HAnimSite665 = x3d.HAnimSite()
+HAnimSite665.setName("l1")
 HAnimSite665.setDEF("l1_Sites")
 
-HAnimSite665.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite665.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment657.addChild(HAnimSite665)
 
@@ -3231,9 +3294,10 @@ Shape668.setGeometry(IndexedFaceSet672)
 
 HAnimSegment667.addChild(Shape668)
 HAnimSite675 = x3d.HAnimSite()
+HAnimSite675.setName("t12")
 HAnimSite675.setDEF("t12_Sites")
 
-HAnimSite675.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite675.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment667.addChild(HAnimSite675)
 
@@ -3277,9 +3341,10 @@ Shape678.setGeometry(IndexedFaceSet682)
 
 HAnimSegment677.addChild(Shape678)
 HAnimSite685 = x3d.HAnimSite()
+HAnimSite685.setName("t11")
 HAnimSite685.setDEF("t11_Sites")
 
-HAnimSite685.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite685.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment677.addChild(HAnimSite685)
 
@@ -3323,9 +3388,10 @@ Shape688.setGeometry(IndexedFaceSet692)
 
 HAnimSegment687.addChild(Shape688)
 HAnimSite695 = x3d.HAnimSite()
+HAnimSite695.setName("t10")
 HAnimSite695.setDEF("t10_Sites")
 
-HAnimSite695.addComments(x3d.CommentsBlock('''(substernale 0.0085 1.2995 0.1147) (mesosternale x y z)'''))
+HAnimSite695.addComments(x3d.CommentsBlock("""(substernale 0.0085 1.2995 0.1147) (mesosternale x y z)"""))
 
 HAnimSegment687.addChild(HAnimSite695)
 
@@ -3369,9 +3435,10 @@ Shape698.setGeometry(IndexedFaceSet702)
 
 HAnimSegment697.addChild(Shape698)
 HAnimSite705 = x3d.HAnimSite()
+HAnimSite705.setName("t9")
 HAnimSite705.setDEF("t9_Sites")
 
-HAnimSite705.addComments(x3d.CommentsBlock('''(l_thelion 0.0918 1.3382 0.1192) (r_thelion -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane x y z) (l_chest_midsagittal_plane x y z) (r_chest_midsagittal_plane x y z)'''))
+HAnimSite705.addComments(x3d.CommentsBlock("""(l_thelion 0.0918 1.3382 0.1192) (r_thelion -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane x y z) (l_chest_midsagittal_plane x y z) (r_chest_midsagittal_plane x y z)"""))
 
 HAnimSegment697.addChild(HAnimSite705)
 
@@ -3415,9 +3482,10 @@ Shape708.setGeometry(IndexedFaceSet712)
 
 HAnimSegment707.addChild(Shape708)
 HAnimSite715 = x3d.HAnimSite()
+HAnimSite715.setName("t8")
 HAnimSite715.setDEF("t8_Sites")
 
-HAnimSite715.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite715.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment707.addChild(HAnimSite715)
 
@@ -3461,9 +3529,10 @@ Shape718.setGeometry(IndexedFaceSet722)
 
 HAnimSegment717.addChild(Shape718)
 HAnimSite725 = x3d.HAnimSite()
+HAnimSite725.setName("t7")
 HAnimSite725.setDEF("t7_Sites")
 
-HAnimSite725.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite725.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment717.addChild(HAnimSite725)
 
@@ -3507,9 +3576,10 @@ Shape728.setGeometry(IndexedFaceSet732)
 
 HAnimSegment727.addChild(Shape728)
 HAnimSite735 = x3d.HAnimSite()
+HAnimSite735.setName("t6")
 HAnimSite735.setDEF("t6_Sites")
 
-HAnimSite735.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite735.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment727.addChild(HAnimSite735)
 
@@ -3553,9 +3623,10 @@ Shape738.setGeometry(IndexedFaceSet742)
 
 HAnimSegment737.addChild(Shape738)
 HAnimSite745 = x3d.HAnimSite()
+HAnimSite745.setName("t5")
 HAnimSite745.setDEF("t5_Sites")
 
-HAnimSite745.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite745.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment737.addChild(HAnimSite745)
 
@@ -3599,9 +3670,10 @@ Shape748.setGeometry(IndexedFaceSet752)
 
 HAnimSegment747.addChild(Shape748)
 HAnimSite755 = x3d.HAnimSite()
+HAnimSite755.setName("t4")
 HAnimSite755.setDEF("t4_Sites")
 
-HAnimSite755.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite755.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment747.addChild(HAnimSite755)
 
@@ -3645,9 +3717,10 @@ Shape758.setGeometry(IndexedFaceSet762)
 
 HAnimSegment757.addChild(Shape758)
 HAnimSite765 = x3d.HAnimSite()
+HAnimSite765.setName("t3")
 HAnimSite765.setDEF("t3_Sites")
 
-HAnimSite765.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite765.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment757.addChild(HAnimSite765)
 
@@ -3691,9 +3764,10 @@ Shape768.setGeometry(IndexedFaceSet772)
 
 HAnimSegment767.addChild(Shape768)
 HAnimSite775 = x3d.HAnimSite()
+HAnimSite775.setName("t2")
 HAnimSite775.setDEF("t2_Sites")
 
-HAnimSite775.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite775.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment767.addChild(HAnimSite775)
 
@@ -3737,9 +3811,10 @@ Shape778.setGeometry(IndexedFaceSet782)
 
 HAnimSegment777.addChild(Shape778)
 HAnimSite785 = x3d.HAnimSite()
+HAnimSite785.setName("t1")
 HAnimSite785.setDEF("t1_Sites")
 
-HAnimSite785.addComments(x3d.CommentsBlock('''(suprasternale 0.0084 1.4714 0.0551) (cervicale 0.0064 1.520 -0.0815)'''))
+HAnimSite785.addComments(x3d.CommentsBlock("""(suprasternale 0.0084 1.4714 0.0551) (cervicale 0.0064 1.520 -0.0815)"""))
 
 HAnimSegment777.addChild(HAnimSite785)
 
@@ -3783,9 +3858,10 @@ Shape788.setGeometry(IndexedFaceSet792)
 
 HAnimSegment787.addChild(Shape788)
 HAnimSite795 = x3d.HAnimSite()
+HAnimSite795.setName("c7")
 HAnimSite795.setDEF("c7_Sites")
 
-HAnimSite795.addComments(x3d.CommentsBlock('''(l_neck_base 0.0646 1.5141 -0.0380) (r_neck_base -0.0419 1.5149 -0.0220)'''))
+HAnimSite795.addComments(x3d.CommentsBlock("""(l_neck_base 0.0646 1.5141 -0.0380) (r_neck_base -0.0419 1.5149 -0.0220)"""))
 
 HAnimSegment787.addChild(HAnimSite795)
 
@@ -3829,9 +3905,10 @@ Shape798.setGeometry(IndexedFaceSet802)
 
 HAnimSegment797.addChild(Shape798)
 HAnimSite805 = x3d.HAnimSite()
+HAnimSite805.setName("c6")
 HAnimSite805.setDEF("c6_Sites")
 
-HAnimSite805.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite805.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment797.addChild(HAnimSite805)
 
@@ -3875,9 +3952,10 @@ Shape808.setGeometry(IndexedFaceSet812)
 
 HAnimSegment807.addChild(Shape808)
 HAnimSite815 = x3d.HAnimSite()
+HAnimSite815.setName("c5")
 HAnimSite815.setDEF("c5_Sites")
 
-HAnimSite815.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite815.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment807.addChild(HAnimSite815)
 
@@ -3921,9 +3999,10 @@ Shape818.setGeometry(IndexedFaceSet822)
 
 HAnimSegment817.addChild(Shape818)
 HAnimSite825 = x3d.HAnimSite()
+HAnimSite825.setName("c4")
 HAnimSite825.setDEF("c4_Sites")
 
-HAnimSite825.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite825.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment817.addChild(HAnimSite825)
 
@@ -3967,9 +4046,10 @@ Shape828.setGeometry(IndexedFaceSet832)
 
 HAnimSegment827.addChild(Shape828)
 HAnimSite835 = x3d.HAnimSite()
+HAnimSite835.setName("c3")
 HAnimSite835.setDEF("c3_Sites")
 
-HAnimSite835.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite835.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment827.addChild(HAnimSite835)
 
@@ -4013,9 +4093,10 @@ Shape838.setGeometry(IndexedFaceSet842)
 
 HAnimSegment837.addChild(Shape838)
 HAnimSite845 = x3d.HAnimSite()
+HAnimSite845.setName("c2")
 HAnimSite845.setDEF("c2_Sites")
 
-HAnimSite845.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite845.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment837.addChild(HAnimSite845)
 
@@ -4059,9 +4140,10 @@ Shape848.setGeometry(IndexedFaceSet852)
 
 HAnimSegment847.addChild(Shape848)
 HAnimSite855 = x3d.HAnimSite()
+HAnimSite855.setName("c1")
 HAnimSite855.setDEF("c1_Sites")
 
-HAnimSite855.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite855.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment847.addChild(HAnimSite855)
 
@@ -4105,9 +4187,10 @@ Shape858.setGeometry(IndexedFaceSet862)
 
 HAnimSegment857.addChild(Shape858)
 HAnimSite865 = x3d.HAnimSite()
+HAnimSite865.setName("skull")
 HAnimSite865.setDEF("skull_Sites")
 
-HAnimSite865.addComments(x3d.CommentsBlock('''(skull_vertex 0.0050 1.7504 0.0055) (sellion 0.0058 1.6316 0.0852) (r_infraorbitale -0.0237 1.6171 0.0752) (l_infraorbitale 0.0341 1.6171 0.0752) (r_tragion -0.0646 1.6347 0.0302) (l_tragion 0.0739 1.6348 0.0282) (nuchale 0.0039 1.5972 -0.0796) (opisthocranion x y z) (glabella x y z) (l_ectocanthus x y z) (r_ectocanthus x y z)'''))
+HAnimSite865.addComments(x3d.CommentsBlock("""(skull_vertex 0.0050 1.7504 0.0055) (sellion 0.0058 1.6316 0.0852) (r_infraorbitale -0.0237 1.6171 0.0752) (l_infraorbitale 0.0341 1.6171 0.0752) (r_tragion -0.0646 1.6347 0.0302) (l_tragion 0.0739 1.6348 0.0282) (nuchale 0.0039 1.5972 -0.0796) (opisthocranion x y z) (glabella x y z) (l_ectocanthus x y z) (r_ectocanthus x y z)"""))
 
 HAnimSegment857.addChild(HAnimSite865)
 
@@ -4151,9 +4234,10 @@ Shape868.setGeometry(IndexedFaceSet872)
 
 HAnimSegment867.addChild(Shape868)
 HAnimSite875 = x3d.HAnimSite()
+HAnimSite875.setName("l_eyelid")
 HAnimSite875.setDEF("l_eyelid_Sites")
 
-HAnimSite875.addComments(x3d.CommentsBlock('''(l_eyelid_tip x y z)'''))
+HAnimSite875.addComments(x3d.CommentsBlock("""(l_eyelid_tip x y z)"""))
 
 HAnimSegment867.addChild(HAnimSite875)
 
@@ -4199,9 +4283,10 @@ Shape878.setGeometry(IndexedFaceSet882)
 
 HAnimSegment877.addChild(Shape878)
 HAnimSite885 = x3d.HAnimSite()
+HAnimSite885.setName("r_eyelid")
 HAnimSite885.setDEF("r_eyelid_Sites")
 
-HAnimSite885.addComments(x3d.CommentsBlock('''(r_eyelid_tip x y z)'''))
+HAnimSite885.addComments(x3d.CommentsBlock("""(r_eyelid_tip x y z)"""))
 
 HAnimSegment877.addChild(HAnimSite885)
 
@@ -4247,9 +4332,10 @@ Shape888.setGeometry(IndexedFaceSet892)
 
 HAnimSegment887.addChild(Shape888)
 HAnimSite895 = x3d.HAnimSite()
+HAnimSite895.setName("l_eyeball")
 HAnimSite895.setDEF("l_eyeball_Sites")
 
-HAnimSite895.addComments(x3d.CommentsBlock('''(l_eyeball_tip x y z)'''))
+HAnimSite895.addComments(x3d.CommentsBlock("""(l_eyeball_tip x y z)"""))
 
 HAnimSegment887.addChild(HAnimSite895)
 
@@ -4295,9 +4381,10 @@ Shape898.setGeometry(IndexedFaceSet902)
 
 HAnimSegment897.addChild(Shape898)
 HAnimSite905 = x3d.HAnimSite()
+HAnimSite905.setName("r_eyeball")
 HAnimSite905.setDEF("r_eyeball_Sites")
 
-HAnimSite905.addComments(x3d.CommentsBlock('''(r_eyeball_tip x y z)'''))
+HAnimSite905.addComments(x3d.CommentsBlock("""(r_eyeball_tip x y z)"""))
 
 HAnimSegment897.addChild(HAnimSite905)
 
@@ -4343,9 +4430,10 @@ Shape908.setGeometry(IndexedFaceSet912)
 
 HAnimSegment907.addChild(Shape908)
 HAnimSite915 = x3d.HAnimSite()
+HAnimSite915.setName("l_eyebrow")
 HAnimSite915.setDEF("l_eyebrow_Sites")
 
-HAnimSite915.addComments(x3d.CommentsBlock('''(l_eyebrow_tip x y z)'''))
+HAnimSite915.addComments(x3d.CommentsBlock("""(l_eyebrow_tip x y z)"""))
 
 HAnimSegment907.addChild(HAnimSite915)
 
@@ -4391,9 +4479,10 @@ Shape918.setGeometry(IndexedFaceSet922)
 
 HAnimSegment917.addChild(Shape918)
 HAnimSite925 = x3d.HAnimSite()
+HAnimSite925.setName("r_eyebrow")
 HAnimSite925.setDEF("r_eyebrow_Sites")
 
-HAnimSite925.addComments(x3d.CommentsBlock('''(r_eyebrow_tip x y z)'''))
+HAnimSite925.addComments(x3d.CommentsBlock("""(r_eyebrow_tip x y z)"""))
 
 HAnimSegment917.addChild(HAnimSite925)
 
@@ -4439,9 +4528,10 @@ Shape928.setGeometry(IndexedFaceSet932)
 
 HAnimSegment927.addChild(Shape928)
 HAnimSite935 = x3d.HAnimSite()
+HAnimSite935.setName("jaw")
 HAnimSite935.setDEF("jaw_Sites")
 
-HAnimSite935.addComments(x3d.CommentsBlock('''(r_gonion -0.0520 1.5529 0.0347) (l_gonion 0.0631 1.5530 0.0330) (supramenton 0.0061 1.5410 0.0805) (menton x y z)'''))
+HAnimSite935.addComments(x3d.CommentsBlock("""(r_gonion -0.0520 1.5529 0.0347) (l_gonion 0.0631 1.5530 0.0330) (supramenton 0.0061 1.5410 0.0805) (menton x y z)"""))
 
 HAnimSegment927.addChild(HAnimSite935)
 
@@ -4503,9 +4593,10 @@ Shape938.setGeometry(IndexedFaceSet942)
 
 HAnimSegment937.addChild(Shape938)
 HAnimSite945 = x3d.HAnimSite()
+HAnimSite945.setName("l_clavicle")
 HAnimSite945.setDEF("l_clavicle_Sites")
 
-HAnimSite945.addComments(x3d.CommentsBlock('''(l_clavicale 0.0271 1.4943 0.0394)'''))
+HAnimSite945.addComments(x3d.CommentsBlock("""(l_clavicale 0.0271 1.4943 0.0394)"""))
 
 HAnimSegment937.addChild(HAnimSite945)
 
@@ -4549,9 +4640,10 @@ Shape948.setGeometry(IndexedFaceSet952)
 
 HAnimSegment947.addChild(Shape948)
 HAnimSite955 = x3d.HAnimSite()
+HAnimSite955.setName("l_scapula")
 HAnimSite955.setDEF("l_scapula_Sites")
 
-HAnimSite955.addComments(x3d.CommentsBlock('''(l_acromion 0.2032 1.4760 -0.0490) (l_axilla_proximal 0.1777 1.4065 -0.0075) (l_axilla_distal 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds x y z)'''))
+HAnimSite955.addComments(x3d.CommentsBlock("""(l_acromion 0.2032 1.4760 -0.0490) (l_axilla_proximal 0.1777 1.4065 -0.0075) (l_axilla_distal 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds x y z)"""))
 
 HAnimSegment947.addChild(HAnimSite955)
 
@@ -4595,9 +4687,10 @@ Shape958.setGeometry(IndexedFaceSet962)
 
 HAnimSegment957.addChild(Shape958)
 HAnimSite965 = x3d.HAnimSite()
+HAnimSite965.setName("l_upperarm")
 HAnimSite965.setDEF("l_upperarm_Sites")
 
-HAnimSite965.addComments(x3d.CommentsBlock('''(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) (l_radiale 0.2182 1.1212 -0.1167) (l_bideltoid x y z)'''))
+HAnimSite965.addComments(x3d.CommentsBlock("""(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) (l_radiale 0.2182 1.1212 -0.1167) (l_bideltoid x y z)"""))
 
 HAnimSegment957.addChild(HAnimSite965)
 
@@ -4641,9 +4734,10 @@ Shape968.setGeometry(IndexedFaceSet972)
 
 HAnimSegment967.addChild(Shape968)
 HAnimSite975 = x3d.HAnimSite()
+HAnimSite975.setName("l_forearm")
 HAnimSite975.setDEF("l_forearm_Sites")
 
-HAnimSite975.addComments(x3d.CommentsBlock('''(l_radial_styloid 0.1901 0.8645 -0.0415) (l_olecranon -0.1962 1.1375 -0.1123)'''))
+HAnimSite975.addComments(x3d.CommentsBlock("""(l_radial_styloid 0.1901 0.8645 -0.0415) (l_olecranon -0.1962 1.1375 -0.1123)"""))
 
 HAnimSegment967.addChild(HAnimSite975)
 
@@ -4687,9 +4781,10 @@ Shape978.setGeometry(IndexedFaceSet982)
 
 HAnimSegment977.addChild(Shape978)
 HAnimSite985 = x3d.HAnimSite()
+HAnimSite985.setName("l_carpal")
 HAnimSite985.setDEF("l_carpal_Sites")
 
-HAnimSite985.addComments(x3d.CommentsBlock('''(l_ulnar_styloid -0.2142 0.8529 -0.0648)'''))
+HAnimSite985.addComments(x3d.CommentsBlock("""(l_ulnar_styloid -0.2142 0.8529 -0.0648)"""))
 
 HAnimSegment977.addChild(HAnimSite985)
 
@@ -4733,9 +4828,10 @@ Shape988.setGeometry(IndexedFaceSet992)
 
 HAnimSegment987.addChild(Shape988)
 HAnimSite995 = x3d.HAnimSite()
+HAnimSite995.setName("l_trapezium")
 HAnimSite995.setDEF("l_trapezium_Sites")
 
-HAnimSite995.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite995.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment987.addChild(HAnimSite995)
 
@@ -4779,9 +4875,10 @@ Shape998.setGeometry(IndexedFaceSet1002)
 
 HAnimSegment997.addChild(Shape998)
 HAnimSite1005 = x3d.HAnimSite()
+HAnimSite1005.setName("l_metacarpal_1")
 HAnimSite1005.setDEF("l_metacarpal_1_Sites")
 
-HAnimSite1005.addComments(x3d.CommentsBlock('''(l_metacarpal_phalanx_2 0.2009 0.8139 -0.0237)'''))
+HAnimSite1005.addComments(x3d.CommentsBlock("""(l_metacarpal_phalanx_2 0.2009 0.8139 -0.0237)"""))
 
 HAnimSegment997.addChild(HAnimSite1005)
 
@@ -4825,9 +4922,10 @@ Shape1008.setGeometry(IndexedFaceSet1012)
 
 HAnimSegment1007.addChild(Shape1008)
 HAnimSite1015 = x3d.HAnimSite()
+HAnimSite1015.setName("l_carpal_proximal_phalanx_1")
 HAnimSite1015.setDEF("l_carpal_proximal_phalanx_1_Sites")
 
-HAnimSite1015.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1015.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1007.addChild(HAnimSite1015)
 
@@ -4871,9 +4969,10 @@ Shape1018.setGeometry(IndexedFaceSet1022)
 
 HAnimSegment1017.addChild(Shape1018)
 HAnimSite1025 = x3d.HAnimSite()
+HAnimSite1025.setName("l_carpal_distal_phalanx_1")
 HAnimSite1025.setDEF("l_carpal_distal_phalanx_1_Sites")
 
-HAnimSite1025.addComments(x3d.CommentsBlock('''(l_carpal_distal_phalanx_1_tip 0.1982 0.8061 0.0759)'''))
+HAnimSite1025.addComments(x3d.CommentsBlock("""(l_carpal_distal_phalanx_1_tip 0.1982 0.8061 0.0759)"""))
 
 HAnimSegment1017.addChild(HAnimSite1025)
 
@@ -4925,9 +5024,10 @@ Shape1028.setGeometry(IndexedFaceSet1032)
 
 HAnimSegment1027.addChild(Shape1028)
 HAnimSite1035 = x3d.HAnimSite()
+HAnimSite1035.setName("l_trapezoid")
 HAnimSite1035.setDEF("l_trapezoid_Sites")
 
-HAnimSite1035.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1035.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1027.addChild(HAnimSite1035)
 
@@ -4971,9 +5071,10 @@ Shape1038.setGeometry(IndexedFaceSet1042)
 
 HAnimSegment1037.addChild(Shape1038)
 HAnimSite1045 = x3d.HAnimSite()
+HAnimSite1045.setName("l_metacarpal_2")
 HAnimSite1045.setDEF("l_metacarpal_2_Sites")
 
-HAnimSite1045.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1045.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1037.addChild(HAnimSite1045)
 
@@ -5017,9 +5118,10 @@ Shape1048.setGeometry(IndexedFaceSet1052)
 
 HAnimSegment1047.addChild(Shape1048)
 HAnimSite1055 = x3d.HAnimSite()
+HAnimSite1055.setName("l_carpal_proximal_phalanx_2")
 HAnimSite1055.setDEF("l_carpal_proximal_phalanx_2_Sites")
 
-HAnimSite1055.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1055.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1047.addChild(HAnimSite1055)
 
@@ -5063,9 +5165,10 @@ Shape1058.setGeometry(IndexedFaceSet1062)
 
 HAnimSegment1057.addChild(Shape1058)
 HAnimSite1065 = x3d.HAnimSite()
+HAnimSite1065.setName("l_carpal_middle_phalanx_2")
 HAnimSite1065.setDEF("l_carpal_middle_phalanx_2_Sites")
 
-HAnimSite1065.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1065.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1057.addChild(HAnimSite1065)
 
@@ -5109,9 +5212,10 @@ Shape1068.setGeometry(IndexedFaceSet1072)
 
 HAnimSegment1067.addChild(Shape1068)
 HAnimSite1075 = x3d.HAnimSite()
+HAnimSite1075.setName("l_carpal_distal_phalanx_2")
 HAnimSite1075.setDEF("l_carpal_distal_phalanx_2_Sites")
 
-HAnimSite1075.addComments(x3d.CommentsBlock('''(l_carpal_distal_phalanx_2_tip 0.2089 0.6858 -0.0245)'''))
+HAnimSite1075.addComments(x3d.CommentsBlock("""(l_carpal_distal_phalanx_2_tip 0.2089 0.6858 -0.0245)"""))
 
 HAnimSegment1067.addChild(HAnimSite1075)
 
@@ -5165,9 +5269,10 @@ Shape1078.setGeometry(IndexedFaceSet1082)
 
 HAnimSegment1077.addChild(Shape1078)
 HAnimSite1085 = x3d.HAnimSite()
+HAnimSite1085.setName("l_capitate")
 HAnimSite1085.setDEF("l_capitate_Sites")
 
-HAnimSite1085.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1085.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1077.addChild(HAnimSite1085)
 
@@ -5211,9 +5316,10 @@ Shape1088.setGeometry(IndexedFaceSet1092)
 
 HAnimSegment1087.addChild(Shape1088)
 HAnimSite1095 = x3d.HAnimSite()
+HAnimSite1095.setName("l_metacarpal_3")
 HAnimSite1095.setDEF("l_metacarpal_3_Sites")
 
-HAnimSite1095.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1095.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1087.addChild(HAnimSite1095)
 
@@ -5257,9 +5363,10 @@ Shape1098.setGeometry(IndexedFaceSet1102)
 
 HAnimSegment1097.addChild(Shape1098)
 HAnimSite1105 = x3d.HAnimSite()
+HAnimSite1105.setName("l_carpal_proximal_phalanx_3")
 HAnimSite1105.setDEF("l_carpal_proximal_phalanx_3_Sites")
 
-HAnimSite1105.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1105.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1097.addChild(HAnimSite1105)
 
@@ -5303,9 +5410,10 @@ Shape1108.setGeometry(IndexedFaceSet1112)
 
 HAnimSegment1107.addChild(Shape1108)
 HAnimSite1115 = x3d.HAnimSite()
+HAnimSite1115.setName("l_carpal_middle_phalanx_3")
 HAnimSite1115.setDEF("l_carpal_middle_phalanx_3_Sites")
 
-HAnimSite1115.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1115.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1107.addChild(HAnimSite1115)
 
@@ -5349,9 +5457,10 @@ Shape1118.setGeometry(IndexedFaceSet1122)
 
 HAnimSegment1117.addChild(Shape1118)
 HAnimSite1125 = x3d.HAnimSite()
+HAnimSite1125.setName("l_carpal_distal_phalanx_3")
 HAnimSite1125.setDEF("l_carpal_distal_phalanx_3_Sites")
 
-HAnimSite1125.addComments(x3d.CommentsBlock('''(l_dactylion 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)'''))
+HAnimSite1125.addComments(x3d.CommentsBlock("""(l_dactylion 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)"""))
 
 HAnimSegment1117.addChild(HAnimSite1125)
 
@@ -5405,9 +5514,10 @@ Shape1128.setGeometry(IndexedFaceSet1132)
 
 HAnimSegment1127.addChild(Shape1128)
 HAnimSite1135 = x3d.HAnimSite()
+HAnimSite1135.setName("l_hamate")
 HAnimSite1135.setDEF("l_hamate_Sites")
 
-HAnimSite1135.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1135.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1127.addChild(HAnimSite1135)
 
@@ -5451,9 +5561,10 @@ Shape1138.setGeometry(IndexedFaceSet1142)
 
 HAnimSegment1137.addChild(Shape1138)
 HAnimSite1145 = x3d.HAnimSite()
+HAnimSite1145.setName("l_metacarpal_4")
 HAnimSite1145.setDEF("l_metacarpal_4_Sites")
 
-HAnimSite1145.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1145.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1137.addChild(HAnimSite1145)
 
@@ -5497,9 +5608,10 @@ Shape1148.setGeometry(IndexedFaceSet1152)
 
 HAnimSegment1147.addChild(Shape1148)
 HAnimSite1155 = x3d.HAnimSite()
+HAnimSite1155.setName("l_carpal_proximal_phalanx_4")
 HAnimSite1155.setDEF("l_carpal_proximal_phalanx_4_Sites")
 
-HAnimSite1155.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1155.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1147.addChild(HAnimSite1155)
 
@@ -5543,9 +5655,10 @@ Shape1158.setGeometry(IndexedFaceSet1162)
 
 HAnimSegment1157.addChild(Shape1158)
 HAnimSite1165 = x3d.HAnimSite()
+HAnimSite1165.setName("l_carpal_middle_phalanx_4")
 HAnimSite1165.setDEF("l_carpal_middle_phalanx_4_Sites")
 
-HAnimSite1165.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1165.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1157.addChild(HAnimSite1165)
 
@@ -5589,9 +5702,10 @@ Shape1168.setGeometry(IndexedFaceSet1172)
 
 HAnimSegment1167.addChild(Shape1168)
 HAnimSite1175 = x3d.HAnimSite()
+HAnimSite1175.setName("l_carpal_distal_phalanx_4")
 HAnimSite1175.setDEF("l_carpal_distal_phalanx_4_Sites")
 
-HAnimSite1175.addComments(x3d.CommentsBlock('''(l_carpal_distal_phalanx_4_tip 0.2035 0.6750 -0.0756)'''))
+HAnimSite1175.addComments(x3d.CommentsBlock("""(l_carpal_distal_phalanx_4_tip 0.2035 0.6750 -0.0756)"""))
 
 HAnimSegment1167.addChild(HAnimSite1175)
 
@@ -5645,9 +5759,10 @@ Shape1178.setGeometry(IndexedFaceSet1182)
 
 HAnimSegment1177.addChild(Shape1178)
 HAnimSite1185 = x3d.HAnimSite()
+HAnimSite1185.setName("l_metacarpal_5")
 HAnimSite1185.setDEF("l_metacarpal_5_Sites")
 
-HAnimSite1185.addComments(x3d.CommentsBlock('''(l_metacarpal_phalanx_5 0.1929 0.7860 -0.1122)'''))
+HAnimSite1185.addComments(x3d.CommentsBlock("""(l_metacarpal_phalanx_5 0.1929 0.7860 -0.1122)"""))
 
 HAnimSegment1177.addChild(HAnimSite1185)
 
@@ -5691,9 +5806,10 @@ Shape1188.setGeometry(IndexedFaceSet1192)
 
 HAnimSegment1187.addChild(Shape1188)
 HAnimSite1195 = x3d.HAnimSite()
+HAnimSite1195.setName("l_carpal_proximal_phalanx_5")
 HAnimSite1195.setDEF("l_carpal_proximal_phalanx_5_Sites")
 
-HAnimSite1195.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1195.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1187.addChild(HAnimSite1195)
 
@@ -5737,9 +5853,10 @@ Shape1198.setGeometry(IndexedFaceSet1202)
 
 HAnimSegment1197.addChild(Shape1198)
 HAnimSite1205 = x3d.HAnimSite()
+HAnimSite1205.setName("l_carpal_middle_phalanx_5")
 HAnimSite1205.setDEF("l_carpal_middle_phalanx_5_Sites")
 
-HAnimSite1205.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1205.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1197.addChild(HAnimSite1205)
 
@@ -5783,9 +5900,10 @@ Shape1208.setGeometry(IndexedFaceSet1212)
 
 HAnimSegment1207.addChild(Shape1208)
 HAnimSite1215 = x3d.HAnimSite()
+HAnimSite1215.setName("l_carpal_distal_phalanx_5")
 HAnimSite1215.setDEF("l_carpal_distal_phalanx_5_Sites")
 
-HAnimSite1215.addComments(x3d.CommentsBlock('''(l_carpal_distal_phalanx_5_tip 0.2014 0.7009 -0.1012)'''))
+HAnimSite1215.addComments(x3d.CommentsBlock("""(l_carpal_distal_phalanx_5_tip 0.2014 0.7009 -0.1012)"""))
 
 HAnimSegment1207.addChild(HAnimSite1215)
 
@@ -5847,9 +5965,10 @@ Shape1218.setGeometry(IndexedFaceSet1222)
 
 HAnimSegment1217.addChild(Shape1218)
 HAnimSite1225 = x3d.HAnimSite()
+HAnimSite1225.setName("r_clavicle")
 HAnimSite1225.setDEF("r_clavicle_Sites")
 
-HAnimSite1225.addComments(x3d.CommentsBlock('''(r_clavicale -0.0115 1.4943 0.0400)'''))
+HAnimSite1225.addComments(x3d.CommentsBlock("""(r_clavicale -0.0115 1.4943 0.0400)"""))
 
 HAnimSegment1217.addChild(HAnimSite1225)
 
@@ -5893,9 +6012,10 @@ Shape1228.setGeometry(IndexedFaceSet1232)
 
 HAnimSegment1227.addChild(Shape1228)
 HAnimSite1235 = x3d.HAnimSite()
+HAnimSite1235.setName("r_scapula")
 HAnimSite1235.setDEF("r_scapula_Sites")
 
-HAnimSite1235.addComments(x3d.CommentsBlock('''(r_acromion -0.1905 1.4791 -0.0431) (r_axilla_proximal -0.1626 1.4072 -0.0031) (r_axilla_distal -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds x y z)'''))
+HAnimSite1235.addComments(x3d.CommentsBlock("""(r_acromion -0.1905 1.4791 -0.0431) (r_axilla_proximal -0.1626 1.4072 -0.0031) (r_axilla_distal -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds x y z)"""))
 
 HAnimSegment1227.addChild(HAnimSite1235)
 
@@ -5939,9 +6059,10 @@ Shape1238.setGeometry(IndexedFaceSet1242)
 
 HAnimSegment1237.addChild(Shape1238)
 HAnimSite1245 = x3d.HAnimSite()
+HAnimSite1245.setName("r_upperarm")
 HAnimSite1245.setDEF("r_upperarm_Sites")
 
-HAnimSite1245.addComments(x3d.CommentsBlock('''(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) (r_radiale -0.2130 1.1305 -0.1091) (r_bideltoid x y z)'''))
+HAnimSite1245.addComments(x3d.CommentsBlock("""(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) (r_radiale -0.2130 1.1305 -0.1091) (r_bideltoid x y z)"""))
 
 HAnimSegment1237.addChild(HAnimSite1245)
 
@@ -5985,9 +6106,10 @@ Shape1248.setGeometry(IndexedFaceSet1252)
 
 HAnimSegment1247.addChild(Shape1248)
 HAnimSite1255 = x3d.HAnimSite()
+HAnimSite1255.setName("r_forearm")
 HAnimSite1255.setDEF("r_forearm_Sites")
 
-HAnimSite1255.addComments(x3d.CommentsBlock('''(r_radial_styloid -0.1884 0.8676 -0.0360) (r_olecranon -0.1907 1.1405 -0.1065)'''))
+HAnimSite1255.addComments(x3d.CommentsBlock("""(r_radial_styloid -0.1884 0.8676 -0.0360) (r_olecranon -0.1907 1.1405 -0.1065)"""))
 
 HAnimSegment1247.addChild(HAnimSite1255)
 
@@ -6031,9 +6153,10 @@ Shape1258.setGeometry(IndexedFaceSet1262)
 
 HAnimSegment1257.addChild(Shape1258)
 HAnimSite1265 = x3d.HAnimSite()
+HAnimSite1265.setName("r_carpal")
 HAnimSite1265.setDEF("r_carpal_Sites")
 
-HAnimSite1265.addComments(x3d.CommentsBlock('''(r_ulnar_styloid -0.2117 0.8562 -0.0584)'''))
+HAnimSite1265.addComments(x3d.CommentsBlock("""(r_ulnar_styloid -0.2117 0.8562 -0.0584)"""))
 
 HAnimSegment1257.addChild(HAnimSite1265)
 
@@ -6077,9 +6200,10 @@ Shape1268.setGeometry(IndexedFaceSet1272)
 
 HAnimSegment1267.addChild(Shape1268)
 HAnimSite1275 = x3d.HAnimSite()
+HAnimSite1275.setName("r_trapezium")
 HAnimSite1275.setDEF("r_trapezium_Sites")
 
-HAnimSite1275.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1275.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1267.addChild(HAnimSite1275)
 
@@ -6123,9 +6247,10 @@ Shape1278.setGeometry(IndexedFaceSet1282)
 
 HAnimSegment1277.addChild(Shape1278)
 HAnimSite1285 = x3d.HAnimSite()
+HAnimSite1285.setName("r_metacarpal_1")
 HAnimSite1285.setDEF("r_metacarpal_1_Sites")
 
-HAnimSite1285.addComments(x3d.CommentsBlock('''(r_metacarpal_phalanx_2 -0.1977 0.8169 -0.0177)'''))
+HAnimSite1285.addComments(x3d.CommentsBlock("""(r_metacarpal_phalanx_2 -0.1977 0.8169 -0.0177)"""))
 
 HAnimSegment1277.addChild(HAnimSite1285)
 
@@ -6169,9 +6294,10 @@ Shape1288.setGeometry(IndexedFaceSet1292)
 
 HAnimSegment1287.addChild(Shape1288)
 HAnimSite1295 = x3d.HAnimSite()
+HAnimSite1295.setName("r_carpal_proximal_phalanx_1")
 HAnimSite1295.setDEF("r_carpal_proximal_phalanx_1_Sites")
 
-HAnimSite1295.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1295.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1287.addChild(HAnimSite1295)
 
@@ -6215,9 +6341,10 @@ Shape1298.setGeometry(IndexedFaceSet1302)
 
 HAnimSegment1297.addChild(Shape1298)
 HAnimSite1305 = x3d.HAnimSite()
+HAnimSite1305.setName("r_carpal_distal_phalanx_1")
 HAnimSite1305.setDEF("r_carpal_distal_phalanx_1_Sites")
 
-HAnimSite1305.addComments(x3d.CommentsBlock('''(r_carpal_distal_phalanx_1_tip -0.1869 0.8090 0.0820)'''))
+HAnimSite1305.addComments(x3d.CommentsBlock("""(r_carpal_distal_phalanx_1_tip -0.1869 0.8090 0.0820)"""))
 
 HAnimSegment1297.addChild(HAnimSite1305)
 
@@ -6269,9 +6396,10 @@ Shape1308.setGeometry(IndexedFaceSet1312)
 
 HAnimSegment1307.addChild(Shape1308)
 HAnimSite1315 = x3d.HAnimSite()
+HAnimSite1315.setName("r_trapezoid")
 HAnimSite1315.setDEF("r_trapezoid_Sites")
 
-HAnimSite1315.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1315.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1307.addChild(HAnimSite1315)
 
@@ -6315,9 +6443,10 @@ Shape1318.setGeometry(IndexedFaceSet1322)
 
 HAnimSegment1317.addChild(Shape1318)
 HAnimSite1325 = x3d.HAnimSite()
+HAnimSite1325.setName("r_metacarpal_2")
 HAnimSite1325.setDEF("r_metacarpal_2_Sites")
 
-HAnimSite1325.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1325.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1317.addChild(HAnimSite1325)
 
@@ -6361,9 +6490,10 @@ Shape1328.setGeometry(IndexedFaceSet1332)
 
 HAnimSegment1327.addChild(Shape1328)
 HAnimSite1335 = x3d.HAnimSite()
+HAnimSite1335.setName("r_carpal_proximal_phalanx_2")
 HAnimSite1335.setDEF("r_carpal_proximal_phalanx_2_Sites")
 
-HAnimSite1335.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1335.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1327.addChild(HAnimSite1335)
 
@@ -6407,9 +6537,10 @@ Shape1338.setGeometry(IndexedFaceSet1342)
 
 HAnimSegment1337.addChild(Shape1338)
 HAnimSite1345 = x3d.HAnimSite()
+HAnimSite1345.setName("r_carpal_middle_phalanx_2")
 HAnimSite1345.setDEF("r_carpal_middle_phalanx_2_Sites")
 
-HAnimSite1345.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1345.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1337.addChild(HAnimSite1345)
 
@@ -6453,9 +6584,10 @@ Shape1348.setGeometry(IndexedFaceSet1352)
 
 HAnimSegment1347.addChild(Shape1348)
 HAnimSite1355 = x3d.HAnimSite()
+HAnimSite1355.setName("r_carpal_distal_phalanx_2")
 HAnimSite1355.setDEF("r_carpal_distal_phalanx_2_Sites")
 
-HAnimSite1355.addComments(x3d.CommentsBlock('''(r_carpal_distal_phalanx_2_tip -0.1980 0.6883 -0.0180)'''))
+HAnimSite1355.addComments(x3d.CommentsBlock("""(r_carpal_distal_phalanx_2_tip -0.1980 0.6883 -0.0180)"""))
 
 HAnimSegment1347.addChild(HAnimSite1355)
 
@@ -6509,9 +6641,10 @@ Shape1358.setGeometry(IndexedFaceSet1362)
 
 HAnimSegment1357.addChild(Shape1358)
 HAnimSite1365 = x3d.HAnimSite()
+HAnimSite1365.setName("r_capitate")
 HAnimSite1365.setDEF("r_capitate_Sites")
 
-HAnimSite1365.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1365.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1357.addChild(HAnimSite1365)
 
@@ -6555,9 +6688,10 @@ Shape1368.setGeometry(IndexedFaceSet1372)
 
 HAnimSegment1367.addChild(Shape1368)
 HAnimSite1375 = x3d.HAnimSite()
+HAnimSite1375.setName("r_metacarpal_3")
 HAnimSite1375.setDEF("r_metacarpal_3_Sites")
 
-HAnimSite1375.addComments(x3d.CommentsBlock('''(r_metacarpal_phalanx_3 x y z)'''))
+HAnimSite1375.addComments(x3d.CommentsBlock("""(r_metacarpal_phalanx_3 x y z)"""))
 
 HAnimSegment1367.addChild(HAnimSite1375)
 
@@ -6601,9 +6735,10 @@ Shape1378.setGeometry(IndexedFaceSet1382)
 
 HAnimSegment1377.addChild(Shape1378)
 HAnimSite1385 = x3d.HAnimSite()
+HAnimSite1385.setName("r_carpal_proximal_phalanx_3")
 HAnimSite1385.setDEF("r_carpal_proximal_phalanx_3_Sites")
 
-HAnimSite1385.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1385.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1377.addChild(HAnimSite1385)
 
@@ -6647,9 +6782,10 @@ Shape1388.setGeometry(IndexedFaceSet1392)
 
 HAnimSegment1387.addChild(Shape1388)
 HAnimSite1395 = x3d.HAnimSite()
+HAnimSite1395.setName("r_carpal_middle_phalanx_3")
 HAnimSite1395.setDEF("r_carpal_middle_phalanx_3_Sites")
 
-HAnimSite1395.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1395.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1387.addChild(HAnimSite1395)
 
@@ -6693,9 +6829,10 @@ Shape1398.setGeometry(IndexedFaceSet1402)
 
 HAnimSegment1397.addChild(Shape1398)
 HAnimSite1405 = x3d.HAnimSite()
+HAnimSite1405.setName("r_carpal_distal_phalanx_3")
 HAnimSite1405.setDEF("r_carpal_distal_phalanx_3_Sites")
 
-HAnimSite1405.addComments(x3d.CommentsBlock('''(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion -0.1941 0.6772 -0.0423'''))
+HAnimSite1405.addComments(x3d.CommentsBlock("""(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion -0.1941 0.6772 -0.0423"""))
 
 HAnimSegment1397.addChild(HAnimSite1405)
 
@@ -6749,9 +6886,10 @@ Shape1408.setGeometry(IndexedFaceSet1412)
 
 HAnimSegment1407.addChild(Shape1408)
 HAnimSite1415 = x3d.HAnimSite()
+HAnimSite1415.setName("r_hamate")
 HAnimSite1415.setDEF("r_hamate_Sites")
 
-HAnimSite1415.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1415.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1407.addChild(HAnimSite1415)
 
@@ -6795,9 +6933,10 @@ Shape1418.setGeometry(IndexedFaceSet1422)
 
 HAnimSegment1417.addChild(Shape1418)
 HAnimSite1425 = x3d.HAnimSite()
+HAnimSite1425.setName("r_metacarpal_4")
 HAnimSite1425.setDEF("r_metacarpal_4_Sites")
 
-HAnimSite1425.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1425.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1417.addChild(HAnimSite1425)
 
@@ -6841,9 +6980,10 @@ Shape1428.setGeometry(IndexedFaceSet1432)
 
 HAnimSegment1427.addChild(Shape1428)
 HAnimSite1435 = x3d.HAnimSite()
+HAnimSite1435.setName("r_carpal_proximal_phalanx_4")
 HAnimSite1435.setDEF("r_carpal_proximal_phalanx_4_Sites")
 
-HAnimSite1435.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1435.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1427.addChild(HAnimSite1435)
 
@@ -6887,9 +7027,10 @@ Shape1438.setGeometry(IndexedFaceSet1442)
 
 HAnimSegment1437.addChild(Shape1438)
 HAnimSite1445 = x3d.HAnimSite()
+HAnimSite1445.setName("r_carpal_middle_phalanx_4")
 HAnimSite1445.setDEF("r_carpal_middle_phalanx_4_Sites")
 
-HAnimSite1445.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1445.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1437.addChild(HAnimSite1445)
 
@@ -6933,9 +7074,10 @@ Shape1448.setGeometry(IndexedFaceSet1452)
 
 HAnimSegment1447.addChild(Shape1448)
 HAnimSite1455 = x3d.HAnimSite()
+HAnimSite1455.setName("hanim_r_carpal_distal_phalanx_4")
 HAnimSite1455.setDEF("hanim_r_carpal_distal_phalanx_4_Sites")
 
-HAnimSite1455.addComments(x3d.CommentsBlock('''(r_carpal_distal_phalanx_4_tip -0.1934 0.6778 -0.0693)'''))
+HAnimSite1455.addComments(x3d.CommentsBlock("""(r_carpal_distal_phalanx_4_tip -0.1934 0.6778 -0.0693)"""))
 
 HAnimSegment1447.addChild(HAnimSite1455)
 
@@ -6989,9 +7131,10 @@ Shape1458.setGeometry(IndexedFaceSet1462)
 
 HAnimSegment1457.addChild(Shape1458)
 HAnimSite1465 = x3d.HAnimSite()
+HAnimSite1465.setName("r_metacarpal_5")
 HAnimSite1465.setDEF("r_metacarpal_5_Sites")
 
-HAnimSite1465.addComments(x3d.CommentsBlock('''(r_metacarpal_phalanx_5 -0.1929 0.7890 -0.1064)'''))
+HAnimSite1465.addComments(x3d.CommentsBlock("""(r_metacarpal_phalanx_5 -0.1929 0.7890 -0.1064)"""))
 
 HAnimSegment1457.addChild(HAnimSite1465)
 
@@ -7035,9 +7178,10 @@ Shape1468.setGeometry(IndexedFaceSet1472)
 
 HAnimSegment1467.addChild(Shape1468)
 HAnimSite1475 = x3d.HAnimSite()
+HAnimSite1475.setName("r_carpal_proximal_phalanx_5")
 HAnimSite1475.setDEF("r_carpal_proximal_phalanx_5_Sites")
 
-HAnimSite1475.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1475.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1467.addChild(HAnimSite1475)
 
@@ -7081,9 +7225,10 @@ Shape1478.setGeometry(IndexedFaceSet1482)
 
 HAnimSegment1477.addChild(Shape1478)
 HAnimSite1485 = x3d.HAnimSite()
+HAnimSite1485.setName("r_carpal_middle_phalanx_5")
 HAnimSite1485.setDEF("r_carpal_middle_phalanx_5_Sites")
 
-HAnimSite1485.addComments(x3d.CommentsBlock('''None'''))
+HAnimSite1485.addComments(x3d.CommentsBlock("""None"""))
 
 HAnimSegment1477.addChild(HAnimSite1485)
 
@@ -7127,9 +7272,10 @@ Shape1488.setGeometry(IndexedFaceSet1492)
 
 HAnimSegment1487.addChild(Shape1488)
 HAnimSite1495 = x3d.HAnimSite()
+HAnimSite1495.setName("r_carpal_distal_phalanx_5")
 HAnimSite1495.setDEF("r_carpal_distal_phalanx_5_Sites")
 
-HAnimSite1495.addComments(x3d.CommentsBlock('''(r_carpal_distal_phalanx_5_tip -0.1938 0.7035 -0.0949)'''))
+HAnimSite1495.addComments(x3d.CommentsBlock("""(r_carpal_distal_phalanx_5_tip -0.1938 0.7035 -0.0949)"""))
 
 HAnimSegment1487.addChild(HAnimSite1495)
 
@@ -15114,4 +15260,4 @@ Scene22.addChild(ROUTE2733)
 
 X3D0.setScene(Scene22)
 X3D0.toFileX3D("../data/JinLOA4scaled1joe06c.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JinLOA4scaled1joe06c.new.graalpy.json")
+X3D0.toFileJSON("../data/JinLOA4scaled1joe06c.new.graalpy.x3dj")

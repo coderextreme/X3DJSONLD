@@ -1,13 +1,15 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
+
+head1.addComments(x3d.CommentsBlock("""meta content='under development' name='warning'/"""))
 component2 = x3d.component()
 component2.setName("Shaders")
 component2.setLevel(1)
@@ -109,8 +111,6 @@ meta21.setContent("../../license.html")
 
 head1.addMeta(meta21)
 
-head1.addComments(x3d.CommentsBlock('''meta content='under development' name='warning'/'''))
-
 X3D0.setHead(head1)
 Scene22 = x3d.Scene()
 ProtoDeclare23 = x3d.ProtoDeclare()
@@ -210,7 +210,7 @@ MetadataSet45.setName("nodes")
 MetadataSet45.setDEF("nodes")
 MetadataSet45.setReference("http://titania.create3000.de")
 
-MetadataSet45.addComments(x3d.CommentsBlock('''NULL'''))
+MetadataSet45.addComments(x3d.CommentsBlock("""NULL"""))
 
 MetadataSet44.setMetadata(MetadataSet45)
 
@@ -266,4 +266,4 @@ Scene22.addChild(ProtoInstance52)
 
 X3D0.setScene(Scene22)
 X3D0.toFileX3D("../data/SimpleShader.new.graalpy.x3d")
-X3D0.toFileJSON("../data/SimpleShader.new.graalpy.json")
+X3D0.toFileJSON("../data/SimpleShader.new.graalpy.x3dj")

@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
 X3D0.setVersion("4.0")
@@ -39,1252 +39,1078 @@ component7.setLevel(1)
 
 head1.addComponent(component7)
 component8 = x3d.component()
-component8.setName("Grouping")
-component8.setLevel(3)
+component8.setName("Shape")
+component8.setLevel(4)
 
 head1.addComponent(component8)
 component9 = x3d.component()
-component9.setName("Core")
-component9.setLevel(1)
+component9.setName("Grouping")
+component9.setLevel(3)
 
 head1.addComponent(component9)
 component10 = x3d.component()
-component10.setName("DIS")
-component10.setLevel(2)
+component10.setName("Core")
+component10.setLevel(1)
 
 head1.addComponent(component10)
+component11 = x3d.component()
+component11.setName("DIS")
+component11.setLevel(2)
 
-head1.addComments(x3d.CommentsBlock('''<component name='Shape' level='4'></component>'''))
-
-head1.addComments(x3d.CommentsBlock('''Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L'''))
-meta11 = x3d.meta()
-meta11.setName("title")
-meta11.setContent("bumpfreewrlsliders.x3d")
-
-head1.addMeta(meta11)
+head1.addComponent(component11)
 meta12 = x3d.meta()
-meta12.setName("description")
-meta12.setContent("*enter description here, short-sentence summaries preferred*")
+meta12.setName("title")
+meta12.setContent("bumpyfreewrlsliders.x3d")
 
 head1.addMeta(meta12)
 meta13 = x3d.meta()
-meta13.setName("creator")
-meta13.setContent("Doug Sanden, Christoph Valentin, John Carlson")
+meta13.setName("description")
+meta13.setContent("Bumpy Orbitals with Sliders for FreeWRL")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
-meta14.setName("translator")
-meta14.setContent("*if manually translating VRML-to-X3D, enter name of person translating here*")
+meta14.setName("creator")
+meta14.setContent("Doug Sanden, Christoph Valentin, John Carlson")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
-meta15.setName("created")
-meta15.setContent("*enter date of initial version here*")
+meta15.setName("identifier")
+meta15.setContent("https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d")
 
 head1.addMeta(meta15)
 meta16 = x3d.meta()
-meta16.setName("translated")
-meta16.setContent("*enter date of translation here*")
+meta16.setName("license")
+meta16.setContent("license.html")
 
 head1.addMeta(meta16)
-meta17 = x3d.meta()
-meta17.setName("modified")
-meta17.setContent("*enter date of latest revision here*")
-
-head1.addMeta(meta17)
-meta18 = x3d.meta()
-meta18.setName("version")
-meta18.setContent("*enter version here, if any*")
-
-head1.addMeta(meta18)
-meta19 = x3d.meta()
-meta19.setName("reference")
-meta19.setContent("*enter reference citation or relative/online url here*")
-
-head1.addMeta(meta19)
-meta20 = x3d.meta()
-meta20.setName("reference")
-meta20.setContent("*enter additional url/bibliographic reference information here*")
-
-head1.addMeta(meta20)
-meta21 = x3d.meta()
-meta21.setName("requires")
-meta21.setContent("*enter reference resource here if required to support function, delivery, or coherence of content*")
-
-head1.addMeta(meta21)
-meta22 = x3d.meta()
-meta22.setName("rights")
-meta22.setContent("*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024")
-
-head1.addMeta(meta22)
-meta23 = x3d.meta()
-meta23.setName("drawing")
-meta23.setContent("*enter drawing filename/url here*")
-
-head1.addMeta(meta23)
-meta24 = x3d.meta()
-meta24.setName("MovingImage")
-meta24.setContent("*enter movie filename/url here*")
-
-head1.addMeta(meta24)
-meta25 = x3d.meta()
-meta25.setName("photo")
-meta25.setContent("*enter photo filename/url here*")
-
-head1.addMeta(meta25)
-meta26 = x3d.meta()
-meta26.setName("subject")
-meta26.setContent("*enter subject keywords here*")
-
-head1.addMeta(meta26)
-meta27 = x3d.meta()
-meta27.setName("accessRights")
-meta27.setContent("*enter permission statements or url here*")
-
-head1.addMeta(meta27)
-meta28 = x3d.meta()
-meta28.setName("identifier")
-meta28.setContent("*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*")
-
-head1.addMeta(meta28)
-meta29 = x3d.meta()
-meta29.setName("generator")
-meta29.setContent("PSPad, http://www.pspad.com/")
-
-head1.addMeta(meta29)
-meta30 = x3d.meta()
-meta30.setName("license")
-meta30.setContent("license.html")
-
-head1.addMeta(meta30)
 
 X3D0.setHead(head1)
+Scene17 = x3d.Scene()
+
+Scene17.addComments(x3d.CommentsBlock("""LayerSet with two layers, navigation happens in layer 1"""))
+LayerSet18 = x3d.LayerSet()
+LayerSet18.setActiveLayer(1)
+LayerSet18.setOrder([1,2])
+
+LayerSet18.addComments(x3d.CommentsBlock("""the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""""))
+
+LayerSet18.addComments(x3d.CommentsBlock("""the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"""))
+Layer19 = x3d.Layer()
+Layer19.setPickable(True)
+Layer19.setObjectType(["ALL"])
+
+Layer19.addComments(x3d.CommentsBlock("""basic nodes, which might be present in any scene"""))
+NavigationInfo20 = x3d.NavigationInfo()
+NavigationInfo20.setType(["EXAMINE","FLY","LOOKAT","ANY"])
+NavigationInfo20.setAvatarSize(x3d.doubleToFloat([0.25,1.75,0.75]))
+
+Layer19.addChild(NavigationInfo20)
+DirectionalLight21 = x3d.DirectionalLight()
+DirectionalLight21.setAmbientIntensity(0.2)
+DirectionalLight21.setDirection(x3d.doubleToFloat([0,-1,0]))
+
+Layer19.addChild(DirectionalLight21)
+DirectionalLight22 = x3d.DirectionalLight()
+DirectionalLight22.setAmbientIntensity(0.2)
+DirectionalLight22.setDirection(x3d.doubleToFloat([-1,-0.1,-1]))
 
-X3D0.addComments(x3d.CommentsBlock('''\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"'''))
-Scene31 = x3d.Scene()
-
-Scene31.addComments(x3d.CommentsBlock('''LayerSet with two layers, navigation happens in layer 1'''))
-LayerSet32 = x3d.LayerSet()
-LayerSet32.setActiveLayer(1)
-LayerSet32.setOrder([1,2])
+Layer19.addChild(DirectionalLight22)
+Viewpoint23 = x3d.Viewpoint()
+Viewpoint23.setDescription("My Overview")
+Viewpoint23.setFieldOfView(1.570796)
+Viewpoint23.setPosition(x3d.doubleToFloat([0,1.75,60]))
+
+Layer19.addChild(Viewpoint23)
+
+Layer19.addComments(x3d.CommentsBlock("""this group contains the red/green/blue 3D crosshair"""))
+Group24 = x3d.Group()
+
+Group24.addComments(x3d.CommentsBlock("""Arrow X"""))
+Transform25 = x3d.Transform()
+Transform25.setTranslation(x3d.doubleToFloat([25,0,0]))
+Transform25.setRotation(x3d.doubleToFloat([0,0,-1,1.57]))
+Shape26 = x3d.Shape()
+Cylinder27 = x3d.Cylinder()
+Cylinder27.setDEF("Shaft")
+Cylinder27.setRadius(0.35)
+Cylinder27.setHeight(50)
+
+Shape26.setGeometry(Cylinder27)
+Appearance28 = x3d.Appearance()
+Material29 = x3d.Material()
+Material29.setDEF("RED")
+Material29.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
+Material29.setEmissiveColor(x3d.doubleToFloat([1,0,0]))
+
+Appearance28.setMaterial(Material29)
+
+Shape26.setAppearance(Appearance28)
+
+Transform25.addChild(Shape26)
+
+Group24.addChild(Transform25)
+Transform30 = x3d.Transform()
+Transform30.setTranslation(x3d.doubleToFloat([50,0,0]))
+Transform30.setRotation(x3d.doubleToFloat([0,0,-1,1.57]))
+Shape31 = x3d.Shape()
+Cone32 = x3d.Cone()
+Cone32.setDEF("Tip")
+Cone32.setBottomRadius(0.8)
+Cone32.setHeight(3)
 
-LayerSet32.addComments(x3d.CommentsBlock('''the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"'''))
-
-LayerSet32.addComments(x3d.CommentsBlock('''the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)'''))
-Layer33 = x3d.Layer()
-Layer33.setPickable(True)
-Layer33.setObjectType(["ALL"])
-
-Layer33.addComments(x3d.CommentsBlock('''basic nodes, which might be present in any scene'''))
-NavigationInfo34 = x3d.NavigationInfo()
-NavigationInfo34.setType(["EXAMINE"])
-NavigationInfo34.setAvatarSize(x3d.doubleToFloat([0.25,1.75,0.75]))
-
-Layer33.addChild(NavigationInfo34)
-DirectionalLight35 = x3d.DirectionalLight()
-DirectionalLight35.setAmbientIntensity(0.2)
-DirectionalLight35.setDirection(x3d.doubleToFloat([0,-1,0]))
-
-Layer33.addChild(DirectionalLight35)
-DirectionalLight36 = x3d.DirectionalLight()
-DirectionalLight36.setAmbientIntensity(0.2)
-DirectionalLight36.setDirection(x3d.doubleToFloat([-1,-0.1,-1]))
+Shape31.setGeometry(Cone32)
+Appearance33 = x3d.Appearance()
+Material34 = x3d.Material()
+Material34.setUSE("RED")
 
-Layer33.addChild(DirectionalLight36)
-Viewpoint37 = x3d.Viewpoint()
-Viewpoint37.setDescription("My Overview")
-Viewpoint37.setFieldOfView(1.570796)
-Viewpoint37.setPosition(x3d.doubleToFloat([0,1.75,60]))
+Appearance33.setMaterial(Material34)
 
-Layer33.addChild(Viewpoint37)
-
-Layer33.addComments(x3d.CommentsBlock('''this group contains the red/green/blue 3D crosshair'''))
-Group38 = x3d.Group()
-
-Group38.addComments(x3d.CommentsBlock('''Arrow X'''))
-Transform39 = x3d.Transform()
-Transform39.setTranslation(x3d.doubleToFloat([25,0,0]))
-Transform39.setRotation(x3d.doubleToFloat([0,0,-1,1.57]))
-Shape40 = x3d.Shape()
-Cylinder41 = x3d.Cylinder()
-Cylinder41.setDEF("Shaft")
-Cylinder41.setRadius(0.35)
-Cylinder41.setHeight(50)
+Shape31.setAppearance(Appearance33)
 
-Shape40.setGeometry(Cylinder41)
-Appearance42 = x3d.Appearance()
-Material43 = x3d.Material()
-Material43.setDEF("RED")
-Material43.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
-Material43.setEmissiveColor(x3d.doubleToFloat([1,0,0]))
-
-Appearance42.setMaterial(Material43)
-
-Shape40.setAppearance(Appearance42)
-
-Transform39.addChild(Shape40)
+Transform30.addChild(Shape31)
 
-Group38.addChild(Transform39)
-Transform44 = x3d.Transform()
-Transform44.setTranslation(x3d.doubleToFloat([50,0,0]))
-Transform44.setRotation(x3d.doubleToFloat([0,0,-1,1.57]))
-Shape45 = x3d.Shape()
-Cone46 = x3d.Cone()
-Cone46.setDEF("Tip")
-Cone46.setBottomRadius(0.8)
-Cone46.setHeight(3)
+Group24.addChild(Transform30)
 
-Shape45.setGeometry(Cone46)
-Appearance47 = x3d.Appearance()
-Material48 = x3d.Material()
-Material48.setUSE("RED")
+Group24.addComments(x3d.CommentsBlock("""Arrow Y"""))
+Transform35 = x3d.Transform()
+Transform35.setTranslation(x3d.doubleToFloat([0,25,0]))
+Shape36 = x3d.Shape()
+Cylinder37 = x3d.Cylinder()
+Cylinder37.setUSE("Shaft")
 
-Appearance47.setMaterial(Material48)
+Shape36.setGeometry(Cylinder37)
+Appearance38 = x3d.Appearance()
+Material39 = x3d.Material()
+Material39.setDEF("GREEN")
+Material39.setDiffuseColor(x3d.doubleToFloat([0,1,0]))
+Material39.setEmissiveColor(x3d.doubleToFloat([0,1,0]))
 
-Shape45.setAppearance(Appearance47)
+Appearance38.setMaterial(Material39)
 
-Transform44.addChild(Shape45)
+Shape36.setAppearance(Appearance38)
 
-Group38.addChild(Transform44)
+Transform35.addChild(Shape36)
 
-Group38.addComments(x3d.CommentsBlock('''Arrow Y'''))
-Transform49 = x3d.Transform()
-Transform49.setTranslation(x3d.doubleToFloat([0,25,0]))
-Shape50 = x3d.Shape()
-Cylinder51 = x3d.Cylinder()
-Cylinder51.setUSE("Shaft")
+Group24.addChild(Transform35)
+Transform40 = x3d.Transform()
+Transform40.setTranslation(x3d.doubleToFloat([0,50,0]))
+Shape41 = x3d.Shape()
+Cone42 = x3d.Cone()
+Cone42.setUSE("Tip")
 
-Shape50.setGeometry(Cylinder51)
-Appearance52 = x3d.Appearance()
-Material53 = x3d.Material()
-Material53.setDEF("GREEN")
-Material53.setDiffuseColor(x3d.doubleToFloat([0,1,0]))
-Material53.setEmissiveColor(x3d.doubleToFloat([0,1,0]))
+Shape41.setGeometry(Cone42)
+Appearance43 = x3d.Appearance()
+Material44 = x3d.Material()
+Material44.setUSE("GREEN")
 
-Appearance52.setMaterial(Material53)
+Appearance43.setMaterial(Material44)
 
-Shape50.setAppearance(Appearance52)
+Shape41.setAppearance(Appearance43)
 
-Transform49.addChild(Shape50)
+Transform40.addChild(Shape41)
 
-Group38.addChild(Transform49)
-Transform54 = x3d.Transform()
-Transform54.setTranslation(x3d.doubleToFloat([0,50,0]))
-Shape55 = x3d.Shape()
-Cone56 = x3d.Cone()
-Cone56.setUSE("Tip")
+Group24.addChild(Transform40)
 
-Shape55.setGeometry(Cone56)
-Appearance57 = x3d.Appearance()
-Material58 = x3d.Material()
-Material58.setUSE("GREEN")
+Group24.addComments(x3d.CommentsBlock("""Arrow Z"""))
+Transform45 = x3d.Transform()
+Transform45.setTranslation(x3d.doubleToFloat([0,0,25]))
+Transform45.setRotation(x3d.doubleToFloat([1,0,0,1.57]))
+Shape46 = x3d.Shape()
+Cylinder47 = x3d.Cylinder()
+Cylinder47.setUSE("Shaft")
 
-Appearance57.setMaterial(Material58)
+Shape46.setGeometry(Cylinder47)
+Appearance48 = x3d.Appearance()
+Material49 = x3d.Material()
+Material49.setDEF("BLUE")
+Material49.setDiffuseColor(x3d.doubleToFloat([0,0,1]))
+Material49.setEmissiveColor(x3d.doubleToFloat([0,0,1]))
 
-Shape55.setAppearance(Appearance57)
+Appearance48.setMaterial(Material49)
+
+Shape46.setAppearance(Appearance48)
 
-Transform54.addChild(Shape55)
-
-Group38.addChild(Transform54)
-
-Group38.addComments(x3d.CommentsBlock('''Arrow Z'''))
-Transform59 = x3d.Transform()
-Transform59.setTranslation(x3d.doubleToFloat([0,0,25]))
-Transform59.setRotation(x3d.doubleToFloat([1,0,0,1.57]))
-Shape60 = x3d.Shape()
-Cylinder61 = x3d.Cylinder()
-Cylinder61.setUSE("Shaft")
-
-Shape60.setGeometry(Cylinder61)
-Appearance62 = x3d.Appearance()
-Material63 = x3d.Material()
-Material63.setDEF("BLUE")
-Material63.setDiffuseColor(x3d.doubleToFloat([0,0,1]))
-Material63.setEmissiveColor(x3d.doubleToFloat([0,0,1]))
-
-Appearance62.setMaterial(Material63)
-
-Shape60.setAppearance(Appearance62)
-
-Transform59.addChild(Shape60)
-
-Group38.addChild(Transform59)
-Transform64 = x3d.Transform()
-Transform64.setTranslation(x3d.doubleToFloat([0,0,50]))
-Transform64.setRotation(x3d.doubleToFloat([1,0,0,1.57]))
-Shape65 = x3d.Shape()
-Cone66 = x3d.Cone()
-Cone66.setUSE("Tip")
-
-Shape65.setGeometry(Cone66)
-Appearance67 = x3d.Appearance()
-Material68 = x3d.Material()
-Material68.setUSE("BLUE")
-
-Appearance67.setMaterial(Material68)
-
-Shape65.setAppearance(Appearance67)
-
-Transform64.addChild(Shape65)
-
-Group38.addChild(Transform64)
-
-Layer33.addChild(Group38)
-
-Layer33.addComments(x3d.CommentsBlock('''the model that is being reviewed by the users of this scene'''))
-Transform69 = x3d.Transform()
-Transform69.setDEF("FlowerTransform")
-
-Transform69.addComments(x3d.CommentsBlock('''<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />'''))
-
-Transform69.addComments(x3d.CommentsBlock('''Images courtesy of Paul Debevec's Light Probe Image Gallery'''))
-Background70 = x3d.Background()
-Background70.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
-Background70.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-Background70.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
-Background70.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
-Background70.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
-Background70.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
-
-Transform69.addChild(Background70)
-Shape71 = x3d.Shape()
-Sphere72 = x3d.Sphere()
-Sphere72.setRadius(0.01)
-
-Shape71.setGeometry(Sphere72)
-Appearance73 = x3d.Appearance()
-Material74 = x3d.Material()
-Material74.setDiffuseColor(x3d.doubleToFloat([0.7,0.7,0.7]))
-Material74.setSpecularColor(x3d.doubleToFloat([0.5,0.5,0.5]))
-
-Appearance73.setMaterial(Material74)
-ComposedCubeMapTexture75 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture75.setDEF("texture")
-ImageTexture76 = x3d.ImageTexture()
-ImageTexture76.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
-
-ComposedCubeMapTexture75.setBackTexture(ImageTexture76)
-ImageTexture77 = x3d.ImageTexture()
-ImageTexture77.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-
-ComposedCubeMapTexture75.setBottomTexture(ImageTexture77)
-ImageTexture78 = x3d.ImageTexture()
-ImageTexture78.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
-
-ComposedCubeMapTexture75.setFrontTexture(ImageTexture78)
-ImageTexture79 = x3d.ImageTexture()
-ImageTexture79.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
-
-ComposedCubeMapTexture75.setLeftTexture(ImageTexture79)
-ImageTexture80 = x3d.ImageTexture()
-ImageTexture80.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
-
-ComposedCubeMapTexture75.setRightTexture(ImageTexture80)
-ImageTexture81 = x3d.ImageTexture()
-ImageTexture81.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
-
-ComposedCubeMapTexture75.setTopTexture(ImageTexture81)
-
-Appearance73.setTexture(ComposedCubeMapTexture75)
-ComposedShader82 = x3d.ComposedShader()
-ComposedShader82.setDEF("freewrlShader")
-ComposedShader82.setLanguage("GLSL")
-field83 = x3d.field()
-field83.setName("chromaticDispertion")
-field83.setAccessType("inputOnly")
-field83.setType("SFVec3f")
-field83.setValue("0.98 1 1.033")
-
-ComposedShader82.addField(field83)
-field84 = x3d.field()
-field84.setName("fw_textureCoordGenType")
-field84.setAccessType("inputOnly")
-field84.setType("SFInt32")
-field84.setValue("0")
-
-ComposedShader82.addField(field84)
-field85 = x3d.field()
-field85.setName("bias")
-field85.setType("SFFloat")
-field85.setAccessType("inputOnly")
-field85.setValue("0.5")
-
-ComposedShader82.addField(field85)
-field86 = x3d.field()
-field86.setName("scale")
-field86.setType("SFFloat")
-field86.setAccessType("inputOnly")
-field86.setValue("0.5")
-
-ComposedShader82.addField(field86)
-field87 = x3d.field()
-field87.setName("power")
-field87.setType("SFFloat")
-field87.setAccessType("inputOnly")
-field87.setValue("2")
-
-ComposedShader82.addField(field87)
-field88 = x3d.field()
-field88.setName("a")
-field88.setType("SFFloat")
-field88.setAccessType("inputOutput")
-field88.setValue("15")
-
-ComposedShader82.addField(field88)
-field89 = x3d.field()
-field89.setName("b")
-field89.setType("SFFloat")
-field89.setAccessType("inputOutput")
-field89.setValue("5")
-
-ComposedShader82.addField(field89)
-field90 = x3d.field()
-field90.setName("c")
-field90.setType("SFFloat")
-field90.setAccessType("inputOutput")
-field90.setValue("5")
-
-ComposedShader82.addField(field90)
-field91 = x3d.field()
-field91.setName("d")
-field91.setType("SFFloat")
-field91.setAccessType("inputOutput")
-field91.setValue("5")
-
-ComposedShader82.addField(field91)
-field92 = x3d.field()
-field92.setName("tdelta")
-field92.setType("SFFloat")
-field92.setAccessType("inputOutput")
-field92.setValue("0")
-
-ComposedShader82.addField(field92)
-field93 = x3d.field()
-field93.setName("pdelta")
-field93.setType("SFFloat")
-field93.setAccessType("inputOutput")
-field93.setValue("0")
-
-ComposedShader82.addField(field93)
-ShaderPart94 = x3d.ShaderPart()
-ShaderPart94.setUrl(["../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"])
-ShaderPart94.setType("VERTEX")
-
-ComposedShader82.addParts(ShaderPart94)
-ShaderPart95 = x3d.ShaderPart()
-ShaderPart95.setUrl(["../shaders/freewrl_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"])
-ShaderPart95.setType("FRAGMENT")
-
-ComposedShader82.addParts(ShaderPart95)
-
-Appearance73.addShaders(ComposedShader82)
-
-Shape71.setAppearance(Appearance73)
-
-Transform69.addChild(Shape71)
-
-Layer33.addChild(Transform69)
-
-Layer33.addComments(x3d.CommentsBlock('''DIS multiuser facilities'''))
-DISEntityManager96 = x3d.DISEntityManager()
-DISEntityManager96.setDEF("EntityManager")
-DISEntityManager96.setNetworkMode("networkReader")
-DISEntityTypeMapping97 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping97.setCategory(77)
-DISEntityTypeMapping97.setSpecific(1)
-DISEntityTypeMapping97.setUrl(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"])
-
-DISEntityManager96.addChild(DISEntityTypeMapping97)
-DISEntityTypeMapping98 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping98.setCategory(77)
-DISEntityTypeMapping98.setSpecific(2)
-DISEntityTypeMapping98.setUrl(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"])
-
-DISEntityManager96.addChild(DISEntityTypeMapping98)
-DISEntityTypeMapping99 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping99.setCategory(77)
-DISEntityTypeMapping99.setSpecific(3)
-DISEntityTypeMapping99.setUrl(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])
-
-DISEntityManager96.addChild(DISEntityTypeMapping99)
-DISEntityTypeMapping100 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping100.setCategory(77)
-DISEntityTypeMapping100.setSpecific(4)
-DISEntityTypeMapping100.setUrl(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])
-
-DISEntityManager96.addChild(DISEntityTypeMapping100)
-
-Layer33.addChild(DISEntityManager96)
-Collision101 = x3d.Collision()
-Collision101.setEnabled(False)
-Group102 = x3d.Group()
-Group102.setDEF("AvatarHolder")
-
-Collision101.setProxy(Group102)
-
-Layer33.addChild(Collision101)
-ROUTE103 = x3d.ROUTE()
-ROUTE103.setFromField("addedEntities")
-ROUTE103.setFromNode("EntityManager")
-ROUTE103.setToField("addChildren")
-ROUTE103.setToNode("AvatarHolder")
-
-Layer33.addChild(ROUTE103)
-ROUTE104 = x3d.ROUTE()
-ROUTE104.setFromField("removedEntities")
-ROUTE104.setFromNode("EntityManager")
-ROUTE104.setToField("removeChildren")
-ROUTE104.setToNode("AvatarHolder")
-
-Layer33.addChild(ROUTE104)
-
-LayerSet32.addLayers(Layer33)
-LayoutLayer105 = x3d.LayoutLayer()
-LayoutLayer105.setPickable(True)
-LayoutLayer105.setObjectType(["ALL"])
-
-LayoutLayer105.addComments(x3d.CommentsBlock('''positioning the LayoutLayer'''))
-
-LayoutLayer105.addComments(x3d.CommentsBlock('''clipping the LayoutLayer'''))
-
-LayoutLayer105.addComments(x3d.CommentsBlock('''the content (children) of the LayoutLayer'''))
-
-LayoutLayer105.addComments(x3d.CommentsBlock('''first, the slider for scaling the model'''))
-Transform106 = x3d.Transform()
-Transform106.setTranslation(x3d.doubleToFloat([0,0,-3]))
-Shape107 = x3d.Shape()
-Appearance108 = x3d.Appearance()
-Material109 = x3d.Material()
-Material109.setDiffuseColor(x3d.doubleToFloat([0,0,0]))
-Material109.setTransparency(0.7)
-
-Appearance108.setMaterial(Material109)
-
-Shape107.setAppearance(Appearance108)
-Box110 = x3d.Box()
-Box110.setSize(x3d.doubleToFloat([100,100,0.02]))
-
-Shape107.setGeometry(Box110)
-
-Transform106.addChild(Shape107)
-
-LayoutLayer105.addChild(Transform106)
-
-LayoutLayer105.addComments(x3d.CommentsBlock('''the plane sensors'''))
-Transform111 = x3d.Transform()
-Transform111.setDEF("aSlider")
-Transform111.setTranslation(x3d.doubleToFloat([0,0.7,0]))
-Transform112 = x3d.Transform()
-Transform112.setRotation(x3d.doubleToFloat([0,0,1,1.57]))
-Shape113 = x3d.Shape()
-Appearance114 = x3d.Appearance()
-Material115 = x3d.Material()
-
-Appearance114.setMaterial(Material115)
-
-Shape113.setAppearance(Appearance114)
-Cylinder116 = x3d.Cylinder()
-Cylinder116.setRadius(0.05)
-Cylinder116.setHeight(2.5)
-
-Shape113.setGeometry(Cylinder116)
-
-Transform112.addChild(Shape113)
-
-Transform111.addChild(Transform112)
-Transform117 = x3d.Transform()
-Transform117.setDEF("aTransform")
-Transform117.setTranslation(x3d.doubleToFloat([0,0,0.1]))
-PlaneSensor118 = x3d.PlaneSensor()
-PlaneSensor118.setDEF("aSensor")
-PlaneSensor118.setMinPosition(x3d.doubleToFloat([-20,0]))
-PlaneSensor118.setMaxPosition(x3d.doubleToFloat([20,0]))
-
-Transform117.addChild(PlaneSensor118)
-Transform119 = x3d.Transform()
-Transform119.setTranslation(x3d.doubleToFloat([0,0,0]))
-TouchSensor120 = x3d.TouchSensor()
-TouchSensor120.setDEF("aTS")
-
-Transform119.addChild(TouchSensor120)
-Shape121 = x3d.Shape()
-Sphere122 = x3d.Sphere()
-Sphere122.setRadius(0.08)
-
-Shape121.setGeometry(Sphere122)
-Appearance123 = x3d.Appearance()
-Material124 = x3d.Material()
-Material124.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
-
-Appearance123.setMaterial(Material124)
-
-Shape121.setAppearance(Appearance123)
-
-Transform119.addChild(Shape121)
-
-Transform117.addChild(Transform119)
-Shape125 = x3d.Shape()
-Cylinder126 = x3d.Cylinder()
-Cylinder126.setRadius(0.05)
-Cylinder126.setHeight(0.3)
-
-Shape125.setGeometry(Cylinder126)
-Appearance127 = x3d.Appearance()
-Material128 = x3d.Material()
-
-Appearance127.setMaterial(Material128)
-
-Shape125.setAppearance(Appearance127)
-
-Transform117.addChild(Shape125)
-
-Transform111.addChild(Transform117)
-Transform129 = x3d.Transform()
-Transform129.setRotation(x3d.doubleToFloat([0,0,1,1.57]))
-Shape130 = x3d.Shape()
-Appearance131 = x3d.Appearance()
-Material132 = x3d.Material()
-
-Appearance131.setMaterial(Material132)
-
-Shape130.setAppearance(Appearance131)
-Cylinder133 = x3d.Cylinder()
-Cylinder133.setRadius(0.05)
-Cylinder133.setHeight(2.5)
-
-Shape130.setGeometry(Cylinder133)
-
-Transform129.addChild(Shape130)
-
-Transform111.addChild(Transform129)
-
-LayoutLayer105.addChild(Transform111)
-Transform134 = x3d.Transform()
-Transform134.setDEF("bSlider")
-Transform134.setTranslation(x3d.doubleToFloat([0,0.4,0]))
-Transform135 = x3d.Transform()
-Transform135.setRotation(x3d.doubleToFloat([0,0,1,1.57]))
-Shape136 = x3d.Shape()
-Appearance137 = x3d.Appearance()
-Material138 = x3d.Material()
-
-Appearance137.setMaterial(Material138)
-
-Shape136.setAppearance(Appearance137)
-Cylinder139 = x3d.Cylinder()
-Cylinder139.setRadius(0.05)
-Cylinder139.setHeight(2.5)
-
-Shape136.setGeometry(Cylinder139)
-
-Transform135.addChild(Shape136)
-
-Transform134.addChild(Transform135)
-Transform140 = x3d.Transform()
-Transform140.setDEF("bTransform")
-Transform140.setTranslation(x3d.doubleToFloat([0,0,0.1]))
-PlaneSensor141 = x3d.PlaneSensor()
-PlaneSensor141.setDEF("bSensor")
-PlaneSensor141.setMinPosition(x3d.doubleToFloat([-20,0]))
-PlaneSensor141.setMaxPosition(x3d.doubleToFloat([20,0]))
-
-Transform140.addChild(PlaneSensor141)
-Transform142 = x3d.Transform()
-Transform142.setTranslation(x3d.doubleToFloat([0,0,0]))
-TouchSensor143 = x3d.TouchSensor()
-TouchSensor143.setDEF("bTS")
-
-Transform142.addChild(TouchSensor143)
-Shape144 = x3d.Shape()
-Sphere145 = x3d.Sphere()
-Sphere145.setRadius(0.08)
-
-Shape144.setGeometry(Sphere145)
-Appearance146 = x3d.Appearance()
-Material147 = x3d.Material()
-Material147.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
-
-Appearance146.setMaterial(Material147)
-
-Shape144.setAppearance(Appearance146)
-
-Transform142.addChild(Shape144)
-
-Transform140.addChild(Transform142)
-Shape148 = x3d.Shape()
-Cylinder149 = x3d.Cylinder()
-Cylinder149.setRadius(0.05)
-Cylinder149.setHeight(0.3)
-
-Shape148.setGeometry(Cylinder149)
-Appearance150 = x3d.Appearance()
-Material151 = x3d.Material()
-
-Appearance150.setMaterial(Material151)
-
-Shape148.setAppearance(Appearance150)
-
-Transform140.addChild(Shape148)
-
-Transform134.addChild(Transform140)
-
-LayoutLayer105.addChild(Transform134)
-Transform152 = x3d.Transform()
-Transform152.setDEF("cSlider")
-Transform152.setTranslation(x3d.doubleToFloat([0,0.1,0]))
-Transform153 = x3d.Transform()
-Transform153.setRotation(x3d.doubleToFloat([0,0,1,1.57]))
-Shape154 = x3d.Shape()
-Appearance155 = x3d.Appearance()
-Material156 = x3d.Material()
-
-Appearance155.setMaterial(Material156)
-
-Shape154.setAppearance(Appearance155)
-Cylinder157 = x3d.Cylinder()
-Cylinder157.setRadius(0.05)
-Cylinder157.setHeight(2.5)
-
-Shape154.setGeometry(Cylinder157)
-
-Transform153.addChild(Shape154)
-
-Transform152.addChild(Transform153)
-Transform158 = x3d.Transform()
-Transform158.setDEF("cTransform")
-Transform158.setTranslation(x3d.doubleToFloat([0,0,0.1]))
-PlaneSensor159 = x3d.PlaneSensor()
-PlaneSensor159.setDEF("cSensor")
-PlaneSensor159.setMinPosition(x3d.doubleToFloat([-20,0]))
-PlaneSensor159.setMaxPosition(x3d.doubleToFloat([20,0]))
-
-Transform158.addChild(PlaneSensor159)
-Transform160 = x3d.Transform()
-Transform160.setTranslation(x3d.doubleToFloat([0,0,0]))
-TouchSensor161 = x3d.TouchSensor()
-TouchSensor161.setDEF("cTS")
-
-Transform160.addChild(TouchSensor161)
-Shape162 = x3d.Shape()
-Sphere163 = x3d.Sphere()
-Sphere163.setRadius(0.08)
-
-Shape162.setGeometry(Sphere163)
-Appearance164 = x3d.Appearance()
-Material165 = x3d.Material()
-Material165.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
-
-Appearance164.setMaterial(Material165)
-
-Shape162.setAppearance(Appearance164)
-
-Transform160.addChild(Shape162)
-
-Transform158.addChild(Transform160)
-Shape166 = x3d.Shape()
-Cylinder167 = x3d.Cylinder()
-Cylinder167.setRadius(0.05)
-Cylinder167.setHeight(0.3)
-
-Shape166.setGeometry(Cylinder167)
-Appearance168 = x3d.Appearance()
-Material169 = x3d.Material()
-
-Appearance168.setMaterial(Material169)
-
-Shape166.setAppearance(Appearance168)
-
-Transform158.addChild(Shape166)
-
-Transform152.addChild(Transform158)
-
-LayoutLayer105.addChild(Transform152)
-Transform170 = x3d.Transform()
-Transform170.setDEF("dSlider")
-Transform170.setTranslation(x3d.doubleToFloat([0,-0.2,0]))
-Transform171 = x3d.Transform()
-Transform171.setRotation(x3d.doubleToFloat([0,0,1,1.57]))
-Shape172 = x3d.Shape()
-Appearance173 = x3d.Appearance()
-Material174 = x3d.Material()
-
-Appearance173.setMaterial(Material174)
-
-Shape172.setAppearance(Appearance173)
-Cylinder175 = x3d.Cylinder()
-Cylinder175.setRadius(0.05)
-Cylinder175.setHeight(2.5)
-
-Shape172.setGeometry(Cylinder175)
-
-Transform171.addChild(Shape172)
-
-Transform170.addChild(Transform171)
-Transform176 = x3d.Transform()
-Transform176.setDEF("dTransform")
-Transform176.setTranslation(x3d.doubleToFloat([0,0,0.1]))
-PlaneSensor177 = x3d.PlaneSensor()
-PlaneSensor177.setDEF("dSensor")
-PlaneSensor177.setMinPosition(x3d.doubleToFloat([-20,0]))
-PlaneSensor177.setMaxPosition(x3d.doubleToFloat([20,0]))
-
-Transform176.addChild(PlaneSensor177)
-Transform178 = x3d.Transform()
-Transform178.setTranslation(x3d.doubleToFloat([0,0,0]))
-TouchSensor179 = x3d.TouchSensor()
-TouchSensor179.setDEF("dTS")
-
-Transform178.addChild(TouchSensor179)
-Shape180 = x3d.Shape()
-Sphere181 = x3d.Sphere()
-Sphere181.setRadius(0.08)
-
-Shape180.setGeometry(Sphere181)
-Appearance182 = x3d.Appearance()
-Material183 = x3d.Material()
-Material183.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
-
-Appearance182.setMaterial(Material183)
-
-Shape180.setAppearance(Appearance182)
-
-Transform178.addChild(Shape180)
-
-Transform176.addChild(Transform178)
-Shape184 = x3d.Shape()
-Cylinder185 = x3d.Cylinder()
-Cylinder185.setRadius(0.05)
-Cylinder185.setHeight(0.3)
-
-Shape184.setGeometry(Cylinder185)
-Appearance186 = x3d.Appearance()
-Material187 = x3d.Material()
-
-Appearance186.setMaterial(Material187)
-
-Shape184.setAppearance(Appearance186)
-
-Transform176.addChild(Shape184)
-
-Transform170.addChild(Transform176)
-
-LayoutLayer105.addChild(Transform170)
-Transform188 = x3d.Transform()
-Transform188.setDEF("pdeltaSlider")
-Transform188.setTranslation(x3d.doubleToFloat([0,-0.5,0]))
-Transform189 = x3d.Transform()
-Transform189.setRotation(x3d.doubleToFloat([0,0,1,1.57]))
-Shape190 = x3d.Shape()
-Appearance191 = x3d.Appearance()
-Material192 = x3d.Material()
-
-Appearance191.setMaterial(Material192)
-
-Shape190.setAppearance(Appearance191)
-Cylinder193 = x3d.Cylinder()
-Cylinder193.setRadius(0.05)
-Cylinder193.setHeight(2.5)
-
-Shape190.setGeometry(Cylinder193)
-
-Transform189.addChild(Shape190)
-
-Transform188.addChild(Transform189)
-Transform194 = x3d.Transform()
-Transform194.setDEF("pdeltaTransform")
-Transform194.setTranslation(x3d.doubleToFloat([0,0,0.1]))
-PlaneSensor195 = x3d.PlaneSensor()
-PlaneSensor195.setDEF("pdeltaSensor")
-PlaneSensor195.setMinPosition(x3d.doubleToFloat([-20,0]))
-PlaneSensor195.setMaxPosition(x3d.doubleToFloat([20,0]))
-
-Transform194.addChild(PlaneSensor195)
-Transform196 = x3d.Transform()
-Transform196.setTranslation(x3d.doubleToFloat([0,0,0]))
-TouchSensor197 = x3d.TouchSensor()
-TouchSensor197.setDEF("pdeltaTS")
-
-Transform196.addChild(TouchSensor197)
-Shape198 = x3d.Shape()
-Sphere199 = x3d.Sphere()
-Sphere199.setRadius(0.08)
-
-Shape198.setGeometry(Sphere199)
-Appearance200 = x3d.Appearance()
-Material201 = x3d.Material()
-Material201.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
-
-Appearance200.setMaterial(Material201)
-
-Shape198.setAppearance(Appearance200)
-
-Transform196.addChild(Shape198)
-
-Transform194.addChild(Transform196)
-Shape202 = x3d.Shape()
-Cylinder203 = x3d.Cylinder()
-Cylinder203.setRadius(0.05)
-Cylinder203.setHeight(0.3)
-
-Shape202.setGeometry(Cylinder203)
-Appearance204 = x3d.Appearance()
-Material205 = x3d.Material()
-
-Appearance204.setMaterial(Material205)
-
-Shape202.setAppearance(Appearance204)
-
-Transform194.addChild(Shape202)
-
-Transform188.addChild(Transform194)
-
-LayoutLayer105.addChild(Transform188)
-Transform206 = x3d.Transform()
-Transform206.setDEF("tdeltaSlider")
-Transform206.setTranslation(x3d.doubleToFloat([0,-0.8,0]))
-Transform207 = x3d.Transform()
-Transform207.setRotation(x3d.doubleToFloat([0,0,1,1.57]))
-Shape208 = x3d.Shape()
-Appearance209 = x3d.Appearance()
-Material210 = x3d.Material()
-
-Appearance209.setMaterial(Material210)
-
-Shape208.setAppearance(Appearance209)
-Cylinder211 = x3d.Cylinder()
-Cylinder211.setRadius(0.05)
-Cylinder211.setHeight(2.5)
-
-Shape208.setGeometry(Cylinder211)
-
-Transform207.addChild(Shape208)
-
-Transform206.addChild(Transform207)
-Transform212 = x3d.Transform()
-Transform212.setDEF("tdeltaTransform")
-Transform212.setTranslation(x3d.doubleToFloat([0,0,0.1]))
-PlaneSensor213 = x3d.PlaneSensor()
-PlaneSensor213.setDEF("tdeltaSensor")
-PlaneSensor213.setMinPosition(x3d.doubleToFloat([-20,0]))
-PlaneSensor213.setMaxPosition(x3d.doubleToFloat([20,0]))
-
-Transform212.addChild(PlaneSensor213)
-Transform214 = x3d.Transform()
-Transform214.setTranslation(x3d.doubleToFloat([0,0,0]))
-TouchSensor215 = x3d.TouchSensor()
-TouchSensor215.setDEF("tdeltaTS")
-
-Transform214.addChild(TouchSensor215)
-Shape216 = x3d.Shape()
-Sphere217 = x3d.Sphere()
-Sphere217.setRadius(0.08)
-
-Shape216.setGeometry(Sphere217)
-Appearance218 = x3d.Appearance()
-Material219 = x3d.Material()
-Material219.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
-
-Appearance218.setMaterial(Material219)
-
-Shape216.setAppearance(Appearance218)
-
-Transform214.addChild(Shape216)
-
-Transform212.addChild(Transform214)
-Shape220 = x3d.Shape()
-Cylinder221 = x3d.Cylinder()
-Cylinder221.setRadius(0.05)
-Cylinder221.setHeight(0.3)
-
-Shape220.setGeometry(Cylinder221)
-Appearance222 = x3d.Appearance()
-Material223 = x3d.Material()
-
-Appearance222.setMaterial(Material223)
-
-Shape220.setAppearance(Appearance222)
-
-Transform212.addChild(Shape220)
-
-Transform206.addChild(Transform212)
-
-LayoutLayer105.addChild(Transform206)
-Script224 = x3d.Script()
-Script224.setDEF("aValueTransformerScript")
-Script224.setDirectOutput(True)
-Script224.setMustEvaluate(True)
-field225 = x3d.field()
-field225.setName("newTranslation")
-field225.setAccessType("inputOnly")
-field225.setType("SFVec3f")
-field225.setValue("1 1 1")
-
-Script224.addField(field225)
-field226 = x3d.field()
-field226.setName("aValue")
-field226.setAccessType("outputOnly")
-field226.setType("SFFloat")
-field226.setValue("1")
-
-Script224.addField(field226)
-
-Script224.setSourceCode('''ecmascript: function newTranslation(Value) { aValue = Value.x * 30; }''')
-
-LayoutLayer105.addChild(Script224)
-Script227 = x3d.Script()
-Script227.setDEF("bValueTransformerScript")
-Script227.setDirectOutput(True)
-Script227.setMustEvaluate(True)
-field228 = x3d.field()
-field228.setName("newTranslation")
-field228.setAccessType("inputOnly")
-field228.setType("SFVec3f")
-field228.setValue("1 1 1")
-
-Script227.addField(field228)
-field229 = x3d.field()
-field229.setName("bValue")
-field229.setAccessType("outputOnly")
-field229.setType("SFFloat")
-field229.setValue("1")
-
-Script227.addField(field229)
-
-Script227.setSourceCode('''ecmascript: function newTranslation(Value) { bValue = Value.x * 30; }''')
-
-LayoutLayer105.addChild(Script227)
-Script230 = x3d.Script()
-Script230.setDEF("cValueTransformerScript")
-Script230.setDirectOutput(True)
-Script230.setMustEvaluate(True)
-field231 = x3d.field()
-field231.setName("newTranslation")
-field231.setAccessType("inputOnly")
-field231.setType("SFVec3f")
-field231.setValue("1 1 1")
-
-Script230.addField(field231)
-field232 = x3d.field()
-field232.setName("cValue")
-field232.setAccessType("outputOnly")
-field232.setType("SFFloat")
-field232.setValue("1")
-
-Script230.addField(field232)
-
-Script230.setSourceCode('''ecmascript: function newTranslation(Value) { cValue = Value.x * 5; }''')
-
-LayoutLayer105.addChild(Script230)
-Script233 = x3d.Script()
-Script233.setDEF("dValueTransformerScript")
-Script233.setDirectOutput(True)
-Script233.setMustEvaluate(True)
-field234 = x3d.field()
-field234.setName("newTranslation")
-field234.setAccessType("inputOnly")
-field234.setType("SFVec3f")
-field234.setValue("1 1 1")
-
-Script233.addField(field234)
-field235 = x3d.field()
-field235.setName("dValue")
-field235.setAccessType("outputOnly")
-field235.setType("SFFloat")
-field235.setValue("1")
-
-Script233.addField(field235)
-
-Script233.setSourceCode('''ecmascript: function newTranslation(Value) { dValue = Value.x * 5; }''')
-
-LayoutLayer105.addChild(Script233)
-Script236 = x3d.Script()
-Script236.setDEF("pdeltaValueTransformerScript")
-Script236.setDirectOutput(True)
-Script236.setMustEvaluate(True)
-field237 = x3d.field()
-field237.setName("newTranslation")
-field237.setAccessType("inputOnly")
-field237.setType("SFVec3f")
-field237.setValue("1 1 1")
-
-Script236.addField(field237)
-field238 = x3d.field()
-field238.setName("pdeltaValue")
-field238.setAccessType("outputOnly")
-field238.setType("SFFloat")
-field238.setValue("1")
-
-Script236.addField(field238)
-
-Script236.setSourceCode('''ecmascript: function newTranslation(Value) { pdeltaValue = Value.x; }''')
-
-LayoutLayer105.addChild(Script236)
-Script239 = x3d.Script()
-Script239.setDEF("tdeltaValueTransformerScript")
-Script239.setDirectOutput(True)
-Script239.setMustEvaluate(True)
-field240 = x3d.field()
-field240.setName("newTranslation")
-field240.setAccessType("inputOnly")
-field240.setType("SFVec3f")
-field240.setValue("1 1 1")
-
-Script239.addField(field240)
-field241 = x3d.field()
-field241.setName("tdeltaValue")
-field241.setAccessType("outputOnly")
-field241.setType("SFFloat")
-field241.setValue("1")
-
-Script239.addField(field241)
-
-Script239.setSourceCode('''ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }''')
-
-LayoutLayer105.addChild(Script239)
-ROUTE242 = x3d.ROUTE()
-ROUTE242.setFromField("translation_changed")
-ROUTE242.setFromNode("aSensor")
-ROUTE242.setToField("set_translation")
-ROUTE242.setToNode("aTransform")
-
-LayoutLayer105.addChild(ROUTE242)
-ROUTE243 = x3d.ROUTE()
-ROUTE243.setFromField("translation_changed")
-ROUTE243.setFromNode("bSensor")
-ROUTE243.setToField("set_translation")
-ROUTE243.setToNode("bTransform")
-
-LayoutLayer105.addChild(ROUTE243)
-ROUTE244 = x3d.ROUTE()
-ROUTE244.setFromField("translation_changed")
-ROUTE244.setFromNode("cSensor")
-ROUTE244.setToField("set_translation")
-ROUTE244.setToNode("cTransform")
-
-LayoutLayer105.addChild(ROUTE244)
-ROUTE245 = x3d.ROUTE()
-ROUTE245.setFromField("translation_changed")
-ROUTE245.setFromNode("dSensor")
-ROUTE245.setToField("set_translation")
-ROUTE245.setToNode("dTransform")
-
-LayoutLayer105.addChild(ROUTE245)
-ROUTE246 = x3d.ROUTE()
-ROUTE246.setFromField("translation_changed")
-ROUTE246.setFromNode("pdeltaSensor")
-ROUTE246.setToField("set_translation")
-ROUTE246.setToNode("pdeltaTransform")
-
-LayoutLayer105.addChild(ROUTE246)
-ROUTE247 = x3d.ROUTE()
-ROUTE247.setFromField("translation_changed")
-ROUTE247.setFromNode("tdeltaSensor")
-ROUTE247.setToField("set_translation")
-ROUTE247.setToNode("tdeltaTransform")
-
-LayoutLayer105.addChild(ROUTE247)
-ROUTE248 = x3d.ROUTE()
-ROUTE248.setFromField("translation_changed")
-ROUTE248.setFromNode("aSensor")
-ROUTE248.setToField("newTranslation")
-ROUTE248.setToNode("aValueTransformerScript")
-
-LayoutLayer105.addChild(ROUTE248)
-ROUTE249 = x3d.ROUTE()
-ROUTE249.setFromField("translation_changed")
-ROUTE249.setFromNode("bSensor")
-ROUTE249.setToField("newTranslation")
-ROUTE249.setToNode("bValueTransformerScript")
-
-LayoutLayer105.addChild(ROUTE249)
-ROUTE250 = x3d.ROUTE()
-ROUTE250.setFromField("translation_changed")
-ROUTE250.setFromNode("cSensor")
-ROUTE250.setToField("newTranslation")
-ROUTE250.setToNode("cValueTransformerScript")
-
-LayoutLayer105.addChild(ROUTE250)
-ROUTE251 = x3d.ROUTE()
-ROUTE251.setFromField("translation_changed")
-ROUTE251.setFromNode("dSensor")
-ROUTE251.setToField("newTranslation")
-ROUTE251.setToNode("dValueTransformerScript")
-
-LayoutLayer105.addChild(ROUTE251)
-ROUTE252 = x3d.ROUTE()
-ROUTE252.setFromField("translation_changed")
-ROUTE252.setFromNode("pdeltaSensor")
-ROUTE252.setToField("newTranslation")
-ROUTE252.setToNode("pdeltaValueTransformerScript")
-
-LayoutLayer105.addChild(ROUTE252)
-ROUTE253 = x3d.ROUTE()
-ROUTE253.setFromField("translation_changed")
-ROUTE253.setFromNode("tdeltaSensor")
-ROUTE253.setToField("newTranslation")
-ROUTE253.setToNode("tdeltaValueTransformerScript")
-
-LayoutLayer105.addChild(ROUTE253)
-ROUTE254 = x3d.ROUTE()
-ROUTE254.setFromField("aValue")
-ROUTE254.setFromNode("aValueTransformerScript")
-ROUTE254.setToField("a")
-ROUTE254.setToNode("freewrlShader")
-
-LayoutLayer105.addChild(ROUTE254)
-ROUTE255 = x3d.ROUTE()
-ROUTE255.setFromField("bValue")
-ROUTE255.setFromNode("bValueTransformerScript")
-ROUTE255.setToField("b")
-ROUTE255.setToNode("freewrlShader")
-
-LayoutLayer105.addChild(ROUTE255)
-ROUTE256 = x3d.ROUTE()
-ROUTE256.setFromField("cValue")
-ROUTE256.setFromNode("cValueTransformerScript")
-ROUTE256.setToField("c")
-ROUTE256.setToNode("freewrlShader")
-
-LayoutLayer105.addChild(ROUTE256)
-ROUTE257 = x3d.ROUTE()
-ROUTE257.setFromField("dValue")
-ROUTE257.setFromNode("dValueTransformerScript")
-ROUTE257.setToField("d")
-ROUTE257.setToNode("freewrlShader")
-
-LayoutLayer105.addChild(ROUTE257)
-ROUTE258 = x3d.ROUTE()
-ROUTE258.setFromField("pdeltaValue")
-ROUTE258.setFromNode("pdeltaValueTransformerScript")
-ROUTE258.setToField("pdelta")
-ROUTE258.setToNode("freewrlShader")
-
-LayoutLayer105.addChild(ROUTE258)
-ROUTE259 = x3d.ROUTE()
-ROUTE259.setFromField("tdeltaValue")
-ROUTE259.setFromNode("tdeltaValueTransformerScript")
-ROUTE259.setToField("tdelta")
-ROUTE259.setToNode("freewrlShader")
-
-LayoutLayer105.addChild(ROUTE259)
-Layout260 = x3d.Layout()
-Layout260.setAlign(["RIGHT","BOTTOM"])
-Layout260.setOffset(x3d.doubleToFloat([0,0]))
-Layout260.setOffsetUnits(["WORLD","WORLD"])
-Layout260.setScaleMode(["NONE","NONE"])
-Layout260.setSize(x3d.doubleToFloat([0.4,1]))
-Layout260.setSizeUnits(["WORLD","WORLD"])
-
-LayoutLayer105.setLayout(Layout260)
-Viewport261 = x3d.Viewport()
-Viewport261.setClipBoundary(x3d.doubleToFloat([0,1,0,1]))
-
-LayoutLayer105.setViewport(Viewport261)
-
-LayerSet32.addLayers(LayoutLayer105)
-
-Scene31.addLayerSet(LayerSet32)
-
-X3D0.setScene(Scene31)
+Transform45.addChild(Shape46)
+
+Group24.addChild(Transform45)
+Transform50 = x3d.Transform()
+Transform50.setTranslation(x3d.doubleToFloat([0,0,50]))
+Transform50.setRotation(x3d.doubleToFloat([1,0,0,1.57]))
+Shape51 = x3d.Shape()
+Cone52 = x3d.Cone()
+Cone52.setUSE("Tip")
+
+Shape51.setGeometry(Cone52)
+Appearance53 = x3d.Appearance()
+Material54 = x3d.Material()
+Material54.setUSE("BLUE")
+
+Appearance53.setMaterial(Material54)
+
+Shape51.setAppearance(Appearance53)
+
+Transform50.addChild(Shape51)
+
+Group24.addChild(Transform50)
+
+Layer19.addChild(Group24)
+
+Layer19.addComments(x3d.CommentsBlock("""the model that is being reviewed by the users of this scene"""))
+Transform55 = x3d.Transform()
+Transform55.setDEF("FlowerTransform")
+
+Transform55.addComments(x3d.CommentsBlock("""<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />"""))
+
+Transform55.addComments(x3d.CommentsBlock("""Images courtesy of Paul Debevec's Light Probe Image Gallery"""))
+Background56 = x3d.Background()
+Background56.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
+Background56.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
+Background56.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
+Background56.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
+Background56.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
+Background56.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+
+Transform55.addChild(Background56)
+Transform57 = x3d.Transform()
+Shape58 = x3d.Shape()
+Sphere59 = x3d.Sphere()
+Sphere59.setRadius(5)
+
+Shape58.setGeometry(Sphere59)
+
+Shape58.addComments(x3d.CommentsBlock("""<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"""))
+Appearance60 = x3d.Appearance()
+Material61 = x3d.Material()
+Material61.setDiffuseColor(x3d.doubleToFloat([0.7,0.7,0.7]))
+Material61.setSpecularColor(x3d.doubleToFloat([0.5,0.5,0.5]))
+
+Appearance60.setMaterial(Material61)
+ComposedCubeMapTexture62 = x3d.ComposedCubeMapTexture()
+ComposedCubeMapTexture62.setDEF("texture")
+ImageTexture63 = x3d.ImageTexture()
+ImageTexture63.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
+
+ComposedCubeMapTexture62.setBackTexture(ImageTexture63)
+ImageTexture64 = x3d.ImageTexture()
+ImageTexture64.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
+
+ComposedCubeMapTexture62.setBottomTexture(ImageTexture64)
+ImageTexture65 = x3d.ImageTexture()
+ImageTexture65.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])
+
+ComposedCubeMapTexture62.setFrontTexture(ImageTexture65)
+ImageTexture66 = x3d.ImageTexture()
+ImageTexture66.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])
+
+ComposedCubeMapTexture62.setLeftTexture(ImageTexture66)
+ImageTexture67 = x3d.ImageTexture()
+ImageTexture67.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])
+
+ComposedCubeMapTexture62.setRightTexture(ImageTexture67)
+ImageTexture68 = x3d.ImageTexture()
+ImageTexture68.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])
+
+ComposedCubeMapTexture62.setTopTexture(ImageTexture68)
+
+Appearance60.setTexture(ComposedCubeMapTexture62)
+ComposedShader69 = x3d.ComposedShader()
+ComposedShader69.setDEF("freewrlShader")
+ComposedShader69.setLanguage("GLSL")
+field70 = x3d.field()
+field70.setName("fw_textureCoordGenType")
+field70.setAccessType("inputOutput")
+field70.setType("SFInt32")
+field70.setValue("0")
+
+ComposedShader69.addField(field70)
+field71 = x3d.field()
+field71.setName("chromaticDispertion")
+field71.setAccessType("initializeOnly")
+field71.setType("SFVec3f")
+field71.setValue("0.98 1 1.033")
+
+ComposedShader69.addField(field71)
+field72 = x3d.field()
+field72.setName("bias")
+field72.setType("SFFloat")
+field72.setAccessType("inputOutput")
+field72.setValue("0.5")
+
+ComposedShader69.addField(field72)
+field73 = x3d.field()
+field73.setName("scale")
+field73.setType("SFFloat")
+field73.setAccessType("inputOutput")
+field73.setValue("0.5")
+
+ComposedShader69.addField(field73)
+field74 = x3d.field()
+field74.setName("power")
+field74.setType("SFFloat")
+field74.setAccessType("inputOutput")
+field74.setValue("2")
+
+ComposedShader69.addField(field74)
+field75 = x3d.field()
+field75.setName("a")
+field75.setType("SFFloat")
+field75.setAccessType("inputOutput")
+field75.setValue("15")
+
+ComposedShader69.addField(field75)
+field76 = x3d.field()
+field76.setName("b")
+field76.setType("SFFloat")
+field76.setAccessType("inputOutput")
+field76.setValue("5")
+
+ComposedShader69.addField(field76)
+field77 = x3d.field()
+field77.setName("c")
+field77.setType("SFFloat")
+field77.setAccessType("inputOutput")
+field77.setValue("20")
+
+ComposedShader69.addField(field77)
+field78 = x3d.field()
+field78.setName("d")
+field78.setType("SFFloat")
+field78.setAccessType("inputOutput")
+field78.setValue("20")
+
+ComposedShader69.addField(field78)
+field79 = x3d.field()
+field79.setName("tdelta")
+field79.setType("SFFloat")
+field79.setAccessType("inputOutput")
+field79.setValue("0")
+
+ComposedShader69.addField(field79)
+field80 = x3d.field()
+field80.setName("pdelta")
+field80.setType("SFFloat")
+field80.setAccessType("inputOutput")
+field80.setValue("0")
+
+ComposedShader69.addField(field80)
+
+ComposedShader69.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"""))
+ShaderPart81 = x3d.ShaderPart()
+ShaderPart81.setType("VERTEX")
+IS82 = x3d.IS()
+connect83 = x3d.connect()
+connect83.setNodeField("url")
+connect83.setProtoField("vertex")
+
+IS82.addConnect(connect83)
+
+ShaderPart81.setIS(IS82)
+
+ComposedShader69.addParts(ShaderPart81)
+ShaderPart84 = x3d.ShaderPart()
+ShaderPart84.setType("FRAGMENT")
+IS85 = x3d.IS()
+connect86 = x3d.connect()
+connect86.setNodeField("url")
+connect86.setProtoField("fragment")
+
+IS85.addConnect(connect86)
+
+ShaderPart84.setIS(IS85)
+
+ComposedShader69.addParts(ShaderPart84)
+
+Appearance60.addShaders(ComposedShader69)
+
+Appearance60.addComments(x3d.CommentsBlock("""<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>"""))
+
+Shape58.setAppearance(Appearance60)
+
+Transform57.addChild(Shape58)
+
+Transform55.addChild(Transform57)
+
+Layer19.addChild(Transform55)
+
+Layer19.addComments(x3d.CommentsBlock("""<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""DIS multiuser facilities"""))
+DISEntityManager87 = x3d.DISEntityManager()
+DISEntityManager87.setDEF("EntityManager")
+DISEntityTypeMapping88 = x3d.DISEntityTypeMapping()
+DISEntityTypeMapping88.setCategory(77)
+DISEntityTypeMapping88.setSpecific(1)
+DISEntityTypeMapping88.setUrl(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"])
+
+DISEntityManager87.addChild(DISEntityTypeMapping88)
+DISEntityTypeMapping89 = x3d.DISEntityTypeMapping()
+DISEntityTypeMapping89.setCategory(77)
+DISEntityTypeMapping89.setSpecific(2)
+DISEntityTypeMapping89.setUrl(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"])
+
+DISEntityManager87.addChild(DISEntityTypeMapping89)
+DISEntityTypeMapping90 = x3d.DISEntityTypeMapping()
+DISEntityTypeMapping90.setCategory(77)
+DISEntityTypeMapping90.setSpecific(3)
+DISEntityTypeMapping90.setUrl(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])
+
+DISEntityManager87.addChild(DISEntityTypeMapping90)
+DISEntityTypeMapping91 = x3d.DISEntityTypeMapping()
+DISEntityTypeMapping91.setCategory(77)
+DISEntityTypeMapping91.setSpecific(4)
+DISEntityTypeMapping91.setUrl(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])
+
+DISEntityManager87.addChild(DISEntityTypeMapping91)
+
+Layer19.addChild(DISEntityManager87)
+Collision92 = x3d.Collision()
+Group93 = x3d.Group()
+Group93.setDEF("AvatarHolder")
+
+Collision92.setProxy(Group93)
+
+Layer19.addChild(Collision92)
+ROUTE94 = x3d.ROUTE()
+ROUTE94.setFromField("addedEntities")
+ROUTE94.setFromNode("EntityManager")
+ROUTE94.setToField("addChildren")
+ROUTE94.setToNode("AvatarHolder")
+
+Layer19.addChild(ROUTE94)
+ROUTE95 = x3d.ROUTE()
+ROUTE95.setFromField("removedEntities")
+ROUTE95.setFromNode("EntityManager")
+ROUTE95.setToField("removeChildren")
+ROUTE95.setToNode("AvatarHolder")
+
+Layer19.addChild(ROUTE95)
+
+LayerSet18.addLayers(Layer19)
+LayoutLayer96 = x3d.LayoutLayer()
+LayoutLayer96.setPickable(True)
+LayoutLayer96.setObjectType(["ALL"])
+
+LayoutLayer96.addComments(x3d.CommentsBlock("""positioning the LayoutLayer"""))
+
+LayoutLayer96.addComments(x3d.CommentsBlock("""clipping the LayoutLayer"""))
+
+LayoutLayer96.addComments(x3d.CommentsBlock("""the content (children) of the LayoutLayer"""))
+
+LayoutLayer96.addComments(x3d.CommentsBlock("""first, the slider for scaling the model"""))
+Transform97 = x3d.Transform()
+Transform97.setTranslation(x3d.doubleToFloat([0,0,-3]))
+Shape98 = x3d.Shape()
+Appearance99 = x3d.Appearance()
+Material100 = x3d.Material()
+Material100.setDiffuseColor(x3d.doubleToFloat([0.1,0.1,0.1]))
+Material100.setTransparency(1)
+
+Appearance99.setMaterial(Material100)
+
+Shape98.setAppearance(Appearance99)
+Box101 = x3d.Box()
+Box101.setSize(x3d.doubleToFloat([100,100,0.02]))
+
+Shape98.setGeometry(Box101)
+
+Transform97.addChild(Shape98)
+
+LayoutLayer96.addChild(Transform97)
+Transform102 = x3d.Transform()
+Transform102.setDEF("equationTransform")
+Transform103 = x3d.Transform()
+Transform103.setTranslation(x3d.doubleToFloat([0,0,-20]))
+Shape104 = x3d.Shape()
+Text105 = x3d.Text()
+Text105.setDEF("equation")
+Text105.setString(["r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"])
+FontStyle106 = x3d.FontStyle()
+FontStyle106.setSize(0.09)
+
+Text105.setFontStyle(FontStyle106)
+
+Shape104.setGeometry(Text105)
+Appearance107 = x3d.Appearance()
+Material108 = x3d.Material()
+Material108.setDiffuseColor(x3d.doubleToFloat([0,1,1]))
+
+Appearance107.setMaterial(Material108)
+
+Shape104.setAppearance(Appearance107)
+
+Transform103.addChild(Shape104)
+
+Transform102.addChild(Transform103)
+
+LayoutLayer96.addChild(Transform102)
+ProtoDeclare109 = x3d.ProtoDeclare()
+ProtoDeclare109.setName("SliderProto")
+ProtoInterface110 = x3d.ProtoInterface()
+field111 = x3d.field()
+field111.setName("sliderTranslation")
+field111.setAccessType("inputOutput")
+field111.setType("SFVec3f")
+field111.setValue("0 0.7 0")
+
+ProtoInterface110.addField(field111)
+field112 = x3d.field()
+field112.setName("transformTranslation")
+field112.setAccessType("inputOutput")
+field112.setType("SFVec3f")
+field112.setValue("0 0 0.1")
+
+ProtoInterface110.addField(field112)
+field113 = x3d.field()
+field113.setName("sensorTranslation")
+field113.setAccessType("inputOutput")
+field113.setType("SFVec3f")
+field113.setValue("0 0 0")
+
+ProtoInterface110.addField(field113)
+field114 = x3d.field()
+field114.setName("numberTranslation")
+field114.setAccessType("inputOutput")
+field114.setType("SFVec3f")
+field114.setValue("0.2 0 0")
+
+ProtoInterface110.addField(field114)
+field115 = x3d.field()
+field115.setName("textString")
+field115.setAccessType("inputOutput")
+field115.setType("MFString")
+field115.setValue("\"a=\"")
+
+ProtoInterface110.addField(field115)
+field116 = x3d.field()
+field116.setName("parameterName")
+field116.setAccessType("inputOutput")
+field116.setType("SFString")
+field116.setValue("a")
+
+ProtoInterface110.addField(field116)
+field117 = x3d.field()
+field117.setName("parameterScale")
+field117.setAccessType("inputOutput")
+field117.setType("SFFloat")
+field117.setValue("30")
+
+ProtoInterface110.addField(field117)
+field118 = x3d.field()
+field118.setName("shaderNode")
+field118.setAccessType("inputOutput")
+field118.setType("SFNode")
+
+ProtoInterface110.addField(field118)
+
+ProtoDeclare109.setProtoInterface(ProtoInterface110)
+ProtoBody119 = x3d.ProtoBody()
+Group120 = x3d.Group()
+Transform121 = x3d.Transform()
+Transform121.setDEF("protoSlider")
+Transform121.setTranslation(x3d.doubleToFloat([0,0.7,0]))
+IS122 = x3d.IS()
+connect123 = x3d.connect()
+connect123.setNodeField("translation")
+connect123.setProtoField("sliderTranslation")
+
+IS122.addConnect(connect123)
+
+Transform121.setIS(IS122)
+Transform124 = x3d.Transform()
+Transform124.setDEF("protoTransform")
+Transform124.setTranslation(x3d.doubleToFloat([0,0,0.1]))
+IS125 = x3d.IS()
+connect126 = x3d.connect()
+connect126.setNodeField("translation")
+connect126.setProtoField("sensorTranslation")
+
+IS125.addConnect(connect126)
+
+Transform124.setIS(IS125)
+PlaneSensor127 = x3d.PlaneSensor()
+PlaneSensor127.setDEF("protoSensor")
+PlaneSensor127.setMaxPosition(x3d.doubleToFloat([2,0]))
+
+Transform124.addChild(PlaneSensor127)
+Transform128 = x3d.Transform()
+Transform128.setTranslation(x3d.doubleToFloat([0,0,0]))
+TouchSensor129 = x3d.TouchSensor()
+TouchSensor129.setDEF("protoTS")
+
+Transform128.addChild(TouchSensor129)
+
+Transform124.addChild(Transform128)
+Transform130 = x3d.Transform()
+Shape131 = x3d.Shape()
+Text132 = x3d.Text()
+Text132.setDEF("protoText")
+Text132.setString(["a="])
+IS133 = x3d.IS()
+connect134 = x3d.connect()
+connect134.setNodeField("string")
+connect134.setProtoField("textString")
+
+IS133.addConnect(connect134)
+
+Text132.setIS(IS133)
+FontStyle135 = x3d.FontStyle()
+FontStyle135.setSize(0.2)
+
+Text132.setFontStyle(FontStyle135)
+
+Shape131.setGeometry(Text132)
+Appearance136 = x3d.Appearance()
+Material137 = x3d.Material()
+Material137.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
+
+Appearance136.setMaterial(Material137)
+
+Shape131.setAppearance(Appearance136)
+
+Transform130.addChild(Shape131)
+Transform138 = x3d.Transform()
+IS139 = x3d.IS()
+connect140 = x3d.connect()
+connect140.setNodeField("translation")
+connect140.setProtoField("numberTranslation")
+
+IS139.addConnect(connect140)
+
+Transform138.setIS(IS139)
+Shape141 = x3d.Shape()
+Text142 = x3d.Text()
+Text142.setDEF("protoNumber")
+Text142.setString(["0"])
+FontStyle143 = x3d.FontStyle()
+FontStyle143.setSize(0.2)
+
+Text142.setFontStyle(FontStyle143)
+
+Shape141.setGeometry(Text142)
+Appearance144 = x3d.Appearance()
+Material145 = x3d.Material()
+Material145.setDiffuseColor(x3d.doubleToFloat([1,1,1]))
+
+Appearance144.setMaterial(Material145)
+
+Shape141.setAppearance(Appearance144)
+
+Transform138.addChild(Shape141)
+
+Transform130.addChild(Transform138)
+
+Transform124.addChild(Transform130)
+
+Transform121.addChild(Transform124)
+
+Group120.addChild(Transform121)
+Script146 = x3d.Script()
+Script146.setDEF("protoValueTransformerScript")
+Script146.setDirectOutput(True)
+Script146.setMustEvaluate(True)
+field147 = x3d.field()
+field147.setName("protoScale")
+field147.setAccessType("inputOutput")
+field147.setType("SFFloat")
+field147.setValue("30")
+
+Script146.addField(field147)
+field148 = x3d.field()
+field148.setName("shader")
+field148.setAccessType("inputOutput")
+field148.setType("SFNode")
+
+Script146.addField(field148)
+field149 = x3d.field()
+field149.setName("newTranslation")
+field149.setAccessType("inputOutput")
+field149.setType("SFVec3f")
+field149.setValue("1 1 1")
+
+Script146.addField(field149)
+field150 = x3d.field()
+field150.setName("protoValue_changed")
+field150.setAccessType("inputOutput")
+field150.setType("SFFloat")
+field150.setValue("1")
+
+Script146.addField(field150)
+field151 = x3d.field()
+field151.setName("protoNumber_changed")
+field151.setAccessType("inputOutput")
+field151.setType("MFString")
+field151.setValue("\"0.0\"")
+
+Script146.addField(field151)
+field152 = x3d.field()
+field152.setName("protoParameterName")
+field152.setAccessType("inputOutput")
+field152.setType("SFString")
+field152.setValue("a")
+
+Script146.addField(field152)
+IS153 = x3d.IS()
+connect154 = x3d.connect()
+connect154.setNodeField("protoScale")
+connect154.setProtoField("parameterScale")
+
+IS153.addConnect(connect154)
+connect155 = x3d.connect()
+connect155.setNodeField("protoParameterName")
+connect155.setProtoField("parameterName")
+
+IS153.addConnect(connect155)
+connect156 = x3d.connect()
+connect156.setNodeField("shader")
+connect156.setProtoField("shaderNode")
+
+IS153.addConnect(connect156)
+
+Script146.setIS(IS153)
+
+Script146.setSourceCode('''ecmascript:
+	const newTranslation = function(Value) {
+	    protoValue_changed = Value[0] * protoScale;
+	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());
+	    Browser.println(\"In newTranslation:\");
+	    Browser.println(shader);
+	    Browser.println(Value[0]);
+	    Browser.println(Value.x);
+	    Browser.println(protoScale);
+	    Browser.println(Value[0] * protoScale);
+	    Browser.println(protoParameterName);
+					// shader[protoParameterName] = Value[0] * protoScale;
+	};''')
+
+Group120.addChild(Script146)
+ROUTE157 = x3d.ROUTE()
+ROUTE157.setFromField("translation_changed")
+ROUTE157.setFromNode("protoSensor")
+ROUTE157.setToField("set_translation")
+ROUTE157.setToNode("protoTransform")
+
+Group120.addChild(ROUTE157)
+ROUTE158 = x3d.ROUTE()
+ROUTE158.setFromField("translation_changed")
+ROUTE158.setFromNode("protoSensor")
+ROUTE158.setToField("newTranslation")
+ROUTE158.setToNode("protoValueTransformerScript")
+
+Group120.addChild(ROUTE158)
+ROUTE159 = x3d.ROUTE()
+ROUTE159.setFromField("protoNumber_changed")
+ROUTE159.setFromNode("protoValueTransformerScript")
+ROUTE159.setToField("string")
+ROUTE159.setToNode("protoNumber")
+
+Group120.addChild(ROUTE159)
+
+ProtoBody119.addChild(Group120)
+
+ProtoDeclare109.setProtoBody(ProtoBody119)
+
+LayoutLayer96.addChild(ProtoDeclare109)
+ProtoInstance160 = x3d.ProtoInstance()
+ProtoInstance160.setName("SliderProto")
+ProtoInstance160.setDEF("aPI")
+fieldValue161 = x3d.fieldValue()
+fieldValue161.setName("sliderTranslation")
+fieldValue161.setValue("0 0.7 0")
+
+ProtoInstance160.addFieldValue(fieldValue161)
+fieldValue162 = x3d.fieldValue()
+fieldValue162.setName("transformTranslation")
+fieldValue162.setValue("0 0 0.1")
+
+ProtoInstance160.addFieldValue(fieldValue162)
+fieldValue163 = x3d.fieldValue()
+fieldValue163.setName("sensorTranslation")
+fieldValue163.setValue("0 0 0")
+
+ProtoInstance160.addFieldValue(fieldValue163)
+fieldValue164 = x3d.fieldValue()
+fieldValue164.setName("numberTranslation")
+fieldValue164.setValue("0.3 0 0")
+
+ProtoInstance160.addFieldValue(fieldValue164)
+fieldValue165 = x3d.fieldValue()
+fieldValue165.setName("textString")
+fieldValue165.setValue("\"a=\"")
+
+ProtoInstance160.addFieldValue(fieldValue165)
+fieldValue166 = x3d.fieldValue()
+fieldValue166.setName("parameterName")
+fieldValue166.setValue("a")
+
+ProtoInstance160.addFieldValue(fieldValue166)
+fieldValue167 = x3d.fieldValue()
+fieldValue167.setName("parameterScale")
+fieldValue167.setValue("30")
+
+ProtoInstance160.addFieldValue(fieldValue167)
+fieldValue168 = x3d.fieldValue()
+fieldValue168.setName("shaderNode")
+ComposedShader169 = x3d.ComposedShader()
+ComposedShader169.setUSE("freewrlShader")
+
+fieldValue168.addChild(ComposedShader169)
+
+ProtoInstance160.addFieldValue(fieldValue168)
+
+LayoutLayer96.addChild(ProtoInstance160)
+ProtoInstance170 = x3d.ProtoInstance()
+ProtoInstance170.setName("SliderProto")
+ProtoInstance170.setDEF("bPI")
+fieldValue171 = x3d.fieldValue()
+fieldValue171.setName("sliderTranslation")
+fieldValue171.setValue("0 0.4 0")
+
+ProtoInstance170.addFieldValue(fieldValue171)
+fieldValue172 = x3d.fieldValue()
+fieldValue172.setName("transformTranslation")
+fieldValue172.setValue("0 0 0.1")
+
+ProtoInstance170.addFieldValue(fieldValue172)
+fieldValue173 = x3d.fieldValue()
+fieldValue173.setName("sensorTranslation")
+fieldValue173.setValue("0 0 0")
+
+ProtoInstance170.addFieldValue(fieldValue173)
+fieldValue174 = x3d.fieldValue()
+fieldValue174.setName("numberTranslation")
+fieldValue174.setValue("0.3 0 0")
+
+ProtoInstance170.addFieldValue(fieldValue174)
+fieldValue175 = x3d.fieldValue()
+fieldValue175.setName("textString")
+fieldValue175.setValue("\"b=\"")
+
+ProtoInstance170.addFieldValue(fieldValue175)
+fieldValue176 = x3d.fieldValue()
+fieldValue176.setName("parameterName")
+fieldValue176.setValue("b")
+
+ProtoInstance170.addFieldValue(fieldValue176)
+fieldValue177 = x3d.fieldValue()
+fieldValue177.setName("parameterScale")
+fieldValue177.setValue("30")
+
+ProtoInstance170.addFieldValue(fieldValue177)
+fieldValue178 = x3d.fieldValue()
+fieldValue178.setName("shaderNode")
+ComposedShader179 = x3d.ComposedShader()
+ComposedShader179.setUSE("freewrlShader")
+
+fieldValue178.addChild(ComposedShader179)
+
+ProtoInstance170.addFieldValue(fieldValue178)
+
+LayoutLayer96.addChild(ProtoInstance170)
+ProtoInstance180 = x3d.ProtoInstance()
+ProtoInstance180.setName("SliderProto")
+ProtoInstance180.setDEF("cPI")
+fieldValue181 = x3d.fieldValue()
+fieldValue181.setName("sliderTranslation")
+fieldValue181.setValue("0 0.1 0")
+
+ProtoInstance180.addFieldValue(fieldValue181)
+fieldValue182 = x3d.fieldValue()
+fieldValue182.setName("transformTranslation")
+fieldValue182.setValue("0 0 0.1")
+
+ProtoInstance180.addFieldValue(fieldValue182)
+fieldValue183 = x3d.fieldValue()
+fieldValue183.setName("sensorTranslation")
+fieldValue183.setValue("0 0 0")
+
+ProtoInstance180.addFieldValue(fieldValue183)
+fieldValue184 = x3d.fieldValue()
+fieldValue184.setName("numberTranslation")
+fieldValue184.setValue("0.3 0 0")
+
+ProtoInstance180.addFieldValue(fieldValue184)
+fieldValue185 = x3d.fieldValue()
+fieldValue185.setName("textString")
+fieldValue185.setValue("\"c=\"")
+
+ProtoInstance180.addFieldValue(fieldValue185)
+fieldValue186 = x3d.fieldValue()
+fieldValue186.setName("parameterName")
+fieldValue186.setValue("c")
+
+ProtoInstance180.addFieldValue(fieldValue186)
+fieldValue187 = x3d.fieldValue()
+fieldValue187.setName("parameterScale")
+fieldValue187.setValue("20")
+
+ProtoInstance180.addFieldValue(fieldValue187)
+fieldValue188 = x3d.fieldValue()
+fieldValue188.setName("shaderNode")
+ComposedShader189 = x3d.ComposedShader()
+ComposedShader189.setUSE("freewrlShader")
+
+fieldValue188.addChild(ComposedShader189)
+
+ProtoInstance180.addFieldValue(fieldValue188)
+
+LayoutLayer96.addChild(ProtoInstance180)
+ProtoInstance190 = x3d.ProtoInstance()
+ProtoInstance190.setName("SliderProto")
+ProtoInstance190.setDEF("dPI")
+fieldValue191 = x3d.fieldValue()
+fieldValue191.setName("sliderTranslation")
+fieldValue191.setValue("0 -0.2 0")
+
+ProtoInstance190.addFieldValue(fieldValue191)
+fieldValue192 = x3d.fieldValue()
+fieldValue192.setName("transformTranslation")
+fieldValue192.setValue("0 0 0.1")
+
+ProtoInstance190.addFieldValue(fieldValue192)
+fieldValue193 = x3d.fieldValue()
+fieldValue193.setName("sensorTranslation")
+fieldValue193.setValue("0 0 0")
+
+ProtoInstance190.addFieldValue(fieldValue193)
+fieldValue194 = x3d.fieldValue()
+fieldValue194.setName("numberTranslation")
+fieldValue194.setValue("0.3 0 0")
+
+ProtoInstance190.addFieldValue(fieldValue194)
+fieldValue195 = x3d.fieldValue()
+fieldValue195.setName("textString")
+fieldValue195.setValue("\"d=\"")
+
+ProtoInstance190.addFieldValue(fieldValue195)
+fieldValue196 = x3d.fieldValue()
+fieldValue196.setName("parameterName")
+fieldValue196.setValue("d")
+
+ProtoInstance190.addFieldValue(fieldValue196)
+fieldValue197 = x3d.fieldValue()
+fieldValue197.setName("parameterScale")
+fieldValue197.setValue("20")
+
+ProtoInstance190.addFieldValue(fieldValue197)
+fieldValue198 = x3d.fieldValue()
+fieldValue198.setName("shaderNode")
+ComposedShader199 = x3d.ComposedShader()
+ComposedShader199.setUSE("freewrlShader")
+
+fieldValue198.addChild(ComposedShader199)
+
+ProtoInstance190.addFieldValue(fieldValue198)
+
+LayoutLayer96.addChild(ProtoInstance190)
+ProtoInstance200 = x3d.ProtoInstance()
+ProtoInstance200.setName("SliderProto")
+ProtoInstance200.setDEF("tdeltaPI")
+fieldValue201 = x3d.fieldValue()
+fieldValue201.setName("sliderTranslation")
+fieldValue201.setValue("0 -0.5 0")
+
+ProtoInstance200.addFieldValue(fieldValue201)
+fieldValue202 = x3d.fieldValue()
+fieldValue202.setName("transformTranslation")
+fieldValue202.setValue("0 0 0.1")
+
+ProtoInstance200.addFieldValue(fieldValue202)
+fieldValue203 = x3d.fieldValue()
+fieldValue203.setName("sensorTranslation")
+fieldValue203.setValue("0 0 0")
+
+ProtoInstance200.addFieldValue(fieldValue203)
+fieldValue204 = x3d.fieldValue()
+fieldValue204.setName("numberTranslation")
+fieldValue204.setValue("0.8 0 0")
+
+ProtoInstance200.addFieldValue(fieldValue204)
+fieldValue205 = x3d.fieldValue()
+fieldValue205.setName("textString")
+fieldValue205.setValue("\"tdelta=\"")
+
+ProtoInstance200.addFieldValue(fieldValue205)
+fieldValue206 = x3d.fieldValue()
+fieldValue206.setName("parameterName")
+fieldValue206.setValue("tdelta")
+
+ProtoInstance200.addFieldValue(fieldValue206)
+fieldValue207 = x3d.fieldValue()
+fieldValue207.setName("parameterScale")
+fieldValue207.setValue("6.28")
+
+ProtoInstance200.addFieldValue(fieldValue207)
+fieldValue208 = x3d.fieldValue()
+fieldValue208.setName("shaderNode")
+ComposedShader209 = x3d.ComposedShader()
+ComposedShader209.setUSE("freewrlShader")
+
+fieldValue208.addChild(ComposedShader209)
+
+ProtoInstance200.addFieldValue(fieldValue208)
+
+LayoutLayer96.addChild(ProtoInstance200)
+ProtoInstance210 = x3d.ProtoInstance()
+ProtoInstance210.setName("SliderProto")
+ProtoInstance210.setDEF("pdeltaPI")
+fieldValue211 = x3d.fieldValue()
+fieldValue211.setName("sliderTranslation")
+fieldValue211.setValue("0 -0.8 0")
+
+ProtoInstance210.addFieldValue(fieldValue211)
+fieldValue212 = x3d.fieldValue()
+fieldValue212.setName("transformTranslation")
+fieldValue212.setValue("0 0 0.1")
+
+ProtoInstance210.addFieldValue(fieldValue212)
+fieldValue213 = x3d.fieldValue()
+fieldValue213.setName("sensorTranslation")
+fieldValue213.setValue("0 0 0")
+
+ProtoInstance210.addFieldValue(fieldValue213)
+fieldValue214 = x3d.fieldValue()
+fieldValue214.setName("numberTranslation")
+fieldValue214.setValue("0.8 0 0")
+
+ProtoInstance210.addFieldValue(fieldValue214)
+fieldValue215 = x3d.fieldValue()
+fieldValue215.setName("textString")
+fieldValue215.setValue("\"pdelta=\"")
+
+ProtoInstance210.addFieldValue(fieldValue215)
+fieldValue216 = x3d.fieldValue()
+fieldValue216.setName("parameterName")
+fieldValue216.setValue("pdelta")
+
+ProtoInstance210.addFieldValue(fieldValue216)
+fieldValue217 = x3d.fieldValue()
+fieldValue217.setName("parameterScale")
+fieldValue217.setValue("6.28")
+
+ProtoInstance210.addFieldValue(fieldValue217)
+fieldValue218 = x3d.fieldValue()
+fieldValue218.setName("shaderNode")
+ComposedShader219 = x3d.ComposedShader()
+ComposedShader219.setUSE("freewrlShader")
+
+fieldValue218.addChild(ComposedShader219)
+
+ProtoInstance210.addFieldValue(fieldValue218)
+
+LayoutLayer96.addChild(ProtoInstance210)
+Layout220 = x3d.Layout()
+Layout220.setAlign(["LEFT","BOTTOM"])
+Layout220.setOffset(x3d.doubleToFloat([-0.5,0]))
+
+LayoutLayer96.setLayout(Layout220)
+Viewport221 = x3d.Viewport()
+
+LayoutLayer96.setViewport(Viewport221)
+
+LayerSet18.addLayers(LayoutLayer96)
+
+Scene17.addLayerSet(LayerSet18)
+
+X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/bumpyfreewrlsliders.new.graalpy.x3d")
-X3D0.toFileJSON("../data/bumpyfreewrlsliders.new.graalpy.json")
+X3D0.toFileJSON("../data/bumpyfreewrlsliders.new.graalpy.x3dj")

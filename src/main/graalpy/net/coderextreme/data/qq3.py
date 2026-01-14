@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -56,7 +56,7 @@ ProtoDeclare11.setName("Process")
 ProtoBody12 = x3d.ProtoBody()
 Group13 = x3d.Group()
 
-Group13.addComments(x3d.CommentsBlock('''left'''))
+Group13.addComments(x3d.CommentsBlock("""left"""))
 Transform14 = x3d.Transform()
 Transform14.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape15 = x3d.Shape()
@@ -79,7 +79,7 @@ Transform14.addChild(Shape15)
 
 Group13.addChild(Transform14)
 
-Group13.addComments(x3d.CommentsBlock('''right'''))
+Group13.addComments(x3d.CommentsBlock("""right"""))
 Transform19 = x3d.Transform()
 Transform19.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape20 = x3d.Shape()
@@ -102,7 +102,7 @@ Transform19.addChild(Shape20)
 
 Group13.addChild(Transform19)
 
-Group13.addComments(x3d.CommentsBlock('''up'''))
+Group13.addComments(x3d.CommentsBlock("""up"""))
 Transform24 = x3d.Transform()
 Transform24.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape25 = x3d.Shape()
@@ -112,7 +112,7 @@ Transform24.addChild(Shape25)
 
 Group13.addChild(Transform24)
 
-Group13.addComments(x3d.CommentsBlock('''down'''))
+Group13.addComments(x3d.CommentsBlock("""down"""))
 Transform26 = x3d.Transform()
 Transform26.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape27 = x3d.Shape()
@@ -159,4 +159,4 @@ Scene10.addChild(Transform33)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/qq3.new.graalpy.x3d")
-X3D0.toFileJSON("../data/qq3.new.graalpy.json")
+X3D0.toFileJSON("../data/qq3.new.graalpy.x3dj")

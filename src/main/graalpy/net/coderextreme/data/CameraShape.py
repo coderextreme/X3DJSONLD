@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interactive")
 X3D0.setVersion("4.0")
@@ -115,7 +115,7 @@ Material24.setDiffuseColor(x3d.doubleToFloat([0.372322,0.371574,0.373173]))
 Material24.setShininess(0.02)
 Material24.setSpecularColor(x3d.doubleToFloat([0.890909,0.887832,0.890909]))
 
-Material24.addComments(x3d.CommentsBlock('''Universal Media Library: Metals 30'''))
+Material24.addComments(x3d.CommentsBlock("""Universal Media Library: Metals 30"""))
 
 Appearance23.setMaterial(Material24)
 
@@ -276,4 +276,4 @@ Scene13.addChild(Transform20)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/CameraShape.new.graalpy.x3d")
-X3D0.toFileJSON("../data/CameraShape.new.graalpy.json")
+X3D0.toFileJSON("../data/CameraShape.new.graalpy.x3dj")

@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -371,6 +371,7 @@ ProtoInstance64.setDEF("connector1")
 fieldValue65 = x3d.fieldValue()
 fieldValue65.setName("startnode")
 ProtoInstance66 = x3d.ProtoInstance()
+ProtoInstance66.setName("point")
 ProtoInstance66.setUSE("G1")
 
 fieldValue65.addChild(ProtoInstance66)
@@ -379,6 +380,7 @@ ProtoInstance64.addFieldValue(fieldValue65)
 fieldValue67 = x3d.fieldValue()
 fieldValue67.setName("endnode")
 ProtoInstance68 = x3d.ProtoInstance()
+ProtoInstance68.setName("point")
 ProtoInstance68.setUSE("G2")
 
 fieldValue67.addChild(ProtoInstance68)
@@ -400,6 +402,7 @@ ProtoInstance71.setDEF("connector2")
 fieldValue72 = x3d.fieldValue()
 fieldValue72.setName("startnode")
 ProtoInstance73 = x3d.ProtoInstance()
+ProtoInstance73.setName("point")
 ProtoInstance73.setUSE("G1")
 
 fieldValue72.addChild(ProtoInstance73)
@@ -408,6 +411,7 @@ ProtoInstance71.addFieldValue(fieldValue72)
 fieldValue74 = x3d.fieldValue()
 fieldValue74.setName("endnode")
 ProtoInstance75 = x3d.ProtoInstance()
+ProtoInstance75.setName("point")
 ProtoInstance75.setUSE("G3")
 
 fieldValue74.addChild(ProtoInstance75)
@@ -429,6 +433,7 @@ ProtoInstance78.setDEF("connector3")
 fieldValue79 = x3d.fieldValue()
 fieldValue79.setName("startnode")
 ProtoInstance80 = x3d.ProtoInstance()
+ProtoInstance80.setName("point")
 ProtoInstance80.setUSE("G1")
 
 fieldValue79.addChild(ProtoInstance80)
@@ -437,6 +442,7 @@ ProtoInstance78.addFieldValue(fieldValue79)
 fieldValue81 = x3d.fieldValue()
 fieldValue81.setName("endnode")
 ProtoInstance82 = x3d.ProtoInstance()
+ProtoInstance82.setName("point")
 ProtoInstance82.setUSE("G4")
 
 fieldValue81.addChild(ProtoInstance82)
@@ -497,4 +503,4 @@ Scene7.addChild(ROUTE90)
 
 X3D0.setScene(Scene7)
 X3D0.toFileX3D("../data/arc.new.graalpy.x3d")
-X3D0.toFileJSON("../data/arc.new.graalpy.json")
+X3D0.toFileJSON("../data/arc.new.graalpy.x3dj")

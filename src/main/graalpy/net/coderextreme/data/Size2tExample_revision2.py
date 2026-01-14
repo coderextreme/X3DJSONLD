@@ -1,15 +1,15 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
 
-head1.addComments(x3d.CommentsBlock('''are units needed? looks like baby Dr. Manhattan... <unit category='length' conversionFactor='0.01' name='CentimetersToMeters'/>'''))
+head1.addComments(x3d.CommentsBlock("""are units needed? looks like baby Dr. Manhattan... <unit category='length' conversionFactor='0.01' name='CentimetersToMeters'/>"""))
 meta2 = x3d.meta()
 meta2.setName("title")
 meta2.setContent("Size2tExample_revision2.x3d")
@@ -784,4 +784,4 @@ Scene15.addChild(TimeSensor146)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/Size2tExample_revision2.new.graalpy.x3d")
-X3D0.toFileJSON("../data/Size2tExample_revision2.new.graalpy.json")
+X3D0.toFileJSON("../data/Size2tExample_revision2.new.graalpy.x3dj")

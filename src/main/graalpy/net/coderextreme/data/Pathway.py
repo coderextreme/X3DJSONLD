@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
 X3D0.setVersion("4.0")
@@ -9807,4 +9807,4 @@ Scene15.addChild(Shape2222)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/Pathway.new.graalpy.x3d")
-X3D0.toFileJSON("../data/Pathway.new.graalpy.json")
+X3D0.toFileJSON("../data/Pathway.new.graalpy.x3dj")

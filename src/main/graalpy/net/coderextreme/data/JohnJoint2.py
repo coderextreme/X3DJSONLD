@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -20,7 +20,7 @@ meta3.setContent("JohnJoint2.x3d")
 head1.addMeta(meta3)
 meta4 = x3d.meta()
 meta4.setName("identifier")
-meta4.setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint2.x3d")
+meta4.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint2.x3d")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
@@ -58,11 +58,11 @@ X3D0.setHead(head1)
 Scene11 = x3d.Scene()
 Transform12 = x3d.Transform()
 
-Transform12.addComments(x3d.CommentsBlock('''DEF for markerfor XYZ axes'''))
+Transform12.addComments(x3d.CommentsBlock("""DEF for markerfor XYZ axes"""))
 Shape13 = x3d.Shape()
 Shape13.setDEF("AxisLinesShape")
 
-Shape13.addComments(x3d.CommentsBlock('''RGB lines showing XYZ axes'''))
+Shape13.addComments(x3d.CommentsBlock("""RGB lines showing XYZ axes"""))
 IndexedLineSet14 = x3d.IndexedLineSet()
 IndexedLineSet14.setColorIndex([0,1,2])
 IndexedLineSet14.setColorPerVertex(False)
@@ -83,10 +83,10 @@ Transform12.addChild(Shape13)
 Scene11.addChild(Transform12)
 Group17 = x3d.Group()
 
-Group17.addComments(x3d.CommentsBlock('''DEFS for markers of skeleton joints, segments, and sites'''))
+Group17.addComments(x3d.CommentsBlock("""DEFS for markers of skeleton joints, segments, and sites"""))
 Transform18 = x3d.Transform()
 
-Transform18.addComments(x3d.CommentsBlock('''<Transform translation='0 2 0'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>'''))
+Transform18.addComments(x3d.CommentsBlock("""<Transform translation='0 2 0'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>"""))
 Transform19 = x3d.Transform()
 Transform19.setTranslation(x3d.doubleToFloat([0,2.1,0]))
 Shape20 = x3d.Shape()
@@ -130,7 +130,7 @@ Transform24.addChild(Shape25)
 
 Transform18.addChild(Transform24)
 
-Transform18.addComments(x3d.CommentsBlock('''<Transform translation='0 2.1 0'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>'''))
+Transform18.addComments(x3d.CommentsBlock("""<Transform translation='0 2.1 0'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>"""))
 
 Group17.addChild(Transform18)
 
@@ -2052,4 +2052,4 @@ Scene11.addChild(HAnimHumanoid31)
 
 X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/JohnJoint2.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JohnJoint2.new.graalpy.json")
+X3D0.toFileJSON("../data/JohnJoint2.new.graalpy.x3dj")

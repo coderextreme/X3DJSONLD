@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -136,7 +136,7 @@ HAnimHumanoid27.setDEF("hanim_Foot_Right")
 HAnimHumanoid27.setLoa(4)
 HAnimHumanoid27.setVersion("2.0")
 
-HAnimHumanoid27.addComments(x3d.CommentsBlock('''original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"''''))
+HAnimHumanoid27.addComments(x3d.CommentsBlock("""original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"""))
 MetadataSet28 = x3d.MetadataSet()
 MetadataSet28.setName("HAnimHumanoid.info")
 MetadataSet28.setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
@@ -154,7 +154,7 @@ HAnimJoint30.setUlimit(x3d.doubleToFloat([0,0,0]))
 HAnimJoint30.setLlimit(x3d.doubleToFloat([0,0,0]))
 HAnimJoint30.setContainerFieldOverride("skeleton")
 
-HAnimJoint30.addComments(x3d.CommentsBlock('''Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model'''))
+HAnimJoint30.addComments(x3d.CommentsBlock("""Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model"""))
 HAnimJoint31 = x3d.HAnimJoint()
 HAnimJoint31.setName("r_talocrural")
 HAnimJoint31.setDEF("hanim_r_talocrural")
@@ -224,7 +224,7 @@ HAnimSegment32.addChild(Shape43)
 
 HAnimJoint31.addChild(HAnimSegment32)
 
-HAnimJoint31.addComments(x3d.CommentsBlock('''TCN'''))
+HAnimJoint31.addComments(x3d.CommentsBlock("""TCN"""))
 HAnimJoint48 = x3d.HAnimJoint()
 HAnimJoint48.setName("r_talocalcaneonavicular")
 HAnimJoint48.setDEF("hanim_r_talocalcaneonavicular")
@@ -302,7 +302,7 @@ HAnimSegment49.addChild(Shape62)
 
 HAnimJoint48.addChild(HAnimSegment49)
 
-HAnimJoint48.addComments(x3d.CommentsBlock('''CN1'''))
+HAnimJoint48.addComments(x3d.CommentsBlock("""CN1"""))
 HAnimJoint67 = x3d.HAnimJoint()
 HAnimJoint67.setName("r_cuneonavicular_1")
 HAnimJoint67.setDEF("hanim_r_cuneonavicular_1")
@@ -464,7 +464,7 @@ HAnimJoint67.addChild(HAnimJoint76)
 
 HAnimJoint48.addChild(HAnimJoint67)
 
-HAnimJoint48.addComments(x3d.CommentsBlock('''CN2'''))
+HAnimJoint48.addComments(x3d.CommentsBlock("""CN2"""))
 HAnimJoint103 = x3d.HAnimJoint()
 HAnimJoint103.setName("r_cuneonavicular_2")
 HAnimJoint103.setDEF("hanim_r_cuneonavicular_2")
@@ -666,7 +666,7 @@ HAnimJoint103.addChild(HAnimJoint112)
 
 HAnimJoint48.addChild(HAnimJoint103)
 
-HAnimJoint48.addComments(x3d.CommentsBlock('''CN3'''))
+HAnimJoint48.addComments(x3d.CommentsBlock("""CN3"""))
 HAnimJoint148 = x3d.HAnimJoint()
 HAnimJoint148.setName("r_cuneonavicular_3")
 HAnimJoint148.setDEF("hanim_r_cuneonavicular_3")
@@ -870,7 +870,7 @@ HAnimJoint48.addChild(HAnimJoint148)
 
 HAnimJoint31.addChild(HAnimJoint48)
 
-HAnimJoint31.addComments(x3d.CommentsBlock('''CC'''))
+HAnimJoint31.addComments(x3d.CommentsBlock("""CC"""))
 HAnimJoint193 = x3d.HAnimJoint()
 HAnimJoint193.setName("r_calcaneocuboid")
 HAnimJoint193.setDEF("hanim_r_calcaneocuboid")
@@ -910,7 +910,7 @@ HAnimSegment194.addChild(Shape197)
 
 HAnimJoint193.addChild(HAnimSegment194)
 
-HAnimJoint193.addComments(x3d.CommentsBlock('''TT'''))
+HAnimJoint193.addComments(x3d.CommentsBlock("""TT"""))
 HAnimJoint202 = x3d.HAnimJoint()
 HAnimJoint202.setName("r_transversetarsal")
 HAnimJoint202.setDEF("hanim_r_transversetarsal")
@@ -969,7 +969,7 @@ HAnimSegment203.addChild(Shape211)
 
 HAnimJoint202.addChild(HAnimSegment203)
 
-HAnimJoint202.addComments(x3d.CommentsBlock('''TMT4'''))
+HAnimJoint202.addComments(x3d.CommentsBlock("""TMT4"""))
 HAnimJoint216 = x3d.HAnimJoint()
 HAnimJoint216.setName("r_tarsometatarsal_4")
 HAnimJoint216.setDEF("hanim_r_tarsometatarsal_4")
@@ -1131,7 +1131,7 @@ HAnimJoint216.addChild(HAnimJoint225)
 
 HAnimJoint202.addChild(HAnimJoint216)
 
-HAnimJoint202.addComments(x3d.CommentsBlock('''TMT5'''))
+HAnimJoint202.addComments(x3d.CommentsBlock("""TMT5"""))
 HAnimJoint252 = x3d.HAnimJoint()
 HAnimJoint252.setName("r_tarsometatarsal_5")
 HAnimJoint252.setDEF("hanim_r_tarsometatarsal_5")
@@ -1570,4 +1570,4 @@ Scene25.addChild(HAnimHumanoid27)
 
 X3D0.setScene(Scene25)
 X3D0.toFileX3D("../data/HAnimModelFootRight.new.graalpy.x3d")
-X3D0.toFileJSON("../data/HAnimModelFootRight.new.graalpy.json")
+X3D0.toFileJSON("../data/HAnimModelFootRight.new.graalpy.x3dj")

@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -20,7 +20,7 @@ meta3.setContent("IFS.x3d")
 head1.addMeta(meta3)
 meta4 = x3d.meta()
 meta4.setName("identifier")
-meta4.setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d")
+meta4.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
@@ -58,7 +58,7 @@ X3D0.setHead(head1)
 Scene11 = x3d.Scene()
 Group12 = x3d.Group()
 
-Group12.addComments(x3d.CommentsBlock('''DEFS for markers of skeleton joints, segments, and sites'''))
+Group12.addComments(x3d.CommentsBlock("""DEFS for markers of skeleton joints, segments, and sites"""))
 Transform13 = x3d.Transform()
 Transform13.setTranslation(x3d.doubleToFloat([0,2.1,0]))
 Shape14 = x3d.Shape()
@@ -104,4 +104,4 @@ Scene11.addChild(Viewpoint21)
 
 X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/IFS.new.graalpy.x3d")
-X3D0.toFileJSON("../data/IFS.new.graalpy.json")
+X3D0.toFileJSON("../data/IFS.new.graalpy.x3dj")

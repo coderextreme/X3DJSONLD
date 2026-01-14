@@ -1,17 +1,17 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
 
-head1.addComments(x3d.CommentsBlock('''Scaled 1:1, Added Animations'''))
+head1.addComments(x3d.CommentsBlock("""Scaled 1:1, Added Animations"""))
 
-head1.addComments(x3d.CommentsBlock('''Added Sites'''))
+head1.addComments(x3d.CommentsBlock("""Added Sites"""))
 component2 = x3d.component()
 component2.setName("HAnim")
 component2.setLevel(1)
@@ -104,7 +104,7 @@ meta19.setContent("Gnu Image Manipulation Program, http://www.gimp.org")
 head1.addMeta(meta19)
 meta20 = x3d.meta()
 meta20.setName("generator")
-meta20.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta20.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta20)
 meta21 = x3d.meta()
@@ -116,13 +116,13 @@ head1.addMeta(meta21)
 X3D0.setHead(head1)
 Scene22 = x3d.Scene()
 
-Scene22.addComments(x3d.CommentsBlock('''https://www.web3d.org/documents/specifications/19774/V2.0/index.html'''))
+Scene22.addComments(x3d.CommentsBlock("""https://www.web3d.org/documents/specifications/19774/V2.0/index.html"""))
 
-Scene22.addComments(x3d.CommentsBlock('''0 0 0 at floor between feet, default I pose (relaxed attention) model gaze +Z, +x to model left, +y up, right-hand rule.'''))
+Scene22.addComments(x3d.CommentsBlock("""0 0 0 at floor between feet, default I pose (relaxed attention) model gaze +Z, +x to model left, +y up, right-hand rule."""))
 
-Scene22.addComments(x3d.CommentsBlock('''Jin loa4 v2 1:1 Only Landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes that will be used to show the Joint center landmarks with connecting lines to show the skeleton Joint hierarchy, and the surface feature Site landmarks with lines showing the Joints which control their basic motions. The skeleton structure user code is then. example: not up to date since dropping segment geometry <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='JointMarker'/> <HAnimSite DEF='hanim_l_psis_pt' name='l_psis' translation='0.05 0.84 -0.11'> <Transform USE='l_psis_pt_SiteShape'/> </HAnimSite> </HAnimSegment> ... entire skeleton hierarchy ... </HAnimJoint> Please Run the example. It generalllystarts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 HAnimLandmarks - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape Site Connections AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointLandmarksAndJointConnections - DEF user code for Joint center location markers and skeleton connection hierarchy. SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry and Site location markers and Site connections. DefaultAnimation_loa4 Default I pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation Demo Johncan tbd TimerControls Selection of timer for animation'''))
+Scene22.addComments(x3d.CommentsBlock("""Jin loa4 v2 1:1 Only Landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes that will be used to show the Joint center landmarks with connecting lines to show the skeleton Joint hierarchy, and the surface feature Site landmarks with lines showing the Joints which control their basic motions. The skeleton structure user code is then. example: not up to date since dropping segment geometry <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='JointMarker'/> <HAnimSite DEF='hanim_l_psis_pt' name='l_psis' translation='0.05 0.84 -0.11'> <Transform USE='l_psis_pt_SiteShape'/> </HAnimSite> </HAnimSegment> ... entire skeleton hierarchy ... </HAnimJoint> Please Run the example. It generalllystarts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 HAnimLandmarks - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape Site Connections AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointLandmarksAndJointConnections - DEF user code for Joint center location markers and skeleton connection hierarchy. SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry and Site location markers and Site connections. DefaultAnimation_loa4 Default I pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation Demo Johncan tbd TimerControls Selection of timer for animation"""))
 
-Scene22.addComments(x3d.CommentsBlock('''Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 0.02 - 0.08 root translation 0.08 - 0.1 root rotation 0.2 - 0.3 sacro 0.25 - 0.75 eyeball 0.6 - 0.65 hip 0.65 0.70 knee 0.70 - 0.74 talocrural talocalcaneonavicular (1 2 3) calcaneocuboid (4 5) transversetarsal (4 5) cuneonavicular (1 2 3) tarsometatarsal (1 2 3 4 5) metatarsophalangeal (1 2 3 4 5) tarsal_interphalangeal (1) tarsal_proximal_interphalangeal (2 3 4 5) tarsal_distal_interphalangeal (2 3 4 5) 0.3 - 0.5 vl5 0.6 0.6375 vl2 0.6375 - 0.6875 vt10 0.6875 - 0.725 vt9 0.725 - 0.7875 vt5 0.7875 - 0.825 vt1 0.825 - 0.8625 vc7 0.8625 - 0.9 vc2 0.9 - 0.9985 skullbase 0.9 - 0.915 sterno 0.915 - 0.93 acrom 0.93 - 0.945 shoulder 0.945 - 0.96 elbow 0.96 - 0.98 radio 0.98 0.985 angeal_1'''))
+Scene22.addComments(x3d.CommentsBlock("""Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 0.02 - 0.08 root translation 0.08 - 0.1 root rotation 0.2 - 0.3 sacro 0.25 - 0.75 eyeball 0.6 - 0.65 hip 0.65 0.70 knee 0.70 - 0.74 talocrural talocalcaneonavicular (1 2 3) calcaneocuboid (4 5) transversetarsal (4 5) cuneonavicular (1 2 3) tarsometatarsal (1 2 3 4 5) metatarsophalangeal (1 2 3 4 5) tarsal_interphalangeal (1) tarsal_proximal_interphalangeal (2 3 4 5) tarsal_distal_interphalangeal (2 3 4 5) 0.3 - 0.5 vl5 0.6 0.6375 vl2 0.6375 - 0.6875 vt10 0.6875 - 0.725 vt9 0.725 - 0.7875 vt5 0.7875 - 0.825 vt1 0.825 - 0.8625 vc7 0.8625 - 0.9 vc2 0.9 - 0.9985 skullbase 0.9 - 0.915 sterno 0.915 - 0.93 acrom 0.93 - 0.945 shoulder 0.945 - 0.96 elbow 0.96 - 0.98 radio 0.98 0.985 angeal_1"""))
 WorldInfo23 = x3d.WorldInfo()
 WorldInfo23.setTitle("11c Jin v2 LOA4 Level 1, Only Joints, Segments, Sites")
 
@@ -306,7 +306,7 @@ Group40.addChild(Transform56)
 
 Scene22.addChild(Group40)
 
-Scene22.addComments(x3d.CommentsBlock('''Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'> <Shape DEF='AxisLines_Shape'> <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1, 0 2 -1, 0 3 -1'> <Color color='1 0 0, 0 1 0, 0 0 1'/> <Coordinate point='0 0 0, 1 0 0, 0 1 0, 0 0 1'/> </IndexedLineSet> </Shape> </Transform'''))
+Scene22.addComments(x3d.CommentsBlock("""Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'> <Shape DEF='AxisLines_Shape'> <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1, 0 2 -1, 0 3 -1'> <Color color='1 0 0, 0 1 0, 0 0 1'/> <Coordinate point='0 0 0, 1 0 0, 0 1 0, 0 0 1'/> </IndexedLineSet> </Shape> </Transform"""))
 Group61 = x3d.Group()
 Group61.setDEF("AnimationSelectMenu")
 ProximitySensor62 = x3d.ProximitySensor()
@@ -798,9 +798,9 @@ ROUTE174.setToNode("HudXform")
 
 Transform63.addChild(ROUTE174)
 
-Transform63.addComments(x3d.CommentsBlock('''</Group> HUD includes DEFs of shpaes for Jin, Jin appears near Menu.'''))
+Transform63.addComments(x3d.CommentsBlock("""</Group> HUD includes DEFs of shpaes for Jin, Jin appears near Menu."""))
 
-Transform63.addComments(x3d.CommentsBlock('''Joint center and Joint hierarchy connections'''))
+Transform63.addComments(x3d.CommentsBlock("""Joint center and Joint hierarchy connections"""))
 Transform175 = x3d.Transform()
 Transform175.setDEF("AllShapesSitesConnections")
 Transform175.setScale(x3d.doubleToFloat([0.1,0.1,0.1]))
@@ -808,7 +808,7 @@ Transform175.setTranslation(x3d.doubleToFloat([-0.2,-0.1,-0.62]))
 Group176 = x3d.Group()
 Group176.setDEF("JointLandmarksAndJointConnections")
 
-Group176.addComments(x3d.CommentsBlock('''Following are defined here and used in the skeleton to show Joint center location and connections between Joint centers.'''))
+Group176.addComments(x3d.CommentsBlock("""Following are defined here and used in the skeleton to show Joint center location and connections between Joint centers."""))
 Transform177 = x3d.Transform()
 Transform177.setDEF("humanoid_root_JointShape")
 Transform177.setTranslation(x3d.doubleToFloat([0,0.77,0]))
@@ -3490,7 +3490,7 @@ Shape822.setGeometry(LineSet823)
 
 Group176.addChild(Shape822)
 
-Group176.addComments(x3d.CommentsBlock('''Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape'''))
+Group176.addComments(x3d.CommentsBlock("""Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape"""))
 Transform826 = x3d.Transform()
 Transform826.setDEF("l_eyelid_joint_JointShape")
 Transform826.setTranslation(x3d.doubleToFloat([0.0505,1.42425,0.03294]))
@@ -5501,7 +5501,7 @@ Group1311.setDEF("SiteDefinitions")
 Group1312 = x3d.Group()
 Group1312.setDEF("sacrum_Sites")
 
-Group1312.addComments(x3d.CommentsBlock('''none'''))
+Group1312.addComments(x3d.CommentsBlock("""none"""))
 
 Group1311.addChild(Group1312)
 Group1313 = x3d.Group()
@@ -6056,19 +6056,19 @@ Group1311.addChild(Group1435)
 Group1450 = x3d.Group()
 Group1450.setDEF("l_navicular_Sites")
 
-Group1450.addComments(x3d.CommentsBlock('''None'''))
+Group1450.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1450)
 Group1451 = x3d.Group()
 Group1451.setDEF("l_cuneiform_1_Sites")
 
-Group1451.addComments(x3d.CommentsBlock('''None'''))
+Group1451.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1451)
 Group1452 = x3d.Group()
 Group1452.setDEF("l_metatarsal_1_Sites")
 
-Group1452.addComments(x3d.CommentsBlock('''None'''))
+Group1452.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1452)
 Group1453 = x3d.Group()
@@ -6138,25 +6138,25 @@ Group1311.addChild(Group1461)
 Group1469 = x3d.Group()
 Group1469.setDEF("l_cuneiform_2_Sites")
 
-Group1469.addComments(x3d.CommentsBlock('''None'''))
+Group1469.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1469)
 Group1470 = x3d.Group()
 Group1470.setDEF("l_metatarsal_2_Sites")
 
-Group1470.addComments(x3d.CommentsBlock('''None'''))
+Group1470.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1470)
 Group1471 = x3d.Group()
 Group1471.setDEF("l_tarsal_proximal_phalanx_2_Sites")
 
-Group1471.addComments(x3d.CommentsBlock('''None'''))
+Group1471.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1471)
 Group1472 = x3d.Group()
 Group1472.setDEF("l_tarsal_middle_phalanx_2_Sites")
 
-Group1472.addComments(x3d.CommentsBlock('''None'''))
+Group1472.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1472)
 Group1473 = x3d.Group()
@@ -6194,25 +6194,25 @@ Group1311.addChild(Group1473)
 Group1481 = x3d.Group()
 Group1481.setDEF("l_cuneiform_3_Sites")
 
-Group1481.addComments(x3d.CommentsBlock('''None'''))
+Group1481.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1481)
 Group1482 = x3d.Group()
 Group1482.setDEF("l_metatarsal_3_Sites")
 
-Group1482.addComments(x3d.CommentsBlock('''None'''))
+Group1482.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1482)
 Group1483 = x3d.Group()
 Group1483.setDEF("l_tarsal_proximal_phalanx_3_Sites")
 
-Group1483.addComments(x3d.CommentsBlock('''None'''))
+Group1483.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1483)
 Group1484 = x3d.Group()
 Group1484.setDEF("l_tarsal_middle_phalanx_3_Sites")
 
-Group1484.addComments(x3d.CommentsBlock('''None'''))
+Group1484.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1484)
 Group1485 = x3d.Group()
@@ -6250,31 +6250,31 @@ Group1311.addChild(Group1485)
 Group1493 = x3d.Group()
 Group1493.setDEF("l_calcaneus_Sites")
 
-Group1493.addComments(x3d.CommentsBlock('''None'''))
+Group1493.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1493)
 Group1494 = x3d.Group()
 Group1494.setDEF("l_cuboid_Sites")
 
-Group1494.addComments(x3d.CommentsBlock('''None'''))
+Group1494.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1494)
 Group1495 = x3d.Group()
 Group1495.setDEF("l_metatarsal_4_Sites")
 
-Group1495.addComments(x3d.CommentsBlock('''None'''))
+Group1495.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1495)
 Group1496 = x3d.Group()
 Group1496.setDEF("l_tarsal_proximal_phalanx_4_Sites")
 
-Group1496.addComments(x3d.CommentsBlock('''None'''))
+Group1496.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1496)
 Group1497 = x3d.Group()
 Group1497.setDEF("l_tarsal_middle_phalanx_4_Sites")
 
-Group1497.addComments(x3d.CommentsBlock('''None'''))
+Group1497.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1497)
 Group1498 = x3d.Group()
@@ -6312,13 +6312,13 @@ Group1311.addChild(Group1498)
 Group1506 = x3d.Group()
 Group1506.setDEF("l_metatarsal_5_Sites")
 
-Group1506.addComments(x3d.CommentsBlock('''None'''))
+Group1506.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1506)
 Group1507 = x3d.Group()
 Group1507.setDEF("l_tarsal_proximal_phalanx_5_Sites")
 
-Group1507.addComments(x3d.CommentsBlock('''None'''))
+Group1507.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1507)
 Group1508 = x3d.Group()
@@ -6652,19 +6652,19 @@ Group1311.addChild(Group1575)
 Group1590 = x3d.Group()
 Group1590.setDEF("r_navicular_Sites")
 
-Group1590.addComments(x3d.CommentsBlock('''None'''))
+Group1590.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1590)
 Group1591 = x3d.Group()
 Group1591.setDEF("r_cuneiform_1_Sites")
 
-Group1591.addComments(x3d.CommentsBlock('''None'''))
+Group1591.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1591)
 Group1592 = x3d.Group()
 Group1592.setDEF("r_metatarsal_1_Sites")
 
-Group1592.addComments(x3d.CommentsBlock('''None'''))
+Group1592.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1592)
 Group1593 = x3d.Group()
@@ -6734,25 +6734,25 @@ Group1311.addChild(Group1601)
 Group1609 = x3d.Group()
 Group1609.setDEF("r_cuneiform_2_Sites")
 
-Group1609.addComments(x3d.CommentsBlock('''None'''))
+Group1609.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1609)
 Group1610 = x3d.Group()
 Group1610.setDEF("r_metatarsal_2_Sites")
 
-Group1610.addComments(x3d.CommentsBlock('''None'''))
+Group1610.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1610)
 Group1611 = x3d.Group()
 Group1611.setDEF("r_tarsal_proximal_phalanx_2_Sites")
 
-Group1611.addComments(x3d.CommentsBlock('''None'''))
+Group1611.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1611)
 Group1612 = x3d.Group()
 Group1612.setDEF("r_tarsal_middle_phalanx_2_Sites")
 
-Group1612.addComments(x3d.CommentsBlock('''None'''))
+Group1612.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1612)
 Group1613 = x3d.Group()
@@ -6790,25 +6790,25 @@ Group1311.addChild(Group1613)
 Group1621 = x3d.Group()
 Group1621.setDEF("r_cuneiform_3_Sites")
 
-Group1621.addComments(x3d.CommentsBlock('''None'''))
+Group1621.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1621)
 Group1622 = x3d.Group()
 Group1622.setDEF("r_metatarsal_3_Sites")
 
-Group1622.addComments(x3d.CommentsBlock('''None'''))
+Group1622.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1622)
 Group1623 = x3d.Group()
 Group1623.setDEF("r_tarsal_proximal_phalanx_3_Sites")
 
-Group1623.addComments(x3d.CommentsBlock('''None'''))
+Group1623.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1623)
 Group1624 = x3d.Group()
 Group1624.setDEF("r_tarsal_middle_phalanx_3_Sites")
 
-Group1624.addComments(x3d.CommentsBlock('''None'''))
+Group1624.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1624)
 Group1625 = x3d.Group()
@@ -6846,31 +6846,31 @@ Group1311.addChild(Group1625)
 Group1633 = x3d.Group()
 Group1633.setDEF("r_calcaneus_Sites")
 
-Group1633.addComments(x3d.CommentsBlock('''None'''))
+Group1633.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1633)
 Group1634 = x3d.Group()
 Group1634.setDEF("r_cuboid_Sites")
 
-Group1634.addComments(x3d.CommentsBlock('''None'''))
+Group1634.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1634)
 Group1635 = x3d.Group()
 Group1635.setDEF("r_metatarsal_4_Sites")
 
-Group1635.addComments(x3d.CommentsBlock('''None'''))
+Group1635.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1635)
 Group1636 = x3d.Group()
 Group1636.setDEF("r_tarsal_proximal_phalanx_4_Sites")
 
-Group1636.addComments(x3d.CommentsBlock('''None'''))
+Group1636.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1636)
 Group1637 = x3d.Group()
 Group1637.setDEF("r_tarsal_middle_phalanx_4_Sites")
 
-Group1637.addComments(x3d.CommentsBlock('''None'''))
+Group1637.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1637)
 Group1638 = x3d.Group()
@@ -6908,13 +6908,13 @@ Group1311.addChild(Group1638)
 Group1646 = x3d.Group()
 Group1646.setDEF("r_metatarsal_5_Sites")
 
-Group1646.addComments(x3d.CommentsBlock('''None'''))
+Group1646.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1646)
 Group1647 = x3d.Group()
 Group1647.setDEF("r_tarsal_proximal_phalanx_5_Sites")
 
-Group1647.addComments(x3d.CommentsBlock('''None'''))
+Group1647.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1647)
 Group1648 = x3d.Group()
@@ -7128,13 +7128,13 @@ Group1311.addChild(Group1664)
 Group1700 = x3d.Group()
 Group1700.setDEF("l4_Sites")
 
-Group1700.addComments(x3d.CommentsBlock('''None'''))
+Group1700.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1700)
 Group1701 = x3d.Group()
 Group1701.setDEF("l3_Sites")
 
-Group1701.addComments(x3d.CommentsBlock('''None'''))
+Group1701.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1701)
 Group1702 = x3d.Group()
@@ -7200,19 +7200,19 @@ Group1311.addChild(Group1702)
 Group1717 = x3d.Group()
 Group1717.setDEF("l1_Sites")
 
-Group1717.addComments(x3d.CommentsBlock('''None'''))
+Group1717.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1717)
 Group1718 = x3d.Group()
 Group1718.setDEF("t12_Sites")
 
-Group1718.addComments(x3d.CommentsBlock('''None'''))
+Group1718.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1718)
 Group1719 = x3d.Group()
 Group1719.setDEF("t11_Sites")
 
-Group1719.addComments(x3d.CommentsBlock('''None'''))
+Group1719.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1719)
 Group1720 = x3d.Group()
@@ -7422,43 +7422,43 @@ Group1311.addChild(Group1735)
 Group1771 = x3d.Group()
 Group1771.setDEF("t8_Sites")
 
-Group1771.addComments(x3d.CommentsBlock('''None'''))
+Group1771.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1771)
 Group1772 = x3d.Group()
 Group1772.setDEF("t7_Sites")
 
-Group1772.addComments(x3d.CommentsBlock('''None'''))
+Group1772.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1772)
 Group1773 = x3d.Group()
 Group1773.setDEF("t6_Sites")
 
-Group1773.addComments(x3d.CommentsBlock('''None'''))
+Group1773.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1773)
 Group1774 = x3d.Group()
 Group1774.setDEF("t5_Sites")
 
-Group1774.addComments(x3d.CommentsBlock('''None'''))
+Group1774.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1774)
 Group1775 = x3d.Group()
 Group1775.setDEF("t4_Sites")
 
-Group1775.addComments(x3d.CommentsBlock('''None'''))
+Group1775.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1775)
 Group1776 = x3d.Group()
 Group1776.setDEF("t3_Sites")
 
-Group1776.addComments(x3d.CommentsBlock('''None'''))
+Group1776.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1776)
 Group1777 = x3d.Group()
 Group1777.setDEF("t2_Sites")
 
-Group1777.addComments(x3d.CommentsBlock('''None'''))
+Group1777.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1777)
 Group1778 = x3d.Group()
@@ -7584,25 +7584,25 @@ Group1311.addChild(Group1793)
 Group1808 = x3d.Group()
 Group1808.setDEF("c6_Sites")
 
-Group1808.addComments(x3d.CommentsBlock('''None'''))
+Group1808.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1808)
 Group1809 = x3d.Group()
 Group1809.setDEF("c5_Sites")
 
-Group1809.addComments(x3d.CommentsBlock('''None'''))
+Group1809.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1809)
 Group1810 = x3d.Group()
 Group1810.setDEF("c4_Sites")
 
-Group1810.addComments(x3d.CommentsBlock('''None'''))
+Group1810.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1810)
 Group1811 = x3d.Group()
 Group1811.setDEF("c3_Sites")
 
-Group1811.addComments(x3d.CommentsBlock('''None'''))
+Group1811.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1811)
 Group1812 = x3d.Group()
@@ -7640,7 +7640,7 @@ Group1311.addChild(Group1812)
 Group1820 = x3d.Group()
 Group1820.setDEF("c1_Sites")
 
-Group1820.addComments(x3d.CommentsBlock('''None'''))
+Group1820.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group1820)
 Group1821 = x3d.Group()
@@ -8622,7 +8622,7 @@ Group1311.addChild(Group2057)
 Group2065 = x3d.Group()
 Group2065.setDEF("l_trapezium_Sites")
 
-Group2065.addComments(x3d.CommentsBlock('''None'''))
+Group2065.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2065)
 Group2066 = x3d.Group()
@@ -8660,7 +8660,7 @@ Group1311.addChild(Group2066)
 Group2074 = x3d.Group()
 Group2074.setDEF("l_carpal_proximal_phalanx_1_Sites")
 
-Group2074.addComments(x3d.CommentsBlock('''None'''))
+Group2074.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2074)
 Group2075 = x3d.Group()
@@ -8698,25 +8698,25 @@ Group1311.addChild(Group2075)
 Group2083 = x3d.Group()
 Group2083.setDEF("l_trapezoid_Sites")
 
-Group2083.addComments(x3d.CommentsBlock('''None'''))
+Group2083.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2083)
 Group2084 = x3d.Group()
 Group2084.setDEF("l_metacarpal_2_Sites")
 
-Group2084.addComments(x3d.CommentsBlock('''None'''))
+Group2084.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2084)
 Group2085 = x3d.Group()
 Group2085.setDEF("l_carpal_proximal_phalanx_2_Sites")
 
-Group2085.addComments(x3d.CommentsBlock('''None'''))
+Group2085.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2085)
 Group2086 = x3d.Group()
 Group2086.setDEF("l_carpal_middle_phalanx_2_Sites")
 
-Group2086.addComments(x3d.CommentsBlock('''None'''))
+Group2086.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2086)
 Group2087 = x3d.Group()
@@ -8782,7 +8782,7 @@ Group1311.addChild(Group2087)
 Group2102 = x3d.Group()
 Group2102.setDEF("l_capitate_Sites")
 
-Group2102.addComments(x3d.CommentsBlock('''None'''))
+Group2102.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2102)
 Group2103 = x3d.Group()
@@ -8820,13 +8820,13 @@ Group1311.addChild(Group2103)
 Group2111 = x3d.Group()
 Group2111.setDEF("l_carpal_proximal_phalanx_3_Sites")
 
-Group2111.addComments(x3d.CommentsBlock('''None'''))
+Group2111.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2111)
 Group2112 = x3d.Group()
 Group2112.setDEF("l_carpal_middle_phalanx_3_Sites")
 
-Group2112.addComments(x3d.CommentsBlock('''None'''))
+Group2112.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2112)
 Group2113 = x3d.Group()
@@ -8864,25 +8864,25 @@ Group1311.addChild(Group2113)
 Group2121 = x3d.Group()
 Group2121.setDEF("l_hamate_Sites")
 
-Group2121.addComments(x3d.CommentsBlock('''None'''))
+Group2121.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2121)
 Group2122 = x3d.Group()
 Group2122.setDEF("l_metacarpal_4_Sites")
 
-Group2122.addComments(x3d.CommentsBlock('''None'''))
+Group2122.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2122)
 Group2123 = x3d.Group()
 Group2123.setDEF("l_carpal_proximal_phalanx_4_Sites")
 
-Group2123.addComments(x3d.CommentsBlock('''None'''))
+Group2123.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2123)
 Group2124 = x3d.Group()
 Group2124.setDEF("l_carpal_middle_phalanx_4_Sites")
 
-Group2124.addComments(x3d.CommentsBlock('''None'''))
+Group2124.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2124)
 Group2125 = x3d.Group()
@@ -8952,13 +8952,13 @@ Group1311.addChild(Group2133)
 Group2141 = x3d.Group()
 Group2141.setDEF("l_carpal_proximal_phalanx_5_Sites")
 
-Group2141.addComments(x3d.CommentsBlock('''None'''))
+Group2141.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2141)
 Group2142 = x3d.Group()
 Group2142.setDEF("l_carpal_middle_phalanx_5_Sites")
 
-Group2142.addComments(x3d.CommentsBlock('''None'''))
+Group2142.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2142)
 Group2143 = x3d.Group()
@@ -9352,7 +9352,7 @@ Group1311.addChild(Group2232)
 Group2240 = x3d.Group()
 Group2240.setDEF("r_trapezium_Sites")
 
-Group2240.addComments(x3d.CommentsBlock('''None'''))
+Group2240.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2240)
 Group2241 = x3d.Group()
@@ -9390,7 +9390,7 @@ Group1311.addChild(Group2241)
 Group2249 = x3d.Group()
 Group2249.setDEF("r_carpal_proximal_phalanx_1_Sites")
 
-Group2249.addComments(x3d.CommentsBlock('''None'''))
+Group2249.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2249)
 Group2250 = x3d.Group()
@@ -9428,25 +9428,25 @@ Group1311.addChild(Group2250)
 Group2258 = x3d.Group()
 Group2258.setDEF("r_trapezoid_Sites")
 
-Group2258.addComments(x3d.CommentsBlock('''None'''))
+Group2258.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2258)
 Group2259 = x3d.Group()
 Group2259.setDEF("r_metacarpal_2_Sites")
 
-Group2259.addComments(x3d.CommentsBlock('''None'''))
+Group2259.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2259)
 Group2260 = x3d.Group()
 Group2260.setDEF("r_carpal_proximal_phalanx_2_Sites")
 
-Group2260.addComments(x3d.CommentsBlock('''None'''))
+Group2260.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2260)
 Group2261 = x3d.Group()
 Group2261.setDEF("r_carpal_middle_phalanx_2_Sites")
 
-Group2261.addComments(x3d.CommentsBlock('''None'''))
+Group2261.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2261)
 Group2262 = x3d.Group()
@@ -9512,7 +9512,7 @@ Group1311.addChild(Group2262)
 Group2277 = x3d.Group()
 Group2277.setDEF("r_capitate_Sites")
 
-Group2277.addComments(x3d.CommentsBlock('''None'''))
+Group2277.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2277)
 Group2278 = x3d.Group()
@@ -9550,13 +9550,13 @@ Group1311.addChild(Group2278)
 Group2286 = x3d.Group()
 Group2286.setDEF("r_carpal_proximal_phalanx_3_Sites")
 
-Group2286.addComments(x3d.CommentsBlock('''None'''))
+Group2286.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2286)
 Group2287 = x3d.Group()
 Group2287.setDEF("r_carpal_middle_phalanx_3_Sites")
 
-Group2287.addComments(x3d.CommentsBlock('''None'''))
+Group2287.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2287)
 Group2288 = x3d.Group()
@@ -9594,25 +9594,25 @@ Group1311.addChild(Group2288)
 Group2296 = x3d.Group()
 Group2296.setDEF("r_hamate_Sites")
 
-Group2296.addComments(x3d.CommentsBlock('''None'''))
+Group2296.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2296)
 Group2297 = x3d.Group()
 Group2297.setDEF("r_metacarpal_4_Sites")
 
-Group2297.addComments(x3d.CommentsBlock('''None'''))
+Group2297.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2297)
 Group2298 = x3d.Group()
 Group2298.setDEF("r_carpal_proximal_phalanx_4_Sites")
 
-Group2298.addComments(x3d.CommentsBlock('''None'''))
+Group2298.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2298)
 Group2299 = x3d.Group()
 Group2299.setDEF("r_carpal_middle_phalanx_4_Sites")
 
-Group2299.addComments(x3d.CommentsBlock('''None'''))
+Group2299.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2299)
 Group2300 = x3d.Group()
@@ -9682,13 +9682,13 @@ Group1311.addChild(Group2308)
 Group2316 = x3d.Group()
 Group2316.setDEF("r_carpal_proximal_phalanx_5_Sites")
 
-Group2316.addComments(x3d.CommentsBlock('''None'''))
+Group2316.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2316)
 Group2317 = x3d.Group()
 Group2317.setDEF("r_carpal_middle_phalanx_5_Sites")
 
-Group2317.addComments(x3d.CommentsBlock('''None'''))
+Group2317.addComments(x3d.CommentsBlock("""None"""))
 
 Group1311.addChild(Group2317)
 Group2318 = x3d.Group()
@@ -9737,7 +9737,7 @@ HAnimHumanoid2326.setDEF("hanim_JinLOA4S")
 HAnimHumanoid2326.setLoa(4)
 HAnimHumanoid2326.setVersion("2.0")
 
-HAnimHumanoid2326.addComments(x3d.CommentsBlock('''MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'> <MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/> <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/> <MetadataString name='creationDate' value='31 March 2011'/> <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/> <MetadataString name='modificationDate' value='25 March 2024'/> <MetadataString name='gender' value='female'/> <MetadataFloat name='height' value='1.5'/> <MetadataString name='humanoidVersion' value='2.0'/> </MetadataSet'''))
+HAnimHumanoid2326.addComments(x3d.CommentsBlock("""MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'> <MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/> <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/> <MetadataString name='creationDate' value='31 March 2011'/> <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/> <MetadataString name='modificationDate' value='25 March 2024'/> <MetadataString name='gender' value='female'/> <MetadataFloat name='height' value='1.5'/> <MetadataString name='humanoidVersion' value='2.0'/> </MetadataSet"""))
 HAnimJoint2327 = x3d.HAnimJoint()
 HAnimJoint2327.setName("humanoid_root")
 HAnimJoint2327.setDEF("hanim_humanoid_root")
@@ -9749,7 +9749,7 @@ HAnimSegment2328 = x3d.HAnimSegment()
 HAnimSegment2328.setName("sacrum")
 HAnimSegment2328.setDEF("hanim_sacrum")
 
-HAnimSegment2328.addComments(x3d.CommentsBlock('''Shape USE='sacrum_Shape'/'''))
+HAnimSegment2328.addComments(x3d.CommentsBlock("""Shape USE='sacrum_Shape'/"""))
 Transform2329 = x3d.Transform()
 Transform2329.setUSE("humanoid_root_JointShape")
 
@@ -9778,7 +9778,7 @@ HAnimSegment2334 = x3d.HAnimSegment()
 HAnimSegment2334.setName("pelvis")
 HAnimSegment2334.setDEF("hanim_pelvis")
 
-HAnimSegment2334.addComments(x3d.CommentsBlock('''Shape USE='pelvis_Shape'/'''))
+HAnimSegment2334.addComments(x3d.CommentsBlock("""Shape USE='pelvis_Shape'/"""))
 Transform2335 = x3d.Transform()
 Transform2335.setUSE("sacroiliac_JointShape")
 
@@ -9943,7 +9943,7 @@ HAnimSegment2369 = x3d.HAnimSegment()
 HAnimSegment2369.setName("l_thigh")
 HAnimSegment2369.setDEF("hanim_l_thigh")
 
-HAnimSegment2369.addComments(x3d.CommentsBlock('''Shape USE='l_thigh_Shape'/'''))
+HAnimSegment2369.addComments(x3d.CommentsBlock("""Shape USE='l_thigh_Shape'/"""))
 Transform2370 = x3d.Transform()
 Transform2370.setUSE("l_hip_JointShape")
 
@@ -10020,7 +10020,7 @@ HAnimSegment2385 = x3d.HAnimSegment()
 HAnimSegment2385.setName("l_calf")
 HAnimSegment2385.setDEF("hanim_l_calf")
 
-HAnimSegment2385.addComments(x3d.CommentsBlock('''Shape USE='l_calf_Shape'/'''))
+HAnimSegment2385.addComments(x3d.CommentsBlock("""Shape USE='l_calf_Shape'/"""))
 Transform2386 = x3d.Transform()
 Transform2386.setUSE("l_knee_JointShape")
 
@@ -10087,7 +10087,7 @@ HAnimSegment2399 = x3d.HAnimSegment()
 HAnimSegment2399.setName("l_talus")
 HAnimSegment2399.setDEF("hanim_l_talus")
 
-HAnimSegment2399.addComments(x3d.CommentsBlock('''Shape USE='l_talus_Shape'/'''))
+HAnimSegment2399.addComments(x3d.CommentsBlock("""Shape USE='l_talus_Shape'/"""))
 Transform2400 = x3d.Transform()
 Transform2400.setUSE("l_talocrural_JointShape")
 
@@ -10140,7 +10140,7 @@ HAnimSegment2410 = x3d.HAnimSegment()
 HAnimSegment2410.setName("l_navicular")
 HAnimSegment2410.setDEF("hanim_l_navicular")
 
-HAnimSegment2410.addComments(x3d.CommentsBlock('''Shape USE='l_navicular_Shape'/'''))
+HAnimSegment2410.addComments(x3d.CommentsBlock("""Shape USE='l_navicular_Shape'/"""))
 Transform2411 = x3d.Transform()
 Transform2411.setUSE("l_talocalcaneonavicular_JointShape")
 
@@ -10169,7 +10169,7 @@ HAnimSegment2416 = x3d.HAnimSegment()
 HAnimSegment2416.setName("l_cuneiform_1")
 HAnimSegment2416.setDEF("hanim_l_cuneiform_1")
 
-HAnimSegment2416.addComments(x3d.CommentsBlock('''Shape USE='l_cuneiform_1_Shape'/'''))
+HAnimSegment2416.addComments(x3d.CommentsBlock("""Shape USE='l_cuneiform_1_Shape'/"""))
 Transform2417 = x3d.Transform()
 Transform2417.setUSE("l_cuneonavicular_1_JointShape")
 
@@ -10190,7 +10190,7 @@ HAnimSegment2420 = x3d.HAnimSegment()
 HAnimSegment2420.setName("l_metatarsal_1")
 HAnimSegment2420.setDEF("hanim_l_metatarsal_1")
 
-HAnimSegment2420.addComments(x3d.CommentsBlock('''Shape USE='l_metatarsal_1_Shape'/'''))
+HAnimSegment2420.addComments(x3d.CommentsBlock("""Shape USE='l_metatarsal_1_Shape'/"""))
 Transform2421 = x3d.Transform()
 Transform2421.setUSE("l_tarsometatarsal_1_JointShape")
 
@@ -10211,7 +10211,7 @@ HAnimSegment2424 = x3d.HAnimSegment()
 HAnimSegment2424.setName("l_tarsal_proximal_phalanx_1")
 HAnimSegment2424.setDEF("hanim_l_tarsal_proximal_phalanx_1")
 
-HAnimSegment2424.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_proximal_phalanx_1_Shape'/'''))
+HAnimSegment2424.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_proximal_phalanx_1_Shape'/"""))
 Transform2425 = x3d.Transform()
 Transform2425.setUSE("l_metatarsophalangeal_1_JointShape")
 
@@ -10246,7 +10246,7 @@ HAnimSegment2431 = x3d.HAnimSegment()
 HAnimSegment2431.setName("l_tarsal_distal_phalanx_1")
 HAnimSegment2431.setDEF("hanim_l_tarsal_distal_phalanx_1")
 
-HAnimSegment2431.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_distal_phalanx_1_Shape'/'''))
+HAnimSegment2431.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_distal_phalanx_1_Shape'/"""))
 Transform2432 = x3d.Transform()
 Transform2432.setUSE("l_tarsal_interphalangeal_1_JointShape")
 
@@ -10289,7 +10289,7 @@ HAnimSegment2438 = x3d.HAnimSegment()
 HAnimSegment2438.setName("l_cuneiform_2")
 HAnimSegment2438.setDEF("hanim_l_cuneiform_2")
 
-HAnimSegment2438.addComments(x3d.CommentsBlock('''Shape USE='l_cuneiform_2_Shape'/'''))
+HAnimSegment2438.addComments(x3d.CommentsBlock("""Shape USE='l_cuneiform_2_Shape'/"""))
 Transform2439 = x3d.Transform()
 Transform2439.setUSE("l_cuneonavicular_2_JointShape")
 
@@ -10310,7 +10310,7 @@ HAnimSegment2442 = x3d.HAnimSegment()
 HAnimSegment2442.setName("l_metatarsal_2")
 HAnimSegment2442.setDEF("hanim_l_metatarsal_2")
 
-HAnimSegment2442.addComments(x3d.CommentsBlock('''Shape USE='l_metatarsal_2_Shape'/'''))
+HAnimSegment2442.addComments(x3d.CommentsBlock("""Shape USE='l_metatarsal_2_Shape'/"""))
 Transform2443 = x3d.Transform()
 Transform2443.setUSE("l_tarsometatarsal_2_JointShape")
 
@@ -10331,7 +10331,7 @@ HAnimSegment2446 = x3d.HAnimSegment()
 HAnimSegment2446.setName("l_tarsal_proximal_phalanx_2")
 HAnimSegment2446.setDEF("hanim_l_tarsal_proximal_phalanx_2")
 
-HAnimSegment2446.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_proximal_phalanx_2_Shape'/'''))
+HAnimSegment2446.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_proximal_phalanx_2_Shape'/"""))
 Transform2447 = x3d.Transform()
 Transform2447.setUSE("l_metatarsophalangeal_2_JointShape")
 
@@ -10352,7 +10352,7 @@ HAnimSegment2450 = x3d.HAnimSegment()
 HAnimSegment2450.setName("l_tarsal_middle_phalanx_2")
 HAnimSegment2450.setDEF("hanim_l_tarsal_middle_phalanx_2")
 
-HAnimSegment2450.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_middle_phalanx_2_Shape'/'''))
+HAnimSegment2450.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_middle_phalanx_2_Shape'/"""))
 Transform2451 = x3d.Transform()
 Transform2451.setUSE("l_tarsal_proximal_interphalangeal_2_JointShape")
 
@@ -10373,7 +10373,7 @@ HAnimSegment2454 = x3d.HAnimSegment()
 HAnimSegment2454.setName("l_tarsal_distal_phalanx_2")
 HAnimSegment2454.setDEF("hanim_l_tarsal_distal_phalanx_2")
 
-HAnimSegment2454.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_distal_phalanx_2_Shape'/'''))
+HAnimSegment2454.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_distal_phalanx_2_Shape'/"""))
 Transform2455 = x3d.Transform()
 Transform2455.setUSE("l_tarsal_distal_interphalangeal_2_JointShape")
 
@@ -10418,7 +10418,7 @@ HAnimSegment2461 = x3d.HAnimSegment()
 HAnimSegment2461.setName("l_cuneiform_3")
 HAnimSegment2461.setDEF("hanim_l_cuneiform_3")
 
-HAnimSegment2461.addComments(x3d.CommentsBlock('''Shape USE='l_cuneiform_3_Shape'/'''))
+HAnimSegment2461.addComments(x3d.CommentsBlock("""Shape USE='l_cuneiform_3_Shape'/"""))
 Transform2462 = x3d.Transform()
 Transform2462.setUSE("l_cuneonavicular_3_JointShape")
 
@@ -10439,7 +10439,7 @@ HAnimSegment2465 = x3d.HAnimSegment()
 HAnimSegment2465.setName("l_metatarsal_3")
 HAnimSegment2465.setDEF("hanim_l_metatarsal_3")
 
-HAnimSegment2465.addComments(x3d.CommentsBlock('''Shape USE='l_metatarsal_3_Shape'/'''))
+HAnimSegment2465.addComments(x3d.CommentsBlock("""Shape USE='l_metatarsal_3_Shape'/"""))
 Transform2466 = x3d.Transform()
 Transform2466.setUSE("l_tarsometatarsal_3_JointShape")
 
@@ -10460,7 +10460,7 @@ HAnimSegment2469 = x3d.HAnimSegment()
 HAnimSegment2469.setName("l_tarsal_proximal_phalanx_3")
 HAnimSegment2469.setDEF("hanim_l_tarsal_proximal_phalanx_3")
 
-HAnimSegment2469.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_proximal_phalanx_3_Shape'/'''))
+HAnimSegment2469.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_proximal_phalanx_3_Shape'/"""))
 Transform2470 = x3d.Transform()
 Transform2470.setUSE("l_metatarsophalangeal_3_JointShape")
 
@@ -10481,7 +10481,7 @@ HAnimSegment2473 = x3d.HAnimSegment()
 HAnimSegment2473.setName("l_tarsal_middle_phalanx_3")
 HAnimSegment2473.setDEF("hanim_l_tarsal_middle_phalanx_3")
 
-HAnimSegment2473.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_middle_phalanx_3_Shape'/'''))
+HAnimSegment2473.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_middle_phalanx_3_Shape'/"""))
 Transform2474 = x3d.Transform()
 Transform2474.setUSE("l_tarsal_proximal_interphalangeal_3_JointShape")
 
@@ -10502,7 +10502,7 @@ HAnimSegment2477 = x3d.HAnimSegment()
 HAnimSegment2477.setName("l_tarsal_distal_phalanx_3")
 HAnimSegment2477.setDEF("hanim_l_tarsal_distal_phalanx_3")
 
-HAnimSegment2477.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_distal_phalanx_3_Shape'/'''))
+HAnimSegment2477.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_distal_phalanx_3_Shape'/"""))
 Transform2478 = x3d.Transform()
 Transform2478.setUSE("l_tarsal_distal_interphalangeal_3_JointShape")
 
@@ -10549,7 +10549,7 @@ HAnimSegment2484 = x3d.HAnimSegment()
 HAnimSegment2484.setName("l_calcaneus")
 HAnimSegment2484.setDEF("hanim_l_calcaneus")
 
-HAnimSegment2484.addComments(x3d.CommentsBlock('''Shape USE='l_calcaneus_Shape'/'''))
+HAnimSegment2484.addComments(x3d.CommentsBlock("""Shape USE='l_calcaneus_Shape'/"""))
 Transform2485 = x3d.Transform()
 Transform2485.setUSE("l_calcaneocuboid_JointShape")
 
@@ -10570,7 +10570,7 @@ HAnimSegment2488 = x3d.HAnimSegment()
 HAnimSegment2488.setName("l_cuboid")
 HAnimSegment2488.setDEF("hanim_l_cuboid")
 
-HAnimSegment2488.addComments(x3d.CommentsBlock('''Shape USE='l_cuboid_Shape'/'''))
+HAnimSegment2488.addComments(x3d.CommentsBlock("""Shape USE='l_cuboid_Shape'/"""))
 Transform2489 = x3d.Transform()
 Transform2489.setUSE("l_transversetarsal_JointShape")
 
@@ -10595,7 +10595,7 @@ HAnimSegment2493 = x3d.HAnimSegment()
 HAnimSegment2493.setName("l_metatarsal_4")
 HAnimSegment2493.setDEF("hanim_l_metatarsal_4")
 
-HAnimSegment2493.addComments(x3d.CommentsBlock('''Shape USE='l_metatarsal_4_Shape'/'''))
+HAnimSegment2493.addComments(x3d.CommentsBlock("""Shape USE='l_metatarsal_4_Shape'/"""))
 Transform2494 = x3d.Transform()
 Transform2494.setUSE("l_tarsometatarsal_4_JointShape")
 
@@ -10616,7 +10616,7 @@ HAnimSegment2497 = x3d.HAnimSegment()
 HAnimSegment2497.setName("l_tarsal_proximal_phalanx_4")
 HAnimSegment2497.setDEF("hanim_l_tarsal_proximal_phalanx_4")
 
-HAnimSegment2497.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_proximal_phalanx_4_Shape'/'''))
+HAnimSegment2497.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_proximal_phalanx_4_Shape'/"""))
 Transform2498 = x3d.Transform()
 Transform2498.setUSE("l_metatarsophalangeal_4_JointShape")
 
@@ -10637,7 +10637,7 @@ HAnimSegment2501 = x3d.HAnimSegment()
 HAnimSegment2501.setName("l_tarsal_middle_phalanx_4")
 HAnimSegment2501.setDEF("hanim_l_tarsal_middle_phalanx_4")
 
-HAnimSegment2501.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_middle_phalanx_4_Shape'/'''))
+HAnimSegment2501.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_middle_phalanx_4_Shape'/"""))
 Transform2502 = x3d.Transform()
 Transform2502.setUSE("l_tarsal_proximal_interphalangeal_4_JointShape")
 
@@ -10658,7 +10658,7 @@ HAnimSegment2505 = x3d.HAnimSegment()
 HAnimSegment2505.setName("l_tarsal_distal_phalanx_4")
 HAnimSegment2505.setDEF("hanim_l_tarsal_distal_phalanx_4")
 
-HAnimSegment2505.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_distal_phalanx_4_Shape'/'''))
+HAnimSegment2505.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_distal_phalanx_4_Shape'/"""))
 Transform2506 = x3d.Transform()
 Transform2506.setUSE("l_tarsal_distal_interphalangeal_4_JointShape")
 
@@ -10701,7 +10701,7 @@ HAnimSegment2512 = x3d.HAnimSegment()
 HAnimSegment2512.setName("l_metatarsal_5")
 HAnimSegment2512.setDEF("hanim_l_metatarsal_5")
 
-HAnimSegment2512.addComments(x3d.CommentsBlock('''Shape USE='l_metatarsal_5_Shape'/'''))
+HAnimSegment2512.addComments(x3d.CommentsBlock("""Shape USE='l_metatarsal_5_Shape'/"""))
 Transform2513 = x3d.Transform()
 Transform2513.setUSE("l_metatarsal_5_JointShape")
 
@@ -10722,7 +10722,7 @@ HAnimSegment2516 = x3d.HAnimSegment()
 HAnimSegment2516.setName("l_tarsal_proximal_phalanx_5")
 HAnimSegment2516.setDEF("hanim_l_tarsal_proximal_phalanx_5")
 
-HAnimSegment2516.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_proximal_phalanx_5_Shape'/'''))
+HAnimSegment2516.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_proximal_phalanx_5_Shape'/"""))
 Transform2517 = x3d.Transform()
 Transform2517.setUSE("l_metatarsophalangeal_5_JointShape")
 
@@ -10743,7 +10743,7 @@ HAnimSegment2520 = x3d.HAnimSegment()
 HAnimSegment2520.setName("l_tarsal_middle_phalanx_5")
 HAnimSegment2520.setDEF("hanim_l_tarsal_middle_phalanx_5")
 
-HAnimSegment2520.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_middle_phalanx_5_Shape'/'''))
+HAnimSegment2520.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_middle_phalanx_5_Shape'/"""))
 Transform2521 = x3d.Transform()
 Transform2521.setUSE("l_tarsal_proximal_interphalangeal_5_JointShape")
 
@@ -10778,7 +10778,7 @@ HAnimSegment2527 = x3d.HAnimSegment()
 HAnimSegment2527.setName("l_tarsal_distal_phalanx_5")
 HAnimSegment2527.setDEF("hanim_l_tarsal_distal_phalanx_5")
 
-HAnimSegment2527.addComments(x3d.CommentsBlock('''Shape USE='l_tarsal_distal_phalanx_5_Shape'/'''))
+HAnimSegment2527.addComments(x3d.CommentsBlock("""Shape USE='l_tarsal_distal_phalanx_5_Shape'/"""))
 Transform2528 = x3d.Transform()
 Transform2528.setUSE("l_tarsal_distal_interphalangeal_5_JointShape")
 
@@ -10831,7 +10831,7 @@ HAnimSegment2534 = x3d.HAnimSegment()
 HAnimSegment2534.setName("r_thigh")
 HAnimSegment2534.setDEF("hanim_r_thigh")
 
-HAnimSegment2534.addComments(x3d.CommentsBlock('''Shape USE='r_thigh_Shape'/'''))
+HAnimSegment2534.addComments(x3d.CommentsBlock("""Shape USE='r_thigh_Shape'/"""))
 Transform2535 = x3d.Transform()
 Transform2535.setUSE("r_hip_JointShape")
 
@@ -10908,7 +10908,7 @@ HAnimSegment2550 = x3d.HAnimSegment()
 HAnimSegment2550.setName("r_calf")
 HAnimSegment2550.setDEF("hanim_r_calf")
 
-HAnimSegment2550.addComments(x3d.CommentsBlock('''Shape USE='r_calf_Shape'/'''))
+HAnimSegment2550.addComments(x3d.CommentsBlock("""Shape USE='r_calf_Shape'/"""))
 Transform2551 = x3d.Transform()
 Transform2551.setUSE("r_knee_JointShape")
 
@@ -10971,7 +10971,7 @@ HAnimSegment2563 = x3d.HAnimSegment()
 HAnimSegment2563.setName("r_talus")
 HAnimSegment2563.setDEF("hanim_r_talus")
 
-HAnimSegment2563.addComments(x3d.CommentsBlock('''Shape USE='r_talus_Shape'/'''))
+HAnimSegment2563.addComments(x3d.CommentsBlock("""Shape USE='r_talus_Shape'/"""))
 Transform2564 = x3d.Transform()
 Transform2564.setUSE("r_talocrural_JointShape")
 
@@ -11024,7 +11024,7 @@ HAnimSegment2574 = x3d.HAnimSegment()
 HAnimSegment2574.setName("r_navicular")
 HAnimSegment2574.setDEF("hanim_r_navicular")
 
-HAnimSegment2574.addComments(x3d.CommentsBlock('''Shape USE='r_navicular_Shape'/'''))
+HAnimSegment2574.addComments(x3d.CommentsBlock("""Shape USE='r_navicular_Shape'/"""))
 Transform2575 = x3d.Transform()
 Transform2575.setUSE("r_talocalcaneonavicular_JointShape")
 
@@ -11053,7 +11053,7 @@ HAnimSegment2580 = x3d.HAnimSegment()
 HAnimSegment2580.setName("r_cuneiform_1")
 HAnimSegment2580.setDEF("hanim_r_cuneiform_1")
 
-HAnimSegment2580.addComments(x3d.CommentsBlock('''Shape USE='r_cuneiform_1_Shape'/'''))
+HAnimSegment2580.addComments(x3d.CommentsBlock("""Shape USE='r_cuneiform_1_Shape'/"""))
 Transform2581 = x3d.Transform()
 Transform2581.setUSE("r_cuneonavicular_1_JointShape")
 
@@ -11074,7 +11074,7 @@ HAnimSegment2584 = x3d.HAnimSegment()
 HAnimSegment2584.setName("r_metatarsal_1")
 HAnimSegment2584.setDEF("hanim_r_metatarsal_1")
 
-HAnimSegment2584.addComments(x3d.CommentsBlock('''Shape USE='r_metatarsal_1_Shape'/'''))
+HAnimSegment2584.addComments(x3d.CommentsBlock("""Shape USE='r_metatarsal_1_Shape'/"""))
 Transform2585 = x3d.Transform()
 Transform2585.setUSE("r_tarsometatarsal_1_JointShape")
 
@@ -11095,7 +11095,7 @@ HAnimSegment2588 = x3d.HAnimSegment()
 HAnimSegment2588.setName("r_tarsal_proximal_phalanx_1")
 HAnimSegment2588.setDEF("hanim_r_tarsal_proximal_phalanx_1")
 
-HAnimSegment2588.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_proximal_phalanx_1_Shape'/'''))
+HAnimSegment2588.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_proximal_phalanx_1_Shape'/"""))
 Transform2589 = x3d.Transform()
 Transform2589.setUSE("r_metatarsophalangeal_1_JointShape")
 
@@ -11130,7 +11130,7 @@ HAnimSegment2595 = x3d.HAnimSegment()
 HAnimSegment2595.setName("r_tarsal_distal_phalanx_1")
 HAnimSegment2595.setDEF("hanim_r_tarsal_distal_phalanx_1")
 
-HAnimSegment2595.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_distal_phalanx_1_Shape'/'''))
+HAnimSegment2595.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_distal_phalanx_1_Shape'/"""))
 Transform2596 = x3d.Transform()
 Transform2596.setUSE("r_tarsal_interphalangeal_1_JointShape")
 
@@ -11173,7 +11173,7 @@ HAnimSegment2602 = x3d.HAnimSegment()
 HAnimSegment2602.setName("r_cuneiform_2")
 HAnimSegment2602.setDEF("hanim_r_cuneiform_2")
 
-HAnimSegment2602.addComments(x3d.CommentsBlock('''Shape USE='r_cuneiform_2_Shape'/'''))
+HAnimSegment2602.addComments(x3d.CommentsBlock("""Shape USE='r_cuneiform_2_Shape'/"""))
 Transform2603 = x3d.Transform()
 Transform2603.setUSE("r_cuneonavicular_2_JointShape")
 
@@ -11194,7 +11194,7 @@ HAnimSegment2606 = x3d.HAnimSegment()
 HAnimSegment2606.setName("r_metatarsal_2")
 HAnimSegment2606.setDEF("hanim_r_metatarsal_2")
 
-HAnimSegment2606.addComments(x3d.CommentsBlock('''Shape USE='r_metatarsal_2_Shape'/'''))
+HAnimSegment2606.addComments(x3d.CommentsBlock("""Shape USE='r_metatarsal_2_Shape'/"""))
 Transform2607 = x3d.Transform()
 Transform2607.setUSE("r_tarsometatarsal_2_JointShape")
 
@@ -11215,7 +11215,7 @@ HAnimSegment2610 = x3d.HAnimSegment()
 HAnimSegment2610.setName("r_tarsal_proximal_phalanx_2")
 HAnimSegment2610.setDEF("hanim_r_tarsal_proximal_phalanx_2")
 
-HAnimSegment2610.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_proximal_phalanx_2_Shape'/'''))
+HAnimSegment2610.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_proximal_phalanx_2_Shape'/"""))
 Transform2611 = x3d.Transform()
 Transform2611.setUSE("r_metatarsophalangeal_2_JointShape")
 
@@ -11236,7 +11236,7 @@ HAnimSegment2614 = x3d.HAnimSegment()
 HAnimSegment2614.setName("r_tarsal_middle_phalanx_2")
 HAnimSegment2614.setDEF("hanim_r_tarsal_middle_phalanx_2")
 
-HAnimSegment2614.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_middle_phalanx_2_Shape'/'''))
+HAnimSegment2614.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_middle_phalanx_2_Shape'/"""))
 Transform2615 = x3d.Transform()
 Transform2615.setUSE("r_tarsal_proximal_interphalangeal_2_JointShape")
 
@@ -11257,7 +11257,7 @@ HAnimSegment2618 = x3d.HAnimSegment()
 HAnimSegment2618.setName("r_tarsal_distal_phalanx_2")
 HAnimSegment2618.setDEF("hanim_r_tarsal_distal_phalanx_2")
 
-HAnimSegment2618.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_distal_phalanx_2_Shape'/'''))
+HAnimSegment2618.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_distal_phalanx_2_Shape'/"""))
 Transform2619 = x3d.Transform()
 Transform2619.setUSE("r_tarsal_distal_interphalangeal_2_JointShape")
 
@@ -11302,7 +11302,7 @@ HAnimSegment2625 = x3d.HAnimSegment()
 HAnimSegment2625.setName("r_cuneiform_3")
 HAnimSegment2625.setDEF("hanim_r_cuneiform_3")
 
-HAnimSegment2625.addComments(x3d.CommentsBlock('''Shape USE='r_cuneiform_3_Shape'/'''))
+HAnimSegment2625.addComments(x3d.CommentsBlock("""Shape USE='r_cuneiform_3_Shape'/"""))
 Transform2626 = x3d.Transform()
 Transform2626.setUSE("r_cuneonavicular_3_JointShape")
 
@@ -11323,7 +11323,7 @@ HAnimSegment2629 = x3d.HAnimSegment()
 HAnimSegment2629.setName("r_metatarsal_3")
 HAnimSegment2629.setDEF("hanim_r_metatarsal_3")
 
-HAnimSegment2629.addComments(x3d.CommentsBlock('''Shape USE='r_metatarsal_3_Shape'/'''))
+HAnimSegment2629.addComments(x3d.CommentsBlock("""Shape USE='r_metatarsal_3_Shape'/"""))
 Transform2630 = x3d.Transform()
 Transform2630.setUSE("r_tarsometatarsal_3_JointShape")
 
@@ -11344,7 +11344,7 @@ HAnimSegment2633 = x3d.HAnimSegment()
 HAnimSegment2633.setName("r_tarsal_proximal_phalanx_3")
 HAnimSegment2633.setDEF("hanim_r_tarsal_proximal_phalanx_3")
 
-HAnimSegment2633.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_proximal_phalanx_3_Shape'/'''))
+HAnimSegment2633.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_proximal_phalanx_3_Shape'/"""))
 Transform2634 = x3d.Transform()
 Transform2634.setUSE("r_metatarsophalangeal_3_JointShape")
 
@@ -11365,7 +11365,7 @@ HAnimSegment2637 = x3d.HAnimSegment()
 HAnimSegment2637.setName("r_tarsal_middle_phalanx_3")
 HAnimSegment2637.setDEF("hanim_r_tarsal_middle_phalanx_3")
 
-HAnimSegment2637.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_middle_phalanx_3_Shape'/'''))
+HAnimSegment2637.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_middle_phalanx_3_Shape'/"""))
 Transform2638 = x3d.Transform()
 Transform2638.setUSE("r_tarsal_proximal_interphalangeal_3_JointShape")
 
@@ -11386,7 +11386,7 @@ HAnimSegment2641 = x3d.HAnimSegment()
 HAnimSegment2641.setName("r_tarsal_distal_phalanx_3")
 HAnimSegment2641.setDEF("hanim_r_tarsal_distal_phalanx_3")
 
-HAnimSegment2641.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_distal_phalanx_3_Shape'/'''))
+HAnimSegment2641.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_distal_phalanx_3_Shape'/"""))
 Transform2642 = x3d.Transform()
 Transform2642.setUSE("r_tarsal_distal_interphalangeal_3_JointShape")
 
@@ -11433,7 +11433,7 @@ HAnimSegment2648 = x3d.HAnimSegment()
 HAnimSegment2648.setName("r_calcaneus")
 HAnimSegment2648.setDEF("hanim_r_calcaneus")
 
-HAnimSegment2648.addComments(x3d.CommentsBlock('''Shape USE='r_calcaneus_Shape'/'''))
+HAnimSegment2648.addComments(x3d.CommentsBlock("""Shape USE='r_calcaneus_Shape'/"""))
 Transform2649 = x3d.Transform()
 Transform2649.setUSE("r_calcaneocuboid_JointShape")
 
@@ -11454,7 +11454,7 @@ HAnimSegment2652 = x3d.HAnimSegment()
 HAnimSegment2652.setName("r_cuboid")
 HAnimSegment2652.setDEF("hanim_r_cuboid")
 
-HAnimSegment2652.addComments(x3d.CommentsBlock('''Shape USE='r_cuboid_Shape'/'''))
+HAnimSegment2652.addComments(x3d.CommentsBlock("""Shape USE='r_cuboid_Shape'/"""))
 Transform2653 = x3d.Transform()
 Transform2653.setUSE("r_transversetarsal_JointShape")
 
@@ -11475,7 +11475,7 @@ HAnimSegment2656 = x3d.HAnimSegment()
 HAnimSegment2656.setName("r_metatarsal_4")
 HAnimSegment2656.setDEF("hanim_r_metatarsal_4")
 
-HAnimSegment2656.addComments(x3d.CommentsBlock('''Shape USE='r_metatarsal_4_Shape'/'''))
+HAnimSegment2656.addComments(x3d.CommentsBlock("""Shape USE='r_metatarsal_4_Shape'/"""))
 Transform2657 = x3d.Transform()
 Transform2657.setUSE("r_tarsometatarsal_4_JointShape")
 
@@ -11496,7 +11496,7 @@ HAnimSegment2660 = x3d.HAnimSegment()
 HAnimSegment2660.setName("r_tarsal_proximal_phalanx_4")
 HAnimSegment2660.setDEF("hanim_r_tarsal_proximal_phalanx_4")
 
-HAnimSegment2660.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_proximal_phalanx_4_Shape'/'''))
+HAnimSegment2660.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_proximal_phalanx_4_Shape'/"""))
 Transform2661 = x3d.Transform()
 Transform2661.setUSE("r_metatarsophalangeal_4_JointShape")
 
@@ -11517,7 +11517,7 @@ HAnimSegment2664 = x3d.HAnimSegment()
 HAnimSegment2664.setName("r_tarsal_middle_phalanx_4")
 HAnimSegment2664.setDEF("hanim_r_tarsal_middle_phalanx_4")
 
-HAnimSegment2664.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_middle_phalanx_4_Shape'/'''))
+HAnimSegment2664.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_middle_phalanx_4_Shape'/"""))
 Transform2665 = x3d.Transform()
 Transform2665.setUSE("r_tarsal_proximal_interphalangeal_4_JointShape")
 
@@ -11538,7 +11538,7 @@ HAnimSegment2668 = x3d.HAnimSegment()
 HAnimSegment2668.setName("r_tarsal_distal_phalanx_4")
 HAnimSegment2668.setDEF("hanim_r_tarsal_distal_phalanx_4")
 
-HAnimSegment2668.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_distal_phalanx_4_Shape'/'''))
+HAnimSegment2668.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_distal_phalanx_4_Shape'/"""))
 Transform2669 = x3d.Transform()
 Transform2669.setUSE("r_tarsal_distal_interphalangeal_4_JointShape")
 
@@ -11581,7 +11581,7 @@ HAnimSegment2675 = x3d.HAnimSegment()
 HAnimSegment2675.setName("r_metatarsal_5")
 HAnimSegment2675.setDEF("hanim_r_metatarsal_5")
 
-HAnimSegment2675.addComments(x3d.CommentsBlock('''Shape USE='r_metatarsal_5_Shape'/'''))
+HAnimSegment2675.addComments(x3d.CommentsBlock("""Shape USE='r_metatarsal_5_Shape'/"""))
 Transform2676 = x3d.Transform()
 Transform2676.setUSE("r_tarsometatarsal_5_JointShape")
 
@@ -11602,7 +11602,7 @@ HAnimSegment2679 = x3d.HAnimSegment()
 HAnimSegment2679.setName("r_tarsal_proximal_phalanx_5")
 HAnimSegment2679.setDEF("hanim_r_tarsal_proximal_phalanx_5")
 
-HAnimSegment2679.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_proximal_phalanx_5_Shape'/'''))
+HAnimSegment2679.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_proximal_phalanx_5_Shape'/"""))
 Transform2680 = x3d.Transform()
 Transform2680.setUSE("r_metatarsophalangeal_5_JointShape")
 
@@ -11623,7 +11623,7 @@ HAnimSegment2683 = x3d.HAnimSegment()
 HAnimSegment2683.setName("r_tarsal_middle_phalanx_5")
 HAnimSegment2683.setDEF("hanim_r_tarsal_middle_phalanx_5")
 
-HAnimSegment2683.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_middle_phalanx_5_Shape'/'''))
+HAnimSegment2683.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_middle_phalanx_5_Shape'/"""))
 Transform2684 = x3d.Transform()
 Transform2684.setUSE("r_tarsal_proximal_interphalangeal_5_JointShape")
 
@@ -11658,7 +11658,7 @@ HAnimSegment2690 = x3d.HAnimSegment()
 HAnimSegment2690.setName("r_tarsal_distal_phalanx_5")
 HAnimSegment2690.setDEF("hanim_r_tarsal_distal_phalanx_5")
 
-HAnimSegment2690.addComments(x3d.CommentsBlock('''Shape USE='r_tarsal_distal_phalanx_5_Shape'/'''))
+HAnimSegment2690.addComments(x3d.CommentsBlock("""Shape USE='r_tarsal_distal_phalanx_5_Shape'/"""))
 Transform2691 = x3d.Transform()
 Transform2691.setUSE("r_tarsal_distal_interphalangeal_5_JointShape")
 
@@ -11669,7 +11669,7 @@ Shape2692.setUSE("r_tarsal_distal_phalanx_5_Segment")
 HAnimSegment2690.addChild(Shape2692)
 HAnimSite2693 = x3d.HAnimSite()
 HAnimSite2693.setName("r_tarsal_distal_phalanx_5")
-HAnimSite2693.setDEF("hanim_")
+HAnimSite2693.setDEF("hanim_r_tarsal_distal_phalanx_5")
 HAnimSite2693.setTranslation(x3d.doubleToFloat([-0.125,0.016,0.115]))
 Transform2694 = x3d.Transform()
 Transform2694.setUSE("r_tarsal_distal_phalanx_5_tip_SiteShape")
@@ -11713,7 +11713,7 @@ HAnimSegment2697 = x3d.HAnimSegment()
 HAnimSegment2697.setName("l5")
 HAnimSegment2697.setDEF("hanim_l5")
 
-HAnimSegment2697.addComments(x3d.CommentsBlock('''Shape USE='l5_Shape'/'''))
+HAnimSegment2697.addComments(x3d.CommentsBlock("""Shape USE='l5_Shape'/"""))
 Transform2698 = x3d.Transform()
 Transform2698.setUSE("vl5_JointShape")
 
@@ -11804,7 +11804,7 @@ HAnimSegment2716 = x3d.HAnimSegment()
 HAnimSegment2716.setName("l4")
 HAnimSegment2716.setDEF("hanim_l4")
 
-HAnimSegment2716.addComments(x3d.CommentsBlock('''Shape USE='l4_Shape'/'''))
+HAnimSegment2716.addComments(x3d.CommentsBlock("""Shape USE='l4_Shape'/"""))
 Transform2717 = x3d.Transform()
 Transform2717.setUSE("vl4_JointShape")
 
@@ -11825,7 +11825,7 @@ HAnimSegment2720 = x3d.HAnimSegment()
 HAnimSegment2720.setName("l3")
 HAnimSegment2720.setDEF("hanim_l3")
 
-HAnimSegment2720.addComments(x3d.CommentsBlock('''Shape USE='l3_Shape'/'''))
+HAnimSegment2720.addComments(x3d.CommentsBlock("""Shape USE='l3_Shape'/"""))
 Transform2721 = x3d.Transform()
 Transform2721.setUSE("vl3_JointShape")
 
@@ -11846,7 +11846,7 @@ HAnimSegment2724 = x3d.HAnimSegment()
 HAnimSegment2724.setName("l2")
 HAnimSegment2724.setDEF("hanim_l2")
 
-HAnimSegment2724.addComments(x3d.CommentsBlock('''Shape USE='l2_Shape'/'''))
+HAnimSegment2724.addComments(x3d.CommentsBlock("""Shape USE='l2_Shape'/"""))
 Transform2725 = x3d.Transform()
 Transform2725.setUSE("vl2_JointShape")
 
@@ -11895,7 +11895,7 @@ HAnimSegment2734 = x3d.HAnimSegment()
 HAnimSegment2734.setName("l1")
 HAnimSegment2734.setDEF("hanim_l1")
 
-HAnimSegment2734.addComments(x3d.CommentsBlock('''Shape USE='l1_Shape'/'''))
+HAnimSegment2734.addComments(x3d.CommentsBlock("""Shape USE='l1_Shape'/"""))
 Transform2735 = x3d.Transform()
 Transform2735.setUSE("vl1_JointShape")
 
@@ -11916,7 +11916,7 @@ HAnimSegment2738 = x3d.HAnimSegment()
 HAnimSegment2738.setName("t12")
 HAnimSegment2738.setDEF("hanim_t12")
 
-HAnimSegment2738.addComments(x3d.CommentsBlock('''Shape USE='t12_Shape'/'''))
+HAnimSegment2738.addComments(x3d.CommentsBlock("""Shape USE='t12_Shape'/"""))
 Transform2739 = x3d.Transform()
 Transform2739.setUSE("vt12_JointShape")
 
@@ -11937,7 +11937,7 @@ HAnimSegment2742 = x3d.HAnimSegment()
 HAnimSegment2742.setName("t11")
 HAnimSegment2742.setDEF("hanim_t11")
 
-HAnimSegment2742.addComments(x3d.CommentsBlock('''Shape USE='t11_Shape'/'''))
+HAnimSegment2742.addComments(x3d.CommentsBlock("""Shape USE='t11_Shape'/"""))
 Transform2743 = x3d.Transform()
 Transform2743.setUSE("vt11_JointShape")
 
@@ -11958,7 +11958,7 @@ HAnimSegment2746 = x3d.HAnimSegment()
 HAnimSegment2746.setName("t10")
 HAnimSegment2746.setDEF("hanim_t10")
 
-HAnimSegment2746.addComments(x3d.CommentsBlock('''Shape USE='t10_Shape'/'''))
+HAnimSegment2746.addComments(x3d.CommentsBlock("""Shape USE='t10_Shape'/"""))
 Transform2747 = x3d.Transform()
 Transform2747.setUSE("vt10_JointShape")
 
@@ -12007,7 +12007,7 @@ HAnimSegment2756 = x3d.HAnimSegment()
 HAnimSegment2756.setName("t9")
 HAnimSegment2756.setDEF("hanim_t9")
 
-HAnimSegment2756.addComments(x3d.CommentsBlock('''Shape USE='t9_Shape'/'''))
+HAnimSegment2756.addComments(x3d.CommentsBlock("""Shape USE='t9_Shape'/"""))
 Transform2757 = x3d.Transform()
 Transform2757.setUSE("vt9_JointShape")
 
@@ -12098,7 +12098,7 @@ HAnimSegment2775 = x3d.HAnimSegment()
 HAnimSegment2775.setName("t8")
 HAnimSegment2775.setDEF("hanim_t8")
 
-HAnimSegment2775.addComments(x3d.CommentsBlock('''Shape USE='t8_Shape'/'''))
+HAnimSegment2775.addComments(x3d.CommentsBlock("""Shape USE='t8_Shape'/"""))
 Transform2776 = x3d.Transform()
 Transform2776.setUSE("vt8_JointShape")
 
@@ -12119,7 +12119,7 @@ HAnimSegment2779 = x3d.HAnimSegment()
 HAnimSegment2779.setName("t7")
 HAnimSegment2779.setDEF("hanim_t7")
 
-HAnimSegment2779.addComments(x3d.CommentsBlock('''Shape USE='t7_Shape'/'''))
+HAnimSegment2779.addComments(x3d.CommentsBlock("""Shape USE='t7_Shape'/"""))
 Transform2780 = x3d.Transform()
 Transform2780.setUSE("vt7_JointShape")
 
@@ -12140,7 +12140,7 @@ HAnimSegment2783 = x3d.HAnimSegment()
 HAnimSegment2783.setName("t6")
 HAnimSegment2783.setDEF("hanim_t6")
 
-HAnimSegment2783.addComments(x3d.CommentsBlock('''Shape USE='t6_Shape'/'''))
+HAnimSegment2783.addComments(x3d.CommentsBlock("""Shape USE='t6_Shape'/"""))
 Transform2784 = x3d.Transform()
 Transform2784.setUSE("vt6_JointShape")
 
@@ -12161,7 +12161,7 @@ HAnimSegment2787 = x3d.HAnimSegment()
 HAnimSegment2787.setName("t5")
 HAnimSegment2787.setDEF("hanim_t5")
 
-HAnimSegment2787.addComments(x3d.CommentsBlock('''Shape USE='t5_Shape'/'''))
+HAnimSegment2787.addComments(x3d.CommentsBlock("""Shape USE='t5_Shape'/"""))
 Transform2788 = x3d.Transform()
 Transform2788.setUSE("vt5_JointShape")
 
@@ -12182,7 +12182,7 @@ HAnimSegment2791 = x3d.HAnimSegment()
 HAnimSegment2791.setName("t4")
 HAnimSegment2791.setDEF("hanim_t4")
 
-HAnimSegment2791.addComments(x3d.CommentsBlock('''Shape USE='t4_Shape'/'''))
+HAnimSegment2791.addComments(x3d.CommentsBlock("""Shape USE='t4_Shape'/"""))
 Transform2792 = x3d.Transform()
 Transform2792.setUSE("vt4_JointShape")
 
@@ -12203,7 +12203,7 @@ HAnimSegment2795 = x3d.HAnimSegment()
 HAnimSegment2795.setName("t3")
 HAnimSegment2795.setDEF("hanim_t3")
 
-HAnimSegment2795.addComments(x3d.CommentsBlock('''Shape USE='t3_Shape'/'''))
+HAnimSegment2795.addComments(x3d.CommentsBlock("""Shape USE='t3_Shape'/"""))
 Transform2796 = x3d.Transform()
 Transform2796.setUSE("vt3_JointShape")
 
@@ -12224,7 +12224,7 @@ HAnimSegment2799 = x3d.HAnimSegment()
 HAnimSegment2799.setName("t2")
 HAnimSegment2799.setDEF("hanim_t2")
 
-HAnimSegment2799.addComments(x3d.CommentsBlock('''Shape USE='t2_Shape'/'''))
+HAnimSegment2799.addComments(x3d.CommentsBlock("""Shape USE='t2_Shape'/"""))
 Transform2800 = x3d.Transform()
 Transform2800.setUSE("vt2_JointShape")
 
@@ -12245,7 +12245,7 @@ HAnimSegment2803 = x3d.HAnimSegment()
 HAnimSegment2803.setName("t1")
 HAnimSegment2803.setDEF("hanim_t1")
 
-HAnimSegment2803.addComments(x3d.CommentsBlock('''Shape USE='t1_Shape'/'''))
+HAnimSegment2803.addComments(x3d.CommentsBlock("""Shape USE='t1_Shape'/"""))
 Transform2804 = x3d.Transform()
 Transform2804.setUSE("vt1_JointShape")
 
@@ -12294,7 +12294,7 @@ HAnimSegment2813 = x3d.HAnimSegment()
 HAnimSegment2813.setName("c7")
 HAnimSegment2813.setDEF("hanim_c7")
 
-HAnimSegment2813.addComments(x3d.CommentsBlock('''Shape USE='c7_Shape'/'''))
+HAnimSegment2813.addComments(x3d.CommentsBlock("""Shape USE='c7_Shape'/"""))
 Transform2814 = x3d.Transform()
 Transform2814.setUSE("vc7_JointShape")
 
@@ -12351,7 +12351,7 @@ HAnimSegment2825 = x3d.HAnimSegment()
 HAnimSegment2825.setName("c6")
 HAnimSegment2825.setDEF("hanim_c6")
 
-HAnimSegment2825.addComments(x3d.CommentsBlock('''Shape USE='c6_Shape'/'''))
+HAnimSegment2825.addComments(x3d.CommentsBlock("""Shape USE='c6_Shape'/"""))
 Transform2826 = x3d.Transform()
 Transform2826.setUSE("vc6_JointShape")
 
@@ -12372,7 +12372,7 @@ HAnimSegment2829 = x3d.HAnimSegment()
 HAnimSegment2829.setName("c5")
 HAnimSegment2829.setDEF("hanim_c5")
 
-HAnimSegment2829.addComments(x3d.CommentsBlock('''Shape USE='c5_Shape'/'''))
+HAnimSegment2829.addComments(x3d.CommentsBlock("""Shape USE='c5_Shape'/"""))
 Transform2830 = x3d.Transform()
 Transform2830.setUSE("vc5_JointShape")
 
@@ -12393,7 +12393,7 @@ HAnimSegment2833 = x3d.HAnimSegment()
 HAnimSegment2833.setName("c4")
 HAnimSegment2833.setDEF("hanim_c4")
 
-HAnimSegment2833.addComments(x3d.CommentsBlock('''Shape USE='c4_Shape'/'''))
+HAnimSegment2833.addComments(x3d.CommentsBlock("""Shape USE='c4_Shape'/"""))
 Transform2834 = x3d.Transform()
 Transform2834.setUSE("vc4_JointShape")
 
@@ -12414,7 +12414,7 @@ HAnimSegment2837 = x3d.HAnimSegment()
 HAnimSegment2837.setName("c3")
 HAnimSegment2837.setDEF("hanim_c3")
 
-HAnimSegment2837.addComments(x3d.CommentsBlock('''Shape USE='c3_Shape'/'''))
+HAnimSegment2837.addComments(x3d.CommentsBlock("""Shape USE='c3_Shape'/"""))
 Transform2838 = x3d.Transform()
 Transform2838.setUSE("vc3_JointShape")
 
@@ -12435,7 +12435,7 @@ HAnimSegment2841 = x3d.HAnimSegment()
 HAnimSegment2841.setName("c2")
 HAnimSegment2841.setDEF("hanim_c2")
 
-HAnimSegment2841.addComments(x3d.CommentsBlock('''Shape USE='c2_Shape'/'''))
+HAnimSegment2841.addComments(x3d.CommentsBlock("""Shape USE='c2_Shape'/"""))
 Transform2842 = x3d.Transform()
 Transform2842.setUSE("vc2_JointShape")
 
@@ -12470,7 +12470,7 @@ HAnimSegment2848 = x3d.HAnimSegment()
 HAnimSegment2848.setName("c1")
 HAnimSegment2848.setDEF("hanim_c1")
 
-HAnimSegment2848.addComments(x3d.CommentsBlock('''Shape USE='c1_Shape'/'''))
+HAnimSegment2848.addComments(x3d.CommentsBlock("""Shape USE='c1_Shape'/"""))
 Transform2849 = x3d.Transform()
 Transform2849.setUSE("vc1_JointShape")
 
@@ -12491,7 +12491,7 @@ HAnimSegment2852 = x3d.HAnimSegment()
 HAnimSegment2852.setName("skull")
 HAnimSegment2852.setDEF("hanim_skull")
 
-HAnimSegment2852.addComments(x3d.CommentsBlock('''Shape USE='skull_Shape'/'''))
+HAnimSegment2852.addComments(x3d.CommentsBlock("""Shape USE='skull_Shape'/"""))
 Transform2853 = x3d.Transform()
 Transform2853.setUSE("skullbase_JointShape")
 
@@ -12525,7 +12525,7 @@ Shape2860.setUSE("skull-to-temporomandibular_Segment")
 
 HAnimSegment2852.addChild(Shape2860)
 
-HAnimSegment2852.addComments(x3d.CommentsBlock('''Shape DEF='skull-to-tongue_joint'/'''))
+HAnimSegment2852.addComments(x3d.CommentsBlock("""Shape DEF='skull-to-tongue_joint'/"""))
 HAnimSite2861 = x3d.HAnimSite()
 HAnimSite2861.setName("skull_vertex")
 HAnimSite2861.setDEF("hanim_skull_vertex_pt")
@@ -12692,7 +12692,7 @@ HAnimSegment2895 = x3d.HAnimSegment()
 HAnimSegment2895.setName("l_eyelid")
 HAnimSegment2895.setDEF("hanim_l_eyelid")
 
-HAnimSegment2895.addComments(x3d.CommentsBlock('''Shape USE='l_eyelid_Shape'/'''))
+HAnimSegment2895.addComments(x3d.CommentsBlock("""Shape USE='l_eyelid_Shape'/"""))
 Transform2896 = x3d.Transform()
 Transform2896.setUSE("l_eyelid_joint_JointShape")
 
@@ -12729,7 +12729,7 @@ HAnimSegment2902 = x3d.HAnimSegment()
 HAnimSegment2902.setName("r_eyelid")
 HAnimSegment2902.setDEF("hanim_r_eyelid")
 
-HAnimSegment2902.addComments(x3d.CommentsBlock('''Shape USE='r_eyelid_Shape'/'''))
+HAnimSegment2902.addComments(x3d.CommentsBlock("""Shape USE='r_eyelid_Shape'/"""))
 Transform2903 = x3d.Transform()
 Transform2903.setUSE("r_eyelid_joint_JointShape")
 
@@ -12766,7 +12766,7 @@ HAnimSegment2909 = x3d.HAnimSegment()
 HAnimSegment2909.setName("l_eyeball")
 HAnimSegment2909.setDEF("hanim_l_eyeball")
 
-HAnimSegment2909.addComments(x3d.CommentsBlock('''Shape USE='l_eyeball_Shape'/'''))
+HAnimSegment2909.addComments(x3d.CommentsBlock("""Shape USE='l_eyeball_Shape'/"""))
 Transform2910 = x3d.Transform()
 Transform2910.setUSE("l_eyeball_joint_JointShape")
 
@@ -12803,7 +12803,7 @@ HAnimSegment2916 = x3d.HAnimSegment()
 HAnimSegment2916.setName("r_eyeball")
 HAnimSegment2916.setDEF("hanim_r_eyeball")
 
-HAnimSegment2916.addComments(x3d.CommentsBlock('''Shape USE='r_eyeball_Shape'/'''))
+HAnimSegment2916.addComments(x3d.CommentsBlock("""Shape USE='r_eyeball_Shape'/"""))
 Transform2917 = x3d.Transform()
 Transform2917.setUSE("r_eyeball_joint_JointShape")
 
@@ -12840,7 +12840,7 @@ HAnimSegment2923 = x3d.HAnimSegment()
 HAnimSegment2923.setName("l_eyebrow")
 HAnimSegment2923.setDEF("hanim_l_eyebrow")
 
-HAnimSegment2923.addComments(x3d.CommentsBlock('''Shape USE='l_eyebrow_Shape'/'''))
+HAnimSegment2923.addComments(x3d.CommentsBlock("""Shape USE='l_eyebrow_Shape'/"""))
 Transform2924 = x3d.Transform()
 Transform2924.setUSE("l_eyebrow_joint_JointShape")
 
@@ -12877,7 +12877,7 @@ HAnimSegment2930 = x3d.HAnimSegment()
 HAnimSegment2930.setName("r_eyebrow")
 HAnimSegment2930.setDEF("hanim_r_eyebrow")
 
-HAnimSegment2930.addComments(x3d.CommentsBlock('''Shape USE='r_eyebrow_Shape'/'''))
+HAnimSegment2930.addComments(x3d.CommentsBlock("""Shape USE='r_eyebrow_Shape'/"""))
 Transform2931 = x3d.Transform()
 Transform2931.setUSE("r_eyebrow_joint_JointShape")
 
@@ -12914,7 +12914,7 @@ HAnimSegment2937 = x3d.HAnimSegment()
 HAnimSegment2937.setName("jaw")
 HAnimSegment2937.setDEF("hanim_jaw")
 
-HAnimSegment2937.addComments(x3d.CommentsBlock('''Shape USE='jaw_Shape'/'''))
+HAnimSegment2937.addComments(x3d.CommentsBlock("""Shape USE='jaw_Shape'/"""))
 Transform2938 = x3d.Transform()
 Transform2938.setUSE("temporomandibular_JointShape")
 
@@ -13013,7 +13013,7 @@ HAnimSegment2954 = x3d.HAnimSegment()
 HAnimSegment2954.setName("l_clavicle")
 HAnimSegment2954.setDEF("hanim_l_clavicle")
 
-HAnimSegment2954.addComments(x3d.CommentsBlock('''Shape USE='l_clavicle_Shape'/'''))
+HAnimSegment2954.addComments(x3d.CommentsBlock("""Shape USE='l_clavicle_Shape'/"""))
 Transform2955 = x3d.Transform()
 Transform2955.setUSE("l_sternoclavicular_JointShape")
 
@@ -13048,7 +13048,7 @@ HAnimSegment2961 = x3d.HAnimSegment()
 HAnimSegment2961.setName("l_scapula")
 HAnimSegment2961.setDEF("hanim_l_scapula")
 
-HAnimSegment2961.addComments(x3d.CommentsBlock('''Shape USE='l_scapula_Shape'/'''))
+HAnimSegment2961.addComments(x3d.CommentsBlock("""Shape USE='l_scapula_Shape'/"""))
 Transform2962 = x3d.Transform()
 Transform2962.setUSE("l_acromioclavicular_JointShape")
 
@@ -13125,7 +13125,7 @@ HAnimSegment2977 = x3d.HAnimSegment()
 HAnimSegment2977.setName("l_upperarm")
 HAnimSegment2977.setDEF("hanim_l_upperarm")
 
-HAnimSegment2977.addComments(x3d.CommentsBlock('''Shape USE='l_upperarm_Shape'/'''))
+HAnimSegment2977.addComments(x3d.CommentsBlock("""Shape USE='l_upperarm_Shape'/"""))
 Transform2978 = x3d.Transform()
 Transform2978.setUSE("l_shoulder_JointShape")
 
@@ -13202,7 +13202,7 @@ HAnimSegment2993 = x3d.HAnimSegment()
 HAnimSegment2993.setName("l_forearm")
 HAnimSegment2993.setDEF("hanim_l_forearm")
 
-HAnimSegment2993.addComments(x3d.CommentsBlock('''Shape USE='l_forearm_Shape'/'''))
+HAnimSegment2993.addComments(x3d.CommentsBlock("""Shape USE='l_forearm_Shape'/"""))
 Transform2994 = x3d.Transform()
 Transform2994.setUSE("l_elbow_JointShape")
 
@@ -13251,7 +13251,7 @@ HAnimSegment3003 = x3d.HAnimSegment()
 HAnimSegment3003.setName("l_carpal")
 HAnimSegment3003.setDEF("hanim_l_carpal")
 
-HAnimSegment3003.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_Shape'/'''))
+HAnimSegment3003.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_Shape'/"""))
 Transform3004 = x3d.Transform()
 Transform3004.setUSE("l_radiocarpal_JointShape")
 
@@ -13298,7 +13298,7 @@ HAnimSegment3013 = x3d.HAnimSegment()
 HAnimSegment3013.setName("l_trapezium")
 HAnimSegment3013.setDEF("hanim_l_trapezium")
 
-HAnimSegment3013.addComments(x3d.CommentsBlock('''Shape USE='l_trapezium_Shape'/'''))
+HAnimSegment3013.addComments(x3d.CommentsBlock("""Shape USE='l_trapezium_Shape'/"""))
 Transform3014 = x3d.Transform()
 Transform3014.setUSE("l_midcarpal_1_JointShape")
 
@@ -13323,7 +13323,7 @@ HAnimSegment3018 = x3d.HAnimSegment()
 HAnimSegment3018.setName("l_metacarpal_1")
 HAnimSegment3018.setDEF("hanim_l_metacarpal_1")
 
-HAnimSegment3018.addComments(x3d.CommentsBlock('''Shape USE='l_metacarpal_1_Shape'/'''))
+HAnimSegment3018.addComments(x3d.CommentsBlock("""Shape USE='l_metacarpal_1_Shape'/"""))
 Transform3019 = x3d.Transform()
 Transform3019.setUSE("l_carpometacarpal_1_JointShape")
 
@@ -13358,7 +13358,7 @@ HAnimSegment3025 = x3d.HAnimSegment()
 HAnimSegment3025.setName("l_carpal_proximal_phalanx_1")
 HAnimSegment3025.setDEF("hanim_l_carpal_proximal_phalanx_1")
 
-HAnimSegment3025.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_proximal_phalanx_1_Shape'/'''))
+HAnimSegment3025.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_proximal_phalanx_1_Shape'/"""))
 Transform3026 = x3d.Transform()
 Transform3026.setUSE("l_metacarpophalangeal_1_JointShape")
 
@@ -13379,7 +13379,7 @@ HAnimSegment3029 = x3d.HAnimSegment()
 HAnimSegment3029.setName("l_carpal_distal_phalanx_1")
 HAnimSegment3029.setDEF("hanim_l_carpal_distal_phalanx_1")
 
-HAnimSegment3029.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_distal_phalanx_1_Shape'/'''))
+HAnimSegment3029.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_distal_phalanx_1_Shape'/"""))
 Transform3030 = x3d.Transform()
 Transform3030.setUSE("l_carpal_interphalangeal_1_JointShape")
 
@@ -13422,7 +13422,7 @@ HAnimSegment3036 = x3d.HAnimSegment()
 HAnimSegment3036.setName("l_trapezoid")
 HAnimSegment3036.setDEF("hanim_l_trapezoid")
 
-HAnimSegment3036.addComments(x3d.CommentsBlock('''Shape USE='l_trapezoid_Shape'/'''))
+HAnimSegment3036.addComments(x3d.CommentsBlock("""Shape USE='l_trapezoid_Shape'/"""))
 Transform3037 = x3d.Transform()
 Transform3037.setUSE("l_midcarpal_2_JointShape")
 
@@ -13443,7 +13443,7 @@ HAnimSegment3040 = x3d.HAnimSegment()
 HAnimSegment3040.setName("l_metacarpal_2")
 HAnimSegment3040.setDEF("hanim_l_metacarpal_2")
 
-HAnimSegment3040.addComments(x3d.CommentsBlock('''Shape USE='l_metacarpal_2_Shape'/'''))
+HAnimSegment3040.addComments(x3d.CommentsBlock("""Shape USE='l_metacarpal_2_Shape'/"""))
 Transform3041 = x3d.Transform()
 Transform3041.setUSE("l_carpometacarpal_2_JointShape")
 
@@ -13464,7 +13464,7 @@ HAnimSegment3044 = x3d.HAnimSegment()
 HAnimSegment3044.setName("l_carpal_proximal_phalanx_2")
 HAnimSegment3044.setDEF("hanim_l_carpal_proximal_phalanx_2")
 
-HAnimSegment3044.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_proximal_phalanx_2_Shape'/'''))
+HAnimSegment3044.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_proximal_phalanx_2_Shape'/"""))
 Transform3045 = x3d.Transform()
 Transform3045.setUSE("l_metacarpophalangeal_2_JointShape")
 
@@ -13485,7 +13485,7 @@ HAnimSegment3048 = x3d.HAnimSegment()
 HAnimSegment3048.setName("l_carpal_middle_phalanx_2")
 HAnimSegment3048.setDEF("hanim_l_carpal_middle_phalanx_2")
 
-HAnimSegment3048.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_middle_phalanx_2_Shape'/'''))
+HAnimSegment3048.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_middle_phalanx_2_Shape'/"""))
 Transform3049 = x3d.Transform()
 Transform3049.setUSE("l_carpal_proximal_interphalangeal_2_JointShape")
 
@@ -13506,7 +13506,7 @@ HAnimSegment3052 = x3d.HAnimSegment()
 HAnimSegment3052.setName("l_carpal_distal_phalanx_2")
 HAnimSegment3052.setDEF("hanim_l_carpal_distal_phalanx_2")
 
-HAnimSegment3052.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_distal_phalanx_2_Shape'/'''))
+HAnimSegment3052.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_distal_phalanx_2_Shape'/"""))
 Transform3053 = x3d.Transform()
 Transform3053.setUSE("l_carpal_distal_interphalangeal_2_JointShape")
 
@@ -13565,7 +13565,7 @@ HAnimSegment3062 = x3d.HAnimSegment()
 HAnimSegment3062.setName("l_capitate")
 HAnimSegment3062.setDEF("hanim_l_capitate")
 
-HAnimSegment3062.addComments(x3d.CommentsBlock('''Shape USE='l_capitate_Shape'/'''))
+HAnimSegment3062.addComments(x3d.CommentsBlock("""Shape USE='l_capitate_Shape'/"""))
 Transform3063 = x3d.Transform()
 Transform3063.setUSE("l_midcarpal_3_JointShape")
 
@@ -13586,7 +13586,7 @@ HAnimSegment3066 = x3d.HAnimSegment()
 HAnimSegment3066.setName("l_metacarpal_3")
 HAnimSegment3066.setDEF("hanim_l_metacarpal_3")
 
-HAnimSegment3066.addComments(x3d.CommentsBlock('''Shape USE='l_metacarpal_3_Shape'/'''))
+HAnimSegment3066.addComments(x3d.CommentsBlock("""Shape USE='l_metacarpal_3_Shape'/"""))
 Transform3067 = x3d.Transform()
 Transform3067.setUSE("l_carpometacarpal_3_JointShape")
 
@@ -13621,7 +13621,7 @@ HAnimSegment3073 = x3d.HAnimSegment()
 HAnimSegment3073.setName("l_carpal_proximal_phalanx_3")
 HAnimSegment3073.setDEF("hanim_l_carpal_proximal_phalanx_3")
 
-HAnimSegment3073.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_proximal_phalanx_3_Shape'/'''))
+HAnimSegment3073.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_proximal_phalanx_3_Shape'/"""))
 Transform3074 = x3d.Transform()
 Transform3074.setUSE("l_metacarpophalangeal_3_JointShape")
 
@@ -13642,7 +13642,7 @@ HAnimSegment3077 = x3d.HAnimSegment()
 HAnimSegment3077.setName("l_carpal_middle_phalanx_3")
 HAnimSegment3077.setDEF("hanim_l_carpal_middle_phalanx_3")
 
-HAnimSegment3077.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_middle_phalanx_3_Shape'/'''))
+HAnimSegment3077.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_middle_phalanx_3_Shape'/"""))
 Transform3078 = x3d.Transform()
 Transform3078.setUSE("l_carpal_proximal_interphalangeal_3_JointShape")
 
@@ -13663,7 +13663,7 @@ HAnimSegment3081 = x3d.HAnimSegment()
 HAnimSegment3081.setName("l_carpal_distal_phalanx_3")
 HAnimSegment3081.setDEF("hanim_l_carpal_distal_phalanx_3")
 
-HAnimSegment3081.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_distal_phalanx_3_Shape'/'''))
+HAnimSegment3081.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_distal_phalanx_3_Shape'/"""))
 Transform3082 = x3d.Transform()
 Transform3082.setUSE("l_carpal_distal_interphalangeal_3_JointShape")
 
@@ -13708,7 +13708,7 @@ HAnimSegment3088 = x3d.HAnimSegment()
 HAnimSegment3088.setName("l_hamate")
 HAnimSegment3088.setDEF("hanim_l_hamate")
 
-HAnimSegment3088.addComments(x3d.CommentsBlock('''Shape USE='l_hamate_Shape'/'''))
+HAnimSegment3088.addComments(x3d.CommentsBlock("""Shape USE='l_hamate_Shape'/"""))
 Transform3089 = x3d.Transform()
 Transform3089.setUSE("l_midcarpal_4_5_JointShape")
 
@@ -13733,7 +13733,7 @@ HAnimSegment3093 = x3d.HAnimSegment()
 HAnimSegment3093.setName("l_metacarpal_4")
 HAnimSegment3093.setDEF("hanim_l_metacarpal_4")
 
-HAnimSegment3093.addComments(x3d.CommentsBlock('''Shape USE='l_metacarpal_4_Shape'/'''))
+HAnimSegment3093.addComments(x3d.CommentsBlock("""Shape USE='l_metacarpal_4_Shape'/"""))
 Transform3094 = x3d.Transform()
 Transform3094.setUSE("l_carpometacarpal_4_JointShape")
 
@@ -13754,7 +13754,7 @@ HAnimSegment3097 = x3d.HAnimSegment()
 HAnimSegment3097.setName("l_carpal_proximal_phalanx_4")
 HAnimSegment3097.setDEF("hanim_l_carpal_proximal_phalanx_4")
 
-HAnimSegment3097.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_proximal_phalanx_4_Shape'/'''))
+HAnimSegment3097.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_proximal_phalanx_4_Shape'/"""))
 Transform3098 = x3d.Transform()
 Transform3098.setUSE("l_metacarpophalangeal_4_JointShape")
 
@@ -13775,7 +13775,7 @@ HAnimSegment3101 = x3d.HAnimSegment()
 HAnimSegment3101.setName("l_carpal_middle_phalanx_4")
 HAnimSegment3101.setDEF("hanim_l_carpal_middle_phalanx_4")
 
-HAnimSegment3101.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_middle_phalanx_4_Shape'/'''))
+HAnimSegment3101.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_middle_phalanx_4_Shape'/"""))
 Transform3102 = x3d.Transform()
 Transform3102.setUSE("l_carpal_proximal_interphalangeal_4_JointShape")
 
@@ -13796,7 +13796,7 @@ HAnimSegment3105 = x3d.HAnimSegment()
 HAnimSegment3105.setName("l_carpal_distal_phalanx_4")
 HAnimSegment3105.setDEF("hanim_l_carpal_distal_phalanx_4")
 
-HAnimSegment3105.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_distal_phalanx_4_Shape'/'''))
+HAnimSegment3105.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_distal_phalanx_4_Shape'/"""))
 Transform3106 = x3d.Transform()
 Transform3106.setUSE("l_carpal_distal_interphalangeal_4_JointShape")
 
@@ -13841,7 +13841,7 @@ HAnimSegment3112 = x3d.HAnimSegment()
 HAnimSegment3112.setName("l_metacarpal_5")
 HAnimSegment3112.setDEF("hanim_l_metacarpal_5")
 
-HAnimSegment3112.addComments(x3d.CommentsBlock('''Shape USE='l_metacarpal_5_Shape'/'''))
+HAnimSegment3112.addComments(x3d.CommentsBlock("""Shape USE='l_metacarpal_5_Shape'/"""))
 Transform3113 = x3d.Transform()
 Transform3113.setUSE("l_carpometacarpal_5_JointShape")
 
@@ -13876,7 +13876,7 @@ HAnimSegment3119 = x3d.HAnimSegment()
 HAnimSegment3119.setName("l_carpal_proximal_phalanx_5")
 HAnimSegment3119.setDEF("hanim_l_carpal_proximal_phalanx_5")
 
-HAnimSegment3119.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_proximal_phalanx_5_Shape'/'''))
+HAnimSegment3119.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_proximal_phalanx_5_Shape'/"""))
 Transform3120 = x3d.Transform()
 Transform3120.setUSE("l_metacarpophalangeal_5_JointShape")
 
@@ -13897,7 +13897,7 @@ HAnimSegment3123 = x3d.HAnimSegment()
 HAnimSegment3123.setName("l_carpal_middle_phalanx_5")
 HAnimSegment3123.setDEF("hanim_l_carpal_middle_phalanx_5")
 
-HAnimSegment3123.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_middle_phalanx_5_Shape'/'''))
+HAnimSegment3123.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_middle_phalanx_5_Shape'/"""))
 Transform3124 = x3d.Transform()
 Transform3124.setUSE("l_carpal_proximal_interphalangeal_5_JointShape")
 
@@ -13918,7 +13918,7 @@ HAnimSegment3127 = x3d.HAnimSegment()
 HAnimSegment3127.setName("l_carpal_distal_phalanx_5")
 HAnimSegment3127.setDEF("hanim_l_carpal_distal_phalanx_5")
 
-HAnimSegment3127.addComments(x3d.CommentsBlock('''Shape USE='l_carpal_distal_phalanx_5_Shape'/'''))
+HAnimSegment3127.addComments(x3d.CommentsBlock("""Shape USE='l_carpal_distal_phalanx_5_Shape'/"""))
 Transform3128 = x3d.Transform()
 Transform3128.setUSE("l_carpal_distal_interphalangeal_5_JointShape")
 
@@ -13971,7 +13971,7 @@ HAnimSegment3134 = x3d.HAnimSegment()
 HAnimSegment3134.setName("r_clavicle")
 HAnimSegment3134.setDEF("hanim_r_clavicle")
 
-HAnimSegment3134.addComments(x3d.CommentsBlock('''Shape USE='r_clavicle_Shape'/'''))
+HAnimSegment3134.addComments(x3d.CommentsBlock("""Shape USE='r_clavicle_Shape'/"""))
 Transform3135 = x3d.Transform()
 Transform3135.setUSE("r_sternoclavicular_JointShape")
 
@@ -14006,7 +14006,7 @@ HAnimSegment3141 = x3d.HAnimSegment()
 HAnimSegment3141.setName("r_scapula")
 HAnimSegment3141.setDEF("hanim_r_scapula")
 
-HAnimSegment3141.addComments(x3d.CommentsBlock('''Shape USE='r_scapula_Shape'/'''))
+HAnimSegment3141.addComments(x3d.CommentsBlock("""Shape USE='r_scapula_Shape'/"""))
 Transform3142 = x3d.Transform()
 Transform3142.setUSE("r_acromioclavicular_JointShape")
 
@@ -14083,7 +14083,7 @@ HAnimSegment3157 = x3d.HAnimSegment()
 HAnimSegment3157.setName("r_upperarm")
 HAnimSegment3157.setDEF("hanim_r_upperarm")
 
-HAnimSegment3157.addComments(x3d.CommentsBlock('''Shape USE='r_upperarm_Shape'/'''))
+HAnimSegment3157.addComments(x3d.CommentsBlock("""Shape USE='r_upperarm_Shape'/"""))
 Transform3158 = x3d.Transform()
 Transform3158.setUSE("r_shoulder_JointShape")
 
@@ -14160,7 +14160,7 @@ HAnimSegment3173 = x3d.HAnimSegment()
 HAnimSegment3173.setName("r_forearm")
 HAnimSegment3173.setDEF("hanim_r_forearm")
 
-HAnimSegment3173.addComments(x3d.CommentsBlock('''Shape USE='r_forearm_Shape'/'''))
+HAnimSegment3173.addComments(x3d.CommentsBlock("""Shape USE='r_forearm_Shape'/"""))
 Transform3174 = x3d.Transform()
 Transform3174.setUSE("r_elbow_JointShape")
 
@@ -14209,7 +14209,7 @@ HAnimSegment3183 = x3d.HAnimSegment()
 HAnimSegment3183.setName("r_carpal")
 HAnimSegment3183.setDEF("hanim_r_carpal")
 
-HAnimSegment3183.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_Shape'/'''))
+HAnimSegment3183.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_Shape'/"""))
 Transform3184 = x3d.Transform()
 Transform3184.setUSE("r_radiocarpal_JointShape")
 
@@ -14256,7 +14256,7 @@ HAnimSegment3193 = x3d.HAnimSegment()
 HAnimSegment3193.setName("r_trapezium")
 HAnimSegment3193.setDEF("hanim_r_trapezium")
 
-HAnimSegment3193.addComments(x3d.CommentsBlock('''Shape USE='r_trapezium_Shape'/'''))
+HAnimSegment3193.addComments(x3d.CommentsBlock("""Shape USE='r_trapezium_Shape'/"""))
 Transform3194 = x3d.Transform()
 Transform3194.setUSE("r_midcarpal_1_JointShape")
 
@@ -14281,7 +14281,7 @@ HAnimSegment3198 = x3d.HAnimSegment()
 HAnimSegment3198.setName("r_metacarpal_1")
 HAnimSegment3198.setDEF("hanim_r_metacarpal_1")
 
-HAnimSegment3198.addComments(x3d.CommentsBlock('''Shape USE='r_metacarpal_1_Shape'/'''))
+HAnimSegment3198.addComments(x3d.CommentsBlock("""Shape USE='r_metacarpal_1_Shape'/"""))
 Transform3199 = x3d.Transform()
 Transform3199.setUSE("r_carpometacarpal_1_JointShape")
 
@@ -14316,7 +14316,7 @@ HAnimSegment3205 = x3d.HAnimSegment()
 HAnimSegment3205.setName("r_carpal_proximal_phalanx_1")
 HAnimSegment3205.setDEF("hanim_r_carpal_proximal_phalanx_1")
 
-HAnimSegment3205.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_proximal_phalanx_1_Shape'/'''))
+HAnimSegment3205.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_proximal_phalanx_1_Shape'/"""))
 Transform3206 = x3d.Transform()
 Transform3206.setUSE("r_metacarpophalangeal_1_JointShape")
 
@@ -14337,7 +14337,7 @@ HAnimSegment3209 = x3d.HAnimSegment()
 HAnimSegment3209.setName("r_carpal_distal_phalanx_1")
 HAnimSegment3209.setDEF("hanim_r_carpal_distal_phalanx_1")
 
-HAnimSegment3209.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_distal_phalanx_1_Shape'/'''))
+HAnimSegment3209.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_distal_phalanx_1_Shape'/"""))
 Transform3210 = x3d.Transform()
 Transform3210.setUSE("r_carpal_interphalangeal_1_JointShape")
 
@@ -14380,7 +14380,7 @@ HAnimSegment3216 = x3d.HAnimSegment()
 HAnimSegment3216.setName("r_trapezoid")
 HAnimSegment3216.setDEF("hanim_r_trapezoid")
 
-HAnimSegment3216.addComments(x3d.CommentsBlock('''Shape USE='r_trapezoid_Shape'/'''))
+HAnimSegment3216.addComments(x3d.CommentsBlock("""Shape USE='r_trapezoid_Shape'/"""))
 Transform3217 = x3d.Transform()
 Transform3217.setUSE("r_midcarpal_2_JointShape")
 
@@ -14401,7 +14401,7 @@ HAnimSegment3220 = x3d.HAnimSegment()
 HAnimSegment3220.setName("r_metacarpal_2")
 HAnimSegment3220.setDEF("hanim_r_metacarpal_2")
 
-HAnimSegment3220.addComments(x3d.CommentsBlock('''Shape USE='r_metacarpal_2_Shape'/'''))
+HAnimSegment3220.addComments(x3d.CommentsBlock("""Shape USE='r_metacarpal_2_Shape'/"""))
 Transform3221 = x3d.Transform()
 Transform3221.setUSE("r_carpometacarpal_2_JointShape")
 
@@ -14422,7 +14422,7 @@ HAnimSegment3224 = x3d.HAnimSegment()
 HAnimSegment3224.setName("r_carpal_proximal_phalanx_2")
 HAnimSegment3224.setDEF("hanim_r_carpal_proximal_phalanx_2")
 
-HAnimSegment3224.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_proximal_phalanx_2_Shape'/'''))
+HAnimSegment3224.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_proximal_phalanx_2_Shape'/"""))
 Transform3225 = x3d.Transform()
 Transform3225.setUSE("r_metacarpophalangeal_2_JointShape")
 
@@ -14443,7 +14443,7 @@ HAnimSegment3228 = x3d.HAnimSegment()
 HAnimSegment3228.setName("r_carpal_middle_phalanx_2")
 HAnimSegment3228.setDEF("hanim_r_carpal_middle_phalanx_2")
 
-HAnimSegment3228.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_middle_phalanx_2_Shape'/'''))
+HAnimSegment3228.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_middle_phalanx_2_Shape'/"""))
 Transform3229 = x3d.Transform()
 Transform3229.setUSE("r_carpal_proximal_interphalangeal_2_JointShape")
 
@@ -14464,7 +14464,7 @@ HAnimSegment3232 = x3d.HAnimSegment()
 HAnimSegment3232.setName("r_carpal_distal_phalanx_2")
 HAnimSegment3232.setDEF("hanim_r_carpal_distal_phalanx_2")
 
-HAnimSegment3232.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_distal_phalanx_2_Shape'/'''))
+HAnimSegment3232.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_distal_phalanx_2_Shape'/"""))
 Transform3233 = x3d.Transform()
 Transform3233.setUSE("r_carpal_distal_interphalangeal_2_JointShape")
 
@@ -14523,7 +14523,7 @@ HAnimSegment3242 = x3d.HAnimSegment()
 HAnimSegment3242.setName("r_capitate")
 HAnimSegment3242.setDEF("hanim_r_capitate")
 
-HAnimSegment3242.addComments(x3d.CommentsBlock('''Shape USE='r_capitate_Shape'/'''))
+HAnimSegment3242.addComments(x3d.CommentsBlock("""Shape USE='r_capitate_Shape'/"""))
 Transform3243 = x3d.Transform()
 Transform3243.setUSE("r_midcarpal_3_JointShape")
 
@@ -14544,7 +14544,7 @@ HAnimSegment3246 = x3d.HAnimSegment()
 HAnimSegment3246.setName("r_metacarpal_3")
 HAnimSegment3246.setDEF("hanim_r_metacarpal_3")
 
-HAnimSegment3246.addComments(x3d.CommentsBlock('''Shape USE='r_metacarpal_3_Shape'/'''))
+HAnimSegment3246.addComments(x3d.CommentsBlock("""Shape USE='r_metacarpal_3_Shape'/"""))
 Transform3247 = x3d.Transform()
 Transform3247.setUSE("r_carpometacarpal_3_JointShape")
 
@@ -14579,7 +14579,7 @@ HAnimSegment3253 = x3d.HAnimSegment()
 HAnimSegment3253.setName("r_carpal_proximal_phalanx_3")
 HAnimSegment3253.setDEF("hanim_r_carpal_proximal_phalanx_3")
 
-HAnimSegment3253.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_proximal_phalanx_3_Shape'/'''))
+HAnimSegment3253.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_proximal_phalanx_3_Shape'/"""))
 Transform3254 = x3d.Transform()
 Transform3254.setUSE("r_carpal_proximal_phalanx_3_JointShape")
 
@@ -14600,7 +14600,7 @@ HAnimSegment3257 = x3d.HAnimSegment()
 HAnimSegment3257.setName("r_carpal_middle_phalanx_3")
 HAnimSegment3257.setDEF("hanim_r_carpal_middle_phalanx_3")
 
-HAnimSegment3257.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_middle_phalanx_3_Shape'/'''))
+HAnimSegment3257.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_middle_phalanx_3_Shape'/"""))
 Transform3258 = x3d.Transform()
 Transform3258.setUSE("r_carpal_proximal_interphalangeal_3_JointShape")
 
@@ -14621,7 +14621,7 @@ HAnimSegment3261 = x3d.HAnimSegment()
 HAnimSegment3261.setName("r_carpal_distal_phalanx_3")
 HAnimSegment3261.setDEF("hanim_r_carpal_distal_phalanx_3")
 
-HAnimSegment3261.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_distal_phalanx_3_Shape'/'''))
+HAnimSegment3261.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_distal_phalanx_3_Shape'/"""))
 Transform3262 = x3d.Transform()
 Transform3262.setUSE("r_carpal_distal_interphalangeal_3_JointShape")
 
@@ -14666,7 +14666,7 @@ HAnimSegment3268 = x3d.HAnimSegment()
 HAnimSegment3268.setName("r_hamate")
 HAnimSegment3268.setDEF("hanim_r_hamate")
 
-HAnimSegment3268.addComments(x3d.CommentsBlock('''Shape USE='r_hamate_Shape'/'''))
+HAnimSegment3268.addComments(x3d.CommentsBlock("""Shape USE='r_hamate_Shape'/"""))
 Transform3269 = x3d.Transform()
 Transform3269.setUSE("r_midcarpal_4_5_JointShape")
 
@@ -14691,7 +14691,7 @@ HAnimSegment3273 = x3d.HAnimSegment()
 HAnimSegment3273.setName("r_metacarpal_4")
 HAnimSegment3273.setDEF("hanim_r_metacarpal_4")
 
-HAnimSegment3273.addComments(x3d.CommentsBlock('''Shape USE='r_metacarpal_4_Shape'/'''))
+HAnimSegment3273.addComments(x3d.CommentsBlock("""Shape USE='r_metacarpal_4_Shape'/"""))
 Transform3274 = x3d.Transform()
 Transform3274.setUSE("r_carpometacarpal_4_JointShape")
 
@@ -14712,7 +14712,7 @@ HAnimSegment3277 = x3d.HAnimSegment()
 HAnimSegment3277.setName("r_carpal_proximal_phalanx_4")
 HAnimSegment3277.setDEF("hanim_r_carpal_proximal_phalanx_4")
 
-HAnimSegment3277.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_proximal_phalanx_4_Shape'/'''))
+HAnimSegment3277.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_proximal_phalanx_4_Shape'/"""))
 Transform3278 = x3d.Transform()
 Transform3278.setUSE("r_metacarpophalangeal_4_JointShape")
 
@@ -14733,7 +14733,7 @@ HAnimSegment3281 = x3d.HAnimSegment()
 HAnimSegment3281.setName("r_carpal_middle_phalanx_4")
 HAnimSegment3281.setDEF("hanim_r_carpal_middle_phalanx_4")
 
-HAnimSegment3281.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_middle_phalanx_4_Shape'/'''))
+HAnimSegment3281.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_middle_phalanx_4_Shape'/"""))
 Transform3282 = x3d.Transform()
 Transform3282.setUSE("r_carpal_proximal_interphalangeal_4_JointShape")
 
@@ -14754,7 +14754,7 @@ HAnimSegment3285 = x3d.HAnimSegment()
 HAnimSegment3285.setName("r_carpal_distal_phalanx_4")
 HAnimSegment3285.setDEF("hanim_r_carpal_distal_phalanx_4")
 
-HAnimSegment3285.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_distal_phalanx_4_Shape'/'''))
+HAnimSegment3285.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_distal_phalanx_4_Shape'/"""))
 Transform3286 = x3d.Transform()
 Transform3286.setUSE("r_carpal_distal_interphalangeal_4_JointShape")
 
@@ -14799,7 +14799,7 @@ HAnimSegment3292 = x3d.HAnimSegment()
 HAnimSegment3292.setName("r_metacarpal_5")
 HAnimSegment3292.setDEF("hanim_r_metacarpal_5")
 
-HAnimSegment3292.addComments(x3d.CommentsBlock('''Shape USE='r_metacarpal_5_Shape'/'''))
+HAnimSegment3292.addComments(x3d.CommentsBlock("""Shape USE='r_metacarpal_5_Shape'/"""))
 Transform3293 = x3d.Transform()
 Transform3293.setUSE("r_carpometacarpal_5_JointShape")
 
@@ -14834,7 +14834,7 @@ HAnimSegment3299 = x3d.HAnimSegment()
 HAnimSegment3299.setName("r_carpal_proximal_phalanx_5")
 HAnimSegment3299.setDEF("hanim_r_carpal_proximal_phalanx_5")
 
-HAnimSegment3299.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_proximal_phalanx_5_Shape'/'''))
+HAnimSegment3299.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_proximal_phalanx_5_Shape'/"""))
 Transform3300 = x3d.Transform()
 Transform3300.setUSE("r_metacarpophalangeal_5_JointShape")
 
@@ -14855,7 +14855,7 @@ HAnimSegment3303 = x3d.HAnimSegment()
 HAnimSegment3303.setName("r_carpal_middle_phalanx_5")
 HAnimSegment3303.setDEF("hanim_r_carpal_middle_phalanx_5")
 
-HAnimSegment3303.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_middle_phalanx_5_Shape'/'''))
+HAnimSegment3303.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_middle_phalanx_5_Shape'/"""))
 Transform3304 = x3d.Transform()
 Transform3304.setUSE("r_carpal_proximal_interphalangeal_5_JointShape")
 
@@ -14876,7 +14876,7 @@ HAnimSegment3307 = x3d.HAnimSegment()
 HAnimSegment3307.setName("r_carpal_distal_phalanx_5")
 HAnimSegment3307.setDEF("hanim_r_carpal_distal_phalanx_5")
 
-HAnimSegment3307.addComments(x3d.CommentsBlock('''Shape USE='r_carpal_distal_phalanx_5_Shape'/'''))
+HAnimSegment3307.addComments(x3d.CommentsBlock("""Shape USE='r_carpal_distal_phalanx_5_Shape'/"""))
 Transform3308 = x3d.Transform()
 Transform3308.setUSE("r_carpal_distal_interphalangeal_5_JointShape")
 
@@ -14966,7 +14966,7 @@ TimeSensor3314.setLoop(True)
 
 Group3313.addChild(TimeSensor3314)
 
-Group3313.addComments(x3d.CommentsBlock('''indention-to-match Joint hierarchy'''))
+Group3313.addComments(x3d.CommentsBlock("""indention-to-match Joint hierarchy"""))
 PositionInterpolator3315 = x3d.PositionInterpolator()
 PositionInterpolator3315.setDEF("Default_humanoid_root_TranslationInterpolator")
 PositionInterpolator3315.setKey(x3d.doubleToFloat([0,0.5,1]))
@@ -15850,7 +15850,7 @@ OrientationInterpolator3461.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group3313.addChild(OrientationInterpolator3461)
 
-Group3313.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group3313.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE3462 = x3d.ROUTE()
 ROUTE3462.setFromField("fraction_changed")
 ROUTE3462.setFromNode("DefaultTimer")
@@ -16881,7 +16881,7 @@ ROUTE3608.setToNode("Default_r_carpal_distal_interphalangeal_5_RotationInterpola
 
 Group3313.addChild(ROUTE3608)
 
-Group3313.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group3313.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE3609 = x3d.ROUTE()
 ROUTE3609.setFromField("value_changed")
 ROUTE3609.setFromNode("Default_humanoid_root_TranslationInterpolator")
@@ -17922,7 +17922,7 @@ TimeSensor3757.setLoop(True)
 
 Group3756.addChild(TimeSensor3757)
 
-Group3756.addComments(x3d.CommentsBlock('''indention to match Joint hierarchy'''))
+Group3756.addComments(x3d.CommentsBlock("""indention to match Joint hierarchy"""))
 PositionInterpolator3758 = x3d.PositionInterpolator()
 PositionInterpolator3758.setDEF("Test_humanoid_root_TranslationInterpolator")
 PositionInterpolator3758.setKey(x3d.doubleToFloat([0,0.5,1]))
@@ -18806,7 +18806,7 @@ OrientationInterpolator3904.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group3756.addChild(OrientationInterpolator3904)
 
-Group3756.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group3756.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE3905 = x3d.ROUTE()
 ROUTE3905.setFromField("fraction_changed")
 ROUTE3905.setFromNode("TestTimer")
@@ -19837,7 +19837,7 @@ ROUTE4051.setToNode("Test_r_carpal_distal_interphalangeal_5_RotationInterpolator
 
 Group3756.addChild(ROUTE4051)
 
-Group3756.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group3756.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE4052 = x3d.ROUTE()
 ROUTE4052.setFromField("value_changed")
 ROUTE4052.setFromNode("Test_humanoid_root_TranslationInterpolator")
@@ -20872,7 +20872,7 @@ Scene22.addChild(Group3756)
 Group4199 = x3d.Group()
 Group4199.setDEF("Pitch1Animation_loa4")
 
-Group4199.addComments(x3d.CommentsBlock('''Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor.'''))
+Group4199.addComments(x3d.CommentsBlock("""Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor."""))
 TimeSensor4200 = x3d.TimeSensor()
 TimeSensor4200.setDEF("Pitch1Timer")
 TimeSensor4200.setCycleInterval(0)
@@ -21762,7 +21762,7 @@ OrientationInterpolator4347.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group4199.addChild(OrientationInterpolator4347)
 
-Group4199.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group4199.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE4348 = x3d.ROUTE()
 ROUTE4348.setFromField("fraction_changed")
 ROUTE4348.setFromNode("Pitch1Timer")
@@ -22793,7 +22793,7 @@ ROUTE4494.setToNode("Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolat
 
 Group4199.addChild(ROUTE4494)
 
-Group4199.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group4199.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE4495 = x3d.ROUTE()
 ROUTE4495.setFromField("value_changed")
 ROUTE4495.setFromNode("Pitch1_humanoid_root_TranslationInterpolator")
@@ -24716,7 +24716,7 @@ OrientationInterpolator4790.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group4642.addChild(OrientationInterpolator4790)
 
-Group4642.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group4642.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE4791 = x3d.ROUTE()
 ROUTE4791.setFromField("fraction_changed")
 ROUTE4791.setFromNode("Pitch2Timer")
@@ -25747,7 +25747,7 @@ ROUTE4937.setToNode("Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolat
 
 Group4642.addChild(ROUTE4937)
 
-Group4642.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group4642.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE4938 = x3d.ROUTE()
 ROUTE4938.setFromField("value_changed")
 ROUTE4938.setFromNode("Pitch2_humanoid_root_TranslationInterpolator")
@@ -26782,7 +26782,7 @@ Scene22.addChild(Group4642)
 Group5085 = x3d.Group()
 Group5085.setDEF("Yaw1Animation_loa4")
 
-Group5085.addComments(x3d.CommentsBlock('''Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model's +X direction, the model left over the left shoulder.'''))
+Group5085.addComments(x3d.CommentsBlock("""Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model's +X direction, the model left over the left shoulder."""))
 TimeSensor5086 = x3d.TimeSensor()
 TimeSensor5086.setDEF("Yaw1Timer")
 TimeSensor5086.setCycleInterval(0)
@@ -27672,7 +27672,7 @@ OrientationInterpolator5233.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,1,0,0.35,0,
 
 Group5085.addChild(OrientationInterpolator5233)
 
-Group5085.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group5085.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE5234 = x3d.ROUTE()
 ROUTE5234.setFromField("fraction_changed")
 ROUTE5234.setFromNode("Yaw1Timer")
@@ -28703,7 +28703,7 @@ ROUTE5380.setToNode("Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator
 
 Group5085.addChild(ROUTE5380)
 
-Group5085.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group5085.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE5381 = x3d.ROUTE()
 ROUTE5381.setFromField("value_changed")
 ROUTE5381.setFromNode("Yaw1_humanoid_root_TranslationInterpolator")
@@ -30626,7 +30626,7 @@ OrientationInterpolator5676.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group5528.addChild(OrientationInterpolator5676)
 
-Group5528.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group5528.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE5677 = x3d.ROUTE()
 ROUTE5677.setFromField("fraction_changed")
 ROUTE5677.setFromNode("Yaw2Timer")
@@ -31657,7 +31657,7 @@ ROUTE5823.setToNode("Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator
 
 Group5528.addChild(ROUTE5823)
 
-Group5528.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group5528.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE5824 = x3d.ROUTE()
 ROUTE5824.setFromField("value_changed")
 ROUTE5824.setFromNode("Yaw2_humanoid_root_TranslationInterpolator")
@@ -32692,7 +32692,7 @@ Scene22.addChild(Group5528)
 Group5971 = x3d.Group()
 Group5971.setDEF("Roll1Animation_loa4")
 
-Group5971.addComments(x3d.CommentsBlock('''Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model's +X direction, the model left toward the left shoulder.'''))
+Group5971.addComments(x3d.CommentsBlock("""Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model's +X direction, the model left toward the left shoulder."""))
 TimeSensor5972 = x3d.TimeSensor()
 TimeSensor5972.setDEF("Roll1Timer")
 TimeSensor5972.setCycleInterval(0)
@@ -33582,7 +33582,7 @@ OrientationInterpolator6119.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group5971.addChild(OrientationInterpolator6119)
 
-Group5971.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group5971.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE6120 = x3d.ROUTE()
 ROUTE6120.setFromField("fraction_changed")
 ROUTE6120.setFromNode("Roll1Timer")
@@ -34613,7 +34613,7 @@ ROUTE6266.setToNode("Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolato
 
 Group5971.addChild(ROUTE6266)
 
-Group5971.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group5971.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE6267 = x3d.ROUTE()
 ROUTE6267.setFromField("value_changed")
 ROUTE6267.setFromNode("Roll1_humanoid_root_TranslationInterpolator")
@@ -38604,7 +38604,7 @@ TimeSensor6858.setLoop(True)
 
 Group6857.addChild(TimeSensor6858)
 
-Group6857.addComments(x3d.CommentsBlock('''indention to match Joint hierarchy'''))
+Group6857.addComments(x3d.CommentsBlock("""indention to match Joint hierarchy"""))
 PositionInterpolator6859 = x3d.PositionInterpolator()
 PositionInterpolator6859.setDEF("Walk_humanoid_root_TranslationInterpolator")
 PositionInterpolator6859.setKey(x3d.doubleToFloat([0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1]))
@@ -39488,7 +39488,7 @@ OrientationInterpolator7005.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group6857.addChild(OrientationInterpolator7005)
 
-Group6857.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group6857.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE7006 = x3d.ROUTE()
 ROUTE7006.setFromField("fraction_changed")
 ROUTE7006.setFromNode("WalkTimer")
@@ -40519,7 +40519,7 @@ ROUTE7152.setToNode("Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator
 
 Group6857.addChild(ROUTE7152)
 
-Group6857.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group6857.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE7153 = x3d.ROUTE()
 ROUTE7153.setFromField("value_changed")
 ROUTE7153.setFromNode("Walk_humanoid_root_TranslationInterpolator")
@@ -41559,7 +41559,7 @@ TimeSensor7301.setLoop(True)
 
 Group7300.addChild(TimeSensor7301)
 
-Group7300.addComments(x3d.CommentsBlock('''indention to match Joint hierarchy'''))
+Group7300.addComments(x3d.CommentsBlock("""indention to match Joint hierarchy"""))
 PositionInterpolator7302 = x3d.PositionInterpolator()
 PositionInterpolator7302.setDEF("Run_humanoid_root_TranslationInterpolator")
 PositionInterpolator7302.setKey(x3d.doubleToFloat([0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1]))
@@ -42443,7 +42443,7 @@ OrientationInterpolator7448.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group7300.addChild(OrientationInterpolator7448)
 
-Group7300.addComments(x3d.CommentsBlock('''Timer to Interpolators'''))
+Group7300.addComments(x3d.CommentsBlock("""Timer to Interpolators"""))
 ROUTE7449 = x3d.ROUTE()
 ROUTE7449.setFromField("fraction_changed")
 ROUTE7449.setFromNode("RunTimer")
@@ -43474,7 +43474,7 @@ ROUTE7595.setToNode("Run_r_carpal_distal_interphalangeal_5_RotationInterpolator"
 
 Group7300.addChild(ROUTE7595)
 
-Group7300.addComments(x3d.CommentsBlock('''Interpolators to Joints'''))
+Group7300.addComments(x3d.CommentsBlock("""Interpolators to Joints"""))
 ROUTE7596 = x3d.ROUTE()
 ROUTE7596.setFromField("value_changed")
 ROUTE7596.setFromNode("Run_humanoid_root_TranslationInterpolator")
@@ -53357,7 +53357,7 @@ Group8629.addChild(ROUTE9071)
 
 Scene22.addChild(Group8629)
 
-Scene22.addComments(x3d.CommentsBlock('''Ball for Kick2 not included Group> <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'> <Shape DEF='ball_Shape'> <Appearance DEF='ball_Appearance'> <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/> </Appearance> <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'> <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/> </IndexedFaceSet> </Shape> <Viewpoint DEF='ballView_1' description='Ball View'/> </Transform> <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/> <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/> </Group'''))
+Scene22.addComments(x3d.CommentsBlock("""Ball for Kick2 not included Group> <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'> <Shape DEF='ball_Shape'> <Appearance DEF='ball_Appearance'> <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/> </Appearance> <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'> <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/> </IndexedFaceSet> </Shape> <Viewpoint DEF='ballView_1' description='Ball View'/> </Transform> <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/> <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/> </Group"""))
 Group9072 = x3d.Group()
 Group9072.setDEF("TimerControls")
 ROUTE9073 = x3d.ROUTE()
@@ -57668,4 +57668,4 @@ Scene22.addChild(ROUTE9708)
 
 X3D0.setScene(Scene22)
 X3D0.toFileX3D("../data/JinConcat11c.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JinConcat11c.new.graalpy.json")
+X3D0.toFileJSON("../data/JinConcat11c.new.graalpy.x3dj")

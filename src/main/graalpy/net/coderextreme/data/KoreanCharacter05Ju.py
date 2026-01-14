@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -75,7 +75,7 @@ meta14.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/
 head1.addMeta(meta14)
 meta15 = x3d.meta()
 meta15.setName("generator")
-meta15.setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview")
+meta15.setContent("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview")
 
 head1.addMeta(meta15)
 meta16 = x3d.meta()
@@ -85,7 +85,7 @@ meta16.setContent("Suwon University HAnim Editor")
 head1.addMeta(meta16)
 meta17 = x3d.meta()
 meta17.setName("generator")
-meta17.setContent("Gnu Image Manipulation Program, http://www.gimp.org")
+meta17.setContent("Gnu Image Manipulation Program, https://www.gimp.org")
 
 head1.addMeta(meta17)
 meta18 = x3d.meta()
@@ -121,7 +121,7 @@ HAnimHumanoid24.setDEF("hanim_Ju")
 HAnimHumanoid24.setScale(x3d.doubleToFloat([0.0225,0.0225,0.0225]))
 HAnimHumanoid24.setVersion("2.0")
 
-HAnimHumanoid24.addComments(x3d.CommentsBlock('''original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=female\" \"height=1.5\"''''))
+HAnimHumanoid24.addComments(x3d.CommentsBlock("""original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=female\" \"height=1.5\"'"""))
 MetadataSet25 = x3d.MetadataSet()
 MetadataSet25.setName("HAnimHumanoid.info")
 MetadataSet25.setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
@@ -1154,4 +1154,4 @@ Scene20.addChild(HAnimHumanoid24)
 
 X3D0.setScene(Scene20)
 X3D0.toFileX3D("../data/KoreanCharacter05Ju.new.graalpy.x3d")
-X3D0.toFileJSON("../data/KoreanCharacter05Ju.new.graalpy.json")
+X3D0.toFileJSON("../data/KoreanCharacter05Ju.new.graalpy.x3dj")

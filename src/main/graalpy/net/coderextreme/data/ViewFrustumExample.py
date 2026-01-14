@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -70,7 +70,7 @@ meta13.setContent("view culling frustum")
 head1.addMeta(meta13)
 meta14 = x3d.meta()
 meta14.setName("identifier")
-meta14.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d")
+meta14.setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
@@ -178,13 +178,13 @@ ExternProtoDeclare24.addField(field32)
 
 Scene17.addChild(ExternProtoDeclare24)
 
-Scene17.addComments(x3d.CommentsBlock('''Example use'''))
+Scene17.addComments(x3d.CommentsBlock("""Example use"""))
 ProtoInstance33 = x3d.ProtoInstance()
 ProtoInstance33.setName("ViewFrustum")
 fieldValue34 = x3d.fieldValue()
 fieldValue34.setName("ViewpointNode")
 
-fieldValue34.addComments(x3d.CommentsBlock('''prefer empty description to prevent entry in player's ViewpointList'''))
+fieldValue34.addComments(x3d.CommentsBlock("""prefer empty description to prevent entry in player's ViewpointList"""))
 Viewpoint35 = x3d.Viewpoint()
 Viewpoint35.setDescription("ViewFrustum ViewpointNode")
 
@@ -227,7 +227,7 @@ ProtoInstance33.addFieldValue(fieldValue42)
 
 Scene17.addChild(ProtoInstance33)
 
-Scene17.addComments(x3d.CommentsBlock('''Visualization assists'''))
+Scene17.addComments(x3d.CommentsBlock("""Visualization assists"""))
 Inline43 = x3d.Inline()
 Inline43.setDEF("GridXZ")
 Inline43.setUrl(["GridXZ_20x20Fixed.x3d"])
@@ -245,4 +245,4 @@ Scene17.addChild(Transform44)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/ViewFrustumExample.new.graalpy.x3d")
-X3D0.toFileJSON("../data/ViewFrustumExample.new.graalpy.json")
+X3D0.toFileJSON("../data/ViewFrustumExample.new.graalpy.x3dj")

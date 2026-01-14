@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -85,7 +85,7 @@ meta16.setContent("BS studio translation from .x3dv by Joe using BS Contact")
 head1.addMeta(meta16)
 meta17 = x3d.meta()
 meta17.setName("generator")
-meta17.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta17.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta17)
 meta18 = x3d.meta()
@@ -130,7 +130,7 @@ PointLight24.setLocation(x3d.doubleToFloat([0,10,-7]))
 
 Scene19.addChild(PointLight24)
 
-Scene19.addComments(x3d.CommentsBlock('''External from the Humanoid viewpoints'''))
+Scene19.addComments(x3d.CommentsBlock("""External from the Humanoid viewpoints"""))
 Viewpoint25 = x3d.Viewpoint()
 Viewpoint25.setDEF("Scene_InclinedView")
 Viewpoint25.setCenterOfRotation(x3d.doubleToFloat([0,0.85,0]))
@@ -187,7 +187,7 @@ MetadataSet33 = x3d.MetadataSet()
 MetadataSet33.setName("warnings")
 MetadataSet33.setReference("HAnim")
 
-MetadataSet33.addComments(x3d.CommentsBlock('''TODO experimental'''))
+MetadataSet33.addComments(x3d.CommentsBlock("""TODO experimental"""))
 MetadataString34 = x3d.MetadataString()
 MetadataString34.setName("SymmetricalLeftRight")
 MetadataString34.setReference("correction options: ignore, warn, average, left, right, largest, smallest")
@@ -213,7 +213,7 @@ Transform37.addChild(Viewpoint38)
 Shape39 = x3d.Shape()
 Shape39.setDEF("AxisLinesShape")
 
-Shape39.addComments(x3d.CommentsBlock('''RGB lines showing XYZ axes'''))
+Shape39.addComments(x3d.CommentsBlock("""RGB lines showing XYZ axes"""))
 IndexedLineSet40 = x3d.IndexedLineSet()
 IndexedLineSet40.setColorIndex([0,1,2])
 IndexedLineSet40.setColorPerVertex(False)
@@ -1663,7 +1663,7 @@ TimeSensor243.setLoop(True)
 
 Group242.addChild(TimeSensor243)
 
-Group242.addComments(x3d.CommentsBlock('''Interpolators'''))
+Group242.addComments(x3d.CommentsBlock("""Interpolators"""))
 OrientationInterpolator244 = x3d.OrientationInterpolator()
 OrientationInterpolator244.setDEF("HumanoidRoot_RotationInterpolator")
 OrientationInterpolator244.setKey(x3d.doubleToFloat([0,0.1,0.4,0.6,1]))
@@ -2237,7 +2237,7 @@ Group242.addChild(OrientationInterpolator338)
 
 Scene19.addChild(Group242)
 
-Scene19.addComments(x3d.CommentsBlock('''TimeSensor to Interpolators'''))
+Scene19.addComments(x3d.CommentsBlock("""TimeSensor to Interpolators"""))
 ROUTE339 = x3d.ROUTE()
 ROUTE339.setFromField("fraction_changed")
 ROUTE339.setFromNode("KickTimer")
@@ -2904,7 +2904,7 @@ ROUTE433.setToNode("r_pinky3_RotationInterpolator")
 
 Scene19.addChild(ROUTE433)
 
-Scene19.addComments(x3d.CommentsBlock('''Routes from Interpolators to Joe_ model Joints'''))
+Scene19.addComments(x3d.CommentsBlock("""Routes from Interpolators to Joe_ model Joints"""))
 ROUTE434 = x3d.ROUTE()
 ROUTE434.setFromField("value_changed")
 ROUTE434.setFromNode("HumanoidRoot_RotationInterpolator")
@@ -3573,7 +3573,7 @@ Scene19.addChild(ROUTE528)
 Group529 = x3d.Group()
 Group529.setDEF("DisplacersAnimationGroup")
 
-Group529.addComments(x3d.CommentsBlock('''TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor'''))
+Group529.addComments(x3d.CommentsBlock("""TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor"""))
 ScalarInterpolator530 = x3d.ScalarInterpolator()
 ScalarInterpolator530.setDEF("skull_tipInterpolator")
 ScalarInterpolator530.setKey(x3d.doubleToFloat([0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]))
@@ -3662,7 +3662,7 @@ Transform538.addChild(Viewpoint545)
 
 Group537.addChild(Transform538)
 
-Group537.addComments(x3d.CommentsBlock('''Ball Animation interpolators'''))
+Group537.addComments(x3d.CommentsBlock("""Ball Animation interpolators"""))
 PositionInterpolator546 = x3d.PositionInterpolator()
 PositionInterpolator546.setDEF("ball_TranslationInterpolator")
 PositionInterpolator546.setKey(x3d.doubleToFloat([0,0.4,0.409,1]))
@@ -3676,7 +3676,7 @@ OrientationInterpolator547.setKeyValue(x3d.doubleToFloat([1,0,1,0.25,-1,0,-1,1.3
 
 Group537.addChild(OrientationInterpolator547)
 
-Group537.addComments(x3d.CommentsBlock('''Ball Animation Routes'''))
+Group537.addComments(x3d.CommentsBlock("""Ball Animation Routes"""))
 ROUTE548 = x3d.ROUTE()
 ROUTE548.setFromField("fraction_changed")
 ROUTE548.setFromNode("KickTimer")
@@ -3797,4 +3797,4 @@ Scene19.addChild(Group552)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/JoeSkinTexcoordDisplacerKick.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKick.new.graalpy.json")
+X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKick.new.graalpy.x3dj")

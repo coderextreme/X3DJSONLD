@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -75,7 +75,7 @@ meta14.setContent("http://www.revemonde.net/UniversalMedia/textures/nature/leave
 head1.addMeta(meta14)
 meta15 = x3d.meta()
 meta15.setName("generator")
-meta15.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta15.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta15)
 meta16 = x3d.meta()
@@ -493,7 +493,7 @@ Shape114.setUSE("plank")
 
 Transform113.addChild(Shape114)
 
-Transform113.addComments(x3d.CommentsBlock('''Main Verticle Support'''))
+Transform113.addComments(x3d.CommentsBlock("""Main Verticle Support"""))
 
 Transform104.addChild(Transform113)
 Transform115 = x3d.Transform()
@@ -637,13 +637,13 @@ Shape144.setGeometry(Sphere147)
 
 Transform143.addChild(Shape144)
 
-Transform143.addComments(x3d.CommentsBlock('''knott'''))
+Transform143.addComments(x3d.CommentsBlock("""knott"""))
 
 Transform138.addChild(Transform143)
 
 Transform129.addChild(Transform138)
 
-Transform129.addComments(x3d.CommentsBlock('''The Unicorn'''))
+Transform129.addComments(x3d.CommentsBlock("""The Unicorn"""))
 Transform148 = x3d.Transform()
 Transform148.setRotation(x3d.doubleToFloat([0,0,1,1.2]))
 Transform148.setScale(x3d.doubleToFloat([0.2,0.2,0.2]))
@@ -665,7 +665,7 @@ Transform148.addChild(Shape149)
 Transform153 = x3d.Transform()
 Transform153.setTranslation(x3d.doubleToFloat([0,-2.5,0]))
 
-Transform153.addComments(x3d.CommentsBlock('''The Unicorn'''))
+Transform153.addComments(x3d.CommentsBlock("""The Unicorn"""))
 Shape154 = x3d.Shape()
 Shape154.setUSE("Torus")
 
@@ -684,7 +684,7 @@ Shape156.setAppearance(Appearance158)
 
 Transform155.addChild(Shape156)
 
-Transform155.addComments(x3d.CommentsBlock('''Knott'''))
+Transform155.addComments(x3d.CommentsBlock("""Knott"""))
 
 Transform153.addChild(Transform155)
 
@@ -722,7 +722,7 @@ Transform164.setTranslation(x3d.doubleToFloat([-17,-4.5,0]))
 Transform165 = x3d.Transform()
 Transform165.setScale(x3d.doubleToFloat([0.2,0.2,0.2]))
 
-Transform165.addComments(x3d.CommentsBlock('''Knot'''))
+Transform165.addComments(x3d.CommentsBlock("""Knot"""))
 Shape166 = x3d.Shape()
 Shape166.setUSE("Torus")
 
@@ -991,7 +991,7 @@ Shape223.setAppearance(Appearance225)
 
 Transform222.addChild(Shape223)
 
-Transform222.addComments(x3d.CommentsBlock('''Top Pivot'''))
+Transform222.addComments(x3d.CommentsBlock("""Top Pivot"""))
 
 Transform104.addChild(Transform222)
 Transform227 = x3d.Transform()
@@ -1029,7 +1029,7 @@ Transform227.addChild(Transform232)
 Transform236 = x3d.Transform()
 Transform236.setTranslation(x3d.doubleToFloat([4,14,2.5]))
 
-Transform236.addComments(x3d.CommentsBlock('''CounterWeight'''))
+Transform236.addComments(x3d.CommentsBlock("""CounterWeight"""))
 Shape237 = x3d.Shape()
 Cylinder238 = x3d.Cylinder()
 Cylinder238.setHeight(4)
@@ -1113,7 +1113,7 @@ Transform254.addChild(Transform255)
 
 Transform246.addChild(Transform254)
 
-Transform246.addComments(x3d.CommentsBlock('''Release Pin'''))
+Transform246.addComments(x3d.CommentsBlock("""Release Pin"""))
 Transform256 = x3d.Transform()
 Transform256.setDEF("Pin")
 Transform256.setRotation(x3d.doubleToFloat([1,0,0,-1.57]))
@@ -1858,4 +1858,4 @@ Scene17.addChild(ROUTE383)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/Trebuchet.new.graalpy.x3d")
-X3D0.toFileJSON("../data/Trebuchet.new.graalpy.json")
+X3D0.toFileJSON("../data/Trebuchet.new.graalpy.x3dj")
