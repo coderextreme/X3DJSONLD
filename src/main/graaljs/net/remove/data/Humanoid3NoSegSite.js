@@ -12,7 +12,7 @@ function doubleToFloat(d) {
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("Humanoid3NoSegSite.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3NoSegSite.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3NoSegSite.x3d"))
         .addMeta(new meta().setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta(new meta().setName("generator").setContent("h2.pl"))
         .addMeta(new meta().setName("modified").setContent("14 Jan 2023"))
@@ -254,4 +254,4 @@ function doubleToFloat(d) {
           .addJoints(new HAnimJoint().setContainerFieldOverride("joints").setUSE("hanim_r_carpal_proximal_interphalangeal_5"))
           .addJoints(new HAnimJoint().setContainerFieldOverride("joints").setUSE("hanim_r_carpal_distal_interphalangeal_5"))))      ;
     X3D0.toFileX3D("../data/Humanoid3NoSegSite.new.graal.x3d");
-    X3D0.toFileJSON("../data/Humanoid3NoSegSite.new.graal.json");
+    X3D0.toFileJSON("../data/Humanoid3NoSegSite.new.graal.x3dj");

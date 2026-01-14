@@ -68,4 +68,4 @@ function doubleToFloat(d) {
                 .setAppearance(new Appearance().setUSE("CameraAppearance"))
                 .setGeometry(new IndexedFaceSet().setUSE("pSphere1_0Geo")))))))      ;
     X3D0.toFileX3D("../data/CameraShape.new.graal.x3d");
-    X3D0.toFileJSON("../data/CameraShape.new.graal.json");
+    X3D0.toFileJSON("../data/CameraShape.new.graal.x3dj");

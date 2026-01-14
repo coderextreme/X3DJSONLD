@@ -114,4 +114,4 @@ ProtoInstance0
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("pierHeight").setValue("2"));
     X3D0.toFileX3D("../data/ArchPrototype.new.graal.x3d");
-    X3D0.toFileJSON("../data/ArchPrototype.new.graal.json");
+    X3D0.toFileJSON("../data/ArchPrototype.new.graal.x3dj");

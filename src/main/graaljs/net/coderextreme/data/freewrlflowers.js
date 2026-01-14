@@ -24,9 +24,10 @@ var ProtoInstance6 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
+        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(Java.to(doubleToFloat([0,0,50]), Java.type("float[]"))))
         .addChild(new Background().setBackUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]"))))
         .addChild(new Group()
-          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(Java.to(["../data/flowerproto.x3d#FlowerProto"], Java.type("java.lang.String[]")))
+          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(Java.to(["../data/flowerprotofreewrl.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"], Java.type("java.lang.String[]")))
             .addField(new field().setType(field.TYPE_MFSTRING).setName("vertex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
             .addField(new field().setType(field.TYPE_MFSTRING).setName("fragment").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .addChild(new ProtoDeclare().setName("flower")
@@ -44,4 +45,4 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/freewrl.fs\""));
     X3D0.toFileX3D("../data/freewrlflowers.new.graal.x3d");
-    X3D0.toFileJSON("../data/freewrlflowers.new.graal.json");
+    X3D0.toFileJSON("../data/freewrlflowers.new.graal.x3dj");

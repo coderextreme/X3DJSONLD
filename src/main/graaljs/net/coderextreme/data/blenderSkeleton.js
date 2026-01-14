@@ -1798,4 +1798,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Armature_Clock").setToField("set_fraction").setToNode("Armature_OI_r_carpal_distal_phalanx_5"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("Armature_OI_r_carpal_distal_phalanx_5").setToField("rotation").setToNode("hanim_r_carpal_distal_phalanx_5")))      ;
     X3D0.toFileX3D("../data/blenderSkeleton.new.graal.x3d");
-    X3D0.toFileJSON("../data/blenderSkeleton.new.graal.json");
+    X3D0.toFileJSON("../data/blenderSkeleton.new.graal.x3dj");

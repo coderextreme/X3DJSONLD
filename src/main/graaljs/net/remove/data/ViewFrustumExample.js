@@ -23,7 +23,7 @@ var ProtoInstance0 = null;
         .addMeta(new meta().setName("Image").setContent("ViewpointCalculator.png"))
         .addMeta(new meta().setName("Image").setContent("ViewpointCalculatorComposed.png"))
         .addMeta(new meta().setName("subject").setContent("view culling frustum"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
@@ -66,4 +66,4 @@ ProtoInstance0
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("trace").setValue("true"));
     X3D0.toFileX3D("../data/ViewFrustumExample.new.graal.x3d");
-    X3D0.toFileJSON("../data/ViewFrustumExample.new.graal.json");
+    X3D0.toFileJSON("../data/ViewFrustumExample.new.graal.x3dj");

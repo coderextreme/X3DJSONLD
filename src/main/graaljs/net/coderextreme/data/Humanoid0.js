@@ -12,7 +12,7 @@ function doubleToFloat(d) {
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("Humanoid0.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"))
         .addMeta(new meta().setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta(new meta().setName("generator").setContent("h2.pl"))
         .addMeta(new meta().setName("modified").setContent("14 Jan 2023"))
@@ -61,6 +61,6 @@ function doubleToFloat(d) {
               .setMaterial(new Material().setDEF("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]"))).setShininess(0.6).setTransparency(1))))
           .setSkinCoord(new Coordinate().setContainerFieldOverride("skinCoord").setUSE("TheSkinCoord"))
           .addSkeleton(new HAnimJoint("hanim_HAnim").setName("humanoid_root").setDEF("hanim_humanoid_root").setUlimit(Java.to(doubleToFloat([0,0,0]), Java.type("float[]"))).setLlimit(Java.to(doubleToFloat([0,0,0]), Java.type("float[]"))).setContainerFieldOverride("skeleton"))
-          .addJoints(new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints").setUSE("hanim_"))))      ;
+          .addJoints(new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints").setUSE("hanim_humanoid_root"))))      ;
     X3D0.toFileX3D("../data/Humanoid0.new.graal.x3d");
-    X3D0.toFileJSON("../data/Humanoid0.new.graal.json");
+    X3D0.toFileJSON("../data/Humanoid0.new.graal.x3dj");

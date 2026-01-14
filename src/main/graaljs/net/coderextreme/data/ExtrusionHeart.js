@@ -26,4 +26,4 @@ function doubleToFloat(d) {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.8,0.3,0.3]), Java.type("float[]"))))))))      ;
     X3D0.toFileX3D("../data/ExtrusionHeart.new.graal.x3d");
-    X3D0.toFileJSON("../data/ExtrusionHeart.new.graal.json");
+    X3D0.toFileJSON("../data/ExtrusionHeart.new.graal.x3dj");

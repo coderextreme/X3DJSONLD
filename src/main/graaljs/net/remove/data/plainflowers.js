@@ -40,8 +40,8 @@ var ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))))      ;
 ProtoInstance0
-                  .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_plain.vs\""));
+                  .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/gl_flowers_plain.vs\""));
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/plain.fs\""));
     X3D0.toFileX3D("../data/plainflowers.new.graal.x3d");
-    X3D0.toFileJSON("../data/plainflowers.new.graal.json");
+    X3D0.toFileJSON("../data/plainflowers.new.graal.x3dj");

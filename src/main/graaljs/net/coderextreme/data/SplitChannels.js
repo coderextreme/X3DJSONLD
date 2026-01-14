@@ -85,4 +85,4 @@ function doubleToFloat(d) {
               .setTexture(new ImageTexture().setUrl(Java.to(["images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"], Java.type("java.lang.String[]")))))
             .setGeometry(new Box().setSize(Java.to(doubleToFloat([100,100,0.001]), Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/SplitChannels.new.graal.x3d");
-    X3D0.toFileJSON("../data/SplitChannels.new.graal.json");
+    X3D0.toFileJSON("../data/SplitChannels.new.graal.x3dj");

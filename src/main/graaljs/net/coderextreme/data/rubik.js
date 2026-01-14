@@ -26,7 +26,7 @@ var ProtoInstance9 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d"))
         .addMeta(new meta().setName("description").setContent("a kind of rubik cube with spheres")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
+        .addChild(new NavigationInfo().setType(Java.to(["ANY","EXAMINE","WALK","FLY","LOOKAT"], Java.type("java.lang.String[]"))))
         .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(Java.to(doubleToFloat([0,0,12]), Java.type("float[]"))))
         .addChild(new ProtoDeclare().setName("sphereproto")
           .setProtoInterface(new ProtoInterface()
@@ -91,4 +91,4 @@ ProtoInstance8
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
     X3D0.toFileX3D("../data/rubik.new.graal.x3d");
-    X3D0.toFileJSON("../data/rubik.new.graal.json");
+    X3D0.toFileJSON("../data/rubik.new.graal.x3dj");

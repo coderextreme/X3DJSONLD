@@ -16,9 +16,9 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("created").setContent("13 December 2001"))
         .addMeta(new meta().setName("modified").setContent("23 May 2020"))
         .addMeta(new meta().setName("warning").setContent("not yet tested, need to compare with NancyDivingExample interpolators"))
-        .addMeta(new meta().setName("reference").setContent("http://www.HAnim.org"))
-        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Models"))
-        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Nodes"))
+        .addMeta(new meta().setName("reference").setContent("https://www.HAnim.org"))
+        .addMeta(new meta().setName("reference").setContent("https://HAnim.org/Models"))
+        .addMeta(new meta().setName("reference").setContent("https://HAnim.org/Nodes"))
         .addMeta(new meta().setName("subject").setContent("Swimming flutter kick Animation HAnim 2001"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
@@ -139,4 +139,4 @@ function doubleToFloat(d) {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,0.2]), Java.type("float[]"))))))))      ;
     X3D0.toFileX3D("../data/LOA1_SwimmingFlutterKickAnimation.new.graal.x3d");
-    X3D0.toFileJSON("../data/LOA1_SwimmingFlutterKickAnimation.new.graal.json");
+    X3D0.toFileJSON("../data/LOA1_SwimmingFlutterKickAnimation.new.graal.x3dj");

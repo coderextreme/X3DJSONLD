@@ -74,4 +74,4 @@ ProtoInstance3
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0,1,0]), Java.type("float[]")))))));
     X3D0.toFileX3D("../data/BoxEm.new.graal.x3d");
-    X3D0.toFileJSON("../data/BoxEm.new.graal.json");
+    X3D0.toFileJSON("../data/BoxEm.new.graal.x3dj");

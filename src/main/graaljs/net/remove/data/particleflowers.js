@@ -144,4 +144,4 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("x_ite").setToField("pdelta"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("x_ite").setToField("tdelta"))))      ;
     X3D0.toFileX3D("../data/particleflowers.new.graal.x3d");
-    X3D0.toFileJSON("../data/particleflowers.new.graal.json");
+    X3D0.toFileJSON("../data/particleflowers.new.graal.x3dj");

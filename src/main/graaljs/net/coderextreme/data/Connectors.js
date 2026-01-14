@@ -55,7 +55,7 @@ var ProtoInstance41 = null;
         .addMeta(new meta().setName("comment").setContent("World of Titania"))
         .addMeta(new meta().setName("created").setContent("Fri, 04 Sep 2015 10:19:01 GMT"))
         .addMeta(new meta().setName("creator").setContent("Holger Seelig"))
-        .addMeta(new meta().setName("generator").setContent("Titania V3.0.4, http://titania.create3000.de"))
+        .addMeta(new meta().setName("generator").setContent("Titania V3.0.4, https://titania.create3000.de"))
         .addMeta(new meta().setName("identifier").setContent("file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d"))
         .addMeta(new meta().setName("modified").setContent("Tue, 25 Jul 2017 09:42:17 GMT"))
         .addMeta(new meta().setName("title").setContent("Connectors")))
@@ -350,4 +350,4 @@ ProtoInstance31
             .addFieldValue(new fieldValue().setName("input")
               .addChild(ProtoInstance33 = new ProtoInstance().setName("Node").setUSE("N8")));
     X3D0.toFileX3D("../data/Connectors.new.graal.x3d");
-    X3D0.toFileJSON("../data/Connectors.new.graal.json");
+    X3D0.toFileJSON("../data/Connectors.new.graal.x3dj");

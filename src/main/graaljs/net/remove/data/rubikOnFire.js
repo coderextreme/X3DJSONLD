@@ -26,7 +26,7 @@ var ProtoInstance9 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"))
         .addMeta(new meta().setName("description").setContent("a white rubik cube")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
+        .addChild(new NavigationInfo().setType(Java.to(["ANY","EXAMINE","WALK","FLY","LOOKAT"], Java.type("java.lang.String[]"))))
         .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(Java.to(doubleToFloat([0,0,12]), Java.type("float[]"))))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
@@ -121,4 +121,4 @@ ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
             .addChild(new Box().setSize(Java.to(doubleToFloat([1,1,1]), Java.type("float[]")))));
     X3D0.toFileX3D("../data/rubikOnFire.new.graal.x3d");
-    X3D0.toFileJSON("../data/rubikOnFire.new.graal.json");
+    X3D0.toFileJSON("../data/rubikOnFire.new.graal.x3dj");

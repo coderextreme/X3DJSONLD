@@ -149,33 +149,33 @@ var ProtoInstance12 = null;
         .addChild(new ROUTE().setFromNode("G4").setFromField("translation").setToNode("connector3").setToField("set_endpoint")))      ;
 ProtoInstance4
           .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance5 = new ProtoInstance().setUSE("G1")));
+            .addChild(ProtoInstance5 = new ProtoInstance().setName("point").setUSE("G1")));
 ProtoInstance4
           .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance6 = new ProtoInstance().setUSE("G2")));
+            .addChild(ProtoInstance6 = new ProtoInstance().setName("point").setUSE("G2")));
 ProtoInstance4
           .addFieldValue(new fieldValue().setName("set_startpoint"));
 ProtoInstance4
           .addFieldValue(new fieldValue().setName("set_endpoint"));
 ProtoInstance7
           .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance8 = new ProtoInstance().setUSE("G1")));
+            .addChild(ProtoInstance8 = new ProtoInstance().setName("point").setUSE("G1")));
 ProtoInstance7
           .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance9 = new ProtoInstance().setUSE("G3")));
+            .addChild(ProtoInstance9 = new ProtoInstance().setName("point").setUSE("G3")));
 ProtoInstance7
           .addFieldValue(new fieldValue().setName("set_startpoint"));
 ProtoInstance7
           .addFieldValue(new fieldValue().setName("set_endpoint"));
 ProtoInstance10
           .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance11 = new ProtoInstance().setUSE("G1")));
+            .addChild(ProtoInstance11 = new ProtoInstance().setName("point").setUSE("G1")));
 ProtoInstance10
           .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance12 = new ProtoInstance().setUSE("G4")));
+            .addChild(ProtoInstance12 = new ProtoInstance().setName("point").setUSE("G4")));
 ProtoInstance10
           .addFieldValue(new fieldValue().setName("set_startpoint"));
 ProtoInstance10
           .addFieldValue(new fieldValue().setName("set_endpoint"));
     X3D0.toFileX3D("../data/arc.new.graal.x3d");
-    X3D0.toFileJSON("../data/arc.new.graal.json");
+    X3D0.toFileJSON("../data/arc.new.graal.x3dj");

@@ -23,7 +23,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("reference").setContent("Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under \"Fair Use\" clause of the DMCA"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm"))
         .addMeta(new meta().setName("reference").setContent("http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("Trebuchet.x3d"))
@@ -491,4 +491,4 @@ function set_fraction ( fraction, eventTime )
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("clock").setToField("set_fraction").setToNode("pinpath"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("pinpath").setToField("set_translation").setToNode("Pin")))      ;
     X3D0.toFileX3D("../data/Trebuchet.new.graal.x3d");
-    X3D0.toFileJSON("../data/Trebuchet.new.graal.json");
+    X3D0.toFileJSON("../data/Trebuchet.new.graal.x3dj");

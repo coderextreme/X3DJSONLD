@@ -144,4 +144,4 @@ ProtoInstance2
 ProtoInstance2
           .addFieldValue(new fieldValue().setName("set_endpoint"));
     X3D0.toFileX3D("../data/arc1.new.graal.x3d");
-    X3D0.toFileJSON("../data/arc1.new.graal.json");
+    X3D0.toFileJSON("../data/arc1.new.graal.x3dj");

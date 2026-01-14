@@ -58,4 +58,4 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/x_ite.fs\""));
     X3D0.toFileX3D("../data/sphereflowers.new.graal.x3d");
-    X3D0.toFileJSON("../data/sphereflowers.new.graal.json");
+    X3D0.toFileJSON("../data/sphereflowers.new.graal.x3dj");

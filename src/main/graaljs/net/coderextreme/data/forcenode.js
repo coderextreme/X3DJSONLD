@@ -136,4 +136,4 @@ ProtoInstance2
 ProtoInstance3
             .addFieldValue(new fieldValue().setName("position").setValue("50 50 -50"));
     X3D0.toFileX3D("../data/forcenode.new.graal.x3d");
-    X3D0.toFileJSON("../data/forcenode.new.graal.json");
+    X3D0.toFileJSON("../data/forcenode.new.graal.x3dj");

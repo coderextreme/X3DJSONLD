@@ -38,13 +38,15 @@ function doubleToFloat(d) {
         .addChild(new Viewpoint().setDescription("Right View").setOrientation(Java.to(doubleToFloat([0,1,0,1.57]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([10,0,0]), Java.type("float[]"))))
         .addChild(new Viewpoint().setDescription("Left View").setOrientation(Java.to(doubleToFloat([0,1,0,-1.57]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([-10,0,0]), Java.type("float[]"))))
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE","WALK","FLY","ANY"], Java.type("java.lang.String[]"))))
+        .addComments(new CommentsBlock("<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture().setImage(Java.to([2,2,4,0xFF0000FF| 0,16711935,0xFFFFFFFF| 0,0xFFFF00FF| 0], Java.type("int[]")))))
+            .setTexture(new PixelTexture().setImage(Java.to([2,2,4,0xFF0000FF| 0,16711935,0xFFFFFFFF| 0,0xFFFF00FF| 0], Java.type("int[]")))
+              .setTextureProperties(new TextureProperties().setMagnificationFilter("NEAREST_PIXEL"))))
           .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(Java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], Java.type("int[]"))).setCreaseAngle(0.5).setTexCoordIndex(Java.to([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1], Java.type("int[]")))
             .setColor(new Color().setColor(Java.to(doubleToFloat([0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]), Java.type("float[]"))))
             .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]), Java.type("float[]"))))
             .setTexCoord(new TextureCoordinate().setPoint(Java.to(doubleToFloat([-1,2,-1,-1,2,2,2,-1]), Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_plus.new.graal.x3d");
-    X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_plus.new.graal.json");
+    X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_plus.new.graal.x3dj");

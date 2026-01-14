@@ -10,6 +10,7 @@ function doubleToFloat(d) {
 }
       var X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -18,7 +19,6 @@ function doubleToFloat(d) {
         .addComponent(new component().setName("Rendering").setLevel(1))
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
-        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addMeta(new meta().setName("title").setContent("bumpyfreewrl.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("A flower"))
@@ -57,4 +57,4 @@ function doubleToFloat(d) {
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(Java.to(["../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(Java.to(["../shaders/freewrl_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"], Java.type("java.lang.String[]")))))))))      ;
     X3D0.toFileX3D("../data/bumpyfreewrl.new.graal.x3d");
-    X3D0.toFileJSON("../data/bumpyfreewrl.new.graal.json");
+    X3D0.toFileJSON("../data/bumpyfreewrl.new.graal.x3dj");

@@ -63,4 +63,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
         .addChild(new ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")))      ;
     X3D0.toFileX3D("../data/MyBounce.new.graal.x3d");
-    X3D0.toFileJSON("../data/MyBounce.new.graal.json");
+    X3D0.toFileJSON("../data/MyBounce.new.graal.x3dj");

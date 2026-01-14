@@ -152,4 +152,4 @@ var ProtoInstance2 = null;
         .addChild(ProtoInstance1 = new ProtoInstance().setName("flower"))
         .addChild(ProtoInstance2 = new ProtoInstance().setName("flower")))      ;
     X3D0.toFileX3D("../data/flowers.new.graal.x3d");
-    X3D0.toFileJSON("../data/flowers.new.graal.json");
+    X3D0.toFileJSON("../data/flowers.new.graal.x3dj");

@@ -23,4 +23,4 @@ function doubleToFloat(d) {
             .setAppearance(new Appearance()
               .setMaterial(new Material())))))      ;
     X3D0.toFileX3D("../data/AllenBox.new.graal.x3d");
-    X3D0.toFileJSON("../data/AllenBox.new.graal.json");
+    X3D0.toFileJSON("../data/AllenBox.new.graal.x3dj");

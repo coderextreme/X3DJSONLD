@@ -28,4 +28,4 @@ var ProtoInstance0 = null;
                 .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")))      ;
     X3D0.toFileX3D("../data/asteroids.new.graal.x3d");
-    X3D0.toFileJSON("../data/asteroids.new.graal.json");
+    X3D0.toFileJSON("../data/asteroids.new.graal.x3dj");

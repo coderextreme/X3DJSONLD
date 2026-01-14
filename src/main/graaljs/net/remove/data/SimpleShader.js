@@ -11,6 +11,7 @@ function doubleToFloat(d) {
 var ProtoInstance0 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("meta content='under development' name='warning'/"))
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addMeta(new meta().setName("title").setContent("SimpleShader.x3d"))
         .addMeta(new meta().setName("description").setContent("Simple shader example"))
@@ -30,8 +31,7 @@ var ProtoInstance0 = null;
         .addMeta(new meta().setName("outputStyle").setContent("nicest"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
-        .addMeta(new meta().setName("license").setContent("../../license.html"))
-        .addComments(new CommentsBlock("meta content='under development' name='warning'/")))
+        .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("myPrototype")
           .setProtoInterface(new ProtoInterface()
@@ -65,4 +65,4 @@ var ProtoInstance0 = null;
               .addValue(new MetadataDouble().setName("centerOfRotation").setDEF("centerOfRotation").setReference("http://titania.create3000.de").setValue(Java.to([-0.808320198626341,-0.358072370409949,0.22817191560906], Java.type("double[]")))))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("myPrototype")))      ;
     X3D0.toFileX3D("../data/SimpleShader.new.graal.x3d");
-    X3D0.toFileJSON("../data/SimpleShader.new.graal.json");
+    X3D0.toFileJSON("../data/SimpleShader.new.graal.x3dj");

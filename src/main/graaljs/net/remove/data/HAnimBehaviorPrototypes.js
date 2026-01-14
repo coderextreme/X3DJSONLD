@@ -2234,8 +2234,8 @@ ProtoInstance1
           .addFieldValue(new fieldValue().setName("whichBody").setValue("0"));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("hAnimBehaviorNodes")
-            .addChild(ProtoInstance2 = new ProtoInstance().setUSE("BehaviorTest1")));
+            .addChild(ProtoInstance2 = new ProtoInstance().setName("HAnimBehavior").setUSE("BehaviorTest1")));
 ProtoInstance1
           .addFieldValue(new fieldValue().setName("enabledBehaviorsArray").setValue("true"));
     X3D0.toFileX3D("../data/HAnimBehaviorPrototypes.new.graal.x3d");
-    X3D0.toFileJSON("../data/HAnimBehaviorPrototypes.new.graal.json");
+    X3D0.toFileJSON("../data/HAnimBehaviorPrototypes.new.graal.x3dj");
