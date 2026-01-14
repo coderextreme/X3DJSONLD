@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -60,7 +60,7 @@ meta11.setContent("view culling frustum")
 head1.addMeta(meta11)
 meta12 = x3d.meta()
 meta12.setName("identifier")
-meta12.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d")
+meta12.setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d")
 
 head1.addMeta(meta12)
 meta13 = x3d.meta()
@@ -90,7 +90,7 @@ field19.setAccessType("initializeOnly")
 field19.setAppinfo("required: insert Viewpoint DEF or USE node for view of interest")
 field19.setType("SFNode")
 
-field19.addComments(x3d.CommentsBlock('''NULL node, ProtoInstance must provide'''))
+field19.addComments(x3d.CommentsBlock("""NULL node, ProtoInstance must provide"""))
 
 ProtoInterface18.addField(field19)
 field20 = x3d.field()
@@ -99,7 +99,7 @@ field20.setAccessType("initializeOnly")
 field20.setAppinfo("required: insert NavigationInfo DEF or USE node of interest")
 field20.setType("SFNode")
 
-field20.addComments(x3d.CommentsBlock('''NULL node, ProtoInstance must provide'''))
+field20.addComments(x3d.CommentsBlock("""NULL node, ProtoInstance must provide"""))
 
 ProtoInterface18.addField(field20)
 field21 = x3d.field()
@@ -255,7 +255,7 @@ field51.setName("ViewpointNode")
 field51.setAccessType("initializeOnly")
 field51.setType("SFNode")
 
-field51.addComments(x3d.CommentsBlock('''initialization node (if any) goes here'''))
+field51.addComments(x3d.CommentsBlock("""initialization node (if any) goes here"""))
 
 Script48.addField(field51)
 field52 = x3d.field()
@@ -263,7 +263,7 @@ field52.setName("NavigationInfoNode")
 field52.setAccessType("initializeOnly")
 field52.setType("SFNode")
 
-field52.addComments(x3d.CommentsBlock('''initialization node (if any) goes here'''))
+field52.addComments(x3d.CommentsBlock("""initialization node (if any) goes here"""))
 
 Script48.addField(field52)
 field53 = x3d.field()
@@ -412,7 +412,7 @@ ProtoDeclare17.setProtoBody(ProtoBody27)
 
 Scene15.addChild(ProtoDeclare17)
 
-Scene15.addComments(x3d.CommentsBlock('''Example use is in separate scene'''))
+Scene15.addComments(x3d.CommentsBlock("""Example use is in separate scene"""))
 Anchor77 = x3d.Anchor()
 Anchor77.setDescription("ViewFrustum Example")
 Anchor77.setUrl(["ViewFrustumExample.x3d"])
@@ -440,4 +440,4 @@ Scene15.addChild(Anchor77)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/ViewFrustumPrototype.new.graalpy.x3d")
-X3D0.toFileJSON("../data/ViewFrustumPrototype.new.graalpy.json")
+X3D0.toFileJSON("../data/ViewFrustumPrototype.new.graalpy.x3dj")

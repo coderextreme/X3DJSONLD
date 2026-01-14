@@ -1,13 +1,15 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
+
+head1.addComments(x3d.CommentsBlock("""BS studio translation from .x3dv by Joe using BS Contact"""))
 component2 = x3d.component()
 component2.setName("H-Anim")
 component2.setLevel(1)
@@ -74,8 +76,6 @@ meta14.setContent("../license.html")
 
 head1.addMeta(meta14)
 
-head1.addComments(x3d.CommentsBlock('''BS studio translation from .x3dv by Joe using BS Contact'''))
-
 X3D0.setHead(head1)
 Scene15 = x3d.Scene()
 WorldInfo16 = x3d.WorldInfo()
@@ -112,7 +112,7 @@ PointLight20.setLocation(x3d.doubleToFloat([0,10,-7]))
 
 Scene15.addChild(PointLight20)
 
-Scene15.addComments(x3d.CommentsBlock('''External from the Humanoid viewpoints'''))
+Scene15.addComments(x3d.CommentsBlock("""External from the Humanoid viewpoints"""))
 Viewpoint21 = x3d.Viewpoint()
 Viewpoint21.setDEF("Scene_InclinedView")
 Viewpoint21.setCenterOfRotation(x3d.doubleToFloat([0,0.85,0]))
@@ -1150,7 +1150,7 @@ TimeSensor141.setLoop(True)
 
 Group140.addChild(TimeSensor141)
 
-Group140.addComments(x3d.CommentsBlock('''Interpolators'''))
+Group140.addComments(x3d.CommentsBlock("""Interpolators"""))
 OrientationInterpolator142 = x3d.OrientationInterpolator()
 OrientationInterpolator142.setDEF("HumanoidRootRotInterp")
 OrientationInterpolator142.setKey(x3d.doubleToFloat([0,0.1,0.4,0.6,1]))
@@ -1724,7 +1724,7 @@ Group140.addChild(OrientationInterpolator236)
 
 Scene15.addChild(Group140)
 
-Scene15.addComments(x3d.CommentsBlock('''TimeSensor to Interpolators'''))
+Scene15.addComments(x3d.CommentsBlock("""TimeSensor to Interpolators"""))
 ROUTE237 = x3d.ROUTE()
 ROUTE237.setFromField("fraction_changed")
 ROUTE237.setFromNode("KickTimer")
@@ -2391,7 +2391,7 @@ ROUTE331.setToNode("r_pinky3RotInterp")
 
 Scene15.addChild(ROUTE331)
 
-Scene15.addComments(x3d.CommentsBlock('''Routes from Interpolators to Joe_ model Joints'''))
+Scene15.addComments(x3d.CommentsBlock("""Routes from Interpolators to Joe_ model Joints"""))
 ROUTE332 = x3d.ROUTE()
 ROUTE332.setFromField("value_changed")
 ROUTE332.setFromNode("HumanoidRootRotInterp")
@@ -3060,7 +3060,7 @@ Scene15.addChild(ROUTE426)
 Group427 = x3d.Group()
 Group427.setDEF("DisplacersAnimationGroup")
 
-Group427.addComments(x3d.CommentsBlock('''TimeSensor DEF='skull_tipTestTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor'''))
+Group427.addComments(x3d.CommentsBlock("""TimeSensor DEF='skull_tipTestTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor"""))
 ScalarInterpolator428 = x3d.ScalarInterpolator()
 ScalarInterpolator428.setDEF("skull_tipTest")
 ScalarInterpolator428.setKey(x3d.doubleToFloat([0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]))
@@ -3149,7 +3149,7 @@ Transform436.addChild(Viewpoint443)
 
 Group435.addChild(Transform436)
 
-Group435.addComments(x3d.CommentsBlock('''Ball Animation interpolators'''))
+Group435.addComments(x3d.CommentsBlock("""Ball Animation interpolators"""))
 PositionInterpolator444 = x3d.PositionInterpolator()
 PositionInterpolator444.setDEF("ballTransInterp")
 PositionInterpolator444.setKey(x3d.doubleToFloat([0,0.4,0.409,1]))
@@ -3163,7 +3163,7 @@ OrientationInterpolator445.setKeyValue(x3d.doubleToFloat([1,0,1,0.25,-1,0,-1,1.3
 
 Group435.addChild(OrientationInterpolator445)
 
-Group435.addComments(x3d.CommentsBlock('''Ball Animation Routes'''))
+Group435.addComments(x3d.CommentsBlock("""Ball Animation Routes"""))
 ROUTE446 = x3d.ROUTE()
 ROUTE446.setFromField("fraction_changed")
 ROUTE446.setFromNode("KickTimer")
@@ -3284,4 +3284,4 @@ Scene15.addChild(Group450)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/JoeSkinTexcoordDisplacerKickUpdate2.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKickUpdate2.new.graalpy.json")
+X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKickUpdate2.new.graalpy.x3dj")

@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
 X3D0.setVersion("4.0")
@@ -98,7 +98,7 @@ ParticleSystem20 = x3d.ParticleSystem()
 ParticleSystem20.setMaxParticles(20)
 ParticleSystem20.setGeometryType("GEOMETRY")
 
-ParticleSystem20.addComments(x3d.CommentsBlock('''* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values'''))
+ParticleSystem20.addComments(x3d.CommentsBlock("""* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values"""))
 VariationPhysicsModel21 = x3d.VariationPhysicsModel()
 VariationPhysicsModel21.setValues("2 2 5 5 0 0")
 VariationPhysicsModel21.setVariations("0.2 0.1 0.3 0.3 0.01 0.01")
@@ -283,4 +283,4 @@ Scene14.addChild(Transform19)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/variationalflowers2.new.graalpy.x3d")
-X3D0.toFileJSON("../data/variationalflowers2.new.graalpy.json")
+X3D0.toFileJSON("../data/variationalflowers2.new.graalpy.x3dj")

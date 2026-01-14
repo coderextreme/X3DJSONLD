@@ -1,15 +1,15 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
 
-head1.addComments(x3d.CommentsBlock('''Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON'''))
+head1.addComments(x3d.CommentsBlock("""Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"""))
 meta2 = x3d.meta()
 meta2.setName("title")
 meta2.setContent("HelloWorld.x3d")
@@ -42,7 +42,7 @@ meta7.setContent("HelloWorld.tall.png")
 head1.addMeta(meta7)
 meta8 = x3d.meta()
 meta8.setName("reference")
-meta8.setContent("http://en.wikipedia.org/wiki/Hello_world")
+meta8.setContent("https://en.wikipedia.org/wiki/Hello_world")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
@@ -57,12 +57,12 @@ meta10.setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program")
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("reference")
-meta11.setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world")
+meta11.setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
 meta12.setName("reference")
-meta12.setContent("http://www.HelloWorldExample.net")
+meta12.setContent("https://www.HelloWorldExample.net")
 
 head1.addMeta(meta12)
 meta13 = x3d.meta()
@@ -82,12 +82,12 @@ meta15.setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d")
 head1.addMeta(meta15)
 meta16 = x3d.meta()
 meta16.setName("reference")
-meta16.setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d")
+meta16.setContent("https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d")
 
 head1.addMeta(meta16)
 meta17 = x3d.meta()
 meta17.setName("identifier")
-meta17.setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d")
+meta17.setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d")
 
 head1.addMeta(meta17)
 meta18 = x3d.meta()
@@ -129,7 +129,7 @@ head1.addMeta(meta24)
 X3D0.setHead(head1)
 Scene25 = x3d.Scene()
 
-Scene25.addComments(x3d.CommentsBlock('''Example scene to illustrate X3D nodes and fields (XML elements and attributes)'''))
+Scene25.addComments(x3d.CommentsBlock("""Example scene to illustrate X3D nodes and fields (XML elements and attributes)"""))
 WorldInfo26 = x3d.WorldInfo()
 WorldInfo26.setInfo(["Example scene to illustrate a simple X3D model"])
 WorldInfo26.setTitle("Hello World!")
@@ -194,4 +194,4 @@ Scene25.addChild(Group27)
 
 X3D0.setScene(Scene25)
 X3D0.toFileX3D("../data/HelloWorld.new.graalpy.x3d")
-X3D0.toFileJSON("../data/HelloWorld.new.graalpy.json")
+X3D0.toFileJSON("../data/HelloWorld.new.graalpy.x3dj")

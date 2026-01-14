@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -22,9 +22,9 @@ head1.addMeta(meta3)
 X3D0.setHead(head1)
 Scene4 = x3d.Scene()
 
-Scene4.addComments(x3d.CommentsBlock('''https://www.web3d.org/documents/specifications/19774/V2.0/index.html'''))
+Scene4.addComments(x3d.CommentsBlock("""https://www.web3d.org/documents/specifications/19774/V2.0/index.html"""))
 
-Scene4.addComments(x3d.CommentsBlock('''0 0 0 at floor between feet, default I pose (relaxed attention) model gaze toward +Z, +x to model left, +y up, right-hand rule.'''))
+Scene4.addComments(x3d.CommentsBlock("""0 0 0 at floor between feet, default I pose (relaxed attention) model gaze toward +Z, +x to model left, +y up, right-hand rule."""))
 WorldInfo5 = x3d.WorldInfo()
 WorldInfo5.setTitle("20f Jin v2 loa4 Level 1, Joints, Segments, Sites")
 
@@ -34,7 +34,7 @@ Transform6.setDEF("ContainerScene000")
 Shape7 = x3d.Shape()
 Shape7.setDEF("AxisLinesShape")
 
-Shape7.addComments(x3d.CommentsBlock('''Red +X, Green +Y, Blue +Z'''))
+Shape7.addComments(x3d.CommentsBlock("""Red +X, Green +Y, Blue +Z"""))
 IndexedLineSet8 = x3d.IndexedLineSet()
 IndexedLineSet8.setColorIndex([0,1,2])
 IndexedLineSet8.setColorPerVertex(False)
@@ -10241,7 +10241,7 @@ Scene4.addChild(Viewpoint2377)
 Transform2378 = x3d.Transform()
 Transform2378.setDEF("Landmark000")
 
-Transform2378.addComments(x3d.CommentsBlock('''Another Parent Scene 0 0 0 landmark'''))
+Transform2378.addComments(x3d.CommentsBlock("""Another Parent Scene 0 0 0 landmark"""))
 Shape2379 = x3d.Shape()
 Shape2379.setDEF("HAnim000Landmark")
 Appearance2380 = x3d.Appearance()
@@ -10263,4 +10263,4 @@ Scene4.addChild(Transform2378)
 
 X3D0.setScene(Scene4)
 X3D0.toFileX3D("../data/Jin20fSegmented.new.graalpy.x3d")
-X3D0.toFileJSON("../data/Jin20fSegmented.new.graalpy.json")
+X3D0.toFileJSON("../data/Jin20fSegmented.new.graalpy.x3dj")

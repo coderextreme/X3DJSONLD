@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -227,7 +227,7 @@ field45.setValue("0")
 
 ComposedShader34.addField(field45)
 
-ComposedShader34.addComments(x3d.CommentsBlock('''<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>'''))
+ComposedShader34.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>"""))
 ShaderPart46 = x3d.ShaderPart()
 ShaderPart46.setUrl(["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"])
 ShaderPart46.setType("VERTEX")
@@ -438,4 +438,4 @@ Scene14.addChild(Transform19)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/cgeparticleflowers.new.graalpy.x3d")
-X3D0.toFileJSON("../data/cgeparticleflowers.new.graalpy.json")
+X3D0.toFileJSON("../data/cgeparticleflowers.new.graalpy.x3dj")

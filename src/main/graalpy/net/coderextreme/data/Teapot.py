@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
 X3D0.setVersion("4.0")
@@ -132,7 +132,7 @@ Scene18.addChild(Shape22)
 Shape27 = x3d.Shape()
 Shape27.setDEF("AxisLinesShape")
 
-Shape27.addComments(x3d.CommentsBlock('''RGB lines showing XYZ axes'''))
+Shape27.addComments(x3d.CommentsBlock("""RGB lines showing XYZ axes"""))
 IndexedLineSet28 = x3d.IndexedLineSet()
 IndexedLineSet28.setColorIndex([0,1,2])
 IndexedLineSet28.setColorPerVertex(False)
@@ -152,4 +152,4 @@ Scene18.addChild(Shape27)
 
 X3D0.setScene(Scene18)
 X3D0.toFileX3D("../data/Teapot.new.graalpy.x3d")
-X3D0.toFileJSON("../data/Teapot.new.graalpy.json")
+X3D0.toFileJSON("../data/Teapot.new.graalpy.x3dj")

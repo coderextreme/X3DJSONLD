@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -20,7 +20,7 @@ meta3.setContent("Humanoid1.x3d")
 head1.addMeta(meta3)
 meta4 = x3d.meta()
 meta4.setName("identifier")
-meta4.setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d")
+meta4.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d")
 
 head1.addMeta(meta4)
 meta5 = x3d.meta()
@@ -58,11 +58,11 @@ X3D0.setHead(head1)
 Scene11 = x3d.Scene()
 Transform12 = x3d.Transform()
 
-Transform12.addComments(x3d.CommentsBlock('''DEF for markerfor XYZ axes'''))
+Transform12.addComments(x3d.CommentsBlock("""DEF for markerfor XYZ axes"""))
 Shape13 = x3d.Shape()
 Shape13.setDEF("AxisLinesShape")
 
-Shape13.addComments(x3d.CommentsBlock('''RGB lines showing XYZ axes'''))
+Shape13.addComments(x3d.CommentsBlock("""RGB lines showing XYZ axes"""))
 IndexedLineSet14 = x3d.IndexedLineSet()
 IndexedLineSet14.setColorIndex([0,1,2])
 IndexedLineSet14.setColorPerVertex(False)
@@ -83,7 +83,7 @@ Transform12.addChild(Shape13)
 Scene11.addChild(Transform12)
 Group17 = x3d.Group()
 
-Group17.addComments(x3d.CommentsBlock('''DEFS for markers of skeleton joints, segments, and sites'''))
+Group17.addComments(x3d.CommentsBlock("""DEFS for markers of skeleton joints, segments, and sites"""))
 Transform18 = x3d.Transform()
 Transform19 = x3d.Transform()
 Transform19.setTranslation(x3d.doubleToFloat([0,2.1,0]))
@@ -178,9 +178,9 @@ HAnimHumanoid38.setDEF("hanim_HAnim")
 HAnimHumanoid38.setInfo(["humanoidVersion=2.0"])
 HAnimHumanoid38.setVersion("2.0")
 
-HAnimHumanoid38.addComments(x3d.CommentsBlock('''<LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene)'''))
+HAnimHumanoid38.addComments(x3d.CommentsBlock("""<LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene)"""))
 
-HAnimHumanoid38.addComments(x3d.CommentsBlock('''</LOD>'''))
+HAnimHumanoid38.addComments(x3d.CommentsBlock("""</LOD>"""))
 Shape39 = x3d.Shape()
 Shape39.setDEF("SkinShape")
 Shape39.setContainerFieldOverride("skin")
@@ -237,7 +237,7 @@ Transform49 = x3d.Transform()
 Transform49.setTranslation(x3d.doubleToFloat([0,0.824,0.0277]))
 Transform50 = x3d.Transform()
 
-Transform50.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform50.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape51 = x3d.Shape()
 Shape51.setUSE("HAnimJointShape")
 
@@ -254,7 +254,7 @@ Coordinate54.setPoint(x3d.doubleToFloat([0,0.824,0.0277,0,0.9149,0.0016]))
 
 LineSet53.setCoord(Coordinate54)
 
-LineSet53.addComments(x3d.CommentsBlock('''from humanoid_root to sacroiliac vertices 2'''))
+LineSet53.addComments(x3d.CommentsBlock("""from humanoid_root to sacroiliac vertices 2"""))
 ColorRGBA55 = x3d.ColorRGBA()
 ColorRGBA55.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -271,7 +271,7 @@ Coordinate58.setPoint(x3d.doubleToFloat([0,0.824,0.0277,0.0028,1.0568,-0.0776]))
 
 LineSet57.setCoord(Coordinate58)
 
-LineSet57.addComments(x3d.CommentsBlock('''from humanoid_root to vl5 vertices 2'''))
+LineSet57.addComments(x3d.CommentsBlock("""from humanoid_root to vl5 vertices 2"""))
 ColorRGBA59 = x3d.ColorRGBA()
 ColorRGBA59.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -295,7 +295,7 @@ Transform62 = x3d.Transform()
 Transform62.setTranslation(x3d.doubleToFloat([0,0.9149,0.0016]))
 Transform63 = x3d.Transform()
 
-Transform63.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform63.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape64 = x3d.Shape()
 Shape64.setUSE("HAnimJointShape")
 
@@ -312,7 +312,7 @@ Coordinate67.setPoint(x3d.doubleToFloat([0,0.9149,0.0016,0.0961,0.9124,-0.0001])
 
 LineSet66.setCoord(Coordinate67)
 
-LineSet66.addComments(x3d.CommentsBlock('''from sacroiliac to l_hip vertices 2'''))
+LineSet66.addComments(x3d.CommentsBlock("""from sacroiliac to l_hip vertices 2"""))
 ColorRGBA68 = x3d.ColorRGBA()
 ColorRGBA68.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -608,7 +608,7 @@ Coordinate141.setPoint(x3d.doubleToFloat([0,0.9149,0.0016,-0.095,0.9171,0.0029])
 
 LineSet140.setCoord(Coordinate141)
 
-LineSet140.addComments(x3d.CommentsBlock('''from sacroiliac to r_hip vertices 2'''))
+LineSet140.addComments(x3d.CommentsBlock("""from sacroiliac to r_hip vertices 2"""))
 ColorRGBA142 = x3d.ColorRGBA()
 ColorRGBA142.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -632,7 +632,7 @@ Transform145 = x3d.Transform()
 Transform145.setTranslation(x3d.doubleToFloat([0.0961,0.9124,-0.0001]))
 Transform146 = x3d.Transform()
 
-Transform146.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform146.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape147 = x3d.Shape()
 Shape147.setUSE("HAnimJointShape")
 
@@ -649,7 +649,7 @@ Coordinate150.setPoint(x3d.doubleToFloat([0.0961,0.9124,-0.0001,0.104,0.4867,0.0
 
 LineSet149.setCoord(Coordinate150)
 
-LineSet149.addComments(x3d.CommentsBlock('''from l_hip to l_knee vertices 2'''))
+LineSet149.addComments(x3d.CommentsBlock("""from l_hip to l_knee vertices 2"""))
 ColorRGBA151 = x3d.ColorRGBA()
 ColorRGBA151.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -784,7 +784,7 @@ Transform182 = x3d.Transform()
 Transform182.setTranslation(x3d.doubleToFloat([0.104,0.4867,0.0308]))
 Transform183 = x3d.Transform()
 
-Transform183.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform183.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape184 = x3d.Shape()
 Shape184.setUSE("HAnimJointShape")
 
@@ -801,7 +801,7 @@ Coordinate187.setPoint(x3d.doubleToFloat([0.104,0.4867,0.0308,0.1101,0.0656,-0.0
 
 LineSet186.setCoord(Coordinate187)
 
-LineSet186.addComments(x3d.CommentsBlock('''from l_knee to l_talocrural vertices 2'''))
+LineSet186.addComments(x3d.CommentsBlock("""from l_knee to l_talocrural vertices 2"""))
 ColorRGBA188 = x3d.ColorRGBA()
 ColorRGBA188.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -909,10 +909,10 @@ Transform212.setScale(x3d.doubleToFloat([0.15,0.15,0.15]))
 Transform212.setTranslation(x3d.doubleToFloat([0.08,0.06,-0.025]))
 Transform212.setRotation(x3d.doubleToFloat([1,0,0,-1.57]))
 
-Transform212.addComments(x3d.CommentsBlock('''Transform left foot'''))
+Transform212.addComments(x3d.CommentsBlock("""Transform left foot"""))
 Transform213 = x3d.Transform()
 
-Transform213.addComments(x3d.CommentsBlock('''Empty Transform left foot'''))
+Transform213.addComments(x3d.CommentsBlock("""Empty Transform left foot"""))
 Shape214 = x3d.Shape()
 Shape214.setUSE("HAnimJointShape")
 
@@ -929,7 +929,7 @@ Coordinate217.setPoint(x3d.doubleToFloat([0.1101,0.0656,-0.0736,0.0824,0.0064,-0
 
 LineSet216.setCoord(Coordinate217)
 
-LineSet216.addComments(x3d.CommentsBlock('''from l_talocrural to l_metatarsophalangeal_2 vertices 2'''))
+LineSet216.addComments(x3d.CommentsBlock("""from l_talocrural to l_metatarsophalangeal_2 vertices 2"""))
 ColorRGBA218 = x3d.ColorRGBA()
 ColorRGBA218.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1023,7 +1023,7 @@ Transform236 = x3d.Transform()
 Transform236.setTranslation(x3d.doubleToFloat([-0.095,0.9171,0.0029]))
 Transform237 = x3d.Transform()
 
-Transform237.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform237.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape238 = x3d.Shape()
 Shape238.setUSE("HAnimJointShape")
 
@@ -1040,7 +1040,7 @@ Coordinate241.setPoint(x3d.doubleToFloat([-0.095,0.9171,0.0029,-0.0867,0.4913,0.
 
 LineSet240.setCoord(Coordinate241)
 
-LineSet240.addComments(x3d.CommentsBlock('''from r_hip to r_knee vertices 2'''))
+LineSet240.addComments(x3d.CommentsBlock("""from r_hip to r_knee vertices 2"""))
 ColorRGBA242 = x3d.ColorRGBA()
 ColorRGBA242.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1175,7 +1175,7 @@ Transform273 = x3d.Transform()
 Transform273.setTranslation(x3d.doubleToFloat([-0.0867,0.4913,0.0318]))
 Transform274 = x3d.Transform()
 
-Transform274.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform274.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape275 = x3d.Shape()
 Shape275.setUSE("HAnimJointShape")
 
@@ -1192,7 +1192,7 @@ Coordinate278.setPoint(x3d.doubleToFloat([-0.0867,0.4913,0.0318,-0.0801,0.0712,-
 
 LineSet277.setCoord(Coordinate278)
 
-LineSet277.addComments(x3d.CommentsBlock('''from r_knee to r_talocrural vertices 2'''))
+LineSet277.addComments(x3d.CommentsBlock("""from r_knee to r_talocrural vertices 2"""))
 ColorRGBA279 = x3d.ColorRGBA()
 ColorRGBA279.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1300,10 +1300,10 @@ Transform303.setScale(x3d.doubleToFloat([0.15,0.15,0.15]))
 Transform303.setTranslation(x3d.doubleToFloat([-0.05,0.06,-0.025]))
 Transform303.setRotation(x3d.doubleToFloat([1,0,0,-1.57]))
 
-Transform303.addComments(x3d.CommentsBlock('''Transform right foot'''))
+Transform303.addComments(x3d.CommentsBlock("""Transform right foot"""))
 Transform304 = x3d.Transform()
 
-Transform304.addComments(x3d.CommentsBlock('''Empty Transform right foot'''))
+Transform304.addComments(x3d.CommentsBlock("""Empty Transform right foot"""))
 Shape305 = x3d.Shape()
 Shape305.setUSE("HAnimJointShape")
 
@@ -1320,7 +1320,7 @@ Coordinate308.setPoint(x3d.doubleToFloat([-0.0801,0.0712,-0.0766,-0.0823,0.0064,
 
 LineSet307.setCoord(Coordinate308)
 
-LineSet307.addComments(x3d.CommentsBlock('''from r_talocrural to r_metatarsophalangeal_2 vertices 2'''))
+LineSet307.addComments(x3d.CommentsBlock("""from r_talocrural to r_metatarsophalangeal_2 vertices 2"""))
 ColorRGBA309 = x3d.ColorRGBA()
 ColorRGBA309.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -1416,7 +1416,7 @@ Transform327 = x3d.Transform()
 Transform327.setTranslation(x3d.doubleToFloat([0.0028,1.0568,-0.0776]))
 Transform328 = x3d.Transform()
 
-Transform328.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform328.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape329 = x3d.Shape()
 Shape329.setUSE("HAnimJointShape")
 
@@ -1433,7 +1433,7 @@ Coordinate332.setPoint(x3d.doubleToFloat([0.0028,1.0568,-0.0776,0.0044,1.6209,0.
 
 LineSet331.setCoord(Coordinate332)
 
-LineSet331.addComments(x3d.CommentsBlock('''from vl5 to skullbase vertices 2'''))
+LineSet331.addComments(x3d.CommentsBlock("""from vl5 to skullbase vertices 2"""))
 ColorRGBA333 = x3d.ColorRGBA()
 ColorRGBA333.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2252,7 +2252,7 @@ Coordinate539.setPoint(x3d.doubleToFloat([0.0028,1.0568,-0.0776,0.2029,1.4376,-0
 
 LineSet538.setCoord(Coordinate539)
 
-LineSet538.addComments(x3d.CommentsBlock('''from vl5 to l_shoulder vertices 2'''))
+LineSet538.addComments(x3d.CommentsBlock("""from vl5 to l_shoulder vertices 2"""))
 ColorRGBA540 = x3d.ColorRGBA()
 ColorRGBA540.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2269,7 +2269,7 @@ Coordinate543.setPoint(x3d.doubleToFloat([0.0028,1.0568,-0.0776,-0.1907,1.4407,-
 
 LineSet542.setCoord(Coordinate543)
 
-LineSet542.addComments(x3d.CommentsBlock('''from vl5 to r_shoulder vertices 2'''))
+LineSet542.addComments(x3d.CommentsBlock("""from vl5 to r_shoulder vertices 2"""))
 ColorRGBA544 = x3d.ColorRGBA()
 ColorRGBA544.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2301,7 +2301,7 @@ Transform548 = x3d.Transform()
 Transform548.setTranslation(x3d.doubleToFloat([0.2029,1.4376,-0.0387]))
 Transform549 = x3d.Transform()
 
-Transform549.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform549.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape550 = x3d.Shape()
 Shape550.setUSE("HAnimJointShape")
 
@@ -2318,7 +2318,7 @@ Coordinate553.setPoint(x3d.doubleToFloat([0.2029,1.4376,-0.0387,0.2014,1.1357,-0
 
 LineSet552.setCoord(Coordinate553)
 
-LineSet552.addComments(x3d.CommentsBlock('''from l_shoulder to l_elbow vertices 2'''))
+LineSet552.addComments(x3d.CommentsBlock("""from l_shoulder to l_elbow vertices 2"""))
 ColorRGBA554 = x3d.ColorRGBA()
 ColorRGBA554.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2397,7 +2397,7 @@ Transform571 = x3d.Transform()
 Transform571.setTranslation(x3d.doubleToFloat([0.2014,1.1357,-0.0682]))
 Transform572 = x3d.Transform()
 
-Transform572.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform572.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape573 = x3d.Shape()
 Shape573.setUSE("HAnimJointShape")
 
@@ -2414,7 +2414,7 @@ Coordinate576.setPoint(x3d.doubleToFloat([0.2014,1.1357,-0.0682,0.1984,0.8663,-0
 
 LineSet575.setCoord(Coordinate576)
 
-LineSet575.addComments(x3d.CommentsBlock('''from l_elbow to l_radiocarpal vertices 2'''))
+LineSet575.addComments(x3d.CommentsBlock("""from l_elbow to l_radiocarpal vertices 2"""))
 ColorRGBA577 = x3d.ColorRGBA()
 ColorRGBA577.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2562,7 +2562,7 @@ Transform609 = x3d.Transform()
 Transform609.setTranslation(x3d.doubleToFloat([-0.1907,1.4407,-0.0325]))
 Transform610 = x3d.Transform()
 
-Transform610.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform610.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape611 = x3d.Shape()
 Shape611.setUSE("HAnimJointShape")
 
@@ -2579,7 +2579,7 @@ Coordinate614.setPoint(x3d.doubleToFloat([-0.1907,1.4407,-0.0325,-0.1949,1.1388,
 
 LineSet613.setCoord(Coordinate614)
 
-LineSet613.addComments(x3d.CommentsBlock('''from r_shoulder to r_elbow vertices 2'''))
+LineSet613.addComments(x3d.CommentsBlock("""from r_shoulder to r_elbow vertices 2"""))
 ColorRGBA615 = x3d.ColorRGBA()
 ColorRGBA615.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -2658,7 +2658,7 @@ Transform632 = x3d.Transform()
 Transform632.setTranslation(x3d.doubleToFloat([-0.1949,1.1388,-0.062]))
 Transform633 = x3d.Transform()
 
-Transform633.addComments(x3d.CommentsBlock('''Empty Transform'''))
+Transform633.addComments(x3d.CommentsBlock("""Empty Transform"""))
 Shape634 = x3d.Shape()
 Shape634.setUSE("HAnimJointShape")
 
@@ -2675,7 +2675,7 @@ Coordinate637.setPoint(x3d.doubleToFloat([-0.1949,1.1388,-0.062,-0.1959,0.8694,-
 
 LineSet636.setCoord(Coordinate637)
 
-LineSet636.addComments(x3d.CommentsBlock('''from r_elbow to r_radiocarpal vertices 2'''))
+LineSet636.addComments(x3d.CommentsBlock("""from r_elbow to r_radiocarpal vertices 2"""))
 ColorRGBA638 = x3d.ColorRGBA()
 ColorRGBA638.setUSE("HAnimSegmentLineColorRGBA")
 
@@ -3319,4 +3319,4 @@ Scene11.addChild(HAnimHumanoid38)
 
 X3D0.setScene(Scene11)
 X3D0.toFileX3D("../data/Humanoid1.new.graalpy.x3d")
-X3D0.toFileJSON("../data/Humanoid1.new.graalpy.json")
+X3D0.toFileJSON("../data/Humanoid1.new.graalpy.x3dj")

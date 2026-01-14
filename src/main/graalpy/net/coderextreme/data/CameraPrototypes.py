@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -65,7 +65,7 @@ meta12.setContent("https://www.web3d.org/x3d/content/examples/Basic/development/
 head1.addMeta(meta12)
 meta13 = x3d.meta()
 meta13.setName("reference")
-meta13.setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d")
+meta13.setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d")
 
 head1.addMeta(meta13)
 meta14 = x3d.meta()
@@ -82,13 +82,13 @@ head1.addMeta(meta15)
 X3D0.setHead(head1)
 Scene16 = x3d.Scene()
 
-Scene16.addComments(x3d.CommentsBlock('''=============== Camera =============='''))
+Scene16.addComments(x3d.CommentsBlock("""=============== Camera =============="""))
 ProtoDeclare17 = x3d.ProtoDeclare()
 ProtoDeclare17.setName("Camera")
 ProtoDeclare17.setAppinfo("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.")
 ProtoInterface18 = x3d.ProtoInterface()
 
-ProtoInterface18.addComments(x3d.CommentsBlock('''Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields'''))
+ProtoInterface18.addComments(x3d.CommentsBlock("""Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"""))
 field19 = x3d.field()
 field19.setName("description")
 field19.setAccessType("inputOutput")
@@ -170,7 +170,7 @@ field29.setAccessType("inputOutput")
 field29.setAppinfo("Array of CameraShot nodes which in turn contain CameraMovement nodes")
 field29.setType("MFNode")
 
-field29.addComments(x3d.CommentsBlock('''initialization nodes (if any) go here'''))
+field29.addComments(x3d.CommentsBlock("""initialization nodes (if any) go here"""))
 
 ProtoInterface18.addField(field29)
 field30 = x3d.field()
@@ -257,7 +257,7 @@ field40.setAccessType("inputOutput")
 field40.setAppinfo("OfflineRender node")
 field40.setType("SFNode")
 
-field40.addComments(x3d.CommentsBlock('''initialization node (if any) goes here'''))
+field40.addComments(x3d.CommentsBlock("""initialization node (if any) goes here"""))
 
 ProtoInterface18.addField(field40)
 field41 = x3d.field()
@@ -314,7 +314,7 @@ Viewpoint43.setIS(IS44)
 
 ProtoBody42.addChild(Viewpoint43)
 
-ProtoBody42.addComments(x3d.CommentsBlock('''NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation'''))
+ProtoBody42.addComments(x3d.CommentsBlock("""NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation"""))
 NavigationInfo52 = x3d.NavigationInfo()
 NavigationInfo52.setDEF("CameraNavInfo")
 NavigationInfo52.setType(["EXAMINE","FLY","ANY"])
@@ -335,18 +335,18 @@ connect56.setProtoField("farClipPlane")
 
 IS53.addConnect(connect56)
 
-IS53.addComments(x3d.CommentsBlock('''No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing.'''))
+IS53.addComments(x3d.CommentsBlock("""No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing."""))
 
 NavigationInfo52.setIS(IS53)
 
 ProtoBody42.addChild(NavigationInfo52)
 
-ProtoBody42.addComments(x3d.CommentsBlock('''this DirectionalLight replaces NavigationInfo headlight in order to add color capability'''))
+ProtoBody42.addComments(x3d.CommentsBlock("""this DirectionalLight replaces NavigationInfo headlight in order to add color capability"""))
 DirectionalLight57 = x3d.DirectionalLight()
 DirectionalLight57.setDEF("CameraDirectionalLight")
 DirectionalLight57.setGlobal(True)
 
-DirectionalLight57.addComments(x3d.CommentsBlock('''TODO confirm other default field values match NavigationInfo spec'''))
+DirectionalLight57.addComments(x3d.CommentsBlock("""TODO confirm other default field values match NavigationInfo spec"""))
 IS58 = x3d.IS()
 connect59 = x3d.connect()
 connect59.setNodeField("on")
@@ -414,7 +414,7 @@ Script70.setDEF("CameraScript")
 Script70.setDirectOutput(True)
 Script70.setMustEvaluate(True)
 
-Script70.addComments(x3d.CommentsBlock('''binding is controlled externally, all camera operations proceed the same regardless of whether bound or not'''))
+Script70.addComments(x3d.CommentsBlock("""binding is controlled externally, all camera operations proceed the same regardless of whether bound or not"""))
 field71 = x3d.field()
 field71.setName("description")
 field71.setAccessType("inputOutput")
@@ -477,7 +477,7 @@ field79.setAccessType("inputOutput")
 field79.setAppinfo("Array of CameraShot nodes which in turn contain CameraMovement nodes")
 field79.setType("MFNode")
 
-field79.addComments(x3d.CommentsBlock('''initialization nodes (if any) go here'''))
+field79.addComments(x3d.CommentsBlock("""initialization nodes (if any) go here"""))
 
 Script70.addField(field79)
 field80 = x3d.field()
@@ -535,7 +535,7 @@ field87.setAccessType("inputOutput")
 field87.setAppinfo("OfflineRender node")
 field87.setType("SFNode")
 
-field87.addComments(x3d.CommentsBlock('''initialization node (if any) goes here'''))
+field87.addComments(x3d.CommentsBlock("""initialization node (if any) goes here"""))
 
 Script70.addField(field87)
 field88 = x3d.field()
@@ -1142,7 +1142,7 @@ ProtoDeclare17.setProtoBody(ProtoBody42)
 
 Scene16.addChild(ProtoDeclare17)
 
-Scene16.addComments(x3d.CommentsBlock('''=============== CameraShot =============='''))
+Scene16.addComments(x3d.CommentsBlock("""=============== CameraShot =============="""))
 ProtoDeclare131 = x3d.ProtoDeclare()
 ProtoDeclare131.setName("CameraShot")
 ProtoDeclare131.setAppinfo("CameraShot collects a specific set of CameraMovement animations that make up an individual shot.")
@@ -1168,7 +1168,7 @@ field135.setAccessType("inputOutput")
 field135.setAppinfo("Set of CameraMovement nodes")
 field135.setType("MFNode")
 
-field135.addComments(x3d.CommentsBlock('''initializing CameraMovement nodes are inserted here by scene author using ProtoInstance'''))
+field135.addComments(x3d.CommentsBlock("""initializing CameraMovement nodes are inserted here by scene author using ProtoInstance"""))
 
 ProtoInterface132.addField(field135)
 field136 = x3d.field()
@@ -1268,7 +1268,7 @@ field149.setAccessType("inputOutput")
 field149.setAppinfo("Set of CameraMovement nodes")
 field149.setType("MFNode")
 
-field149.addComments(x3d.CommentsBlock('''initialization nodes (if any) go here'''))
+field149.addComments(x3d.CommentsBlock("""initialization nodes (if any) go here"""))
 
 Script146.addField(field149)
 field150 = x3d.field()
@@ -1515,13 +1515,13 @@ function alwaysPrint (outputValue)
 
 ProtoBody145.addChild(Script146)
 
-ProtoBody145.addComments(x3d.CommentsBlock('''Add any ROUTEs here, going from Script to other nodes within ProtoBody'''))
+ProtoBody145.addComments(x3d.CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
 
 ProtoDeclare131.setProtoBody(ProtoBody145)
 
 Scene16.addChild(ProtoDeclare131)
 
-Scene16.addComments(x3d.CommentsBlock('''=============== CameraMovement =============='''))
+Scene16.addComments(x3d.CommentsBlock("""=============== CameraMovement =============="""))
 ProtoDeclare175 = x3d.ProtoDeclare()
 ProtoDeclare175.setName("CameraMovement")
 ProtoDeclare175.setAppinfo("CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.")
@@ -1624,11 +1624,11 @@ ProtoInterface176.addField(field188)
 ProtoDeclare175.setProtoInterface(ProtoInterface176)
 ProtoBody189 = x3d.ProtoBody()
 
-ProtoBody189.addComments(x3d.CommentsBlock('''First node determines node type of this prototype'''))
+ProtoBody189.addComments(x3d.CommentsBlock("""First node determines node type of this prototype"""))
 
-ProtoBody189.addComments(x3d.CommentsBlock('''Subsequent nodes do not render, but still must be a valid X3D subgraph'''))
+ProtoBody189.addComments(x3d.CommentsBlock("""Subsequent nodes do not render, but still must be a valid X3D subgraph"""))
 
-ProtoBody189.addComments(x3d.CommentsBlock('''Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events'''))
+ProtoBody189.addComments(x3d.CommentsBlock("""Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events"""))
 Script190 = x3d.Script()
 Script190.setDEF("CameraMovementScript")
 Script190.setDirectOutput(True)
@@ -1874,19 +1874,19 @@ function alwaysPrint (outputValue)
 
 ProtoBody189.addChild(Script190)
 
-ProtoBody189.addComments(x3d.CommentsBlock('''Add any ROUTEs here, going from Script to other nodes within ProtoBody'''))
+ProtoBody189.addComments(x3d.CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
 
 ProtoDeclare175.setProtoBody(ProtoBody189)
 
 Scene16.addChild(ProtoDeclare175)
 
-Scene16.addComments(x3d.CommentsBlock('''=============== OfflineRender =============='''))
+Scene16.addComments(x3d.CommentsBlock("""=============== OfflineRender =============="""))
 ProtoDeclare216 = x3d.ProtoDeclare()
 ProtoDeclare216.setName("OfflineRender")
 ProtoDeclare216.setAppinfo("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).")
 ProtoInterface217 = x3d.ProtoInterface()
 
-ProtoInterface217.addComments(x3d.CommentsBlock('''TODO non-photorealistic rendering (NPR) parameters'''))
+ProtoInterface217.addComments(x3d.CommentsBlock("""TODO non-photorealistic rendering (NPR) parameters"""))
 field218 = x3d.field()
 field218.setName("description")
 field218.setAccessType("inputOutput")
@@ -1975,9 +1975,9 @@ ProtoInterface217.addField(field228)
 ProtoDeclare216.setProtoInterface(ProtoInterface217)
 ProtoBody229 = x3d.ProtoBody()
 
-ProtoBody229.addComments(x3d.CommentsBlock('''First node determines node type of this prototype'''))
+ProtoBody229.addComments(x3d.CommentsBlock("""First node determines node type of this prototype"""))
 
-ProtoBody229.addComments(x3d.CommentsBlock('''Subsequent nodes do not render, but still must be a valid X3D subgraph'''))
+ProtoBody229.addComments(x3d.CommentsBlock("""Subsequent nodes do not render, but still must be a valid X3D subgraph"""))
 Script230 = x3d.Script()
 Script230.setDEF("OfflineRenderScript")
 Script230.setMustEvaluate(True)
@@ -2174,13 +2174,13 @@ function alwaysPrint (outputValue)
 
 ProtoBody229.addChild(Script230)
 
-ProtoBody229.addComments(x3d.CommentsBlock('''Add any ROUTEs here, going from Script to other nodes within ProtoBody'''))
+ProtoBody229.addComments(x3d.CommentsBlock("""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""))
 
 ProtoDeclare216.setProtoBody(ProtoBody229)
 
 Scene16.addChild(ProtoDeclare216)
 
-Scene16.addComments(x3d.CommentsBlock('''=============== Launch Prototype Example =============='''))
+Scene16.addComments(x3d.CommentsBlock("""=============== Launch Prototype Example =============="""))
 Background254 = x3d.Background()
 Background254.setSkyColor(x3d.doubleToFloat([0.282353,0.380392,0.470588]))
 
@@ -2214,4 +2214,4 @@ Scene16.addChild(Anchor255)
 
 X3D0.setScene(Scene16)
 X3D0.toFileX3D("../data/CameraPrototypes.new.graalpy.x3d")
-X3D0.toFileJSON("../data/CameraPrototypes.new.graalpy.json")
+X3D0.toFileJSON("../data/CameraPrototypes.new.graalpy.x3dj")

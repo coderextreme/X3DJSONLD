@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
 X3D0.setVersion("4.0")
@@ -149,6 +149,8 @@ NavigationInfo29 = x3d.NavigationInfo()
 NavigationInfo29.setType(["EXAMINE","WALK","FLY","ANY"])
 
 Scene22.addChild(NavigationInfo29)
+
+Scene22.addComments(x3d.CommentsBlock("""<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"""))
 Shape30 = x3d.Shape()
 Appearance31 = x3d.Appearance()
 Material32 = x3d.Material()
@@ -156,32 +158,36 @@ Material32 = x3d.Material()
 Appearance31.setMaterial(Material32)
 PixelTexture33 = x3d.PixelTexture()
 PixelTexture33.setImage([2,2,4,-16776961,16711935,-1,-65281])
+TextureProperties34 = x3d.TextureProperties()
+TextureProperties34.setMagnificationFilter("NEAREST_PIXEL")
+
+PixelTexture33.setTextureProperties(TextureProperties34)
 
 Appearance31.setTexture(PixelTexture33)
 
 Shape30.setAppearance(Appearance31)
-IndexedFaceSet34 = x3d.IndexedFaceSet()
-IndexedFaceSet34.setColorPerVertex(False)
-IndexedFaceSet34.setCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])
-IndexedFaceSet34.setCreaseAngle(0.5)
-IndexedFaceSet34.setTexCoordIndex([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1])
-Color35 = x3d.Color()
-Color35.setColor(x3d.doubleToFloat([0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]))
+IndexedFaceSet35 = x3d.IndexedFaceSet()
+IndexedFaceSet35.setColorPerVertex(False)
+IndexedFaceSet35.setCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])
+IndexedFaceSet35.setCreaseAngle(0.5)
+IndexedFaceSet35.setTexCoordIndex([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1])
+Color36 = x3d.Color()
+Color36.setColor(x3d.doubleToFloat([0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]))
 
-IndexedFaceSet34.setColor(Color35)
-Coordinate36 = x3d.Coordinate()
-Coordinate36.setPoint(x3d.doubleToFloat([-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]))
+IndexedFaceSet35.setColor(Color36)
+Coordinate37 = x3d.Coordinate()
+Coordinate37.setPoint(x3d.doubleToFloat([-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]))
 
-IndexedFaceSet34.setCoord(Coordinate36)
-TextureCoordinate37 = x3d.TextureCoordinate()
-TextureCoordinate37.setPoint(x3d.doubleToFloat([0.5,1,0.5,0.5,1,1,1,0.5]))
+IndexedFaceSet35.setCoord(Coordinate37)
+TextureCoordinate38 = x3d.TextureCoordinate()
+TextureCoordinate38.setPoint(x3d.doubleToFloat([0.5,1,0.5,0.5,1,1,1,0.5]))
 
-IndexedFaceSet34.setTexCoord(TextureCoordinate37)
+IndexedFaceSet35.setTexCoord(TextureCoordinate38)
 
-Shape30.setGeometry(IndexedFaceSet34)
+Shape30.setGeometry(IndexedFaceSet35)
 
 Scene22.addChild(Shape30)
 
 X3D0.setScene(Scene22)
 X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_part.new.graalpy.x3d")
-X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_part.new.graalpy.json")
+X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_part.new.graalpy.x3dj")

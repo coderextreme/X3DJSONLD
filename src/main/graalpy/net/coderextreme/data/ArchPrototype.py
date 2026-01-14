@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -71,13 +71,13 @@ ProtoDeclare14.setName("ArchPrototype")
 ProtoDeclare14.setAppinfo("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.")
 ProtoInterface15 = x3d.ProtoInterface()
 
-ProtoInterface15.addComments(x3d.CommentsBlock('''COLOR OF ARCH'''))
+ProtoInterface15.addComments(x3d.CommentsBlock("""COLOR OF ARCH"""))
 
-ProtoInterface15.addComments(x3d.CommentsBlock('''INPUT PARAMETERS'''))
+ProtoInterface15.addComments(x3d.CommentsBlock("""INPUT PARAMETERS"""))
 
-ProtoInterface15.addComments(x3d.CommentsBlock('''General parameters: measures in meters'''))
+ProtoInterface15.addComments(x3d.CommentsBlock("""General parameters: measures in meters"""))
 
-ProtoInterface15.addComments(x3d.CommentsBlock('''Parameters to create to create shapes related to arch: put true to apply'''))
+ProtoInterface15.addComments(x3d.CommentsBlock("""Parameters to create to create shapes related to arch: put true to apply"""))
 field16 = x3d.field()
 field16.setName("diffuseColor")
 field16.setAccessType("inputOutput")
@@ -194,15 +194,15 @@ ProtoInterface15.addField(field29)
 ProtoDeclare14.setProtoInterface(ProtoInterface15)
 ProtoBody30 = x3d.ProtoBody()
 
-ProtoBody30.addComments(x3d.CommentsBlock('''First node determines node type of this prototype'''))
+ProtoBody30.addComments(x3d.CommentsBlock("""First node determines node type of this prototype"""))
 
-ProtoBody30.addComments(x3d.CommentsBlock('''IndexedFaceset creates arch'''))
+ProtoBody30.addComments(x3d.CommentsBlock("""IndexedFaceset creates arch"""))
 Transform31 = x3d.Transform()
 Transform31.setDEF("ArchTransform")
 Shape32 = x3d.Shape()
 Shape32.setDEF("Arch")
 
-Shape32.addComments(x3d.CommentsBlock('''note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly'''))
+Shape32.addComments(x3d.CommentsBlock("""note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"""))
 IndexedFaceSet33 = x3d.IndexedFaceSet()
 IndexedFaceSet33.setDEF("ArchIndex")
 IndexedFaceSet33.setConvex(False)
@@ -238,20 +238,20 @@ Transform31.addChild(Shape32)
 
 ProtoBody30.addChild(Transform31)
 
-ProtoBody30.addComments(x3d.CommentsBlock('''Subsequent nodes do not render, but still must be a valid X3D subgraph'''))
+ProtoBody30.addComments(x3d.CommentsBlock("""Subsequent nodes do not render, but still must be a valid X3D subgraph"""))
 
-ProtoBody30.addComments(x3d.CommentsBlock('''This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs'''))
+ProtoBody30.addComments(x3d.CommentsBlock("""This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"""))
 Script40 = x3d.Script()
 Script40.setDEF("ArchPrototypeScript")
 Script40.setUrl(["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"])
 
-Script40.addComments(x3d.CommentsBlock('''INPUT PARAMETERS'''))
+Script40.addComments(x3d.CommentsBlock("""INPUT PARAMETERS"""))
 
-Script40.addComments(x3d.CommentsBlock('''General parameters'''))
+Script40.addComments(x3d.CommentsBlock("""General parameters"""))
 
-Script40.addComments(x3d.CommentsBlock('''Parameters to create to create shapes related to arch: put true to apply'''))
+Script40.addComments(x3d.CommentsBlock("""Parameters to create to create shapes related to arch: put true to apply"""))
 
-Script40.addComments(x3d.CommentsBlock('''OUTPUT PARAMETERS'''))
+Script40.addComments(x3d.CommentsBlock("""OUTPUT PARAMETERS"""))
 field41 = x3d.field()
 field41.setName("clearSpanWidth")
 field41.setAccessType("initializeOnly")
@@ -493,7 +493,7 @@ ProtoInstance72.addFieldValue(fieldValue80)
 
 Scene13.addChild(ProtoInstance72)
 
-Scene13.addComments(x3d.CommentsBlock('''Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)'''))
+Scene13.addComments(x3d.CommentsBlock("""Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"""))
 Inline81 = x3d.Inline()
 Inline81.setDEF("CoordinateAxes")
 Inline81.setUrl(["../data/CoordinateAxes.x3d"])
@@ -502,4 +502,4 @@ Scene13.addChild(Inline81)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/ArchPrototype.new.graalpy.x3d")
-X3D0.toFileJSON("../data/ArchPrototype.new.graalpy.json")
+X3D0.toFileJSON("../data/ArchPrototype.new.graalpy.x3dj")

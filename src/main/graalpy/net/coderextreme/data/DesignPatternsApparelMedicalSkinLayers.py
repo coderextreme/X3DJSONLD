@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -103,7 +103,7 @@ MetadataString21.setValue(["E.4 Multiple humanoids per file"])
 
 Group20.setMetadata(MetadataString21)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid22 = x3d.HAnimHumanoid()
 HAnimHumanoid22.setName("SimpleSkeleton")
 HAnimHumanoid22.setDEF("a_SimpleSkeleton")
@@ -139,7 +139,7 @@ HAnimHumanoid22.addSkeleton(HAnimJoint23)
 
 Group20.addChild(HAnimHumanoid22)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid29 = x3d.HAnimHumanoid()
 HAnimHumanoid29.setName("SimpleSkeletonMesh")
 HAnimHumanoid29.setDEF("b_SimpleSkeletonMesh")
@@ -165,7 +165,7 @@ HAnimHumanoid29.addSkeleton(HAnimJoint30)
 
 Group20.addChild(HAnimHumanoid29)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid34 = x3d.HAnimHumanoid()
 HAnimHumanoid34.setName("SkinIndexedGeometry")
 HAnimHumanoid34.setDEF("c_SkinIndexedGeometry")
@@ -189,7 +189,7 @@ HAnimHumanoid34.addSkin(IndexedFaceSet37)
 
 Group20.addChild(HAnimHumanoid34)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid38 = x3d.HAnimHumanoid()
 HAnimHumanoid38.setName("SkinShapeIndexedGeometry")
 HAnimHumanoid38.setDEF("d_SkinShapeIndexedGeometry")
@@ -216,7 +216,7 @@ HAnimHumanoid38.addSkin(Shape41)
 
 Group20.addChild(HAnimHumanoid38)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid43 = x3d.HAnimHumanoid()
 HAnimHumanoid43.setName("SkinSwitchShapeIndexedGeometry")
 HAnimHumanoid43.setDEF("e_SkinSwitchShapeIndexedGeometry")
@@ -233,7 +233,7 @@ HAnimJoint44.addChild(HAnimSegment45)
 
 HAnimHumanoid43.addSkeleton(HAnimJoint44)
 
-HAnimHumanoid43.addComments(x3d.CommentsBlock('''TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>'''))
+HAnimHumanoid43.addComments(x3d.CommentsBlock("""TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>"""))
 Shape46 = x3d.Shape()
 Shape46.setContainerFieldOverride("skin")
 IndexedFaceSet47 = x3d.IndexedFaceSet()
@@ -249,9 +249,9 @@ HAnimHumanoid43.addSkin(Shape46)
 
 Group20.addChild(HAnimHumanoid43)
 
-Group20.addComments(x3d.CommentsBlock('''similarly for LOD'''))
+Group20.addComments(x3d.CommentsBlock("""similarly for LOD"""))
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid49 = x3d.HAnimHumanoid()
 HAnimHumanoid49.setName("SynthesizedSkinShapeIndexedTwoPartGeometry")
 HAnimHumanoid49.setDEF("f_SynthesizedSkinShapeIndexedTwoPartGeometry")
@@ -282,7 +282,7 @@ HAnimHumanoid49.addSkin(Shape52)
 
 Group20.addChild(HAnimHumanoid49)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid55 = x3d.HAnimHumanoid()
 HAnimHumanoid55.setName("ApparelSkinIndexedGeometryMultipleShapes")
 HAnimHumanoid55.setDEF("g_ApparelSkinIndexedGeometryMultipleShapes")
@@ -303,13 +303,13 @@ Shape58.setContainerFieldOverride("skin")
 
 HAnimHumanoid55.addSkin(Shape58)
 
-HAnimHumanoid55.addComments(x3d.CommentsBlock('''allow multiple Shape nodes with containerField='apparel', one for each layer of clothing'''))
+HAnimHumanoid55.addComments(x3d.CommentsBlock("""allow multiple Shape nodes with containerField='apparel', one for each layer of clothing"""))
 
-HAnimHumanoid55.addComments(x3d.CommentsBlock('''TODO proposed for X3D4.1 <Shape containerField='apparel'/>'''))
+HAnimHumanoid55.addComments(x3d.CommentsBlock("""TODO proposed for X3D4.1 <Shape containerField='apparel'/>"""))
 
 Group20.addChild(HAnimHumanoid55)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 HAnimHumanoid59 = x3d.HAnimHumanoid()
 HAnimHumanoid59.setName("AnatomySkinIndexedGeometryMultipleShapes")
 HAnimHumanoid59.setDEF("h_AnatomySkinIndexedGeometryMultipleShapes")
@@ -326,7 +326,7 @@ HAnimJoint60.addChild(HAnimSegment61)
 
 HAnimHumanoid59.addSkeleton(HAnimJoint60)
 
-HAnimHumanoid59.addComments(x3d.CommentsBlock('''allow multiple Shape nodes with containerField='skin', one for each layer of skin'''))
+HAnimHumanoid59.addComments(x3d.CommentsBlock("""allow multiple Shape nodes with containerField='skin', one for each layer of skin"""))
 Shape62 = x3d.Shape()
 Shape62.setContainerFieldOverride("skin")
 
@@ -334,7 +334,7 @@ HAnimHumanoid59.addSkin(Shape62)
 
 Group20.addChild(HAnimHumanoid59)
 
-Group20.addComments(x3d.CommentsBlock('''=============================='''))
+Group20.addComments(x3d.CommentsBlock("""=============================="""))
 
 Scene17.addChild(Group20)
 Viewpoint63 = x3d.Viewpoint()
@@ -344,14 +344,14 @@ Viewpoint63.setPosition(x3d.doubleToFloat([0,0,12]))
 
 Scene17.addChild(Viewpoint63)
 
-Scene17.addComments(x3d.CommentsBlock('''Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip'''))
+Scene17.addComments(x3d.CommentsBlock("""Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip"""))
 Anchor64 = x3d.Anchor()
 Anchor64.setDescription("DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches")
 Anchor64.setParameter(["target=blank"])
 Anchor64.setUrl(["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"])
 Shape65 = x3d.Shape()
 
-Shape65.addComments(x3d.CommentsBlock('''TODO adjust Text string and Box size, then set Material transparency='1''''))
+Shape65.addComments(x3d.CommentsBlock("""TODO adjust Text string and Box size, then set Material transparency='1'"""))
 Text66 = x3d.Text()
 Text66.setString(["DesignPatternsApparelMedicalSkinLayers.x3d","","explores potential apparel approaches"])
 FontStyle67 = x3d.FontStyle()
@@ -374,7 +374,7 @@ Shape65.setAppearance(Appearance68)
 Anchor64.addChild(Shape65)
 Shape70 = x3d.Shape()
 
-Shape70.addComments(x3d.CommentsBlock('''Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.'''))
+Shape70.addComments(x3d.CommentsBlock("""Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible."""))
 Box71 = x3d.Box()
 Box71.setSize(x3d.doubleToFloat([11,2,0.001]))
 
@@ -393,4 +393,4 @@ Scene17.addChild(Anchor64)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/DesignPatternsApparelMedicalSkinLayers.new.graalpy.x3d")
-X3D0.toFileJSON("../data/DesignPatternsApparelMedicalSkinLayers.new.graalpy.json")
+X3D0.toFileJSON("../data/DesignPatternsApparelMedicalSkinLayers.new.graalpy.x3dj")

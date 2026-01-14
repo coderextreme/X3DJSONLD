@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -241,9 +241,9 @@ Script50 = x3d.Script()
 Script50.setDEF("TextScript")
 Script50.setUrl(["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"])
 
-Script50.addComments(x3d.CommentsBlock('''initialize() method includes unit test to printAllStrategies() to console'''))
+Script50.addComments(x3d.CommentsBlock("""initialize() method includes unit test to printAllStrategies() to console"""))
 
-Script50.addComments(x3d.CommentsBlock('''TODO insert field definitions here (index string_changed previous next random) and then animate!'''))
+Script50.addComments(x3d.CommentsBlock("""TODO insert field definitions here (index string_changed previous next random) and then animate!"""))
 field51 = x3d.field()
 field51.setName("index")
 field51.setAccessType("initializeOnly")
@@ -339,13 +339,13 @@ Sound66.setMaxFront(100)
 Sound66.setMinBack(20)
 Sound66.setMinFront(20)
 
-Sound66.addComments(x3d.CommentsBlock('''Make sure the sound source AudioClip is audible at the user location'''))
+Sound66.addComments(x3d.CommentsBlock("""Make sure the sound source AudioClip is audible at the user location"""))
 
-Sound66.addComments(x3d.CommentsBlock('''Not all X3D players seem to use the .mp3'''))
+Sound66.addComments(x3d.CommentsBlock("""Not all X3D players seem to use the .mp3"""))
 
-Sound66.addComments(x3d.CommentsBlock('''&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players'''))
+Sound66.addComments(x3d.CommentsBlock("""&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"""))
 
-Sound66.addComments(x3d.CommentsBlock('''%20 is space character used in uri/url encoding'''))
+Sound66.addComments(x3d.CommentsBlock("""%20 is space character used in uri/url encoding"""))
 AudioClip67 = x3d.AudioClip()
 AudioClip67.setDEF("TextToSpeechAudioClip")
 AudioClip67.setDescription("sends strategy text google translate")
@@ -409,7 +409,7 @@ Transform78.setScale(x3d.doubleToFloat([2,0.6,1]))
 Shape79 = x3d.Shape()
 Shape79.setDEF("TransparentClickSurface")
 
-Shape79.addComments(x3d.CommentsBlock('''support Selectable Text with a scalable IFS'''))
+Shape79.addComments(x3d.CommentsBlock("""support Selectable Text with a scalable IFS"""))
 IndexedFaceSet80 = x3d.IndexedFaceSet()
 IndexedFaceSet80.setCoordIndex([0,1,2,3,-1])
 IndexedFaceSet80.setSolid(False)
@@ -556,4 +556,4 @@ Scene33.addChild(Transform102)
 
 X3D0.setScene(Scene33)
 X3D0.toFileX3D("../data/ObliqueStrategies.new.graalpy.x3d")
-X3D0.toFileJSON("../data/ObliqueStrategies.new.graalpy.json")
+X3D0.toFileJSON("../data/ObliqueStrategies.new.graalpy.x3dj")

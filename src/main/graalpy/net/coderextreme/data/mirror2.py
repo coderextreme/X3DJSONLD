@@ -1,13 +1,15 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
+
+head1.addComments(x3d.CommentsBlock("""<component name='Shape' level='4'></component>"""))
 component2 = x3d.component()
 component2.setName("Scripting")
 component2.setLevel(1)
@@ -48,8 +50,6 @@ component9.setName("Core")
 component9.setLevel(1)
 
 head1.addComponent(component9)
-
-head1.addComments(x3d.CommentsBlock('''<component name='Shape' level='4'></component>'''))
 meta10 = x3d.meta()
 meta10.setName("title")
 meta10.setContent("mirror2.x3d")
@@ -138,7 +138,7 @@ ComposedShader29 = x3d.ComposedShader()
 ComposedShader29.setDEF("x_ite")
 ComposedShader29.setLanguage("GLSL")
 
-ComposedShader29.addComments(x3d.CommentsBlock('''http://hypertextbook.com/facts/2005/JustinChe.shtml'''))
+ComposedShader29.addComments(x3d.CommentsBlock("""http://hypertextbook.com/facts/2005/JustinChe.shtml"""))
 field30 = x3d.field()
 field30.setName("chromaticDispertion")
 field30.setAccessType("inputOutput")
@@ -460,4 +460,4 @@ Scene15.addChild(Transform18)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/mirror2.new.graalpy.x3d")
-X3D0.toFileJSON("../data/mirror2.new.graalpy.json")
+X3D0.toFileJSON("../data/mirror2.new.graalpy.x3dj")

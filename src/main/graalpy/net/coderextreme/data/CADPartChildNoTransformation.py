@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("CADInterchange")
 X3D0.setVersion("4.0")
@@ -95,12 +95,12 @@ CADAssembly19.setName("DesignPatternAssembly")
 CADPart20 = x3d.CADPart()
 CADPart20.setName("CADPartExample")
 
-CADPart20.addComments(x3d.CommentsBlock('''the rotation and translation attributes serve to position the bushing within the assembly'''))
+CADPart20.addComments(x3d.CommentsBlock("""the rotation and translation attributes serve to position the bushing within the assembly"""))
 CADFace21 = x3d.CADFace()
 CADFace21.setName("outerSurface")
 Shape22 = x3d.Shape()
 
-Shape22.addComments(x3d.CommentsBlock('''note solid='true' and so one-sided external rendering only'''))
+Shape22.addComments(x3d.CommentsBlock("""note solid='true' and so one-sided external rendering only"""))
 Cylinder23 = x3d.Cylinder()
 Cylinder23.setBottom(False)
 Cylinder23.setHeight(3)
@@ -123,7 +123,7 @@ CADFace26 = x3d.CADFace()
 CADFace26.setName("innerSurface")
 Shape27 = x3d.Shape()
 
-Shape27.addComments(x3d.CommentsBlock('''note solid='false' and so two-sided internal + external rendering'''))
+Shape27.addComments(x3d.CommentsBlock("""note solid='false' and so two-sided internal + external rendering"""))
 Cylinder28 = x3d.Cylinder()
 Cylinder28.setBottom(False)
 Cylinder28.setHeight(3)
@@ -184,4 +184,4 @@ Scene15.addChild(CADAssembly19)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/CADPartChildNoTransformation.new.graalpy.x3d")
-X3D0.toFileJSON("../data/CADPartChildNoTransformation.new.graalpy.json")
+X3D0.toFileJSON("../data/CADPartChildNoTransformation.new.graalpy.x3dj")
