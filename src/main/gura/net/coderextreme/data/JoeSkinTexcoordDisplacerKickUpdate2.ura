@@ -3,6 +3,7 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+#BS studio translation from .x3dv by Joe using BS Contact
             component: [
                 name: "H-Anim"
                 level: 1
@@ -54,8 +55,7 @@ X3D:
             meta: [
                 name: "license"
                 content: "../license.html"
-            ],
-#BS studio translation from .x3dv by Joe using BS Contact
+            ]
         ]
     ]
     setScene: [

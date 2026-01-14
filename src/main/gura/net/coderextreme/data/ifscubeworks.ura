@@ -1,5 +1,5 @@
 X3D:
-    profile: "Interchange"
+    profile: "Immersive"
     version: "4.0"
     setHead: [
         head: [

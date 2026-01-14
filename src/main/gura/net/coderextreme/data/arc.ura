@@ -324,12 +324,14 @@ X3D:
                 fieldValue: [
                     name: "startnode"
                     ProtoInstance: [
+                        name: "point"
                         USE: "G1"
                     ]
                 ],
                 fieldValue: [
                     name: "endnode"
                     ProtoInstance: [
+                        name: "point"
                         USE: "G2"
                     ]
                 ],
@@ -346,12 +348,14 @@ X3D:
                 fieldValue: [
                     name: "startnode"
                     ProtoInstance: [
+                        name: "point"
                         USE: "G1"
                     ]
                 ],
                 fieldValue: [
                     name: "endnode"
                     ProtoInstance: [
+                        name: "point"
                         USE: "G3"
                     ]
                 ],
@@ -368,12 +372,14 @@ X3D:
                 fieldValue: [
                     name: "startnode"
                     ProtoInstance: [
+                        name: "point"
                         USE: "G1"
                     ]
                 ],
                 fieldValue: [
                     name: "endnode"
                     ProtoInstance: [
+                        name: "point"
                         USE: "G4"
                     ]
                 ],

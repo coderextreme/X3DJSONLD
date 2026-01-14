@@ -3,6 +3,8 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+#<component name='Shape' level='4'></component>
+#Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
             component: [
                 name: "Scripting"
                 level: 1
@@ -39,8 +41,6 @@ X3D:
                 name: "DIS"
                 level: 2
             ],
-#<component name='Shape' level='4'></component>
-#Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
             meta: [
                 name: "title"
                 content: "bumpyfreewrljsonverse.x3d"
@@ -543,27 +543,22 @@ X3D:
 #DIS multiuser facilities
                     DISEntityManager: [
                         DEF: "EntityManager"
-                        networkMode: "networkReader"
                         DISEntityTypeMapping: [
-                            readInterval: "3"
                             category: 77
                             specific: 1
                             url: ["../data/Gramps8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]
                         ],
                         DISEntityTypeMapping: [
-                            readInterval: "3"
                             category: 77
                             specific: 2
                             url: ["../data/Leif8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]
                         ],
                         DISEntityTypeMapping: [
-                            readInterval: "3"
                             category: 77
                             specific: 3
                             url: ["../data/Lily8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]
                         ],
                         DISEntityTypeMapping: [
-                            readInterval: "3"
                             category: 77
                             specific: 4
                             url: ["../data/Tufani8Final.x3d", "https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]

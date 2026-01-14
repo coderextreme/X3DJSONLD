@@ -79,7 +79,7 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+                content: "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
             ],
             meta: [
                 name: "license"
@@ -10746,7 +10746,7 @@ X3D:
                                                                 ],
                                                                 HAnimSite: [
                                                                     name: "r_tarsal_distal_phalanx_5"
-                                                                    DEF: "hanim_"
+                                                                    DEF: "hanim_r_tarsal_distal_phalanx_5"
                                                                     translation: [-0.125, 0.016, 0.115]
                                                                     Transform: [
                                                                         USE: "r_tarsal_distal_phalanx_5_tip_SiteShape"

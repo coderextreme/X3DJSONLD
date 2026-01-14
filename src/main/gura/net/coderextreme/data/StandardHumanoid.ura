@@ -13,7 +13,7 @@ X3D:
             ],
             meta: [
                 name: "identifier"
-                content: "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/StandardHumanoid.x3d"
+                content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/StandardHumanoid.x3d"
             ],
             meta: [
                 name: "description"

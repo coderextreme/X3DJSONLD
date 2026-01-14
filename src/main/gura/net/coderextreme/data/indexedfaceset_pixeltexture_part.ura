@@ -118,6 +118,7 @@ X3D:
             NavigationInfo: [
                 type: ["EXAMINE", "WALK", "FLY", "ANY"]
             ],
+#<Environment id="gamma" gammaCorrectionDefault="none"></Environment>
             Shape: [
                 setAppearance: [
                     Appearance: [
@@ -128,6 +129,11 @@ X3D:
                         setTexture: [
                             PixelTexture: [
                                 image: [2, 2, 4, -16776961, 16711935, -1, -65281]
+                                setTextureProperties: [
+                                    TextureProperties: [
+                                        magnificationFilter: "NEAREST_PIXEL"
+                                    ]
+                                ]
                             ]
                         ]
                     ]

@@ -61,7 +61,7 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"
+                content: "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
             ],
             meta: [
                 name: "generator"
@@ -69,7 +69,7 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "Gnu Image Manipulation Program, http://www.gimp.org"
+                content: "Gnu Image Manipulation Program, https://www.gimp.org"
             ],
             meta: [
                 name: "generator"

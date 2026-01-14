@@ -1,0 +1,358 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "WinterAndSpringHumanoidTimings.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "Example animation timings, manually translated from tool outputs and export."
+            ],
+            meta: [
+                name: "reference"
+                content: "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/originals/WinterAndSpringHumanoidTimings.x3dv"
+            ],
+            meta: [
+                name: "info"
+                content: "reference .x3dv model successfully translated by Castle Game Engine, IICM, and Xj3D import (with loss of comments)"
+            ],
+            meta: [
+                name: "creator"
+                content: "Katy Schildmeyer"
+            ],
+            meta: [
+                name: "creator"
+                content: "Carol McDonald"
+            ],
+            meta: [
+                name: "translator"
+                content: "Joe Williams"
+            ],
+            meta: [
+                name: "translator"
+                content: "Don Brutzman"
+            ],
+            meta: [
+                name: "created"
+                content: "2 July 2023"
+            ],
+            meta: [
+                name: "translated"
+                content: "9 July 2023"
+            ],
+            meta: [
+                name: "modified"
+                content: "Mon, 15 Sep 2025 05:21:02 GMT"
+            ],
+            meta: [
+                name: "hint"
+                content: "MetadataString approach for name=poses sequence, matching the key/keyValue pairs, is experimental but seems unambiguous."
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/WinterAndSpringHumanoidTimings.x3d"
+            ],
+            meta: [
+                name: "generator"
+                content: "Cinema 4D https://www.maxon.net/en/cinema-4d"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "WinterAndSpringHumanoidTimings.x3d"
+            ],
+            Viewpoint: [
+                DEF: "EntryView1"
+                description: "Hello characters 1"
+                position: [0, 2, 40]
+            ],
+            Viewpoint: [
+                DEF: "EntryView2"
+                description: "Hello characters 2"
+                position: [-15, 10, 30]
+                orientation: [0, 1, 0, -0.643501]
+                centerOfRotation: [0, 10, 10]
+            ],
+            Transform: [
+                DEF: "TextRoot"
+                translation: [9.8557, 0.95, 3.5]
+                Shape: [
+                    DEF: "ModelDescriptionText"
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [0.960784, 0.894118, 0]
+                                ]
+                            ]
+                        ]
+                    ]
+                    setGeometry: [
+                        Text: [
+                            string: ["This scene tests", "", "experimental approaches", "", "for human animation"]
+                            setFontStyle: [
+                                FontStyle: [
+                                    family: ["SANS"]
+                                    style: "BOLD"
+                                    size: 0.8
+                                    justify: ["MIDDLE", "MIDDLE"]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            Transform: [
+                DEF: "Root4"
+                translation: [11.3657, 0.475, 3.377131]
+            ],
+            Transform: [
+                DEF: "Root5"
+                translation: [10.55646, 0.475, 3.391616]
+            ],
+            Transform: [
+                DEF: "Root6"
+                translation: [9.167682, 0.475, 3.332752]
+            ],
+            PositionInterpolator: [
+                DEF: "Gramps_HumanoidRoot_TranslationInterpolator"
+                key: [0, 0.09, 0.11, 0.22, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [6.8557, 0.95, 0.5, 6.8557, 0.95, 0.5, 6.8557, 0.95, 0.5, 9.8557, 0.95, 3.5, 9.8557, 0.95, 3.5, 9.8557, 0.95, 3.5, 14.3558, 0.95, 8, 16.8558, 0.95, 15, 21.3557, 0.95, 24.5, 21.3557, 0.95, 24.5, 21.3557, 0.95, 24.5]
+                setMetadata: [
+                    MetadataString: [
+                        name: "poses"
+                        value: ["Gramps_Stand01", "Gramps_Stand01", "Gramps_Walk01", "Gramps_Stand02", "Gramps_Turn01", "Gramps_Walk01", "Gramps_Walk02", "Gramps_Skip01", "Gramps_Stand03", "Gramps_Stand03", "Gramps_Stand03"]
+                    ]
+                ]
+            ],
+            PositionInterpolator: [
+                DEF: "Leif_HumanoidRoot_TranslationInterpolator"
+                key: [0, 0.09, 0.11, 0.223, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [-7.9962, 0.4, 3, -7.9962, 0.4, 3, -7.9962, 0.4, 3, -7.9962, 0.4, 3, 9.004, 0.475, 3.4999, 11.5048, 0.475, 3.3699, 16.0038, 0.475, 7.8699, 18.5038, 0.475, 14.8699, 23.0038, 0.475, 24.3699, 23.0038, 0.475, 24.3699, 23.0038, 0.475, 24.3699]
+                setMetadata: [
+                    MetadataString: [
+                        name: "poses"
+                        value: ["Leif_Stand01", "Leif_Stand01", "Leif_Stand01", "Leif_Run01", "Leif_Turn01", "Leif_Walk01", "Leif_Walk01", "Leif_Skip01", "Leif_Stand01", "Leif_Stand01", "Leif_Stand01"]
+                    ]
+                ]
+            ],
+            PositionInterpolator: [
+                DEF: "Lily_HumanoidRoot_TranslationInterpolator"
+                key: [0, 0.09, 0.11, 0.225, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [-8.0962, 0.4, 5.6, -8.0962, 0.4, 5.6, -8.0962, 0.4, 5.6, -8.0962, 0.4, 5.6, 8.9038, 0.475, 4.0999, 10.6538, 0.475, 3.3499, 15.1538, 0.475, 7.8499, 17.6538, 0.475, 14.8499, 22.1538, 0.475, 24.3499, 22.1538, 0.475, 24.3499, 22.1538, 0.475, 24.3499]
+                setMetadata: [
+                    MetadataString: [
+                        name: "poses"
+                        value: ["Lily_Stand01", "Lily_Stand01", "Lily_Stand01", "Leif_Run01", "Lily_Turn01", "Lily_Walk01", "Lily_Walk01", "Lily_Skip01", "Lily_Stand01", "Lily_Stand01", "Lily_Stand01"]
+                    ]
+                ]
+            ],
+            PositionInterpolator: [
+                DEF: "Tufani_HumanoidRoot_TranslationInterpolator"
+                key: [0, 0.09, 0.11, 0.227, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [-8.0962, 0.4, 6.4, -8.0962, 0.4, 6.4, -8.0962, 0.4, 6.4, -8.0962, 0.4, 6.4, 9.40338, 0.475, 4.3999, 9.1538, 0.475, 3.2699, 13.6538, 0.475, 7.7699, 16.1538, 0.475, 14.7699, 20.6538, 0.475, 24.2699, 20.6538, 0.475, 24.2699, 20.6538, 0.475, 24.2699]
+                setMetadata: [
+                    MetadataString: [
+                        name: "poses"
+                        value: ["Tufani_Stand01", "Tufani_Stand01", "Tufani_Stand01", "Tufani_Run01", "Tufani_Turn01", "Tufani_Walk01", "Tufani_Walk01", "Tufani_Skip01", "Tufani_Stand01", "Tufani_Stand01", "Tufani_Stand01"]
+                    ]
+                ]
+            ],
+            Background: [
+                DEF: "Background3Black"
+            ],
+            Background: [
+                DEF: "Background4SkyBlueGreenGrass"
+                skyColor: [0, 0.71, 0.886]
+                groundAngle: [1.57]
+                groundColor: [0.356863, 0.639216, 0, 0.721569, 1, 0.501961]
+            ],
+            Background: [
+                DEF: "Background5LightGrey"
+                skyColor: [0.827, 0.827, 0.827]
+            ],
+            Background: [
+                DEF: "Background6DarkGrey"
+                skyColor: [0.6, 0.2, 0.2]
+            ],
+            TimeSensor: [
+                DEF: "Clock10Seconds"
+                cycleInterval: 5.0
+                loop: true
+            ],
+            TimeSensor: [
+                DEF: "Clock100Seconds"
+                enabled: false
+                cycleInterval: 100.0
+            ],
+            BooleanSequencer: [
+                DEF: "Background3Sequencer"
+                key: [0, 0.09, 0.11, 0.22, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [true, true, true, false, false, false, false, false, false, false, false]
+            ],
+            BooleanSequencer: [
+                DEF: "Background4Sequencer"
+                key: [0, 0.09, 0.11, 0.22, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [false, false, false, true, true, false, false, false, false, false, false]
+            ],
+            BooleanSequencer: [
+                DEF: "Background5Sequencer"
+                key: [0, 0.09, 0.11, 0.22, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [false, false, false, false, false, true, true, true, false, false, false]
+            ],
+            BooleanSequencer: [
+                DEF: "Background6Sequencer"
+                key: [0, 0.09, 0.11, 0.22, 0.043, 0.55, 0.63, 0.73, 0.85, 0.86, 1]
+                keyValue: [false, false, false, false, false, false, false, false, true, true, true]
+            ],
+            ROUTE: [
+                fromNode: "Background3Sequencer"
+                fromField: "value_changed"
+                toNode: "Background3Black"
+                toField: "set_bind"
+            ],
+            ROUTE: [
+                fromNode: "Background4Sequencer"
+                fromField: "value_changed"
+                toNode: "Background4SkyBlueGreenGrass"
+                toField: "set_bind"
+            ],
+            ROUTE: [
+                fromNode: "Background5Sequencer"
+                fromField: "value_changed"
+                toNode: "Background5LightGrey"
+                toField: "set_bind"
+            ],
+            ROUTE: [
+                fromNode: "Background6Sequencer"
+                fromField: "value_changed"
+                toNode: "Background6DarkGrey"
+                toField: "set_bind"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background3Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background4Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background5Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background6Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background3Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background4Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background5Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Background6Sequencer"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Gramps_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Leif_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Lily_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock10Seconds"
+                fromField: "fraction_changed"
+                toNode: "Tufani_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Gramps_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Leif_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Lily_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Clock100Seconds"
+                fromField: "fraction_changed"
+                toNode: "Tufani_HumanoidRoot_TranslationInterpolator"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Gramps_HumanoidRoot_TranslationInterpolator"
+                fromField: "value_changed"
+                toNode: "TextRoot"
+                toField: "set_translation"
+            ],
+            ROUTE: [
+                fromNode: "Leif_HumanoidRoot_TranslationInterpolator"
+                fromField: "value_changed"
+                toNode: "Root4"
+                toField: "set_translation"
+            ],
+            ROUTE: [
+                fromNode: "Lily_HumanoidRoot_TranslationInterpolator"
+                fromField: "value_changed"
+                toNode: "Root5"
+                toField: "set_translation"
+            ],
+            ROUTE: [
+                fromNode: "Tufani_HumanoidRoot_TranslationInterpolator"
+                fromField: "value_changed"
+                toNode: "Root6"
+                toField: "set_translation"
+            ]
+        ]
+    ]
