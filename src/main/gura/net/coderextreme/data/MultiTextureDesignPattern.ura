@@ -1,0 +1,152 @@
+X3D:
+    profile: "Immersive"
+    version: "3.3"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "MultiTextureDesignPattern.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "Design pattern for MultiTexture, MultiTextureCoordinate, MultiTextureTransform node correspondences"
+            ],
+            meta: [
+                name: "creator"
+                content: "Don Brutzman"
+            ],
+            meta: [
+                name: "created"
+                content: "5 March 2011"
+            ],
+            meta: [
+                name: "modified"
+                content: "29 October 2023"
+            ],
+            meta: [
+                name: "TODO"
+                content: "X3D schematron rules for quality assurance"
+            ],
+            meta: [
+                name: "Image"
+                content: "MultiTextureDesignPatternSceneGraph.png"
+            ],
+            meta: [
+                name: "subject"
+                content: "MultiTexture, MultiTextureCoordinate, MultiTextureTransform"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/files/specifications/19775-1/V3.2/Part01/components/texturing.html#MultiTexture"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/TextureMapping/MultiTextureDesignPattern.x3d"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/x3d/content/examples/X3dResources.html"
+            ],
+            meta: [
+                name: "generator"
+                content: "X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"
+            ],
+            meta: [
+                name: "license"
+                content: "../license.html"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+#================================
+            WorldInfo: [
+                title: "MultiTextureDesignPattern.x3d"
+            ],
+            Background: [
+                skyColor: [0.72549, 1, 0.721569]
+            ],
+            Viewpoint: [
+                description: "MultiTexture design pattern"
+            ],
+            Shape: [
+                setGeometry: [
+                    Text: [
+                        string: ["Source shows design pattern for", "MultiTexture, MultiTextureCoordinate,", " and MultiTextureTransform nodes"]
+                        setFontStyle: [
+                            FontStyle: [
+                                justify: ["MIDDLE", "MIDDLE"]
+                                size: 0.6
+                            ]
+                        ]
+                    ]
+                ]
+                setAppearance: [
+                    Appearance: [
+                        setMaterial: [
+                            Material: [
+                                diffuseColor: [0.2, 0.4, 0.8]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+#================================
+            Shape: [
+#add a single geometry node here
+                setGeometry: [
+                    IndexedFaceSet: [
+                        setTexCoord: [
+                            MultiTextureCoordinate: [
+#add multiple TextureCoordinate nodes here, match corresponding MultiTexture child texture nodes
+                                TextureCoordinate: [
+                                    point: [0, 0, 1, 0, 1, 1, 0, 1]
+                                ],
+                                TextureCoordinate: [
+                                    point: [0, 0, 1, 0, 1, 1, 0, 1]
+                                ],
+                                TextureCoordinate: [
+                                    point: [0, 0, 1, 0, 1, 1, 0, 1]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+                setAppearance: [
+                    Appearance: [
+                        setMaterial: [
+                            Material: [ empty
+                            ]
+                        ]
+                        setTexture: [
+                            MultiTexture: [
+                                alpha: 0.8
+                                color: [0.9, 1, 0.2]
+                                function: ["COMPLEMENT", "ALPHAREPLICATE"]
+                                mode: ["MODULATE", "REPLACE", "BLENDDIFFUSEALPHA"]
+                                source: ["DIFFUSE", "SPECULAR", "FACTOR"]
+#add multiple texture nodes here
+                                ImageTexture: [ empty
+                                ],
+                                MovieTexture: [ empty
+                                ],
+                                PixelTexture: [ empty
+                                ]
+                            ]
+                        ]
+                        setTextureTransform: [
+                            MultiTextureTransform: [
+#add multiple TextureTransform nodes here, match corresponding MultiTexture child texture nodes
+                                TextureTransform: [ empty
+                                ],
+                                TextureTransform: [ empty
+                                ],
+                                TextureTransform: [ empty
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

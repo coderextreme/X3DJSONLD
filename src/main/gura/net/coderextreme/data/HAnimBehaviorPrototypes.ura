@@ -8099,6 +8099,7 @@ X3D:
                 fieldValue: [
                     name: "hAnimBehaviorNodes"
                     ProtoInstance: [
+                        name: "HAnimBehavior"
                         USE: "BehaviorTest1"
                     ]
                 ],

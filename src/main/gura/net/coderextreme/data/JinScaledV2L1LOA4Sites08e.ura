@@ -3,6 +3,8 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+#Scaled 1:1, Added Animations
+#Added Sites
             component: [
                 name: "HAnim"
                 level: 1
@@ -82,9 +84,7 @@ X3D:
             meta: [
                 name: "license"
                 content: "../license.html"
-            ],
-#Scaled 1:1, Added Animations
-#Added Sites
+            ]
         ]
     ]
     setScene: [

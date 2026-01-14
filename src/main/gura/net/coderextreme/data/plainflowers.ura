@@ -61,7 +61,7 @@ X3D:
                                     name: "FlowerProto"
                                     fieldValue: [
                                         name: "vertex"
-                                        value: "\"../shaders/x_ite_flowers_plain.vs\""
+                                        value: "\"../shaders/gl_flowers_plain.vs\""
                                     ],
                                     fieldValue: [
                                         name: "fragment"

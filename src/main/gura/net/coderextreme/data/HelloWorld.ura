@@ -30,7 +30,7 @@ X3D:
             ],
             meta: [
                 name: "reference"
-                content: "http://en.wikipedia.org/wiki/Hello_world"
+                content: "https://en.wikipedia.org/wiki/Hello_world"
             ],
             meta: [
                 name: "reference"
@@ -42,11 +42,11 @@ X3D:
             ],
             meta: [
                 name: "reference"
-                content: "http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+                content: "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
             ],
             meta: [
                 name: "reference"
-                content: "http://www.HelloWorldExample.net"
+                content: "https://www.HelloWorldExample.net"
             ],
             meta: [
                 name: "reference"
@@ -62,11 +62,11 @@ X3D:
             ],
             meta: [
                 name: "reference"
-                content: "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"
+                content: "https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"
             ],
             meta: [
                 name: "identifier"
-                content: "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"
+                content: "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"
             ],
             meta: [
                 name: "license"

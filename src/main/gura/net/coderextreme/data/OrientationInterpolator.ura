@@ -1,0 +1,35 @@
+X3D:
+    profile: "Interactive"
+    version: "4.0"
+    setHead: [
+        head: [
+            component: [
+                name: "HAnim"
+                level: 1
+            ],
+            meta: [
+                name: "title"
+                content: "OrientationInterpolator.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "created"
+                content: "29 December 2025"
+            ],
+            meta: [
+                name: "license"
+                content: "license.html"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "OrientationInterpolator.x3d"
+            ],
+#<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+        ]
+    ]

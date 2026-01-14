@@ -13,7 +13,7 @@ X3D:
             ],
             meta: [
                 name: "identifier"
-                content: "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"
+                content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"
             ],
             meta: [
                 name: "description"
@@ -222,7 +222,7 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_"
+                    USE: "hanim_humanoid_root"
                 ]
             ]
         ]

@@ -3,6 +3,8 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+#Scaled 1:1, Added Animations
+#Added Sites
             component: [
                 name: "HAnim"
                 level: 1
@@ -77,14 +79,12 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+                content: "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
             ],
             meta: [
                 name: "license"
                 content: "../license.html"
-            ],
-#Scaled 1:1, Added Animations
-#Added Sites
+            ]
         ]
     ]
     setScene: [

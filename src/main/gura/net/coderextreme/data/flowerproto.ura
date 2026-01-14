@@ -69,15 +69,15 @@ X3D:
                     ProtoInterface: [
                         field: [
                             name: "vertex"
-                            accessType: "inputOutput"
+                            accessType: "inputOnly"
                             type: "MFString"
-                            value: "\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\""
+                            value: "\"../shaders/gl_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\""
                         ],
                         field: [
                             name: "fragment"
-                            accessType: "inputOutput"
+                            accessType: "inputOnly"
                             type: "MFString"
-                            value: "\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\""
+                            value: "\"../shaders/pc_flowers.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\""
                         ]
                     ]
                 ]
@@ -132,11 +132,14 @@ X3D:
                                         ComposedShader: [
                                             DEF: "shader"
                                             language: "GLSL"
+#<field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
                                             field: [
                                                 name: "cube"
-                                                type: "SFInt32"
-                                                accessType: "inputOutput"
-                                                value: "0"
+                                                type: "SFNode"
+                                                accessType: "inputOnly"
+                                                ComposedCubeMapTexture: [
+                                                    USE: "texture"
+                                                ]
                                             ],
                                             field: [
                                                 name: "chromaticDispertion"
@@ -147,58 +150,57 @@ X3D:
                                             field: [
                                                 name: "bias"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "0.5"
                                             ],
                                             field: [
                                                 name: "scale"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "0.5"
                                             ],
                                             field: [
                                                 name: "power"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "2"
                                             ],
                                             field: [
                                                 name: "a"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "10"
                                             ],
                                             field: [
                                                 name: "b"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "1"
                                             ],
                                             field: [
                                                 name: "c"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "20"
                                             ],
                                             field: [
                                                 name: "d"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "20"
                                             ],
                                             field: [
                                                 name: "tdelta"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "0"
                                             ],
                                             field: [
                                                 name: "pdelta"
                                                 type: "SFFloat"
-                                                accessType: "inputOutput"
+                                                accessType: "inputOnly"
                                                 value: "0"
                                             ],
-#<field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field>
                                             ShaderPart: [
                                                 type: "VERTEX"
                                                 IS: [
@@ -227,6 +229,7 @@ X3D:
                             ],
                             Script: [
                                 DEF: "Animate"
+                                directOutput: true
                                 field: [
                                     name: "translation"
                                     accessType: "inputOutput"
@@ -235,7 +238,7 @@ X3D:
                                 ],
                                 field: [
                                     name: "velocity"
-                                    accessType: "inputOutput"
+                                    accessType: "outputOnly"
                                     type: "SFVec3f"
                                     value: "0 0 0"
                                 ],
@@ -247,37 +250,37 @@ X3D:
                                 field: [
                                     name: "a"
                                     type: "SFFloat"
-                                    accessType: "inputOutput"
+                                    accessType: "outputOnly"
                                     value: "0.5"
                                 ],
                                 field: [
                                     name: "b"
                                     type: "SFFloat"
-                                    accessType: "inputOutput"
+                                    accessType: "outputOnly"
                                     value: "0.5"
                                 ],
                                 field: [
                                     name: "c"
                                     type: "SFFloat"
-                                    accessType: "inputOutput"
+                                    accessType: "outputOnly"
                                     value: "3"
                                 ],
                                 field: [
                                     name: "d"
                                     type: "SFFloat"
-                                    accessType: "inputOutput"
+                                    accessType: "outputOnly"
                                     value: "3"
                                 ],
                                 field: [
                                     name: "tdelta"
                                     type: "SFFloat"
-                                    accessType: "inputOutput"
+                                    accessType: "outputOnly"
                                     value: "0.5"
                                 ],
                                 field: [
                                     name: "pdelta"
                                     type: "SFFloat"
-                                    accessType: "inputOutput"
+                                    accessType: "outputOnly"
                                     value: "0.5"
                                 ],
 #ecmascript:

@@ -53,7 +53,7 @@ X3D:
             ],
             meta: [
                 name: "identifier"
-                content: "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
+                content: "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
             ],
             meta: [
                 name: "generator"
