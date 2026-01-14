@@ -19,6 +19,7 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
+//meta content='under development' name='warning'/
 component& component2 =  component();
 component2.setName(CString("Shaders"));
 component2.setLevel(1);
@@ -119,7 +120,6 @@ meta21.setName(CString("license"));
 meta21.setContent(CString("../../license.html"));
 head1.addMeta(&meta21);
 
-//meta content='under development' name='warning'/
 X3D0.setHead(&head1);
 
 Scene& Scene22 =  Scene();

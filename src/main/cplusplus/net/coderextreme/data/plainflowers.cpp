@@ -85,7 +85,7 @@ ProtoInstance& ProtoInstance17 =  ProtoInstance();
 ProtoInstance17.setName(CString("FlowerProto"));
 fieldValue& fieldValue18 =  fieldValue();
 fieldValue18.setName(CString("vertex"));
-fieldValue18.setValue(CString("\"../shaders/x_ite_flowers_plain.vs\""));
+fieldValue18.setValue(CString("\"../shaders/gl_flowers_plain.vs\""));
 ProtoInstance17.addChild(&fieldValue18);
 
 fieldValue& fieldValue19 =  fieldValue();

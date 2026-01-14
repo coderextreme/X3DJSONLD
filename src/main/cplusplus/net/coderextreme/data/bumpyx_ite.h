@@ -8,6 +8,7 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
+//<component name='Shape' level='4'></component>
 component& component2 =  component();
 component2.setName(CString("Scripting"));
 component2.setLevel(1);
@@ -48,7 +49,6 @@ component9.setName(CString("Core"));
 component9.setLevel(1);
 head1.addChild(&component9);
 
-//<component name='Shape' level='4'></component>
 meta& meta10 =  meta();
 meta10.setName(CString("title"));
 meta10.setContent(CString("bumpyx_ite.x3d"));

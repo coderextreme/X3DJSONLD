@@ -101,7 +101,7 @@ head1.addMeta(&meta17);
 
 meta& meta18 =  meta();
 meta18.setName(CString("generator"));
-meta18.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta18.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta18);
 
 meta& meta19 =  meta();

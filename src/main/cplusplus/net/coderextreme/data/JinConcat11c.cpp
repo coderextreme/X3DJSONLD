@@ -113,7 +113,7 @@ head1.addMeta(&meta19);
 
 meta& meta20 =  meta();
 meta20.setName(CString("generator"));
-meta20.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta20.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta20);
 
 meta& meta21 =  meta();
@@ -11525,7 +11525,7 @@ HAnimSegment2690.addChild(&Shape2692);
 
 HAnimSite& HAnimSite2693 =  HAnimSite();
 HAnimSite2693.X3DNode::setName(CString("r_tarsal_distal_phalanx_5"));
-HAnimSite2693.setDEF(CString("hanim_"));
+HAnimSite2693.setDEF(CString("hanim_r_tarsal_distal_phalanx_5"));
 HAnimSite2693.setTranslation(new float[]{-0.125,0.016,0.115});
 Transform& Transform2694 =  Transform();
 Transform2694.setUSE(CString("r_tarsal_distal_phalanx_5_tip_SiteShape"));

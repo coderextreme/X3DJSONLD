@@ -20,7 +20,7 @@ head1.addMeta(&meta3);
 
 meta& meta4 =  meta();
 meta4.setName(CString("identifier"));
-meta4.setContent(CString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"));
+meta4.setContent(CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d"));
 head1.addMeta(&meta4);
 
 meta& meta5 =  meta();
@@ -224,7 +224,7 @@ HAnimJoint47.setLlimit(new float[]{0.0,0.0,0.0}, 3);
 HAnimHumanoid38.setSkeleton(&HAnimJoint47);
 
 HAnimJoint& HAnimJoint48 =  HAnimJoint();
-HAnimJoint48.setUSE(CString("hanim_"));
+HAnimJoint48.setUSE(CString("hanim_humanoid_root"));
 HAnimHumanoid38.setJoints(&HAnimJoint48);
 
 Scene11.addChild(&HAnimHumanoid38);

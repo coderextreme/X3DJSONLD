@@ -8,6 +8,8 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
+//<component name='Shape' level='4'></component>
+//<component name='DIS' level='2'></component>
 component& component2 =  component();
 component2.setName(CString("Scripting"));
 component2.setLevel(1);
@@ -48,1217 +50,1078 @@ component9.setName(CString("Core"));
 component9.setLevel(1);
 head1.addChild(&component9);
 
-component& component10 =  component();
-component10.setName(CString("DIS"));
-component10.setLevel(2);
-head1.addChild(&component10);
+meta& meta10 =  meta();
+meta10.setName(CString("title"));
+meta10.setContent(CString("bumpyx_itesliders.x3d"));
+head1.addMeta(&meta10);
 
-//<component name='Shape' level='4'></component>
-//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 meta& meta11 =  meta();
-meta11.setName(CString("title"));
-meta11.setContent(CString("bumpyx_itesliders.x3d"));
+meta11.setName(CString("description"));
+meta11.setContent(CString("*Bumpy flower with prototype sliders*"));
 head1.addMeta(&meta11);
 
 meta& meta12 =  meta();
-meta12.setName(CString("description"));
-meta12.setContent(CString("*enter description here, short-sentence summaries preferred*"));
+meta12.setName(CString("creator"));
+meta12.setContent(CString("Doug Sanden, Christoph Valentin, John Carlson"));
 head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
-meta13.setName(CString("creator"));
-meta13.setContent(CString("Doug Sanden, Christoph Valentin, John Carlson"));
+meta13.setName(CString("identifier"));
+meta13.setContent(CString("https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d"));
 head1.addMeta(&meta13);
 
 meta& meta14 =  meta();
-meta14.setName(CString("translator"));
-meta14.setContent(CString("*if manually translating VRML-to-X3D, enter name of person translating here*"));
+meta14.setName(CString("generator"));
+meta14.setContent(CString("PSPad, http://www.pspad.com/"));
 head1.addMeta(&meta14);
 
 meta& meta15 =  meta();
-meta15.setName(CString("created"));
-meta15.setContent(CString("*enter date of initial version here*"));
+meta15.setName(CString("license"));
+meta15.setContent(CString("license.html"));
 head1.addMeta(&meta15);
-
-meta& meta16 =  meta();
-meta16.setName(CString("translated"));
-meta16.setContent(CString("*enter date of translation here*"));
-head1.addMeta(&meta16);
-
-meta& meta17 =  meta();
-meta17.setName(CString("modified"));
-meta17.setContent(CString("*enter date of latest revision here*"));
-head1.addMeta(&meta17);
-
-meta& meta18 =  meta();
-meta18.setName(CString("version"));
-meta18.setContent(CString("*enter version here, if any*"));
-head1.addMeta(&meta18);
-
-meta& meta19 =  meta();
-meta19.setName(CString("reference"));
-meta19.setContent(CString("*enter reference citation or relative/online url here*"));
-head1.addMeta(&meta19);
-
-meta& meta20 =  meta();
-meta20.setName(CString("reference"));
-meta20.setContent(CString("*enter additional url/bibliographic reference information here*"));
-head1.addMeta(&meta20);
-
-meta& meta21 =  meta();
-meta21.setName(CString("requires"));
-meta21.setContent(CString("*enter reference resource here if required to support function, delivery, or coherence of content*"));
-head1.addMeta(&meta21);
-
-meta& meta22 =  meta();
-meta22.setName(CString("rights"));
-meta22.setContent(CString("*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024"));
-head1.addMeta(&meta22);
-
-meta& meta23 =  meta();
-meta23.setName(CString("drawing"));
-meta23.setContent(CString("*enter drawing filename/url here*"));
-head1.addMeta(&meta23);
-
-meta& meta24 =  meta();
-meta24.setName(CString("MovingImage"));
-meta24.setContent(CString("*enter movie filename/url here*"));
-head1.addMeta(&meta24);
-
-meta& meta25 =  meta();
-meta25.setName(CString("photo"));
-meta25.setContent(CString("*enter photo filename/url here*"));
-head1.addMeta(&meta25);
-
-meta& meta26 =  meta();
-meta26.setName(CString("subject"));
-meta26.setContent(CString("*enter subject keywords here*"));
-head1.addMeta(&meta26);
-
-meta& meta27 =  meta();
-meta27.setName(CString("accessRights"));
-meta27.setContent(CString("*enter permission statements or url here*"));
-head1.addMeta(&meta27);
-
-meta& meta28 =  meta();
-meta28.setName(CString("identifier"));
-meta28.setContent(CString("*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*"));
-head1.addMeta(&meta28);
-
-meta& meta29 =  meta();
-meta29.setName(CString("generator"));
-meta29.setContent(CString("PSPad, http://www.pspad.com/"));
-head1.addMeta(&meta29);
-
-meta& meta30 =  meta();
-meta30.setName(CString("license"));
-meta30.setContent(CString("license.html"));
-head1.addMeta(&meta30);
 
 X3D0.setHead(&head1);
 
 //\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
-Scene& Scene31 =  Scene();
+Scene& Scene16 =  Scene();
 //LayerSet with two layers, navigation happens in layer 1
-LayerSet& LayerSet32 =  LayerSet();
-LayerSet32.setActiveLayer(1);
-LayerSet32.setOrder(new int32_t[]{1,2}, 2);
+LayerSet& LayerSet17 =  LayerSet();
+LayerSet17.setActiveLayer(1);
+LayerSet17.setOrder(new int32_t[]{1,2,3}, 3);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
-Layer& Layer33 =  Layer();
-Layer33.setPickable(true);
-Layer33.setObjectType(new CString[]{CString("ALL")}, 1);
+Layer& Layer18 =  Layer();
+Layer18.setPickable(true);
+Layer18.setObjectType(new CString[]{CString("ALL")}, 1);
 //basic nodes, which might be present in any scene
-NavigationInfo& NavigationInfo34 =  NavigationInfo();
-NavigationInfo34.setType(new CString[]{CString("EXAMINE")}, 1);
-NavigationInfo34.setAvatarSize(new float[]{0.25,1.75,0.75}, 3);
-Layer33.addChild(&NavigationInfo34);
+NavigationInfo& NavigationInfo19 =  NavigationInfo();
+NavigationInfo19.setType(new CString[]{CString("EXAMINE")}, 1);
+NavigationInfo19.setAvatarSize(new float[]{0.25,1.75,0.75}, 3);
+Layer18.addChild(&NavigationInfo19);
 
-DirectionalLight& DirectionalLight35 =  DirectionalLight();
-DirectionalLight35.setAmbientIntensity(0.2);
-DirectionalLight35.setDirection(new float[]{0.0,-1.0,0.0});
-Layer33.addChild(&DirectionalLight35);
+DirectionalLight& DirectionalLight20 =  DirectionalLight();
+DirectionalLight20.setAmbientIntensity(0.2);
+DirectionalLight20.setDirection(new float[]{0.0,-1.0,0.0});
+Layer18.addChild(&DirectionalLight20);
 
-DirectionalLight& DirectionalLight36 =  DirectionalLight();
-DirectionalLight36.setAmbientIntensity(0.2);
-DirectionalLight36.setDirection(new float[]{-1.0,-0.1,-1.0});
-Layer33.addChild(&DirectionalLight36);
+DirectionalLight& DirectionalLight21 =  DirectionalLight();
+DirectionalLight21.setAmbientIntensity(0.2);
+DirectionalLight21.setDirection(new float[]{-1.0,-0.1,-1.0});
+Layer18.addChild(&DirectionalLight21);
 
-Viewpoint& Viewpoint37 =  Viewpoint();
-Viewpoint37.setDescription(CString("My Overview"));
-Viewpoint37.setFieldOfView(1.570796);
-Viewpoint37.setPosition(new float[]{0.0,1.75,60.0});
-Layer33.addChild(&Viewpoint37);
+Viewpoint& Viewpoint22 =  Viewpoint();
+Viewpoint22.setDescription(CString("My Overview"));
+Viewpoint22.setFieldOfView(1.570796);
+Viewpoint22.setPosition(new float[]{0.0,1.75,60.0});
+Layer18.addChild(&Viewpoint22);
 
 //this group contains the red/green/blue 3D crosshair
-Group& Group38 =  Group();
+Group& Group23 =  Group();
 //Arrow X
+Transform& Transform24 =  Transform();
+Transform24.setTranslation(new float[]{25.0,0.0,0.0});
+Transform24.setRotation(new float[]{0.0,0.0,-1.0,1.57});
+Shape& Shape25 =  Shape();
+Cylinder& Cylinder26 =  Cylinder();
+Cylinder26.setDEF(CString("Shaft"));
+Cylinder26.setRadius(0.35);
+Cylinder26.setHeight(50);
+Shape25.setGeometry(&Cylinder26);
+
+Appearance& Appearance27 =  Appearance();
+Material& Material28 =  Material();
+Material28.setDEF(CString("RED"));
+Material28.setDiffuseColor(new float[]{1.0,0.0,0.0});
+Material28.setEmissiveColor(new float[]{1.0,0.0,0.0});
+Appearance27.addChild(&Material28);
+
+Shape25.addChild(&Appearance27);
+
+Transform24.addChild(&Shape25);
+
+Group23.addChild(&Transform24);
+
+Transform& Transform29 =  Transform();
+Transform29.setTranslation(new float[]{50.0,0.0,0.0});
+Transform29.setRotation(new float[]{0.0,0.0,-1.0,1.57});
+Shape& Shape30 =  Shape();
+Cone& Cone31 =  Cone();
+Cone31.setDEF(CString("Tip"));
+Cone31.setBottomRadius(0.8);
+Cone31.setHeight(3);
+Shape30.setGeometry(&Cone31);
+
+Appearance& Appearance32 =  Appearance();
+Material& Material33 =  Material();
+Material33.setUSE(CString("RED"));
+Appearance32.addChild(&Material33);
+
+Shape30.addChild(&Appearance32);
+
+Transform29.addChild(&Shape30);
+
+Group23.addChild(&Transform29);
+
+//Arrow Y
+Transform& Transform34 =  Transform();
+Transform34.setTranslation(new float[]{0.0,25.0,0.0});
+Shape& Shape35 =  Shape();
+Cylinder& Cylinder36 =  Cylinder();
+Cylinder36.setUSE(CString("Shaft"));
+Shape35.setGeometry(&Cylinder36);
+
+Appearance& Appearance37 =  Appearance();
+Material& Material38 =  Material();
+Material38.setDEF(CString("GREEN"));
+Material38.setDiffuseColor(new float[]{0.0,1.0,0.0});
+Material38.setEmissiveColor(new float[]{0.0,1.0,0.0});
+Appearance37.addChild(&Material38);
+
+Shape35.addChild(&Appearance37);
+
+Transform34.addChild(&Shape35);
+
+Group23.addChild(&Transform34);
+
 Transform& Transform39 =  Transform();
-Transform39.setTranslation(new float[]{25.0,0.0,0.0});
-Transform39.setRotation(new float[]{0.0,0.0,-1.0,1.57});
+Transform39.setTranslation(new float[]{0.0,50.0,0.0});
 Shape& Shape40 =  Shape();
-Cylinder& Cylinder41 =  Cylinder();
-Cylinder41.setDEF(CString("Shaft"));
-Cylinder41.setRadius(0.35);
-Cylinder41.setHeight(50);
-Shape40.setGeometry(&Cylinder41);
+Cone& Cone41 =  Cone();
+Cone41.setUSE(CString("Tip"));
+Shape40.setGeometry(&Cone41);
 
 Appearance& Appearance42 =  Appearance();
 Material& Material43 =  Material();
-Material43.setDEF(CString("RED"));
-Material43.setDiffuseColor(new float[]{1.0,0.0,0.0});
-Material43.setEmissiveColor(new float[]{1.0,0.0,0.0});
+Material43.setUSE(CString("GREEN"));
 Appearance42.addChild(&Material43);
 
 Shape40.addChild(&Appearance42);
 
 Transform39.addChild(&Shape40);
 
-Group38.addChild(&Transform39);
+Group23.addChild(&Transform39);
 
+//Arrow Z
 Transform& Transform44 =  Transform();
-Transform44.setTranslation(new float[]{50.0,0.0,0.0});
-Transform44.setRotation(new float[]{0.0,0.0,-1.0,1.57});
+Transform44.setTranslation(new float[]{0.0,0.0,25.0});
+Transform44.setRotation(new float[]{1.0,0.0,0.0,1.57});
 Shape& Shape45 =  Shape();
-Cone& Cone46 =  Cone();
-Cone46.setDEF(CString("Tip"));
-Cone46.setBottomRadius(0.8);
-Cone46.setHeight(3);
-Shape45.setGeometry(&Cone46);
+Cylinder& Cylinder46 =  Cylinder();
+Cylinder46.setUSE(CString("Shaft"));
+Shape45.setGeometry(&Cylinder46);
 
 Appearance& Appearance47 =  Appearance();
 Material& Material48 =  Material();
-Material48.setUSE(CString("RED"));
+Material48.setDEF(CString("BLUE"));
+Material48.setDiffuseColor(new float[]{0.0,0.0,1.0});
+Material48.setEmissiveColor(new float[]{0.0,0.0,1.0});
 Appearance47.addChild(&Material48);
 
 Shape45.addChild(&Appearance47);
 
 Transform44.addChild(&Shape45);
 
-Group38.addChild(&Transform44);
+Group23.addChild(&Transform44);
 
-//Arrow Y
 Transform& Transform49 =  Transform();
-Transform49.setTranslation(new float[]{0.0,25.0,0.0});
+Transform49.setTranslation(new float[]{0.0,0.0,50.0});
+Transform49.setRotation(new float[]{1.0,0.0,0.0,1.57});
 Shape& Shape50 =  Shape();
-Cylinder& Cylinder51 =  Cylinder();
-Cylinder51.setUSE(CString("Shaft"));
-Shape50.setGeometry(&Cylinder51);
+Cone& Cone51 =  Cone();
+Cone51.setUSE(CString("Tip"));
+Shape50.setGeometry(&Cone51);
 
 Appearance& Appearance52 =  Appearance();
 Material& Material53 =  Material();
-Material53.setDEF(CString("GREEN"));
-Material53.setDiffuseColor(new float[]{0.0,1.0,0.0});
-Material53.setEmissiveColor(new float[]{0.0,1.0,0.0});
+Material53.setUSE(CString("BLUE"));
 Appearance52.addChild(&Material53);
 
 Shape50.addChild(&Appearance52);
 
 Transform49.addChild(&Shape50);
 
-Group38.addChild(&Transform49);
+Group23.addChild(&Transform49);
 
-Transform& Transform54 =  Transform();
-Transform54.setTranslation(new float[]{0.0,50.0,0.0});
-Shape& Shape55 =  Shape();
-Cone& Cone56 =  Cone();
-Cone56.setUSE(CString("Tip"));
-Shape55.setGeometry(&Cone56);
-
-Appearance& Appearance57 =  Appearance();
-Material& Material58 =  Material();
-Material58.setUSE(CString("GREEN"));
-Appearance57.addChild(&Material58);
-
-Shape55.addChild(&Appearance57);
-
-Transform54.addChild(&Shape55);
-
-Group38.addChild(&Transform54);
-
-//Arrow Z
-Transform& Transform59 =  Transform();
-Transform59.setTranslation(new float[]{0.0,0.0,25.0});
-Transform59.setRotation(new float[]{1.0,0.0,0.0,1.57});
-Shape& Shape60 =  Shape();
-Cylinder& Cylinder61 =  Cylinder();
-Cylinder61.setUSE(CString("Shaft"));
-Shape60.setGeometry(&Cylinder61);
-
-Appearance& Appearance62 =  Appearance();
-Material& Material63 =  Material();
-Material63.setDEF(CString("BLUE"));
-Material63.setDiffuseColor(new float[]{0.0,0.0,1.0});
-Material63.setEmissiveColor(new float[]{0.0,0.0,1.0});
-Appearance62.addChild(&Material63);
-
-Shape60.addChild(&Appearance62);
-
-Transform59.addChild(&Shape60);
-
-Group38.addChild(&Transform59);
-
-Transform& Transform64 =  Transform();
-Transform64.setTranslation(new float[]{0.0,0.0,50.0});
-Transform64.setRotation(new float[]{1.0,0.0,0.0,1.57});
-Shape& Shape65 =  Shape();
-Cone& Cone66 =  Cone();
-Cone66.setUSE(CString("Tip"));
-Shape65.setGeometry(&Cone66);
-
-Appearance& Appearance67 =  Appearance();
-Material& Material68 =  Material();
-Material68.setUSE(CString("BLUE"));
-Appearance67.addChild(&Material68);
-
-Shape65.addChild(&Appearance67);
-
-Transform64.addChild(&Shape65);
-
-Group38.addChild(&Transform64);
-
-Layer33.addChild(&Group38);
+Layer18.addChild(&Group23);
 
 //the model that is being reviewed by the users of this scene
-Transform& Transform69 =  Transform();
-Transform69.setDEF(CString("FlowerTransform"));
+Transform& Transform54 =  Transform();
+Transform54.setDEF(CString("FlowerTransform"));
 //<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />
 //Images courtesy of Paul Debevec's Light Probe Image Gallery
-Background& Background70 =  Background();
-Background70.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
-Background70.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
-Background70.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
-Background70.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
-Background70.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
-Background70.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
-Transform69.addChild(&Background70);
+Background& Background55 =  Background();
+Background55.setBackUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+Background55.setBottomUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+Background55.setFrontUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+Background55.setLeftUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+Background55.setRightUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+Background55.setTopUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
+Transform54.addChild(&Background55);
 
-Transform& Transform71 =  Transform();
-Shape& Shape72 =  Shape();
-Sphere& Sphere73 =  Sphere();
-Sphere73.setRadius(40);
-Shape72.setGeometry(&Sphere73);
+Transform& Transform56 =  Transform();
+Shape& Shape57 =  Shape();
+//<Sphere radius='40'></Sphere>
+IndexedFaceSet& IndexedFaceSet58 =  IndexedFaceSet();
+IndexedFaceSet58.setConvex(false);
+IndexedFaceSet58.setDEF(CString("Orbit"));
+Coordinate& Coordinate59 =  Coordinate();
+Coordinate59.setDEF(CString("OrbitCoordinates"));
+IndexedFaceSet58.setCoord(&Coordinate59);
 
-Appearance& Appearance74 =  Appearance();
-Material& Material75 =  Material();
-Material75.setDiffuseColor(new float[]{0.7,0.7,0.7});
-Material75.setSpecularColor(new float[]{0.5,0.5,0.5});
-Appearance74.addChild(&Material75);
+Shape57.setGeometry(&IndexedFaceSet58);
 
-ComposedCubeMapTexture& ComposedCubeMapTexture76 =  ComposedCubeMapTexture();
-ComposedCubeMapTexture76.setDEF(CString("texture"));
-ImageTexture& ImageTexture77 =  ImageTexture();
-ImageTexture77.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
-ComposedCubeMapTexture76.setBack(ImageTexture77);
+Appearance& Appearance60 =  Appearance();
+Material& Material61 =  Material();
+Material61.setDiffuseColor(new float[]{0.7,0.7,0.7});
+Material61.setSpecularColor(new float[]{0.5,0.5,0.5});
+Appearance60.addChild(&Material61);
 
-ImageTexture& ImageTexture78 =  ImageTexture();
-ImageTexture78.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
-ComposedCubeMapTexture76.setBottom(ImageTexture78);
+ComposedCubeMapTexture& ComposedCubeMapTexture62 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture62.setDEF(CString("texture"));
+ImageTexture& ImageTexture63 =  ImageTexture();
+ImageTexture63.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")}, 2);
+ComposedCubeMapTexture62.setBack(ImageTexture63);
 
-ImageTexture& ImageTexture79 =  ImageTexture();
-ImageTexture79.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
-ComposedCubeMapTexture76.setFront(ImageTexture79);
+ImageTexture& ImageTexture64 =  ImageTexture();
+ImageTexture64.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")}, 2);
+ComposedCubeMapTexture62.setBottom(ImageTexture64);
 
-ImageTexture& ImageTexture80 =  ImageTexture();
-ImageTexture80.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
-ComposedCubeMapTexture76.setLeft(ImageTexture80);
+ImageTexture& ImageTexture65 =  ImageTexture();
+ImageTexture65.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")}, 2);
+ComposedCubeMapTexture62.setFront(ImageTexture65);
 
-ImageTexture& ImageTexture81 =  ImageTexture();
-ImageTexture81.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
-ComposedCubeMapTexture76.setRight(ImageTexture81);
+ImageTexture& ImageTexture66 =  ImageTexture();
+ImageTexture66.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")}, 2);
+ComposedCubeMapTexture62.setLeft(ImageTexture66);
 
-ImageTexture& ImageTexture82 =  ImageTexture();
-ImageTexture82.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
-ComposedCubeMapTexture76.setTop(ImageTexture82);
+ImageTexture& ImageTexture67 =  ImageTexture();
+ImageTexture67.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")}, 2);
+ComposedCubeMapTexture62.setRight(ImageTexture67);
 
-Appearance74.addChild(&ComposedCubeMapTexture76);
+ImageTexture& ImageTexture68 =  ImageTexture();
+ImageTexture68.setUrl(new CString[]{CString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), CString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")}, 2);
+ComposedCubeMapTexture62.setTop(ImageTexture68);
 
-ComposedShader& ComposedShader83 =  ComposedShader();
-ComposedShader83.setDEF(CString("x_iteShader"));
-ComposedShader83.setLanguage(CString("GLSL"));
-field& field84 =  field();
-field84.setName(CString("chromaticDispertion"));
-field84.setAccessType(CString("inputOnly"));
-field84.setType(CString("SFVec3f"));
-field84.setValue(CString("0.98 1 1.033"));
-ComposedShader83.addChild(&field84);
+Appearance60.addChild(&ComposedCubeMapTexture62);
 
+ComposedShader& ComposedShader69 =  ComposedShader();
+ComposedShader69.setDEF(CString("x_iteShader"));
+ComposedShader69.setLanguage(CString("GLSL"));
+field& field70 =  field();
+field70.setName(CString("chromaticDispertion"));
+field70.setAccessType(CString("inputOnly"));
+field70.setType(CString("SFVec3f"));
+field70.setValue(CString("0.98 1 1.033"));
+ComposedShader69.addChild(&field70);
+
+field& field71 =  field();
+field71.setName(CString("cube"));
+field71.setType(CString("SFNode"));
+field71.setAccessType(CString("inputOnly"));
+ComposedCubeMapTexture& ComposedCubeMapTexture72 =  ComposedCubeMapTexture();
+ComposedCubeMapTexture72.setUSE(CString("texture"));
+field71.addChild(&ComposedCubeMapTexture72);
+
+ComposedShader69.addChild(&field71);
+
+field& field73 =  field();
+field73.setName(CString("bias"));
+field73.setType(CString("SFFloat"));
+field73.setAccessType(CString("inputOnly"));
+field73.setValue(CString("0.5"));
+ComposedShader69.addChild(&field73);
+
+field& field74 =  field();
+field74.setName(CString("scale"));
+field74.setType(CString("SFFloat"));
+field74.setAccessType(CString("inputOnly"));
+field74.setValue(CString("0.5"));
+ComposedShader69.addChild(&field74);
+
+field& field75 =  field();
+field75.setName(CString("power"));
+field75.setType(CString("SFFloat"));
+field75.setAccessType(CString("inputOnly"));
+field75.setValue(CString("2"));
+ComposedShader69.addChild(&field75);
+
+field& field76 =  field();
+field76.setName(CString("a"));
+field76.setType(CString("SFFloat"));
+field76.setAccessType(CString("inputOutput"));
+field76.setValue(CString("15"));
+ComposedShader69.addChild(&field76);
+
+field& field77 =  field();
+field77.setName(CString("b"));
+field77.setType(CString("SFFloat"));
+field77.setAccessType(CString("inputOutput"));
+field77.setValue(CString("5"));
+ComposedShader69.addChild(&field77);
+
+field& field78 =  field();
+field78.setName(CString("c"));
+field78.setType(CString("SFFloat"));
+field78.setAccessType(CString("inputOutput"));
+field78.setValue(CString("5"));
+ComposedShader69.addChild(&field78);
+
+field& field79 =  field();
+field79.setName(CString("d"));
+field79.setType(CString("SFFloat"));
+field79.setAccessType(CString("inputOutput"));
+field79.setValue(CString("5"));
+ComposedShader69.addChild(&field79);
+
+field& field80 =  field();
+field80.setName(CString("tdelta"));
+field80.setType(CString("SFFloat"));
+field80.setAccessType(CString("inputOutput"));
+field80.setValue(CString("0"));
+ComposedShader69.addChild(&field80);
+
+field& field81 =  field();
+field81.setName(CString("pdelta"));
+field81.setType(CString("SFFloat"));
+field81.setAccessType(CString("inputOutput"));
+field81.setValue(CString("0"));
+ComposedShader69.addChild(&field81);
+
+ShaderPart& ShaderPart82 =  ShaderPart();
+ShaderPart82.setUrl(new CString[]{CString("../shaders/x_ite_flowers_chromatic.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")}, 2);
+ShaderPart82.setType(CString("VERTEX"));
+ComposedShader69.setParts(&ShaderPart82);
+
+ShaderPart& ShaderPart83 =  ShaderPart();
+ShaderPart83.setUrl(new CString[]{CString("../shaders/x_ite.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")}, 2);
+ShaderPart83.setType(CString("FRAGMENT"));
+ComposedShader69.setParts(&ShaderPart83);
+
+//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+Appearance60.addChild(&ComposedShader69);
+
+Shape57.addChild(&Appearance60);
+
+Transform56.addChild(&Shape57);
+
+Transform54.addChild(&Transform56);
+
+Layer18.addChild(&Transform54);
+
+Script& Script84 =  Script();
+Script84.setDEF(CString("OrbitScript"));
 field& field85 =  field();
-field85.setName(CString("cube"));
-field85.setType(CString("SFNode"));
-field85.setAccessType(CString("inputOnly"));
-ComposedCubeMapTexture& ComposedCubeMapTexture86 =  ComposedCubeMapTexture();
-ComposedCubeMapTexture86.setUSE(CString("texture"));
-field85.addChild(&ComposedCubeMapTexture86);
+field85.setName(CString("coordinates"));
+field85.setAccessType(CString("inputOutput"));
+field85.setType(CString("MFVec3f"));
+Script84.addChild(&field85);
 
-ComposedShader83.addChild(&field85);
+field& field86 =  field();
+field86.setName(CString("coordIndexes"));
+field86.setAccessType(CString("outputOnly"));
+field86.setType(CString("MFInt32"));
+Script84.addChild(&field86);
 
 field& field87 =  field();
-field87.setName(CString("bias"));
+field87.setName(CString("a"));
 field87.setType(CString("SFFloat"));
-field87.setAccessType(CString("inputOnly"));
-field87.setValue(CString("0.5"));
-ComposedShader83.addChild(&field87);
+field87.setAccessType(CString("inputOutput"));
+field87.setValue(CString("10"));
+Script84.addChild(&field87);
 
 field& field88 =  field();
-field88.setName(CString("scale"));
+field88.setName(CString("b"));
 field88.setType(CString("SFFloat"));
-field88.setAccessType(CString("inputOnly"));
-field88.setValue(CString("0.5"));
-ComposedShader83.addChild(&field88);
+field88.setAccessType(CString("inputOutput"));
+field88.setValue(CString("10"));
+Script84.addChild(&field88);
 
 field& field89 =  field();
-field89.setName(CString("power"));
+field89.setName(CString("c"));
 field89.setType(CString("SFFloat"));
-field89.setAccessType(CString("inputOnly"));
+field89.setAccessType(CString("inputOutput"));
 field89.setValue(CString("2"));
-ComposedShader83.addChild(&field89);
+Script84.addChild(&field89);
 
 field& field90 =  field();
-field90.setName(CString("a"));
+field90.setName(CString("d"));
 field90.setType(CString("SFFloat"));
 field90.setAccessType(CString("inputOutput"));
-field90.setValue(CString("15"));
-ComposedShader83.addChild(&field90);
+field90.setValue(CString("2"));
+Script84.addChild(&field90);
 
 field& field91 =  field();
-field91.setName(CString("b"));
+field91.setName(CString("pdelta"));
 field91.setType(CString("SFFloat"));
 field91.setAccessType(CString("inputOutput"));
-field91.setValue(CString("5"));
-ComposedShader83.addChild(&field91);
+field91.setValue(CString("0"));
+Script84.addChild(&field91);
 
 field& field92 =  field();
-field92.setName(CString("c"));
+field92.setName(CString("tdelta"));
 field92.setType(CString("SFFloat"));
 field92.setAccessType(CString("inputOutput"));
-field92.setValue(CString("5"));
-ComposedShader83.addChild(&field92);
+field92.setValue(CString("0"));
+Script84.addChild(&field92);
 
-field& field93 =  field();
-field93.setName(CString("d"));
-field93.setType(CString("SFFloat"));
-field93.setAccessType(CString("inputOutput"));
-field93.setValue(CString("5"));
-ComposedShader83.addChild(&field93);
 
-field& field94 =  field();
-field94.setName(CString("tdelta"));
-field94.setType(CString("SFFloat"));
-field94.setAccessType(CString("inputOutput"));
-field94.setValue(CString("0"));
-ComposedShader83.addChild(&field94);
+//Script84.setSourceCode(CString("ecmascript:")+
+//_T("function initialize() {")+
+//_T("     var resolution = 300;")+
+//_T("     var theta = 0.0;")+
+//_T("     var phi = 0.0;")+
+//_T("     var delta = (2 * 3.141592653) / (resolution-1);")+
+//_T("     var crds = new MFVec3f();")+
+//_T("     for ( i = 0; i < resolution; i++) {")+
+//_T("     	for ( j = 0; j < resolution; j++) {")+
+//_T("		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);")+
+//_T("		crds.push(new SFVec3f(")+
+//_T("			rho * Math.cos(phi) * Math.cos(theta),")+
+//_T("			rho * Math.cos(phi) * Math.sin(theta),")+
+//_T("			rho * Math.sin(phi)")+
+//_T("		));")+
+//_T("		theta += delta;")+
+//_T("	}")+
+//_T("	phi += delta;")+
+//_T("     }")+
+//_T("     coordinates = crds;")+
+//_T("     var cis = new MFInt32();")+
+//_T("     for ( i = 0; i < resolution-1; i++) {")+
+//_T("     	for ( j = 0; j < resolution-1; j++) {")+
+//_T("	     cis.push(i*resolution+j);")+
+//_T("	     cis.push(i*resolution+j+1);")+
+//_T("	     cis.push((i+1)*resolution+j+1);")+
+//_T("	     cis.push((i+1)*resolution+j);")+
+//_T("	     cis.push(-1);")+
+//_T("	}")+
+//_T("    }")+
+//_T("    coordIndexes = cis;")+
+//_T("}"));
+Layer18.addChild(&Script84);
 
-field& field95 =  field();
-field95.setName(CString("pdelta"));
-field95.setType(CString("SFFloat"));
-field95.setAccessType(CString("inputOutput"));
-field95.setValue(CString("0"));
-ComposedShader83.addChild(&field95);
+ROUTE& ROUTE93 =  ROUTE();
+ROUTE93.setFromField(CString("coordIndexes"));
+ROUTE93.setFromNode(CString("OrbitScript"));
+ROUTE93.setToField(CString("set_coordIndex"));
+ROUTE93.setToNode(CString("Orbit"));
+Layer18.addChild(&ROUTE93);
 
-ShaderPart& ShaderPart96 =  ShaderPart();
-ShaderPart96.setUrl(new CString[]{CString("../shaders/x_ite_flowers_chromatic.vs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs")}, 2);
-ShaderPart96.setType(CString("VERTEX"));
-ComposedShader83.setParts(&ShaderPart96);
+ROUTE& ROUTE94 =  ROUTE();
+ROUTE94.setFromField(CString("coordinates"));
+ROUTE94.setFromNode(CString("OrbitScript"));
+ROUTE94.setToField(CString("set_point"));
+ROUTE94.setToNode(CString("OrbitCoordinates"));
+Layer18.addChild(&ROUTE94);
 
-ShaderPart& ShaderPart97 =  ShaderPart();
-ShaderPart97.setUrl(new CString[]{CString("../shaders/x_ite.fs"), CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")}, 2);
-ShaderPart97.setType(CString("FRAGMENT"));
-ComposedShader83.setParts(&ShaderPart97);
+LayerSet17.addChild(&Layer18);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>
-Appearance74.addChild(&ComposedShader83);
+LayoutLayer& LayoutLayer95 =  LayoutLayer();
+LayoutLayer95.setPickable(true);
+LayoutLayer95.setObjectType(new CString[]{CString("ALL")}, 1);
+Layout& Layout96 =  Layout();
+Layout96.setAlign(new CString[]{CString("LEFT"), CString("BOTTOM")}, 2);
+Layout96.setOffset(new float[]{-0.2,0.19}, 2);
+Layout96.setSize(new float[]{0.4,0.6}, 2);
+LayoutLayer95.setLayout(Layout96);
 
-Shape72.addChild(&Appearance74);
+Viewport& Viewport97 =  Viewport();
+Viewport97.setClipBoundary(new float[]{0.0,1.0,0.0,1.0}, 4);
+LayoutLayer95.setViewport(Viewport97);
 
-Transform71.addChild(&Shape72);
+Transform& Transform98 =  Transform();
+Transform98.setTranslation(new float[]{0.0,0.0,-3.0});
+Shape& Shape99 =  Shape();
+Appearance& Appearance100 =  Appearance();
+Material& Material101 =  Material();
+Material101.setDiffuseColor(new float[]{0.0,0.0,0.0});
+Material101.setTransparency(0.7);
+Appearance100.addChild(&Material101);
 
-Transform69.addChild(&Transform71);
+Shape99.addChild(&Appearance100);
 
-Layer33.addChild(&Transform69);
+Box& Box102 =  Box();
+Box102.setSize(new float[]{100.0,100.0,0.02});
+Shape99.setGeometry(&Box102);
 
-//DIS multiuser facilities
-DISEntityManager& DISEntityManager98 =  DISEntityManager();
-DISEntityManager98.setDEF(CString("EntityManager"));
-DISEntityManager98.setNetworkMode("networkReader");
-DISEntityTypeMapping& DISEntityTypeMapping99 =  DISEntityTypeMapping();
-DISEntityTypeMapping99.setCategory(77);
-DISEntityTypeMapping99.setSpecific(1);
-DISEntityTypeMapping99.setUrl(new CString[]{CString("Leif8Final.x3d")}, 1);
-DISEntityManager98.setMapping(&DISEntityTypeMapping99);
+Transform98.addChild(&Shape99);
 
-DISEntityTypeMapping& DISEntityTypeMapping100 =  DISEntityTypeMapping();
-DISEntityTypeMapping100.setCategory(77);
-DISEntityTypeMapping100.setSpecific(2);
-DISEntityTypeMapping100.setUrl(new CString[]{CString("Lily8Final.x3d")}, 1);
-DISEntityManager98.setMapping(&DISEntityTypeMapping100);
+LayoutLayer95.addChild(&Transform98);
 
-Layer33.addChild(&DISEntityManager98);
+Transform& Transform103 =  Transform();
+Transform103.setDEF(CString("equationTransform"));
+Transform& Transform104 =  Transform();
+Transform104.setTranslation(new float[]{0.0,0.0,-20.0});
+Shape& Shape105 =  Shape();
+Text& Text106 =  Text();
+Text106.setDEF(CString("equation"));
+Text106.setString(new CString[]{CString("r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)")}, 1);
+CFontStyle& FontStyle107 =  CFontStyle();
+FontStyle107.setSize(0.09);
+Text106.setFontStyle(&FontStyle107);
 
-Collision& Collision101 =  Collision();
-Collision101.setEnabled(false);
-Group& Group102 =  Group();
-Group102.setDEF(CString("AvatarHolder"));
-Collision101.addChildren(&Group102);
+Shape105.setGeometry(&Text106);
 
-Layer33.addChild(&Collision101);
-
-ROUTE& ROUTE103 =  ROUTE();
-ROUTE103.setFromField(CString("addedEntities"));
-ROUTE103.setFromNode(CString("EntityManager"));
-ROUTE103.setToField(CString("addChildren"));
-ROUTE103.setToNode(CString("AvatarHolder"));
-Layer33.addChild(&ROUTE103);
-
-ROUTE& ROUTE104 =  ROUTE();
-ROUTE104.setFromField(CString("removedEntities"));
-ROUTE104.setFromNode(CString("EntityManager"));
-ROUTE104.setToField(CString("removeChildren"));
-ROUTE104.setToNode(CString("AvatarHolder"));
-Layer33.addChild(&ROUTE104);
-
-LayerSet32.addChild(&Layer33);
-
-LayoutLayer& LayoutLayer105 =  LayoutLayer();
-LayoutLayer105.setPickable(true);
-LayoutLayer105.setObjectType(new CString[]{CString("ALL")}, 1);
-//positioning the LayoutLayer
-//clipping the LayoutLayer
-//the content (children) of the LayoutLayer
-//first, the slider for scaling the model
-Transform& Transform106 =  Transform();
-Transform106.setTranslation(new float[]{0.0,0.0,-3.0});
-Shape& Shape107 =  Shape();
 Appearance& Appearance108 =  Appearance();
 Material& Material109 =  Material();
-Material109.setDiffuseColor(new float[]{0.0,0.0,0.0});
-Material109.setTransparency(0.7);
+Material109.setDiffuseColor(new float[]{1.0,1.0,0.0});
 Appearance108.addChild(&Material109);
 
-Shape107.addChild(&Appearance108);
+Shape105.addChild(&Appearance108);
 
-Box& Box110 =  Box();
-Box110.setSize(new float[]{100.0,100.0,0.02});
-Shape107.setGeometry(&Box110);
+Transform104.addChild(&Shape105);
 
-Transform106.addChild(&Shape107);
+Transform103.addChild(&Transform104);
 
-LayoutLayer105.addChild(&Transform106);
+LayoutLayer95.addChild(&Transform103);
 
-//the plane sensors
-Transform& Transform111 =  Transform();
-Transform111.setDEF(CString("aSlider"));
-Transform111.setTranslation(new float[]{0.0,0.7,0.0});
-Transform& Transform112 =  Transform();
-Transform112.setRotation(new float[]{0.0,0.0,1.0,1.57});
-Shape& Shape113 =  Shape();
-Appearance& Appearance114 =  Appearance();
-Material& Material115 =  Material();
-Appearance114.addChild(&Material115);
+ProtoDeclare& ProtoDeclare110 =  ProtoDeclare();
+ProtoDeclare110.setName(CString("SliderProto"));
+ProtoInterface& ProtoInterface111 =  ProtoInterface();
+field& field112 =  field();
+field112.setName(CString("sliderTranslation"));
+field112.setAccessType(CString("inputOutput"));
+field112.setType(CString("SFVec3f"));
+field112.setValue(CString("0 0.7 0"));
+ProtoInterface111.addChild(&field112);
 
-Shape113.addChild(&Appearance114);
+field& field113 =  field();
+field113.setName(CString("transformTranslation"));
+field113.setAccessType(CString("inputOutput"));
+field113.setType(CString("SFVec3f"));
+field113.setValue(CString("0 0 0.1"));
+ProtoInterface111.addChild(&field113);
 
-Cylinder& Cylinder116 =  Cylinder();
-Cylinder116.setRadius(0.05);
-Cylinder116.setHeight(2.5);
-Shape113.setGeometry(&Cylinder116);
+field& field114 =  field();
+field114.setName(CString("sensorTranslation"));
+field114.setAccessType(CString("inputOutput"));
+field114.setType(CString("SFVec3f"));
+field114.setValue(CString("0 0 0"));
+ProtoInterface111.addChild(&field114);
 
-Transform112.addChild(&Shape113);
+field& field115 =  field();
+field115.setName(CString("textString"));
+field115.setAccessType(CString("inputOutput"));
+field115.setType(CString("MFString"));
+field115.setValue(CString("\"a=\""));
+ProtoInterface111.addChild(&field115);
 
-Transform111.addChild(&Transform112);
+field& field116 =  field();
+field116.setName(CString("parameterScale"));
+field116.setAccessType(CString("inputOutput"));
+field116.setType(CString("SFFloat"));
+field116.setValue(CString("30"));
+ProtoInterface111.addChild(&field116);
 
-Transform& Transform117 =  Transform();
-Transform117.setDEF(CString("aTransform"));
-Transform117.setTranslation(new float[]{0.0,0.0,0.1});
-PlaneSensor& PlaneSensor118 =  PlaneSensor();
-PlaneSensor118.setDEF(CString("aSensor"));
-PlaneSensor118.setMinPosition(new float[]{-20.0,0.0});
-PlaneSensor118.setMaxPosition(new float[]{20.0,0.0});
-Transform117.addChild(&PlaneSensor118);
+field& field117 =  field();
+field117.setName(CString("parameterName"));
+field117.setAccessType(CString("inputOutput"));
+field117.setType(CString("SFString"));
+field117.setValue(CString("a"));
+ProtoInterface111.addChild(&field117);
 
-Transform& Transform119 =  Transform();
-Transform119.setTranslation(new float[]{0.0,0.0,0.0});
-TouchSensor& TouchSensor120 =  TouchSensor();
-TouchSensor120.setDEF(CString("aTS"));
-Transform119.addChild(&TouchSensor120);
+field& field118 =  field();
+field118.setName(CString("petNames"));
+field118.setAccessType(CString("inputOutput"));
+field118.setType(CString("MFString"));
+ProtoInterface111.addChild(&field118);
 
-Shape& Shape121 =  Shape();
-Sphere& Sphere122 =  Sphere();
-Sphere122.setRadius(0.08);
-Shape121.setGeometry(&Sphere122);
+field& field119 =  field();
+field119.setName(CString("shaderNode"));
+field119.setAccessType(CString("inputOutput"));
+field119.setType(CString("SFNode"));
+ProtoInterface111.addChild(&field119);
 
-Appearance& Appearance123 =  Appearance();
-Material& Material124 =  Material();
-Material124.setDiffuseColor(new float[]{1.0,0.0,0.0});
-Appearance123.addChild(&Material124);
+ProtoDeclare110.addChild(&ProtoInterface111);
 
-Shape121.addChild(&Appearance123);
+ProtoBody& ProtoBody120 =  ProtoBody();
+Group& Group121 =  Group();
+Transform& Transform122 =  Transform();
+Transform122.setDEF(CString("protoSlider"));
+Transform122.setTranslation(new float[]{0.0,0.7,0.0});
+IS& IS123 =  IS();
+Connect& connect124 =  Connect();
+connect124.setNodeField(CString("translation"));
+connect124.setProtoField(CString("sliderTranslation"));
+IS123.addChild(&connect124);
 
-Transform119.addChild(&Shape121);
+Transform122.addChild(&IS123);
 
-Transform117.addChild(&Transform119);
+Transform& Transform125 =  Transform();
+Transform125.setDEF(CString("protoTransform"));
+Transform125.setTranslation(new float[]{0.0,0.0,0.1});
+IS& IS126 =  IS();
+Connect& connect127 =  Connect();
+connect127.setNodeField(CString("translation"));
+connect127.setProtoField(CString("sensorTranslation"));
+IS126.addChild(&connect127);
 
-Shape& Shape125 =  Shape();
-Cylinder& Cylinder126 =  Cylinder();
-Cylinder126.setRadius(0.05);
-Cylinder126.setHeight(0.3);
-Shape125.setGeometry(&Cylinder126);
+Transform125.addChild(&IS126);
 
-Appearance& Appearance127 =  Appearance();
-Material& Material128 =  Material();
-Appearance127.addChild(&Material128);
-
-Shape125.addChild(&Appearance127);
-
-Transform117.addChild(&Shape125);
-
-Transform111.addChild(&Transform117);
+PlaneSensor& PlaneSensor128 =  PlaneSensor();
+PlaneSensor128.setDEF(CString("protoSensor"));
+PlaneSensor128.setDescription(CString("Grab with mouse to adjust slider"));
+PlaneSensor128.setMaxPosition(new float[]{1.0,0.0});
+Transform125.addChild(&PlaneSensor128);
 
 Transform& Transform129 =  Transform();
-Transform129.setRotation(new float[]{0.0,0.0,1.0,1.57});
-Shape& Shape130 =  Shape();
-Appearance& Appearance131 =  Appearance();
-Material& Material132 =  Material();
-Appearance131.addChild(&Material132);
+Transform129.setTranslation(new float[]{0.0,0.0,0.0});
+TouchSensor& TouchSensor130 =  TouchSensor();
+TouchSensor130.setDEF(CString("protoTS"));
+Transform129.addChild(&TouchSensor130);
 
-Shape130.addChild(&Appearance131);
+Transform125.addChild(&Transform129);
 
-Cylinder& Cylinder133 =  Cylinder();
-Cylinder133.setRadius(0.05);
-Cylinder133.setHeight(2.5);
-Shape130.setGeometry(&Cylinder133);
+Transform& Transform131 =  Transform();
+Shape& Shape132 =  Shape();
+Text& Text133 =  Text();
+Text133.setDEF(CString("protoText"));
+Text133.setString(new CString[]{CString("a=")}, 1);
+IS& IS134 =  IS();
+Connect& connect135 =  Connect();
+connect135.setNodeField(CString("string"));
+connect135.setProtoField(CString("textString"));
+IS134.addChild(&connect135);
 
-Transform129.addChild(&Shape130);
+Text133.addChild(&IS134);
 
-Transform111.addChild(&Transform129);
+CFontStyle& FontStyle136 =  CFontStyle();
+FontStyle136.setSize(0.23);
+Text133.setFontStyle(&FontStyle136);
 
-LayoutLayer105.addChild(&Transform111);
+Shape132.setGeometry(&Text133);
 
-Transform& Transform134 =  Transform();
-Transform134.setDEF(CString("bSlider"));
-Transform134.setTranslation(new float[]{0.0,0.4,0.0});
-Transform& Transform135 =  Transform();
-Transform135.setRotation(new float[]{0.0,0.0,1.0,1.57});
-Shape& Shape136 =  Shape();
 Appearance& Appearance137 =  Appearance();
 Material& Material138 =  Material();
 Appearance137.addChild(&Material138);
 
-Shape136.addChild(&Appearance137);
-
-Cylinder& Cylinder139 =  Cylinder();
-Cylinder139.setRadius(0.05);
-Cylinder139.setHeight(2.5);
-Shape136.setGeometry(&Cylinder139);
-
-Transform135.addChild(&Shape136);
-
-Transform134.addChild(&Transform135);
-
-Transform& Transform140 =  Transform();
-Transform140.setDEF(CString("bTransform"));
-Transform140.setTranslation(new float[]{0.0,0.0,0.1});
-PlaneSensor& PlaneSensor141 =  PlaneSensor();
-PlaneSensor141.setDEF(CString("bSensor"));
-PlaneSensor141.setMinPosition(new float[]{-20.0,0.0});
-PlaneSensor141.setMaxPosition(new float[]{20.0,0.0});
-Transform140.addChild(&PlaneSensor141);
-
-Transform& Transform142 =  Transform();
-Transform142.setTranslation(new float[]{0.0,0.0,0.0});
-TouchSensor& TouchSensor143 =  TouchSensor();
-TouchSensor143.setDEF(CString("bTS"));
-Transform142.addChild(&TouchSensor143);
-
-Shape& Shape144 =  Shape();
-Sphere& Sphere145 =  Sphere();
-Sphere145.setRadius(0.08);
-Shape144.setGeometry(&Sphere145);
-
-Appearance& Appearance146 =  Appearance();
-Material& Material147 =  Material();
-Material147.setDiffuseColor(new float[]{1.0,0.0,0.0});
-Appearance146.addChild(&Material147);
-
-Shape144.addChild(&Appearance146);
-
-Transform142.addChild(&Shape144);
-
-Transform140.addChild(&Transform142);
-
-Shape& Shape148 =  Shape();
-Cylinder& Cylinder149 =  Cylinder();
-Cylinder149.setRadius(0.05);
-Cylinder149.setHeight(0.3);
-Shape148.setGeometry(&Cylinder149);
-
-Appearance& Appearance150 =  Appearance();
-Material& Material151 =  Material();
-Appearance150.addChild(&Material151);
-
-Shape148.addChild(&Appearance150);
-
-Transform140.addChild(&Shape148);
-
-Transform134.addChild(&Transform140);
-
-LayoutLayer105.addChild(&Transform134);
-
-Transform& Transform152 =  Transform();
-Transform152.setDEF(CString("cSlider"));
-Transform152.setTranslation(new float[]{0.0,0.1,0.0});
-Transform& Transform153 =  Transform();
-Transform153.setRotation(new float[]{0.0,0.0,1.0,1.57});
-Shape& Shape154 =  Shape();
-Appearance& Appearance155 =  Appearance();
-Material& Material156 =  Material();
-Appearance155.addChild(&Material156);
-
-Shape154.addChild(&Appearance155);
-
-Cylinder& Cylinder157 =  Cylinder();
-Cylinder157.setRadius(0.05);
-Cylinder157.setHeight(2.5);
-Shape154.setGeometry(&Cylinder157);
-
-Transform153.addChild(&Shape154);
-
-Transform152.addChild(&Transform153);
-
-Transform& Transform158 =  Transform();
-Transform158.setDEF(CString("cTransform"));
-Transform158.setTranslation(new float[]{0.0,0.0,0.1});
-PlaneSensor& PlaneSensor159 =  PlaneSensor();
-PlaneSensor159.setDEF(CString("cSensor"));
-PlaneSensor159.setMinPosition(new float[]{-20.0,0.0});
-PlaneSensor159.setMaxPosition(new float[]{20.0,0.0});
-Transform158.addChild(&PlaneSensor159);
-
-Transform& Transform160 =  Transform();
-Transform160.setTranslation(new float[]{0.0,0.0,0.0});
-TouchSensor& TouchSensor161 =  TouchSensor();
-TouchSensor161.setDEF(CString("cTS"));
-Transform160.addChild(&TouchSensor161);
-
-Shape& Shape162 =  Shape();
-Sphere& Sphere163 =  Sphere();
-Sphere163.setRadius(0.08);
-Shape162.setGeometry(&Sphere163);
-
-Appearance& Appearance164 =  Appearance();
-Material& Material165 =  Material();
-Material165.setDiffuseColor(new float[]{1.0,0.0,0.0});
-Appearance164.addChild(&Material165);
-
-Shape162.addChild(&Appearance164);
-
-Transform160.addChild(&Shape162);
-
-Transform158.addChild(&Transform160);
-
-Shape& Shape166 =  Shape();
-Cylinder& Cylinder167 =  Cylinder();
-Cylinder167.setRadius(0.05);
-Cylinder167.setHeight(0.3);
-Shape166.setGeometry(&Cylinder167);
-
-Appearance& Appearance168 =  Appearance();
-Material& Material169 =  Material();
-Appearance168.addChild(&Material169);
-
-Shape166.addChild(&Appearance168);
-
-Transform158.addChild(&Shape166);
-
-Transform152.addChild(&Transform158);
-
-LayoutLayer105.addChild(&Transform152);
-
-Transform& Transform170 =  Transform();
-Transform170.setDEF(CString("dSlider"));
-Transform170.setTranslation(new float[]{0.0,-0.2,0.0});
-Transform& Transform171 =  Transform();
-Transform171.setRotation(new float[]{0.0,0.0,1.0,1.57});
-Shape& Shape172 =  Shape();
-Appearance& Appearance173 =  Appearance();
-Material& Material174 =  Material();
-Appearance173.addChild(&Material174);
-
-Shape172.addChild(&Appearance173);
-
-Cylinder& Cylinder175 =  Cylinder();
-Cylinder175.setRadius(0.05);
-Cylinder175.setHeight(2.5);
-Shape172.setGeometry(&Cylinder175);
-
-Transform171.addChild(&Shape172);
-
-Transform170.addChild(&Transform171);
-
-Transform& Transform176 =  Transform();
-Transform176.setDEF(CString("dTransform"));
-Transform176.setTranslation(new float[]{0.0,0.0,0.1});
-PlaneSensor& PlaneSensor177 =  PlaneSensor();
-PlaneSensor177.setDEF(CString("dSensor"));
-PlaneSensor177.setMinPosition(new float[]{-20.0,0.0});
-PlaneSensor177.setMaxPosition(new float[]{20.0,0.0});
-Transform176.addChild(&PlaneSensor177);
-
-Transform& Transform178 =  Transform();
-Transform178.setTranslation(new float[]{0.0,0.0,0.0});
-TouchSensor& TouchSensor179 =  TouchSensor();
-TouchSensor179.setDEF(CString("dTS"));
-Transform178.addChild(&TouchSensor179);
-
-Shape& Shape180 =  Shape();
-Sphere& Sphere181 =  Sphere();
-Sphere181.setRadius(0.08);
-Shape180.setGeometry(&Sphere181);
-
-Appearance& Appearance182 =  Appearance();
-Material& Material183 =  Material();
-Material183.setDiffuseColor(new float[]{1.0,0.0,0.0});
-Appearance182.addChild(&Material183);
-
-Shape180.addChild(&Appearance182);
-
-Transform178.addChild(&Shape180);
-
-Transform176.addChild(&Transform178);
-
-Shape& Shape184 =  Shape();
-Cylinder& Cylinder185 =  Cylinder();
-Cylinder185.setRadius(0.05);
-Cylinder185.setHeight(0.3);
-Shape184.setGeometry(&Cylinder185);
-
-Appearance& Appearance186 =  Appearance();
-Material& Material187 =  Material();
-Appearance186.addChild(&Material187);
-
-Shape184.addChild(&Appearance186);
-
-Transform176.addChild(&Shape184);
-
-Transform170.addChild(&Transform176);
-
-LayoutLayer105.addChild(&Transform170);
-
-Transform& Transform188 =  Transform();
-Transform188.setDEF(CString("pdeltaSlider"));
-Transform188.setTranslation(new float[]{0.0,-0.5,0.0});
-Transform& Transform189 =  Transform();
-Transform189.setRotation(new float[]{0.0,0.0,1.0,1.57});
-Shape& Shape190 =  Shape();
-Appearance& Appearance191 =  Appearance();
-Material& Material192 =  Material();
-Appearance191.addChild(&Material192);
-
-Shape190.addChild(&Appearance191);
-
-Cylinder& Cylinder193 =  Cylinder();
-Cylinder193.setRadius(0.05);
-Cylinder193.setHeight(2.5);
-Shape190.setGeometry(&Cylinder193);
-
-Transform189.addChild(&Shape190);
-
-Transform188.addChild(&Transform189);
-
-Transform& Transform194 =  Transform();
-Transform194.setDEF(CString("pdeltaTransform"));
-Transform194.setTranslation(new float[]{0.0,0.0,0.1});
-PlaneSensor& PlaneSensor195 =  PlaneSensor();
-PlaneSensor195.setDEF(CString("pdeltaSensor"));
-PlaneSensor195.setMinPosition(new float[]{-20.0,0.0});
-PlaneSensor195.setMaxPosition(new float[]{20.0,0.0});
-Transform194.addChild(&PlaneSensor195);
-
-Transform& Transform196 =  Transform();
-Transform196.setTranslation(new float[]{0.0,0.0,0.0});
-TouchSensor& TouchSensor197 =  TouchSensor();
-TouchSensor197.setDEF(CString("pdeltaTS"));
-Transform196.addChild(&TouchSensor197);
-
-Shape& Shape198 =  Shape();
-Sphere& Sphere199 =  Sphere();
-Sphere199.setRadius(0.08);
-Shape198.setGeometry(&Sphere199);
-
-Appearance& Appearance200 =  Appearance();
-Material& Material201 =  Material();
-Material201.setDiffuseColor(new float[]{1.0,0.0,0.0});
-Appearance200.addChild(&Material201);
-
-Shape198.addChild(&Appearance200);
-
-Transform196.addChild(&Shape198);
-
-Transform194.addChild(&Transform196);
-
-Shape& Shape202 =  Shape();
-Cylinder& Cylinder203 =  Cylinder();
-Cylinder203.setRadius(0.05);
-Cylinder203.setHeight(0.3);
-Shape202.setGeometry(&Cylinder203);
-
-Appearance& Appearance204 =  Appearance();
-Material& Material205 =  Material();
-Appearance204.addChild(&Material205);
-
-Shape202.addChild(&Appearance204);
-
-Transform194.addChild(&Shape202);
-
-Transform188.addChild(&Transform194);
-
-LayoutLayer105.addChild(&Transform188);
-
-Transform& Transform206 =  Transform();
-Transform206.setDEF(CString("tdeltaSlider"));
-Transform206.setTranslation(new float[]{0.0,-0.8,0.0});
-Transform& Transform207 =  Transform();
-Transform207.setRotation(new float[]{0.0,0.0,1.0,1.57});
-Shape& Shape208 =  Shape();
-Appearance& Appearance209 =  Appearance();
-Material& Material210 =  Material();
-Appearance209.addChild(&Material210);
-
-Shape208.addChild(&Appearance209);
-
-Cylinder& Cylinder211 =  Cylinder();
-Cylinder211.setRadius(0.05);
-Cylinder211.setHeight(2.5);
-Shape208.setGeometry(&Cylinder211);
-
-Transform207.addChild(&Shape208);
-
-Transform206.addChild(&Transform207);
-
-Transform& Transform212 =  Transform();
-Transform212.setDEF(CString("tdeltaTransform"));
-Transform212.setTranslation(new float[]{0.0,0.0,0.1});
-PlaneSensor& PlaneSensor213 =  PlaneSensor();
-PlaneSensor213.setDEF(CString("tdeltaSensor"));
-PlaneSensor213.setMinPosition(new float[]{-20.0,0.0});
-PlaneSensor213.setMaxPosition(new float[]{20.0,0.0});
-Transform212.addChild(&PlaneSensor213);
-
-Transform& Transform214 =  Transform();
-Transform214.setTranslation(new float[]{0.0,0.0,0.0});
-TouchSensor& TouchSensor215 =  TouchSensor();
-TouchSensor215.setDEF(CString("tdeltaTS"));
-Transform214.addChild(&TouchSensor215);
-
-Shape& Shape216 =  Shape();
-Sphere& Sphere217 =  Sphere();
-Sphere217.setRadius(0.08);
-Shape216.setGeometry(&Sphere217);
-
-Appearance& Appearance218 =  Appearance();
-Material& Material219 =  Material();
-Material219.setDiffuseColor(new float[]{1.0,0.0,0.0});
-Appearance218.addChild(&Material219);
-
-Shape216.addChild(&Appearance218);
-
-Transform214.addChild(&Shape216);
-
-Transform212.addChild(&Transform214);
-
-Shape& Shape220 =  Shape();
-Cylinder& Cylinder221 =  Cylinder();
-Cylinder221.setRadius(0.05);
-Cylinder221.setHeight(0.3);
-Shape220.setGeometry(&Cylinder221);
-
-Appearance& Appearance222 =  Appearance();
-Material& Material223 =  Material();
-Appearance222.addChild(&Material223);
-
-Shape220.addChild(&Appearance222);
-
-Transform212.addChild(&Shape220);
-
-Transform206.addChild(&Transform212);
-
-LayoutLayer105.addChild(&Transform206);
-
-Script& Script224 =  Script();
-Script224.setDEF(CString("aValueTransformerScript"));
-Script224.setDirectOutput(true);
-Script224.setMustEvaluate(true);
-field& field225 =  field();
-field225.setName(CString("newTranslation"));
-field225.setAccessType(CString("inputOnly"));
-field225.setType(CString("SFVec3f"));
-field225.setValue(CString("1 1 1"));
-Script224.addChild(&field225);
-
-field& field226 =  field();
-field226.setName(CString("aValue_changed"));
-field226.setAccessType(CString("outputOnly"));
-field226.setType(CString("SFFloat"));
-field226.setValue(CString("1"));
-Script224.addChild(&field226);
-
-
-//Script224.setSourceCode(CString("ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }"));
-LayoutLayer105.addChild(&Script224);
-
-Script& Script227 =  Script();
-Script227.setDEF(CString("bValueTransformerScript"));
-Script227.setDirectOutput(true);
-Script227.setMustEvaluate(true);
-field& field228 =  field();
-field228.setName(CString("newTranslation"));
-field228.setAccessType(CString("inputOnly"));
-field228.setType(CString("SFVec3f"));
-field228.setValue(CString("1 1 1"));
-Script227.addChild(&field228);
-
-field& field229 =  field();
-field229.setName(CString("bValue_changed"));
-field229.setAccessType(CString("outputOnly"));
-field229.setType(CString("SFFloat"));
-field229.setValue(CString("1"));
-Script227.addChild(&field229);
-
-
-//Script227.setSourceCode(CString("ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }"));
-LayoutLayer105.addChild(&Script227);
-
-Script& Script230 =  Script();
-Script230.setDEF(CString("cValueTransformerScript"));
-Script230.setDirectOutput(true);
-Script230.setMustEvaluate(true);
-field& field231 =  field();
-field231.setName(CString("newTranslation"));
-field231.setAccessType(CString("inputOnly"));
-field231.setType(CString("SFVec3f"));
-field231.setValue(CString("1 1 1"));
-Script230.addChild(&field231);
-
-field& field232 =  field();
-field232.setName(CString("cValue_changed"));
-field232.setAccessType(CString("outputOnly"));
-field232.setType(CString("SFFloat"));
-field232.setValue(CString("1"));
-Script230.addChild(&field232);
-
-
-//Script230.setSourceCode(CString("ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }"));
-LayoutLayer105.addChild(&Script230);
-
-Script& Script233 =  Script();
-Script233.setDEF(CString("dValueTransformerScript"));
-Script233.setDirectOutput(true);
-Script233.setMustEvaluate(true);
-field& field234 =  field();
-field234.setName(CString("newTranslation"));
-field234.setAccessType(CString("inputOnly"));
-field234.setType(CString("SFVec3f"));
-field234.setValue(CString("1 1 1"));
-Script233.addChild(&field234);
-
-field& field235 =  field();
-field235.setName(CString("dValue_changed"));
-field235.setAccessType(CString("outputOnly"));
-field235.setType(CString("SFFloat"));
-field235.setValue(CString("1"));
-Script233.addChild(&field235);
-
-
-//Script233.setSourceCode(CString("ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }"));
-LayoutLayer105.addChild(&Script233);
-
-Script& Script236 =  Script();
-Script236.setDEF(CString("pdeltaValueTransformerScript"));
-Script236.setDirectOutput(true);
-Script236.setMustEvaluate(true);
-field& field237 =  field();
-field237.setName(CString("newTranslation"));
-field237.setAccessType(CString("inputOnly"));
-field237.setType(CString("SFVec3f"));
-field237.setValue(CString("1 1 1"));
-Script236.addChild(&field237);
-
-field& field238 =  field();
-field238.setName(CString("pdeltaValue_changed"));
-field238.setAccessType(CString("outputOnly"));
-field238.setType(CString("SFFloat"));
-field238.setValue(CString("1"));
-Script236.addChild(&field238);
-
-
-//Script236.setSourceCode(CString("ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }"));
-LayoutLayer105.addChild(&Script236);
-
-Script& Script239 =  Script();
-Script239.setDEF(CString("tdeltaValueTransformerScript"));
-Script239.setDirectOutput(true);
-Script239.setMustEvaluate(true);
-field& field240 =  field();
-field240.setName(CString("newTranslation"));
-field240.setAccessType(CString("inputOnly"));
-field240.setType(CString("SFVec3f"));
-field240.setValue(CString("1 1 1"));
-Script239.addChild(&field240);
-
-field& field241 =  field();
-field241.setName(CString("tdeltaValue_changed"));
-field241.setAccessType(CString("outputOnly"));
-field241.setType(CString("SFFloat"));
-field241.setValue(CString("1"));
-Script239.addChild(&field241);
-
-
-//Script239.setSourceCode(CString("ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }"));
-LayoutLayer105.addChild(&Script239);
-
-ROUTE& ROUTE242 =  ROUTE();
-ROUTE242.setFromField(CString("translation_changed"));
-ROUTE242.setFromNode(CString("aSensor"));
-ROUTE242.setToField(CString("set_translation"));
-ROUTE242.setToNode(CString("aTransform"));
-LayoutLayer105.addChild(&ROUTE242);
-
-ROUTE& ROUTE243 =  ROUTE();
-ROUTE243.setFromField(CString("translation_changed"));
-ROUTE243.setFromNode(CString("bSensor"));
-ROUTE243.setToField(CString("set_translation"));
-ROUTE243.setToNode(CString("bTransform"));
-LayoutLayer105.addChild(&ROUTE243);
-
-ROUTE& ROUTE244 =  ROUTE();
-ROUTE244.setFromField(CString("translation_changed"));
-ROUTE244.setFromNode(CString("cSensor"));
-ROUTE244.setToField(CString("set_translation"));
-ROUTE244.setToNode(CString("cTransform"));
-LayoutLayer105.addChild(&ROUTE244);
-
-ROUTE& ROUTE245 =  ROUTE();
-ROUTE245.setFromField(CString("translation_changed"));
-ROUTE245.setFromNode(CString("dSensor"));
-ROUTE245.setToField(CString("set_translation"));
-ROUTE245.setToNode(CString("dTransform"));
-LayoutLayer105.addChild(&ROUTE245);
-
-ROUTE& ROUTE246 =  ROUTE();
-ROUTE246.setFromField(CString("translation_changed"));
-ROUTE246.setFromNode(CString("pdeltaSensor"));
-ROUTE246.setToField(CString("set_translation"));
-ROUTE246.setToNode(CString("pdeltaTransform"));
-LayoutLayer105.addChild(&ROUTE246);
-
-ROUTE& ROUTE247 =  ROUTE();
-ROUTE247.setFromField(CString("translation_changed"));
-ROUTE247.setFromNode(CString("tdeltaSensor"));
-ROUTE247.setToField(CString("set_translation"));
-ROUTE247.setToNode(CString("tdeltaTransform"));
-LayoutLayer105.addChild(&ROUTE247);
-
-ROUTE& ROUTE248 =  ROUTE();
-ROUTE248.setFromField(CString("translation_changed"));
-ROUTE248.setFromNode(CString("aSensor"));
-ROUTE248.setToField(CString("newTranslation"));
-ROUTE248.setToNode(CString("aValueTransformerScript"));
-LayoutLayer105.addChild(&ROUTE248);
-
-ROUTE& ROUTE249 =  ROUTE();
-ROUTE249.setFromField(CString("translation_changed"));
-ROUTE249.setFromNode(CString("bSensor"));
-ROUTE249.setToField(CString("newTranslation"));
-ROUTE249.setToNode(CString("bValueTransformerScript"));
-LayoutLayer105.addChild(&ROUTE249);
-
-ROUTE& ROUTE250 =  ROUTE();
-ROUTE250.setFromField(CString("translation_changed"));
-ROUTE250.setFromNode(CString("cSensor"));
-ROUTE250.setToField(CString("newTranslation"));
-ROUTE250.setToNode(CString("cValueTransformerScript"));
-LayoutLayer105.addChild(&ROUTE250);
-
-ROUTE& ROUTE251 =  ROUTE();
-ROUTE251.setFromField(CString("translation_changed"));
-ROUTE251.setFromNode(CString("dSensor"));
-ROUTE251.setToField(CString("newTranslation"));
-ROUTE251.setToNode(CString("dValueTransformerScript"));
-LayoutLayer105.addChild(&ROUTE251);
-
-ROUTE& ROUTE252 =  ROUTE();
-ROUTE252.setFromField(CString("translation_changed"));
-ROUTE252.setFromNode(CString("pdeltaSensor"));
-ROUTE252.setToField(CString("newTranslation"));
-ROUTE252.setToNode(CString("pdeltaValueTransformerScript"));
-LayoutLayer105.addChild(&ROUTE252);
-
-ROUTE& ROUTE253 =  ROUTE();
-ROUTE253.setFromField(CString("translation_changed"));
-ROUTE253.setFromNode(CString("tdeltaSensor"));
-ROUTE253.setToField(CString("newTranslation"));
-ROUTE253.setToNode(CString("tdeltaValueTransformerScript"));
-LayoutLayer105.addChild(&ROUTE253);
-
-ROUTE& ROUTE254 =  ROUTE();
-ROUTE254.setFromField(CString("aValue_changed"));
-ROUTE254.setFromNode(CString("aValueTransformerScript"));
-ROUTE254.setToField(CString("a"));
-ROUTE254.setToNode(CString("x_iteShader"));
-LayoutLayer105.addChild(&ROUTE254);
-
-ROUTE& ROUTE255 =  ROUTE();
-ROUTE255.setFromField(CString("bValue_changed"));
-ROUTE255.setFromNode(CString("bValueTransformerScript"));
-ROUTE255.setToField(CString("b"));
-ROUTE255.setToNode(CString("x_iteShader"));
-LayoutLayer105.addChild(&ROUTE255);
-
-ROUTE& ROUTE256 =  ROUTE();
-ROUTE256.setFromField(CString("cValue_changed"));
-ROUTE256.setFromNode(CString("cValueTransformerScript"));
-ROUTE256.setToField(CString("c"));
-ROUTE256.setToNode(CString("x_iteShader"));
-LayoutLayer105.addChild(&ROUTE256);
-
-ROUTE& ROUTE257 =  ROUTE();
-ROUTE257.setFromField(CString("dValue_changed"));
-ROUTE257.setFromNode(CString("dValueTransformerScript"));
-ROUTE257.setToField(CString("d"));
-ROUTE257.setToNode(CString("x_iteShader"));
-LayoutLayer105.addChild(&ROUTE257);
-
-ROUTE& ROUTE258 =  ROUTE();
-ROUTE258.setFromField(CString("pdeltaValue_changed"));
-ROUTE258.setFromNode(CString("pdeltaValueTransformerScript"));
-ROUTE258.setToField(CString("pdelta"));
-ROUTE258.setToNode(CString("x_iteShader"));
-LayoutLayer105.addChild(&ROUTE258);
-
-ROUTE& ROUTE259 =  ROUTE();
-ROUTE259.setFromField(CString("tdeltaValue_changed"));
-ROUTE259.setFromNode(CString("tdeltaValueTransformerScript"));
-ROUTE259.setToField(CString("tdelta"));
-ROUTE259.setToNode(CString("x_iteShader"));
-LayoutLayer105.addChild(&ROUTE259);
-
-Layout& Layout260 =  Layout();
-Layout260.setAlign(new CString[]{CString("RIGHT"), CString("BOTTOM")}, 2);
-Layout260.setOffset(new float[]{0.0,0.2}, 2);
-Layout260.setOffsetUnits(new CString[]{CString("WORLD"), CString("WORLD")}, 2);
-Layout260.setScaleMode(new CString[]{CString("NONE"), CString("NONE")}, 2);
-Layout260.setSize(new float[]{0.4,0.6}, 2);
-Layout260.setSizeUnits(new CString[]{CString("WORLD"), CString("WORLD")}, 2);
-LayoutLayer105.setLayout(Layout260);
-
-Viewport& Viewport261 =  Viewport();
-Viewport261.setClipBoundary(new float[]{0.0,1.0,0.0,1.0}, 4);
-LayoutLayer105.setViewport(Viewport261);
-
-LayerSet32.addChild(&LayoutLayer105);
-
-Scene31.addChild(&LayerSet32);
-
-X3D0.setScene(&Scene31);
+Shape132.addChild(&Appearance137);
+
+Transform131.addChild(&Shape132);
+
+Transform125.addChild(&Transform131);
+
+Transform122.addChild(&Transform125);
+
+Group121.addChild(&Transform122);
+
+Script& Script139 =  Script();
+Script139.setUrl(new CString[]{CString("../javascripts/X3DUser.js"), CString("https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js")}, 2);
+Script139.setDEF(CString("protoValueTransformerScript"));
+Script139.setDirectOutput(true);
+Script139.setMustEvaluate(true);
+field& field140 =  field();
+field140.setName(CString("protoScale"));
+field140.setAccessType(CString("inputOutput"));
+field140.setType(CString("SFFloat"));
+Script139.addChild(&field140);
+
+field& field141 =  field();
+field141.setName(CString("petNames"));
+field141.setAccessType(CString("inputOutput"));
+field141.setType(CString("MFString"));
+Script139.addChild(&field141);
+
+field& field142 =  field();
+field142.setName(CString("protoParameterName"));
+field142.setAccessType(CString("inputOutput"));
+field142.setType(CString("SFString"));
+Script139.addChild(&field142);
+
+field& field143 =  field();
+field143.setName(CString("shader"));
+field143.setAccessType(CString("inputOutput"));
+field143.setType(CString("SFNode"));
+Script139.addChild(&field143);
+
+field& field144 =  field();
+field144.setName(CString("newTranslation"));
+field144.setAccessType(CString("inputOnly"));
+field144.setType(CString("SFVec3f"));
+field144.setValue(CString("1 1 1"));
+Script139.addChild(&field144);
+
+field& field145 =  field();
+field145.setName(CString("protoValue_changed"));
+field145.setAccessType(CString("outputOnly"));
+field145.setType(CString("SFFloat"));
+field145.setValue(CString("1"));
+Script139.addChild(&field145);
+
+field& field146 =  field();
+field146.setName(CString("protoText_changed"));
+field146.setAccessType(CString("outputOnly"));
+field146.setType(CString("MFString"));
+field146.setValue(CString("\"1.0\""));
+Script139.addChild(&field146);
+
+IS& IS147 =  IS();
+Connect& connect148 =  Connect();
+connect148.setNodeField(CString("protoScale"));
+connect148.setProtoField(CString("parameterScale"));
+IS147.addChild(&connect148);
+
+Connect& connect149 =  Connect();
+connect149.setNodeField(CString("petNames"));
+connect149.setProtoField(CString("petNames"));
+IS147.addChild(&connect149);
+
+Connect& connect150 =  Connect();
+connect150.setNodeField(CString("protoParameterName"));
+connect150.setProtoField(CString("parameterName"));
+IS147.addChild(&connect150);
+
+Connect& connect151 =  Connect();
+connect151.setNodeField(CString("shader"));
+connect151.setProtoField(CString("shaderNode"));
+IS147.addChild(&connect151);
+
+Script139.addChild(&IS147);
+
+Group121.addChild(&Script139);
+
+ROUTE& ROUTE152 =  ROUTE();
+ROUTE152.setFromField(CString("translation_changed"));
+ROUTE152.setFromNode(CString("protoSensor"));
+ROUTE152.setToField(CString("set_translation"));
+ROUTE152.setToNode(CString("protoTransform"));
+Group121.addChild(&ROUTE152);
+
+ROUTE& ROUTE153 =  ROUTE();
+ROUTE153.setFromField(CString("translation_changed"));
+ROUTE153.setFromNode(CString("protoSensor"));
+ROUTE153.setToField(CString("newTranslation"));
+ROUTE153.setToNode(CString("protoValueTransformerScript"));
+Group121.addChild(&ROUTE153);
+
+ROUTE& ROUTE154 =  ROUTE();
+ROUTE154.setFromField(CString("protoText_changed"));
+ROUTE154.setFromNode(CString("protoValueTransformerScript"));
+ROUTE154.setToField(CString("string"));
+ROUTE154.setToNode(CString("protoText"));
+Group121.addChild(&ROUTE154);
+
+ProtoBody120.addChild(&Group121);
+
+ProtoDeclare110.addChild(&ProtoBody120);
+
+LayoutLayer95.addChild(&ProtoDeclare110);
+
+ProtoInstance& ProtoInstance155 =  ProtoInstance();
+ProtoInstance155.setName(CString("SliderProto"));
+ProtoInstance155.setDEF(CString("aPI"));
+fieldValue& fieldValue156 =  fieldValue();
+fieldValue156.setName(CString("sliderTranslation"));
+fieldValue156.setValue(CString("0 0.7 0"));
+ProtoInstance155.addChild(&fieldValue156);
+
+fieldValue& fieldValue157 =  fieldValue();
+fieldValue157.setName(CString("transformTranslation"));
+fieldValue157.setValue(CString("0 0 0.1"));
+ProtoInstance155.addChild(&fieldValue157);
+
+fieldValue& fieldValue158 =  fieldValue();
+fieldValue158.setName(CString("sensorTranslation"));
+fieldValue158.setValue(CString("0 0 0"));
+ProtoInstance155.addChild(&fieldValue158);
+
+fieldValue& fieldValue159 =  fieldValue();
+fieldValue159.setName(CString("textString"));
+fieldValue159.setValue(CString("\"a=\""));
+ProtoInstance155.addChild(&fieldValue159);
+
+fieldValue& fieldValue160 =  fieldValue();
+fieldValue160.setName(CString("parameterScale"));
+fieldValue160.setValue(CString("30"));
+ProtoInstance155.addChild(&fieldValue160);
+
+fieldValue& fieldValue161 =  fieldValue();
+fieldValue161.setName(CString("parameterName"));
+fieldValue161.setValue(CString("a"));
+ProtoInstance155.addChild(&fieldValue161);
+
+fieldValue& fieldValue162 =  fieldValue();
+fieldValue162.setName(CString("petNames"));
+fieldValue162.setValue(CString("\"yottzumm\" \"group1-petname\""));
+ProtoInstance155.addChild(&fieldValue162);
+
+fieldValue& fieldValue163 =  fieldValue();
+fieldValue163.setName(CString("shaderNode"));
+ComposedShader& ComposedShader164 =  ComposedShader();
+ComposedShader164.setUSE(CString("x_iteShader"));
+fieldValue163.addChild(&ComposedShader164);
+
+ProtoInstance155.addChild(&fieldValue163);
+
+LayoutLayer95.addChild(&ProtoInstance155);
+
+ProtoInstance& ProtoInstance165 =  ProtoInstance();
+ProtoInstance165.setName(CString("SliderProto"));
+ProtoInstance165.setDEF(CString("bPI"));
+fieldValue& fieldValue166 =  fieldValue();
+fieldValue166.setName(CString("sliderTranslation"));
+fieldValue166.setValue(CString("0 0.4 0"));
+ProtoInstance165.addChild(&fieldValue166);
+
+fieldValue& fieldValue167 =  fieldValue();
+fieldValue167.setName(CString("transformTranslation"));
+fieldValue167.setValue(CString("0 0 0.1"));
+ProtoInstance165.addChild(&fieldValue167);
+
+fieldValue& fieldValue168 =  fieldValue();
+fieldValue168.setName(CString("sensorTranslation"));
+fieldValue168.setValue(CString("0 0 0"));
+ProtoInstance165.addChild(&fieldValue168);
+
+fieldValue& fieldValue169 =  fieldValue();
+fieldValue169.setName(CString("textString"));
+fieldValue169.setValue(CString("\"b=\""));
+ProtoInstance165.addChild(&fieldValue169);
+
+fieldValue& fieldValue170 =  fieldValue();
+fieldValue170.setName(CString("parameterScale"));
+fieldValue170.setValue(CString("30"));
+ProtoInstance165.addChild(&fieldValue170);
+
+fieldValue& fieldValue171 =  fieldValue();
+fieldValue171.setName(CString("parameterName"));
+fieldValue171.setValue(CString("b"));
+ProtoInstance165.addChild(&fieldValue171);
+
+fieldValue& fieldValue172 =  fieldValue();
+fieldValue172.setName(CString("petNames"));
+fieldValue172.setValue(CString("\"yottzumm\" \"group1-petname\""));
+ProtoInstance165.addChild(&fieldValue172);
+
+fieldValue& fieldValue173 =  fieldValue();
+fieldValue173.setName(CString("shaderNode"));
+ComposedShader& ComposedShader174 =  ComposedShader();
+ComposedShader174.setUSE(CString("x_iteShader"));
+fieldValue173.addChild(&ComposedShader174);
+
+ProtoInstance165.addChild(&fieldValue173);
+
+LayoutLayer95.addChild(&ProtoInstance165);
+
+ProtoInstance& ProtoInstance175 =  ProtoInstance();
+ProtoInstance175.setName(CString("SliderProto"));
+ProtoInstance175.setDEF(CString("cPI"));
+fieldValue& fieldValue176 =  fieldValue();
+fieldValue176.setName(CString("sliderTranslation"));
+fieldValue176.setValue(CString("0 0.1 0"));
+ProtoInstance175.addChild(&fieldValue176);
+
+fieldValue& fieldValue177 =  fieldValue();
+fieldValue177.setName(CString("transformTranslation"));
+fieldValue177.setValue(CString("0 0 0.1"));
+ProtoInstance175.addChild(&fieldValue177);
+
+fieldValue& fieldValue178 =  fieldValue();
+fieldValue178.setName(CString("sensorTranslation"));
+fieldValue178.setValue(CString("0 0 0"));
+ProtoInstance175.addChild(&fieldValue178);
+
+fieldValue& fieldValue179 =  fieldValue();
+fieldValue179.setName(CString("textString"));
+fieldValue179.setValue(CString("\"c=\""));
+ProtoInstance175.addChild(&fieldValue179);
+
+fieldValue& fieldValue180 =  fieldValue();
+fieldValue180.setName(CString("parameterScale"));
+fieldValue180.setValue(CString("20"));
+ProtoInstance175.addChild(&fieldValue180);
+
+fieldValue& fieldValue181 =  fieldValue();
+fieldValue181.setName(CString("parameterName"));
+fieldValue181.setValue(CString("c"));
+ProtoInstance175.addChild(&fieldValue181);
+
+fieldValue& fieldValue182 =  fieldValue();
+fieldValue182.setName(CString("petNames"));
+fieldValue182.setValue(CString("\"yottzumm\" \"yottzumm2\" \"group1-petname\""));
+ProtoInstance175.addChild(&fieldValue182);
+
+fieldValue& fieldValue183 =  fieldValue();
+fieldValue183.setName(CString("shaderNode"));
+ComposedShader& ComposedShader184 =  ComposedShader();
+ComposedShader184.setUSE(CString("x_iteShader"));
+fieldValue183.addChild(&ComposedShader184);
+
+ProtoInstance175.addChild(&fieldValue183);
+
+LayoutLayer95.addChild(&ProtoInstance175);
+
+ProtoInstance& ProtoInstance185 =  ProtoInstance();
+ProtoInstance185.setName(CString("SliderProto"));
+ProtoInstance185.setDEF(CString("dPI"));
+fieldValue& fieldValue186 =  fieldValue();
+fieldValue186.setName(CString("sliderTranslation"));
+fieldValue186.setValue(CString("0 -0.2 0"));
+ProtoInstance185.addChild(&fieldValue186);
+
+fieldValue& fieldValue187 =  fieldValue();
+fieldValue187.setName(CString("transformTranslation"));
+fieldValue187.setValue(CString("0 0 0.1"));
+ProtoInstance185.addChild(&fieldValue187);
+
+fieldValue& fieldValue188 =  fieldValue();
+fieldValue188.setName(CString("sensorTranslation"));
+fieldValue188.setValue(CString("0 0 0"));
+ProtoInstance185.addChild(&fieldValue188);
+
+fieldValue& fieldValue189 =  fieldValue();
+fieldValue189.setName(CString("textString"));
+fieldValue189.setValue(CString("\"d=\""));
+ProtoInstance185.addChild(&fieldValue189);
+
+fieldValue& fieldValue190 =  fieldValue();
+fieldValue190.setName(CString("parameterScale"));
+fieldValue190.setValue(CString("20"));
+ProtoInstance185.addChild(&fieldValue190);
+
+fieldValue& fieldValue191 =  fieldValue();
+fieldValue191.setName(CString("parameterName"));
+fieldValue191.setValue(CString("d"));
+ProtoInstance185.addChild(&fieldValue191);
+
+fieldValue& fieldValue192 =  fieldValue();
+fieldValue192.setName(CString("petNames"));
+fieldValue192.setValue(CString("\"yottzumm\" \"yottzumm2\" \"group1-petname\""));
+ProtoInstance185.addChild(&fieldValue192);
+
+fieldValue& fieldValue193 =  fieldValue();
+fieldValue193.setName(CString("shaderNode"));
+ComposedShader& ComposedShader194 =  ComposedShader();
+ComposedShader194.setUSE(CString("x_iteShader"));
+fieldValue193.addChild(&ComposedShader194);
+
+ProtoInstance185.addChild(&fieldValue193);
+
+LayoutLayer95.addChild(&ProtoInstance185);
+
+ProtoInstance& ProtoInstance195 =  ProtoInstance();
+ProtoInstance195.setName(CString("SliderProto"));
+ProtoInstance195.setDEF(CString("tdeltaPI"));
+fieldValue& fieldValue196 =  fieldValue();
+fieldValue196.setName(CString("sliderTranslation"));
+fieldValue196.setValue(CString("0 -0.5 0"));
+ProtoInstance195.addChild(&fieldValue196);
+
+fieldValue& fieldValue197 =  fieldValue();
+fieldValue197.setName(CString("transformTranslation"));
+fieldValue197.setValue(CString("0 0 0.1"));
+ProtoInstance195.addChild(&fieldValue197);
+
+fieldValue& fieldValue198 =  fieldValue();
+fieldValue198.setName(CString("sensorTranslation"));
+fieldValue198.setValue(CString("0 0 0"));
+ProtoInstance195.addChild(&fieldValue198);
+
+fieldValue& fieldValue199 =  fieldValue();
+fieldValue199.setName(CString("textString"));
+fieldValue199.setValue(CString("\"tdelta=\""));
+ProtoInstance195.addChild(&fieldValue199);
+
+fieldValue& fieldValue200 =  fieldValue();
+fieldValue200.setName(CString("parameterScale"));
+fieldValue200.setValue(CString("6.28"));
+ProtoInstance195.addChild(&fieldValue200);
+
+fieldValue& fieldValue201 =  fieldValue();
+fieldValue201.setName(CString("parameterName"));
+fieldValue201.setValue(CString("tdelta"));
+ProtoInstance195.addChild(&fieldValue201);
+
+fieldValue& fieldValue202 =  fieldValue();
+fieldValue202.setName(CString("petNames"));
+fieldValue202.setValue(CString("\"yottzumm2\" \"group1-petname\""));
+ProtoInstance195.addChild(&fieldValue202);
+
+fieldValue& fieldValue203 =  fieldValue();
+fieldValue203.setName(CString("shaderNode"));
+ComposedShader& ComposedShader204 =  ComposedShader();
+ComposedShader204.setUSE(CString("x_iteShader"));
+fieldValue203.addChild(&ComposedShader204);
+
+ProtoInstance195.addChild(&fieldValue203);
+
+LayoutLayer95.addChild(&ProtoInstance195);
+
+ProtoInstance& ProtoInstance205 =  ProtoInstance();
+ProtoInstance205.setName(CString("SliderProto"));
+ProtoInstance205.setDEF(CString("pdeltaPI"));
+fieldValue& fieldValue206 =  fieldValue();
+fieldValue206.setName(CString("sliderTranslation"));
+fieldValue206.setValue(CString("0 -0.8 0"));
+ProtoInstance205.addChild(&fieldValue206);
+
+fieldValue& fieldValue207 =  fieldValue();
+fieldValue207.setName(CString("transformTranslation"));
+fieldValue207.setValue(CString("0 0 0.1"));
+ProtoInstance205.addChild(&fieldValue207);
+
+fieldValue& fieldValue208 =  fieldValue();
+fieldValue208.setName(CString("sensorTranslation"));
+fieldValue208.setValue(CString("0 0 0"));
+ProtoInstance205.addChild(&fieldValue208);
+
+fieldValue& fieldValue209 =  fieldValue();
+fieldValue209.setName(CString("textString"));
+fieldValue209.setValue(CString("\"pdelta=\""));
+ProtoInstance205.addChild(&fieldValue209);
+
+fieldValue& fieldValue210 =  fieldValue();
+fieldValue210.setName(CString("parameterScale"));
+fieldValue210.setValue(CString("6.28"));
+ProtoInstance205.addChild(&fieldValue210);
+
+fieldValue& fieldValue211 =  fieldValue();
+fieldValue211.setName(CString("parameterName"));
+fieldValue211.setValue(CString("pdelta"));
+ProtoInstance205.addChild(&fieldValue211);
+
+fieldValue& fieldValue212 =  fieldValue();
+fieldValue212.setName(CString("petNames"));
+fieldValue212.setValue(CString("\"yottzumm2\" \"group1-petname\""));
+ProtoInstance205.addChild(&fieldValue212);
+
+fieldValue& fieldValue213 =  fieldValue();
+fieldValue213.setName(CString("shaderNode"));
+ComposedShader& ComposedShader214 =  ComposedShader();
+ComposedShader214.setUSE(CString("x_iteShader"));
+fieldValue213.addChild(&ComposedShader214);
+
+ProtoInstance205.addChild(&fieldValue213);
+
+LayoutLayer95.addChild(&ProtoInstance205);
+
+LayerSet17.addChild(&LayoutLayer95);
+
+Layer& Layer215 =  Layer();
+Layer215.setPickable(true);
+Layer215.setObjectType(new CString[]{CString("ALL")}, 1);
+Viewpoint& Viewpoint216 =  Viewpoint();
+Viewpoint216.setDescription(CString("My Humanoids"));
+Viewpoint216.setFieldOfView(1.570796);
+Viewpoint216.setPosition(new float[]{0.0,1.75,80.0});
+Layer215.addChild(&Viewpoint216);
+
+Script& Script217 =  Script();
+Script217.setUrl(new CString[]{CString("../javascripts/X3DAvatar.js"), CString("https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js")}, 2);
+Script217.setDEF(CString("HumanoidScript"));
+Script217.setDirectOutput(true);
+Script217.setMustEvaluate(true);
+Layer215.addChild(&Script217);
+
+Group& Group218 =  Group();
+Group218.setDEF(CString("humanoidGroup"));
+Group& Group219 =  Group();
+Group218.addChild(&Group219);
+
+Layer215.addChild(&Group218);
+
+LayerSet17.addChild(&Layer215);
+
+Scene16.addChild(&LayerSet17);
+
+X3D0.setScene(&Scene16);
 
 //}

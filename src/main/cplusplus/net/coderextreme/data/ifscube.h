@@ -5,7 +5,7 @@
 //int main(int argc, char ** argv) 
 //{
 X3D& X3D0 =  X3D();
-X3D0.setProfile(CString("Interchange"));
+X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
 meta& meta2 =  meta();

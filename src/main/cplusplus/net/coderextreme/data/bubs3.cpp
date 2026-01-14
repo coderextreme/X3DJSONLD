@@ -67,7 +67,7 @@ Background10.setTopUrl(new CString[]{CString("../resources/images/TP.png"), CStr
 Scene7.addChild(&Background10);
 
 Transform& Transform11 =  Transform();
-Transform11.setDEF(CString("DECLBubble_bubbleA"));
+Transform11.setDEF(CString("DECLBubble_transformA"));
 Shape& Shape12 =  Shape();
 Sphere& Sphere13 =  Sphere();
 Sphere13.setRadius(0.25);
@@ -168,14 +168,14 @@ Transform11.addChild(&TimeSensor22);
 ROUTE& ROUTE23 =  ROUTE();
 ROUTE23.setFromNode(CString("DECLBubble_bubbleA_bounce"));
 ROUTE23.setFromField(CString("translation_changed"));
-ROUTE23.setToNode(CString("DECLBubble_transform"));
+ROUTE23.setToNode(CString("DECLBubble_transformA"));
 ROUTE23.setToField(CString("set_translation"));
 Transform11.addChild(&ROUTE23);
 
 ROUTE& ROUTE24 =  ROUTE();
 ROUTE24.setFromNode(CString("DECLBubble_bubbleA_bounce"));
 ROUTE24.setFromField(CString("scale_changed"));
-ROUTE24.setToNode(CString("DECLBubble_transform"));
+ROUTE24.setToNode(CString("DECLBubble_transformA"));
 ROUTE24.setToField(CString("set_scale"));
 Transform11.addChild(&ROUTE24);
 
@@ -189,7 +189,7 @@ Transform11.addChild(&ROUTE25);
 Scene7.addChild(&Transform11);
 
 Transform& Transform26 =  Transform();
-Transform26.setDEF(CString("DECLBubble_bubbleB"));
+Transform26.setDEF(CString("DECLBubble_transformB"));
 Shape& Shape27 =  Shape();
 Sphere& Sphere28 =  Sphere();
 Sphere28.setRadius(0.25);
@@ -290,14 +290,14 @@ Transform26.addChild(&TimeSensor37);
 ROUTE& ROUTE38 =  ROUTE();
 ROUTE38.setFromNode(CString("DECLBubble_bubbleB_bounce"));
 ROUTE38.setFromField(CString("translation_changed"));
-ROUTE38.setToNode(CString("DECLBubble_transform"));
+ROUTE38.setToNode(CString("DECLBubble_transformB"));
 ROUTE38.setToField(CString("set_translation"));
 Transform26.addChild(&ROUTE38);
 
 ROUTE& ROUTE39 =  ROUTE();
 ROUTE39.setFromNode(CString("DECLBubble_bubbleB_bounce"));
 ROUTE39.setFromField(CString("scale_changed"));
-ROUTE39.setToNode(CString("DECLBubble_transform"));
+ROUTE39.setToNode(CString("DECLBubble_transformB"));
 ROUTE39.setToField(CString("set_scale"));
 Transform26.addChild(&ROUTE39);
 
@@ -311,7 +311,7 @@ Transform26.addChild(&ROUTE40);
 Scene7.addChild(&Transform26);
 
 Transform& Transform41 =  Transform();
-Transform41.setDEF(CString("DECLBubble_bubbleC"));
+Transform41.setDEF(CString("DECLBubble_transformC"));
 Shape& Shape42 =  Shape();
 Sphere& Sphere43 =  Sphere();
 Sphere43.setRadius(0.25);
@@ -412,14 +412,14 @@ Transform41.addChild(&TimeSensor52);
 ROUTE& ROUTE53 =  ROUTE();
 ROUTE53.setFromNode(CString("DECLBubble_bubbleC_bounce"));
 ROUTE53.setFromField(CString("translation_changed"));
-ROUTE53.setToNode(CString("DECLBubble_transform"));
+ROUTE53.setToNode(CString("DECLBubble_transformC"));
 ROUTE53.setToField(CString("set_translation"));
 Transform41.addChild(&ROUTE53);
 
 ROUTE& ROUTE54 =  ROUTE();
 ROUTE54.setFromNode(CString("DECLBubble_bubbleC_bounce"));
 ROUTE54.setFromField(CString("scale_changed"));
-ROUTE54.setToNode(CString("DECLBubble_transform"));
+ROUTE54.setToNode(CString("DECLBubble_transformC"));
 ROUTE54.setToField(CString("set_scale"));
 Transform41.addChild(&ROUTE54);
 
@@ -433,7 +433,7 @@ Transform41.addChild(&ROUTE55);
 Scene7.addChild(&Transform41);
 
 Transform& Transform56 =  Transform();
-Transform56.setDEF(CString("DECLBubble_bubbleD"));
+Transform56.setDEF(CString("DECLBubble_transformD"));
 Shape& Shape57 =  Shape();
 Sphere& Sphere58 =  Sphere();
 Sphere58.setRadius(0.25);
@@ -534,14 +534,14 @@ Transform56.addChild(&TimeSensor67);
 ROUTE& ROUTE68 =  ROUTE();
 ROUTE68.setFromNode(CString("DECLBubble_bubbleD_bounce"));
 ROUTE68.setFromField(CString("translation_changed"));
-ROUTE68.setToNode(CString("DECLBubble_transform"));
+ROUTE68.setToNode(CString("DECLBubble_transformD"));
 ROUTE68.setToField(CString("set_translation"));
 Transform56.addChild(&ROUTE68);
 
 ROUTE& ROUTE69 =  ROUTE();
 ROUTE69.setFromNode(CString("DECLBubble_bubbleD_bounce"));
 ROUTE69.setFromField(CString("scale_changed"));
-ROUTE69.setToNode(CString("DECLBubble_transform"));
+ROUTE69.setToNode(CString("DECLBubble_transformD"));
 ROUTE69.setToField(CString("set_scale"));
 Transform56.addChild(&ROUTE69);
 

@@ -8,6 +8,8 @@ X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
 X3D0.setVersion(CString("4.0"));
 head& head1 =  head();
+//Scaled 1:1, Added Animations
+//Added Sites
 component& component2 =  component();
 component2.setName(CString("HAnim"));
 component2.setLevel(1);
@@ -100,7 +102,7 @@ head1.addMeta(&meta19);
 
 meta& meta20 =  meta();
 meta20.setName(CString("generator"));
-meta20.setContent(CString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+meta20.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 head1.addMeta(&meta20);
 
 meta& meta21 =  meta();
@@ -108,8 +110,6 @@ meta21.setName(CString("license"));
 meta21.setContent(CString("../license.html"));
 head1.addMeta(&meta21);
 
-//Scaled 1:1, Added Animations
-//Added Sites
 X3D0.setHead(&head1);
 
 Scene& Scene22 =  Scene();
@@ -218,6 +218,7 @@ Shape38.setGeometry(&IndexedFaceSet42);
 HAnimSegment37.addChild(&Shape38);
 
 HAnimSite& HAnimSite45 =  HAnimSite();
+HAnimSite45.X3DNode::setName(CString("sacrum"));
 HAnimSite45.setDEF(CString("sacrum_Sites"));
 //None
 HAnimSegment37.addChild(&HAnimSite45);
@@ -263,6 +264,7 @@ Shape48.setGeometry(&IndexedFaceSet52);
 HAnimSegment47.addChild(&Shape48);
 
 HAnimSite& HAnimSite55 =  HAnimSite();
+HAnimSite55.X3DNode::setName(CString("pelvis"));
 HAnimSite55.setDEF(CString("pelvis_Sites"));
 //(r_iliocristale -0.1525 1.0628 0.0035) (r_trochanterion -0.1689 0.8419 0.0352) (l_iliocristale 0.1612 1.0537 0.0008) (l_trochanterion 0.1677 0.8336 0.0303) (r_asis -0.0887 1.0021 0.1112) (l_asis 0.0774 1.0190 -0.1151) (r_psis -0.0716 1.0190 -0.1138) (l_psis 0.0774 1.0190 -0.1151) (crotch 0.0034 0.8266 0.0257)
 HAnimSegment47.addChild(&HAnimSite55);
@@ -308,6 +310,7 @@ Shape58.setGeometry(&IndexedFaceSet62);
 HAnimSegment57.addChild(&Shape58);
 
 HAnimSite& HAnimSite65 =  HAnimSite();
+HAnimSite65.X3DNode::setName(CString("l_thigh"));
 HAnimSite65.setDEF(CString("l_thigh_Sites"));
 //(l_knee_crease 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella x y z)
 HAnimSegment57.addChild(&HAnimSite65);
@@ -353,6 +356,7 @@ Shape68.setGeometry(&IndexedFaceSet72);
 HAnimSegment67.addChild(&Shape68);
 
 HAnimSite& HAnimSite75 =  HAnimSite();
+HAnimSite75.X3DNode::setName(CString("l_calf"));
 HAnimSite75.setDEF(CString("l_calf_Sites"));
 //(l_tibiale x y z) (l_medial_malleolus 0.0890 0.0716 -0.0881) (l_lateral_malleolus 0.1308 0.0597 -0.1032)
 HAnimSegment67.addChild(&HAnimSite75);
@@ -398,6 +402,7 @@ Shape78.setGeometry(&IndexedFaceSet82);
 HAnimSegment77.addChild(&Shape78);
 
 HAnimSite& HAnimSite85 =  HAnimSite();
+HAnimSite85.X3DNode::setName(CString("l_talus"));
 HAnimSite85.setDEF(CString("l_talus_Sites"));
 //(l_sphyrion 0.0890 0.0575 -0.0943) (l_calcaneous_posterior 0.0974 0.0259 -0.1171)
 HAnimSegment77.addChild(&HAnimSite85);
@@ -443,6 +448,7 @@ Shape88.setGeometry(&IndexedFaceSet92);
 HAnimSegment87.addChild(&Shape88);
 
 HAnimSite& HAnimSite95 =  HAnimSite();
+HAnimSite95.X3DNode::setName(CString("l_navicular"));
 HAnimSite95.setDEF(CString("l_navicular_Sites"));
 //None
 HAnimSegment87.addChild(&HAnimSite95);
@@ -488,6 +494,7 @@ Shape98.setGeometry(&IndexedFaceSet102);
 HAnimSegment97.addChild(&Shape98);
 
 HAnimSite& HAnimSite105 =  HAnimSite();
+HAnimSite105.X3DNode::setName(CString("l_cuneiform_1"));
 HAnimSite105.setDEF(CString("l_cuneiform_1_Sites"));
 //None
 HAnimSegment97.addChild(&HAnimSite105);
@@ -533,6 +540,7 @@ Shape108.setGeometry(&IndexedFaceSet112);
 HAnimSegment107.addChild(&Shape108);
 
 HAnimSite& HAnimSite115 =  HAnimSite();
+HAnimSite115.X3DNode::setName(CString("l_metatarsal_1"));
 HAnimSite115.setDEF(CString("l_metatarsal_1_Sites"));
 //None
 HAnimSegment107.addChild(&HAnimSite115);
@@ -578,6 +586,7 @@ Shape118.setGeometry(&IndexedFaceSet122);
 HAnimSegment117.addChild(&Shape118);
 
 HAnimSite& HAnimSite125 =  HAnimSite();
+HAnimSite125.X3DNode::setName(CString("l_tarsal_proximal_phalanx_1"));
 HAnimSite125.setDEF(CString("l_tarsal_proximal_phalanx_1_Sites"));
 //(l_metatarsal_phalanx_1 0.0816 0.0232 0.0106)
 HAnimSegment117.addChild(&HAnimSite125);
@@ -623,6 +632,7 @@ Shape128.setGeometry(&IndexedFaceSet132);
 HAnimSegment127.addChild(&Shape128);
 
 HAnimSite& HAnimSite135 =  HAnimSite();
+HAnimSite135.X3DNode::setName(CString("l_tarsal_distal_phalanx_1"));
 HAnimSite135.setDEF(CString("l_tarsal_distal_phalanx_1_Sites"));
 //(l_tarsal_distal_phalanx_1_tip 0.090 0.012 0.188)
 HAnimSegment127.addChild(&HAnimSite135);
@@ -676,6 +686,7 @@ Shape138.setGeometry(&IndexedFaceSet142);
 HAnimSegment137.addChild(&Shape138);
 
 HAnimSite& HAnimSite145 =  HAnimSite();
+HAnimSite145.X3DNode::setName(CString("l_cuneiform_2"));
 HAnimSite145.setDEF(CString("l_cuneiform_2_Sites"));
 //None
 HAnimSegment137.addChild(&HAnimSite145);
@@ -721,6 +732,7 @@ Shape148.setGeometry(&IndexedFaceSet152);
 HAnimSegment147.addChild(&Shape148);
 
 HAnimSite& HAnimSite155 =  HAnimSite();
+HAnimSite155.X3DNode::setName(CString("l_metatarsal_2"));
 HAnimSite155.setDEF(CString("l_metatarsal_2_Sites"));
 //None
 HAnimSegment147.addChild(&HAnimSite155);
@@ -766,6 +778,7 @@ Shape158.setGeometry(&IndexedFaceSet162);
 HAnimSegment157.addChild(&Shape158);
 
 HAnimSite& HAnimSite165 =  HAnimSite();
+HAnimSite165.X3DNode::setName(CString("l_tarsal_proximal_phalanx_2"));
 HAnimSite165.setDEF(CString("l_tarsal_proximal_phalanx_2_Sites"));
 //None
 HAnimSegment157.addChild(&HAnimSite165);
@@ -811,6 +824,7 @@ Shape168.setGeometry(&IndexedFaceSet172);
 HAnimSegment167.addChild(&Shape168);
 
 HAnimSite& HAnimSite175 =  HAnimSite();
+HAnimSite175.X3DNode::setName(CString("l_tarsal_middle_phalanx_2"));
 HAnimSite175.setDEF(CString("l_tarsal_middle_phalanx_2_Sites"));
 //None
 HAnimSegment167.addChild(&HAnimSite175);
@@ -856,7 +870,8 @@ Shape178.setGeometry(&IndexedFaceSet182);
 HAnimSegment177.addChild(&Shape178);
 
 HAnimSite& HAnimSite185 =  HAnimSite();
-HAnimSite185.setDEF(CString("l_tarsal_distal_phalanx_2"));
+HAnimSite185.X3DNode::setName(CString("l_tarsal_distal_phalanx_2"));
+HAnimSite185.setDEF(CString("l_tarsal_distal_phalanx_2_Sites"));
 //(l_tarsal_distal_phalanx_2_tip 0.110 0.011 0.19)
 HAnimSegment177.addChild(&HAnimSite185);
 
@@ -911,6 +926,7 @@ Shape188.setGeometry(&IndexedFaceSet192);
 HAnimSegment187.addChild(&Shape188);
 
 HAnimSite& HAnimSite195 =  HAnimSite();
+HAnimSite195.X3DNode::setName(CString("l_cuneiform_3"));
 HAnimSite195.setDEF(CString("l_cuneiform_3_Sites"));
 //None
 HAnimSegment187.addChild(&HAnimSite195);
@@ -956,6 +972,7 @@ Shape198.setGeometry(&IndexedFaceSet202);
 HAnimSegment197.addChild(&Shape198);
 
 HAnimSite& HAnimSite205 =  HAnimSite();
+HAnimSite205.X3DNode::setName(CString("l_metatarsal_3"));
 HAnimSite205.setDEF(CString("l_metatarsal_3_Sites"));
 //None
 HAnimSegment197.addChild(&HAnimSite205);
@@ -1001,6 +1018,7 @@ Shape208.setGeometry(&IndexedFaceSet212);
 HAnimSegment207.addChild(&Shape208);
 
 HAnimSite& HAnimSite215 =  HAnimSite();
+HAnimSite215.X3DNode::setName(CString("l_tarsal_proximal_phalanx_3"));
 HAnimSite215.setDEF(CString("l_tarsal_proximal_phalanx_3_Sites"));
 //None
 HAnimSegment207.addChild(&HAnimSite215);
@@ -1046,6 +1064,7 @@ Shape218.setGeometry(&IndexedFaceSet222);
 HAnimSegment217.addChild(&Shape218);
 
 HAnimSite& HAnimSite225 =  HAnimSite();
+HAnimSite225.X3DNode::setName(CString("l_tarsal_middle_phalanx_3"));
 HAnimSite225.setDEF(CString("l_tarsal_middle_phalanx_3_Sites"));
 //None
 HAnimSegment217.addChild(&HAnimSite225);
@@ -1091,6 +1110,7 @@ Shape228.setGeometry(&IndexedFaceSet232);
 HAnimSegment227.addChild(&Shape228);
 
 HAnimSite& HAnimSite235 =  HAnimSite();
+HAnimSite235.X3DNode::setName(CString("l_tarsal_distal_phalanx_3"));
 HAnimSite235.setDEF(CString("l_tarsal_distal_phalanx_3_Sites"));
 //(l_tarsal_distal_phalanx_3_tip 0.128 0.011 0.185)
 HAnimSegment227.addChild(&HAnimSite235);
@@ -1148,6 +1168,7 @@ Shape238.setGeometry(&IndexedFaceSet242);
 HAnimSegment237.addChild(&Shape238);
 
 HAnimSite& HAnimSite245 =  HAnimSite();
+HAnimSite245.X3DNode::setName(CString("l_calcaneus"));
 HAnimSite245.setDEF(CString("l_calcaneus_Sites"));
 //None
 HAnimSegment237.addChild(&HAnimSite245);
@@ -1193,6 +1214,7 @@ Shape248.setGeometry(&IndexedFaceSet252);
 HAnimSegment247.addChild(&Shape248);
 
 HAnimSite& HAnimSite255 =  HAnimSite();
+HAnimSite255.X3DNode::setName(CString("l_cuboid"));
 HAnimSite255.setDEF(CString("l_cuboid_Sites"));
 //None
 HAnimSegment247.addChild(&HAnimSite255);
@@ -1238,6 +1260,7 @@ Shape258.setGeometry(&IndexedFaceSet262);
 HAnimSegment257.addChild(&Shape258);
 
 HAnimSite& HAnimSite265 =  HAnimSite();
+HAnimSite265.X3DNode::setName(CString("l_metatarsal_4"));
 HAnimSite265.setDEF(CString("l_metatarsal_4_Sites"));
 //None
 HAnimSegment257.addChild(&HAnimSite265);
@@ -1283,6 +1306,7 @@ Shape268.setGeometry(&IndexedFaceSet272);
 HAnimSegment267.addChild(&Shape268);
 
 HAnimSite& HAnimSite275 =  HAnimSite();
+HAnimSite275.X3DNode::setName(CString("l_tarsal_proximal_phalanx_4"));
 HAnimSite275.setDEF(CString("l_tarsal_proximal_phalanx_4_Sites"));
 //None
 HAnimSegment267.addChild(&HAnimSite275);
@@ -1328,6 +1352,7 @@ Shape278.setGeometry(&IndexedFaceSet282);
 HAnimSegment277.addChild(&Shape278);
 
 HAnimSite& HAnimSite285 =  HAnimSite();
+HAnimSite285.X3DNode::setName(CString("l_tarsal_middle_phalanx_4"));
 HAnimSite285.setDEF(CString("l_tarsal_middle_phalanx_4_Sites"));
 //None
 HAnimSegment277.addChild(&HAnimSite285);
@@ -1373,6 +1398,7 @@ Shape288.setGeometry(&IndexedFaceSet292);
 HAnimSegment287.addChild(&Shape288);
 
 HAnimSite& HAnimSite295 =  HAnimSite();
+HAnimSite295.X3DNode::setName(CString("l_tarsal_distal_phalanx_4"));
 HAnimSite295.setDEF(CString("l_tarsal_distal_phalanx_4_Sites"));
 //(l_tarsal_distal_phalanx_4_tip 0.142 0.011 0.178)
 HAnimSegment287.addChild(&HAnimSite295);
@@ -1426,6 +1452,7 @@ Shape298.setGeometry(&IndexedFaceSet302);
 HAnimSegment297.addChild(&Shape298);
 
 HAnimSite& HAnimSite305 =  HAnimSite();
+HAnimSite305.X3DNode::setName(CString("l_metatarsal_5"));
 HAnimSite305.setDEF(CString("l_metatarsal_5_Sites"));
 //None
 HAnimSegment297.addChild(&HAnimSite305);
@@ -1471,6 +1498,7 @@ Shape308.setGeometry(&IndexedFaceSet312);
 HAnimSegment307.addChild(&Shape308);
 
 HAnimSite& HAnimSite315 =  HAnimSite();
+HAnimSite315.X3DNode::setName(CString("l_tarsal_proximal_phalanx_5"));
 HAnimSite315.setDEF(CString("l_tarsal_proximal_phalanx_5_Sites"));
 //None
 HAnimSegment307.addChild(&HAnimSite315);
@@ -1516,6 +1544,7 @@ Shape318.setGeometry(&IndexedFaceSet322);
 HAnimSegment317.addChild(&Shape318);
 
 HAnimSite& HAnimSite325 =  HAnimSite();
+HAnimSite325.X3DNode::setName(CString("l_tarsal_middle_phalanx_5"));
 HAnimSite325.setDEF(CString("l_tarsal_middle_phalanx_5_Sites"));
 //(l_metatarsal_phalanx_5 0.1825 0.0070 0.0928)
 HAnimSegment317.addChild(&HAnimSite325);
@@ -1561,6 +1590,7 @@ Shape328.setGeometry(&IndexedFaceSet332);
 HAnimSegment327.addChild(&Shape328);
 
 HAnimSite& HAnimSite335 =  HAnimSite();
+HAnimSite335.X3DNode::setName(CString("l_tarsal_distal_phalanx_5"));
 HAnimSite335.setDEF(CString("l_tarsal_distal_phalanx_5_Sites"));
 //(l_tarsal_distal_phalanx_5_tip 0.154 0.010 0.168)
 HAnimSegment327.addChild(&HAnimSite335);
@@ -1624,6 +1654,7 @@ Shape338.setGeometry(&IndexedFaceSet342);
 HAnimSegment337.addChild(&Shape338);
 
 HAnimSite& HAnimSite345 =  HAnimSite();
+HAnimSite345.X3DNode::setName(CString("r_thigh"));
 HAnimSite345.setDEF(CString("r_thigh_Sites"));
 //(r_knee_crease -0.0825 0.4932 -0.0326) (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) (r_femoral_medial_epicn -0.0221 0.5014 0.0289) (r_suprapatella x y z)
 HAnimSegment337.addChild(&HAnimSite345);
@@ -1669,6 +1700,7 @@ Shape348.setGeometry(&IndexedFaceSet352);
 HAnimSegment347.addChild(&Shape348);
 
 HAnimSite& HAnimSite355 =  HAnimSite();
+HAnimSite355.X3DNode::setName(CString("r_calf"));
 HAnimSite355.setDEF(CString("r_calf_Sites"));
 //(r_tibiale x y z) (r_medial_malleolus -0.0591 0.0760 -0.0928) (r_lateral_malleolus -0.1006 0.0658 -0.1075)
 HAnimSegment347.addChild(&HAnimSite355);
@@ -1714,6 +1746,7 @@ Shape358.setGeometry(&IndexedFaceSet362);
 HAnimSegment357.addChild(&Shape358);
 
 HAnimSite& HAnimSite365 =  HAnimSite();
+HAnimSite365.X3DNode::setName(CString("r_talus"));
 HAnimSite365.setDEF(CString("r_talus_Sites"));
 //(r_sphyrion -0.0603 0.0610 -0.1002) (r_calcaneous_posterior -0.0692 0.0297 -0.1221)
 HAnimSegment357.addChild(&HAnimSite365);
@@ -1759,6 +1792,7 @@ Shape368.setGeometry(&IndexedFaceSet372);
 HAnimSegment367.addChild(&Shape368);
 
 HAnimSite& HAnimSite375 =  HAnimSite();
+HAnimSite375.X3DNode::setName(CString("r_navicular"));
 HAnimSite375.setDEF(CString("r_navicular_Sites"));
 //None
 HAnimSegment367.addChild(&HAnimSite375);
@@ -1804,6 +1838,7 @@ Shape378.setGeometry(&IndexedFaceSet382);
 HAnimSegment377.addChild(&Shape378);
 
 HAnimSite& HAnimSite385 =  HAnimSite();
+HAnimSite385.X3DNode::setName(CString("r_cuneiform_1"));
 HAnimSite385.setDEF(CString("r_cuneiform_1_Sites"));
 //None
 HAnimSegment377.addChild(&HAnimSite385);
@@ -1849,6 +1884,7 @@ Shape388.setGeometry(&IndexedFaceSet392);
 HAnimSegment387.addChild(&Shape388);
 
 HAnimSite& HAnimSite395 =  HAnimSite();
+HAnimSite395.X3DNode::setName(CString("r_metatarsal_1"));
 HAnimSite395.setDEF(CString("r_metatarsal_1_Sites"));
 //None
 HAnimSegment387.addChild(&HAnimSite395);
@@ -1894,6 +1930,7 @@ Shape398.setGeometry(&IndexedFaceSet402);
 HAnimSegment397.addChild(&Shape398);
 
 HAnimSite& HAnimSite405 =  HAnimSite();
+HAnimSite405.X3DNode::setName(CString("r_tarsal_proximal_phalanx_1"));
 HAnimSite405.setDEF(CString("r_tarsal_proximal_phalanx_1_Sites"));
 //None
 HAnimSegment397.addChild(&HAnimSite405);
@@ -1939,6 +1976,7 @@ Shape408.setGeometry(&IndexedFaceSet412);
 HAnimSegment407.addChild(&Shape408);
 
 HAnimSite& HAnimSite415 =  HAnimSite();
+HAnimSite415.X3DNode::setName(CString("r_tarsal_distal_phalanx_1"));
 HAnimSite415.setDEF(CString("r_tarsal_distal_phalanx_1_Sites"));
 //(r_metatarsal_phalanx_1 x y z) (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)
 HAnimSegment407.addChild(&HAnimSite415);
@@ -1992,6 +2030,7 @@ Shape418.setGeometry(&IndexedFaceSet422);
 HAnimSegment417.addChild(&Shape418);
 
 HAnimSite& HAnimSite425 =  HAnimSite();
+HAnimSite425.X3DNode::setName(CString("r_cuneiform_2"));
 HAnimSite425.setDEF(CString("r_cuneiform_2_Sites"));
 //None
 HAnimSegment417.addChild(&HAnimSite425);
@@ -2037,6 +2076,7 @@ Shape428.setGeometry(&IndexedFaceSet432);
 HAnimSegment427.addChild(&Shape428);
 
 HAnimSite& HAnimSite435 =  HAnimSite();
+HAnimSite435.X3DNode::setName(CString("r_metatarsal_2"));
 HAnimSite435.setDEF(CString("r_metatarsal_2_Sites"));
 //None
 HAnimSegment427.addChild(&HAnimSite435);
@@ -2082,6 +2122,7 @@ Shape438.setGeometry(&IndexedFaceSet442);
 HAnimSegment437.addChild(&Shape438);
 
 HAnimSite& HAnimSite445 =  HAnimSite();
+HAnimSite445.X3DNode::setName(CString("r_tarsal_proximal_phalanx_2"));
 HAnimSite445.setDEF(CString("r_tarsal_proximal_phalanx_2_Sites"));
 //None
 HAnimSegment437.addChild(&HAnimSite445);
@@ -2127,6 +2168,7 @@ Shape448.setGeometry(&IndexedFaceSet452);
 HAnimSegment447.addChild(&Shape448);
 
 HAnimSite& HAnimSite455 =  HAnimSite();
+HAnimSite455.X3DNode::setName(CString("r_tarsal_middle_phalanx_2"));
 HAnimSite455.setDEF(CString("r_tarsal_middle_phalanx_2_Sites"));
 //None
 HAnimSegment447.addChild(&HAnimSite455);
@@ -2172,6 +2214,7 @@ Shape458.setGeometry(&IndexedFaceSet462);
 HAnimSegment457.addChild(&Shape458);
 
 HAnimSite& HAnimSite465 =  HAnimSite();
+HAnimSite465.X3DNode::setName(CString("r_tarsal_distal_phalanx_2"));
 HAnimSite465.setDEF(CString("r_tarsal_distal_phalanx_2_Sites"));
 //(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19)
 HAnimSegment457.addChild(&HAnimSite465);
@@ -2227,6 +2270,7 @@ Shape468.setGeometry(&IndexedFaceSet472);
 HAnimSegment467.addChild(&Shape468);
 
 HAnimSite& HAnimSite475 =  HAnimSite();
+HAnimSite475.X3DNode::setName(CString("r_cuneiform_3"));
 HAnimSite475.setDEF(CString("r_cuneiform_3_Sites"));
 //None
 HAnimSegment467.addChild(&HAnimSite475);
@@ -2272,6 +2316,7 @@ Shape478.setGeometry(&IndexedFaceSet482);
 HAnimSegment477.addChild(&Shape478);
 
 HAnimSite& HAnimSite485 =  HAnimSite();
+HAnimSite485.X3DNode::setName(CString("r_metatarsal_3"));
 HAnimSite485.setDEF(CString("r_metatarsal_3_Sites"));
 //None
 HAnimSegment477.addChild(&HAnimSite485);
@@ -2317,6 +2362,7 @@ Shape488.setGeometry(&IndexedFaceSet492);
 HAnimSegment487.addChild(&Shape488);
 
 HAnimSite& HAnimSite495 =  HAnimSite();
+HAnimSite495.X3DNode::setName(CString("r_tarsal_proximal_phalanx_3"));
 HAnimSite495.setDEF(CString("r_tarsal_proximal_phalanx_3_Sites"));
 //None
 HAnimSegment487.addChild(&HAnimSite495);
@@ -2362,6 +2408,7 @@ Shape498.setGeometry(&IndexedFaceSet502);
 HAnimSegment497.addChild(&Shape498);
 
 HAnimSite& HAnimSite505 =  HAnimSite();
+HAnimSite505.X3DNode::setName(CString("r_tarsal_middle_phalanx_3"));
 HAnimSite505.setDEF(CString("r_tarsal_middle_phalanx_3_Sites"));
 //None
 HAnimSegment497.addChild(&HAnimSite505);
@@ -2407,6 +2454,7 @@ Shape508.setGeometry(&IndexedFaceSet512);
 HAnimSegment507.addChild(&Shape508);
 
 HAnimSite& HAnimSite515 =  HAnimSite();
+HAnimSite515.X3DNode::setName(CString("r_tarsal_distal_phalanx_3"));
 HAnimSite515.setDEF(CString("r_tarsal_distal_phalanx_3_Sites"));
 //(r_tarsal_distal_phalanx_3_tip -0.128 0.011 0.185)
 HAnimSegment507.addChild(&HAnimSite515);
@@ -2464,6 +2512,7 @@ Shape518.setGeometry(&IndexedFaceSet522);
 HAnimSegment517.addChild(&Shape518);
 
 HAnimSite& HAnimSite525 =  HAnimSite();
+HAnimSite525.X3DNode::setName(CString("r_calcaneus"));
 HAnimSite525.setDEF(CString("r_calcaneus_Sites"));
 //None
 HAnimSegment517.addChild(&HAnimSite525);
@@ -2509,6 +2558,7 @@ Shape528.setGeometry(&IndexedFaceSet532);
 HAnimSegment527.addChild(&Shape528);
 
 HAnimSite& HAnimSite535 =  HAnimSite();
+HAnimSite535.X3DNode::setName(CString("r_cuboid"));
 HAnimSite535.setDEF(CString("r_cuboid_Sites"));
 //None
 HAnimSegment527.addChild(&HAnimSite535);
@@ -2554,6 +2604,7 @@ Shape538.setGeometry(&IndexedFaceSet542);
 HAnimSegment537.addChild(&Shape538);
 
 HAnimSite& HAnimSite545 =  HAnimSite();
+HAnimSite545.X3DNode::setName(CString("r_metatarsal_4"));
 HAnimSite545.setDEF(CString("r_metatarsal_4_Sites"));
 //None
 HAnimSegment537.addChild(&HAnimSite545);
@@ -2599,6 +2650,7 @@ Shape548.setGeometry(&IndexedFaceSet552);
 HAnimSegment547.addChild(&Shape548);
 
 HAnimSite& HAnimSite555 =  HAnimSite();
+HAnimSite555.X3DNode::setName(CString("r_tarsal_proximal_phalanx_4"));
 HAnimSite555.setDEF(CString("r_tarsal_proximal_phalanx_4_Sites"));
 //None
 HAnimSegment547.addChild(&HAnimSite555);
@@ -2644,6 +2696,7 @@ Shape558.setGeometry(&IndexedFaceSet562);
 HAnimSegment557.addChild(&Shape558);
 
 HAnimSite& HAnimSite565 =  HAnimSite();
+HAnimSite565.X3DNode::setName(CString("r_tarsal_middle_phalanx_4"));
 HAnimSite565.setDEF(CString("r_tarsal_middle_phalanx_4_Sites"));
 //None
 HAnimSegment557.addChild(&HAnimSite565);
@@ -2689,6 +2742,7 @@ Shape568.setGeometry(&IndexedFaceSet572);
 HAnimSegment567.addChild(&Shape568);
 
 HAnimSite& HAnimSite575 =  HAnimSite();
+HAnimSite575.X3DNode::setName(CString("r_tarsal_distal_phalanx_4"));
 HAnimSite575.setDEF(CString("r_tarsal_distal_phalanx_4_Sites"));
 //(r_tarsal_distal_phalanx_4_tip -0.142 0.011 0.178)
 HAnimSegment567.addChild(&HAnimSite575);
@@ -2742,6 +2796,7 @@ Shape578.setGeometry(&IndexedFaceSet582);
 HAnimSegment577.addChild(&Shape578);
 
 HAnimSite& HAnimSite585 =  HAnimSite();
+HAnimSite585.X3DNode::setName(CString("r_metatarsal_"));
 HAnimSite585.setDEF(CString("r_metatarsal__Sites"));
 //None
 HAnimSegment577.addChild(&HAnimSite585);
@@ -2787,6 +2842,7 @@ Shape588.setGeometry(&IndexedFaceSet592);
 HAnimSegment587.addChild(&Shape588);
 
 HAnimSite& HAnimSite595 =  HAnimSite();
+HAnimSite595.X3DNode::setName(CString("r_tarsal_proximal_phalanx_5"));
 HAnimSite595.setDEF(CString("r_tarsal_proximal_phalanx_5_Sites"));
 //None
 HAnimSegment587.addChild(&HAnimSite595);
@@ -2832,6 +2888,7 @@ Shape598.setGeometry(&IndexedFaceSet602);
 HAnimSegment597.addChild(&Shape598);
 
 HAnimSite& HAnimSite605 =  HAnimSite();
+HAnimSite605.X3DNode::setName(CString("r_tarsal_middle_phalanx_5"));
 HAnimSite605.setDEF(CString("r_tarsal_middle_phalanx_5_Sites"));
 //(r_metatarsal_phalanx_5 x y z)
 HAnimSegment597.addChild(&HAnimSite605);
@@ -2877,6 +2934,7 @@ Shape608.setGeometry(&IndexedFaceSet612);
 HAnimSegment607.addChild(&Shape608);
 
 HAnimSite& HAnimSite615 =  HAnimSite();
+HAnimSite615.X3DNode::setName(CString("r_tarsal_distal_phalanx_5"));
 HAnimSite615.setDEF(CString("r_tarsal_distal_phalanx_5_Sites"));
 //(r_tarsal_distal_phalanx_5_tip -0.154 0.010 0.168)
 HAnimSegment607.addChild(&HAnimSite615);
@@ -2940,6 +2998,7 @@ Shape618.setGeometry(&IndexedFaceSet622);
 HAnimSegment617.addChild(&Shape618);
 
 HAnimSite& HAnimSite625 =  HAnimSite();
+HAnimSite625.X3DNode::setName(CString("l5"));
 HAnimSite625.setDEF(CString("l5_Sites"));
 //(spine_2_lower_back x y z) (waist_preferred_anterior x y z) (waist_preferred_posterior 0.2900 1.0915 -0.1091)
 HAnimSegment617.addChild(&HAnimSite625);
@@ -2985,6 +3044,7 @@ Shape628.setGeometry(&IndexedFaceSet632);
 HAnimSegment627.addChild(&Shape628);
 
 HAnimSite& HAnimSite635 =  HAnimSite();
+HAnimSite635.X3DNode::setName(CString("l4"));
 HAnimSite635.setDEF(CString("l4_Sites"));
 //None
 HAnimSegment627.addChild(&HAnimSite635);
@@ -3030,6 +3090,7 @@ Shape638.setGeometry(&IndexedFaceSet642);
 HAnimSegment637.addChild(&Shape638);
 
 HAnimSite& HAnimSite645 =  HAnimSite();
+HAnimSite645.X3DNode::setName(CString("l3"));
 HAnimSite645.setDEF(CString("l3_Sites"));
 //None
 HAnimSegment637.addChild(&HAnimSite645);
@@ -3075,6 +3136,7 @@ Shape648.setGeometry(&IndexedFaceSet652);
 HAnimSegment647.addChild(&Shape648);
 
 HAnimSite& HAnimSite655 =  HAnimSite();
+HAnimSite655.X3DNode::setName(CString("l2"));
 HAnimSite655.setDEF(CString("l2_Sites"));
 //(l_rib_10 0.0871 1.1925 0.0992) (r_rib_10 -0.0711 1.1941 0.1016) (rib_10_midspine 0.0049 1.1908 -0.1113)
 HAnimSegment647.addChild(&HAnimSite655);
@@ -3120,6 +3182,7 @@ Shape658.setGeometry(&IndexedFaceSet662);
 HAnimSegment657.addChild(&Shape658);
 
 HAnimSite& HAnimSite665 =  HAnimSite();
+HAnimSite665.X3DNode::setName(CString("l1"));
 HAnimSite665.setDEF(CString("l1_Sites"));
 //None
 HAnimSegment657.addChild(&HAnimSite665);
@@ -3165,6 +3228,7 @@ Shape668.setGeometry(&IndexedFaceSet672);
 HAnimSegment667.addChild(&Shape668);
 
 HAnimSite& HAnimSite675 =  HAnimSite();
+HAnimSite675.X3DNode::setName(CString("t12"));
 HAnimSite675.setDEF(CString("t12_Sites"));
 //None
 HAnimSegment667.addChild(&HAnimSite675);
@@ -3210,6 +3274,7 @@ Shape678.setGeometry(&IndexedFaceSet682);
 HAnimSegment677.addChild(&Shape678);
 
 HAnimSite& HAnimSite685 =  HAnimSite();
+HAnimSite685.X3DNode::setName(CString("t11"));
 HAnimSite685.setDEF(CString("t11_Sites"));
 //None
 HAnimSegment677.addChild(&HAnimSite685);
@@ -3255,6 +3320,7 @@ Shape688.setGeometry(&IndexedFaceSet692);
 HAnimSegment687.addChild(&Shape688);
 
 HAnimSite& HAnimSite695 =  HAnimSite();
+HAnimSite695.X3DNode::setName(CString("t10"));
 HAnimSite695.setDEF(CString("t10_Sites"));
 //(substernale 0.0085 1.2995 0.1147) (mesosternale x y z)
 HAnimSegment687.addChild(&HAnimSite695);
@@ -3300,6 +3366,7 @@ Shape698.setGeometry(&IndexedFaceSet702);
 HAnimSegment697.addChild(&Shape698);
 
 HAnimSite& HAnimSite705 =  HAnimSite();
+HAnimSite705.X3DNode::setName(CString("t9"));
 HAnimSite705.setDEF(CString("t9_Sites"));
 //(l_thelion 0.0918 1.3382 0.1192) (r_thelion -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane x y z) (l_chest_midsagittal_plane x y z) (r_chest_midsagittal_plane x y z)
 HAnimSegment697.addChild(&HAnimSite705);
@@ -3345,6 +3412,7 @@ Shape708.setGeometry(&IndexedFaceSet712);
 HAnimSegment707.addChild(&Shape708);
 
 HAnimSite& HAnimSite715 =  HAnimSite();
+HAnimSite715.X3DNode::setName(CString("t8"));
 HAnimSite715.setDEF(CString("t8_Sites"));
 //None
 HAnimSegment707.addChild(&HAnimSite715);
@@ -3390,6 +3458,7 @@ Shape718.setGeometry(&IndexedFaceSet722);
 HAnimSegment717.addChild(&Shape718);
 
 HAnimSite& HAnimSite725 =  HAnimSite();
+HAnimSite725.X3DNode::setName(CString("t7"));
 HAnimSite725.setDEF(CString("t7_Sites"));
 //None
 HAnimSegment717.addChild(&HAnimSite725);
@@ -3435,6 +3504,7 @@ Shape728.setGeometry(&IndexedFaceSet732);
 HAnimSegment727.addChild(&Shape728);
 
 HAnimSite& HAnimSite735 =  HAnimSite();
+HAnimSite735.X3DNode::setName(CString("t6"));
 HAnimSite735.setDEF(CString("t6_Sites"));
 //None
 HAnimSegment727.addChild(&HAnimSite735);
@@ -3480,6 +3550,7 @@ Shape738.setGeometry(&IndexedFaceSet742);
 HAnimSegment737.addChild(&Shape738);
 
 HAnimSite& HAnimSite745 =  HAnimSite();
+HAnimSite745.X3DNode::setName(CString("t5"));
 HAnimSite745.setDEF(CString("t5_Sites"));
 //None
 HAnimSegment737.addChild(&HAnimSite745);
@@ -3525,6 +3596,7 @@ Shape748.setGeometry(&IndexedFaceSet752);
 HAnimSegment747.addChild(&Shape748);
 
 HAnimSite& HAnimSite755 =  HAnimSite();
+HAnimSite755.X3DNode::setName(CString("t4"));
 HAnimSite755.setDEF(CString("t4_Sites"));
 //None
 HAnimSegment747.addChild(&HAnimSite755);
@@ -3570,6 +3642,7 @@ Shape758.setGeometry(&IndexedFaceSet762);
 HAnimSegment757.addChild(&Shape758);
 
 HAnimSite& HAnimSite765 =  HAnimSite();
+HAnimSite765.X3DNode::setName(CString("t3"));
 HAnimSite765.setDEF(CString("t3_Sites"));
 //None
 HAnimSegment757.addChild(&HAnimSite765);
@@ -3615,6 +3688,7 @@ Shape768.setGeometry(&IndexedFaceSet772);
 HAnimSegment767.addChild(&Shape768);
 
 HAnimSite& HAnimSite775 =  HAnimSite();
+HAnimSite775.X3DNode::setName(CString("t2"));
 HAnimSite775.setDEF(CString("t2_Sites"));
 //None
 HAnimSegment767.addChild(&HAnimSite775);
@@ -3660,6 +3734,7 @@ Shape778.setGeometry(&IndexedFaceSet782);
 HAnimSegment777.addChild(&Shape778);
 
 HAnimSite& HAnimSite785 =  HAnimSite();
+HAnimSite785.X3DNode::setName(CString("t1"));
 HAnimSite785.setDEF(CString("t1_Sites"));
 //(suprasternale 0.0084 1.4714 0.0551) (cervicale 0.0064 1.520 -0.0815)
 HAnimSegment777.addChild(&HAnimSite785);
@@ -3705,6 +3780,7 @@ Shape788.setGeometry(&IndexedFaceSet792);
 HAnimSegment787.addChild(&Shape788);
 
 HAnimSite& HAnimSite795 =  HAnimSite();
+HAnimSite795.X3DNode::setName(CString("c7"));
 HAnimSite795.setDEF(CString("c7_Sites"));
 //(l_neck_base 0.0646 1.5141 -0.0380) (r_neck_base -0.0419 1.5149 -0.0220)
 HAnimSegment787.addChild(&HAnimSite795);
@@ -3750,6 +3826,7 @@ Shape798.setGeometry(&IndexedFaceSet802);
 HAnimSegment797.addChild(&Shape798);
 
 HAnimSite& HAnimSite805 =  HAnimSite();
+HAnimSite805.X3DNode::setName(CString("c6"));
 HAnimSite805.setDEF(CString("c6_Sites"));
 //None
 HAnimSegment797.addChild(&HAnimSite805);
@@ -3795,6 +3872,7 @@ Shape808.setGeometry(&IndexedFaceSet812);
 HAnimSegment807.addChild(&Shape808);
 
 HAnimSite& HAnimSite815 =  HAnimSite();
+HAnimSite815.X3DNode::setName(CString("c5"));
 HAnimSite815.setDEF(CString("c5_Sites"));
 //None
 HAnimSegment807.addChild(&HAnimSite815);
@@ -3840,6 +3918,7 @@ Shape818.setGeometry(&IndexedFaceSet822);
 HAnimSegment817.addChild(&Shape818);
 
 HAnimSite& HAnimSite825 =  HAnimSite();
+HAnimSite825.X3DNode::setName(CString("c4"));
 HAnimSite825.setDEF(CString("c4_Sites"));
 //None
 HAnimSegment817.addChild(&HAnimSite825);
@@ -3885,6 +3964,7 @@ Shape828.setGeometry(&IndexedFaceSet832);
 HAnimSegment827.addChild(&Shape828);
 
 HAnimSite& HAnimSite835 =  HAnimSite();
+HAnimSite835.X3DNode::setName(CString("c3"));
 HAnimSite835.setDEF(CString("c3_Sites"));
 //None
 HAnimSegment827.addChild(&HAnimSite835);
@@ -3930,6 +4010,7 @@ Shape838.setGeometry(&IndexedFaceSet842);
 HAnimSegment837.addChild(&Shape838);
 
 HAnimSite& HAnimSite845 =  HAnimSite();
+HAnimSite845.X3DNode::setName(CString("c2"));
 HAnimSite845.setDEF(CString("c2_Sites"));
 //None
 HAnimSegment837.addChild(&HAnimSite845);
@@ -3975,6 +4056,7 @@ Shape848.setGeometry(&IndexedFaceSet852);
 HAnimSegment847.addChild(&Shape848);
 
 HAnimSite& HAnimSite855 =  HAnimSite();
+HAnimSite855.X3DNode::setName(CString("c1"));
 HAnimSite855.setDEF(CString("c1_Sites"));
 //None
 HAnimSegment847.addChild(&HAnimSite855);
@@ -4020,6 +4102,7 @@ Shape858.setGeometry(&IndexedFaceSet862);
 HAnimSegment857.addChild(&Shape858);
 
 HAnimSite& HAnimSite865 =  HAnimSite();
+HAnimSite865.X3DNode::setName(CString("skull"));
 HAnimSite865.setDEF(CString("skull_Sites"));
 //(skull_vertex 0.0050 1.7504 0.0055) (sellion 0.0058 1.6316 0.0852) (r_infraorbitale -0.0237 1.6171 0.0752) (l_infraorbitale 0.0341 1.6171 0.0752) (r_tragion -0.0646 1.6347 0.0302) (l_tragion 0.0739 1.6348 0.0282) (nuchale 0.0039 1.5972 -0.0796) (opisthocranion x y z) (glabella x y z) (l_ectocanthus x y z) (r_ectocanthus x y z)
 HAnimSegment857.addChild(&HAnimSite865);
@@ -4065,6 +4148,7 @@ Shape868.setGeometry(&IndexedFaceSet872);
 HAnimSegment867.addChild(&Shape868);
 
 HAnimSite& HAnimSite875 =  HAnimSite();
+HAnimSite875.X3DNode::setName(CString("l_eyelid"));
 HAnimSite875.setDEF(CString("l_eyelid_Sites"));
 //(l_eyelid_tip x y z)
 HAnimSegment867.addChild(&HAnimSite875);
@@ -4112,6 +4196,7 @@ Shape878.setGeometry(&IndexedFaceSet882);
 HAnimSegment877.addChild(&Shape878);
 
 HAnimSite& HAnimSite885 =  HAnimSite();
+HAnimSite885.X3DNode::setName(CString("r_eyelid"));
 HAnimSite885.setDEF(CString("r_eyelid_Sites"));
 //(r_eyelid_tip x y z)
 HAnimSegment877.addChild(&HAnimSite885);
@@ -4159,6 +4244,7 @@ Shape888.setGeometry(&IndexedFaceSet892);
 HAnimSegment887.addChild(&Shape888);
 
 HAnimSite& HAnimSite895 =  HAnimSite();
+HAnimSite895.X3DNode::setName(CString("l_eyeball"));
 HAnimSite895.setDEF(CString("l_eyeball_Sites"));
 //(l_eyeball_tip x y z)
 HAnimSegment887.addChild(&HAnimSite895);
@@ -4206,6 +4292,7 @@ Shape898.setGeometry(&IndexedFaceSet902);
 HAnimSegment897.addChild(&Shape898);
 
 HAnimSite& HAnimSite905 =  HAnimSite();
+HAnimSite905.X3DNode::setName(CString("r_eyeball"));
 HAnimSite905.setDEF(CString("r_eyeball_Sites"));
 //(r_eyeball_tip x y z)
 HAnimSegment897.addChild(&HAnimSite905);
@@ -4253,6 +4340,7 @@ Shape908.setGeometry(&IndexedFaceSet912);
 HAnimSegment907.addChild(&Shape908);
 
 HAnimSite& HAnimSite915 =  HAnimSite();
+HAnimSite915.X3DNode::setName(CString("l_eyebrow"));
 HAnimSite915.setDEF(CString("l_eyebrow_Sites"));
 //(l_eyebrow_tip x y z)
 HAnimSegment907.addChild(&HAnimSite915);
@@ -4300,6 +4388,7 @@ Shape918.setGeometry(&IndexedFaceSet922);
 HAnimSegment917.addChild(&Shape918);
 
 HAnimSite& HAnimSite925 =  HAnimSite();
+HAnimSite925.X3DNode::setName(CString("r_eyebrow"));
 HAnimSite925.setDEF(CString("r_eyebrow_Sites"));
 //(r_eyebrow_tip x y z)
 HAnimSegment917.addChild(&HAnimSite925);
@@ -4347,6 +4436,7 @@ Shape928.setGeometry(&IndexedFaceSet932);
 HAnimSegment927.addChild(&Shape928);
 
 HAnimSite& HAnimSite935 =  HAnimSite();
+HAnimSite935.X3DNode::setName(CString("jaw"));
 HAnimSite935.setDEF(CString("jaw_Sites"));
 //(r_gonion -0.0520 1.5529 0.0347) (l_gonion 0.0631 1.5530 0.0330) (supramenton 0.0061 1.5410 0.0805) (menton x y z)
 HAnimSegment927.addChild(&HAnimSite935);
@@ -4410,6 +4500,7 @@ Shape938.setGeometry(&IndexedFaceSet942);
 HAnimSegment937.addChild(&Shape938);
 
 HAnimSite& HAnimSite945 =  HAnimSite();
+HAnimSite945.X3DNode::setName(CString("l_clavicle"));
 HAnimSite945.setDEF(CString("l_clavicle_Sites"));
 //(l_clavicale 0.0271 1.4943 0.0394)
 HAnimSegment937.addChild(&HAnimSite945);
@@ -4455,6 +4546,7 @@ Shape948.setGeometry(&IndexedFaceSet952);
 HAnimSegment947.addChild(&Shape948);
 
 HAnimSite& HAnimSite955 =  HAnimSite();
+HAnimSite955.X3DNode::setName(CString("l_scapula"));
 HAnimSite955.setDEF(CString("l_scapula_Sites"));
 //(l_acromion 0.2032 1.4760 -0.0490) (l_axilla_proximal 0.1777 1.4065 -0.0075) (l_axilla_distal 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds x y z)
 HAnimSegment947.addChild(&HAnimSite955);
@@ -4500,6 +4592,7 @@ Shape958.setGeometry(&IndexedFaceSet962);
 HAnimSegment957.addChild(&Shape958);
 
 HAnimSite& HAnimSite965 =  HAnimSite();
+HAnimSite965.X3DNode::setName(CString("l_upperarm"));
 HAnimSite965.setDEF(CString("l_upperarm_Sites"));
 //(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) (l_radiale 0.2182 1.1212 -0.1167) (l_bideltoid x y z)
 HAnimSegment957.addChild(&HAnimSite965);
@@ -4545,6 +4638,7 @@ Shape968.setGeometry(&IndexedFaceSet972);
 HAnimSegment967.addChild(&Shape968);
 
 HAnimSite& HAnimSite975 =  HAnimSite();
+HAnimSite975.X3DNode::setName(CString("l_forearm"));
 HAnimSite975.setDEF(CString("l_forearm_Sites"));
 //(l_radial_styloid 0.1901 0.8645 -0.0415) (l_olecranon -0.1962 1.1375 -0.1123)
 HAnimSegment967.addChild(&HAnimSite975);
@@ -4590,6 +4684,7 @@ Shape978.setGeometry(&IndexedFaceSet982);
 HAnimSegment977.addChild(&Shape978);
 
 HAnimSite& HAnimSite985 =  HAnimSite();
+HAnimSite985.X3DNode::setName(CString("l_carpal"));
 HAnimSite985.setDEF(CString("l_carpal_Sites"));
 //(l_ulnar_styloid -0.2142 0.8529 -0.0648)
 HAnimSegment977.addChild(&HAnimSite985);
@@ -4635,6 +4730,7 @@ Shape988.setGeometry(&IndexedFaceSet992);
 HAnimSegment987.addChild(&Shape988);
 
 HAnimSite& HAnimSite995 =  HAnimSite();
+HAnimSite995.X3DNode::setName(CString("l_trapezium"));
 HAnimSite995.setDEF(CString("l_trapezium_Sites"));
 //None
 HAnimSegment987.addChild(&HAnimSite995);
@@ -4680,6 +4776,7 @@ Shape998.setGeometry(&IndexedFaceSet1002);
 HAnimSegment997.addChild(&Shape998);
 
 HAnimSite& HAnimSite1005 =  HAnimSite();
+HAnimSite1005.X3DNode::setName(CString("l_metacarpal_1"));
 HAnimSite1005.setDEF(CString("l_metacarpal_1_Sites"));
 //(l_metacarpal_phalanx_2 0.2009 0.8139 -0.0237)
 HAnimSegment997.addChild(&HAnimSite1005);
@@ -4725,6 +4822,7 @@ Shape1008.setGeometry(&IndexedFaceSet1012);
 HAnimSegment1007.addChild(&Shape1008);
 
 HAnimSite& HAnimSite1015 =  HAnimSite();
+HAnimSite1015.X3DNode::setName(CString("l_carpal_proximal_phalanx_1"));
 HAnimSite1015.setDEF(CString("l_carpal_proximal_phalanx_1_Sites"));
 //None
 HAnimSegment1007.addChild(&HAnimSite1015);
@@ -4770,6 +4868,7 @@ Shape1018.setGeometry(&IndexedFaceSet1022);
 HAnimSegment1017.addChild(&Shape1018);
 
 HAnimSite& HAnimSite1025 =  HAnimSite();
+HAnimSite1025.X3DNode::setName(CString("l_carpal_distal_phalanx_1"));
 HAnimSite1025.setDEF(CString("l_carpal_distal_phalanx_1_Sites"));
 //(l_carpal_distal_phalanx_1_tip 0.1982 0.8061 0.0759)
 HAnimSegment1017.addChild(&HAnimSite1025);
@@ -4823,6 +4922,7 @@ Shape1028.setGeometry(&IndexedFaceSet1032);
 HAnimSegment1027.addChild(&Shape1028);
 
 HAnimSite& HAnimSite1035 =  HAnimSite();
+HAnimSite1035.X3DNode::setName(CString("l_trapezoid"));
 HAnimSite1035.setDEF(CString("l_trapezoid_Sites"));
 //None
 HAnimSegment1027.addChild(&HAnimSite1035);
@@ -4868,6 +4968,7 @@ Shape1038.setGeometry(&IndexedFaceSet1042);
 HAnimSegment1037.addChild(&Shape1038);
 
 HAnimSite& HAnimSite1045 =  HAnimSite();
+HAnimSite1045.X3DNode::setName(CString("l_metacarpal_2"));
 HAnimSite1045.setDEF(CString("l_metacarpal_2_Sites"));
 //None
 HAnimSegment1037.addChild(&HAnimSite1045);
@@ -4913,6 +5014,7 @@ Shape1048.setGeometry(&IndexedFaceSet1052);
 HAnimSegment1047.addChild(&Shape1048);
 
 HAnimSite& HAnimSite1055 =  HAnimSite();
+HAnimSite1055.X3DNode::setName(CString("l_carpal_proximal_phalanx_2"));
 HAnimSite1055.setDEF(CString("l_carpal_proximal_phalanx_2_Sites"));
 //None
 HAnimSegment1047.addChild(&HAnimSite1055);
@@ -4958,6 +5060,7 @@ Shape1058.setGeometry(&IndexedFaceSet1062);
 HAnimSegment1057.addChild(&Shape1058);
 
 HAnimSite& HAnimSite1065 =  HAnimSite();
+HAnimSite1065.X3DNode::setName(CString("l_carpal_middle_phalanx_2"));
 HAnimSite1065.setDEF(CString("l_carpal_middle_phalanx_2_Sites"));
 //None
 HAnimSegment1057.addChild(&HAnimSite1065);
@@ -5003,6 +5106,7 @@ Shape1068.setGeometry(&IndexedFaceSet1072);
 HAnimSegment1067.addChild(&Shape1068);
 
 HAnimSite& HAnimSite1075 =  HAnimSite();
+HAnimSite1075.X3DNode::setName(CString("l_carpal_distal_phalanx_2"));
 HAnimSite1075.setDEF(CString("l_carpal_distal_phalanx_2_Sites"));
 //(l_carpal_distal_phalanx_2_tip 0.2089 0.6858 -0.0245)
 HAnimSegment1067.addChild(&HAnimSite1075);
@@ -5058,6 +5162,7 @@ Shape1078.setGeometry(&IndexedFaceSet1082);
 HAnimSegment1077.addChild(&Shape1078);
 
 HAnimSite& HAnimSite1085 =  HAnimSite();
+HAnimSite1085.X3DNode::setName(CString("l_capitate"));
 HAnimSite1085.setDEF(CString("l_capitate_Sites"));
 //None
 HAnimSegment1077.addChild(&HAnimSite1085);
@@ -5103,6 +5208,7 @@ Shape1088.setGeometry(&IndexedFaceSet1092);
 HAnimSegment1087.addChild(&Shape1088);
 
 HAnimSite& HAnimSite1095 =  HAnimSite();
+HAnimSite1095.X3DNode::setName(CString("l_metacarpal_3"));
 HAnimSite1095.setDEF(CString("l_metacarpal_3_Sites"));
 //None
 HAnimSegment1087.addChild(&HAnimSite1095);
@@ -5148,6 +5254,7 @@ Shape1098.setGeometry(&IndexedFaceSet1102);
 HAnimSegment1097.addChild(&Shape1098);
 
 HAnimSite& HAnimSite1105 =  HAnimSite();
+HAnimSite1105.X3DNode::setName(CString("l_carpal_proximal_phalanx_3"));
 HAnimSite1105.setDEF(CString("l_carpal_proximal_phalanx_3_Sites"));
 //None
 HAnimSegment1097.addChild(&HAnimSite1105);
@@ -5193,6 +5300,7 @@ Shape1108.setGeometry(&IndexedFaceSet1112);
 HAnimSegment1107.addChild(&Shape1108);
 
 HAnimSite& HAnimSite1115 =  HAnimSite();
+HAnimSite1115.X3DNode::setName(CString("l_carpal_middle_phalanx_3"));
 HAnimSite1115.setDEF(CString("l_carpal_middle_phalanx_3_Sites"));
 //None
 HAnimSegment1107.addChild(&HAnimSite1115);
@@ -5238,6 +5346,7 @@ Shape1118.setGeometry(&IndexedFaceSet1122);
 HAnimSegment1117.addChild(&Shape1118);
 
 HAnimSite& HAnimSite1125 =  HAnimSite();
+HAnimSite1125.X3DNode::setName(CString("l_carpal_distal_phalanx_3"));
 HAnimSite1125.setDEF(CString("l_carpal_distal_phalanx_3_Sites"));
 //(l_dactylion 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
 HAnimSegment1117.addChild(&HAnimSite1125);
@@ -5293,6 +5402,7 @@ Shape1128.setGeometry(&IndexedFaceSet1132);
 HAnimSegment1127.addChild(&Shape1128);
 
 HAnimSite& HAnimSite1135 =  HAnimSite();
+HAnimSite1135.X3DNode::setName(CString("l_hamate"));
 HAnimSite1135.setDEF(CString("l_hamate_Sites"));
 //None
 HAnimSegment1127.addChild(&HAnimSite1135);
@@ -5338,6 +5448,7 @@ Shape1138.setGeometry(&IndexedFaceSet1142);
 HAnimSegment1137.addChild(&Shape1138);
 
 HAnimSite& HAnimSite1145 =  HAnimSite();
+HAnimSite1145.X3DNode::setName(CString("l_metacarpal_4"));
 HAnimSite1145.setDEF(CString("l_metacarpal_4_Sites"));
 //None
 HAnimSegment1137.addChild(&HAnimSite1145);
@@ -5383,6 +5494,7 @@ Shape1148.setGeometry(&IndexedFaceSet1152);
 HAnimSegment1147.addChild(&Shape1148);
 
 HAnimSite& HAnimSite1155 =  HAnimSite();
+HAnimSite1155.X3DNode::setName(CString("l_carpal_proximal_phalanx_4"));
 HAnimSite1155.setDEF(CString("l_carpal_proximal_phalanx_4_Sites"));
 //None
 HAnimSegment1147.addChild(&HAnimSite1155);
@@ -5428,6 +5540,7 @@ Shape1158.setGeometry(&IndexedFaceSet1162);
 HAnimSegment1157.addChild(&Shape1158);
 
 HAnimSite& HAnimSite1165 =  HAnimSite();
+HAnimSite1165.X3DNode::setName(CString("l_carpal_middle_phalanx_4"));
 HAnimSite1165.setDEF(CString("l_carpal_middle_phalanx_4_Sites"));
 //None
 HAnimSegment1157.addChild(&HAnimSite1165);
@@ -5473,6 +5586,7 @@ Shape1168.setGeometry(&IndexedFaceSet1172);
 HAnimSegment1167.addChild(&Shape1168);
 
 HAnimSite& HAnimSite1175 =  HAnimSite();
+HAnimSite1175.X3DNode::setName(CString("l_carpal_distal_phalanx_4"));
 HAnimSite1175.setDEF(CString("l_carpal_distal_phalanx_4_Sites"));
 //(l_carpal_distal_phalanx_4_tip 0.2035 0.6750 -0.0756)
 HAnimSegment1167.addChild(&HAnimSite1175);
@@ -5528,6 +5642,7 @@ Shape1178.setGeometry(&IndexedFaceSet1182);
 HAnimSegment1177.addChild(&Shape1178);
 
 HAnimSite& HAnimSite1185 =  HAnimSite();
+HAnimSite1185.X3DNode::setName(CString("l_metacarpal_5"));
 HAnimSite1185.setDEF(CString("l_metacarpal_5_Sites"));
 //(l_metacarpal_phalanx_5 0.1929 0.7860 -0.1122)
 HAnimSegment1177.addChild(&HAnimSite1185);
@@ -5573,6 +5688,7 @@ Shape1188.setGeometry(&IndexedFaceSet1192);
 HAnimSegment1187.addChild(&Shape1188);
 
 HAnimSite& HAnimSite1195 =  HAnimSite();
+HAnimSite1195.X3DNode::setName(CString("l_carpal_proximal_phalanx_5"));
 HAnimSite1195.setDEF(CString("l_carpal_proximal_phalanx_5_Sites"));
 //None
 HAnimSegment1187.addChild(&HAnimSite1195);
@@ -5618,6 +5734,7 @@ Shape1198.setGeometry(&IndexedFaceSet1202);
 HAnimSegment1197.addChild(&Shape1198);
 
 HAnimSite& HAnimSite1205 =  HAnimSite();
+HAnimSite1205.X3DNode::setName(CString("l_carpal_middle_phalanx_5"));
 HAnimSite1205.setDEF(CString("l_carpal_middle_phalanx_5_Sites"));
 //None
 HAnimSegment1197.addChild(&HAnimSite1205);
@@ -5663,6 +5780,7 @@ Shape1208.setGeometry(&IndexedFaceSet1212);
 HAnimSegment1207.addChild(&Shape1208);
 
 HAnimSite& HAnimSite1215 =  HAnimSite();
+HAnimSite1215.X3DNode::setName(CString("l_carpal_distal_phalanx_5"));
 HAnimSite1215.setDEF(CString("l_carpal_distal_phalanx_5_Sites"));
 //(l_carpal_distal_phalanx_5_tip 0.2014 0.7009 -0.1012)
 HAnimSegment1207.addChild(&HAnimSite1215);
@@ -5726,6 +5844,7 @@ Shape1218.setGeometry(&IndexedFaceSet1222);
 HAnimSegment1217.addChild(&Shape1218);
 
 HAnimSite& HAnimSite1225 =  HAnimSite();
+HAnimSite1225.X3DNode::setName(CString("r_clavicle"));
 HAnimSite1225.setDEF(CString("r_clavicle_Sites"));
 //(r_clavicale -0.0115 1.4943 0.0400)
 HAnimSegment1217.addChild(&HAnimSite1225);
@@ -5771,6 +5890,7 @@ Shape1228.setGeometry(&IndexedFaceSet1232);
 HAnimSegment1227.addChild(&Shape1228);
 
 HAnimSite& HAnimSite1235 =  HAnimSite();
+HAnimSite1235.X3DNode::setName(CString("r_scapula"));
 HAnimSite1235.setDEF(CString("r_scapula_Sites"));
 //(r_acromion -0.1905 1.4791 -0.0431) (r_axilla_proximal -0.1626 1.4072 -0.0031) (r_axilla_distal -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds x y z)
 HAnimSegment1227.addChild(&HAnimSite1235);
@@ -5816,6 +5936,7 @@ Shape1238.setGeometry(&IndexedFaceSet1242);
 HAnimSegment1237.addChild(&Shape1238);
 
 HAnimSite& HAnimSite1245 =  HAnimSite();
+HAnimSite1245.X3DNode::setName(CString("r_upperarm"));
 HAnimSite1245.setDEF(CString("r_upperarm_Sites"));
 //(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) (r_radiale -0.2130 1.1305 -0.1091) (r_bideltoid x y z)
 HAnimSegment1237.addChild(&HAnimSite1245);
@@ -5861,6 +5982,7 @@ Shape1248.setGeometry(&IndexedFaceSet1252);
 HAnimSegment1247.addChild(&Shape1248);
 
 HAnimSite& HAnimSite1255 =  HAnimSite();
+HAnimSite1255.X3DNode::setName(CString("r_forearm"));
 HAnimSite1255.setDEF(CString("r_forearm_Sites"));
 //(r_radial_styloid -0.1884 0.8676 -0.0360) (r_olecranon -0.1907 1.1405 -0.1065)
 HAnimSegment1247.addChild(&HAnimSite1255);
@@ -5906,6 +6028,7 @@ Shape1258.setGeometry(&IndexedFaceSet1262);
 HAnimSegment1257.addChild(&Shape1258);
 
 HAnimSite& HAnimSite1265 =  HAnimSite();
+HAnimSite1265.X3DNode::setName(CString("r_carpal"));
 HAnimSite1265.setDEF(CString("r_carpal_Sites"));
 //(r_ulnar_styloid -0.2117 0.8562 -0.0584)
 HAnimSegment1257.addChild(&HAnimSite1265);
@@ -5951,6 +6074,7 @@ Shape1268.setGeometry(&IndexedFaceSet1272);
 HAnimSegment1267.addChild(&Shape1268);
 
 HAnimSite& HAnimSite1275 =  HAnimSite();
+HAnimSite1275.X3DNode::setName(CString("r_trapezium"));
 HAnimSite1275.setDEF(CString("r_trapezium_Sites"));
 //None
 HAnimSegment1267.addChild(&HAnimSite1275);
@@ -5996,6 +6120,7 @@ Shape1278.setGeometry(&IndexedFaceSet1282);
 HAnimSegment1277.addChild(&Shape1278);
 
 HAnimSite& HAnimSite1285 =  HAnimSite();
+HAnimSite1285.X3DNode::setName(CString("r_metacarpal_1"));
 HAnimSite1285.setDEF(CString("r_metacarpal_1_Sites"));
 //(r_metacarpal_phalanx_2 -0.1977 0.8169 -0.0177)
 HAnimSegment1277.addChild(&HAnimSite1285);
@@ -6041,6 +6166,7 @@ Shape1288.setGeometry(&IndexedFaceSet1292);
 HAnimSegment1287.addChild(&Shape1288);
 
 HAnimSite& HAnimSite1295 =  HAnimSite();
+HAnimSite1295.X3DNode::setName(CString("r_carpal_proximal_phalanx_1"));
 HAnimSite1295.setDEF(CString("r_carpal_proximal_phalanx_1_Sites"));
 //None
 HAnimSegment1287.addChild(&HAnimSite1295);
@@ -6086,6 +6212,7 @@ Shape1298.setGeometry(&IndexedFaceSet1302);
 HAnimSegment1297.addChild(&Shape1298);
 
 HAnimSite& HAnimSite1305 =  HAnimSite();
+HAnimSite1305.X3DNode::setName(CString("r_carpal_distal_phalanx_1"));
 HAnimSite1305.setDEF(CString("r_carpal_distal_phalanx_1_Sites"));
 //(r_carpal_distal_phalanx_1_tip -0.1869 0.8090 0.0820)
 HAnimSegment1297.addChild(&HAnimSite1305);
@@ -6139,6 +6266,7 @@ Shape1308.setGeometry(&IndexedFaceSet1312);
 HAnimSegment1307.addChild(&Shape1308);
 
 HAnimSite& HAnimSite1315 =  HAnimSite();
+HAnimSite1315.X3DNode::setName(CString("r_trapezoid"));
 HAnimSite1315.setDEF(CString("r_trapezoid_Sites"));
 //None
 HAnimSegment1307.addChild(&HAnimSite1315);
@@ -6184,6 +6312,7 @@ Shape1318.setGeometry(&IndexedFaceSet1322);
 HAnimSegment1317.addChild(&Shape1318);
 
 HAnimSite& HAnimSite1325 =  HAnimSite();
+HAnimSite1325.X3DNode::setName(CString("r_metacarpal_2"));
 HAnimSite1325.setDEF(CString("r_metacarpal_2_Sites"));
 //None
 HAnimSegment1317.addChild(&HAnimSite1325);
@@ -6229,6 +6358,7 @@ Shape1328.setGeometry(&IndexedFaceSet1332);
 HAnimSegment1327.addChild(&Shape1328);
 
 HAnimSite& HAnimSite1335 =  HAnimSite();
+HAnimSite1335.X3DNode::setName(CString("r_carpal_proximal_phalanx_2"));
 HAnimSite1335.setDEF(CString("r_carpal_proximal_phalanx_2_Sites"));
 //None
 HAnimSegment1327.addChild(&HAnimSite1335);
@@ -6274,6 +6404,7 @@ Shape1338.setGeometry(&IndexedFaceSet1342);
 HAnimSegment1337.addChild(&Shape1338);
 
 HAnimSite& HAnimSite1345 =  HAnimSite();
+HAnimSite1345.X3DNode::setName(CString("r_carpal_middle_phalanx_2"));
 HAnimSite1345.setDEF(CString("r_carpal_middle_phalanx_2_Sites"));
 //None
 HAnimSegment1337.addChild(&HAnimSite1345);
@@ -6319,6 +6450,7 @@ Shape1348.setGeometry(&IndexedFaceSet1352);
 HAnimSegment1347.addChild(&Shape1348);
 
 HAnimSite& HAnimSite1355 =  HAnimSite();
+HAnimSite1355.X3DNode::setName(CString("r_carpal_distal_phalanx_2"));
 HAnimSite1355.setDEF(CString("r_carpal_distal_phalanx_2_Sites"));
 //(r_carpal_distal_phalanx_2_tip -0.1980 0.6883 -0.0180)
 HAnimSegment1347.addChild(&HAnimSite1355);
@@ -6374,6 +6506,7 @@ Shape1358.setGeometry(&IndexedFaceSet1362);
 HAnimSegment1357.addChild(&Shape1358);
 
 HAnimSite& HAnimSite1365 =  HAnimSite();
+HAnimSite1365.X3DNode::setName(CString("r_capitate"));
 HAnimSite1365.setDEF(CString("r_capitate_Sites"));
 //None
 HAnimSegment1357.addChild(&HAnimSite1365);
@@ -6419,6 +6552,7 @@ Shape1368.setGeometry(&IndexedFaceSet1372);
 HAnimSegment1367.addChild(&Shape1368);
 
 HAnimSite& HAnimSite1375 =  HAnimSite();
+HAnimSite1375.X3DNode::setName(CString("r_metacarpal_3"));
 HAnimSite1375.setDEF(CString("r_metacarpal_3_Sites"));
 //(r_metacarpal_phalanx_3 x y z)
 HAnimSegment1367.addChild(&HAnimSite1375);
@@ -6464,6 +6598,7 @@ Shape1378.setGeometry(&IndexedFaceSet1382);
 HAnimSegment1377.addChild(&Shape1378);
 
 HAnimSite& HAnimSite1385 =  HAnimSite();
+HAnimSite1385.X3DNode::setName(CString("r_carpal_proximal_phalanx_3"));
 HAnimSite1385.setDEF(CString("r_carpal_proximal_phalanx_3_Sites"));
 //None
 HAnimSegment1377.addChild(&HAnimSite1385);
@@ -6509,6 +6644,7 @@ Shape1388.setGeometry(&IndexedFaceSet1392);
 HAnimSegment1387.addChild(&Shape1388);
 
 HAnimSite& HAnimSite1395 =  HAnimSite();
+HAnimSite1395.X3DNode::setName(CString("r_carpal_middle_phalanx_3"));
 HAnimSite1395.setDEF(CString("r_carpal_middle_phalanx_3_Sites"));
 //None
 HAnimSegment1387.addChild(&HAnimSite1395);
@@ -6554,6 +6690,7 @@ Shape1398.setGeometry(&IndexedFaceSet1402);
 HAnimSegment1397.addChild(&Shape1398);
 
 HAnimSite& HAnimSite1405 =  HAnimSite();
+HAnimSite1405.X3DNode::setName(CString("r_carpal_distal_phalanx_3"));
 HAnimSite1405.setDEF(CString("r_carpal_distal_phalanx_3_Sites"));
 //(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion -0.1941 0.6772 -0.0423
 HAnimSegment1397.addChild(&HAnimSite1405);
@@ -6609,6 +6746,7 @@ Shape1408.setGeometry(&IndexedFaceSet1412);
 HAnimSegment1407.addChild(&Shape1408);
 
 HAnimSite& HAnimSite1415 =  HAnimSite();
+HAnimSite1415.X3DNode::setName(CString("r_hamate"));
 HAnimSite1415.setDEF(CString("r_hamate_Sites"));
 //None
 HAnimSegment1407.addChild(&HAnimSite1415);
@@ -6654,6 +6792,7 @@ Shape1418.setGeometry(&IndexedFaceSet1422);
 HAnimSegment1417.addChild(&Shape1418);
 
 HAnimSite& HAnimSite1425 =  HAnimSite();
+HAnimSite1425.X3DNode::setName(CString("r_metacarpal_4"));
 HAnimSite1425.setDEF(CString("r_metacarpal_4_Sites"));
 //None
 HAnimSegment1417.addChild(&HAnimSite1425);
@@ -6699,6 +6838,7 @@ Shape1428.setGeometry(&IndexedFaceSet1432);
 HAnimSegment1427.addChild(&Shape1428);
 
 HAnimSite& HAnimSite1435 =  HAnimSite();
+HAnimSite1435.X3DNode::setName(CString("r_carpal_proximal_phalanx_4"));
 HAnimSite1435.setDEF(CString("r_carpal_proximal_phalanx_4_Sites"));
 //None
 HAnimSegment1427.addChild(&HAnimSite1435);
@@ -6744,6 +6884,7 @@ Shape1438.setGeometry(&IndexedFaceSet1442);
 HAnimSegment1437.addChild(&Shape1438);
 
 HAnimSite& HAnimSite1445 =  HAnimSite();
+HAnimSite1445.X3DNode::setName(CString("r_carpal_middle_phalanx_4"));
 HAnimSite1445.setDEF(CString("r_carpal_middle_phalanx_4_Sites"));
 //None
 HAnimSegment1437.addChild(&HAnimSite1445);
@@ -6789,6 +6930,7 @@ Shape1448.setGeometry(&IndexedFaceSet1452);
 HAnimSegment1447.addChild(&Shape1448);
 
 HAnimSite& HAnimSite1455 =  HAnimSite();
+HAnimSite1455.X3DNode::setName(CString("hanim_r_carpal_distal_phalanx_4"));
 HAnimSite1455.setDEF(CString("hanim_r_carpal_distal_phalanx_4_Sites"));
 //(r_carpal_distal_phalanx_4_tip -0.1934 0.6778 -0.0693)
 HAnimSegment1447.addChild(&HAnimSite1455);
@@ -6844,6 +6986,7 @@ Shape1458.setGeometry(&IndexedFaceSet1462);
 HAnimSegment1457.addChild(&Shape1458);
 
 HAnimSite& HAnimSite1465 =  HAnimSite();
+HAnimSite1465.X3DNode::setName(CString("r_metacarpal_5"));
 HAnimSite1465.setDEF(CString("r_metacarpal_5_Sites"));
 //(r_metacarpal_phalanx_5 -0.1929 0.7890 -0.1064)
 HAnimSegment1457.addChild(&HAnimSite1465);
@@ -6889,6 +7032,7 @@ Shape1468.setGeometry(&IndexedFaceSet1472);
 HAnimSegment1467.addChild(&Shape1468);
 
 HAnimSite& HAnimSite1475 =  HAnimSite();
+HAnimSite1475.X3DNode::setName(CString("r_carpal_proximal_phalanx_5"));
 HAnimSite1475.setDEF(CString("r_carpal_proximal_phalanx_5_Sites"));
 //None
 HAnimSegment1467.addChild(&HAnimSite1475);
@@ -6934,6 +7078,7 @@ Shape1478.setGeometry(&IndexedFaceSet1482);
 HAnimSegment1477.addChild(&Shape1478);
 
 HAnimSite& HAnimSite1485 =  HAnimSite();
+HAnimSite1485.X3DNode::setName(CString("r_carpal_middle_phalanx_5"));
 HAnimSite1485.setDEF(CString("r_carpal_middle_phalanx_5_Sites"));
 //None
 HAnimSegment1477.addChild(&HAnimSite1485);
@@ -6979,6 +7124,7 @@ Shape1488.setGeometry(&IndexedFaceSet1492);
 HAnimSegment1487.addChild(&Shape1488);
 
 HAnimSite& HAnimSite1495 =  HAnimSite();
+HAnimSite1495.X3DNode::setName(CString("r_carpal_distal_phalanx_5"));
 HAnimSite1495.setDEF(CString("r_carpal_distal_phalanx_5_Sites"));
 //(r_carpal_distal_phalanx_5_tip -0.1938 0.7035 -0.0949)
 HAnimSegment1487.addChild(&HAnimSite1495);

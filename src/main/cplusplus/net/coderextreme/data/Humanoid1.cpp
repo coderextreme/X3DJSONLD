@@ -31,7 +31,7 @@ head1.addMeta(&meta3);
 
 meta& meta4 =  meta();
 meta4.setName(CString("identifier"));
-meta4.setContent(CString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d"));
+meta4.setContent(CString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d"));
 head1.addMeta(&meta4);
 
 meta& meta5 =  meta();

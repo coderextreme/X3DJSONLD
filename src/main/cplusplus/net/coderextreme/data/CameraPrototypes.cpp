@@ -76,7 +76,7 @@ head1.addMeta(&meta12);
 
 meta& meta13 =  meta();
 meta13.setName(CString("reference"));
-meta13.setContent(CString("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"));
+meta13.setContent(CString("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"));
 head1.addMeta(&meta13);
 
 meta& meta14 =  meta();
