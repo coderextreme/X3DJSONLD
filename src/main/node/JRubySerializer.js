@@ -165,6 +165,10 @@ JRubySerializer.prototype = {
 			method = "IS";
 			addpre = "set";
 		}
+		if (addpre+method === "setPoses") {
+			method = "Child"
+			addpre = "add";
+		}
 		if (addpre+method === "setJoints") {
 			method = "Joints"
 			addpre = "add";
