@@ -6,6 +6,7 @@ META "title" "ifscube.x3d"
 META "identifier" "http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"
 META "description" "Template for an Indexed Face Set"
 META "creator" "John Carlson"
+META "created" "4 April 2017"
 Group {
       children [
         Shape {

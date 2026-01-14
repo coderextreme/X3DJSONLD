@@ -6,7 +6,7 @@ META "title" "ViewFrustumExample.x3d"
 META "description" "Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."
 META "creator" "Don Brutzman"
 META "translated" "16 August 2008"
-META "modified" "Wed, 17 Sep 2025 23:48:14 GMT"
+META "modified" "20 October 2019"
 META "reference" "ViewFrustumPrototype.x3d"
 META "drawing" "ViewFrustumComputation.png"
 META "Image" "ViewFrustumOverheadView.png"
@@ -15,7 +15,32 @@ META "Image" "ViewpointCalculator.png"
 META "Image" "ViewpointCalculatorComposed.png"
 META "subject" "view culling frustum"
 META "identifier" "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
-ExternProtoDeclare {
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
+WorldInfo {
+      title "ViewFrustumExample.x3d" 
+    }
+    Viewpoint {
+      description "ViewFrustum from above, looking down"
+      orientation 1 0 0 -1.57
+      position 0 40 0 
+    }
+    Viewpoint {
+      description "ViewFrustum from point of view" 
+    }
+    Viewpoint {
+      description "ViewFrustum behind point of view"
+      position 0 0 15 
+    }
+    Viewpoint {
+      description "ViewFrustum oblique side view"
+      orientation 0.8005 0.5926 0.0898 -0.3743
+      position -5 5 20 
+    }
+    NavigationInfo {
+      type ["EXAMINE" "FLY" "ANY"] 
+    }
+    ExternProtoDeclare {
       appinfo "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"
       name "ViewFrustum"
       url ["ViewFrustumPrototype.x3d#ViewFrustum"]
@@ -71,29 +96,6 @@ ExternProtoDeclare {
         
       ]
     
-    }
-    WorldInfo {
-      title "ViewFrustumExample.x3d" 
-    }
-    Viewpoint {
-      description "ViewFrustum from above, looking down"
-      orientation 1 0 0 -1.57
-      position 0 40 0 
-    }
-    Viewpoint {
-      description "ViewFrustum from point of view" 
-    }
-    Viewpoint {
-      description "ViewFrustum behind point of view"
-      position 0 0 15 
-    }
-    Viewpoint {
-      description "ViewFrustum oblique side view"
-      orientation 0.8005 0.5926 0.0898 -0.3743
-      position -5 5 20 
-    }
-    NavigationInfo {
-      type ["EXAMINE" "FLY" "ANY"] 
     }
     ProtoInstance {
       name "ViewFrustum"

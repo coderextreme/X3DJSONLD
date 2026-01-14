@@ -7,7 +7,7 @@ META "title" "HAnimModelFootLeft.x3d"
 META "description" "Left foot, using high-fidelity definitions for HAnim version 2.0"
 META "creator" "Kwan-Hee YOO, Don Brutzman and Joe Williams"
 META "created" "26 January 2015"
-META "modified" "Wed, 17 Sep 2025 23:47:34 GMT"
+META "modified" "23 December 2021"
 META "warning" "not yet to scale"
 META "warning" "TODO will X3D HAnim component add a new level to support LOA-4 functionality?"
 META "info" "TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"
@@ -20,6 +20,8 @@ META "reference" "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1
 META "subject" "X3D HAnim humanoid animation"
 META "TODO" "Integrate and confirm Segment/Joint names, Viewpoints."
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "HAnimModelFootLeft.x3d" 
     }
@@ -31,7 +33,8 @@ WorldInfo {
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
         children [
           MetadataString {
-            name "authorName" 
+            name "authorName"
+            value ["Kwan-Hee YOO, Don Brutzman and Joe Williams"] 
           }
           
         ]

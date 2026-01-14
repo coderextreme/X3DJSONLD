@@ -3,6 +3,7 @@
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim'/>
+    <meta content='JinScaledV2L1LOA4MinimumSkeleton20f.x3d' name='title'/>
   </head>
   <Scene>
     <WorldInfo title='20f Jin v2 loa4 Level 1, Joints, Segments, Sites'/>

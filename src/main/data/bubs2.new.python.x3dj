@@ -8,6 +8,12 @@
         "@profile":"Immersive",
     "head":
     {
+        "component":
+        {
+      {
+        "@name":"Scripting"
+      }
+    },
         "meta":
         {
       {
@@ -39,27 +45,56 @@
         "meta":
         {
       {
-        "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d",
+        "@name":"identifier"
       }
     },
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@content":"13 March 2016",
+        "@name":"translated"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html",
         "@name":"generator"
       }
     },
     }    "Scene":
     {
+        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Bubbles in action",
+        "@orientation":"1 0 0 0",
+        "@position":"0 0 4"
+      }
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"",
+        "@bottomUrl":""../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"",
+        "@frontUrl":""../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"",
+        "@leftUrl":""../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"",
+        "@rightUrl":""../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"",
+        "@topUrl":""../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png""
+      }
+    },
         "ProtoDeclare":
         {
       {
         "@name":"Bubble"
       }
-            "ProtoInterface":
-            {
-    },
             "ProtoBody":
             {
                 "Transform":
@@ -204,7 +239,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -212,7 +248,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -220,7 +257,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"scalvel",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -239,8 +277,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"translation_changed",
         "@fromNode":"bounce",
@@ -248,8 +286,8 @@
         "@toNode":"body_trans"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"scale_changed",
         "@fromNode":"bounce",
@@ -257,8 +295,8 @@
         "@toNode":"body_trans"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"bubbleClock",
@@ -266,31 +304,7 @@
         "@toNode":"bounce"
       }
     },
-            }        }        "NavigationInfo":
-        {
-      {
-        "@type":""EXAMINE""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Bubbles in action",
-        "@position":"0 0 4"
-      }
-    },
-        "Background":
-        {
-      {
-        "@backUrl":""../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"",
-        "@bottomUrl":""../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"",
-        "@frontUrl":""../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"",
-        "@leftUrl":""../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"",
-        "@rightUrl":""../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"",
-        "@topUrl":""../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png""
-      }
-    },
-        "ProtoInstance":
+                }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"bubbleA",

@@ -6,7 +6,7 @@ META "title" "ObliqueStrategies.x3d"
 META "description" "Text scripting and animation example using Oblique Strategies card set by Brian Eno."
 META "creator" "Don Brutzman, John Kelly, Ben Cheng"
 META "created" "3 November 2013"
-META "modified" "Wed, 17 Sep 2025 23:48:07 GMT"
+META "modified" "10 November 2019"
 META "reference" "oblique.html"
 META "reference" "ObliqueStrategies.txt"
 META "reference" "ObliqueStrategiesScript.js"
@@ -15,22 +15,24 @@ META "reference" "http://www.eno-web.co.uk/obliques.html"
 META "reference" "http://gothpunk.com/haiku-intro.html"
 META "reference" "http://www.rtqe.net/ObliqueStrategies/OSintro.html"
 META "reference" "https://en.wikipedia.org/wiki/Oblique_Strategies"
-META "reference" "http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"
-META "reference" "http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"
-META "reference" "https://gist.github.com/alotaiba/1728771"
-META "reference" "https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api"
-META "reference" "https://cloud.google.com/translate/docs/basic/translating-text"
 META "subject" "Brian Eno, Oblique Strategies"
 META "Image" "images/ObliqueStrategiesEntryScreen.png"
 META "Sound" "http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"
 META "Sound" "translate_tts_HelloX3D.mp3"
 META "Sound" "translate_tts_HelloX3D.wav"
-META "Sound" "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4"
-META "Sound" "translate_tts_HelloX3D4.mp3"
 META "TODO" "multiliingual translation parameter"
+META "reference" "http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"
+META "reference" "http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"
 META "warning" "under development, scene Sound/AudioClip triggering (or retrieved file format) not working"
 META "warning" "TODO resolve potential error in Script node TextScript: parse problem line 15 " var strategy = [];"
+META "reference" "https://gist.github.com/alotaiba/1728771"
+META "reference" "https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api"
+META "Sound" "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4"
+META "Sound" "translate_tts_HelloX3D4.mp3"
+META "reference" "https://cloud.google.com/translate/docs/basic/translating-text"
 META "identifier" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "ObliqueStrategies.x3d" 
     }
@@ -172,6 +174,8 @@ WorldInfo {
           }
            
         }
+        
+        ROUTE TextScript.string_changed TO CardText.string
         DEF CardSoundSpatialization Sound {
           maxBack 100
           maxFront 100
@@ -184,6 +188,10 @@ WorldInfo {
           
         }
         
+        ROUTE TextScript.textToSpeechUrl TO TextToSpeechAudioClip.url
+        
+        ROUTE TextScript.newCardTime TO TextToSpeechAudioClip.startTime
+        
       ]
     
     }
@@ -194,6 +202,8 @@ WorldInfo {
         DEF PreviousTextClickedSensor TouchSensor {
           description "Select to see previous strategy" 
         }
+        
+        ROUTE PreviousTextClickedSensor.isActive TO TextScript.selectPreviousCard
         Shape {
           appearance DEF InterfaceAppearance Appearance {
             material Material {
@@ -244,6 +254,8 @@ WorldInfo {
         DEF NextTextClickedSensor TouchSensor {
           description "Select to see next strategy" 
         }
+        
+        ROUTE NextTextClickedSensor.isActive TO TextScript.selectNextCard
         Shape {
           appearance USE InterfaceAppearance 
           geometry Text {
@@ -267,7 +279,9 @@ WorldInfo {
       scale 0.4 0.4 0.4
       translation -3.3 -0.5 0
       children [
-        USE RandomTextClickedSensor Shape {
+        USE RandomTextClickedSensor 
+        ROUTE RandomTextClickedSensor.isActive TO TextScript.selectRandomCard
+        Shape {
           appearance USE InterfaceAppearance 
           geometry Text {
             string ["random"]
@@ -295,6 +309,8 @@ WorldInfo {
           parameter ["target=_blank"]
           url ["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]
           children [
+            
+            ROUTE TextScript.textToSpeechUrl TO TextToSpeechAnchor.url
             Shape {
               appearance USE InterfaceAppearance 
               geometry Text {
@@ -318,18 +334,4 @@ WorldInfo {
       ]
     
     }
-    
-    ROUTE TextScript.string_changed TO CardText.set_string
-    
-    ROUTE TextScript.textToSpeechUrl TO TextToSpeechAudioClip.set_url
-    
-    ROUTE TextScript.newCardTime TO TextToSpeechAudioClip.set_startTime
-    
-    ROUTE PreviousTextClickedSensor.isActive TO TextScript.selectPreviousCard
-    
-    ROUTE NextTextClickedSensor.isActive TO TextScript.selectNextCard
-    
-    ROUTE RandomTextClickedSensor.isActive TO TextScript.selectRandomCard
-    
-    ROUTE TextScript.textToSpeechUrl TO TextToSpeechAnchor.set_url
     

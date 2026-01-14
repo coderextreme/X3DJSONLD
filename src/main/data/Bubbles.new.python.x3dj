@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:18 GMT",
+        "@content":"23 May 2020",
         "@name":"modified"
       }
     },
@@ -48,6 +48,20 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -89,7 +103,7 @@
       {
         "@DEF":"BubblePath2",
         "@key":"0 0.3 0.64 0.85 1",
-        "@keyValue":"0.1 0.1 0.1 0.2 0.4 0.25 0.3 0.5 0.46 0.75 0.5 0.575 0.03848348 1.989 1.098373"
+        "@keyValue":"0.1 0.1 0.1 0.2 0.4 0.25 0.3 0.5 0.46 0.75 0.5 0.575 0.038483478 1.989 1.098373"
       }
     },
                 "PositionInterpolator":
@@ -161,8 +175,7 @@
                     "Transform":
                     {
       {
-        "@DEF":"bubble1",
-        "@translation":"0.16925 0.16925 0.16925"
+        "@DEF":"bubble1"
       }
                         "Shape":
                         {
@@ -184,8 +197,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble2",
-        "@translation":"0.1376111 0.2128333 0.1564167"
+        "@DEF":"bubble2"
       }
                         "Shape":
                         {
@@ -207,8 +219,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble3",
-        "@translation":"0.261 0.3591667 0.004536666"
+        "@DEF":"bubble3"
       }
                         "Shape":
                         {
@@ -230,8 +241,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble4",
-        "@translation":"0.1128333 0.1128333 0.001128333"
+        "@DEF":"bubble4"
       }
                         "Shape":
                         {
@@ -253,8 +263,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble5",
-        "@translation":"0.2256666 0.2256666 0.002256666"
+        "@DEF":"bubble5"
       }
                         "Shape":
                         {
@@ -276,8 +285,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble6",
-        "@translation":"0.1767722 0.2598927 0.004137222"
+        "@DEF":"bubble6"
       }
                         "Shape":
                         {
@@ -299,8 +307,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble7",
-        "@translation":"0.0574403 0.1035275 0.001558728"
+        "@DEF":"bubble7"
       }
                         "Shape":
                         {
@@ -322,8 +329,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble8",
-        "@translation":"0.1238349 0.0502907 0.001253255"
+        "@DEF":"bubble8"
       }
                         "Shape":
                         {
@@ -345,8 +351,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble9",
-        "@translation":"0.6291718 0.2527671 0.00565187"
+        "@DEF":"bubble9"
       }
                         "Shape":
                         {
@@ -368,8 +373,7 @@
                         }                    }                    "Transform":
                     {
       {
-        "@DEF":"bubble10",
-        "@translation":"0.3849022 0.4809182 0.005787181"
+        "@DEF":"bubble10"
       }
                         "Shape":
                         {
@@ -388,14 +392,8 @@
         "@radius":"0.035"
       }
     },
-                        }                    }                }            }        }        "Background":
-        {
-      {
-        "@skyColor":"0 0 0.6"
-      }
-    },
-        "ROUTE":
-        {
+                        }                    }                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -403,8 +401,8 @@
         "@toNode":"BubblePath1"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -412,8 +410,8 @@
         "@toNode":"BubblePath2"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -421,8 +419,8 @@
         "@toNode":"BubblePath3"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -430,8 +428,8 @@
         "@toNode":"BubblePath4"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -439,8 +437,8 @@
         "@toNode":"BubblePath5"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -448,8 +446,8 @@
         "@toNode":"BubblePath6"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -457,8 +455,8 @@
         "@toNode":"BubblePath7"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -466,8 +464,8 @@
         "@toNode":"BubblePath8"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -475,8 +473,8 @@
         "@toNode":"BubblePath9"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"BubbleClock",
@@ -484,8 +482,8 @@
         "@toNode":"BubblePath10"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath1",
@@ -493,8 +491,8 @@
         "@toNode":"bubble1"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath2",
@@ -502,8 +500,8 @@
         "@toNode":"bubble2"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath3",
@@ -511,8 +509,8 @@
         "@toNode":"bubble3"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath4",
@@ -520,8 +518,8 @@
         "@toNode":"bubble4"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath5",
@@ -529,8 +527,8 @@
         "@toNode":"bubble5"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath6",
@@ -538,8 +536,8 @@
         "@toNode":"bubble6"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath7",
@@ -547,8 +545,8 @@
         "@toNode":"bubble7"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath8",
@@ -556,8 +554,8 @@
         "@toNode":"bubble8"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath9",
@@ -565,13 +563,19 @@
         "@toNode":"bubble9"
       }
     },
-        "ROUTE":
-        {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"BubblePath10",
         "@toField":"set_translation",
         "@toNode":"bubble10"
+      }
+    },
+                }            }        }        "Background":
+        {
+      {
+        "@skyColor":"0 0 0.6"
       }
     },
     }}

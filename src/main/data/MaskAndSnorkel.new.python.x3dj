@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:02 GMT",
+        "@content":"23 May 2020",
         "@name":"modified"
       }
     },
@@ -48,6 +48,20 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

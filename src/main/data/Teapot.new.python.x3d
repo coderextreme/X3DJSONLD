@@ -5,7 +5,7 @@
     <meta content='Teapot.x3d' name='title'/>
     <meta content='A watertight (solid) Utah Teapot Model converted from obj format.' name='description'/>
     <meta content='20 March 2016' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:48:11 GMT' name='modified'/>
+    <meta content='20 October 2019' name='modified'/>
     <meta content='Pyarelal Knowles' name='creator'/>
     <meta content='Don Brutzman' name='translator'/>
     <meta content='wt_teapot.obj' name='reference'/>
@@ -16,6 +16,8 @@
     <meta content='http://www.realtimerendering.com/udacity/?load=demo/unit1-teapot-demo.js' name='reference'/>
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/Teapot.x3d' name='identifier'/>
     <meta content='Meshlab X3D Exported, http://meshlab.sourceforge.net' name='generator'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='Teapot.x3d'/>

@@ -683,4 +683,28 @@
           { "ROUTE":
             {
               "@fromField":"translation_changed",
-     
+              "@fromNode":"G3",
+              "@toField":"set_endpoint",
+              "@toNode":"connector2"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"G1",
+              "@toField":"set_startpoint",
+              "@toNode":"connector3"
+            }
+          },
+          { "ROUTE":
+            {
+              "@fromField":"translation_changed",
+              "@fromNode":"G4",
+              "@toField":"set_endpoint",
+              "@toNode":"connector3"
+            }
+          }
+        ]
+    }
+  }
+}

@@ -5,14 +5,17 @@
     <meta content='BoxEm.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d' name='identifier'/>
+    <meta content='3 boxes' name='description'/>
   </head>
   <Scene>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Cubes on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='xtranslation' type='SFVec3f'/>
+        <field accessType='inputOutput' name='xtranslation' type='SFVec3f' value='0 0 0'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape DEF='_1'>
+          <Shape>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -31,9 +34,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='ytranslation' type='SFVec3f'/>
+        <field accessType='inputOutput' name='ytranslation' type='SFVec3f' value='0 0 0'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape DEF='_2'>
+          <Shape>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -50,6 +53,7 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
+            <fieldValue name='xtranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='anyShape'>
             <IS>
@@ -66,9 +70,8 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Cubes on Fire' position='0 0 12'/>
     <ProtoInstance DEF='threepi' name='three'>
+      <fieldValue name='ytranslation' value='0 0 0'/>
       <fieldValue name='myShape'>
         <Shape DEF='box'>
           <Appearance>

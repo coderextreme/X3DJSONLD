@@ -6,7 +6,8 @@ COMPONENT Scripting:1
 META "title" "asphere.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d"
+META "description" "a sphere"
 Group {
       children [
         Shape {

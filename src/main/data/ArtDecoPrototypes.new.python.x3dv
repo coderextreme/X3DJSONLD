@@ -7,17 +7,19 @@ META "description" "Prototype declarations defining values for X3D/VRML material
 META "creator" "David Roussel"
 META "translator" "James Harney, Don Brutzman NPS"
 META "created" "7 April 2002"
-META "modified" "Wed, 17 Sep 2025 23:46:17 GMT"
+META "modified" "20 October 2019"
 META "reference" "http://vrmlstuff.free.fr/materials"
 META "subject" "Universal Media Material Library"
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d"
-ProtoDeclare {
+META "generator" "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+META "license" "../license.html"
+WorldInfo {
+      title "ArtDecoPrototypes.x3d" 
+    }
+    ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco00"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -36,9 +38,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco01"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -57,9 +56,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco02"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -78,9 +74,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco03"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -99,9 +92,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco04"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -120,9 +110,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco05"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -141,9 +128,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco06"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -162,9 +146,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco07"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -183,9 +164,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco08"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -204,9 +182,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco09"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -225,9 +200,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco10"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -246,9 +218,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco11"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -268,9 +237,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco12"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -289,9 +255,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco13"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -310,9 +273,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco14"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -331,9 +291,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco15"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -352,9 +309,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco16"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -373,9 +327,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco17"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -394,9 +345,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco18"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -415,9 +363,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco19"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -436,9 +381,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco20"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -457,9 +399,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco21"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -478,9 +417,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco22"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -499,9 +435,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco23"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -520,9 +453,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco24"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -541,9 +471,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco25"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -562,9 +489,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco26"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -583,9 +507,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco27"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -604,9 +525,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco28"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -625,9 +543,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco29"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -646,9 +561,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco30"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -667,9 +579,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco31"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -688,9 +597,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco32"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -709,9 +615,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco33"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -730,9 +633,6 @@ ProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco34"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Material {
@@ -745,9 +645,6 @@ ProtoDeclare {
       
       }
       
-    }
-    WorldInfo {
-      title "ArtDecoPrototypes.x3d" 
     }
     Anchor {
       description "ArtDecoPrototypeExample"

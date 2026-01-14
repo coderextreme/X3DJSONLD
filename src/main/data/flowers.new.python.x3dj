@@ -11,6 +11,12 @@
         "component":
         {
       {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"EnvironmentalEffects"
       }
@@ -30,6 +36,18 @@
         "component":
         {
       {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"4",
         "@name":"Shape"
       }
@@ -39,6 +57,12 @@
       {
         "@level":"3",
         "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "meta":
@@ -69,16 +93,34 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d",
+        "@name":"identifier"
+      }
+    },
     }    "Scene":
     {
+        "NavigationInfo":
+        {
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
+        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
+        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
+        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
+        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
+        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
+      }
+    },
         "ProtoDeclare":
         {
       {
         "@name":"flower"
       }
-            "ProtoInterface":
-            {
-    },
             "ProtoBody":
             {
                 "Transform":
@@ -171,7 +213,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"bias",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                                 "field":
@@ -179,7 +222,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"scale",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                                 "field":
@@ -187,7 +231,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"power",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"2"
       }
     },
                                 "field":
@@ -195,7 +240,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"a",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"10"
       }
     },
                                 "field":
@@ -203,7 +249,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"b",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"1"
       }
     },
                                 "field":
@@ -211,7 +258,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"c",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"20"
       }
     },
                                 "field":
@@ -219,7 +267,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"d",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"20"
       }
     },
                                 "field":
@@ -397,7 +446,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                     "field":
@@ -405,7 +455,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                     "field":
@@ -499,7 +550,7 @@
                 "ROUTE":
                 {
       {
-        "@fromField":"a_changed",
+        "@fromField":"a",
         "@fromNode":"Animate",
         "@toField":"a",
         "@toNode":"x_ite"
@@ -508,7 +559,7 @@
                 "ROUTE":
                 {
       {
-        "@fromField":"b_changed",
+        "@fromField":"b",
         "@fromNode":"Animate",
         "@toField":"b",
         "@toNode":"x_ite"
@@ -517,7 +568,7 @@
                 "ROUTE":
                 {
       {
-        "@fromField":"c_changed",
+        "@fromField":"c",
         "@fromNode":"Animate",
         "@toField":"c",
         "@toNode":"x_ite"
@@ -526,7 +577,7 @@
                 "ROUTE":
                 {
       {
-        "@fromField":"d_changed",
+        "@fromField":"d",
         "@fromNode":"Animate",
         "@toField":"d",
         "@toNode":"x_ite"
@@ -535,7 +586,7 @@
                 "ROUTE":
                 {
       {
-        "@fromField":"pdelta_changed",
+        "@fromField":"pdelta",
         "@fromNode":"Animate",
         "@toField":"pdelta",
         "@toNode":"x_ite"
@@ -544,27 +595,13 @@
                 "ROUTE":
                 {
       {
-        "@fromField":"tdelta_changed",
+        "@fromField":"tdelta",
         "@fromNode":"Animate",
         "@toField":"tdelta",
         "@toNode":"x_ite"
       }
     },
-            }        }        "NavigationInfo":
-        {
-    },
-        "Background":
-        {
-      {
-        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
-        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
-        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
-        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
-        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
-        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
-      }
-    },
-        "ProtoInstance":
+            }        }        "ProtoInstance":
         {
       {
         "@name":"flower"

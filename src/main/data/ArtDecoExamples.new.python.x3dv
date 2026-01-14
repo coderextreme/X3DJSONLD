@@ -7,11 +7,16 @@ META "description" "Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML m
 META "creator" "David Roussel"
 META "translator" "James Harney, Don Brutzman NPS"
 META "created" "7 April 2002"
-META "modified" "Wed, 17 Sep 2025 23:46:17 GMT"
+META "modified" "19 January 2025"
 META "reference" "http://vrmlstuff.free.fr/materials"
 META "subject" "Universal Media Material Library"
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"
-ExternProtoDeclare {
+META "generator" "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+META "license" "../license.html"
+WorldInfo {
+      title "ArtDecoExamples.x3d" 
+    }
+    ExternProtoDeclare {
       appinfo "UniversalMediaMaterials prototype"
       documentation "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"
       name "ArtDeco00"
@@ -221,9 +226,6 @@ ExternProtoDeclare {
       name "ArtDeco34"
       url ["../data/ArtDecoPrototypes.json#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34" "ArtDecoPrototypes.wrl#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"] 
     }
-    WorldInfo {
-      title "ArtDecoExamples.x3d" 
-    }
     Group {
       children [
         NavigationInfo {
@@ -249,7 +251,6 @@ ExternProtoDeclare {
           position 0 0 -12 
         }
         DEF Close_travel Transform {
-          translation 0 -2.443333 0
           children [
             DEF Close_Mover PositionInterpolator {
               key [0 0.25 0.5 0.75 1]

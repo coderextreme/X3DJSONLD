@@ -1,0 +1,53 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Interactive",
+    "head":
+    {
+        "component":
+        {
+      {
+        "@name":"HAnim"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"OrientationInterpolator.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"29 December 2025",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"license.html",
+        "@name":"license"
+      }
+    },
+    }    "Scene":
+    {
+        "WorldInfo":
+        {
+      {
+        "@title":"OrientationInterpolator.x3d"
+      }
+    }
+    }}

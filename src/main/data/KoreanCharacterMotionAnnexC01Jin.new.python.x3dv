@@ -8,7 +8,7 @@ META "creator" "Jin Hoon Lee and Min Joo Lee"
 META "translator" "Chul Hee Jung and Myeong Won Lee"
 META "created" "31 March 2011"
 META "translated" "1 November 2014"
-META "modified" "Wed, 17 Sep 2025 23:47:56 GMT"
+META "modified" "7 January 2023"
 META "description" "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."
 META "reference" "KoreanCharacter00ReadMe.txt"
 META "reference" "KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
@@ -19,6 +19,8 @@ META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/
 META "generator" "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
 META "generator" "Suwon HAnim Converter"
 META "generator" "Gnu Image Manipulation Program, https://www.gimp.org"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "KoreanCharacterMotionAnnexC01Jin.x3d" 
     }
@@ -38,7 +40,8 @@ WorldInfo {
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
         children [
           MetadataString {
-            name "humanoidVersion" 
+            name "humanoidVersion"
+            value ["2.0"] 
           }
           
         ]
@@ -57,8 +60,6 @@ WorldInfo {
         DEF hanim_humanoid_root HAnimJoint {
           center 0 30.53 -0.7076
           name "humanoid_root"
-          rotation -0.06058423462378 -0.980935988531478 -0.184645977261418 2.65385328111214
-          translation 7.259936 33.66762 46.41799
           children [
             DEF hanim_sacrum HAnimSegment {
               name "sacrum"
@@ -104,7 +105,6 @@ WorldInfo {
             DEF hanim_sacroiliac HAnimJoint {
               center 0 35.8 -0.7076
               name "sacroiliac"
-              rotation 0.419252339310183 0.0834783640974423 0.904023693666572 0.679554268554793
               children [
                 DEF hanim_pelvis HAnimSegment {
                   name "pelvis"
@@ -147,7 +147,6 @@ WorldInfo {
                 DEF hanim_l_hip HAnimJoint {
                   center 4.207 32.02 -0.8155
                   name "l_hip"
-                  rotation -0.250610110420198 0.0912706064069886 0.963776036722887 0.455272100075471
                   children [
                     DEF hanim_l_thigh HAnimSegment {
                       name "l_thigh"
@@ -190,7 +189,6 @@ WorldInfo {
                     DEF hanim_l_knee HAnimJoint {
                       center 4.116 17.26 -0.8639
                       name "l_knee"
-                      rotation 0.999110014184326 -0.0366550214009175 0.0208707681385637 0.625599905161764
                       children [
                         DEF hanim_l_calf HAnimSegment {
                           name "l_calf"
@@ -233,7 +231,6 @@ WorldInfo {
                         DEF hanim_l_talocrural HAnimJoint {
                           center 3.854 3.939 -0.7038
                           name "l_talocrural"
-                          rotation 0.991855738678493 -0.0485588491238132 -0.117746472653289 0.184095367458099
                           children [
                             DEF hanim_l_talus HAnimSegment {
                               name "l_talus"
@@ -276,7 +273,6 @@ WorldInfo {
                             DEF hanim_l_metatarsophalangeal_2 HAnimJoint {
                               center 3.854 3.64 0.7402
                               name "l_metatarsophalangeal_2"
-                              rotation 0.991855738678493 -0.0485588491238132 -0.117746472653289 0.184095367458099
                               children [
                                 DEF hanim_l_tarsal_proximal_phalanx_2 HAnimSegment {
                                   name "l_tarsal_proximal_phalanx_2"
@@ -335,7 +331,6 @@ WorldInfo {
                 DEF hanim_r_hip HAnimJoint {
                   center -4.207 32.02 -0.8155
                   name "r_hip"
-                  rotation -0.432290392902804 0.493568317198885 -0.754662396347798 2.11782309181768
                   children [
                     DEF hanim_r_thigh HAnimSegment {
                       name "r_thigh"
@@ -378,7 +373,6 @@ WorldInfo {
                     DEF hanim_r_knee HAnimJoint {
                       center -4.116 17.26 -0.8639
                       name "r_knee"
-                      rotation 0.99774141525652 0.035396546954167 0.0570889897057167 0.160938818630774
                       children [
                         DEF hanim_r_calf HAnimSegment {
                           name "r_calf"
@@ -421,7 +415,6 @@ WorldInfo {
                         DEF hanim_r_talocrural HAnimJoint {
                           center -3.854 3.939 -0.7038
                           name "r_talocrural"
-                          rotation 0.991855738678493 -0.0485588491238132 -0.117746472653289 0.184095367458099
                           children [
                             DEF hanim_r_talus HAnimSegment {
                               name "r_talus"
@@ -464,7 +457,6 @@ WorldInfo {
                             DEF hanim_r_metatarsophalangeal_2 HAnimJoint {
                               center -3.854 3.64 0.7402
                               name "r_metatarsophalangeal_2"
-                              rotation 0.860409028618095 0.200027720321224 -0.468705893472196 0.354281779605579
                               children [
                                 DEF hanim_r_tarsal_proximal_phalanx_2 HAnimSegment {
                                   name "r_tarsal_proximal_phalanx_2"
@@ -523,7 +515,6 @@ WorldInfo {
                 DEF hanim_vl5 HAnimJoint {
                   center 0 40.23 -0.8527
                   name "vl5"
-                  rotation 0.061368195451275 -0.998059621836508 0.0105326087284431 0.206461137735708
                   children [
                     DEF hanim_l5 HAnimSegment {
                       name "l5"
@@ -566,7 +557,6 @@ WorldInfo {
                     DEF hanim_skullbase HAnimJoint {
                       center 0 57.43 -0.6863
                       name "skullbase"
-                      rotation -0.137840742963179 -0.990264602034152 -0.0193893666089186 0.412032906239254
                       children [
                         DEF hanim_skull HAnimSegment {
                           name "skull"
@@ -613,7 +603,6 @@ WorldInfo {
                     DEF hanim_l_shoulder HAnimJoint {
                       center 5.975 52 -0.1452
                       name "l_shoulder"
-                      rotation -0.448844383031875 0.416002782042202 0.790873191576172 0.624371889671837
                       children [
                         DEF hanim_l_upperarm HAnimSegment {
                           name "l_upperarm"
@@ -656,7 +645,6 @@ WorldInfo {
                         DEF hanim_l_elbow HAnimJoint {
                           center 8.093 40.38 -0.2502
                           name "l_elbow"
-                          rotation -0.172921807800454 -0.693797502327535 0.699101619330908 3.1120226245186
                           children [
                             DEF hanim_l_forearm HAnimSegment {
                               name "l_forearm"
@@ -699,7 +687,6 @@ WorldInfo {
                             DEF hanim_l_radiocarpal HAnimJoint {
                               center 7.808 31.46 -0.05849
                               name "l_radiocarpal"
-                              rotation 0.395090250538176 -0.816502239355824 -0.420984307375708 1.22697052872284
                               children [
                                 DEF hanim_l_carpal HAnimSegment {
                                   name "l_carpal"
@@ -754,7 +741,6 @@ WorldInfo {
                     DEF hanim_r_shoulder HAnimJoint {
                       center -5.975 52 -0.1452
                       name "r_shoulder"
-                      rotation 0.0306822882551753 -0.269524414855032 -0.962504642578143 1.38141228951515
                       children [
                         DEF hanim_r_upperarm HAnimSegment {
                           name "r_upperarm"
@@ -797,7 +783,6 @@ WorldInfo {
                         DEF hanim_r_elbow HAnimJoint {
                           center -8.093 40.38 -0.2502
                           name "r_elbow"
-                          rotation -0.989953647991655 0.0881840183943219 -0.110523091378425 1.02596573808049
                           children [
                             DEF hanim_r_forearm HAnimSegment {
                               name "r_forearm"
@@ -840,7 +825,6 @@ WorldInfo {
                             DEF hanim_r_radiocarpal HAnimJoint {
                               center -7.808 31.46 -0.05849
                               name "r_radiocarpal"
-                              rotation 0.536795185133687 0.219686490376121 -0.81460958450261 0.315006841444254
                               children [
                                 DEF hanim_r_carpal HAnimSegment {
                                   name "r_carpal"
@@ -991,83 +975,83 @@ WorldInfo {
           keyValue [-0.1061377 0.2055572 -1 0.1109398 -0.1086088 0.2050643 -1 0.1096466 -0.1113647 0.2045068 -1 0.1083012 -0.114642 0.2039609 -1 0.1068684 -0.1186359 0.2032744 -1 0.1053493 -0.1230243 0.2025389 -1 0.1037605 -0.1278196 0.2017502 -1 0.1021013 -0.132937 0.2009428 -1 0.1004427 -0.1380383 0.2000824 -1 0.09878357 -0.1435044 0.1992345 -1 0.09710684 -0.1489414 0.1982977 -1 0.09544662 -0.1545013 0.1974683 -1 0.09380452 -0.1602793 0.1966358 -1 0.09214431 -0.1664126 0.1957444 -1 0.0905022 -0.1727617 0.1948109 -1 0.08885957 -0.1793932 0.1936696 -1 0.08719882 -0.1864492 0.1926927 -1 0.0855386 -0.1937667 0.1916669 -1 0.08387785 -0.2015312 0.1905681 -1 0.08223469 -0.2090531 0.1895189 -1 0.08062614 -0.2161369 0.1886318 -1 0.07910494 -0.2226514 0.1875368 -1 0.07763487 -0.228632 0.1867595 -1 0.07618185 -0.2349627 0.1857936 -1 0.07469368 -0.2429302 0.1847505 -1 0.07315384 -0.2530114 0.1835625 -1 0.07172105 -0.2647747 0.1820398 -1 0.07058655 -0.2773756 0.1806686 -1 0.06997988 -0.2892017 0.1796666 -1 0.07014606 -0.2982896 0.1790502 -1 0.07143557 -0.3020531 0.1792176 -1 0.0740934 -0.2983991 0.1801208 -1 0.07815472 -0.2879641 0.1822647 -1 0.08319715 -0.2728775 0.1847365 -1 0.08862254 -0.2561664 0.1874703 -1 0.0938695 -0.239546 0.1900524 -1 0.09877931 -0.2253184 0.1923602 -1 0.1033903 -0.2140044 0.1943741 -1 0.1080748 -0.2057264 0.1961828 -1 0.1133271 -0.1999582 0.1979558 -1 0.1197474 -0.1950869 0.2000079 -1 0.1277939 -0.1891696 0.2024696 -1 0.1376929 -0.1806744 0.2054525 -1 0.1494412 -0.168507 0.209244 -1 0.1631399 -0.1510433 0.2141128 -1 0.1792164 -0.1281893 0.219984 -1 0.1982164 -0.1019307 0.2267386 -1 0.22009 -0.07500344 0.2340399 -1 0.2438918 -0.05022942 0.2411609 -1 0.2682703 -0.02967722 0.2478118 -1 0.292006 -0.01396949 0.253755 -1 0.3145199 -0.001743939 0.259104 -1 0.335961 0.008862014 0.2641655 -1 0.3567304 0.01846713 0.2690434 -1 0.3771926 0.02663396 0.2738254 -1 0.3977085 0.03277585 0.2784769 -1 0.4188843 0.03697407 0.2831028 -1 0.4412773 0.04064766 0.2879051 -1 0.4651674 0.04562014 0.2930404 -1 0.4898299 0.05262703 0.2981058 -1 0.5126372 0.06109068 0.3024305 -1 0.5298977 0.07199673 0.3056882 -1 0.5389279 0.08973147 0.3083143 -1 0.5387926 0.1205365 0.3112927 -1 0.5298306 0.168309 0.3151458 -1 0.5125802 0.2316172 0.3193605 -1 0.4872876 0.3032795 0.3224759 -1 0.4540077 0.3724112 0.3222167 -1 0.412537 0.4297277 0.3171332 -1 0.36224 0.4739453 0.3076832 -1 0.3039647 0.5127063 0.296783 -1 0.243063 0.5520927 0.2880388 -1 0.1893188 0.5757135 0.2818827 -1 0.1526907 0.5451041 0.2755536 -1 0.1383289 0.4572302 0.2683992 -1 0.1450911 0.3587717 0.2632943 -1 0.1669658 0.2798323 0.2615641 -1 0.1961349 0.2195766 0.261494 -1 0.225574 0.1683318 0.2611735 -1 0.2501454 0.1189424 0.2591064 -1 0.2661963 0.07018935 0.2548129 -1 0.2712888 0.02792142 0.248868 -1 0.2642069 0.002703972 0.2425463 -1 0.2456702 0.00526501 0.237798 -1 0.2190775 0.03955632 0.2356431 -1 0.1900448 0.08888047 0.2354449 -1 0.1635831 0.1109669 0.233424 -1 0.1422096 0.06432699 0.2255113 -1 0.1261113 -0.0575971 0.2111661 -1 0.1145772 -0.2235404 0.1931621 -1 0.1069456 -0.3843524 0.1764601 -1 0.1032955 -0.4951802 0.1655841 -1 0.1045408 -0.5356376 0.1627463 -1 0.1119364 -0.5186858 0.1669332 -1 0.1259766 -0.4711284 0.1752838 -1 0.1459444 -0.4128027 0.1854932 -1 0.1699161 -0.3548713 0.1959275 -1 0.1950036 -0.3037399 0.2053794 -1 0.2184154 -0.2651267 0.212865 -1 0.2380813 -0.2443133 0.2176257 -1 0.2526562 -0.2434633 0.2193085 -1 0.2618255 -0.2603328 0.2183266 -1 0.2665526 -0.2880177 0.2157102 -1 0.2688573 -0.3177597 0.2128633 -1 0.2708488 -0.3422538 0.2107424 -1 0.2740648 -0.3581807 0.2099129 -1 0.2793347 -0.3651321 0.2103719 -1 0.2868507 -0.3646739 0.2119448 -1 0.296217 -0.3590065 0.2142831 -1 0.3066705 -0.3502919 0.2169531 -1 0.3171873 -0.3408206 0.2194438 -1 0.3265973 -0.3326744 0.2215223 -1 0.333847 -0.3272264 0.2228539 -1 0.3384318 -0.3247868 0.2234726 -1 0.3406082 -0.3236454 0.2237139 -1 0.341217 -0.3209561 0.2240235 -1 0.3413246 -0.3141201 0.2248507 -1 0.3419073 -0.3013228 0.2265562 -1 0.3434908 -0.2806587 0.2293309 -1 0.3463473 -0.2519131 0.2331705 -1 0.3502398 -0.2186376 0.2375799 -1 0.3542979 -0.1875667 0.2415776 -1 0.3571683 -0.1644617 0.2443419 -1 0.3579086 -0.1509807 0.2455558 -1 0.3559672 -0.1436487 0.2455552 -1 0.3510771 -0.1364345 0.2449858 -1 0.3429262 -0.1220665 0.2446995 -1 0.3320419 -0.1003139 0.2446268 -1 0.3176821 -0.07603228 0.2439134 -1 0.2985047 -0.0573076 0.2412877 -1 0.2731493 -0.0520504 0.2359603 -1 0.2414172 -0.06449893 0.2280015 -1 0.2058059 -0.09315199 0.2185705 -1 0.1718453 -0.126897 0.210394 -1 0.1464962 -0.1430552 0.2065475 -1 0.1352625 -0.1196965 0.2098589 -1 0.1399747 -0.0589832 0.2195325 -1 0.1587425 0.01796103 0.2328813 -1 0.1870429 0.09264804 0.2469201 -1 0.2192016 0.1576493 0.2598622 -1 0.2492729 0.2163241 0.2709262 -1 0.2720648 0.2781265 0.2804082 -1 0.2841161 0.352796 0.2888864 -1 0.2844725 0.4427418 0.29694 -1 0.2752329 0.5355908 0.3038024 -1 0.2609621 0.6029016 0.3076804 -1 0.2468148 0.6155486 0.3064405 -1 0.2366224 0.5644957 0.2996423 -1 0.2319001 0.4643123 0.2889941 -1 0.2322005 0.3388245 0.2764026 -1 0.2360615 0.206733 0.2634692 -1 0.2415498 0.07659705 0.2506004 -1 0.2464867 -0.0517053 0.2373809 -1 0.2486839 -0.1818421 0.2232367 -1 0.246776 -0.3148306 0.2080683 -1 0.2408776 -0.4461567 0.1927299 -1 0.2325078 -0.5668623 0.1785051 -1 0.2236283 -0.6686193 0.1664236 -1 0.2158508 -0.7488902 0.15696 -1 0.2099796 -0.8102056 0.1498561 -1 0.2063604 -0.8546079 0.1450037 -1 0.2052796 -0.8809418 0.1424413 -1 0.2070166 -0.8891806 0.1421988 -1 0.2113911 -0.8846943 0.1435597 -1 0.2171073 -0.8769659 0.1450954 -1 0.2220027 -0.8776679 0.1452716 -1 0.2237513 -0.8961225 0.1428664 -1 0.220898 -0.9344511 0.1376707 -1 0.2136334 -0.9913602 0.1298987 -1 0.2030106 -1 0.1136017 -0.9424574 0.202306 -1 0.09741589 -0.880672 0.2020359 -1 0.08621819 -0.8381627 0.1992598 -1 0.08510196 -0.836258 0.1932272 -1 0.1009789 -0.9021729 0.1844585 -0.9364445 0.1332119 -1 0.1859568 -0.7305308 0.1609019 -1 0.2225886 -0.5440258 0.1890464 -1 0.2740723 -0.4022104 0.2136894 -1 0.332925 -0.3088289 0.2327931 -1 0.3888748 -0.2573367 0.2455566 -1 0.4336287 -0.2361766 0.2525975 -1 0.4637719 -0.2324065 0.2555093 -1 0.4805291 -0.2376502 0.2558077 -1 0.4869238 -0.2507975 0.254021 -1 0.4857238 -0.2736877 0.2502596 -1 0.4789605 -0.3066056 0.2447495 -1 0.4682769 -0.3477089 0.2380333 -1 0.455025 -0.3937313 0.2305714 -1 0.4401774 -0.4418876 0.2227695 -1 0.424053 -0.4909625 0.2147042 -1 0.4064804 -0.5414613 0.2062752 -1 0.3872055 -0.5944649 0.1974624 -1 0.3667253 -0.6515148 0.1881481 -1 0.3460698 -0.7144222 0.1783414 -1 0.326201 -0.7837188 0.1679761 -1 0.3076212 -0.8569373 0.1574572 -1 0.2906526 -0.9295405 0.1472794 -1 0.2755631 -0.995052 0.1381923 -1 0.2627629 -1 0.125737 -0.9572859 0.2642458 -1 0.1193424 -0.9347295 0.2641595 -1 0.1184807 -0.9326701 0.26176 -1 0.1206919 -0.9423193 0.2577897 -1 0.1222486 -0.9501863 0.2529518 -1 0.1196624 -0.9432502 0.2478652 -1 0.1105472 -0.9119909 0.2433937 -1 0.09422546 -0.8530676 0.2404328 -1 0.07229351 -0.7704297 0.2396946 -1 0.0473243 -0.6731907 0.2416057 -1 0.02144996 -0.5693077 0.2465858 -1 -0.004031584 -0.4640399 0.2547175 -1 -0.0284272 -0.3612255 0.2654804 -1 -0.05079492 -0.264734 0.2778668 -1 -0.07003003 -0.179975 0.2902893 -1 -0.08415065 -0.1166626 0.3007529 -1 -0.0901346 -0.08998021 0.3070353 -1 -0.0832471 -0.1220495 0.306231 -1 -0.05485475 -0.2482457 0.2932865 -1 0.01541169 -0.5434641 0.2593301 -0.7983037 0.1564126 -1 0.2403253 -0.2423724 0.2339125 -1 0.3481513 0.1146782 0.2901624 -1 0.425212 0.3786136 0.3295634 -1 0.4376442 0.5861969 0.3450851 -1 0.3846957 0.7634226 0.3413084 -1 0.2979507 0.9288766 0.3356724 -1 0.2191217 1 0.330618 -0.9951568 0.1810343 0.9270666 0.3235569 -1 0.1781074 0.7998667 0.3134747 -1 0.1892117 0.6967475 0.3037027 -1 0.1926163 0.6143731 0.2930893 -1 0.18405 0.5308772 0.2822278 -1 0.1737697 0.4339601 0.2721205 -1 0.1723896 0.349953 0.2653224 -1 0.1804276 0.3099894 0.2639094 -1 0.1924986 0.3177437 0.2676659 -1 0.206249 0.3557352 0.2750457 -1 0.221697 0.4021856 0.2832538 -1 0.2365079 0.4508728 0.2905382 -1 0.2449639 0.5212796 0.297303 -1 0.2412329 0.655306 0.3075007 -1 0.2241434 0.8964799 0.3266414 -1 0.2003107 1 0.2889516 -0.8095145 0.2258294 1 0.2524857 -0.6474259 0.2831073 1 0.2405669 -0.5790793 0.3373087 1 0.2280534 -0.5259567 0.3646623 1 0.2011081 -0.4384434 0.3658386 1 0.169914 -0.3311816 0.3627826 1 0.1415845 -0.2244279 0.3688874 1 0.1207175 -0.1393464 0.4014778 1 0.1066245 -0.08030542 0.4581389 1 0.09826127 -0.04539109 0.5216713 1 0.09302903 -0.02376613 0.5765557 1 0.08739447 -0.001352889 0.6204711 1 0.07919312 0.03098334 0.6600407 1 0.06969207 0.06929942 0.7011482 1 0.06095972 0.1052563 0.7418948 1 0.05411342 0.1346086 0.776894 1 0.0484655 0.1611321 0.7991819 1 0.04274909 0.1920029 0.808737 1 0.03630045 0.2344576 0.8087064 1 0.02985531 0.2888595 0.8028507 1 0.02499732 0.3445448 0.7886095 1 0.0222916 0.3846882 0.7506291 1 0.02149663 0.391496 0.6665455 1 0.02753938 0.3355397 0.5277402 1 0.06067849 0.1436644 0.3536143 1 0.1898292 -0.4510347 0.1755225 0.1167151 0.2400538 -1 0.1723347 -0.4559026 0.1873623 -1 0.2066155 -0.8941039 0.1374845 -1 0.1843057 -1 0.03278059 -0.621896 0.2043491 -1 -0.04687525 -0.2778865 0.2284028 -1 -0.09303545 -0.06399871 0.2467552 -1 -0.1114887 0.02412486 0.2625307 -1 -0.1103838 0.01584924 0.2741336 -1 -0.09678284 -0.05222001 0.2782396 -1 -0.07549979 -0.1522621 0.2729554 -1 -0.05002866 -0.266399 0.2592433 -1 -0.02313964 -0.3833209 0.2400105 -1 0.003919879 -0.4996 0.2177203 -1 0.03254279 -0.6230277 0.1931591 -1 0.06795296 -0.7768235 0.1657706 -0.9986939 0.1189997 -1 0.1353978 -0.7304603 0.1476562 -1 0.1401931 -0.4873741 0.1730459 -1 0.1424402 -0.2725303 0.1947419 -1 0.1418618 -0.08727635 0.2129245 -1 0.1388759 0.06534665 0.2272762 -1 0.1347064 0.1781962 0.237794 -1 0.1309636 0.2415974 0.243692 -1 0.1290808 0.2508767 0.2446349 -1 0.1295516 0.2113187 0.2411595 -1 0.1317045 0.1347045 0.2341828 -1 0.1344502 0.03494925 0.224661 -1 0.1368913 -0.0754188 0.2140687 -1 0.1384993 -0.1862117 0.202923 -1 0.138919 -0.2908511 0.1921898 -1 0.1378319 -0.3843482 0.1822124 -1 0.1349637 -0.460459 0.1736006 -1 0.1301844 -0.5097243 0.167459 -1 0.1237326 -0.5185261 0.1653351 -1 0.1163237 -0.4727705 0.1684348 -1 0.108543 -0.3682854 0.1775417 -1 0.1006632 -0.2192881 0.1908185 -1 0.09239838 -0.05663241 0.2051755 -1 0.0835359 0.08107507 0.2168469 -1 0.07443695 0.1495805 0.2217498 -1 0.06628608 0.1034503 0.2162057 -1 0.06036374 -0.0767834 0.1981149 -1 0.05749232 -0.3518203 0.1712426 -1 0.05780498 -0.6419717 0.1429912 -1 0.06062899 -0.8868827 0.119223 -1 0.06481016 -1 0.09479436 -0.9353768 0.07411311 -1 0.0743443 -0.8350947 0.0877927 -1 0.06258921 -0.7782892 0.09778382 -1 0.05519628 -0.7429527 0.1034878 -1 0.04968819 -0.7176597 0.1050266 -1 0.04470909 -0.6961696 0.1033988 -1 0.04037139 -0.6773525 0.09978864 -1 0.03759868 -0.6654637 0.09504981 -1 0.03814063 -0.6698513 0.08970166 -1 0.04489957 -0.7019246 0.08404883 -1 0.05902515 -0.7691364 0.07817709 -1 0.0811704 -0.8735977 0.07211894 -0.9898999 0.1090677 -1 0.06692151 -0.8600396 0.1228658 -1 0.07131679 -0.7646654 0.1331997 -1 0.07575255 -0.6954303 0.1409182 -1 0.08007593 -0.6307649 0.1483197 -1 0.08467787 -0.5497177 0.1575345 -1 0.09027424 -0.4463331 0.1690997 -1 0.09723308 -0.3298952 0.1822656 -1 0.1049829 -0.212174 0.1954097 -1 0.1125644 -0.1008093 0.2077929 -1 0.1196516 -0.000922111 0.2193002 -1 0.127077 0.08385883 0.2294196 -1 0.136226 0.1544549 0.2387806 -1 0.1475503 0.2167387 0.2475962 -1 0.1600965 0.2746957 0.2559264 -1 0.1722394 0.3287625 0.263685 -1 0.1827696 0.3789106 0.2707541 -1 0.1914025 0.4265043 0.2771693 -1 0.1982686 0.4742491 0.2832819 -1 0.2035348 0.5268344 0.2897408 -1 0.2077053 0.5908443 0.2974557 -1 0.2116505 0.6730385 0.3073128 -1 0.2163728 0.7743624 0.3199902 -1 0.2230083 0.8893633 0.3356536 -1 0.2331091 1 0.3516062 -0.992914 0.2500965 1 0.3358038 -0.8948068 0.3001712 1 0.3273535 -0.8215839 0.3536978 1 0.322172 -0.7650154 0.4026814 1 0.3158723 -0.721425 0.4359659 1 0.3047252 -0.6880841 0.443712 1 0.2858052 -0.6555846 0.4238376 1 0.2575662 -0.6040208 0.38484 1 0.2209524 -0.5133075 0.3422317 1 0.1821033 -0.3887005 0.3089345 1 0.1503758 -0.2686861 0.2884768 1 0.1325794 -0.1946792 0.2769026 1 0.1301759 -0.1844926 0.2683189 1 0.141895 -0.2356345 0.258438 1 0.1660104 -0.3384967 0.2453892 1 0.2010899 -0.4832893 0.2294282 1 0.2452926 -0.6604795 0.2120015 1 0.2950806 -0.8552107 0.194701 0.9553918 0.3289334 -1 0.1866279 0.8257467 0.318303 -1 0.1972859 0.7553781 0.3108172 -1 0.1966627 0.7349698 0.3056973 -1 0.1850673 0.7693981 0.3041276 -1 0.1648124 0.8809045 0.3088469 -1 0.1394532 1 0.2907199 -0.8935996 0.1256955 1 0.228155 -0.6268331 0.1361055 1 0.17268 -0.3800646 0.1539998 1 0.1285489 -0.1769183 0.178725 1 0.09640423 -0.02424745 0.2085941 1 0.07482503 0.08153991 0.2405266 1 0.06135036 0.1496721 0.2704262 1 0.05330513 0.1912377 0.2942765 1 0.0486015 0.216359 0.3096841 1 0.04572498 0.2325912 0.3170156 1 0.04331931 0.2465676 0.3193577 1 0.04018511 0.2654583 0.3210959 1 0.03572244 0.2925917 0.3267005 1 0.03105323 0.3215488 0.3396388 1 0.02843394 0.3377284 0.3602451 1 0.02931604 0.3303816 0.3834293 1 0.03366703 0.3001821 0.3984403 1 0.04101378 0.253204 0.3932465 1 0.0514942 0.1942495 0.3621758 1 0.06472776 0.1269269 0.3108481 1 0.0788088 0.05959448 0.2531395 1 0.08932052 0.01176538 0.2029022 1 0.09068948 0.008548686 0.1675318 1 0.08288004 0.05139703 0.1468616 1 0.07364927 0.1009318 0.1361561 1 0.07239413 0.1081521 0.1302087 1 0.08369127 0.04976787 0.1256418 1 0.1074529 -0.07033987 0.1210427 1 0.1413461 -0.2358658 0.1159112 1 0.1827268 -0.431934 0.110141 1 0.2310317 -0.6522909 0.1038096 1 0.2858428 -0.8959146 0.096981 0.8626401 0.2986897 -1 0.1039 0.696203 0.2857121 -1 0.1173623 0.5802608 0.27647 -1 0.1269204 0.4971631 0.2698539 -1 0.1336603 0.4384711 0.2653089 -1 0.1394085 0.4007703 0.2629001 -1 0.1454379 0.3810332 0.2622919 -1 0.1518668 0.3759214 0.2631443 -1 0.1579697 0.3801871 0.2646185 -1 0.1629578 0.3884864 0.2660964 -1 0.1660801 0.3956985 0.2669512 -1 0.1665488 0.3981741 0.2665896 -1 0.1638201 0.3928363 0.2648006 -1 0.1582312 0.3778197 0.2617235 -1 0.1508782 0.3515103 0.2575326 -1 0.1430853 0.31314 0.2521862 -1 0.1360369 0.2629876 0.2460268 -1 0.1305737 0.2042839 0.2396596 -1 0.1275148 0.1456267 0.2338782 -1 0.1278211 0.0969981 0.2297284 -1 0.1313732 0.05972393 0.2270153 -1 0.136315 0.02652326 0.2245621 -1 0.1405915 -0.009135135 0.2215628 -1 0.1433159 -0.04834275 0.217735 -1 0.1441132 -0.09028749 0.2131643 -1 0.1420844 -0.1346603 0.207651 -1 0.1365041 -0.1787349 0.2015649 -1 0.1275058 -0.2122418 0.1960674 -1 0.1163002 -0.2181583 0.1932868 -1 0.1047352 -0.1817055 0.1948987 -1 0.09451079 -0.0999643 0.2013911 -1 0.08653569 0.01500784 0.2116176 -1 0.0809569 0.1398643 0.2232501 -1 0.07760931 0.2398115 0.2325694 -1 0.07598478 0.2811065 0.2364922 -1 0.07505587 0.249934 0.2331161 -1 0.07411844 0.1663932 0.2250587 -1 0.07401191 0.08148881 0.2172383 -1 0.07675231 0.04646268 0.2154773 -1 0.08438173 0.06941913 0.2203956 -1 0.09817158 0.1151732 0.2288835 -1 0.1177602 0.1469322 0.2365259 -1 0.1398442 0.1543908 0.2409468 -1 0.158228 0.1494613 0.2422291 -1 0.1667773 0.1499056 0.2414701 -1 0.162888 0.1667167 0.2402105 -1 0.1487738 0.1980389 0.23947 -1 0.1300438 0.2297157 0.2391188 -1 0.1130357 0.2444448 0.2383934 -1 0.1021961 0.2360792 0.2369252 -1 0.09906267 0.2154668 0.2356312 -1 0.1024172 0.1963275 0.2351299 -1 0.1090399 0.182331 0.234905 -1 0.1150848 0.169037 0.2342586 -1 0.1181586 0.1504276 0.2323608 -1 0.1180702 0.1235105 0.2294358 -1 0.116361 0.09164876 0.2259355 -1 0.1150581 0.06364281 0.2234421 -1 0.1157719 0.04606523 0.2221936 -1 0.1188063 0.03895338 0.2224283 -1 0.1230482 0.03904162 0.2232176 -1 0.126988 0.04159119 0.2239457 -1 0.1298376 0.0431322 0.2245319 -1 0.1317492 0.04227187 0.2247432 -1 0.1330601 0.03883677 0.2246033 -1 0.1340156 0.03392765 0.2241695 -1 0.1347331 0.02856075 0.2238131 -1 0.1354526 0.02434459 0.2235819 -1 0.1363251 0.02100364 0.2233804 -1 0.1373515 0.01829584 0.2234239 -1 0.1384972 0.01591124 0.2234213 -1 0.1397297 0.01357538 0.2233965 -1 0.1409798 0.0112829 0.2234047 -1 0.1422128 0.00903465 0.2234193 -1 0.1434453 0.006945681 0.2234483 -1 0.1446608 0.00489614 0.2234827 -1 0.1458757 0.002881484 0.2235476 -1 0.1470736 0.001016425 0.2236256 -1 0.1482539] 
         }
         
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_humanoid_root_Position.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_humanoid_root.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_sacroiliac.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_shoulder.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_elbow.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_radiocarpal.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_shoulder.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_elbow.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_radiocarpal.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_vl5.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_skullbase.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_hip.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_knee.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_talocrural.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_metatarsophalangeal_2.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_hip.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_knee.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_talocrural.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_metatarsophalangeal_2.set_fraction
+        
+        ROUTE Keyframe_humanoid_root_Position.value_changed TO hanim_humanoid_root.translation
+        
+        ROUTE Keyframe_humanoid_root.value_changed TO hanim_humanoid_root.rotation
+        
+        ROUTE Keyframe_sacroiliac.value_changed TO hanim_sacroiliac.rotation
+        
+        ROUTE Keyframe_l_shoulder.value_changed TO hanim_l_shoulder.rotation
+        
+        ROUTE Keyframe_l_elbow.value_changed TO hanim_l_elbow.rotation
+        
+        ROUTE Keyframe_l_radiocarpal.value_changed TO hanim_l_radiocarpal.rotation
+        
+        ROUTE Keyframe_r_shoulder.value_changed TO hanim_r_shoulder.rotation
+        
+        ROUTE Keyframe_r_elbow.value_changed TO hanim_r_elbow.rotation
+        
+        ROUTE Keyframe_r_radiocarpal.value_changed TO hanim_r_radiocarpal.rotation
+        
+        ROUTE Keyframe_vl5.value_changed TO hanim_vl5.rotation
+        
+        ROUTE Keyframe_skullbase.value_changed TO hanim_skullbase.rotation
+        
+        ROUTE Keyframe_l_hip.value_changed TO hanim_l_hip.rotation
+        
+        ROUTE Keyframe_l_knee.value_changed TO hanim_l_knee.rotation
+        
+        ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_talocrural.rotation
+        
+        ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_metatarsophalangeal_2.rotation
+        
+        ROUTE Keyframe_r_hip.value_changed TO hanim_r_hip.rotation
+        
+        ROUTE Keyframe_r_knee.value_changed TO hanim_r_knee.rotation
+        
+        ROUTE Keyframe_l_talocrural.value_changed TO hanim_r_talocrural.rotation
+        
+        ROUTE Keyframe_r_metatarsophalangeal_2.value_changed TO hanim_r_metatarsophalangeal_2.rotation
+        
       ]
     
     }
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_humanoid_root_Position.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_humanoid_root.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_sacroiliac.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_shoulder.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_elbow.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_radiocarpal.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_shoulder.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_elbow.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_radiocarpal.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_vl5.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_skullbase.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_hip.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_knee.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_talocrural.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_metatarsophalangeal_2.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_hip.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_knee.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_talocrural.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_metatarsophalangeal_2.set_fraction
-    
-    ROUTE Keyframe_humanoid_root_Position.value_changed TO hanim_humanoid_root.set_translation
-    
-    ROUTE Keyframe_humanoid_root.value_changed TO hanim_humanoid_root.set_rotation
-    
-    ROUTE Keyframe_sacroiliac.value_changed TO hanim_sacroiliac.set_rotation
-    
-    ROUTE Keyframe_l_shoulder.value_changed TO hanim_l_shoulder.set_rotation
-    
-    ROUTE Keyframe_l_elbow.value_changed TO hanim_l_elbow.set_rotation
-    
-    ROUTE Keyframe_l_radiocarpal.value_changed TO hanim_l_radiocarpal.set_rotation
-    
-    ROUTE Keyframe_r_shoulder.value_changed TO hanim_r_shoulder.set_rotation
-    
-    ROUTE Keyframe_r_elbow.value_changed TO hanim_r_elbow.set_rotation
-    
-    ROUTE Keyframe_r_radiocarpal.value_changed TO hanim_r_radiocarpal.set_rotation
-    
-    ROUTE Keyframe_vl5.value_changed TO hanim_vl5.set_rotation
-    
-    ROUTE Keyframe_skullbase.value_changed TO hanim_skullbase.set_rotation
-    
-    ROUTE Keyframe_l_hip.value_changed TO hanim_l_hip.set_rotation
-    
-    ROUTE Keyframe_l_knee.value_changed TO hanim_l_knee.set_rotation
-    
-    ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_talocrural.set_rotation
-    
-    ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_metatarsophalangeal_2.set_rotation
-    
-    ROUTE Keyframe_r_hip.value_changed TO hanim_r_hip.set_rotation
-    
-    ROUTE Keyframe_r_knee.value_changed TO hanim_r_knee.set_rotation
-    
-    ROUTE Keyframe_l_talocrural.value_changed TO hanim_r_talocrural.set_rotation
-    
-    ROUTE Keyframe_r_metatarsophalangeal_2.value_changed TO hanim_r_metatarsophalangeal_2.set_rotation
     

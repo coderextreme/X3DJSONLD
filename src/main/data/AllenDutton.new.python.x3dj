@@ -60,7 +60,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:17 GMT",
+        "@content":"17 July 2025",
         "@name":"modified"
       }
     },
@@ -125,6 +125,20 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -1632,7 +1646,7 @@
                 {
       {
         "@DEF":"Stand_Time",
-        "@cycleInterval":"0.00999999977648258"
+        "@cycleInterval":"0.009999999776482582"
       }
     },
             }            "Group":
@@ -2112,7 +2126,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Stand_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Walk_Time"
       }
     },
@@ -2121,7 +2135,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Stand_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Run_Time"
       }
     },
@@ -2130,7 +2144,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Stand_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Jump_Time"
       }
     },
@@ -2139,7 +2153,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Stand_Touch",
-        "@toField":"set_startTime",
+        "@toField":"startTime",
         "@toNode":"Stand_Time"
       }
     },
@@ -2148,7 +2162,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Walk_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Stand_Time"
       }
     },
@@ -2157,7 +2171,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Walk_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Run_Time"
       }
     },
@@ -2166,7 +2180,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Walk_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Jump_Time"
       }
     },
@@ -2175,7 +2189,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Walk_Touch",
-        "@toField":"set_startTime",
+        "@toField":"startTime",
         "@toNode":"Walk_Time"
       }
     },
@@ -2184,7 +2198,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Run_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Stand_Time"
       }
     },
@@ -2193,7 +2207,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Run_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Walk_Time"
       }
     },
@@ -2202,7 +2216,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Run_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Jump_Time"
       }
     },
@@ -2211,7 +2225,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Run_Touch",
-        "@toField":"set_startTime",
+        "@toField":"startTime",
         "@toNode":"Run_Time"
       }
     },
@@ -2220,7 +2234,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Jump_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Stand_Time"
       }
     },
@@ -2229,7 +2243,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Jump_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Walk_Time"
       }
     },
@@ -2238,7 +2252,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Jump_Touch",
-        "@toField":"set_stopTime",
+        "@toField":"stopTime",
         "@toNode":"Run_Time"
       }
     },
@@ -2247,7 +2261,7 @@
       {
         "@fromField":"touchTime",
         "@fromNode":"Jump_Touch",
-        "@toField":"set_startTime",
+        "@toField":"startTime",
         "@toNode":"Jump_Time"
       }
     },

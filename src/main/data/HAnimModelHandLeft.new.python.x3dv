@@ -7,9 +7,8 @@ META "title" "HAnimModelHandLeft.x3d"
 META "description" "Left hand, using high-fidelity definitions for HAnim version 2.0"
 META "creator" "Kwan-Hee YOO, Don Brutzman and Joe Williams"
 META "created" "26 January 2015"
-META "modified" "Wed, 17 Sep 2025 23:47:36 GMT"
+META "modified" "23 December 2021"
 META "TODO" "fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2"
-META "TODO" "Integrate and confirm Segment/Joint names, Viewpoints."
 META "Image" "HAnimModelHandRightSegmentVisualizationError.png"
 META "error" "not yet to scale, also relatively flat"
 META "warning" "TODO will X3D HAnim component add a new level to support LOA-4 functionality?"
@@ -21,7 +20,10 @@ META "reference" "https://www.web3d.org/documents/specifications/19774/V2.0/Arch
 META "reference" "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4"
 META "reference" "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"
 META "subject" "X3D HAnim humanoid animation"
+META "TODO" "Integrate and confirm Segment/Joint names, Viewpoints."
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "HAnimModelHandLeft.x3d" 
     }
@@ -33,7 +35,8 @@ WorldInfo {
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
         children [
           MetadataString {
-            name "authorName" 
+            name "authorName"
+            value ["Kwan-Hee YOO, Don Brutzman and Joe Williams"] 
           }
           
         ]

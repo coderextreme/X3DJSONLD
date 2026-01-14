@@ -5,15 +5,24 @@ PROFILE Immersive
 META "title" "arc1.x3d"
 META "creator" "Lost, Doug Sanden I think"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
-ProtoDeclare {
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"
+META "description" "a generic proto to connect two objects"
+Viewpoint {
+      description "Only Viewpoint"
+      position 0 0 5 
+    }
+    Background {
+      skyColor [0.4 0.4 0.4] 
+    }
+    ProtoDeclare {
       name "point"
       ProtoInterface ProtoInterface {
         children [
           field {
             accessType "inputOutput"
             name "translation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           
         ]
@@ -74,7 +83,8 @@ ProtoDeclare {
                   field {
                     accessType "inputOutput"
                     name "old"
-                    type "SFVec3f" 
+                    type "SFVec3f"
+                    value [0, 0, 0] 
                   }
                   field {
                     accessType "inputOnly"
@@ -96,24 +106,68 @@ ProtoDeclare {
                 loop TRUE 
               }
               
+              ROUTE CL1.cycleTime TO MB1.set_location
+              
+              ROUTE CL1.fraction_changed TO PI1.set_fraction
+              
+              ROUTE MB1.keyValue TO PI1.keyValue
+              
+              ROUTE PI1.value_changed TO node.set_translation
+              
+              ROUTE MB1.translation_changed TO node.set_translation
+              
             ]
           
           }
-          
-          ROUTE CL1.cycleTime TO MB1.set_location
-          
-          ROUTE CL1.fraction_changed TO PI1.set_fraction
-          
-          ROUTE MB1.keyValue_changed TO PI1.set_keyValue
-          
-          ROUTE PI1.value_changed TO node.set_translation
-          
-          ROUTE MB1.translation_changed TO node.set_translation
           
         ]
       
       }
       
+    }
+    DEF G1 Transform {
+      children [
+        ProtoInstance {
+          name "point" 
+        }
+        
+      ]
+    
+    }
+    DEF G2 Transform {
+      children [
+        ProtoInstance {
+          name "point" 
+        }
+        
+      ]
+    
+    }
+    DEF transC1 Transform {
+      children [
+        DEF rotscaleC1 Transform {
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.2 0.7 0.7
+                  transparency 0.5 
+                }
+                 
+              }
+              
+              geometry Cylinder {
+                radius 0.05 
+              }
+               
+            }
+            
+          ]
+        
+        }
+        
+      ]
+    
     }
     ProtoDeclare {
       name "x3dconnector"
@@ -249,6 +303,14 @@ ProtoDeclare {
                   protoField "endnode" 
                 }
                 connect {
+                  nodeField "transnode"
+                  protoField "transnode" 
+                }
+                connect {
+                  nodeField "rotscalenode"
+                  protoField "rotscalenode" 
+                }
+                connect {
                   nodeField "set_startpoint"
                   protoField "set_startpoint" 
                 }
@@ -302,73 +364,6 @@ ProtoDeclare {
       }
       
     }
-    Viewpoint {
-      description "Only Viewpoint"
-      position 0 0 5 
-    }
-    Background {
-      skyColor [0.4 0.4 0.4] 
-    }
-    DEF G1 Transform {
-      children [
-        ProtoInstance {
-          name "point"
-          children [
-            fieldValue {
-              name "translation"
-              value 0 0.4650003 0 
-            }
-            
-          ]
-        
-        }
-        
-      ]
-    
-    }
-    DEF G2 Transform {
-      children [
-        ProtoInstance {
-          name "point"
-          children [
-            fieldValue {
-              name "translation"
-              value 0 0.4650003 0 
-            }
-            
-          ]
-        
-        }
-        
-      ]
-    
-    }
-    DEF transC1 Transform {
-      children [
-        DEF rotscaleC1 Transform {
-          children [
-            Shape {
-              appearance Appearance {
-                material Material {
-                  diffuseColor 0.2 0.7 0.7
-                  transparency 0.5 
-                }
-                 
-              }
-              
-              geometry Cylinder {
-                radius 0.05 
-              }
-               
-            }
-            
-          ]
-        
-        }
-        
-      ]
-    
-    }
     ProtoInstance {
       name "x3dconnector"
       children [
@@ -399,6 +394,12 @@ ProtoDeclare {
             USE rotscaleC1 
           ]
         
+        }
+        fieldValue {
+          name "set_startpoint" 
+        }
+        fieldValue {
+          name "set_endpoint" 
         }
         
       ]

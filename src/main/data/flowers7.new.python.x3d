@@ -2,15 +2,20 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
+    <component name='Texturing'/>
+    <component name='Rendering'/>
     <component level='4' name='Shape'/>
     <component level='3' name='Grouping'/>
+    <component name='Core'/>
     <meta content='flowers7.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d' name='identifier'/>
+    <meta content='a flower' name='description'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -50,13 +55,13 @@
               <ComposedCubeMapTexture USE='texture'/>
             </field>
             <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
-            <field accessType='inputOnly' name='bias' type='SFFloat'/>
-            <field accessType='inputOnly' name='scale' type='SFFloat'/>
-            <field accessType='inputOnly' name='power' type='SFFloat'/>
-            <field accessType='inputOnly' name='a' type='SFFloat'/>
-            <field accessType='inputOnly' name='b' type='SFFloat'/>
-            <field accessType='inputOnly' name='c' type='SFFloat'/>
-            <field accessType='inputOnly' name='d' type='SFFloat'/>
+            <field accessType='inputOnly' name='bias' type='SFFloat' value='0.5'/>
+            <field accessType='inputOnly' name='scale' type='SFFloat' value='0.5'/>
+            <field accessType='inputOnly' name='power' type='SFFloat' value='2'/>
+            <field accessType='inputOnly' name='a' type='SFFloat' value='10'/>
+            <field accessType='inputOnly' name='b' type='SFFloat' value='1'/>
+            <field accessType='inputOnly' name='c' type='SFFloat' value='20'/>
+            <field accessType='inputOnly' name='d' type='SFFloat' value='20'/>
             <field accessType='inputOnly' name='tdelta' type='SFFloat'/>
             <field accessType='inputOnly' name='pdelta' type='SFFloat'/>
             <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
@@ -201,17 +206,17 @@
     </Script>
     <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'/>
     <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
-    <ROUTE fromField='a_changed' fromNode='Animate' toField='a' toNode='x_ite'/>
-    <ROUTE fromField='b_changed' fromNode='Animate' toField='b' toNode='x_ite'/>
-    <ROUTE fromField='c_changed' fromNode='Animate' toField='c' toNode='x_ite'/>
-    <ROUTE fromField='d_changed' fromNode='Animate' toField='d' toNode='x_ite'/>
-    <ROUTE fromField='pdelta_changed' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
-    <ROUTE fromField='tdelta_changed' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
-    <ROUTE fromField='a_changed' fromNode='Animate' toField='set_a' toNode='x3dom'/>
-    <ROUTE fromField='b_changed' fromNode='Animate' toField='set_b' toNode='x3dom'/>
-    <ROUTE fromField='c_changed' fromNode='Animate' toField='set_c' toNode='x3dom'/>
-    <ROUTE fromField='d_changed' fromNode='Animate' toField='set_d' toNode='x3dom'/>
-    <ROUTE fromField='pdelta_changed' fromNode='Animate' toField='set_pdelta' toNode='x3dom'/>
-    <ROUTE fromField='tdelta_changed' fromNode='Animate' toField='set_tdelta' toNode='x3dom'/>
+    <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
+    <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>
+    <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x_ite'/>
+    <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x_ite'/>
+    <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
+    <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
+    <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x3dom'/>
+    <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x3dom'/>
+    <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x3dom'/>
+    <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x3dom'/>
+    <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x3dom'/>
+    <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x3dom'/>
   </Scene>
 </X3D>

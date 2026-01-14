@@ -9,17 +9,19 @@ META "creator" "John Stewart"
 META "translator" "Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"
 META "created" "26 May 2009"
 META "translated" "15 October 2009"
-META "modified" "Wed, 17 Sep 2025 23:48:09 GMT"
+META "modified" "20 October 2019"
 META "reference" "http://www.opengl.org/wiki/Fragment_Shader"
 META "reference" "http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"
 META "reference" "https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"
+META "subject" "X3D shader example"
 META "reference" "originals/simpleShader.x3dv"
 META "reference" "ShaderTutorialInstantReality.pdf"
-META "subject" "X3D shader example"
 META "generator" "Titania V3.0.3, http://titania.create3000.de"
-META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
 META "info" "World of Titania"
+META "outputStyle" "nicest"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"
+META "license" "../../license.html"
 ProtoDeclare {
       name "myPrototype"
       ProtoInterface ProtoInterface {
@@ -93,7 +95,7 @@ ProtoDeclare {
                       children [
                         ShaderPart { 
                         }
-                        ShaderPart {
+                        DEF _1 ShaderPart {
                           type "FRAGMENT" 
                         }
                         

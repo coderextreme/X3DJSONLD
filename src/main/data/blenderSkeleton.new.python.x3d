@@ -6,10 +6,11 @@
     <meta content='blenderSkeleton.x3d' name='title'/>
     <meta content='2023' name='copyright'/>
     <meta content='http://www.web3D.org' name='reference'/>
+    <meta content='Blender 4.0.1' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo/>
-    <Background DEF='WO_World' groundColor='0.05087609 0.05087609 0.05087609' skyColor='0.05087609 0.05087609 0.05087609'/>
+    <Background DEF='WO_World' groundColor='0.05087608844041824 0.05087608844041824 0.05087608844041824' skyColor='0.05087608844041824 0.05087608844041824 0.05087608844041824'/>
     <Transform>
       <Shape DEF='SiteShape'>
         <Appearance>
@@ -27,10 +28,10 @@
       </Shape>
     </Transform>
     <Transform DEF='Light_TRANSFORM' rotation='0.20594 0.33152 0.9207 1.92627' translation='4.07625 1.00545 5.90386'>
-      <PointLight DEF='LA_Light' location='-8.940697e-08 -3.576279e-07 4.61936e-07' radius='40'/>
+      <PointLight DEF='LA_Light' location='-8.940696716308594e-08 -3.5762786865234375e-07 4.6193599700927734e-07' radius='40'/>
     </Transform>
     <Transform DEF='Camera_TRANSFORM' rotation='0.77344 0.33383 0.53884 1.35072' translation='7.35889 -6.92579 4.95831'>
-      <Viewpoint DEF='CA_Camera' fieldOfView='0.6911112' position='-3.92708e-07 -2.123415e-07 2.384186e-07'/>
+      <Viewpoint DEF='CA_Camera' fieldOfView='0.6911112070083618' orientation='-3.627339850709177e-08 -0.4730778932571411 -0.8810206651687622 0' position='-3.927080456378462e-07 -2.123415470123291e-07 2.384185791015625e-07'/>
     </Transform>
     <Transform DEF='Armature_TRANSFORM'>
       <HAnimHumanoid DEF='hanim_humanoid' name='humanoid'>
@@ -2093,8 +2094,9 @@
         </HAnimJoint>
       </HAnimHumanoid>
     </Transform>
-    <TimeSensor DEF='Armature_Clock' cycleInterval='10.4166666666667' loop='true'/>
+    <TimeSensor DEF='Armature_Clock' cycleInterval='10.416666666666666' loop='true'/>
     <ProximitySensor DEF='Armature_Close' size='1000000 1000000 1000000'/>
+    <ROUTE fromField='enterTime' fromNode='Armature_Close' toField='startTime' toNode='Armature_Clock'/>
     <OrientationInterpolator DEF='Armature_OI_sacrum' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
     <OrientationInterpolator DEF='Armature_OI_pelvis' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
     <OrientationInterpolator DEF='Armature_OI_l_thigh' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
@@ -2241,298 +2243,297 @@
     <OrientationInterpolator DEF='Armature_OI_r_carpal_proximal_phalanx_5' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
     <OrientationInterpolator DEF='Armature_OI_r_carpal_middle_phalanx_5' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
     <OrientationInterpolator DEF='Armature_OI_r_carpal_distal_phalanx_5' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-    <ROUTE fromField='enterTime' fromNode='Armature_Close' toField='set_startTime' toNode='Armature_Clock'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_sacrum'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_sacrum' toField='set_rotation' toNode='hanim_sacrum'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_sacrum' toField='rotation' toNode='hanim_sacrum'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_pelvis'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_pelvis' toField='set_rotation' toNode='hanim_pelvis'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_pelvis' toField='rotation' toNode='hanim_pelvis'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_thigh'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_thigh' toField='set_rotation' toNode='hanim_l_thigh'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_thigh' toField='rotation' toNode='hanim_l_thigh'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_calf'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_calf' toField='set_rotation' toNode='hanim_l_calf'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_calf' toField='rotation' toNode='hanim_l_calf'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_talus'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_talus' toField='set_rotation' toNode='hanim_l_talus'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_talus' toField='rotation' toNode='hanim_l_talus'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_navicular'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_navicular' toField='set_rotation' toNode='hanim_l_navicular'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_navicular' toField='rotation' toNode='hanim_l_navicular'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_cuneiform_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuneiform_1' toField='set_rotation' toNode='hanim_l_cuneiform_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuneiform_1' toField='rotation' toNode='hanim_l_cuneiform_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metatarsal_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_1' toField='set_rotation' toNode='hanim_l_metatarsal_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_1' toField='rotation' toNode='hanim_l_metatarsal_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_proximal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_1' toField='set_rotation' toNode='hanim_l_tarsal_proximal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_1' toField='rotation' toNode='hanim_l_tarsal_proximal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_distal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_1' toField='set_rotation' toNode='hanim_l_tarsal_distal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_1' toField='rotation' toNode='hanim_l_tarsal_distal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_cuneiform_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuneiform_2' toField='set_rotation' toNode='hanim_l_cuneiform_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuneiform_2' toField='rotation' toNode='hanim_l_cuneiform_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metatarsal_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_2' toField='set_rotation' toNode='hanim_l_metatarsal_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_2' toField='rotation' toNode='hanim_l_metatarsal_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_proximal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_2' toField='set_rotation' toNode='hanim_l_tarsal_proximal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_2' toField='rotation' toNode='hanim_l_tarsal_proximal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_middle_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_2' toField='set_rotation' toNode='hanim_l_tarsal_middle_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_2' toField='rotation' toNode='hanim_l_tarsal_middle_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_distal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_2' toField='set_rotation' toNode='hanim_l_tarsal_distal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_2' toField='rotation' toNode='hanim_l_tarsal_distal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_cuneiform_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuneiform_3' toField='set_rotation' toNode='hanim_l_cuneiform_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuneiform_3' toField='rotation' toNode='hanim_l_cuneiform_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metatarsal_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_3' toField='set_rotation' toNode='hanim_l_metatarsal_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_3' toField='rotation' toNode='hanim_l_metatarsal_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_proximal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_3' toField='set_rotation' toNode='hanim_l_tarsal_proximal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_3' toField='rotation' toNode='hanim_l_tarsal_proximal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_middle_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_3' toField='set_rotation' toNode='hanim_l_tarsal_middle_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_3' toField='rotation' toNode='hanim_l_tarsal_middle_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_distal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_3' toField='set_rotation' toNode='hanim_l_tarsal_distal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_3' toField='rotation' toNode='hanim_l_tarsal_distal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_calcaneus'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_calcaneus' toField='set_rotation' toNode='hanim_l_calcaneus'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_calcaneus' toField='rotation' toNode='hanim_l_calcaneus'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_cuboid'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuboid' toField='set_rotation' toNode='hanim_l_cuboid'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_cuboid' toField='rotation' toNode='hanim_l_cuboid'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metatarsal_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_4' toField='set_rotation' toNode='hanim_l_metatarsal_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_4' toField='rotation' toNode='hanim_l_metatarsal_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_proximal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_4' toField='set_rotation' toNode='hanim_l_tarsal_proximal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_4' toField='rotation' toNode='hanim_l_tarsal_proximal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_middle_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_4' toField='set_rotation' toNode='hanim_l_tarsal_middle_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_4' toField='rotation' toNode='hanim_l_tarsal_middle_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_distal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_4' toField='set_rotation' toNode='hanim_l_tarsal_distal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_4' toField='rotation' toNode='hanim_l_tarsal_distal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metatarsal_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_5' toField='set_rotation' toNode='hanim_l_metatarsal_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metatarsal_5' toField='rotation' toNode='hanim_l_metatarsal_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_proximal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_5' toField='set_rotation' toNode='hanim_l_tarsal_proximal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_proximal_phalanx_5' toField='rotation' toNode='hanim_l_tarsal_proximal_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_middle_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_5' toField='set_rotation' toNode='hanim_l_tarsal_middle_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_middle_phalanx_5' toField='rotation' toNode='hanim_l_tarsal_middle_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_tarsal_distal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_5' toField='set_rotation' toNode='hanim_l_tarsal_distal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_tarsal_distal_phalanx_5' toField='rotation' toNode='hanim_l_tarsal_distal_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_thigh'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_thigh' toField='set_rotation' toNode='hanim_r_thigh'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_thigh' toField='rotation' toNode='hanim_r_thigh'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_calf'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_calf' toField='set_rotation' toNode='hanim_r_calf'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_calf' toField='rotation' toNode='hanim_r_calf'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_talus'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_talus' toField='set_rotation' toNode='hanim_r_talus'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_talus' toField='rotation' toNode='hanim_r_talus'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_navicular'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_navicular' toField='set_rotation' toNode='hanim_r_navicular'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_navicular' toField='rotation' toNode='hanim_r_navicular'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_cuneiform_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuneiform_1' toField='set_rotation' toNode='hanim_r_cuneiform_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuneiform_1' toField='rotation' toNode='hanim_r_cuneiform_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metatarsal_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_1' toField='set_rotation' toNode='hanim_r_metatarsal_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_1' toField='rotation' toNode='hanim_r_metatarsal_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_proximal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_1' toField='set_rotation' toNode='hanim_r_tarsal_proximal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_1' toField='rotation' toNode='hanim_r_tarsal_proximal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_distal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_1' toField='set_rotation' toNode='hanim_r_tarsal_distal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_1' toField='rotation' toNode='hanim_r_tarsal_distal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_cuneiform_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuneiform_2' toField='set_rotation' toNode='hanim_r_cuneiform_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuneiform_2' toField='rotation' toNode='hanim_r_cuneiform_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metatarsal_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_2' toField='set_rotation' toNode='hanim_r_metatarsal_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_2' toField='rotation' toNode='hanim_r_metatarsal_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_proximal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_2' toField='set_rotation' toNode='hanim_r_tarsal_proximal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_2' toField='rotation' toNode='hanim_r_tarsal_proximal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_middle_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_2' toField='set_rotation' toNode='hanim_r_tarsal_middle_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_2' toField='rotation' toNode='hanim_r_tarsal_middle_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_distal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_2' toField='set_rotation' toNode='hanim_r_tarsal_distal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_2' toField='rotation' toNode='hanim_r_tarsal_distal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_cuneiform_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuneiform_3' toField='set_rotation' toNode='hanim_r_cuneiform_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuneiform_3' toField='rotation' toNode='hanim_r_cuneiform_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metatarsal_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_3' toField='set_rotation' toNode='hanim_r_metatarsal_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_3' toField='rotation' toNode='hanim_r_metatarsal_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_proximal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_3' toField='set_rotation' toNode='hanim_r_tarsal_proximal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_3' toField='rotation' toNode='hanim_r_tarsal_proximal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_middle_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_3' toField='set_rotation' toNode='hanim_r_tarsal_middle_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_3' toField='rotation' toNode='hanim_r_tarsal_middle_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_distal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_3' toField='set_rotation' toNode='hanim_r_tarsal_distal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_3' toField='rotation' toNode='hanim_r_tarsal_distal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_calcaneus'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_calcaneus' toField='set_rotation' toNode='hanim_r_calcaneus'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_calcaneus' toField='rotation' toNode='hanim_r_calcaneus'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_cuboid'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuboid' toField='set_rotation' toNode='hanim_r_cuboid'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_cuboid' toField='rotation' toNode='hanim_r_cuboid'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metatarsal_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_4' toField='set_rotation' toNode='hanim_r_metatarsal_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_4' toField='rotation' toNode='hanim_r_metatarsal_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_proximal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_4' toField='set_rotation' toNode='hanim_r_tarsal_proximal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_4' toField='rotation' toNode='hanim_r_tarsal_proximal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_middle_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_4' toField='set_rotation' toNode='hanim_r_tarsal_middle_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_4' toField='rotation' toNode='hanim_r_tarsal_middle_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_distal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_4' toField='set_rotation' toNode='hanim_r_tarsal_distal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_4' toField='rotation' toNode='hanim_r_tarsal_distal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metatarsal_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_5' toField='set_rotation' toNode='hanim_r_metatarsal_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metatarsal_5' toField='rotation' toNode='hanim_r_metatarsal_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_proximal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_5' toField='set_rotation' toNode='hanim_r_tarsal_proximal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_proximal_phalanx_5' toField='rotation' toNode='hanim_r_tarsal_proximal_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_middle_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_5' toField='set_rotation' toNode='hanim_r_tarsal_middle_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_middle_phalanx_5' toField='rotation' toNode='hanim_r_tarsal_middle_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_tarsal_distal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_5' toField='set_rotation' toNode='hanim_r_tarsal_distal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_tarsal_distal_phalanx_5' toField='rotation' toNode='hanim_r_tarsal_distal_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l5' toField='set_rotation' toNode='hanim_l5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l5' toField='rotation' toNode='hanim_l5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l4' toField='set_rotation' toNode='hanim_l4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l4' toField='rotation' toNode='hanim_l4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l3' toField='set_rotation' toNode='hanim_l3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l3' toField='rotation' toNode='hanim_l3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l2' toField='set_rotation' toNode='hanim_l2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l2' toField='rotation' toNode='hanim_l2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l1' toField='set_rotation' toNode='hanim_l1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l1' toField='rotation' toNode='hanim_l1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t12'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t12' toField='set_rotation' toNode='hanim_t12'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t12' toField='rotation' toNode='hanim_t12'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t11'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t11' toField='set_rotation' toNode='hanim_t11'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t11' toField='rotation' toNode='hanim_t11'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t10'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t10' toField='set_rotation' toNode='hanim_t10'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t10' toField='rotation' toNode='hanim_t10'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t9'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t9' toField='set_rotation' toNode='hanim_t9'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t9' toField='rotation' toNode='hanim_t9'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t8'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t8' toField='set_rotation' toNode='hanim_t8'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t8' toField='rotation' toNode='hanim_t8'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t7'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t7' toField='set_rotation' toNode='hanim_t7'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t7' toField='rotation' toNode='hanim_t7'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t6'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t6' toField='set_rotation' toNode='hanim_t6'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t6' toField='rotation' toNode='hanim_t6'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t5' toField='set_rotation' toNode='hanim_t5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t5' toField='rotation' toNode='hanim_t5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t4' toField='set_rotation' toNode='hanim_t4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t4' toField='rotation' toNode='hanim_t4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t3' toField='set_rotation' toNode='hanim_t3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t3' toField='rotation' toNode='hanim_t3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t2' toField='set_rotation' toNode='hanim_t2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t2' toField='rotation' toNode='hanim_t2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_t1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_t1' toField='set_rotation' toNode='hanim_t1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_t1' toField='rotation' toNode='hanim_t1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_c7'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_c7' toField='set_rotation' toNode='hanim_c7'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_c7' toField='rotation' toNode='hanim_c7'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_c6'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_c6' toField='set_rotation' toNode='hanim_c6'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_c6' toField='rotation' toNode='hanim_c6'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_c5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_c5' toField='set_rotation' toNode='hanim_c5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_c5' toField='rotation' toNode='hanim_c5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_c4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_c4' toField='set_rotation' toNode='hanim_c4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_c4' toField='rotation' toNode='hanim_c4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_c3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_c3' toField='set_rotation' toNode='hanim_c3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_c3' toField='rotation' toNode='hanim_c3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_c2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_c2' toField='set_rotation' toNode='hanim_c2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_c2' toField='rotation' toNode='hanim_c2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_c1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_c1' toField='set_rotation' toNode='hanim_c1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_c1' toField='rotation' toNode='hanim_c1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_skull'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_skull' toField='set_rotation' toNode='hanim_skull'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_skull' toField='rotation' toNode='hanim_skull'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_eyelid'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_eyelid' toField='set_rotation' toNode='hanim_l_eyelid'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_eyelid' toField='rotation' toNode='hanim_l_eyelid'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_eyelid'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_eyelid' toField='set_rotation' toNode='hanim_r_eyelid'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_eyelid' toField='rotation' toNode='hanim_r_eyelid'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_eyeball'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_eyeball' toField='set_rotation' toNode='hanim_l_eyeball'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_eyeball' toField='rotation' toNode='hanim_l_eyeball'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_eyeball'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_eyeball' toField='set_rotation' toNode='hanim_r_eyeball'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_eyeball' toField='rotation' toNode='hanim_r_eyeball'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_eyebrow'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_eyebrow' toField='set_rotation' toNode='hanim_l_eyebrow'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_eyebrow' toField='rotation' toNode='hanim_l_eyebrow'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_eyebrow'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_eyebrow' toField='set_rotation' toNode='hanim_r_eyebrow'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_eyebrow' toField='rotation' toNode='hanim_r_eyebrow'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_jaw'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_jaw' toField='set_rotation' toNode='hanim_jaw'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_jaw' toField='rotation' toNode='hanim_jaw'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_clavicle'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_clavicle' toField='set_rotation' toNode='hanim_l_clavicle'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_clavicle' toField='rotation' toNode='hanim_l_clavicle'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_scapula'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_scapula' toField='set_rotation' toNode='hanim_l_scapula'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_scapula' toField='rotation' toNode='hanim_l_scapula'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_upperarm'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_upperarm' toField='set_rotation' toNode='hanim_l_upperarm'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_upperarm' toField='rotation' toNode='hanim_l_upperarm'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_forearm'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_forearm' toField='set_rotation' toNode='hanim_l_forearm'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_forearm' toField='rotation' toNode='hanim_l_forearm'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal' toField='set_rotation' toNode='hanim_l_carpal'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal' toField='rotation' toNode='hanim_l_carpal'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_trapezium'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_trapezium' toField='set_rotation' toNode='hanim_l_trapezium'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_trapezium' toField='rotation' toNode='hanim_l_trapezium'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metacarpal_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_1' toField='set_rotation' toNode='hanim_l_metacarpal_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_1' toField='rotation' toNode='hanim_l_metacarpal_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_proximal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_1' toField='set_rotation' toNode='hanim_l_carpal_proximal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_1' toField='rotation' toNode='hanim_l_carpal_proximal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_distal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_1' toField='set_rotation' toNode='hanim_l_carpal_distal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_1' toField='rotation' toNode='hanim_l_carpal_distal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_trapezoid'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_trapezoid' toField='set_rotation' toNode='hanim_l_trapezoid'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_trapezoid' toField='rotation' toNode='hanim_l_trapezoid'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metacarpal_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_2' toField='set_rotation' toNode='hanim_l_metacarpal_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_2' toField='rotation' toNode='hanim_l_metacarpal_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_proximal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_2' toField='set_rotation' toNode='hanim_l_carpal_proximal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_2' toField='rotation' toNode='hanim_l_carpal_proximal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_middle_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_2' toField='set_rotation' toNode='hanim_l_carpal_middle_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_2' toField='rotation' toNode='hanim_l_carpal_middle_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_distal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_2' toField='set_rotation' toNode='hanim_l_carpal_distal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_2' toField='rotation' toNode='hanim_l_carpal_distal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_capitate'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_capitate' toField='set_rotation' toNode='hanim_l_capitate'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_capitate' toField='rotation' toNode='hanim_l_capitate'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metacarpal_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_3' toField='set_rotation' toNode='hanim_l_metacarpal_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_3' toField='rotation' toNode='hanim_l_metacarpal_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_proximal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_3' toField='set_rotation' toNode='hanim_l_carpal_proximal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_3' toField='rotation' toNode='hanim_l_carpal_proximal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_middle_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_3' toField='set_rotation' toNode='hanim_l_carpal_middle_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_3' toField='rotation' toNode='hanim_l_carpal_middle_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_distal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_3' toField='set_rotation' toNode='hanim_l_carpal_distal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_3' toField='rotation' toNode='hanim_l_carpal_distal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_hamate'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_hamate' toField='set_rotation' toNode='hanim_l_hamate'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_hamate' toField='rotation' toNode='hanim_l_hamate'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metacarpal_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_4' toField='set_rotation' toNode='hanim_l_metacarpal_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_4' toField='rotation' toNode='hanim_l_metacarpal_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_proximal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_4' toField='set_rotation' toNode='hanim_l_carpal_proximal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_4' toField='rotation' toNode='hanim_l_carpal_proximal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_middle_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_4' toField='set_rotation' toNode='hanim_l_carpal_middle_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_4' toField='rotation' toNode='hanim_l_carpal_middle_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_distal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_4' toField='set_rotation' toNode='hanim_l_carpal_distal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_4' toField='rotation' toNode='hanim_l_carpal_distal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_metacarpal_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_5' toField='set_rotation' toNode='hanim_l_metacarpal_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_metacarpal_5' toField='rotation' toNode='hanim_l_metacarpal_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_proximal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_5' toField='set_rotation' toNode='hanim_l_carpal_proximal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_proximal_phalanx_5' toField='rotation' toNode='hanim_l_carpal_proximal_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_middle_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_5' toField='set_rotation' toNode='hanim_l_carpal_middle_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_middle_phalanx_5' toField='rotation' toNode='hanim_l_carpal_middle_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_l_carpal_distal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_5' toField='set_rotation' toNode='hanim_l_carpal_distal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_l_carpal_distal_phalanx_5' toField='rotation' toNode='hanim_l_carpal_distal_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_clavicle'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_clavicle' toField='set_rotation' toNode='hanim_r_clavicle'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_clavicle' toField='rotation' toNode='hanim_r_clavicle'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_scapula'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_scapula' toField='set_rotation' toNode='hanim_r_scapula'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_scapula' toField='rotation' toNode='hanim_r_scapula'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_upperarm'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_upperarm' toField='set_rotation' toNode='hanim_r_upperarm'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_upperarm' toField='rotation' toNode='hanim_r_upperarm'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_forearm'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_forearm' toField='set_rotation' toNode='hanim_r_forearm'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_forearm' toField='rotation' toNode='hanim_r_forearm'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal' toField='set_rotation' toNode='hanim_r_carpal'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal' toField='rotation' toNode='hanim_r_carpal'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_trapezium'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_trapezium' toField='set_rotation' toNode='hanim_r_trapezium'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_trapezium' toField='rotation' toNode='hanim_r_trapezium'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metacarpal_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_1' toField='set_rotation' toNode='hanim_r_metacarpal_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_1' toField='rotation' toNode='hanim_r_metacarpal_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_proximal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_1' toField='set_rotation' toNode='hanim_r_carpal_proximal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_1' toField='rotation' toNode='hanim_r_carpal_proximal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_distal_phalanx_1'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_1' toField='set_rotation' toNode='hanim_r_carpal_distal_phalanx_1'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_1' toField='rotation' toNode='hanim_r_carpal_distal_phalanx_1'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_trapezoid'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_trapezoid' toField='set_rotation' toNode='hanim_r_trapezoid'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_trapezoid' toField='rotation' toNode='hanim_r_trapezoid'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metacarpal_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_2' toField='set_rotation' toNode='hanim_r_metacarpal_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_2' toField='rotation' toNode='hanim_r_metacarpal_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_proximal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_2' toField='set_rotation' toNode='hanim_r_carpal_proximal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_2' toField='rotation' toNode='hanim_r_carpal_proximal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_middle_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_2' toField='set_rotation' toNode='hanim_r_carpal_middle_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_2' toField='rotation' toNode='hanim_r_carpal_middle_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_distal_phalanx_2'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_2' toField='set_rotation' toNode='hanim_r_carpal_distal_phalanx_2'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_2' toField='rotation' toNode='hanim_r_carpal_distal_phalanx_2'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_capitate'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_capitate' toField='set_rotation' toNode='hanim_r_capitate'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_capitate' toField='rotation' toNode='hanim_r_capitate'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metacarpal_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_3' toField='set_rotation' toNode='hanim_r_metacarpal_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_3' toField='rotation' toNode='hanim_r_metacarpal_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_proximal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_3' toField='set_rotation' toNode='hanim_r_carpal_proximal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_3' toField='rotation' toNode='hanim_r_carpal_proximal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_middle_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_3' toField='set_rotation' toNode='hanim_r_carpal_middle_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_3' toField='rotation' toNode='hanim_r_carpal_middle_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_distal_phalanx_3'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_3' toField='set_rotation' toNode='hanim_r_carpal_distal_phalanx_3'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_3' toField='rotation' toNode='hanim_r_carpal_distal_phalanx_3'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_hamate'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_hamate' toField='set_rotation' toNode='hanim_r_hamate'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_hamate' toField='rotation' toNode='hanim_r_hamate'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metacarpal_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_4' toField='set_rotation' toNode='hanim_r_metacarpal_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_4' toField='rotation' toNode='hanim_r_metacarpal_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_proximal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_4' toField='set_rotation' toNode='hanim_r_carpal_proximal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_4' toField='rotation' toNode='hanim_r_carpal_proximal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_middle_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_4' toField='set_rotation' toNode='hanim_r_carpal_middle_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_4' toField='rotation' toNode='hanim_r_carpal_middle_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_distal_phalanx_4'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_4' toField='set_rotation' toNode='hanim_r_carpal_distal_phalanx_4'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_4' toField='rotation' toNode='hanim_r_carpal_distal_phalanx_4'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_metacarpal_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_5' toField='set_rotation' toNode='hanim_r_metacarpal_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_metacarpal_5' toField='rotation' toNode='hanim_r_metacarpal_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_proximal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_5' toField='set_rotation' toNode='hanim_r_carpal_proximal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_proximal_phalanx_5' toField='rotation' toNode='hanim_r_carpal_proximal_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_middle_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_5' toField='set_rotation' toNode='hanim_r_carpal_middle_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_middle_phalanx_5' toField='rotation' toNode='hanim_r_carpal_middle_phalanx_5'/>
     <ROUTE fromField='fraction_changed' fromNode='Armature_Clock' toField='set_fraction' toNode='Armature_OI_r_carpal_distal_phalanx_5'/>
-    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_5' toField='set_rotation' toNode='hanim_r_carpal_distal_phalanx_5'/>
+    <ROUTE fromField='value_changed' fromNode='Armature_OI_r_carpal_distal_phalanx_5' toField='rotation' toNode='hanim_r_carpal_distal_phalanx_5'/>
   </Scene>
 </X3D>

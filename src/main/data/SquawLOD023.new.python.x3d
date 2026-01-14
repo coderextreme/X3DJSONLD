@@ -8,11 +8,13 @@
     <meta content='Salvador Bayarri, ESRI' name='creator'/>
     <meta content='Don Brutzman' name='translator'/>
     <meta content='22 April 2003' name='translated'/>
-    <meta content='Wed, 17 Sep 2025 23:48:11 GMT' name='modified'/>
+    <meta content='20 January 2020' name='modified'/>
     <meta content='http://www.geovrml.org/examples' name='reference'/>
     <meta content='X3D geospatial example' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/Geospatial/SquawLOD023.x3d' name='identifier'/>
     <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
+    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='SquawLOD023.x3d'/>

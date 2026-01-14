@@ -11,6 +11,12 @@
         "component":
         {
       {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"EnvironmentalEffects"
       }
@@ -30,6 +36,18 @@
         "component":
         {
       {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"4",
         "@name":"Shape"
       }
@@ -39,6 +57,12 @@
       {
         "@level":"3",
         "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "meta":
@@ -69,6 +93,13 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d",
+        "@name":"identifier"
+      }
+    },
     }    "Scene":
     {
         "ProtoDeclare":
@@ -83,7 +114,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"vertex",
-        "@type":"MFString"
+        "@type":"MFString",
+        "@value":"['../shaders/gl_flowers_chromatic.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs']"
       }
     },
                 "field":
@@ -91,7 +123,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"fragment",
-        "@type":"MFString"
+        "@type":"MFString",
+        "@value":"['../shaders/pc_flowers.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs']"
       }
     },
             }            "ProtoBody":
@@ -166,8 +199,13 @@
         "@name":"cube",
         "@type":"SFNode"
       }
+                                    "ComposedCubeMapTexture":
+                                    {
+      {
+        "@USE":"texture"
+      }
     },
-                                "field":
+                                }                                "field":
                                 {
       {
         "@accessType":"initializeOnly",
@@ -181,7 +219,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"bias",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                                 "field":
@@ -189,7 +228,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"scale",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                                 "field":
@@ -197,7 +237,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"power",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"2"
       }
     },
                                 "field":
@@ -205,7 +246,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"a",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"10"
       }
     },
                                 "field":
@@ -213,7 +255,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"b",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"1"
       }
     },
                                 "field":
@@ -221,7 +264,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"c",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"20"
       }
     },
                                 "field":
@@ -229,7 +273,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"d",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"20"
       }
     },
                                 "field":
@@ -418,7 +463,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -426,7 +472,8 @@
       {
         "@accessType":"outputOnly",
         "@name":"velocity",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -442,7 +489,8 @@
       {
         "@accessType":"outputOnly",
         "@name":"a",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                         "field":
@@ -450,7 +498,8 @@
       {
         "@accessType":"outputOnly",
         "@name":"b",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                         "field":
@@ -458,7 +507,8 @@
       {
         "@accessType":"outputOnly",
         "@name":"c",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"3"
       }
     },
                         "field":
@@ -466,7 +516,8 @@
       {
         "@accessType":"outputOnly",
         "@name":"d",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"3"
       }
     },
                         "field":
@@ -474,7 +525,8 @@
       {
         "@accessType":"outputOnly",
         "@name":"tdelta",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                         "field":
@@ -482,7 +534,8 @@
       {
         "@accessType":"outputOnly",
         "@name":"pdelta",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                     }                    "TimeSensor":
@@ -493,8 +546,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"TourTime",
@@ -502,8 +555,8 @@
         "@toNode":"Animate"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"translation_changed",
         "@fromNode":"Animate",
@@ -511,8 +564,8 @@
         "@toNode":"transform"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"a",
         "@fromNode":"Animate",
@@ -520,8 +573,8 @@
         "@toNode":"shader"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"b",
         "@fromNode":"Animate",
@@ -529,8 +582,8 @@
         "@toNode":"shader"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"c",
         "@fromNode":"Animate",
@@ -538,8 +591,8 @@
         "@toNode":"shader"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"d",
         "@fromNode":"Animate",
@@ -547,8 +600,8 @@
         "@toNode":"shader"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"tdelta",
         "@fromNode":"Animate",
@@ -556,8 +609,8 @@
         "@toNode":"shader"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"pdelta",
         "@fromNode":"Animate",
@@ -565,4 +618,4 @@
         "@toNode":"shader"
       }
     },
-            }        }    }}
+                }            }        }    }}

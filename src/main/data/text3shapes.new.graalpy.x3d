@@ -40,4 +40,9 @@
         <field accessType='initializeOnly' name='frontUrls' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
 <![CDATA[
 ecmascript:
-			    v
+			    var me = '"1" ""2" "\n3"';
+]]>
+      </Script>
+    </Transform>
+  </Scene>
+</X3D>

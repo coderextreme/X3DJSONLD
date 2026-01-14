@@ -6,8 +6,10 @@ META "title" "ScubaTank.x3d"
 META "description" "Scuba gear used by Nancy Diving example."
 META "creator" "Etsuko Lippi"
 META "created" "24 January 2001"
-META "modified" "Wed, 17 Sep 2025 23:48:09 GMT"
+META "modified" "23 May 2020"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "ScubaTank.x3d" 
     }

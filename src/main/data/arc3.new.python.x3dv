@@ -5,7 +5,8 @@ PROFILE Immersive
 META "title" "arc3.x3d"
 META "creator" "Lost, Doug Sanden I think"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"
+META "description" "a generic proto to connect two objects"
 Viewpoint {
       description "Only Viewpoint"
       position 0 0 5 
@@ -14,7 +15,6 @@ Viewpoint {
       skyColor [0.4 0.4 0.4] 
     }
     DEF DECLpoint_G1_node Transform {
-      translation 0 0.5616665 0
       children [
         Shape {
           appearance Appearance {
@@ -51,12 +51,14 @@ Viewpoint {
             field {
               accessType "inputOutput"
               name "translation"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "old"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOnly"
@@ -78,11 +80,18 @@ Viewpoint {
           loop TRUE 
         }
         
+        ROUTE DECLpoint_G1_CL1.cycleTime TO DECLpoint_G1_MB1.set_location
+        
+        ROUTE DECLpoint_G1_CL1.fraction_changed TO DECLpoint_G1_PI1.set_fraction
+        
+        ROUTE DECLpoint_G1_MB1.keyValue TO DECLpoint_G1_PI1.keyValue
+        
+        ROUTE DECLpoint_G1_PI1.value_changed TO DECLpoint_G1_node.set_translation
+        
       ]
     
     }
     DEF DECLpoint_G2_node Transform {
-      translation 0 0.5616665 0
       children [
         Shape {
           appearance Appearance {
@@ -119,12 +128,14 @@ Viewpoint {
             field {
               accessType "inputOutput"
               name "translation"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "old"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOnly"
@@ -145,6 +156,14 @@ Viewpoint {
           cycleInterval 3
           loop TRUE 
         }
+        
+        ROUTE DECLpoint_G2_CL1.cycleTime TO DECLpoint_G2_MB1.set_location
+        
+        ROUTE DECLpoint_G2_CL1.fraction_changed TO DECLpoint_G2_PI1.set_fraction
+        
+        ROUTE DECLpoint_G2_MB1.keyValue TO DECLpoint_G2_PI1.keyValue
+        
+        ROUTE DECLpoint_G2_PI1.value_changed TO DECLpoint_G2_node.set_translation
         
       ]
     
@@ -325,23 +344,7 @@ Viewpoint {
     
     }
     
-    ROUTE DECLpoint_G1_CL1.cycleTime TO DECLpoint_G1_MB1.set_location
+    ROUTE DECLpoint_G1_node.translation TO DECLx3dconnector_connector1_S1.set_startpoint
     
-    ROUTE DECLpoint_G1_CL1.fraction_changed TO DECLpoint_G1_PI1.set_fraction
-    
-    ROUTE DECLpoint_G1_MB1.keyValue_changed TO DECLpoint_G1_PI1.set_keyValue
-    
-    ROUTE DECLpoint_G1_PI1.value_changed TO DECLpoint_G1_node.set_translation
-    
-    ROUTE DECLpoint_G2_CL1.cycleTime TO DECLpoint_G2_MB1.set_location
-    
-    ROUTE DECLpoint_G2_CL1.fraction_changed TO DECLpoint_G2_PI1.set_fraction
-    
-    ROUTE DECLpoint_G2_MB1.keyValue_changed TO DECLpoint_G2_PI1.set_keyValue
-    
-    ROUTE DECLpoint_G2_PI1.value_changed TO DECLpoint_G2_node.set_translation
-    
-    ROUTE DECLpoint_G1_node.translation_changed TO DECLx3dconnector_connector1_S1.set_startpoint
-    
-    ROUTE DECLpoint_G2_node.translation_changed TO DECLx3dconnector_connector1_S1.set_endpoint
+    ROUTE DECLpoint_G2_node.translation TO DECLx3dconnector_connector1_S1.set_endpoint
     

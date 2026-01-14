@@ -8,6 +8,7 @@ META "description" "Template for an Indexed Face Set"
 META "creator" "John Carlson"
 META "created" "4 April 2017"
 META "license" "https://www.web3d.org/x3d/content/examples/license.html"
+META "generator" "X3D-Edit, https://savage.nps.edu/X3D-Edit"
 WorldInfo {
       title "ifscubeworks.x3d" 
     }

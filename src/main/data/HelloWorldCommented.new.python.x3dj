@@ -32,7 +32,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:36 GMT",
+        "@content":"20 October 2019",
         "@name":"modified"
       }
     },
@@ -76,6 +76,20 @@
       {
         "@content":"https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/license.html",
+        "@name":"license"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
       }
     },
     }    "Scene":

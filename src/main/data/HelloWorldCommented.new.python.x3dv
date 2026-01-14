@@ -5,13 +5,15 @@ PROFILE Immersive
 META "title" "HelloWorldCommented.x3d"
 META "description" "Numerous comments added to simple X3D scene example for testing JSON encoding alternatives."
 META "created" "19 December 2015"
-META "modified" "Wed, 17 Sep 2025 23:47:36 GMT"
+META "modified" "20 October 2019"
 META "creator" "Don Brutzman"
 META "info" "HelloWorldCommented.json is most current, HelloWorldCommentedOriginalEncoding.json and HelloWorldCommentedAlternativeEncoding.json were experimental."
 META "reference" "HelloWorldCommented.json"
 META "reference" "HelloWorldCommentedOriginalEncoding.json"
 META "reference" "HelloWorldCommentedAlternativeEncoding.json"
 META "identifier" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d"
+META "license" "https://www.web3d.org/x3d/content/examples/license.html"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
 WorldInfo {
       title "Hello world!" 
     }

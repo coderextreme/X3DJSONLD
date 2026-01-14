@@ -32,12 +32,32 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/BoxEm2.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"3 boxes",
+        "@name":"description"
       }
     },
     }    "Scene":
     {
+        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Cubes on Fire",
+        "@position":"0 0 12"
+      }
+    },
         "ProtoDeclare":
         {
       {
@@ -50,7 +70,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"xtranslation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -62,9 +83,6 @@
       }
                     "Shape":
                     {
-      {
-        "@DEF":"_1"
-      }
                         "Appearance":
                         {
                             "Material":
@@ -108,7 +126,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"ytranslation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -120,9 +139,6 @@
       }
                     "Shape":
                     {
-      {
-        "@DEF":"_2"
-      }
                         "Appearance":
                         {
                             "Material":
@@ -161,7 +177,14 @@
         "@protoField":"myShape"
       }
     },
-                        }                    }                    "ProtoInstance":
+                        }                        "fieldValue":
+                        {
+      {
+        "@name":"xtranslation",
+        "@value":"0 0 0"
+      }
+    },
+                    }                    "ProtoInstance":
                     {
       {
         "@name":"anyShape"
@@ -203,25 +226,19 @@
         "@value":"-2 0 0"
       }
     },
-                    }                }            }        }        "NavigationInfo":
-        {
-      {
-        "@type":""EXAMINE""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Cubes on Fire",
-        "@position":"0 0 12"
-      }
-    },
-        "ProtoInstance":
+                    }                }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"threepi",
         "@name":"three"
       }
+            "fieldValue":
+            {
+      {
+        "@name":"ytranslation",
+        "@value":"0 0 0"
+      }
+    },
             "fieldValue":
             {
       {

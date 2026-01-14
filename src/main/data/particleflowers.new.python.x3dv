@@ -5,12 +5,16 @@ PROFILE Immersive
 COMPONENT EnvironmentalEffects:3
 COMPONENT Shaders:1
 COMPONENT CubeMapTexturing:1
+COMPONENT Texturing:1
+COMPONENT Rendering:1
 COMPONENT Grouping:3
+COMPONENT Core:1
 COMPONENT ParticleSystems:3
 META "title" "particleflowers.x3d"
 META "creator" "John Carlson"
 META "description" "A flower particle system"
 META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
+META "generator" "Vim"
 WorldInfo {
       title "particleflowers.x3d" 
     }
@@ -315,12 +319,14 @@ WorldInfo {
             field {
               accessType "inputOutput"
               name "translation"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "velocity"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOnly"
@@ -372,21 +378,21 @@ WorldInfo {
           loop TRUE 
         }
         
+        ROUTE TourTime.fraction_changed TO Animate.set_fraction
+        
+        ROUTE Animate.a TO x_ite.a
+        
+        ROUTE Animate.b TO x_ite.b
+        
+        ROUTE Animate.c TO x_ite.c
+        
+        ROUTE Animate.d TO x_ite.d
+        
+        ROUTE Animate.pdelta TO x_ite.pdelta
+        
+        ROUTE Animate.tdelta TO x_ite.tdelta
+        
       ]
     
     }
-    
-    ROUTE TourTime.fraction_changed TO Animate.set_fraction
-    
-    ROUTE Animate.a_changed TO x_ite.set_a
-    
-    ROUTE Animate.b_changed TO x_ite.set_b
-    
-    ROUTE Animate.c_changed TO x_ite.set_c
-    
-    ROUTE Animate.d_changed TO x_ite.set_d
-    
-    ROUTE Animate.pdelta_changed TO x_ite.set_pdelta
-    
-    ROUTE Animate.tdelta_changed TO x_ite.set_tdelta
     

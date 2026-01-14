@@ -8,6 +8,12 @@
         "@profile":"Immersive",
     "head":
     {
+        "component":
+        {
+      {
+        "@name":"Scripting"
+      }
+    },
         "meta":
         {
       {
@@ -25,7 +31,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:24 GMT",
+        "@content":"July 14 2025",
         "@name":"modified"
       }
     },
@@ -41,6 +47,27 @@
       {
         "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"beginnings of a force directed graph in 3D",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -183,8 +210,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"cycleTime",
         "@fromNode":"nodeClock",
@@ -192,8 +219,8 @@
         "@toNode":"MoveBall"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"nodeClock",
@@ -201,8 +228,8 @@
         "@toNode":"NodePosition"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"keyValue",
         "@fromNode":"MoveBall",
@@ -210,8 +237,8 @@
         "@toNode":"NodePosition"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"NodePosition",
@@ -219,7 +246,7 @@
         "@toNode":"transform"
       }
     },
-            }        }        "ProtoDeclare":
+                }            }        }        "ProtoDeclare":
         {
       {
         "@name":"cyl"
@@ -279,7 +306,7 @@
 &quot;+
 &quot;                }
 &quot;+
-&quot;                
+&quot;
 &quot;+
 &quot;                function set_endB(value) {
 &quot;+
@@ -328,8 +355,8 @@
         "@type":"SFVec3f"
       }
     },
-                    }                }                "ROUTE":
-                {
+                    }                    "ROUTE":
+                    {
       {
         "@fromField":"spine_changed",
         "@fromNode":"MoveCylinder",
@@ -337,7 +364,7 @@
         "@toNode":"extrusion"
       }
     },
-            }        }        "Transform":
+                }            }        }        "Transform":
         {
       {
         "@DEF":"HoldsContent",
@@ -362,7 +389,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.6349999 0"
+        "@value":"0 1.388333 0"
       }
     },
             }            "ProtoInstance":
@@ -375,7 +402,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.6349999 0"
+        "@value":"0 1.388333 0"
       }
     },
             }            "ProtoInstance":
@@ -388,7 +415,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.6349999 0"
+        "@value":"0 1.388333 0"
       }
     },
             }            "ProtoInstance":
@@ -401,7 +428,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.6349999 0"
+        "@value":"0 1.388333 0"
       }
     },
             }            "ProtoInstance":
@@ -410,61 +437,22 @@
         "@DEF":"linkA",
         "@name":"cyl"
       }
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionA",
-        "@value":"0 0.6349999 0"
-      }
     },
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionB",
-        "@value":"0 0.6349999 0"
-      }
-    },
-            }            "ProtoInstance":
+            "ProtoInstance":
             {
       {
         "@DEF":"linkB",
         "@name":"cyl"
       }
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionA",
-        "@value":"0 0.6349999 0"
-      }
     },
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionB",
-        "@value":"0 0.6349999 0"
-      }
-    },
-            }            "ProtoInstance":
+            "ProtoInstance":
             {
       {
         "@DEF":"linkC",
         "@name":"cyl"
       }
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionA",
-        "@value":"0 0.6349999 0"
-      }
     },
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionB",
-        "@value":"0 0.6349999 0"
-      }
-    },
-            }        }        "Script":
+        }        "Script":
         {
       {
         "@DEF":"clickHandler",
@@ -500,7 +488,7 @@
 &quot;+
 &quot;			});
 &quot;+
-&quot;                
+&quot;
 &quot;+
 &quot;        }"
       }
@@ -542,7 +530,7 @@
       {
         "@fromField":"position_changed",
         "@fromNode":"nodeA",
-        "@toField":"set_set_positionA",
+        "@toField":"set_positionA",
         "@toNode":"linkA"
       }
     },
@@ -551,7 +539,7 @@
       {
         "@fromField":"position_changed",
         "@fromNode":"nodeB",
-        "@toField":"set_set_positionB",
+        "@toField":"set_positionB",
         "@toNode":"linkA"
       }
     },
@@ -560,7 +548,7 @@
       {
         "@fromField":"position_changed",
         "@fromNode":"nodeA",
-        "@toField":"set_set_positionA",
+        "@toField":"set_positionA",
         "@toNode":"linkB"
       }
     },
@@ -569,7 +557,7 @@
       {
         "@fromField":"position_changed",
         "@fromNode":"nodeC",
-        "@toField":"set_set_positionB",
+        "@toField":"set_positionB",
         "@toNode":"linkB"
       }
     },
@@ -578,7 +566,7 @@
       {
         "@fromField":"position_changed",
         "@fromNode":"nodeA",
-        "@toField":"set_set_positionA",
+        "@toField":"set_positionA",
         "@toNode":"linkC"
       }
     },
@@ -587,7 +575,7 @@
       {
         "@fromField":"position_changed",
         "@fromNode":"nodeD",
-        "@toField":"set_set_positionB",
+        "@toField":"set_positionB",
         "@toNode":"linkC"
       }
     },

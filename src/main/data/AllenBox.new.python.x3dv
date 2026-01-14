@@ -5,6 +5,7 @@ PROFILE Immersive
 META "title" "AllenBox.x3d"
 META "creator" "Allen Box"
 META "created" "8 July 2025"
+META "license" "../license.html"
 WorldInfo {
       title "AllenBox.x3d" 
     }

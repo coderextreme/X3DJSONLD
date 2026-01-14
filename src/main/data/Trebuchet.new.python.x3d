@@ -6,15 +6,17 @@
     <meta content='Working model of a 14th century Trebuchet Catapult.' name='description'/>
     <meta content='LT Joe Roth' name='creator'/>
     <meta content='20 June 2001' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:48:11 GMT' name='modified'/>
+    <meta content='20 October 2019' name='modified'/>
     <meta content='7.8' name='version'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d' name='identifier'/>
     <meta content='http://trebuchet.com' name='reference'/>
     <meta content='http://members.home.net/dimona' name='reference'/>
+    <meta content='trebuchet catapult Monty Python' name='subject'/>
     <meta content='Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under "Fair Use" clause of the DMCA' name='reference'/>
     <meta content='https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm' name='reference'/>
     <meta content='http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm' name='reference'/>
-    <meta content='trebuchet catapult Monty Python' name='subject'/>
+    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='Trebuchet.x3d'/>
@@ -722,15 +724,15 @@
     <ROUTE fromField='isActive' fromNode='Launch' toField='set_boolean' toNode='PigdogMonkScript'/>
     <ROUTE fromField='touchTime' fromNode='Launch' toField='set_startTime' toNode='PigDogSound'/>
     <ROUTE fromField='touchTime' fromNode='Launch' toField='set_startTime' toNode='MonkSound'/>
-    <ROUTE fromField='whichchoice' fromNode='PigdogMonkScript' toField='set_whichChoice' toNode='PigdogMonk'/>
+    <ROUTE fromField='whichchoice' fromNode='PigdogMonkScript' toField='whichChoice' toNode='PigdogMonk'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='HolyHandGrenadeSound'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='CowSound'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='HamsterSound'/>
     <ROUTE fromField='isActive' fromNode='LauncheeChoice' toField='set_boolean' toNode='LauncheeScript'/>
-    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='set_whichChoice' toNode='projectile'/>
-    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='set_whichChoice' toNode='projectilename'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectile'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectilename'/>
     <ROUTE fromField='isActive' fromNode='weightselector' toField='set_boolean' toNode='WeightScript'/>
-    <ROUTE fromField='whichchoice' fromNode='WeightScript' toField='set_whichChoice' toNode='Weight'/>
+    <ROUTE fromField='whichchoice' fromNode='WeightScript' toField='whichChoice' toNode='Weight'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='flingerangles'/>
     <ROUTE fromField='value_changed' fromNode='flingerangles' toField='set_rotation' toNode='flinger'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='verticalweightpath'/>

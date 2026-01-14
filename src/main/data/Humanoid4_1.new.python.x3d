@@ -7,8 +7,10 @@
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid4_1.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
     <meta content='h2.pl' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
-    <meta content='Wed, 17 Sep 2025 23:47:38 GMT' name='modified'/>
+    <meta content='14 Jan 2023' name='modified'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='9 November 2020' name='created'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <Transform>
@@ -78,7 +80,7 @@
       <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_2'/>
       <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_2'/>
       <HAnimJoint USE='hanim_l_cuneonavicular_3'/>
-      <HAnimJoint USE='hanim_l_tarsometatarsal_3 '/>
+      <HAnimJoint USE='hanim_l_tarsometatarsal_3'/>
       <HAnimJoint USE='hanim_l_metatarsophalangeal_3'/>
       <HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_3'/>
       <HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_3'/>
@@ -106,7 +108,7 @@
       <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_2'/>
       <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_2'/>
       <HAnimJoint USE='hanim_r_cuneonavicular_3'/>
-      <HAnimJoint USE='hanim_r_tarsometatarsal_3 '/>
+      <HAnimJoint USE='hanim_r_tarsometatarsal_3'/>
       <HAnimJoint USE='hanim_r_metatarsophalangeal_3'/>
       <HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_3'/>
       <HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_3'/>
@@ -291,7 +293,7 @@
       <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_1'/>
       <HAnimSegment USE='hanim_l_trapezoid'/>
       <HAnimSegment USE='hanim_l_metacarpal_2'/>
-      <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_2 '/>
+      <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_2'/>
       <HAnimSegment USE='hanim_l_carpal_middle_phalanx_2'/>
       <HAnimSegment USE='hanim_l_capitate'/>
       <HAnimSegment USE='hanim_l_metacarpal_3'/>
@@ -314,7 +316,7 @@
       <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_1'/>
       <HAnimSegment USE='hanim_r_trapezoid'/>
       <HAnimSegment USE='hanim_r_metacarpal_2'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_2 '/>
+      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_2'/>
       <HAnimSegment USE='hanim_r_carpal_middle_phalanx_2'/>
       <HAnimSegment USE='hanim_r_capitate'/>
       <HAnimSegment USE='hanim_r_metacarpal_3'/>
@@ -796,7 +798,7 @@
                         </LineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_3 ' name='l_tarsometatarsal_3 '>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_3' name='l_tarsometatarsal_3'>
                       <HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'>
                         <Transform translation='4.1235 0.0328 1.3453'>
                           <Transform>
@@ -1218,7 +1220,7 @@
                         </LineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_3 ' name='r_tarsometatarsal_3 '>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_3' name='r_tarsometatarsal_3'>
                       <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'>
                         <Transform translation='-4.1245 0.0328 1.3453'>
                           <Transform>
@@ -2190,7 +2192,7 @@
                                                           </Shape>
                                                         </HAnimSegment>
                                                         <HAnimJoint DEF='hanim_l_metacarpophalangeal_2' center='0.1983 0.7815 -0.028' name='l_metacarpophalangeal_2'>
-                                                          <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2 ' name='l_carpal_proximal_phalanx_2 '>
+                                                          <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2' name='l_carpal_proximal_phalanx_2'>
                                                             <Transform translation='0.1983 0.7815 -0.028'>
                                                               <Transform>
                                                                 <Shape USE='HAnimJointShape'/>
@@ -2628,7 +2630,7 @@
                                                           </Shape>
                                                         </HAnimSegment>
                                                         <HAnimJoint DEF='hanim_r_metacarpophalangeal_2' center='-0.1961 0.7846 -0.0218' name='r_metacarpophalangeal_2'>
-                                                          <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2 ' name='r_carpal_proximal_phalanx_2 '>
+                                                          <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2' name='r_carpal_proximal_phalanx_2'>
                                                             <Transform translation='-0.1961 0.7846 -0.0218'>
                                                               <Transform>
                                                                 <Shape USE='HAnimJointShape'/>

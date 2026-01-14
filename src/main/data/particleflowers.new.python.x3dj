@@ -30,8 +30,26 @@
         "component":
         {
       {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "component":
@@ -67,6 +85,13 @@
       {
         "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Vim",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -440,7 +465,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -448,7 +474,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -521,8 +548,8 @@
         "@loop":"true"
       }
     },
-        }        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"TourTime",
@@ -530,58 +557,58 @@
         "@toNode":"Animate"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
-        "@fromField":"a_changed",
+        "@fromField":"a",
         "@fromNode":"Animate",
-        "@toField":"set_a",
+        "@toField":"a",
         "@toNode":"x_ite"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
-        "@fromField":"b_changed",
+        "@fromField":"b",
         "@fromNode":"Animate",
-        "@toField":"set_b",
+        "@toField":"b",
         "@toNode":"x_ite"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
-        "@fromField":"c_changed",
+        "@fromField":"c",
         "@fromNode":"Animate",
-        "@toField":"set_c",
+        "@toField":"c",
         "@toNode":"x_ite"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
-        "@fromField":"d_changed",
+        "@fromField":"d",
         "@fromNode":"Animate",
-        "@toField":"set_d",
+        "@toField":"d",
         "@toNode":"x_ite"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
-        "@fromField":"pdelta_changed",
+        "@fromField":"pdelta",
         "@fromNode":"Animate",
-        "@toField":"set_pdelta",
+        "@toField":"pdelta",
         "@toNode":"x_ite"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
-        "@fromField":"tdelta_changed",
+        "@fromField":"tdelta",
         "@fromNode":"Animate",
-        "@toField":"set_tdelta",
+        "@toField":"tdelta",
         "@toNode":"x_ite"
       }
     },
-    }}
+        }    }}

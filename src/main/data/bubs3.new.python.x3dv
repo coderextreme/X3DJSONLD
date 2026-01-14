@@ -6,11 +6,13 @@ META "title" "bubs3.x3d"
 META "creator" "John Carlson"
 META "description" "Tour around a prismatic sphere"
 META "generator" "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"
 NavigationInfo {
       type ["EXAMINE"] 
     }
     Viewpoint {
       description "Bubbles in action"
+      orientation 1 0 0 0
       position 0 0 4 
     }
     Background {
@@ -125,17 +127,20 @@ NavigationInfo {
             field {
               accessType "inputOutput"
               name "translation"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "velocity"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "scalvel"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOnly"
@@ -150,6 +155,12 @@ NavigationInfo {
           cycleInterval 10
           loop TRUE 
         }
+        
+        ROUTE DECLBubble_bubbleA_bounce.translation_changed TO DECLBubble_transformA.set_translation
+        
+        ROUTE DECLBubble_bubbleA_bounce.scale_changed TO DECLBubble_transformA.set_scale
+        
+        ROUTE DECLBubble_bubbleA_bubbleClock.fraction_changed TO DECLBubble_bubbleA_bounce.set_fraction
         
       ]
     
@@ -258,17 +269,20 @@ NavigationInfo {
             field {
               accessType "inputOutput"
               name "translation"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "velocity"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "scalvel"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOnly"
@@ -283,6 +297,12 @@ NavigationInfo {
           cycleInterval 10
           loop TRUE 
         }
+        
+        ROUTE DECLBubble_bubbleB_bounce.translation_changed TO DECLBubble_transformB.set_translation
+        
+        ROUTE DECLBubble_bubbleB_bounce.scale_changed TO DECLBubble_transformB.set_scale
+        
+        ROUTE DECLBubble_bubbleB_bubbleClock.fraction_changed TO DECLBubble_bubbleB_bounce.set_fraction
         
       ]
     
@@ -391,17 +411,20 @@ NavigationInfo {
             field {
               accessType "inputOutput"
               name "translation"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "velocity"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "scalvel"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOnly"
@@ -416,6 +439,12 @@ NavigationInfo {
           cycleInterval 10
           loop TRUE 
         }
+        
+        ROUTE DECLBubble_bubbleC_bounce.translation_changed TO DECLBubble_transformC.set_translation
+        
+        ROUTE DECLBubble_bubbleC_bounce.scale_changed TO DECLBubble_transformC.set_scale
+        
+        ROUTE DECLBubble_bubbleC_bubbleClock.fraction_changed TO DECLBubble_bubbleC_bounce.set_fraction
         
       ]
     
@@ -524,17 +553,20 @@ NavigationInfo {
             field {
               accessType "inputOutput"
               name "translation"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "velocity"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOutput"
               name "scalvel"
-              type "SFVec3f" 
+              type "SFVec3f"
+              value [0, 0, 0] 
             }
             field {
               accessType "inputOnly"
@@ -550,31 +582,13 @@ NavigationInfo {
           loop TRUE 
         }
         
+        ROUTE DECLBubble_bubbleD_bounce.translation_changed TO DECLBubble_transformD.set_translation
+        
+        ROUTE DECLBubble_bubbleD_bounce.scale_changed TO DECLBubble_transformD.set_scale
+        
+        ROUTE DECLBubble_bubbleD_bubbleClock.fraction_changed TO DECLBubble_bubbleD_bounce.set_fraction
+        
       ]
     
     }
-    
-    ROUTE DECLBubble_bubbleA_bounce.translation_changed TO DECLBubble_transformA.set_translation
-    
-    ROUTE DECLBubble_bubbleA_bounce.scale_changed TO DECLBubble_transformA.set_scale
-    
-    ROUTE DECLBubble_bubbleA_bubbleClock.fraction_changed TO DECLBubble_bubbleA_bounce.set_fraction
-    
-    ROUTE DECLBubble_bubbleB_bounce.translation_changed TO DECLBubble_transformB.set_translation
-    
-    ROUTE DECLBubble_bubbleB_bounce.scale_changed TO DECLBubble_transformB.set_scale
-    
-    ROUTE DECLBubble_bubbleB_bubbleClock.fraction_changed TO DECLBubble_bubbleB_bounce.set_fraction
-    
-    ROUTE DECLBubble_bubbleC_bounce.translation_changed TO DECLBubble_transformC.set_translation
-    
-    ROUTE DECLBubble_bubbleC_bounce.scale_changed TO DECLBubble_transformC.set_scale
-    
-    ROUTE DECLBubble_bubbleC_bubbleClock.fraction_changed TO DECLBubble_bubbleC_bounce.set_fraction
-    
-    ROUTE DECLBubble_bubbleD_bounce.translation_changed TO DECLBubble_transformD.set_translation
-    
-    ROUTE DECLBubble_bubbleD_bounce.scale_changed TO DECLBubble_transformD.set_scale
-    
-    ROUTE DECLBubble_bubbleD_bubbleClock.fraction_changed TO DECLBubble_bubbleD_bounce.set_fraction
     

@@ -6,8 +6,10 @@ META "title" "ExtrusionHeart.x3d"
 META "description" "Simple extrusion of a Valentine heart."
 META "creator" "Class participants in course Introduction to VRML/X3D."
 META "created" "14 February 2001"
-META "modified" "Wed, 17 Sep 2025 23:46:20 GMT"
+META "modified" "27 November 2015"
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 Viewpoint {
       description "Extrusion Heart"
       orientation 1 0 0 1.57

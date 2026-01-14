@@ -15,8 +15,21 @@
         "@name":"title"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D scene with a Switch of Inlines controlled by a menu",
+        "@name":"description"
+      }
+    },
     }    "Scene":
     {
+        "Viewpoint":
+        {
+      {
+        "@position":"0 20 110"
+      }
+    },
         "ProtoDeclare":
         {
       {
@@ -342,7 +355,9 @@
 &quot;+
 &quot;        function touchPoint(value) {
 &quot;+
-&quot;          Browser.print(&quot;Hit &quot;+value+&quot; &quot;+selection+&quot;\n&quot;);
+&quot;          Browser.print(&quot;Hit &quot;+value+&quot; &quot;+selection+&quot;
+&quot;+
+&quot;&quot;);
 &quot;+
 &quot;          var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
 &quot;+
@@ -352,7 +367,9 @@
 &quot;+
 &quot;          if (selection >= 0 && selection < menuItems.length) {
 &quot;+
-&quot;            Browser.print(&quot;Selected &quot;+value+&quot; &quot;+selection+&quot; &quot;+menuItems[selection]+&quot;\n&quot;);
+&quot;            Browser.print(&quot;Selected &quot;+value+&quot; &quot;+selection+&quot; &quot;+menuItems[selection]+&quot;
+&quot;+
+&quot;&quot;);
 &quot;+
 &quot;          }
 &quot;+
@@ -425,8 +442,8 @@
         "@type":"SFFloat"
       }
     },
-                    }                }                "ROUTE":
-                {
+                    }                    "ROUTE":
+                    {
       {
         "@fromField":"hitPoint_changed",
         "@fromNode":"MenuTouchSensor",
@@ -434,22 +451,16 @@
         "@toNode":"MenuScript"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"selection",
         "@fromNode":"MenuScript",
-        "@toField":"set_whichChoice",
+        "@toField":"whichChoice",
         "@toNode":"SceneSwitcher"
       }
     },
-            }        }        "Viewpoint":
-        {
-      {
-        "@position":"0 20 110"
-      }
-    },
-        "ProtoInstance":
+                }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"MainMenu",

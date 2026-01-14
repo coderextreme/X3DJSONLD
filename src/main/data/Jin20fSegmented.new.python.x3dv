@@ -3,6 +3,7 @@
 
 PROFILE Immersive
 COMPONENT HAnim:1
+META "title" "JinScaledV2L1LOA4MinimumSkeleton20f.x3d"
 WorldInfo {
       title "20f Jin v2 loa4 Level 1, Joints, Segments, Sites" 
     }

@@ -5,22 +5,31 @@ PROFILE Immersive
 META "title" "rubikFurnace.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
-ProtoDeclare {
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"
+META "description" "a green rubik cube"
+NavigationInfo {
+      type ["ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"] 
+    }
+    Viewpoint {
+      description "Rubiks Cube on Fire"
+      position 0 0 12 
+    }
+    ProtoDeclare {
       name "anyShape"
       ProtoInterface ProtoInterface {
         children [
           field {
             accessType "inputOutput"
             name "xtranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "MFNode"
             children [
-              DEF _1 Shape {
+              Shape {
                 appearance Appearance {
                   material Material {
                     diffuseColor 1 1 1 
@@ -73,14 +82,15 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ytranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "MFNode"
             children [
-              DEF _2 Shape {
+              Shape {
                 appearance Appearance {
                   material Material {
                     diffuseColor 1 1 1 
@@ -128,7 +138,15 @@ ProtoDeclare {
                   ]
                 
                 }
-                 
+                
+                children [
+                  fieldValue {
+                    name "xtranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "anyShape"
@@ -191,14 +209,15 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ztranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "MFNode"
             children [
-              DEF _3 Shape {
+              Shape {
                 appearance Appearance {
                   material Material {
                     diffuseColor 1 1 1 
@@ -246,7 +265,15 @@ ProtoDeclare {
                   ]
                 
                 }
-                 
+                
+                children [
+                  fieldValue {
+                    name "ytranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "three"
@@ -309,14 +336,15 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ttranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "MFNode"
             children [
-              DEF _4 Shape {
+              Shape {
                 appearance Appearance {
                   material Material {
                     diffuseColor 1 1 1 
@@ -364,7 +392,15 @@ ProtoDeclare {
                   ]
                 
                 }
-                 
+                
+                children [
+                  fieldValue {
+                    name "ztranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "nine"
@@ -420,20 +456,17 @@ ProtoDeclare {
       }
       
     }
-    NavigationInfo {
-      type ["ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"] 
-    }
-    Viewpoint {
-      description "Rubiks Cube on Fire"
-      position 0 0 12 
-    }
     ProtoInstance {
       name "twentyseven"
       children [
         fieldValue {
+          name "ttranslation"
+          value 0 0 0 
+        }
+        fieldValue {
           name "myShape"
           children [
-            DEF _5 Shape {
+            Shape {
               appearance Appearance {
                 material Material {
                   diffuseColor 0 1 0 

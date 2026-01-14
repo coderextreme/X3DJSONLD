@@ -3,7 +3,11 @@
 
 PROFILE Immersive
 META "title" "Menu.x3d"
-ProtoDeclare {
+META "description" "X3D scene with a Switch of Inlines controlled by a menu"
+Viewpoint {
+      position 0 20 110 
+    }
+    ProtoDeclare {
       name "Menu"
       ProtoInterface ProtoInterface {
         children [
@@ -194,7 +198,9 @@ ProtoDeclare {
 "+
 "        function touchPoint(value) {
 "+
-"          Browser.print("Hit "+value+" "+selection+"\n");
+"          Browser.print("Hit "+value+" "+selection+"
+"+
+"");
 "+
 "          var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
 "+
@@ -204,7 +210,9 @@ ProtoDeclare {
 "+
 "          if (selection >= 0 && selection < menuItems.length) {
 "+
-"            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\n");
+"            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"
+"+
+"");
 "+
 "          }
 "+
@@ -263,21 +271,18 @@ ProtoDeclare {
               
               }
               
+              ROUTE MenuTouchSensor.hitPoint_changed TO MenuScript.touchPoint
+              
+              ROUTE MenuScript.selection TO SceneSwitcher.whichChoice
+              
             ]
           
           }
-          
-          ROUTE MenuTouchSensor.hitPoint_changed TO MenuScript.touchPoint
-          
-          ROUTE MenuScript.selection TO SceneSwitcher.set_whichChoice
           
         ]
       
       }
       
-    }
-    Viewpoint {
-      position 0 20 110 
     }
     ProtoInstance {
       name "Menu"

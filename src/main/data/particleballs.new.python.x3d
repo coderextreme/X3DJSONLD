@@ -5,11 +5,15 @@
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
+    <component name='Texturing'/>
+    <component name='Rendering'/>
     <component level='3' name='Grouping'/>
+    <component name='Core'/>
     <component level='3' name='ParticleSystems'/>
     <meta content='particleflowers.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower proto with configurable shaders' name='description'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d' name='identifier'/>
   </head>
   <Scene>
     <WorldInfo title='particleflowers.x3d'/>

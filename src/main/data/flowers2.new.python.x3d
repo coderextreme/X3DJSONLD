@@ -2,54 +2,61 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <component name='Scripting'/>
     <meta content='flowers2.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='23 January 2005' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:48:24 GMT' name='modified'/>
+    <meta content='9 November 2024' name='modified'/>
     <meta content='2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)' name='description'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d' name='identifier'/>
+    <meta content='manually written' name='generator'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
   </head>
   <Scene>
-    <ProtoDeclare name='orbit'>
-      <ProtoInterface>
-        <field accessType='inputOutput' name='translation' type='SFVec3f' value='-8 0 0'/>
-        <field accessType='inputOutput' name='diffuseColor' type='SFColor' value='1 0.5 0'/>
-        <field accessType='inputOutput' name='specularColor' type='SFColor' value='1 0.5 0'/>
-        <field accessType='inputOutput' name='transparency' type='SFFloat' value='0.75'/>
-      </ProtoInterface>
-      <ProtoBody>
-        <Group>
-          <TimeSensor DEF='Clock' cycleInterval='16' loop='true'/>
-          <OrientationInterpolator DEF='OrbitPath' key='0 0.5 1' keyValue='1 0 0 0 1 0 0 3.14 1 0 0 6.28'/>
-          <Transform DEF='OrbitTransform'>
-            <IS>
-              <connect nodeField='translation' protoField='translation'/>
-            </IS>
-            <Shape>
-              <Appearance>
-                <Material>
-                  <IS>
-                    <connect nodeField='diffuseColor' protoField='diffuseColor'/>
-                    <connect nodeField='specularColor' protoField='specularColor'/>
-                    <connect nodeField='transparency' protoField='transparency'/>
-                  </IS>
-                </Material>
-              </Appearance>
-              <IndexedFaceSet DEF='Orbit' ccw='false' convex='false' coordIndex='0 1 2 -1'>
-                <Coordinate DEF='OrbitCoordinates' point='0 0 1 0 1 0 1 0 0'/>
-              </IndexedFaceSet>
-            </Shape>
-          </Transform>
-          <Script DEF='OrbitScript'>
-            <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
-            <field accessType='inputOutput' name='coordinates' type='MFVec3f'/>
-            <field accessType='inputOutput' name='coordIndexes' type='MFInt32'/>
-            <field accessType='inputOutput' name='e' type='SFFloat' value='5'/>
-            <field accessType='inputOutput' name='f' type='SFFloat' value='5'/>
-            <field accessType='inputOutput' name='g' type='SFFloat' value='5'/>
-            <field accessType='inputOutput' name='h' type='SFFloat' value='5'/>
-            <field accessType='inputOutput' name='resolution' type='SFInt32' value='50'/>
-          <![CDATA[ecmascript:
+    <NavigationInfo/>
+    <Viewpoint description='Two mathematical orbitals' position='0 0 50'/>
+    <Group>
+      <DirectionalLight direction='1 1 1'/>
+      <ProtoDeclare name='orbit'>
+        <ProtoInterface>
+          <field accessType='inputOutput' name='translation' type='SFVec3f' value='-8 0 0'/>
+          <field accessType='inputOutput' name='diffuseColor' type='SFColor' value='1 0.5 0'/>
+          <field accessType='inputOutput' name='specularColor' type='SFColor' value='1 0.5 0'/>
+          <field accessType='inputOutput' name='transparency' type='SFFloat' value='0.75'/>
+        </ProtoInterface>
+        <ProtoBody>
+          <Group>
+            <TimeSensor DEF='Clock' cycleInterval='16' loop='true'/>
+            <OrientationInterpolator DEF='OrbitPath' key='0 0.5 1' keyValue='1 0 0 0 1 0 0 3.14 1 0 0 6.28'/>
+            <Transform DEF='OrbitTransform'>
+              <IS>
+                <connect nodeField='translation' protoField='translation'/>
+              </IS>
+              <Shape>
+                <Appearance>
+                  <Material>
+                    <IS>
+                      <connect nodeField='diffuseColor' protoField='diffuseColor'/>
+                      <connect nodeField='specularColor' protoField='specularColor'/>
+                      <connect nodeField='transparency' protoField='transparency'/>
+                    </IS>
+                  </Material>
+                </Appearance>
+                <IndexedFaceSet DEF='Orbit' ccw='false' convex='false' coordIndex='0 1 2 -1'>
+                  <Coordinate DEF='OrbitCoordinates' point='0 0 1 0 1 0 1 0 0'/>
+                </IndexedFaceSet>
+              </Shape>
+            </Transform>
+            <Script DEF='OrbitScript'>
+              <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+              <field accessType='inputOutput' name='coordinates' type='MFVec3f'/>
+              <field accessType='inputOutput' name='coordIndexes' type='MFInt32'/>
+              <field accessType='inputOutput' name='e' type='SFFloat' value='5'/>
+              <field accessType='inputOutput' name='f' type='SFFloat' value='5'/>
+              <field accessType='inputOutput' name='g' type='SFFloat' value='5'/>
+              <field accessType='inputOutput' name='h' type='SFFloat' value='5'/>
+              <field accessType='inputOutput' name='resolution' type='SFInt32' value='50'/>
+            <![CDATA[ecmascript:
 "+
 "
 "+
@@ -178,20 +185,21 @@
 "				generateCoordinates();
 "+
 "			}]]>
-          </Script>
-        </Group>
-        <ROUTE fromField='coordIndexes_changed' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
-        <ROUTE fromField='coordinates_changed' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
-        <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
-        <ROUTE fromField='value_changed' fromNode='OrbitPath' toField='set_rotation' toNode='OrbitTransform'/>
-        <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitPath'/>
-      </ProtoBody>
-    </ProtoDeclare>
-    <NavigationInfo/>
-    <Viewpoint description='Two mathematical orbitals' position='0 0 50'/>
-    <Group>
-      <DirectionalLight direction='1 1 1'/>
-      <ProtoInstance name='orbit'/>
+            </Script>
+            <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
+            <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='point' toNode='OrbitCoordinates'/>
+            <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
+            <ROUTE fromField='value_changed' fromNode='OrbitPath' toField='rotation' toNode='OrbitTransform'/>
+            <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitPath'/>
+          </Group>
+        </ProtoBody>
+      </ProtoDeclare>
+      <ProtoInstance name='orbit'>
+        <fieldValue name='translation' value='-8 0 0'/>
+        <fieldValue name='diffuseColor' value='1 0.5 0'/>
+        <fieldValue name='specularColor' value='1 0.5 0'/>
+        <fieldValue name='transparency' value='0.75'/>
+      </ProtoInstance>
       <ProtoInstance name='orbit'>
         <fieldValue name='translation' value='8 0 0'/>
         <fieldValue name='diffuseColor' value='0 0.5 1'/>

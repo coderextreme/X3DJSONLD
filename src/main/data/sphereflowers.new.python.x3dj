@@ -11,6 +11,12 @@
         "component":
         {
       {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"EnvironmentalEffects"
       }
@@ -30,8 +36,26 @@
         "component":
         {
       {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "meta":
@@ -58,7 +82,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:44 GMT",
+        "@content":"Sep 3 2023",
         "@name":"modified"
       }
     },
@@ -69,62 +93,23 @@
         "@name":"description"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d",
+        "@name":"identifier"
+      }
+    },
     }    "Scene":
     {
-        "ExternProtoDeclare":
-        {
-      {
-        "@name":"FlowerProto",
-        "@url":""../data/flowerproto.x3d#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto""
-      }
-            "field":
-            {
-      {
-        "@accessType":"inputOutput",
-        "@name":"vertex",
-        "@type":"MFString"
-      }
-    },
-            "field":
-            {
-      {
-        "@accessType":"inputOutput",
-        "@name":"fragment",
-        "@type":"MFString"
-      }
-    },
-        }        "ProtoDeclare":
-        {
-      {
-        "@name":"flower"
-      }
-            "ProtoInterface":
-            {
-    },
-            "ProtoBody":
-            {
-                "Group":
-                {
-                    "ProtoInstance":
-                    {
-      {
-        "@name":"FlowerProto"
-      }
-                        "fieldValue":
-                        {
-      {
-        "@name":"vertex",
-        "@value":""../shaders/x_ite_flowers_chromatic.vs""
-      }
-    },
-                        "fieldValue":
-                        {
-      {
-        "@name":"fragment",
-        "@value":""../shaders/x_ite.fs""
-      }
-    },
-                    }                }            }        }        "NavigationInfo":
+        "NavigationInfo":
         {
     },
         "Background":
@@ -140,7 +125,57 @@
     },
         "Group":
         {
-            "ProtoInstance":
+            "ExternProtoDeclare":
+            {
+      {
+        "@name":"FlowerProto",
+        "@url":""../data/flowerproto.x3d#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto""
+      }
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"vertex",
+        "@type":"MFString"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"fragment",
+        "@type":"MFString"
+      }
+    },
+            }            "ProtoDeclare":
+            {
+      {
+        "@name":"flower"
+      }
+                "ProtoBody":
+                {
+                    "Group":
+                    {
+                        "ProtoInstance":
+                        {
+      {
+        "@name":"FlowerProto"
+      }
+                            "fieldValue":
+                            {
+      {
+        "@name":"vertex",
+        "@value":""../shaders/x_ite_flowers_chromatic.vs""
+      }
+    },
+                            "fieldValue":
+                            {
+      {
+        "@name":"fragment",
+        "@value":""../shaders/x_ite.fs""
+      }
+    },
+                        }                    }                }            }            "ProtoInstance":
             {
       {
         "@name":"flower"
@@ -197,17 +232,16 @@
       {
         "@DEF":"AudioClip",
         "@description":"Chandubabamusic #1",
-        "@startTime":"1758152924.008",
         "@url":""../resources/chandubabamusic1.wav" "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav""
       }
     },
-            }        }        "ROUTE":
-        {
+            }            "ROUTE":
+            {
       {
         "@fromField":"cycleTime",
         "@fromNode":"SongTime",
-        "@toField":"set_startTime",
+        "@toField":"startTime",
         "@toNode":"AudioClip"
       }
     },
-    }}
+        }    }}

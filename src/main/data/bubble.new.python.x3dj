@@ -36,16 +36,34 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d",
+        "@name":"identifier"
+      }
+    },
     }    "Scene":
     {
+        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Bubble in action",
+        "@orientation":"1 0 0 0",
+        "@position":"0 0 4"
+      }
+    },
         "ProtoDeclare":
         {
       {
         "@name":"Bubble"
       }
-            "ProtoInterface":
-            {
-    },
             "ProtoBody":
             {
                 "Transform":
@@ -178,7 +196,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -186,7 +205,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -194,7 +214,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"scalvel",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -213,8 +234,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"translation_changed",
         "@fromNode":"bounce",
@@ -222,8 +243,8 @@
         "@toNode":"transform"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"scale_changed",
         "@fromNode":"bounce",
@@ -231,8 +252,8 @@
         "@toNode":"transform"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"bubbleClock",
@@ -240,20 +261,7 @@
         "@toNode":"bounce"
       }
     },
-            }        }        "NavigationInfo":
-        {
-      {
-        "@type":""EXAMINE""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Bubble in action",
-        "@position":"0 0 4"
-      }
-    },
-        "ProtoInstance":
+                }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"bubbleA",

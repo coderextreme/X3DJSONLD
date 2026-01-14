@@ -8,7 +8,7 @@ META "creator" "Jin Hoon Lee and Min Joo Lee"
 META "translator" "Chul Hee Jung and Myeong Won Lee"
 META "created" "31 March 2011"
 META "translated" "1 November 2014"
-META "modified" "Wed, 17 Sep 2025 23:47:55 GMT"
+META "modified" "23 December 2021"
 META "warning" "HAnimJoint and HAnimSegment names upgraded to HAnim2 but graph topology has inconsistencies that do not match loa=1 specification hierarchy"
 META "description" "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."
 META "reference" "KoreanCharacter00ReadMe.txt"
@@ -18,6 +18,8 @@ META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/
 META "generator" "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
 META "generator" "Suwon University HAnim Editor"
 META "generator" "Gnu Image Manipulation Program, https://www.gimp.org"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "KoreanCharacter05Ju.x3d" 
     }
@@ -37,16 +39,20 @@ WorldInfo {
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
         children [
           MetadataString {
-            name "authorName" 
+            name "authorName"
+            value ["Chul Hee Jung and Myeong Won Lee"] 
           }
           MetadataString {
-            name "authorEmail" 
+            name "authorEmail"
+            value ["myeongwonlee@gmail.com"] 
           }
           MetadataString {
-            name "creationDate" 
+            name "creationDate"
+            value ["31 March 2011"] 
           }
           MetadataString {
-            name "gender" 
+            name "gender"
+            value ["female"] 
           }
           MetadataFloat {
             name "height"
@@ -116,14 +122,14 @@ WorldInfo {
              
             }
             DEF hanim_l_hip HAnimJoint {
-              center 3.22 33.62 -0.2832
+              center 3.22 33.619999 -0.2832
               name "l_hip"
               children [
                 DEF hanim_l_thigh HAnimSegment {
                   name "l_thigh"
                   children [
                     Transform {
-                      translation 3.22 33.62 -0.2832
+                      translation 3.22 33.619999 -0.2832
                       children [
                         Shape {
                           appearance Appearance {
@@ -300,14 +306,14 @@ WorldInfo {
              
             }
             DEF hanim_r_hip HAnimJoint {
-              center -3.22 33.62 -0.2832
+              center -3.22 33.619999 -0.2832
               name "r_hip"
               children [
                 DEF hanim_r_thigh HAnimSegment {
                   name "r_thigh"
                   children [
                     Transform {
-                      translation -3.22 33.62 -0.2832
+                      translation -3.22 33.619999 -0.2832
                       children [
                         Shape {
                           appearance Appearance {
@@ -526,14 +532,14 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_shoulder HAnimJoint {
-                  center 4.778 51.03 -2.069
+                  center 4.778 51.029999 -2.069
                   name "l_shoulder"
                   children [
                     DEF hanim_l_upperarm HAnimSegment {
                       name "l_upperarm"
                       children [
                         Transform {
-                          translation 4.778 51.03 -2.069
+                          translation 4.778 51.029999 -2.069
                           children [
                             Shape {
                               appearance Appearance {
@@ -568,14 +574,14 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_elbow HAnimJoint {
-                      center 5.297 40.12 -2.055
+                      center 5.297 40.119999 -2.055
                       name "l_elbow"
                       children [
                         DEF hanim_l_forearm HAnimSegment {
                           name "l_forearm"
                           children [
                             Transform {
-                              translation 5.297 40.12 -2.055
+                              translation 5.297 40.119999 -2.055
                               children [
                                 Shape {
                                   appearance Appearance {
@@ -664,14 +670,14 @@ WorldInfo {
                  
                 }
                 DEF hanim_r_shoulder HAnimJoint {
-                  center -4.778 51.03 -2.069
+                  center -4.778 51.029999 -2.069
                   name "r_shoulder"
                   children [
                     DEF hanim_r_upperarm HAnimSegment {
                       name "r_upperarm"
                       children [
                         Transform {
-                          translation -4.778 51.03 -2.069
+                          translation -4.778 51.029999 -2.069
                           children [
                             Shape {
                               appearance Appearance {
@@ -706,14 +712,14 @@ WorldInfo {
                      
                     }
                     DEF hanim_r_elbow HAnimJoint {
-                      center -5.297 40.12 -2.055
+                      center -5.297 40.119999 -2.055
                       name "r_elbow"
                       children [
                         DEF hanim_r_forearm HAnimSegment {
                           name "r_forearm"
                           children [
                             Transform {
-                              translation -5.297 40.12 -2.055
+                              translation -5.297 40.119999 -2.055
                               children [
                                 Shape {
                                   appearance Appearance {

@@ -6,7 +6,16 @@
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "@version":"4.0",
         "@profile":"Immersive",
-    "Scene":
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"Scripting.x3d",
+        "@name":"title"
+      }
+    },
+    }    "Scene":
     {
         "Script":
         {
@@ -129,7 +138,7 @@
       {
         "@fromField":"vaultUnlocked",
         "@fromNode":"OpenVault",
-        "@toField":"set_startTime",
+        "@toField":"startTime",
         "@toNode":"Click"
       }
     },

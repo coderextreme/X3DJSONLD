@@ -7,18 +7,217 @@ META "title" "CaliforniaCampuses.x3d"
 META "description" "Viewpoints and tour of California campuses"
 META "creator" "Don Brutzman, Dale Tourtelotte, Mike Bailey, Don McGregor"
 META "created" "4 March 2010"
-META "modified" "Wed, 17 Sep 2025 23:46:18 GMT"
+META "modified" "20 October 2019"
 META "reference" "CaliforniaCampuses.kml"
 META "reference" "https://www.web3d.org/x3d-earth"
 META "reference" "http://x3d-earth.nps.edu"
 META "reference" "http://hamming.uc.nps.edu"
-META "reference" "http://mmog.ern.nps.edu/California/California.x3d"
 META "subject" "X3D Earth"
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/Geospatial/CaliforniaCampuses.x3d"
+META "reference" "http://mmog.ern.nps.edu/California/California.x3d"
 META "warning" "under development"
 META "warning" "mmog.ern.nps.edu restricted to internal access within NPS firewall only"
 META "generator" "KmlToX3dViewpoints.xslt"
-ExternProtoDeclare {
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "https://savage.nps.edu/Savage/license.html"
+WorldInfo {
+      title "CaliforniaCampuses.x3d" 
+    }
+    DEF SwitchGlobes Switch {
+      whichChoice 0
+      children [
+        Inline {
+          url ["http://x3d-earth.nps.edu/osmdemo.x3d"] 
+        }
+        
+      ]
+    
+    }
+    NavigationInfo {
+      transitionType ["ANIMATE"] 
+    }
+    DEF PlacemarkGroup Group {
+      children [
+        DEF View01 GeoViewpoint {
+          description "Naval Postgraduate School"
+          orientation 1 0 0 -1.57
+          position 36.595599 -121.877148 250000 
+        }
+        DEF View02 GeoViewpoint {
+          description "University of California Davis"
+          orientation 1 0 0 -1.57
+          position 38.53650615157984 -121.7489628616831 250000 
+        }
+        DEF View03 GeoViewpoint {
+          description "University of California Berkeley"
+          orientation 1 0 0 -1.57
+          position 37.86963434512325 -122.2593873127355 250000 
+        }
+        DEF View04 GeoViewpoint {
+          description "University of California San Francisco"
+          orientation 1 0 0 -1.57
+          position 37.76340647188392 -122.4582475377715 250000 
+        }
+        DEF View05 GeoViewpoint {
+          description "University of California Santa Cruz"
+          orientation 1 0 0 -1.57
+          position 36.99628443046043 -122.0534325473795 250000 
+        }
+        DEF View06 GeoViewpoint {
+          description "University of California Merced"
+          orientation 1 0 0 -1.57
+          position 37.365508575977 -120.4252597059142 250000 
+        }
+        DEF View07 GeoViewpoint {
+          description "University of California Santa Barbara"
+          orientation 1 0 0 -1.57
+          position 34.41124450961521 -119.8479940053906 250000 
+        }
+        DEF View08 GeoViewpoint {
+          description "University of California Los Angeles"
+          orientation 1 0 0 -1.57
+          position 34.07224474392262 -118.4408472225642 250000 
+        }
+        DEF View09 GeoViewpoint {
+          description "University of California Irvine"
+          orientation 1 0 0 -1.57
+          position 33.64623283675919 -117.8427064139082 250000 
+        }
+        DEF View10 GeoViewpoint {
+          description "University of California Riverside"
+          orientation 1 0 0 -1.57
+          position 33.97350567066717 -117.3281649569839 250000 
+        }
+        DEF View11 GeoViewpoint {
+          description "University of California San Diego"
+          orientation 1 0 0 -1.57
+          position 32.87612136607509 -117.2367298240259 250000 
+        }
+        DEF View12 GeoViewpoint {
+          description "Humboldt State University"
+          orientation 1 0 0 -1.57
+          position 40.87630235623448 -124.0785789217266 250000 
+        }
+        DEF View13 GeoViewpoint {
+          description "California State University, Chico"
+          orientation 1 0 0 -1.57
+          position 39.73031527724385 -121.8453722745223 250000 
+        }
+        DEF View14 GeoViewpoint {
+          description "California State University Sacramento"
+          orientation 1 0 0 -1.57
+          position 38.5626517618963 -121.4244636520556 250000 
+        }
+        DEF View15 GeoViewpoint {
+          description "Sonoma State University"
+          orientation 1 0 0 -1.57
+          position 38.33922929793606 -122.6744333530031 250000 
+        }
+        DEF View16 GeoViewpoint {
+          description "California Maritime Academy"
+          orientation 1 0 0 -1.57
+          position 38.06907065059484 -122.2309147135222 250000 
+        }
+        DEF View17 GeoViewpoint {
+          description "San Francisco State University"
+          orientation 1 0 0 -1.57
+          position 37.722876 -122.4781512190666 250000 
+        }
+        DEF View18 GeoViewpoint {
+          description "California State University, East Bay"
+          orientation 1 0 0 -1.57
+          position 37.65707914139907 -122.0569190659761 250000 
+        }
+        DEF View19 GeoViewpoint {
+          description "California State University Stanislaus"
+          orientation 1 0 0 -1.57
+          position 37.52552478005697 -120.8563508560606 250000 
+        }
+        DEF View20 GeoViewpoint {
+          description "San Jose State University"
+          orientation 1 0 0 -1.57
+          position 37.33580940527095 -121.8815343755784 250000 
+        }
+        DEF View21 GeoViewpoint {
+          description "California State University, Monterey Bay"
+          orientation 1 0 0 -1.57
+          position 36.6538071781493 -121.7984465276711 250000 
+        }
+        DEF View22 GeoViewpoint {
+          description "Fresno State University"
+          orientation 1 0 0 -1.57
+          position 36.812166 -119.7451552005852 250000 
+        }
+        DEF View23 GeoViewpoint {
+          description "California State University, Bakersfield"
+          orientation 1 0 0 -1.57
+          position 35.350804 -119.1043226128032 250000 
+        }
+        DEF View24 GeoViewpoint {
+          description "California Polytechnic State University"
+          orientation 1 0 0 -1.57
+          position 35.30115692599171 -120.6595761796351 250000 
+        }
+        DEF View25 GeoViewpoint {
+          description "California State University, Channel Islands"
+          orientation 1 0 0 -1.57
+          position 34.1624126428852 -119.0425264841287 250000 
+        }
+        DEF View26 GeoViewpoint {
+          description "California State University, Northridge"
+          orientation 1 0 0 -1.57
+          position 34.23959265263849 -118.5284272400904 250000 
+        }
+        DEF View27 GeoViewpoint {
+          description "California State University, Los Angeles"
+          orientation 1 0 0 -1.57
+          position 34.06645996626264 -118.1682050902557 250000 
+        }
+        DEF View28 GeoViewpoint {
+          description "California State Polytechnic University, Pomona"
+          orientation 1 0 0 -1.57
+          position 34.05727150000314 -117.8215320234812 250000 
+        }
+        DEF View29 GeoViewpoint {
+          description "California State University, San Bernardino"
+          orientation 1 0 0 -1.57
+          position 34.18180116432101 -117.3243676664719 250000 
+        }
+        DEF View30 GeoViewpoint {
+          description "California State University, Fullerton"
+          orientation 1 0 0 -1.57
+          position 33.882522 -117.8868367869023 250000 
+        }
+        DEF View31 GeoViewpoint {
+          description "California State University Dominguez Hills"
+          orientation 1 0 0 -1.57
+          position 33.86463396857103 -118.2553596272055 250000 
+        }
+        DEF View32 GeoViewpoint {
+          description "California State University, Long Beach"
+          orientation 1 0 0 -1.57
+          position 33.78196696470824 -118.112678253688 250000 
+        }
+        DEF View33 GeoViewpoint {
+          description "California State University, San Marcos"
+          orientation 1 0 0 -1.57
+          position 33.12837619265174 -117.1600194071002 250000 
+        }
+        DEF View34 GeoViewpoint {
+          description "San Diego State University"
+          orientation 1 0 0 -1.57
+          position 32.77593126586385 -117.0722876242553 250000 
+        }
+        DEF View35 GeoViewpoint {
+          description "CENIC"
+          orientation 1 0 0 -1.57
+          position 33.879947 -118.027903 250000 
+        }
+        
+      ]
+    
+    }
+    ExternProtoDeclare {
       appinfo "CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point"
       name "CrossHair"
       url ["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"]
@@ -52,6 +251,29 @@ ExternProtoDeclare {
           appinfo "distance in front of HUD viewpoint"
           name "positionOffsetFromCamera"
           type "SFVec3f" 
+        }
+        
+      ]
+    
+    }
+    ProtoInstance {
+      name "CrossHair"
+      children [
+        fieldValue {
+          name "enabled"
+          value true 
+        }
+        fieldValue {
+          name "markerColor"
+          value 0.1 0.8 0.1 
+        }
+        fieldValue {
+          name "scale"
+          value 0.5 0.5 0.5 
+        }
+        fieldValue {
+          name "positionOffsetFromCamera"
+          value 0 0 -5 
         }
         
       ]
@@ -159,6 +381,80 @@ ExternProtoDeclare {
       ]
     
     }
+    ProtoInstance {
+      name "ViewpointSequencer"
+      children [
+        fieldValue {
+          name "interval"
+          value 30 
+        }
+        fieldValue {
+          name "enabled"
+          value true 
+        }
+        fieldValue {
+          name "toggleMessage"
+          value "ViewpointSequencer tour" 
+        }
+        fieldValue {
+          name "viewpoints"
+          children [
+            USE View01 USE View02 USE View03 USE View04 USE View05 USE View06 USE View07 USE View08 USE View09 USE View10 USE View11 USE View12 USE View13 USE View14 USE View15 USE View16 USE View17 USE View18 USE View19 USE View20 USE View21 USE View22 USE View23 USE View24 USE View25 USE View26 USE View27 USE View28 USE View29 USE View30 USE View31 USE View32 USE View33 USE View34 USE View35 DEF View4 Viewpoint {
+              description "View four (-X axis)"
+              orientation 0 1 0 -1.57
+              position -10 0 0 
+            }
+            
+          ]
+        
+        }
+        
+      ]
+    
+    }
+    GeoLocation {
+      geoCoords 36.595599 -121.877148 624990
+      children [
+        Billboard {
+          axisOfRotation 0 0 0
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  ambientIntensity 0.25
+                  diffuseColor 0.795918 0.505869 0.093315
+                  shininess 0.39
+                  specularColor 0.923469 0.428866 0.006369 
+                }
+                 
+              }
+              
+              geometry Text {
+                string ["ViewpointSequencer tour"]
+                fontStyle FontStyle {
+                  justify ["MIDDLE" "MIDDLE"] 
+                }
+                 
+              }
+               
+            }
+            
+          ]
+        
+        }
+        DEF TourTouch TouchSensor {
+          description "Touch text to turn tour on/off" 
+        }
+        DEF TourToggle BooleanToggle { 
+        }
+        
+        ROUTE TourTouch.isActive TO TourToggle.set_boolean
+        
+        ROUTE TourToggle.toggle TO ViewpointTour.set_enabled
+        
+      ]
+    
+    }
     ExternProtoDeclare {
       appinfo "ViewPositionOrientation provides provides console output of local position and orientation as user navigates"
       name "ViewPositionOrientation"
@@ -204,296 +500,6 @@ ExternProtoDeclare {
       ]
     
     }
-    WorldInfo {
-      title "CaliforniaCampuses.x3d" 
-    }
-    DEF SwitchGlobes Switch {
-      whichChoice 0
-      children [
-        Inline {
-          url ["http://x3d-earth.nps.edu/osmdemo.x3d"] 
-        }
-        
-      ]
-    
-    }
-    NavigationInfo {
-      transitionType ["ANIMATE"] 
-    }
-    DEF PlacemarkGroup Group {
-      children [
-        DEF View01 GeoViewpoint {
-          description "Naval Postgraduate School"
-          orientation 1 0 0 -1.57
-          position 36.595599 -121.877148 250000 
-        }
-        DEF View02 GeoViewpoint {
-          description "University of California Davis"
-          orientation 1 0 0 -1.57
-          position 38.5365061515798 -121.748962861683 250000 
-        }
-        DEF View03 GeoViewpoint {
-          description "University of California Berkeley"
-          orientation 1 0 0 -1.57
-          position 37.8696343451233 -122.259387312736 250000 
-        }
-        DEF View04 GeoViewpoint {
-          description "University of California San Francisco"
-          orientation 1 0 0 -1.57
-          position 37.7634064718839 -122.458247537772 250000 
-        }
-        DEF View05 GeoViewpoint {
-          description "University of California Santa Cruz"
-          orientation 1 0 0 -1.57
-          position 36.9962844304604 -122.05343254738 250000 
-        }
-        DEF View06 GeoViewpoint {
-          description "University of California Merced"
-          orientation 1 0 0 -1.57
-          position 37.365508575977 -120.425259705914 250000 
-        }
-        DEF View07 GeoViewpoint {
-          description "University of California Santa Barbara"
-          orientation 1 0 0 -1.57
-          position 34.4112445096152 -119.847994005391 250000 
-        }
-        DEF View08 GeoViewpoint {
-          description "University of California Los Angeles"
-          orientation 1 0 0 -1.57
-          position 34.0722447439226 -118.440847222564 250000 
-        }
-        DEF View09 GeoViewpoint {
-          description "University of California Irvine"
-          orientation 1 0 0 -1.57
-          position 33.6462328367592 -117.842706413908 250000 
-        }
-        DEF View10 GeoViewpoint {
-          description "University of California Riverside"
-          orientation 1 0 0 -1.57
-          position 33.9735056706672 -117.328164956984 250000 
-        }
-        DEF View11 GeoViewpoint {
-          description "University of California San Diego"
-          orientation 1 0 0 -1.57
-          position 32.8761213660751 -117.236729824026 250000 
-        }
-        DEF View12 GeoViewpoint {
-          description "Humboldt State University"
-          orientation 1 0 0 -1.57
-          position 40.8763023562345 -124.078578921727 250000 
-        }
-        DEF View13 GeoViewpoint {
-          description "California State University, Chico"
-          orientation 1 0 0 -1.57
-          position 39.7303152772439 -121.845372274522 250000 
-        }
-        DEF View14 GeoViewpoint {
-          description "California State University Sacramento"
-          orientation 1 0 0 -1.57
-          position 38.5626517618963 -121.424463652056 250000 
-        }
-        DEF View15 GeoViewpoint {
-          description "Sonoma State University"
-          orientation 1 0 0 -1.57
-          position 38.3392292979361 -122.674433353003 250000 
-        }
-        DEF View16 GeoViewpoint {
-          description "California Maritime Academy"
-          orientation 1 0 0 -1.57
-          position 38.0690706505948 -122.230914713522 250000 
-        }
-        DEF View17 GeoViewpoint {
-          description "San Francisco State University"
-          orientation 1 0 0 -1.57
-          position 37.722876 -122.478151219067 250000 
-        }
-        DEF View18 GeoViewpoint {
-          description "California State University, East Bay"
-          orientation 1 0 0 -1.57
-          position 37.6570791413991 -122.056919065976 250000 
-        }
-        DEF View19 GeoViewpoint {
-          description "California State University Stanislaus"
-          orientation 1 0 0 -1.57
-          position 37.525524780057 -120.856350856061 250000 
-        }
-        DEF View20 GeoViewpoint {
-          description "San Jose State University"
-          orientation 1 0 0 -1.57
-          position 37.335809405271 -121.881534375578 250000 
-        }
-        DEF View21 GeoViewpoint {
-          description "California State University, Monterey Bay"
-          orientation 1 0 0 -1.57
-          position 36.6538071781493 -121.798446527671 250000 
-        }
-        DEF View22 GeoViewpoint {
-          description "Fresno State University"
-          orientation 1 0 0 -1.57
-          position 36.812166 -119.745155200585 250000 
-        }
-        DEF View23 GeoViewpoint {
-          description "California State University, Bakersfield"
-          orientation 1 0 0 -1.57
-          position 35.350804 -119.104322612803 250000 
-        }
-        DEF View24 GeoViewpoint {
-          description "California Polytechnic State University"
-          orientation 1 0 0 -1.57
-          position 35.3011569259917 -120.659576179635 250000 
-        }
-        DEF View25 GeoViewpoint {
-          description "California State University, Channel Islands"
-          orientation 1 0 0 -1.57
-          position 34.1624126428852 -119.042526484129 250000 
-        }
-        DEF View26 GeoViewpoint {
-          description "California State University, Northridge"
-          orientation 1 0 0 -1.57
-          position 34.2395926526385 -118.52842724009 250000 
-        }
-        DEF View27 GeoViewpoint {
-          description "California State University, Los Angeles"
-          orientation 1 0 0 -1.57
-          position 34.0664599662626 -118.168205090256 250000 
-        }
-        DEF View28 GeoViewpoint {
-          description "California State Polytechnic University, Pomona"
-          orientation 1 0 0 -1.57
-          position 34.0572715000031 -117.821532023481 250000 
-        }
-        DEF View29 GeoViewpoint {
-          description "California State University, San Bernardino"
-          orientation 1 0 0 -1.57
-          position 34.181801164321 -117.324367666472 250000 
-        }
-        DEF View30 GeoViewpoint {
-          description "California State University, Fullerton"
-          orientation 1 0 0 -1.57
-          position 33.882522 -117.886836786902 250000 
-        }
-        DEF View31 GeoViewpoint {
-          description "California State University Dominguez Hills"
-          orientation 1 0 0 -1.57
-          position 33.864633968571 -118.255359627206 250000 
-        }
-        DEF View32 GeoViewpoint {
-          description "California State University, Long Beach"
-          orientation 1 0 0 -1.57
-          position 33.7819669647082 -118.112678253688 250000 
-        }
-        DEF View33 GeoViewpoint {
-          description "California State University, San Marcos"
-          orientation 1 0 0 -1.57
-          position 33.1283761926517 -117.1600194071 250000 
-        }
-        DEF View34 GeoViewpoint {
-          description "San Diego State University"
-          orientation 1 0 0 -1.57
-          position 32.7759312658639 -117.072287624255 250000 
-        }
-        DEF View35 GeoViewpoint {
-          description "CENIC"
-          orientation 1 0 0 -1.57
-          position 33.879947 -118.027903 250000 
-        }
-        
-      ]
-    
-    }
-    ProtoInstance {
-      name "CrossHair"
-      children [
-        fieldValue {
-          name "enabled"
-          value true 
-        }
-        fieldValue {
-          name "markerColor"
-          value 0.1 0.8 0.1 
-        }
-        fieldValue {
-          name "scale"
-          value 0.5 0.5 0.5 
-        }
-        fieldValue {
-          name "positionOffsetFromCamera"
-          value 0 0 -5 
-        }
-        
-      ]
-    
-    }
-    ProtoInstance {
-      name "ViewpointSequencer"
-      children [
-        fieldValue {
-          name "viewpoints"
-          children [
-            USE View01 USE View02 USE View03 USE View04 USE View05 USE View06 USE View07 USE View08 USE View09 USE View10 USE View11 USE View12 USE View13 USE View14 USE View15 USE View16 USE View17 USE View18 USE View19 USE View20 USE View21 USE View22 USE View23 USE View24 USE View25 USE View26 USE View27 USE View28 USE View29 USE View30 USE View31 USE View32 USE View33 USE View34 USE View35 DEF View4 Viewpoint {
-              description "View four (-X axis)"
-              orientation 0 1 0 -1.57
-              position -10 0 0 
-            }
-            
-          ]
-        
-        }
-        fieldValue {
-          name "interval"
-          value 30 
-        }
-        fieldValue {
-          name "enabled"
-          value true 
-        }
-        fieldValue {
-          name "toggleMessage"
-          value "ViewpointSequencer tour" 
-        }
-        
-      ]
-    
-    }
-    GeoLocation {
-      geoCoords 36.595599 -121.877148 624990
-      children [
-        Billboard {
-          axisOfRotation 0 0 0
-          children [
-            Shape {
-              appearance Appearance {
-                material Material {
-                  ambientIntensity 0.25
-                  diffuseColor 0.795918 0.505869 0.093315
-                  shininess 0.39
-                  specularColor 0.923469 0.428866 0.006369 
-                }
-                 
-              }
-              
-              geometry Text {
-                string ["ViewpointSequencer tour"]
-                fontStyle FontStyle {
-                  justify ["MIDDLE" "MIDDLE"] 
-                }
-                 
-              }
-               
-            }
-            
-          ]
-        
-        }
-        DEF TourTouch TouchSensor {
-          description "Touch text to turn tour on/off" 
-        }
-        DEF TourToggle BooleanToggle { 
-        }
-        
-      ]
-    
-    }
     ProtoInstance {
       name "ViewPositionOrientation"
       children [
@@ -505,8 +511,4 @@ ExternProtoDeclare {
       ]
     
     }
-    
-    ROUTE TourTouch.isActive TO TourToggle.set_boolean
-    
-    ROUTE TourToggle.toggle_changed TO ViewpointTour.set_enabled
     

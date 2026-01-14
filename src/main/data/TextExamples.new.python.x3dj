@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:11 GMT",
+        "@content":"26 April 2016",
         "@name":"modified"
       }
     },
@@ -62,6 +62,20 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/Basic/development/TextExamples.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

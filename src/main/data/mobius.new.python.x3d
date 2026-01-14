@@ -8,7 +8,8 @@
     <meta content='mobius.x3d' name='title'/>
     <meta content='Vince Marchetti' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='https://kshell.com/mobius.x3d' name='identifier'/>
+    <meta content='a mobius of 3 NURBS Patch Surfaces' name='description'/>
   </head>
   <Scene>
     <Background skyColor='1 1 1'/>
