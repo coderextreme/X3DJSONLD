@@ -1,0 +1,9 @@
+module net.coderextreme {
+	requires java.xml;
+	requires jakarta.json;
+	exports net.coderextreme;
+    	exports net.coderextreme.data;
+    	exports net.coderextreme.personal;
+    	exports net.coderextreme.visitor;
+    	exports net.x3djsonld.data;
+}

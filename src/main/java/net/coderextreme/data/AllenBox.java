@@ -43,12 +43,12 @@ public class AllenBox implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new AllenBox().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/AllenBox.new.java.x3d");
-    model.toFileJSON("../data/AllenBox.new.java.json");
+    model.toFileJSON("../data/AllenBox.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -64,8 +64,8 @@ public class AllenBox implements X3DRoots {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("AllenBox.x3d"))
-        .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat0().getArray()).setSpeed(0.5f))
-        .addChild(new Transform().setDEF("Floor").setScale(new double[] {1f,0.0125f,1f}).setTranslation(new double[] {0f,-0.0125f,0f})
+        .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat0().getArray()).setSpeed(0.5f ))
+        .addChild(new Transform().setDEF("Floor").setScale(new float[] {1f ,0.0125f ,1f }).setTranslation(new float[] {0f ,-0.0125f ,0f })
           .addChild(new Shape()
             .setGeometry(new Box())
             .setAppearance(new Appearance()
@@ -74,7 +74,7 @@ public class AllenBox implements X3DRoots {
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0.15f,1.53f,0.75f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.15f ,1.53f ,0.75f });
   }
 }
 }

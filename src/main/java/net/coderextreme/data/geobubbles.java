@@ -43,12 +43,12 @@ public class geobubbles implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new geobubbles().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/geobubbles.new.java.x3d");
-    model.toFileJSON("../data/geobubbles.new.java.json");
+    model.toFileJSON("../data/geobubbles.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -67,13 +67,13 @@ public class geobubbles implements X3DRoots {
       .setScene(new Scene()
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
         .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
-        .addChild(new GeoViewpoint().setDEF("Tour").setPosition(new double[] {0d,0d,4d}).setOrientation(new double[] {1f,0f,0f,0f}).setDescription("Tour Views"))
+        .addChild(new GeoViewpoint().setDEF("Tour").setPosition(new double[] {0d,0d,4d}).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription("Tour Views"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Transform()
           .addChild(new Shape()
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f})))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f })))))
         .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
         .addChild(new GeoPositionInterpolator().setDEF("TourPosition").setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3d7().getArray()))
         .addChild(new Script().setDEF("RandomTourTime")
@@ -136,7 +136,7 @@ private class MFString5 {
 }
 private class MFFloat6 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,1f });
   }
 }
 private class MFVec3d7 {

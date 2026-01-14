@@ -106,7 +106,7 @@ public class JoeSkinTexcoordDisplacerKickUpdate2
             try { // catch-all
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
-    .addComponent(new component().setName("HAnim").setLevel(3))
+    .addComponent(new component().setName("H-Anim").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JoeSkinTexcoordDisplacerKick.x3d"))
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("The Joe model is a Humanoid with textured skin."))

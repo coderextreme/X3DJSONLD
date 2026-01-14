@@ -12,7 +12,7 @@
   </head>
 
 Recommended tools:
-- X3D-Edit, https://savage.nps.edu/X3D-Edit
+- X3D-Edit, https://www.web3d.org/x3d/tools/X3D-Edit
 - SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
 - XML Spy https://www.xmlspy.com
 -->
@@ -1636,6 +1636,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
+                      not((local-name()='containerField' and string(.)='tangent')          and (local-name(..)='Tangent')) and
                       not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D' or local-name(..)='GeneratedCubeMapTexture')) and
                       not((local-name()='containerField' and string(.)='fontStyle')        and (local-name(..)='FontStyle')) and
                       not((local-name()='containerField' and string(.)='texCoord')         and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
@@ -2993,6 +2994,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($attributeName='language')           or
                             ($attributeName='mapping')            or
                             ($attributeName='marking')            or
+                            ($attributeName='mediaDeviceID')      or
                             ($attributeName='multicastAddress')   or
                             ($attributeName='networkMode')        or
                             ($attributeName='oversample')         or
@@ -3052,6 +3054,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='url') or contains($attributeName,'Url') or
                     ($attributeName='forceOutput') or
                     ($attributeName='objectType')  or
+                    ($attributeName='streamIdentifier')  or
                     ($parentElementName='Anchor' and $attributeName='parameter') or
                     ($parentElementName='CollisionCollection' and $attributeName='appliedParameters') or
                     ($parentElementName='Contact' and $attributeName='appliedParameters') or
@@ -3271,6 +3274,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='motor1AngleRate')  or ($attributeName='motor2AngleRate') or
                     ($attributeName='maxDistance')      or
                     ($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
+                    ($attributeName='playbackRate')     or ($attributeName='sampleRate')      or
                     starts-with($attributeName,'pointSize') or
                     ($attributeName='priority')         or
                     ($attributeName='qualityFactor')    or
@@ -3322,6 +3326,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='LoadSensor'           and ($attributeName='progress'))  or
                     (ends-with($parentElementName,'Material')  and ($attributeName='ambientIntensity' or $attributeName='metallic' or $attributeName='normalScale' or $attributeName='occlusionStrength' or $attributeName='roughness' or $attributeName='shininess' or $attributeName='transparency')) or
                     ($parentElementName='ParticleSystem'       and ($attributeName='lifetimeVariation' or $attributeName='particleLifetime')) or
+                    ($parentElementName='PointProperties'      and (starts-with($attributeName,'pointSize'))) or
                     ($parentElementName='TwoSidedMaterial'     and ($attributeName='backAmbientIntensity' or $attributeName='backShininess' or $attributeName='backTransparency')) or
                     ($parentElementName='MotorJoint'           and (starts-with($attributeName,'axis') or starts-with($attributeName,'stop'))) or
                     ($parentElementName='MovieTexture'         and ($attributeName='pitch' or $attributeName='speed')) or
@@ -3359,6 +3364,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($localFieldType='MFFloat')  or 
                     ($attributeName='key')       or
                     ($parentElementName='BufferAudioSource' and $attributeName='buffer') or
+                    ($parentElementName='Convolver' and $attributeName='buffer') or
                     (contains($parentElementName,'ElevationGrid') and $attributeName='height') or
                     (contains($parentElementName,'LOD') and $attributeName='range') or
                     (ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
@@ -3381,6 +3387,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='Text' and $attributeName='length') or
                     ($parentElementName='TextureCoordinateGenerator' and $attributeName='parameter') or
                     ($parentElementName='Viewport' and $attributeName='clipBoundary') or
+                    ($parentElementName='WaveShaper' and $attributeName='curve') or
                     ($parentElementName='XvlShell' and ($attributeName='vertexRound' or $attributeName='edgeRound'))">
 			  <xsl:text>MFFloat</xsl:text>
 		  </xsl:when>
@@ -3522,7 +3529,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='RigidBodyCollection' and ($attributeName='gravity')) or
                     ($parentElementName='SingleAxisHingeJoint' and ($attributeName='axis')) or
                     ($parentElementName='SliderJoint' and ($attributeName='axis')) or
-                    ($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
+                    (contains($parentElementName,'Sound') and ($attributeName='direction' or $attributeName='location')) or
                     ($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
                     (starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location' or $attributeName='upVector')) or
                     ($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
@@ -3549,11 +3556,10 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='PositionInterpolator'       and $attributeName='keyValue') or
                     ($parentElementName='SplinePositionInterpolator' and ($attributeName='keyValue' or $attributeName='keyVelocity')) or
                     ($parentElementName='RigidBody'                  and ($attributeName='forces'   or $attributeName='torques')) or
-                    (contains($parentElementName,'Coordinate') and $attributeName='point') or
-                    ($parentElementName='Extrusion' and $attributeName='spine') or
-                    ($parentElementName='Normal' and $attributeName='vector') or
-                    ($parentElementName='HAnimDisplacer' and $attributeName='displacements') or
-                    ($parentElementName='XvlShell' and ($attributeName='edgeBeginVector' or $attributeName='edgeEndVector'))">
+                    (contains($parentElementName,'Coordinate')       and $attributeName='point') or
+                    ($parentElementName='Extrusion'                  and $attributeName='spine') or
+                    ($parentElementName='HAnimDisplacer'             and $attributeName='displacements') or
+                    ($parentElementName='XvlShell'                   and ($attributeName='edgeBeginVector' or $attributeName='edgeEndVector'))">
 			  <xsl:text>MFVec3f</xsl:text>
 		  </xsl:when>
 		  <!-- SFVec4f -->
@@ -3563,6 +3569,12 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='OrthoViewpoint' and $attributeName='fieldOfView') or 
                     ($parentElementName='TextureProjectorParallel' and $attributeName='fieldOfView')">
 			  <xsl:text>SFVec4f</xsl:text>
+		  </xsl:when>
+		  <!-- MFVec4f -->
+		  <xsl:when test="
+                    ($localFieldType='MFVec4f') or
+                    ($parentElementName='Tangent'                    and $attributeName='vector')">
+			  <xsl:text>MFVec4f</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->
@@ -3619,7 +3631,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFNode -->
 		  <xsl:when test="
                     ($localFieldType='SFNode')    or 
-                    ($attributeName='attrib') or ($attributeName='color') or ($attributeName='coord') or ($attributeName='normal') or ($attributeName='texCoord') or 
+                    ($attributeName='attrib') or ($attributeName='color') or ($attributeName='coord') or ($attributeName='normal') or ($attributeName='tangent') or ($attributeName='texCoord') or 
                     ($attributeName='body1')  or ($attributeName='body2') or ($attributeName='geometry1')  or ($attributeName='geometry2') or 
                     (($parentElementName='MetadataSet')         and  $attributeName='metadata') or
                     (($parentElementName='CollidableOffset')    and  $attributeName='collidable') or
@@ -3651,7 +3663,6 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='colorIndex') or
                     ($attributeName='coordIndex') or
                     ($attributeName='normalIndex') or
-                    ($attributeName='numberOfChannels') or 
                     ($attributeName='texCoordIndex') or
                     ($attributeName='faceCoordIndex') or
                     ($attributeName='faceTexCoordIndex') or
@@ -3668,6 +3679,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='LayerSet' and ($attributeName='order')) or
                     ($parentElementName='LineSet' and $attributeName='vertexCount') or
                     ($parentElementName='MetadataInteger' and $attributeName='value') or
+                    ($parentElementName='PeriodicWave'  and (($attributeName='optionsReal') or ($attributeName='optionsImag'))) or
                     ($parentElementName='PixelTexture3D'  and $attributeName='image') or
                     ($parentElementName='SignalPdu' and $attributeName='data')">
 			  <xsl:text>MFInt32</xsl:text>
@@ -3684,6 +3696,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='fftSize')                  or
                     ($attributeName='frequencyBinCount')        or
                     ($attributeName='maxChannelCount')          or
+                    ($attributeName='numberOfChannels')         or 
                     ($attributeName='order')                    or
                     ($attributeName='uOrder')                   or
                     ($attributeName='vOrder')                   or

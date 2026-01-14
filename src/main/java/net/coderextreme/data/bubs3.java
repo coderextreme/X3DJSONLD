@@ -43,12 +43,12 @@ public class bubs3 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new bubs3().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/bubs3.new.java.x3d");
-    model.toFileJSON("../data/bubs3.new.java.json");
+    model.toFileJSON("../data/bubs3.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -65,13 +65,13 @@ public class bubs3 implements X3DRoots {
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setPosition(new double[] {0f,0f,4f}).setOrientation(new double[] {1f,0f,0f,0f}).setDescription("Bubbles in action"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,4f }).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription("Bubbles in action"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Transform().setDEF("DECLBubble_bubbleA")
+        .addChild(new Transform().setDEF("DECLBubble_transformA")
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.25f))
+            .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}).setTransparency(0.2f))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
           .addChild(new Script().setDEF("DECLBubble_bubbleA_bounce")
             .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -118,14 +118,14 @@ public class bubs3 implements X3DRoots {
 "    }\n"+
 "}"))
           .addChild(new TimeSensor().setDEF("DECLBubble_bubbleA_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformA").setToField("set_translation"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformA").setToField("set_scale"))
           .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleA_bounce").setToField("set_fraction")))
-        .addChild(new Transform().setDEF("DECLBubble_bubbleB")
+        .addChild(new Transform().setDEF("DECLBubble_transformB")
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.25f))
+            .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}).setTransparency(0.2f))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
           .addChild(new Script().setDEF("DECLBubble_bubbleB_bounce")
             .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -172,14 +172,14 @@ public class bubs3 implements X3DRoots {
 "    }\n"+
 "}"))
           .addChild(new TimeSensor().setDEF("DECLBubble_bubbleB_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformB").setToField("set_translation"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformB").setToField("set_scale"))
           .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleB_bounce").setToField("set_fraction")))
-        .addChild(new Transform().setDEF("DECLBubble_bubbleC")
+        .addChild(new Transform().setDEF("DECLBubble_transformC")
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.25f))
+            .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}).setTransparency(0.2f))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
           .addChild(new Script().setDEF("DECLBubble_bubbleC_bounce")
             .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -226,14 +226,14 @@ public class bubs3 implements X3DRoots {
 "    }\n"+
 "}"))
           .addChild(new TimeSensor().setDEF("DECLBubble_bubbleC_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformC").setToField("set_translation"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformC").setToField("set_scale"))
           .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleC_bounce").setToField("set_fraction")))
-        .addChild(new Transform().setDEF("DECLBubble_bubbleD")
+        .addChild(new Transform().setDEF("DECLBubble_transformD")
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.25f))
+            .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}).setTransparency(0.2f))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
           .addChild(new Script().setDEF("DECLBubble_bubbleD_bounce")
             .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -280,8 +280,8 @@ public class bubs3 implements X3DRoots {
 "    }\n"+
 "}"))
           .addChild(new TimeSensor().setDEF("DECLBubble_bubbleD_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transform").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transform").setToField("set_scale"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformD").setToField("set_translation"))
+          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformD").setToField("set_scale"))
           .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleD_bounce").setToField("set_fraction"))));
     return X3D0;
     }

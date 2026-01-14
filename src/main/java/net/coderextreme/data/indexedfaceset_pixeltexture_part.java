@@ -43,12 +43,12 @@ public class indexedfaceset_pixeltexture_part implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new indexedfaceset_pixeltexture_part().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/indexedfaceset_pixeltexture_part.new.java.x3d");
-    model.toFileJSON("../data/indexedfaceset_pixeltexture_part.new.java.json");
+    model.toFileJSON("../data/indexedfaceset_pixeltexture_part.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -80,17 +80,19 @@ public class indexedfaceset_pixeltexture_part implements X3DRoots {
         .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDescription("Front View"))
-        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(new double[] {0f,1f,0f,3.14f}).setPosition(new double[] {0f,0f,-10f}))
-        .addChild(new Viewpoint().setDescription("Top View").setOrientation(new double[] {1f,0f,0f,-1.57f}).setPosition(new double[] {0f,10f,0f}))
-        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new double[] {1f,0f,0f,1.57f}).setPosition(new double[] {0f,-10f,0f}))
-        .addChild(new Viewpoint().setDescription("Right View").setOrientation(new double[] {0f,1f,0f,1.57f}).setPosition(new double[] {10f,0f,0f}))
-        .addChild(new Viewpoint().setDescription("Left View").setOrientation(new double[] {0f,1f,0f,-1.57f}).setPosition(new double[] {-10f,0f,0f}))
+        .addChild(new Viewpoint().setDescription("Rear View").setOrientation(new float[] {0f ,1f ,0f ,3.14f }).setPosition(new float[] {0f ,0f ,-10f }))
+        .addChild(new Viewpoint().setDescription("Top View").setOrientation(new float[] {1f ,0f ,0f ,-1.57f }).setPosition(new float[] {0f ,10f ,0f }))
+        .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(new float[] {1f ,0f ,0f ,1.57f }).setPosition(new float[] {0f ,-10f ,0f }))
+        .addChild(new Viewpoint().setDescription("Right View").setOrientation(new float[] {0f ,1f ,0f ,1.57f }).setPosition(new float[] {10f ,0f ,0f }))
+        .addChild(new Viewpoint().setDescription("Left View").setOrientation(new float[] {0f ,1f ,0f ,-1.57f }).setPosition(new float[] {-10f ,0f ,0f }))
         .addChild(new NavigationInfo().setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
+        .addComments(new CommentsBlock("<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF})))
-          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5f).setTexCoordIndex(new MFInt321().getArray())
+            .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF})
+              .setTextureProperties(new TextureProperties().setMagnificationFilter("NEAREST_PIXEL"))))
+          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5f ).setTexCoordIndex(new MFInt321().getArray())
             .setColor(new Color().setColor(new MFColor2().getArray()))
             .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f4().getArray())))));
@@ -108,17 +110,17 @@ private class MFInt321 {
 }
 private class MFColor2 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f });
   }
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-2f,1f,1f,-2f,-1f,1f,2f,1f,1f,2f,-1f,1f,2f,1f,-1f,2f,-1f,-1f,-2f,1f,-1f,-2f,-1f,-1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2f ,1f ,1f ,-2f ,-1f ,1f ,2f ,1f ,1f ,2f ,-1f ,1f ,2f ,1f ,-1f ,2f ,-1f ,-1f ,-2f ,1f ,-1f ,-2f ,-1f ,-1f });
   }
 }
 private class MFVec2f4 {
   private org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new double[] {0.5f,1f,0.5f,0.5f,1f,1f,1f,0.5f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.5f ,1f ,0.5f ,0.5f ,1f ,1f ,1f ,0.5f });
   }
 }
 }

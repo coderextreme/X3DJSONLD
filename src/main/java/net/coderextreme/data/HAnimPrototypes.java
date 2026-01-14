@@ -1,0 +1,229 @@
+package net.coderextreme.data;
+import org.web3d.x3d.jsail.*;
+import org.web3d.x3d.jsail.CADGeometry.*;
+import org.web3d.x3d.jsail.Core.*;
+import org.web3d.x3d.jsail.CubeMapTexturing.*;
+import org.web3d.x3d.jsail.DIS.*;
+import org.web3d.x3d.jsail.EnvironmentalEffects.*;
+import org.web3d.x3d.jsail.EnvironmentalSensor.*;
+import org.web3d.x3d.jsail.EventUtilities.*;
+import org.web3d.x3d.jsail.Followers.*;
+import org.web3d.x3d.jsail.Geometry2D.*;
+import org.web3d.x3d.jsail.Geometry3D.*;
+import org.web3d.x3d.jsail.Geospatial.*;
+import org.web3d.x3d.jsail.Grouping.*;
+import org.web3d.x3d.jsail.HAnim.*;
+import org.web3d.x3d.jsail.Interpolation.*;
+import org.web3d.x3d.jsail.KeyDeviceSensor.*;
+import org.web3d.x3d.jsail.Layering.*;
+import org.web3d.x3d.jsail.Layout.*;
+import org.web3d.x3d.jsail.Lighting.*;
+import org.web3d.x3d.jsail.NURBS.*;
+import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Networking.*;
+import org.web3d.x3d.jsail.ParticleSystems.*;
+import org.web3d.x3d.jsail.Picking.*;
+import org.web3d.x3d.jsail.PointingDeviceSensor.*;
+import org.web3d.x3d.jsail.Rendering.*;
+import org.web3d.x3d.jsail.RigidBodyPhysics.*;
+import org.web3d.x3d.jsail.Scripting.*;
+import org.web3d.x3d.jsail.Shaders.*;
+import org.web3d.x3d.jsail.Shape.*;
+import org.web3d.x3d.jsail.Sound.*;
+import org.web3d.x3d.jsail.Text.*;
+import org.web3d.x3d.jsail.Texturing3D.*;
+import org.web3d.x3d.jsail.Texturing.*;
+import org.web3d.x3d.jsail.Time.*;
+import org.web3d.x3d.jsail.VolumeRendering.*;
+import org.web3d.x3d.jsail.fields.*;
+import java.util.ArrayList;
+import java.util.List;
+import net.coderextreme.X3DRoots;
+public class HAnimPrototypes implements X3DRoots {
+  public static void main(String[] args) {
+    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+    ConfigurationProperties.setDeleteIntermediateFiles(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
+    ConfigurationProperties.setStripDefaultAttributes(true);
+    X3D model = new HAnimPrototypes().getRootNodeList().get(0); // only get one root node
+    System.out.print(model.validationReport().trim());
+    model.toFileX3D("../data/HAnimPrototypes.new.java.x3d");
+    model.toFileJSON("../data/HAnimPrototypes.new.java.x3dj");
+    }
+    public List<X3D> getRootNodeList() {
+    	List<X3D> list = new ArrayList<X3D>(1);
+    	list.add(initialize());
+    	return list;
+    }
+    public X3D initialize() {
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("HAnimPrototypes.x3d"))
+        .addMeta(new meta().setName("description").setContent("Example implementation of X3D Humanoid Animation (HAnim) nodes using X3D prototypes."))
+        .addMeta(new meta().setName("warning").setContent("These are developmental examples that can assist X3D player implementations and support interoperability. They are not intended for author use in regular X3D scenes."))
+        .addMeta(new meta().setName("warning").setContent("Developer note: names for these HAnim Prototypes need to be corrected if used internally in an X3D player implementation (e.g. Joint to HAnimJoint)."))
+        .addMeta(new meta().setName("warning").setContent("Need support for skin"))
+        .addMeta(new meta().setName("creator").setContent("Ozan APAYDIN, Don Brutzman"))
+        .addMeta(new meta().setName("translator").setContent("Ozan APAYDIN, Don Brutzman"))
+        .addMeta(new meta().setName("created").setContent("15 November 2001"))
+        .addMeta(new meta().setName("modified").setContent("Mon, 15 Sep 2025 05:20:09 GMT"))
+        .addMeta(new meta().setName("TODO").setContent("upgrade to match support requirements for HAnim 2.2"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19774/V1.0/HAnim/HAnim.html"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/hanim.html"))
+        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl"))
+        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Specifications/HAnim2001"))
+        .addMeta(new meta().setName("reference").setContent("http://www.HAnim.org"))
+        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Models"))
+        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Specifications"))
+        .addMeta(new meta().setName("reference").setContent("InterchangableActorsViaDynamicRoutingPrototypes.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d")))
+      .setScene(new Scene()
+        .addChild(new ProtoDeclare().setName("Humanoid1_1").setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new field().setType("SFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("version").setValue("1.1").setAppinfo("legal values: 1.1 or 2.0"))
+            .addField(new field().setType("SFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("humanoidVersion").setAppinfo("Version of the humanoid being modeled. Hint: HAnim version 2.0"))
+            .addField(new field().setType("MFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("info"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("translation"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("rotation"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("center"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("humanoidBody").setAppinfo("HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton.").setDocumentation("http://HAnim.org/Specifications/HAnim1.1/#humanoid"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("skeleton").setAppinfo("HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("joints").setAppinfo("Container field for Joint nodes"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("segments").setAppinfo("Container field for Segment nodes"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("sites").setAppinfo("Container field for Site nodes"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("viewpoints").setAppinfo("Container field for Viewpoint nodes"))
+            .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("skinCoord").setAppinfo("Hint: HAnim version 2.0"))
+            .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("skinNormal").setAppinfo("Hint: HAnim version 2.0")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform().setDEF("HumanoidTransform")
+              .addChild(new Group().setDEF("HumanoidGroup1")
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("children").setProtoField("humanoidBody"))))
+              .addChild(new Group().setDEF("HumanoidGroup2")
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("children").setProtoField("skeleton"))))
+              .addChild(new Group().setDEF("HumanoidGroup3")
+                .setIS(new IS()
+                  .addConnect(new connect().setNodeField("children").setProtoField("viewpoints"))))
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("translation"))
+                .addConnect(new connect().setNodeField("rotation").setProtoField("rotation"))
+                .addConnect(new connect().setNodeField("scale").setProtoField("scale"))
+                .addConnect(new connect().setNodeField("scaleOrientation").setProtoField("scaleOrientation"))
+                .addConnect(new connect().setNodeField("center").setProtoField("center"))
+                .addConnect(new connect().setNodeField("bboxSize").setProtoField("bboxSize"))
+                .addConnect(new connect().setNodeField("bboxCenter").setProtoField("bboxCenter"))))))
+        .addChild(new ProtoDeclare().setName("Joint").setAppinfo("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Joint.html")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new field().setType("MFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("ulimit"))
+            .addField(new field().setType("MFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("llimit"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("limitOrientation"))
+            .addField(new field().setType("MFInt32").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("skinCoordIndex"))
+            .addField(new field().setType("MFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("skinCoordWeight"))
+            .addField(new field().setType("MFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("stiffness").setValue("0 0 0"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("translation"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("rotation"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("center"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("removeChildren")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform().setDEF("JointTransform")
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("translation"))
+                .addConnect(new connect().setNodeField("rotation").setProtoField("rotation"))
+                .addConnect(new connect().setNodeField("scale").setProtoField("scale"))
+                .addConnect(new connect().setNodeField("scaleOrientation").setProtoField("scaleOrientation"))
+                .addConnect(new connect().setNodeField("center").setProtoField("center"))
+                .addConnect(new connect().setNodeField("bboxSize").setProtoField("bboxSize"))
+                .addConnect(new connect().setNodeField("bboxCenter").setProtoField("bboxCenter"))
+                .addConnect(new connect().setNodeField("addChildren").setProtoField("addChildren"))
+                .addConnect(new connect().setNodeField("removeChildren").setProtoField("removeChildren"))
+                .addConnect(new connect().setNodeField("children").setProtoField("children"))))))
+        .addChild(new ProtoDeclare().setName("Segment").setAppinfo("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node.").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Segment.html")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new field().setType("SFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("mass"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("centerOfMass"))
+            .addField(new field().setType("MFFloat").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("momentsOfInertia").setValue("0 0 0 0 0 0 0 0 0"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("removeChildren"))
+            .addField(new field().setType("SFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("coord").setAppinfo("contains Coordinate nodes"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("displacers").setAppinfo("contains Displacer nodes")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Group().setDEF("SegmentGroup")
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("bboxSize").setProtoField("bboxSize"))
+                .addConnect(new connect().setNodeField("bboxCenter").setProtoField("bboxCenter"))
+                .addConnect(new connect().setNodeField("addChildren").setProtoField("addChildren"))
+                .addConnect(new connect().setNodeField("removeChildren").setProtoField("removeChildren"))
+                .addConnect(new connect().setNodeField("children").setProtoField("children"))))))
+        .addChild(new ProtoDeclare().setName("Site").setAppinfo("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Site.html")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("translation"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("rotation"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scale").setValue("1 1 1"))
+            .addField(new field().setType("SFRotation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("scaleOrientation"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("center"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxCenter"))
+            .addField(new field().setType("SFVec3f").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setName("bboxSize").setValue("-1 -1 -1"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("children"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("addChildren"))
+            .addField(new field().setType("MFNode").setAccessType(field.ACCESSTYPE_INPUTONLY).setName("removeChildren")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new Transform().setDEF("SiteTransform")
+              .setIS(new IS()
+                .addConnect(new connect().setNodeField("translation").setProtoField("translation"))
+                .addConnect(new connect().setNodeField("rotation").setProtoField("rotation"))
+                .addConnect(new connect().setNodeField("scale").setProtoField("scale"))
+                .addConnect(new connect().setNodeField("scaleOrientation").setProtoField("scaleOrientation"))
+                .addConnect(new connect().setNodeField("center").setProtoField("center"))
+                .addConnect(new connect().setNodeField("bboxSize").setProtoField("bboxSize"))
+                .addConnect(new connect().setNodeField("bboxCenter").setProtoField("bboxCenter"))
+                .addConnect(new connect().setNodeField("addChildren").setProtoField("addChildren"))
+                .addConnect(new connect().setNodeField("removeChildren").setProtoField("removeChildren"))
+                .addConnect(new connect().setNodeField("children").setProtoField("children"))))))
+        .addChild(new ProtoDeclare().setName("Displacer").setAppinfo("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.").setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html")
+          .setProtoInterface(new ProtoInterface()
+            .addField(new field().setType("SFString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("name"))
+            .addField(new field().setType("MFInt32").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("coordIndex"))
+            .addField(new field().setType("MFVec3f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setName("displacements")))
+          .setProtoBody(new ProtoBody()
+            .addChild(new WorldInfo().setInfo(new MFString0().getArray()))))
+        .addChild(new Shape()
+          .setAppearance(new Appearance()
+            .setMaterial(new Material().setAmbientIntensity(0.25f ).setDiffuseColor(new float[] {0.795918f ,0.505869f ,0.093315f }).setSpecularColor(new float[] {0.923469f ,0.428866f ,0.006369f }).setShininess(0.39f )))
+          .setGeometry(new Text().setString(new MFString1().getArray())
+            .setFontStyle(new FontStyle().setJustify(new MFString2().getArray())))));
+    return X3D0;
+    }
+private class MFString0 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"null body node"});
+  }
+}
+private class MFString1 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Humanoid Animation","(HAnim) prototype","implementations"});
+  }
+}
+private class MFString2 {
+  private org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"MIDDLE","MIDDLE"});
+  }
+}
+}

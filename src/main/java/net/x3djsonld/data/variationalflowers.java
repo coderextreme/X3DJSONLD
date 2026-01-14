@@ -27,7 +27,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/variationalflowers.x3d">variationalflowers.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d">particleflowers.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -39,7 +39,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/variationalflowers.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/variationalflowers.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -81,12 +81,12 @@ public class variationalflowers
     .addComponent(new component().setName("Grouping").setLevel(3))
     .addComponent(new component().setName("Core").setLevel(1))
     .addComponent(new component().setName("ParticleSystems").setLevel(3))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("variationalflowers.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("particleflowers.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A flower proto with configurable shaders"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/variationalflowers.x3d")))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d")))
   .setScene(new Scene()
-    .addChild(new WorldInfo().setTitle("variationalflowers.x3d"))
+    .addChild(new WorldInfo().setTitle("particleflowers.x3d"))
     .addChild(new NavigationInfo().setType(new String[] {"ANY","EXAMINE","FLY","LOOKAT"}))
     .addChild(new Viewpoint().setDescription("Tour Views").setPosition(0.0,0.0,12.0))
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))

@@ -43,12 +43,12 @@ public class rubikOnFire implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new rubikOnFire().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/rubikOnFire.new.java.x3d");
-    model.toFileJSON("../data/rubikOnFire.new.java.json");
+    model.toFileJSON("../data/rubikOnFire.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -74,8 +74,8 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"))
         .addMeta(new meta().setName("description").setContent("a white rubik cube")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new double[] {0f,0f,12f}))
+        .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"WALK\" \"FLY\" \"LOOKAT\""))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new float[] {0f ,0f ,12f }))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -89,7 +89,7 @@ ProtoInstance ProtoInstance9 = null;
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("geometry").setProtoField("myShape")))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f})))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))))))
         .addChild(new ProtoDeclare().setName("three")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -167,7 +167,7 @@ ProtoInstance9
           .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Box().setSize(new double[] {1f,1f,1f})));
+            .addChild(new Box().setSize(new float[] {1f ,1f ,1f })));
     return X3D0;
     }
 }

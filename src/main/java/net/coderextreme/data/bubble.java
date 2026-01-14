@@ -43,12 +43,12 @@ public class bubble implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new bubble().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/bubble.new.java.x3d");
-    model.toFileJSON("../data/bubble.new.java.json");
+    model.toFileJSON("../data/bubble.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -66,14 +66,14 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setPosition(new double[] {0f,0f,4f}).setOrientation(new double[] {1f,0f,0f,0f}).setDescription("Bubble in action"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,4f }).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription("Bubble in action"))
         .addChild(new ProtoDeclare().setName("Bubble")
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("transform")
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.25f))
+                .setGeometry(new Sphere().setRadius(0.25f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}).setTransparency(0.2f))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
               .addChild(new Script().setDEF("bounce")
                 .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))

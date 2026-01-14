@@ -22,7 +22,7 @@ Additional references of interest:
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
-	            xmlns:fn ="http://www.w3.org/2005/xpath-functions"
+	              xmlns:fn ="http://www.w3.org/2005/xpath-functions"
 				xmlns:saxon="http://saxon.sf.net/"><!-- https://www.saxonica.com/documentation12/#!extensions/attributes -->
 	<!-- extension-element-prefixes="xs" -->
 	<xsl:param name="targetDirectory"><xsl:text></xsl:text></xsl:param>
@@ -839,9 +839,9 @@ Additional references of interest:
                 <xsl:when test="($nodeTypeBase = 'X3DTextureProjectorNode')">
                     <xsl:text>TextureProjection</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DColorNode')    or ($nodeTypeBase = 'X3DCoordinateNode')        or ($nodeTypeBase = 'X3DNormalNode') or
-                                ($nodeTypeBase = 'X3DGeometryNode') or ($nodeTypeBase = 'X3DGeometricPropertyNode') or ($nodeTypeBase = 'X3DComposedGeometryNode') or
-                                ($nodeTypeBase = 'CoordinateDouble')">
+                <xsl:when test="($nodeTypeBase = 'X3DColorNode')     or ($nodeTypeBase = 'X3DCoordinateNode')        or ($nodeTypeBase = 'X3DNormalNode') or
+                                ($nodeTypeBase = 'X3DGeometryNode')  or ($nodeTypeBase = 'X3DGeometricPropertyNode') or ($nodeTypeBase = 'X3DComposedGeometryNode') or
+                                ($nodeTypeBase = 'CoordinateDouble') or ($nodeTypeBase = 'X3DTangentNode')">
                     <xsl:text>Rendering</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNBodyCollidableNode') or ($nodeTypeBase = 'X3DNBodyCollisionSpaceNode') or ($nodeTypeBase = 'X3DRigidJointNode') or
@@ -863,7 +863,7 @@ Additional references of interest:
                     <xsl:text>Shape</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DSoundChannelNode')    or ($nodeTypeBase = 'X3DSoundDestinationNode') or ($nodeTypeBase = 'X3DSoundNode') or
-                                ($nodeTypeBase = 'X3DSoundProcessingNode') or ($nodeTypeBase = 'X3DSoundSourceNode')">
+                                ($nodeTypeBase = 'X3DSoundProcessingNode') or ($nodeTypeBase = 'X3DSoundSourceNode')      or ($nodeTypeBase = 'PeriodicWave')">
                     <xsl:text>Sound</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DFontStyleNode')">
@@ -2109,7 +2109,6 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 					</xsl:if>
 				</xsl:when>
 				<xsl:when test="($hasField)">
-
 					<!-- ===================================================== -->
 					<!-- Source code: Member declarations -->
 					<xsl:choose>
@@ -2425,46 +2424,46 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'</i>
+	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'";
+	public static final String X3D_XML_SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'</i>
+	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'";
+	public static final String X3D_XML_SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'</i>
+	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'";
+	public static final String X3D_XML_SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'</i>
+	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'";
+	public static final String X3D_XML_SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'</i>
+	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'";
+	public static final String X3D_XML_SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'</i>
+	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'";
+	public static final String X3D_XML_SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'";
 ]]></xsl:text>
 
 									<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -3954,134 +3953,138 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                         -->
 							<!-- containerField defaults and methods -->
 							<xsl:variable name="containerFieldDefaultType" select="InterfaceDefinition/containerField/@type"/>
-                                                        <xsl:variable name="containerFieldAllowedValues">
-                                                            <!-- TODO once recorded in X3D XML Schema and X3D Object Model, iterate over values and add to array -->
-                                                            <xsl:choose>
-                                                                    <xsl:when test="(string-length($containerFieldDefaultType) > 0) and //simpleType[@name=$containerFieldDefaultType]">
-                                                                        <xsl:message>
-                                                                            <xsl:text>[warning] found containerFieldDefaultType=</xsl:text>
-                                                                            <xsl:value-of select="$containerFieldDefaultType"/>
-                                                                        </xsl:message>
-                                                                        <xsl:for-each select="enumeration">
-                                                                            <xsl:text>, "</xsl:text>
-                                                                            <xsl:value-of select="@value"/>
-                                                                            <xsl:text>"</xsl:text>
-                                                                            <xsl:if test="(string-length(@appinfo) > 0)">
-                                                                               <xsl:text> // </xsl:text>
-                                                                               <xsl:value-of select="@appinfo"/>
-                                                                               <xsl:text>&#10;</xsl:text>
-                                                                            </xsl:if>
-                                                                        </xsl:for-each>
-                                                                    </xsl:when>
-                                                                    <!-- manually customized code follows, might still have some omissions, see various containerFieldChoices* in X3DUOM -->
-                                                                    <xsl:when test="starts-with($name,'Coordinate') or starts-with($name,'CoordinateDouble')">
-                                                                            <xsl:text>, "skinCoord", "skinBindingCoords" /*HAnimHumanoid parent*/, "controlPoint" /*NurbsPatchSurface parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'Normal')">
-                                                                            <xsl:text>, "skinNormal", "skinBindingNormal" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'Shape')">
-                                                                            <xsl:text>, "proxy" /*Collision parent*/, "shape", "rootNode" /*GeoLOD parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'LOD') or ($name = 'Transform')">
-                                                                            <xsl:text>, "proxy" /*Collision parent*/, "shape"/*CADFace or CollidableShape parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'Group')">
-                                                                            <!-- debatable whether support is appropriate for a few other X3DGroupingNode nodes -->
-                                                                            <xsl:text>, "proxy" /*Collision parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'IndexedFaceSet') or ($name = 'IndexedLineSet')     or ($name = 'IndexedFanSet') or
-                                                                                    ($name = 'IndexedQuadSet') or ($name = 'IndexedTriangleSet') or ($name = 'IndexedTriangleStripSet')">
-                                                                            <!-- debatable whether support is appropriate for a few other X3DGroupingNode nodes -->
-                                                                            <xsl:text>, "skin" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'StaticGroup') or ($name = 'Collision')   or
-                                                                                    ($name = 'Anchor')      or ($name = 'Billboard')   or ($name = 'CADAssembly') or
-                                                                                    ($name = 'CADLayer')    or ($name = 'CADPart')     or ($name = 'Switch')">
-                                                                            <!-- debatable whether support is appropriate for a few other X3DGroupingNode nodes -->
-                                                                            <xsl:text>, "proxy" /*Collision parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'ImageTexture') or ($name = 'PixelTexture')">
-                                                                            <xsl:text>, "back",        "bottom",        "front",        "left",        "right",        "top"</xsl:text>
-                                                                            <xsl:text>, "backTexture", "bottomTexture", "frontTexture", "leftTexture", "rightTexture", "topTexture"</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'Metadata') and starts-with(//X3dUnifiedObjectModel/@version, '4')">
-                                                                            <!-- X3D version 4 default -->
-                                                                            <xsl:text>, "metadata" /*any node parent, X3D3 default**/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'Metadata')">
-                                                                            <!-- X3D version 3 default -->
-                                                                            <xsl:text>, "value" /*MetadataSet parent, X3D4 default*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="($name = 'MovieTexture')">
-                                                                            <xsl:text>, "source" /*Sound parent*/</xsl:text>
-                                                                            <!-- X3D3 synonyms for X3D4 field regularization -->
-                                                                            <xsl:text>, "back",        "bottom",        "front",        "left",        "right",        "top"</xsl:text>
-                                                                            <xsl:text>, "backTexture", "bottomTexture", "frontTexture", "leftTexture", "rightTexture", "topTexture"</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'DISEntityTypeMapping')">
-                                                                            <xsl:text>, "mapping"</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'HAnimDisplacer')">
-                                                                            <xsl:text>, "displacers" /*HAnimJoint or HAnimSegment parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'HAnimJoint')">
-                                                                            <xsl:text>, "joints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'HAnimSegment')">
-                                                                            <xsl:text>, "segments" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'HAnimSite')">
-                                                                            <xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'HAnimMotion')">
-                                                                            <xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                                    <xsl:when test="starts-with($name,'HAnimMotion')">
-                                                                            <xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
-                                                                    </xsl:when>
-                                                            </xsl:choose>
-                                                            <!-- X3DUrlObject nodes can also be a child of LoadSensor -->
-                                                            <xsl:if test="($name = 'Anchor')              or ($name = 'AudioClip')      or ($name = 'DISEntityTypeMapping') or ($name = 'GeoMetadata') or
-                                                                          ($name = 'ImageCubeMapTexture') or ($name = 'ImageTexture3D') or ($name = 'ImageTexture')         or ($name = 'Inline') or
-                                                                          ($name = 'MovieTexture')        or ($name = 'PackagedShader') or ($name = 'Script')               or ($name = 'ShaderPart') or
-                                                                          ($name = 'ShaderProgram')">
-                                                                    <xsl:text>, "children"</xsl:text><!-- formerly watchList in X3D3 -->
-                                                            </xsl:if>
-                                                            <xsl:text> };</xsl:text>
-                                                            <xsl:if test="(string-length(InterfaceDefinition/containerField/@type) > 0)">
-                                                                    <xsl:text> // type </xsl:text>
-                                                                    <xsl:if test="starts-with(InterfaceDefinition/containerField/@type,'containerField')">
-                                                                        <xsl:text>X3DUOM </xsl:text>
-                                                                    </xsl:if>
-                                                                    <xsl:value-of select="InterfaceDefinition/containerField/@type"/>
-                                                            </xsl:if>
-                                                        </xsl:variable>
+                            <xsl:variable name="containerFieldAllowedValues">
+                                <!-- TODO once recorded in X3D XML Schema and X3D Object Model, iterate over values and add to array -->
+                                <xsl:choose>
+                                        <xsl:when test="(string-length($containerFieldDefaultType) > 0) and //simpleType[@name=$containerFieldDefaultType]">
+                                            <xsl:message>
+                                                <xsl:text>[warning] found containerFieldDefaultType=</xsl:text>
+                                                <xsl:value-of select="$containerFieldDefaultType"/>
+                                            </xsl:message>
+                                            <xsl:for-each select="enumeration">
+                                                <xsl:text>, "</xsl:text>
+                                                <xsl:value-of select="@value"/>
+                                                <xsl:text>"</xsl:text>
+                                                <xsl:if test="(string-length(@appinfo) > 0)">
+                                                   <xsl:text> // </xsl:text>
+                                                   <xsl:value-of select="@appinfo"/>
+                                                   <xsl:text>&#10;</xsl:text>
+                                                </xsl:if>
+                                            </xsl:for-each>
+                                        </xsl:when>
+                                        <!-- TODO watch out, $containerFieldAllowedValues are manually transcribed in this stylesheet. 
+                                                  Better approach would be to autogenerate them from X3DUOM -->
+                                        <!-- manually customized code follows, might still have some omissions, see various containerFieldChoices* in X3DUOM -->
+                                        <xsl:when test="starts-with($name,'Coordinate') or starts-with($name,'CoordinateDouble')">
+                                                <xsl:text>, "skinCoord", "skinBindingCoords" /*HAnimHumanoid parent*/, "controlPoint" /*NurbsPatchSurface parent*/</xsl:text>
+                                        </xsl:when>
+                                        <!-- Tangent has only one possible containerField -->
+                                        <xsl:when test="($name = 'Normal')">
+                                                <xsl:text>, "skinNormal", "skinBindingNormal" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="($name = 'Shape')">
+                                                <xsl:text>, "proxy" /*Collision parent*/, "shape", "rootNode" /*GeoLOD parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="($name = 'LOD') or ($name = 'Transform')">
+                                                <xsl:text>, "proxy" /*Collision parent*/, "shape"/*CADFace or CollidableShape parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="($name = 'Group')">
+                                                <!-- debatable whether support is appropriate for a few other X3DGroupingNode nodes -->
+                                                <xsl:text>, "proxy" /*Collision parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="($name = 'IndexedFaceSet') or ($name = 'IndexedLineSet')     or ($name = 'IndexedFanSet') or
+                                                        ($name = 'IndexedQuadSet') or ($name = 'IndexedTriangleSet') or ($name = 'IndexedTriangleStripSet')">
+                                                <!-- debatable whether support is appropriate for a few other X3DGroupingNode nodes -->
+                                                <xsl:text>, "skin" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="($name = 'StaticGroup') or ($name = 'Collision')   or
+                                                        ($name = 'Anchor')      or ($name = 'Billboard')   or ($name = 'CADAssembly') or
+                                                        ($name = 'CADLayer')    or ($name = 'CADPart')     or ($name = 'Switch')">
+                                                <!-- debatable whether support is appropriate for a few other X3DGroupingNode nodes -->
+                                                <xsl:text>, "proxy" /*Collision parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="($name = 'ImageTexture') or ($name = 'PixelTexture')">
+                                                <xsl:text>, "backTexture", "bottomTexture", "frontTexture", "leftTexture", "rightTexture", "topTexture"</xsl:text>
+                                                <xsl:text>, "back", "bottom", "front", "left", "right", "top"</xsl:text>
+                                                <xsl:text>, "ambientTexture", "baseTexture", "diffuseTexture", "emissiveTexture", "metallicRoughnessTexture"</xsl:text>
+                                                <xsl:text>, "normalTexture", "occlusionTexture", "shininessTexture", "specularTexture"</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'Metadata') and starts-with(//X3dUnifiedObjectModel/@version, '4')">
+                                                <!-- X3D version 4 default -->
+                                                <xsl:text>, "metadata" /*any node parent, X3D3 default**/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'Metadata')">
+                                                <!-- X3D version 3 default -->
+                                                <xsl:text>, "value" /*MetadataSet parent, X3D4 default*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="($name = 'MovieTexture')">
+                                                <xsl:text>, "source" /*Sound parent*/</xsl:text>
+                                                <!-- X3D3 synonyms for X3D4 field regularization -->
+                                                <xsl:text>, "back",        "bottom",        "front",        "left",        "right",        "top"</xsl:text>
+                                                <xsl:text>, "backTexture", "bottomTexture", "frontTexture", "leftTexture", "rightTexture", "topTexture"</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'DISEntityTypeMapping')">
+                                                <xsl:text>, "mapping"</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'HAnimDisplacer')">
+                                                <xsl:text>, "displacers" /*HAnimJoint or HAnimSegment parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'HAnimJoint')">
+                                                <xsl:text>, "joints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'HAnimSegment')">
+                                                <xsl:text>, "segments" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'HAnimSite')">
+                                                <xsl:text>, "sites" /*HAnimHumanoid parent*/, "viewpoints" /*HAnimHumanoid parent*/, "skeleton" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                        <xsl:when test="starts-with($name,'HAnimMotion')">
+                                                <xsl:text>, "motions" /*HAnimHumanoid parent*/</xsl:text>
+                                        </xsl:when>
+                                </xsl:choose>
+                                <!-- X3DUrlObject nodes can also be a child of LoadSensor -->
+                                <xsl:if test="($name = 'Anchor')              or ($name = 'AudioClip')      or ($name = 'DISEntityTypeMapping') or ($name = 'GeoMetadata') or
+                                              ($name = 'ImageCubeMapTexture') or ($name = 'ImageTexture3D') or ($name = 'ImageTexture')         or ($name = 'Inline') or
+                                              ($name = 'MovieTexture')        or ($name = 'PackagedShader') or ($name = 'Script')               or ($name = 'ShaderPart') or
+                                              ($name = 'ShaderProgram')">
+                                        <xsl:text>, "children"</xsl:text><!-- formerly watchList in X3D3 -->
+                                </xsl:if>
+                                <xsl:text> };</xsl:text>
+                                <xsl:if test="(string-length(InterfaceDefinition/containerField/@type) > 0)">
+                                        <xsl:text> // type </xsl:text>
+                                        <xsl:if test="starts-with(InterfaceDefinition/containerField/@type,'containerField')">
+                                            <xsl:text>X3DUOM </xsl:text>
+                                        </xsl:if>
+                                        <xsl:value-of select="InterfaceDefinition/containerField/@type"/>
+                                </xsl:if>
+                            </xsl:variable>
 							<xsl:if test="(string-length(InterfaceDefinition/containerField/@default) > 0)">
 								<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-         * containerField describes typical field relationship of a node to its parent.
-	 * Usage is not ordinarily needed when using this API, this default value is provided for informational purposes only.
-         * <br />
-         * containerField_DEFAULT_VALUE = "]]></xsl:text>
+     * containerField describes typical field relationship of a node to its parent.
+     * Usage is not ordinarily needed when using this API, this default value is provided for informational purposes only.
+     * <br />
+     * containerField_DEFAULT_VALUE = "]]></xsl:text>
 								<xsl:value-of select="InterfaceDefinition/containerField/@default"/>
 								<xsl:text disable-output-escaping="yes"><![CDATA[";
-         * <br />
-         * containerField_ALLOWED_VALUES = {"]]></xsl:text>
+     * <br />
+     * containerField_ALLOWED_VALUES = {"]]></xsl:text>
 								<xsl:value-of select="InterfaceDefinition/containerField/@default"/>
-                                                                <xsl:text>"</xsl:text>
-                                                                <!-- replace Java contained-comment characters within javadoc -->
-                                                                <xsl:value-of select='replace($containerFieldAllowedValues, "/", "")'/>
+                                <xsl:text>"</xsl:text>
+                                <!-- TODO watch out, $containerFieldAllowedValues are manually transcribed in this stylesheet. 
+                                     Better approach would be to autogenerate them from X3DUOM -->
+                                <!-- replace Java contained-comment characters within javadoc -->
+                                <xsl:value-of select='replace($containerFieldAllowedValues, "/", "")'/>
 
 								<xsl:if test="(string-length(InterfaceDefinition/containerField/@type) > 0)">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
+	 * @see #containerField_ALLOWED_VALUES
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerFieldChoices" target="_blank">X3D Scene Authoring Hints: validation choices for containerField</a>
 	 * @see <a href="https://www.web3d.org/specifications/X3DUOM.html" target="_blank">X3D Unified Object Model (X3DUOM)</a>]]></xsl:text>
 								</xsl:if>
 								<xsl:text>
 	 */
-
 	public static final String containerField_DEFAULT_VALUE = "</xsl:text>
 								<xsl:value-of select="InterfaceDefinition/containerField/@default"/>
 								<xsl:text>";</xsl:text>
@@ -4090,19 +4093,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:value-of select="InterfaceDefinition/containerField/@type"/>
 								</xsl:if>
 								<xsl:text>
+
 	/**
-         * containerField describes typical field relationship of a node to its parent.
+     * containerField describes typical field relationship of a node to its parent.
 	 * Programmer usage is not ordinarily needed when using this API, since this default value is provided for informational purposes only.</xsl:text>
 								<xsl:if test="(string-length(InterfaceDefinition/containerField/@type) > 0)">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	 * @see #containerField_DEFAULT_VALUE
-         * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
+     * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerFieldChoices" target="_blank">X3D Scene Authoring Hints: validation choices for containerField</a>
 	 * @see <a href="https://www.web3d.org/specifications/X3DUOM.html" target="_blank">X3D Unified Object Model (X3DUOM)</a>]]></xsl:text>
 								</xsl:if>
 								<xsl:text>
-         * @return default containerField value
+     * @return default containerField value
 	 */
         @Override
         public final String getContainerFieldDefault()
@@ -4548,11 +4552,11 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	public static final String FILE_EXTENSION_JAVASCRIPT = ".js";
 
 	/**
-	 * File extension for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.json</i>
+	 * File extension for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.x3dj</i>
 	 * @see <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JavaScript Object Notation (JSON)</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#JSON" target="_blank">X3D Scene Authoring Hints: JSON</a>
 	 */
-	public static final String FILE_EXTENSION_JSON = ".json";
+	public static final String FILE_EXTENSION_JSON = ".x3dj";
 
 	/**
 	 * File extension for Python programming-language source code, with dot prepended: <i>.py</i>
@@ -7102,12 +7106,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                 e.printStackTrace(System.err);
 	    }
 	}
-        // validation checking complete
-        ConfigurationProperties.setConsoleOutputVerbose(priorConsoleOutputVerbose);
+    // validation checking complete
+    ConfigurationProperties.setConsoleOutputVerbose(priorConsoleOutputVerbose);
 
 	if  (metaResult.isEmpty() && exceptionResult.isEmpty() && validationResult.isEmpty())
 	     return "success";
-	else
+	else // print  info, warnings and errors
 	{
 		if (!metaResult.isEmpty())
                      metaResult = "\n" + metaResult; // easier to read
@@ -7692,7 +7696,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								<xsl:text>	/**</xsl:text>
 								<xsl:text>&#10;</xsl:text>
 								<xsl:text>	 * Provide </xsl:text>
-<xsl:if test="($debug = 'true')">
+<xsl:if test="($thisClassName = 'OscillatorSource')"> <!-- ($debug = 'true') -->
 	<xsl:text>($javaType=</xsl:text>
 	<xsl:value-of select="$javaType"/>
 	<xsl:text>, isArrayType=</xsl:text>
@@ -9062,7 +9066,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	{</xsl:text>
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>            // set-newValue-validity-checks #0.a</xsl:text>
+										<xsl:text>        // set-newValue-validity-checks #0.a</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:call-template name="set-newValue-validity-checks">
 											<xsl:with-param name="elementName"      ><xsl:value-of select="$name"/></xsl:with-param>
@@ -9088,7 +9092,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                not((@name = 'info')      and ($thisClassName = 'HAnimHumanoid')) and
                                not((@name = 'info')      and ($thisClassName = 'WorldInfo')) and
                                not((@name = 'family')    and contains($thisClassName, 'Font')) and
-                               not(@name = 'objectType')"> <!-- objectTypea is free-form label, see X3DPickableObject -->
+                               not(@name = 'objectType') and
+                               not(@name = 'streamIdentifier')"> <!-- objectTypea is free-form label, see X3DPickableObject -->
 			<xsl:text disable-output-escaping="yes"><![CDATA[
             // Check that newValue array parameter has one of the allowed enumeration values before assigning to scene graph
             if (]]></xsl:text>
@@ -9698,6 +9703,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:text> = </xsl:text>
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>;</xsl:text>
+											</xsl:otherwise>
+										</xsl:choose>
+                    
 												<!-- set SFNode -->
 												<xsl:if test="(@type = 'SFNode')">
 													<xsl:value-of select="$newValueInstanceAcceptableNodeTypesTest" disable-output-escaping="yes"/>
@@ -9708,6 +9716,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="$normalizedMemberObjectName"/>
 													<xsl:text>).setParent(this); // parentTest15.1</xsl:text>
 													<xsl:text>&#10;</xsl:text>
+                          
 									<!-- as needed, containerField updates by checking parent node and SFNode field -->
 									<!-- Reference list found at X3D Scene Authoring Hints: containerField -->
 									<!-- https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
@@ -9742,13 +9751,13 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:value-of select="$normalizedMemberObjectName"/>
 											<xsl:text> instanceof org.web3d.x3d.jsail.Core.MetadataSet)</xsl:text>
 											<xsl:text>&#10;</xsl:text>
-											<xsl:text>{</xsl:text>
+											<xsl:text>			{</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 											<xsl:text>				((X3DConcreteNode) </xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
 											<xsl:text>).setContainerFieldOverride("metadata");</xsl:text>
 											<xsl:text>&#10;</xsl:text>
-											<xsl:text>}</xsl:text>
+											<xsl:text>			}</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:when>
 										<xsl:when test="($name = 'Sound') and (@name = 'source')">
@@ -9770,6 +9779,21 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>).setContainerFieldOverride("</xsl:text><xsl:value-of select="@name"/><xsl:text>");</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:when>
+										<xsl:when test="($name = 'HAnimJoint') and (@name = 'skeleton')">
+											<!-- humanoid_root check -->
+											<xsl:text>			((X3DConcreteNode)</xsl:text>
+											<xsl:value-of select="$normalizedMemberObjectName"/>
+											<xsl:text>).setContainerFieldOverride("</xsl:text><xsl:value-of select="@name"/><xsl:text>");</xsl:text>
+											<xsl:text> // humanoid_root check; TODO not working</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+										</xsl:when>
+										<xsl:when test="(($name = 'PhysicalMaterial') or ($name = 'UnlitMaterial')) and ends-with(@name, 'Texture')">
+											<!-- PhysicalMaterial, other PBR node use of images -->
+											<xsl:text>			((X3DConcreteNode)</xsl:text>
+											<xsl:value-of select="$normalizedMemberObjectName"/>
+											<xsl:text>).setContainerFieldOverride("</xsl:text><xsl:value-of select="@name"/><xsl:text>");</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+										</xsl:when>
 									</xsl:choose>
 <xsl:text>		}</xsl:text>
 													<xsl:if test="not($isX3dStatement = 'true') and not(@name = 'IS')">
@@ -9780,9 +9804,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			</xsl:text><xsl:value-of select="$normalizedMemberObjectName"/><xsl:text>ProtoInstance = null;
 		}</xsl:text>
 													</xsl:if>
-												</xsl:if>
-											</xsl:otherwise>
-										</xsl:choose>
+												</xsl:if><!-- SFNode -->
 
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>            return this;</xsl:text>
@@ -11571,7 +11593,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	</xsl:if>
 									<xsl:text>	/**</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>	 * Set single </xsl:text>
+									<xsl:text>	 * Utility method to set single </xsl:text>
 									<xsl:if test="not(starts-with(@name,'child'))">
 										<xsl:text>child </xsl:text>
 									</xsl:if>
@@ -11651,6 +11673,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:choose>
 										<xsl:when test="not(starts-with(@name,'add'))">
 											<xsl:text>set</xsl:text>
+                                            <xsl:if test="not(starts-with(@name,'children')) and not(starts-with(@name,'field'))">
+                                                <xsl:text>Single</xsl:text>
+                                            </xsl:if>
 											<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 										</xsl:when>
 										<xsl:otherwise>
@@ -11729,7 +11754,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 													<xsl:value-of select="$newValueNullClearsFieldReturnVoid"/>
 												</xsl:otherwise>
 											</xsl:choose>
-											<xsl:value-of select="$newValueInstanceAcceptableNodeTypesTest" disable-output-escaping="yes"/>
+<!-- end of setSingle method --> 
+        
 											<xsl:choose>
 												<xsl:when test="($name = 'ExternProtoDeclare') and (@name = 'field')">
 		<!-- check to ensure that no value is present within field having parent ExternProtoDeclare -->
@@ -12224,20 +12250,20 @@ setAttribute method invocations).]]></xsl:text>
 									</xsl:choose>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>		/** Private utility method to access SFNode ProtoInstance field **/</xsl:text>
+									<xsl:text>	/** Private utility method to access SFNode ProtoInstance field **/</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>		private ProtoInstance get</xsl:text>
+									<xsl:text>	private ProtoInstance get</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>ProtoInstance</xsl:text>
 									<xsl:text>()</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>		{</xsl:text>
+									<xsl:text>	{</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>			return </xsl:text>
+									<xsl:text>		return </xsl:text>
 									<xsl:value-of select="@name"/>
 									<xsl:text>ProtoInstance;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
-									<xsl:text>		}</xsl:text>
+									<xsl:text>	}</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 								</xsl:if>
 
@@ -13034,7 +13060,8 @@ setAttribute method invocations).
                                         <!-- end Source code: accessor methods -->
 
 								<!-- HAnim utility methods -->
-								<xsl:if test="(($name = 'HAnimJoint') or ($name = 'HAnimSegment') or ($name = 'HAnimSite') or ($name = 'HAnimDisplacer') or ($name = 'HAnimMotion')) and not($isInterface = 'true')">
+								<xsl:if test="(($name = 'HAnimJoint')  or ($name = 'HAnimSegment') or ($name = 'HAnimSite') or ($name = 'HAnimDisplacer') or 
+                                               ($name = 'HAnimMotion') or ($name = 'HAnimPose')) and not($isInterface = 'true')">
 									<xsl:text>
 	/** Return reference to ancestor HAnimHumanoid
 	 * @return HAnimHumanoid if found, otherwise null
@@ -13059,7 +13086,21 @@ setAttribute method invocations).
 	}
 </xsl:text>
 								</xsl:if>
-
+								<xsl:if test="($name = 'HAnimJoint') and not($isInterface = 'true')">
+									<xsl:text disable-output-escaping="yes"><![CDATA[
+	/** Add a child HAnimJoint node to this HAnimJoint.
+     * This is an additional utility method for addChild() since HAnimJoint is not an X3DChildNode.
+	 * @return {@link HAnimJoint} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+     */
+	public HAnimJoint addChild (HAnimJoint newValue)
+	{
+		if (newValue == null) return this; // newValueNullReturnThis
+        
+		addChildren((org.web3d.x3d.sai.Core.X3DNode) newValue);
+        return this;
+	}
+]]></xsl:text>
+								</xsl:if>
 								<xsl:choose>
 									<xsl:when test="($name = 'HAnimMotion') and not($isInterface = 'true')">
 										<xsl:text>
@@ -13318,7 +13359,8 @@ setAttribute method invocations).
 	}
 ]]></xsl:text>
 							</xsl:when>
-							<xsl:when test="(starts-with($name, 'Metadata') or starts-with($name, 'CAD') or starts-with($name, 'HAnim')) and not($name = 'HAnimMotion')">
+							<xsl:when test="(starts-with($name, 'Metadata') or starts-with($name, 'CAD') or starts-with($name, 'HAnim')) and 
+                                            not($name = 'HAnimMotion')">
 								<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Utility constructor that assigns both DEF label and name, after initializing member variables with default values.
@@ -14263,8 +14305,7 @@ setAttribute method invocations).
 				break;
 			default:
 				stringX3D.append("<!-- unknown DOCTYPE for X3D version ").append(version).append(" -->").append("\n");
-		}
-		stringX3D.append("<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->").append("\n");]]></xsl:text>
+		}]]></xsl:text>
 			</xsl:when>
 		</xsl:choose>
 
@@ -14304,25 +14345,26 @@ setAttribute method invocations).
 			}
 			</xsl:text>
 			</xsl:if>
-			<!-- output prior to other fields; name comes first, except for meta statement -->
+			<!-- avoid listing name first, stay alphabetical for C14N
+           output prior to other fields; name comes first, except for meta statement
 			<xsl:if test="InterfaceDefinition/field[@name = 'name'] and not(@name='meta')">
-			<!-- name is now required
-                                <xsl:if test="($name = 'ProtoInstance')">
+			< ! - - name is now required for ProtoInstance USE
+                <xsl:if test="($name = 'ProtoInstance')">
 					<xsl:text disable-output-escaping="yes"><![CDATA[
-			// note special case for ProtoInstance, do not include name field if USE is present]]></xsl:text>
-				</xsl:if> -->
+			        // note special case for ProtoInstance, do not include name field if USE is present]]></xsl:text>
+				</xsl:if> - - >
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 			if (!getName().equals(getNameDefault())]]></xsl:text>
-			<!-- name is now required
+			< ! - - name is now required
 			<xsl:if test="not($isX3dStatement = 'true') or ($name = 'ProtoInstance')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[ && !hasUSE()]]></xsl:text>
-			</xsl:if> -->
+			</xsl:if> - - >
 			<xsl:text>)
 			{
 				stringX3D.append(" name='").append(SFString.toString(getName())).append("'");
 			}
 			</xsl:text>
-			</xsl:if>
+			</xsl:if> -->
                         <xsl:choose>
                             <xsl:when test="starts-with(local-name(),'Metadata')">
                                     <xsl:text disable-output-escaping="yes"><![CDATA[
@@ -14337,13 +14379,88 @@ setAttribute method invocations).
             }
 ]]></xsl:text>
                             </xsl:when>
-                            <!-- this if statement might be more selective, but this approach is safest to avoid unintended omission and evolution -->
-                            <xsl:when test="not($isX3dStatement = 'true') or ($name = 'ProtoInstance')">
+                            <!-- hacking wildly... TODO better approach needed to preserve containerField values inside HAnimHumanoid -->
+                            <xsl:when test="($name = 'HAnimJoint')">
                                     <xsl:text disable-output-escaping="yes"><![CDATA[
-            // containerField is critical for ProtoInstance relationship to parent node
-            if (!getContainerFieldOverride().isBlank() && !getContainerFieldOverride().equals(this.getContainerFieldDefault())) // output if not default ProtoInstance containerField
+            // containerField correction for HAnimHumanoid parent
+            if (!hasUSE() && getParent().getElementName().equals("HAnimHumanoid"))
             {
-                    stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
+                setContainerFieldOverride("skeleton"); // TODO superfluous?
+				stringX3D.append(" containerField='").append("skeleton").append("'");
+            }
+            else if (hasUSE() && getParent().getElementName().equals("HAnimHumanoid"))
+            {
+				stringX3D.append(" containerField='").append("joints").append("'");
+            }
+]]></xsl:text>
+                            </xsl:when>
+                            <xsl:when test="($name = 'HAnimSegment')">
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            // containerField correction for HAnimHumanoid parent
+            if (hasUSE() && getParent().getElementName().equals("HAnimHumanoid"))
+            {
+				stringX3D.append(" containerField='").append("segments").append("'");
+            }
+]]></xsl:text>
+                            </xsl:when>
+                            <xsl:when test="($name = 'HAnimSite')">
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            // containerField correction for HAnimHumanoid parent
+            if (hasUSE() && getParent().getElementName().equals("HAnimHumanoid"))
+            {
+				stringX3D.append(" containerField='").append("sites").append("'");
+            }
+]]></xsl:text>
+                            </xsl:when>
+                            <xsl:when test="($name = 'Group') or
+                                            ($name = 'LOD') or
+                                            ($name = 'Shape') or
+                                            ($name = 'Switch') or
+                                            ($name = 'Transform') or
+                                            ($name = 'IndexedFaceSet') or
+                                            ($name = 'IndexedFanSet') or
+                                            ($name = 'IndexedLineSet') or
+                                            ($name = 'IndexedQuadSet') or
+                                            ($name = 'IndexedTriangleSet') or
+                                            ($name = 'IndexedTriangleStripSet')">
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            // containerField correction for HAnimHumanoid parent
+            if (getParent().getElementName().equals("HAnimHumanoid")) // likely not a USE node, but that is possible
+            {
+				stringX3D.append(" containerField='").append("skin").append("'");
+            }
+]]></xsl:text>
+                            </xsl:when>
+                            <!-- TODO need disambiguation between skinCoord and skinBindingCoords -->
+                            <xsl:when test="($name = 'Coordinate') or
+                                            ($name = 'CoordinateDouble')">
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            // containerField correction for HAnimHumanoid parent
+            if (hasUSE() && getParent().getElementName().equals("HAnimHumanoid"))
+            {
+				stringX3D.append(" containerField='").append("skinCoord").append("'");
+            }
+]]></xsl:text>
+                            </xsl:when>
+                            <!-- TODO need disambiguation between skinNormal and skinBindingNormal -->
+                            <xsl:when test="($name = 'Normal')">
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            // containerField correction for HAnimHumanoid parent
+            if (hasUSE() && getParent().getElementName().equals("HAnimHumanoid"))
+            {
+				stringX3D.append(" containerField='").append("skinNormal").append("'");
+            }
+]]></xsl:text>
+                            </xsl:when>
+                            <!-- this if statement might be more selective, but this approach is safest to avoid unintended omission and evolution -->
+                            <xsl:when test="not($isX3dStatement = 'true') or ($name = 'ProtoInstance') or ($name = 'HAnimJoint')">
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            // containerField is critical for ProtoInstance relationship to parent node, also for HAnimJoint skeleton field (and others)
+            if ( // (!getContainerField()        .isBlank() && !getContainerField().        equals(this.getContainerFieldDefault())) || 
+                    (!getContainerFieldOverride().isBlank() && !getContainerFieldOverride().equals(this.getContainerFieldDefault()))) 
+            {
+                // output if not default ProtoInstance containerField
+                stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
             }
 ]]></xsl:text>
                                 <xsl:if test="starts-with($name,'Metadata')">
@@ -14363,9 +14480,9 @@ setAttribute method invocations).
                         </xsl:choose>
 			<!-- test attributes (i.e. non-node fields) -->
 			<xsl:for-each select="InterfaceDefinition/field[not(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'sourceCode') and
-                                                            (not(@name = 'name') or ((@name = 'name') and ancestor::Statement[@name='meta'])) and
                                                             ((@accessType='initializeOnly') or (@accessType='inputOutput'))]">
 				<!-- alphabetic order of attributes is essential for X3D canonical form (C14N) -->
+        <!-- TODO removed for C14N: (not(@name = 'name') or ((@name = 'name') and ancestor::Statement[@name='meta'])) and -->
 				<xsl:sort select="@name" order="ascending"/>
 
                 <xsl:if test="(position() = 1)">
@@ -14436,64 +14553,69 @@ setAttribute method invocations).
 								(($name = 'unit')      and ($fieldName = 'conversionFactor'))">
 					<xsl:text><![CDATA[true) /* required attribute */ ]]></xsl:text>
 				</xsl:when>
+				<xsl:when test="($fieldName = 'name')">
+          <xsl:text>get</xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text disable-output-escaping="yes"><![CDATA[().length() > 0) /* name value */]]></xsl:text>
+				</xsl:when>
 				<xsl:when test="(@type = 'SFBool') or (@type = 'SFInt32') or (@type = 'SFFloat') or (@type = 'SFDouble') or (@type = 'SFTime')">
 					<xsl:text><![CDATA[(get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[() != ]]></xsl:text>
-                    <xsl:text>get</xsl:text>
-                    <xsl:value-of select="upper-case(substring(@name,1,1))"/>
-                    <xsl:value-of select="substring(@name,2)"/>
-                    <xsl:text>Default()</xsl:text>
+          <xsl:text>get</xsl:text>
+          <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+          <xsl:value-of select="substring(@name,2)"/>
+          <xsl:text>Default()</xsl:text>
 					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple type */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($javaType, 'ArrayList')">
-                                            <xsl:text><![CDATA[((get]]></xsl:text>
-                                            <xsl:value-of select="$CamelCaseName"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !Arrays.equals(get]]></xsl:text>
-                                            <xsl:value-of select="$CamelCaseName"/>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[(), ]]></xsl:text>
-                                            <xsl:text>get</xsl:text>
-                                            <xsl:value-of select="$CamelCaseName"/>
-                                            <xsl:text>Default()</xsl:text>
-                                            <xsl:text disable-output-escaping="yes"><![CDATA[)) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple array .x3d compare */]]></xsl:text>
+          <xsl:text><![CDATA[((get]]></xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !Arrays.equals(get]]></xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text disable-output-escaping="yes"><![CDATA[(), ]]></xsl:text>
+          <xsl:text>get</xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text>Default()</xsl:text>
+          <xsl:text disable-output-escaping="yes"><![CDATA[)) || !ConfigurationProperties.getStripDefaultAttributes()) /* simple array .x3d compare */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($name = 'LayerSet') and ($fieldName = 'order')">
 					<xsl:text><![CDATA[!(get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[().equals(]]></xsl:text>
-                    <xsl:text>get</xsl:text>
-                    <xsl:value-of select="$CamelCaseName"/>
-                    <xsl:text>Default()</xsl:text>
+          <xsl:text>get</xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text>Default()</xsl:text>
 					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes())]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="($isSingleValueType = 'true')">
 					<xsl:text><![CDATA[!get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text><![CDATA[().equals(]]></xsl:text>
-                    <xsl:text>get</xsl:text>
-                    <xsl:value-of select="$CamelCaseName"/>
-                    <xsl:text>Default()</xsl:text>
+          <xsl:text>get</xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text>Default()</xsl:text>
 					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes()) /* isSingleValueType */]]></xsl:text>
 				</xsl:when>
 				<xsl:when test="(string-length(@default) > 0)">
 					<xsl:text><![CDATA[!Arrays.equals(get]]></xsl:text>
 					<xsl:value-of select="$CamelCaseName"/>
 					<xsl:text><![CDATA[(), ]]></xsl:text>
-                    <xsl:text>get</xsl:text>
-                    <xsl:value-of select="$CamelCaseName"/>
-                    <xsl:text>Default()</xsl:text>
+          <xsl:text>get</xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text>Default()</xsl:text>
 					<xsl:text><![CDATA[) || !ConfigurationProperties.getStripDefaultAttributes()) /* (string-length(@default) > 0) */]]></xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
-                    <xsl:text><![CDATA[((get]]></xsl:text>
-                    <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text><![CDATA[((get]]></xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
                     <xsl:text disable-output-escaping="yes"><![CDATA[().length > 0) && !get]]></xsl:text>
-                    <xsl:value-of select="$CamelCaseName"/>
+          <xsl:value-of select="$CamelCaseName"/>
 					<xsl:text disable-output-escaping="yes"><![CDATA[().equals(]]></xsl:text>
-                    <xsl:text>get</xsl:text>
-                    <xsl:value-of select="$CamelCaseName"/>
-                    <xsl:text>Default()</xsl:text>
-                    <xsl:text disable-output-escaping="yes"><![CDATA[)) || !ConfigurationProperties.getStripDefaultAttributes()) /* otherwise */]]></xsl:text>
+          <xsl:text>get</xsl:text>
+          <xsl:value-of select="$CamelCaseName"/>
+          <xsl:text>Default()</xsl:text>
+          <xsl:text disable-output-escaping="yes"><![CDATA[)) || !ConfigurationProperties.getStripDefaultAttributes()) /* otherwise */]]></xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="not($isX3dStatement = 'true')">
@@ -14513,6 +14635,11 @@ setAttribute method invocations).
 						<xsl:value-of select="$CamelCaseName"/>
 						<xsl:text>())</xsl:text>
 						<xsl:text>.toStringX3D()</xsl:text>
+					</xsl:when>
+					<xsl:when test="(@type = 'xs:NMTOKEN')">
+						<xsl:text>get</xsl:text>
+						<xsl:value-of select="$CamelCaseName"/>
+						<xsl:text>()</xsl:text>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:value-of select="@type"/>
@@ -14603,13 +14730,12 @@ setAttribute method invocations).
 			</xsl:if>
 
 			<xsl:for-each select="InterfaceDefinition/field[(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and
-									((@accessType='initializeOnly') or (@accessType='inputOutput')) and
-                                                                        not(@name = 'meta')]">
+									((@accessType='initializeOnly') or (@accessType='inputOutput')) and not(@name = 'meta')]">
 				<!-- order is essential for elements, note that xsl:sort results in reverse order -->
 				<!-- sort by statement/field @name, all other child nodes last -->
 				<xsl:sort select="@name[not((. = 'Scene') or (. = 'head') or (. = 'meta') or (. = 'unit') or (. = 'component') or
-                                                            (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'fieldValue') or
-                                                            (. = 'metadata'))]"/>
+                                    (. = 'ProtoBody') or (. = 'ProtoInterface') or (. = 'IS') or (. = 'field') or (. = 'fieldValue') or
+                                    (. = 'metadata'))]"/>
 				<!-- sort head before Scene in X3D -->
 				<xsl:sort select="(@name = 'Scene')"/>
 				<xsl:sort select="(@name = 'head')"/>
@@ -14622,14 +14748,14 @@ setAttribute method invocations).
 				<xsl:sort select="(@name = 'ProtoInterface')"/>
 				<!-- necessary order for model validation: field/IS/metadata before all other nodes/statements -->
 				<!-- sort order field, fieldValue, IS, metadata in ProtoInstance, Script, others -->
-                                <!-- note reverse order since each sort is applied after the preceding sort -->
+        <!-- note reverse order since each sort is applied after the preceding sort -->
 				<xsl:sort select="(@name = 'metadata')"/>
 				<xsl:sort select="(@name = 'IS')"/>
 				<xsl:sort select="(@name = 'field')"/>
-                                <!-- adjust child ordering: Collision proxy field may have DEF geometry that gets USEd in children -->
-                                <xsl:sort select="(@name = 'children')"/>
-                                <xsl:sort select="(@name = 'proxy')"/>
-                                <xsl:sort select="(@name = 'metadata')"/>
+        <!-- adjust child ordering: Collision proxy field may have DEF geometry that gets USEd in children -->
+        <xsl:sort select="(@name = 'children')"/>
+        <xsl:sort select="(@name = 'proxy')"/>
+        <xsl:sort select="(@name = 'metadata')"/>
 
 				<xsl:variable name="isX3dStatement">
                                     <xsl:call-template name="isX3dStatement">
@@ -14695,8 +14821,8 @@ setAttribute method invocations).
                                     <xsl:text>
 			// special case for HAnimHumanoid: output skeleton field prior to any of corresponding USE MFNode arrays
 			for (org.web3d.x3d.sai.Core.X3DNode element : skeleton)
-                        {
-                                stringX3D.append(((X3DConcreteElement)element).toStringX3D(indentLevel + indentIncrement));
+			{
+                stringX3D.append(((X3DConcreteElement)element).toStringX3D(indentLevel + indentIncrement));
 			}</xsl:text>
                                 </xsl:if>
 			</xsl:for-each>
@@ -14775,7 +14901,6 @@ setAttribute method invocations).
 	}
 ]]></xsl:text>
 						</xsl:if>
-
 						<!-- toStringClassicVRML -->
 						<xsl:if test="not(starts-with($thisClassName, 'X3DConcrete'))">
 <!-- debug ($debug = 'true')-->
@@ -14907,8 +15032,7 @@ setAttribute method invocations).
 				<xsl:text>
 		stringClassicVRML.append("#X3D V") // V for version
                                  .append(version).append(" utf8").append("\n");
-		stringClassicVRML.append("PROFILE").append(" ").append(profile).append("\n");
-		stringClassicVRML.append("# This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html\n");</xsl:text>
+		stringClassicVRML.append("PROFILE").append(" ").append(profile).append("\n");</xsl:text>
 			</xsl:when>
 			<xsl:when test="(@name = 'head') or (@name = 'Scene')">
 				<!-- special output provided separately by X3D, only mention name as a comment here -->
@@ -15294,11 +15418,11 @@ setAttribute method invocations).
 			</xsl:if>
 
 			<xsl:for-each select="InterfaceDefinition/field[not(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'sourceCode') and
-                                                            ((@accessType='initializeOnly') or (@accessType='inputOutput'))]">
+                                                      ((@accessType='initializeOnly') or (@accessType='inputOutput'))]">
 				<!-- alphabetic order of attributes is essential for X3D canonical form (C14N) -->
 				<xsl:sort select="@name" order="ascending"/>
 
-                                <xsl:variable name="fieldName" select="translate(@name,'-','_')"/><!-- handle http-equiv etc. -->
+        <xsl:variable name="fieldName" select="translate(@name,'-','_')"/><!-- handle http-equiv etc. -->
 				<xsl:variable name="isSingleValueType">
 					<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
 				</xsl:variable>
@@ -15744,6 +15868,8 @@ setAttribute method invocations).
 			{
 				 stringClassicVRML.append(element.toStringClassicVRML(indentLevel));
 			}
+                    
+		stringClassicVRML.append("# This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html\n");
 ]]></xsl:text>
 			</xsl:if>
 
@@ -17056,7 +17182,8 @@ setAttribute method invocations).
 		{
 			String warningNotice = ConfigurationProperties.WARNING_PROTOINSTANCE_NOT_FOUND +
 									", " + NAME + " " + getName() + " has no corresponding " +
-									ProtoInstance.NAME + " attached to the scene graph. ";
+									ProtoInstance.NAME + " attached to the scene graph. " +
+                                    "Good practice suggests testing new prototype declarations, even if not rendering them.";
 			validationResult.append(warningNotice).append("\n");
 		}
 		// TODO pass through allowed containerField values array?
@@ -19847,6 +19974,38 @@ public String getAccessType(String fieldName)
         return hasSupport;
     }
 ]]></xsl:text>
+                        
+				<xsl:text disable-output-escaping="yes"><![CDATA[
+	/**
+	 * Utility method to add meta name=generator for X3DJSAIL.
+     */
+    public void addMetaGeneratorX3DJSAIL ()
+    {
+        boolean alreadyFound = false;
+        if (getHead() != null)
+		{
+            
+			// first list informational meta elements of interest
+			for (meta meta : getHead().getMetaList())
+			{
+				if (meta.getName().equals(meta.NAME_GENERATOR) && meta.getContent().contains("X3DJSAIL"))
+				{
+                    alreadyFound = true;
+                    break;
+				}
+			}
+            if (!alreadyFound)
+            {
+                getHead().addMeta(meta.NAME_GENERATOR, "X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html");
+            }
+		}
+        else
+        {
+            setHead(new head());
+            getHead().addMeta(meta.NAME_GENERATOR, "X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html");
+        }
+	}
+]]></xsl:text>
             </xsl:if>
 
 			<!-- finished source file definition -->
@@ -21787,12 +21946,12 @@ shall not include the underlying field's values at that point in time.
                 if (value.startsWith(".") || value.startsWith("-"))       // NameStartChar restrictions
                     result = false;
 */
-                String prefix = new String(); // "[SFString.meetsX3dInteroperabilityNamingConventions()] "
+                String prefix = "[SFString.meetsX3dInteroperabilityNamingConventions()] "; // new String();
                 if      (isX3dNodeName(value))
                 {
                         System.out.print ("[warning]");
                         if (!prefix.isBlank())
-                            System.out.print(" prefix='" + prefix + "'");
+                            System.out.print(prefix);
                         System.out.println(" name='" + value + "' matches an X3D node name, literal name collisions can have unexpected consequences");
                         return false; // special case
                 }
@@ -26062,15 +26221,15 @@ public void append(]]></xsl:text>
 		newValue = SFTime.DEFAULT_VALUE; // unusual occurrence, TODO log it
 	}]]></xsl:text>
 	</xsl:if>
-					<xsl:text>
+		<xsl:text>
 	</xsl:text>
-				</xsl:otherwise>
+	</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="not(not(contains($javaPrimitiveType,'[')) and ($tupleSize = '1'))"> <!-- opposite of below -->
 				<xsl:text>int originalLength = </xsl:text>
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text>.length;
-				</xsl:text>
+	</xsl:text>
 			</xsl:if>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:text> = </xsl:text>
@@ -26080,14 +26239,16 @@ public void append(]]></xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:text>.length + </xsl:text>
 			<xsl:choose>
-				<xsl:when test="contains($javaPrimitiveType,'[')">
+                <!-- apply same array=type check as appeared above in method signature -->
+				<xsl:when test="contains($javaPrimitiveType,'[') or 
+                                ($isArrayType and not(@type = 'MFBool') and not(@type = 'MFInt32') and not(@type = 'MFFloat') and not(@type = 'MFDouble') and not(@type = 'MFString') and not(@type = 'MFTime'))">
 					<xsl:text>newValue.length</xsl:text><!-- array -->
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:value-of select="$tupleSize"/>
 				</xsl:otherwise>
 			</xsl:choose>
-			<xsl:text>); // increase array size for append
+			<xsl:text>); // increase array size for append #1
 	</xsl:text>
 			<xsl:choose>
 				<xsl:when test="not(contains($javaPrimitiveType,'[')) and ($tupleSize = '1')">
@@ -26134,9 +26295,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![
 			<xsl:text> = </xsl:text>
 			<xsl:text>Arrays.copyOf(</xsl:text>
 			<xsl:value-of select="$fieldName"/>
-			<xsl:text>, </xsl:text>
-			<xsl:value-of select="$fieldName"/>
-			<xsl:text>.length + </xsl:text>
+			<xsl:text>, originalLength + </xsl:text>
 			<xsl:choose>
 				<xsl:when test="contains($javaPrimitiveType,'[') or starts-with($fieldName,'MF')">
 					<xsl:text>newValue.length</xsl:text><!-- array -->
@@ -26145,7 +26304,7 @@ public void append(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><![
 					<xsl:value-of select="$tupleSize"/>
 				</xsl:otherwise>
 			</xsl:choose>
-			<xsl:text><![CDATA[); // increase array size for append
+			<xsl:text><![CDATA[); // increase array size for append #2
 	for (int i = 0; i < newValue.length; i++)
 	{
 		]]></xsl:text>
@@ -33755,7 +33914,7 @@ package org.web3d.x3d.util.exi;
 		<xsl:result-document href="{$targetPath}{$concretePackageDirectorySource}/../util/x3duom/package-info.java" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
 <xsl:text disable-output-escaping="yes"><![CDATA[
 /**
- *
+ * <!-- these source files are not maintained in version control because a new timestamp is regenerated each time -->
  * <p> The X3D Java x3duom package provides a
  * set of Java utility classes for the X3D Unified Object Model (X3DUOM).
  *
@@ -33917,7 +34076,7 @@ import javax.script.ScriptException;</xsl:text>
         "-toXML                            # output in .xml (X3D) format" + "\n" +
         "-toClassicVrml                    # output in .x3dv (ClassicVrml) X3D format" + "\n" +
         "-toJava                           # output in .java source code using X3DJSAIL" + "\n" +
-        "-toJSON                           # output in .json (JavaScript Object Notation) format" + "\n" +
+        "-toJSON                           # output in .x3dj (JavaScript Object Notation) format" + "\n" +
         "-toPython                         # output in .py Python source code" + "\n" +
         "-toVRML97                         # output in .wrl  (VRML97) format" + "\n" +
         "-toHTML                           # output in .html  pretty-print documentation" + "\n" +
@@ -36015,20 +36174,28 @@ showing default attribute values, and other custom settings.</p>
 	}
     // ==========================================================================================
 
-	/** Whether to omit trailing zeros from floating-point or double-precision output. */
-	private static final boolean stripTrailingZeroes_DEFAULT = true;
+	/** Whether to omit trailing zeros from floating-point or double-precision output, default is <code>true</code>.
+   * Property <code>stripTrailingZeroes</code> can be initialized by user preferences in <code>X3DJSAIL.properties</code> file.
+   */
+	public static final boolean stripTrailingZeroes_DEFAULT = true;
 
-	/** Whether to omit trailing zeros from floating-point or double-precision output. */
+	/** Whether to omit trailing zeros from floating-point or double-precision output, default is <code>true</code>.
+   * Property <code>stripTrailingZeroes</code> can be initialized by user preferences in <code>X3DJSAIL.properties</code> file.
+   */
 	private static boolean stripTrailingZeroes = stripTrailingZeroes_DEFAULT;
 
-	/** Indicates whether trailing zeros are omitted from output of floating-point or double-precision values, this property can be helpful for debugging.
+	/** Indicates whether trailing zeros are omitted from output of floating-point or double-precision values, default is <code>true</code>.
+   * This property can be helpful for debugging.
+   * Property <code>stripTrailingZeroes</code> can be initialized by user preferences in <code>X3DJSAIL.properties</code> file.
 	 * @return configuration setting whether trailing zeros are stripped
 	 */
 	public static final boolean isStripTrailingZeroes()
 	{
 		return stripTrailingZeroes;
 	}
-	/** Set whether to omit trailing zeros from floating-point or double-precision output, this property can be helpful for debugging.
+	/** Set whether to omit trailing zeros from floating-point or double-precision output, default is <code>true</code>.
+   * This property can be helpful for debugging.
+   * Property <code>stripTrailingZeroes</code> can be initialized by user preferences in <code>X3DJSAIL.properties</code> file.
 	 * @param newValue is new value to assign
 	 */
 	public static final void setStripTrailingZeroes(boolean newValue)
@@ -36140,7 +36307,7 @@ showing default attribute values, and other custom settings.</p>
 		stripDefaultAttributes        = stripDefaultAttributes_DEFAULT;
 		validationExceptionAllowed    = validationExceptionAllowed_DEFAULT;
 		deleteIntermediateFiles       = deleteIntermediateFiles_DEFAULT;
-		stripTrailingZeroes	      = stripTrailingZeroes_DEFAULT;
+		stripTrailingZeroes	          = stripTrailingZeroes_DEFAULT;
 		normalizeCommentWhitespace    = normalizeCommentWhitespace_DEFAULT;
 		overwriteExistingFiles        = overwriteExistingFiles_DEFAULT;
 		consoleOutputVerbose          = consoleOutputVerbose_DEFAULT;
@@ -36728,7 +36895,11 @@ showing default attribute values, and other custom settings.</p>
 	 */
 	public String toStringX3D()
 	{
-		return toStringX3D(0); // apply next method with initial indentation level 0
+        if (this.getElementName().equals(X3D.NAME))
+        {
+            ((X3D) this).addMetaGeneratorX3DJSAIL();
+        }
+        return toStringX3D(0); // apply next method with initial indentation level 0
 	}
 
 	/**
@@ -36753,7 +36924,11 @@ showing default attribute values, and other custom settings.</p>
 	 */
 	public String toStringClassicVRML()
 	{
-		return toStringClassicVRML(0); // apply next method with initial indentation level 0
+        if (getElementName().equals(X3D.NAME))
+        {
+            ((X3D) this).addMetaGeneratorX3DJSAIL();
+        }
+        return toStringClassicVRML(0); // apply next method with initial indentation level 0
 	}
 
 	/**
@@ -36895,11 +37070,11 @@ showing default attribute values, and other custom settings.</p>
 	private static final String USE_DEFAULT_VALUE = "";
 
 	/**
-         * Warning: containerFieldOverride describes a non-default (and quite possibly incorrect) field relationship of a node to its parent,
-         * overriding the default or alternate containerField value.
-	 * Programmer usage is not ordinarily needed when using this API (in rare cases it may be needed for ProtoInstance nodes).
-         * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
-         * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
+   * Warning: containerFieldOverride describes a non-default field relationship of a node to its parent,
+   * overriding the default or alternate containerField value.
+   * Programmer usage is not ordinarily needed when using this API (in rare cases it may be needed for ProtoInstance nodes).
+   * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
+   * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
 	 */
         public String containerFieldOverride = new String();
 
@@ -37158,13 +37333,13 @@ ProtoBody nodes.
 	abstract public String getContainerFieldDefault();
 
 	/**
-         * This string array provides all allowed containerField values for this node, starting with the default value.
+     * This string array provides all allowed containerField values for this node, starting with the default value.
 	 * Note that containerField describes the field relationship of a node to its parent.
 	 * Modification of this value is not needed when using this API, since alternative values are provided for informational purposes.
 	 * When relevant, a concrete class independently overrides this array with final values.
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 */
-	public String[] containerField_ALLOWED_VALUES = { };
+	public String[] containerField_ALLOWED_VALUES = { }; // instantiated by initialize() method
 
         /**
          * containerField describes the field relationship of a node to its parent.
@@ -37179,11 +37354,11 @@ ProtoBody nodes.
 	}
 
 	/**
-         * Warning: containerFieldOverride describes a non-default (and quite possibly incorrect) field relationship of a node to its parent,
-         * overriding the default or alternate containerField value.
-	 * Programmer usage is not ordinarily needed when using this API (in rare cases it may be needed for ProtoInstance nodes).
-         * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
-         *
+   * Warning: containerFieldOverride describes a non-default field relationship of a node to its parent,
+   * overriding the default or alternate containerField value.
+   * Programmer usage is not ordinarily needed when using this API (in rare cases it may be needed for ProtoInstance nodes).
+   * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
+   *
 	 * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
 	 * @return containerFieldOverride value, if any
@@ -37193,11 +37368,11 @@ ProtoBody nodes.
 		return containerFieldOverride;
 	}
 	/**
-         * Warning: containerFieldOverride describes a non-default (and quite possibly incorrect) field relationship of a node to its parent,
-         * overriding the default or alternate containerField value.
-	 * Programmer usage is not ordinarily needed when using this API (in rare cases it may be needed for ProtoInstance nodes).
-         * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
-         *
+   * Warning: containerFieldOverride describes a non-default field relationship of a node to its parent,
+   * overriding the default or alternate containerField value.
+   * Programmer usage is not ordinarily needed when using this API (in rare cases it may be needed for ProtoInstance nodes).
+   * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
+   *
 	 * @param value to set containerFieldOverride, must be allowed in containerField_ALLOWED_VALUES
          * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField" target="_blank">X3D Scene Authoring Hints: containerField</a>
@@ -37216,19 +37391,20 @@ ProtoBody nodes.
 		}
 		else
 		{
-			String errorNotice = "*** Invalid setContainerFieldOverride() value='" + value +
+			String errorNotice = "*** Found invalid value, containerField='" + value +
 				"', legal values for " + getElementName() + " are containerField_ALLOWED_VALUES='" +
-				new org.web3d.x3d.jsail.fields.MFString(containerField_ALLOWED_VALUES).toStringX3D() + "'";
+				new org.web3d.x3d.jsail.fields.MFString(containerField_ALLOWED_VALUES).toStringX3D() + "'\n" +
+                "    see https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField for more information.";
 			throw new org.web3d.x3d.sai.InvalidFieldValueException(errorNotice);
 		}
 		return this;
 	}
 	/**
-         * Warning: containerFieldOverride describes a non-default (and quite possibly incorrect) field relationship of a node to its parent,
-         * overriding the default or alternate containerField value.
+   * Warning: containerFieldOverride describes a non-default field relationship of a node to its parent,
+   * overriding the default or alternate containerField value.
 	 * Programmer usage is not ordinarily needed when using this API (in rare cases it may be needed for ProtoInstance nodes).
-         * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
-         * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
+   * Instead of using containerFieldOverride workaround methods, focus on defining correct parent-child node relationships instead.
+   * @see org.web3d.x3d.jsail.X3DConcreteNode#containerField_ALLOWED_VALUES
 	 */
         public void resetContainerFieldOverride()
 	{
@@ -37308,6 +37484,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.w3c.dom.Document;
 import org.w3c.dom.DOMException;
+import org.w3c.dom.DOMImplementation;
+import org.w3c.dom.DocumentType;
 
 import java.io.File;
 import java.io.IOException;
@@ -37370,6 +37548,7 @@ import org.web3d.x3d.sai.Core.X3DSensorNode;
 import org.web3d.x3d.sai.CubeMapTexturing.X3DEnvironmentTextureNode;
 import org.web3d.x3d.sai.Grouping.X3DBoundedObject;
 import org.web3d.x3d.sai.Grouping.X3DGroupingNode;
+import org.web3d.x3d.sai.Layering.X3DViewportNode;
 import org.web3d.x3d.sai.Rendering.X3DComposedGeometryNode;
 import org.web3d.x3d.sai.Rendering.X3DColorNode;
 import org.web3d.x3d.sai.Rendering.X3DComposedGeometryNode;
@@ -37523,7 +37702,25 @@ import org.web3d.x3d.sai.X3DException;
 			documentBuilder = documentBuilderFactory.newDocumentBuilder();
 			OutputStreamWriter errorWriter = new OutputStreamWriter(System.out, ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT);
 			documentBuilder.setErrorHandler(new MyErrorHandler (new PrintWriter(errorWriter, true)));
+            
+            // TODO must have DOCTYPE in order for X3DLoaderDOM to get default containerField values and perform type-aware parsing
+            
 			document = documentBuilder.parse(x3dFile);
+            // https://docs.oracle.com/en/java/javase/25/docs/api/java.xml/org/w3c/dom/Document.html#getDoctype()
+            if (document.getDoctype() == null)
+            {
+                // https://stackoverflow.com/questions/13553614/how-to-add-doctype-in-xml-document-using-dom
+                DOMImplementation domImpl = document.getImplementation();
+                DocumentType doctype = domImpl.createDocumentType("doctype",
+                     "ISO//Web3D//DTD X3D 4.0//EN", "https://www.web3d.org/specifications/x3d-4.0.dtd");
+                // TODO how to attach to the document where it is needed?
+            
+                String message = "[warning] This X3D document has no DOCTYPE statement which helps with scene validation, suggest adding it.\n" +
+                                 "          <!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n" +
+                                 "          https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation";
+                System.err.println(message);
+            }
+            
 			X3DConcreteElement concreteElement =  toX3dModelInstance(document);
             if (!concreteElement.getElementName().equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.NAME))
             {
@@ -37533,20 +37730,20 @@ import org.web3d.x3d.sai.X3DException;
 		catch (ParserConfigurationException parserConfigurationException)
 		{
 			Logger.getLogger(X3DLoaderDOM.class.getName()).log(Level.SEVERE, null, parserConfigurationException);
-                        loadSuccess = false;
-                        return loadSuccess;
+            loadSuccess = false;
+            return loadSuccess;
 		}
 		catch (SAXException saxException)
 		{
 			Logger.getLogger(X3DLoaderDOM.class.getName()).log(Level.SEVERE, null, saxException);
-                        loadSuccess = false;
-                        return loadSuccess;
+            loadSuccess = false;
+            return loadSuccess;
 		}
 		catch (IOException ioException)
 		{
 			Logger.getLogger(X3DLoaderDOM.class.getName()).log(Level.SEVERE, null, ioException);
-                        loadSuccess = false;
-                        return loadSuccess;
+            loadSuccess = false;
+            return loadSuccess;
 		}
 		loadSuccess = (document != null);
 		return loadSuccess;
@@ -37580,6 +37777,7 @@ import org.web3d.x3d.sai.X3DException;
 	{
 		boolean nodeChildFound = false;
 		StringBuilder result = new StringBuilder();
+        org.w3c.dom.NodeList childNodeList;
 
         if (node==null)
         {
@@ -37593,7 +37791,7 @@ import org.web3d.x3d.sai.X3DException;
 		{
 			case org.w3c.dom.Node.DOCUMENT_NODE:
 				result.append("<?xml version=\"1.0\" encoding=\"").append(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT).append("\"?>").append("\n");
-				org.w3c.dom.NodeList childNodeList = node.getChildNodes();	// recurse on children
+				childNodeList = node.getChildNodes(); // recurse on children
 				if (childNodeList != null)
 				{
 					for (int i = 0; i < childNodeList.getLength(); i++)
@@ -37748,10 +37946,12 @@ import org.web3d.x3d.sai.X3DException;
 	public X3DConcreteElement toX3dModelInstance(org.w3c.dom.Node node, X3DConcreteElement parentElement)
 	{
 		String indent = "  "; // TODO omit when refactored
+		boolean     doctypeFound = false;
 		boolean   nodeChildFound = false;
 		Class<X3DConcreteElement> elementClass; // TODO <X3DConcreteElement> ?
-		X3DConcreteElement       elementObject = null;
+		X3DConcreteElement        elementObject = null;
 		String errorNotice;
+        org.w3c.dom.NodeList childNodeList;
 
         if (node==null)
         {
@@ -37763,7 +37963,7 @@ import org.web3d.x3d.sai.X3DException;
 		{
 			case org.w3c.dom.Node.DOCUMENT_NODE:
 				// omit: ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-				org.w3c.dom.NodeList childNodeList = node.getChildNodes();	// recurse on children
+				childNodeList = node.getChildNodes(); // recurse on children
 				if (childNodeList != null)
 				{
 					for (int i = 0; i < childNodeList.getLength(); i++)
@@ -37777,7 +37977,8 @@ import org.web3d.x3d.sai.X3DException;
 
 			case org.w3c.dom.Node.DOCUMENT_TYPE_NODE:
 				// omit: org.w3c.dom.Node.DocumentType documentType = (org.w3c.dom.Node.DocumentType) node;
-				childNodeList = node.getChildNodes();	// recurse on children, e.g. CDATA and namespaces
+                doctypeFound = true;
+				childNodeList = node.getChildNodes(); // recurse on children, e.g. CDATA and namespaces
 				if (childNodeList != null)
 				{
 					for (int i = 0; i < childNodeList.getLength(); i++)
@@ -37795,8 +37996,15 @@ import org.web3d.x3d.sai.X3DException;
 				String             packageName = X3DConcreteNode.getPackageName(elementName); // X3DJSAIL utility
 				String	  elementSetMethodName;
 				Method		  elementSetMethod;
+                    
+                // ensure DOCTYPE is set since it provides default containerField values
+                if (!doctypeFound)
+                {
+                    // TODO add doctype
+                    doctypeFound = true;
+                }
 
-				// https://stackoverflow.com/questions/7495785/java-how-to-instantiate-a-class-from-stringstring
+				// https://stackoverflow.com/questions/7495785/java-how-to-instantiate-a-class-from-string
 
 				try // to create X3D object and related X3DConcreteElement node/statement objects
 				{
@@ -37910,8 +38118,15 @@ import org.web3d.x3d.sai.X3DException;
 							containerField = children.item(i).getAttributes().getNamedItem("containerField").getNodeValue();
                             // TODO containerField synonyms
 							if ((childX3dElement instanceof X3DConcreteNode) && !(containerField == null) && !containerField.isEmpty())
+                            {
 								 ((X3DConcreteNode)childX3dElement).setContainerFieldOverride(containerField);
+                            }
 						}
+                        else if ((childX3dElement instanceof X3DConcreteNode) && ((containerField == null) || containerField.isEmpty()))
+                        {
+                            // use alternative source for default containerField if doctype not provided
+                            containerField = ((X3DConcreteNode)childX3dElement).getContainerFieldDefault();
+                        }
 						String  protoInstanceNodeType = new String();
 						String                    DEF = new String();
 
@@ -38173,6 +38388,8 @@ import org.web3d.x3d.sai.X3DException;
 
 							else if (nodeName.equals("Sound") && (childElementName.equals("AudioClip") || childElementName.equals("MovieTexture")))
 									((Sound)elementObject).setSource ((X3DSoundSourceNode) childX3dElement);
+							else if (nodeName.equals("OscillatorSource") && childElementName.equals("PeriodicWave"))
+									((OscillatorSource)elementObject).setPeriodicWave ((PeriodicWave) childX3dElement);
 							else if (nodeName.equals("Sound") && (protoInstanceNodeType.equals("AudioClip") || protoInstanceNodeType.equals("MovieTexture") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("source") || containerField.isEmpty())))
 									((Sound)elementObject).setSource ((ProtoInstance) childX3dElement);
                             // TODO other audio-graph nodes
@@ -38244,7 +38461,7 @@ import org.web3d.x3d.sai.X3DException;
 									  childElementName.equals("Disk2D") || childElementName.equals("Polyline2D") || childElementName.equals("Polypoint2D") ||
 									  childElementName.equals("Rectangle2D") || childElementName.equals("TriangleSet2D") ||
 									  childElementName.equals("ElevationGrid") || childElementName.equals("Extrusion") || childElementName.equals("GeoElevationGrid") ||
-									  childElementName.equals("IndexedLineSet") || childElementName.equals("IndexedPointSet") || childElementName.equals("IndexedQuadSet") ||
+									  childElementName.equals("IndexedLineSet") || childElementName.equals("IndexedQuadSet") ||
 									  childElementName.equals("LineSet") || childElementName.equals("PointSet") || childElementName.equals("QuadSet") ||
 									  childElementName.equals("IndexedTriangleFanSet") || childElementName.equals("IndexedTriangleSet") || childElementName.equals("IndexedTriangleStripSet") ||
 									  childElementName.equals("TriangleFanSet") || childElementName.equals("TriangleSet") || childElementName.equals("TriangleStripSet") ||
@@ -38259,7 +38476,7 @@ import org.web3d.x3d.sai.X3DException;
 									  protoInstanceNodeType.equals("Disk2D") || protoInstanceNodeType.equals("Polyline2D") || protoInstanceNodeType.equals("Polypoint2D") ||
 									  protoInstanceNodeType.equals("Rectangle2D ") || protoInstanceNodeType.equals("TriangleSet2D") ||
 									  protoInstanceNodeType.equals("ElevationGrid") || protoInstanceNodeType.equals("Extrusion") || protoInstanceNodeType.equals("GeoElevationGrid") ||
-									  protoInstanceNodeType.equals("IndexedLineSet") || protoInstanceNodeType.equals("IndexedPointSet") || protoInstanceNodeType.equals("IndexedQuadSet") ||
+									  protoInstanceNodeType.equals("IndexedLineSet") || protoInstanceNodeType.equals("IndexedQuadSet") ||
 									  protoInstanceNodeType.equals("LineSet") || protoInstanceNodeType.equals("PointSet") || protoInstanceNodeType.equals("QuadSet") ||
 									  protoInstanceNodeType.equals("IndexedTriangleFanSet") || protoInstanceNodeType.equals("IndexedTriangleSet") || protoInstanceNodeType.equals("IndexedTriangleStripSet") ||
 									  protoInstanceNodeType.equals("TriangleFanSet") || protoInstanceNodeType.equals("TriangleSet") || protoInstanceNodeType.equals("TriangleStripSet") ||
@@ -38399,6 +38616,10 @@ import org.web3d.x3d.sai.X3DException;
 									((HAnimHumanoid)elementObject).addViewpoints((HAnimSite) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("viewpoints"))
 									((HAnimHumanoid)elementObject).addViewpoints((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals(HAnimPose.NAME)) // && containerField.equals("children"))
+									((HAnimHumanoid)elementObject).addChild((HAnimPose) childX3dElement);
+							else if ((childElementName.equals(HAnimPose.NAME)) && containerField.equals("children"))
+									((X3DGroupingNode)elementObject).addChildren(new org.web3d.x3d.sai.Core.X3DNode[] { (X3DNode) childX3dElement } );
 
 							else if (nodeName.equals("HAnimHumanoid") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble")) && containerField.equals("skinCoord"))
 									((HAnimHumanoid)elementObject).setSkinCoord ((X3DCoordinateNode) childX3dElement);
@@ -38590,6 +38811,36 @@ import org.web3d.x3d.sai.X3DException;
 									((TriangleFanSet)elementObject).setNormal((ProtoInstance) childX3dElement);
 							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("Normal") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("normal") || containerField.isEmpty()) || containerField.isEmpty()))
 									((TriangleStripSet)elementObject).setNormal((ProtoInstance) childX3dElement);
+                                       
+							else if (nodeName.equals(LayerSet.NAME) && childElementName.equals(Layer.NAME) && containerField.equals("layers"))
+									((LayerSet)elementObject).addLayers((X3DNode) childX3dElement );
+							else if (nodeName.equals(Layer.NAME) && childElementName.equals(Viewport.NAME) && containerField.equals("viewport"))
+									((Layer)elementObject).setViewport((X3DViewportNode) childX3dElement );
+                                        
+                            // X3D v4.1 nodes
+							else if (nodeName.endsWith("Set") && childElementName.equals("Tangent") && containerField.equals("tangent"))
+									((X3DComposedGeometryNode)elementObject).setTangent((Tangent) childX3dElement);
+							else if (nodeName.equals("IndexedFaceSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((IndexedFaceSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("IndexedQuadSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((IndexedQuadSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("IndexedTriangleSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((IndexedTriangleSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("IndexedTriangleFanSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((IndexedTriangleFanSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("IndexedTriangleStripSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((IndexedTriangleStripSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("QuadSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((QuadSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("TriangleSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((TriangleSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("TriangleFanSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("tangent") || containerField.isEmpty()))
+									((TriangleFanSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("TriangleStripSet") && (protoInstanceNodeType.contains("Tangent") || protoInstanceNodeType.equals("ExternProtoDeclare")) && ((containerField.equals("tangent") || containerField.isEmpty()) || containerField.isEmpty()))
+									((TriangleStripSet)elementObject).setTangent((ProtoInstance) childX3dElement);
+
+							else if ((childElementName.equals(FontLibrary.NAME)) && containerField.equals("children"))
+									((X3DGroupingNode)elementObject).addChildren(new org.web3d.x3d.sai.Core.X3DNode[] { (X3DNode) childX3dElement } );
 
 							else if (nodeName.equals("StaticGroup") && (containerField.equals("children") || containerField.isEmpty()))
 									((StaticGroup)elementObject).addChild((X3DChildNode) childX3dElement);
@@ -38601,7 +38852,7 @@ import org.web3d.x3d.sai.X3DException;
 									((ViewpointGroup)elementObject).addChild((X3DNode) childX3dElement);
 							else if (nodeName.equals("ViewpointGroup") && (protoInstanceNodeType.equals("Viewpoint") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("children") || containerField.isEmpty()))
 									((ViewpointGroup)elementObject).addChild((ProtoInstance) childX3dElement);
-
+                                        
 							else if (nodeName.equals("Text") && childElementName.equals("FontStyle") && (containerField.equals("fontStyle") || containerField.isEmpty()))
 									((Text)elementObject).setFontStyle ((X3DFontStyleNode) childX3dElement);
 							else if (nodeName.equals("Text") && (protoInstanceNodeType.equals("FontStyle") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("fontStyle") || containerField.isEmpty()))
@@ -39178,15 +39429,15 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	private static String blenderPath = "";
 
 	/** Default Blender path default for Windows operating system, possibly unneeded if <code>blender</code> is in path already.
-	 * Can also set <code>BLENDER_PATH</code> property in X3DJSAIL.properties, or <code>BLENDER_PATH</code> environment variable in operating system.
-         * <i>Warning:</i> local settings vary, configure path if necessary.
+	 * Can also set <code>BLENDER_PATH</code> property in <code>X3DJSAIL.properties</code>, or <code>BLENDER_PATH</code> environment variable in operating system.
+   * <i>Warning:</i> local settings vary, configure path if necessary.
 	 * @see #checkBlenderPath()
 	 * @see #setBlenderPath(String)
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/index.html">Blender Command Line</a>
 	 * @see <a href="https://www.blender.org/download">Blender Download</a>
 	 */
-	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 4.5"; // escape \
+	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 5.0"; // escape \
 
 	/** Default Blender path default for macOS operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.

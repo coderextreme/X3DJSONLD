@@ -43,12 +43,12 @@ public class SimpleShader implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new SimpleShader().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/SimpleShader.new.java.x3d");
-    model.toFileJSON("../data/SimpleShader.new.java.json");
+    model.toFileJSON("../data/SimpleShader.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -59,6 +59,7 @@ public class SimpleShader implements X3DRoots {
 ProtoInstance ProtoInstance0 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("meta content='under development' name='warning'/"))
         .addComponent(new component().setName("Shaders").setLevel(1))
         .addMeta(new meta().setName("title").setContent("SimpleShader.x3d"))
         .addMeta(new meta().setName("description").setContent("Simple shader example"))
@@ -78,8 +79,7 @@ ProtoInstance ProtoInstance0 = null;
         .addMeta(new meta().setName("outputStyle").setContent("nicest"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"))
-        .addMeta(new meta().setName("license").setContent("../../license.html"))
-        .addComments(new CommentsBlock("meta content='under development' name='warning'/")))
+        .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("myPrototype")
           .setProtoInterface(new ProtoInterface()
@@ -88,7 +88,7 @@ ProtoInstance ProtoInstance0 = null;
             .addChild(new Transform().setDEF("TR")
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0.5f,0.5f,0.9f}))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0.5f ,0.5f ,0.9f }))
                   .addShaders(new ComposedShader().setLanguage("GLSL")
                     .addField(new field().setType("SFVec3f").setName("decis").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                     .setIS(new IS()
@@ -99,7 +99,7 @@ ProtoInstance ProtoInstance0 = null;
                     .addField(new field().setType("SFVec3f").setName("decis").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.95 0.77 0.44"))
                     .addParts(new ShaderPart().setType("VERTEX"))
                     .addParts(new ShaderPart().setType("FRAGMENT").setDEF("_1"))))
-                .setGeometry(new Sphere().setRadius(1.75f))))))
+                .setGeometry(new Sphere().setRadius(1.75f ))))))
         .addChild(new WorldInfo().setTitle("SimpleShader")
           .setMetadata(new MetadataSet().setName("Titania").setDEF("Titania").setReference("http://titania.create3000.de")
             .setMetadata(new MetadataSet().setName("Selection").setDEF("Selection").setReference("http://titania.create3000.de")

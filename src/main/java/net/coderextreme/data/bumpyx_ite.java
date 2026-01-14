@@ -43,12 +43,12 @@ public class bumpyx_ite implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new bumpyx_ite().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/bumpyx_ite.new.java.x3d");
-    model.toFileJSON("../data/bumpyx_ite.new.java.json");
+    model.toFileJSON("../data/bumpyx_ite.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -58,6 +58,7 @@ public class bumpyx_ite implements X3DRoots {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -66,7 +67,6 @@ public class bumpyx_ite implements X3DRoots {
         .addComponent(new component().setName("Rendering").setLevel(1))
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
-        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addMeta(new meta().setName("title").setContent("bumpyx_ite.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("A flower"))
@@ -75,14 +75,14 @@ public class bumpyx_ite implements X3DRoots {
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("bumpyx_ite.x3d"))
         .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""))
-        .addChild(new Viewpoint().setPosition(new double[] {0f,0f,40f}).setDescription("Transparent rose"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,40f }).setDescription("Transparent rose"))
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Transform()
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(40f))
+            .setGeometry(new Sphere().setRadius(40f ))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))
               .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                 .setBackTexture(new ImageTexture().setUrl(new MFString6().getArray()))
                 .setBottomTexture(new ImageTexture().setUrl(new MFString7().getArray()))

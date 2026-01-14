@@ -43,12 +43,12 @@ public class TextExamples implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new TextExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/TextExamples.new.java.x3d");
-    model.toFileJSON("../data/TextExamples.new.java.json");
+    model.toFileJSON("../data/TextExamples.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -69,18 +69,18 @@ public class TextExamples implements X3DRoots {
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new Transform().setTranslation(new double[] {0f,2f,0f})
+        .addChild(new Transform().setTranslation(new float[] {0f ,2f ,0f })
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString0().getArray())
-              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8f)))
+              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8f )))
             .setAppearance(new Appearance().setDEF("LightBlueAppearance")
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.1f,0.7f,0.7f})))))
-        .addChild(new Transform().setTranslation(new double[] {-3f,0f,0f})
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.7f ,0.7f })))))
+        .addChild(new Transform().setTranslation(new float[] {-3f ,0f ,0f })
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString2().getArray())
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))
             .setAppearance(new Appearance().setUSE("LightBlueAppearance"))))
-        .addChild(new Transform().setTranslation(new double[] {3f,0f,0f})
+        .addChild(new Transform().setTranslation(new float[] {3f ,0f ,0f })
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString3().getArray())
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))

@@ -1655,10 +1655,11 @@ Invocation:
 		    <xsl:when test="(($nodeName='ConeEmitter') and ($attributeName='angle')) or
 				    (($nodeName='GeoElevationGrid') and ($attributeName='yScale')) or
 				    (($nodeName='HAnimDisplacer') and ($attributeName='coordIndex')) or
-                                    (($nodeName='HAnimSegment' or $nodeName='RigidBody') and ($attributeName='mass')) or
-                                    (($nodeName='LayerSet') and ($attributeName='order')) or
+                    (($nodeName='HAnimSegment' or $nodeName='RigidBody') and ($attributeName='mass')) or
+                    (($nodeName='LayerSet') and ($attributeName='order')) or
 				    ( contains($nodeName,'Light') and ($attributeName='radius')) or
 				    (($nodeName='NurbsPositionInterpolator') and ($attributeName='order')) or
+				    (($nodeName='HAnimPose') and ($attributeName='transitionDuration')) or
 				    ($attributeName='name') or
 				    ($attributeName='type') or
 				    ($attributeName='info')">

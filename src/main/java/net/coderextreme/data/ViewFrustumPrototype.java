@@ -43,12 +43,12 @@ public class ViewFrustumPrototype implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new ViewFrustumPrototype().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/ViewFrustumPrototype.new.java.x3d");
-    model.toFileJSON("../data/ViewFrustumPrototype.new.java.json");
+    model.toFileJSON("../data/ViewFrustumPrototype.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -68,7 +68,7 @@ public class ViewFrustumPrototype implements X3DRoots {
         .addMeta(new meta().setName("Image").setContent("ViewFrustumOverheadView.png"))
         .addMeta(new meta().setName("Image").setContent("ViewFrustumObliqueView.png"))
         .addMeta(new meta().setName("subject").setContent("view culling frustum"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
@@ -87,7 +87,7 @@ public class ViewFrustumPrototype implements X3DRoots {
             .addField(new field().setType("SFBool").setName("trace").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("debug support, default false").setValue("false")))
           .setProtoBody(new ProtoBody()
             .addChild(new Switch().setDEF("VisibilitySwitch").setWhichChoice(-1)
-              .addChild(new Transform().setDEF("PositionTransform").setRotation(new double[] {0f,1f,0f,3.14159f})
+              .addChild(new Transform().setDEF("PositionTransform").setRotation(new float[] {0f ,1f ,0f ,3.14159f })
                 .addChild(new Transform().setDEF("OrientationTransform")
                   .addChild(new Shape()
                     .setGeometry(new IndexedLineSet().setDEF("FrustumLines").setCoordIndex(new MFInt320().getArray())
@@ -104,7 +104,7 @@ public class ViewFrustumPrototype implements X3DRoots {
                           .addConnect(new connect().setNodeField("diffuseColor").setProtoField("frustumColor"))
                           .addConnect(new connect().setNodeField("transparency").setProtoField("transparency"))))))
                   .addChild(new Shape()
-                    .setGeometry(new Sphere().setRadius(0.08f))
+                    .setGeometry(new Sphere().setRadius(0.08f ))
                     .setAppearance(new Appearance().setUSE("FrustumAppearance"))))))
             .addChild(new Script().setDEF("GeometryComputationScript").setDirectOutput(true).setUrl(new MFString2().getArray())
               .addField(new field().setType("SFBool").setName("visible").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether or not frustum geometry is rendered"))
@@ -141,9 +141,9 @@ public class ViewFrustumPrototype implements X3DRoots {
         .addChild(new Anchor().setDescription("ViewFrustum Example").setUrl(new MFString3().getArray())
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.8f,0.4f,0f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.8f ,0.4f ,0f })))
             .setGeometry(new Text().setString(new MFString4().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f))))));
+              .setFontStyle(new FontStyle().setJustify(new MFString5().getArray()).setSize(0.8f ))))));
     return X3D0;
     }
 private class MFInt320 {
@@ -153,7 +153,7 @@ private class MFInt320 {
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f ,0f });
   }
 }
 private class MFString2 {

@@ -43,12 +43,12 @@ public class rubikPly implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new rubikPly().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/rubikPly.new.java.x3d");
-    model.toFileJSON("../data/rubikPly.new.java.json");
+    model.toFileJSON("../data/rubikPly.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -74,8 +74,8 @@ ProtoInstance ProtoInstance9 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"))
         .addMeta(new meta().setName("description").setContent("a green rubik cube")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new double[] {0f,0f,12f}))
+        .addChild(new NavigationInfo().setType("\"ANY\" \"EXAMINE\" \"WALK\" \"FLY\" \"LOOKAT\""))
+        .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(new float[] {0f ,0f ,12f }))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -83,7 +83,7 @@ ProtoInstance ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f}))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -96,7 +96,7 @@ ProtoInstance ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f}))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -117,7 +117,7 @@ ProtoInstance ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f}))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -138,7 +138,7 @@ ProtoInstance ProtoInstance9 = null;
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f}))))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
@@ -198,12 +198,12 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,1f,1f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,1f ,1f ,1f ,0f });
   }
 }
 private class MFColor3 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f });
   }
 }
 private class MFInt324 {
@@ -213,12 +213,12 @@ private class MFInt324 {
 }
 private class MFVec3f5 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,1f,1f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,1f ,1f ,1f ,0f });
   }
 }
 private class MFColor6 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,1f ,1f ,1f ,1f ,1f ,1f ,1f ,1f ,1f ,1f ,1f ,0f ,0f ,0f });
   }
 }
 }

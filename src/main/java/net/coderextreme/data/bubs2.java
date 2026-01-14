@@ -43,12 +43,12 @@ public class bubs2 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new bubs2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/bubs2.new.java.x3d");
-    model.toFileJSON("../data/bubs2.new.java.json");
+    model.toFileJSON("../data/bubs2.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -62,25 +62,25 @@ ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("bubs2.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"))
         .addMeta(new meta().setName("translated").setContent("13 March 2016"))
-        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
-        .addComponent(new component().setName("Scripting").setLevel(1)))
+        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setPosition(new double[] {0f,0f,4f}).setOrientation(new double[] {1f,0f,0f,0f}).setDescription("Bubbles in action"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,4f }).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription("Bubbles in action"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new ProtoDeclare().setName("Bubble")
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("body_trans")
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.25f))
+                .setGeometry(new Sphere().setRadius(0.25f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f}).setTransparency(0.2f))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
               .addChild(new Script().setDEF("bounce")
                 .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))

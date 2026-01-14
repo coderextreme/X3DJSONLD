@@ -43,12 +43,12 @@ public class StringArrayEncodingExamples implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new StringArrayEncodingExamples().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/StringArrayEncodingExamples.new.java.x3d");
-    model.toFileJSON("../data/StringArrayEncodingExamples.new.java.json");
+    model.toFileJSON("../data/StringArrayEncodingExamples.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -82,12 +82,12 @@ public class StringArrayEncodingExamples implements X3DRoots {
             .addComments(new CommentsBlock("alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"))
             .setFontStyle(new FontStyle().setJustify(new MFString2().getArray()).setStyle("BOLD")))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(new double[] {0.6f,0.4f,0.2f})))));
+            .setMaterial(new Material().setDiffuseColor(new float[] {0.6f ,0.4f ,0.2f })))));
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.6f,1f,0.8f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.6f ,1f ,0.8f });
   }
 }
 private class MFString1 {

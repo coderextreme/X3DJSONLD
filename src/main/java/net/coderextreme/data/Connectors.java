@@ -48,7 +48,7 @@ public class Connectors implements X3DRoots {
     X3D model = new Connectors().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/Connectors.new.java.x3d");
-    model.toFileJSON("../data/Connectors.new.java.json");
+    model.toFileJSON("../data/Connectors.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -103,7 +103,7 @@ ProtoInstance ProtoInstance41 = null;
         .addMeta(new meta().setName("comment").setContent("World of Titania"))
         .addMeta(new meta().setName("created").setContent("Fri, 04 Sep 2015 10:19:01 GMT"))
         .addMeta(new meta().setName("creator").setContent("Holger Seelig"))
-        .addMeta(new meta().setName("generator").setContent("Titania V3.0.4, http://titania.create3000.de"))
+        .addMeta(new meta().setName("generator").setContent("Titania V3.0.4, https://titania.create3000.de"))
         .addMeta(new meta().setName("identifier").setContent("file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d"))
         .addMeta(new meta().setName("modified").setContent("Tue, 25 Jul 2017 09:42:17 GMT"))
         .addMeta(new meta().setName("title").setContent("Connectors")))
@@ -194,7 +194,7 @@ ProtoInstance ProtoInstance41 = null;
                   .setLineProperties(new LineProperties()
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("linewidthScaleFactor").setProtoField("linewidthScaleFactor"))))
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0f,0f,0f})
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f })
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("lineColor")))))))))
         .addChild(new ProtoDeclare().setName("Node")
@@ -207,9 +207,9 @@ ProtoInstance ProtoInstance41 = null;
                 .setIS(new IS()
                   .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
                 .addChild(ProtoInstance0 = new ProtoInstance().setName("Widget"))
-                .addChild(new Transform().setDEF("Input").setTranslation(new double[] {-1f,0f,0f})
+                .addChild(new Transform().setDEF("Input").setTranslation(new float[] {-1f ,0f ,0f })
                   .addChild(ProtoInstance2 = new ProtoInstance().setName("Widget")))
-                .addChild(new Transform().setDEF("Output").setTranslation(new double[] {1f,0f,0f})
+                .addChild(new Transform().setDEF("Output").setTranslation(new float[] {1f ,0f ,0f })
                   .addChild(ProtoInstance3 = new ProtoInstance().setName("Widget")))))
             .addChild(new Script().setDirectOutput(true)
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
@@ -224,7 +224,7 @@ ProtoInstance ProtoInstance41 = null;
 "{\n"+
 "	sensor .offset = translation;\n"+
 "}"))
-            .addChild(new ROUTE().setFromField("translation_changed").setFromNode("PlaneSensor").setToField("set_translation").setToNode("Node"))))
+            .addChild(new ROUTE().setFromNode("PlaneSensor").setFromField("translation_changed").setToNode("Node").setToField("set_translation"))))
         .addChild(new ProtoDeclare().setName("Route")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFColor").setName("lineColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.43 0.43 0.98"))
@@ -237,7 +237,7 @@ ProtoInstance ProtoInstance41 = null;
                 .setLineProperties(new LineProperties()
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("linewidthScaleFactor").setProtoField("linewidthScaleFactor"))))
-                .setMaterial(new Material().setDiffuseColor(new double[] {0f,0f,0f})
+                .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f })
                   .setIS(new IS()
                     .addConnect(new connect().setNodeField("emissiveColor").setProtoField("lineColor")))))
               .setGeometry(new LineSet().setDEF("Geometry_1").setVertexCount(new MFInt320().getArray())
@@ -283,7 +283,7 @@ ProtoInstance ProtoInstance41 = null;
 "}"))))
         .addChild(new NavigationInfo().setType("\"FLY\" \"ANY\""))
         .addChild(new Background().setSkyColor(new MFColor2().getArray()))
-        .addChild(new OrthoViewpoint().setCenterOfRotation(new double[] {-3.13496f,-4.19776f,0f}).setDescription("OthoViewpoint").setFieldOfView(new MFFloat3().getArray()).setPosition(new double[] {-3.13496f,-4.19776f,10f}))
+        .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(new float[] {-3.13496f ,-4.19776f ,10f }).setCenterOfRotation(new float[] {-3.13496f ,-4.19776f ,0f }).setFieldOfView(new MFFloat3().getArray()))
         .addChild(new Viewpoint().setDescription("Viewpoint"))
         .addChild(new Transform().setDEF("Connectors")
           .addChild(ProtoInstance4 = new ProtoInstance().setName("Route"))
@@ -315,7 +315,7 @@ ProtoInstance2
                     .addFieldValue(new fieldValue().setName("lineColor").setValue("0.72 0.14 0.23"));
 ProtoInstance2
                     .addFieldValue(new fieldValue().setName("geometry")
-                      .addChild(new Disk2D().setDEF("Connector").setOuterRadius(0.2f)));
+                      .addChild(new Disk2D().setDEF("Connector").setOuterRadius(0.2f )));
 ProtoInstance3
                     .addFieldValue(new fieldValue().setName("lineColor").setValue("0.44 0.5 0.72"));
 ProtoInstance3
@@ -406,17 +406,17 @@ private class MFInt320 {
 }
 private class MFVec3f1 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-1f,0f,0f,1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1f ,0f ,0f ,1f ,0f ,0f });
   }
 }
 private class MFColor2 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.2f,0.2f,0.2f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2f ,0.2f ,0.2f });
   }
 }
 private class MFFloat3 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,10f,10f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,10f ,10f });
   }
 }
 }

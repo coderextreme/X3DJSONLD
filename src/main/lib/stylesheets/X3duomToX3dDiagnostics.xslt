@@ -17,7 +17,7 @@
   <xsl:param name="LinkDom" select="true()"/>
   
 <!--
-Copyright (c) 2001-2024 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2026 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -117,7 +117,7 @@ Invocation:
 </xsl:variable>
 
 <xsl:variable name="nameHAnim2NameHAnim1AliasTables">
-              <xsl:text>HAnim2NameHanim1AliasTables.txt</xsl:text>
+              <xsl:text>HAnim2NameHAnim1AliasTables.txt</xsl:text>
 </xsl:variable>
         
 <xsl:variable name="nameHAnim2DefaultValuesJointsFeaturePoints">
@@ -125,9 +125,13 @@ Invocation:
 </xsl:variable>
         
 <xsl:variable name="nameAllX3dElementNames">
-              <xsl:text>AllX3dElementNames.txt</xsl:text>
+              <xsl:text>AllX3dElementNames.</xsl:text>
               <xsl:value-of select="$X3duomVersionNumber"/>
               <xsl:text>.txt</xsl:text>
+</xsl:variable>
+        
+<xsl:variable name="nameHAnim2JointParentsLoaTable.html">
+              <xsl:text>HAnim2JointParentsLoaTable.html</xsl:text>
 </xsl:variable>
 
 <!-- ****************** root:  start of file ****************** -->
@@ -339,6 +343,11 @@ Invocation:
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimJointNameValues']/enumeration[string-length(@parent) > 0]">
         <xsl:sort select="number(@index)"/>
         
+        <xsl:variable name="currentJointName"          select="@value"/>
+        <xsl:variable name="currentJointLoa"           select="@loa"/>
+        <xsl:variable name="parentJointName"           select="@parent"/>
+        <xsl:variable name="parentJointLoa"            select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointName]/@loa"/>
+        
         <xsl:text disable-output-escaping="yes"><![CDATA[      <]]></xsl:text>
         <xsl:text>report test="$isHAnim2 and (@name='</xsl:text>
         <xsl:value-of select="@value"/>
@@ -348,7 +357,11 @@ Invocation:
         <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimJoint DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; has parent HAnimJoint name='<value-of select='parent::HAnimJoint/@name'/>' ]]></xsl:text>
         <xsl:text>rather than expected parent name='</xsl:text>
         <xsl:value-of select='@parent'/>
-        <xsl:text disable-output-escaping="yes"><![CDATA[', recommend checking model </report>]]></xsl:text>
+        <xsl:text>'</xsl:text>
+        <xsl:text> (loa='</xsl:text>
+        <xsl:value-of select="$parentJointLoa"/>
+        <xsl:text>')</xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[, recommend checking model </report>]]></xsl:text>
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
     <xsl:text>&#10;</xsl:text>
@@ -566,26 +579,40 @@ Invocation:
         <xsl:variable name="value" select="@value"/>
         <xsl:for-each select="tokenize(@alias, ',')">
             <xsl:variable name="alias" select="."/>
-            
             <xsl:text disable-output-escaping="yes"><![CDATA[      <]]></xsl:text>
             <xsl:text>report test="$isHAnim2 and starts-with(@name,'</xsl:text>
             <xsl:value-of select="$alias"/>
             <xsl:text>')</xsl:text>
+            <!-- sometimes the new name is a superset of the old name, so check closely to avoid false-positive reports -->
             <xsl:choose>
                 <xsl:when test="ends-with($alias, 'trochanter')">
-                    <xsl:text> and not(contains(.,'trochanterion'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'trochanterion'))</xsl:text>
                 </xsl:when>
                 <xsl:when test="ends-with($alias, 'nuchal')">
-                    <xsl:text> and not(contains(.,'nuchale'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'nuchale'))</xsl:text>
                 </xsl:when>
                 <xsl:when test="ends-with($alias, 'phalanx')">
-                    <xsl:text> and not(contains(.,'phalanx_'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'phalanx_'))</xsl:text>
                 </xsl:when>
                 <xsl:when test="ends-with($alias, 'waist_preferred_post')">
-                    <xsl:text> and not(contains(.,'waist_preferred_posterior'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'waist_preferred_posterior'))</xsl:text>
                 </xsl:when>
                 <xsl:when test="ends-with($alias, 'waist_preferred_ant')">
-                    <xsl:text> and not(contains(.,'waist_preferred_anterior'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'waist_preferred_anterior'))</xsl:text>
+                </xsl:when>
+                <xsl:when test="ends-with($alias, 'tarsal_distal_phalanx')">
+                    <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_1'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_2'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_3'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_4'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_5'))</xsl:text>
+                </xsl:when>
+                <xsl:when test="ends-with($alias, 'metatarsal')">
+                    <xsl:text> and not(contains(@name,'metatarsal_1'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'metatarsal_2'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'metatarsal_3'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'metatarsal_4'))</xsl:text>
+                    <xsl:text> and not(contains(@name,'metatarsal_5'))</xsl:text>
                 </xsl:when>
             </xsl:choose>
             <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSite DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is an HAnimSite alias for ']]></xsl:text>
@@ -595,7 +622,7 @@ Invocation:
         </xsl:for-each>
     </xsl:for-each>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match -->]]></xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which can be confusing... -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[string-length(@alias) > 0]">
@@ -610,7 +637,7 @@ Invocation:
             <xsl:text>')</xsl:text>
             <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSite DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; contains an HAnimSegment alias for ']]></xsl:text>
             <xsl:value-of select="$value"/>
-            <xsl:text disable-output-escaping="yes"><![CDATA[', recommend updating X3D model source </report>]]></xsl:text>
+            <xsl:text disable-output-escaping="yes"><![CDATA[', recommend distinct HAnimSite/HAnimSegment names in X3D model source </report>]]></xsl:text>
             <xsl:text>&#10;</xsl:text>
         </xsl:for-each>
     </xsl:for-each>
@@ -1002,6 +1029,7 @@ Invocation:
                     <xsl:text disable-output-escaping="yes"><![CDATA[                <xsl:when test="starts-with(.,']]></xsl:text>
                     <xsl:value-of select="$alias"/>
                     <xsl:text>')</xsl:text>
+                    <!-- sometimes the new name is a superset of the old name, so check closely to avoid false-positive reports -->
                     <xsl:choose>
                         <xsl:when test="ends-with($alias, 'trochanter')">
                             <xsl:text> and not(contains(.,'trochanterion'))</xsl:text>
@@ -1017,6 +1045,20 @@ Invocation:
                         </xsl:when>
                         <xsl:when test="ends-with($alias, 'waist_preferred_ant')">
                             <xsl:text> and not(contains(.,'waist_preferred_anterior'))</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="ends-with($alias, 'tarsal_distal_phalanx')">
+                            <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_1'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_2'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_3'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_4'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'tarsal_distal_phalanx_5'))</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="ends-with($alias, 'metatarsal')">
+                            <xsl:text> and not(contains(@name,'metatarsal_1'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'metatarsal_2'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'metatarsal_3'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'metatarsal_4'))</xsl:text>
+                            <xsl:text> and not(contains(@name,'metatarsal_5'))</xsl:text>
                         </xsl:when>
                     </xsl:choose>
                     <xsl:text disable-output-escaping="yes"><![CDATA["><xsl:text>]]></xsl:text>
@@ -1114,7 +1156,7 @@ Invocation:
     <xsl:text> HAnim2 name and HAnim1 alias tables for Joint, Segment and Site (feature points)</xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text> https://www.web3d.org/x3d/content/examples/HumanoidAnimation/</xsl:text>
+    <xsl:text>https://www.web3d.org/x3d/content/examples/HumanoidAnimation/</xsl:text>
     <xsl:value-of select="$nameHAnim2NameHAnim1AliasTables"/>
     <xsl:text>&#10;</xsl:text>
     
@@ -1258,6 +1300,398 @@ Invocation:
 	  <xsl:value-of select="$nameAllX3dElementNames"/>
 	 </xsl:message>
      
+          
+<xsl:result-document href="{$nameHAnim2JointParentsLoaTable.html}" method="xml" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+
+    <html lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <title>ISO/IEC 19774-1:202x V2.1 &#8212; Annex C Joint parent relationships for the human body</title><!-- &mdash; &#8212; -->
+            <link rel="stylesheet" href="HAnim.css" type="text/css"/>
+            <link rel="icon" type="image/x-icon" href="../Images/web3d.ico"/>
+            <meta name="title" content="{$nameHAnim2JointParentsLoaTable.html}"/>
+            <meta name="creator" content="Don Brutzman"/>
+            <meta name="creator" content="Joe D. Williams"/>
+            <meta name="reference" content="X3duomToX3dDiagnostics.xslt"/>
+        </head>
+        <body>
+
+<!--<div class="proposed">-->
+	<div class="CenterDiv">
+		<p class="HeadingPart"><a href="HAnimArchitecture.html" title="to index"><img class='x3dlogo' src='../Images/HAnimLogo.png' alt='HAnim logo' style='border-width: 0px; width: 229px; height: 83px'/></a></p>
+        <p class="HeadingPart">
+            <xsl:text disable-output-escaping="true">Part 1:&amp;nbsp; Humanoid animation (HAnim) architecture</xsl:text>
+        </p>
+		<p class="AnnexHeadingBottom"><a id="FeaturePointForTheHumanBody"></a>Annex C</p>
+		<p class="AnnexType">(informative)</p>
+		<p class="AnnexHeadingBottom">Joint object parent relationships for the human body</p>
+	</div>
+
+<a href="#" title="to top"><img class="HAnimBar" src="../Images/SimpleBar.png" alt="--- HAnim separator bar ---"/></a>
+
+<p align="center">
+    <span class="editorsNote">Editors note: this table is a candidate for inclusion as a new Annex C (informative) in the HAnim Architecture draft v2.1.</span>
+</p>
+
+<h1><a href='#' title='to top'><img class='cube' src='../Images/cube.png' alt='cube' height='19' width='20'/></a> <a id="General"></a>C.1 General</h1>
+
+<h2><a id="Overview"></a>C.1.1 Overview</h2>
+<p>
+    This annex lists each of the <span class="Object">Joint</span> objects for a human body by name, and shows 
+    expected parent <span class="Object">Joint</span> object for each Level of Articulation (LOA). 
+</p>
+<h2><a id="Topics"></a>C.1.2 Topics</h2>
+
+<p>
+    <a href="#t-topics">Table C.1</a> lists the major topics in 
+    this annex.
+</p>
+<div class="CenterDiv">
+    <p class="TableCaption"><a id="t-topics"></a>Table C.1 &#8212; Topics</p><!-- &mdash; &#8212; -->
+    <table class="topics" summary="Topics">
+        <tr>
+            <td>
+                <ul>
+                    <li><a href="#General">C.1 General</a>
+                        <ul>
+                            <li><a href="#Overview">C.1.1 Overview</a></li>
+                            <li><a href="#Topics">C.1.2 Topics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#JointObjectHierarchy">C.2 Joint object hierarchy</a>        </li>
+                </ul>
+                <ul>
+                    <li><a href="#t-topics">Table C.1 &#8212; Topics</a></li>
+                    <li><a href="#t-JointObjectHierarchy">Table C.2 &#8212; Joint objects and expected parent joints</a>        </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<h1><a href='#' title='to top'><img class='cube' src='../Images/cube.png' alt='cube' height='19' width='20'/></a> <a id="JointObjectHierarchy"></a>C.2 Joint object hierarchy</h1>
+            
+            <p>
+                <a href="#t-JointObjectHierarchy">Table C.2</a>
+                shows parent-child relationships between all <span class="Object">Joint</span> objects for all LOAs,
+                providing an alternate view for relationships already defined authoritatively in
+                <a href="concepts.html">4. Concepts</a>.
+            </p>
+            <p>
+                This table assists authors and validation tools when checking skeleton hierarchies, 
+                in order to precisely confirm parent-child correctness of <span class="Object">Joint</span> objects for each LOA.
+            </p>
+            <p>
+                Presentation key:
+            </p>
+            <ul>
+                <!--
+                <li>
+                    Cells with a <span style="background-color:greenyellow">greenyellow background</span> indicates that the row has been checked against all specification LOA tables.
+                </li>
+                        -->
+                <li>
+                    Cells with an <i>italicized name</i> are implicit for that column's LOA, 
+                    and later defined at a lesser LOA value in that row.
+                </li>
+                <li>
+                    Cells with a <span style="background-color:#EEEEEE">light-grey background</span> indicates a lesser LOA value than the joint for that row.
+                </li>
+            </ul>
+<div class="CenterDiv">
+<p class="TableCaption">
+    <a id="t-JointObjectHierarchy"></a>Table C.2 &#8212; Joint objects and expected parent joints
+</p>
+            
+            <table border="1">
+                <tr>
+                    <th>Index</th>
+                    <th colspan="2">Joint name and LOA</th>
+                    <th>LOA-4 <br /> parent Joint</th>
+                    <th>LOA-3 <br /> parent Joint</th>
+                    <th>LOA-2 <br /> parent Joint</th>
+                    <th>LOA-1 <br /> parent Joint</th>
+                    <th>LOA-0 <br /> parent Joint</th>
+                </tr>
+    
+    <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimJointNameValues']/enumeration[(string-length(@parent) > 0) or (@value = 'humanoid_root')]">
+        
+        <xsl:variable name="currentJointName"          select="@value"/>
+        <xsl:variable name="currentJointLoa"           select="@loa"/>
+        
+        <xsl:variable name="parentJointNameLOA4">
+            <xsl:call-template name="find-parent-joint-name">
+                <xsl:with-param name="originalJointName" select="$currentJointName"/>
+                <xsl:with-param name="goalLoa"   select="4"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="parentJointNameLOA4LOA"       select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointNameLOA4]/@loa"/>
+        
+        <xsl:variable name="parentJointNameLOA3">
+            <xsl:call-template name="find-parent-joint-name">
+                <xsl:with-param name="originalJointName" select="$currentJointName"/>
+                <xsl:with-param name="goalLoa"   select="3"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="parentJointNameLOA3LOA"       select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointNameLOA3]/@loa"/>
+        
+        <xsl:variable name="parentJointNameLOA2">
+            <xsl:call-template name="find-parent-joint-name">
+                <xsl:with-param name="originalJointName" select="$currentJointName"/>
+                <xsl:with-param name="goalLoa"   select="2"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="parentJointNameLOA2LOA"       select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointNameLOA2]/@loa"/>
+        
+        <xsl:variable name="parentJointNameLOA1">
+            <xsl:call-template name="find-parent-joint-name">
+                <xsl:with-param name="originalJointName" select="$currentJointName"/>
+                <xsl:with-param name="goalLoa"   select="1"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="parentJointNameLOA1LOA"       select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointNameLOA1]/@loa"/>
+        
+        <xsl:variable name="parentJointNameLOA0">
+            <xsl:call-template name="find-parent-joint-name">
+                <xsl:with-param name="originalJointName" select="$currentJointName"/>
+                <xsl:with-param name="goalLoa"   select="0"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="parentJointNameLOA0LOA"       select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointNameLOA0]/@loa"/>
+        
+<!--
+                    
+        <xsl:variable name="parentJointLoa"            select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointName]/@loa"/>
+        
+        <xsl:variable name="grandParentJointName"      select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointName]/@parent"/>
+        <xsl:variable name="grandParentJointLoa"       select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $grandParentJointName]/@loa"/>
+        
+        <xsl:variable name="greatGrandParentJointName" select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $grandParentJointName]/@parent"/>
+        <xsl:variable name="greatGrandParentJointLoa"  select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $greatGrandParentJointName]/@loa"/>
+-->  
+        <xsl:variable name="highlightRowBackgroundColor">
+            <xsl:choose>
+                <xsl:when test="(number(@index) le 21) or 
+                               ((number(@index) ge 22)  and (number(@index) le 35)) or
+                               ((number(@index) ge 31)  and (number(@index) le 146)) or
+                                (number(@index) eq 999)">
+                <!--
+                    <xsl:text>background-color:greenyellow</xsl:text>
+                -->
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text></xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="highlightCellBackgroundColorLOA0">
+            <xsl:if test="(number($currentJointLoa) ge 1)">
+                <xsl:text>background-color:#EEEEEE</xsl:text><!-- lightgrey=211,211,211 -->
+            </xsl:if>
+        </xsl:variable>
+        <xsl:variable name="highlightCellBackgroundColorLOA1">
+            <xsl:if test="(number($currentJointLoa) gt 1)">
+                <xsl:text>background-color:#EEEEEE</xsl:text>
+            </xsl:if>
+        </xsl:variable>
+        <xsl:variable name="highlightCellBackgroundColorLOA2">
+            <xsl:if test="(number($currentJointLoa) gt 2)">
+                <xsl:text>background-color:#EEEEEE</xsl:text>
+            </xsl:if>
+        </xsl:variable>
+        <xsl:variable name="highlightCellBackgroundColorLOA3">
+            <xsl:if test="(number($currentJointLoa) gt 3)">
+                <xsl:text>background-color:#EEEEEE</xsl:text>
+            </xsl:if>
+        </xsl:variable>
+        <xsl:variable name="highlightCellBackgroundColorLOA4">
+            <xsl:if test="(number($currentJointLoa) gt 4)">
+                <xsl:text>background-color:#EEEEEE</xsl:text>
+            </xsl:if>
+        </xsl:variable>
+        <tr style='{$highlightRowBackgroundColor}'>
+            <!-- current joint LOA -->
+            <td>
+                <xsl:if test="(number(@index) lt 10)">
+                    <xsl:text disable-output-escaping="yes">&amp;#160; </xsl:text><!-- nbsp -->
+                </xsl:if>
+                <xsl:if test="(number(@index) lt 100)">
+                    <xsl:text disable-output-escaping="yes">&amp;#160; </xsl:text><!-- nbsp -->
+                </xsl:if>
+                <xsl:value-of select="@index"/>
+            </td>
+            <td>
+                <xsl:value-of select="$currentJointName"/>
+            </td>
+            <td>
+                <xsl:value-of select="$currentJointLoa"/>
+            </td>
+
+            <!-- parent joint LOA4 column -->
+            <td style='{$highlightCellBackgroundColorLOA4}'>
+                <xsl:text> </xsl:text>
+                <xsl:if test="(number($parentJointNameLOA4LOA) lt 4)"><xsl:text disable-output-escaping="yes"><![CDATA[<i>]]></xsl:text></xsl:if>
+                <xsl:element name="span">
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$parentJointNameLOA4"/>
+                        <xsl:text> loa=</xsl:text>
+                        <xsl:value-of select="$parentJointNameLOA4LOA"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="$parentJointNameLOA4"/>
+                </xsl:element>
+                <xsl:if test="(number($parentJointNameLOA4LOA) lt 4)"><xsl:text disable-output-escaping="yes"><![CDATA[</i>]]></xsl:text></xsl:if>
+                <!-- debug
+                <xsl:if test="(string-length($parentJointNameLOA4) > 0) and (number($parentJointNameLOA4LOA) lt 4)">
+                    <xsl:text> (loa=</xsl:text>
+                    <xsl:value-of select="$parentJointNameLOA4LOA"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if> -->
+                <xsl:text> </xsl:text>
+            </td>
+
+            <!-- parent joint LOA3 column -->
+            <td style='{$highlightCellBackgroundColorLOA3}'>
+                <xsl:text> </xsl:text>
+                <xsl:if test="(number($parentJointNameLOA3LOA) lt 3)"><xsl:text disable-output-escaping="yes"><![CDATA[<i>]]></xsl:text></xsl:if>
+                <xsl:element name="span">
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$parentJointNameLOA3"/>
+                        <xsl:text> loa=</xsl:text>
+                        <xsl:value-of select="$parentJointNameLOA3LOA"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="$parentJointNameLOA3"/>
+                </xsl:element>
+                <xsl:if test="(number($parentJointNameLOA3LOA) lt 3)"><xsl:text disable-output-escaping="yes"><![CDATA[</i>]]></xsl:text></xsl:if>
+                <!-- debug
+                <xsl:if test="(string-length($parentJointNameLOA3) > 0) and (number($parentJointNameLOA3LOA) lt 3)">
+                    <xsl:text> (loa=</xsl:text>
+                    <xsl:value-of select="$parentJointNameLOA3LOA"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if> -->
+                <xsl:text> </xsl:text>
+            </td>
+
+            <!-- parent joint LOA2 column -->
+            <td style='{$highlightCellBackgroundColorLOA2}'>
+                <xsl:text> </xsl:text>
+                <xsl:if test="(number($parentJointNameLOA2LOA) lt 2)"><xsl:text disable-output-escaping="yes"><![CDATA[<i>]]></xsl:text></xsl:if>
+                <xsl:element name="span">
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$parentJointNameLOA2"/>
+                        <xsl:text> loa=</xsl:text>
+                        <xsl:value-of select="$parentJointNameLOA2LOA"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="$parentJointNameLOA2"/>
+                </xsl:element>
+                <xsl:if test="(number($parentJointNameLOA2LOA) lt 2)"><xsl:text disable-output-escaping="yes"><![CDATA[</i>]]></xsl:text></xsl:if>
+                <!-- debug
+                <xsl:if test="(string-length($parentJointNameLOA2) > 0) and (number($parentJointNameLOA2LOA) lt 2)">
+                    <xsl:text> (loa=</xsl:text>
+                    <xsl:value-of select="$parentJointNameLOA2LOA"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if> -->
+                <xsl:text> </xsl:text>
+            </td>
+
+            <!-- parent joint LOA1 column -->
+            <td style='{$highlightCellBackgroundColorLOA1}'>
+                <xsl:text> </xsl:text>
+                <xsl:if test="(number($parentJointNameLOA1LOA) lt 1)"><xsl:text disable-output-escaping="yes"><![CDATA[<i>]]></xsl:text></xsl:if>
+                <xsl:element name="span">
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$parentJointNameLOA1"/>
+                        <xsl:text> loa=</xsl:text>
+                        <xsl:value-of select="$parentJointNameLOA1LOA"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="$parentJointNameLOA1"/>
+                </xsl:element>
+                <xsl:if test="(number($parentJointNameLOA1LOA) lt 1)"><xsl:text disable-output-escaping="yes"><![CDATA[</i>]]></xsl:text></xsl:if>
+                <!-- debug
+                <xsl:if test="(string-length($parentJointNameLOA1) > 0) and ($parentJointNameLOA1 != 'none') and (number($parentJointNameLOA1LOA) lt 1)">
+                    <xsl:text> (loa=</xsl:text>
+                    <xsl:value-of select="$parentJointNameLOA1LOA"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if> -->
+                <xsl:text> </xsl:text>
+            </td>
+
+            <!-- parent joint LOA0 column -->
+            <td style='{$highlightCellBackgroundColorLOA0}'>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$parentJointNameLOA0"/>
+                <!-- debug -->
+                <xsl:if test="(string-length($parentJointNameLOA0) > 0) and ($parentJointNameLOA0 != 'none') and ($parentJointNameLOA0 != 'humanoid_root')">
+                    <xsl:text> (loa=</xsl:text>
+                    <xsl:value-of select="$parentJointNameLOA0LOA"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if>
+                <xsl:text> </xsl:text>
+            </td>
+        </tr>
+        
+        <!-- debug: this approach does not work because multiple parents might occur before next loa
+        <xsl:if test="(string-length($grandParentJointName) > 0)">
+            <xsl:message>
+                <xsl:text>*** $jointName='</xsl:text>
+                <xsl:value-of select="$currentJointName"/>
+                <xsl:text>' (loa='</xsl:text>
+                <xsl:value-of select="$currentJointLoa"/>
+                <xsl:text>')</xsl:text>
+                <xsl:if test="(string-length($parentJointName) > 0)">
+                    <xsl:text> $parentJointName='</xsl:text>
+                    <xsl:value-of select="$parentJointName"/>
+                    <xsl:text>' (loa='</xsl:text>
+                    <xsl:value-of select="$parentJointLoa"/>
+                    <xsl:text>')</xsl:text>
+                    <xsl:if test="(string-length($grandParentJointName) > 0)">
+                        <xsl:text> $grandParentJointName='</xsl:text>
+                        <xsl:value-of select="$grandParentJointName"/>
+                        <xsl:text>' (loa='</xsl:text>
+                        <xsl:value-of select="$grandParentJointLoa"/>
+                        <xsl:text>')</xsl:text>
+                        <xsl:if test="(string-length($greatGrandParentJointName) > 0)">
+                            <xsl:text> $greatGrandParentJointName='</xsl:text>
+                            <xsl:value-of select="$greatGrandParentJointName"/>
+                            <xsl:text>' (loa='</xsl:text>
+                            <xsl:value-of select="$greatGrandParentJointLoa"/>
+                            <xsl:text>')</xsl:text>
+                        </xsl:if>
+                    </xsl:if>
+                </xsl:if>
+            </xsl:message>
+        </xsl:if> -->
+        
+        <xsl:text>&#10;</xsl:text>
+        
+    </xsl:for-each>
+    <!--
+                <tr>
+                    <th>Index</th>
+                    <th colspan="2">Joint name and LOA</th>
+                    <th>LOA-4 <br /> parent Joint</th>
+                    <th>LOA-3 <br /> parent Joint</th>
+                    <th>LOA-2 <br /> parent Joint</th>
+                    <th>LOA-1 <br /> parent Joint</th>
+                    <th>LOA-0 <br /> parent Joint</th>
+                </tr>
+    -->
+    
+            </table>
+</div>
+            
+            <a href="#" title="to top"><img class="HAnimBar" src="../Images/SimpleBar.png" alt="--- HAnim separator bar ---"/></a>
+    <!-- </div>  proposed -->
+        </body>
+    </html>
+    
+</xsl:result-document>
+
+	<!-- debug -->
+	<xsl:message>
+	  <xsl:text>*** Produced new </xsl:text>
+	  <xsl:value-of select="$nameHAnim2JointParentsLoaTable.html"/>
+	 </xsl:message>
+     
      
 
 </xsl:template>
@@ -1281,7 +1715,16 @@ Invocation:
     <xsl:for-each select="1 to ($columnWidth - string-length('HAnim2 name'))">
         <xsl:text> </xsl:text>
     </xsl:for-each>
-    <xsl:text>HAnim1, others</xsl:text>
+    <xsl:text>    HAnim1</xsl:text>
+    <xsl:choose>
+        <xsl:when test="($enumerationsType = 'hanimFeaturePointNameValues')">
+            <xsl:text>, others</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text>                  </xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
+    <xsl:text>                      Latin (medical name)</xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
@@ -1526,6 +1969,243 @@ Invocation:
         </xsl:otherwise>
     </xsl:choose>
         
+</xsl:template>
+
+<xsl:template name="find-parent-joint-name">
+    <xsl:param name="originalJointName"><xsl:text></xsl:text></xsl:param>
+    <xsl:param name="nextJointName"    ><xsl:text></xsl:text></xsl:param>
+    <xsl:param name="goalLoa"          ><xsl:text></xsl:text></xsl:param>
+    
+    <xsl:variable name="currentJointName">
+        <xsl:choose>
+            <xsl:when test="(string-length($nextJointName) > 0)">
+                <xsl:value-of select="$nextJointName"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$originalJointName"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    
+    <xsl:variable name="originalJointIndex"         select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $originalJointName]/@index"/>
+    <xsl:variable name="originalJointLoa"           select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $originalJointName]/@loa"/>
+    <xsl:variable name="currentJointLoa"            select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $currentJointName]/@loa"/>
+    <xsl:variable name="parentJointName"            select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $currentJointName]/@parent"/>
+    <xsl:variable name="parentJointLoa"             select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $parentJointName]/@loa"/>
+    <xsl:variable name="parentJointLOA3Name"        select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $currentJointName]/@parentLOA3"/>
+    <xsl:variable name="parentJointLOA2Name"        select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $currentJointName]/@parentLOA2"/>
+    <xsl:variable name="parentJointLOA1Name"        select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $currentJointName]/@parentLOA1"/>
+    
+    <xsl:variable name="nextParentJointToRecurse">
+        <xsl:value-of select="$parentJointName"/>
+    </xsl:variable>
+    
+    <xsl:variable name="parentOverrideFromX3DUOM">
+        <xsl:choose>
+            <xsl:when test="(number($goalLoa) eq 1) and (string-length($parentJointLOA1Name) > 0)">
+                <xsl:value-of select="$parentJointLOA1Name"/>
+                <xsl:message>
+                    <xsl:text>*** </xsl:text>
+                    <xsl:value-of select="$originalJointIndex"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$originalJointName"/>
+                    <xsl:text> $goalLoa=</xsl:text>
+                    <xsl:value-of select="$goalLoa"/>
+                    <xsl:text> (found overriding $parentJointLOA1Name=</xsl:text>
+                    <xsl:value-of select="$parentJointLOA1Name"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="(number($goalLoa) eq 2) and (string-length($parentJointLOA2Name) > 0)">
+                <xsl:value-of select="$parentJointLOA2Name"/>
+                <xsl:message>
+                    <xsl:text>*** </xsl:text>
+                    <xsl:value-of select="$originalJointIndex"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$originalJointName"/>
+                    <xsl:text> $goalLoa=</xsl:text>
+                    <xsl:value-of select="$goalLoa"/>
+                    <xsl:text> (found overriding $parentJointLOA2Name=</xsl:text>
+                    <xsl:value-of select="$parentJointLOA2Name"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:message>
+            </xsl:when>
+            <xsl:when test="(number($goalLoa) eq 3) and (string-length($parentJointLOA3Name) > 0)">
+                <xsl:value-of select="$parentJointLOA3Name"/>
+                <xsl:message>
+                    <xsl:text>*** </xsl:text>
+                    <xsl:value-of select="$originalJointIndex"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$originalJointName"/>
+                    <xsl:text> $goalLoa=</xsl:text>
+                    <xsl:value-of select="$goalLoa"/>
+                    <xsl:text> (found overriding $parentJointLOA3Name=</xsl:text>
+                    <xsl:value-of select="$parentJointLOA3Name"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:message>
+            </xsl:when>
+        </xsl:choose>
+    </xsl:variable>
+    
+    <!-- debug; no need to trace base case
+    <xsl:if test="not($originalJointName = $currentJointName) or (string-length($parentJointLOA3Name) > 0) or (string-length($parentJointLOA2Name) > 0) or (string-length($parentJointLOA1Name) > 0)"> -->
+    <!-- debug -->
+    <xsl:if test="ends-with($originalJointName, 'skullbase')">
+        <xsl:message>
+            <xsl:text>    </xsl:text>
+            <xsl:value-of select="$originalJointIndex"/>
+            <xsl:text> $originalJoint=</xsl:text>
+            <xsl:value-of select="$originalJointName"/>
+            <xsl:text> (loa=</xsl:text>
+            <xsl:value-of select="$originalJointLoa"/>
+            <xsl:text>) $currentJoint=</xsl:text>
+            <xsl:value-of select="$currentJointName"/>
+            <xsl:text> (loa=</xsl:text>
+            <xsl:value-of select="$currentJointLoa"/>
+            <xsl:text>) $goalLoa=</xsl:text>
+            <xsl:value-of select="$goalLoa"/>
+            <xsl:text> ... $parentJoint=</xsl:text>
+            <xsl:value-of select="$parentJointName"/>
+            <xsl:text> (loa=</xsl:text>
+            <xsl:value-of select="$parentJointLoa"/>
+            <xsl:text>) $nextParentJointToRecurse=</xsl:text>
+            <xsl:value-of select="$nextParentJointToRecurse"/>
+            <xsl:if test="(string-length($parentJointLOA3Name) > 0)">
+                <xsl:text> $parentJointLOA3=</xsl:text>
+                <xsl:value-of select="$parentJointLOA3Name"/>
+            </xsl:if>
+            <xsl:if test="(string-length($parentJointLOA2Name) > 0)">
+                <xsl:text> $parentJointLOA2=</xsl:text>
+                <xsl:value-of select="$parentJointLOA2Name"/>
+            </xsl:if>
+            <xsl:if test="(string-length($parentJointLOA1Name) > 0)">
+                <xsl:text> $parentJointLOA1=</xsl:text>
+                <xsl:value-of select="$parentJointLOA1Name"/>
+            </xsl:if>
+        </xsl:message>
+    </xsl:if>
+    
+    <xsl:choose>
+        <xsl:when test="($currentJointName = 'humanoid_root')">
+            <!-- special case, root node -->
+            <xsl:text>none</xsl:text>
+        </xsl:when>
+        <xsl:when test="(number($goalLoa) = 0)">
+            <!-- special case, root node -->
+            <xsl:text>humanoid_root</xsl:text>
+        </xsl:when>
+        <xsl:when test="(string-length($parentOverrideFromX3DUOM) > 0)">
+            <xsl:value-of select="$parentOverrideFromX3DUOM"/>
+        </xsl:when>
+        <xsl:when test="(1 eq number($goalLoa)) and (string-length($parentJointLOA1Name) > 0)">
+            <!-- specially overridden in X3D XML Schema and X3DUOM to match HAnim specification -->
+            <xsl:value-of select="$parentJointLOA1Name"/>
+            <xsl:message><xsl:text>*** </xsl:text>
+                <xsl:value-of select="$originalJointIndex"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$originalJointName"/>
+                <xsl:text> (special case) found parentLOA1=</xsl:text><xsl:value-of select="$parentJointLOA1Name"/></xsl:message>
+        </xsl:when>
+        <xsl:when test="(2 eq number($goalLoa)) and (string-length($parentJointLOA2Name) > 0)">
+            <!-- specially overridden in X3D XML Schema and X3DUOM to match HAnim specification -->
+            <xsl:value-of select="$parentJointLOA2Name"/>
+            <xsl:message><xsl:text>*** </xsl:text>
+                <xsl:value-of select="$originalJointIndex"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$originalJointName"/>
+                <xsl:text> (special case) found parentLOA2=</xsl:text><xsl:value-of select="$parentJointLOA2Name"/></xsl:message>
+        </xsl:when>
+        <xsl:when test="(3 eq number($goalLoa)) and (string-length($parentJointLOA3Name) > 0)">
+            <!-- specially overridden in X3D XML Schema and X3DUOM to match HAnim specification -->
+            <xsl:value-of select="$parentJointLOA3Name"/>
+            <xsl:message>
+                <xsl:text>*** </xsl:text>
+                <xsl:value-of select="$originalJointIndex"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$originalJointName"/>
+                <xsl:text> (special case) found parentLOA3=</xsl:text>
+                <xsl:value-of select="$parentJointLOA3Name"/>
+            </xsl:message>
+        </xsl:when>
+        <xsl:when test="(4 eq number($goalLoa))">
+            <!-- loa 4 means use original parent attribute in X3DUOM to match HAnim specification -->
+            <xsl:value-of select="$parentJointName"/>
+            <!-- debug -->
+            <xsl:message>
+                <xsl:text>*** </xsl:text>
+                <xsl:value-of select="$originalJointIndex"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$originalJointName"/>
+                <xsl:text> loa=4 means use original parent=</xsl:text>
+                <xsl:value-of select="$parentJointName"/>
+            </xsl:message>
+        </xsl:when>
+        <xsl:when test="(number($parentJointLoa) le number($goalLoa))">
+            <xsl:value-of select="$parentJointName"/>
+            <!-- debug
+            <xsl:message>
+                <xsl:text>*** filling a blank </xsl:text>
+                <xsl:value-of select="$originalJointIndex"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$originalJointName"/>
+                <xsl:text> loa=</xsl:text>
+                <xsl:value-of select="$originalJointLoa"/>
+                <xsl:text> having $parentJointName=</xsl:text>
+                <xsl:value-of select="$parentJointName"/>
+                <xsl:text> loa=</xsl:text>
+                <xsl:value-of select="$parentJointLoa"/>
+                <xsl:text> means continue to $goalLoa=</xsl:text>
+                <xsl:value-of select="$goalLoa"/>
+                <xsl:text> with $parentJointName</xsl:text>
+            </xsl:message>
+            -->
+        </xsl:when>
+        <xsl:when test="(number($parentJointLoa) eq number($goalLoa))">
+            <!-- immediate parent is a match -->
+            <xsl:value-of select="$parentJointName"/>
+        </xsl:when>
+        <xsl:when test="(number($currentJointLoa) lt number($goalLoa))">
+            <!-- found an acceptable value, we are done at a lesser loa, look ahead for followon parent -->
+       <!-- <xsl:text>(TODO check) </xsl:text>-->
+            <xsl:variable name="nextParent">
+                <xsl:call-template name="find-parent-joint-name">
+                    <xsl:with-param name="originalJointName" select="$originalJointName"/>
+                    <xsl:with-param name="nextJointName" select="$nextParentJointToRecurse"/>
+                    <xsl:with-param name="goalLoa"   select="($goalLoa - 1)"/>
+                </xsl:call-template>
+            </xsl:variable>
+            <xsl:value-of select="$nextParent"/>
+                <!-- debug
+                <xsl:if test="(string-length($nextParent) > 0)">
+                    <xsl:text> (loa=</xsl:text>
+                    <xsl:value-of select="//SimpleType[@name='hanimJointNameValues']/enumeration[@value = $nextParent]/@loa"/>
+                    <xsl:text>)</xsl:text>
+                </xsl:if>
+                -->
+        </xsl:when>
+        <xsl:when test="(number($currentJointLoa) eq number($goalLoa)) and ($currentJointName != $originalJointName)">
+            <!-- recursing found correct parent in current node, report it since correct LOA -->
+            <xsl:value-of select="$currentJointName"/>
+        </xsl:when>
+        <xsl:when test="(number($currentJointLoa) gt number($goalLoa))">
+            <!-- continue looking, go to next parent -->
+            <xsl:call-template name="find-parent-joint-name">
+                <xsl:with-param name="originalJointName" select="$originalJointName"/>
+                <xsl:with-param name="nextJointName" select="$nextParentJointToRecurse"/>
+                <xsl:with-param name="goalLoa"   select="$goalLoa"/>
+            </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+            <!-- no parent node at goalLoa found for this invocation -->
+            <!-- continue looking, go to next parent -->
+            <xsl:call-template name="find-parent-joint-name">
+                <xsl:with-param name="originalJointName" select="$originalJointName"/>
+                <xsl:with-param name="nextJointName" select="$nextParentJointToRecurse"/>
+                <xsl:with-param name="goalLoa"   select="$goalLoa"/>
+            </xsl:call-template>
+        </xsl:otherwise>
+    </xsl:choose>
+    
 </xsl:template>
 
 
