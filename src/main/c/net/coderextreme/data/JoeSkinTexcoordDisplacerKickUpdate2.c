@@ -5,6 +5,7 @@ X3D X3D0;
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
+//BS studio translation from .x3dv by Joe using BS Contact
 component component2 = createNode("component");
 component2.name = "H-Anim";
 component2.level = 1;
@@ -72,7 +73,6 @@ meta14.name = "license";
 meta14.content = "../license.html";
 head1.meta[12] = meta14;
 
-//BS studio translation from .x3dv by Joe using BS Contact
 head = head1;
 
 WorldInfo WorldInfo16 = createNode("WorldInfo");

@@ -5,6 +5,8 @@ X3D X3D0;
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
+//Scaled 1:1, Added Animations
+//Added Sites
 component component2 = createNode("component");
 component2.name = "HAnim";
 component2.level = 1;
@@ -99,7 +101,7 @@ head1.meta[17] = meta19;
 
 meta meta20 = createNode("meta");
 meta20.name = "generator";
-meta20.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta20.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[18] = meta20;
 
 meta meta21 = createNode("meta");
@@ -107,8 +109,6 @@ meta21.name = "license";
 meta21.content = "../license.html";
 head1.meta[19] = meta21;
 
-//Scaled 1:1, Added Animations
-//Added Sites
 head = head1;
 
 WorldInfo WorldInfo23 = createNode("WorldInfo");

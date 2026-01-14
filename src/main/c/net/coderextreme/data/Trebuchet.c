@@ -74,7 +74,7 @@ head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
 meta15.name = "generator";
-meta15.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta15.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");

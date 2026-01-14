@@ -39,38 +39,43 @@ children = new MFNode();
 
 children[0] = NavigationInfo8;
 
-Background Background9 = createNode("Background");
-Background9.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-Background9.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-Background9.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-Background9.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-Background9.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-Background9.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
-children[1] = Background9;
+Viewpoint Viewpoint9 = createNode("Viewpoint");
+Viewpoint9.description = "Tour Views";
+Viewpoint9.position = new SFVec3f(new float[0,0,50]);
+children[1] = Viewpoint9;
 
-Group Group10 = createNode("Group");
-ExternProtoDeclare ExternProtoDeclare11 = createNode("ExternProtoDeclare");
-ExternProtoDeclare11.name = "FlowerProto";
-ExternProtoDeclare11.url = new MFString(new java.lang.String["../data/flowerproto.x3d#FlowerProto"]);
-field field12 = createNode("field");
-field12.name = "vertex";
-field12.accessType = "inputOutput";
-field12.type = "MFString";
-ExternProtoDeclare11.field = new MFNode();
+Background Background10 = createNode("Background");
+Background10.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+Background10.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+Background10.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+Background10.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+Background10.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+Background10.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+children[2] = Background10;
 
-ExternProtoDeclare11.field[0] = field12;
-
+Group Group11 = createNode("Group");
+ExternProtoDeclare ExternProtoDeclare12 = createNode("ExternProtoDeclare");
+ExternProtoDeclare12.name = "FlowerProto";
+ExternProtoDeclare12.url = new MFString(new java.lang.String["../data/flowerprotofreewrl.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"]);
 field field13 = createNode("field");
-field13.name = "fragment";
+field13.name = "vertex";
 field13.accessType = "inputOutput";
 field13.type = "MFString";
-ExternProtoDeclare11.field[1] = field13;
+ExternProtoDeclare12.field = new MFNode();
 
-Group10.children = new MFNode();
+ExternProtoDeclare12.field[0] = field13;
 
-Group10.children[0] = ExternProtoDeclare11;
+field field14 = createNode("field");
+field14.name = "fragment";
+field14.accessType = "inputOutput";
+field14.type = "MFString";
+ExternProtoDeclare12.field[1] = field14;
 
-ProtoDeclare ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+Group11.children = new MFNode();
+
+Group11.children[0] = ExternProtoDeclare12;
+
+ProtoDeclare ProtoDeclare15 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/freewrl_flowers_chromatic.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/freewrl.fs&quot;"></fieldValue>
@@ -78,59 +83,59 @@ ProtoDeclare ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" e
 </Group>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare14.name = "flower";
-ProtoBody ProtoBody15 = createNode("ProtoBody");
-Group Group16 = createNode("Group");
-ProtoInstance ProtoInstance17 = createNode("ProtoInstance");
-ProtoInstance17.name = "FlowerProto";
-fieldValue fieldValue18 = createNode("fieldValue");
-fieldValue18.name = "vertex";
-fieldValue18.value = "\"../shaders/freewrl_flowers_chromatic.vs\"";
-ProtoInstance17.fieldValue = new MFNode();
-
-ProtoInstance17.fieldValue[0] = fieldValue18;
-
+ProtoDeclare15.name = "flower";
+ProtoBody ProtoBody16 = createNode("ProtoBody");
+Group Group17 = createNode("Group");
+ProtoInstance ProtoInstance18 = createNode("ProtoInstance");
+ProtoInstance18.name = "FlowerProto";
 fieldValue fieldValue19 = createNode("fieldValue");
-fieldValue19.name = "fragment";
-fieldValue19.value = "\"../shaders/freewrl.fs\"";
-ProtoInstance17.fieldValue[1] = fieldValue19;
+fieldValue19.name = "vertex";
+fieldValue19.value = "\"../shaders/freewrl_flowers_chromatic.vs\"";
+ProtoInstance18.fieldValue = new MFNode();
 
-Group16.children = new MFNode();
+ProtoInstance18.fieldValue[0] = fieldValue19;
 
-Group16.children[0] = ProtoInstance17;
+fieldValue fieldValue20 = createNode("fieldValue");
+fieldValue20.name = "fragment";
+fieldValue20.value = "\"../shaders/freewrl.fs\"";
+ProtoInstance18.fieldValue[1] = fieldValue20;
 
-ProtoBody15.children = new MFNode();
+Group17.children = new MFNode();
 
-ProtoBody15.children[0] = Group16;
+Group17.children[0] = ProtoInstance18;
 
-ProtoDeclare14.protoBody = ProtoBody15;
+ProtoBody16.children = new MFNode();
 
-Group10.children[1] = ProtoDeclare14;
+ProtoBody16.children[0] = Group17;
 
-ProtoInstance ProtoInstance20 = createNode("ProtoInstance");
-ProtoInstance20.name = "flower";
-Group10.children[2] = ProtoInstance20;
+ProtoDeclare15.protoBody = ProtoBody16;
+
+Group11.children[1] = ProtoDeclare15;
 
 ProtoInstance ProtoInstance21 = createNode("ProtoInstance");
 ProtoInstance21.name = "flower";
-Group10.children[3] = ProtoInstance21;
+Group11.children[2] = ProtoInstance21;
 
 ProtoInstance ProtoInstance22 = createNode("ProtoInstance");
 ProtoInstance22.name = "flower";
-Group10.children[4] = ProtoInstance22;
+Group11.children[3] = ProtoInstance22;
 
 ProtoInstance ProtoInstance23 = createNode("ProtoInstance");
 ProtoInstance23.name = "flower";
-Group10.children[5] = ProtoInstance23;
+Group11.children[4] = ProtoInstance23;
 
 ProtoInstance ProtoInstance24 = createNode("ProtoInstance");
 ProtoInstance24.name = "flower";
-Group10.children[6] = ProtoInstance24;
+Group11.children[5] = ProtoInstance24;
 
 ProtoInstance ProtoInstance25 = createNode("ProtoInstance");
 ProtoInstance25.name = "flower";
-Group10.children[7] = ProtoInstance25;
+Group11.children[6] = ProtoInstance25;
 
-children[2] = Group10;
+ProtoInstance ProtoInstance26 = createNode("ProtoInstance");
+ProtoInstance26.name = "flower";
+Group11.children[7] = ProtoInstance26;
+
+children[3] = Group11;
 
 }

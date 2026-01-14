@@ -19,7 +19,7 @@ head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
 meta4.name = "identifier";
-meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint20.x3d";
+meta4.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint20.x3d";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");

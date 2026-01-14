@@ -56,7 +56,7 @@ Background10.topUrl = new MFString(new java.lang.String["../resources/images/TP.
 children[2] = Background10;
 
 Transform Transform11 = createNode("Transform");
-Transform11.DEF = "DECLBubble_bubbleA";
+Transform11.DEF = "DECLBubble_transformA";
 Shape Shape12 = createNode("Shape");
 Sphere Sphere13 = createNode("Sphere");
 Sphere13.radius = 0.25;
@@ -163,14 +163,14 @@ Transform11.children[2] = TimeSensor22;
 ROUTE ROUTE23 = createNode("ROUTE");
 ROUTE23.fromNode = "DECLBubble_bubbleA_bounce";
 ROUTE23.fromField = "translation_changed";
-ROUTE23.toNode = "DECLBubble_transform";
+ROUTE23.toNode = "DECLBubble_transformA";
 ROUTE23.toField = "set_translation";
 Transform11.children[3] = ROUTE23;
 
 ROUTE ROUTE24 = createNode("ROUTE");
 ROUTE24.fromNode = "DECLBubble_bubbleA_bounce";
 ROUTE24.fromField = "scale_changed";
-ROUTE24.toNode = "DECLBubble_transform";
+ROUTE24.toNode = "DECLBubble_transformA";
 ROUTE24.toField = "set_scale";
 Transform11.children[4] = ROUTE24;
 
@@ -184,7 +184,7 @@ Transform11.children[5] = ROUTE25;
 children[3] = Transform11;
 
 Transform Transform26 = createNode("Transform");
-Transform26.DEF = "DECLBubble_bubbleB";
+Transform26.DEF = "DECLBubble_transformB";
 Shape Shape27 = createNode("Shape");
 Sphere Sphere28 = createNode("Sphere");
 Sphere28.radius = 0.25;
@@ -291,14 +291,14 @@ Transform26.children[2] = TimeSensor37;
 ROUTE ROUTE38 = createNode("ROUTE");
 ROUTE38.fromNode = "DECLBubble_bubbleB_bounce";
 ROUTE38.fromField = "translation_changed";
-ROUTE38.toNode = "DECLBubble_transform";
+ROUTE38.toNode = "DECLBubble_transformB";
 ROUTE38.toField = "set_translation";
 Transform26.children[3] = ROUTE38;
 
 ROUTE ROUTE39 = createNode("ROUTE");
 ROUTE39.fromNode = "DECLBubble_bubbleB_bounce";
 ROUTE39.fromField = "scale_changed";
-ROUTE39.toNode = "DECLBubble_transform";
+ROUTE39.toNode = "DECLBubble_transformB";
 ROUTE39.toField = "set_scale";
 Transform26.children[4] = ROUTE39;
 
@@ -312,7 +312,7 @@ Transform26.children[5] = ROUTE40;
 children[4] = Transform26;
 
 Transform Transform41 = createNode("Transform");
-Transform41.DEF = "DECLBubble_bubbleC";
+Transform41.DEF = "DECLBubble_transformC";
 Shape Shape42 = createNode("Shape");
 Sphere Sphere43 = createNode("Sphere");
 Sphere43.radius = 0.25;
@@ -419,14 +419,14 @@ Transform41.children[2] = TimeSensor52;
 ROUTE ROUTE53 = createNode("ROUTE");
 ROUTE53.fromNode = "DECLBubble_bubbleC_bounce";
 ROUTE53.fromField = "translation_changed";
-ROUTE53.toNode = "DECLBubble_transform";
+ROUTE53.toNode = "DECLBubble_transformC";
 ROUTE53.toField = "set_translation";
 Transform41.children[3] = ROUTE53;
 
 ROUTE ROUTE54 = createNode("ROUTE");
 ROUTE54.fromNode = "DECLBubble_bubbleC_bounce";
 ROUTE54.fromField = "scale_changed";
-ROUTE54.toNode = "DECLBubble_transform";
+ROUTE54.toNode = "DECLBubble_transformC";
 ROUTE54.toField = "set_scale";
 Transform41.children[4] = ROUTE54;
 
@@ -440,7 +440,7 @@ Transform41.children[5] = ROUTE55;
 children[5] = Transform41;
 
 Transform Transform56 = createNode("Transform");
-Transform56.DEF = "DECLBubble_bubbleD";
+Transform56.DEF = "DECLBubble_transformD";
 Shape Shape57 = createNode("Shape");
 Sphere Sphere58 = createNode("Sphere");
 Sphere58.radius = 0.25;
@@ -547,14 +547,14 @@ Transform56.children[2] = TimeSensor67;
 ROUTE ROUTE68 = createNode("ROUTE");
 ROUTE68.fromNode = "DECLBubble_bubbleD_bounce";
 ROUTE68.fromField = "translation_changed";
-ROUTE68.toNode = "DECLBubble_transform";
+ROUTE68.toNode = "DECLBubble_transformD";
 ROUTE68.toField = "set_translation";
 Transform56.children[3] = ROUTE68;
 
 ROUTE ROUTE69 = createNode("ROUTE");
 ROUTE69.fromNode = "DECLBubble_bubbleD_bounce";
 ROUTE69.fromField = "scale_changed";
-ROUTE69.toNode = "DECLBubble_transform";
+ROUTE69.toNode = "DECLBubble_transformD";
 ROUTE69.toField = "set_scale";
 Transform56.children[4] = ROUTE69;
 

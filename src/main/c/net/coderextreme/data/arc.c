@@ -502,6 +502,7 @@ ProtoInstance64.DEF = "connector1";
 fieldValue fieldValue65 = createNode("fieldValue");
 fieldValue65.name = "startnode";
 ProtoInstance ProtoInstance66 = createNode("ProtoInstance");
+ProtoInstance66.name = "point";
 ProtoInstance66.USE = "G1";
 fieldValue65.children = new MFNode();
 
@@ -514,6 +515,7 @@ ProtoInstance64.fieldValue[0] = fieldValue65;
 fieldValue fieldValue67 = createNode("fieldValue");
 fieldValue67.name = "endnode";
 ProtoInstance ProtoInstance68 = createNode("ProtoInstance");
+ProtoInstance68.name = "point";
 ProtoInstance68.USE = "G2";
 fieldValue67.children = new MFNode();
 
@@ -537,6 +539,7 @@ ProtoInstance71.DEF = "connector2";
 fieldValue fieldValue72 = createNode("fieldValue");
 fieldValue72.name = "startnode";
 ProtoInstance ProtoInstance73 = createNode("ProtoInstance");
+ProtoInstance73.name = "point";
 ProtoInstance73.USE = "G1";
 fieldValue72.children = new MFNode();
 
@@ -549,6 +552,7 @@ ProtoInstance71.fieldValue[0] = fieldValue72;
 fieldValue fieldValue74 = createNode("fieldValue");
 fieldValue74.name = "endnode";
 ProtoInstance ProtoInstance75 = createNode("ProtoInstance");
+ProtoInstance75.name = "point";
 ProtoInstance75.USE = "G3";
 fieldValue74.children = new MFNode();
 
@@ -572,6 +576,7 @@ ProtoInstance78.DEF = "connector3";
 fieldValue fieldValue79 = createNode("fieldValue");
 fieldValue79.name = "startnode";
 ProtoInstance ProtoInstance80 = createNode("ProtoInstance");
+ProtoInstance80.name = "point";
 ProtoInstance80.USE = "G1";
 fieldValue79.children = new MFNode();
 
@@ -584,6 +589,7 @@ ProtoInstance78.fieldValue[0] = fieldValue79;
 fieldValue fieldValue81 = createNode("fieldValue");
 fieldValue81.name = "endnode";
 ProtoInstance ProtoInstance82 = createNode("ProtoInstance");
+ProtoInstance82.name = "point";
 ProtoInstance82.USE = "G4";
 fieldValue81.children = new MFNode();
 

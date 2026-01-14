@@ -84,7 +84,7 @@ head1.meta[14] = meta16;
 
 meta meta17 = createNode("meta");
 meta17.name = "generator";
-meta17.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta17.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[15] = meta17;
 
 meta meta18 = createNode("meta");
@@ -8824,7 +8824,7 @@ OrientationInterpolator1791.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator1791.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group1783.children[7] = OrientationInterpolator1791;
 
-//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 OrientationInterpolator OrientationInterpolator1792 = createNode("OrientationInterpolator");
 OrientationInterpolator1792.DEF = "Stop_l_metatarsal_RotationInterpolator";
 OrientationInterpolator1792.key = new MFFloat(new float[0,0.5,1]);
@@ -8855,7 +8855,7 @@ OrientationInterpolator1796.key = new MFFloat(new float[0,0.5,1]);
 OrientationInterpolator1796.keyValue = new MFRotation(new float[0,0,1,0,0,0,1,0,0,0,1,0]);
 Group1783.children[12] = OrientationInterpolator1796;
 
-//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 OrientationInterpolator OrientationInterpolator1797 = createNode("OrientationInterpolator");
 OrientationInterpolator1797.DEF = "Stop_r_metatarsal_RotationInterpolator";
 OrientationInterpolator1797.key = new MFFloat(new float[0,0.5,1]);

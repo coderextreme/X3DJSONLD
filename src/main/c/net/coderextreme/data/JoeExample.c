@@ -2,8 +2,8 @@
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
-X3D0.version = "4.0";
 X3D0.profile = "Immersive";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";

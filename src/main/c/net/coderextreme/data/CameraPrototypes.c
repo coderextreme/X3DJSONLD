@@ -64,7 +64,7 @@ head1.meta[10] = meta12;
 
 meta meta13 = createNode("meta");
 meta13.name = "reference";
-meta13.content = "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d";
+meta13.content = "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d";
 head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");

@@ -416,28 +416,21 @@ fieldValue60.children[0] = Transform61;
 
 ProtoInstance53.fieldValue[3] = fieldValue60;
 
-fieldValue fieldValue62 = createNode("fieldValue");
-fieldValue62.name = "set_startpoint";
-ProtoInstance53.fieldValue[4] = fieldValue62;
-
-fieldValue fieldValue63 = createNode("fieldValue");
-fieldValue63.name = "set_endpoint";
-ProtoInstance53.fieldValue[5] = fieldValue63;
-
+//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
 children[6] = ProtoInstance53;
 
-ROUTE ROUTE64 = createNode("ROUTE");
-ROUTE64.fromNode = "G1";
-ROUTE64.fromField = "translation_changed";
-ROUTE64.toNode = "connector1";
-ROUTE64.toField = "set_startpoint";
-children[7] = ROUTE64;
+ROUTE ROUTE62 = createNode("ROUTE");
+ROUTE62.fromNode = "G1";
+ROUTE62.fromField = "translation_changed";
+ROUTE62.toNode = "connector1";
+ROUTE62.toField = "set_startpoint";
+children[7] = ROUTE62;
 
-ROUTE ROUTE65 = createNode("ROUTE");
-ROUTE65.fromNode = "G2";
-ROUTE65.fromField = "translation_changed";
-ROUTE65.toNode = "connector1";
-ROUTE65.toField = "set_endpoint";
-children[8] = ROUTE65;
+ROUTE ROUTE63 = createNode("ROUTE");
+ROUTE63.fromNode = "G2";
+ROUTE63.fromField = "translation_changed";
+ROUTE63.toNode = "connector1";
+ROUTE63.toField = "set_endpoint";
+children[8] = ROUTE63;
 
 }
