@@ -1,3 +1,562 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a57a1f6bd5f92414c38c05efda10c8476d1e6885b633236d1d0c00a8fdaa2c10
-size 12513
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"arc1.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Lost, Doug Sanden I think",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"manual",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "ProtoDeclare":
+        {
+      {
+        "@name":"point"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"translation",
+        "@type":"SFVec3f"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Transform":
+                {
+      {
+        "@DEF":"node"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"translation",
+        "@protoField":"translation"
+      }
+    },
+                    }                    "Shape":
+                    {
+                        "Appearance":
+                        {
+                            "Material":
+                            {
+      {
+        "@diffuseColor":"1 0 0"
+      }
+    },
+                        }                        "Sphere":
+                        {
+      {
+        "@radius":"0.1"
+      }
+    },
+                    }                    "PositionInterpolator":
+                    {
+      {
+        "@DEF":"PI1",
+        "@key":"0 1",
+        "@keyValue":"0 0 0 0 5 0"
+      }
+    },
+                    "Script":
+                    {
+      {
+        "@DEF":"MB1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;               function set_location(value) {
+&quot;+
+&quot;                    old = translation;
+&quot;+
+&quot;                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+&quot;+
+&quot;                    keyValue = new MFVec3f([old, translation]);
+&quot;+
+&quot;               }"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"translation",
+        "@type":"SFVec3f",
+        "@value":"[50, 50, 0]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"old",
+        "@type":"SFVec3f"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_location",
+        "@type":"SFTime"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"keyValue",
+        "@type":"MFVec3f",
+        "@value":"[(0, 0, 0), (0, 5, 0)]"
+      }
+    },
+                    }                    "TimeSensor":
+                    {
+      {
+        "@DEF":"CL1",
+        "@cycleInterval":"3",
+        "@loop":"true"
+      }
+    },
+                }                "ROUTE":
+                {
+      {
+        "@fromField":"cycleTime",
+        "@fromNode":"CL1",
+        "@toField":"set_location",
+        "@toNode":"MB1"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"CL1",
+        "@toField":"set_fraction",
+        "@toNode":"PI1"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"keyValue_changed",
+        "@fromNode":"MB1",
+        "@toField":"set_keyValue",
+        "@toNode":"PI1"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"PI1",
+        "@toField":"set_translation",
+        "@toNode":"node"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"MB1",
+        "@toField":"set_translation",
+        "@toNode":"node"
+      }
+    },
+            }        }        "ProtoDeclare":
+        {
+      {
+        "@name":"x3dconnector"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"startnode",
+        "@type":"SFNode"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"endnode",
+        "@type":"SFNode"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"transnode",
+        "@type":"SFNode"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"rotscalenode",
+        "@type":"SFNode"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_startpoint",
+        "@type":"SFVec3f"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_endpoint",
+        "@type":"SFVec3f"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Script":
+                {
+      {
+        "@DEF":"S1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;        function recompute(startpoint,endpoint){
+&quot;+
+&quot;	    if (typeof endpoint === 'undefined') {
+&quot;+
+&quot;		return;
+&quot;+
+&quot;	    }
+&quot;+
+&quot;            var dif = endpoint.subtract(startpoint);
+&quot;+
+&quot;            var dist = dif.length()*0.5;
+&quot;+
+&quot;            var dif2 = dif.multiply(0.5);
+&quot;+
+&quot;            var norm = dif.normalize();
+&quot;+
+&quot;            var transl = startpoint.add(dif2);
+&quot;+
+&quot;	    if (typeof Quaternion !== 'undefined') {
+&quot;+
+&quot;		    return {
+&quot;+
+&quot;			    scale : new SFVec3f(1.0,dist,1.0),
+&quot;+
+&quot;			    translation : transl,
+&quot;+
+&quot;			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+&quot;+
+&quot;		    };
+&quot;+
+&quot;	    } else {
+&quot;+
+&quot;		    return {
+&quot;+
+&quot;			    scale : new SFVec3f(1.0,dist,1.0),
+&quot;+
+&quot;			    translation : transl,
+&quot;+
+&quot;			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+&quot;+
+&quot;		    };
+&quot;+
+&quot;	    }
+&quot;+
+&quot;	}
+&quot;+
+&quot;	function recompute_and_route(startpoint, endpoint) {
+&quot;+
+&quot;	      var trafo = recompute(startpoint, endpoint);
+&quot;+
+&quot;	      if (trafo) {
+&quot;+
+&quot;		      transnode.translation = trafo.translation;
+&quot;+
+&quot;		      rotscalenode.rotation = trafo.rotation;
+&quot;+
+&quot;		      rotscalenode.scale = trafo.scale;
+&quot;+
+&quot;	      }
+&quot;+
+&quot;	}
+&quot;+
+&quot;        function initialize(){
+&quot;+
+&quot;            recompute_and_route(startnode.translation,endnode.translation);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        function set_startpoint(val,t){
+&quot;+
+&quot;            recompute_and_route(val,endnode.translation);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        function set_endpoint(val,t){
+&quot;+
+&quot;            recompute_and_route(startnode.translation,val);
+&quot;+
+&quot;        }"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"startnode",
+        "@protoField":"startnode"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"endnode",
+        "@protoField":"endnode"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"set_startpoint",
+        "@protoField":"set_startpoint"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"set_endpoint",
+        "@protoField":"set_endpoint"
+      }
+    },
+                    }                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"startnode",
+        "@type":"SFNode"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"endnode",
+        "@type":"SFNode"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"transnode",
+        "@type":"SFNode"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"rotscalenode",
+        "@type":"SFNode"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_startpoint",
+        "@type":"SFVec3f"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_endpoint",
+        "@type":"SFVec3f"
+      }
+    },
+                }            }        }        "Viewpoint":
+        {
+      {
+        "@description":"Only Viewpoint",
+        "@position":"0 0 5"
+      }
+    },
+        "Background":
+        {
+      {
+        "@skyColor":"0.4 0.4 0.4"
+      }
+    },
+        "Transform":
+        {
+      {
+        "@DEF":"G1"
+      }
+            "ProtoInstance":
+            {
+      {
+        "@name":"point"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"translation",
+        "@value":"0 0.4650003 0"
+      }
+    },
+            }        }        "Transform":
+        {
+      {
+        "@DEF":"G2"
+      }
+            "ProtoInstance":
+            {
+      {
+        "@name":"point"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"translation",
+        "@value":"0 0.4650003 0"
+      }
+    },
+            }        }        "Transform":
+        {
+      {
+        "@DEF":"transC1"
+      }
+            "Transform":
+            {
+      {
+        "@DEF":"rotscaleC1"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0.2 0.7 0.7",
+        "@transparency":"0.5"
+      }
+    },
+                    }                    "Cylinder":
+                    {
+      {
+        "@radius":"0.05"
+      }
+    },
+                }            }        }        "ProtoInstance":
+        {
+      {
+        "@DEF":"connector1",
+        "@name":"x3dconnector"
+      }
+            "fieldValue":
+            {
+      {
+        "@name":"startnode"
+      }
+                "Transform":
+                {
+      {
+        "@USE":"G1"
+      }
+    },
+            }            "fieldValue":
+            {
+      {
+        "@name":"endnode"
+      }
+                "Transform":
+                {
+      {
+        "@USE":"G2"
+      }
+    },
+            }            "fieldValue":
+            {
+      {
+        "@name":"transnode"
+      }
+                "Transform":
+                {
+      {
+        "@USE":"transC1"
+      }
+    },
+            }            "fieldValue":
+            {
+      {
+        "@name":"rotscalenode"
+      }
+                "Transform":
+                {
+      {
+        "@USE":"rotscaleC1"
+      }
+    },
+            }        }        "ROUTE":
+        {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"G1",
+        "@toField":"set_startpoint",
+        "@toNode":"connector1"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"G2",
+        "@toField":"set_endpoint",
+        "@toNode":"connector1"
+      }
+    },
+    }}

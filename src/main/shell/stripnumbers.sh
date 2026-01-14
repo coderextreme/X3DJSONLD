@@ -4,8 +4,6 @@ IFS=$'\n\t'
 
 . ./classpath
 
-export PROCESSORS=${PROCESSORS-4}
-
 find  ../data/*.x3d | grep -v new | xargs ${NODE} ${NODEDIR}/xml2xml.js
 for i in `find  ../data/*.Snew.x3d`
 do

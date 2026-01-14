@@ -10,14 +10,14 @@ do
 	${NODE} ${NODEDIR}/xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .x3d.new`.x3d $i
 done
 
-for i in `find ../data -name '*.new.java.json'`
+for i in `find ../data -name '*.new.java.'${JSONEXT}`
 do
-	${NODE} ${NODEDIR}/jsondiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .new.java.json`.json $i
+	${NODE} ${NODEDIR}/jsondiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .new.java.${JSONEXT}`.${JSONEXT} $i
 done
 
-#for i in `find ../data -name '*.new.json.intermediate.x3d'`
+#for i in `find ../data -name '*.new.'${JSONEXT}'.intermediate.x3d'`
 #do
-#	${NODE} ${NODEDIR}/xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .new.json.intermediate.x3d`.x3d $i
+#	${NODE} ${NODEDIR}/xmldiff.js `dirname $i  | sed 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/'`/`basename $i .new.'${JSONEXT}'.intermediate.x3d`.x3d $i
 #done
 
 # old way of comparing output from graaljs

@@ -5,18 +5,12 @@ IFS=$'\n\t'
 # Run the Test Suite
 
 # accepts files with .x3d extension
-export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
-JSONEXT=json
-
 pushd ../java
-echo "export CLASSPATH=$CLASSPATH"
-# export CLASSPATH="C:/Users/jcarl/X3DJSONLD/X3DJSAIL.4.0.full.jar;C:/Users/jcarl/X3DJSONLD/saxon-he-12.8.jar;.;../java"
-echo "export CLASSPATH=$CLASSPATH"
-javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
-javac -proc:full -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
+javac -proc:full net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
+javac -proc:full net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
 popd
 
 echo translating to java
@@ -35,21 +29,21 @@ do
 	perl -p -i -e "s/NeedClassName/$X3D/g" "$JAVA"
 	perl -p -i -e "s/JohnBoy/$X3D/g" "$JAVA"
 
-	find . -name `basename "${JAVA}"` | xargs -L 1 -P $PROCESSORS javac.exe -proc:full -J-Xss1g -J-Xmx19g -cp "${CLASSPATH}"
+	find . -name `basename "${JAVA}"` | xargs -L 1 -P $PROCESSORS javac.exe -proc:full -J-Xss1g -J-Xmx19g
 
 	echo running java
-	echo java -Xss1g -Xmx19g -cp "${CLASSPATH}" ${CLASS}
-	java -Xss1g -Xmx19g -cp "${CLASSPATH}" ${CLASS}
+	echo java -Xss1g -Xmx19g ${CLASS}
+	java -Xss1g -Xmx19g ${CLASS}
 	popd
 done
 
 if false
 then
 echo comparing java created json
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.'${JSONEXT}'/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	echo "OLDJSON=`mydirname $i | sed -e $LOCALTOROOT `/`mybasename $i .new.java.json`.${JSONEXT}"
-	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.json`.${JSONEXT}
+	echo "OLDJSON=`mydirname $i | sed -e $LOCALTOROOT `/`mybasename $i .new.java.${JSONEXT}`.${JSONEXT}"
+	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.${JSONEXT}`.${JSONEXT}
 	echo "${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 	"${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 done

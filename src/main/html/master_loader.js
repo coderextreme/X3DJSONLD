@@ -237,11 +237,12 @@ export async function loadX3DFile(filePath) {
 export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null) {
     document.getElementById('currentFileName').textContent = sourceFileName;
     const baseFileName = sourceFileName.substring(sourceFileName.lastIndexOf('/') + 1);
-    const jsonString = JSON.stringify(jsonObj, null, 2);
+    console.log(jsonObj);
+    const jsonString = JSON.stringify(jsonObj);
 
     loadSchema(jsonObj, sourceFileName, async function() {
 
-	    $('#json').val(jsonString);
+	    // $('#json').val(jsonString);
 
 	    let xmlString = "";
 	    let element = null;
@@ -316,8 +317,14 @@ export async function updateFromStl(stlText, sourceFileName) {
 export async function updateFromPly(plyText, sourceFileName) {
     try {
         const jsonObj = convertPlyToJson(plyText);
-        await updateFromJson(jsonObj, sourceFileName.replace(/\.ply$/i, ".json"));
-        $('#ply').val(plyText);
+	if (jsonObj !== null) {
+        	await updateFromJson(jsonObj, sourceFileName.replace(/\.ply$/i, ".json"));
+	}
+	if (plyText.length > 10000) {
+        	$('#ply').val("TOO BIG, TRUNCATED!"+plyText.substring(0, 10000));
+	} else {
+        	$('#ply').val(plyText);
+	}
     } catch (e) {
         alert("Error converting PLY: ".concat(e.message));
     }

@@ -5,7 +5,6 @@ IFS=$'\n\t'
 # Run the Test Suite
 
 # accepts files with .x3d extension
-export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
@@ -13,7 +12,7 @@ pip3 install x3d
 pip3 install xmlschema
 # ${PYTHON} ../python/classes.py
 pushd ../java
-javac -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
+javac net/coderextreme/RunSaxon.java
 popd
 
 	#if false

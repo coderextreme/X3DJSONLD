@@ -1,41 +1,62 @@
 #!/bin/bash
 # Window defines this, use ${USERNAME:....} something instead
-export HOMESFOLDER=C:/Users
-export USERNAME=jcarl
+if uname | grep -q "Linux"; then
+  echo "Running on Linux"
+  export HOMESFOLDER=/home
+  export USERNAME=yottzumm
+  export NODE=node
+  export DOWNLOADS=${HOMESFOLDER}/$USERNAME/Downloads
+  export X3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
+  export GRAALX3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
+  export PYTHONSAI=${HOMESFOLDER}/$USERNAME/pythonSAI
+  export GRAALPY=${DOWNLOADS}/graalpy-community-jvm-24.2.2-linux-amd64/graalpy-community-24.2.2-linux-amd64/bin/graalpy
+  export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar:${X3DJSONLD}/saxon-he-12.8.jar:.:../../..:../java"
+  export JRUBY=${DOWNLOADS}/jruby-dist-10.0.1.0-bin/jruby-10.0.1.0/bin/jruby
+  # GRAAL DOES NOT TAKE C:  You need colon separators on Linux, commas on Windows
+  export GRAAL_CLASSPATH=".:${GRAALX3DJSONLD}/saxon-he-12.8.jar:${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar:${GRAALX3DJSONLD}/src/main/graaljs:../java:${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar:${PYTHONSAI}/xmlresolver-5.1.1.jar:${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
+else
+  echo "Running on Windows"
+  export HOMESFOLDER=C:/Users
+  export USERNAME=jcarl
+  export NODE=node.exe
+  export DOWNLOADS=${HOMESFOLDER}/$USERNAME/Downloads
+  export X3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
+  export GRAALX3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
+  export PYTHONSAI=${HOMESFOLDER}/$USERNAME/pythonSAI
+  export GRAALPY=${DOWNLOADS}/graalpy-community-jvm-24.2.1-windows-amd64/graalpy-community-24.2.1-windows-amd64/bin/graalpy
+# export JRUBY=/c/jruby-11.0.0.1/bin/jruby
+# export JRUBY=/c/jruby-10.0.2.0/bin/jruby
+  export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.8.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${PYTHONSAI}/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
+  # export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;${PYTHONSAI}/xmlresolver-5.1.1.jar;${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
+  export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../../..;../java"
+fi
 
-export X3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
-export GRAALX3DJSONLD=${HOMESFOLDER}/$USERNAME/X3DJSONLD
-# export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;{HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1-data.jar"
-export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../../..;../java"
-
-# GRAAL DOES NOT TAKE C:  You need colon separators on Linux, commas on Windows
-export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.8.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/pythonSAI/xmlresolver-5.1.1-data.jar"
-export PYTHONPATH="${PYTHONPATH-"."}:net/coderextreme/data:net/coderextreme/personal"
-export PATH="${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:${PATH}"
-
-export PYTHON=python
-export GRAALPY=${HOMESFOLDER}/$USERNAME/Downloads/graalpy-community-jvm-24.2.1-windows-amd64/graalpy-community-24.2.1-windows-amd64/bin/graalpy
-#export GRAALPY=/home/yottzumm/Downloads/graalpy-community-jvm-24.2.2-linux-amd64/graalpy-community-24.2.2-linux-amd64/bin/graalpy
 source ${X3DJSONLD}/src/main/python/venv/Scripts/activate
 export PIP=pip3
-export NODE=node
-export NODEDIR=${HOMESFOLDER}/$USERNAME/X3DJSONLD/src/main/node
+#source venv/bin/activate
+#export PIP=pipx
+
+
+export PYTHONPATH="${PYTHONPATH-"."}:net/coderextreme/data:net/coderextreme/personal"
+export PATH="${JAVA_HOME-/usr/lib/jvm/default-runtime}/bin:${JAVA_HOME-/usr/lib/jvm/default-runtime}/jre/bin/server:${PATH}"
+
+export PYTHON=python
+export JSONEXT=x3dj
+export PROCESSORS=1
+export NODEDIR=${X3DJSONLD}/src/main/node
 # allow caps
 export LEIN_BREAK_CONVENTION=true
 # ${HOME}\\apache-maven-3.5.2\\bin\\mvn clean install
 # sh replaceclass.sh
 # ${HOME}\\apache-maven-3.5.2\\bin\\mvn install
 #
-# export JRUBY=/c/jruby-10.0.0.1/bin/jruby
-# export JRUBY=/home/yottzumm/Downloads/jruby-dist-10.0.1.0-bin/jruby-10.0.1.0/bin/jruby
-export JRUBY=/c/jruby-10.0.2.0/bin/jruby
 
 function jjs() {
-	# C:/graalvm-jdk-20_windows-x64_bin/graalvm-jdk-20.0.2+9.1/bin/js.cmd "$@"
-	# C:/graaljs-community-jvm-23.1.2-windows-amd64/graaljs-community-23.1.2-windows-amd64/bin/js.exe --experimental-options --polyglot --vm.Djs.allowAllAccess=true --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}" "$@"
-	# C:/graaljs-community-jvm-24.0.0-windows-amd64/graaljs-community-24.0.0-windows-amd64/bin/js.exe --experimental-options --polyglot --vm.Djs.allowAllAccess=true --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}" "$@"
-	C:/Users/jcarl/Downloads/graaljs-community-jvm-24.1.1-windows-amd64/graaljs-community-24.1.1-windows-amd64/bin/js.exe --experimental-options --polyglot --vm.Djs.allowAllAccess=true --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}" "$@"
-	# /home/yottzumm/Downloads/graaljs-community-24.2.2-linux-amd64/bin/js --experimental-options --polyglot --vm.Djs.allowAllAccess=true --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}" "$@"
+	if uname | grep -q "Linux"; then
+		${DOWNLOADS}/graaljs-community-24.2.2-linux-amd64/bin/js --experimental-options --polyglot --vm.Djs.allowAllAccess=true --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}" "$@"
+	else
+  		${DOWNLOADS}/graaljs-community-jvm-24.1.1-windows-amd64/graaljs-community-24.1.1-windows-amd64/bin/js.exe --experimental-options --polyglot --vm.Djs.allowAllAccess=true --vm.Xss1g --vm.Xmx4g --jvm --vm.classpath="${GRAAL_CLASSPATH}" "$@"
+  	fi
 
 }
 

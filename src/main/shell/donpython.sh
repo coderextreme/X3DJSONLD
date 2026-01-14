@@ -7,7 +7,6 @@ IFS=$'\n\t'
 # accepts files with .x3d extension
 
 source ../python/venv/Scripts/activate
-export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 

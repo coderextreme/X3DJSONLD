@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:baf56bb052ff51ab3aefb09045b3ab52b92ce0a9afd33ad4c6d9f98f769d4879
-size 1118
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Full",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"personal.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://someAddress/somePath/personal.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John's Portfolio",
+        "@name":"description"
+      }
+    },
+    }    "Scene":
+    {
+        "Viewpoint":
+        {
+      {
+        "@description":"Tour Views",
+        "@position":"0 0 12"
+      }
+    },
+        "Switch":
+        {
+      {
+        "@DEF":"SceneSwitcher",
+        "@whichChoice":"0"
+      }
+            "Inline":
+            {
+      {
+        "@url":""../data/force-tidy.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d""
+      }
+    },
+        }    }}

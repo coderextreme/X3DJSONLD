@@ -1,3 +1,816 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:733994942dbb8ae204633440ff198bc7bf9cf3ef11a777f859d5dd61349bfe66
-size 24851
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"EnvironmentalEffects"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Shaders"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"CubeMapTexturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"4",
+        "@name":"Shape"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"Grouping"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"flowers7.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"manual",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "NavigationInfo":
+        {
+    },
+        "Background":
+        {
+      {
+        "@DEF":"background",
+        "@backUrl":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"",
+        "@bottomUrl":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"",
+        "@frontUrl":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"",
+        "@leftUrl":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"",
+        "@rightUrl":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"",
+        "@topUrl":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Transparent rose",
+        "@position":"0 0 40"
+      }
+    },
+        "Transform":
+        {
+            "Shape":
+            {
+                "Appearance":
+                {
+                    "Material":
+                    {
+      {
+        "@diffuseColor":"0.7 0.7 0.7",
+        "@specularColor":"0.5 0.5 0.5"
+      }
+    },
+                    "ComposedCubeMapTexture":
+                    {
+      {
+        "@DEF":"texture"
+      }
+                        "ImageTexture":
+                        {
+      {
+        "@DEF":"backShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@DEF":"bottomShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@DEF":"frontShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@DEF":"leftShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@DEF":"rightShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@DEF":"topShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
+      }
+    },
+                    }                    "ComposedShader":
+                    {
+      {
+        "@DEF":"x3dom",
+        "@language":"GLSL"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"cube",
+        "@type":"SFNode"
+      }
+                            "ComposedCubeMapTexture":
+                            {
+      {
+        "@USE":"texture"
+      }
+    },
+                        }                        "field":
+                        {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"chromaticDispertion",
+        "@type":"SFVec3f",
+        "@value":"[0.98, 1, 1.033]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"bias",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"scale",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"power",
+        "@type":"SFFloat",
+        "@value":"2"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"a",
+        "@type":"SFFloat",
+        "@value":"10"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"b",
+        "@type":"SFFloat",
+        "@value":"1"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"c",
+        "@type":"SFFloat",
+        "@value":"20"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"d",
+        "@type":"SFFloat",
+        "@value":"20"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"tdelta",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"pdelta",
+        "@type":"SFFloat"
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@url":""https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs""
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@type":"FRAGMENT",
+        "@url":""https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs""
+      }
+    },
+                    }                    "ComposedShader":
+                    {
+      {
+        "@DEF":"x_ite",
+        "@language":"GLSL"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"cube",
+        "@type":"SFNode"
+      }
+                            "ComposedCubeMapTexture":
+                            {
+      {
+        "@USE":"texture"
+      }
+    },
+                        }                        "field":
+                        {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"chromaticDispertion",
+        "@type":"SFVec3f",
+        "@value":"[0.98, 1, 1.033]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"bias",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"scale",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"power",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"a",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"b",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"c",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"d",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"tdelta",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"pdelta",
+        "@type":"SFFloat"
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@url":""https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs""
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@type":"FRAGMENT",
+        "@url":""https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs""
+      }
+    },
+                    }                }                "Sphere":
+                {
+    },
+            }        }        "Script":
+        {
+      {
+        "@DEF":"UrlSelector",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;        function set_fraction( f, tm ) {
+&quot;+
+&quot;            var side = Math.floor(f*frontUrls.length);
+&quot;+
+&quot;            if (side > frontUrls.length-1) {
+&quot;+
+&quot;                side = 0;
+&quot;+
+&quot;            }
+&quot;+
+&quot;            if (side != old) {
+&quot;+
+&quot;                    old = side;
+&quot;+
+&quot;                    front[0] = frontUrls[side];
+&quot;+
+&quot;                    back[0] = backUrls[side];
+&quot;+
+&quot;                    left[0] = leftUrls[side];
+&quot;+
+&quot;                    right[0] = rightUrls[side];
+&quot;+
+&quot;                    top[0] = topUrls[side];
+&quot;+
+&quot;                    bottom[0] = bottomUrls[side];
+&quot;+
+&quot;            }
+&quot;+
+&quot;        }"
+      }
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"frontUrls",
+        "@type":"MFString",
+        "@value":"['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png']"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"backUrls",
+        "@type":"MFString",
+        "@value":"['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png']"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"leftUrls",
+        "@type":"MFString",
+        "@value":"['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png']"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"rightUrls",
+        "@type":"MFString",
+        "@value":"['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png']"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"topUrls",
+        "@type":"MFString",
+        "@value":"['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png']"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"bottomUrls",
+        "@type":"MFString",
+        "@value":"['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/building_cross/building_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/campus_cross/campus_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/galileo_cross/galileo_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/grace_cross/grace_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/kitchen_cross/kitchen_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/rnl_cross/rnl_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png']"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"front",
+        "@type":"MFString"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"back",
+        "@type":"MFString"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"left",
+        "@type":"MFString"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"right",
+        "@type":"MFString"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"top",
+        "@type":"MFString"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"bottom",
+        "@type":"MFString"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_fraction",
+        "@type":"SFFloat"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"old",
+        "@type":"SFInt32",
+        "@value":"-1"
+      }
+    },
+        }        "Script":
+        {
+      {
+        "@DEF":"Animate",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function set_fraction() {
+&quot;+
+&quot;	var choice = Math.floor(Math.random() * 4);
+&quot;+
+&quot;	switch (choice) {
+&quot;+
+&quot;	case 0:
+&quot;+
+&quot;		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 1:
+&quot;+
+&quot;		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 2:
+&quot;+
+&quot;		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 3:
+&quot;+
+&quot;		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	tdelta = tdelta + 0.5;
+&quot;+
+&quot;	pdelta = pdelta + 0.5;
+&quot;+
+&quot;	if (a < 1) {
+&quot;+
+&quot;		a = 10;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (b < 1) {
+&quot;+
+&quot;		b = 10;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (c < 1) {
+&quot;+
+&quot;		c = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (c > 20) {
+&quot;+
+&quot;		c = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (d < 1) {
+&quot;+
+&quot;		d = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (d > 20) {
+&quot;+
+&quot;		d = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;}"
+      }
+            "field":
+            {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_fraction",
+        "@type":"SFFloat"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"a",
+        "@type":"SFFloat",
+        "@value":"10"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"b",
+        "@type":"SFFloat",
+        "@value":"1"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"c",
+        "@type":"SFFloat",
+        "@value":"20"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"d",
+        "@type":"SFFloat",
+        "@value":"20"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"tdelta",
+        "@type":"SFFloat"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"pdelta",
+        "@type":"SFFloat"
+      }
+    },
+        }        "TimeSensor":
+        {
+      {
+        "@DEF":"TourTime",
+        "@cycleInterval":"5",
+        "@loop":"true"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"TourTime",
+        "@toField":"set_fraction",
+        "@toNode":"Animate"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"a_changed",
+        "@fromNode":"Animate",
+        "@toField":"a",
+        "@toNode":"x_ite"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"b_changed",
+        "@fromNode":"Animate",
+        "@toField":"b",
+        "@toNode":"x_ite"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"c_changed",
+        "@fromNode":"Animate",
+        "@toField":"c",
+        "@toNode":"x_ite"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"d_changed",
+        "@fromNode":"Animate",
+        "@toField":"d",
+        "@toNode":"x_ite"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"pdelta_changed",
+        "@fromNode":"Animate",
+        "@toField":"pdelta",
+        "@toNode":"x_ite"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"tdelta_changed",
+        "@fromNode":"Animate",
+        "@toField":"tdelta",
+        "@toNode":"x_ite"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"a_changed",
+        "@fromNode":"Animate",
+        "@toField":"set_a",
+        "@toNode":"x3dom"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"b_changed",
+        "@fromNode":"Animate",
+        "@toField":"set_b",
+        "@toNode":"x3dom"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"c_changed",
+        "@fromNode":"Animate",
+        "@toField":"set_c",
+        "@toNode":"x3dom"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"d_changed",
+        "@fromNode":"Animate",
+        "@toField":"set_d",
+        "@toNode":"x3dom"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"pdelta_changed",
+        "@fromNode":"Animate",
+        "@toField":"set_pdelta",
+        "@toNode":"x3dom"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"tdelta_changed",
+        "@fromNode":"Animate",
+        "@toField":"set_tdelta",
+        "@toNode":"x3dom"
+      }
+    },
+    }}

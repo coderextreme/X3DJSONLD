@@ -1,3 +1,136 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4795042e54c4f9ea7be63c6dea3fa9a05cc38b23b089659e962e1cba5d420c46
-size 2684
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "Scene":
+    {
+        "Script":
+        {
+      {
+        "@DEF":"OpenVault",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;      function combinationEntered (value) {
+&quot;+
+&quot;
+&quot;+
+&quot;        unlocked = value;
+&quot;+
+&quot;
+&quot;+
+&quot;      }
+&quot;+
+&quot;
+&quot;+
+&quot;      function openVault(value) {
+&quot;+
+&quot;
+&quot;+
+&quot;      if (unlocked) vaultUnlocked = value;
+&quot;+
+&quot;
+&quot;+
+&quot;      }"
+      }
+            "field":
+            {
+      {
+        "@accessType":"inputOnly",
+        "@name":"openVault",
+        "@type":"SFTime"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOnly",
+        "@name":"combinationEntered",
+        "@type":"SFBool"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"outputOnly",
+        "@name":"vaultUnlocked",
+        "@type":"SFTime"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"unlocked",
+        "@type":"SFBool"
+      }
+    },
+        }        "Shape":
+        {
+            "Appearance":
+            {
+                "Material":
+                {
+      {
+        "@diffuseColor":"1 0 0"
+      }
+    },
+            }            "Sphere":
+            {
+    },
+        }        "Sound":
+        {
+      {
+        "@maxBack":"1000",
+        "@maxFront":"1000",
+        "@minBack":"1000",
+        "@minFront":"1000"
+      }
+            "AudioClip":
+            {
+      {
+        "@DEF":"Click",
+        "@description":"clicking sound",
+        "@stopTime":"1",
+        "@url":""../resources/chandubabamusic1.wav""
+      }
+    },
+        }        "TouchSensor":
+        {
+      {
+        "@DEF":"TS"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isOver",
+        "@fromNode":"TS",
+        "@toField":"combinationEntered",
+        "@toNode":"OpenVault"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"TS",
+        "@toField":"openVault",
+        "@toNode":"OpenVault"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"vaultUnlocked",
+        "@fromNode":"OpenVault",
+        "@toField":"set_startTime",
+        "@toNode":"Click"
+      }
+    },
+    }}

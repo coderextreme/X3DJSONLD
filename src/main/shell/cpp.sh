@@ -6,10 +6,8 @@ IFS=$'\n\t'
 
 # accepts files with .json extension
 
-export PROCESSORS="${PROCESSORS-8}"
-
 . ../shell/classpath
 
 export NODE_OPTIONS=--max-old-space-size=24576
 
-ls -d "$@" | grep json | grep -v new | xargs -P "${PROCESSORS}" "${NODE}" "${NODEDIR}/json2cpp.js"
+ls -d "$@" | grep ${JSONEXT} | grep -v new | xargs -P "${PROCESSORS}" "${NODE}" "${NODEDIR}/json2cpp.js"
