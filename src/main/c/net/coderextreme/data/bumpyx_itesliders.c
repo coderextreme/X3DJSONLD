@@ -5,6 +5,8 @@ X3D X3D0;
 X3D0.profile = "Full";
 X3D0.version = "4.0";
 head head1 = createNode("head");
+//<component name='Shape' level='4'></component>
+//<component name='DIS' level='2'></component>
 component component2 = createNode("component");
 component2.name = "Scripting";
 component2.level = 1;
@@ -47,167 +49,157 @@ component9.name = "Core";
 component9.level = 1;
 head1.component[7] = component9;
 
-component component10 = createNode("component");
-component10.name = "DIS";
-component10.level = 2;
-head1.component[8] = component10;
+meta meta10 = createNode("meta");
+meta10.name = "title";
+meta10.content = "bumpyx_itesliders.x3d";
+head1.meta[8] = meta10;
 
-//<component name='Shape' level='4'></component>
-//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 meta meta11 = createNode("meta");
-meta11.name = "title";
-meta11.content = "bumpyx_itesliders.x3d";
+meta11.name = "description";
+meta11.content = "*Bumpy flower with prototype sliders*";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
-meta12.name = "description";
-meta12.content = "*enter description here, short-sentence summaries preferred*";
+meta12.name = "creator";
+meta12.content = "Doug Sanden, Christoph Valentin, John Carlson";
 head1.meta[10] = meta12;
 
 meta meta13 = createNode("meta");
-meta13.name = "creator";
-meta13.content = "Doug Sanden, Christoph Valentin, John Carlson";
+meta13.name = "identifier";
+meta13.content = "https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d";
 head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");
-meta14.name = "translator";
-meta14.content = "*if manually translating VRML-to-X3D, enter name of person translating here*";
+meta14.name = "generator";
+meta14.content = "PSPad, http://www.pspad.com/";
 head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
-meta15.name = "created";
-meta15.content = "*enter date of initial version here*";
+meta15.name = "license";
+meta15.content = "license.html";
 head1.meta[13] = meta15;
-
-meta meta16 = createNode("meta");
-meta16.name = "translated";
-meta16.content = "*enter date of translation here*";
-head1.meta[14] = meta16;
-
-meta meta17 = createNode("meta");
-meta17.name = "modified";
-meta17.content = "*enter date of latest revision here*";
-head1.meta[15] = meta17;
-
-meta meta18 = createNode("meta");
-meta18.name = "version";
-meta18.content = "*enter version here, if any*";
-head1.meta[16] = meta18;
-
-meta meta19 = createNode("meta");
-meta19.name = "reference";
-meta19.content = "*enter reference citation or relative/online url here*";
-head1.meta[17] = meta19;
-
-meta meta20 = createNode("meta");
-meta20.name = "reference";
-meta20.content = "*enter additional url/bibliographic reference information here*";
-head1.meta[18] = meta20;
-
-meta meta21 = createNode("meta");
-meta21.name = "requires";
-meta21.content = "*enter reference resource here if required to support function, delivery, or coherence of content*";
-head1.meta[19] = meta21;
-
-meta meta22 = createNode("meta");
-meta22.name = "rights";
-meta22.content = "*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024";
-head1.meta[20] = meta22;
-
-meta meta23 = createNode("meta");
-meta23.name = "drawing";
-meta23.content = "*enter drawing filename/url here*";
-head1.meta[21] = meta23;
-
-meta meta24 = createNode("meta");
-meta24.name = "MovingImage";
-meta24.content = "*enter movie filename/url here*";
-head1.meta[22] = meta24;
-
-meta meta25 = createNode("meta");
-meta25.name = "photo";
-meta25.content = "*enter photo filename/url here*";
-head1.meta[23] = meta25;
-
-meta meta26 = createNode("meta");
-meta26.name = "subject";
-meta26.content = "*enter subject keywords here*";
-head1.meta[24] = meta26;
-
-meta meta27 = createNode("meta");
-meta27.name = "accessRights";
-meta27.content = "*enter permission statements or url here*";
-head1.meta[25] = meta27;
-
-meta meta28 = createNode("meta");
-meta28.name = "identifier";
-meta28.content = "*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*";
-head1.meta[26] = meta28;
-
-meta meta29 = createNode("meta");
-meta29.name = "generator";
-meta29.content = "PSPad, http://www.pspad.com/";
-head1.meta[27] = meta29;
-
-meta meta30 = createNode("meta");
-meta30.name = "license";
-meta30.content = "license.html";
-head1.meta[28] = meta30;
 
 head = head1;
 
 //\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
 //LayerSet with two layers, navigation happens in layer 1
-LayerSet LayerSet32 = createNode("LayerSet");
-LayerSet32.activeLayer = 1;
-LayerSet32.order = new MFInt32(new int[1,2]);
+LayerSet LayerSet17 = createNode("LayerSet");
+LayerSet17.activeLayer = 1;
+LayerSet17.order = new MFInt32(new int[1,2,3]);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
-Layer Layer33 = createNode("Layer");
-Layer33.pickable = True;
-Layer33.objectType = new MFString(new java.lang.String["ALL"]);
+Layer Layer18 = createNode("Layer");
+Layer18.pickable = True;
+Layer18.objectType = new MFString(new java.lang.String["ALL"]);
 //basic nodes, which might be present in any scene
-NavigationInfo NavigationInfo34 = createNode("NavigationInfo");
-NavigationInfo34.type = new MFString(new java.lang.String["EXAMINE"]);
-NavigationInfo34.avatarSize = new MFFloat(new float[0.25,1.75,0.75]);
-Layer33.children = new MFNode();
+NavigationInfo NavigationInfo19 = createNode("NavigationInfo");
+NavigationInfo19.type = new MFString(new java.lang.String["EXAMINE"]);
+NavigationInfo19.avatarSize = new MFFloat(new float[0.25,1.75,0.75]);
+Layer18.children = new MFNode();
 
-Layer33.children[0] = NavigationInfo34;
+Layer18.children[0] = NavigationInfo19;
 
-DirectionalLight DirectionalLight35 = createNode("DirectionalLight");
-DirectionalLight35.ambientIntensity = 0.2;
-DirectionalLight35.direction = new SFVec3f(new float[0,-1,0]);
-Layer33.children[1] = DirectionalLight35;
+DirectionalLight DirectionalLight20 = createNode("DirectionalLight");
+DirectionalLight20.ambientIntensity = 0.2;
+DirectionalLight20.direction = new SFVec3f(new float[0,-1,0]);
+Layer18.children[1] = DirectionalLight20;
 
-DirectionalLight DirectionalLight36 = createNode("DirectionalLight");
-DirectionalLight36.ambientIntensity = 0.2;
-DirectionalLight36.direction = new SFVec3f(new float[-1,-0.1,-1]);
-Layer33.children[2] = DirectionalLight36;
+DirectionalLight DirectionalLight21 = createNode("DirectionalLight");
+DirectionalLight21.ambientIntensity = 0.2;
+DirectionalLight21.direction = new SFVec3f(new float[-1,-0.1,-1]);
+Layer18.children[2] = DirectionalLight21;
 
-Viewpoint Viewpoint37 = createNode("Viewpoint");
-Viewpoint37.description = "My Overview";
-Viewpoint37.fieldOfView = 1.570796;
-Viewpoint37.position = new SFVec3f(new float[0,1.75,60]);
-Layer33.children[3] = Viewpoint37;
+Viewpoint Viewpoint22 = createNode("Viewpoint");
+Viewpoint22.description = "My Overview";
+Viewpoint22.fieldOfView = 1.570796;
+Viewpoint22.position = new SFVec3f(new float[0,1.75,60]);
+Layer18.children[3] = Viewpoint22;
 
 //this group contains the red/green/blue 3D crosshair
-Group Group38 = createNode("Group");
+Group Group23 = createNode("Group");
 //Arrow X
+Transform Transform24 = createNode("Transform");
+Transform24.translation = new SFVec3f(new float[25,0,0]);
+Transform24.rotation = new SFRotation(new float[0,0,-1,1.57]);
+Shape Shape25 = createNode("Shape");
+Cylinder Cylinder26 = createNode("Cylinder");
+Cylinder26.DEF = "Shaft";
+Cylinder26.radius = 0.35;
+Cylinder26.height = 50;
+Shape25.geometry = Cylinder26;
+
+Appearance Appearance27 = createNode("Appearance");
+Material Material28 = createNode("Material");
+Material28.DEF = "RED";
+Material28.diffuseColor = new SFColor(new float[1,0,0]);
+Material28.emissiveColor = new SFColor(new float[1,0,0]);
+Appearance27.material = Material28;
+
+Shape25.appearance = Appearance27;
+
+Transform24.child = new undefined();
+
+Transform24.child[0] = Shape25;
+
+Group23.children = new MFNode();
+
+Group23.children[0] = Transform24;
+
+Transform Transform29 = createNode("Transform");
+Transform29.translation = new SFVec3f(new float[50,0,0]);
+Transform29.rotation = new SFRotation(new float[0,0,-1,1.57]);
+Shape Shape30 = createNode("Shape");
+Cone Cone31 = createNode("Cone");
+Cone31.DEF = "Tip";
+Cone31.bottomRadius = 0.8;
+Cone31.height = 3;
+Shape30.geometry = Cone31;
+
+Appearance Appearance32 = createNode("Appearance");
+Material Material33 = createNode("Material");
+Material33.USE = "RED";
+Appearance32.material = Material33;
+
+Shape30.appearance = Appearance32;
+
+Transform29.child = new undefined();
+
+Transform29.child[0] = Shape30;
+
+Group23.children[1] = Transform29;
+
+//Arrow Y
+Transform Transform34 = createNode("Transform");
+Transform34.translation = new SFVec3f(new float[0,25,0]);
+Shape Shape35 = createNode("Shape");
+Cylinder Cylinder36 = createNode("Cylinder");
+Cylinder36.USE = "Shaft";
+Shape35.geometry = Cylinder36;
+
+Appearance Appearance37 = createNode("Appearance");
+Material Material38 = createNode("Material");
+Material38.DEF = "GREEN";
+Material38.diffuseColor = new SFColor(new float[0,1,0]);
+Material38.emissiveColor = new SFColor(new float[0,1,0]);
+Appearance37.material = Material38;
+
+Shape35.appearance = Appearance37;
+
+Transform34.child = new undefined();
+
+Transform34.child[0] = Shape35;
+
+Group23.children[2] = Transform34;
+
 Transform Transform39 = createNode("Transform");
-Transform39.translation = new SFVec3f(new float[25,0,0]);
-Transform39.rotation = new SFRotation(new float[0,0,-1,1.57]);
+Transform39.translation = new SFVec3f(new float[0,50,0]);
 Shape Shape40 = createNode("Shape");
-Cylinder Cylinder41 = createNode("Cylinder");
-Cylinder41.DEF = "Shaft";
-Cylinder41.radius = 0.35;
-Cylinder41.height = 50;
-Shape40.geometry = Cylinder41;
+Cone Cone41 = createNode("Cone");
+Cone41.USE = "Tip";
+Shape40.geometry = Cone41;
 
 Appearance Appearance42 = createNode("Appearance");
 Material Material43 = createNode("Material");
-Material43.DEF = "RED";
-Material43.diffuseColor = new SFColor(new float[1,0,0]);
-Material43.emissiveColor = new SFColor(new float[1,0,0]);
+Material43.USE = "GREEN";
 Appearance42.material = Material43;
 
 Shape40.appearance = Appearance42;
@@ -216,23 +208,22 @@ Transform39.child = new undefined();
 
 Transform39.child[0] = Shape40;
 
-Group38.children = new MFNode();
+Group23.children[3] = Transform39;
 
-Group38.children[0] = Transform39;
-
+//Arrow Z
 Transform Transform44 = createNode("Transform");
-Transform44.translation = new SFVec3f(new float[50,0,0]);
-Transform44.rotation = new SFRotation(new float[0,0,-1,1.57]);
+Transform44.translation = new SFVec3f(new float[0,0,25]);
+Transform44.rotation = new SFRotation(new float[1,0,0,1.57]);
 Shape Shape45 = createNode("Shape");
-Cone Cone46 = createNode("Cone");
-Cone46.DEF = "Tip";
-Cone46.bottomRadius = 0.8;
-Cone46.height = 3;
-Shape45.geometry = Cone46;
+Cylinder Cylinder46 = createNode("Cylinder");
+Cylinder46.USE = "Shaft";
+Shape45.geometry = Cylinder46;
 
 Appearance Appearance47 = createNode("Appearance");
 Material Material48 = createNode("Material");
-Material48.USE = "RED";
+Material48.DEF = "BLUE";
+Material48.diffuseColor = new SFColor(new float[0,0,1]);
+Material48.emissiveColor = new SFColor(new float[0,0,1]);
 Appearance47.material = Material48;
 
 Shape45.appearance = Appearance47;
@@ -241,21 +232,19 @@ Transform44.child = new undefined();
 
 Transform44.child[0] = Shape45;
 
-Group38.children[1] = Transform44;
+Group23.children[4] = Transform44;
 
-//Arrow Y
 Transform Transform49 = createNode("Transform");
-Transform49.translation = new SFVec3f(new float[0,25,0]);
+Transform49.translation = new SFVec3f(new float[0,0,50]);
+Transform49.rotation = new SFRotation(new float[1,0,0,1.57]);
 Shape Shape50 = createNode("Shape");
-Cylinder Cylinder51 = createNode("Cylinder");
-Cylinder51.USE = "Shaft";
-Shape50.geometry = Cylinder51;
+Cone Cone51 = createNode("Cone");
+Cone51.USE = "Tip";
+Shape50.geometry = Cone51;
 
 Appearance Appearance52 = createNode("Appearance");
 Material Material53 = createNode("Material");
-Material53.DEF = "GREEN";
-Material53.diffuseColor = new SFColor(new float[0,1,0]);
-Material53.emissiveColor = new SFColor(new float[0,1,0]);
+Material53.USE = "BLUE";
 Appearance52.material = Material53;
 
 Shape50.appearance = Appearance52;
@@ -264,1095 +253,1011 @@ Transform49.child = new undefined();
 
 Transform49.child[0] = Shape50;
 
-Group38.children[2] = Transform49;
+Group23.children[5] = Transform49;
 
-Transform Transform54 = createNode("Transform");
-Transform54.translation = new SFVec3f(new float[0,50,0]);
-Shape Shape55 = createNode("Shape");
-Cone Cone56 = createNode("Cone");
-Cone56.USE = "Tip";
-Shape55.geometry = Cone56;
-
-Appearance Appearance57 = createNode("Appearance");
-Material Material58 = createNode("Material");
-Material58.USE = "GREEN";
-Appearance57.material = Material58;
-
-Shape55.appearance = Appearance57;
-
-Transform54.child = new undefined();
-
-Transform54.child[0] = Shape55;
-
-Group38.children[3] = Transform54;
-
-//Arrow Z
-Transform Transform59 = createNode("Transform");
-Transform59.translation = new SFVec3f(new float[0,0,25]);
-Transform59.rotation = new SFRotation(new float[1,0,0,1.57]);
-Shape Shape60 = createNode("Shape");
-Cylinder Cylinder61 = createNode("Cylinder");
-Cylinder61.USE = "Shaft";
-Shape60.geometry = Cylinder61;
-
-Appearance Appearance62 = createNode("Appearance");
-Material Material63 = createNode("Material");
-Material63.DEF = "BLUE";
-Material63.diffuseColor = new SFColor(new float[0,0,1]);
-Material63.emissiveColor = new SFColor(new float[0,0,1]);
-Appearance62.material = Material63;
-
-Shape60.appearance = Appearance62;
-
-Transform59.child = new undefined();
-
-Transform59.child[0] = Shape60;
-
-Group38.children[4] = Transform59;
-
-Transform Transform64 = createNode("Transform");
-Transform64.translation = new SFVec3f(new float[0,0,50]);
-Transform64.rotation = new SFRotation(new float[1,0,0,1.57]);
-Shape Shape65 = createNode("Shape");
-Cone Cone66 = createNode("Cone");
-Cone66.USE = "Tip";
-Shape65.geometry = Cone66;
-
-Appearance Appearance67 = createNode("Appearance");
-Material Material68 = createNode("Material");
-Material68.USE = "BLUE";
-Appearance67.material = Material68;
-
-Shape65.appearance = Appearance67;
-
-Transform64.child = new undefined();
-
-Transform64.child[0] = Shape65;
-
-Group38.children[5] = Transform64;
-
-Layer33.children[4] = Group38;
+Layer18.children[4] = Group23;
 
 //the model that is being reviewed by the users of this scene
-Transform Transform69 = createNode("Transform");
-Transform69.DEF = "FlowerTransform";
+Transform Transform54 = createNode("Transform");
+Transform54.DEF = "FlowerTransform";
 //<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />
 //Images courtesy of Paul Debevec's Light Probe Image Gallery
-Background Background70 = createNode("Background");
-Background70.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-Background70.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-Background70.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-Background70.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-Background70.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-Background70.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
-Transform69.children = new MFNode();
+Background Background55 = createNode("Background");
+Background55.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+Background55.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+Background55.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+Background55.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+Background55.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+Background55.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+Transform54.children = new MFNode();
 
-Transform69.children[0] = Background70;
+Transform54.children[0] = Background55;
 
-Transform Transform71 = createNode("Transform");
-Shape Shape72 = createNode("Shape");
-Sphere Sphere73 = createNode("Sphere");
-Sphere73.radius = 40;
-Shape72.geometry = Sphere73;
+Transform Transform56 = createNode("Transform");
+Shape Shape57 = createNode("Shape");
+//<Sphere radius='40'></Sphere>
+IndexedFaceSet IndexedFaceSet58 = createNode("IndexedFaceSet");
+IndexedFaceSet58.convex = False;
+IndexedFaceSet58.DEF = "Orbit";
+Coordinate Coordinate59 = createNode("Coordinate");
+Coordinate59.DEF = "OrbitCoordinates";
+IndexedFaceSet58.coord = Coordinate59;
 
-Appearance Appearance74 = createNode("Appearance");
-Material Material75 = createNode("Material");
-Material75.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
-Material75.specularColor = new SFColor(new float[0.5,0.5,0.5]);
-Appearance74.material = Material75;
+Shape57.geometry = IndexedFaceSet58;
 
-ComposedCubeMapTexture ComposedCubeMapTexture76 = createNode("ComposedCubeMapTexture");
-ComposedCubeMapTexture76.DEF = "texture";
-ImageTexture ImageTexture77 = createNode("ImageTexture");
-ImageTexture77.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
-ComposedCubeMapTexture76.topTexture = ImageTexture77;
+Appearance Appearance60 = createNode("Appearance");
+Material Material61 = createNode("Material");
+Material61.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
+Material61.specularColor = new SFColor(new float[0.5,0.5,0.5]);
+Appearance60.material = Material61;
 
-ImageTexture ImageTexture78 = createNode("ImageTexture");
-ImageTexture78.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
-ComposedCubeMapTexture76.topTexture = ImageTexture78;
+ComposedCubeMapTexture ComposedCubeMapTexture62 = createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture62.DEF = "texture";
+ImageTexture ImageTexture63 = createNode("ImageTexture");
+ImageTexture63.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]);
+ComposedCubeMapTexture62.topTexture = ImageTexture63;
 
-ImageTexture ImageTexture79 = createNode("ImageTexture");
-ImageTexture79.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
-ComposedCubeMapTexture76.topTexture = ImageTexture79;
+ImageTexture ImageTexture64 = createNode("ImageTexture");
+ImageTexture64.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]);
+ComposedCubeMapTexture62.topTexture = ImageTexture64;
 
-ImageTexture ImageTexture80 = createNode("ImageTexture");
-ImageTexture80.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
-ComposedCubeMapTexture76.topTexture = ImageTexture80;
+ImageTexture ImageTexture65 = createNode("ImageTexture");
+ImageTexture65.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]);
+ComposedCubeMapTexture62.topTexture = ImageTexture65;
 
-ImageTexture ImageTexture81 = createNode("ImageTexture");
-ImageTexture81.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
-ComposedCubeMapTexture76.topTexture = ImageTexture81;
+ImageTexture ImageTexture66 = createNode("ImageTexture");
+ImageTexture66.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]);
+ComposedCubeMapTexture62.topTexture = ImageTexture66;
 
-ImageTexture ImageTexture82 = createNode("ImageTexture");
-ImageTexture82.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
-ComposedCubeMapTexture76.topTexture = ImageTexture82;
+ImageTexture ImageTexture67 = createNode("ImageTexture");
+ImageTexture67.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]);
+ComposedCubeMapTexture62.topTexture = ImageTexture67;
 
-Appearance74.texture = ComposedCubeMapTexture76;
+ImageTexture ImageTexture68 = createNode("ImageTexture");
+ImageTexture68.url = new MFString(new java.lang.String["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]);
+ComposedCubeMapTexture62.topTexture = ImageTexture68;
 
-ComposedShader ComposedShader83 = createNode("ComposedShader");
-ComposedShader83.DEF = "x_iteShader";
-ComposedShader83.language = "GLSL";
-field field84 = createNode("field");
-field84.name = "chromaticDispertion";
-field84.accessType = "inputOnly";
-field84.type = "SFVec3f";
-field84.value = "0.98 1 1.033";
-ComposedShader83.field = new MFNode();
+Appearance60.texture = ComposedCubeMapTexture62;
 
-ComposedShader83.field[0] = field84;
+ComposedShader ComposedShader69 = createNode("ComposedShader");
+ComposedShader69.DEF = "x_iteShader";
+ComposedShader69.language = "GLSL";
+field field70 = createNode("field");
+field70.name = "chromaticDispertion";
+field70.accessType = "inputOnly";
+field70.type = "SFVec3f";
+field70.value = "0.98 1 1.033";
+ComposedShader69.field = new MFNode();
 
+ComposedShader69.field[0] = field70;
+
+field field71 = createNode("field");
+field71.name = "cube";
+field71.type = "SFNode";
+field71.accessType = "inputOnly";
+ComposedCubeMapTexture ComposedCubeMapTexture72 = createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture72.USE = "texture";
+field71.children = new MFNode();
+
+field71.children[0] = ComposedCubeMapTexture72;
+
+ComposedShader69.field[1] = field71;
+
+field field73 = createNode("field");
+field73.name = "bias";
+field73.type = "SFFloat";
+field73.accessType = "inputOnly";
+field73.value = "0.5";
+ComposedShader69.field[2] = field73;
+
+field field74 = createNode("field");
+field74.name = "scale";
+field74.type = "SFFloat";
+field74.accessType = "inputOnly";
+field74.value = "0.5";
+ComposedShader69.field[3] = field74;
+
+field field75 = createNode("field");
+field75.name = "power";
+field75.type = "SFFloat";
+field75.accessType = "inputOnly";
+field75.value = "2";
+ComposedShader69.field[4] = field75;
+
+field field76 = createNode("field");
+field76.name = "a";
+field76.type = "SFFloat";
+field76.accessType = "inputOutput";
+field76.value = "15";
+ComposedShader69.field[5] = field76;
+
+field field77 = createNode("field");
+field77.name = "b";
+field77.type = "SFFloat";
+field77.accessType = "inputOutput";
+field77.value = "5";
+ComposedShader69.field[6] = field77;
+
+field field78 = createNode("field");
+field78.name = "c";
+field78.type = "SFFloat";
+field78.accessType = "inputOutput";
+field78.value = "5";
+ComposedShader69.field[7] = field78;
+
+field field79 = createNode("field");
+field79.name = "d";
+field79.type = "SFFloat";
+field79.accessType = "inputOutput";
+field79.value = "5";
+ComposedShader69.field[8] = field79;
+
+field field80 = createNode("field");
+field80.name = "tdelta";
+field80.type = "SFFloat";
+field80.accessType = "inputOutput";
+field80.value = "0";
+ComposedShader69.field[9] = field80;
+
+field field81 = createNode("field");
+field81.name = "pdelta";
+field81.type = "SFFloat";
+field81.accessType = "inputOutput";
+field81.value = "0";
+ComposedShader69.field[10] = field81;
+
+ShaderPart ShaderPart82 = createNode("ShaderPart");
+ShaderPart82.url = new MFString(new java.lang.String["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]);
+ShaderPart82.type = "VERTEX";
+ComposedShader69.parts[11] = ShaderPart82;
+
+ShaderPart ShaderPart83 = createNode("ShaderPart");
+ShaderPart83.url = new MFString(new java.lang.String["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]);
+ShaderPart83.type = "FRAGMENT";
+ComposedShader69.parts[12] = ShaderPart83;
+
+//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+Appearance60.shaders = new MFNode();
+
+Appearance60.shaders[0] = ComposedShader69;
+
+Shape57.appearance = Appearance60;
+
+Transform56.child = new undefined();
+
+Transform56.child[0] = Shape57;
+
+Transform54.children[1] = Transform56;
+
+Layer18.children[5] = Transform54;
+
+Script Script84 = createNode("Script");
+Script84.DEF = "OrbitScript";
 field field85 = createNode("field");
-field85.name = "cube";
-field85.type = "SFNode";
-field85.accessType = "inputOnly";
-ComposedCubeMapTexture ComposedCubeMapTexture86 = createNode("ComposedCubeMapTexture");
-ComposedCubeMapTexture86.USE = "texture";
-field85.children = new MFNode();
+field85.name = "coordinates";
+field85.accessType = "inputOutput";
+field85.type = "MFVec3f";
+Script84.field = new MFNode();
 
-field85.children[0] = ComposedCubeMapTexture86;
+Script84.field[0] = field85;
 
-ComposedShader83.field[1] = field85;
+field field86 = createNode("field");
+field86.name = "coordIndexes";
+field86.accessType = "outputOnly";
+field86.type = "MFInt32";
+Script84.field[1] = field86;
 
 field field87 = createNode("field");
-field87.name = "bias";
+field87.name = "a";
 field87.type = "SFFloat";
-field87.accessType = "inputOnly";
-field87.value = "0.5";
-ComposedShader83.field[2] = field87;
+field87.accessType = "inputOutput";
+field87.value = "10";
+Script84.field[2] = field87;
 
 field field88 = createNode("field");
-field88.name = "scale";
+field88.name = "b";
 field88.type = "SFFloat";
-field88.accessType = "inputOnly";
-field88.value = "0.5";
-ComposedShader83.field[3] = field88;
+field88.accessType = "inputOutput";
+field88.value = "10";
+Script84.field[3] = field88;
 
 field field89 = createNode("field");
-field89.name = "power";
+field89.name = "c";
 field89.type = "SFFloat";
-field89.accessType = "inputOnly";
+field89.accessType = "inputOutput";
 field89.value = "2";
-ComposedShader83.field[4] = field89;
+Script84.field[4] = field89;
 
 field field90 = createNode("field");
-field90.name = "a";
+field90.name = "d";
 field90.type = "SFFloat";
 field90.accessType = "inputOutput";
-field90.value = "15";
-ComposedShader83.field[5] = field90;
+field90.value = "2";
+Script84.field[5] = field90;
 
 field field91 = createNode("field");
-field91.name = "b";
+field91.name = "pdelta";
 field91.type = "SFFloat";
 field91.accessType = "inputOutput";
-field91.value = "5";
-ComposedShader83.field[6] = field91;
+field91.value = "0";
+Script84.field[6] = field91;
 
 field field92 = createNode("field");
-field92.name = "c";
+field92.name = "tdelta";
 field92.type = "SFFloat";
 field92.accessType = "inputOutput";
-field92.value = "5";
-ComposedShader83.field[7] = field92;
+field92.value = "0";
+Script84.field[7] = field92;
 
-field field93 = createNode("field");
-field93.name = "d";
-field93.type = "SFFloat";
-field93.accessType = "inputOutput";
-field93.value = "5";
-ComposedShader83.field[8] = field93;
 
-field field94 = createNode("field");
-field94.name = "tdelta";
-field94.type = "SFFloat";
-field94.accessType = "inputOutput";
-field94.value = "0";
-ComposedShader83.field[9] = field94;
+Script84.setSourceCode(`ecmascript:\n"+
+"function initialize() {\n"+
+"     var resolution = 300;\n"+
+"     var theta = 0.0;\n"+
+"     var phi = 0.0;\n"+
+"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
+"     var crds = new MFVec3f();\n"+
+"     for ( i = 0; i < resolution; i++) {\n"+
+"     	for ( j = 0; j < resolution; j++) {\n"+
+"		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);\n"+
+"		crds.push(new SFVec3f(\n"+
+"			rho * Math.cos(phi) * Math.cos(theta),\n"+
+"			rho * Math.cos(phi) * Math.sin(theta),\n"+
+"			rho * Math.sin(phi)\n"+
+"		));\n"+
+"		theta += delta;\n"+
+"	}\n"+
+"	phi += delta;\n"+
+"     }\n"+
+"     coordinates = crds;\n"+
+"\n"+
+"\n"+
+"     var cis = new MFInt32();\n"+
+"     for ( i = 0; i < resolution-1; i++) {\n"+
+"     	for ( j = 0; j < resolution-1; j++) {\n"+
+"	     cis.push(i*resolution+j);\n"+
+"	     cis.push(i*resolution+j+1);\n"+
+"	     cis.push((i+1)*resolution+j+1);\n"+
+"	     cis.push((i+1)*resolution+j);\n"+
+"	     cis.push(-1);\n"+
+"	}\n"+
+"    }\n"+
+"    coordIndexes = cis;\n"+
+"}`)
+Layer18.children[6] = Script84;
 
-field field95 = createNode("field");
-field95.name = "pdelta";
-field95.type = "SFFloat";
-field95.accessType = "inputOutput";
-field95.value = "0";
-ComposedShader83.field[10] = field95;
+ROUTE ROUTE93 = createNode("ROUTE");
+ROUTE93.fromField = "coordIndexes";
+ROUTE93.fromNode = "OrbitScript";
+ROUTE93.toField = "set_coordIndex";
+ROUTE93.toNode = "Orbit";
+Layer18.children[7] = ROUTE93;
 
-ShaderPart ShaderPart96 = createNode("ShaderPart");
-ShaderPart96.url = new MFString(new java.lang.String["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]);
-ShaderPart96.type = "VERTEX";
-ComposedShader83.parts[11] = ShaderPart96;
+ROUTE ROUTE94 = createNode("ROUTE");
+ROUTE94.fromField = "coordinates";
+ROUTE94.fromNode = "OrbitScript";
+ROUTE94.toField = "set_point";
+ROUTE94.toNode = "OrbitCoordinates";
+Layer18.children[8] = ROUTE94;
 
-ShaderPart ShaderPart97 = createNode("ShaderPart");
-ShaderPart97.url = new MFString(new java.lang.String["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]);
-ShaderPart97.type = "FRAGMENT";
-ComposedShader83.parts[12] = ShaderPart97;
+LayerSet17.layers = new MFNode();
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>
-Appearance74.shaders = new MFNode();
+LayerSet17.layers[0] = Layer18;
 
-Appearance74.shaders[0] = ComposedShader83;
+LayoutLayer LayoutLayer95 = createNode("LayoutLayer");
+LayoutLayer95.pickable = True;
+LayoutLayer95.objectType = new MFString(new java.lang.String["ALL"]);
+Layout Layout96 = createNode("Layout");
+Layout96.align = new MFString(new java.lang.String["LEFT","BOTTOM"]);
+Layout96.offset = new MFFloat(new float[-0.2,0.19]);
+Layout96.size = new MFFloat(new float[0.4,0.6]);
+LayoutLayer95.layout = Layout96;
 
-Shape72.appearance = Appearance74;
+Viewport Viewport97 = createNode("Viewport");
+Viewport97.clipBoundary = new MFFloat(new float[0,1,0,1]);
+LayoutLayer95.viewport = Viewport97;
 
-Transform71.child = new undefined();
+Transform Transform98 = createNode("Transform");
+Transform98.translation = new SFVec3f(new float[0,0,-3]);
+Shape Shape99 = createNode("Shape");
+Appearance Appearance100 = createNode("Appearance");
+Material Material101 = createNode("Material");
+Material101.diffuseColor = new SFColor(new float[0,0,0]);
+Material101.transparency = 0.7;
+Appearance100.material = Material101;
 
-Transform71.child[0] = Shape72;
+Shape99.appearance = Appearance100;
 
-Transform69.children[1] = Transform71;
+Box Box102 = createNode("Box");
+Box102.size = new SFVec3f(new float[100,100,0.02]);
+Shape99.geometry = Box102;
 
-Layer33.children[5] = Transform69;
+Transform98.child = new undefined();
 
-//DIS multiuser facilities
-DISEntityManager DISEntityManager98 = createNode("DISEntityManager");
-DISEntityManager98.DEF = "EntityManager";
-DISEntityManager98.networkMode = "networkReader";
-DISEntityTypeMapping DISEntityTypeMapping99 = createNode("DISEntityTypeMapping");
-DISEntityTypeMapping99.category = 77;
-DISEntityTypeMapping99.specific = 1;
-DISEntityTypeMapping99.url = new MFString(new java.lang.String["Leif8Final.x3d"]);
-DISEntityManager98.children = new MFNode();
+Transform98.child[0] = Shape99;
 
-DISEntityManager98.children[0] = DISEntityTypeMapping99;
+LayoutLayer95.children = new MFNode();
 
-DISEntityTypeMapping DISEntityTypeMapping100 = createNode("DISEntityTypeMapping");
-DISEntityTypeMapping100.category = 77;
-DISEntityTypeMapping100.specific = 2;
-DISEntityTypeMapping100.url = new MFString(new java.lang.String["Lily8Final.x3d"]);
-DISEntityManager98.children[1] = DISEntityTypeMapping100;
+LayoutLayer95.children[0] = Transform98;
 
-Layer33.children[6] = DISEntityManager98;
+Transform Transform103 = createNode("Transform");
+Transform103.DEF = "equationTransform";
+Transform Transform104 = createNode("Transform");
+Transform104.translation = new SFVec3f(new float[0,0,-20]);
+Shape Shape105 = createNode("Shape");
+Text Text106 = createNode("Text");
+Text106.DEF = "equation";
+Text106.string = new MFString(new java.lang.String["r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"]);
+FontStyle FontStyle107 = createNode("FontStyle");
+FontStyle107.size = 0.09;
+Text106.fontStyle = FontStyle107;
 
-Collision Collision101 = createNode("Collision");
-Collision101.enabled = False;
-Group Group102 = createNode("Group");
-Group102.DEF = "AvatarHolder";
-Collision101.proxy = Group102;
+Shape105.geometry = Text106;
 
-Layer33.children[7] = Collision101;
-
-ROUTE ROUTE103 = createNode("ROUTE");
-ROUTE103.fromField = "addedEntities";
-ROUTE103.fromNode = "EntityManager";
-ROUTE103.toField = "addChildren";
-ROUTE103.toNode = "AvatarHolder";
-Layer33.children[8] = ROUTE103;
-
-ROUTE ROUTE104 = createNode("ROUTE");
-ROUTE104.fromField = "removedEntities";
-ROUTE104.fromNode = "EntityManager";
-ROUTE104.toField = "removeChildren";
-ROUTE104.toNode = "AvatarHolder";
-Layer33.children[9] = ROUTE104;
-
-LayerSet32.layers = new MFNode();
-
-LayerSet32.layers[0] = Layer33;
-
-LayoutLayer LayoutLayer105 = createNode("LayoutLayer");
-LayoutLayer105.pickable = True;
-LayoutLayer105.objectType = new MFString(new java.lang.String["ALL"]);
-//positioning the LayoutLayer
-//clipping the LayoutLayer
-//the content (children) of the LayoutLayer
-//first, the slider for scaling the model
-Transform Transform106 = createNode("Transform");
-Transform106.translation = new SFVec3f(new float[0,0,-3]);
-Shape Shape107 = createNode("Shape");
 Appearance Appearance108 = createNode("Appearance");
 Material Material109 = createNode("Material");
-Material109.diffuseColor = new SFColor(new float[0,0,0]);
-Material109.transparency = 0.7;
+Material109.diffuseColor = new SFColor(new float[1,1,0]);
 Appearance108.material = Material109;
 
-Shape107.appearance = Appearance108;
+Shape105.appearance = Appearance108;
 
-Box Box110 = createNode("Box");
-Box110.size = new SFVec3f(new float[100,100,0.02]);
-Shape107.geometry = Box110;
+Transform104.child = new undefined();
 
-Transform106.child = new undefined();
+Transform104.child[0] = Shape105;
 
-Transform106.child[0] = Shape107;
+Transform103.children = new MFNode();
 
-LayoutLayer105.children = new MFNode();
+Transform103.children[0] = Transform104;
 
-LayoutLayer105.children[0] = Transform106;
+LayoutLayer95.children[1] = Transform103;
 
-//the plane sensors
-Transform Transform111 = createNode("Transform");
-Transform111.DEF = "aSlider";
-Transform111.translation = new SFVec3f(new float[0,0.7,0]);
-Transform Transform112 = createNode("Transform");
-Transform112.rotation = new SFRotation(new float[0,0,1,1.57]);
-Shape Shape113 = createNode("Shape");
-Appearance Appearance114 = createNode("Appearance");
-Material Material115 = createNode("Material");
-Appearance114.material = Material115;
+ProtoDeclare ProtoDeclare110 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+<ProtoDeclare name="SliderProto" ><ProtoInterface><field name="sliderTranslation" accessType="inputOutput" type="SFVec3f" value="0 0.7 0"></field>
+<field name="transformTranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0.1"></field>
+<field name="sensorTranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="textString" accessType="inputOutput" type="MFString" value="&quot;a=&quot;"></field>
+<field name="parameterScale" accessType="inputOutput" type="SFFloat" value="30"></field>
+<field name="parameterName" accessType="inputOutput" type="SFString" value="a"></field>
+<field name="petNames" accessType="inputOutput" type="MFString"></field>
+<field name="shaderNode" accessType="inputOutput" type="SFNode"></field>
+</ProtoInterface>
+<ProtoBody><Group><Transform DEF="protoSlider" translation="0 0.7 0"><IS><connect nodeField="translation" protoField="sliderTranslation"></connect>
+</IS>
+<Transform DEF="protoTransform" translation="0 0 0.1"><IS><connect nodeField="translation" protoField="sensorTranslation"></connect>
+</IS>
+<PlaneSensor DEF="protoSensor" description="Grab with mouse to adjust slider" maxPosition="1 0"></PlaneSensor>
+<Transform translation="0 0 0"><TouchSensor DEF="protoTS"></TouchSensor>
+</Transform>
+<Transform><Shape><Text DEF="protoText" string="&quot;a=&quot;"><IS><connect nodeField="string" protoField="textString"></connect>
+</IS>
+<FontStyle containerField="fontStyle" size="0.23"></FontStyle>
+</Text>
+<Appearance containerField="appearance"><Material containerField="material"></Material>
+</Appearance>
+</Shape>
+</Transform>
+</Transform>
+</Transform>
+<Script url="&quot;../javascripts/X3DUser.js&quot; &quot;https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js&quot;" DEF="protoValueTransformerScript" directOutput="true" mustEvaluate="true"><field name="protoScale" accessType="inputOutput" type="SFFloat"></field>
+<field name="petNames" accessType="inputOutput" type="MFString"></field>
+<field name="protoParameterName" accessType="inputOutput" type="SFString"></field>
+<field name="shader" accessType="inputOutput" type="SFNode"></field>
+<field name="newTranslation" accessType="inputOnly" type="SFVec3f" value="1 1 1"></field>
+<field name="protoValue_changed" accessType="outputOnly" type="SFFloat" value="1"></field>
+<field name="protoText_changed" accessType="outputOnly" type="MFString" value="&quot;1.0&quot;"></field>
+<IS><connect nodeField="protoScale" protoField="parameterScale"></connect>
+<connect nodeField="petNames" protoField="petNames"></connect>
+<connect nodeField="protoParameterName" protoField="parameterName"></connect>
+<connect nodeField="shader" protoField="shaderNode"></connect>
+</IS>
+</Script>
+<ROUTE fromField="translation_changed" fromNode="protoSensor" toField="set_translation" toNode="protoTransform"></ROUTE>
+<ROUTE fromField="translation_changed" fromNode="protoSensor" toField="newTranslation" toNode="protoValueTransformerScript"></ROUTE>
+<ROUTE fromField="protoText_changed" fromNode="protoValueTransformerScript" toField="string" toNode="protoText"></ROUTE>
+</Group>
+</ProtoBody>
+</ProtoDeclare>`);
+ProtoDeclare110.name = "SliderProto";
+ProtoInterface ProtoInterface111 = createNode("ProtoInterface");
+field field112 = createNode("field");
+field112.name = "sliderTranslation";
+field112.accessType = "inputOutput";
+field112.type = "SFVec3f";
+field112.value = "0 0.7 0";
+ProtoInterface111.field = new MFNode();
 
-Shape113.appearance = Appearance114;
+ProtoInterface111.field[0] = field112;
 
-Cylinder Cylinder116 = createNode("Cylinder");
-Cylinder116.radius = 0.05;
-Cylinder116.height = 2.5;
-Shape113.geometry = Cylinder116;
+field field113 = createNode("field");
+field113.name = "transformTranslation";
+field113.accessType = "inputOutput";
+field113.type = "SFVec3f";
+field113.value = "0 0 0.1";
+ProtoInterface111.field[1] = field113;
 
-Transform112.child = new undefined();
+field field114 = createNode("field");
+field114.name = "sensorTranslation";
+field114.accessType = "inputOutput";
+field114.type = "SFVec3f";
+field114.value = "0 0 0";
+ProtoInterface111.field[2] = field114;
 
-Transform112.child[0] = Shape113;
+field field115 = createNode("field");
+field115.name = "textString";
+field115.accessType = "inputOutput";
+field115.type = "MFString";
+field115.value = "\"a=\"";
+ProtoInterface111.field[3] = field115;
 
-Transform111.children = new MFNode();
+field field116 = createNode("field");
+field116.name = "parameterScale";
+field116.accessType = "inputOutput";
+field116.type = "SFFloat";
+field116.value = "30";
+ProtoInterface111.field[4] = field116;
 
-Transform111.children[0] = Transform112;
+field field117 = createNode("field");
+field117.name = "parameterName";
+field117.accessType = "inputOutput";
+field117.type = "SFString";
+field117.value = "a";
+ProtoInterface111.field[5] = field117;
 
-Transform Transform117 = createNode("Transform");
-Transform117.DEF = "aTransform";
-Transform117.translation = new SFVec3f(new float[0,0,0.1]);
-PlaneSensor PlaneSensor118 = createNode("PlaneSensor");
-PlaneSensor118.DEF = "aSensor";
-PlaneSensor118.minPosition = new SFVec2f(new float[-20,0]);
-PlaneSensor118.maxPosition = new SFVec2f(new float[20,0]);
-Transform117.children = new MFNode();
+field field118 = createNode("field");
+field118.name = "petNames";
+field118.accessType = "inputOutput";
+field118.type = "MFString";
+ProtoInterface111.field[6] = field118;
 
-Transform117.children[0] = PlaneSensor118;
+field field119 = createNode("field");
+field119.name = "shaderNode";
+field119.accessType = "inputOutput";
+field119.type = "SFNode";
+ProtoInterface111.field[7] = field119;
 
-Transform Transform119 = createNode("Transform");
-Transform119.translation = new SFVec3f(new float[0,0,0]);
-TouchSensor TouchSensor120 = createNode("TouchSensor");
-TouchSensor120.DEF = "aTS";
-Transform119.children = new MFNode();
+ProtoDeclare110.protoInterface = ProtoInterface111;
 
-Transform119.children[0] = TouchSensor120;
+ProtoBody ProtoBody120 = createNode("ProtoBody");
+Group Group121 = createNode("Group");
+Transform Transform122 = createNode("Transform");
+Transform122.DEF = "protoSlider";
+Transform122.translation = new SFVec3f(new float[0,0.7,0]);
+IS IS123 = createNode("IS");
+connect connect124 = createNode("connect");
+connect124.nodeField = "translation";
+connect124.protoField = "sliderTranslation";
+IS123.connect = new MFNode();
 
-Shape Shape121 = createNode("Shape");
-Sphere Sphere122 = createNode("Sphere");
-Sphere122.radius = 0.08;
-Shape121.geometry = Sphere122;
+IS123.connect[0] = connect124;
 
-Appearance Appearance123 = createNode("Appearance");
-Material Material124 = createNode("Material");
-Material124.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance123.material = Material124;
+Transform122.iS = IS123;
 
-Shape121.appearance = Appearance123;
+Transform Transform125 = createNode("Transform");
+Transform125.DEF = "protoTransform";
+Transform125.translation = new SFVec3f(new float[0,0,0.1]);
+IS IS126 = createNode("IS");
+connect connect127 = createNode("connect");
+connect127.nodeField = "translation";
+connect127.protoField = "sensorTranslation";
+IS126.connect = new MFNode();
 
-Transform119.child[1] = Shape121;
+IS126.connect[0] = connect127;
 
-Transform117.children[1] = Transform119;
+Transform125.iS = IS126;
 
-Shape Shape125 = createNode("Shape");
-Cylinder Cylinder126 = createNode("Cylinder");
-Cylinder126.radius = 0.05;
-Cylinder126.height = 0.3;
-Shape125.geometry = Cylinder126;
+PlaneSensor PlaneSensor128 = createNode("PlaneSensor");
+PlaneSensor128.DEF = "protoSensor";
+PlaneSensor128.description = "Grab with mouse to adjust slider";
+PlaneSensor128.maxPosition = new SFVec2f(new float[1,0]);
+Transform125.children = new MFNode();
 
-Appearance Appearance127 = createNode("Appearance");
-Material Material128 = createNode("Material");
-Appearance127.material = Material128;
-
-Shape125.appearance = Appearance127;
-
-Transform117.child[2] = Shape125;
-
-Transform111.children[1] = Transform117;
+Transform125.children[0] = PlaneSensor128;
 
 Transform Transform129 = createNode("Transform");
-Transform129.rotation = new SFRotation(new float[0,0,1,1.57]);
-Shape Shape130 = createNode("Shape");
-Appearance Appearance131 = createNode("Appearance");
-Material Material132 = createNode("Material");
-Appearance131.material = Material132;
+Transform129.translation = new SFVec3f(new float[0,0,0]);
+TouchSensor TouchSensor130 = createNode("TouchSensor");
+TouchSensor130.DEF = "protoTS";
+Transform129.children = new MFNode();
 
-Shape130.appearance = Appearance131;
+Transform129.children[0] = TouchSensor130;
 
-Cylinder Cylinder133 = createNode("Cylinder");
-Cylinder133.radius = 0.05;
-Cylinder133.height = 2.5;
-Shape130.geometry = Cylinder133;
+Transform125.children[1] = Transform129;
 
-Transform129.child = new undefined();
+Transform Transform131 = createNode("Transform");
+Shape Shape132 = createNode("Shape");
+Text Text133 = createNode("Text");
+Text133.DEF = "protoText";
+Text133.string = new MFString(new java.lang.String["a="]);
+IS IS134 = createNode("IS");
+connect connect135 = createNode("connect");
+connect135.nodeField = "string";
+connect135.protoField = "textString";
+IS134.connect = new MFNode();
 
-Transform129.child[0] = Shape130;
+IS134.connect[0] = connect135;
 
-Transform111.children[2] = Transform129;
+Text133.iS = IS134;
 
-LayoutLayer105.children[1] = Transform111;
+FontStyle FontStyle136 = createNode("FontStyle");
+FontStyle136.size = 0.23;
+Text133.fontStyle = FontStyle136;
 
-Transform Transform134 = createNode("Transform");
-Transform134.DEF = "bSlider";
-Transform134.translation = new SFVec3f(new float[0,0.4,0]);
-Transform Transform135 = createNode("Transform");
-Transform135.rotation = new SFRotation(new float[0,0,1,1.57]);
-Shape Shape136 = createNode("Shape");
+Shape132.geometry = Text133;
+
 Appearance Appearance137 = createNode("Appearance");
 Material Material138 = createNode("Material");
 Appearance137.material = Material138;
 
-Shape136.appearance = Appearance137;
-
-Cylinder Cylinder139 = createNode("Cylinder");
-Cylinder139.radius = 0.05;
-Cylinder139.height = 2.5;
-Shape136.geometry = Cylinder139;
-
-Transform135.child = new undefined();
-
-Transform135.child[0] = Shape136;
-
-Transform134.children = new MFNode();
-
-Transform134.children[0] = Transform135;
-
-Transform Transform140 = createNode("Transform");
-Transform140.DEF = "bTransform";
-Transform140.translation = new SFVec3f(new float[0,0,0.1]);
-PlaneSensor PlaneSensor141 = createNode("PlaneSensor");
-PlaneSensor141.DEF = "bSensor";
-PlaneSensor141.minPosition = new SFVec2f(new float[-20,0]);
-PlaneSensor141.maxPosition = new SFVec2f(new float[20,0]);
-Transform140.children = new MFNode();
-
-Transform140.children[0] = PlaneSensor141;
-
-Transform Transform142 = createNode("Transform");
-Transform142.translation = new SFVec3f(new float[0,0,0]);
-TouchSensor TouchSensor143 = createNode("TouchSensor");
-TouchSensor143.DEF = "bTS";
-Transform142.children = new MFNode();
-
-Transform142.children[0] = TouchSensor143;
-
-Shape Shape144 = createNode("Shape");
-Sphere Sphere145 = createNode("Sphere");
-Sphere145.radius = 0.08;
-Shape144.geometry = Sphere145;
-
-Appearance Appearance146 = createNode("Appearance");
-Material Material147 = createNode("Material");
-Material147.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance146.material = Material147;
-
-Shape144.appearance = Appearance146;
-
-Transform142.child[1] = Shape144;
-
-Transform140.children[1] = Transform142;
-
-Shape Shape148 = createNode("Shape");
-Cylinder Cylinder149 = createNode("Cylinder");
-Cylinder149.radius = 0.05;
-Cylinder149.height = 0.3;
-Shape148.geometry = Cylinder149;
-
-Appearance Appearance150 = createNode("Appearance");
-Material Material151 = createNode("Material");
-Appearance150.material = Material151;
-
-Shape148.appearance = Appearance150;
-
-Transform140.child[2] = Shape148;
-
-Transform134.children[1] = Transform140;
-
-LayoutLayer105.children[2] = Transform134;
-
-Transform Transform152 = createNode("Transform");
-Transform152.DEF = "cSlider";
-Transform152.translation = new SFVec3f(new float[0,0.1,0]);
-Transform Transform153 = createNode("Transform");
-Transform153.rotation = new SFRotation(new float[0,0,1,1.57]);
-Shape Shape154 = createNode("Shape");
-Appearance Appearance155 = createNode("Appearance");
-Material Material156 = createNode("Material");
-Appearance155.material = Material156;
-
-Shape154.appearance = Appearance155;
-
-Cylinder Cylinder157 = createNode("Cylinder");
-Cylinder157.radius = 0.05;
-Cylinder157.height = 2.5;
-Shape154.geometry = Cylinder157;
-
-Transform153.child = new undefined();
-
-Transform153.child[0] = Shape154;
-
-Transform152.children = new MFNode();
-
-Transform152.children[0] = Transform153;
-
-Transform Transform158 = createNode("Transform");
-Transform158.DEF = "cTransform";
-Transform158.translation = new SFVec3f(new float[0,0,0.1]);
-PlaneSensor PlaneSensor159 = createNode("PlaneSensor");
-PlaneSensor159.DEF = "cSensor";
-PlaneSensor159.minPosition = new SFVec2f(new float[-20,0]);
-PlaneSensor159.maxPosition = new SFVec2f(new float[20,0]);
-Transform158.children = new MFNode();
-
-Transform158.children[0] = PlaneSensor159;
-
-Transform Transform160 = createNode("Transform");
-Transform160.translation = new SFVec3f(new float[0,0,0]);
-TouchSensor TouchSensor161 = createNode("TouchSensor");
-TouchSensor161.DEF = "cTS";
-Transform160.children = new MFNode();
-
-Transform160.children[0] = TouchSensor161;
-
-Shape Shape162 = createNode("Shape");
-Sphere Sphere163 = createNode("Sphere");
-Sphere163.radius = 0.08;
-Shape162.geometry = Sphere163;
-
-Appearance Appearance164 = createNode("Appearance");
-Material Material165 = createNode("Material");
-Material165.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance164.material = Material165;
-
-Shape162.appearance = Appearance164;
-
-Transform160.child[1] = Shape162;
-
-Transform158.children[1] = Transform160;
-
-Shape Shape166 = createNode("Shape");
-Cylinder Cylinder167 = createNode("Cylinder");
-Cylinder167.radius = 0.05;
-Cylinder167.height = 0.3;
-Shape166.geometry = Cylinder167;
-
-Appearance Appearance168 = createNode("Appearance");
-Material Material169 = createNode("Material");
-Appearance168.material = Material169;
-
-Shape166.appearance = Appearance168;
-
-Transform158.child[2] = Shape166;
-
-Transform152.children[1] = Transform158;
-
-LayoutLayer105.children[3] = Transform152;
-
-Transform Transform170 = createNode("Transform");
-Transform170.DEF = "dSlider";
-Transform170.translation = new SFVec3f(new float[0,-0.2,0]);
-Transform Transform171 = createNode("Transform");
-Transform171.rotation = new SFRotation(new float[0,0,1,1.57]);
-Shape Shape172 = createNode("Shape");
-Appearance Appearance173 = createNode("Appearance");
-Material Material174 = createNode("Material");
-Appearance173.material = Material174;
-
-Shape172.appearance = Appearance173;
-
-Cylinder Cylinder175 = createNode("Cylinder");
-Cylinder175.radius = 0.05;
-Cylinder175.height = 2.5;
-Shape172.geometry = Cylinder175;
-
-Transform171.child = new undefined();
-
-Transform171.child[0] = Shape172;
-
-Transform170.children = new MFNode();
-
-Transform170.children[0] = Transform171;
-
-Transform Transform176 = createNode("Transform");
-Transform176.DEF = "dTransform";
-Transform176.translation = new SFVec3f(new float[0,0,0.1]);
-PlaneSensor PlaneSensor177 = createNode("PlaneSensor");
-PlaneSensor177.DEF = "dSensor";
-PlaneSensor177.minPosition = new SFVec2f(new float[-20,0]);
-PlaneSensor177.maxPosition = new SFVec2f(new float[20,0]);
-Transform176.children = new MFNode();
-
-Transform176.children[0] = PlaneSensor177;
-
-Transform Transform178 = createNode("Transform");
-Transform178.translation = new SFVec3f(new float[0,0,0]);
-TouchSensor TouchSensor179 = createNode("TouchSensor");
-TouchSensor179.DEF = "dTS";
-Transform178.children = new MFNode();
-
-Transform178.children[0] = TouchSensor179;
-
-Shape Shape180 = createNode("Shape");
-Sphere Sphere181 = createNode("Sphere");
-Sphere181.radius = 0.08;
-Shape180.geometry = Sphere181;
-
-Appearance Appearance182 = createNode("Appearance");
-Material Material183 = createNode("Material");
-Material183.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance182.material = Material183;
-
-Shape180.appearance = Appearance182;
-
-Transform178.child[1] = Shape180;
-
-Transform176.children[1] = Transform178;
-
-Shape Shape184 = createNode("Shape");
-Cylinder Cylinder185 = createNode("Cylinder");
-Cylinder185.radius = 0.05;
-Cylinder185.height = 0.3;
-Shape184.geometry = Cylinder185;
-
-Appearance Appearance186 = createNode("Appearance");
-Material Material187 = createNode("Material");
-Appearance186.material = Material187;
-
-Shape184.appearance = Appearance186;
-
-Transform176.child[2] = Shape184;
-
-Transform170.children[1] = Transform176;
-
-LayoutLayer105.children[4] = Transform170;
-
-Transform Transform188 = createNode("Transform");
-Transform188.DEF = "pdeltaSlider";
-Transform188.translation = new SFVec3f(new float[0,-0.5,0]);
-Transform Transform189 = createNode("Transform");
-Transform189.rotation = new SFRotation(new float[0,0,1,1.57]);
-Shape Shape190 = createNode("Shape");
-Appearance Appearance191 = createNode("Appearance");
-Material Material192 = createNode("Material");
-Appearance191.material = Material192;
-
-Shape190.appearance = Appearance191;
-
-Cylinder Cylinder193 = createNode("Cylinder");
-Cylinder193.radius = 0.05;
-Cylinder193.height = 2.5;
-Shape190.geometry = Cylinder193;
-
-Transform189.child = new undefined();
-
-Transform189.child[0] = Shape190;
-
-Transform188.children = new MFNode();
-
-Transform188.children[0] = Transform189;
-
-Transform Transform194 = createNode("Transform");
-Transform194.DEF = "pdeltaTransform";
-Transform194.translation = new SFVec3f(new float[0,0,0.1]);
-PlaneSensor PlaneSensor195 = createNode("PlaneSensor");
-PlaneSensor195.DEF = "pdeltaSensor";
-PlaneSensor195.minPosition = new SFVec2f(new float[-20,0]);
-PlaneSensor195.maxPosition = new SFVec2f(new float[20,0]);
-Transform194.children = new MFNode();
-
-Transform194.children[0] = PlaneSensor195;
-
-Transform Transform196 = createNode("Transform");
-Transform196.translation = new SFVec3f(new float[0,0,0]);
-TouchSensor TouchSensor197 = createNode("TouchSensor");
-TouchSensor197.DEF = "pdeltaTS";
-Transform196.children = new MFNode();
-
-Transform196.children[0] = TouchSensor197;
-
-Shape Shape198 = createNode("Shape");
-Sphere Sphere199 = createNode("Sphere");
-Sphere199.radius = 0.08;
-Shape198.geometry = Sphere199;
-
-Appearance Appearance200 = createNode("Appearance");
-Material Material201 = createNode("Material");
-Material201.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance200.material = Material201;
-
-Shape198.appearance = Appearance200;
-
-Transform196.child[1] = Shape198;
-
-Transform194.children[1] = Transform196;
-
-Shape Shape202 = createNode("Shape");
-Cylinder Cylinder203 = createNode("Cylinder");
-Cylinder203.radius = 0.05;
-Cylinder203.height = 0.3;
-Shape202.geometry = Cylinder203;
-
-Appearance Appearance204 = createNode("Appearance");
-Material Material205 = createNode("Material");
-Appearance204.material = Material205;
-
-Shape202.appearance = Appearance204;
-
-Transform194.child[2] = Shape202;
-
-Transform188.children[1] = Transform194;
-
-LayoutLayer105.children[5] = Transform188;
-
-Transform Transform206 = createNode("Transform");
-Transform206.DEF = "tdeltaSlider";
-Transform206.translation = new SFVec3f(new float[0,-0.8,0]);
-Transform Transform207 = createNode("Transform");
-Transform207.rotation = new SFRotation(new float[0,0,1,1.57]);
-Shape Shape208 = createNode("Shape");
-Appearance Appearance209 = createNode("Appearance");
-Material Material210 = createNode("Material");
-Appearance209.material = Material210;
-
-Shape208.appearance = Appearance209;
-
-Cylinder Cylinder211 = createNode("Cylinder");
-Cylinder211.radius = 0.05;
-Cylinder211.height = 2.5;
-Shape208.geometry = Cylinder211;
-
-Transform207.child = new undefined();
-
-Transform207.child[0] = Shape208;
-
-Transform206.children = new MFNode();
-
-Transform206.children[0] = Transform207;
-
-Transform Transform212 = createNode("Transform");
-Transform212.DEF = "tdeltaTransform";
-Transform212.translation = new SFVec3f(new float[0,0,0.1]);
-PlaneSensor PlaneSensor213 = createNode("PlaneSensor");
-PlaneSensor213.DEF = "tdeltaSensor";
-PlaneSensor213.minPosition = new SFVec2f(new float[-20,0]);
-PlaneSensor213.maxPosition = new SFVec2f(new float[20,0]);
-Transform212.children = new MFNode();
-
-Transform212.children[0] = PlaneSensor213;
-
-Transform Transform214 = createNode("Transform");
-Transform214.translation = new SFVec3f(new float[0,0,0]);
-TouchSensor TouchSensor215 = createNode("TouchSensor");
-TouchSensor215.DEF = "tdeltaTS";
-Transform214.children = new MFNode();
-
-Transform214.children[0] = TouchSensor215;
-
-Shape Shape216 = createNode("Shape");
-Sphere Sphere217 = createNode("Sphere");
-Sphere217.radius = 0.08;
-Shape216.geometry = Sphere217;
-
-Appearance Appearance218 = createNode("Appearance");
-Material Material219 = createNode("Material");
-Material219.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance218.material = Material219;
-
-Shape216.appearance = Appearance218;
-
-Transform214.child[1] = Shape216;
-
-Transform212.children[1] = Transform214;
-
-Shape Shape220 = createNode("Shape");
-Cylinder Cylinder221 = createNode("Cylinder");
-Cylinder221.radius = 0.05;
-Cylinder221.height = 0.3;
-Shape220.geometry = Cylinder221;
-
-Appearance Appearance222 = createNode("Appearance");
-Material Material223 = createNode("Material");
-Appearance222.material = Material223;
-
-Shape220.appearance = Appearance222;
-
-Transform212.child[2] = Shape220;
-
-Transform206.children[1] = Transform212;
-
-LayoutLayer105.children[6] = Transform206;
-
-Script Script224 = createNode("Script");
-Script224.DEF = "aValueTransformerScript";
-Script224.directOutput = True;
-Script224.mustEvaluate = True;
-field field225 = createNode("field");
-field225.name = "newTranslation";
-field225.accessType = "inputOnly";
-field225.type = "SFVec3f";
-field225.value = "1 1 1";
-Script224.field = new MFNode();
-
-Script224.field[0] = field225;
-
-field field226 = createNode("field");
-field226.name = "aValue_changed";
-field226.accessType = "outputOnly";
-field226.type = "SFFloat";
-field226.value = "1";
-Script224.field[1] = field226;
-
-
-Script224.setSourceCode(`ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }`)
-LayoutLayer105.children[7] = Script224;
-
-Script Script227 = createNode("Script");
-Script227.DEF = "bValueTransformerScript";
-Script227.directOutput = True;
-Script227.mustEvaluate = True;
-field field228 = createNode("field");
-field228.name = "newTranslation";
-field228.accessType = "inputOnly";
-field228.type = "SFVec3f";
-field228.value = "1 1 1";
-Script227.field = new MFNode();
-
-Script227.field[0] = field228;
-
-field field229 = createNode("field");
-field229.name = "bValue_changed";
-field229.accessType = "outputOnly";
-field229.type = "SFFloat";
-field229.value = "1";
-Script227.field[1] = field229;
-
-
-Script227.setSourceCode(`ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }`)
-LayoutLayer105.children[8] = Script227;
-
-Script Script230 = createNode("Script");
-Script230.DEF = "cValueTransformerScript";
-Script230.directOutput = True;
-Script230.mustEvaluate = True;
-field field231 = createNode("field");
-field231.name = "newTranslation";
-field231.accessType = "inputOnly";
-field231.type = "SFVec3f";
-field231.value = "1 1 1";
-Script230.field = new MFNode();
-
-Script230.field[0] = field231;
-
-field field232 = createNode("field");
-field232.name = "cValue_changed";
-field232.accessType = "outputOnly";
-field232.type = "SFFloat";
-field232.value = "1";
-Script230.field[1] = field232;
-
-
-Script230.setSourceCode(`ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }`)
-LayoutLayer105.children[9] = Script230;
-
-Script Script233 = createNode("Script");
-Script233.DEF = "dValueTransformerScript";
-Script233.directOutput = True;
-Script233.mustEvaluate = True;
-field field234 = createNode("field");
-field234.name = "newTranslation";
-field234.accessType = "inputOnly";
-field234.type = "SFVec3f";
-field234.value = "1 1 1";
-Script233.field = new MFNode();
-
-Script233.field[0] = field234;
-
-field field235 = createNode("field");
-field235.name = "dValue_changed";
-field235.accessType = "outputOnly";
-field235.type = "SFFloat";
-field235.value = "1";
-Script233.field[1] = field235;
-
-
-Script233.setSourceCode(`ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }`)
-LayoutLayer105.children[10] = Script233;
-
-Script Script236 = createNode("Script");
-Script236.DEF = "pdeltaValueTransformerScript";
-Script236.directOutput = True;
-Script236.mustEvaluate = True;
-field field237 = createNode("field");
-field237.name = "newTranslation";
-field237.accessType = "inputOnly";
-field237.type = "SFVec3f";
-field237.value = "1 1 1";
-Script236.field = new MFNode();
-
-Script236.field[0] = field237;
-
-field field238 = createNode("field");
-field238.name = "pdeltaValue_changed";
-field238.accessType = "outputOnly";
-field238.type = "SFFloat";
-field238.value = "1";
-Script236.field[1] = field238;
-
-
-Script236.setSourceCode(`ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }`)
-LayoutLayer105.children[11] = Script236;
-
-Script Script239 = createNode("Script");
-Script239.DEF = "tdeltaValueTransformerScript";
-Script239.directOutput = True;
-Script239.mustEvaluate = True;
-field field240 = createNode("field");
-field240.name = "newTranslation";
-field240.accessType = "inputOnly";
-field240.type = "SFVec3f";
-field240.value = "1 1 1";
-Script239.field = new MFNode();
-
-Script239.field[0] = field240;
-
-field field241 = createNode("field");
-field241.name = "tdeltaValue_changed";
-field241.accessType = "outputOnly";
-field241.type = "SFFloat";
-field241.value = "1";
-Script239.field[1] = field241;
-
-
-Script239.setSourceCode(`ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }`)
-LayoutLayer105.children[12] = Script239;
-
-ROUTE ROUTE242 = createNode("ROUTE");
-ROUTE242.fromField = "translation_changed";
-ROUTE242.fromNode = "aSensor";
-ROUTE242.toField = "set_translation";
-ROUTE242.toNode = "aTransform";
-LayoutLayer105.children[13] = ROUTE242;
-
-ROUTE ROUTE243 = createNode("ROUTE");
-ROUTE243.fromField = "translation_changed";
-ROUTE243.fromNode = "bSensor";
-ROUTE243.toField = "set_translation";
-ROUTE243.toNode = "bTransform";
-LayoutLayer105.children[14] = ROUTE243;
-
-ROUTE ROUTE244 = createNode("ROUTE");
-ROUTE244.fromField = "translation_changed";
-ROUTE244.fromNode = "cSensor";
-ROUTE244.toField = "set_translation";
-ROUTE244.toNode = "cTransform";
-LayoutLayer105.children[15] = ROUTE244;
-
-ROUTE ROUTE245 = createNode("ROUTE");
-ROUTE245.fromField = "translation_changed";
-ROUTE245.fromNode = "dSensor";
-ROUTE245.toField = "set_translation";
-ROUTE245.toNode = "dTransform";
-LayoutLayer105.children[16] = ROUTE245;
-
-ROUTE ROUTE246 = createNode("ROUTE");
-ROUTE246.fromField = "translation_changed";
-ROUTE246.fromNode = "pdeltaSensor";
-ROUTE246.toField = "set_translation";
-ROUTE246.toNode = "pdeltaTransform";
-LayoutLayer105.children[17] = ROUTE246;
-
-ROUTE ROUTE247 = createNode("ROUTE");
-ROUTE247.fromField = "translation_changed";
-ROUTE247.fromNode = "tdeltaSensor";
-ROUTE247.toField = "set_translation";
-ROUTE247.toNode = "tdeltaTransform";
-LayoutLayer105.children[18] = ROUTE247;
-
-ROUTE ROUTE248 = createNode("ROUTE");
-ROUTE248.fromField = "translation_changed";
-ROUTE248.fromNode = "aSensor";
-ROUTE248.toField = "newTranslation";
-ROUTE248.toNode = "aValueTransformerScript";
-LayoutLayer105.children[19] = ROUTE248;
-
-ROUTE ROUTE249 = createNode("ROUTE");
-ROUTE249.fromField = "translation_changed";
-ROUTE249.fromNode = "bSensor";
-ROUTE249.toField = "newTranslation";
-ROUTE249.toNode = "bValueTransformerScript";
-LayoutLayer105.children[20] = ROUTE249;
-
-ROUTE ROUTE250 = createNode("ROUTE");
-ROUTE250.fromField = "translation_changed";
-ROUTE250.fromNode = "cSensor";
-ROUTE250.toField = "newTranslation";
-ROUTE250.toNode = "cValueTransformerScript";
-LayoutLayer105.children[21] = ROUTE250;
-
-ROUTE ROUTE251 = createNode("ROUTE");
-ROUTE251.fromField = "translation_changed";
-ROUTE251.fromNode = "dSensor";
-ROUTE251.toField = "newTranslation";
-ROUTE251.toNode = "dValueTransformerScript";
-LayoutLayer105.children[22] = ROUTE251;
-
-ROUTE ROUTE252 = createNode("ROUTE");
-ROUTE252.fromField = "translation_changed";
-ROUTE252.fromNode = "pdeltaSensor";
-ROUTE252.toField = "newTranslation";
-ROUTE252.toNode = "pdeltaValueTransformerScript";
-LayoutLayer105.children[23] = ROUTE252;
-
-ROUTE ROUTE253 = createNode("ROUTE");
-ROUTE253.fromField = "translation_changed";
-ROUTE253.fromNode = "tdeltaSensor";
-ROUTE253.toField = "newTranslation";
-ROUTE253.toNode = "tdeltaValueTransformerScript";
-LayoutLayer105.children[24] = ROUTE253;
-
-ROUTE ROUTE254 = createNode("ROUTE");
-ROUTE254.fromField = "aValue_changed";
-ROUTE254.fromNode = "aValueTransformerScript";
-ROUTE254.toField = "a";
-ROUTE254.toNode = "x_iteShader";
-LayoutLayer105.children[25] = ROUTE254;
-
-ROUTE ROUTE255 = createNode("ROUTE");
-ROUTE255.fromField = "bValue_changed";
-ROUTE255.fromNode = "bValueTransformerScript";
-ROUTE255.toField = "b";
-ROUTE255.toNode = "x_iteShader";
-LayoutLayer105.children[26] = ROUTE255;
-
-ROUTE ROUTE256 = createNode("ROUTE");
-ROUTE256.fromField = "cValue_changed";
-ROUTE256.fromNode = "cValueTransformerScript";
-ROUTE256.toField = "c";
-ROUTE256.toNode = "x_iteShader";
-LayoutLayer105.children[27] = ROUTE256;
-
-ROUTE ROUTE257 = createNode("ROUTE");
-ROUTE257.fromField = "dValue_changed";
-ROUTE257.fromNode = "dValueTransformerScript";
-ROUTE257.toField = "d";
-ROUTE257.toNode = "x_iteShader";
-LayoutLayer105.children[28] = ROUTE257;
-
-ROUTE ROUTE258 = createNode("ROUTE");
-ROUTE258.fromField = "pdeltaValue_changed";
-ROUTE258.fromNode = "pdeltaValueTransformerScript";
-ROUTE258.toField = "pdelta";
-ROUTE258.toNode = "x_iteShader";
-LayoutLayer105.children[29] = ROUTE258;
-
-ROUTE ROUTE259 = createNode("ROUTE");
-ROUTE259.fromField = "tdeltaValue_changed";
-ROUTE259.fromNode = "tdeltaValueTransformerScript";
-ROUTE259.toField = "tdelta";
-ROUTE259.toNode = "x_iteShader";
-LayoutLayer105.children[30] = ROUTE259;
-
-Layout Layout260 = createNode("Layout");
-Layout260.align = new MFString(new java.lang.String["RIGHT","BOTTOM"]);
-Layout260.offset = new MFFloat(new float[0,0.2]);
-Layout260.offsetUnits = new MFString(new java.lang.String["WORLD","WORLD"]);
-Layout260.scaleMode = new MFString(new java.lang.String["NONE","NONE"]);
-Layout260.size = new MFFloat(new float[0.4,0.6]);
-Layout260.sizeUnits = new MFString(new java.lang.String["WORLD","WORLD"]);
-LayoutLayer105.layout = Layout260;
-
-Viewport Viewport261 = createNode("Viewport");
-Viewport261.clipBoundary = new MFFloat(new float[0,1,0,1]);
-LayoutLayer105.viewport = Viewport261;
-
-LayerSet32.layers[1] = LayoutLayer105;
+Shape132.appearance = Appearance137;
+
+Transform131.child = new undefined();
+
+Transform131.child[0] = Shape132;
+
+Transform125.children[2] = Transform131;
+
+Transform122.children = new MFNode();
+
+Transform122.children[0] = Transform125;
+
+Group121.children = new MFNode();
+
+Group121.children[0] = Transform122;
+
+Script Script139 = createNode("Script");
+Script139.url = new MFString(new java.lang.String["../javascripts/X3DUser.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js"]);
+Script139.DEF = "protoValueTransformerScript";
+Script139.directOutput = True;
+Script139.mustEvaluate = True;
+field field140 = createNode("field");
+field140.name = "protoScale";
+field140.accessType = "inputOutput";
+field140.type = "SFFloat";
+Script139.field = new MFNode();
+
+Script139.field[0] = field140;
+
+field field141 = createNode("field");
+field141.name = "petNames";
+field141.accessType = "inputOutput";
+field141.type = "MFString";
+Script139.field[1] = field141;
+
+field field142 = createNode("field");
+field142.name = "protoParameterName";
+field142.accessType = "inputOutput";
+field142.type = "SFString";
+Script139.field[2] = field142;
+
+field field143 = createNode("field");
+field143.name = "shader";
+field143.accessType = "inputOutput";
+field143.type = "SFNode";
+Script139.field[3] = field143;
+
+field field144 = createNode("field");
+field144.name = "newTranslation";
+field144.accessType = "inputOnly";
+field144.type = "SFVec3f";
+field144.value = "1 1 1";
+Script139.field[4] = field144;
+
+field field145 = createNode("field");
+field145.name = "protoValue_changed";
+field145.accessType = "outputOnly";
+field145.type = "SFFloat";
+field145.value = "1";
+Script139.field[5] = field145;
+
+field field146 = createNode("field");
+field146.name = "protoText_changed";
+field146.accessType = "outputOnly";
+field146.type = "MFString";
+field146.value = "\"1.0\"";
+Script139.field[6] = field146;
+
+IS IS147 = createNode("IS");
+connect connect148 = createNode("connect");
+connect148.nodeField = "protoScale";
+connect148.protoField = "parameterScale";
+IS147.connect = new MFNode();
+
+IS147.connect[0] = connect148;
+
+connect connect149 = createNode("connect");
+connect149.nodeField = "petNames";
+connect149.protoField = "petNames";
+IS147.connect[1] = connect149;
+
+connect connect150 = createNode("connect");
+connect150.nodeField = "protoParameterName";
+connect150.protoField = "parameterName";
+IS147.connect[2] = connect150;
+
+connect connect151 = createNode("connect");
+connect151.nodeField = "shader";
+connect151.protoField = "shaderNode";
+IS147.connect[3] = connect151;
+
+Script139.iS = IS147;
+
+Group121.children[1] = Script139;
+
+ROUTE ROUTE152 = createNode("ROUTE");
+ROUTE152.fromField = "translation_changed";
+ROUTE152.fromNode = "protoSensor";
+ROUTE152.toField = "set_translation";
+ROUTE152.toNode = "protoTransform";
+Group121.children[2] = ROUTE152;
+
+ROUTE ROUTE153 = createNode("ROUTE");
+ROUTE153.fromField = "translation_changed";
+ROUTE153.fromNode = "protoSensor";
+ROUTE153.toField = "newTranslation";
+ROUTE153.toNode = "protoValueTransformerScript";
+Group121.children[3] = ROUTE153;
+
+ROUTE ROUTE154 = createNode("ROUTE");
+ROUTE154.fromField = "protoText_changed";
+ROUTE154.fromNode = "protoValueTransformerScript";
+ROUTE154.toField = "string";
+ROUTE154.toNode = "protoText";
+Group121.children[4] = ROUTE154;
+
+ProtoBody120.children = new MFNode();
+
+ProtoBody120.children[0] = Group121;
+
+ProtoDeclare110.protoBody = ProtoBody120;
+
+LayoutLayer95.children[2] = ProtoDeclare110;
+
+ProtoInstance ProtoInstance155 = createNode("ProtoInstance");
+ProtoInstance155.name = "SliderProto";
+ProtoInstance155.DEF = "aPI";
+fieldValue fieldValue156 = createNode("fieldValue");
+fieldValue156.name = "sliderTranslation";
+fieldValue156.value = "0 0.7 0";
+ProtoInstance155.fieldValue = new MFNode();
+
+ProtoInstance155.fieldValue[0] = fieldValue156;
+
+fieldValue fieldValue157 = createNode("fieldValue");
+fieldValue157.name = "transformTranslation";
+fieldValue157.value = "0 0 0.1";
+ProtoInstance155.fieldValue[1] = fieldValue157;
+
+fieldValue fieldValue158 = createNode("fieldValue");
+fieldValue158.name = "sensorTranslation";
+fieldValue158.value = "0 0 0";
+ProtoInstance155.fieldValue[2] = fieldValue158;
+
+fieldValue fieldValue159 = createNode("fieldValue");
+fieldValue159.name = "textString";
+fieldValue159.value = "\"a=\"";
+ProtoInstance155.fieldValue[3] = fieldValue159;
+
+fieldValue fieldValue160 = createNode("fieldValue");
+fieldValue160.name = "parameterScale";
+fieldValue160.value = "30";
+ProtoInstance155.fieldValue[4] = fieldValue160;
+
+fieldValue fieldValue161 = createNode("fieldValue");
+fieldValue161.name = "parameterName";
+fieldValue161.value = "a";
+ProtoInstance155.fieldValue[5] = fieldValue161;
+
+fieldValue fieldValue162 = createNode("fieldValue");
+fieldValue162.name = "petNames";
+fieldValue162.value = "\"yottzumm\" \"group1-petname\"";
+ProtoInstance155.fieldValue[6] = fieldValue162;
+
+fieldValue fieldValue163 = createNode("fieldValue");
+fieldValue163.name = "shaderNode";
+ComposedShader ComposedShader164 = createNode("ComposedShader");
+ComposedShader164.USE = "x_iteShader";
+fieldValue163.children = new MFNode();
+
+fieldValue163.children[0] = ComposedShader164;
+
+ProtoInstance155.fieldValue[7] = fieldValue163;
+
+LayoutLayer95.children[3] = ProtoInstance155;
+
+ProtoInstance ProtoInstance165 = createNode("ProtoInstance");
+ProtoInstance165.name = "SliderProto";
+ProtoInstance165.DEF = "bPI";
+fieldValue fieldValue166 = createNode("fieldValue");
+fieldValue166.name = "sliderTranslation";
+fieldValue166.value = "0 0.4 0";
+ProtoInstance165.fieldValue = new MFNode();
+
+ProtoInstance165.fieldValue[0] = fieldValue166;
+
+fieldValue fieldValue167 = createNode("fieldValue");
+fieldValue167.name = "transformTranslation";
+fieldValue167.value = "0 0 0.1";
+ProtoInstance165.fieldValue[1] = fieldValue167;
+
+fieldValue fieldValue168 = createNode("fieldValue");
+fieldValue168.name = "sensorTranslation";
+fieldValue168.value = "0 0 0";
+ProtoInstance165.fieldValue[2] = fieldValue168;
+
+fieldValue fieldValue169 = createNode("fieldValue");
+fieldValue169.name = "textString";
+fieldValue169.value = "\"b=\"";
+ProtoInstance165.fieldValue[3] = fieldValue169;
+
+fieldValue fieldValue170 = createNode("fieldValue");
+fieldValue170.name = "parameterScale";
+fieldValue170.value = "30";
+ProtoInstance165.fieldValue[4] = fieldValue170;
+
+fieldValue fieldValue171 = createNode("fieldValue");
+fieldValue171.name = "parameterName";
+fieldValue171.value = "b";
+ProtoInstance165.fieldValue[5] = fieldValue171;
+
+fieldValue fieldValue172 = createNode("fieldValue");
+fieldValue172.name = "petNames";
+fieldValue172.value = "\"yottzumm\" \"group1-petname\"";
+ProtoInstance165.fieldValue[6] = fieldValue172;
+
+fieldValue fieldValue173 = createNode("fieldValue");
+fieldValue173.name = "shaderNode";
+ComposedShader ComposedShader174 = createNode("ComposedShader");
+ComposedShader174.USE = "x_iteShader";
+fieldValue173.children = new MFNode();
+
+fieldValue173.children[0] = ComposedShader174;
+
+ProtoInstance165.fieldValue[7] = fieldValue173;
+
+LayoutLayer95.children[4] = ProtoInstance165;
+
+ProtoInstance ProtoInstance175 = createNode("ProtoInstance");
+ProtoInstance175.name = "SliderProto";
+ProtoInstance175.DEF = "cPI";
+fieldValue fieldValue176 = createNode("fieldValue");
+fieldValue176.name = "sliderTranslation";
+fieldValue176.value = "0 0.1 0";
+ProtoInstance175.fieldValue = new MFNode();
+
+ProtoInstance175.fieldValue[0] = fieldValue176;
+
+fieldValue fieldValue177 = createNode("fieldValue");
+fieldValue177.name = "transformTranslation";
+fieldValue177.value = "0 0 0.1";
+ProtoInstance175.fieldValue[1] = fieldValue177;
+
+fieldValue fieldValue178 = createNode("fieldValue");
+fieldValue178.name = "sensorTranslation";
+fieldValue178.value = "0 0 0";
+ProtoInstance175.fieldValue[2] = fieldValue178;
+
+fieldValue fieldValue179 = createNode("fieldValue");
+fieldValue179.name = "textString";
+fieldValue179.value = "\"c=\"";
+ProtoInstance175.fieldValue[3] = fieldValue179;
+
+fieldValue fieldValue180 = createNode("fieldValue");
+fieldValue180.name = "parameterScale";
+fieldValue180.value = "20";
+ProtoInstance175.fieldValue[4] = fieldValue180;
+
+fieldValue fieldValue181 = createNode("fieldValue");
+fieldValue181.name = "parameterName";
+fieldValue181.value = "c";
+ProtoInstance175.fieldValue[5] = fieldValue181;
+
+fieldValue fieldValue182 = createNode("fieldValue");
+fieldValue182.name = "petNames";
+fieldValue182.value = "\"yottzumm\" \"yottzumm2\" \"group1-petname\"";
+ProtoInstance175.fieldValue[6] = fieldValue182;
+
+fieldValue fieldValue183 = createNode("fieldValue");
+fieldValue183.name = "shaderNode";
+ComposedShader ComposedShader184 = createNode("ComposedShader");
+ComposedShader184.USE = "x_iteShader";
+fieldValue183.children = new MFNode();
+
+fieldValue183.children[0] = ComposedShader184;
+
+ProtoInstance175.fieldValue[7] = fieldValue183;
+
+LayoutLayer95.children[5] = ProtoInstance175;
+
+ProtoInstance ProtoInstance185 = createNode("ProtoInstance");
+ProtoInstance185.name = "SliderProto";
+ProtoInstance185.DEF = "dPI";
+fieldValue fieldValue186 = createNode("fieldValue");
+fieldValue186.name = "sliderTranslation";
+fieldValue186.value = "0 -0.2 0";
+ProtoInstance185.fieldValue = new MFNode();
+
+ProtoInstance185.fieldValue[0] = fieldValue186;
+
+fieldValue fieldValue187 = createNode("fieldValue");
+fieldValue187.name = "transformTranslation";
+fieldValue187.value = "0 0 0.1";
+ProtoInstance185.fieldValue[1] = fieldValue187;
+
+fieldValue fieldValue188 = createNode("fieldValue");
+fieldValue188.name = "sensorTranslation";
+fieldValue188.value = "0 0 0";
+ProtoInstance185.fieldValue[2] = fieldValue188;
+
+fieldValue fieldValue189 = createNode("fieldValue");
+fieldValue189.name = "textString";
+fieldValue189.value = "\"d=\"";
+ProtoInstance185.fieldValue[3] = fieldValue189;
+
+fieldValue fieldValue190 = createNode("fieldValue");
+fieldValue190.name = "parameterScale";
+fieldValue190.value = "20";
+ProtoInstance185.fieldValue[4] = fieldValue190;
+
+fieldValue fieldValue191 = createNode("fieldValue");
+fieldValue191.name = "parameterName";
+fieldValue191.value = "d";
+ProtoInstance185.fieldValue[5] = fieldValue191;
+
+fieldValue fieldValue192 = createNode("fieldValue");
+fieldValue192.name = "petNames";
+fieldValue192.value = "\"yottzumm\" \"yottzumm2\" \"group1-petname\"";
+ProtoInstance185.fieldValue[6] = fieldValue192;
+
+fieldValue fieldValue193 = createNode("fieldValue");
+fieldValue193.name = "shaderNode";
+ComposedShader ComposedShader194 = createNode("ComposedShader");
+ComposedShader194.USE = "x_iteShader";
+fieldValue193.children = new MFNode();
+
+fieldValue193.children[0] = ComposedShader194;
+
+ProtoInstance185.fieldValue[7] = fieldValue193;
+
+LayoutLayer95.children[6] = ProtoInstance185;
+
+ProtoInstance ProtoInstance195 = createNode("ProtoInstance");
+ProtoInstance195.name = "SliderProto";
+ProtoInstance195.DEF = "tdeltaPI";
+fieldValue fieldValue196 = createNode("fieldValue");
+fieldValue196.name = "sliderTranslation";
+fieldValue196.value = "0 -0.5 0";
+ProtoInstance195.fieldValue = new MFNode();
+
+ProtoInstance195.fieldValue[0] = fieldValue196;
+
+fieldValue fieldValue197 = createNode("fieldValue");
+fieldValue197.name = "transformTranslation";
+fieldValue197.value = "0 0 0.1";
+ProtoInstance195.fieldValue[1] = fieldValue197;
+
+fieldValue fieldValue198 = createNode("fieldValue");
+fieldValue198.name = "sensorTranslation";
+fieldValue198.value = "0 0 0";
+ProtoInstance195.fieldValue[2] = fieldValue198;
+
+fieldValue fieldValue199 = createNode("fieldValue");
+fieldValue199.name = "textString";
+fieldValue199.value = "\"tdelta=\"";
+ProtoInstance195.fieldValue[3] = fieldValue199;
+
+fieldValue fieldValue200 = createNode("fieldValue");
+fieldValue200.name = "parameterScale";
+fieldValue200.value = "6.28";
+ProtoInstance195.fieldValue[4] = fieldValue200;
+
+fieldValue fieldValue201 = createNode("fieldValue");
+fieldValue201.name = "parameterName";
+fieldValue201.value = "tdelta";
+ProtoInstance195.fieldValue[5] = fieldValue201;
+
+fieldValue fieldValue202 = createNode("fieldValue");
+fieldValue202.name = "petNames";
+fieldValue202.value = "\"yottzumm2\" \"group1-petname\"";
+ProtoInstance195.fieldValue[6] = fieldValue202;
+
+fieldValue fieldValue203 = createNode("fieldValue");
+fieldValue203.name = "shaderNode";
+ComposedShader ComposedShader204 = createNode("ComposedShader");
+ComposedShader204.USE = "x_iteShader";
+fieldValue203.children = new MFNode();
+
+fieldValue203.children[0] = ComposedShader204;
+
+ProtoInstance195.fieldValue[7] = fieldValue203;
+
+LayoutLayer95.children[7] = ProtoInstance195;
+
+ProtoInstance ProtoInstance205 = createNode("ProtoInstance");
+ProtoInstance205.name = "SliderProto";
+ProtoInstance205.DEF = "pdeltaPI";
+fieldValue fieldValue206 = createNode("fieldValue");
+fieldValue206.name = "sliderTranslation";
+fieldValue206.value = "0 -0.8 0";
+ProtoInstance205.fieldValue = new MFNode();
+
+ProtoInstance205.fieldValue[0] = fieldValue206;
+
+fieldValue fieldValue207 = createNode("fieldValue");
+fieldValue207.name = "transformTranslation";
+fieldValue207.value = "0 0 0.1";
+ProtoInstance205.fieldValue[1] = fieldValue207;
+
+fieldValue fieldValue208 = createNode("fieldValue");
+fieldValue208.name = "sensorTranslation";
+fieldValue208.value = "0 0 0";
+ProtoInstance205.fieldValue[2] = fieldValue208;
+
+fieldValue fieldValue209 = createNode("fieldValue");
+fieldValue209.name = "textString";
+fieldValue209.value = "\"pdelta=\"";
+ProtoInstance205.fieldValue[3] = fieldValue209;
+
+fieldValue fieldValue210 = createNode("fieldValue");
+fieldValue210.name = "parameterScale";
+fieldValue210.value = "6.28";
+ProtoInstance205.fieldValue[4] = fieldValue210;
+
+fieldValue fieldValue211 = createNode("fieldValue");
+fieldValue211.name = "parameterName";
+fieldValue211.value = "pdelta";
+ProtoInstance205.fieldValue[5] = fieldValue211;
+
+fieldValue fieldValue212 = createNode("fieldValue");
+fieldValue212.name = "petNames";
+fieldValue212.value = "\"yottzumm2\" \"group1-petname\"";
+ProtoInstance205.fieldValue[6] = fieldValue212;
+
+fieldValue fieldValue213 = createNode("fieldValue");
+fieldValue213.name = "shaderNode";
+ComposedShader ComposedShader214 = createNode("ComposedShader");
+ComposedShader214.USE = "x_iteShader";
+fieldValue213.children = new MFNode();
+
+fieldValue213.children[0] = ComposedShader214;
+
+ProtoInstance205.fieldValue[7] = fieldValue213;
+
+LayoutLayer95.children[8] = ProtoInstance205;
+
+LayerSet17.layers[1] = LayoutLayer95;
+
+Layer Layer215 = createNode("Layer");
+Layer215.pickable = True;
+Layer215.objectType = new MFString(new java.lang.String["ALL"]);
+Viewpoint Viewpoint216 = createNode("Viewpoint");
+Viewpoint216.description = "My Humanoids";
+Viewpoint216.fieldOfView = 1.570796;
+Viewpoint216.position = new SFVec3f(new float[0,1.75,80]);
+Layer215.children = new MFNode();
+
+Layer215.children[0] = Viewpoint216;
+
+Script Script217 = createNode("Script");
+Script217.url = new MFString(new java.lang.String["../javascripts/X3DAvatar.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js"]);
+Script217.DEF = "HumanoidScript";
+Script217.directOutput = True;
+Script217.mustEvaluate = True;
+Layer215.children[1] = Script217;
+
+Group Group218 = createNode("Group");
+Group218.DEF = "humanoidGroup";
+Group Group219 = createNode("Group");
+Group218.children = new MFNode();
+
+Group218.children[0] = Group219;
+
+Layer215.children[2] = Group218;
+
+LayerSet17.layers[2] = Layer215;
 
 layerSet = new undefined();
 
-layerSet[0] = LayerSet32;
+layerSet[0] = LayerSet17;
 
 }

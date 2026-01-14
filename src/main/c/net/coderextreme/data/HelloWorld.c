@@ -40,7 +40,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "reference";
-meta8.content = "http://en.wikipedia.org/wiki/Hello_world";
+meta8.content = "https://en.wikipedia.org/wiki/Hello_world";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -55,12 +55,12 @@ head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
 meta11.name = "reference";
-meta11.content = "http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world";
+meta11.content = "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
 meta12.name = "reference";
-meta12.content = "http://www.HelloWorldExample.net";
+meta12.content = "https://www.HelloWorldExample.net";
 head1.meta[10] = meta12;
 
 meta meta13 = createNode("meta");
@@ -80,12 +80,12 @@ head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");
 meta16.name = "reference";
-meta16.content = "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d";
+meta16.content = "https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d";
 head1.meta[14] = meta16;
 
 meta meta17 = createNode("meta");
 meta17.name = "identifier";
-meta17.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d";
+meta17.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d";
 head1.meta[15] = meta17;
 
 meta meta18 = createNode("meta");

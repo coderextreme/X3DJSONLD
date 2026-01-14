@@ -154,6 +154,7 @@ NavigationInfo NavigationInfo30 = createNode("NavigationInfo");
 NavigationInfo30.type = new MFString(new java.lang.String["EXAMINE"]);
 children[6] = NavigationInfo30;
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 Shape Shape31 = createNode("Shape");
 Appearance Appearance32 = createNode("Appearance");
 Material Material33 = createNode("Material");
@@ -161,28 +162,32 @@ Appearance32.material = Material33;
 
 PixelTexture PixelTexture34 = createNode("PixelTexture");
 PixelTexture34.image = new SFImage(new int[2,2,4,-16776961,16711935,-1,-65281]);
+TextureProperties TextureProperties35 = createNode("TextureProperties");
+TextureProperties35.magnificationFilter = "NEAREST_PIXEL";
+PixelTexture34.textureProperties = TextureProperties35;
+
 Appearance32.texture = PixelTexture34;
 
 Shape31.appearance = Appearance32;
 
-IndexedFaceSet IndexedFaceSet35 = createNode("IndexedFaceSet");
-IndexedFaceSet35.colorPerVertex = False;
-IndexedFaceSet35.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-IndexedFaceSet35.creaseAngle = 0.5;
-IndexedFaceSet35.texCoordIndex = new MFInt32(new int[0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
-Color Color36 = createNode("Color");
-Color36.color = new MFColor(new float[0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]);
-IndexedFaceSet35.color = Color36;
+IndexedFaceSet IndexedFaceSet36 = createNode("IndexedFaceSet");
+IndexedFaceSet36.colorPerVertex = False;
+IndexedFaceSet36.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+IndexedFaceSet36.creaseAngle = 0.5;
+IndexedFaceSet36.texCoordIndex = new MFInt32(new int[0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
+Color Color37 = createNode("Color");
+Color37.color = new MFColor(new float[0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]);
+IndexedFaceSet36.color = Color37;
 
-Coordinate Coordinate37 = createNode("Coordinate");
-Coordinate37.point = new MFVec3f(new float[-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]);
-IndexedFaceSet35.coord = Coordinate37;
+Coordinate Coordinate38 = createNode("Coordinate");
+Coordinate38.point = new MFVec3f(new float[-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]);
+IndexedFaceSet36.coord = Coordinate38;
 
-TextureCoordinate TextureCoordinate38 = createNode("TextureCoordinate");
-TextureCoordinate38.point = new MFVec2f(new float[0,1,0,0,1,1,1,0]);
-IndexedFaceSet35.texCoord = TextureCoordinate38;
+TextureCoordinate TextureCoordinate39 = createNode("TextureCoordinate");
+TextureCoordinate39.point = new MFVec2f(new float[0,1,0,0,1,1,1,0]);
+IndexedFaceSet36.texCoord = TextureCoordinate39;
 
-Shape31.geometry = IndexedFaceSet35;
+Shape31.geometry = IndexedFaceSet36;
 
 children[7] = Shape31;
 

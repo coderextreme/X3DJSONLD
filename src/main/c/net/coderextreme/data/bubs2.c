@@ -5,47 +5,47 @@ X3D X3D0;
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
-meta meta2 = createNode("meta");
-meta2.name = "title";
-meta2.content = "bubs2.x3d";
-head1.meta = new MFNode();
+component component2 = createNode("component");
+component2.name = "Scripting";
+component2.level = 1;
+head1.component = new MFNode();
 
-head1.meta[0] = meta2;
+head1.component[0] = component2;
 
 meta meta3 = createNode("meta");
-meta3.name = "creator";
-meta3.content = "John Carlson";
+meta3.name = "title";
+meta3.content = "bubs2.x3d";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
-meta4.name = "description";
-meta4.content = "Tour around a prismatic sphere";
+meta4.name = "creator";
+meta4.content = "John Carlson";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
-meta5.name = "generator";
-meta5.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
+meta5.name = "description";
+meta5.content = "Tour around a prismatic sphere";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
-meta6.name = "identifier";
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d";
+meta6.name = "generator";
+meta6.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
-meta7.name = "translated";
-meta7.content = "13 March 2016";
+meta7.name = "identifier";
+meta7.content = "https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
-meta8.name = "generator";
-meta8.content = "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html";
+meta8.name = "translated";
+meta8.content = "13 March 2016";
 head1.meta[6] = meta8;
 
-component component9 = createNode("component");
-component9.name = "Scripting";
-component9.level = 1;
-head1.component[7] = component9;
+meta meta9 = createNode("meta");
+meta9.name = "generator";
+meta9.content = "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html";
+head1.meta[7] = meta9;
 
 head = head1;
 

@@ -69,7 +69,7 @@ head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");
 meta14.name = "identifier";
-meta14.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d";
+meta14.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d";
 head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");

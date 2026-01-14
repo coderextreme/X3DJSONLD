@@ -19,7 +19,7 @@ head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
 meta4.name = "identifier";
-meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d";
+meta4.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
@@ -238,7 +238,7 @@ HAnimJoint47.llimit = new MFFloat(new float[0,0,0]);
 HAnimHumanoid38.joints[1] = HAnimJoint47;
 
 HAnimJoint HAnimJoint48 = createNode("HAnimJoint");
-HAnimJoint48.USE = "hanim_";
+HAnimJoint48.USE = "hanim_humanoid_root";
 HAnimHumanoid38.joints[2] = HAnimJoint48;
 
 children[4] = HAnimHumanoid38;

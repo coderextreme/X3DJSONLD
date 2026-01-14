@@ -101,7 +101,7 @@ head1.meta[17] = meta19;
 
 meta meta20 = createNode("meta");
 meta20.name = "generator";
-meta20.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta20.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[18] = meta20;
 
 meta meta21 = createNode("meta");
@@ -12544,7 +12544,7 @@ HAnimSegment2690.children[1] = Shape2692;
 
 HAnimSite HAnimSite2693 = createNode("HAnimSite");
 HAnimSite2693.name = "r_tarsal_distal_phalanx_5";
-HAnimSite2693.DEF = "hanim_";
+HAnimSite2693.DEF = "hanim_r_tarsal_distal_phalanx_5";
 HAnimSite2693.translation = new SFVec3f(new float[-0.125,0.016,0.115]);
 Transform Transform2694 = createNode("Transform");
 Transform2694.USE = "r_tarsal_distal_phalanx_5_tip_SiteShape";

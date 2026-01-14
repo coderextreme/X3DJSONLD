@@ -39,27 +39,27 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "reference";
-meta8.content = "http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl";
+meta8.content = "https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
 meta9.name = "reference";
-meta9.content = "http://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl";
+meta9.content = "https://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
 meta10.name = "reference";
-meta10.content = "http://www.HAnim.org";
+meta10.content = "https://www.HAnim.org";
 head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
 meta11.name = "reference";
-meta11.content = "http://HAnim.org/Models";
+meta11.content = "https://HAnim.org/Models";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
 meta12.name = "reference";
-meta12.content = "http://HAnim.org/Nodes";
+meta12.content = "https://HAnim.org/Nodes";
 head1.meta[10] = meta12;
 
 meta meta13 = createNode("meta");

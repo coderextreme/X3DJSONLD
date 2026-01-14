@@ -12104,6 +12104,7 @@ ProtoInstance1811.fieldValue[1] = fieldValue1814;
 fieldValue fieldValue1815 = createNode("fieldValue");
 fieldValue1815.name = "hAnimBehaviorNodes";
 ProtoInstance ProtoInstance1816 = createNode("ProtoInstance");
+ProtoInstance1816.name = "HAnimBehavior";
 ProtoInstance1816.USE = "BehaviorTest1";
 fieldValue1815.children = new MFNode();
 

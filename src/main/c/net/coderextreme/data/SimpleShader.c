@@ -5,6 +5,7 @@ X3D X3D0;
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
+//meta content='under development' name='warning'/
 component component2 = createNode("component");
 component2.name = "Shaders";
 component2.level = 1;
@@ -107,7 +108,6 @@ meta21.name = "license";
 meta21.content = "../../license.html";
 head1.meta[19] = meta21;
 
-//meta content='under development' name='warning'/
 head = head1;
 
 ProtoDeclare ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>

@@ -5,6 +5,7 @@ X3D X3D0;
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
+//<component name='Shape' level='4'></component>
 component component2 = createNode("component");
 component2.name = "Scripting";
 component2.level = 1;
@@ -47,7 +48,6 @@ component9.name = "Core";
 component9.level = 1;
 head1.component[7] = component9;
 
-//<component name='Shape' level='4'></component>
 meta meta10 = createNode("meta");
 meta10.name = "title";
 meta10.content = "mirror2.x3d";

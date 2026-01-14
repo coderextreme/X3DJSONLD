@@ -69,7 +69,7 @@ head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");
 meta14.name = "generator";
-meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta14.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
@@ -119,6 +119,7 @@ NavigationInfo NavigationInfo23 = createNode("NavigationInfo");
 NavigationInfo23.type = new MFString(new java.lang.String["EXAMINE","WALK","FLY","ANY"]);
 children[6] = NavigationInfo23;
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 Shape Shape24 = createNode("Shape");
 Appearance Appearance25 = createNode("Appearance");
 Material Material26 = createNode("Material");
@@ -128,17 +129,21 @@ PixelTexture PixelTexture27 = createNode("PixelTexture");
 PixelTexture27.image = new SFImage(new int[2,2,4,-16776961,16711935,-1,-65281]);
 PixelTexture27.repeatS = False;
 PixelTexture27.repeatT = False;
+TextureProperties TextureProperties28 = createNode("TextureProperties");
+TextureProperties28.magnificationFilter = "NEAREST_PIXEL";
+PixelTexture27.textureProperties = TextureProperties28;
+
 Appearance25.texture = PixelTexture27;
 
 Shape24.appearance = Appearance25;
 
-IndexedFaceSet IndexedFaceSet28 = createNode("IndexedFaceSet");
-IndexedFaceSet28.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-Coordinate Coordinate29 = createNode("Coordinate");
-Coordinate29.point = new MFVec3f(new float[-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]);
-IndexedFaceSet28.coord = Coordinate29;
+IndexedFaceSet IndexedFaceSet29 = createNode("IndexedFaceSet");
+IndexedFaceSet29.coordIndex = new MFInt32(new int[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+Coordinate Coordinate30 = createNode("Coordinate");
+Coordinate30.point = new MFVec3f(new float[-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]);
+IndexedFaceSet29.coord = Coordinate30;
 
-Shape24.geometry = IndexedFaceSet28;
+Shape24.geometry = IndexedFaceSet29;
 
 children[7] = Shape24;
 

@@ -24,7 +24,7 @@ head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "generator";
-meta5.content = "Titania V3.0.4, http://titania.create3000.de";
+meta5.content = "Titania V3.0.4, https://titania.create3000.de";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
@@ -62,7 +62,7 @@ ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" e
 <IS><connect nodeField="cornerRadius" protoField="cornerRadius"></connect>
 <connect nodeField="size" protoField="size"></connect>
 </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 
 function initialize ()
 {
@@ -207,7 +207,7 @@ IS26.connect[1] = connect28;
 Script20.iS = IS26;
 
 
-Script20.setSourceCode(`vrmlscript:\n"+
+Script20.setSourceCode(`ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -441,7 +441,7 @@ ProtoDeclare ProtoDeclare55 = browser.createX3DFromString(`<?xml version="1.0" e
 </field>
 <IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -619,7 +619,7 @@ IS85.connect[0] = connect86;
 Script79.iS = IS85;
 
 
-Script79.setSourceCode(`vrmlscript:\n"+
+Script79.setSourceCode(`ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
@@ -665,7 +665,7 @@ ProtoDeclare ProtoDeclare88 = browser.createX3DFromString(`<?xml version="1.0" e
 <IS><connect nodeField="output" protoField="output"></connect>
 <connect nodeField="input" protoField="input"></connect>
 </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -841,7 +841,7 @@ IS114.connect[1] = connect116;
 Script105.iS = IS114;
 
 
-Script105.setSourceCode(`vrmlscript:\n"+
+Script105.setSourceCode(`ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\n"+
@@ -875,7 +875,7 @@ ProtoDeclare88.protoBody = ProtoBody94;
 children[3] = ProtoDeclare88;
 
 NavigationInfo NavigationInfo117 = createNode("NavigationInfo");
-NavigationInfo117.type = new MFString(new java.lang.String[", ","PLANE_create3000.deANY"]);
+NavigationInfo117.type = new MFString(new java.lang.String["FLY","ANY"]);
 children[4] = NavigationInfo117;
 
 Background Background118 = createNode("Background");

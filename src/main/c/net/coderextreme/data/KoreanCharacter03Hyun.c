@@ -69,7 +69,7 @@ head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");
 meta14.name = "generator";
-meta14.content = "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview";
+meta14.content = "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview";
 head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
@@ -79,7 +79,7 @@ head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");
 meta16.name = "generator";
-meta16.content = "Gnu Image Manipulation Program, http://www.gimp.org";
+meta16.content = "Gnu Image Manipulation Program, https://www.gimp.org";
 head1.meta[14] = meta16;
 
 meta meta17 = createNode("meta");
