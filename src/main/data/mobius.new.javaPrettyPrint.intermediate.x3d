@@ -9,8 +9,7 @@
     <meta content='mobius.x3d' name='title'/>
     <meta content='Vince Marchetti' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://kshell.com/mobius.x3d' name='identifier'/>
-    <meta content='a mobius of 3 NURBS Patch Surfaces' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <Background skyColor='1 1 1'/>
@@ -50,9 +49,7 @@
     <Group DEF='triad'>
       <Shape>
         <Appearance>
-          <LineProperties linewidthScaleFactor='2.0'>
-            <!-- linetype='1' solid -->
-          </LineProperties>
+          <LineProperties linewidthScaleFactor='2.0'/>
           <Material emissiveColor='1 0 0'/>
         </Appearance>
         <LineSet vertexCount='2'>
@@ -61,9 +58,7 @@
       </Shape>
       <Shape>
         <Appearance>
-          <LineProperties linewidthScaleFactor='2.0'>
-            <!-- linetype='1' solid -->
-          </LineProperties>
+          <LineProperties linewidthScaleFactor='2.0'/>
           <Material emissiveColor='0 1 0'/>
         </Appearance>
         <LineSet vertexCount='2'>
@@ -72,9 +67,7 @@
       </Shape>
       <Shape>
         <Appearance>
-          <LineProperties linewidthScaleFactor='2.0'>
-            <!-- linetype='1' solid -->
-          </LineProperties>
+          <LineProperties linewidthScaleFactor='2.0'/>
           <Material emissiveColor='0 0 1'/>
         </Appearance>
         <LineSet vertexCount='2'>

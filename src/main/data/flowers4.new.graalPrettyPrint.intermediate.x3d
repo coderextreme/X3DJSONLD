@@ -3,31 +3,25 @@
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
     <component name='Shape' level='4'/>
     <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
     <meta content='flowers4.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d' name='identifier'/>
-    <meta content='an animated flower' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo/>
     <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
     <Transform DEF='transform'>
       <Shape>
-        <!-- <Sphere> -->
         <Appearance>
           <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedShader DEF='shader' language='GLSL'>
-            <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+            <field name='cube' accessType='inputOutput' type='SFInt32'/>
             <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
             <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
@@ -132,7 +126,7 @@ function set_fraction(fraction, eventTime) {
     </Script>
     <TimeSensor DEF='Clock' cycleInterval='16.0' loop='true'/>
     <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
-    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
+    <ROUTE fromField='coordinates_changed' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
   </Scene>
 </X3D>

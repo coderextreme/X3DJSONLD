@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='HAnim' level='1'/>
+    <component level='1' name='HAnim'/>
     <meta content='HAnimBehaviorPrototypes.x3d' name='title'/>
     <meta content='Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors.' name='description'/>
     <meta content='Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor' name='creator'/>
@@ -19,10 +18,11 @@
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='HAnimBehaviorPrototypes.x3d'/>
-    <ProtoDeclare name='HAnimBehavior' appinfo='The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior.' documentation='https://www.web3d.org/files/specifications/19774/V1.0/'>
+    <ProtoDeclare appinfo='The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior.' documentation='https://www.web3d.org/files/specifications/19774/V1.0/' name='HAnimBehavior'>
       <ProtoInterface>
         <!-- supported Level of Articulation (LOA) -->
         <!-- shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations -->
@@ -30,1343 +30,1343 @@
         <!-- Not supported: animated translation of individual joints -->
         <!-- pass in key/keyValue array pairs for single PositionInterpolator -->
         <!-- pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint -->
-        <field name='supportedLOA' accessType='inputOutput' appinfo='Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.' type='SFInt32' value='-1'/>
-        <field name='enabled' accessType='inputOutput' appinfo='is this behavior enabled?' type='SFBool' value='true'/>
-        <field name='cycleInterval' accessType='inputOutput' appinfo='how long do these interpolators take to execute?' type='SFTime' value='1.0'/>
-        <field name='loop' accessType='inputOutput' appinfo='whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands).' type='SFBool' value='false'/>
-        <field name='startTime' accessType='inputOutput' appinfo='when time now &gt;= startTime isActive becomes true and TimeSensor becomes active' type='SFTime' value='0.0'/>
-        <field name='stopTime' accessType='inputOutput' appinfo='when stopTime becomes &lt;= time now isActive becomes false and TimeSensor becomes inactive' type='SFTime' value='0.0'/>
-        <field name='pauseTime' accessType='inputOutput' appinfo='when time now &gt;= pauseTime isPaused becomes true and TimeSensor becomes paused' type='SFTime' value='0.0'/>
-        <field name='resumeTime' accessType='inputOutput' appinfo='when resumeTime becomes &lt;= time now isPaused becomes false and TimeSensor becomes inactive' type='SFTime' value='0.0'/>
-        <field name='cycleTime' accessType='outputOnly' appinfo='cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle' type='SFTime'/>
-        <field name='isActive' accessType='outputOnly' appinfo='isActive true/false events are sent when TimeSensor starts/stops running' type='SFBool'/>
-        <field name='isPaused' accessType='outputOnly' appinfo='isPaused true/false events are sent when TimeSensor is paused/resumed' type='SFBool'/>
-        <field name='elapsedTime' accessType='outputOnly' appinfo='current elapsed time since TimeSensor activated/running cumulative in seconds and not counting any paused time' type='SFBool'/>
-        <field name='time' accessType='outputOnly' appinfo='continuously sends the absolute time (since January 1 1970)' type='SFBool'/>
-        <field name='fraction_changed' accessType='outputOnly' appinfo='fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle.' type='SFFloat'/>
-        <field name='HumanoidRoot_translation_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='inputOutput' appinfo='Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.' name='supportedLOA' type='SFInt32' value='-1'/>
+        <field accessType='inputOutput' appinfo='is this behavior enabled?' name='enabled' type='SFBool' value='true'/>
+        <field accessType='inputOutput' appinfo='how long do these interpolators take to execute?' name='cycleInterval' type='SFTime' value='1.0'/>
+        <field accessType='inputOutput' appinfo='whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands).' name='loop' type='SFBool' value='false'/>
+        <field accessType='inputOutput' appinfo='when time now &gt;= startTime isActive becomes true and TimeSensor becomes active' name='startTime' type='SFTime' value='0.0'/>
+        <field accessType='inputOutput' appinfo='when stopTime becomes &lt;= time now isActive becomes false and TimeSensor becomes inactive' name='stopTime' type='SFTime' value='0.0'/>
+        <field accessType='inputOutput' appinfo='when time now &gt;= pauseTime isPaused becomes true and TimeSensor becomes paused' name='pauseTime' type='SFTime' value='0.0'/>
+        <field accessType='inputOutput' appinfo='when resumeTime becomes &lt;= time now isPaused becomes false and TimeSensor becomes inactive' name='resumeTime' type='SFTime' value='0.0'/>
+        <field accessType='outputOnly' appinfo='cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle' name='cycleTime' type='SFTime'/>
+        <field accessType='outputOnly' appinfo='isActive true/false events are sent when TimeSensor starts/stops running' name='isActive' type='SFBool'/>
+        <field accessType='outputOnly' appinfo='isPaused true/false events are sent when TimeSensor is paused/resumed' name='isPaused' type='SFBool'/>
+        <field accessType='outputOnly' appinfo='current elapsed time since TimeSensor activated/running cumulative in seconds and not counting any paused time' name='elapsedTime' type='SFBool'/>
+        <field accessType='outputOnly' appinfo='continuously sends the absolute time (since January 1 1970)' name='time' type='SFBool'/>
+        <field accessType='outputOnly' appinfo='fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle.' name='fraction_changed' type='SFFloat'/>
+        <field accessType='inputOutput' name='HumanoidRoot_translation_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='HumanoidRoot_translation_keyValue' accessType='inputOutput' type='MFVec3f'>
+        <field accessType='inputOutput' name='HumanoidRoot_translation_keyValue' type='MFVec3f'>
           <!-- no default value -->
         </field>
-        <field name='HumanoidRoot_translation_changed' accessType='outputOnly' type='SFVec3f'/>
-        <field name='HumanoidRoot_rotation_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='HumanoidRoot_translation_changed' type='SFVec3f'/>
+        <field accessType='inputOutput' name='HumanoidRoot_rotation_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='HumanoidRoot_rotation_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='HumanoidRoot_rotation_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='HumanoidRoot_rotation_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='c1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='HumanoidRoot_rotation_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='c1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='c1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='c1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='c1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='c2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='c1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='c2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='c2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='c2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='c2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='c3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='c2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='c3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='c3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='c3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='c3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='c4_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='c3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='c4_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='c4_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='c4_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='c4_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='c5_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='c4_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='c5_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='c5_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='c5_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='c5_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='c6_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='c5_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='c6_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='c6_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='c6_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='c6_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='c7_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='c6_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='c7_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='c7_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='c7_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='c7_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='jaw_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='c7_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='jaw_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='jaw_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='jaw_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='jaw_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='jaw_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l4_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l4_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l4_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l4_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l4_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l5_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l4_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l5_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l5_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l5_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l5_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_acromioclavicular_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l5_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_acromioclavicular_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_acromioclavicular_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_acromioclavicular_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_acromioclavicular_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ankle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_acromioclavicular_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ankle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ankle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ankle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ankle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_calf_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ankle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_calf_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_calf_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_calf_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_calf_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_clavicle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_calf_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_clavicle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_clavicle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_clavicle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_clavicle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_elbow_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_clavicle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_elbow_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_elbow_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_elbow_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_elbow_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_eyeball_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_elbow_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_eyeball_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_eyeball_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_eyeball_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_eyeball_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_eyeball_joint_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_eyeball_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_eyeball_joint_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_eyeball_joint_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_eyeball_joint_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_eyeball_joint_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_eyebrow_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_eyeball_joint_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_eyebrow_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_eyebrow_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_eyebrow_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_eyebrow_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_eyebrow_joint_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_eyebrow_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_eyebrow_joint_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_eyebrow_joint_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_eyebrow_joint_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_eyebrow_joint_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_eyelid_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_eyebrow_joint_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_eyelid_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_eyelid_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_eyelid_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_eyelid_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_eyelid_joint_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_eyelid_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_eyelid_joint_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_eyelid_joint_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_eyelid_joint_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_eyelid_joint_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_forearm_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_eyelid_joint_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_forearm_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_forearm_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_forearm_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_forearm_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_forefoot_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_forearm_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_forefoot_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_forefoot_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_forefoot_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_forefoot_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_hand_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_forefoot_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_hand_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_hand_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_hand_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_hand_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_hindfoot_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_hand_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_hindfoot_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_hindfoot_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_hindfoot_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_hindfoot_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_hip_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_hindfoot_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_hip_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_hip_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_hip_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_hip_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_hip_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_index_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_index_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_index_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_index_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_index_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_knee_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_index_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_knee_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_knee_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_knee_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_knee_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_metatarsal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_knee_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_metatarsal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_metatarsal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_metatarsal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_metatarsal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middistal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_metatarsal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middistal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middistal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middistal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middistal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middistal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_middle_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_middle_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_middle_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_middle_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_midproximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_middle_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_midproximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_midproximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_midproximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_midproximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_midtarsal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_midproximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_midtarsal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_midtarsal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_midtarsal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_midtarsal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_midtarsal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_pinky_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_pinky_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_pinky_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_pinky_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_pinky_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_ring_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_ring_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_ring_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_ring_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_scapula_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_ring_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_scapula_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_scapula_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_scapula_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_scapula_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_shoulder_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_scapula_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_shoulder_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_shoulder_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_shoulder_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_shoulder_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_sternoclavicular_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_shoulder_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_sternoclavicular_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_sternoclavicular_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_sternoclavicular_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_sternoclavicular_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_subtalar_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_sternoclavicular_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_subtalar_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_subtalar_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_subtalar_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_subtalar_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_thigh_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_subtalar_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_thigh_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_thigh_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_thigh_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_thigh_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_thumb1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_thigh_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_thumb1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_thumb1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_thumb2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_thumb1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_thumb2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_thumb2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_thumb3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_thumb2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_thumb3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_thumb3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_thumb_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_thumb3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_thumb_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_thumb_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_thumb_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_thumb_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_thumb_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_thumb_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_thumb_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_thumb_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_thumb_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_thumb_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_thumb_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_upperarm_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_thumb_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_upperarm_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_upperarm_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_upperarm_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_upperarm_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='l_wrist_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_upperarm_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='l_wrist_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='l_wrist_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='l_wrist_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='l_wrist_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='pelvis_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='l_wrist_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='pelvis_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='pelvis_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='pelvis_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='pelvis_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_acromioclavicular_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='pelvis_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_acromioclavicular_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_acromioclavicular_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_acromioclavicular_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_acromioclavicular_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ankle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_acromioclavicular_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ankle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ankle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ankle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ankle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_calf_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ankle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_calf_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_calf_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_calf_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_calf_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_clavicle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_calf_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_clavicle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_clavicle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_clavicle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_clavicle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_elbow_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_clavicle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_elbow_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_elbow_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_elbow_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_elbow_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_eyeball_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_elbow_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_eyeball_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_eyeball_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_eyeball_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_eyeball_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_eyeball_joint_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_eyeball_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_eyeball_joint_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_eyeball_joint_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_eyeball_joint_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_eyeball_joint_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_eyebrow_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_eyeball_joint_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_eyebrow_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_eyebrow_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_eyebrow_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_eyebrow_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_eyebrow_joint_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_eyebrow_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_eyebrow_joint_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_eyebrow_joint_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_eyebrow_joint_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_eyebrow_joint_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_eyelid_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_eyebrow_joint_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_eyelid_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_eyelid_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_eyelid_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_eyelid_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_eyelid_joint_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_eyelid_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_eyelid_joint_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_eyelid_joint_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_eyelid_joint_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_eyelid_joint_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_forearm_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_eyelid_joint_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_forearm_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_forearm_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_forearm_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_forearm_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_forefoot_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_forearm_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_forefoot_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_forefoot_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_forefoot_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_forefoot_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_hand_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_forefoot_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_hand_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_hand_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_hand_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_hand_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_hindfoot_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_hand_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_hindfoot_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_hindfoot_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_hindfoot_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_hindfoot_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_hip_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_hindfoot_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_hip_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_hip_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_hip_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_hip_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_hip_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_index_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_index_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_index_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_index_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_index_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_knee_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_index_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_knee_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_knee_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_knee_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_knee_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_metatarsal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_knee_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_metatarsal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_metatarsal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_metatarsal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_metatarsal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middistal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_metatarsal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middistal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middistal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middistal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middistal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middistal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_middle_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_middle_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_middle_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_middle_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_midproximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_middle_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_midproximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_midproximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_midproximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_midproximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_midtarsal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_midproximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_midtarsal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_midtarsal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_midtarsal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_midtarsal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_midtarsal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_pinky_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_pinky_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_pinky_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_pinky_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring0_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_pinky_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring0_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring0_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring0_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring0_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring0_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring_middle_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring_middle_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_middle_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring_middle_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_middle_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_ring_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring_middle_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_ring_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_ring_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_ring_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_scapula_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_ring_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_scapula_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_scapula_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_scapula_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_scapula_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_shoulder_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_scapula_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_shoulder_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_shoulder_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_shoulder_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_shoulder_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_sternoclavicular_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_shoulder_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_sternoclavicular_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_sternoclavicular_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_sternoclavicular_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_sternoclavicular_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_subtalar_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_sternoclavicular_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_subtalar_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_subtalar_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_subtalar_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_subtalar_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_thigh_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_subtalar_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_thigh_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_thigh_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_thigh_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_thigh_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_thumb1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_thigh_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_thumb1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_thumb1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_thumb2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_thumb1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_thumb2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_thumb2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_thumb3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_thumb2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_thumb3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_thumb3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_thumb_distal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_thumb3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_thumb_distal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb_distal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_thumb_distal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb_distal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_thumb_metacarpal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_thumb_distal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_thumb_metacarpal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb_metacarpal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_thumb_metacarpal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb_metacarpal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_thumb_proximal_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_thumb_metacarpal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_thumb_proximal_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb_proximal_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_thumb_proximal_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_thumb_proximal_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_upperarm_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_thumb_proximal_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_upperarm_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_upperarm_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_upperarm_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_upperarm_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='r_wrist_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_upperarm_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='r_wrist_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='r_wrist_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='r_wrist_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='r_wrist_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='sacroiliac_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='r_wrist_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='sacroiliac_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='sacroiliac_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='sacroiliac_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='sacroiliac_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='sacrum_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='sacroiliac_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='sacrum_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='sacrum_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='sacrum_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='sacrum_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='skull_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='sacrum_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='skull_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='skull_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='skull_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='skull_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='skullbase_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='skull_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='skullbase_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='skullbase_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='skullbase_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='skullbase_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t10_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='skullbase_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t10_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t10_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t10_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t10_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t11_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t10_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t11_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t11_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t11_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t11_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t12_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t11_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t12_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t12_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t12_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t12_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t12_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t4_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t4_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t4_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t4_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t4_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t5_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t4_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t5_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t5_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t5_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t5_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t6_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t5_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t6_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t6_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t6_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t6_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t7_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t6_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t7_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t7_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t7_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t7_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t8_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t7_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t8_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t8_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t8_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t8_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='t9_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t8_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='t9_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='t9_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='t9_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='t9_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='temporomandibular_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='t9_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='temporomandibular_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='temporomandibular_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='temporomandibular_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='temporomandibular_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vc1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='temporomandibular_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vc1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vc1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vc1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vc1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vc2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vc1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vc2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vc2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vc2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vc2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vc3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vc2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vc3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vc3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vc3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vc3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vc4_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vc3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vc4_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vc4_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vc4_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vc4_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vc5_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vc4_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vc5_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vc5_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vc5_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vc5_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vc6_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vc5_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vc6_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vc6_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vc6_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vc6_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vc7_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vc6_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vc7_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vc7_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vc7_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vc7_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vl1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vc7_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vl1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vl1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vl1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vl1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vl2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vl1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vl2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vl2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vl2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vl2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vl3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vl2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vl3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vl3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vl3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vl3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vl4_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vl3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vl4_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vl4_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vl4_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vl4_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vl5_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vl4_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vl5_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vl5_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vl5_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vl5_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt10_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vl5_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt10_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt10_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt10_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt10_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt11_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt10_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt11_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt11_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt11_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt11_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt12_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt11_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt12_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt12_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt12_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt12_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt1_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt12_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt1_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt1_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt1_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt1_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt2_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt1_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt2_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt2_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt2_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt2_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt3_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt2_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt3_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt3_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt3_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt3_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt4_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt3_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt4_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt4_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt4_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt4_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt5_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt4_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt5_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt5_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt5_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt5_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt6_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt5_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt6_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt6_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt6_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt6_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt7_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt6_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt7_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt7_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt7_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt7_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt8_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt7_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt8_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt8_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt8_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt8_changed' accessType='outputOnly' type='SFRotation'/>
-        <field name='vt9_key' accessType='inputOutput' type='MFFloat'>
+        <field accessType='outputOnly' name='vt8_changed' type='SFRotation'/>
+        <field accessType='inputOutput' name='vt9_key' type='MFFloat'>
           <!-- no default value -->
         </field>
-        <field name='vt9_keyValue' accessType='inputOutput' type='MFRotation'>
+        <field accessType='inputOutput' name='vt9_keyValue' type='MFRotation'>
           <!-- no default value -->
         </field>
-        <field name='vt9_changed' accessType='outputOnly' type='SFRotation'/>
+        <field accessType='outputOnly' name='vt9_changed' type='SFRotation'/>
       </ProtoInterface>
       <ProtoBody>
         <!-- design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators -->
@@ -2907,7 +2907,7 @@
         <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt12_OI'/>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='HAnimBodyBehaviorChooser' appinfo='The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time.'>
+    <ProtoDeclare appinfo='The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time.' name='HAnimBodyBehaviorChooser'>
       <ProtoInterface>
         <!-- TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs -->
         <!-- accessType="inputOutput" avoided to maintain backwards compatilibility with VRML97 scripting constraints -->
@@ -2915,23 +2915,23 @@
         <!-- TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName -->
         <!-- TODO: consider addBody, removeBody, addBehavior, removeBehavior -->
         <!-- TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName -->
-        <field name='supportedLOA' accessType='inputOutput' appinfo='Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.' type='SFInt32' value='-1'/>
-        <field name='HumanoidArray' accessType='initializeOnly' appinfo='[HAnimHumanoid] nodes only' type='MFNode'>
+        <field accessType='inputOutput' appinfo='Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.' name='supportedLOA' type='SFInt32' value='-1'/>
+        <field accessType='initializeOnly' appinfo='[HAnimHumanoid] nodes only' name='HumanoidArray' type='MFNode'>
           <!-- default NULL -->
         </field>
-        <field name='whichBody' accessType='initializeOnly' appinfo='whichBody is selected default is initial member of HumanoidArray' type='SFInt32' value='-1'/>
-        <field name='set_whichBody' accessType='inputOnly' appinfo='whichBody is selected default is none' type='SFInt32'/>
-        <field name='whichBody_changed' accessType='outputOnly' appinfo='whichBody is selected default is none' type='SFInt32'/>
-        <field name='hAnimBehaviorNodes' accessType='initializeOnly' appinfo='[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.' type='MFNode'>
+        <field accessType='initializeOnly' appinfo='whichBody is selected default is initial member of HumanoidArray' name='whichBody' type='SFInt32' value='-1'/>
+        <field accessType='inputOnly' appinfo='whichBody is selected default is none' name='set_whichBody' type='SFInt32'/>
+        <field accessType='outputOnly' appinfo='whichBody is selected default is none' name='whichBody_changed' type='SFInt32'/>
+        <field accessType='initializeOnly' appinfo='[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.' name='hAnimBehaviorNodes' type='MFNode'>
           <!-- default NULL -->
         </field>
-        <field name='enabledBehaviorsArray' accessType='initializeOnly' appinfo='indicate which HAnimBehavior nodes are activated, empty indicates all enabled true' type='MFBool'>
+        <field accessType='initializeOnly' appinfo='indicate which HAnimBehavior nodes are activated, empty indicates all enabled true' name='enabledBehaviorsArray' type='MFBool'>
           <!-- no default values -->
         </field>
-        <field name='enableBehavior' accessType='inputOnly' appinfo='enable corresponding behavior identified by index number' type='SFInt32'/>
-        <field name='disableBehavior' accessType='inputOnly' appinfo='disable corresponding behavior identified by index number' type='SFInt32'/>
-        <field name='startTime' accessType='inputOutput' type='SFTime' value='0.0'/>
-        <field name='stopTime' accessType='inputOutput' type='SFTime' value='0.0'/>
+        <field accessType='inputOnly' appinfo='enable corresponding behavior identified by index number' name='enableBehavior' type='SFInt32'/>
+        <field accessType='inputOnly' appinfo='disable corresponding behavior identified by index number' name='disableBehavior' type='SFInt32'/>
+        <field accessType='inputOutput' name='startTime' type='SFTime' value='0.0'/>
+        <field accessType='inputOutput' name='stopTime' type='SFTime' value='0.0'/>
       </ProtoInterface>
       <ProtoBody>
         <Switch DEF='BodySwitch'>
@@ -2958,21 +2958,21 @@
           </IS>
         </Switch>
         <Script DEF='BehaviorSelectionScript' directOutput='true' url='"HAnimBehaviorPrototypesScript.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"'>
-          <field name='HumanoidArray' accessType='initializeOnly' appinfo='[HAnimHumanoid] nodes only' type='MFNode'/>
-          <field name='whichBody' accessType='initializeOnly' appinfo='whichBody is selected default is none' type='SFInt32'/>
-          <field name='set_whichBody' accessType='inputOnly' appinfo='whichBody is selected default is none' type='SFInt32'/>
-          <field name='whichBody_changed' accessType='outputOnly' appinfo='whichBody is selected default is none' type='SFInt32'/>
-          <field name='hAnimBehaviorNodes' accessType='initializeOnly' appinfo='[HAnimBehavior] nodes only' type='MFNode'>
+          <field accessType='initializeOnly' appinfo='[HAnimHumanoid] nodes only' name='HumanoidArray' type='MFNode'/>
+          <field accessType='initializeOnly' appinfo='whichBody is selected default is none' name='whichBody' type='SFInt32'/>
+          <field accessType='inputOnly' appinfo='whichBody is selected default is none' name='set_whichBody' type='SFInt32'/>
+          <field accessType='outputOnly' appinfo='whichBody is selected default is none' name='whichBody_changed' type='SFInt32'/>
+          <field accessType='initializeOnly' appinfo='[HAnimBehavior] nodes only' name='hAnimBehaviorNodes' type='MFNode'>
             <!-- TODO: might consider accessType="inputOutput" if VRML97 compatibility not needed -->
           </field>
-          <field name='enabledBehaviorsArray' accessType='initializeOnly' type='MFBool'/>
-          <field name='enableBehavior' accessType='inputOnly' appinfo='enable corresponding behavior' type='SFInt32'/>
-          <field name='disableBehavior' accessType='inputOnly' appinfo='enable corresponding behavior' type='SFInt32'/>
-          <field name='timeSensorNode' accessType='initializeOnly' type='SFNode'>
+          <field accessType='initializeOnly' name='enabledBehaviorsArray' type='MFBool'/>
+          <field accessType='inputOnly' appinfo='enable corresponding behavior' name='enableBehavior' type='SFInt32'/>
+          <field accessType='inputOnly' appinfo='enable corresponding behavior' name='disableBehavior' type='SFInt32'/>
+          <field accessType='initializeOnly' name='timeSensorNode' type='SFNode'>
             <TimeSensor USE='TimeSensorHolderStartStopTimes'/>
           </field>
-          <field name='previousBodyIndex' accessType='initializeOnly' appinfo='remember prior body index to avoid unnecessary ROUTE teardown and creation' type='SFInt32' value='-1'/>
-          <field name='traceEnabled' accessType='initializeOnly' type='SFBool' value='true'/>
+          <field accessType='initializeOnly' appinfo='remember prior body index to avoid unnecessary ROUTE teardown and creation' name='previousBodyIndex' type='SFInt32' value='-1'/>
+          <field accessType='initializeOnly' name='traceEnabled' type='SFBool' value='true'/>
           <IS>
             <connect nodeField='HumanoidArray' protoField='HumanoidArray'/>
             <connect nodeField='whichBody' protoField='whichBody'/>
@@ -3001,7 +3001,7 @@
       </fieldValue>
       <fieldValue name='whichBody' value='0'/>
       <fieldValue name='hAnimBehaviorNodes'>
-        <ProtoInstance USE='BehaviorTest1'/>
+        <ProtoInstance USE='BehaviorTest1' name='HAnimBehavior'/>
       </fieldValue>
       <fieldValue name='enabledBehaviorsArray' value='true'/>
     </ProtoInstance>

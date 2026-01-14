@@ -6,14 +6,13 @@
     <meta content='asmallbox.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d' name='identifier'/>
-    <meta content='a box' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
         <field name='myShape' accessType='inputOutput' type='MFNode'>
-          <Shape>
+          <Shape DEF='_1'>
             <Sphere/>
           </Shape>
         </field>
@@ -29,7 +28,7 @@
     <ProtoDeclare name='one'>
       <ProtoInterface>
         <field name='myShape' accessType='inputOutput' type='MFNode'>
-          <Shape>
+          <Shape DEF='_2'>
             <Cylinder/>
           </Shape>
         </field>
@@ -46,7 +45,7 @@
     </ProtoDeclare>
     <ProtoInstance name='one'>
       <fieldValue name='myShape'>
-        <Shape>
+        <Shape DEF='_3'>
           <Box/>
         </Shape>
       </fieldValue>

@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='Trebuchet.x3d' name='title'/>
     <meta content='Working model of a 14th century Trebuchet Catapult.' name='description'/>
     <meta content='LT Joe Roth' name='creator'/>
     <meta content='20 June 2001' name='created'/>
-    <meta content='20 October 2019' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:11 GMT' name='modified'/>
     <meta content='7.8' name='version'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d' name='identifier'/>
     <meta content='http://trebuchet.com' name='reference'/>
     <meta content='http://members.home.net/dimona' name='reference'/>
-    <meta content='trebuchet catapult Monty Python' name='subject'/>
     <meta content='Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under "Fair Use" clause of the DMCA' name='reference'/>
     <meta content='https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm' name='reference'/>
     <meta content='http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm' name='reference'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
+    <meta content='trebuchet catapult Monty Python' name='subject'/>
   </head>
   <Scene>
     <WorldInfo title='Trebuchet.x3d'/>
     <Background backUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"' bottomUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"' frontUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"' groundAngle='1.309 1.570796' groundColor='0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"' rightUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"' skyAngle='1.309 1.57079' skyColor='0 0.2 0.7 0 0.5 1 1 1 1' topUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"'/>
-    <Sound maxBack='1000.0' maxFront='1000.0'>
+    <Sound maxBack='1000' maxFront='1000'>
       <AudioClip DEF='HolyGrail' description='HolyGrail' loop='true' url='"holygral.mp3" "http://www.nps.navy.mil/code32/vrml/holygral.mp3"'/>
     </Sound>
     <Shape>
@@ -72,7 +69,7 @@
       <Transform translation='8 0 0'>
         <Shape>
           <Appearance>
-            <Material transparency='1.0'/>
+            <Material transparency='1'/>
           </Appearance>
           <Box size='20 1 1'/>
         </Shape>
@@ -92,19 +89,19 @@
           <Transform translation='2 0.3 0'>
             <Shape>
               <Appearance>
-                <Material transparency='1.0'/>
+                <Material transparency='1'/>
               </Appearance>
               <Box size='5 1 1'/>
             </Shape>
           </Transform>
           <Switch DEF='PigdogMonk'>
             <Group>
-              <Sound maxBack='1000.0' maxFront='1000.0'>
+              <Sound maxBack='1000' maxFront='1000'>
                 <AudioClip DEF='PigDogSound' description='PigDogSound' url='"pigdog.wav" "http://www.nps.navy.mil/code32/vrml/pigdog.wav"'/>
               </Sound>
             </Group>
             <Group>
-              <Sound maxBack='1000.0' maxFront='1000.0'>
+              <Sound maxBack='1000' maxFront='1000'>
                 <AudioClip DEF='MonkSound' description='MonkSound' url='"monks.wav" "http://www.nps.navy.mil/code32/vrml/monks.wav"'/>
               </Sound>
             </Group>
@@ -121,7 +118,7 @@
                 <FontStyle size='0.5'/>
               </Text>
             </Shape>
-            <Sound maxBack='1000.0' maxFront='1000.0' priority='1.0'>
+            <Sound maxBack='1000' maxFront='1000' priority='1'>
               <AudioClip DEF='HolyHandGrenadeSound' description='HolyHandGrenadeSound' url='"grenade.wav" "http://www.nps.navy.mil/code32/vrml/grenade.wav"'/>
             </Sound>
           </Group>
@@ -132,7 +129,7 @@
                 <FontStyle size='0.5'/>
               </Text>
             </Shape>
-            <Sound maxBack='1000.0' maxFront='1000.0'>
+            <Sound maxBack='1000' maxFront='1000'>
               <AudioClip DEF='CowSound' description='CowSound' url='"lavache.wav" "http://www.nps.navy.mil/code32/vrml/lavache.wav"'/>
             </Sound>
           </Group>
@@ -143,7 +140,7 @@
                 <FontStyle size='0.5'/>
               </Text>
             </Shape>
-            <Sound maxBack='1000.0' maxFront='1000.0' priority='1.0'>
+            <Sound maxBack='1000' maxFront='1000' priority='1'>
               <AudioClip DEF='HamsterSound' description='HamsterSound' url='"hamster.wav" "http://www.nps.navy.mil/code32/vrml/hamster.wav"'/>
             </Sound>
           </Group>
@@ -229,7 +226,7 @@
             <Appearance>
               <Material specularColor='1 1 1'/>
             </Appearance>
-            <Cylinder height='10.0'/>
+            <Cylinder height='10'/>
           </Shape>
           <Transform translation='0 -2.5 0'>
             <Shape USE='Torus'/>
@@ -348,7 +345,7 @@
           <Appearance>
             <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
           </Appearance>
-          <Cylinder height='8.0' radius='0.4'/>
+          <Cylinder height='8' radius='0.4'/>
         </Shape>
       </Transform>
       <Transform DEF='verticalweight'>
@@ -369,7 +366,7 @@
             <Appearance>
               <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
             </Appearance>
-            <Cylinder height='4.0' radius='1.5'/>
+            <Cylinder height='4' radius='1.5'/>
           </Shape>
         </Transform>
         <Transform rotation='1 0 0 1.57' translation='4 22 2.5'>
@@ -389,7 +386,7 @@
               <Appearance>
                 <Material specularColor='1 1 1'/>
               </Appearance>
-              <Cylinder height='10.0' radius='0.7'/>
+              <Cylinder height='10' radius='0.7'/>
             </Shape>
           </Transform>
         </Transform>
@@ -426,7 +423,7 @@
         <Transform rotation='1 0 0 1.57' translation='0 0 4.5'>
           <Shape DEF='wheel'>
             <Appearance USE='wood'/>
-            <Cylinder radius='2.0'/>
+            <Cylinder radius='2'/>
           </Shape>
           <Shape DEF='tracks'>
             <Appearance USE='black'/>
@@ -474,7 +471,7 @@
             <Transform translation='2.5 0 0'>
               <Shape>
                 <Appearance>
-                  <Material transparency='1.0'/>
+                  <Material transparency='1'/>
                 </Appearance>
                 <Box size='5 0.5 0.5'/>
               </Shape>
@@ -486,7 +483,7 @@
             <Transform translation='8 0 0'>
               <Shape>
                 <Appearance>
-                  <Material transparency='1.0'/>
+                  <Material transparency='1'/>
                 </Appearance>
                 <Box size='17 1 0.5'/>
               </Shape>
@@ -510,11 +507,10 @@
           </Transform>
         </Transform>
         <Script DEF='WeightScript'>
-          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
-          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
-          <field name='CounterWeight' accessType='outputOnly' type='SFFloat'/>
-<![CDATA[
-ecmascript:
+          <field accessType='inputOnly' name='set_boolean' type='SFBool'/>
+          <field accessType='outputOnly' name='whichchoice' type='SFInt32'/>
+          <field accessType='outputOnly' name='CounterWeight' type='SFFloat'/>
+        <![CDATA[ecmascript:
 "+
 "
 "+
@@ -558,15 +554,13 @@ ecmascript:
 "+
 "        Browser.println ('CounterWeight ='+CounterWeight);
 "+
-"}
-]]>
+"}]]>
         </Script>
         <Script DEF='LauncheeScript'>
-          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
-          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
-          <field name='ProjectileWeight' accessType='outputOnly' type='SFFloat'/>
-<![CDATA[
-ecmascript:
+          <field accessType='inputOnly' name='set_boolean' type='SFBool'/>
+          <field accessType='outputOnly' name='whichchoice' type='SFInt32'/>
+          <field accessType='outputOnly' name='ProjectileWeight' type='SFFloat'/>
+        <![CDATA[ecmascript:
 "+
 "
 "+
@@ -590,14 +584,12 @@ ecmascript:
 "+
 "	Browser.println ('Projectile Weight'+ProjectileWeight);
 "+
-"}
-]]>
+"}]]>
         </Script>
         <Script DEF='PigdogMonkScript'>
-          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
-          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
-<![CDATA[
-ecmascript:
+          <field accessType='inputOnly' name='set_boolean' type='SFBool'/>
+          <field accessType='outputOnly' name='whichchoice' type='SFInt32'/>
+        <![CDATA[ecmascript:
 "+
 "
 "+
@@ -619,19 +611,17 @@ ecmascript:
 "+
 "
 "+
-"}
-]]>
+"}]]>
         </Script>
         <Script DEF='Mover'>
-          <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
-          <field name='set_MassCounterWeight' accessType='inputOnly' type='SFFloat'/>
-          <field name='set_MassProjectileWeight' accessType='inputOnly' type='SFFloat'/>
-          <field name='MassCounterWeight' accessType='initializeOnly' type='SFFloat' value='1.0'/>
-          <field name='MassProjectileWeight' accessType='initializeOnly' type='SFFloat' value='1.0'/>
-          <field name='transparent' accessType='outputOnly' type='SFVec3f'/>
-          <field name='value_changed' accessType='outputOnly' type='SFVec3f'/>
-<![CDATA[
-ecmascript:
+          <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+          <field accessType='inputOnly' name='set_MassCounterWeight' type='SFFloat'/>
+          <field accessType='inputOnly' name='set_MassProjectileWeight' type='SFFloat'/>
+          <field accessType='initializeOnly' name='MassCounterWeight' type='SFFloat' value='1'/>
+          <field accessType='initializeOnly' name='MassProjectileWeight' type='SFFloat' value='1'/>
+          <field accessType='outputOnly' name='transparent' type='SFVec3f'/>
+          <field accessType='outputOnly' name='value_changed' type='SFVec3f'/>
+        <![CDATA[ecmascript:
 "+
 "
 "+
@@ -711,12 +701,11 @@ ecmascript:
 "+
 "	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
 "+
-"}
-]]>
+"}]]>
         </Script>
       </Transform>
     </Transform>
-    <TimeSensor DEF='clock' cycleInterval='10.0'/>
+    <TimeSensor DEF='clock' cycleInterval='10'/>
     <PositionInterpolator DEF='verticalweightpath' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0'/>
     <OrientationInterpolator DEF='flingerangles' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82'/>
     <PositionInterpolator DEF='pinpath' key='0 0.01 0.95 1' keyValue='0 0 -3 0 0 -10 0 0 -10 0 0 -3'/>
@@ -733,15 +722,15 @@ ecmascript:
     <ROUTE fromField='isActive' fromNode='Launch' toField='set_boolean' toNode='PigdogMonkScript'/>
     <ROUTE fromField='touchTime' fromNode='Launch' toField='set_startTime' toNode='PigDogSound'/>
     <ROUTE fromField='touchTime' fromNode='Launch' toField='set_startTime' toNode='MonkSound'/>
-    <ROUTE fromField='whichchoice' fromNode='PigdogMonkScript' toField='whichChoice' toNode='PigdogMonk'/>
+    <ROUTE fromField='whichchoice' fromNode='PigdogMonkScript' toField='set_whichChoice' toNode='PigdogMonk'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='HolyHandGrenadeSound'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='CowSound'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='HamsterSound'/>
     <ROUTE fromField='isActive' fromNode='LauncheeChoice' toField='set_boolean' toNode='LauncheeScript'/>
-    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectile'/>
-    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectilename'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='set_whichChoice' toNode='projectile'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='set_whichChoice' toNode='projectilename'/>
     <ROUTE fromField='isActive' fromNode='weightselector' toField='set_boolean' toNode='WeightScript'/>
-    <ROUTE fromField='whichchoice' fromNode='WeightScript' toField='whichChoice' toNode='Weight'/>
+    <ROUTE fromField='whichchoice' fromNode='WeightScript' toField='set_whichChoice' toNode='Weight'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='flingerangles'/>
     <ROUTE fromField='value_changed' fromNode='flingerangles' toField='set_rotation' toNode='flinger'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='verticalweightpath'/>

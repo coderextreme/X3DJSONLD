@@ -98,7 +98,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 August 2025"
+            "@content":"09 December 2025"
           },
           {
             "@name":"generator",
@@ -16635,7 +16635,7 @@
                                                                                         { "HAnimSite":
                                                                                           {
                                                                                             "@name":"r_tarsal_distal_phalanx_5",
-                                                                                            "@DEF":"hanim_",
+                                                                                            "@DEF":"hanim_r_tarsal_distal_phalanx_5",
                                                                                             "@translation":[-0.125,0.016,0.115],
                                                                                             "-children":[
                                                                                               { "Transform":

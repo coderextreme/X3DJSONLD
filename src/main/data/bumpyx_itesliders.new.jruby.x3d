@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Full' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <!-- "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their "discussion about the teapot" -->
   <head>
     <!-- <component name='Shape' level='4'></component> -->
     <!-- <component name='DIS' level='2'></component> -->
-    <!-- Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L -->
-    <component name='Scripting' level='1'/>
-    <component name='EnvironmentalEffects' level='3'/>
-    <component name='Shaders' level='1'/>
-    <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
-    <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
+    <component level='1' name='Scripting'/>
+    <component level='3' name='EnvironmentalEffects'/>
+    <component level='1' name='Shaders'/>
+    <component level='1' name='CubeMapTexturing'/>
+    <component level='1' name='Texturing'/>
+    <component level='1' name='Rendering'/>
+    <component level='3' name='Grouping'/>
+    <component level='1' name='Core'/>
     <meta content='bumpyx_itesliders.x3d' name='title'/>
-    <meta content='*enter description here, short-sentence summaries preferred*' name='description'/>
+    <meta content='*Bumpy flower with prototype sliders*' name='description'/>
     <meta content='Doug Sanden, Christoph Valentin, John Carlson' name='creator'/>
     <meta content='https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d' name='identifier'/>
     <meta content='PSPad, http://www.pspad.com/' name='generator'/>
     <meta content='license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <!-- LayerSet with two layers, navigation happens in layer 1 -->
     <LayerSet activeLayer='1' order='1 2 3'>
       <!-- the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" -->
-      <!-- the second layer contains the sliders that are moved with the user's display like a HUD (heads up display) -->
       <Layer>
         <!-- basic nodes, which might be present in any scene -->
         <NavigationInfo avatarSize='0.25 1.75 0.75' type='"EXAMINE"'/>
@@ -98,22 +96,22 @@
               <Appearance>
                 <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                 <ComposedShader DEF='x_iteShader' language='GLSL'>
-                  <!-- TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
-                  <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1 1.033'/>
-                  <field name='cube' accessType='inputOnly' type='SFNode'>
+                  <!-- TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> -->
+                  <field accessType='inputOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
+                  <field accessType='inputOnly' name='cube' type='SFNode'>
                     <ComposedCubeMapTexture USE='texture'/>
                   </field>
-                  <field name='bias' accessType='inputOnly' type='SFFloat' value='0.5'/>
-                  <field name='scale' accessType='inputOnly' type='SFFloat' value='0.5'/>
-                  <field name='power' accessType='inputOnly' type='SFFloat' value='2.0'/>
-                  <field name='a' accessType='inputOutput' type='SFFloat' value='15.0'/>
-                  <field name='b' accessType='inputOutput' type='SFFloat' value='5.0'/>
-                  <field name='c' accessType='inputOutput' type='SFFloat' value='5.0'/>
-                  <field name='d' accessType='inputOutput' type='SFFloat' value='5.0'/>
-                  <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-                  <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-                  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs"'/>
-                  <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs"'/>
+                  <field accessType='inputOnly' name='bias' type='SFFloat' value='0.5'/>
+                  <field accessType='inputOnly' name='scale' type='SFFloat' value='0.5'/>
+                  <field accessType='inputOnly' name='power' type='SFFloat' value='2.0'/>
+                  <field accessType='inputOutput' name='a' type='SFFloat' value='15.0'/>
+                  <field accessType='inputOutput' name='b' type='SFFloat' value='5.0'/>
+                  <field accessType='inputOutput' name='c' type='SFFloat' value='5.0'/>
+                  <field accessType='inputOutput' name='d' type='SFFloat' value='5.0'/>
+                  <field accessType='inputOutput' name='tdelta' type='SFFloat' value='0.0'/>
+                  <field accessType='inputOutput' name='pdelta' type='SFFloat' value='0.0'/>
+                  <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
+                  <ShaderPart type='FRAGMENT' url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
                 </ComposedShader>
                 <ComposedCubeMapTexture DEF='texture'>
                   <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
@@ -131,14 +129,14 @@
           </Transform>
         </Transform>
         <Script DEF='OrbitScript'>
-          <field name='coordinates' accessType='inputOutput' type='MFVec3f'/>
-          <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
-          <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
-          <field name='b' accessType='inputOutput' type='SFFloat' value='10.0'/>
-          <field name='c' accessType='inputOutput' type='SFFloat' value='2.0'/>
-          <field name='d' accessType='inputOutput' type='SFFloat' value='2.0'/>
-          <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-          <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+          <field accessType='inputOutput' name='coordinates' type='MFVec3f'/>
+          <field accessType='outputOnly' name='coordIndexes' type='MFInt32'/>
+          <field accessType='inputOutput' name='a' type='SFFloat' value='10.0'/>
+          <field accessType='inputOutput' name='b' type='SFFloat' value='10.0'/>
+          <field accessType='inputOutput' name='c' type='SFFloat' value='2.0'/>
+          <field accessType='inputOutput' name='d' type='SFFloat' value='2.0'/>
+          <field accessType='inputOutput' name='pdelta' type='SFFloat' value='0.0'/>
+          <field accessType='inputOutput' name='tdelta' type='SFFloat' value='0.0'/>
 <![CDATA[
 ecmascript:
 function initialize() {
@@ -178,15 +176,8 @@ function initialize() {
         </Script>
         <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
         <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
-        <!-- DIS multiuser facilities -->
-        <!-- <DISEntityManager DEF='EntityManager' networkMode='networkReader' > <DISEntityTypeMapping category='77' specific='1' url='"Leif8Final.x3d"'/> <DISEntityTypeMapping category='77' specific='2' url='"Lily8Final.x3d"'/> </DISEntityManager> -->
-        <!-- <ROUTE fromField='addedEntities' fromNode='EntityManager' toField='addChildren' toNode='AvatarHolder'/> <ROUTE fromField='removedEntities' fromNode='EntityManager' toField='removeChildren' toNode='AvatarHolder'/> -->
       </Layer>
       <LayoutLayer>
-        <!-- positioning the LayoutLayer -->
-        <!-- clipping the LayoutLayer -->
-        <!-- the content (children) of the LayoutLayer -->
-        <!-- first, the slider for scaling the model -->
         <Transform translation='0 0 -3'>
           <Shape>
             <Appearance>
@@ -209,14 +200,14 @@ function initialize() {
         </Transform>
         <ProtoDeclare name='SliderProto'>
           <ProtoInterface>
-            <field name='sliderTranslation' accessType='inputOutput' type='SFVec3f' value='0 0.7 0'/>
-            <field name='transformTranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0.1'/>
-            <field name='sensorTranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='textString' accessType='inputOutput' type='MFString' value='"a="'/>
-            <field name='parameterScale' accessType='inputOutput' type='SFFloat' value='30.0'/>
-            <field name='parameterName' accessType='inputOutput' type='SFString' value='a'/>
-            <field name='petNames' accessType='inputOutput' type='MFString'/>
-            <field name='shaderNode' accessType='inputOutput' type='SFNode'/>
+            <field accessType='inputOutput' name='sliderTranslation' type='SFVec3f' value='0 0.7 0'/>
+            <field accessType='inputOutput' name='transformTranslation' type='SFVec3f' value='0 0 0.1'/>
+            <field accessType='inputOutput' name='sensorTranslation' type='SFVec3f' value='0 0 0'/>
+            <field accessType='inputOutput' name='textString' type='MFString' value='"a="'/>
+            <field accessType='inputOutput' name='parameterScale' type='SFFloat' value='30.0'/>
+            <field accessType='inputOutput' name='parameterName' type='SFString' value='a'/>
+            <field accessType='inputOutput' name='petNames' type='MFString'/>
+            <field accessType='inputOutput' name='shaderNode' type='SFNode'/>
           </ProtoInterface>
           <ProtoBody>
             <Group>
@@ -228,7 +219,7 @@ function initialize() {
                   <IS>
                     <connect nodeField='translation' protoField='sensorTranslation'/>
                   </IS>
-                  <PlaneSensor DEF='protoSensor' maxPosition='1 0'/>
+                  <PlaneSensor DEF='protoSensor' description='Grab with mouse to adjust slider' maxPosition='1 0'/>
                   <Transform>
                     <TouchSensor DEF='protoTS'/>
                   </Transform>
@@ -247,14 +238,14 @@ function initialize() {
                   </Transform>
                 </Transform>
               </Transform>
-              <Script DEF='protoValueTransformerScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DUser.js"'>
-                <field name='protoScale' accessType='inputOutput' type='SFFloat' value='30.0'/>
-                <field name='petNames' accessType='inputOutput' type='MFString'/>
-                <field name='protoParameterName' accessType='inputOutput' type='SFString' value='a'/>
-                <field name='shader' accessType='inputOutput' type='SFNode'/>
-                <field name='newTranslation' accessType='inputOnly' type='SFVec3f' value='1 1 1'/>
-                <field name='protoValue_changed' accessType='outputOnly' type='SFFloat' value='1.0'/>
-                <field name='protoText_changed' accessType='outputOnly' type='MFString' value='"1.0"'/>
+              <Script DEF='protoValueTransformerScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DUser.js" "https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js"'>
+                <field accessType='inputOutput' name='protoScale' type='SFFloat'/>
+                <field accessType='inputOutput' name='petNames' type='MFString'/>
+                <field accessType='inputOutput' name='protoParameterName' type='SFString'/>
+                <field accessType='inputOutput' name='shader' type='SFNode'/>
+                <field accessType='inputOnly' name='newTranslation' type='SFVec3f' value='1 1 1'/>
+                <field accessType='outputOnly' name='protoValue_changed' type='SFFloat' value='1.0'/>
+                <field accessType='outputOnly' name='protoText_changed' type='MFString' value='"1.0"'/>
                 <IS>
                   <connect nodeField='protoScale' protoField='parameterScale'/>
                   <connect nodeField='petNames' protoField='petNames'/>
@@ -345,8 +336,10 @@ function initialize() {
       </LayoutLayer>
       <Layer>
         <Viewpoint description='My Humanoids' fieldOfView='1.570796' position='0 1.75 80'/>
-        <Script DEF='HumanoidScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DAvatar.js"'/>
-        <Group DEF='humanoidGroup'/>
+        <Script DEF='HumanoidScript' directOutput='true' mustEvaluate='true' url='"../javascripts/X3DAvatar.js" "https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js"'/>
+        <Group DEF='humanoidGroup'>
+          <Group/>
+        </Group>
       </Layer>
     </LayerSet>
   </Scene>

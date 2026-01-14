@@ -6,8 +6,7 @@
     <meta content='flower3.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d' name='identifier'/>
-    <meta content='a flower' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -25,13 +24,12 @@
       </Shape>
     </Transform>
     <Script DEF='OrbitScript'>
-      <!-- <field accessType="inputOutput" name="e" type="SFFloat" value="5"/> <field accessType="inputOutput" name="f" type="SFFloat" value="5"/> <field accessType="inputOutput" name="g" type="SFFloat" value="5"/> <field accessType="inputOutput" name="h" type="SFFloat" value="5"/> <field accessType="inputOutput" name="t" type="SFFloat" value="0"/> <field accessType="inputOutput" name="p" type="SFFloat" value="0"/> <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"/> -->
       <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
       <field name='coordinates' accessType='outputOnly' type='MFVec3f'/>
       <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
 <![CDATA[
 ecmascript:
-
+    
 var e = 5;
 var f = 5;
 var g = 5;
@@ -110,7 +108,7 @@ function set_fraction(fraction, eventTime) {
     </Script>
     <TimeSensor DEF='Clock' cycleInterval='16.0' loop='true'/>
     <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
-    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='point' toNode='OrbitCoordinates'/>
+    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
   </Scene>
 </X3D>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Shaders" level="1"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><!--meta content='under development' name='warning'/--><component name="Shaders" level="1"></component>
 <meta name="title" content="SimpleShader.x3d"></meta>
 <meta name="description" content="Simple shader example"></meta>
 <meta name="creator" content="John Stewart"></meta>
@@ -20,7 +20,7 @@
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"></meta>
 <meta name="license" content="../../license.html"></meta>
-<!--meta content='under development' name='warning'/--></head>
+</head>
 <Scene><ProtoDeclare name="myPrototype"><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="TR"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.5 0.5 0.9"></Material>

@@ -88,7 +88,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 August 2025"
+            "@content":"09 December 2025"
           },
           {
             "@name":"generator",
@@ -146,6 +146,9 @@
             {
               "@type":["EXAMINE","WALK","FLY","ANY"]
             }
+          },
+          {
+            "#comment":"<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"
           },
           { "Shape":
             {

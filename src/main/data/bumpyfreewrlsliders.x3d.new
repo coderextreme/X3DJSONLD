@@ -229,7 +229,7 @@
 </fieldValue>
 </ProtoInstance>
 <Layout containerField="layout" align="&quot;LEFT&quot; &quot;BOTTOM&quot;" offset="-0.5 0"></Layout>
-<Viewport containerField="viewport"></Viewport>
+<Viewport></Viewport>
 </LayoutLayer>
 </LayerSet>
 </Scene>
