@@ -601,4 +601,4 @@ var ProtoInstance34 = null;
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("Close_Time").setToField("set_fraction").setToNode("Close_Mover"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("Close_Mover").setToField("set_translation").setToNode("Close_travel")))      ;
     X3D0.toFileX3D("../data/ArtDecoExamples.new.graal.x3d");
-    X3D0.toFileJSON("../data/ArtDecoExamples.new.graal.json");
+    X3D0.toFileJSON("../data/ArtDecoExamples.new.graal.x3dj");

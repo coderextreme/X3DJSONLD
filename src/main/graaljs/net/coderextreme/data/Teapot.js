@@ -41,4 +41,4 @@ function doubleToFloat(d) {
             .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([0,0,0,1,0,0,0,1,0,0,0,1]), Java.type("float[]"))))
             .setColor(new Color().setColor(Java.to(doubleToFloat([1,0,0,0,0.6,0,0,0,1]), Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/Teapot.new.graal.x3d");
-    X3D0.toFileJSON("../data/Teapot.new.graal.json");
+    X3D0.toFileJSON("../data/Teapot.new.graal.x3dj");

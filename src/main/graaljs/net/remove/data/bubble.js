@@ -83,4 +83,4 @@ function set_fraction(value) {
               .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA")))      ;
     X3D0.toFileX3D("../data/bubble.new.graal.x3d");
-    X3D0.toFileJSON("../data/bubble.new.graal.json");
+    X3D0.toFileJSON("../data/bubble.new.graal.x3dj");

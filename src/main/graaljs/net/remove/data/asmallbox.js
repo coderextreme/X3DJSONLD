@@ -43,4 +43,4 @@ ProtoInstance1
             .addChild(new Shape()
               .setGeometry(new Box())));
     X3D0.toFileX3D("../data/asmallbox.new.graal.x3d");
-    X3D0.toFileJSON("../data/asmallbox.new.graal.json");
+    X3D0.toFileJSON("../data/asmallbox.new.graal.x3dj");

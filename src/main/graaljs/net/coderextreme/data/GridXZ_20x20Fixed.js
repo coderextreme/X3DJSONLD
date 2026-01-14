@@ -1,0 +1,66 @@
+load('X3Dautoclass.js');
+var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
+ConfigurationProperties.setStripTrailingZeroes(true);
+ConfigurationProperties.setStripDefaultAttributes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array(d);
+}
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")
+      .setHead(new head()
+        .addMeta(new meta().setName("title").setContent("GridXZ_20x20Fixed.x3d"))
+        .addMeta(new meta().setName("creator").setContent("MV4204 class"))
+        .addMeta(new meta().setName("created").setContent("3 September 2000"))
+        .addMeta(new meta().setName("modified").setContent("28 November 2019"))
+        .addMeta(new meta().setName("reference").setContent("GridXY_20x20Fixed.x3d"))
+        .addMeta(new meta().setName("reference").setContent("GridYZ_20x20Fixed.x3d"))
+        .addMeta(new meta().setName("description").setContent("Line grid authoring tool to enable precise visual measurement of objects in 3D space - fixed position. Oriented along XZ plane, size 20m by 20m, default block size 1m by 1m."))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../../license.html")))
+      .setScene(new Scene()
+        .addChild(new WorldInfo().setTitle("GridXZ_20x20Fixed.x3d"))
+        .addChild(new Viewpoint().setDescription("XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)").setOrientation(Java.to(doubleToFloat([1,0,0,-0.4]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([0,10,25]), Java.type("float[]"))))
+        .addChild(new Transform().setDEF("GridLocation")
+          .addChild(new Group()
+            .addChild(new Shape().setDEF("LinesAlignedAlongZ")
+              .setGeometry(new IndexedLineSet().setColorIndex(Java.to([1,0,0,0,0,2,0,0,0,0,1,0,0,0,0,2,0,0,0,0,1], Java.type("int[]"))).setColorPerVertex(false).setCoordIndex(Java.to([1,22,-1,2,23,-1,3,24,-1,4,25,-1,5,26,-1,6,27,-1,7,28,-1,8,29,-1,9,30,-1,10,31,-1,11,32,-1,12,33,-1,13,34,-1,14,35,-1,15,36,-1,16,37,-1,17,38,-1,18,39,-1,19,40,-1,20,41,-1,21,42,-1], Java.type("int[]")))
+                .setCoord(new Coordinate().setDEF("EndPoints").setPoint(Java.to(doubleToFloat([0,0,0,-10,0,10,-9,0,10,-8,0,10,-7,0,10,-6,0,10,-5,0,10,-4,0,10,-3,0,10,-2,0,10,-1,0,10,0,0,10,1,0,10,2,0,10,3,0,10,4,0,10,5,0,10,6,0,10,7,0,10,8,0,10,9,0,10,10,0,10,-10,0,-10,-9,0,-10,-8,0,-10,-7,0,-10,-6,0,-10,-5,0,-10,-4,0,-10,-3,0,-10,-2,0,-10,-1,0,-10,0,0,-10,1,0,-10,2,0,-10,3,0,-10,4,0,-10,5,0,-10,6,0,-10,7,0,-10,8,0,-10,9,0,-10,10,0,-10]), Java.type("float[]"))))
+                .setColor(new Color().setColor(Java.to(doubleToFloat([0.4,0.4,0.4,0.8,0.2,0,0.4,0.1,0.05]), Java.type("float[]"))))))
+            .addChild(new Transform().setDEF("LinesAlignedAlongX").setRotation(Java.to(doubleToFloat([0,1,0,1.57079]), Java.type("float[]")))
+              .addChild(new Shape().setUSE("LinesAlignedAlongZ")))
+            .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,-0.5,0]), Java.type("float[]")))
+              .addChild(new Billboard()
+                .addChild(new Shape()
+                  .setGeometry(new Text().setDEF("CenterTextNode").setString(Java.to(["origin"], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyle().setDEF("FS4").setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.4)))
+                  .setAppearance(new Appearance().setDEF("DefaultAppearance")
+                    .setMaterial(new Material())))))
+            .addChild(new Transform().setTranslation(Java.to(doubleToFloat([10,-0.5,10]), Java.type("float[]")))
+              .addChild(new Billboard()
+                .addChild(new Shape()
+                  .setGeometry(new Text().setString(Java.to(["10 0 10"], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyle().setUSE("FS4")))
+                  .setAppearance(new Appearance().setUSE("DefaultAppearance")))))
+            .addChild(new Transform().setTranslation(Java.to(doubleToFloat([10,-0.5,-10]), Java.type("float[]")))
+              .addChild(new Billboard()
+                .addChild(new Shape()
+                  .setGeometry(new Text().setString(Java.to(["10 0 -10"], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyle().setUSE("FS4")))
+                  .setAppearance(new Appearance().setUSE("DefaultAppearance")))))
+            .addChild(new Transform().setTranslation(Java.to(doubleToFloat([-10,-0.5,10]), Java.type("float[]")))
+              .addChild(new Billboard()
+                .addChild(new Shape()
+                  .setGeometry(new Text().setString(Java.to(["-10 0 10"], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyle().setUSE("FS4")))
+                  .setAppearance(new Appearance().setUSE("DefaultAppearance")))))
+            .addChild(new Transform().setTranslation(Java.to(doubleToFloat([-10,-0.5,-10]), Java.type("float[]")))
+              .addChild(new Billboard()
+                .addChild(new Shape()
+                  .setGeometry(new Text().setString(Java.to(["-10 0 -10"], Java.type("java.lang.String[]")))
+                    .setFontStyle(new FontStyle().setUSE("FS4")))
+                  .setAppearance(new Appearance().setUSE("DefaultAppearance"))))))))      ;
+    X3D0.toFileX3D("../data/GridXZ_20x20Fixed.new.graal.x3d");
+    X3D0.toFileJSON("../data/GridXZ_20x20Fixed.new.graal.x3dj");

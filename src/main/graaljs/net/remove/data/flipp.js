@@ -37,4 +37,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
         .addChild(new ROUTE().setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")))      ;
     X3D0.toFileX3D("../data/flipp.new.graal.x3d");
-    X3D0.toFileJSON("../data/flipp.new.graal.json");
+    X3D0.toFileJSON("../data/flipp.new.graal.x3dj");

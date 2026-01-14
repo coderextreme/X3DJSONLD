@@ -43,4 +43,4 @@ ProtoInstance1
             .addChild(new Shape()
               .setGeometry(new Box().setSize(Java.to(doubleToFloat([140,140,140]), Java.type("float[]"))))));
     X3D0.toFileX3D("../data/abox.new.graal.x3d");
-    X3D0.toFileJSON("../data/abox.new.graal.json");
+    X3D0.toFileJSON("../data/abox.new.graal.x3dj");

@@ -14,14 +14,14 @@ var ProtoInstance2 = null;
 var ProtoInstance3 = null;
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("bubs2.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"))
         .addMeta(new meta().setName("translated").setContent("13 March 2016"))
-        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))
-        .addComponent(new component().setName("Scripting").setLevel(1)))
+        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
         .addChild(new Viewpoint().setPosition(Java.to(doubleToFloat([0,0,4]), Java.type("float[]"))).setOrientation(Java.to(doubleToFloat([1,0,0,0]), Java.type("float[]"))).setDescription("Bubbles in action"))
@@ -99,4 +99,4 @@ function set_fraction(value) {
         .addChild(ProtoInstance2 = new ProtoInstance().setName("Bubble").setDEF("bubbleC"))
         .addChild(ProtoInstance3 = new ProtoInstance().setName("Bubble").setDEF("bubbleD")))      ;
     X3D0.toFileX3D("../data/bubs2.new.graal.x3d");
-    X3D0.toFileJSON("../data/bubs2.new.graal.json");
+    X3D0.toFileJSON("../data/bubs2.new.graal.x3dj");

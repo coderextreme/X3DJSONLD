@@ -38,4 +38,4 @@ function doubleToFloat(d) {
               .setFontStyle(new FontStyle().setUSE("testFontStyle")))
             .setAppearance(new Appearance().setUSE("LightBlueAppearance")))))      ;
     X3D0.toFileX3D("../data/TextExamples.new.graal.x3d");
-    X3D0.toFileJSON("../data/TextExamples.new.graal.json");
+    X3D0.toFileJSON("../data/TextExamples.new.graal.x3dj");

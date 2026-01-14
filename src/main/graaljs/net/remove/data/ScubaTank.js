@@ -66,4 +66,4 @@ function doubleToFloat(d) {
               .setGeometry(new Cylinder().setHeight(0.1).setRadius(0.115)))))
         .addChild(new Background().setSkyColor(Java.to(doubleToFloat([0.6,0.6,0.6]), Java.type("float[]")))))      ;
     X3D0.toFileX3D("../data/ScubaTank.new.graal.x3d");
-    X3D0.toFileJSON("../data/ScubaTank.new.graal.json");
+    X3D0.toFileJSON("../data/ScubaTank.new.graal.x3dj");

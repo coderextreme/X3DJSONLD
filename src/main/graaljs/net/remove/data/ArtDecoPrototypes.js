@@ -137,4 +137,4 @@ function doubleToFloat(d) {
             .setGeometry(new Text().setString(Java.to(["ArtDecoExamples.x3d","is a Materials Prototype declaration file.","","For an example scene using these node,","click this text and view","ArtDecoExamples.x3d"], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.8))))))      ;
     X3D0.toFileX3D("../data/ArtDecoPrototypes.new.graal.x3d");
-    X3D0.toFileJSON("../data/ArtDecoPrototypes.new.graal.json");
+    X3D0.toFileJSON("../data/ArtDecoPrototypes.new.graal.x3dj");

@@ -21,7 +21,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("subject").setContent("Camera nodes for Viewpoint navigation control"))
         .addMeta(new meta().setName("reference").setContent("CameraExamples.x3d"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
-        .addMeta(new meta().setName("reference").setContent("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
+        .addMeta(new meta().setName("reference").setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
@@ -874,4 +874,4 @@ function alwaysPrint (outputValue)
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,0.2]), Java.type("float[]")))))))))      ;
     X3D0.toFileX3D("../data/CameraPrototypes.new.graal.x3d");
-    X3D0.toFileJSON("../data/CameraPrototypes.new.graal.json");
+    X3D0.toFileJSON("../data/CameraPrototypes.new.graal.x3dj");

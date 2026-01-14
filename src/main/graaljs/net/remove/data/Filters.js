@@ -73,4 +73,4 @@ function doubleToFloat(d) {
                     .addChild(new BiquadFilter().setType(BiquadFilter.TYPE_ALLPASS).setFrequency(1000).setQualityFactor(0)
                       .addChild(new AudioClip().setDescription("Wobble loop").setLoop(true).setUrl(Java.to(["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"], Java.type("java.lang.String[]"))))))))))))      ;
     X3D0.toFileX3D("../data/Filters.new.graal.x3d");
-    X3D0.toFileJSON("../data/Filters.new.graal.json");
+    X3D0.toFileJSON("../data/Filters.new.graal.x3dj");

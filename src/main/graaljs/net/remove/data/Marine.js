@@ -56,4 +56,4 @@ function doubleToFloat(d) {
             .addChild(new Viewpoint().setDEF("Viewpoint1").setDescription("Sailor Front").setOrientation(Java.to(doubleToFloat([0,1,0,1.571]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([2.293,1.66,0]), Java.type("float[]"))))
             .addChild(new Viewpoint().setDEF("Viewpoint2").setDescription("Sailor Back").setOrientation(Java.to(doubleToFloat([-0.185,-0.965,-0.185,1.605]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([-1.208,2,0]), Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/Marine.new.graal.x3d");
-    X3D0.toFileJSON("../data/Marine.new.graal.json");
+    X3D0.toFileJSON("../data/Marine.new.graal.x3dj");

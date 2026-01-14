@@ -2396,4 +2396,4 @@ function doubleToFloat(d) {
               .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0,1,0]), Java.type("float[]"))).setEmissiveColor(Java.to(doubleToFloat([0,1,0]), Java.type("float[]")))))
             .setGeometry(new Sphere().setRadius(0.01)))))      ;
     X3D0.toFileX3D("../data/Jin20fSegmented.new.graal.x3d");
-    X3D0.toFileJSON("../data/Jin20fSegmented.new.graal.json");
+    X3D0.toFileJSON("../data/Jin20fSegmented.new.graal.x3dj");

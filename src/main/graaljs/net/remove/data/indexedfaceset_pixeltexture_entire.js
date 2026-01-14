@@ -22,7 +22,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("description").setContent("Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry."))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d"))
         .addMeta(new meta().setName("generator").setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../../license.html")))
       .setScene(new Scene()
         .addChild(new Viewpoint().setDescription("Front View"))
@@ -32,11 +32,13 @@ function doubleToFloat(d) {
         .addChild(new Viewpoint().setDescription("Right View").setOrientation(Java.to(doubleToFloat([0,1,0,1.57]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([10,0,0]), Java.type("float[]"))))
         .addChild(new Viewpoint().setDescription("Left View").setOrientation(Java.to(doubleToFloat([0,1,0,-1.57]), Java.type("float[]"))).setPosition(Java.to(doubleToFloat([-10,0,0]), Java.type("float[]"))))
         .addChild(new NavigationInfo().setType(Java.to(["EXAMINE","WALK","FLY","ANY"], Java.type("java.lang.String[]"))))
+        .addComments(new CommentsBlock("<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
             .setMaterial(new Material())
-            .setTexture(new PixelTexture().setImage(Java.to([2,2,4,0xFF0000FF| 0,16711935,0xFFFFFFFF| 0,0xFFFF00FF| 0], Java.type("int[]"))).setRepeatS(false).setRepeatT(false)))
+            .setTexture(new PixelTexture().setImage(Java.to([2,2,4,0xFF0000FF| 0,16711935,0xFFFFFFFF| 0,0xFFFF00FF| 0], Java.type("int[]"))).setRepeatS(false).setRepeatT(false)
+              .setTextureProperties(new TextureProperties().setMagnificationFilter("NEAREST_PIXEL"))))
           .setGeometry(new IndexedFaceSet().setCoordIndex(Java.to([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], Java.type("int[]")))
             .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]), Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_entire.new.graal.x3d");
-    X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_entire.new.graal.json");
+    X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_entire.new.graal.x3dj");

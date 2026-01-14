@@ -37,4 +37,4 @@ function doubleToFloat(d) {
         .addChild(new Transform().setDEF("InlineScene")
           .addChild(new Inline().setDEF("inline").setUrl(Java.to(["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"], Java.type("java.lang.String[]"))))))      ;
     X3D0.toFileX3D("../data/InlineSoundSource.new.graal.x3d");
-    X3D0.toFileJSON("../data/InlineSoundSource.new.graal.json");
+    X3D0.toFileJSON("../data/InlineSoundSource.new.graal.x3dj");

@@ -30,7 +30,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("Suwon HAnim Converter"))
         .addMeta(new meta().setName("generator").setContent("johnRescaler+joedwillyNotePad"))
         .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addComments(new CommentsBlock("https://www.web3d.org/documents/specifications/19774/V2.0/index.html"))
@@ -2855,7 +2855,7 @@ function doubleToFloat(d) {
                                   .addComments(new CommentsBlock("Shape USE='r_tarsal_distal_phalanx_5_Shape'/"))
                                   .addChild(new Transform().setUSE("r_tarsal_distal_interphalangeal_5_JointShape"))
                                   .addChild(new Shape().setUSE("r_tarsal_distal_phalanx_5_Segment"))
-                                  .addChild(new HAnimSite().setName("r_tarsal_distal_phalanx_5").setDEF("hanim_").setTranslation(Java.to(doubleToFloat([-0.125,0.016,0.115]), Java.type("float[]")))
+                                  .addChild(new HAnimSite().setName("r_tarsal_distal_phalanx_5").setDEF("hanim_r_tarsal_distal_phalanx_5").setTranslation(Java.to(doubleToFloat([-0.125,0.016,0.115]), Java.type("float[]")))
                                     .addChild(new Transform().setUSE("r_tarsal_distal_phalanx_5_tip_SiteShape")))
                                   .addChild(new Shape().setUSE("r_tarsal_distal_interphalangeal_5-to-r_tarsal_distal_phalanx_5_tip")))))))))))))
             .addChild(new HAnimJoint().setName("vl5").setDEF("hanim_vl5").setCenter(Java.to(doubleToFloat([0,0.9254,-0.01376]), Java.type("float[]"))).setLlimit(Java.to(doubleToFloat([0,0,0]), Java.type("float[]"))).setUlimit(Java.to(doubleToFloat([0,0,0]), Java.type("float[]")))
@@ -9987,4 +9987,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("Default_r_carpal_distal_interphalangeal_5_RotationInterpolatorTest_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch1_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch2_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw1_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw2_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll1_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll2_r_carpal_distal_interphalangeal_5_RotationInterpolatorWalk_r_carpal_distal_interphalangeal_5_RotationInterpolatorRun_r_carpal_distal_interphalangeal_5_RotationInterpolatorJump_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick1_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick2_r_carpal_distal_interphalangeal_5_RotationInterpolator").setToField("set_rotation").setToNode("hanim_r_carpal_distal_interphalangeal_5"))
         .addChild(new ROUTE().setFromField("fraction_changed").setFromNode("ShinyTimer").setToField("set_fraction").setToNode("Default_r_carpal_distal_interphalangeal_5_RotationInterpolatorTest_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch1_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch2_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw1_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw2_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll1_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll2_r_carpal_distal_interphalangeal_5_RotationInterpolatorWalk_r_carpal_distal_interphalangeal_5_RotationInterpolatorRun_r_carpal_distal_interphalangeal_5_RotationInterpolatorJump_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick1_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick2_r_carpal_distal_interphalangeal_5_RotationInterpolator")))      ;
     X3D0.toFileX3D("../data/JinConcat11c.new.graal.x3d");
-    X3D0.toFileJSON("../data/JinConcat11c.new.graal.json");
+    X3D0.toFileJSON("../data/JinConcat11c.new.graal.x3dj");

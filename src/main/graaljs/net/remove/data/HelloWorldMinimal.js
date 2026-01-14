@@ -32,4 +32,4 @@ function doubleToFloat(d) {
         .addChild(new Shape()
           .setGeometry(new Text().setString(Java.to(["hello, world"], Java.type("java.lang.String[]"))))))      ;
     X3D0.toFileX3D("../data/HelloWorldMinimal.new.graal.x3d");
-    X3D0.toFileJSON("../data/HelloWorldMinimal.new.graal.json");
+    X3D0.toFileJSON("../data/HelloWorldMinimal.new.graal.x3dj");

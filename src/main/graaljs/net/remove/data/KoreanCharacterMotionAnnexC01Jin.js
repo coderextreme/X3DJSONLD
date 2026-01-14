@@ -24,9 +24,9 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("specificationSection").setContent("HAnim 2.0 Part 2: Humanoid animation (HAnim) motion data animation, Annex C (informative) An example of HAnim motion data animation using interpolators"))
         .addMeta(new meta().setName("specificationUrl").setContent("https://www.web3d.org/documents/specifications/19774/V2.0/MotionDataAnimation/ExampleMocapAnimationInterpolators.html"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/KoreanCharacterMotionAnnexC01Jin.x3d"))
-        .addMeta(new meta().setName("generator").setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
+        .addMeta(new meta().setName("generator").setContent("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"))
         .addMeta(new meta().setName("generator").setContent("Suwon HAnim Converter"))
-        .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
+        .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, https://www.gimp.org"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
@@ -313,4 +313,4 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromField("value_changed").setFromNode("Keyframe_l_talocrural").setToField("rotation").setToNode("hanim_r_talocrural"))
           .addChild(new ROUTE().setFromField("value_changed").setFromNode("Keyframe_r_metatarsophalangeal_2").setToField("rotation").setToNode("hanim_r_metatarsophalangeal_2"))))      ;
     X3D0.toFileX3D("../data/KoreanCharacterMotionAnnexC01Jin.new.graal.x3d");
-    X3D0.toFileJSON("../data/KoreanCharacterMotionAnnexC01Jin.new.graal.json");
+    X3D0.toFileJSON("../data/KoreanCharacterMotionAnnexC01Jin.new.graal.x3dj");

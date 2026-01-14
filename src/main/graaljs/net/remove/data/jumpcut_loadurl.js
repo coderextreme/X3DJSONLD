@@ -42,4 +42,4 @@ function doubleToFloat(d) {
           .addField(new field().setType(field.TYPE_SFBOOL).setName("trigger_event").setAccessType(field.ACCESSTYPE_INPUTONLY)))
         .addChild(new ROUTE().setFromField("isActive").setFromNode("STARTER").setToField("trigger_event").setToNode("MYSCRIPT")))      ;
     X3D0.toFileX3D("../data/jumpcut_loadurl.new.graal.x3d");
-    X3D0.toFileJSON("../data/jumpcut_loadurl.new.graal.json");
+    X3D0.toFileJSON("../data/jumpcut_loadurl.new.graal.x3dj");

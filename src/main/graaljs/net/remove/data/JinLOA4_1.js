@@ -25,7 +25,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
         .addMeta(new meta().setName("generator").setContent("Suwon HAnim Converter"))
         .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("JinLOA4_1.x3d"))
@@ -1792,4 +1792,4 @@ function doubleToFloat(d) {
           .addSegments(new HAnimSegment().setContainerFieldOverride("segments").setUSE("hanim_l_upperarm"))
           .addSegments(new HAnimSegment().setContainerFieldOverride("segments").setUSE("hanim_r_upperarm"))))      ;
     X3D0.toFileX3D("../data/JinLOA4_1.new.graal.x3d");
-    X3D0.toFileJSON("../data/JinLOA4_1.new.graal.json");
+    X3D0.toFileJSON("../data/JinLOA4_1.new.graal.x3dj");

@@ -20,7 +20,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("Image").setContent("ViewFrustumOverheadView.png"))
         .addMeta(new meta().setName("Image").setContent("ViewFrustumObliqueView.png"))
         .addMeta(new meta().setName("subject").setContent("view culling frustum"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
@@ -97,4 +97,4 @@ function doubleToFloat(d) {
             .setGeometry(new Text().setString(Java.to(["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"], Java.type("java.lang.String[]")))
               .setFontStyle(new FontStyle().setJustify(Java.to(["MIDDLE","MIDDLE"], Java.type("java.lang.String[]"))).setSize(0.8))))))      ;
     X3D0.toFileX3D("../data/ViewFrustumPrototype.new.graal.x3d");
-    X3D0.toFileJSON("../data/ViewFrustumPrototype.new.graal.json");
+    X3D0.toFileJSON("../data/ViewFrustumPrototype.new.graal.x3dj");

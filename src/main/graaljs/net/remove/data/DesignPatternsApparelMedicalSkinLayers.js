@@ -100,4 +100,4 @@ function doubleToFloat(d) {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setTransparency(1))))))      ;
     X3D0.toFileX3D("../data/DesignPatternsApparelMedicalSkinLayers.new.graal.x3d");
-    X3D0.toFileJSON("../data/DesignPatternsApparelMedicalSkinLayers.new.graal.json");
+    X3D0.toFileJSON("../data/DesignPatternsApparelMedicalSkinLayers.new.graal.x3dj");

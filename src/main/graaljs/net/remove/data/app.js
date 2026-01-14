@@ -22,4 +22,4 @@ function doubleToFloat(d) {
             .setGeometry(new Box())))
         .addChild(new Transform().setRotation(Java.to(doubleToFloat([7,8,9,3.14]), Java.type("float[]"))).setScale(Java.to(doubleToFloat([4,5,6]), Java.type("float[]"))).setTranslation(Java.to(doubleToFloat([1,2,3]), Java.type("float[]")))))      ;
     X3D0.toFileX3D("../data/app.new.graal.x3d");
-    X3D0.toFileJSON("../data/app.new.graal.json");
+    X3D0.toFileJSON("../data/app.new.graal.x3dj");

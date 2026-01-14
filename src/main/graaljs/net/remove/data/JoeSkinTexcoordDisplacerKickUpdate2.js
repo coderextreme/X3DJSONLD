@@ -10,6 +10,7 @@ function doubleToFloat(d) {
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("BS studio translation from .x3dv by Joe using BS Contact"))
         .addComponent(new component().setName("H-Anim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("JoeSkinTexcoordDisplacerKick.x3d"))
         .addMeta(new meta().setName("info").setContent("Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim"))
@@ -22,8 +23,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("translators").setContent("Roy Walmsley and Don Brutzman"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html"))
-        .addComments(new CommentsBlock("BS studio translation from .x3dv by Joe using BS Contact")))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setInfo(Java.to(["X3D Humanoid V1 LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"], Java.type("java.lang.String[]"))).setTitle("X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"))
         .addChild(new NavigationInfo().setDEF("Start_NavigationInfo").setHeadlight(false).setSpeed(2.5))
@@ -486,4 +486,4 @@ function doubleToFloat(d) {
                 .setMaterial(new Material().setDEF("circle2_Material").setDiffuseColor(Java.to(doubleToFloat([0.9,0,0.7]), Java.type("float[]"))).setEmissiveColor(Java.to(doubleToFloat([0.424956,0.483976,1]), Java.type("float[]")))))
               .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))))      ;
     X3D0.toFileX3D("../data/JoeSkinTexcoordDisplacerKickUpdate2.new.graal.x3d");
-    X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKickUpdate2.new.graal.json");
+    X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKickUpdate2.new.graal.x3dj");

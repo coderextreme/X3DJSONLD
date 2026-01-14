@@ -166,4 +166,4 @@ function set_fraction() {
         .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("x3dom").setToField("pdelta"))
         .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("x3dom").setToField("tdelta")))      ;
     X3D0.toFileX3D("../data/flowers7.new.graal.x3d");
-    X3D0.toFileJSON("../data/flowers7.new.graal.json");
+    X3D0.toFileJSON("../data/flowers7.new.graal.x3dj");

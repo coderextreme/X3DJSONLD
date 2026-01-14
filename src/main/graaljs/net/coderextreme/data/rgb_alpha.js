@@ -56,4 +56,4 @@ function doubleToFloat(d) {
                 .setTexture(new PixelTexture().setUSE("RgbOpacityCheckerboard")))
               .setGeometry(new Cylinder())))))      ;
     X3D0.toFileX3D("../data/rgb_alpha.new.graal.x3d");
-    X3D0.toFileJSON("../data/rgb_alpha.new.graal.json");
+    X3D0.toFileJSON("../data/rgb_alpha.new.graal.x3dj");

@@ -33,4 +33,4 @@ var xxx = ' '+' '+
 
 }`)))      ;
     X3D0.toFileX3D("../data/browser.new.graal.x3d");
-    X3D0.toFileJSON("../data/browser.new.graal.json");
+    X3D0.toFileJSON("../data/browser.new.graal.x3dj");

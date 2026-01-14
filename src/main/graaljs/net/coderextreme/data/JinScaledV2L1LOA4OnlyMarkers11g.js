@@ -10,6 +10,8 @@ function doubleToFloat(d) {
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("Scaled 1:1, Added Animations"))
+        .addComments(new CommentsBlock("Added Sites"))
         .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("JinScaledV2L1LOA4OnlyMarkers11g.x3d"))
         .addMeta(new meta().setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
@@ -28,10 +30,8 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("Suwon HAnim Converter"))
         .addMeta(new meta().setName("generator").setContent("johnRescaler+joedwillyNotePad"))
         .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html"))
-        .addComments(new CommentsBlock("Scaled 1:1, Added Animations"))
-        .addComments(new CommentsBlock("Added Sites")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addComments(new CommentsBlock("https://www.web3d.org/documents/specifications/19774/V2.0/index.html"))
         .addComments(new CommentsBlock("0 0 0 at floor between feet, default I pose (relaxed attention) model gaze toward +Z, +x to model left, +y up, right-hand rule."))
@@ -9541,4 +9541,4 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromField("touchTime").setFromNode("StopTimer_Touch").setToField("set_stopTime").setToNode("Kick1Timer"))
           .addChild(new ROUTE().setFromField("touchTime").setFromNode("StopTimer_Touch").setToField("set_stopTime").setToNode("Kick2Timer"))))      ;
     X3D0.toFileX3D("../data/JinScaledV2L1LOA4OnlyMarkers11g.new.graal.x3d");
-    X3D0.toFileJSON("../data/JinScaledV2L1LOA4OnlyMarkers11g.new.graal.json");
+    X3D0.toFileJSON("../data/JinScaledV2L1LOA4OnlyMarkers11g.new.graal.x3dj");

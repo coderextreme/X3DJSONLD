@@ -1,0 +1,67 @@
+load('X3Dautoclass.js');
+var ConfigurationProperties = Packages.org.web3d.x3d.jsail.ConfigurationProperties;
+ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
+ConfigurationProperties.setDeleteIntermediateFiles(false);
+ConfigurationProperties.setStripTrailingZeroes(true);
+ConfigurationProperties.setStripDefaultAttributes(true);
+function doubleToFloat(d) {
+    if (Float32Array)
+	return new Float32Array(d);
+}
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      .setHead(new head()
+        .addComponent(new component().setName("HAnim").setLevel(1))
+        .addMeta(new meta().setName("title").setContent("DiamondManLOA_0.x3d"))
+        .addMeta(new meta().setName("description").setContent("HAnim skeletal structure for Level of Action (LOA) zero, with one diamond at the base node for the structure. HumanoidRoot only, so this is the minimum legal HAnim humanoid."))
+        .addMeta(new meta().setName("creator").setContent("Matthew T. Beitler"))
+        .addMeta(new meta().setName("translator").setContent("Joel S. Pawloski"))
+        .addMeta(new meta().setName("created").setContent("12 November 2001"))
+        .addMeta(new meta().setName("modified").setContent("Tue, 09 Sep 2025 19:37:54 GMT"))
+        .addMeta(new meta().setName("reference").setContent("../Templates/DiamondManLOA_0.x3d"))
+        .addMeta(new meta().setName("reference").setContent("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"))
+        .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html#LevelOfArticulationZero"))
+        .addMeta(new meta().setName("reference").setContent("HAnim 1.1 specification, Appendix A: Suggested Body Dimensions and Levels of Articulation, Level of Articulation Zero"))
+        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Specifications/HAnim1.1/appendices.html#appendixa"))
+        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0.wrl"))
+        .addMeta(new meta().setName("reference").setContent("http://HAnim.org/Specifications/HAnim1.1/JointCenters1_1_LOA0-diamond.wrl"))
+        .addMeta(new meta().setName("reference").setContent("http://ece.uwaterloo.ca/~HAnim"))
+        .addMeta(new meta().setName("reference").setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.pdf"))
+        .addMeta(new meta().setName("reference").setContent("http://www.cis.upenn.edu/~badler/anthro/89-71.ps"))
+        .addMeta(new meta().setName("reference").setContent("http://www.cis.upenn.edu/~beitler"))
+        .addMeta(new meta().setName("error").setContent("Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported"))
+        .addMeta(new meta().setName("motto").setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""))
+        .addMeta(new meta().setName("Image").setContent("humanoid_landmark_locations.gif"))
+        .addMeta(new meta().setName("Image").setContent("http://HAnim.org/Specifications/HAnim1.1/humanoid_landmark_locations.gif"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA_0.x3d")))
+      .setScene(new Scene()
+        .addChild(new WorldInfo().setTitle("HANIM 2.0 Default Joint Centers, LOA0").setInfo(Java.to(["HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 0 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"], Java.type("java.lang.String[]"))))
+        .addChild(new NavigationInfo().setSpeed(1.5))
+        .addChild(new Viewpoint().setDescription("Diamond Man, LOA 0").setPosition(Java.to(doubleToFloat([0,1,3]), Java.type("float[]"))).setCenterOfRotation(Java.to(doubleToFloat([0,1,0]), Java.type("float[]"))))
+        .addChild(new HAnimHumanoid().setDEF("hanim_humanoid").setName("humanoid").setVersion("1.0")
+          .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+            .addValue(new MetadataString().setName("authorEmail"))
+            .addValue(new MetadataString().setName("authorName"))
+            .addValue(new MetadataString().setName("copyright"))
+            .addValue(new MetadataString().setName("creationDate"))
+            .addValue(new MetadataString().setName("humanoidVersion"))
+            .addValue(new MetadataString().setName("usageRestrictions")))
+          .addSkeleton(new HAnimJoint().setContainerFieldOverride("skeleton").setDEF("hanim_HumanoidRoot").setName("humanoid_root").setCenter(Java.to(doubleToFloat([0,0.824,0.0277]), Java.type("float[]")))
+            .addChild(new HAnimJoint().setDEF("hanim_sacroiliac").setName("sacroiliac").setCenter(Java.to(doubleToFloat([0,0.9149,0.0016]), Java.type("float[]")))
+              .addChild(new HAnimSegment().setDEF("hanim_pelvis").setName("pelvis")
+                .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,0.9149,0.0016]), Java.type("float[]")))
+                  .addChild(new Shape().setDEF("DiamondShape")
+                    .setAppearance(new Appearance()
+                      .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,0]), Java.type("float[]")))))
+                    .setGeometry(new IndexedFaceSet().setCreaseAngle(0.5).setCoordIndex(Java.to([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], Java.type("int[]")))
+                      .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0]), Java.type("float[]"))))))))))
+          .addJoints(new HAnimJoint().setContainerFieldOverride("joints").setUSE("hanim_HumanoidRoot"))
+          .addJoints(new HAnimJoint().setContainerFieldOverride("joints").setUSE("hanim_sacroiliac"))
+          .addSegments(new HAnimSegment().setContainerFieldOverride("segments").setUSE("hanim_pelvis"))
+          .addViewpoints(new HAnimSite().setContainerFieldOverride("viewpoints").setDEF("hanim_site_view").setName("site_view")
+            .addChild(new Viewpoint().setDEF("InclinedView").setDescription("Inclined View").setPosition(Java.to(doubleToFloat([1.62,1.05,2.06]), Java.type("float[]"))).setOrientation(Java.to(doubleToFloat([-0.113,0.993,0.0347,0.671]), Java.type("float[]"))))
+            .addChild(new Viewpoint().setDEF("FrontView").setDescription("Front View").setPosition(Java.to(doubleToFloat([0,0.854,2.57665]), Java.type("float[]"))))
+            .addChild(new Viewpoint().setDEF("SideView").setDescription("Side View").setPosition(Java.to(doubleToFloat([2.5929,0.854,0]), Java.type("float[]"))).setOrientation(Java.to(doubleToFloat([0,1,0,1.57079]), Java.type("float[]"))))
+            .addChild(new Viewpoint().setDEF("TopView").setDescription("Top View").setPosition(Java.to(doubleToFloat([0,3.4495,0]), Java.type("float[]"))).setOrientation(Java.to(doubleToFloat([1,0,0,-1.57079]), Java.type("float[]")))))))      ;
+    X3D0.toFileX3D("../data/DiamondManLOA_0.new.graal.x3d");
+    X3D0.toFileJSON("../data/DiamondManLOA_0.new.graal.json");

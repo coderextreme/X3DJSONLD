@@ -10,6 +10,8 @@ function doubleToFloat(d) {
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("Scaled 1:1, Added Animations"))
+        .addComments(new CommentsBlock("Added Sites"))
         .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("JinScaledV2L1LOA4Sites10h.x3d"))
         .addMeta(new meta().setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
@@ -28,10 +30,8 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("Suwon HAnim Converter"))
         .addMeta(new meta().setName("generator").setContent("johnRescaler+joedwillyNotePad"))
         .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html"))
-        .addComments(new CommentsBlock("Scaled 1:1, Added Animations"))
-        .addComments(new CommentsBlock("Added Sites")))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addComments(new CommentsBlock("https://www.web3d.org/documents/specifications/19774/V2.0/index.html Jin loa4 v2 1:1 https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes and Sites that will be used to compose the character. This allows the skeleton structure user code to be simplified. example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='sacrum_Shape'/> <Group USE='sacrum_Sites'/> </HAnimSegment> ... entire sheleton hierarchy ,,, </HAnimJoint Please Run the example. It starts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 Markers - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointsAndConnections - DEF user code for Joint center location markers and connection hierarchy SurfacesAndSites - DEF user code for the various Shape nodes and Site location markers hanim_JinLOA4S - This Humanoid USE assets in JointsAndConnections and SurfacesAndSites example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='sacrum_Shape'/> <Group USE='sacrum_Sites'/> </HAnimSegment> ... entire skeleton hierarchy ,,, </HAnimJoint DefaultAnimation_loa4 Default pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation TimerControls Selection of timer for animation"))
         .addComments(new CommentsBlock("Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 0.02 - 0.08 root translation 0.08 - 0.1 root rotation 0.2 - 0.3 sacro 0.25 - 0.75 eyeball 0.6 - 0.65 hip 0.65 0.70 knee 0.70 - 0.74 talocrural talocalcaneonavicular (1 2 3) calcaneocuboid (4 5) transversetarsal (4 5) cuneonavicular (1 2 3) tarsometatarsal (1 2 3 4 5) metatarsophalangeal (1 2 3 4 5) tarsal_interphalangeal (1) tarsal_proximal_interphalangeal (2 3 4 5) tarsal_distal_interphalangeal (2 3 4 5) 0.3 - 0.5 vl5 0.6 0.6375 vl2 0.6375 - 0.6875 vt10 0.6875 - 0.725 vt9 0.725 - 0.7875 vt5 0.7875 - 0.825 vt1 0.825 - 0.8625 vc7 0.8625 - 0.9 vc2 0.9 - 0.9985 skullbase 0.9 - 0.915 sterno 0.915 - 0.93 acrom 0.93 - 0.945 shoulder 0.945 - 0.96 elbow 0.96 - 0.98 radio 0.98 0.985 angeal_1"))
@@ -10326,4 +10326,4 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromField("touchTime").setFromNode("StopTimer_Touch").setToField("set_stopTime").setToNode("Kick1Timer"))
           .addChild(new ROUTE().setFromField("touchTime").setFromNode("StopTimer_Touch").setToField("set_stopTime").setToNode("Kick2Timer"))))      ;
     X3D0.toFileX3D("../data/JinScaledV2L1LOA4Sites10h.new.graal.x3d");
-    X3D0.toFileJSON("../data/JinScaledV2L1LOA4Sites10h.new.graal.json");
+    X3D0.toFileJSON("../data/JinScaledV2L1LOA4Sites10h.new.graal.x3dj");

@@ -10,6 +10,8 @@ function doubleToFloat(d) {
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("Scaled 1:1, Added Animations"))
+        .addComments(new CommentsBlock("Added Sites"))
         .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("JinScaledV2L1LOA4Sites07f.x3d"))
         .addMeta(new meta().setName("creator").setContent("Jin Hoon Lee and Min Joo Lee"))
@@ -29,9 +31,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("joedwillyNotePad"))
         .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html"))
-        .addComments(new CommentsBlock("Scaled 1:1, Added Animations"))
-        .addComments(new CommentsBlock("Added Sites")))
+        .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("Jin LOA4 Level 1 All Joints, Segments, Sites"))
         .addChild(new NavigationInfo())
@@ -3262,4 +3262,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
     X3D0.toFileX3D("../data/JinScaledV2L1LOA4Sites08e.new.graal.x3d");
-    X3D0.toFileJSON("../data/JinScaledV2L1LOA4Sites08e.new.graal.json");
+    X3D0.toFileJSON("../data/JinScaledV2L1LOA4Sites08e.new.graal.x3dj");

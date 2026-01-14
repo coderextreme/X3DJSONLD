@@ -85,4 +85,4 @@ function set_fraction(value) {
         .addChild(ProtoInstance2 = new ProtoInstance().setName("Bubble").setDEF("bubbleC"))
         .addChild(ProtoInstance3 = new ProtoInstance().setName("Bubble").setDEF("bubbleD")))      ;
     X3D0.toFileX3D("../data/bubs.new.graal.x3d");
-    X3D0.toFileJSON("../data/bubs.new.graal.json");
+    X3D0.toFileJSON("../data/bubs.new.graal.x3dj");

@@ -52,4 +52,4 @@ function doubleToFloat(d) {
                   .setGeometry(new Text().setString(Java.to(["Z"], Java.type("java.lang.String[]")))
                     .setFontStyle(new FontStyle().setUSE("LABEL_FONT")))))))))      ;
     X3D0.toFileX3D("../data/JointCoordinateAxes.new.graal.x3d");
-    X3D0.toFileJSON("../data/JointCoordinateAxes.new.graal.json");
+    X3D0.toFileJSON("../data/JointCoordinateAxes.new.graal.x3dj");
