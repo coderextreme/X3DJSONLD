@@ -1,3 +1,4723 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a3cb222a961760107c22748a9fda21408f2001bf712f6ce0a07bc6cbb7ea2019
-size 156504
+{
+  "string": "Scene",
+  "children": [
+    {
+      "string": " worldinfo",
+      "nodeType": "worldinfo",
+      "title": "ArtDecoExamples.x3d",
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco00",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco00",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00",
+        "ArtDecoPrototypes.wrl#ArtDeco00",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco01",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco01",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01",
+        "ArtDecoPrototypes.wrl#ArtDeco01",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco02",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco02",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02",
+        "ArtDecoPrototypes.wrl#ArtDeco02",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco03",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco03",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03",
+        "ArtDecoPrototypes.wrl#ArtDeco03",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco04",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco04",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04",
+        "ArtDecoPrototypes.wrl#ArtDeco04",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco05",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco05",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05",
+        "ArtDecoPrototypes.wrl#ArtDeco05",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco06",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco06",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06",
+        "ArtDecoPrototypes.wrl#ArtDeco06",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco07",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco07",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07",
+        "ArtDecoPrototypes.wrl#ArtDeco07",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco08",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco08",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08",
+        "ArtDecoPrototypes.wrl#ArtDeco08",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco09",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco09",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09",
+        "ArtDecoPrototypes.wrl#ArtDeco09",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco10",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco10",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10",
+        "ArtDecoPrototypes.wrl#ArtDeco10",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco11",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco11",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11",
+        "ArtDecoPrototypes.wrl#ArtDeco11",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco12",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco12",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12",
+        "ArtDecoPrototypes.wrl#ArtDeco12",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco13",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco13",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13",
+        "ArtDecoPrototypes.wrl#ArtDeco13",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco14",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco14",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14",
+        "ArtDecoPrototypes.wrl#ArtDeco14",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco15",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco15",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15",
+        "ArtDecoPrototypes.wrl#ArtDeco15",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco16",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco16",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16",
+        "ArtDecoPrototypes.wrl#ArtDeco16",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco17",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco17",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17",
+        "ArtDecoPrototypes.wrl#ArtDeco17",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco18",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco18",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18",
+        "ArtDecoPrototypes.wrl#ArtDeco18",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco19",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco19",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19",
+        "ArtDecoPrototypes.wrl#ArtDeco19",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco20",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco20",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20",
+        "ArtDecoPrototypes.wrl#ArtDeco20",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco21",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco21",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21",
+        "ArtDecoPrototypes.wrl#ArtDeco21",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco22",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco22",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22",
+        "ArtDecoPrototypes.wrl#ArtDeco22",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco23",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco23",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23",
+        "ArtDecoPrototypes.wrl#ArtDeco23",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco24",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco24",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24",
+        "ArtDecoPrototypes.wrl#ArtDeco24",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco25",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco25",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25",
+        "ArtDecoPrototypes.wrl#ArtDeco25",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco26",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco26",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26",
+        "ArtDecoPrototypes.wrl#ArtDeco26",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco27",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco27",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27",
+        "ArtDecoPrototypes.wrl#ArtDeco27",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco28",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco28",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28",
+        "ArtDecoPrototypes.wrl#ArtDeco28",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco29",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco29",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29",
+        "ArtDecoPrototypes.wrl#ArtDeco29",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco30",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco30",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30",
+        "ArtDecoPrototypes.wrl#ArtDeco30",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco31",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco31",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31",
+        "ArtDecoPrototypes.wrl#ArtDeco31",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco32",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco32",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32",
+        "ArtDecoPrototypes.wrl#ArtDeco32",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco33",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco33",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33",
+        "ArtDecoPrototypes.wrl#ArtDeco33",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33\""
+      ],
+      "children": []
+    },
+    {
+      "string": " externprotodeclare",
+      "nodeType": "externprotodeclare",
+      "appinfo": "UniversalMediaMaterials prototype",
+      "documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+      "name": "ArtDeco34",
+      "url": [
+        "\"ArtDecoPrototypes.x3d#ArtDeco34",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34",
+        "ArtDecoPrototypes.wrl#ArtDeco34",
+        "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34\""
+      ],
+      "children": []
+    },
+    {
+      "string": " group",
+      "nodeType": "group",
+      "children": [
+        {
+          "string": " navigationinfo",
+          "nodeType": "navigationinfo",
+          "headlight": "false",
+          "children": []
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "Front",
+          "description": "Front view",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 12
+          },
+          "children": []
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "PersRight",
+          "description": "Low Right",
+          "orientation": {
+            "x": 0.74291,
+            "y": 0.30772,
+            "z": 0.59447,
+            "w": 1.2171
+          },
+          "position": {
+            "x": 6.9282,
+            "y": -6.9282,
+            "z": 6.9282
+          },
+          "children": []
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "PersLeft",
+          "description": "Low Left",
+          "orientation": {
+            "x": 0.74291,
+            "y": -0.30772,
+            "z": -0.59447,
+            "w": 1.2171
+          },
+          "position": {
+            "x": -6.9282,
+            "y": -6.9282,
+            "z": 6.9282
+          },
+          "children": []
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "Back",
+          "description": "Back view",
+          "orientation": {
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "w": 3.1416
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": -12
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "DEF": "Close_travel",
+          "children": [
+            {
+              "string": " positioninterpolator",
+              "nodeType": "positioninterpolator",
+              "DEF": "Close_Mover",
+              "key": [
+                "0.0",
+                "0.25",
+                "0.5",
+                "0.75",
+                "1.0"
+              ],
+              "keyValue": [
+                {
+                  "x": 0,
+                  "y": 2.5,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": -2.5,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                {
+                  "x": 0,
+                  "y": 2.5,
+                  "z": 0
+                }
+              ],
+              "children": []
+            },
+            {
+              "string": " timesensor",
+              "nodeType": "timesensor",
+              "DEF": "Close_Time",
+              "cycleInterval": "12.0",
+              "loop": "true",
+              "children": []
+            },
+            {
+              "string": " viewpoint",
+              "nodeType": "viewpoint",
+              "DEF": "Close",
+              "description": "Close Front",
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 6
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " directionallight",
+          "nodeType": "directionallight",
+          "direction": {
+            "x": 1,
+            "y": -1,
+            "z": -1
+          },
+          "children": []
+        },
+        {
+          "string": " directionallight",
+          "nodeType": "directionallight",
+          "direction": {
+            "x": 0,
+            "y": 1,
+            "z": -0.5
+          },
+          "intensity": "0.5",
+          "children": []
+        },
+        {
+          "string": " anchor",
+          "nodeType": "anchor",
+          "description": "Back to front view",
+          "url": [
+            "\"#Front\""
+          ],
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0,
+                "z": -0.5
+              },
+              "children": [
+                {
+                  "string": " inline",
+                  "nodeType": "inline",
+                  "url": [
+                    "\"../data/gridBack.json",
+                    "../data/gridBack.x3d",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d",
+                    "gridBack.wrl",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl\""
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View00",
+          "description": "ArtDeco00",
+          "position": {
+            "x": -3.75,
+            "y": 3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -3.75,
+            "y": 3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco00 view",
+              "url": [
+                "\"#View00\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco00",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "DEF": "Ball",
+                      "radius": "0.5",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco00",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "DEF": "TextMat",
+                              "diffuseColor": {
+                                "r": 1,
+                                "g": 1,
+                                "b": 1
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco00\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "DEF": "Style",
+                              "family": [
+                                "\"SANS\""
+                              ],
+                              "justify": [
+                                "\"MIDDLE",
+                                "MIDDLE\""
+                              ],
+                              "size": "0.3",
+                              "style": "BOLD",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View01",
+          "description": "ArtDeco01",
+          "position": {
+            "x": -2.25,
+            "y": 3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -2.25,
+            "y": 3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco01 view",
+              "url": [
+                "\"#View01\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco01",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco01",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco01\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View02",
+          "description": "ArtDeco02",
+          "position": {
+            "x": -0.75,
+            "y": 3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -0.75,
+            "y": 3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco02 view",
+              "url": [
+                "\"#View02\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco02",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco02",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco02\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View03",
+          "description": "ArtDeco03",
+          "position": {
+            "x": 0.75,
+            "y": 3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 0.75,
+            "y": 3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco03 view",
+              "url": [
+                "\"#View03\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco03",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco03",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco03\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View04",
+          "description": "ArtDeco04",
+          "position": {
+            "x": 2.25,
+            "y": 3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 2.25,
+            "y": 3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco04 view",
+              "url": [
+                "\"#View04\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco04",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco04",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco04\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View05",
+          "description": "ArtDeco05",
+          "position": {
+            "x": 3.75,
+            "y": 3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 3.75,
+            "y": 3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco05 view",
+              "url": [
+                "\"#View05\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco05",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco05",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco05\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View06",
+          "description": "ArtDeco06",
+          "position": {
+            "x": -3.75,
+            "y": 2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -3.75,
+            "y": 2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco06 view",
+              "url": [
+                "\"#View06\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco06",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco06",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco06\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View07",
+          "description": "ArtDeco07",
+          "position": {
+            "x": -2.25,
+            "y": 2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -2.25,
+            "y": 2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco07 view",
+              "url": [
+                "\"#View07\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco07",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco07",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco07\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View08",
+          "description": "ArtDeco08",
+          "position": {
+            "x": -0.75,
+            "y": 2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -0.75,
+            "y": 2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco08 view",
+              "url": [
+                "\"#View08\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco08",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco08",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco08\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View09",
+          "description": "ArtDeco09",
+          "position": {
+            "x": 0.75,
+            "y": 2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 0.75,
+            "y": 2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco09 view",
+              "url": [
+                "\"#View09\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco09",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco09",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco09\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View10",
+          "description": "ArtDeco10",
+          "position": {
+            "x": 2.25,
+            "y": 2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 2.25,
+            "y": 2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco10 view",
+              "url": [
+                "\"#View10\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco10",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco10",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco10\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View11",
+          "description": "ArtDeco11",
+          "position": {
+            "x": 3.75,
+            "y": 2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 3.75,
+            "y": 2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco11 view",
+              "url": [
+                "\"#View11\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco11",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco11",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco11\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View12",
+          "description": "ArtDeco12",
+          "position": {
+            "x": -3.75,
+            "y": 0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -3.75,
+            "y": 0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco12 view",
+              "url": [
+                "\"#View12\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco12",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco12",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco12\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View13",
+          "description": "ArtDeco13",
+          "position": {
+            "x": -2.25,
+            "y": 0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -2.25,
+            "y": 0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco13 view",
+              "url": [
+                "\"#View13\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco13",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco13",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco13\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View14",
+          "description": "ArtDeco14",
+          "position": {
+            "x": -0.75,
+            "y": 0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -0.75,
+            "y": 0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco14 view",
+              "url": [
+                "\"#View14\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco14",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco14",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco14\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View15",
+          "description": "ArtDeco15",
+          "position": {
+            "x": 0.75,
+            "y": 0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 0.75,
+            "y": 0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco15 view",
+              "url": [
+                "\"#View15\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco15",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco15",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco15\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View16",
+          "description": "ArtDeco16",
+          "position": {
+            "x": 2.25,
+            "y": 0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 2.25,
+            "y": 0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco16 view",
+              "url": [
+                "\"#View16\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco16",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco16",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco16\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View17",
+          "description": "ArtDeco17",
+          "position": {
+            "x": 3.75,
+            "y": 0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 3.75,
+            "y": 0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco17 view",
+              "url": [
+                "\"#View17\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco17",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco17",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco17\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View18",
+          "description": "ArtDeco18",
+          "position": {
+            "x": -3.75,
+            "y": -0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -3.75,
+            "y": -0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco18 view",
+              "url": [
+                "\"#View18\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco18",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco18",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco18\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View19",
+          "description": "ArtDeco19",
+          "position": {
+            "x": -2.25,
+            "y": -0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -2.25,
+            "y": -0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco19 view",
+              "url": [
+                "\"#View19\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco19",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco19",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco19\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View20",
+          "description": "ArtDeco20",
+          "position": {
+            "x": -0.75,
+            "y": -0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -0.75,
+            "y": -0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco20 view",
+              "url": [
+                "\"#View20\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco20",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco20",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco20\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View21",
+          "description": "ArtDeco21",
+          "position": {
+            "x": 0.75,
+            "y": -0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 0.75,
+            "y": -0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco21 view",
+              "url": [
+                "\"#View21\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco21",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco21",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco21\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View22",
+          "description": "ArtDeco22",
+          "position": {
+            "x": 2.25,
+            "y": -0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 2.25,
+            "y": -0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco22 view",
+              "url": [
+                "\"#View22\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco22",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco22",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco22\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View23",
+          "description": "ArtDeco23",
+          "position": {
+            "x": 3.75,
+            "y": -0.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 3.75,
+            "y": -0.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco23 view",
+              "url": [
+                "\"#View23\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco23",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco23",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco23\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View24",
+          "description": "ArtDeco24",
+          "position": {
+            "x": -3.75,
+            "y": -2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -3.75,
+            "y": -2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco24 view",
+              "url": [
+                "\"#View24\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco24",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco24",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco24\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View25",
+          "description": "ArtDeco25",
+          "position": {
+            "x": -2.25,
+            "y": -2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -2.25,
+            "y": -2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco25 view",
+              "url": [
+                "\"#View25\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco25",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco25",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco25\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View26",
+          "description": "ArtDeco26",
+          "position": {
+            "x": -0.75,
+            "y": -2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -0.75,
+            "y": -2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco26 view",
+              "url": [
+                "\"#View26\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco26",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco26",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco26\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View27",
+          "description": "ArtDeco27",
+          "position": {
+            "x": 0.75,
+            "y": -2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 0.75,
+            "y": -2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco27 view",
+              "url": [
+                "\"#View27\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco27",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco27",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco27\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View28",
+          "description": "ArtDeco28",
+          "position": {
+            "x": 2.25,
+            "y": -2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 2.25,
+            "y": -2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco28 view",
+              "url": [
+                "\"#View28\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco28",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco28",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco28\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View29",
+          "description": "ArtDeco29",
+          "position": {
+            "x": 3.75,
+            "y": -2.25,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 3.75,
+            "y": -2.25,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco29 view",
+              "url": [
+                "\"#View29\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco29",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco29",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco29\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View30",
+          "description": "ArtDeco30",
+          "position": {
+            "x": -3.75,
+            "y": -3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -3.75,
+            "y": -3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco30 view",
+              "url": [
+                "\"#View30\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco30",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco30",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco30\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View31",
+          "description": "ArtDeco31",
+          "position": {
+            "x": -2.25,
+            "y": -3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -2.25,
+            "y": -3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco31 view",
+              "url": [
+                "\"#View31\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco31",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco31",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco31\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View32",
+          "description": "ArtDeco32",
+          "position": {
+            "x": -0.75,
+            "y": -3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": -0.75,
+            "y": -3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco32 view",
+              "url": [
+                "\"#View32\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco32",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco32",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco32\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View33",
+          "description": "ArtDeco33",
+          "position": {
+            "x": 0.75,
+            "y": -3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 0.75,
+            "y": -3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco33 view",
+              "url": [
+                "\"#View33\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco33",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco33",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco33\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "string": " viewpoint",
+          "nodeType": "viewpoint",
+          "DEF": "View34",
+          "description": "ArtDeco34",
+          "position": {
+            "x": 2.25,
+            "y": -3.75,
+            "z": 3
+          },
+          "children": []
+        },
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "translation": {
+            "x": 2.25,
+            "y": -3.75,
+            "z": 0
+          },
+          "children": [
+            {
+              "string": " anchor",
+              "nodeType": "anchor",
+              "description": "ArtDeco34 view",
+              "url": [
+                "\"#View34\""
+              ],
+              "children": [
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": "material protoinstance",
+                          "nodeType": "protoinstance",
+                          "name": "ArtDeco34",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "USE": "Ball",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "translation": {
+                "x": 0,
+                "y": 0.3,
+                "z": 0.5
+              },
+              "children": [
+                {
+                  "string": " anchor",
+                  "nodeType": "anchor",
+                  "description": "ArtDeco34",
+                  "parameter": [
+                    "\"target=_source\""
+                  ],
+                  "url": [
+                    "\"ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34",
+                    "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34\""
+                  ],
+                  "children": [
+                    {
+                      "string": " shape",
+                      "nodeType": "shape",
+                      "children": [
+                        {
+                          "string": " appearance",
+                          "nodeType": "appearance",
+                          "children": [
+                            {
+                              "string": " material",
+                              "nodeType": "material",
+                              "USE": "TextMat",
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "string": [
+                            "\"ArtDeco34\""
+                          ],
+                          "nodeType": "text",
+                          "children": [
+                            {
+                              "string": " fontstyle",
+                              "nodeType": "fontstyle",
+                              "USE": "Style",
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " route",
+      "nodeType": "route",
+      "fromField": "fraction_changed",
+      "fromNode": "Close_Time",
+      "toField": "set_fraction",
+      "toNode": "Close_Mover",
+      "children": []
+    },
+    {
+      "string": " route",
+      "nodeType": "route",
+      "fromField": "value_changed",
+      "fromNode": "Close_Mover",
+      "toField": "set_translation",
+      "toNode": "Close_travel",
+      "children": []
+    }
+  ]
+}

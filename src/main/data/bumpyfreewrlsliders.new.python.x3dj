@@ -1,3 +1,387 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1166e998a5625af5ebcb233837af99c94f87b4931e2eafb922948277ab9ba78c
-size 10316
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Full",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"bumpyfreewrlsliders.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Bumpy Orbitals with Sliders for FreeWRL",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Doug Sanden, Christoph Valentin, John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d",
+        "@name":"identifier"
+      }
+    },
+    }    "Scene":
+    {
+        "ProtoDeclare":
+        {
+      {
+        "@name":"SliderProto"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"sliderTranslation",
+        "@type":"SFVec3f",
+        "@value":"[0, 0.7, 0]"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"transformTranslation",
+        "@type":"SFVec3f"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"sensorTranslation",
+        "@type":"SFVec3f"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"numberTranslation",
+        "@type":"SFVec3f",
+        "@value":"[0.2, 0, 0]"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"textString",
+        "@type":"MFString",
+        "@value":"['a=']"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"parameterName",
+        "@type":"SFString",
+        "@value":"a"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"parameterScale",
+        "@type":"SFFloat",
+        "@value":"30"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"shaderNode",
+        "@type":"SFNode"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Group":
+                {
+                    "Transform":
+                    {
+      {
+        "@DEF":"protoSlider"
+      }
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"translation",
+        "@protoField":"sliderTranslation"
+      }
+    },
+                        }                        "Transform":
+                        {
+      {
+        "@DEF":"protoTransform"
+      }
+                            "IS":
+                            {
+                                "connect":
+                                {
+      {
+        "@nodeField":"translation",
+        "@protoField":"transformTranslation"
+      }
+    },
+                                "connect":
+                                {
+      {
+        "@nodeField":"translation",
+        "@protoField":"sensorTranslation"
+      }
+    },
+                            }                            "PlaneSensor":
+                            {
+      {
+        "@DEF":"protoSensor",
+        "@maxPosition":"2 0"
+      }
+    },
+                            "Transform":
+                            {
+                                "TouchSensor":
+                                {
+      {
+        "@DEF":"protoTS"
+      }
+    },
+                            }                            "Transform":
+                            {
+                                "Shape":
+                                {
+                                    "Appearance":
+                                    {
+                                        "Material":
+                                        {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                                    }                                    "Text":
+                                    {
+      {
+        "@DEF":"protoText"
+      }
+                                        "IS":
+                                        {
+                                            "connect":
+                                            {
+      {
+        "@nodeField":"string",
+        "@protoField":"textString"
+      }
+    },
+                                        }                                        "FontStyle":
+                                        {
+      {
+        "@size":"0.2"
+      }
+    },
+                                    }                                }                                "Transform":
+                                {
+                                    "IS":
+                                    {
+                                        "connect":
+                                        {
+      {
+        "@nodeField":"translation",
+        "@protoField":"numberTranslation"
+      }
+    },
+                                    }                                    "Shape":
+                                    {
+                                        "Appearance":
+                                        {
+                                            "Material":
+                                            {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                                        }                                        "Text":
+                                        {
+      {
+        "@DEF":"protoNumber",
+        "@string":""0""
+      }
+                                            "FontStyle":
+                                            {
+      {
+        "@size":"0.2"
+      }
+    },
+                                        }                                    }                                }                            }                        }                    }                    "Script":
+                    {
+      {
+        "@DEF":"protoValueTransformerScript",
+        "@directOutput":"true",
+        "@mustEvaluate":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;	const newTranslation = function(Value) {
+&quot;+
+&quot;	    protoValue_changed = Value[0] * protoScale;
+&quot;+
+&quot;	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());
+&quot;+
+&quot;	    Browser.println(&quot;In newTranslation:&quot;);
+&quot;+
+&quot;	    Browser.println(shader);
+&quot;+
+&quot;	    Browser.println(Value[0]);
+&quot;+
+&quot;	    Browser.println(Value.x);
+&quot;+
+&quot;	    Browser.println(protoScale);
+&quot;+
+&quot;	    Browser.println(Value[0] * protoScale);
+&quot;+
+&quot;	    Browser.println(protoParameterName);
+&quot;+
+&quot;					// shader[protoParameterName] = Value[0] * protoScale;
+&quot;+
+&quot;	};"
+      }
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"protoScale",
+        "@protoField":"parameterScale"
+      }
+    },
+                            "connect":
+                            {
+      {
+        "@nodeField":"shader",
+        "@protoField":"shaderNode"
+      }
+    },
+                            "connect":
+                            {
+      {
+        "@nodeField":"protoParameterName",
+        "@protoField":"parameterName"
+      }
+    },
+                        }                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoScale",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"shader",
+        "@type":"SFNode"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"newTranslation",
+        "@type":"SFVec3f",
+        "@value":"[1, 1, 1]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoValue_changed",
+        "@type":"SFFloat",
+        "@value":"1"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoNumber_changed",
+        "@type":"MFString",
+        "@value":"['0.0']"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoParameterName",
+        "@type":"SFString"
+      }
+    },
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"protoSensor",
+        "@toField":"set_translation",
+        "@toNode":"protoTransform"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"protoSensor",
+        "@toField":"set_newTranslation",
+        "@toNode":"protoValueTransformerScript"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"protoNumber_changed_changed",
+        "@fromNode":"protoValueTransformerScript",
+        "@toField":"set_string",
+        "@toNode":"protoNumber"
+      }
+    },
+            }        }        "ROUTE":
+        {
+      {
+        "@fromField":"addedEntities",
+        "@fromNode":"EntityManager",
+        "@toField":"addChildren",
+        "@toNode":"AvatarHolder"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"removedEntities",
+        "@fromNode":"EntityManager",
+        "@toField":"removeChildren",
+        "@toNode":"AvatarHolder"
+      }
+    },
+    }}

@@ -6,8 +6,6 @@ IFS=$'\n\t'
 
 . ./classpath
 
-export PROCESSORS=${PROCESSORS-8}
-
 cp /dev/null jsdiffs.txt
 
 pushd ../python

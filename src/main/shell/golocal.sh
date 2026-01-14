@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-export PROCESSORS="${PROCESSORS-8}"
-
 . ./classpath
 
-# find ../data -name '*.json' | grep -v intermediate | grep -v '\.new' | xargs -P "${PROCESSORS}" "${NODE}" "${NODEDIR}/json2all.js"
+# find ../data -name '*.'${JSONEXT} | grep -v intermediate | grep -v '\.new' | xargs -P "${PROCESSORS}" "${NODE}" "${NODEDIR}/json2all.js"
 find ../data -name '*.x3d' | grep -v intermediate | grep -v '\.new' | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" bash runtidy.sh | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
 
 pushd ../go

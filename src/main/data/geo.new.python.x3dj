@@ -1,3 +1,283 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bc54c2a450727f7d44bcece5d4bdc3b8fec955d587fefb3a2439a1e8e61319fd
-size 7532
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"EnvironmentalEffects"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Shaders"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"CubeMapTexturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"Grouping"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"geo.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"manual",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "NavigationInfo":
+        {
+      {
+        "@type":""ANY" "EXAMINE" "FLY" "LOOKAT""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@DEF":"Tour",
+        "@description":"Tour Views"
+      }
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"",
+        "@bottomUrl":""../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"",
+        "@frontUrl":""../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"",
+        "@leftUrl":""../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"",
+        "@rightUrl":""../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"",
+        "@topUrl":""../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png""
+      }
+    },
+        "Transform":
+        {
+            "Shape":
+            {
+                "Appearance":
+                {
+                    "Material":
+                    {
+      {
+        "@diffuseColor":"0.7 0.7 0.7",
+        "@specularColor":"0.5 0.5 0.5"
+      }
+    },
+                    "ComposedCubeMapTexture":
+                    {
+      {
+        "@DEF":"texture"
+      }
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png""
+      }
+    },
+                    }                    "ComposedShader":
+                    {
+      {
+        "@language":"GLSL"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"chromaticDispertion",
+        "@type":"SFVec3f",
+        "@value":"[0.98, 1, 1.033]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"cube",
+        "@type":"SFNode"
+      }
+                            "ComposedCubeMapTexture":
+                            {
+      {
+        "@USE":"texture"
+      }
+    },
+                        }                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"bias",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"scale",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"power",
+        "@type":"SFFloat",
+        "@value":"2"
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@url":""../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs""
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@DEF":"common",
+        "@type":"FRAGMENT",
+        "@url":""../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs""
+      }
+    },
+                    }                    "ComposedShader":
+                    {
+      {
+        "@language":"GLSL"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"chromaticDispertion",
+        "@type":"SFVec3f",
+        "@value":"[0.98, 1, 1.033]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"cube",
+        "@type":"SFNode"
+      }
+                            "ComposedCubeMapTexture":
+                            {
+      {
+        "@USE":"texture"
+      }
+    },
+                        }                        "field":
+                        {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"bias",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"scale",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"power",
+        "@type":"SFFloat",
+        "@value":"2"
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@url":""../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs""
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@type":"FRAGMENT",
+        "@url":""../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs""
+      }
+    },
+                    }                }                "Sphere":
+                {
+    },
+            }        }    }}

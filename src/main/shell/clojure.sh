@@ -4,7 +4,6 @@ IFS=$'\n\t'
 # Run the Test Suite
 
 # accepts files with .x3d extension
-export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
@@ -33,7 +32,6 @@ function mybasename {
 }
 
 ROOTTOLOCAL='s/www.web3d.org/www_web3d_org/' 
-JSONEXT=json
 
 echo Running Clojure
 OLDCLASSPATH=${CLASSPATH}
@@ -63,10 +61,10 @@ do
 	popd
 done
 
-echo comparing Clojure created json
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.clojure.json/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
+echo comparing Clojure created ${JSONEXT}
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.clojure.'${JSONEXT}'/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
-	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.clojure.json`.${JSONEXT}
+	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.clojure.${JSONEXT}`.${JSONEXT}
 	echo "${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 	"${NODE}" --trace-warnings "${NODEDIR}/jsondiff.js" "$OLDJSON" "$i"
 done

@@ -6,4 +6,4 @@ IFS=$'\n\t'
 
 . ../shell/classpath
 
-find ../java -name '*.class' | grep -v '[$ "]'| sed 's/\.class$/.new.java.json/'| xargs ls 2>&1| grep "No such file or directory" | awk '{ print $4; }' | sed "s/^'\.\.\/java\///" | sed "s/\.new.java.json'://" | sed "s/^'//" | sed 's/\//./g'
+find ../java -name '*.class' | grep -v '[$ "]'| sed 's/\.class$/.new.java.'${JSONEXT}'/'| xargs ls 2>&1| grep "No such file or directory" | awk '{ print $4; }' | sed "s/^'\.\.\/java\///" | sed "s/\.new.java.${JSONEXT}'://" | sed "s/^'//" | sed 's/\//./g'

@@ -1,3 +1,115 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecc766ffe515e8e3ebd5f4491d222de94e1010c0bed8177c5a26ac42de9cc454
-size 2537
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "component":
+        {
+      {
+        "@name":"HAnim"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"IFS.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"An attempt at a standard LOA-4 skeleton",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"h2.pl",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Wed, 17 Sep 2025 23:47:38 GMT",
+        "@name":"modified"
+      }
+    },
+    }    "Scene":
+    {
+        "Group":
+        {
+            "Transform":
+            {
+      {
+        "@translation":"0 2.1 0"
+      }
+                "Shape":
+                {
+      {
+        "@DEF":"HAnimSiteShape"
+      }
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"1 1 0",
+        "@transparency":"0.3"
+      }
+    },
+                    }                    "IndexedFaceSet":
+                    {
+      {
+        "@DEF":"DiamondIFS",
+        "@coordIndex":"0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1",
+        "@creaseAngle":"0.5",
+        "@solid":"false"
+      }
+                        "ColorRGBA":
+                        {
+      {
+        "@DEF":"HAnimSiteColorRGBA",
+        "@color":"1 1 0 1 1 1 0 0.1"
+      }
+    },
+                        "Coordinate":
+                        {
+      {
+        "@point":"0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"
+      }
+    },
+                    }                }            }        }        "NavigationInfo":
+        {
+      {
+        "@speed":"1.5"
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"default"
+      }
+    },
+    }}

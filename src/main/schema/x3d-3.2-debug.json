@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-        "title": "X3D V3.2 JSON Schema, generated 2026/01/14 02:51:01",
+        "title": "X3D V3.2 JSON Schema, generated 2026/01/14 05:16:57",
         "description": "Experimental JSON Schema for X3D V3.2",
         "license": "Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
@@ -11304,8 +11304,8 @@
 							{
 								"enum": [
 									"CENTER",
-									"LEFT",
-									"RIGHT"
+									"RIGHT",
+									"LEFT"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -11346,9 +11346,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
+									"PIXEL",
 									"FRACTION",
-									"PIXEL"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11356,9 +11356,9 @@
 							,
 							{
 								"enum": [
-									"WORLD",
+									"PIXEL",
 									"FRACTION",
-									"PIXEL"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11374,10 +11374,10 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"NONE",
-									"FRACTION",
+									"PIXEL",
 									"STRETCH",
-									"PIXEL"
+									"FRACTION",
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -11385,10 +11385,10 @@
 							,
 							{
 								"enum": [
-									"NONE",
-									"FRACTION",
+									"PIXEL",
 									"STRETCH",
-									"PIXEL"
+									"FRACTION",
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -11413,9 +11413,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
+									"PIXEL",
 									"FRACTION",
-									"PIXEL"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11423,9 +11423,9 @@
 							,
 							{
 								"enum": [
-									"WORLD",
+									"PIXEL",
 									"FRACTION",
-									"PIXEL"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -13526,12 +13526,12 @@
 						"prefixItems": [
 						{
 							"enum": [
-								"EXPLORE",
-								"ANY",
 								"EXAMINE",
-								"NONE",
 								"FLY",
 								"WALK",
+								"ANY",
+								"EXPLORE",
+								"NONE",
 								"LOOKAT"
 							],
 								"default":"EXAMINE",

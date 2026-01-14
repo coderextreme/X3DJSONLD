@@ -6,6 +6,6 @@ IFS=$'\n\t'
 
 . ./classpath
 
-echo ===================t2.json Local=================================== 1>&2
-ls ../data/t2.json | xargs ${NODE} ${NODEDIR}/PPP.js
+echo ===================t2.${JSONEXT} Local=================================== 1>&2
+ls ../data/t2.${JSONEXT} | xargs ${NODE} ${NODEDIR}/PPP.js
 

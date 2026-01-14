@@ -1,3 +1,82 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:43ef7cac16c8f07fdca4bd8d422a389d052115dad0f4a457a057b58731d76cf7
-size 1767
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"asteroids.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"manual",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "ProtoDeclare":
+        {
+      {
+        "@name":"anyShape"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"myShape",
+        "@type":"MFNode"
+      }
+                    "Shape":
+                    {
+      {
+        "@DEF":"_1"
+      }
+                        "Sphere":
+                        {
+    },
+                    }                }            }            "ProtoBody":
+            {
+                "Transform":
+                {
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"children",
+        "@protoField":"myShape"
+      }
+    },
+                    }                }            }        }        "ProtoInstance":
+        {
+      {
+        "@name":"anyShape"
+      }
+    },
+    }}

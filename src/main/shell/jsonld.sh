@@ -5,7 +5,6 @@ IFS=$'\n\t'
 # Run the Test Suite
 
 # accepts files with .x3d extension
-export PROCESSORS="${PROCESSORS-8}"
 
 . ./classpath
 
@@ -16,4 +15,4 @@ ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_cod
 # OVERWRITE=
 OVERWRITE=---overwrite
 
-ls -d "$@" | sed 's/.x3d$/.json/g' | grep -v intermediate | grep -v "\.new" | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"
+ls -d "$@" | sed 's/.x3d$/.'${JSONEXT}'/g' | grep -v intermediate | grep -v "\.new" | xargs -P "$PROCESSORS" "${NODE}" "${NODEDIR}/json2all.js"

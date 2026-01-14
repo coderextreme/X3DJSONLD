@@ -4,7 +4,7 @@ IFS=$'\n\t'
 
 . ./classpath
 
-for i in `find . -name '*.new.json'`
+for i in `find . -name '*.new.'${JSONEXT}`
 do
-	${NODE} jsondiff.js `dirname $i  | sed  -e 's/\/_\([0-9]\/\)/\/\1/g' -e 's/^_\(default|switch|for\)$/\1/g' -e 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' -e 's/_/*/g'`/`basename $i .new.json`.json $i
+	${NODE} jsondiff.js `dirname $i  | sed  -e 's/\/_\([0-9]\/\)/\/\1/g' -e 's/^_\(default|switch|for\)$/\1/g' -e 's/.\/www_web3d_org/\/c\/x3d-code\/www.web3d.org/' -e 's/_/*/g'`/`basename $i .new.${JSONEXT}`.${JSONEXT} $i
 done
