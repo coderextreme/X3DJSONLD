@@ -163,23 +163,23 @@ ecmascript:
 				}
 			    }
 			}
-			function set_e(value) {
-				e = value;
+			function set_a(value) {
+				a = value;
 				generateCoordinates();
 			}
 
-			function set_f(value) {
-				f = value;
+			function set_b(value) {
+				b = value;
 				generateCoordinates();
 			}
 
-			function set_g(value) {
-				g = value;
+			function set_c(value) {
+				c = value;
 				generateCoordinates();
 			}
 
-			function set_h(value) {
-				h = value;
+			function set_d(value) {
+				d = value;
 				generateCoordinates();
 			}
 
@@ -205,7 +205,7 @@ ecmascript:
 			     var arrIndex = 0;
 			     for (var i = 0; i < resolution; i++) {
 				for (var j = 0; j < resolution; j++) {
-					var rho = e + f * Math.cos(g * theta + tdelta) * Math.cos(h * phi + pdelta);
+					var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);
 					coordinates[arrIndex++] = new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),
@@ -219,10 +219,10 @@ ecmascript:
 """)
           .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-          .addField(new field().setName("e").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
-          .addField(new field().setName("f").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
-          .addField(new field().setName("g").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
-          .addField(new field().setName("h").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
+          .addField(new field().setName("a").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
+          .addField(new field().setName("b").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
+          .addField(new field().setName("c").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
+          .addField(new field().setName("d").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(5))
           .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
           .addField(new field().setName("tdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
           .addField(new field().setName("resolution").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(50)))

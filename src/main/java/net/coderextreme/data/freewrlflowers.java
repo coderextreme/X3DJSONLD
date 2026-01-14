@@ -43,12 +43,12 @@ public class freewrlflowers implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new freewrlflowers().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/freewrlflowers.new.java.x3d");
-    model.toFileJSON("../data/freewrlflowers.new.java.json");
+    model.toFileJSON("../data/freewrlflowers.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -72,6 +72,7 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
+        .addChild(new Viewpoint().setDescription("Tour Views").setPosition(new float[] {0f ,0f ,50f }))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Group()
           .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new MFString6().getArray())
@@ -125,7 +126,7 @@ private class MFString5 {
 }
 private class MFString6 {
   private org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/flowerproto.x3d#FlowerProto"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../data/flowerprotofreewrl.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"});
   }
 }
 }

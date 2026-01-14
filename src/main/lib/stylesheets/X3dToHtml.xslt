@@ -100,7 +100,7 @@ Recommended tool:
 <xsl:variable name="wrapped" select="//*[local-name()='appearance' or
 	local-name()='children' or local-name()='choice' or 
 	local-name()='color' or local-name()='coord' or local-name()='fontStyle' or 
-	local-name()='geometry' or local-name()='material' or local-name()='normal' or 
+	local-name()='geometry' or local-name()='material' or local-name()='normal' or local-name()='tangent' or 
 	local-name()='source' or local-name()='level' or local-name()='texCoord' or 
 	local-name()='texture' or local-name()='textureTransform']" />
 <xsl:choose>
@@ -852,6 +852,7 @@ Recommended tool:
                       not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
                       not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
                       not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
+                      not((local-name()='containerField' and string(.)='tangent')          and (local-name(..)='Tangent')) and
                       not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D' or local-name(..)='GeneratedCubeMapTexture')) and
                       not((local-name()='containerField' and string(.)='fontStyle')        and (local-name(..)='FontStyle')) and
                       not((local-name()='containerField' and string(.)='texCoord')         and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and

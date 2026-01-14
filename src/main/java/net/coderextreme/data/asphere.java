@@ -43,12 +43,12 @@ public class asphere implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new asphere().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/asphere.new.java.x3d");
-    model.toFileJSON("../data/asphere.new.java.json");
+    model.toFileJSON("../data/asphere.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -68,7 +68,7 @@ public class asphere implements X3DRoots {
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
             .setGeometry(new Sphere()))));
     return X3D0;
     }

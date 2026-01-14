@@ -43,12 +43,12 @@ public class flowers2 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new flowers2().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/flowers2.new.java.x3d");
-    model.toFileJSON("../data/flowers2.new.java.json");
+    model.toFileJSON("../data/flowers2.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -71,9 +71,9 @@ ProtoInstance ProtoInstance1 = null;
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new double[] {0f,0f,50f}))
+        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new float[] {0f ,0f ,50f }))
         .addChild(new Group()
-          .addChild(new DirectionalLight().setDirection(new double[] {1f,1f,1f}))
+          .addChild(new DirectionalLight().setDirection(new float[] {1f ,1f ,1f }))
           .addChild(new ProtoDeclare().setName("orbit")
             .setProtoInterface(new ProtoInterface()
               .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
@@ -198,12 +198,12 @@ ProtoInstance1
     }
 private class MFFloat0 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0.5f ,1f });
   }
 }
 private class MFRotation1 {
   private org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new double[] {1f,0f,0f,0f,1f,0f,0f,3.14f,1f,0f,0f,6.28f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f ,0f ,0f ,0f ,1f ,0f ,0f ,3.14f ,1f ,0f ,0f ,6.28f });
   }
 }
 private class MFInt322 {
@@ -213,7 +213,7 @@ private class MFInt322 {
 }
 private class MFVec3f3 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f });
   }
 }
 }

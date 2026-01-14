@@ -164,6 +164,8 @@ public class indexedfaceset_pixeltexture_whole
     .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
     .addChild(new Viewpoint().setDescription("Left View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-10.0,0.0,0.0))
     .addChild(new NavigationInfo().setType(new String[] {"EXAMINE"}))
+    .addComments(new String[] {"",
+"    <Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"})
     .addChild(new Shape()
       .setAppearance(new Appearance()
         .setMaterial(new Material())

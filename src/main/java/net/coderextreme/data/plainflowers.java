@@ -43,12 +43,12 @@ public class plainflowers implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new plainflowers().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/plainflowers.new.java.x3d");
-    model.toFileJSON("../data/plainflowers.new.java.json");
+    model.toFileJSON("../data/plainflowers.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -88,7 +88,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))));
 ProtoInstance0
-                  .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x_ite_flowers_plain.vs\""));
+                  .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/gl_flowers_plain.vs\""));
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/plain.fs\""));
     return X3D0;

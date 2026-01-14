@@ -43,12 +43,12 @@ public class flowerproto implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new flowerproto().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/flowerproto.new.java.x3d");
-    model.toFileJSON("../data/flowerproto.new.java.json");
+    model.toFileJSON("../data/flowerproto.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -75,13 +75,13 @@ public class flowerproto implements X3DRoots {
       .setScene(new Scene()
         .addChild(new ProtoDeclare().setName("FlowerProto")
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("MFString").setName("vertex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\""))
-            .addField(new field().setType("MFString").setName("fragment").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"")))
+            .addField(new field().setType("MFString").setName("vertex").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("\"../shaders/gl_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\""))
+            .addField(new field().setType("MFString").setName("fragment").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("\"../shaders/pc_flowers.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"")))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform().setDEF("transform")
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))
                   .setTexture(new ComposedCubeMapTexture().setDEF("texture")
                     .setBackTexture(new ImageTexture().setUrl(new MFString0().getArray()))
                     .setBottomTexture(new ImageTexture().setUrl(new MFString1().getArray()))
@@ -90,18 +90,19 @@ public class flowerproto implements X3DRoots {
                     .setRightTexture(new ImageTexture().setUrl(new MFString4().getArray()))
                     .setTopTexture(new ImageTexture().setUrl(new MFString5().getArray())))
                   .addShaders(new ComposedShader().setDEF("shader").setLanguage("GLSL")
-                    .addField(new field().setType("SFInt32").setName("cube").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
+                    .addComments(new CommentsBlock("<field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>"))
+                    .addField(new field().setType("SFNode").setName("cube").setAccessType(field.ACCESSTYPE_INPUTONLY)
+                      .addChild(new ComposedCubeMapTexture().setUSE("texture")))
                     .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
-                    .addField(new field().setType("SFFloat").setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                    .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                    .addField(new field().setType("SFFloat").setName("a").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("10"))
-                    .addField(new field().setType("SFFloat").setName("b").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-                    .addField(new field().setType("SFFloat").setName("c").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                    .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                    .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                    .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
+                    .addField(new field().setType("SFFloat").setName("bias").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0.5"))
+                    .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0.5"))
+                    .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("2"))
+                    .addField(new field().setType("SFFloat").setName("a").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("10"))
+                    .addField(new field().setType("SFFloat").setName("b").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("1"))
+                    .addField(new field().setType("SFFloat").setName("c").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("20"))
+                    .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("20"))
+                    .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0"))
+                    .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0"))
                     .addParts(new ShaderPart().setType("VERTEX")
                       .setIS(new IS()
                         .addConnect(new connect().setNodeField("url").setProtoField("vertex"))))
@@ -109,16 +110,16 @@ public class flowerproto implements X3DRoots {
                       .setIS(new IS()
                         .addConnect(new connect().setNodeField("url").setProtoField("fragment"))))))
                 .setGeometry(new Sphere()))
-              .addChild(new Script().setDEF("Animate")
+              .addChild(new Script().setDEF("Animate").setDirectOutput(true)
                 .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
+                .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
                 .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFFloat").setName("a").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType("SFFloat").setName("b").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType("SFFloat").setName("c").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
-                .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("3"))
-                .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
+                .addField(new field().setType("SFFloat").setName("a").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0.5"))
+                .addField(new field().setType("SFFloat").setName("b").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0.5"))
+                .addField(new field().setType("SFFloat").setName("c").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("3"))
+                .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("3"))
+                .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0.5"))
+                .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0.5"))
                 .setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+

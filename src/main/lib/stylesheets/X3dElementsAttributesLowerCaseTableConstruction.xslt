@@ -95,7 +95,7 @@
             <meta name="filename"    content="X3dElementsLowerCaseTable.html"/>
             <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/X3dElementsLowerCaseTable.html"/>
             <meta name="reference"   content="https://www.web3d.org/x3d/stylesheets/X3dElementsAttributesLowerCaseTableConstruction.xslt"/>
-            <meta name="generator"   content="X3D-Edit, https://savage.nps.edu/X3D-Edit"/>
+            <meta name="generator"   content="X3D-Edit, https://www.web3d.org/x3d/tools/X3D-Edit"/>
             <meta name="license"     content="license.html"/>    
         </head>
         <body>
@@ -146,7 +146,7 @@
             <meta name="filename"    content="X3dAttributesLowerCaseTable.html"/>
             <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/X3dAttributesLowerCaseTable.html"/>
             <meta name="reference"   content="https://www.web3d.org/x3d/stylesheets/X3dElementsAttributesLowerCaseTableConstruction.xslt"/>
-            <meta name="generator"   content="X3D-Edit, https://savage.nps.edu/X3D-Edit"/>
+            <meta name="generator"   content="X3D-Edit, https://www.web3d.org/x3d/tools/X3D-Edit"/>
             <meta name="license"     content="license.html"/>    
         </head>
         <body>

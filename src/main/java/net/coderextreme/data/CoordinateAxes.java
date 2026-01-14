@@ -43,12 +43,12 @@ public class CoordinateAxes implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new CoordinateAxes().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/CoordinateAxes.new.java.x3d");
-    model.toFileJSON("../data/CoordinateAxes.new.java.json");
+    model.toFileJSON("../data/CoordinateAxes.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -81,52 +81,52 @@ public class CoordinateAxes implements X3DRoots {
             .addComments(new CommentsBlock("Vertical Y arrow and label"))
             .addChild(new Group().setDEF("ArrowGreen")
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setDEF("ArrowCylinder").setRadius(0.025f).setTop(false))
+                .setGeometry(new Cylinder().setDEF("ArrowCylinder").setRadius(0.025f ).setTop(false))
                 .setAppearance(new Appearance().setDEF("Green")
-                  .setMaterial(new Material().setDiffuseColor(new double[] {0.1f,0.6f,0.1f}).setEmissiveColor(new double[] {0.05f,0.2f,0.05f}))))
-              .addChild(new Transform().setTranslation(new double[] {0f,1f,0f})
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.6f ,0.1f }).setEmissiveColor(new float[] {0.05f ,0.2f ,0.05f }))))
+              .addChild(new Transform().setTranslation(new float[] {0f ,1f ,0f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setDEF("ArrowCone").setBottomRadius(0.05f).setHeight(0.1f))
+                  .setGeometry(new Cone().setDEF("ArrowCone").setBottomRadius(0.05f ).setHeight(0.1f ))
                   .setAppearance(new Appearance().setUSE("Green")))))
-            .addChild(new Transform().setTranslation(new double[] {0f,1.08f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f ,1.08f ,0f })
               .addChild(new Billboard()
                 .addChild(new Shape()
                   .setAppearance(new Appearance().setDEF("LABEL_APPEARANCE")
-                    .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,0.3f}).setEmissiveColor(new double[] {0.33f,0.33f,0.1f})))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,0.3f }).setEmissiveColor(new float[] {0.33f ,0.33f ,0.1f })))
                   .setGeometry(new Text().setString(new MFString0().getArray())
-                    .setFontStyle(new FontStyle().setDEF("LABEL_FONT").setFamily(new MFString1().getArray()).setJustify(new MFString2().getArray()).setSize(0.2f)))))))
-          .addChild(new Transform().setRotation(new double[] {0f,0f,1f,-1.57079f})
+                    .setFontStyle(new FontStyle().setDEF("LABEL_FONT").setFamily(new MFString1().getArray()).setJustify(new MFString2().getArray()).setSize(0.2f )))))))
+          .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,-1.57079f })
             .addComments(new CommentsBlock("Horizontal X arrow and label"))
             .addChild(new Group()
               .addChild(new Group().setDEF("ArrowRed")
                 .addChild(new Shape()
                   .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
                   .setAppearance(new Appearance().setDEF("Red")
-                    .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.1f,0.1f}).setEmissiveColor(new double[] {0.33f,0f,0f}))))
-                .addChild(new Transform().setTranslation(new double[] {0f,1f,0f})
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.1f ,0.1f }).setEmissiveColor(new float[] {0.33f ,0f ,0f }))))
+                .addChild(new Transform().setTranslation(new float[] {0f ,1f ,0f })
                   .addChild(new Shape()
                     .setGeometry(new Cone().setUSE("ArrowCone"))
                     .setAppearance(new Appearance().setUSE("Red")))))
-              .addChild(new Transform().setRotation(new double[] {0f,0f,1f,1.57079f}).setTranslation(new double[] {0.072f,1.1f,0f})
+              .addChild(new Transform().setRotation(new float[] {0f ,0f ,1f ,1.57079f }).setTranslation(new float[] {0.072f ,1.1f ,0f })
                 .addComments(new CommentsBlock("note label rotated back to original coordinate frame"))
                 .addChild(new Billboard()
                   .addChild(new Shape()
                     .setAppearance(new Appearance().setUSE("LABEL_APPEARANCE"))
                     .setGeometry(new Text().setString(new MFString3().getArray())
                       .setFontStyle(new FontStyle().setUSE("LABEL_FONT"))))))))
-          .addChild(new Transform().setRotation(new double[] {1f,0f,0f,1.57079f})
+          .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,1.57079f })
             .addComments(new CommentsBlock("Perpendicular Z arrow and label, note right-hand rule"))
             .addChild(new Group()
               .addChild(new Group().setDEF("ArrowBlue")
                 .addChild(new Shape()
                   .setGeometry(new Cylinder().setUSE("ArrowCylinder"))
                   .setAppearance(new Appearance().setDEF("Blue")
-                    .setMaterial(new Material().setDiffuseColor(new double[] {0.3f,0.3f,1f}).setEmissiveColor(new double[] {0.1f,0.1f,0.33f}))))
-                .addChild(new Transform().setTranslation(new double[] {0f,1f,0f})
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.3f ,0.3f ,1f }).setEmissiveColor(new float[] {0.1f ,0.1f ,0.33f }))))
+                .addChild(new Transform().setTranslation(new float[] {0f ,1f ,0f })
                   .addChild(new Shape()
                     .setGeometry(new Cone().setUSE("ArrowCone"))
                     .setAppearance(new Appearance().setUSE("Blue")))))
-              .addChild(new Transform().setRotation(new double[] {1f,0f,0f,-1.57079f}).setTranslation(new double[] {0f,1.1f,0.072f})
+              .addChild(new Transform().setRotation(new float[] {1f ,0f ,0f ,-1.57079f }).setTranslation(new float[] {0f ,1.1f ,0.072f })
                 .addComments(new CommentsBlock("note label rotated back to original coordinate frame"))
                 .addChild(new Billboard()
                   .addChild(new Shape()

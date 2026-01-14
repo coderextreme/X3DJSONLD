@@ -2981,7 +2981,7 @@ public class JinConcat11c
                               .addComments(" Shape USE='r_tarsal_distal_phalanx_5_Shape'/ ")
                               .addChild(new Transform().setUSE("r_tarsal_distal_interphalangeal_5_JointShape"))
                               .addChild(new Shape().setUSE("r_tarsal_distal_phalanx_5_Segment"))
-                              .addChild(new HAnimSite("hanim_").setName("r_tarsal_distal_phalanx_5").setTranslation(-0.125,0.016,0.115)
+                              .addChild(new HAnimSite("hanim_r_tarsal_distal_phalanx_5").setName("r_tarsal_distal_phalanx_5").setTranslation(-0.125,0.016,0.115)
                                 .addChild(new Transform().setUSE("r_tarsal_distal_phalanx_5_tip_SiteShape")))
                               .addChild(new Shape().setUSE("r_tarsal_distal_interphalangeal_5-to-r_tarsal_distal_phalanx_5_tip")))))))))))))
         .addChild(new HAnimJoint("hanim_vl5").setName("vl5").setCenter(0.0,0.9254,-0.01376).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})

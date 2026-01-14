@@ -161,7 +161,7 @@ __all__ = [</xsl:text>
 # https://docs.python.org/3/reference/import.html
 # https://docs.python.org/3/reference/import.html#package-relative-imports
                 
-import re # regular expressions library, built in
+import re # built-in Python regular expressions library
 
 #print('====================================', flush=True)
 #print('PyPI x3d package __init__.py diagnostics', flush=True)
@@ -618,6 +618,10 @@ class Comment(_X3DStatement):
     def NAME(cls):
         """ Name of this X3D Statement class. """
         return 'Comment'
+    @property # getter - - - - - - - - - -
+    def name(self):
+        # of possible internal use when supporting Comments class for persistent comments
+        return '_Comment' # "Comment" is not a reserved word in X3D, might be a prototype name
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
@@ -713,7 +717,7 @@ def isX3DNode(value):
 # TODO how to introspect the version number at run time from the object. Specifically,
 # get the magic dictionary __dict__ and then perform standard dictionary lookups on that version key.
 
-print("x3d.py package 4.0.64.5 loaded, have fun with X3D Graphics!", flush=True)
+print("x3d.py package 4.0.65.0 loaded, have fun with X3D Graphics!", flush=True)
 
 ###############################################
 </xsl:text>
@@ -2856,6 +2860,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:text>(</xsl:text>
                 <xsl:text>_X3DStatement</xsl:text>
             </xsl:when>
+            <xsl:when test="($elementName = 'FontLibrary')">
+              <!-- skip baseType=X3DNode to avoid overlapping with X3DUrlObject class in this library -->
+                <xsl:text>(</xsl:text>
+            </xsl:when>
             <xsl:when test="(string-length($baseType) > 0)">
                 <xsl:text>(_</xsl:text>
                 <xsl:value-of select="$baseType"/>
@@ -2881,7 +2889,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
             <xsl:otherwise>
                 <xsl:for-each select=".//AdditionalInheritance">
-                    <xsl:text>, _</xsl:text>
+                    <xsl:if test="not($elementName = 'FontLibrary')">
+                      <!-- skip baseType=X3DNode to avoid overlapping with X3DUrlObject class in this library -->
+                      <xsl:text>, </xsl:text>
+                    </xsl:if>
+                    <xsl:text>_</xsl:text>
                     <xsl:value-of select="@baseType"/>
                 </xsl:for-each>
                 <xsl:text>)</xsl:text>

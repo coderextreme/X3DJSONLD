@@ -43,12 +43,12 @@ public class app implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new app().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/app.new.java.x3d");
-    model.toFileJSON("../data/app.new.java.json");
+    model.toFileJSON("../data/app.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -66,9 +66,9 @@ public class app implements X3DRoots {
         .addChild(new Group()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f})))
+              .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
             .setGeometry(new Box())))
-        .addChild(new Transform().setRotation(new double[] {7f,8f,9f,3.14f}).setScale(new double[] {4f,5f,6f}).setTranslation(new double[] {1f,2f,3f})));
+        .addChild(new Transform().setRotation(new float[] {7f ,8f ,9f ,3.14f }).setScale(new float[] {4f ,5f ,6f }).setTranslation(new float[] {1f ,2f ,3f })));
     return X3D0;
     }
 }

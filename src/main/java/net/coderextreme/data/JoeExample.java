@@ -43,12 +43,12 @@ public class JoeExample implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new JoeExample().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/JoeExample.new.java.x3d");
-    model.toFileJSON("../data/JoeExample.new.java.json");
+    model.toFileJSON("../data/JoeExample.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -56,7 +56,7 @@ public class JoeExample implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setVersion("4.0").setProfile("Immersive")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("Scripting.x3d")))
       .setScene(new Scene()
@@ -80,9 +80,9 @@ public class JoeExample implements X3DRoots {
 "      }"))
         .addChild(new Shape()
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDiffuseColor(new double[] {1f,0f,0f})))
+            .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
           .setGeometry(new Sphere()))
-        .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f).setMinBack(1000f).setMinFront(1000f)
+        .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f ).setMinBack(1000f ).setMinFront(1000f )
           .setSource(new AudioClip().setDEF("Click").setStopTime(1d).setDescription("clicking sound").setUrl(new MFString0().getArray())))
         .addChild(new TouchSensor().setDEF("TS"))
         .addChild(new ROUTE().setFromNode("TS").setFromField("isOver").setToNode("OpenVault").setToField("combinationEntered"))

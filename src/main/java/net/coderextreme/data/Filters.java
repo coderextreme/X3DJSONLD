@@ -43,12 +43,12 @@ public class Filters implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new Filters().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/Filters.new.java.x3d");
-    model.toFileJSON("../data/Filters.new.java.json");
+    model.toFileJSON("../data/Filters.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -74,33 +74,33 @@ public class Filters implements X3DRoots {
         .addChild(new WorldInfo().setTitle("Filters.x3d"))
         .addChild(new NavigationInfo())
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("View entire audio model").setOrientation(new double[] {1f,0f,0f,-0.5f}).setPosition(new double[] {0f,500f,600f}).setRetainUserOffsets(true))
-        .addChild(new Transform().setDEF("TransformAudio1").setTranslation(new double[] {-200f,50f,0f})
+        .addChild(new Viewpoint().setDescription("View entire audio model").setOrientation(new float[] {1f ,0f ,0f ,-0.5f }).setPosition(new float[] {0f ,500f ,600f }).setRetainUserOffsets(true))
+        .addChild(new Transform().setDEF("TransformAudio1").setTranslation(new float[] {-200f ,50f ,0f })
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit")
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.1f,0.1f,0.1f}).setEmissiveColor(new double[] {0.8f,0.8f,0.8f}).setSpecularColor(new double[] {0.01f,0.01f,0.01f})))
-            .setGeometry(new Sphere().setRadius(30f))))
-        .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new double[] {0f,50f,0f})
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.1f ,0.1f }).setEmissiveColor(new float[] {0.8f ,0.8f ,0.8f }).setSpecularColor(new float[] {0.01f ,0.01f ,0.01f })))
+            .setGeometry(new Sphere().setRadius(30f ))))
+        .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new float[] {0f ,50f ,0f })
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit2")
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.1f,0.1f,0.1f}).setEmissiveColor(new double[] {0.8f,0.8f,0.8f}).setSpecularColor(new double[] {0.01f,0.01f,0.01f})))
-            .setGeometry(new Sphere().setRadius(30f))))
-        .addChild(new Transform().setDEF("TransformAudio3").setTranslation(new double[] {200f,50f,0f})
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.1f ,0.1f }).setEmissiveColor(new float[] {0.8f ,0.8f ,0.8f }).setSpecularColor(new float[] {0.01f ,0.01f ,0.01f })))
+            .setGeometry(new Sphere().setRadius(30f ))))
+        .addChild(new Transform().setDEF("TransformAudio3").setTranslation(new float[] {200f ,50f ,0f })
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit3")
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.1f,0.1f,0.1f}).setEmissiveColor(new double[] {0.8f,0.8f,0.8f}).setSpecularColor(new double[] {0.01f,0.01f,0.01f})))
-            .setGeometry(new Sphere().setRadius(30f))))
-        .addChild(new Transform().setDEF("AnimData").setTranslation(new double[] {0f,50f,0f}))
-        .addChild(new Transform().setDEF("AnimDataBoxH").setTranslation(new double[] {0f,100f,0f}))
-        .addChild(new Transform().setDEF("AnimDataBoxM").setTranslation(new double[] {15f,100f,0f}))
-        .addChild(new Transform().setDEF("AnimDataBoxL").setTranslation(new double[] {30f,100f,0f}))
-        .addChild(new Transform().setDEF("AnimDataBoxMM").setTranslation(new double[] {-15f,100f,0f}))
-        .addChild(new Transform().setDEF("AnimDataBoxLM").setTranslation(new double[] {-30f,100f,0f}))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.1f ,0.1f }).setEmissiveColor(new float[] {0.8f ,0.8f ,0.8f }).setSpecularColor(new float[] {0.01f ,0.01f ,0.01f })))
+            .setGeometry(new Sphere().setRadius(30f ))))
+        .addChild(new Transform().setDEF("AnimData").setTranslation(new float[] {0f ,50f ,0f }))
+        .addChild(new Transform().setDEF("AnimDataBoxH").setTranslation(new float[] {0f ,100f ,0f }))
+        .addChild(new Transform().setDEF("AnimDataBoxM").setTranslation(new float[] {15f ,100f ,0f }))
+        .addChild(new Transform().setDEF("AnimDataBoxL").setTranslation(new float[] {30f ,100f ,0f }))
+        .addChild(new Transform().setDEF("AnimDataBoxMM").setTranslation(new float[] {-15f ,100f ,0f }))
+        .addChild(new Transform().setDEF("AnimDataBoxLM").setTranslation(new float[] {-30f ,100f ,0f }))
         .addChild(new Transform()
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("floor")
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.1f,0.1f,0.1f}).setShininess(0.8f).setSpecularColor(new double[] {0.5f,0.6f,0.7f})))
-            .setGeometry(new Cylinder().setRadius(500f))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.1f ,0.1f }).setShininess(0.8f ).setSpecularColor(new float[] {0.5f ,0.6f ,0.7f })))
+            .setGeometry(new Cylinder().setRadius(500f ))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
         .addChild(new StreamAudioDestination()
           .addChild(new DynamicsCompressor()
@@ -108,23 +108,23 @@ public class Filters implements X3DRoots {
               .addChild(new SpatialSound().setDEF("Audio1")
                 .addChild(new Gain()
                   .addChild(new Analyser()
-                    .addChild(new BiquadFilter().setType("ALLPASS").setDetune(50f).setFrequency(600f).setQualityFactor(30f)
+                    .addChild(new BiquadFilter().setType("ALLPASS").setDetune(50f ).setFrequency(600f ).setQualityFactor(30f )
                       .addChild(new AudioClip().setDescription("Techno beat").setLoop(true).setUrl(new MFString1().getArray()))))))
               .addChild(new SpatialSound().setDEF("Audio2")
                 .addChild(new Gain()
                   .addChild(new Analyser()
-                    .addChild(new BiquadFilter().setType("ALLPASS").setDetune(15f).setFrequency(600f).setQualityFactor(15f)
+                    .addChild(new BiquadFilter().setType("ALLPASS").setDetune(15f ).setFrequency(600f ).setQualityFactor(15f )
                       .addChild(new AudioClip().setDescription("Simple beat").setLoop(true).setUrl(new MFString2().getArray()))))))
               .addChild(new SpatialSound().setDEF("Audio3")
                 .addChild(new Gain()
                   .addChild(new Analyser()
-                    .addChild(new BiquadFilter().setType("ALLPASS").setFrequency(1000f).setQualityFactor(0f)
+                    .addChild(new BiquadFilter().setType("ALLPASS").setFrequency(1000f ).setQualityFactor(0f )
                       .addChild(new AudioClip().setDescription("Wobble loop").setLoop(true).setUrl(new MFString3().getArray()))))))))));
     return X3D0;
     }
 private class MFColor0 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0.2f,0.2f,0.2f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2f ,0.2f ,0.2f });
   }
 }
 private class MFString1 {

@@ -43,12 +43,12 @@ public class mirror implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new mirror().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/mirror.new.java.x3d");
-    model.toFileJSON("../data/mirror.new.java.json");
+    model.toFileJSON("../data/mirror.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -58,6 +58,7 @@ public class mirror implements X3DRoots {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -66,14 +67,13 @@ public class mirror implements X3DRoots {
         .addComponent(new component().setName("Rendering").setLevel(1))
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
-        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addMeta(new meta().setName("title").setContent("mirror.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"))
         .addMeta(new meta().setName("description").setContent("sphere with alternating backgrounds")))
       .setScene(new Scene()
-        .addChild(new Viewpoint().setPosition(new double[] {0f,5f,100f}).setDescription("Switch background and images texture"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,5f ,100f }).setDescription("Switch background and images texture"))
         .addChild(new TextureBackground()
           .setLeftTexture(new ImageTexture().setDEF("leftBackgroundTexture").setUrl(new MFString0().getArray()))
           .setRightTexture(new ImageTexture().setDEF("rightBackgroundTexture").setUrl(new MFString1().getArray()))
@@ -84,7 +84,7 @@ public class mirror implements X3DRoots {
         .addChild(new Transform()
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setDiffuseColor(new double[] {0.7f,0.7f,0.7f}).setSpecularColor(new double[] {0.5f,0.5f,0.5f}))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))
               .setTexture(new ComposedCubeMapTexture()
                 .setBackTexture(new ImageTexture().setDEF("backShader").setUrl(new MFString6().getArray()))
                 .setBottomTexture(new ImageTexture().setDEF("bottomShader").setUrl(new MFString7().getArray()))
@@ -109,7 +109,7 @@ public class mirror implements X3DRoots {
                 .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(new MFString14().getArray()))
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new MFString15().getArray()))))
-            .setGeometry(new Sphere().setRadius(30f)))
+            .setGeometry(new Sphere().setRadius(30f )))
           .addChild(new Script().setDEF("UrlSelector").setDirectOutput(true)
             .addField(new field().setType("MFString").setName("frontUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_front.png\" \"../resources/images/all_probes/building_cross/building_front.png\" \"../resources/images/all_probes/campus_cross/campus_front.png\" \"../resources/images/all_probes/galileo_cross/galileo_front.png\" \"../resources/images/all_probes/grace_cross/grace_front.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_front.png\" \"../resources/images/all_probes/rnl_cross/rnl_front.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_front.png\""))
             .addField(new field().setType("MFString").setName("backUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"../resources/images/all_probes/beach_cross/beach_back.png\" \"../resources/images/all_probes/building_cross/building_back.png\" \"../resources/images/all_probes/campus_cross/campus_back.png\" \"../resources/images/all_probes/galileo_cross/galileo_back.png\" \"../resources/images/all_probes/grace_cross/grace_back.png\" \"../resources/images/all_probes/kitchen_cross/kitchen_back.png\" \"../resources/images/all_probes/rnl_cross/rnl_back.png\" \"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"../resources/images/all_probes/uffizi_cross/uffizi_back.png\""))

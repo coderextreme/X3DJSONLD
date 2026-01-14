@@ -43,12 +43,12 @@ public class Humanoid3 implements X3DRoots {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    ConfigurationProperties.setStripTrailingZeroes(false);
+    ConfigurationProperties.setStripTrailingZeroes(true);
     ConfigurationProperties.setStripDefaultAttributes(true);
     X3D model = new Humanoid3().getRootNodeList().get(0); // only get one root node
     System.out.print(model.validationReport().trim());
     model.toFileX3D("../data/Humanoid3.new.java.x3d");
-    model.toFileJSON("../data/Humanoid3.new.java.json");
+    model.toFileJSON("../data/Humanoid3.new.java.x3dj");
     }
     public List<X3D> getRootNodeList() {
     	List<X3D> list = new ArrayList<X3D>(1);
@@ -60,7 +60,7 @@ public class Humanoid3 implements X3DRoots {
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("Humanoid3.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid3.x3d"))
         .addMeta(new meta().setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
         .addMeta(new meta().setName("generator").setContent("h2.pl"))
         .addMeta(new meta().setName("modified").setContent("14 Jan 2023"))
@@ -78,39 +78,39 @@ public class Humanoid3 implements X3DRoots {
         .addChild(new Group()
           .addComments(new CommentsBlock("DEFS for markers of skeleton joints, segments, and sites"))
           .addChild(new Transform()
-            .addChild(new Transform().setTranslation(new double[] {0f,2.1f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f ,2.1f ,0f })
               .addChild(new Shape().setDEF("HAnimJointShape")
-                .setGeometry(new Sphere().setRadius(0.02f))
+                .setGeometry(new Sphere().setRadius(0.02f ))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDEF("HAnimJointMaterial").setDiffuseColor(new double[] {0f,0f,0f})))))
-            .addChild(new Transform().setTranslation(new double[] {0f,2.05f,0f})
+                  .setMaterial(new Material().setDEF("HAnimJointMaterial").setDiffuseColor(new float[] {0f ,0f ,0f })))))
+            .addChild(new Transform().setTranslation(new float[] {0f ,2.05f ,0f })
               .addChild(new Shape().setDEF("HAnimSegmentLine")
                 .setGeometry(new LineSet().setVertexCount(new MFInt324().getArray())
                   .setColor(new ColorRGBA().setDEF("HAnimSegmentLineColorRGBA").setColor(new MFColorRGBA5().getArray()))
                   .setCoord(new Coordinate().setPoint(new MFVec3f6().getArray())))))
-            .addChild(new Transform().setTranslation(new double[] {0f,2.1f,0f})
+            .addChild(new Transform().setTranslation(new float[] {0f ,2.1f ,0f })
               .addChild(new Shape().setDEF("HAnimSiteShape")
-                .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setCreaseAngle(0.5f).setSolid(false).setCoordIndex(new MFInt327().getArray())
+                .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setCreaseAngle(0.5f ).setSolid(false).setCoordIndex(new MFInt327().getArray())
                   .setColor(new ColorRGBA().setDEF("HAnimSiteColorRGBA").setColor(new MFColorRGBA8().getArray()))
                   .setCoord(new Coordinate().setPoint(new MFVec3f9().getArray())))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new double[] {1f,1f,1f}).setTransparency(1f)))))))
-        .addChild(new NavigationInfo().setSpeed(1.5f))
-        .addChild(new Viewpoint().setPosition(new double[] {0f,1f,3f}).setCenterOfRotation(new double[] {0f,1f,0f}).setDescription("default"))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }).setTransparency(1f )))))))
+        .addChild(new NavigationInfo().setSpeed(1.5f ))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,1f ,3f }).setCenterOfRotation(new float[] {0f ,1f ,0f }).setDescription("default"))
         .addChild(new HAnimHumanoid().setName("HAnim").setDEF("hanim_HAnim").setInfo(new MFString10().getArray()).setVersion("2.0")
           .addComments(new CommentsBlock("<LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene)"))
           .addComments(new CommentsBlock("</LOD>"))
-          .addSkin(((Shape)new Shape().setDEF("SkinShape").setContainerFieldOverride("skin"))
-            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray().append(new MFInt3212().getArray()).append(new MFInt3213().getArray()).append(new MFInt3214().getArray())).setCreaseAngle(3.1f)
+          .addSkin(new Shape().setDEF("SkinShape")
+            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray().append(new MFInt3212().getArray()).append(new MFInt3213().getArray()).append(new MFInt3214().getArray())).setCreaseAngle(3.1f )
               .setCoord(new Coordinate().setDEF("TheSkinCoord").setPoint(new MFVec3f15().getArray().append(new MFVec3f16().getArray())))
               .setColor(new Color().setColor(new MFColor17().getArray().append(new MFColor18().getArray()).append(new MFColor19().getArray()))))
             .setAppearance(new Appearance().setDEF("SkinAppearance")
               .setTexture(new ImageTexture().setDEF("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new MFString20().getArray()))
-              .setMaterial(new Material().setDEF("SkinMaterial").setAmbientIntensity(0.6f).setDiffuseColor(new double[] {1f,1f,1f}).setShininess(0.6f).setTransparency(1f))))
-          .setSkinCoord(((Coordinate)new Coordinate().setContainerFieldOverride("skinCoord")).setUSE("TheSkinCoord"))
-          .addSkeleton(((HAnimJoint)new HAnimJoint("hanim_HAnim").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new double[] {0f,0.824f,0.0277f}).setUlimit(new MFFloat21().getArray()).setLlimit(new MFFloat22().getArray()).setContainerFieldOverride("skeleton"))
+              .setMaterial(new Material().setDEF("SkinMaterial").setAmbientIntensity(0.6f ).setDiffuseColor(new float[] {1f ,1f ,1f }).setShininess(0.6f ).setTransparency(1f ))))
+          .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
+          .addSkeleton(new HAnimJoint("hanim_HAnim").setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f ,0.824f ,0.0277f }).setUlimit(new MFFloat21().getArray()).setLlimit(new MFFloat22().getArray())
             .addChild(new HAnimSegment("hanim_humanoid_root").setName("sacrum").setDEF("hanim_sacrum")
-              .addChild(new Transform().setTranslation(new double[] {0f,0.824f,0.0277f})
+              .addChild(new Transform().setTranslation(new float[] {0f ,0.824f ,0.0277f })
                 .addChild(new Transform()
                   .addComments(new CommentsBlock("Empty Transform"))
                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -124,9 +124,9 @@ public class Humanoid3 implements X3DRoots {
                   .setCoord(new Coordinate().setPoint(new MFVec3f26().getArray()))
                   .addComments(new CommentsBlock("from humanoid_root to vl5 vertices 2"))
                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new double[] {0f,0.9149f,0.0016f}).setUlimit(new MFFloat27().getArray()).setLlimit(new MFFloat28().getArray())
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f ,0.9149f ,0.0016f }).setUlimit(new MFFloat27().getArray()).setLlimit(new MFFloat28().getArray())
               .addChild(new HAnimSegment("hanim_sacroiliac").setName("pelvis").setDEF("hanim_pelvis")
-                .addChild(new Transform().setTranslation(new double[] {0f,0.9149f,0.0016f})
+                .addChild(new Transform().setTranslation(new float[] {0f ,0.9149f ,0.0016f })
                   .addChild(new Transform()
                     .addComments(new CommentsBlock("Empty Transform"))
                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -141,78 +141,78 @@ public class Humanoid3 implements X3DRoots {
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString31().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("crotch").setDEF("hanim_crotch").setTranslation(new double[] {0.0034f,0.8266f,0.0257f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("crotch").setDEF("hanim_crotch").setTranslation(new float[] {0.0034f ,0.8266f ,0.0257f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 38 crotch"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString32().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("l_asis").setDEF("hanim_l_asis").setTranslation(new double[] {0.0925f,0.9983f,0.1052f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("l_asis").setDEF("hanim_l_asis").setTranslation(new float[] {0.0925f ,0.9983f ,0.1052f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 32 l_asis"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString33().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("l_iliocristale").setDEF("hanim_l_iliocristale").setTranslation(new double[] {0.1612f,1.0537f,0.0008f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("l_iliocristale").setDEF("hanim_l_iliocristale").setTranslation(new float[] {0.1612f ,1.0537f ,0.0008f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 33 l_iliocristale"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString34().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("l_psis").setDEF("hanim_l_psis").setTranslation(new double[] {0.0774f,1.019f,-0.1151f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("l_psis").setDEF("hanim_l_psis").setTranslation(new float[] {0.0774f ,1.019f ,-0.1151f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 34 l_psis"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString35().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("l_trochanterion").setDEF("hanim_l_trochanterion").setTranslation(new double[] {0.1677f,0.8336f,0.0303f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("l_trochanterion").setDEF("hanim_l_trochanterion").setTranslation(new float[] {0.1677f ,0.8336f ,0.0303f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 42 l_trochanterion"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString36().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("r_asis").setDEF("hanim_r_asis").setTranslation(new double[] {-0.0887f,1.0021f,0.1112f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("r_asis").setDEF("hanim_r_asis").setTranslation(new float[] {-0.0887f ,1.0021f ,0.1112f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 35 r_asis"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString37().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("r_iliocristale").setDEF("hanim_r_iliocristale").setTranslation(new double[] {-0.1525f,1.0628f,0.0035f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("r_iliocristale").setDEF("hanim_r_iliocristale").setTranslation(new float[] {-0.1525f ,1.0628f ,0.0035f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 36 r_iliocristale"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString38().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("r_psis").setDEF("hanim_r_psis").setTranslation(new double[] {-0.0716f,1.019f,-0.1138f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("r_psis").setDEF("hanim_r_psis").setTranslation(new float[] {-0.0716f ,1.019f ,-0.1138f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 37 r_psis"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString39().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_pelvis").setName("r_trochanterion").setDEF("hanim_r_trochanterion").setTranslation(new double[] {-0.1689f,0.8419f,0.0352f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_pelvis").setName("r_trochanterion").setDEF("hanim_r_trochanterion").setTranslation(new float[] {-0.1689f ,0.8419f ,0.0352f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 46 r_trochanterion"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString40().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
                 .addChild(new Shape()
                   .setGeometry(new LineSet().setVertexCount(new MFInt3241().getArray())
                     .setCoord(new Coordinate().setPoint(new MFVec3f42().getArray()))
                     .addComments(new CommentsBlock("from sacroiliac to r_hip vertices 2"))
                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-              .addChild(new HAnimJoint("hanim_sacroiliac").setName("l_hip").setDEF("hanim_l_hip").setCenter(new double[] {0.0961f,0.9124f,-0.0001f}).setUlimit(new MFFloat43().getArray()).setLlimit(new MFFloat44().getArray())
+              .addChild(new HAnimJoint("hanim_sacroiliac").setName("l_hip").setDEF("hanim_l_hip").setCenter(new float[] {0.0961f ,0.9124f ,-0.0001f }).setUlimit(new MFFloat43().getArray()).setLlimit(new MFFloat44().getArray())
                 .addChild(new HAnimSegment("hanim_l_hip").setName("l_thigh").setDEF("hanim_l_thigh")
-                  .addChild(new Transform().setTranslation(new double[] {0.0961f,0.9124f,-0.0001f})
+                  .addChild(new Transform().setTranslation(new float[] {0.0961f ,0.9124f ,-0.0001f })
                     .addChild(new Transform()
                       .addComments(new CommentsBlock("Empty Transform"))
                       .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -221,37 +221,37 @@ public class Humanoid3 implements X3DRoots {
                       .setCoord(new Coordinate().setPoint(new MFVec3f46().getArray()))
                       .addComments(new CommentsBlock("from l_hip to l_knee vertices 2"))
                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                  .addChild(new HAnimSite("hanim_l_thigh").setName("l_femoral_lateral_epicondyles").setDEF("hanim_l_femoral_lateral_epicondyles").setTranslation(new double[] {0.1598f,0.4967f,0.0297f})
+                  .addChild(new HAnimSite("hanim_l_thigh").setName("l_femoral_lateral_epicondyles").setDEF("hanim_l_femoral_lateral_epicondyles").setTranslation(new float[] {0.1598f ,0.4967f ,0.0297f })
                     .addChild(new TouchSensor().setDescription("HAnimSite 40 l_femoral_lateral_epicondyles"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString47().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                  .addChild(new HAnimSite("hanim_l_thigh").setName("l_femoral_medial_epicondyles").setDEF("hanim_l_femoral_medial_epicondyles").setTranslation(new double[] {0.0398f,0.4946f,0.0303f})
+                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                  .addChild(new HAnimSite("hanim_l_thigh").setName("l_femoral_medial_epicondyles").setDEF("hanim_l_femoral_medial_epicondyles").setTranslation(new float[] {0.0398f ,0.4946f ,0.0303f })
                     .addChild(new TouchSensor().setDescription("HAnimSite 39 l_femoral_medial_epicondyles"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString48().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                  .addChild(new HAnimSite("hanim_l_thigh").setName("l_knee_crease").setDEF("hanim_l_knee_crease").setTranslation(new double[] {0.0993f,0.4881f,-0.0309f})
+                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                  .addChild(new HAnimSite("hanim_l_thigh").setName("l_knee_crease").setDEF("hanim_l_knee_crease").setTranslation(new float[] {0.0993f ,0.4881f ,-0.0309f })
                     .addChild(new TouchSensor().setDescription("HAnimSite 90 l_knee_crease"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString49().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f))))))
+                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
                   .addChild(new HAnimSite("hanim_l_thigh").setName("l_suprapatella").setDEF("hanim_l_suprapatella")
                     .addChild(new TouchSensor().setDescription("HAnimSite 41 l_suprapatella"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString50().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                .addChild(new HAnimJoint("hanim_l_hip").setName("l_knee").setDEF("hanim_l_knee").setCenter(new double[] {0.104f,0.4867f,0.0308f}).setUlimit(new MFFloat51().getArray()).setLlimit(new MFFloat52().getArray())
+                          .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                .addChild(new HAnimJoint("hanim_l_hip").setName("l_knee").setDEF("hanim_l_knee").setCenter(new float[] {0.104f ,0.4867f ,0.0308f }).setUlimit(new MFFloat51().getArray()).setLlimit(new MFFloat52().getArray())
                   .addChild(new HAnimSegment("hanim_l_knee").setName("l_calf").setDEF("hanim_l_calf")
-                    .addChild(new Transform().setTranslation(new double[] {0.104f,0.4867f,0.0308f})
+                    .addChild(new Transform().setTranslation(new float[] {0.104f ,0.4867f ,0.0308f })
                       .addChild(new Transform()
                         .addComments(new CommentsBlock("Empty Transform"))
                         .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -260,30 +260,30 @@ public class Humanoid3 implements X3DRoots {
                         .setCoord(new Coordinate().setPoint(new MFVec3f54().getArray()))
                         .addComments(new CommentsBlock("from l_knee to l_talocrural vertices 2"))
                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                    .addChild(new HAnimSite("hanim_l_calf").setName("l_lateral_malleolus").setDEF("hanim_l_lateral_malleolus").setTranslation(new double[] {0.1308f,0.0597f,-0.1032f})
+                    .addChild(new HAnimSite("hanim_l_calf").setName("l_lateral_malleolus").setDEF("hanim_l_lateral_malleolus").setTranslation(new float[] {0.1308f ,0.0597f ,-0.1032f })
                       .addChild(new TouchSensor().setDescription("HAnimSite 49 l_lateral_malleolus"))
                       .addChild(new Shape().setUSE("HAnimSiteShape"))
                       .addChild(new Billboard()
                         .addChild(new Shape()
                           .setGeometry(new Text().setString(new MFString55().getArray())
-                            .setFontStyle(new FontStyle().setSize(0.035f))))))
-                    .addChild(new HAnimSite("hanim_l_calf").setName("l_medial_malleolus").setDEF("hanim_l_medial_malleolus").setTranslation(new double[] {0.089f,0.0716f,-0.0881f})
+                            .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                    .addChild(new HAnimSite("hanim_l_calf").setName("l_medial_malleolus").setDEF("hanim_l_medial_malleolus").setTranslation(new float[] {0.089f ,0.0716f ,-0.0881f })
                       .addChild(new TouchSensor().setDescription("HAnimSite 48 l_medial_malleolus"))
                       .addChild(new Shape().setUSE("HAnimSiteShape"))
                       .addChild(new Billboard()
                         .addChild(new Shape()
                           .setGeometry(new Text().setString(new MFString56().getArray())
-                            .setFontStyle(new FontStyle().setSize(0.035f))))))
+                            .setFontStyle(new FontStyle().setSize(0.035f ))))))
                     .addChild(new HAnimSite("hanim_l_calf").setName("l_tibiale").setDEF("hanim_l_tibiale")
                       .addChild(new TouchSensor().setDescription("HAnimSite 47 l_tibiale"))
                       .addChild(new Shape().setUSE("HAnimSiteShape"))
                       .addChild(new Billboard()
                         .addChild(new Shape()
                           .setGeometry(new Text().setString(new MFString57().getArray())
-                            .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                  .addChild(new HAnimJoint("hanim_l_knee").setName("l_talocrural").setDEF("hanim_l_talocrural").setCenter(new double[] {0.1101f,0.0656f,-0.0736f}).setUlimit(new MFFloat58().getArray()).setLlimit(new MFFloat59().getArray())
+                            .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                  .addChild(new HAnimJoint("hanim_l_knee").setName("l_talocrural").setDEF("hanim_l_talocrural").setCenter(new float[] {0.1101f ,0.0656f ,-0.0736f }).setUlimit(new MFFloat58().getArray()).setLlimit(new MFFloat59().getArray())
                     .addChild(new HAnimSegment("hanim_l_talocrural").setName("l_talus").setDEF("hanim_l_talus")
-                      .addChild(new Transform().setScale(new double[] {0.15f,0.15f,0.15f}).setTranslation(new double[] {0.08f,0.06f,-0.025f}).setRotation(new double[] {1f,0f,0f,-1.57f})
+                      .addChild(new Transform().setScale(new float[] {0.15f ,0.15f ,0.15f }).setTranslation(new float[] {0.08f ,0.06f ,-0.025f }).setRotation(new float[] {1f ,0f ,0f ,-1.57f })
                         .addComments(new CommentsBlock("Transform left foot"))
                         .addChild(new Transform()
                           .addComments(new CommentsBlock("Empty Transform left foot"))
@@ -293,23 +293,23 @@ public class Humanoid3 implements X3DRoots {
                           .setCoord(new Coordinate().setPoint(new MFVec3f61().getArray()))
                           .addComments(new CommentsBlock("from l_talocrural to l_tarsometatarsal_2 vertices 2"))
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                      .addChild(new HAnimSite("hanim_l_talus").setName("l_calcaneus_posterior").setDEF("hanim_l_calcaneus_posterior").setTranslation(new double[] {0.0974f,0.0259f,-0.1171f})
+                      .addChild(new HAnimSite("hanim_l_talus").setName("l_calcaneus_posterior").setDEF("hanim_l_calcaneus_posterior").setTranslation(new float[] {0.0974f ,0.0259f ,-0.1171f })
                         .addChild(new TouchSensor().setDescription("HAnimSite 58 l_calcaneus_posterior"))
                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                         .addChild(new Billboard()
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new MFString62().getArray())
-                              .setFontStyle(new FontStyle().setSize(0.035f))))))
-                      .addChild(new HAnimSite("hanim_l_talus").setName("l_sphyrion").setDEF("hanim_l_sphyrion").setTranslation(new double[] {0.089f,0.0575f,-0.0943f})
+                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                      .addChild(new HAnimSite("hanim_l_talus").setName("l_sphyrion").setDEF("hanim_l_sphyrion").setTranslation(new float[] {0.089f ,0.0575f ,-0.0943f })
                         .addChild(new TouchSensor().setDescription("HAnimSite 50 l_sphyrion"))
                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                         .addChild(new Billboard()
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new MFString63().getArray())
-                              .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                    .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_tarsometatarsal_2").setDEF("hanim_l_tarsometatarsal_2").setCenter(new double[] {0.08f,0.0175f,-0.0608f}).setUlimit(new MFFloat64().getArray()).setLlimit(new MFFloat65().getArray())
+                              .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                    .addChild(new HAnimJoint("hanim_l_talocrural").setName("l_tarsometatarsal_2").setDEF("hanim_l_tarsometatarsal_2").setCenter(new float[] {0.08f ,0.0175f ,-0.0608f }).setUlimit(new MFFloat64().getArray()).setLlimit(new MFFloat65().getArray())
                       .addChild(new HAnimSegment("hanim_l_tarsometatarsal_2").setName("l_metatarsal_2").setDEF("hanim_l_metatarsal_2")
-                        .addChild(new Transform().setTranslation(new double[] {0.08f,0.0175f,-0.0608f})
+                        .addChild(new Transform().setTranslation(new float[] {0.08f ,0.0175f ,-0.0608f })
                           .addChild(new Transform()
                             .addComments(new CommentsBlock("Empty Transform"))
                             .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -318,9 +318,9 @@ public class Humanoid3 implements X3DRoots {
                             .setCoord(new Coordinate().setPoint(new MFVec3f67().getArray()))
                             .addComments(new CommentsBlock("from l_tarsometatarsal_2 to l_metatarsophalangeal_2 vertices 2"))
                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                      .addChild(new HAnimJoint("hanim_l_tarsometatarsal_2").setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new double[] {0.0824f,0.0064f,-0.004f}).setUlimit(new MFFloat68().getArray()).setLlimit(new MFFloat69().getArray())
+                      .addChild(new HAnimJoint("hanim_l_tarsometatarsal_2").setName("l_metatarsophalangeal_2").setDEF("hanim_l_metatarsophalangeal_2").setCenter(new float[] {0.0824f ,0.0064f ,-0.004f }).setUlimit(new MFFloat68().getArray()).setLlimit(new MFFloat69().getArray())
                         .addChild(new HAnimSegment("hanim_l_metatarsophalangeal_2").setName("l_tarsal_proximal_phalanx_2").setDEF("hanim_l_tarsal_proximal_phalanx_2")
-                          .addChild(new Transform().setTranslation(new double[] {0.0824f,0.0064f,-0.004f})
+                          .addChild(new Transform().setTranslation(new float[] {0.0824f ,0.0064f ,-0.004f })
                             .addChild(new Transform()
                               .addComments(new CommentsBlock("Empty Transform"))
                               .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -335,53 +335,53 @@ public class Humanoid3 implements X3DRoots {
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString72().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_l_tarsal_proximal_phalanx_2").setName("l_metatarsal_phalanx_5").setDEF("hanim_l_metatarsal_phalanx_5")
                             .addChild(new TouchSensor().setDescription("HAnimSite 56 l_metatarsal_phalanx_5"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString73().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_distal_phalanx_1_tip").setDEF("hanim_l_tarsal_distal_phalanx_1_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_1_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString74().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
-                          .addChild(new HAnimSite("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_distal_phalanx_2_tip").setDEF("hanim_l_tarsal_distal_phalanx_2_tip").setTranslation(new double[] {0.1195f,0.0079f,0.1433f})
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                          .addChild(new HAnimSite("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_distal_phalanx_2_tip").setDEF("hanim_l_tarsal_distal_phalanx_2_tip").setTranslation(new float[] {0.1195f ,0.0079f ,0.1433f })
                             .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_2_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString75().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_distal_phalanx_3_tip").setDEF("hanim_l_tarsal_distal_phalanx_3_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_3_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString76().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_distal_phalanx_4_tip").setDEF("hanim_l_tarsal_distal_phalanx_4_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_4_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString77().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_distal_phalanx_5_tip").setDEF("hanim_l_tarsal_distal_phalanx_5_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_5_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString78().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                        .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setDEF("hanim_l_tarsal_distal_interphalangeal_2").setCenter(new double[] {0.0841f,0.0013f,0.0216f}).setUlimit(new MFFloat79().getArray()).setLlimit(new MFFloat80().getArray())))))))
-              .addChild(new HAnimJoint("hanim_sacroiliac").setName("r_hip").setDEF("hanim_r_hip").setCenter(new double[] {-0.095f,0.9171f,0.0029f}).setUlimit(new MFFloat81().getArray()).setLlimit(new MFFloat82().getArray())
+                                  .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                        .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setDEF("hanim_l_tarsal_distal_interphalangeal_2").setCenter(new float[] {0.0841f ,0.0013f ,0.0216f }).setUlimit(new MFFloat79().getArray()).setLlimit(new MFFloat80().getArray())))))))
+              .addChild(new HAnimJoint("hanim_sacroiliac").setName("r_hip").setDEF("hanim_r_hip").setCenter(new float[] {-0.095f ,0.9171f ,0.0029f }).setUlimit(new MFFloat81().getArray()).setLlimit(new MFFloat82().getArray())
                 .addChild(new HAnimSegment("hanim_r_hip").setName("r_thigh").setDEF("hanim_r_thigh")
-                  .addChild(new Transform().setTranslation(new double[] {-0.095f,0.9171f,0.0029f})
+                  .addChild(new Transform().setTranslation(new float[] {-0.095f ,0.9171f ,0.0029f })
                     .addChild(new Transform()
                       .addComments(new CommentsBlock("Empty Transform"))
                       .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -390,37 +390,37 @@ public class Humanoid3 implements X3DRoots {
                       .setCoord(new Coordinate().setPoint(new MFVec3f84().getArray()))
                       .addComments(new CommentsBlock("from r_hip to r_knee vertices 2"))
                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                  .addChild(new HAnimSite("hanim_r_thigh").setName("r_femoral_lateral_epicondyles").setDEF("hanim_r_femoral_lateral_epicondyles").setTranslation(new double[] {-0.1421f,0.4992f,0.031f})
+                  .addChild(new HAnimSite("hanim_r_thigh").setName("r_femoral_lateral_epicondyles").setDEF("hanim_r_femoral_lateral_epicondyles").setTranslation(new float[] {-0.1421f ,0.4992f ,0.031f })
                     .addChild(new TouchSensor().setDescription("HAnimSite 44 r_femoral_lateral_epicondyles"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString85().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                  .addChild(new HAnimSite("hanim_r_thigh").setName("r_femoral_medial_epicondyles").setDEF("hanim_r_femoral_medial_epicondyles").setTranslation(new double[] {-0.0221f,0.5014f,0.0289f})
+                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                  .addChild(new HAnimSite("hanim_r_thigh").setName("r_femoral_medial_epicondyles").setDEF("hanim_r_femoral_medial_epicondyles").setTranslation(new float[] {-0.0221f ,0.5014f ,0.0289f })
                     .addChild(new TouchSensor().setDescription("HAnimSite 43 r_femoral_medial_epicondyles"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString86().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                  .addChild(new HAnimSite("hanim_r_thigh").setName("r_knee_crease").setDEF("hanim_r_knee_crease").setTranslation(new double[] {-0.0825f,0.4932f,-0.0326f})
+                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                  .addChild(new HAnimSite("hanim_r_thigh").setName("r_knee_crease").setDEF("hanim_r_knee_crease").setTranslation(new float[] {-0.0825f ,0.4932f ,-0.0326f })
                     .addChild(new TouchSensor().setDescription("HAnimSite 91 r_knee_crease"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString87().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f))))))
+                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
                   .addChild(new HAnimSite("hanim_r_thigh").setName("r_suprapatella").setDEF("hanim_r_suprapatella")
                     .addChild(new TouchSensor().setDescription("HAnimSite 45 r_suprapatella"))
                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                     .addChild(new Billboard()
                       .addChild(new Shape()
                         .setGeometry(new Text().setString(new MFString88().getArray())
-                          .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                .addChild(new HAnimJoint("hanim_r_hip").setName("r_knee").setDEF("hanim_r_knee").setCenter(new double[] {-0.0867f,0.4913f,0.0318f}).setUlimit(new MFFloat89().getArray()).setLlimit(new MFFloat90().getArray())
+                          .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                .addChild(new HAnimJoint("hanim_r_hip").setName("r_knee").setDEF("hanim_r_knee").setCenter(new float[] {-0.0867f ,0.4913f ,0.0318f }).setUlimit(new MFFloat89().getArray()).setLlimit(new MFFloat90().getArray())
                   .addChild(new HAnimSegment("hanim_r_knee").setName("r_calf").setDEF("hanim_r_calf")
-                    .addChild(new Transform().setTranslation(new double[] {-0.0867f,0.4913f,0.0318f})
+                    .addChild(new Transform().setTranslation(new float[] {-0.0867f ,0.4913f ,0.0318f })
                       .addChild(new Transform()
                         .addComments(new CommentsBlock("Empty Transform"))
                         .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -429,30 +429,30 @@ public class Humanoid3 implements X3DRoots {
                         .setCoord(new Coordinate().setPoint(new MFVec3f92().getArray()))
                         .addComments(new CommentsBlock("from r_knee to r_talocrural vertices 2"))
                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                    .addChild(new HAnimSite("hanim_r_calf").setName("r_lateral_malleolus").setDEF("hanim_r_lateral_malleolus").setTranslation(new double[] {-0.1006f,0.0658f,-0.1075f})
+                    .addChild(new HAnimSite("hanim_r_calf").setName("r_lateral_malleolus").setDEF("hanim_r_lateral_malleolus").setTranslation(new float[] {-0.1006f ,0.0658f ,-0.1075f })
                       .addChild(new TouchSensor().setDescription("HAnimSite 53 r_lateral_malleolus"))
                       .addChild(new Shape().setUSE("HAnimSiteShape"))
                       .addChild(new Billboard()
                         .addChild(new Shape()
                           .setGeometry(new Text().setString(new MFString93().getArray())
-                            .setFontStyle(new FontStyle().setSize(0.035f))))))
-                    .addChild(new HAnimSite("hanim_r_calf").setName("r_medial_malleolus").setDEF("hanim_r_medial_malleolus").setTranslation(new double[] {-0.0591f,0.076f,-0.0928f})
+                            .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                    .addChild(new HAnimSite("hanim_r_calf").setName("r_medial_malleolus").setDEF("hanim_r_medial_malleolus").setTranslation(new float[] {-0.0591f ,0.076f ,-0.0928f })
                       .addChild(new TouchSensor().setDescription("HAnimSite 52 r_medial_malleolus"))
                       .addChild(new Shape().setUSE("HAnimSiteShape"))
                       .addChild(new Billboard()
                         .addChild(new Shape()
                           .setGeometry(new Text().setString(new MFString94().getArray())
-                            .setFontStyle(new FontStyle().setSize(0.035f))))))
+                            .setFontStyle(new FontStyle().setSize(0.035f ))))))
                     .addChild(new HAnimSite("hanim_r_calf").setName("r_tibiale").setDEF("hanim_r_tibiale")
                       .addChild(new TouchSensor().setDescription("HAnimSite 51 r_tibiale"))
                       .addChild(new Shape().setUSE("HAnimSiteShape"))
                       .addChild(new Billboard()
                         .addChild(new Shape()
                           .setGeometry(new Text().setString(new MFString95().getArray())
-                            .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                  .addChild(new HAnimJoint("hanim_r_knee").setName("r_talocrural").setDEF("hanim_r_talocrural").setCenter(new double[] {-0.0801f,0.0712f,-0.0766f}).setUlimit(new MFFloat96().getArray()).setLlimit(new MFFloat97().getArray())
+                            .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                  .addChild(new HAnimJoint("hanim_r_knee").setName("r_talocrural").setDEF("hanim_r_talocrural").setCenter(new float[] {-0.0801f ,0.0712f ,-0.0766f }).setUlimit(new MFFloat96().getArray()).setLlimit(new MFFloat97().getArray())
                     .addChild(new HAnimSegment("hanim_r_talocrural").setName("r_talus").setDEF("hanim_r_talus")
-                      .addChild(new Transform().setScale(new double[] {0.15f,0.15f,0.15f}).setTranslation(new double[] {-0.05f,0.06f,-0.025f}).setRotation(new double[] {1f,0f,0f,-1.57f})
+                      .addChild(new Transform().setScale(new float[] {0.15f ,0.15f ,0.15f }).setTranslation(new float[] {-0.05f ,0.06f ,-0.025f }).setRotation(new float[] {1f ,0f ,0f ,-1.57f })
                         .addComments(new CommentsBlock("Transform right foot"))
                         .addChild(new Transform()
                           .addComments(new CommentsBlock("Empty Transform right foot"))
@@ -462,23 +462,23 @@ public class Humanoid3 implements X3DRoots {
                           .setCoord(new Coordinate().setPoint(new MFVec3f99().getArray()))
                           .addComments(new CommentsBlock("from r_talocrural to r_tarsometatarsal_2 vertices 2"))
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                      .addChild(new HAnimSite("hanim_r_talus").setName("r_calcaneus_posterior").setDEF("hanim_r_calcaneus_posterior").setTranslation(new double[] {-0.0692f,0.0297f,-0.1221f})
+                      .addChild(new HAnimSite("hanim_r_talus").setName("r_calcaneus_posterior").setDEF("hanim_r_calcaneus_posterior").setTranslation(new float[] {-0.0692f ,0.0297f ,-0.1221f })
                         .addChild(new TouchSensor().setDescription("HAnimSite 62 r_calcaneus_posterior"))
                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                         .addChild(new Billboard()
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new MFString100().getArray())
-                              .setFontStyle(new FontStyle().setSize(0.035f))))))
-                      .addChild(new HAnimSite("hanim_r_talus").setName("r_sphyrion").setDEF("hanim_r_sphyrion").setTranslation(new double[] {-0.0603f,0.061f,-0.1002f})
+                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                      .addChild(new HAnimSite("hanim_r_talus").setName("r_sphyrion").setDEF("hanim_r_sphyrion").setTranslation(new float[] {-0.0603f ,0.061f ,-0.1002f })
                         .addChild(new TouchSensor().setDescription("HAnimSite 54 r_sphyrion"))
                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                         .addChild(new Billboard()
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new MFString101().getArray())
-                              .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                    .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_tarsometatarsal_2").setDEF("hanim_r_tarsometatarsal_2").setCenter(new double[] {-0.08f,0.0175f,-0.0608f}).setUlimit(new MFFloat102().getArray()).setLlimit(new MFFloat103().getArray())
+                              .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                    .addChild(new HAnimJoint("hanim_r_talocrural").setName("r_tarsometatarsal_2").setDEF("hanim_r_tarsometatarsal_2").setCenter(new float[] {-0.08f ,0.0175f ,-0.0608f }).setUlimit(new MFFloat102().getArray()).setLlimit(new MFFloat103().getArray())
                       .addChild(new HAnimSegment("hanim_r_tarsometatarsal_2").setName("r_metatarsal_2").setDEF("hanim_r_metatarsal_2")
-                        .addChild(new Transform().setTranslation(new double[] {-0.08f,0.0175f,-0.0608f})
+                        .addChild(new Transform().setTranslation(new float[] {-0.08f ,0.0175f ,-0.0608f })
                           .addChild(new Transform()
                             .addComments(new CommentsBlock("Empty Transform"))
                             .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -487,9 +487,9 @@ public class Humanoid3 implements X3DRoots {
                             .setCoord(new Coordinate().setPoint(new MFVec3f105().getArray()))
                             .addComments(new CommentsBlock("from r_tarsometatarsal_2 to r_metatarsophalangeal_2 vertices 2"))
                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                      .addChild(new HAnimJoint("hanim_r_tarsometatarsal_2").setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new double[] {-0.0823f,0.0064f,-0.004f}).setUlimit(new MFFloat106().getArray()).setLlimit(new MFFloat107().getArray())
+                      .addChild(new HAnimJoint("hanim_r_tarsometatarsal_2").setName("r_metatarsophalangeal_2").setDEF("hanim_r_metatarsophalangeal_2").setCenter(new float[] {-0.0823f ,0.0064f ,-0.004f }).setUlimit(new MFFloat106().getArray()).setLlimit(new MFFloat107().getArray())
                         .addChild(new HAnimSegment("hanim_r_metatarsophalangeal_2").setName("r_tarsal_proximal_phalanx_2").setDEF("hanim_r_tarsal_proximal_phalanx_2")
-                          .addChild(new Transform().setTranslation(new double[] {-0.0823f,0.0064f,-0.004f})
+                          .addChild(new Transform().setTranslation(new float[] {-0.0823f ,0.0064f ,-0.004f })
                             .addChild(new Transform()
                               .addComments(new CommentsBlock("Empty Transform"))
                               .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -504,53 +504,53 @@ public class Humanoid3 implements X3DRoots {
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString110().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_r_tarsal_proximal_phalanx_2").setName("r_metatarsal_phalanx_5").setDEF("hanim_r_metatarsal_phalanx_5")
                             .addChild(new TouchSensor().setDescription("HAnimSite 60 r_metatarsal_phalanx_5"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString111().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_distal_phalanx_1_tip").setDEF("hanim_r_tarsal_distal_phalanx_1_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_1_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString112().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
-                          .addChild(new HAnimSite("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_distal_phalanx_2_tip").setDEF("hanim_r_tarsal_distal_phalanx_2_tip").setTranslation(new double[] {-0.0883f,0.0134f,0.1383f})
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                          .addChild(new HAnimSite("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_distal_phalanx_2_tip").setDEF("hanim_r_tarsal_distal_phalanx_2_tip").setTranslation(new float[] {-0.0883f ,0.0134f ,0.1383f })
                             .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_2_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString113().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_distal_phalanx_3_tip").setDEF("hanim_r_tarsal_distal_phalanx_3_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_3_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString114().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_distal_phalanx_4_tip").setDEF("hanim_r_tarsal_distal_phalanx_4_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_4_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString115().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                           .addChild(new HAnimSite("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_distal_phalanx_5_tip").setDEF("hanim_r_tarsal_distal_phalanx_5_tip")
                             .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_5_tip"))
                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                             .addChild(new Billboard()
                               .addChild(new Shape()
                                 .setGeometry(new Text().setString(new MFString116().getArray())
-                                  .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                        .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setDEF("hanim_r_tarsal_distal_interphalangeal_2").setCenter(new double[] {-0.0841f,0.0013f,0.0216f}).setUlimit(new MFFloat117().getArray()).setLlimit(new MFFloat118().getArray()))))))))
-            .addChild(new HAnimJoint("hanim_humanoid_root").setName("vl5").setDEF("hanim_vl5").setCenter(new double[] {0.0028f,1.0568f,-0.0776f}).setUlimit(new MFFloat119().getArray()).setLlimit(new MFFloat120().getArray())
+                                  .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                        .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setDEF("hanim_r_tarsal_distal_interphalangeal_2").setCenter(new float[] {-0.0841f ,0.0013f ,0.0216f }).setUlimit(new MFFloat117().getArray()).setLlimit(new MFFloat118().getArray()))))))))
+            .addChild(new HAnimJoint("hanim_humanoid_root").setName("vl5").setDEF("hanim_vl5").setCenter(new float[] {0.0028f ,1.0568f ,-0.0776f }).setUlimit(new MFFloat119().getArray()).setLlimit(new MFFloat120().getArray())
               .addChild(new HAnimSegment("hanim_vl5").setName("l5").setDEF("hanim_l5")
-                .addChild(new Transform().setTranslation(new double[] {0.0028f,1.0568f,-0.0776f})
+                .addChild(new Transform().setTranslation(new float[] {0.0028f ,1.0568f ,-0.0776f })
                   .addChild(new Transform()
                     .addComments(new CommentsBlock("Empty Transform"))
                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -559,30 +559,30 @@ public class Humanoid3 implements X3DRoots {
                     .setCoord(new Coordinate().setPoint(new MFVec3f122().getArray()))
                     .addComments(new CommentsBlock("from vl5 to vl4 vertices 2"))
                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                .addChild(new HAnimSite("hanim_l5").setName("navel").setDEF("hanim_navel").setTranslation(new double[] {0.0069f,1.0966f,0.1017f})
+                .addChild(new HAnimSite("hanim_l5").setName("navel").setDEF("hanim_navel").setTranslation(new float[] {0.0069f ,1.0966f ,0.1017f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 84 navel"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString123().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
                 .addChild(new HAnimSite("hanim_l5").setName("waist_preferred_anterior").setDEF("hanim_waist_preferred_anterior")
                   .addChild(new TouchSensor().setDescription("HAnimSite 26 waist_preferred_anterior"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString124().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                .addChild(new HAnimSite("hanim_l5").setName("waist_preferred_posterior").setDEF("hanim_waist_preferred_posterior").setTranslation(new double[] {0.29f,1.0915f,-0.1091f})
+                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                .addChild(new HAnimSite("hanim_l5").setName("waist_preferred_posterior").setDEF("hanim_waist_preferred_posterior").setTranslation(new float[] {0.29f ,1.0915f ,-0.1091f })
                   .addChild(new TouchSensor().setDescription("HAnimSite 27 waist_preferred_posterior"))
                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                   .addChild(new Billboard()
                     .addChild(new Shape()
                       .setGeometry(new Text().setString(new MFString125().getArray())
-                        .setFontStyle(new FontStyle().setSize(0.035f)))))))
-              .addChild(new HAnimJoint("hanim_vl5").setName("vl4").setDEF("hanim_vl4").setCenter(new double[] {0.0035f,1.0925f,-0.0787f}).setUlimit(new MFFloat126().getArray()).setLlimit(new MFFloat127().getArray())
+                        .setFontStyle(new FontStyle().setSize(0.035f )))))))
+              .addChild(new HAnimJoint("hanim_vl5").setName("vl4").setDEF("hanim_vl4").setCenter(new float[] {0.0035f ,1.0925f ,-0.0787f }).setUlimit(new MFFloat126().getArray()).setLlimit(new MFFloat127().getArray())
                 .addChild(new HAnimSegment("hanim_vl4").setName("l4").setDEF("hanim_l4")
-                  .addChild(new Transform().setTranslation(new double[] {0.0035f,1.0925f,-0.0787f})
+                  .addChild(new Transform().setTranslation(new float[] {0.0035f ,1.0925f ,-0.0787f })
                     .addChild(new Transform()
                       .addComments(new CommentsBlock("Empty Transform"))
                       .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -591,9 +591,9 @@ public class Humanoid3 implements X3DRoots {
                       .setCoord(new Coordinate().setPoint(new MFVec3f129().getArray()))
                       .addComments(new CommentsBlock("from vl4 to vl3 vertices 2"))
                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                .addChild(new HAnimJoint("hanim_vl4").setName("vl3").setDEF("hanim_vl3").setCenter(new double[] {0.0041f,1.1276f,-0.0796f}).setUlimit(new MFFloat130().getArray()).setLlimit(new MFFloat131().getArray())
+                .addChild(new HAnimJoint("hanim_vl4").setName("vl3").setDEF("hanim_vl3").setCenter(new float[] {0.0041f ,1.1276f ,-0.0796f }).setUlimit(new MFFloat130().getArray()).setLlimit(new MFFloat131().getArray())
                   .addChild(new HAnimSegment("hanim_vl3").setName("l3").setDEF("hanim_l3")
-                    .addChild(new Transform().setTranslation(new double[] {0.0041f,1.1276f,-0.0796f})
+                    .addChild(new Transform().setTranslation(new float[] {0.0041f ,1.1276f ,-0.0796f })
                       .addChild(new Transform()
                         .addComments(new CommentsBlock("Empty Transform"))
                         .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -602,9 +602,9 @@ public class Humanoid3 implements X3DRoots {
                         .setCoord(new Coordinate().setPoint(new MFVec3f133().getArray()))
                         .addComments(new CommentsBlock("from vl3 to vl2 vertices 2"))
                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                  .addChild(new HAnimJoint("hanim_vl3").setName("vl2").setDEF("hanim_vl2").setCenter(new double[] {0.0045f,1.1546f,-0.08f}).setUlimit(new MFFloat134().getArray()).setLlimit(new MFFloat135().getArray())
+                  .addChild(new HAnimJoint("hanim_vl3").setName("vl2").setDEF("hanim_vl2").setCenter(new float[] {0.0045f ,1.1546f ,-0.08f }).setUlimit(new MFFloat134().getArray()).setLlimit(new MFFloat135().getArray())
                     .addChild(new HAnimSegment("hanim_vl2").setName("l2").setDEF("hanim_l2")
-                      .addChild(new Transform().setTranslation(new double[] {0.0045f,1.1546f,-0.08f})
+                      .addChild(new Transform().setTranslation(new float[] {0.0045f ,1.1546f ,-0.08f })
                         .addChild(new Transform()
                           .addComments(new CommentsBlock("Empty Transform"))
                           .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -613,30 +613,30 @@ public class Humanoid3 implements X3DRoots {
                           .setCoord(new Coordinate().setPoint(new MFVec3f137().getArray()))
                           .addComments(new CommentsBlock("from vl2 to vl1 vertices 2"))
                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                      .addChild(new HAnimSite("hanim_l2").setName("l_rib10").setDEF("hanim_l_rib10").setTranslation(new double[] {0.0871f,1.1925f,0.0992f})
+                      .addChild(new HAnimSite("hanim_l2").setName("l_rib10").setDEF("hanim_l_rib10").setTranslation(new float[] {0.0871f ,1.1925f ,0.0992f })
                         .addChild(new TouchSensor().setDescription("HAnimSite 28 l_rib10"))
                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                         .addChild(new Billboard()
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new MFString138().getArray())
-                              .setFontStyle(new FontStyle().setSize(0.035f))))))
-                      .addChild(new HAnimSite("hanim_l2").setName("r_rib10").setDEF("hanim_r_rib10").setTranslation(new double[] {-0.0711f,1.1941f,0.1016f})
+                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                      .addChild(new HAnimSite("hanim_l2").setName("r_rib10").setDEF("hanim_r_rib10").setTranslation(new float[] {-0.0711f ,1.1941f ,0.1016f })
                         .addChild(new TouchSensor().setDescription("HAnimSite 30 r_rib10"))
                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                         .addChild(new Billboard()
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new MFString139().getArray())
-                              .setFontStyle(new FontStyle().setSize(0.035f))))))
+                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
                       .addChild(new HAnimSite("hanim_l2").setName("spine_2_middle_back").setDEF("hanim_spine_2_middle_back")
                         .addChild(new TouchSensor().setDescription("HAnimSite spine_2_middle_back"))
                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                         .addChild(new Billboard()
                           .addChild(new Shape()
                             .setGeometry(new Text().setString(new MFString140().getArray())
-                              .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                    .addChild(new HAnimJoint("hanim_vl2").setName("vl1").setDEF("hanim_vl1").setCenter(new double[] {0.0048f,1.1912f,-0.0805f}).setUlimit(new MFFloat141().getArray()).setLlimit(new MFFloat142().getArray())
+                              .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                    .addChild(new HAnimJoint("hanim_vl2").setName("vl1").setDEF("hanim_vl1").setCenter(new float[] {0.0048f ,1.1912f ,-0.0805f }).setUlimit(new MFFloat141().getArray()).setLlimit(new MFFloat142().getArray())
                       .addChild(new HAnimSegment("hanim_vl1").setName("l1").setDEF("hanim_l1")
-                        .addChild(new Transform().setTranslation(new double[] {0.0048f,1.1912f,-0.0805f})
+                        .addChild(new Transform().setTranslation(new float[] {0.0048f ,1.1912f ,-0.0805f })
                           .addChild(new Transform()
                             .addComments(new CommentsBlock("Empty Transform"))
                             .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -645,9 +645,9 @@ public class Humanoid3 implements X3DRoots {
                             .setCoord(new Coordinate().setPoint(new MFVec3f144().getArray()))
                             .addComments(new CommentsBlock("from vl1 to vt12 vertices 2"))
                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                      .addChild(new HAnimJoint("hanim_vl1").setName("vt12").setDEF("hanim_vt12").setCenter(new double[] {0.0051f,1.2278f,-0.0808f}).setUlimit(new MFFloat145().getArray()).setLlimit(new MFFloat146().getArray())
+                      .addChild(new HAnimJoint("hanim_vl1").setName("vt12").setDEF("hanim_vt12").setCenter(new float[] {0.0051f ,1.2278f ,-0.0808f }).setUlimit(new MFFloat145().getArray()).setLlimit(new MFFloat146().getArray())
                         .addChild(new HAnimSegment("hanim_vt12").setName("t12").setDEF("hanim_t12")
-                          .addChild(new Transform().setTranslation(new double[] {0.0051f,1.2278f,-0.0808f})
+                          .addChild(new Transform().setTranslation(new float[] {0.0051f ,1.2278f ,-0.0808f })
                             .addChild(new Transform()
                               .addComments(new CommentsBlock("Empty Transform"))
                               .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -656,9 +656,9 @@ public class Humanoid3 implements X3DRoots {
                               .setCoord(new Coordinate().setPoint(new MFVec3f148().getArray()))
                               .addComments(new CommentsBlock("from vt12 to vt11 vertices 2"))
                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                        .addChild(new HAnimJoint("hanim_vt12").setName("vt11").setDEF("hanim_vt11").setCenter(new double[] {0.0053f,1.2679f,-0.081f}).setUlimit(new MFFloat149().getArray()).setLlimit(new MFFloat150().getArray())
+                        .addChild(new HAnimJoint("hanim_vt12").setName("vt11").setDEF("hanim_vt11").setCenter(new float[] {0.0053f ,1.2679f ,-0.081f }).setUlimit(new MFFloat149().getArray()).setLlimit(new MFFloat150().getArray())
                           .addChild(new HAnimSegment("hanim_vt11").setName("t11").setDEF("hanim_t11")
-                            .addChild(new Transform().setTranslation(new double[] {0.0053f,1.2679f,-0.081f})
+                            .addChild(new Transform().setTranslation(new float[] {0.0053f ,1.2679f ,-0.081f })
                               .addChild(new Transform()
                                 .addComments(new CommentsBlock("Empty Transform"))
                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -667,9 +667,9 @@ public class Humanoid3 implements X3DRoots {
                                 .setCoord(new Coordinate().setPoint(new MFVec3f152().getArray()))
                                 .addComments(new CommentsBlock("from vt11 to vt10 vertices 2"))
                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                          .addChild(new HAnimJoint("hanim_vt11").setName("vt10").setDEF("hanim_vt10").setCenter(new double[] {0.0056f,1.2848f,-0.0822f}).setUlimit(new MFFloat153().getArray()).setLlimit(new MFFloat154().getArray())
+                          .addChild(new HAnimJoint("hanim_vt11").setName("vt10").setDEF("hanim_vt10").setCenter(new float[] {0.0056f ,1.2848f ,-0.0822f }).setUlimit(new MFFloat153().getArray()).setLlimit(new MFFloat154().getArray())
                             .addChild(new HAnimSegment("hanim_vt10").setName("t10").setDEF("hanim_t10")
-                              .addChild(new Transform().setTranslation(new double[] {0.0056f,1.2848f,-0.0822f})
+                              .addChild(new Transform().setTranslation(new float[] {0.0056f ,1.2848f ,-0.0822f })
                                 .addChild(new Transform()
                                   .addComments(new CommentsBlock("Empty Transform"))
                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -678,16 +678,16 @@ public class Humanoid3 implements X3DRoots {
                                   .setCoord(new Coordinate().setPoint(new MFVec3f156().getArray()))
                                   .addComments(new CommentsBlock("from vt10 to vt9 vertices 2"))
                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                              .addChild(new HAnimSite("hanim_t10").setName("substernale").setDEF("hanim_substernale").setTranslation(new double[] {0.0085f,1.2995f,0.1147f})
+                              .addChild(new HAnimSite("hanim_t10").setName("substernale").setDEF("hanim_substernale").setTranslation(new float[] {0.0085f ,1.2995f ,0.1147f })
                                 .addChild(new TouchSensor().setDescription("HAnimSite 13 substernale"))
                                 .addChild(new Shape().setUSE("HAnimSiteShape"))
                                 .addChild(new Billboard()
                                   .addChild(new Shape()
                                     .setGeometry(new Text().setString(new MFString157().getArray())
-                                      .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                            .addChild(new HAnimJoint("hanim_vt10").setName("vt9").setDEF("hanim_vt9").setCenter(new double[] {0.0057f,1.3126f,-0.0838f}).setUlimit(new MFFloat158().getArray()).setLlimit(new MFFloat159().getArray())
+                                      .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                            .addChild(new HAnimJoint("hanim_vt10").setName("vt9").setDEF("hanim_vt9").setCenter(new float[] {0.0057f ,1.3126f ,-0.0838f }).setUlimit(new MFFloat158().getArray()).setLlimit(new MFFloat159().getArray())
                               .addChild(new HAnimSegment("hanim_vt9").setName("t9").setDEF("hanim_t9")
-                                .addChild(new Transform().setTranslation(new double[] {0.0057f,1.3126f,-0.0838f})
+                                .addChild(new Transform().setTranslation(new float[] {0.0057f ,1.3126f ,-0.0838f })
                                   .addChild(new Transform()
                                     .addComments(new CommentsBlock("Empty Transform"))
                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -696,23 +696,23 @@ public class Humanoid3 implements X3DRoots {
                                     .setCoord(new Coordinate().setPoint(new MFVec3f161().getArray()))
                                     .addComments(new CommentsBlock("from vt9 to vt8 vertices 2"))
                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                .addChild(new HAnimSite("hanim_t9").setName("l_thelion").setDEF("hanim_l_thelion").setTranslation(new double[] {0.0918f,1.3382f,0.1192f})
+                                .addChild(new HAnimSite("hanim_t9").setName("l_thelion").setDEF("hanim_l_thelion").setTranslation(new float[] {0.0918f ,1.3382f ,0.1192f })
                                   .addChild(new TouchSensor().setDescription("HAnimSite 29 l_thelion"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                   .addChild(new Billboard()
                                     .addChild(new Shape()
                                       .setGeometry(new Text().setString(new MFString162().getArray())
-                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                .addChild(new HAnimSite("hanim_t9").setName("r_thelion").setDEF("hanim_r_thelion").setTranslation(new double[] {-0.0736f,1.3385f,0.1217f})
+                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                .addChild(new HAnimSite("hanim_t9").setName("r_thelion").setDEF("hanim_r_thelion").setTranslation(new float[] {-0.0736f ,1.3385f ,0.1217f })
                                   .addChild(new TouchSensor().setDescription("HAnimSite 31 r_thelion"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                   .addChild(new Billboard()
                                     .addChild(new Shape()
                                       .setGeometry(new Text().setString(new MFString163().getArray())
-                                        .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                              .addChild(new HAnimJoint("hanim_vt9").setName("vt8").setDEF("hanim_vt8").setCenter(new double[] {0.0057f,1.3382f,-0.0845f}).setUlimit(new MFFloat164().getArray()).setLlimit(new MFFloat165().getArray())
+                                        .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                              .addChild(new HAnimJoint("hanim_vt9").setName("vt8").setDEF("hanim_vt8").setCenter(new float[] {0.0057f ,1.3382f ,-0.0845f }).setUlimit(new MFFloat164().getArray()).setLlimit(new MFFloat165().getArray())
                                 .addChild(new HAnimSegment("hanim_vt8").setName("t8").setDEF("hanim_t8")
-                                  .addChild(new Transform().setTranslation(new double[] {0.0057f,1.3382f,-0.0845f})
+                                  .addChild(new Transform().setTranslation(new float[] {0.0057f ,1.3382f ,-0.0845f })
                                     .addChild(new Transform()
                                       .addComments(new CommentsBlock("Empty Transform"))
                                       .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -721,9 +721,9 @@ public class Humanoid3 implements X3DRoots {
                                       .setCoord(new Coordinate().setPoint(new MFVec3f167().getArray()))
                                       .addComments(new CommentsBlock("from vt8 to vt7 vertices 2"))
                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                .addChild(new HAnimJoint("hanim_vt8").setName("vt7").setDEF("hanim_vt7").setCenter(new double[] {0.0058f,1.3625f,-0.0833f}).setUlimit(new MFFloat168().getArray()).setLlimit(new MFFloat169().getArray())
+                                .addChild(new HAnimJoint("hanim_vt8").setName("vt7").setDEF("hanim_vt7").setCenter(new float[] {0.0058f ,1.3625f ,-0.0833f }).setUlimit(new MFFloat168().getArray()).setLlimit(new MFFloat169().getArray())
                                   .addChild(new HAnimSegment("hanim_vt7").setName("t7").setDEF("hanim_t7")
-                                    .addChild(new Transform().setTranslation(new double[] {0.0058f,1.3625f,-0.0833f})
+                                    .addChild(new Transform().setTranslation(new float[] {0.0058f ,1.3625f ,-0.0833f })
                                       .addChild(new Transform()
                                         .addComments(new CommentsBlock("Empty Transform"))
                                         .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -732,9 +732,9 @@ public class Humanoid3 implements X3DRoots {
                                         .setCoord(new Coordinate().setPoint(new MFVec3f171().getArray()))
                                         .addComments(new CommentsBlock("from vt7 to vt6 vertices 2"))
                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                  .addChild(new HAnimJoint("hanim_vt7").setName("vt6").setDEF("hanim_vt6").setCenter(new double[] {0.0059f,1.3866f,-0.08f}).setUlimit(new MFFloat172().getArray()).setLlimit(new MFFloat173().getArray())
+                                  .addChild(new HAnimJoint("hanim_vt7").setName("vt6").setDEF("hanim_vt6").setCenter(new float[] {0.0059f ,1.3866f ,-0.08f }).setUlimit(new MFFloat172().getArray()).setLlimit(new MFFloat173().getArray())
                                     .addChild(new HAnimSegment("hanim_vt6").setName("t6").setDEF("hanim_t6")
-                                      .addChild(new Transform().setTranslation(new double[] {0.0059f,1.3866f,-0.08f})
+                                      .addChild(new Transform().setTranslation(new float[] {0.0059f ,1.3866f ,-0.08f })
                                         .addChild(new Transform()
                                           .addComments(new CommentsBlock("Empty Transform"))
                                           .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -749,31 +749,31 @@ public class Humanoid3 implements X3DRoots {
                                         .addChild(new Billboard()
                                           .addChild(new Shape()
                                             .setGeometry(new Text().setString(new MFString176().getArray())
-                                              .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                       .addChild(new HAnimSite("hanim_t6").setName("mesosternale").setDEF("hanim_mesosternale")
                                         .addChild(new TouchSensor().setDescription("HAnimSite 88 mesosternale"))
                                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                                         .addChild(new Billboard()
                                           .addChild(new Shape()
                                             .setGeometry(new Text().setString(new MFString177().getArray())
-                                              .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                       .addChild(new HAnimSite("hanim_t6").setName("r_chest_midsagittal_plane").setDEF("hanim_r_chest_midsagittal_plane")
                                         .addChild(new TouchSensor().setDescription("HAnimSite 95 r_chest_midsagittal_plane"))
                                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                                         .addChild(new Billboard()
                                           .addChild(new Shape()
                                             .setGeometry(new Text().setString(new MFString178().getArray())
-                                              .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                       .addChild(new HAnimSite("hanim_t6").setName("rear_center_midsagittal_plane").setDEF("hanim_rear_center_midsagittal_plane")
                                         .addChild(new TouchSensor().setDescription("HAnimSite 92 rear_center_midsagittal_plane"))
                                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                                         .addChild(new Billboard()
                                           .addChild(new Shape()
                                             .setGeometry(new Text().setString(new MFString179().getArray())
-                                              .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                    .addChild(new HAnimJoint("hanim_vt6").setName("vt5").setDEF("hanim_vt5").setCenter(new double[] {0.006f,1.4102f,-0.0745f}).setUlimit(new MFFloat180().getArray()).setLlimit(new MFFloat181().getArray())
+                                              .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                    .addChild(new HAnimJoint("hanim_vt6").setName("vt5").setDEF("hanim_vt5").setCenter(new float[] {0.006f ,1.4102f ,-0.0745f }).setUlimit(new MFFloat180().getArray()).setLlimit(new MFFloat181().getArray())
                                       .addChild(new HAnimSegment("hanim_vt5").setName("t5").setDEF("hanim_t5")
-                                        .addChild(new Transform().setTranslation(new double[] {0.006f,1.4102f,-0.0745f})
+                                        .addChild(new Transform().setTranslation(new float[] {0.006f ,1.4102f ,-0.0745f })
                                           .addChild(new Transform()
                                             .addComments(new CommentsBlock("Empty Transform"))
                                             .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -788,10 +788,10 @@ public class Humanoid3 implements X3DRoots {
                                           .addChild(new Billboard()
                                             .addChild(new Shape()
                                               .setGeometry(new Text().setString(new MFString184().getArray())
-                                                .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                      .addChild(new HAnimJoint("hanim_vt5").setName("vt4").setDEF("hanim_vt4").setCenter(new double[] {0.0061f,1.432f,-0.0675f}).setUlimit(new MFFloat185().getArray()).setLlimit(new MFFloat186().getArray())
+                                                .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                      .addChild(new HAnimJoint("hanim_vt5").setName("vt4").setDEF("hanim_vt4").setCenter(new float[] {0.0061f ,1.432f ,-0.0675f }).setUlimit(new MFFloat185().getArray()).setLlimit(new MFFloat186().getArray())
                                         .addChild(new HAnimSegment("hanim_vt4").setName("t4").setDEF("hanim_t4")
-                                          .addChild(new Transform().setTranslation(new double[] {0.0061f,1.432f,-0.0675f})
+                                          .addChild(new Transform().setTranslation(new float[] {0.0061f ,1.432f ,-0.0675f })
                                             .addChild(new Transform()
                                               .addComments(new CommentsBlock("Empty Transform"))
                                               .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -800,9 +800,9 @@ public class Humanoid3 implements X3DRoots {
                                               .setCoord(new Coordinate().setPoint(new MFVec3f188().getArray()))
                                               .addComments(new CommentsBlock("from vt4 to vt3 vertices 2"))
                                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                        .addChild(new HAnimJoint("hanim_vt4").setName("vt3").setDEF("hanim_vt3").setCenter(new double[] {0.0062f,1.4583f,-0.057f}).setUlimit(new MFFloat189().getArray()).setLlimit(new MFFloat190().getArray())
+                                        .addChild(new HAnimJoint("hanim_vt4").setName("vt3").setDEF("hanim_vt3").setCenter(new float[] {0.0062f ,1.4583f ,-0.057f }).setUlimit(new MFFloat189().getArray()).setLlimit(new MFFloat190().getArray())
                                           .addChild(new HAnimSegment("hanim_vt3").setName("t3").setDEF("hanim_t3")
-                                            .addChild(new Transform().setTranslation(new double[] {0.0062f,1.4583f,-0.057f})
+                                            .addChild(new Transform().setTranslation(new float[] {0.0062f ,1.4583f ,-0.057f })
                                               .addChild(new Transform()
                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -811,9 +811,9 @@ public class Humanoid3 implements X3DRoots {
                                                 .setCoord(new Coordinate().setPoint(new MFVec3f192().getArray()))
                                                 .addComments(new CommentsBlock("from vt3 to vt2 vertices 2"))
                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                          .addChild(new HAnimJoint("hanim_vt3").setName("vt2").setDEF("hanim_vt2").setCenter(new double[] {0.0063f,1.4761f,-0.0484f}).setUlimit(new MFFloat193().getArray()).setLlimit(new MFFloat194().getArray())
+                                          .addChild(new HAnimJoint("hanim_vt3").setName("vt2").setDEF("hanim_vt2").setCenter(new float[] {0.0063f ,1.4761f ,-0.0484f }).setUlimit(new MFFloat193().getArray()).setLlimit(new MFFloat194().getArray())
                                             .addChild(new HAnimSegment("hanim_vt2").setName("t2").setDEF("hanim_t2")
-                                              .addChild(new Transform().setTranslation(new double[] {0.0063f,1.4761f,-0.0484f})
+                                              .addChild(new Transform().setTranslation(new float[] {0.0063f ,1.4761f ,-0.0484f })
                                                 .addChild(new Transform()
                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -822,9 +822,9 @@ public class Humanoid3 implements X3DRoots {
                                                   .setCoord(new Coordinate().setPoint(new MFVec3f196().getArray()))
                                                   .addComments(new CommentsBlock("from vt2 to vt1 vertices 2"))
                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                            .addChild(new HAnimJoint("hanim_vt2").setName("vt1").setDEF("hanim_vt1").setCenter(new double[] {0.0065f,1.4951f,-0.0387f}).setUlimit(new MFFloat197().getArray()).setLlimit(new MFFloat198().getArray())
+                                            .addChild(new HAnimJoint("hanim_vt2").setName("vt1").setDEF("hanim_vt1").setCenter(new float[] {0.0065f ,1.4951f ,-0.0387f }).setUlimit(new MFFloat197().getArray()).setLlimit(new MFFloat198().getArray())
                                               .addChild(new HAnimSegment("hanim_vt1").setName("t1").setDEF("hanim_t1")
-                                                .addChild(new Transform().setTranslation(new double[] {0.0065f,1.4951f,-0.0387f})
+                                                .addChild(new Transform().setTranslation(new float[] {0.0065f ,1.4951f ,-0.0387f })
                                                   .addChild(new Transform()
                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -833,20 +833,20 @@ public class Humanoid3 implements X3DRoots {
                                                     .setCoord(new Coordinate().setPoint(new MFVec3f200().getArray()))
                                                     .addComments(new CommentsBlock("from vt1 to vc7 vertices 2"))
                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                .addChild(new HAnimSite("hanim_t1").setName("cervicale").setDEF("hanim_cervicale").setTranslation(new double[] {0.0064f,1.52f,-0.0815f})
+                                                .addChild(new HAnimSite("hanim_t1").setName("cervicale").setDEF("hanim_cervicale").setTranslation(new float[] {0.0064f ,1.52f ,-0.0815f })
                                                   .addChild(new TouchSensor().setDescription("HAnimSite 10 cervicale"))
                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                   .addChild(new Billboard()
                                                     .addChild(new Shape()
                                                       .setGeometry(new Text().setString(new MFString201().getArray())
-                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                .addChild(new HAnimSite("hanim_t1").setName("suprasternale").setDEF("hanim_suprasternale").setTranslation(new double[] {0.0084f,1.4714f,0.0551f})
+                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                .addChild(new HAnimSite("hanim_t1").setName("suprasternale").setDEF("hanim_suprasternale").setTranslation(new float[] {0.0084f ,1.4714f ,0.0551f })
                                                   .addChild(new TouchSensor().setDescription("HAnimSite 12 suprasternale"))
                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                   .addChild(new Billboard()
                                                     .addChild(new Shape()
                                                       .setGeometry(new Text().setString(new MFString202().getArray())
-                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                 .addChild(new Shape()
                                                   .setGeometry(new LineSet().setVertexCount(new MFInt32203().getArray())
                                                     .setCoord(new Coordinate().setPoint(new MFVec3f204().getArray()))
@@ -857,9 +857,9 @@ public class Humanoid3 implements X3DRoots {
                                                     .setCoord(new Coordinate().setPoint(new MFVec3f206().getArray()))
                                                     .addComments(new CommentsBlock("from vt1 to r_sternoclavicular vertices 2"))
                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                              .addChild(new HAnimJoint("hanim_vt1").setName("vc7").setDEF("hanim_vc7").setCenter(new double[] {0.0066f,1.5132f,-0.0301f}).setUlimit(new MFFloat207().getArray()).setLlimit(new MFFloat208().getArray())
+                                              .addChild(new HAnimJoint("hanim_vt1").setName("vc7").setDEF("hanim_vc7").setCenter(new float[] {0.0066f ,1.5132f ,-0.0301f }).setUlimit(new MFFloat207().getArray()).setLlimit(new MFFloat208().getArray())
                                                 .addChild(new HAnimSegment("hanim_vc7").setName("c7").setDEF("hanim_c7")
-                                                  .addChild(new Transform().setTranslation(new double[] {0.0066f,1.5132f,-0.0301f})
+                                                  .addChild(new Transform().setTranslation(new float[] {0.0066f ,1.5132f ,-0.0301f })
                                                     .addChild(new Transform()
                                                       .addComments(new CommentsBlock("Empty Transform"))
                                                       .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -868,23 +868,23 @@ public class Humanoid3 implements X3DRoots {
                                                       .setCoord(new Coordinate().setPoint(new MFVec3f210().getArray()))
                                                       .addComments(new CommentsBlock("from vc7 to vc6 vertices 2"))
                                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                  .addChild(new HAnimSite("hanim_c7").setName("l_neck_base").setDEF("hanim_l_neck_base").setTranslation(new double[] {0.0646f,1.5141f,-0.038f})
+                                                  .addChild(new HAnimSite("hanim_c7").setName("l_neck_base").setDEF("hanim_l_neck_base").setTranslation(new float[] {0.0646f ,1.5141f ,-0.038f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 82 l_neck_base"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString211().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                  .addChild(new HAnimSite("hanim_c7").setName("r_neck_base").setDEF("hanim_r_neck_base").setTranslation(new double[] {-0.0419f,1.5149f,-0.022f})
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                  .addChild(new HAnimSite("hanim_c7").setName("r_neck_base").setDEF("hanim_r_neck_base").setTranslation(new float[] {-0.0419f ,1.5149f ,-0.022f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 83 r_neck_base"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString212().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                .addChild(new HAnimJoint("hanim_vc7").setName("vc6").setDEF("hanim_vc6").setCenter(new double[] {0.0066f,1.5357f,-0.0143f}).setUlimit(new MFFloat213().getArray()).setLlimit(new MFFloat214().getArray())
+                                                          .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                .addChild(new HAnimJoint("hanim_vc7").setName("vc6").setDEF("hanim_vc6").setCenter(new float[] {0.0066f ,1.5357f ,-0.0143f }).setUlimit(new MFFloat213().getArray()).setLlimit(new MFFloat214().getArray())
                                                   .addChild(new HAnimSegment("hanim_vc6").setName("c6").setDEF("hanim_c6")
-                                                    .addChild(new Transform().setTranslation(new double[] {0.0066f,1.5357f,-0.0143f})
+                                                    .addChild(new Transform().setTranslation(new float[] {0.0066f ,1.5357f ,-0.0143f })
                                                       .addChild(new Transform()
                                                         .addComments(new CommentsBlock("Empty Transform"))
                                                         .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -893,9 +893,9 @@ public class Humanoid3 implements X3DRoots {
                                                         .setCoord(new Coordinate().setPoint(new MFVec3f216().getArray()))
                                                         .addComments(new CommentsBlock("from vc6 to vc5 vertices 2"))
                                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                  .addChild(new HAnimJoint("hanim_vc6").setName("vc5").setDEF("hanim_vc5").setCenter(new double[] {0.0066f,1.552f,-0.0082f}).setUlimit(new MFFloat217().getArray()).setLlimit(new MFFloat218().getArray())
+                                                  .addChild(new HAnimJoint("hanim_vc6").setName("vc5").setDEF("hanim_vc5").setCenter(new float[] {0.0066f ,1.552f ,-0.0082f }).setUlimit(new MFFloat217().getArray()).setLlimit(new MFFloat218().getArray())
                                                     .addChild(new HAnimSegment("hanim_vc5").setName("c5").setDEF("hanim_c5")
-                                                      .addChild(new Transform().setTranslation(new double[] {0.0066f,1.552f,-0.0082f})
+                                                      .addChild(new Transform().setTranslation(new float[] {0.0066f ,1.552f ,-0.0082f })
                                                         .addChild(new Transform()
                                                           .addComments(new CommentsBlock("Empty Transform"))
                                                           .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -904,9 +904,9 @@ public class Humanoid3 implements X3DRoots {
                                                           .setCoord(new Coordinate().setPoint(new MFVec3f220().getArray()))
                                                           .addComments(new CommentsBlock("from vc5 to vc4 vertices 2"))
                                                           .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                    .addChild(new HAnimJoint("hanim_vc5").setName("vc4").setDEF("hanim_vc4").setCenter(new double[] {0.0066f,1.5662f,-0.0084f}).setUlimit(new MFFloat221().getArray()).setLlimit(new MFFloat222().getArray())
+                                                    .addChild(new HAnimJoint("hanim_vc5").setName("vc4").setDEF("hanim_vc4").setCenter(new float[] {0.0066f ,1.5662f ,-0.0084f }).setUlimit(new MFFloat221().getArray()).setLlimit(new MFFloat222().getArray())
                                                       .addChild(new HAnimSegment("hanim_vc4").setName("c4").setDEF("hanim_c4")
-                                                        .addChild(new Transform().setTranslation(new double[] {0.0066f,1.5662f,-0.0084f})
+                                                        .addChild(new Transform().setTranslation(new float[] {0.0066f ,1.5662f ,-0.0084f })
                                                           .addChild(new Transform()
                                                             .addComments(new CommentsBlock("Empty Transform"))
                                                             .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -915,9 +915,9 @@ public class Humanoid3 implements X3DRoots {
                                                             .setCoord(new Coordinate().setPoint(new MFVec3f224().getArray()))
                                                             .addComments(new CommentsBlock("from vc4 to vc3 vertices 2"))
                                                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                      .addChild(new HAnimJoint("hanim_vc4").setName("vc3").setDEF("hanim_vc3").setCenter(new double[] {0.0066f,1.58f,-0.0103f}).setUlimit(new MFFloat225().getArray()).setLlimit(new MFFloat226().getArray())
+                                                      .addChild(new HAnimJoint("hanim_vc4").setName("vc3").setDEF("hanim_vc3").setCenter(new float[] {0.0066f ,1.58f ,-0.0103f }).setUlimit(new MFFloat225().getArray()).setLlimit(new MFFloat226().getArray())
                                                         .addChild(new HAnimSegment("hanim_vc3").setName("c3").setDEF("hanim_c3")
-                                                          .addChild(new Transform().setTranslation(new double[] {0.0066f,1.58f,-0.0103f})
+                                                          .addChild(new Transform().setTranslation(new float[] {0.0066f ,1.58f ,-0.0103f })
                                                             .addChild(new Transform()
                                                               .addComments(new CommentsBlock("Empty Transform"))
                                                               .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -926,9 +926,9 @@ public class Humanoid3 implements X3DRoots {
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f228().getArray()))
                                                               .addComments(new CommentsBlock("from vc3 to vc2 vertices 2"))
                                                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild(new HAnimJoint("hanim_vc3").setName("vc2").setDEF("hanim_vc2").setCenter(new double[] {0.0066f,1.5928f,-0.0103f}).setUlimit(new MFFloat229().getArray()).setLlimit(new MFFloat230().getArray())
+                                                        .addChild(new HAnimJoint("hanim_vc3").setName("vc2").setDEF("hanim_vc2").setCenter(new float[] {0.0066f ,1.5928f ,-0.0103f }).setUlimit(new MFFloat229().getArray()).setLlimit(new MFFloat230().getArray())
                                                           .addChild(new HAnimSegment("hanim_vc2").setName("c2").setDEF("hanim_c2")
-                                                            .addChild(new Transform().setTranslation(new double[] {0.0066f,1.5928f,-0.0103f})
+                                                            .addChild(new Transform().setTranslation(new float[] {0.0066f ,1.5928f ,-0.0103f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -943,10 +943,10 @@ public class Humanoid3 implements X3DRoots {
                                                               .addChild(new Billboard()
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new Text().setString(new MFString233().getArray())
-                                                                    .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                          .addChild(new HAnimJoint("hanim_vc2").setName("vc1").setDEF("hanim_vc1").setCenter(new double[] {0.0066f,1.6144f,-0.0034f}).setUlimit(new MFFloat234().getArray()).setLlimit(new MFFloat235().getArray())
+                                                                    .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                          .addChild(new HAnimJoint("hanim_vc2").setName("vc1").setDEF("hanim_vc1").setCenter(new float[] {0.0066f ,1.6144f ,-0.0034f }).setUlimit(new MFFloat234().getArray()).setLlimit(new MFFloat235().getArray())
                                                             .addChild(new HAnimSegment("hanim_vc1").setName("c1").setDEF("hanim_c1")
-                                                              .addChild(new Transform().setTranslation(new double[] {0.0066f,1.6144f,-0.0034f})
+                                                              .addChild(new Transform().setTranslation(new float[] {0.0066f ,1.6144f ,-0.0034f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -955,9 +955,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f237().getArray()))
                                                                   .addComments(new CommentsBlock("from vc1 to skullbase vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_vc1").setName("skullbase").setDEF("hanim_skullbase").setCenter(new double[] {0.0044f,1.6209f,0.0236f}).setUlimit(new MFFloat238().getArray()).setLlimit(new MFFloat239().getArray())
+                                                            .addChild(new HAnimJoint("hanim_vc1").setName("skullbase").setDEF("hanim_skullbase").setCenter(new float[] {0.0044f ,1.6209f ,0.0236f }).setUlimit(new MFFloat238().getArray()).setLlimit(new MFFloat239().getArray())
                                                               .addChild(new HAnimSegment("hanim_skullbase").setName("skull").setDEF("hanim_skull")
-                                                                .addChild(new Transform().setTranslation(new double[] {0.0044f,1.6209f,0.0236f})
+                                                                .addChild(new Transform().setTranslation(new float[] {0.0044f ,1.6209f ,0.0236f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -972,77 +972,77 @@ public class Humanoid3 implements X3DRoots {
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString242().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                                 .addChild(new HAnimSite("hanim_skull").setName("l_ectocanthus").setDEF("hanim_l_ectocanthus")
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 85 l_ectocanthus"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString243().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                                .addChild(new HAnimSite("hanim_skull").setName("l_infraorbitale").setDEF("hanim_l_infraorbitale").setTranslation(new double[] {0.0341f,1.6171f,0.0752f})
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                                .addChild(new HAnimSite("hanim_skull").setName("l_infraorbitale").setDEF("hanim_l_infraorbitale").setTranslation(new float[] {0.0341f ,1.6171f ,0.0752f })
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 3 l_infraorbitale"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString244().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                                .addChild(new HAnimSite("hanim_skull").setName("l_tragion").setDEF("hanim_l_tragion").setTranslation(new double[] {0.0739f,1.6348f,0.0282f})
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                                .addChild(new HAnimSite("hanim_skull").setName("l_tragion").setDEF("hanim_l_tragion").setTranslation(new float[] {0.0739f ,1.6348f ,0.0282f })
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 4 l_tragion"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString245().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                                .addChild(new HAnimSite("hanim_skull").setName("nuchale").setDEF("hanim_nuchale").setTranslation(new double[] {0.0039f,1.5972f,-0.0796f})
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                                .addChild(new HAnimSite("hanim_skull").setName("nuchale").setDEF("hanim_nuchale").setTranslation(new float[] {0.0039f ,1.5972f ,-0.0796f })
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 81 nuchale"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString246().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                                 .addChild(new HAnimSite("hanim_skull").setName("opisthocranion").setDEF("hanim_opisthocranion")
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 89 opisthocranion"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString247().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                                 .addChild(new HAnimSite("hanim_skull").setName("r_ectocanthus").setDEF("hanim_r_ectocanthus")
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 86 r_ectocanthus"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString248().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                                .addChild(new HAnimSite("hanim_skull").setName("r_infraorbitale").setDEF("hanim_r_infraorbitale").setTranslation(new double[] {-0.0237f,1.6171f,0.0752f})
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                                .addChild(new HAnimSite("hanim_skull").setName("r_infraorbitale").setDEF("hanim_r_infraorbitale").setTranslation(new float[] {-0.0237f ,1.6171f ,0.0752f })
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 6 r_infraorbitale"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString249().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                                .addChild(new HAnimSite("hanim_skull").setName("r_tragion").setDEF("hanim_r_tragion").setTranslation(new double[] {-0.0646f,1.6347f,0.0302f})
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                                .addChild(new HAnimSite("hanim_skull").setName("r_tragion").setDEF("hanim_r_tragion").setTranslation(new float[] {-0.0646f ,1.6347f ,0.0302f })
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 7 r_tragion"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString250().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                                .addChild(new HAnimSite("hanim_skull").setName("sellion").setDEF("hanim_sellion").setTranslation(new double[] {0.0058f,1.6316f,0.0852f})
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                                .addChild(new HAnimSite("hanim_skull").setName("sellion").setDEF("hanim_sellion").setTranslation(new float[] {0.0058f ,1.6316f ,0.0852f })
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 2 sellion"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString251().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                                .addChild(new HAnimSite("hanim_skull").setName("skull_vertex").setDEF("hanim_skull_vertex").setTranslation(new double[] {0.005f,1.7504f,0.0055f})
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                                .addChild(new HAnimSite("hanim_skull").setName("skull_vertex").setDEF("hanim_skull_vertex").setTranslation(new float[] {0.005f ,1.7504f ,0.0055f })
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite 0 skull_vertex"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                                   .addChild(new Billboard()
                                                                     .addChild(new Shape()
                                                                       .setGeometry(new Text().setString(new MFString252().getArray())
-                                                                        .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                                        .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new LineSet().setVertexCount(new MFInt32253().getArray())
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f254().getArray()))
@@ -1073,16 +1073,16 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f264().getArray()))
                                                                     .addComments(new CommentsBlock("from skullbase to temporomandibular vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("l_eyelid_joint").setDEF("hanim_l_eyelid_joint").setCenter(new double[] {0.0503f,1.4157f,-0.0689f}).setUlimit(new MFFloat265().getArray()).setLlimit(new MFFloat266().getArray()))
-                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("r_eyelid_joint").setDEF("hanim_r_eyelid_joint").setCenter(new double[] {-0.0507f,1.4157f,-0.0689f}).setUlimit(new MFFloat267().getArray()).setLlimit(new MFFloat268().getArray()))
-                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("l_eyeball_joint").setDEF("hanim_l_eyeball_joint").setCenter(new double[] {0.0479f,1.3963f,-0.0188f}).setUlimit(new MFFloat269().getArray()).setLlimit(new MFFloat270().getArray()))
-                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("r_eyeball_joint").setDEF("hanim_r_eyeball_joint").setCenter(new double[] {-0.0483f,1.3963f,-0.0188f}).setUlimit(new MFFloat271().getArray()).setLlimit(new MFFloat272().getArray()))
-                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("l_eyebrow_joint").setDEF("hanim_l_eyebrow_joint").setCenter(new double[] {0.0216f,1.4053f,0.0051f}).setUlimit(new MFFloat273().getArray()).setLlimit(new MFFloat274().getArray()))
-                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("r_eyebrow_joint").setDEF("hanim_r_eyebrow_joint").setCenter(new double[] {-0.0219f,1.4053f,0.0051f}).setUlimit(new MFFloat275().getArray()).setLlimit(new MFFloat276().getArray()))
-                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("temporomandibular").setDEF("hanim_temporomandibular").setCenter(new double[] {-0.0002f,1.3043f,-0.0865f}).setUlimit(new MFFloat277().getArray()).setLlimit(new MFFloat278().getArray()))))))))))
-                                              .addChild(new HAnimJoint("hanim_vt1").setName("l_sternoclavicular").setDEF("hanim_l_sternoclavicular").setCenter(new double[] {0.082f,1.4488f,-0.0353f}).setUlimit(new MFFloat279().getArray()).setLlimit(new MFFloat280().getArray())
+                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("l_eyelid_joint").setDEF("hanim_l_eyelid_joint").setCenter(new float[] {0.0503f ,1.4157f ,-0.0689f }).setUlimit(new MFFloat265().getArray()).setLlimit(new MFFloat266().getArray()))
+                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("r_eyelid_joint").setDEF("hanim_r_eyelid_joint").setCenter(new float[] {-0.0507f ,1.4157f ,-0.0689f }).setUlimit(new MFFloat267().getArray()).setLlimit(new MFFloat268().getArray()))
+                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("l_eyeball_joint").setDEF("hanim_l_eyeball_joint").setCenter(new float[] {0.0479f ,1.3963f ,-0.0188f }).setUlimit(new MFFloat269().getArray()).setLlimit(new MFFloat270().getArray()))
+                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("r_eyeball_joint").setDEF("hanim_r_eyeball_joint").setCenter(new float[] {-0.0483f ,1.3963f ,-0.0188f }).setUlimit(new MFFloat271().getArray()).setLlimit(new MFFloat272().getArray()))
+                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("l_eyebrow_joint").setDEF("hanim_l_eyebrow_joint").setCenter(new float[] {0.0216f ,1.4053f ,0.0051f }).setUlimit(new MFFloat273().getArray()).setLlimit(new MFFloat274().getArray()))
+                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("r_eyebrow_joint").setDEF("hanim_r_eyebrow_joint").setCenter(new float[] {-0.0219f ,1.4053f ,0.0051f }).setUlimit(new MFFloat275().getArray()).setLlimit(new MFFloat276().getArray()))
+                                                              .addChild(new HAnimJoint("hanim_skullbase").setName("temporomandibular").setDEF("hanim_temporomandibular").setCenter(new float[] {-0.0002f ,1.3043f ,-0.0865f }).setUlimit(new MFFloat277().getArray()).setLlimit(new MFFloat278().getArray()))))))))))
+                                              .addChild(new HAnimJoint("hanim_vt1").setName("l_sternoclavicular").setDEF("hanim_l_sternoclavicular").setCenter(new float[] {0.082f ,1.4488f ,-0.0353f }).setUlimit(new MFFloat279().getArray()).setLlimit(new MFFloat280().getArray())
                                                 .addChild(new HAnimSegment("hanim_l_sternoclavicular").setName("l_clavicle").setDEF("hanim_l_clavicle")
-                                                  .addChild(new Transform().setTranslation(new double[] {0.082f,1.4488f,-0.0353f})
+                                                  .addChild(new Transform().setTranslation(new float[] {0.082f ,1.4488f ,-0.0353f })
                                                     .addChild(new Transform()
                                                       .addComments(new CommentsBlock("Empty Transform"))
                                                       .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1091,44 +1091,44 @@ public class Humanoid3 implements X3DRoots {
                                                       .setCoord(new Coordinate().setPoint(new MFVec3f282().getArray()))
                                                       .addComments(new CommentsBlock("from l_sternoclavicular to l_acromioclavicular vertices 2"))
                                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_acromion").setDEF("hanim_l_acromion").setTranslation(new double[] {0.2032f,1.476f,-0.049f})
+                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_acromion").setDEF("hanim_l_acromion").setTranslation(new float[] {0.2032f ,1.476f ,-0.049f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 15 l_acromion"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString283().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_axilla_distal").setDEF("hanim_l_axilla_distal").setTranslation(new double[] {0.1706f,1.4072f,-0.0875f})
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_axilla_distal").setDEF("hanim_l_axilla_distal").setTranslation(new float[] {0.1706f ,1.4072f ,-0.0875f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 17 l_axilla_distal"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString284().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                   .addChild(new HAnimSite("hanim_l_clavicle").setName("l_axilla_posterior_folds").setDEF("hanim_l_axilla_posterior_folds")
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 18 l_axilla_posterior_folds"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString285().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_axilla_proximal").setDEF("hanim_l_axilla_proximal").setTranslation(new double[] {0.1777f,1.4065f,-0.0075f})
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_axilla_proximal").setDEF("hanim_l_axilla_proximal").setTranslation(new float[] {0.1777f ,1.4065f ,-0.0075f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 16 l_axilla_proximal"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString286().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_clavicale").setDEF("hanim_l_clavicale").setTranslation(new double[] {0.0271f,1.4943f,0.0394f})
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                  .addChild(new HAnimSite("hanim_l_clavicle").setName("l_clavicale").setDEF("hanim_l_clavicale").setTranslation(new float[] {0.0271f ,1.4943f ,0.0394f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 14 l_clavicale"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString287().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                .addChild(new HAnimJoint("hanim_l_sternoclavicular").setName("l_acromioclavicular").setDEF("hanim_l_acromioclavicular").setCenter(new double[] {0.0962f,1.4269f,-0.0424f}).setUlimit(new MFFloat288().getArray()).setLlimit(new MFFloat289().getArray())
+                                                          .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                .addChild(new HAnimJoint("hanim_l_sternoclavicular").setName("l_acromioclavicular").setDEF("hanim_l_acromioclavicular").setCenter(new float[] {0.0962f ,1.4269f ,-0.0424f }).setUlimit(new MFFloat288().getArray()).setLlimit(new MFFloat289().getArray())
                                                   .addChild(new HAnimSegment("hanim_l_acromioclavicular").setName("l_scapula").setDEF("hanim_l_scapula")
-                                                    .addChild(new Transform().setTranslation(new double[] {0.0962f,1.4269f,-0.0424f})
+                                                    .addChild(new Transform().setTranslation(new float[] {0.0962f ,1.4269f ,-0.0424f })
                                                       .addChild(new Transform()
                                                         .addComments(new CommentsBlock("Empty Transform"))
                                                         .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1137,9 +1137,9 @@ public class Humanoid3 implements X3DRoots {
                                                         .setCoord(new Coordinate().setPoint(new MFVec3f291().getArray()))
                                                         .addComments(new CommentsBlock("from l_acromioclavicular to l_shoulder vertices 2"))
                                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                  .addChild(new HAnimJoint("hanim_l_acromioclavicular").setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new double[] {0.2029f,1.4376f,-0.0387f}).setUlimit(new MFFloat292().getArray()).setLlimit(new MFFloat293().getArray())
+                                                  .addChild(new HAnimJoint("hanim_l_acromioclavicular").setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new float[] {0.2029f ,1.4376f ,-0.0387f }).setUlimit(new MFFloat292().getArray()).setLlimit(new MFFloat293().getArray())
                                                     .addChild(new HAnimSegment("hanim_l_shoulder").setName("l_upperarm").setDEF("hanim_l_upperarm")
-                                                      .addChild(new Transform().setTranslation(new double[] {0.2029f,1.4376f,-0.0387f})
+                                                      .addChild(new Transform().setTranslation(new float[] {0.2029f ,1.4376f ,-0.0387f })
                                                         .addChild(new Transform()
                                                           .addComments(new CommentsBlock("Empty Transform"))
                                                           .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1154,17 +1154,17 @@ public class Humanoid3 implements X3DRoots {
                                                         .addChild(new Billboard()
                                                           .addChild(new Shape()
                                                             .setGeometry(new Text().setString(new MFString296().getArray())
-                                                              .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                      .addChild(new HAnimSite("hanim_l_upperarm").setName("l_humeral_lateral_epicondyles").setDEF("hanim_l_humeral_lateral_epicondyles").setTranslation(new double[] {0.228f,1.1482f,-0.11f})
+                                                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                      .addChild(new HAnimSite("hanim_l_upperarm").setName("l_humeral_lateral_epicondyles").setDEF("hanim_l_humeral_lateral_epicondyles").setTranslation(new float[] {0.228f ,1.1482f ,-0.11f })
                                                         .addChild(new TouchSensor().setDescription("HAnimSite 63 l_humeral_lateral_epicondyles"))
                                                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                         .addChild(new Billboard()
                                                           .addChild(new Shape()
                                                             .setGeometry(new Text().setString(new MFString297().getArray())
-                                                              .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                    .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new double[] {0.2014f,1.1357f,-0.0682f}).setUlimit(new MFFloat298().getArray()).setLlimit(new MFFloat299().getArray())
+                                                              .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                    .addChild(new HAnimJoint("hanim_l_shoulder").setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new float[] {0.2014f ,1.1357f ,-0.0682f }).setUlimit(new MFFloat298().getArray()).setLlimit(new MFFloat299().getArray())
                                                       .addChild(new HAnimSegment("hanim_l_elbow").setName("l_forearm").setDEF("hanim_l_forearm")
-                                                        .addChild(new Transform().setTranslation(new double[] {0.2014f,1.1357f,-0.0682f})
+                                                        .addChild(new Transform().setTranslation(new float[] {0.2014f ,1.1357f ,-0.0682f })
                                                           .addChild(new Transform()
                                                             .addComments(new CommentsBlock("Empty Transform"))
                                                             .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1173,39 +1173,39 @@ public class Humanoid3 implements X3DRoots {
                                                             .setCoord(new Coordinate().setPoint(new MFVec3f301().getArray()))
                                                             .addComments(new CommentsBlock("from l_elbow to l_radiocarpal vertices 2"))
                                                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_humeral_medial_epicondyles").setDEF("hanim_l_humeral_medial_epicondyles").setTranslation(new double[] {0.1735f,1.1272f,-0.1113f})
+                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_humeral_medial_epicondyles").setDEF("hanim_l_humeral_medial_epicondyles").setTranslation(new float[] {0.1735f ,1.1272f ,-0.1113f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 64 l_humeral_medial_epicondyles"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString302().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_olecranon").setDEF("hanim_l_olecranon").setTranslation(new double[] {-0.1962f,1.1375f,-0.1123f})
+                                                                .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_olecranon").setDEF("hanim_l_olecranon").setTranslation(new float[] {-0.1962f ,1.1375f ,-0.1123f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 65 l_olecranon"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString303().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_radial_styloid").setDEF("hanim_l_radial_styloid").setTranslation(new double[] {0.1901f,0.8645f,-0.0415f})
+                                                                .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_radial_styloid").setDEF("hanim_l_radial_styloid").setTranslation(new float[] {0.1901f ,0.8645f ,-0.0415f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 71 l_radial_styloid"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString304().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_radiale").setDEF("hanim_l_radiale").setTranslation(new double[] {0.2182f,1.1212f,-0.1167f})
+                                                                .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                        .addChild(new HAnimSite("hanim_l_forearm").setName("l_radiale").setDEF("hanim_l_radiale").setTranslation(new float[] {0.2182f ,1.1212f ,-0.1167f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 69 l_radiale"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString305().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                      .addChild(new HAnimJoint("hanim_l_elbow").setName("l_radiocarpal").setDEF("hanim_l_radiocarpal").setCenter(new double[] {0.1984f,0.8663f,-0.0583f}).setUlimit(new MFFloat306().getArray()).setLlimit(new MFFloat307().getArray())
+                                                                .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                      .addChild(new HAnimJoint("hanim_l_elbow").setName("l_radiocarpal").setDEF("hanim_l_radiocarpal").setCenter(new float[] {0.1984f ,0.8663f ,-0.0583f }).setUlimit(new MFFloat306().getArray()).setLlimit(new MFFloat307().getArray())
                                                         .addChild(new HAnimSegment("hanim_l_radiocarpal").setName("l_carpal").setDEF("hanim_l_carpal")
-                                                          .addChild(new Transform().setScale(new double[] {0.2f,0.2f,0.2f}).setTranslation(new double[] {0.2f,0.85f,-0.05f}).setRotation(new double[] {0f,0f,1f,-3.14f})
+                                                          .addChild(new Transform().setScale(new float[] {0.2f ,0.2f ,0.2f }).setTranslation(new float[] {0.2f ,0.85f ,-0.05f }).setRotation(new float[] {0f ,0f ,1f ,-3.14f })
                                                             .addComments(new CommentsBlock("Transform left hand"))
-                                                            .addChild(new Transform().setRotation(new double[] {0f,1f,0f,-1.57f})
+                                                            .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,-1.57f })
                                                               .addComments(new CommentsBlock("Transform left hand"))
                                                               .addChild(new Shape().setUSE("HAnimJointShape"))))
                                                           .addChild(new Shape()
@@ -1213,13 +1213,13 @@ public class Humanoid3 implements X3DRoots {
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f309().getArray()))
                                                               .addComments(new CommentsBlock("from l_radiocarpal to l_carpometacarpal_1 vertices 2"))
                                                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                          .addChild(new HAnimSite("hanim_l_carpal").setName("l_ulnar_styloid").setDEF("hanim_l_ulnar_styloid").setTranslation(new double[] {-0.2142f,0.8529f,-0.0648f})
+                                                          .addChild(new HAnimSite("hanim_l_carpal").setName("l_ulnar_styloid").setDEF("hanim_l_ulnar_styloid").setTranslation(new float[] {-0.2142f ,0.8529f ,-0.0648f })
                                                             .addChild(new TouchSensor().setDescription("HAnimSite 70 l_ulnar_styloid"))
                                                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                             .addChild(new Billboard()
                                                               .addChild(new Shape()
                                                                 .setGeometry(new Text().setString(new MFString310().getArray())
-                                                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                           .addChild(new Shape()
                                                             .setGeometry(new LineSet().setVertexCount(new MFInt32311().getArray())
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f312().getArray()))
@@ -1240,9 +1240,9 @@ public class Humanoid3 implements X3DRoots {
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f318().getArray()))
                                                               .addComments(new CommentsBlock("from l_radiocarpal to l_carpometacarpal_5 vertices 2"))
                                                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_1").setDEF("hanim_l_carpometacarpal_1").setCenter(new double[] {0.1924f,0.8472f,-0.0534f}).setUlimit(new MFFloat319().getArray()).setLlimit(new MFFloat320().getArray())
+                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_1").setDEF("hanim_l_carpometacarpal_1").setCenter(new float[] {0.1924f ,0.8472f ,-0.0534f }).setUlimit(new MFFloat319().getArray()).setLlimit(new MFFloat320().getArray())
                                                           .addChild(new HAnimSegment("hanim_l_carpometacarpal_1").setName("l_metacarpal_1").setDEF("hanim_l_metacarpal_1")
-                                                            .addChild(new Transform().setTranslation(new double[] {0.1924f,0.8472f,-0.0534f})
+                                                            .addChild(new Transform().setTranslation(new float[] {0.1924f ,0.8472f ,-0.0534f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1251,9 +1251,9 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f322().getArray()))
                                                                 .addComments(new CommentsBlock("from l_carpometacarpal_1 to l_metacarpophalangeal_1 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_metacarpophalangeal_1").setDEF("hanim_l_metacarpophalangeal_1").setCenter(new double[] {0.1951f,0.8226f,0.0246f}).setUlimit(new MFFloat323().getArray()).setLlimit(new MFFloat324().getArray())
+                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_metacarpophalangeal_1").setDEF("hanim_l_metacarpophalangeal_1").setCenter(new float[] {0.1951f ,0.8226f ,0.0246f }).setUlimit(new MFFloat323().getArray()).setLlimit(new MFFloat324().getArray())
                                                             .addChild(new HAnimSegment("hanim_l_metacarpophalangeal_1").setName("l_carpal_proximal_phalanx_1").setDEF("hanim_l_carpal_proximal_phalanx_1")
-                                                              .addChild(new Transform().setTranslation(new double[] {0.1951f,0.8226f,0.0246f})
+                                                              .addChild(new Transform().setTranslation(new float[] {0.1951f ,0.8226f ,0.0246f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1262,10 +1262,10 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f326().getArray()))
                                                                   .addComments(new CommentsBlock("from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_1").setName("l_carpal_interphalangeal_1").setDEF("hanim_l_carpal_interphalangeal_1").setCenter(new double[] {0.1955f,0.8159f,0.0464f}).setUlimit(new MFFloat327().getArray()).setLlimit(new MFFloat328().getArray()))))
-                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_2").setDEF("hanim_l_carpometacarpal_2").setCenter(new double[] {0.1983f,0.8024f,-0.028f}).setUlimit(new MFFloat329().getArray()).setLlimit(new MFFloat330().getArray())
+                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_1").setName("l_carpal_interphalangeal_1").setDEF("hanim_l_carpal_interphalangeal_1").setCenter(new float[] {0.1955f ,0.8159f ,0.0464f }).setUlimit(new MFFloat327().getArray()).setLlimit(new MFFloat328().getArray()))))
+                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_2").setDEF("hanim_l_carpometacarpal_2").setCenter(new float[] {0.1983f ,0.8024f ,-0.028f }).setUlimit(new MFFloat329().getArray()).setLlimit(new MFFloat330().getArray())
                                                           .addChild(new HAnimSegment("hanim_l_carpometacarpal_2").setName("l_metacarpal_2").setDEF("hanim_l_metacarpal_2")
-                                                            .addChild(new Transform().setTranslation(new double[] {0.1983f,0.8024f,-0.028f})
+                                                            .addChild(new Transform().setTranslation(new float[] {0.1983f ,0.8024f ,-0.028f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1274,16 +1274,16 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f332().getArray()))
                                                                 .addComments(new CommentsBlock("from l_carpometacarpal_2 to l_metacarpophalangeal_2 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                            .addChild(new HAnimSite("hanim_l_metacarpal_2").setName("l_metacarpal_phalanx_2").setDEF("hanim_l_metacarpal_phalanx_2").setTranslation(new double[] {0.2009f,0.8139f,-0.0237f})
+                                                            .addChild(new HAnimSite("hanim_l_metacarpal_2").setName("l_metacarpal_phalanx_2").setDEF("hanim_l_metacarpal_phalanx_2").setTranslation(new float[] {0.2009f ,0.8139f ,-0.0237f })
                                                               .addChild(new TouchSensor().setDescription("HAnimSite 75 l_metacarpal_phalanx_2"))
                                                               .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                               .addChild(new Billboard()
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new Text().setString(new MFString333().getArray())
-                                                                    .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_metacarpophalangeal_2").setDEF("hanim_l_metacarpophalangeal_2").setCenter(new double[] {0.1983f,0.7815f,-0.028f}).setUlimit(new MFFloat334().getArray()).setLlimit(new MFFloat335().getArray())
+                                                                    .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_metacarpophalangeal_2").setDEF("hanim_l_metacarpophalangeal_2").setCenter(new float[] {0.1983f ,0.7815f ,-0.028f }).setUlimit(new MFFloat334().getArray()).setLlimit(new MFFloat335().getArray())
                                                             .addChild(new HAnimSegment("hanim_l_metacarpophalangeal_2").setName("l_carpal_proximal_phalanx_2").setDEF("hanim_l_carpal_proximal_phalanx_2")
-                                                              .addChild(new Transform().setTranslation(new double[] {0.1983f,0.7815f,-0.028f})
+                                                              .addChild(new Transform().setTranslation(new float[] {0.1983f ,0.7815f ,-0.028f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1292,9 +1292,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f337().getArray()))
                                                                   .addComments(new CommentsBlock("from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_2").setName("l_carpal_proximal_interphalangeal_2").setDEF("hanim_l_carpal_proximal_interphalangeal_2").setCenter(new double[] {0.2017f,0.7363f,-0.0248f}).setUlimit(new MFFloat338().getArray()).setLlimit(new MFFloat339().getArray())
+                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_2").setName("l_carpal_proximal_interphalangeal_2").setDEF("hanim_l_carpal_proximal_interphalangeal_2").setCenter(new float[] {0.2017f ,0.7363f ,-0.0248f }).setUlimit(new MFFloat338().getArray()).setLlimit(new MFFloat339().getArray())
                                                               .addChild(new HAnimSegment("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_middle_phalanx_2").setDEF("hanim_l_carpal_middle_phalanx_2")
-                                                                .addChild(new Transform().setTranslation(new double[] {0.2017f,0.7363f,-0.0248f})
+                                                                .addChild(new Transform().setTranslation(new float[] {0.2017f ,0.7363f ,-0.0248f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1303,10 +1303,10 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f341().getArray()))
                                                                     .addComments(new CommentsBlock("from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_distal_interphalangeal_2").setDEF("hanim_l_carpal_distal_interphalangeal_2").setCenter(new double[] {0.2028f,0.7139f,-0.0236f}).setUlimit(new MFFloat342().getArray()).setLlimit(new MFFloat343().getArray())))))
-                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_3").setDEF("hanim_l_carpometacarpal_3").setCenter(new double[] {0.1987f,0.8029f,-0.053f}).setUlimit(new MFFloat344().getArray()).setLlimit(new MFFloat345().getArray())
+                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_distal_interphalangeal_2").setDEF("hanim_l_carpal_distal_interphalangeal_2").setCenter(new float[] {0.2028f ,0.7139f ,-0.0236f }).setUlimit(new MFFloat342().getArray()).setLlimit(new MFFloat343().getArray())))))
+                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_3").setDEF("hanim_l_carpometacarpal_3").setCenter(new float[] {0.1987f ,0.8029f ,-0.053f }).setUlimit(new MFFloat344().getArray()).setLlimit(new MFFloat345().getArray())
                                                           .addChild(new HAnimSegment("hanim_l_carpometacarpal_3").setName("l_metacarpal_3").setDEF("hanim_l_metacarpal_3")
-                                                            .addChild(new Transform().setTranslation(new double[] {0.1987f,0.8029f,-0.053f})
+                                                            .addChild(new Transform().setTranslation(new float[] {0.1987f ,0.8029f ,-0.053f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1321,10 +1321,10 @@ public class Humanoid3 implements X3DRoots {
                                                               .addChild(new Billboard()
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new Text().setString(new MFString348().getArray())
-                                                                    .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_3").setName("l_metacarpophalangeal_3").setDEF("hanim_l_metacarpophalangeal_3").setCenter(new double[] {0.1987f,0.7818f,-0.053f}).setUlimit(new MFFloat349().getArray()).setLlimit(new MFFloat350().getArray())
+                                                                    .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_3").setName("l_metacarpophalangeal_3").setDEF("hanim_l_metacarpophalangeal_3").setCenter(new float[] {0.1987f ,0.7818f ,-0.053f }).setUlimit(new MFFloat349().getArray()).setLlimit(new MFFloat350().getArray())
                                                             .addChild(new HAnimSegment("hanim_l_metacarpophalangeal_3").setName("l_carpal_proximal_phalanx_3").setDEF("hanim_l_carpal_proximal_phalanx_3")
-                                                              .addChild(new Transform().setTranslation(new double[] {0.1987f,0.7818f,-0.053f})
+                                                              .addChild(new Transform().setTranslation(new float[] {0.1987f ,0.7818f ,-0.053f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1333,9 +1333,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f352().getArray()))
                                                                   .addComments(new CommentsBlock("from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_3").setName("l_carpal_proximal_interphalangeal_3").setDEF("hanim_l_carpal_proximal_interphalangeal_3").setCenter(new double[] {0.2013f,0.7273f,-0.0503f}).setUlimit(new MFFloat353().getArray()).setLlimit(new MFFloat354().getArray())
+                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_3").setName("l_carpal_proximal_interphalangeal_3").setDEF("hanim_l_carpal_proximal_interphalangeal_3").setCenter(new float[] {0.2013f ,0.7273f ,-0.0503f }).setUlimit(new MFFloat353().getArray()).setLlimit(new MFFloat354().getArray())
                                                               .addChild(new HAnimSegment("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_middle_phalanx_3").setDEF("hanim_l_carpal_middle_phalanx_3")
-                                                                .addChild(new Transform().setTranslation(new double[] {0.2013f,0.7273f,-0.0503f})
+                                                                .addChild(new Transform().setTranslation(new float[] {0.2013f ,0.7273f ,-0.0503f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1344,10 +1344,10 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f356().getArray()))
                                                                     .addComments(new CommentsBlock("from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_distal_interphalangeal_3").setDEF("hanim_l_carpal_distal_interphalangeal_3").setCenter(new double[] {0.2026f,0.7011f,-0.0494f}).setUlimit(new MFFloat357().getArray()).setLlimit(new MFFloat358().getArray())))))
-                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_4").setDEF("hanim_l_carpometacarpal_4").setCenter(new double[] {0.1956f,0.8019f,-0.0794f}).setUlimit(new MFFloat359().getArray()).setLlimit(new MFFloat360().getArray())
+                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_distal_interphalangeal_3").setDEF("hanim_l_carpal_distal_interphalangeal_3").setCenter(new float[] {0.2026f ,0.7011f ,-0.0494f }).setUlimit(new MFFloat357().getArray()).setLlimit(new MFFloat358().getArray())))))
+                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_4").setDEF("hanim_l_carpometacarpal_4").setCenter(new float[] {0.1956f ,0.8019f ,-0.0794f }).setUlimit(new MFFloat359().getArray()).setLlimit(new MFFloat360().getArray())
                                                           .addChild(new HAnimSegment("hanim_l_carpometacarpal_4").setName("l_metacarpal_4").setDEF("hanim_l_metacarpal_4")
-                                                            .addChild(new Transform().setTranslation(new double[] {0.1956f,0.8019f,-0.0794f})
+                                                            .addChild(new Transform().setTranslation(new float[] {0.1956f ,0.8019f ,-0.0794f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1356,9 +1356,9 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f362().getArray()))
                                                                 .addComments(new CommentsBlock("from l_carpometacarpal_4 to l_metacarpophalangeal_4 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_4").setName("l_metacarpophalangeal_4").setDEF("hanim_l_metacarpophalangeal_4").setCenter(new double[] {0.1956f,0.7815f,-0.0794f}).setUlimit(new MFFloat363().getArray()).setLlimit(new MFFloat364().getArray())
+                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_4").setName("l_metacarpophalangeal_4").setDEF("hanim_l_metacarpophalangeal_4").setCenter(new float[] {0.1956f ,0.7815f ,-0.0794f }).setUlimit(new MFFloat363().getArray()).setLlimit(new MFFloat364().getArray())
                                                             .addChild(new HAnimSegment("hanim_l_metacarpophalangeal_4").setName("l_carpal_proximal_phalanx_4").setDEF("hanim_l_carpal_proximal_phalanx_4")
-                                                              .addChild(new Transform().setTranslation(new double[] {0.1956f,0.7815f,-0.0794f})
+                                                              .addChild(new Transform().setTranslation(new float[] {0.1956f ,0.7815f ,-0.0794f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1367,9 +1367,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f366().getArray()))
                                                                   .addComments(new CommentsBlock("from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_4").setName("l_carpal_proximal_interphalangeal_4").setDEF("hanim_l_carpal_proximal_interphalangeal_4").setCenter(new double[] {0.1973f,0.7287f,-0.0777f}).setUlimit(new MFFloat367().getArray()).setLlimit(new MFFloat368().getArray())
+                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_4").setName("l_carpal_proximal_interphalangeal_4").setDEF("hanim_l_carpal_proximal_interphalangeal_4").setCenter(new float[] {0.1973f ,0.7287f ,-0.0777f }).setUlimit(new MFFloat367().getArray()).setLlimit(new MFFloat368().getArray())
                                                               .addChild(new HAnimSegment("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_middle_phalanx_4").setDEF("hanim_l_carpal_middle_phalanx_4")
-                                                                .addChild(new Transform().setTranslation(new double[] {0.1973f,0.7287f,-0.0777f})
+                                                                .addChild(new Transform().setTranslation(new float[] {0.1973f ,0.7287f ,-0.0777f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1378,10 +1378,10 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f370().getArray()))
                                                                     .addComments(new CommentsBlock("from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_distal_interphalangeal_4").setDEF("hanim_l_carpal_distal_interphalangeal_4").setCenter(new double[] {0.1983f,0.7045f,-0.0767f}).setUlimit(new MFFloat371().getArray()).setLlimit(new MFFloat372().getArray())))))
-                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_5").setDEF("hanim_l_carpometacarpal_5").setCenter(new double[] {0.1925f,0.8066f,-0.1036f}).setUlimit(new MFFloat373().getArray()).setLlimit(new MFFloat374().getArray())
+                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_distal_interphalangeal_4").setDEF("hanim_l_carpal_distal_interphalangeal_4").setCenter(new float[] {0.1983f ,0.7045f ,-0.0767f }).setUlimit(new MFFloat371().getArray()).setLlimit(new MFFloat372().getArray())))))
+                                                        .addChild(new HAnimJoint("hanim_l_radiocarpal").setName("l_carpometacarpal_5").setDEF("hanim_l_carpometacarpal_5").setCenter(new float[] {0.1925f ,0.8066f ,-0.1036f }).setUlimit(new MFFloat373().getArray()).setLlimit(new MFFloat374().getArray())
                                                           .addChild(new HAnimSegment("hanim_l_carpometacarpal_5").setName("l_metacarpal_5").setDEF("hanim_l_metacarpal_5")
-                                                            .addChild(new Transform().setTranslation(new double[] {0.1925f,0.8066f,-0.1036f})
+                                                            .addChild(new Transform().setTranslation(new float[] {0.1925f ,0.8066f ,-0.1036f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1390,16 +1390,16 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f376().getArray()))
                                                                 .addComments(new CommentsBlock("from l_carpometacarpal_5 to l_metacarpophalangeal_5 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                            .addChild(new HAnimSite("hanim_l_metacarpal_5").setName("l_metacarpal_phalanx_5").setDEF("hanim_l_metacarpal_phalanx_5").setTranslation(new double[] {0.1929f,0.786f,-0.1122f})
+                                                            .addChild(new HAnimSite("hanim_l_metacarpal_5").setName("l_metacarpal_phalanx_5").setDEF("hanim_l_metacarpal_phalanx_5").setTranslation(new float[] {0.1929f ,0.786f ,-0.1122f })
                                                               .addChild(new TouchSensor().setDescription("HAnimSite 77 l_metacarpal_phalanx_5"))
                                                               .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                               .addChild(new Billboard()
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new Text().setString(new MFString377().getArray())
-                                                                    .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_5").setName("l_metacarpophalangeal_5").setDEF("hanim_l_metacarpophalangeal_5").setCenter(new double[] {0.1925f,0.7866f,-0.1036f}).setUlimit(new MFFloat378().getArray()).setLlimit(new MFFloat379().getArray())
+                                                                    .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                          .addChild(new HAnimJoint("hanim_l_carpometacarpal_5").setName("l_metacarpophalangeal_5").setDEF("hanim_l_metacarpophalangeal_5").setCenter(new float[] {0.1925f ,0.7866f ,-0.1036f }).setUlimit(new MFFloat378().getArray()).setLlimit(new MFFloat379().getArray())
                                                             .addChild(new HAnimSegment("hanim_l_metacarpophalangeal_5").setName("l_carpal_proximal_phalanx_5").setDEF("hanim_l_carpal_proximal_phalanx_5")
-                                                              .addChild(new Transform().setTranslation(new double[] {0.1925f,0.7866f,-0.1036f})
+                                                              .addChild(new Transform().setTranslation(new float[] {0.1925f ,0.7866f ,-0.1036f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1408,9 +1408,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f381().getArray()))
                                                                   .addComments(new CommentsBlock("from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_5").setName("l_carpal_proximal_interphalangeal_5").setDEF("hanim_l_carpal_proximal_interphalangeal_5").setCenter(new double[] {0.1938f,0.7452f,-0.1024f}).setUlimit(new MFFloat382().getArray()).setLlimit(new MFFloat383().getArray())
+                                                            .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_5").setName("l_carpal_proximal_interphalangeal_5").setDEF("hanim_l_carpal_proximal_interphalangeal_5").setCenter(new float[] {0.1938f ,0.7452f ,-0.1024f }).setUlimit(new MFFloat382().getArray()).setLlimit(new MFFloat383().getArray())
                                                               .addChild(new HAnimSegment("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_middle_phalanx_5").setDEF("hanim_l_carpal_middle_phalanx_5")
-                                                                .addChild(new Transform().setTranslation(new double[] {0.1938f,0.7452f,-0.1024f})
+                                                                .addChild(new Transform().setTranslation(new float[] {0.1938f ,0.7452f ,-0.1024f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1419,10 +1419,10 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f385().getArray()))
                                                                     .addComments(new CommentsBlock("from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_distal_interphalangeal_5").setDEF("hanim_l_carpal_distal_interphalangeal_5").setCenter(new double[] {0.1948f,0.7277f,-0.1017f}).setUlimit(new MFFloat386().getArray()).setLlimit(new MFFloat387().getArray()))))))))))
-                                              .addChild(new HAnimJoint("hanim_vt1").setName("r_sternoclavicular").setDEF("hanim_r_sternoclavicular").setCenter(new double[] {-0.0694f,1.46f,-0.033f}).setUlimit(new MFFloat388().getArray()).setLlimit(new MFFloat389().getArray())
+                                                              .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_distal_interphalangeal_5").setDEF("hanim_l_carpal_distal_interphalangeal_5").setCenter(new float[] {0.1948f ,0.7277f ,-0.1017f }).setUlimit(new MFFloat386().getArray()).setLlimit(new MFFloat387().getArray()))))))))))
+                                              .addChild(new HAnimJoint("hanim_vt1").setName("r_sternoclavicular").setDEF("hanim_r_sternoclavicular").setCenter(new float[] {-0.0694f ,1.46f ,-0.033f }).setUlimit(new MFFloat388().getArray()).setLlimit(new MFFloat389().getArray())
                                                 .addChild(new HAnimSegment("hanim_r_sternoclavicular").setName("r_clavicle").setDEF("hanim_r_clavicle")
-                                                  .addChild(new Transform().setTranslation(new double[] {-0.0694f,1.46f,-0.033f})
+                                                  .addChild(new Transform().setTranslation(new float[] {-0.0694f ,1.46f ,-0.033f })
                                                     .addChild(new Transform()
                                                       .addComments(new CommentsBlock("Empty Transform"))
                                                       .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1431,44 +1431,44 @@ public class Humanoid3 implements X3DRoots {
                                                       .setCoord(new Coordinate().setPoint(new MFVec3f391().getArray()))
                                                       .addComments(new CommentsBlock("from r_sternoclavicular to r_acromioclavicular vertices 2"))
                                                       .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_acromion").setDEF("hanim_r_acromion").setTranslation(new double[] {-0.1905f,1.4791f,-0.0431f})
+                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_acromion").setDEF("hanim_r_acromion").setTranslation(new float[] {-0.1905f ,1.4791f ,-0.0431f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 20 r_acromion"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString392().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_axilla_distal").setDEF("hanim_r_axilla_distal").setTranslation(new double[] {-0.1603f,1.4098f,-0.0826f})
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_axilla_distal").setDEF("hanim_r_axilla_distal").setTranslation(new float[] {-0.1603f ,1.4098f ,-0.0826f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 22 r_axilla_distal"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString393().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                   .addChild(new HAnimSite("hanim_r_clavicle").setName("r_axilla_posterior_folds").setDEF("hanim_r_axilla_posterior_folds")
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 23 r_axilla_posterior_folds"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString394().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_axilla_proximal").setDEF("hanim_r_axilla_proximal").setTranslation(new double[] {-0.1626f,1.4072f,-0.0031f})
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_axilla_proximal").setDEF("hanim_r_axilla_proximal").setTranslation(new float[] {-0.1626f ,1.4072f ,-0.0031f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 21 r_axilla_proximal"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString395().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_clavicale").setDEF("hanim_r_clavicale").setTranslation(new double[] {-0.0115f,1.4943f,0.04f})
+                                                          .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                  .addChild(new HAnimSite("hanim_r_clavicle").setName("r_clavicale").setDEF("hanim_r_clavicale").setTranslation(new float[] {-0.0115f ,1.4943f ,0.04f })
                                                     .addChild(new TouchSensor().setDescription("HAnimSite 19 r_clavicale"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                     .addChild(new Billboard()
                                                       .addChild(new Shape()
                                                         .setGeometry(new Text().setString(new MFString396().getArray())
-                                                          .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                .addChild(new HAnimJoint("hanim_r_sternoclavicular").setName("r_acromioclavicular").setDEF("hanim_r_acromioclavicular").setCenter(new double[] {-0.0836f,1.4281f,-0.0401f}).setUlimit(new MFFloat397().getArray()).setLlimit(new MFFloat398().getArray())
+                                                          .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                .addChild(new HAnimJoint("hanim_r_sternoclavicular").setName("r_acromioclavicular").setDEF("hanim_r_acromioclavicular").setCenter(new float[] {-0.0836f ,1.4281f ,-0.0401f }).setUlimit(new MFFloat397().getArray()).setLlimit(new MFFloat398().getArray())
                                                   .addChild(new HAnimSegment("hanim_r_acromioclavicular").setName("r_scapula").setDEF("hanim_r_scapula")
-                                                    .addChild(new Transform().setTranslation(new double[] {-0.0836f,1.4281f,-0.0401f})
+                                                    .addChild(new Transform().setTranslation(new float[] {-0.0836f ,1.4281f ,-0.0401f })
                                                       .addChild(new Transform()
                                                         .addComments(new CommentsBlock("Empty Transform"))
                                                         .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1477,9 +1477,9 @@ public class Humanoid3 implements X3DRoots {
                                                         .setCoord(new Coordinate().setPoint(new MFVec3f400().getArray()))
                                                         .addComments(new CommentsBlock("from r_acromioclavicular to r_shoulder vertices 2"))
                                                         .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                  .addChild(new HAnimJoint("hanim_r_acromioclavicular").setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new double[] {-0.1907f,1.4407f,-0.0325f}).setUlimit(new MFFloat401().getArray()).setLlimit(new MFFloat402().getArray())
+                                                  .addChild(new HAnimJoint("hanim_r_acromioclavicular").setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new float[] {-0.1907f ,1.4407f ,-0.0325f }).setUlimit(new MFFloat401().getArray()).setLlimit(new MFFloat402().getArray())
                                                     .addChild(new HAnimSegment("hanim_r_shoulder").setName("r_upperarm").setDEF("hanim_r_upperarm")
-                                                      .addChild(new Transform().setTranslation(new double[] {-0.1907f,1.4407f,-0.0325f})
+                                                      .addChild(new Transform().setTranslation(new float[] {-0.1907f ,1.4407f ,-0.0325f })
                                                         .addChild(new Transform()
                                                           .addComments(new CommentsBlock("Empty Transform"))
                                                           .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1494,17 +1494,17 @@ public class Humanoid3 implements X3DRoots {
                                                         .addChild(new Billboard()
                                                           .addChild(new Shape()
                                                             .setGeometry(new Text().setString(new MFString405().getArray())
-                                                              .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                      .addChild(new HAnimSite("hanim_r_upperarm").setName("r_humeral_lateral_epicondyles").setDEF("hanim_r_humeral_lateral_epicondyles").setTranslation(new double[] {-0.2224f,1.1517f,-0.1033f})
+                                                              .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                      .addChild(new HAnimSite("hanim_r_upperarm").setName("r_humeral_lateral_epicondyles").setDEF("hanim_r_humeral_lateral_epicondyles").setTranslation(new float[] {-0.2224f ,1.1517f ,-0.1033f })
                                                         .addChild(new TouchSensor().setDescription("HAnimSite 66 r_humeral_lateral_epicondyles"))
                                                         .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                         .addChild(new Billboard()
                                                           .addChild(new Shape()
                                                             .setGeometry(new Text().setString(new MFString406().getArray())
-                                                              .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                    .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new double[] {-0.1949f,1.1388f,-0.062f}).setUlimit(new MFFloat407().getArray()).setLlimit(new MFFloat408().getArray())
+                                                              .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                    .addChild(new HAnimJoint("hanim_r_shoulder").setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new float[] {-0.1949f ,1.1388f ,-0.062f }).setUlimit(new MFFloat407().getArray()).setLlimit(new MFFloat408().getArray())
                                                       .addChild(new HAnimSegment("hanim_r_elbow").setName("r_forearm").setDEF("hanim_r_forearm")
-                                                        .addChild(new Transform().setTranslation(new double[] {-0.1949f,1.1388f,-0.062f})
+                                                        .addChild(new Transform().setTranslation(new float[] {-0.1949f ,1.1388f ,-0.062f })
                                                           .addChild(new Transform()
                                                             .addComments(new CommentsBlock("Empty Transform"))
                                                             .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1513,39 +1513,39 @@ public class Humanoid3 implements X3DRoots {
                                                             .setCoord(new Coordinate().setPoint(new MFVec3f410().getArray()))
                                                             .addComments(new CommentsBlock("from r_elbow to r_radiocarpal vertices 2"))
                                                             .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_humeral_medial_epicondyles").setDEF("hanim_r_humeral_medial_epicondyles").setTranslation(new double[] {-0.168f,1.1298f,-0.1062f})
+                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_humeral_medial_epicondyles").setDEF("hanim_r_humeral_medial_epicondyles").setTranslation(new float[] {-0.168f ,1.1298f ,-0.1062f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 67 r_humeral_medial_epicondyles"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString411().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_olecranon").setDEF("hanim_r_olecranon").setTranslation(new double[] {-0.1907f,1.1405f,-0.1065f})
+                                                                .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_olecranon").setDEF("hanim_r_olecranon").setTranslation(new float[] {-0.1907f ,1.1405f ,-0.1065f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 68 r_olecranon"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString412().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_radial_styloid").setDEF("hanim_r_radial_styloid").setTranslation(new double[] {-0.1884f,0.8676f,-0.036f})
+                                                                .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_radial_styloid").setDEF("hanim_r_radial_styloid").setTranslation(new float[] {-0.1884f ,0.8676f ,-0.036f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 74 r_radial_styloid"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString413().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f))))))
-                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_radiale").setDEF("hanim_r_radiale").setTranslation(new double[] {-0.213f,1.1305f,-0.1091f})
+                                                                .setFontStyle(new FontStyle().setSize(0.035f ))))))
+                                                        .addChild(new HAnimSite("hanim_r_forearm").setName("r_radiale").setDEF("hanim_r_radiale").setTranslation(new float[] {-0.213f ,1.1305f ,-0.1091f })
                                                           .addChild(new TouchSensor().setDescription("HAnimSite 72 r_radiale"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                           .addChild(new Billboard()
                                                             .addChild(new Shape()
                                                               .setGeometry(new Text().setString(new MFString414().getArray())
-                                                                .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                      .addChild(new HAnimJoint("hanim_r_elbow").setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setCenter(new double[] {-0.1959f,0.8694f,-0.0521f}).setUlimit(new MFFloat415().getArray()).setLlimit(new MFFloat416().getArray())
+                                                                .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                      .addChild(new HAnimJoint("hanim_r_elbow").setName("r_radiocarpal").setDEF("hanim_r_radiocarpal").setCenter(new float[] {-0.1959f ,0.8694f ,-0.0521f }).setUlimit(new MFFloat415().getArray()).setLlimit(new MFFloat416().getArray())
                                                         .addChild(new HAnimSegment("hanim_r_radiocarpal").setName("r_carpal").setDEF("hanim_r_carpal")
-                                                          .addChild(new Transform().setScale(new double[] {0.2f,0.2f,0.2f}).setTranslation(new double[] {-0.2f,0.85f,-0.05f}).setRotation(new double[] {0f,0f,1f,-3.14f})
+                                                          .addChild(new Transform().setScale(new float[] {0.2f ,0.2f ,0.2f }).setTranslation(new float[] {-0.2f ,0.85f ,-0.05f }).setRotation(new float[] {0f ,0f ,1f ,-3.14f })
                                                             .addComments(new CommentsBlock("Transform right hand"))
-                                                            .addChild(new Transform().setRotation(new double[] {0f,1f,0f,1.57f})
+                                                            .addChild(new Transform().setRotation(new float[] {0f ,1f ,0f ,1.57f })
                                                               .addComments(new CommentsBlock("Transform right hand"))
                                                               .addChild(new Shape().setUSE("HAnimJointShape"))))
                                                           .addChild(new Shape()
@@ -1553,13 +1553,13 @@ public class Humanoid3 implements X3DRoots {
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f418().getArray()))
                                                               .addComments(new CommentsBlock("from r_radiocarpal to r_carpometacarpal_1 vertices 2"))
                                                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                          .addChild(new HAnimSite("hanim_r_carpal").setName("r_ulnar_styloid").setDEF("hanim_r_ulnar_styloid").setTranslation(new double[] {-0.2117f,0.8562f,-0.0584f})
+                                                          .addChild(new HAnimSite("hanim_r_carpal").setName("r_ulnar_styloid").setDEF("hanim_r_ulnar_styloid").setTranslation(new float[] {-0.2117f ,0.8562f ,-0.0584f })
                                                             .addChild(new TouchSensor().setDescription("HAnimSite 73 r_ulnar_styloid"))
                                                             .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                             .addChild(new Billboard()
                                                               .addChild(new Shape()
                                                                 .setGeometry(new Text().setString(new MFString419().getArray())
-                                                                  .setFontStyle(new FontStyle().setSize(0.035f))))))
+                                                                  .setFontStyle(new FontStyle().setSize(0.035f ))))))
                                                           .addChild(new Shape()
                                                             .setGeometry(new LineSet().setVertexCount(new MFInt32420().getArray())
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f421().getArray()))
@@ -1580,9 +1580,9 @@ public class Humanoid3 implements X3DRoots {
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f427().getArray()))
                                                               .addComments(new CommentsBlock("from r_radiocarpal to r_carpometacarpal_5 vertices 2"))
                                                               .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_1").setDEF("hanim_r_carpometacarpal_1").setCenter(new double[] {-0.1899f,0.8502f,-0.0473f}).setUlimit(new MFFloat428().getArray()).setLlimit(new MFFloat429().getArray())
+                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_1").setDEF("hanim_r_carpometacarpal_1").setCenter(new float[] {-0.1899f ,0.8502f ,-0.0473f }).setUlimit(new MFFloat428().getArray()).setLlimit(new MFFloat429().getArray())
                                                           .addChild(new HAnimSegment("hanim_r_carpometacarpal_1").setName("r_metacarpal_1").setDEF("hanim_r_metacarpal_1")
-                                                            .addChild(new Transform().setTranslation(new double[] {-0.1899f,0.8502f,-0.0473f})
+                                                            .addChild(new Transform().setTranslation(new float[] {-0.1899f ,0.8502f ,-0.0473f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1591,9 +1591,9 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f431().getArray()))
                                                                 .addComments(new CommentsBlock("from r_carpometacarpal_1 to r_metacarpophalangeal_1 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_1").setName("r_metacarpophalangeal_1").setDEF("hanim_r_metacarpophalangeal_1").setCenter(new double[] {-0.1874f,0.8256f,0.0306f}).setUlimit(new MFFloat432().getArray()).setLlimit(new MFFloat433().getArray())
+                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_1").setName("r_metacarpophalangeal_1").setDEF("hanim_r_metacarpophalangeal_1").setCenter(new float[] {-0.1874f ,0.8256f ,0.0306f }).setUlimit(new MFFloat432().getArray()).setLlimit(new MFFloat433().getArray())
                                                             .addChild(new HAnimSegment("hanim_r_metacarpophalangeal_1").setName("r_carpal_proximal_phalanx_1").setDEF("hanim_r_carpal_proximal_phalanx_1")
-                                                              .addChild(new Transform().setTranslation(new double[] {-0.1874f,0.8256f,0.0306f})
+                                                              .addChild(new Transform().setTranslation(new float[] {-0.1874f ,0.8256f ,0.0306f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1602,10 +1602,10 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f435().getArray()))
                                                                   .addComments(new CommentsBlock("from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_1").setName("r_carpal_interphalangeal_1").setDEF("hanim_r_carpal_interphalangeal_1").setCenter(new double[] {-0.1864f,0.819f,0.0506f}).setUlimit(new MFFloat436().getArray()).setLlimit(new MFFloat437().getArray()))))
-                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_2").setDEF("hanim_r_carpometacarpal_2").setCenter(new double[] {-0.1961f,0.8055f,-0.0218f}).setUlimit(new MFFloat438().getArray()).setLlimit(new MFFloat439().getArray())
+                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_1").setName("r_carpal_interphalangeal_1").setDEF("hanim_r_carpal_interphalangeal_1").setCenter(new float[] {-0.1864f ,0.819f ,0.0506f }).setUlimit(new MFFloat436().getArray()).setLlimit(new MFFloat437().getArray()))))
+                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_2").setDEF("hanim_r_carpometacarpal_2").setCenter(new float[] {-0.1961f ,0.8055f ,-0.0218f }).setUlimit(new MFFloat438().getArray()).setLlimit(new MFFloat439().getArray())
                                                           .addChild(new HAnimSegment("hanim_r_carpometacarpal_2").setName("r_metacarpal_2").setDEF("hanim_r_metacarpal_2")
-                                                            .addChild(new Transform().setTranslation(new double[] {-0.1961f,0.8055f,-0.0218f})
+                                                            .addChild(new Transform().setTranslation(new float[] {-0.1961f ,0.8055f ,-0.0218f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1614,16 +1614,16 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f441().getArray()))
                                                                 .addComments(new CommentsBlock("from r_carpometacarpal_2 to r_metacarpophalangeal_2 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                            .addChild(new HAnimSite("hanim_r_metacarpal_2").setName("r_metacarpal_phalanx_2").setDEF("hanim_r_metacarpal_phalanx_2").setTranslation(new double[] {-0.1977f,0.8169f,-0.0177f})
+                                                            .addChild(new HAnimSite("hanim_r_metacarpal_2").setName("r_metacarpal_phalanx_2").setDEF("hanim_r_metacarpal_phalanx_2").setTranslation(new float[] {-0.1977f ,0.8169f ,-0.0177f })
                                                               .addChild(new TouchSensor().setDescription("HAnimSite 78 r_metacarpal_phalanx_2"))
                                                               .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                               .addChild(new Billboard()
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new Text().setString(new MFString442().getArray())
-                                                                    .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_2").setName("r_metacarpophalangeal_2").setDEF("hanim_r_metacarpophalangeal_2").setCenter(new double[] {-0.1961f,0.7846f,-0.0218f}).setUlimit(new MFFloat443().getArray()).setLlimit(new MFFloat444().getArray())
+                                                                    .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_2").setName("r_metacarpophalangeal_2").setDEF("hanim_r_metacarpophalangeal_2").setCenter(new float[] {-0.1961f ,0.7846f ,-0.0218f }).setUlimit(new MFFloat443().getArray()).setLlimit(new MFFloat444().getArray())
                                                             .addChild(new HAnimSegment("hanim_r_metacarpophalangeal_2").setName("r_carpal_proximal_phalanx_2").setDEF("hanim_r_carpal_proximal_phalanx_2")
-                                                              .addChild(new Transform().setTranslation(new double[] {-0.1961f,0.7846f,-0.0218f})
+                                                              .addChild(new Transform().setTranslation(new float[] {-0.1961f ,0.7846f ,-0.0218f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1632,9 +1632,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f446().getArray()))
                                                                   .addComments(new CommentsBlock("from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_2").setName("r_carpal_proximal_interphalangeal_2").setDEF("hanim_r_carpal_proximal_interphalangeal_2").setCenter(new double[] {-0.1954f,0.7393f,-0.0185f}).setUlimit(new MFFloat447().getArray()).setLlimit(new MFFloat448().getArray())
+                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_2").setName("r_carpal_proximal_interphalangeal_2").setDEF("hanim_r_carpal_proximal_interphalangeal_2").setCenter(new float[] {-0.1954f ,0.7393f ,-0.0185f }).setUlimit(new MFFloat447().getArray()).setLlimit(new MFFloat448().getArray())
                                                               .addChild(new HAnimSegment("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_middle_phalanx_2").setDEF("hanim_r_carpal_middle_phalanx_2")
-                                                                .addChild(new Transform().setTranslation(new double[] {-0.1954f,0.7393f,-0.0185f})
+                                                                .addChild(new Transform().setTranslation(new float[] {-0.1954f ,0.7393f ,-0.0185f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1643,10 +1643,10 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f450().getArray()))
                                                                     .addComments(new CommentsBlock("from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_distal_interphalangeal_2").setDEF("hanim_r_carpal_distal_interphalangeal_2").setCenter(new double[] {-0.1945f,0.7169f,-0.0173f}).setUlimit(new MFFloat451().getArray()).setLlimit(new MFFloat452().getArray())))))
-                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_3").setDEF("hanim_r_carpometacarpal_3").setCenter(new double[] {-0.1972f,0.806f,-0.0468f}).setUlimit(new MFFloat453().getArray()).setLlimit(new MFFloat454().getArray())
+                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_distal_interphalangeal_2").setDEF("hanim_r_carpal_distal_interphalangeal_2").setCenter(new float[] {-0.1945f ,0.7169f ,-0.0173f }).setUlimit(new MFFloat451().getArray()).setLlimit(new MFFloat452().getArray())))))
+                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_3").setDEF("hanim_r_carpometacarpal_3").setCenter(new float[] {-0.1972f ,0.806f ,-0.0468f }).setUlimit(new MFFloat453().getArray()).setLlimit(new MFFloat454().getArray())
                                                           .addChild(new HAnimSegment("hanim_r_carpometacarpal_3").setName("r_metacarpal_3").setDEF("hanim_r_metacarpal_3")
-                                                            .addChild(new Transform().setTranslation(new double[] {-0.1972f,0.806f,-0.0468f})
+                                                            .addChild(new Transform().setTranslation(new float[] {-0.1972f ,0.806f ,-0.0468f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1661,10 +1661,10 @@ public class Humanoid3 implements X3DRoots {
                                                               .addChild(new Billboard()
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new Text().setString(new MFString457().getArray())
-                                                                    .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_3").setName("r_metacarpophalangeal_3").setDEF("hanim_r_metacarpophalangeal_3").setCenter(new double[] {-0.1972f,0.7849f,-0.0468f}).setUlimit(new MFFloat458().getArray()).setLlimit(new MFFloat459().getArray())
+                                                                    .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_3").setName("r_metacarpophalangeal_3").setDEF("hanim_r_metacarpophalangeal_3").setCenter(new float[] {-0.1972f ,0.7849f ,-0.0468f }).setUlimit(new MFFloat458().getArray()).setLlimit(new MFFloat459().getArray())
                                                             .addChild(new HAnimSegment("hanim_r_metacarpophalangeal_3").setName("r_carpal_proximal_phalanx_3").setDEF("hanim_r_carpal_proximal_phalanx_3")
-                                                              .addChild(new Transform().setTranslation(new double[] {-0.1972f,0.7849f,-0.0468f})
+                                                              .addChild(new Transform().setTranslation(new float[] {-0.1972f ,0.7849f ,-0.0468f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1673,9 +1673,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f461().getArray()))
                                                                   .addComments(new CommentsBlock("from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_3").setName("r_carpal_proximal_interphalangeal_3").setDEF("hanim_r_carpal_proximal_interphalangeal_3").setCenter(new double[] {-0.195f,0.7304f,-0.0441f}).setUlimit(new MFFloat462().getArray()).setLlimit(new MFFloat463().getArray())
+                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_3").setName("r_carpal_proximal_interphalangeal_3").setDEF("hanim_r_carpal_proximal_interphalangeal_3").setCenter(new float[] {-0.195f ,0.7304f ,-0.0441f }).setUlimit(new MFFloat462().getArray()).setLlimit(new MFFloat463().getArray())
                                                               .addChild(new HAnimSegment("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_middle_phalanx_3").setDEF("hanim_r_carpal_middle_phalanx_3")
-                                                                .addChild(new Transform().setTranslation(new double[] {-0.195f,0.7304f,-0.0441f})
+                                                                .addChild(new Transform().setTranslation(new float[] {-0.195f ,0.7304f ,-0.0441f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1684,10 +1684,10 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f465().getArray()))
                                                                     .addComments(new CommentsBlock("from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_distal_interphalangeal_3").setDEF("hanim_r_carpal_distal_interphalangeal_3").setCenter(new double[] {-0.1939f,0.7042f,-0.0432f}).setUlimit(new MFFloat466().getArray()).setLlimit(new MFFloat467().getArray())))))
-                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_4").setDEF("hanim_r_carpometacarpal_4").setCenter(new double[] {-0.1951f,0.8049f,-0.0732f}).setUlimit(new MFFloat468().getArray()).setLlimit(new MFFloat469().getArray())
+                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_distal_interphalangeal_3").setDEF("hanim_r_carpal_distal_interphalangeal_3").setCenter(new float[] {-0.1939f ,0.7042f ,-0.0432f }).setUlimit(new MFFloat466().getArray()).setLlimit(new MFFloat467().getArray())))))
+                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_4").setDEF("hanim_r_carpometacarpal_4").setCenter(new float[] {-0.1951f ,0.8049f ,-0.0732f }).setUlimit(new MFFloat468().getArray()).setLlimit(new MFFloat469().getArray())
                                                           .addChild(new HAnimSegment("hanim_r_carpometacarpal_4").setName("r_metacarpal_4").setDEF("hanim_r_metacarpal_4")
-                                                            .addChild(new Transform().setTranslation(new double[] {-0.1951f,0.8049f,-0.0732f})
+                                                            .addChild(new Transform().setTranslation(new float[] {-0.1951f ,0.8049f ,-0.0732f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1696,9 +1696,9 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f471().getArray()))
                                                                 .addComments(new CommentsBlock("from r_carpometacarpal_4 to r_metacarpophalangeal_4 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_4").setName("r_metacarpophalangeal_4").setDEF("hanim_r_metacarpophalangeal_4").setCenter(new double[] {-0.1951f,0.7845f,-0.0732f}).setUlimit(new MFFloat472().getArray()).setLlimit(new MFFloat473().getArray())
+                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_4").setName("r_metacarpophalangeal_4").setDEF("hanim_r_metacarpophalangeal_4").setCenter(new float[] {-0.1951f ,0.7845f ,-0.0732f }).setUlimit(new MFFloat472().getArray()).setLlimit(new MFFloat473().getArray())
                                                             .addChild(new HAnimSegment("hanim_r_metacarpophalangeal_4").setName("r_carpal_proximal_phalanx_4").setDEF("hanim_r_carpal_proximal_phalanx_4")
-                                                              .addChild(new Transform().setTranslation(new double[] {-0.1951f,0.7845f,-0.0732f})
+                                                              .addChild(new Transform().setTranslation(new float[] {-0.1951f ,0.7845f ,-0.0732f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1707,9 +1707,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f475().getArray()))
                                                                   .addComments(new CommentsBlock("from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_4").setName("r_carpal_proximal_interphalangeal_4").setDEF("hanim_r_carpal_proximal_interphalangeal_4").setCenter(new double[] {-0.192f,0.7318f,-0.0716f}).setUlimit(new MFFloat476().getArray()).setLlimit(new MFFloat477().getArray())
+                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_4").setName("r_carpal_proximal_interphalangeal_4").setDEF("hanim_r_carpal_proximal_interphalangeal_4").setCenter(new float[] {-0.192f ,0.7318f ,-0.0716f }).setUlimit(new MFFloat476().getArray()).setLlimit(new MFFloat477().getArray())
                                                               .addChild(new HAnimSegment("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_middle_phalanx_4").setDEF("hanim_r_carpal_middle_phalanx_4")
-                                                                .addChild(new Transform().setTranslation(new double[] {-0.192f,0.7318f,-0.0716f})
+                                                                .addChild(new Transform().setTranslation(new float[] {-0.192f ,0.7318f ,-0.0716f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1718,10 +1718,10 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f479().getArray()))
                                                                     .addComments(new CommentsBlock("from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_distal_interphalangeal_4").setDEF("hanim_r_carpal_distal_interphalangeal_4").setCenter(new double[] {-0.1908f,0.7077f,-0.0706f}).setUlimit(new MFFloat480().getArray()).setLlimit(new MFFloat481().getArray())))))
-                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_5").setDEF("hanim_r_carpometacarpal_5").setCenter(new double[] {-0.1926f,0.8096f,-0.0975f}).setUlimit(new MFFloat482().getArray()).setLlimit(new MFFloat483().getArray())
+                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_distal_interphalangeal_4").setDEF("hanim_r_carpal_distal_interphalangeal_4").setCenter(new float[] {-0.1908f ,0.7077f ,-0.0706f }).setUlimit(new MFFloat480().getArray()).setLlimit(new MFFloat481().getArray())))))
+                                                        .addChild(new HAnimJoint("hanim_r_radiocarpal").setName("r_carpometacarpal_5").setDEF("hanim_r_carpometacarpal_5").setCenter(new float[] {-0.1926f ,0.8096f ,-0.0975f }).setUlimit(new MFFloat482().getArray()).setLlimit(new MFFloat483().getArray())
                                                           .addChild(new HAnimSegment("hanim_r_carpometacarpal_5").setName("r_metacarpal_5").setDEF("hanim_r_metacarpal_5")
-                                                            .addChild(new Transform().setTranslation(new double[] {-0.1926f,0.8096f,-0.0975f})
+                                                            .addChild(new Transform().setTranslation(new float[] {-0.1926f ,0.8096f ,-0.0975f })
                                                               .addChild(new Transform()
                                                                 .addComments(new CommentsBlock("Empty Transform"))
                                                                 .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1730,16 +1730,16 @@ public class Humanoid3 implements X3DRoots {
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f485().getArray()))
                                                                 .addComments(new CommentsBlock("from r_carpometacarpal_5 to r_metacarpophalangeal_5 vertices 2"))
                                                                 .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA"))))
-                                                            .addChild(new HAnimSite("hanim_r_metacarpal_5").setName("r_metacarpal_phalanx_5").setDEF("hanim_r_metacarpal_phalanx_5").setTranslation(new double[] {-0.1929f,0.789f,-0.1064f})
+                                                            .addChild(new HAnimSite("hanim_r_metacarpal_5").setName("r_metacarpal_phalanx_5").setDEF("hanim_r_metacarpal_phalanx_5").setTranslation(new float[] {-0.1929f ,0.789f ,-0.1064f })
                                                               .addChild(new TouchSensor().setDescription("HAnimSite 80 r_metacarpal_phalanx_5"))
                                                               .addChild(new Shape().setUSE("HAnimSiteShape"))
                                                               .addChild(new Billboard()
                                                                 .addChild(new Shape()
                                                                   .setGeometry(new Text().setString(new MFString486().getArray())
-                                                                    .setFontStyle(new FontStyle().setSize(0.035f)))))))
-                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_5").setName("r_metacarpophalangeal_5").setDEF("hanim_r_metacarpophalangeal_5").setCenter(new double[] {-0.1926f,0.7896f,-0.0975f}).setUlimit(new MFFloat487().getArray()).setLlimit(new MFFloat488().getArray())
+                                                                    .setFontStyle(new FontStyle().setSize(0.035f )))))))
+                                                          .addChild(new HAnimJoint("hanim_r_carpometacarpal_5").setName("r_metacarpophalangeal_5").setDEF("hanim_r_metacarpophalangeal_5").setCenter(new float[] {-0.1926f ,0.7896f ,-0.0975f }).setUlimit(new MFFloat487().getArray()).setLlimit(new MFFloat488().getArray())
                                                             .addChild(new HAnimSegment("hanim_r_metacarpophalangeal_5").setName("r_carpal_proximal_phalanx_5").setDEF("hanim_r_carpal_proximal_phalanx_5")
-                                                              .addChild(new Transform().setTranslation(new double[] {-0.1926f,0.7896f,-0.0975f})
+                                                              .addChild(new Transform().setTranslation(new float[] {-0.1926f ,0.7896f ,-0.0975f })
                                                                 .addChild(new Transform()
                                                                   .addComments(new CommentsBlock("Empty Transform"))
                                                                   .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1748,9 +1748,9 @@ public class Humanoid3 implements X3DRoots {
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f490().getArray()))
                                                                   .addComments(new CommentsBlock("from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 vertices 2"))
                                                                   .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_5").setName("r_carpal_proximal_interphalangeal_5").setDEF("hanim_r_carpal_proximal_interphalangeal_5").setCenter(new double[] {-0.1902f,0.7483f,-0.0963f}).setUlimit(new MFFloat491().getArray()).setLlimit(new MFFloat492().getArray())
+                                                            .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_5").setName("r_carpal_proximal_interphalangeal_5").setDEF("hanim_r_carpal_proximal_interphalangeal_5").setCenter(new float[] {-0.1902f ,0.7483f ,-0.0963f }).setUlimit(new MFFloat491().getArray()).setLlimit(new MFFloat492().getArray())
                                                               .addChild(new HAnimSegment("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_middle_phalanx_5").setDEF("hanim_r_carpal_middle_phalanx_5")
-                                                                .addChild(new Transform().setTranslation(new double[] {-0.1902f,0.7483f,-0.0963f})
+                                                                .addChild(new Transform().setTranslation(new float[] {-0.1902f ,0.7483f ,-0.0963f })
                                                                   .addChild(new Transform()
                                                                     .addComments(new CommentsBlock("Empty Transform"))
                                                                     .addChild(new Shape().setUSE("HAnimJointShape"))))
@@ -1759,278 +1759,278 @@ public class Humanoid3 implements X3DRoots {
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f494().getArray()))
                                                                     .addComments(new CommentsBlock("from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 vertices 2"))
                                                                     .setColor(new ColorRGBA().setUSE("HAnimSegmentLineColorRGBA")))))
-                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_distal_interphalangeal_5").setDEF("hanim_r_carpal_distal_interphalangeal_5").setCenter(new double[] {-0.1908f,0.754f,-0.096f}).setUlimit(new MFFloat495().getArray()).setLlimit(new MFFloat496().getArray()))))))))))))))))))))))))))))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_humanoid_root"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_sacroiliac"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_hip"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_knee"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_talocrural"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_tarsometatarsal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_metatarsophalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_tarsal_distal_interphalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_hip"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_knee"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_talocrural"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_tarsometatarsal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_metatarsophalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_tarsal_distal_interphalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vl5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vl4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vl3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vl2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vl1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt12"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt11"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt10"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt9"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt8"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt7"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt6"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vt1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vc7"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vc6"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vc5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vc4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vc3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vc2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_vc1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_skullbase"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_eyelid_joint"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_eyelid_joint"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_eyeball_joint"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_eyeball_joint"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_eyebrow_joint"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_eyebrow_joint"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_temporomandibular"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_sternoclavicular"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_acromioclavicular"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_shoulder"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_elbow"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_radiocarpal"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpometacarpal_1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_metacarpophalangeal_1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_interphalangeal_1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpometacarpal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_metacarpophalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_proximal_interphalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_distal_interphalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpometacarpal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_metacarpophalangeal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_proximal_interphalangeal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_distal_interphalangeal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpometacarpal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_metacarpophalangeal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_proximal_interphalangeal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_distal_interphalangeal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpometacarpal_5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_metacarpophalangeal_5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_proximal_interphalangeal_5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_l_carpal_distal_interphalangeal_5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_sternoclavicular"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_acromioclavicular"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_shoulder"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_elbow"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_radiocarpal"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpometacarpal_1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_metacarpophalangeal_1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_interphalangeal_1"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpometacarpal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_metacarpophalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_proximal_interphalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_distal_interphalangeal_2"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpometacarpal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_metacarpophalangeal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_proximal_interphalangeal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_distal_interphalangeal_3"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpometacarpal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_metacarpophalangeal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_proximal_interphalangeal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_distal_interphalangeal_4"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpometacarpal_5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_metacarpophalangeal_5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_proximal_interphalangeal_5"))
-          .addJoints(((HAnimJoint)new HAnimJoint("hanim_HAnim").setContainerFieldOverride("joints")).setUSE("hanim_r_carpal_distal_interphalangeal_5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_sacrum"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_pelvis"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_thigh"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_calf"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_talus"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_metatarsal_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_tarsal_proximal_phalanx_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_thigh"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_calf"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_talus"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_metatarsal_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_tarsal_proximal_phalanx_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l1"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t12"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t11"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t10"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t9"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t8"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t7"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t6"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_t1"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_c7"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_c6"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_c5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_c4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_c3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_c2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_c1"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_skull"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_clavicle"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_scapula"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_upperarm"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_forearm"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_metacarpal_1"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_proximal_phalanx_1"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_metacarpal_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_proximal_phalanx_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_middle_phalanx_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_metacarpal_3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_proximal_phalanx_3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_middle_phalanx_3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_metacarpal_4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_proximal_phalanx_4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_middle_phalanx_4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_metacarpal_5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_proximal_phalanx_5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_l_carpal_middle_phalanx_5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_clavicle"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_scapula"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_upperarm"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_forearm"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_metacarpal_1"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_proximal_phalanx_1"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_metacarpal_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_proximal_phalanx_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_middle_phalanx_2"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_metacarpal_3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_proximal_phalanx_3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_middle_phalanx_3"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_metacarpal_4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_proximal_phalanx_4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_middle_phalanx_4"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_metacarpal_5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_proximal_phalanx_5"))
-          .addSegments(((HAnimSegment)new HAnimSegment("hanim_HAnim").setContainerFieldOverride("segments")).setUSE("hanim_r_carpal_middle_phalanx_5"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_buttocks_standing_wall_contact_point"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_crotch"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_asis"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_iliocristale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_psis"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_trochanterion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_asis"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_iliocristale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_psis"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_trochanterion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_femoral_lateral_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_femoral_medial_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_knee_crease"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_suprapatella"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_lateral_malleolus"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_medial_malleolus"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_tibiale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_calcaneus_posterior"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_sphyrion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_metatarsal_phalanx_1"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_metatarsal_phalanx_5"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_tarsal_distal_phalanx_1_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_tarsal_distal_phalanx_2_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_tarsal_distal_phalanx_3_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_tarsal_distal_phalanx_4_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_tarsal_distal_phalanx_5_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_femoral_lateral_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_femoral_medial_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_knee_crease"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_suprapatella"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_lateral_malleolus"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_medial_malleolus"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_tibiale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_calcaneus_posterior"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_sphyrion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_metatarsal_phalanx_1"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_metatarsal_phalanx_5"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_tarsal_distal_phalanx_1_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_tarsal_distal_phalanx_2_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_tarsal_distal_phalanx_3_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_tarsal_distal_phalanx_4_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_tarsal_distal_phalanx_5_tip"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_navel"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_waist_preferred_anterior"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_waist_preferred_posterior"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_rib10"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_rib10"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_spine_2_middle_back"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_substernale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_thelion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_thelion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_chest_midsagittal_plane"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_mesosternale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_chest_midsagittal_plane"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_rear_center_midsagittal_plane"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_spine_1_middle_back"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_cervicale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_suprasternale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_neck_base"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_neck_base"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_adams_apple"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_glabella"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_ectocanthus"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_infraorbitale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_tragion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_nuchale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_opisthocranion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_ectocanthus"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_infraorbitale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_tragion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_sellion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_skull_vertex"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_acromion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_axilla_distal"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_axilla_posterior_folds"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_axilla_proximal"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_clavicale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_bideltoid"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_humeral_lateral_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_humeral_medial_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_olecranon"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_radial_styloid"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_radiale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_ulnar_styloid"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_metacarpal_phalanx_2"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_metacarpal_phalanx_3"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_l_metacarpal_phalanx_5"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_acromion"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_axilla_distal"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_axilla_posterior_folds"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_axilla_proximal"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_clavicale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_bideltoid"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_humeral_lateral_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_humeral_medial_epicondyles"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_olecranon"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_radial_styloid"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_radiale"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_ulnar_styloid"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_metacarpal_phalanx_2"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_metacarpal_phalanx_3"))
-          .addSites(((HAnimSite)new HAnimSite("hanim_HAnim").setContainerFieldOverride("sites")).setUSE("hanim_r_metacarpal_phalanx_5"))));
+                                                              .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_distal_interphalangeal_5").setDEF("hanim_r_carpal_distal_interphalangeal_5").setCenter(new float[] {-0.1908f ,0.754f ,-0.096f }).setUlimit(new MFFloat495().getArray()).setLlimit(new MFFloat496().getArray()))))))))))))))))))))))))))))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_humanoid_root"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_sacroiliac"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_hip"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_knee"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_talocrural"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_tarsometatarsal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_metatarsophalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_tarsal_distal_interphalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_hip"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_knee"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_talocrural"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_tarsometatarsal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_metatarsophalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_tarsal_distal_interphalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vl5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vl4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vl3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vl2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vl1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt12"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt11"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt10"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt9"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt8"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt7"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt6"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vt1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vc7"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vc6"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vc5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vc4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vc3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vc2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_vc1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_skullbase"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_eyelid_joint"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_eyelid_joint"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_eyeball_joint"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_eyeball_joint"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_eyebrow_joint"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_eyebrow_joint"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_temporomandibular"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_sternoclavicular"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_acromioclavicular"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_shoulder"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_elbow"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_radiocarpal"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpometacarpal_1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_metacarpophalangeal_1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_interphalangeal_1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpometacarpal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_metacarpophalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_proximal_interphalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_distal_interphalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpometacarpal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_metacarpophalangeal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_proximal_interphalangeal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_distal_interphalangeal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpometacarpal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_metacarpophalangeal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_proximal_interphalangeal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_distal_interphalangeal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpometacarpal_5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_metacarpophalangeal_5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_proximal_interphalangeal_5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_l_carpal_distal_interphalangeal_5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_sternoclavicular"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_acromioclavicular"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_shoulder"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_elbow"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_radiocarpal"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpometacarpal_1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_metacarpophalangeal_1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_interphalangeal_1"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpometacarpal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_metacarpophalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_proximal_interphalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_distal_interphalangeal_2"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpometacarpal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_metacarpophalangeal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_proximal_interphalangeal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_distal_interphalangeal_3"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpometacarpal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_metacarpophalangeal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_proximal_interphalangeal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_distal_interphalangeal_4"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpometacarpal_5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_metacarpophalangeal_5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_proximal_interphalangeal_5"))
+          .addJoints(new HAnimJoint("hanim_HAnim").setUSE("hanim_r_carpal_distal_interphalangeal_5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_sacrum"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_pelvis"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_thigh"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_calf"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_talus"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_metatarsal_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_tarsal_proximal_phalanx_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_thigh"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_calf"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_talus"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_metatarsal_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_tarsal_proximal_phalanx_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l1"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t12"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t11"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t10"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t9"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t8"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t7"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t6"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_t1"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_c7"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_c6"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_c5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_c4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_c3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_c2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_c1"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_skull"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_clavicle"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_scapula"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_upperarm"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_forearm"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_metacarpal_1"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_proximal_phalanx_1"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_metacarpal_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_proximal_phalanx_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_middle_phalanx_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_metacarpal_3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_proximal_phalanx_3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_middle_phalanx_3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_metacarpal_4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_proximal_phalanx_4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_middle_phalanx_4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_metacarpal_5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_proximal_phalanx_5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_l_carpal_middle_phalanx_5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_clavicle"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_scapula"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_upperarm"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_forearm"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_metacarpal_1"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_proximal_phalanx_1"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_metacarpal_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_proximal_phalanx_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_middle_phalanx_2"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_metacarpal_3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_proximal_phalanx_3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_middle_phalanx_3"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_metacarpal_4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_proximal_phalanx_4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_middle_phalanx_4"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_metacarpal_5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_proximal_phalanx_5"))
+          .addSegments(new HAnimSegment("hanim_HAnim").setUSE("hanim_r_carpal_middle_phalanx_5"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_buttocks_standing_wall_contact_point"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_crotch"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_asis"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_iliocristale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_psis"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_trochanterion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_asis"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_iliocristale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_psis"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_trochanterion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_femoral_lateral_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_femoral_medial_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_knee_crease"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_suprapatella"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_lateral_malleolus"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_medial_malleolus"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_tibiale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_calcaneus_posterior"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_sphyrion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_metatarsal_phalanx_1"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_metatarsal_phalanx_5"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_tarsal_distal_phalanx_1_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_tarsal_distal_phalanx_2_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_tarsal_distal_phalanx_3_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_tarsal_distal_phalanx_4_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_tarsal_distal_phalanx_5_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_femoral_lateral_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_femoral_medial_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_knee_crease"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_suprapatella"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_lateral_malleolus"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_medial_malleolus"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_tibiale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_calcaneus_posterior"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_sphyrion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_metatarsal_phalanx_1"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_metatarsal_phalanx_5"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_tarsal_distal_phalanx_1_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_tarsal_distal_phalanx_2_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_tarsal_distal_phalanx_3_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_tarsal_distal_phalanx_4_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_tarsal_distal_phalanx_5_tip"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_navel"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_waist_preferred_anterior"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_waist_preferred_posterior"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_rib10"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_rib10"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_spine_2_middle_back"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_substernale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_thelion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_thelion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_chest_midsagittal_plane"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_mesosternale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_chest_midsagittal_plane"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_rear_center_midsagittal_plane"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_spine_1_middle_back"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_cervicale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_suprasternale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_neck_base"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_neck_base"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_adams_apple"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_glabella"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_ectocanthus"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_infraorbitale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_tragion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_nuchale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_opisthocranion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_ectocanthus"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_infraorbitale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_tragion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_sellion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_skull_vertex"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_acromion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_axilla_distal"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_axilla_posterior_folds"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_axilla_proximal"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_clavicale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_bideltoid"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_humeral_lateral_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_humeral_medial_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_olecranon"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_radial_styloid"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_radiale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_ulnar_styloid"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_metacarpal_phalanx_2"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_metacarpal_phalanx_3"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_l_metacarpal_phalanx_5"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_acromion"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_axilla_distal"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_axilla_posterior_folds"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_axilla_proximal"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_clavicale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_bideltoid"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_humeral_lateral_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_humeral_medial_epicondyles"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_olecranon"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_radial_styloid"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_radiale"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_ulnar_styloid"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_metacarpal_phalanx_2"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_metacarpal_phalanx_3"))
+          .addSites(new HAnimSite("hanim_HAnim").setUSE("hanim_r_metacarpal_phalanx_5"))));
     return X3D0;
     }
 private class MFInt320 {
@@ -2045,12 +2045,12 @@ private class MFInt321 {
 }
 private class MFVec3f2 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0f,0f,0.1f,0f,0f,0f,0.1f,0f,0f,0f,0.1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0f ,0f ,0.1f ,0f ,0f ,0f ,0.1f ,0f ,0f ,0f ,0.1f });
   }
 }
 private class MFColor3 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1f,0f,0f,0f,0.6f,0f,0f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,0f ,0f ,0f ,0.6f ,0f ,0f ,0f ,1f });
   }
 }
 private class MFInt324 {
@@ -2060,12 +2060,12 @@ private class MFInt324 {
 }
 private class MFColorRGBA5 {
   private org.web3d.x3d.jsail.fields.MFColorRGBA getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new double[] {1f,1f,0f,0f,1f,1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1f ,1f ,0f ,0f ,1f ,1f ,0f ,0f });
   }
 }
 private class MFVec3f6 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.05f,0f,0f,0.05f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.05f ,0f ,0f ,0.05f ,0f ,0f });
   }
 }
 private class MFInt327 {
@@ -2075,12 +2075,12 @@ private class MFInt327 {
 }
 private class MFColorRGBA8 {
   private org.web3d.x3d.jsail.fields.MFColorRGBA getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new double[] {1f,1f,0f,1f,1f,1f,0f,0.1f,1f,1f,0f,1f,1f,1f,0f,0.1f,1f,1f,0f,1f,1f,1f,0f,0.1f});
+    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1f ,1f ,0f ,1f ,1f ,1f ,0f ,0.1f ,1f ,1f ,0f ,1f ,1f ,1f ,0f ,0.1f ,1f ,1f ,0f ,1f ,1f ,1f ,0f ,0.1f });
   }
 }
 private class MFVec3f9 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0.01f,0f,-0.01f,0f,0f,0f,0f,0.01f,0.01f,0f,0f,0f,0f,-0.01f,0f,-0.01f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.01f ,0f ,-0.01f ,0f ,0f ,0f ,0f ,0.01f ,0.01f ,0f ,0f ,0f ,0f ,-0.01f ,0f ,-0.01f ,0f });
   }
 }
 private class MFString10 {
@@ -2110,27 +2110,27 @@ private class MFInt3214 {
 }
 private class MFVec3f15 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,1.77f,0f,0f,1.665f,0.09f,-0.033f,1.62f,0.087f,0.033f,1.62f,0.087f,0f,1.55f,0.097f,-0.077f,1.64f,-0.01f,-0.0527f,1.58f,0.015f,0.077f,1.64f,-0.01f,0.0527f,1.58f,0.015f,0f,1.625f,-0.0925f,-0.03f,1.46f,0.035f,0f,1.44f,0.03f,0.03f,1.46f,0.035f,-0.1135f,1.318f,0.095f,0.1135f,1.318f,0.095f,0f,1.25f,0.113f,-0.087f,1.19f,0.09f,-0.0935f,1.03f,0.075f,0.087f,1.19f,0.09f,0.0935f,1.03f,0.075f,-0.1425f,1.065f,0.0033f,-0.15f,0.9f,-0.01f,0.1425f,1.065f,0.0033f,0.15f,0.9f,-0.01f,0f,1.53f,-0.084f,0.0049f,1.1908f,-0.1113f,-0.0773f,1.019f,-0.12f,0.0773f,1.019f,-0.12f,0.005f,1.0915f,-0.1091f,-0.178f,1.4825f,-0.0625f,-0.17f,1.38f,0.007f,-0.1884f,0.8676f,-0.036f,-0.16f,1.38f,-0.127f,-0.2f,1.1388f,-0.08f,-0.244f,1.1388f,-0.04f,-0.165f,1.1388f,-0.04f,-0.23f,1.133f,-0.055f,-0.1977f,0.8169f,-0.0177f,-0.1941f,0.6772f,-0.0423f,-0.2117f,0.8562f,-0.0584f,-0.1929f,0.789f,-0.1064f,0.175f,1.4825f,-0.06f,0.17f,1.38f,0.007f,0.1901f,0.8645f,-0.0415f,0.16f,1.38f,-0.125f,0.2f,1.1388f,-0.08f,0.165f,1.1388f,-0.04f,0.244f,1.1388f,-0.04f,0.23f,1.133f,-0.055f,0.2009f,0.8139f,-0.0237f,0.2056f,0.6743f,-0.0482f,0.2142f,0.8529f,-0.0648f,0.1929f,0.786f,-0.1122f,-0.1f,0.4913f,-0.03f,-0.17f,0.466f,0f,-0.05f,0.466f,0f,-0.165f,0.01f,0.12f,-0.15f,0.07f,0f,-0.085f,0.086f,0.0125f,-0.09f,0.056f,0.0125f,-0.115f,0.02f,0.122f,-0.115f,0.04f,-0.055f,-0.11f,0.011f,0.19f,0.0993f,0.4881f,-0.0309f,0.17f,0.466f,0f,0.05f,0.4867f,0f,0.165f,0.01f,0.12f,0.15f,0.07f,0f,0.085f,0.086f,0.0125f,0.09f,0.056f,0.0125f,0.115f,0.02f,0.122f,0.115f,0.04f,-0.055f,0.11f,0.011f,0.19f,0f,0.875f,0f,-0.0646f,1.5149f,-0.038f,0.0646f,1.5149f,-0.038f,0f,1.07225f,0.09f,-0.11f,1.427f,-0.1375f,-0.235f,1.42f,-0.0625f,0.11f,1.427f,-0.1375f,0.235f,1.42f,-0.0625f,0f,1.41f,-0.145f,0f,0.925f,0.08f,-0.087f,1.19f,-0.09f,0.087f,1.19f,-0.09f,0.172f,1.32f,-0.03f,-0.172f,1.32f,-0.03f,0.15f,1.23f,-0.015f,-0.15f,1.23f,-0.015f,0.079f,0.92f,-0.14f,0.1f,0.9f,0.077f,-0.079f,0.92f,-0.14f,-0.1f,0.9f,0.075f,0f,0.87f,0f,0.171f,0.65f,0f,0.02f,0.65f,0f,0.1f,0.65f,-0.08f,0.1f,0.65f,0.07f,-0.171f,0.65f,0f,-0.02f,0.65f,0f,-0.1f,0.65f,-0.08f,-0.1f,0.65f,0.07f,0.25f,1.27f,-0.04f,0.17f,1.27f,-0.04f,0.2f,1.27f,-0.09f,0.2f,1.27f,0.02f,0.244f,1.1388f,-0.04f,0.165f,1.1388f,-0.04f,0.2f,1.1388f,-0.08f,0.2f,1.1388f,-0.013f,0.225f,1f,-0.01f,0.225f,1f,-0.07f,0.185f,1f,-0.01f,0.185f,1f,-0.07f,0.2f,1.1388f,-0.04f,0.225f,0.92f,-0.04f,0.175f,0.92f,-0.04f,0.2f,0.92f,-0.065f,0.2f,0.92f,-0.015f,0.225f,0.89f,-0.04f,0.175f,0.89f,-0.04f,0.2f,0.89f,-0.065f,0.2f,0.89f,-0.015f,0.218f,0.86f,-0.04f,0.184f,0.86f,-0.04f,0.2f,0.87f,-0.07f,0.2f,0.87f,0f,0.21f,0.85f,0f,0.1854f,0.85f,0f,0.212f,0.84f,-0.015f,0.183f,0.84f,-0.015f,0.213f,0.835f,-0.04f,0.19f,0.835f,-0.04f,0.211f,0.835f,-0.065f,0.192f,0.835f,-0.065f,0.208f,0.84f,-0.085f,0.19f,0.84f,-0.085f,0.2f,0.84f,-0.095f,0.215f,0.82f,0f,0.193f,0.815f,0.005f,0.198f,0.8f,0.012f,0.21f,0.82f,0.03f,0.19f,0.82f,0.03f,0.2f,0.835f,0.039f,0.212f,0.8f,0.05f,0.188f,0.8f,0.05f,0.2f,0.807f,0.057f,0.2f,0.793f,0.035f,0.2f,0.774f,0.076f,0.212f,0.78f,0.07f,0.188f,0.78f,0.07f,0.2f,0.785f,0.075f,0.2f,0.77f,0.062f,0.215f,0.793f,-0.015f,0.187f,0.793f,-0.015f,0.2f,0.793f,-0.005f,0.215f,0.788f,-0.04f,0.187f,0.788f,-0.04f,0.215f,0.793f,-0.065f,0.187f,0.793f,-0.065f,0.21f,0.79f,-0.085f,0.19f,0.79f,-0.085f,0.2f,0.79f,-0.095f,0.19f,0.77f,-0.0275f,0.19f,0.77f,-0.0525f,0.19f,0.78f,-0.0775f,0.212f,0.745f,-0.015f,0.188f,0.745f,-0.02f,0.2f,0.745f,-0.0255f,0.2f,0.745f,-0.0045f,0.211f,0.72f,-0.015f,0.189f,0.72f,-0.015f,0.2f,0.72f,-0.0252f,0.2f,0.72f,-0.0048f,0.21f,0.695f,-0.015f,0.19f,0.695f,-0.015f,0.2f,0.695f,-0.025f,0.2f,0.695f,-0.005f,0.2f,0.685f,-0.015f,0.215f,0.74f,-0.04f,0.185f,0.74f,-0.04f,0.2f,0.74f,-0.055f,0.2f,0.74f,-0.025f,0.21f,0.7142f,-0.04f,0.19f,0.7142f,-0.04f,0.2f,0.7142f,-0.053f,0.2f,0.7142f,-0.027f,0.21f,0.68f,-0.04f,0.19f,0.68f,-0.04f,0.2f,0.68f,-0.05f,0.2f,0.68f,-0.03f,0.2f,0.67f,-0.04f,0.212f,0.74f,-0.065f,0.188f,0.74f,-0.065f,0.2f,0.74f,-0.0756f,0.2f,0.74f,-0.0542f,0.21f,0.7177f,-0.065f,0.19f,0.7177f,-0.065f,0.2f,0.7177f,-0.0751f,0.2f,0.7177f,-0.0549f,0.21f,0.695f,-0.065f,0.19f,0.695f,-0.065f,0.2f,0.695f,-0.075f,0.2f,0.695f,-0.055f,0.2f,0.685f,-0.065f,0.211f,0.755f,-0.085f,0.189f,0.755f,-0.085f,0.2f,0.755f,-0.0952f,0.2f,0.755f,-0.0748f,0.21f,0.735f,-0.085f,0.19f,0.735f,-0.085f,0.2f,0.735f,-0.0951f,0.2f,0.735f,-0.0749f,0.21f,0.72f,-0.085f,0.19f,0.72f,-0.085f,0.2f,0.72f,-0.095f,0.2f,0.72f,-0.075f,0.2f,0.71f,-0.085f,-0.23f,1.23f,-0.04f,-0.16f,1.23f,-0.04f,-0.2f,1.235f,-0.105f,-0.2f,1.235f,0.02f,-0.244f,1.1388f,-0.04f,-0.165f,1.1388f,-0.04f,-0.2f,1.1388f,-0.08f,-0.2f,1.1388f,0.013f,-0.225f,1f,-0.01f,-0.225f,1f,-0.07f,-0.185f,1f,-0.01f,-0.185f,1f,-0.07f,-0.2f,1.1388f,-0.04f,-0.225f,0.92f,-0.04f,-0.175f,0.92f,-0.04f,-0.2f,0.92f,-0.065f,-0.2f,0.92f,-0.015f,-0.225f,0.89f,-0.04f,-0.175f,0.89f,-0.04f,-0.2f,0.89f,-0.065f,-0.2f,0.89f,-0.015f,-0.218f,0.86f,-0.04f,-0.184f,0.86f,-0.04f,-0.2f,0.87f,-0.07f,-0.2f,0.87f,0f,-0.21f,0.85f,0f,-0.1854f,0.85f,0f,-0.212f,0.84f,-0.015f,-0.183f,0.84f,-0.015f,-0.213f,0.835f,-0.04f,-0.19f,0.835f,-0.04f,-0.211f,0.835f,-0.065f,-0.192f,0.835f,-0.065f,-0.208f,0.84f,-0.085f,-0.19f,0.84f,-0.085f,-0.2f,0.84f,-0.095f,-0.215f,0.82f,0f,-0.193f,0.815f,0.005f,-0.198f,0.8f,0.012f,-0.21f,0.82f,0.03f,-0.19f,0.82f,0.03f,-0.2f,0.835f,0.039f,-0.212f,0.8f,0.05f,-0.188f,0.8f,0.05f,-0.2f,0.807f,0.057f,-0.2f,0.793f,0.035f,-0.2f,0.774f,0.076f,-0.212f,0.78f,0.07f,-0.188f,0.78f,0.07f,-0.2f,0.785f,0.075f,-0.2f,0.77f,0.062f,-0.215f,0.793f,-0.015f,-0.187f,0.793f,-0.015f,-0.2f,0.793f,-0.005f,-0.215f,0.788f,-0.04f,-0.187f,0.788f,-0.04f,-0.215f,0.793f,-0.065f,-0.187f,0.793f,-0.065f,-0.21f,0.79f,-0.085f,-0.19f,0.79f,-0.085f,-0.2f,0.79f,-0.095f,-0.19f,0.77f,-0.0275f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,1.77f ,0f ,0f ,1.665f ,0.09f ,-0.033f ,1.62f ,0.087f ,0.033f ,1.62f ,0.087f ,0f ,1.55f ,0.097f ,-0.077f ,1.64f ,-0.01f ,-0.0527f ,1.58f ,0.015f ,0.077f ,1.64f ,-0.01f ,0.0527f ,1.58f ,0.015f ,0f ,1.625f ,-0.0925f ,-0.03f ,1.46f ,0.035f ,0f ,1.44f ,0.03f ,0.03f ,1.46f ,0.035f ,-0.1135f ,1.318f ,0.095f ,0.1135f ,1.318f ,0.095f ,0f ,1.25f ,0.113f ,-0.087f ,1.19f ,0.09f ,-0.0935f ,1.03f ,0.075f ,0.087f ,1.19f ,0.09f ,0.0935f ,1.03f ,0.075f ,-0.1425f ,1.065f ,0.0033f ,-0.15f ,0.9f ,-0.01f ,0.1425f ,1.065f ,0.0033f ,0.15f ,0.9f ,-0.01f ,0f ,1.53f ,-0.084f ,0.0049f ,1.1908f ,-0.1113f ,-0.0773f ,1.019f ,-0.12f ,0.0773f ,1.019f ,-0.12f ,0.005f ,1.0915f ,-0.1091f ,-0.178f ,1.4825f ,-0.0625f ,-0.17f ,1.38f ,0.007f ,-0.1884f ,0.8676f ,-0.036f ,-0.16f ,1.38f ,-0.127f ,-0.2f ,1.1388f ,-0.08f ,-0.244f ,1.1388f ,-0.04f ,-0.165f ,1.1388f ,-0.04f ,-0.23f ,1.133f ,-0.055f ,-0.1977f ,0.8169f ,-0.0177f ,-0.1941f ,0.6772f ,-0.0423f ,-0.2117f ,0.8562f ,-0.0584f ,-0.1929f ,0.789f ,-0.1064f ,0.175f ,1.4825f ,-0.06f ,0.17f ,1.38f ,0.007f ,0.1901f ,0.8645f ,-0.0415f ,0.16f ,1.38f ,-0.125f ,0.2f ,1.1388f ,-0.08f ,0.165f ,1.1388f ,-0.04f ,0.244f ,1.1388f ,-0.04f ,0.23f ,1.133f ,-0.055f ,0.2009f ,0.8139f ,-0.0237f ,0.2056f ,0.6743f ,-0.0482f ,0.2142f ,0.8529f ,-0.0648f ,0.1929f ,0.786f ,-0.1122f ,-0.1f ,0.4913f ,-0.03f ,-0.17f ,0.466f ,0f ,-0.05f ,0.466f ,0f ,-0.165f ,0.01f ,0.12f ,-0.15f ,0.07f ,0f ,-0.085f ,0.086f ,0.0125f ,-0.09f ,0.056f ,0.0125f ,-0.115f ,0.02f ,0.122f ,-0.115f ,0.04f ,-0.055f ,-0.11f ,0.011f ,0.19f ,0.0993f ,0.4881f ,-0.0309f ,0.17f ,0.466f ,0f ,0.05f ,0.4867f ,0f ,0.165f ,0.01f ,0.12f ,0.15f ,0.07f ,0f ,0.085f ,0.086f ,0.0125f ,0.09f ,0.056f ,0.0125f ,0.115f ,0.02f ,0.122f ,0.115f ,0.04f ,-0.055f ,0.11f ,0.011f ,0.19f ,0f ,0.875f ,0f ,-0.0646f ,1.5149f ,-0.038f ,0.0646f ,1.5149f ,-0.038f ,0f ,1.07225f ,0.09f ,-0.11f ,1.427f ,-0.1375f ,-0.235f ,1.42f ,-0.0625f ,0.11f ,1.427f ,-0.1375f ,0.235f ,1.42f ,-0.0625f ,0f ,1.41f ,-0.145f ,0f ,0.925f ,0.08f ,-0.087f ,1.19f ,-0.09f ,0.087f ,1.19f ,-0.09f ,0.172f ,1.32f ,-0.03f ,-0.172f ,1.32f ,-0.03f ,0.15f ,1.23f ,-0.015f ,-0.15f ,1.23f ,-0.015f ,0.079f ,0.92f ,-0.14f ,0.1f ,0.9f ,0.077f ,-0.079f ,0.92f ,-0.14f ,-0.1f ,0.9f ,0.075f ,0f ,0.87f ,0f ,0.171f ,0.65f ,0f ,0.02f ,0.65f ,0f ,0.1f ,0.65f ,-0.08f ,0.1f ,0.65f ,0.07f ,-0.171f ,0.65f ,0f ,-0.02f ,0.65f ,0f ,-0.1f ,0.65f ,-0.08f ,-0.1f ,0.65f ,0.07f ,0.25f ,1.27f ,-0.04f ,0.17f ,1.27f ,-0.04f ,0.2f ,1.27f ,-0.09f ,0.2f ,1.27f ,0.02f ,0.244f ,1.1388f ,-0.04f ,0.165f ,1.1388f ,-0.04f ,0.2f ,1.1388f ,-0.08f ,0.2f ,1.1388f ,-0.013f ,0.225f ,1f ,-0.01f ,0.225f ,1f ,-0.07f ,0.185f ,1f ,-0.01f ,0.185f ,1f ,-0.07f ,0.2f ,1.1388f ,-0.04f ,0.225f ,0.92f ,-0.04f ,0.175f ,0.92f ,-0.04f ,0.2f ,0.92f ,-0.065f ,0.2f ,0.92f ,-0.015f ,0.225f ,0.89f ,-0.04f ,0.175f ,0.89f ,-0.04f ,0.2f ,0.89f ,-0.065f ,0.2f ,0.89f ,-0.015f ,0.218f ,0.86f ,-0.04f ,0.184f ,0.86f ,-0.04f ,0.2f ,0.87f ,-0.07f ,0.2f ,0.87f ,0f ,0.21f ,0.85f ,0f ,0.1854f ,0.85f ,0f ,0.212f ,0.84f ,-0.015f ,0.183f ,0.84f ,-0.015f ,0.213f ,0.835f ,-0.04f ,0.19f ,0.835f ,-0.04f ,0.211f ,0.835f ,-0.065f ,0.192f ,0.835f ,-0.065f ,0.208f ,0.84f ,-0.085f ,0.19f ,0.84f ,-0.085f ,0.2f ,0.84f ,-0.095f ,0.215f ,0.82f ,0f ,0.193f ,0.815f ,0.005f ,0.198f ,0.8f ,0.012f ,0.21f ,0.82f ,0.03f ,0.19f ,0.82f ,0.03f ,0.2f ,0.835f ,0.039f ,0.212f ,0.8f ,0.05f ,0.188f ,0.8f ,0.05f ,0.2f ,0.807f ,0.057f ,0.2f ,0.793f ,0.035f ,0.2f ,0.774f ,0.076f ,0.212f ,0.78f ,0.07f ,0.188f ,0.78f ,0.07f ,0.2f ,0.785f ,0.075f ,0.2f ,0.77f ,0.062f ,0.215f ,0.793f ,-0.015f ,0.187f ,0.793f ,-0.015f ,0.2f ,0.793f ,-0.005f ,0.215f ,0.788f ,-0.04f ,0.187f ,0.788f ,-0.04f ,0.215f ,0.793f ,-0.065f ,0.187f ,0.793f ,-0.065f ,0.21f ,0.79f ,-0.085f ,0.19f ,0.79f ,-0.085f ,0.2f ,0.79f ,-0.095f ,0.19f ,0.77f ,-0.0275f ,0.19f ,0.77f ,-0.0525f ,0.19f ,0.78f ,-0.0775f ,0.212f ,0.745f ,-0.015f ,0.188f ,0.745f ,-0.02f ,0.2f ,0.745f ,-0.0255f ,0.2f ,0.745f ,-0.0045f ,0.211f ,0.72f ,-0.015f ,0.189f ,0.72f ,-0.015f ,0.2f ,0.72f ,-0.0252f ,0.2f ,0.72f ,-0.0048f ,0.21f ,0.695f ,-0.015f ,0.19f ,0.695f ,-0.015f ,0.2f ,0.695f ,-0.025f ,0.2f ,0.695f ,-0.005f ,0.2f ,0.685f ,-0.015f ,0.215f ,0.74f ,-0.04f ,0.185f ,0.74f ,-0.04f ,0.2f ,0.74f ,-0.055f ,0.2f ,0.74f ,-0.025f ,0.21f ,0.7142f ,-0.04f ,0.19f ,0.7142f ,-0.04f ,0.2f ,0.7142f ,-0.053f ,0.2f ,0.7142f ,-0.027f ,0.21f ,0.68f ,-0.04f ,0.19f ,0.68f ,-0.04f ,0.2f ,0.68f ,-0.05f ,0.2f ,0.68f ,-0.03f ,0.2f ,0.67f ,-0.04f ,0.212f ,0.74f ,-0.065f ,0.188f ,0.74f ,-0.065f ,0.2f ,0.74f ,-0.0756f ,0.2f ,0.74f ,-0.0542f ,0.21f ,0.7177f ,-0.065f ,0.19f ,0.7177f ,-0.065f ,0.2f ,0.7177f ,-0.0751f ,0.2f ,0.7177f ,-0.0549f ,0.21f ,0.695f ,-0.065f ,0.19f ,0.695f ,-0.065f ,0.2f ,0.695f ,-0.075f ,0.2f ,0.695f ,-0.055f ,0.2f ,0.685f ,-0.065f ,0.211f ,0.755f ,-0.085f ,0.189f ,0.755f ,-0.085f ,0.2f ,0.755f ,-0.0952f ,0.2f ,0.755f ,-0.0748f ,0.21f ,0.735f ,-0.085f ,0.19f ,0.735f ,-0.085f ,0.2f ,0.735f ,-0.0951f ,0.2f ,0.735f ,-0.0749f ,0.21f ,0.72f ,-0.085f ,0.19f ,0.72f ,-0.085f ,0.2f ,0.72f ,-0.095f ,0.2f ,0.72f ,-0.075f ,0.2f ,0.71f ,-0.085f ,-0.23f ,1.23f ,-0.04f ,-0.16f ,1.23f ,-0.04f ,-0.2f ,1.235f ,-0.105f ,-0.2f ,1.235f ,0.02f ,-0.244f ,1.1388f ,-0.04f ,-0.165f ,1.1388f ,-0.04f ,-0.2f ,1.1388f ,-0.08f ,-0.2f ,1.1388f ,0.013f ,-0.225f ,1f ,-0.01f ,-0.225f ,1f ,-0.07f ,-0.185f ,1f ,-0.01f ,-0.185f ,1f ,-0.07f ,-0.2f ,1.1388f ,-0.04f ,-0.225f ,0.92f ,-0.04f ,-0.175f ,0.92f ,-0.04f ,-0.2f ,0.92f ,-0.065f ,-0.2f ,0.92f ,-0.015f ,-0.225f ,0.89f ,-0.04f ,-0.175f ,0.89f ,-0.04f ,-0.2f ,0.89f ,-0.065f ,-0.2f ,0.89f ,-0.015f ,-0.218f ,0.86f ,-0.04f ,-0.184f ,0.86f ,-0.04f ,-0.2f ,0.87f ,-0.07f ,-0.2f ,0.87f ,0f ,-0.21f ,0.85f ,0f ,-0.1854f ,0.85f ,0f ,-0.212f ,0.84f ,-0.015f ,-0.183f ,0.84f ,-0.015f ,-0.213f ,0.835f ,-0.04f ,-0.19f ,0.835f ,-0.04f ,-0.211f ,0.835f ,-0.065f ,-0.192f ,0.835f ,-0.065f ,-0.208f ,0.84f ,-0.085f ,-0.19f ,0.84f ,-0.085f ,-0.2f ,0.84f ,-0.095f ,-0.215f ,0.82f ,0f ,-0.193f ,0.815f ,0.005f ,-0.198f ,0.8f ,0.012f ,-0.21f ,0.82f ,0.03f ,-0.19f ,0.82f ,0.03f ,-0.2f ,0.835f ,0.039f ,-0.212f ,0.8f ,0.05f ,-0.188f ,0.8f ,0.05f ,-0.2f ,0.807f ,0.057f ,-0.2f ,0.793f ,0.035f ,-0.2f ,0.774f ,0.076f ,-0.212f ,0.78f ,0.07f ,-0.188f ,0.78f ,0.07f ,-0.2f ,0.785f ,0.075f ,-0.2f ,0.77f ,0.062f ,-0.215f ,0.793f ,-0.015f ,-0.187f ,0.793f ,-0.015f ,-0.2f ,0.793f ,-0.005f ,-0.215f ,0.788f ,-0.04f ,-0.187f ,0.788f ,-0.04f ,-0.215f ,0.793f ,-0.065f ,-0.187f ,0.793f ,-0.065f ,-0.21f ,0.79f ,-0.085f ,-0.19f ,0.79f ,-0.085f ,-0.2f ,0.79f ,-0.095f ,-0.19f ,0.77f ,-0.0275f });
   }
 }
 private class MFVec3f16 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.19f,0.77f,-0.0525f,-0.19f,0.78f,-0.0775f,-0.212f,0.745f,-0.015f,-0.188f,0.745f,-0.02f,-0.2f,0.745f,-0.0255f,-0.2f,0.745f,-0.0045f,-0.211f,0.72f,-0.015f,-0.189f,0.72f,-0.015f,-0.2f,0.72f,-0.0252f,-0.2f,0.72f,-0.0048f,-0.21f,0.695f,-0.015f,-0.19f,0.695f,-0.015f,-0.2f,0.695f,-0.025f,-0.2f,0.695f,-0.005f,-0.2f,0.685f,-0.015f,-0.215f,0.74f,-0.04f,-0.185f,0.74f,-0.04f,-0.2f,0.74f,-0.055f,-0.2f,0.74f,-0.025f,-0.21f,0.7142f,-0.04f,-0.19f,0.7142f,-0.04f,-0.2f,0.7142f,-0.053f,-0.2f,0.7142f,-0.027f,-0.21f,0.68f,-0.04f,-0.19f,0.68f,-0.04f,-0.2f,0.68f,-0.05f,-0.2f,0.68f,-0.03f,-0.2f,0.67f,-0.04f,-0.212f,0.74f,-0.065f,-0.188f,0.74f,-0.065f,-0.2f,0.74f,-0.0756f,-0.2f,0.74f,-0.0542f,-0.21f,0.7177f,-0.065f,-0.19f,0.7177f,-0.065f,-0.2f,0.7177f,-0.0751f,-0.2f,0.7177f,-0.0549f,-0.21f,0.695f,-0.065f,-0.19f,0.695f,-0.065f,-0.2f,0.695f,-0.075f,-0.2f,0.695f,-0.055f,-0.2f,0.685f,-0.065f,-0.211f,0.755f,-0.085f,-0.189f,0.755f,-0.085f,-0.2f,0.755f,-0.0952f,-0.2f,0.755f,-0.0748f,-0.21f,0.735f,-0.085f,-0.19f,0.735f,-0.085f,-0.2f,0.735f,-0.0951f,-0.2f,0.735f,-0.0749f,-0.21f,0.72f,-0.085f,-0.19f,0.72f,-0.085f,-0.2f,0.72f,-0.095f,-0.2f,0.72f,-0.075f,-0.2f,0.71f,-0.085f,0.115f,0.466f,0.06f,0.115f,0.466f,-0.055f,0.15f,0.466f,0f,0.05f,0.466f,0f,0.17f,0.3f,0f,0.06f,0.3f,0f,0.1f,0.3f,-0.05f,0.1f,0.3f,0.05f,0.15f,0.07f,0f,0.085f,0.086f,0.0125f,0.115f,0.069f,-0.045f,0.117f,0.0975f,0.0615f,0.1375f,0.006f,-0.03f,0.095f,0.006f,-0.03f,0.115f,0.015f,-0.045f,0.115f,0.06f,0.1f,0.115f,0f,0.07f,0.165f,0f,0.07f,0.095f,0f,0.07f,0.115f,0.04f,0.13f,0.125f,0f,0.12f,0.165f,0f,0.12f,0.087f,0f,0.122f,0.09f,0.012f,0.188f,0.11f,0.011f,0.19f,0.128f,0.011f,0.185f,0.142f,0.011f,0.178f,0.154f,0.01f,0.168f,-0.115f,0.466f,0.06f,-0.115f,0.466f,-0.055f,-0.17f,0.466f,0f,-0.05f,0.466f,0f,-0.17f,0.3f,0f,-0.06f,0.3f,0f,-0.1f,0.3f,-0.05f,-0.1f,0.3f,0.05f,-0.15f,0.07f,0f,-0.085f,0.086f,0.0125f,-0.115f,0.069f,-0.045f,-0.117f,0.0975f,0.0615f,-0.1375f,0.006f,-0.03f,-0.095f,0.006f,-0.03f,-0.095f,0.006f,-0.03f,-0.115f,0.06f,0.1f,-0.115f,0f,0.07f,-0.165f,0f,0.07f,-0.095f,0f,0.07f,-0.115f,0.04f,0.13f,-0.125f,0f,0.12f,-0.165f,0f,0.12f,-0.087f,0f,0.122f,-0.09f,0.012f,0.188f,-0.11f,0.011f,0.19f,-0.128f,0.011f,0.185f,-0.142f,0.011f,0.178f,-0.154f,0.01f,0.168f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.19f ,0.77f ,-0.0525f ,-0.19f ,0.78f ,-0.0775f ,-0.212f ,0.745f ,-0.015f ,-0.188f ,0.745f ,-0.02f ,-0.2f ,0.745f ,-0.0255f ,-0.2f ,0.745f ,-0.0045f ,-0.211f ,0.72f ,-0.015f ,-0.189f ,0.72f ,-0.015f ,-0.2f ,0.72f ,-0.0252f ,-0.2f ,0.72f ,-0.0048f ,-0.21f ,0.695f ,-0.015f ,-0.19f ,0.695f ,-0.015f ,-0.2f ,0.695f ,-0.025f ,-0.2f ,0.695f ,-0.005f ,-0.2f ,0.685f ,-0.015f ,-0.215f ,0.74f ,-0.04f ,-0.185f ,0.74f ,-0.04f ,-0.2f ,0.74f ,-0.055f ,-0.2f ,0.74f ,-0.025f ,-0.21f ,0.7142f ,-0.04f ,-0.19f ,0.7142f ,-0.04f ,-0.2f ,0.7142f ,-0.053f ,-0.2f ,0.7142f ,-0.027f ,-0.21f ,0.68f ,-0.04f ,-0.19f ,0.68f ,-0.04f ,-0.2f ,0.68f ,-0.05f ,-0.2f ,0.68f ,-0.03f ,-0.2f ,0.67f ,-0.04f ,-0.212f ,0.74f ,-0.065f ,-0.188f ,0.74f ,-0.065f ,-0.2f ,0.74f ,-0.0756f ,-0.2f ,0.74f ,-0.0542f ,-0.21f ,0.7177f ,-0.065f ,-0.19f ,0.7177f ,-0.065f ,-0.2f ,0.7177f ,-0.0751f ,-0.2f ,0.7177f ,-0.0549f ,-0.21f ,0.695f ,-0.065f ,-0.19f ,0.695f ,-0.065f ,-0.2f ,0.695f ,-0.075f ,-0.2f ,0.695f ,-0.055f ,-0.2f ,0.685f ,-0.065f ,-0.211f ,0.755f ,-0.085f ,-0.189f ,0.755f ,-0.085f ,-0.2f ,0.755f ,-0.0952f ,-0.2f ,0.755f ,-0.0748f ,-0.21f ,0.735f ,-0.085f ,-0.19f ,0.735f ,-0.085f ,-0.2f ,0.735f ,-0.0951f ,-0.2f ,0.735f ,-0.0749f ,-0.21f ,0.72f ,-0.085f ,-0.19f ,0.72f ,-0.085f ,-0.2f ,0.72f ,-0.095f ,-0.2f ,0.72f ,-0.075f ,-0.2f ,0.71f ,-0.085f ,0.115f ,0.466f ,0.06f ,0.115f ,0.466f ,-0.055f ,0.15f ,0.466f ,0f ,0.05f ,0.466f ,0f ,0.17f ,0.3f ,0f ,0.06f ,0.3f ,0f ,0.1f ,0.3f ,-0.05f ,0.1f ,0.3f ,0.05f ,0.15f ,0.07f ,0f ,0.085f ,0.086f ,0.0125f ,0.115f ,0.069f ,-0.045f ,0.117f ,0.0975f ,0.0615f ,0.1375f ,0.006f ,-0.03f ,0.095f ,0.006f ,-0.03f ,0.115f ,0.015f ,-0.045f ,0.115f ,0.06f ,0.1f ,0.115f ,0f ,0.07f ,0.165f ,0f ,0.07f ,0.095f ,0f ,0.07f ,0.115f ,0.04f ,0.13f ,0.125f ,0f ,0.12f ,0.165f ,0f ,0.12f ,0.087f ,0f ,0.122f ,0.09f ,0.012f ,0.188f ,0.11f ,0.011f ,0.19f ,0.128f ,0.011f ,0.185f ,0.142f ,0.011f ,0.178f ,0.154f ,0.01f ,0.168f ,-0.115f ,0.466f ,0.06f ,-0.115f ,0.466f ,-0.055f ,-0.17f ,0.466f ,0f ,-0.05f ,0.466f ,0f ,-0.17f ,0.3f ,0f ,-0.06f ,0.3f ,0f ,-0.1f ,0.3f ,-0.05f ,-0.1f ,0.3f ,0.05f ,-0.15f ,0.07f ,0f ,-0.085f ,0.086f ,0.0125f ,-0.115f ,0.069f ,-0.045f ,-0.117f ,0.0975f ,0.0615f ,-0.1375f ,0.006f ,-0.03f ,-0.095f ,0.006f ,-0.03f ,-0.095f ,0.006f ,-0.03f ,-0.115f ,0.06f ,0.1f ,-0.115f ,0f ,0.07f ,-0.165f ,0f ,0.07f ,-0.095f ,0f ,0.07f ,-0.115f ,0.04f ,0.13f ,-0.125f ,0f ,0.12f ,-0.165f ,0f ,0.12f ,-0.087f ,0f ,0.122f ,-0.09f ,0.012f ,0.188f ,-0.11f ,0.011f ,0.19f ,-0.128f ,0.011f ,0.185f ,-0.142f ,0.011f ,0.178f ,-0.154f ,0.01f ,0.168f });
   }
 }
 private class MFColor17 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1f,0f,0f,0f,1f,1f,0f,1f,0f,1f,1f,0f,1f,1f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f,1f,1f,0f,1f,1f,1f,1f,0f,1f,1f,0f,1f,1f,0f,1f,1f,0f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,0f,1f,1f,0f,1f,1f,0f,1f,1f,1f,1f,0f,0f,0f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,1f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,0f,1f,0f,0f,1f,0f,0f,1f,1f,1f,0f,0f,1f,0f,0f,0f,1f,1f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,0f,1f,1f,0f,1f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,1f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f,1f,1f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,1f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,0f ,0f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f });
   }
 }
 private class MFColor18 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,0f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,0f,0f,1f,1f,1f,0f,1f,0f,1f,1f,0f,1f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,1f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f,1f,1f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,1f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,0f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f });
   }
 }
 private class MFColor19 {
   private org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new double[] {1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,1f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,0f,0f,1f,1f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,1f,1f,0f,0f,0f,1f,0f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,0f,1f,1f,1f,0f,0f,1f,0f,0f,0f,1f,1f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,0f,1f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,0f,1f,0f,1f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,0f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,1f ,1f ,0f ,0f ,1f ,0f ,0f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,0f ,1f ,0f ,1f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,0f ,1f ,1f ,1f ,1f });
   }
 }
 private class MFString20 {
@@ -2140,12 +2140,12 @@ private class MFString20 {
 }
 private class MFFloat21 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat22 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3223 {
@@ -2155,7 +2155,7 @@ private class MFInt3223 {
 }
 private class MFVec3f24 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0.824f,0.0277f,0f,0.9149f,0.0016f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.824f ,0.0277f ,0f ,0.9149f ,0.0016f });
   }
 }
 private class MFInt3225 {
@@ -2165,17 +2165,17 @@ private class MFInt3225 {
 }
 private class MFVec3f26 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0.824f,0.0277f,0.0028f,1.0568f,-0.0776f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.824f ,0.0277f ,0.0028f ,1.0568f ,-0.0776f });
   }
 }
 private class MFFloat27 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat28 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3229 {
@@ -2185,7 +2185,7 @@ private class MFInt3229 {
 }
 private class MFVec3f30 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0.9149f,0.0016f,0.0961f,0.9124f,-0.0001f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.9149f ,0.0016f ,0.0961f ,0.9124f ,-0.0001f });
   }
 }
 private class MFString31 {
@@ -2245,17 +2245,17 @@ private class MFInt3241 {
 }
 private class MFVec3f42 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0f,0.9149f,0.0016f,-0.095f,0.9171f,0.0029f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f ,0.9149f ,0.0016f ,-0.095f ,0.9171f ,0.0029f });
   }
 }
 private class MFFloat43 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat44 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3245 {
@@ -2265,7 +2265,7 @@ private class MFInt3245 {
 }
 private class MFVec3f46 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0961f,0.9124f,-0.0001f,0.104f,0.4867f,0.0308f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0961f ,0.9124f ,-0.0001f ,0.104f ,0.4867f ,0.0308f });
   }
 }
 private class MFString47 {
@@ -2290,12 +2290,12 @@ private class MFString50 {
 }
 private class MFFloat51 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat52 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3253 {
@@ -2305,7 +2305,7 @@ private class MFInt3253 {
 }
 private class MFVec3f54 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.104f,0.4867f,0.0308f,0.1101f,0.0656f,-0.0736f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.104f ,0.4867f ,0.0308f ,0.1101f ,0.0656f ,-0.0736f });
   }
 }
 private class MFString55 {
@@ -2325,12 +2325,12 @@ private class MFString57 {
 }
 private class MFFloat58 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat59 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3260 {
@@ -2340,7 +2340,7 @@ private class MFInt3260 {
 }
 private class MFVec3f61 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1101f,0.0656f,-0.0736f,0.08f,0.0175f,-0.0608f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1101f ,0.0656f ,-0.0736f ,0.08f ,0.0175f ,-0.0608f });
   }
 }
 private class MFString62 {
@@ -2355,12 +2355,12 @@ private class MFString63 {
 }
 private class MFFloat64 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat65 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3266 {
@@ -2370,17 +2370,17 @@ private class MFInt3266 {
 }
 private class MFVec3f67 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.08f,0.0175f,-0.0608f,0.0824f,0.0064f,-0.004f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.08f ,0.0175f ,-0.0608f ,0.0824f ,0.0064f ,-0.004f });
   }
 }
 private class MFFloat68 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat69 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3270 {
@@ -2390,7 +2390,7 @@ private class MFInt3270 {
 }
 private class MFVec3f71 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0824f,0.0064f,-0.004f,0.0841f,0.0013f,0.0216f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0824f ,0.0064f ,-0.004f ,0.0841f ,0.0013f ,0.0216f });
   }
 }
 private class MFString72 {
@@ -2430,22 +2430,22 @@ private class MFString78 {
 }
 private class MFFloat79 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat80 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat81 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat82 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3283 {
@@ -2455,7 +2455,7 @@ private class MFInt3283 {
 }
 private class MFVec3f84 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.095f,0.9171f,0.0029f,-0.0867f,0.4913f,0.0318f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.095f ,0.9171f ,0.0029f ,-0.0867f ,0.4913f ,0.0318f });
   }
 }
 private class MFString85 {
@@ -2480,12 +2480,12 @@ private class MFString88 {
 }
 private class MFFloat89 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat90 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3291 {
@@ -2495,7 +2495,7 @@ private class MFInt3291 {
 }
 private class MFVec3f92 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.0867f,0.4913f,0.0318f,-0.0801f,0.0712f,-0.0766f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0867f ,0.4913f ,0.0318f ,-0.0801f ,0.0712f ,-0.0766f });
   }
 }
 private class MFString93 {
@@ -2515,12 +2515,12 @@ private class MFString95 {
 }
 private class MFFloat96 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat97 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt3298 {
@@ -2530,7 +2530,7 @@ private class MFInt3298 {
 }
 private class MFVec3f99 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.0801f,0.0712f,-0.0766f,-0.08f,0.0175f,-0.0608f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0801f ,0.0712f ,-0.0766f ,-0.08f ,0.0175f ,-0.0608f });
   }
 }
 private class MFString100 {
@@ -2545,12 +2545,12 @@ private class MFString101 {
 }
 private class MFFloat102 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat103 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32104 {
@@ -2560,17 +2560,17 @@ private class MFInt32104 {
 }
 private class MFVec3f105 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.08f,0.0175f,-0.0608f,-0.0823f,0.0064f,-0.004f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.08f ,0.0175f ,-0.0608f ,-0.0823f ,0.0064f ,-0.004f });
   }
 }
 private class MFFloat106 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat107 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32108 {
@@ -2580,7 +2580,7 @@ private class MFInt32108 {
 }
 private class MFVec3f109 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.0823f,0.0064f,-0.004f,-0.0841f,0.0013f,0.0216f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0823f ,0.0064f ,-0.004f ,-0.0841f ,0.0013f ,0.0216f });
   }
 }
 private class MFString110 {
@@ -2620,22 +2620,22 @@ private class MFString116 {
 }
 private class MFFloat117 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat118 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat119 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat120 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32121 {
@@ -2645,7 +2645,7 @@ private class MFInt32121 {
 }
 private class MFVec3f122 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0028f,1.0568f,-0.0776f,0.0035f,1.0925f,-0.0787f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0028f ,1.0568f ,-0.0776f ,0.0035f ,1.0925f ,-0.0787f });
   }
 }
 private class MFString123 {
@@ -2665,12 +2665,12 @@ private class MFString125 {
 }
 private class MFFloat126 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat127 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32128 {
@@ -2680,17 +2680,17 @@ private class MFInt32128 {
 }
 private class MFVec3f129 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0035f,1.0925f,-0.0787f,0.0041f,1.1276f,-0.0796f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0035f ,1.0925f ,-0.0787f ,0.0041f ,1.1276f ,-0.0796f });
   }
 }
 private class MFFloat130 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat131 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32132 {
@@ -2700,17 +2700,17 @@ private class MFInt32132 {
 }
 private class MFVec3f133 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0041f,1.1276f,-0.0796f,0.0045f,1.1546f,-0.08f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0041f ,1.1276f ,-0.0796f ,0.0045f ,1.1546f ,-0.08f });
   }
 }
 private class MFFloat134 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat135 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32136 {
@@ -2720,7 +2720,7 @@ private class MFInt32136 {
 }
 private class MFVec3f137 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0045f,1.1546f,-0.08f,0.0048f,1.1912f,-0.0805f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0045f ,1.1546f ,-0.08f ,0.0048f ,1.1912f ,-0.0805f });
   }
 }
 private class MFString138 {
@@ -2740,12 +2740,12 @@ private class MFString140 {
 }
 private class MFFloat141 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat142 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32143 {
@@ -2755,17 +2755,17 @@ private class MFInt32143 {
 }
 private class MFVec3f144 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0048f,1.1912f,-0.0805f,0.0051f,1.2278f,-0.0808f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0048f ,1.1912f ,-0.0805f ,0.0051f ,1.2278f ,-0.0808f });
   }
 }
 private class MFFloat145 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat146 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32147 {
@@ -2775,17 +2775,17 @@ private class MFInt32147 {
 }
 private class MFVec3f148 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0051f,1.2278f,-0.0808f,0.0053f,1.2679f,-0.081f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0051f ,1.2278f ,-0.0808f ,0.0053f ,1.2679f ,-0.081f });
   }
 }
 private class MFFloat149 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat150 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32151 {
@@ -2795,17 +2795,17 @@ private class MFInt32151 {
 }
 private class MFVec3f152 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0053f,1.2679f,-0.081f,0.0056f,1.2848f,-0.0822f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0053f ,1.2679f ,-0.081f ,0.0056f ,1.2848f ,-0.0822f });
   }
 }
 private class MFFloat153 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat154 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32155 {
@@ -2815,7 +2815,7 @@ private class MFInt32155 {
 }
 private class MFVec3f156 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0056f,1.2848f,-0.0822f,0.0057f,1.3126f,-0.0838f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0056f ,1.2848f ,-0.0822f ,0.0057f ,1.3126f ,-0.0838f });
   }
 }
 private class MFString157 {
@@ -2825,12 +2825,12 @@ private class MFString157 {
 }
 private class MFFloat158 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat159 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32160 {
@@ -2840,7 +2840,7 @@ private class MFInt32160 {
 }
 private class MFVec3f161 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0057f,1.3126f,-0.0838f,0.0057f,1.3382f,-0.0845f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0057f ,1.3126f ,-0.0838f ,0.0057f ,1.3382f ,-0.0845f });
   }
 }
 private class MFString162 {
@@ -2855,12 +2855,12 @@ private class MFString163 {
 }
 private class MFFloat164 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat165 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32166 {
@@ -2870,17 +2870,17 @@ private class MFInt32166 {
 }
 private class MFVec3f167 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0057f,1.3382f,-0.0845f,0.0058f,1.3625f,-0.0833f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0057f ,1.3382f ,-0.0845f ,0.0058f ,1.3625f ,-0.0833f });
   }
 }
 private class MFFloat168 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat169 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32170 {
@@ -2890,17 +2890,17 @@ private class MFInt32170 {
 }
 private class MFVec3f171 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0058f,1.3625f,-0.0833f,0.0059f,1.3866f,-0.08f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0058f ,1.3625f ,-0.0833f ,0.0059f ,1.3866f ,-0.08f });
   }
 }
 private class MFFloat172 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat173 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32174 {
@@ -2910,7 +2910,7 @@ private class MFInt32174 {
 }
 private class MFVec3f175 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0059f,1.3866f,-0.08f,0.006f,1.4102f,-0.0745f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0059f ,1.3866f ,-0.08f ,0.006f ,1.4102f ,-0.0745f });
   }
 }
 private class MFString176 {
@@ -2935,12 +2935,12 @@ private class MFString179 {
 }
 private class MFFloat180 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat181 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32182 {
@@ -2950,7 +2950,7 @@ private class MFInt32182 {
 }
 private class MFVec3f183 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.006f,1.4102f,-0.0745f,0.0061f,1.432f,-0.0675f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.006f ,1.4102f ,-0.0745f ,0.0061f ,1.432f ,-0.0675f });
   }
 }
 private class MFString184 {
@@ -2960,12 +2960,12 @@ private class MFString184 {
 }
 private class MFFloat185 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat186 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32187 {
@@ -2975,17 +2975,17 @@ private class MFInt32187 {
 }
 private class MFVec3f188 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0061f,1.432f,-0.0675f,0.0062f,1.4583f,-0.057f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0061f ,1.432f ,-0.0675f ,0.0062f ,1.4583f ,-0.057f });
   }
 }
 private class MFFloat189 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat190 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32191 {
@@ -2995,17 +2995,17 @@ private class MFInt32191 {
 }
 private class MFVec3f192 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0062f,1.4583f,-0.057f,0.0063f,1.4761f,-0.0484f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0062f ,1.4583f ,-0.057f ,0.0063f ,1.4761f ,-0.0484f });
   }
 }
 private class MFFloat193 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat194 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32195 {
@@ -3015,17 +3015,17 @@ private class MFInt32195 {
 }
 private class MFVec3f196 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0063f,1.4761f,-0.0484f,0.0065f,1.4951f,-0.0387f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0063f ,1.4761f ,-0.0484f ,0.0065f ,1.4951f ,-0.0387f });
   }
 }
 private class MFFloat197 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat198 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32199 {
@@ -3035,7 +3035,7 @@ private class MFInt32199 {
 }
 private class MFVec3f200 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0065f,1.4951f,-0.0387f,0.0066f,1.5132f,-0.0301f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0065f ,1.4951f ,-0.0387f ,0.0066f ,1.5132f ,-0.0301f });
   }
 }
 private class MFString201 {
@@ -3055,7 +3055,7 @@ private class MFInt32203 {
 }
 private class MFVec3f204 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0065f,1.4951f,-0.0387f,0.082f,1.4488f,-0.0353f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0065f ,1.4951f ,-0.0387f ,0.082f ,1.4488f ,-0.0353f });
   }
 }
 private class MFInt32205 {
@@ -3065,17 +3065,17 @@ private class MFInt32205 {
 }
 private class MFVec3f206 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0065f,1.4951f,-0.0387f,-0.0694f,1.46f,-0.033f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0065f ,1.4951f ,-0.0387f ,-0.0694f ,1.46f ,-0.033f });
   }
 }
 private class MFFloat207 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat208 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32209 {
@@ -3085,7 +3085,7 @@ private class MFInt32209 {
 }
 private class MFVec3f210 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0066f,1.5132f,-0.0301f,0.0066f,1.5357f,-0.0143f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0066f ,1.5132f ,-0.0301f ,0.0066f ,1.5357f ,-0.0143f });
   }
 }
 private class MFString211 {
@@ -3100,12 +3100,12 @@ private class MFString212 {
 }
 private class MFFloat213 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat214 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32215 {
@@ -3115,17 +3115,17 @@ private class MFInt32215 {
 }
 private class MFVec3f216 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0066f,1.5357f,-0.0143f,0.0066f,1.552f,-0.0082f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0066f ,1.5357f ,-0.0143f ,0.0066f ,1.552f ,-0.0082f });
   }
 }
 private class MFFloat217 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat218 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32219 {
@@ -3135,17 +3135,17 @@ private class MFInt32219 {
 }
 private class MFVec3f220 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0066f,1.552f,-0.0082f,0.0066f,1.5662f,-0.0084f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0066f ,1.552f ,-0.0082f ,0.0066f ,1.5662f ,-0.0084f });
   }
 }
 private class MFFloat221 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat222 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32223 {
@@ -3155,17 +3155,17 @@ private class MFInt32223 {
 }
 private class MFVec3f224 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0066f,1.5662f,-0.0084f,0.0066f,1.58f,-0.0103f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0066f ,1.5662f ,-0.0084f ,0.0066f ,1.58f ,-0.0103f });
   }
 }
 private class MFFloat225 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat226 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32227 {
@@ -3175,17 +3175,17 @@ private class MFInt32227 {
 }
 private class MFVec3f228 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0066f,1.58f,-0.0103f,0.0066f,1.5928f,-0.0103f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0066f ,1.58f ,-0.0103f ,0.0066f ,1.5928f ,-0.0103f });
   }
 }
 private class MFFloat229 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat230 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32231 {
@@ -3195,7 +3195,7 @@ private class MFInt32231 {
 }
 private class MFVec3f232 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0066f,1.5928f,-0.0103f,0.0066f,1.6144f,-0.0034f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0066f ,1.5928f ,-0.0103f ,0.0066f ,1.6144f ,-0.0034f });
   }
 }
 private class MFString233 {
@@ -3205,12 +3205,12 @@ private class MFString233 {
 }
 private class MFFloat234 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat235 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32236 {
@@ -3220,17 +3220,17 @@ private class MFInt32236 {
 }
 private class MFVec3f237 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0066f,1.6144f,-0.0034f,0.0044f,1.6209f,0.0236f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0066f ,1.6144f ,-0.0034f ,0.0044f ,1.6209f ,0.0236f });
   }
 }
 private class MFFloat238 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat239 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32240 {
@@ -3240,7 +3240,7 @@ private class MFInt32240 {
 }
 private class MFVec3f241 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0044f,1.6209f,0.0236f,0.0503f,1.4157f,-0.0689f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0044f ,1.6209f ,0.0236f ,0.0503f ,1.4157f ,-0.0689f });
   }
 }
 private class MFString242 {
@@ -3305,7 +3305,7 @@ private class MFInt32253 {
 }
 private class MFVec3f254 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0044f,1.6209f,0.0236f,-0.0507f,1.4157f,-0.0689f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0044f ,1.6209f ,0.0236f ,-0.0507f ,1.4157f ,-0.0689f });
   }
 }
 private class MFInt32255 {
@@ -3315,7 +3315,7 @@ private class MFInt32255 {
 }
 private class MFVec3f256 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0044f,1.6209f,0.0236f,0.0479f,1.3963f,-0.0188f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0044f ,1.6209f ,0.0236f ,0.0479f ,1.3963f ,-0.0188f });
   }
 }
 private class MFInt32257 {
@@ -3325,7 +3325,7 @@ private class MFInt32257 {
 }
 private class MFVec3f258 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0044f,1.6209f,0.0236f,-0.0483f,1.3963f,-0.0188f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0044f ,1.6209f ,0.0236f ,-0.0483f ,1.3963f ,-0.0188f });
   }
 }
 private class MFInt32259 {
@@ -3335,7 +3335,7 @@ private class MFInt32259 {
 }
 private class MFVec3f260 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0044f,1.6209f,0.0236f,0.0216f,1.4053f,0.0051f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0044f ,1.6209f ,0.0236f ,0.0216f ,1.4053f ,0.0051f });
   }
 }
 private class MFInt32261 {
@@ -3345,7 +3345,7 @@ private class MFInt32261 {
 }
 private class MFVec3f262 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0044f,1.6209f,0.0236f,-0.0219f,1.4053f,0.0051f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0044f ,1.6209f ,0.0236f ,-0.0219f ,1.4053f ,0.0051f });
   }
 }
 private class MFInt32263 {
@@ -3355,87 +3355,87 @@ private class MFInt32263 {
 }
 private class MFVec3f264 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0044f,1.6209f,0.0236f,-0.0002f,1.3043f,-0.0865f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0044f ,1.6209f ,0.0236f ,-0.0002f ,1.3043f ,-0.0865f });
   }
 }
 private class MFFloat265 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat266 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat267 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat268 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat269 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat270 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat271 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat272 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat273 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat274 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat275 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat276 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat277 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat278 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat279 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat280 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32281 {
@@ -3445,7 +3445,7 @@ private class MFInt32281 {
 }
 private class MFVec3f282 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.082f,1.4488f,-0.0353f,0.0962f,1.4269f,-0.0424f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.082f ,1.4488f ,-0.0353f ,0.0962f ,1.4269f ,-0.0424f });
   }
 }
 private class MFString283 {
@@ -3475,12 +3475,12 @@ private class MFString287 {
 }
 private class MFFloat288 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat289 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32290 {
@@ -3490,17 +3490,17 @@ private class MFInt32290 {
 }
 private class MFVec3f291 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.0962f,1.4269f,-0.0424f,0.2029f,1.4376f,-0.0387f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0962f ,1.4269f ,-0.0424f ,0.2029f ,1.4376f ,-0.0387f });
   }
 }
 private class MFFloat292 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat293 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32294 {
@@ -3510,7 +3510,7 @@ private class MFInt32294 {
 }
 private class MFVec3f295 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.2029f,1.4376f,-0.0387f,0.2014f,1.1357f,-0.0682f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2029f ,1.4376f ,-0.0387f ,0.2014f ,1.1357f ,-0.0682f });
   }
 }
 private class MFString296 {
@@ -3525,12 +3525,12 @@ private class MFString297 {
 }
 private class MFFloat298 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat299 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32300 {
@@ -3540,7 +3540,7 @@ private class MFInt32300 {
 }
 private class MFVec3f301 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.2014f,1.1357f,-0.0682f,0.1984f,0.8663f,-0.0583f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2014f ,1.1357f ,-0.0682f ,0.1984f ,0.8663f ,-0.0583f });
   }
 }
 private class MFString302 {
@@ -3565,12 +3565,12 @@ private class MFString305 {
 }
 private class MFFloat306 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat307 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32308 {
@@ -3580,7 +3580,7 @@ private class MFInt32308 {
 }
 private class MFVec3f309 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1984f,0.8663f,-0.0583f,0.1924f,0.8472f,-0.0534f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1984f ,0.8663f ,-0.0583f ,0.1924f ,0.8472f ,-0.0534f });
   }
 }
 private class MFString310 {
@@ -3595,7 +3595,7 @@ private class MFInt32311 {
 }
 private class MFVec3f312 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1984f,0.8663f,-0.0583f,0.1983f,0.8024f,-0.028f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1984f ,0.8663f ,-0.0583f ,0.1983f ,0.8024f ,-0.028f });
   }
 }
 private class MFInt32313 {
@@ -3605,7 +3605,7 @@ private class MFInt32313 {
 }
 private class MFVec3f314 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1984f,0.8663f,-0.0583f,0.1987f,0.8029f,-0.053f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1984f ,0.8663f ,-0.0583f ,0.1987f ,0.8029f ,-0.053f });
   }
 }
 private class MFInt32315 {
@@ -3615,7 +3615,7 @@ private class MFInt32315 {
 }
 private class MFVec3f316 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1984f,0.8663f,-0.0583f,0.1956f,0.8019f,-0.0794f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1984f ,0.8663f ,-0.0583f ,0.1956f ,0.8019f ,-0.0794f });
   }
 }
 private class MFInt32317 {
@@ -3625,17 +3625,17 @@ private class MFInt32317 {
 }
 private class MFVec3f318 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1984f,0.8663f,-0.0583f,0.1925f,0.8066f,-0.1036f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1984f ,0.8663f ,-0.0583f ,0.1925f ,0.8066f ,-0.1036f });
   }
 }
 private class MFFloat319 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat320 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32321 {
@@ -3645,17 +3645,17 @@ private class MFInt32321 {
 }
 private class MFVec3f322 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1924f,0.8472f,-0.0534f,0.1951f,0.8226f,0.0246f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1924f ,0.8472f ,-0.0534f ,0.1951f ,0.8226f ,0.0246f });
   }
 }
 private class MFFloat323 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat324 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32325 {
@@ -3665,27 +3665,27 @@ private class MFInt32325 {
 }
 private class MFVec3f326 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1951f,0.8226f,0.0246f,0.1955f,0.8159f,0.0464f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1951f ,0.8226f ,0.0246f ,0.1955f ,0.8159f ,0.0464f });
   }
 }
 private class MFFloat327 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat328 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat329 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat330 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32331 {
@@ -3695,7 +3695,7 @@ private class MFInt32331 {
 }
 private class MFVec3f332 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1983f,0.8024f,-0.028f,0.1983f,0.7815f,-0.028f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1983f ,0.8024f ,-0.028f ,0.1983f ,0.7815f ,-0.028f });
   }
 }
 private class MFString333 {
@@ -3705,12 +3705,12 @@ private class MFString333 {
 }
 private class MFFloat334 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat335 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32336 {
@@ -3720,17 +3720,17 @@ private class MFInt32336 {
 }
 private class MFVec3f337 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1983f,0.7815f,-0.028f,0.2017f,0.7363f,-0.0248f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1983f ,0.7815f ,-0.028f ,0.2017f ,0.7363f ,-0.0248f });
   }
 }
 private class MFFloat338 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat339 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32340 {
@@ -3740,27 +3740,27 @@ private class MFInt32340 {
 }
 private class MFVec3f341 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.2017f,0.7363f,-0.0248f,0.2028f,0.7139f,-0.0236f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2017f ,0.7363f ,-0.0248f ,0.2028f ,0.7139f ,-0.0236f });
   }
 }
 private class MFFloat342 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat343 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat344 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat345 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32346 {
@@ -3770,7 +3770,7 @@ private class MFInt32346 {
 }
 private class MFVec3f347 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1987f,0.8029f,-0.053f,0.1987f,0.7818f,-0.053f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1987f ,0.8029f ,-0.053f ,0.1987f ,0.7818f ,-0.053f });
   }
 }
 private class MFString348 {
@@ -3780,12 +3780,12 @@ private class MFString348 {
 }
 private class MFFloat349 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat350 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32351 {
@@ -3795,17 +3795,17 @@ private class MFInt32351 {
 }
 private class MFVec3f352 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1987f,0.7818f,-0.053f,0.2013f,0.7273f,-0.0503f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1987f ,0.7818f ,-0.053f ,0.2013f ,0.7273f ,-0.0503f });
   }
 }
 private class MFFloat353 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat354 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32355 {
@@ -3815,27 +3815,27 @@ private class MFInt32355 {
 }
 private class MFVec3f356 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.2013f,0.7273f,-0.0503f,0.2026f,0.7011f,-0.0494f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2013f ,0.7273f ,-0.0503f ,0.2026f ,0.7011f ,-0.0494f });
   }
 }
 private class MFFloat357 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat358 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat359 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat360 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32361 {
@@ -3845,17 +3845,17 @@ private class MFInt32361 {
 }
 private class MFVec3f362 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1956f,0.8019f,-0.0794f,0.1956f,0.7815f,-0.0794f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1956f ,0.8019f ,-0.0794f ,0.1956f ,0.7815f ,-0.0794f });
   }
 }
 private class MFFloat363 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat364 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32365 {
@@ -3865,17 +3865,17 @@ private class MFInt32365 {
 }
 private class MFVec3f366 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1956f,0.7815f,-0.0794f,0.1973f,0.7287f,-0.0777f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1956f ,0.7815f ,-0.0794f ,0.1973f ,0.7287f ,-0.0777f });
   }
 }
 private class MFFloat367 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat368 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32369 {
@@ -3885,27 +3885,27 @@ private class MFInt32369 {
 }
 private class MFVec3f370 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1973f,0.7287f,-0.0777f,0.1983f,0.7045f,-0.0767f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1973f ,0.7287f ,-0.0777f ,0.1983f ,0.7045f ,-0.0767f });
   }
 }
 private class MFFloat371 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat372 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat373 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat374 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32375 {
@@ -3915,7 +3915,7 @@ private class MFInt32375 {
 }
 private class MFVec3f376 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1925f,0.8066f,-0.1036f,0.1925f,0.7866f,-0.1036f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1925f ,0.8066f ,-0.1036f ,0.1925f ,0.7866f ,-0.1036f });
   }
 }
 private class MFString377 {
@@ -3925,12 +3925,12 @@ private class MFString377 {
 }
 private class MFFloat378 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat379 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32380 {
@@ -3940,17 +3940,17 @@ private class MFInt32380 {
 }
 private class MFVec3f381 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1925f,0.7866f,-0.1036f,0.1938f,0.7452f,-0.1024f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1925f ,0.7866f ,-0.1036f ,0.1938f ,0.7452f ,-0.1024f });
   }
 }
 private class MFFloat382 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat383 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32384 {
@@ -3960,27 +3960,27 @@ private class MFInt32384 {
 }
 private class MFVec3f385 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {0.1938f,0.7452f,-0.1024f,0.1948f,0.7277f,-0.1017f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1938f ,0.7452f ,-0.1024f ,0.1948f ,0.7277f ,-0.1017f });
   }
 }
 private class MFFloat386 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat387 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat388 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat389 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32390 {
@@ -3990,7 +3990,7 @@ private class MFInt32390 {
 }
 private class MFVec3f391 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.0694f,1.46f,-0.033f,-0.0836f,1.4281f,-0.0401f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0694f ,1.46f ,-0.033f ,-0.0836f ,1.4281f ,-0.0401f });
   }
 }
 private class MFString392 {
@@ -4020,12 +4020,12 @@ private class MFString396 {
 }
 private class MFFloat397 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat398 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32399 {
@@ -4035,17 +4035,17 @@ private class MFInt32399 {
 }
 private class MFVec3f400 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.0836f,1.4281f,-0.0401f,-0.1907f,1.4407f,-0.0325f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0836f ,1.4281f ,-0.0401f ,-0.1907f ,1.4407f ,-0.0325f });
   }
 }
 private class MFFloat401 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat402 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32403 {
@@ -4055,7 +4055,7 @@ private class MFInt32403 {
 }
 private class MFVec3f404 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1907f,1.4407f,-0.0325f,-0.1949f,1.1388f,-0.062f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1907f ,1.4407f ,-0.0325f ,-0.1949f ,1.1388f ,-0.062f });
   }
 }
 private class MFString405 {
@@ -4070,12 +4070,12 @@ private class MFString406 {
 }
 private class MFFloat407 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat408 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32409 {
@@ -4085,7 +4085,7 @@ private class MFInt32409 {
 }
 private class MFVec3f410 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1949f,1.1388f,-0.062f,-0.1959f,0.8694f,-0.0521f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1949f ,1.1388f ,-0.062f ,-0.1959f ,0.8694f ,-0.0521f });
   }
 }
 private class MFString411 {
@@ -4110,12 +4110,12 @@ private class MFString414 {
 }
 private class MFFloat415 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat416 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32417 {
@@ -4125,7 +4125,7 @@ private class MFInt32417 {
 }
 private class MFVec3f418 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1959f,0.8694f,-0.0521f,-0.1899f,0.8502f,-0.0473f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1959f ,0.8694f ,-0.0521f ,-0.1899f ,0.8502f ,-0.0473f });
   }
 }
 private class MFString419 {
@@ -4140,7 +4140,7 @@ private class MFInt32420 {
 }
 private class MFVec3f421 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1959f,0.8694f,-0.0521f,-0.1961f,0.8055f,-0.0218f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1959f ,0.8694f ,-0.0521f ,-0.1961f ,0.8055f ,-0.0218f });
   }
 }
 private class MFInt32422 {
@@ -4150,7 +4150,7 @@ private class MFInt32422 {
 }
 private class MFVec3f423 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1959f,0.8694f,-0.0521f,-0.1972f,0.806f,-0.0468f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1959f ,0.8694f ,-0.0521f ,-0.1972f ,0.806f ,-0.0468f });
   }
 }
 private class MFInt32424 {
@@ -4160,7 +4160,7 @@ private class MFInt32424 {
 }
 private class MFVec3f425 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1959f,0.8694f,-0.0521f,-0.1951f,0.8049f,-0.0732f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1959f ,0.8694f ,-0.0521f ,-0.1951f ,0.8049f ,-0.0732f });
   }
 }
 private class MFInt32426 {
@@ -4170,17 +4170,17 @@ private class MFInt32426 {
 }
 private class MFVec3f427 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1959f,0.8694f,-0.0521f,-0.1926f,0.8096f,-0.0975f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1959f ,0.8694f ,-0.0521f ,-0.1926f ,0.8096f ,-0.0975f });
   }
 }
 private class MFFloat428 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat429 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32430 {
@@ -4190,17 +4190,17 @@ private class MFInt32430 {
 }
 private class MFVec3f431 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1899f,0.8502f,-0.0473f,-0.1874f,0.8256f,0.0306f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1899f ,0.8502f ,-0.0473f ,-0.1874f ,0.8256f ,0.0306f });
   }
 }
 private class MFFloat432 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat433 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32434 {
@@ -4210,27 +4210,27 @@ private class MFInt32434 {
 }
 private class MFVec3f435 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1874f,0.8256f,0.0306f,-0.1864f,0.819f,0.0506f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1874f ,0.8256f ,0.0306f ,-0.1864f ,0.819f ,0.0506f });
   }
 }
 private class MFFloat436 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat437 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat438 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat439 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32440 {
@@ -4240,7 +4240,7 @@ private class MFInt32440 {
 }
 private class MFVec3f441 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1961f,0.8055f,-0.0218f,-0.1961f,0.7846f,-0.0218f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1961f ,0.8055f ,-0.0218f ,-0.1961f ,0.7846f ,-0.0218f });
   }
 }
 private class MFString442 {
@@ -4250,12 +4250,12 @@ private class MFString442 {
 }
 private class MFFloat443 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat444 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32445 {
@@ -4265,17 +4265,17 @@ private class MFInt32445 {
 }
 private class MFVec3f446 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1961f,0.7846f,-0.0218f,-0.1954f,0.7393f,-0.0185f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1961f ,0.7846f ,-0.0218f ,-0.1954f ,0.7393f ,-0.0185f });
   }
 }
 private class MFFloat447 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat448 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32449 {
@@ -4285,27 +4285,27 @@ private class MFInt32449 {
 }
 private class MFVec3f450 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1954f,0.7393f,-0.0185f,-0.1945f,0.7169f,-0.0173f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1954f ,0.7393f ,-0.0185f ,-0.1945f ,0.7169f ,-0.0173f });
   }
 }
 private class MFFloat451 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat452 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat453 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat454 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32455 {
@@ -4315,7 +4315,7 @@ private class MFInt32455 {
 }
 private class MFVec3f456 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1972f,0.806f,-0.0468f,-0.1972f,0.7849f,-0.0468f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1972f ,0.806f ,-0.0468f ,-0.1972f ,0.7849f ,-0.0468f });
   }
 }
 private class MFString457 {
@@ -4325,12 +4325,12 @@ private class MFString457 {
 }
 private class MFFloat458 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat459 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32460 {
@@ -4340,17 +4340,17 @@ private class MFInt32460 {
 }
 private class MFVec3f461 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1972f,0.7849f,-0.0468f,-0.195f,0.7304f,-0.0441f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1972f ,0.7849f ,-0.0468f ,-0.195f ,0.7304f ,-0.0441f });
   }
 }
 private class MFFloat462 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat463 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32464 {
@@ -4360,27 +4360,27 @@ private class MFInt32464 {
 }
 private class MFVec3f465 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.195f,0.7304f,-0.0441f,-0.1939f,0.7042f,-0.0432f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.195f ,0.7304f ,-0.0441f ,-0.1939f ,0.7042f ,-0.0432f });
   }
 }
 private class MFFloat466 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat467 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat468 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat469 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32470 {
@@ -4390,17 +4390,17 @@ private class MFInt32470 {
 }
 private class MFVec3f471 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1951f,0.8049f,-0.0732f,-0.1951f,0.7845f,-0.0732f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1951f ,0.8049f ,-0.0732f ,-0.1951f ,0.7845f ,-0.0732f });
   }
 }
 private class MFFloat472 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat473 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32474 {
@@ -4410,17 +4410,17 @@ private class MFInt32474 {
 }
 private class MFVec3f475 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1951f,0.7845f,-0.0732f,-0.192f,0.7318f,-0.0716f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1951f ,0.7845f ,-0.0732f ,-0.192f ,0.7318f ,-0.0716f });
   }
 }
 private class MFFloat476 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat477 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32478 {
@@ -4430,27 +4430,27 @@ private class MFInt32478 {
 }
 private class MFVec3f479 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.192f,0.7318f,-0.0716f,-0.1908f,0.7077f,-0.0706f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.192f ,0.7318f ,-0.0716f ,-0.1908f ,0.7077f ,-0.0706f });
   }
 }
 private class MFFloat480 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat481 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat482 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat483 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32484 {
@@ -4460,7 +4460,7 @@ private class MFInt32484 {
 }
 private class MFVec3f485 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1926f,0.8096f,-0.0975f,-0.1926f,0.7896f,-0.0975f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1926f ,0.8096f ,-0.0975f ,-0.1926f ,0.7896f ,-0.0975f });
   }
 }
 private class MFString486 {
@@ -4470,12 +4470,12 @@ private class MFString486 {
 }
 private class MFFloat487 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat488 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32489 {
@@ -4485,17 +4485,17 @@ private class MFInt32489 {
 }
 private class MFVec3f490 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1926f,0.7896f,-0.0975f,-0.1902f,0.7483f,-0.0963f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1926f ,0.7896f ,-0.0975f ,-0.1902f ,0.7483f ,-0.0963f });
   }
 }
 private class MFFloat491 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat492 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFInt32493 {
@@ -4505,17 +4505,17 @@ private class MFInt32493 {
 }
 private class MFVec3f494 {
   private org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new double[] {-0.1902f,0.7483f,-0.0963f,-0.1908f,0.754f,-0.096f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1902f ,0.7483f ,-0.0963f ,-0.1908f ,0.754f ,-0.096f });
   }
 }
 private class MFFloat495 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 private class MFFloat496 {
   private org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new double[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f ,0f ,0f });
   }
 }
 }
