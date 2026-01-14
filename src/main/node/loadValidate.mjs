@@ -6,9 +6,9 @@ import { localize } from "../node/ajv-i18n/messages/index.js";
 const ajv = new Ajv({ allErrors: true, verbose: true}); // options can be passed, e.g. {allErrors: true}
 addFormats(ajv, [ "uri", "uri-reference"]);
 
-// import JSONSchema from "../schema/x3d-4.0-JSONSchema.json" assert { type: "json" };
-// const JSONSchema = require("../schema/x3d-4.0-JSONSchema.json")
-const JSONSchema = "https://coderextreme.net/X3DJSONLD/src/main/schema/x3d-4.0-JSONSchema.json";
+// import JSONSchema from "../schema/x3d-4.1-JSONSchema.json" assert { type: "json" };
+// const JSONSchema = require("../schema/x3d-4.1-JSONSchema.json")
+const JSONSchema = "https://coderextreme.net/X3DJSONLD/src/main/schema/x3d-4.1-JSONSchema.json";
 
 var fs = require('fs');
 //
@@ -99,11 +99,11 @@ validateSchema : function(ajv, schemajson, version) {
 },
 
 loadSchema : function(json, file, success, failure) {
-	var versions = { "4.0":true }
+	var versions = { "4.1":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
-		console.info("Can only validate version 4.0 presently. Switching version to 4.0.");
-		version = "4.0";
+		console.info("Can only validate version 4.1 presently. Switching version to 4.1.");
+		version = "4.1";
 	}
 	var validated_version = CACHE.validate[version];
 	if (typeof validated_version === 'undefined') {

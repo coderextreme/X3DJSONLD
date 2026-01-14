@@ -53,6 +53,6 @@ function schemaProcess(object) {
 }
 
 var fs = require('fs');
-var file = "x3d-4.0-JSONSchema.json";
+var file = "x3d-4.1-JSONSchema.json";
 var object = JSON.parse(fs.readFileSync(file).toString());
 schemaProcess(object);

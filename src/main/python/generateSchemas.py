@@ -11,7 +11,7 @@ import os
 #Neither the names of the Web3D Consortium nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 #THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #"""
-#A friend wrote a loop to generate versions of X3D JSON Schemas.  He wrote the loop in python.  I have modified the loop to create schema validators in python.  The code and products are checked into X3DJSONLD/src/main/python. There are examples of using python scripts generated from the validator for 3.3 and 4.0.
+#A friend wrote a loop to generate versions of X3D JSON Schemas.  He wrote the loop in python.  I have modified the loop to create schema validators in python.  The code and products are checked into X3DJSONLD/src/main/python. There are examples of using python scripts generated from the validator for 3.3 and 4.1.
 #
 #If someone would like to, they can develop a script for Command Prompt or PowerShell based on this python script.   I don't know if python on windows does any mapping from Linux to Windows.
 #
@@ -66,7 +66,7 @@ import os
 # os.system(f'python validate07.py < ../schema/draft-07-JSONSchema.json')
 
 # generates X3D JSON schema from 5 different versions of X3DUOM.
-versions = ['3.0', '3.1', '3.2', '3.3', '4.0']
+versions = ['3.0', '3.1', '3.2', '3.3', '4.0', '4.1']
 for version in versions:
     print(f"{version}")
     schemacodeversion = version.replace(".", "")

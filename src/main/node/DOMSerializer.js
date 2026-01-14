@@ -27,7 +27,7 @@ export default function DOMSerializer() {
 		return xmlstr;
 	},
 	this.serializeDOM = function(json, element, appendDocType) {
-		var version = "4.0";
+		var version = "4.1";
 		var encoding = "UTF-8";
 		if (typeof json !== 'undefined') {
 			version = json.X3D["@version"];

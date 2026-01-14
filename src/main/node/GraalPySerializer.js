@@ -402,7 +402,7 @@ GraalPySerializer.prototype = {
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
 				str += "\n"+element.nodeName+stack[0];
-				str += ".addComments(x3d.CommentsBlock('''"+y+"'''))\n";
+				str += '.addComments(x3d.CommentsBlock("""'+y+'"""))\n';
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				var y = node.nodeValue.
 					replace(/\\/g, '\\\\').

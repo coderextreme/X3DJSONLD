@@ -5,8 +5,8 @@ import fs from 'fs';
 
 var ajv = new Ajv2020({ strict: false });
 addFormats(ajv, {mode: "full", formats: ["uri-reference", "uri", "iri-reference", "iri"], keywords: true});  // fast mode is "fast"
-var schemajson = await loadSchemaJson("4.0");
-let validated_version = addSchema(ajv, schemajson, "4.0");
+var schemajson = await loadSchemaJson("4.1");
+let validated_version = addSchema(ajv, schemajson, "4.1");
 
 X3DJSONLD.processURLs = function(urls) { return urls; };
 
@@ -143,16 +143,16 @@ async function loadSchemaJson(version) {
 
 export async function loadSchema(json, file, success, failure) {
 	try {
-		var versions = { "4.0":true };
-		var version = "4.0";
+		var versions = { "4.1":true };
+		var version = "4.1";
 		try {
 			version = json.X3D["@version"];
 		} catch {
-			console.log("No version found, defaulting to 4.0");
+			console.log("No version found, defaulting to 4.1");
 		}
 		if (!versions[version]) {
-			console.info("Can only validate version 4.0 presently. Switching version to 4.0.");
-			version = "4.0";
+			console.info("Can only validate version 4.1 presently. Switching version to 4.1.");
+			version = "4.1";
 		}
 		doValidate(json, validated_version, file, success, failure);
 	} catch (e) {

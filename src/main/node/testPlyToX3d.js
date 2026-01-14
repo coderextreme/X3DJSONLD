@@ -15,12 +15,21 @@ let filenames = [
 async function convertFile(filename) {
 	console.log(filename);
 	let data = await fetch(filename);
-	const reader_stream = data.body;
+	let reader_stream = data.body;
 	let x3d = await convertPlyToX3d(data);
 	let newfilename = filename.substring(filename.lastIndexOf("/")+1,filename.lastIndexOf("."))+".x3d";
 	console.log(newfilename);
-	const fd = fs.openSync(newfilename, 'w');
+	let fd = fs.openSync(newfilename, 'w');
 	fs.writeSync(fd, x3d);
+
+	data = await fetch(filename);
+	reader_stream = data.body;
+	let buf = await data.arrayBuffer();
+	newfilename = filename.substring(filename.lastIndexOf("/")+1,filename.lastIndexOf("."))+".ply";
+	console.log(newfilename);
+	fd = fs.openSync(newfilename, 'w');
+	const nodeBuffer = Buffer.from(buf);
+	fs.writeSync(fd, nodeBuffer);
 }
 
 async function processFiles(filenames) {

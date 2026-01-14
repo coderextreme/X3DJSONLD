@@ -656,7 +656,7 @@ fixXML : function(xmlstr) {
  * Serialize an element to XML and add an XML header.
  */
 serializeDOM : function(json, element, appendDocType) {
-	var version = "4.0";
+	var version = "4.1";
 	var encoding = "UTF-8";
 	if (typeof json !== 'undefined') {
 		version = json.X3D["@version"];
