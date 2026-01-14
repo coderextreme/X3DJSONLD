@@ -69,7 +69,7 @@ code += 'java.classpath.push("../../jars/X3DJSAIL.4.0.full.jar");\n'
 
 classes = {}
 
-with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
+with open("../../specifications/X3dUnifiedObjectModel-4.1.xml") as fp:
     soup = BeautifulSoup(fp, 'xml')
 
 

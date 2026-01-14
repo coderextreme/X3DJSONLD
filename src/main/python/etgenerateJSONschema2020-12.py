@@ -31,14 +31,19 @@ class ClassPrinter:
         self.children = {}
         self.printed = False
         self.hasIS = hasIS
+        self.legalnodes = None
         if isString(node):
             self.name = node
             self.node = None
             self.statementContentModel = None
+            self.groupContentModel = None
+            self.nodeContentModel = None
         else:
             self.name = node.get("name")
             self.node = node
             self.statementContentModel = self.node.findall(".//StatementContentModel")
+            self.nodeContentModel = self.node.findall(".//NodeContentModel")
+            self.groupContentModel = self.node.findall(".//GroupContentModel")
 
     def findParents(self):
         if self.node is not None:
@@ -471,6 +476,85 @@ class ClassPrinter:
         str += '\t\t\t\t\t},\n'
         return str
 
+    def addContainerFieldNodeContentModel(self, accnts):
+
+        if accnts is None:
+            return ""
+        elif accnts.endswith("MFNode"):
+            cf = '\t\t\t\t\t"-' + accnts.replace("|", "-") + '" : {\n'
+            cf += '\t\t\t\t\t\t"$comment":"MFNode '+"Unknown access type"+'",\n'
+            cf += '\t\t\t\t\t\t"type": "array",\n'
+            cf += '\t\t\t\t\t\t"minItems": 1,\n'
+            cf += '\t\t\t\t\t\t"items": {\n'
+            cf += '\t\t\t\t\t\t\t"type": "object",\n'
+            cf += '\t\t\t\t\t\t\t"properties": {\n'
+            cf += '\t\t\t\t\t\t\t\t"#comment": {\n'
+            cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
+            cf += '\t\t\t\t\t\t\t\t},\n'
+            accnts = accnts.replace("ds:Signature", "")
+            acnts = accnts[0:-6]
+            acnts = acnts.split("-")
+            acnts.append("ProtoInstance")
+            doList = {}
+            for acnt in acnts:
+                if acnt != '':
+                    doList = classes[acnt].listChildren(doList)
+            cf += self.printList(doList)
+            if cf[-2] == ',':
+                 cf = cf[:-2] + '\n' # strip off comma
+            cf += '\t\t\t\t\t\t\t},\n'
+            cf += '\t\t\t\t\t\t\t"additionalProperties": false\n'
+            cf += '\t\t\t\t\t\t}\n'
+            cf += '\t\t\t\t\t},\n'
+            return cf
+        else:
+            cf = '\t\t\t\t\t"-' + accnts.replace("|", "-") + '" : {\n'
+            cf += '\t\t\t\t\t\t\t"type": "object",\n'
+            cf += '\t\t\t\t\t\t\t"properties": {\n'
+            accnts = accnts.replace("ds:Signature", "")
+            acnts = accnts[0:-6]
+            acnts = acnts.split("-")
+            acnts.append("ProtoInstance")
+            doList = {}
+            for acnt in acnts:
+                if acnt != '':
+                    doList = classes[acnt].listChildren(doList)
+            cf += self.printList(doList)
+            if cf[-2] == ',':
+                 cf = cf[:-2] + '\n' # strip off comma
+            cf += '\t\t\t\t\t\t\t},\n'
+            cf += '\t\t\t\t\t\t\t"additionalProperties": false\n'
+            cf += '\t\t\t\t\t},\n'
+            return cf
+
+    def addContainerField(self, field):
+        cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
+        if field.get("type") == "MFNode":
+            cf += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
+            cf += '\t\t\t\t\t\t"type": "array",\n'
+            cf += '\t\t\t\t\t\t"minItems": 1,\n'
+            cf += '\t\t\t\t\t\t"items": {\n'
+        cf += '\t\t\t\t\t\t\t"type": "object",\n'
+        cf += '\t\t\t\t\t\t\t"properties": {\n'
+        if field.get("type") == "MFNode":
+            cf += '\t\t\t\t\t\t\t\t"#comment": {\n'
+            cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
+            cf += '\t\t\t\t\t\t\t\t},\n'
+        acnts = field.get("acceptableNodeTypes").split("|")
+        acnts.append("ProtoInstance")
+        doList = {}
+        for acnt in acnts:
+            doList = classes[acnt].listChildren(doList)
+        cf += self.printList(doList)
+        if cf[-2] == ',':
+             cf = cf[:-2] + '\n' # strip off comma
+        cf += '\t\t\t\t\t\t\t},\n'
+        cf += '\t\t\t\t\t\t\t"additionalProperties": false\n'
+        if field.get("type") == "MFNode":
+            cf += '\t\t\t\t\t\t}\n'
+        cf += '\t\t\t\t\t},\n'
+        return cf
+
     def printClass(self):
         str = ""
         if self.name.startswith("X3D") and self.name != "X3D":
@@ -571,10 +655,30 @@ class ClassPrinter:
             str += ",\n".join(scms)
             str += '\n\t\t\t}\n'
             str += '\t\t},\n'
+
         str += '''\
                                  "type": "object",
                                  "properties": {
 '''
+
+#        if self.nodeContentModel:
+#            nodes = []
+#            nodemax = 0
+#            for node in self.nodeContentModel:
+#                nodename = node.get('name')
+#                nodemaxocc = node.get('maxOccurs')
+#                if nodemaxocc is None or nodemaxocc == 'unbounded':
+#                    modemax = 2
+#                elif int(nodemaxocc) > 1:
+#                    modemax += int(nodemaxocc)
+#                nodes.append(nodename)
+#            if nodemax is None or nodemax > 1:
+#                self.legalnodes = "-".join(nodes)+"MFNode"
+#            elif nodemax == 0:
+#                self.legalnodes = "-".join(nodes)+"MFNode"
+#            else:
+#                self.legalnodes = "-".join(nodes)+"SFNode"
+#            containerFields[self.legalnodes] = self.addContainerFieldNodeContentModel(self.legalnodes)
 
         if self.name == "Script" or self.name == "ShaderProgram" or self.name == "ShaderPart":
             str += '''\
@@ -658,8 +762,14 @@ class ClassPrinter:
 					}
 				},
 '''
+#        elif self.legalnodes is not None:
+#            str += '''\
+#                            "-children": {
+#                                    "$ref": "#/$defs/-'''+self.legalnodes+'''"
+#                            },
+#'''
         elif not foundChildren:
-            str += '''\
+                str += '''\
                                 "-children": {
                                         "$ref": "#/$defs/-childStatements"
                                 },
@@ -708,35 +818,7 @@ class ClassPrinter:
                                     str += '\t\t\t\t\t},\n'
                                 # container fields
                                 if field.get("acceptableNodeTypes"):
-                                    cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
-                                    if field.get("type") == "MFNode":
-                                        cf += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
-                                        cf += '\t\t\t\t\t\t"type": "array",\n'
-                                        cf += '\t\t\t\t\t\t"minItems": 1,\n'
-                                        cf += '\t\t\t\t\t\t"items": {\n'
-                                    cf += '\t\t\t\t\t\t\t"type": "object",\n'
-                                    cf += '\t\t\t\t\t\t\t"properties": {\n'
-                                    if field.get("type") == "MFNode":
-                                        cf += '\t\t\t\t\t\t\t\t"#comment": {\n'
-                                        cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
-                                        cf += '\t\t\t\t\t\t\t\t},\n'
-                                    acnts = field.get("acceptableNodeTypes").split("|")
-                                    # add properties that appear in all SFNode, MFNode
-                                    acnts.append("ProtoInstance")
-                                    doList = {}
-                                    for acnt in acnts:
-                                        doList = classes[acnt].listChildren(doList)
-                                    cf += self.printList(doList)
-                                        #str += "___________PARENTS____________\n"
-                                        #str += classes[acnt].listParents()
-                                    if cf[-2] == ',':
-                                         cf = cf[:-2] + '\n' # strip off comma
-                                    cf += '\t\t\t\t\t\t\t},\n'
-                                    cf += '\t\t\t\t\t\t\t"additionalProperties": false\n'
-                                    if field.get("type") == "MFNode":
-                                        cf += '\t\t\t\t\t\t}\n'
-                                    cf += '\t\t\t\t\t},\n'
-                                    containerFields[field.get("acceptableNodeTypes").replace("|", "-") + field.get("type")] = cf
+                                    containerFields[field.get("acceptableNodeTypes").replace("|", "-") + field.get("type")] = self.addContainerField(field)
                         elif field.get("name") != "USE":
                             str += self.printField(field, "name")
                             if field.get("synonym") != None:
