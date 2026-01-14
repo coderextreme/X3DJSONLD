@@ -3,6 +3,10 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+            component: [
+                name: "Scripting"
+                level: 1
+            ],
             meta: [
                 name: "title"
                 content: "bubs2.x3d"
@@ -30,10 +34,6 @@ X3D:
             meta: [
                 name: "generator"
                 content: "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-            ],
-            component: [
-                name: "Scripting"
-                level: 1
             ]
         ]
     ]

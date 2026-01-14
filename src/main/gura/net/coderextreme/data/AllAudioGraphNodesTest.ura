@@ -1,0 +1,122 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            component: [
+                name: "Sound"
+                level: 3
+            ],
+            meta: [
+                name: "title"
+                content: "AllAudioGraphNodesTest.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."
+            ],
+            meta: [
+                name: "creator"
+                content: "Don Brutzman"
+            ],
+            meta: [
+                name: "created"
+                content: "25 October 2020"
+            ],
+            meta: [
+                name: "modified"
+                content: "Mon, 15 Sep 2025 05:18:43 GMT"
+            ],
+            meta: [
+                name: "warning"
+                content: "Developmental test, no actual 3D model expected"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "AllAudioGraphNodesTest.x3d"
+            ],
+            Shape: [
+                setAppearance: [
+                    Appearance: [
+                        setAcousticProperties: [
+                            AcousticProperties: [
+                                description: "Testing of X3D4 nodes demonstrating W3C Audio API in progress"
+                                diffuse: 0.25
+                                specular: 1.0
+                                refraction: 0.5
+                            ]
+                        ]
+                        setMaterial: [
+                            Material: [ empty
+                            ]
+                        ]
+                    ]
+                ]
+                setGeometry: [
+                    Box: [ empty
+                    ]
+                ]
+            ],
+            Sound: [
+                location: [0, 1.6, 0]
+                setSource: [
+                    AudioClip: [
+                        description: "testing"
+                        url: ["sound/saxophone.mp3", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]
+                    ]
+                ]
+            ],
+            Sound: [
+                location: [0, 1.6, 0]
+                setSource: [
+                    MovieTexture: [
+                        description: "testing"
+                        url: ["bogus.mpg", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]
+                    ]
+                ]
+            ],
+            SpatialSound: [
+                Analyser: [
+                    StreamAudioDestination: [
+                        BiquadFilter: [
+                            ChannelMerger: [
+                                ChannelSelector: [
+                                    ChannelSplitter: [
+                                        Convolver: [
+                                            Delay: [
+                                                DynamicsCompressor: [
+                                                    Gain: [
+                                                        StreamAudioDestination: [
+                                                            WaveShaper: [
+                                                                BufferAudioSource: [ empty
+                                                                ],
+                                                                ListenerPointSource: [ empty
+                                                                ],
+                                                                MicrophoneSource: [ empty
+                                                                ],
+                                                                OscillatorSource: [ empty
+                                                                ],
+                                                                StreamAudioSource: [ empty
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

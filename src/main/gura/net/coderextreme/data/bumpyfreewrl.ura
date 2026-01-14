@@ -3,6 +3,7 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+#<component name='Shape' level='4'></component>
             component: [
                 name: "Scripting"
                 level: 1
@@ -35,7 +36,6 @@ X3D:
                 name: "Core"
                 level: 1
             ],
-#<component name='Shape' level='4'></component>
             meta: [
                 name: "title"
                 content: "bumpyfreewrl.x3d"

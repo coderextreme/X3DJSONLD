@@ -3,6 +3,7 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+#meta content='under development' name='warning'/
             component: [
                 name: "Shaders"
                 level: 1
@@ -82,8 +83,7 @@ X3D:
             meta: [
                 name: "license"
                 content: "../../license.html"
-            ],
-#meta content='under development' name='warning'/
+            ]
         ]
     ]
     setScene: [

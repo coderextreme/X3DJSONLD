@@ -44,7 +44,7 @@ X3D:
                 topUrl: ["../resources/images/TP.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]
             ],
             Transform: [
-                DEF: "DECLBubble_bubbleA"
+                DEF: "DECLBubble_transformA"
                 Shape: [
                     setGeometry: [
                         Sphere: [
@@ -141,13 +141,13 @@ X3D:
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleA_bounce"
                     fromField: "translation_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformA"
                     toField: "set_translation"
                 ],
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleA_bounce"
                     fromField: "scale_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformA"
                     toField: "set_scale"
                 ],
                 ROUTE: [
@@ -158,7 +158,7 @@ X3D:
                 ]
             ],
             Transform: [
-                DEF: "DECLBubble_bubbleB"
+                DEF: "DECLBubble_transformB"
                 Shape: [
                     setGeometry: [
                         Sphere: [
@@ -255,13 +255,13 @@ X3D:
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleB_bounce"
                     fromField: "translation_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformB"
                     toField: "set_translation"
                 ],
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleB_bounce"
                     fromField: "scale_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformB"
                     toField: "set_scale"
                 ],
                 ROUTE: [
@@ -272,7 +272,7 @@ X3D:
                 ]
             ],
             Transform: [
-                DEF: "DECLBubble_bubbleC"
+                DEF: "DECLBubble_transformC"
                 Shape: [
                     setGeometry: [
                         Sphere: [
@@ -369,13 +369,13 @@ X3D:
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleC_bounce"
                     fromField: "translation_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformC"
                     toField: "set_translation"
                 ],
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleC_bounce"
                     fromField: "scale_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformC"
                     toField: "set_scale"
                 ],
                 ROUTE: [
@@ -386,7 +386,7 @@ X3D:
                 ]
             ],
             Transform: [
-                DEF: "DECLBubble_bubbleD"
+                DEF: "DECLBubble_transformD"
                 Shape: [
                     setGeometry: [
                         Sphere: [
@@ -483,13 +483,13 @@ X3D:
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleD_bounce"
                     fromField: "translation_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformD"
                     toField: "set_translation"
                 ],
                 ROUTE: [
                     fromNode: "DECLBubble_bubbleD_bounce"
                     fromField: "scale_changed"
-                    toNode: "DECLBubble_transform"
+                    toNode: "DECLBubble_transformD"
                     toField: "set_scale"
                 ],
                 ROUTE: [

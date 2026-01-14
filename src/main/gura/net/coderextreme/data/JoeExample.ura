@@ -1,6 +1,6 @@
 X3D:
-    version: "4.0"
     profile: "Immersive"
+    version: "4.0"
     setHead: [
         head: [
             meta: [

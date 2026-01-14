@@ -40,14 +40,6 @@ X3D:
                 content: "remove colors bleeding into camo"
             ],
             meta: [
-                name: "error"
-                content: "Legacy model, not valid as X3D4 HAnim version 2.0 since HAnim version 1.0 has significant differences and is no longer directly supported"
-            ],
-            meta: [
-                name: "warning"
-                content: "X3D Validator reports numerous warnings are present"
-            ],
-            meta: [
                 name: "reference"
                 content: "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl"
             ],
@@ -134,7 +126,7 @@ X3D:
                                                     DEF: "camo"
                                                     repeatS: false
                                                     repeatT: false
-                                                    url: ["images/greenCamo.jpg", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
+                                                    url: ["../resources/images/greenCamo.jpg", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg"]
                                                 ]
                                             ]
                                         ]

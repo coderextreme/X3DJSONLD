@@ -1,0 +1,683 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "HAnimPrototypes.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "Example implementation of X3D Humanoid Animation (HAnim) nodes using X3D prototypes."
+            ],
+            meta: [
+                name: "warning"
+                content: "These are developmental examples that can assist X3D player implementations and support interoperability. They are not intended for author use in regular X3D scenes."
+            ],
+            meta: [
+                name: "warning"
+                content: "Developer note: names for these HAnim Prototypes need to be corrected if used internally in an X3D player implementation (e.g. Joint to HAnimJoint)."
+            ],
+            meta: [
+                name: "warning"
+                content: "Need support for skin"
+            ],
+            meta: [
+                name: "creator"
+                content: "Ozan APAYDIN, Don Brutzman"
+            ],
+            meta: [
+                name: "translator"
+                content: "Ozan APAYDIN, Don Brutzman"
+            ],
+            meta: [
+                name: "created"
+                content: "15 November 2001"
+            ],
+            meta: [
+                name: "modified"
+                content: "Mon, 15 Sep 2025 05:20:09 GMT"
+            ],
+            meta: [
+                name: "TODO"
+                content: "upgrade to match support requirements for HAnim 2.2"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/files/specifications/19774/V1.0/HAnim/HAnim.html"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/hanim.html"
+            ],
+            meta: [
+                name: "reference"
+                content: "http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl"
+            ],
+            meta: [
+                name: "reference"
+                content: "http://HAnim.org/Specifications/HAnim2001"
+            ],
+            meta: [
+                name: "reference"
+                content: "http://www.HAnim.org"
+            ],
+            meta: [
+                name: "reference"
+                content: "http://HAnim.org/Models"
+            ],
+            meta: [
+                name: "reference"
+                content: "http://HAnim.org/Specifications"
+            ],
+            meta: [
+                name: "reference"
+                content: "InterchangableActorsViaDynamicRoutingPrototypes.x3d"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            ProtoDeclare: [
+                name: "Humanoid1_1"
+                appinfo: "The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model."
+                documentation: "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFString"
+                            name: "name"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFString"
+                            name: "version"
+                            value: "1.1"
+                            appinfo: "legal values: 1.1 or 2.0"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFString"
+                            name: "humanoidVersion"
+                            appinfo: "Version of the humanoid being modeled. Hint: HAnim version 2.0"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFString"
+                            name: "info"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "translation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFRotation"
+                            name: "rotation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "center"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "scale"
+                            value: "1 1 1"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFRotation"
+                            name: "scaleOrientation"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxCenter"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxSize"
+                            value: "-1 -1 -1"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "humanoidBody"
+                            appinfo: "HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton."
+                            documentation: "http://HAnim.org/Specifications/HAnim1.1/#humanoid"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "skeleton"
+                            appinfo: "HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody"
+                            documentation: "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "joints"
+                            appinfo: "Container field for Joint nodes"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "segments"
+                            appinfo: "Container field for Segment nodes"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "sites"
+                            appinfo: "Container field for Site nodes"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "viewpoints"
+                            appinfo: "Container field for Viewpoint nodes"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFNode"
+                            name: "skinCoord"
+                            appinfo: "Hint: HAnim version 2.0"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFNode"
+                            name: "skinNormal"
+                            appinfo: "Hint: HAnim version 2.0"
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Transform: [
+                            DEF: "HumanoidTransform"
+                            Group: [
+                                DEF: "HumanoidGroup1"
+                                IS: [
+                                    connect: [
+                                        nodeField: "children"
+                                        protoField: "humanoidBody"
+                                    ]
+                                ]
+                            ],
+                            Group: [
+                                DEF: "HumanoidGroup2"
+                                IS: [
+                                    connect: [
+                                        nodeField: "children"
+                                        protoField: "skeleton"
+                                    ]
+                                ]
+                            ],
+                            Group: [
+                                DEF: "HumanoidGroup3"
+                                IS: [
+                                    connect: [
+                                        nodeField: "children"
+                                        protoField: "viewpoints"
+                                    ]
+                                ]
+                            ],
+                            IS: [
+                                connect: [
+                                    nodeField: "translation"
+                                    protoField: "translation"
+                                ],
+                                connect: [
+                                    nodeField: "rotation"
+                                    protoField: "rotation"
+                                ],
+                                connect: [
+                                    nodeField: "scale"
+                                    protoField: "scale"
+                                ],
+                                connect: [
+                                    nodeField: "scaleOrientation"
+                                    protoField: "scaleOrientation"
+                                ],
+                                connect: [
+                                    nodeField: "center"
+                                    protoField: "center"
+                                ],
+                                connect: [
+                                    nodeField: "bboxSize"
+                                    protoField: "bboxSize"
+                                ],
+                                connect: [
+                                    nodeField: "bboxCenter"
+                                    protoField: "bboxCenter"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoDeclare: [
+                name: "Joint"
+                appinfo: "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid."
+                documentation: "http://HAnim.org/Specifications/HAnim2001/part1/Joint.html"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFString"
+                            name: "name"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFFloat"
+                            name: "ulimit"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFFloat"
+                            name: "llimit"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFRotation"
+                            name: "limitOrientation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFInt32"
+                            name: "skinCoordIndex"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFFloat"
+                            name: "skinCoordWeight"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFFloat"
+                            name: "stiffness"
+                            value: "0 0 0"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "translation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFRotation"
+                            name: "rotation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "scale"
+                            value: "1 1 1"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFRotation"
+                            name: "scaleOrientation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "center"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxCenter"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxSize"
+                            value: "-1 -1 -1"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "children"
+                        ],
+                        field: [
+                            accessType: "inputOnly"
+                            type: "MFNode"
+                            name: "addChildren"
+                        ],
+                        field: [
+                            accessType: "inputOnly"
+                            type: "MFNode"
+                            name: "removeChildren"
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Transform: [
+                            DEF: "JointTransform"
+                            IS: [
+                                connect: [
+                                    nodeField: "translation"
+                                    protoField: "translation"
+                                ],
+                                connect: [
+                                    nodeField: "rotation"
+                                    protoField: "rotation"
+                                ],
+                                connect: [
+                                    nodeField: "scale"
+                                    protoField: "scale"
+                                ],
+                                connect: [
+                                    nodeField: "scaleOrientation"
+                                    protoField: "scaleOrientation"
+                                ],
+                                connect: [
+                                    nodeField: "center"
+                                    protoField: "center"
+                                ],
+                                connect: [
+                                    nodeField: "bboxSize"
+                                    protoField: "bboxSize"
+                                ],
+                                connect: [
+                                    nodeField: "bboxCenter"
+                                    protoField: "bboxCenter"
+                                ],
+                                connect: [
+                                    nodeField: "addChildren"
+                                    protoField: "addChildren"
+                                ],
+                                connect: [
+                                    nodeField: "removeChildren"
+                                    protoField: "removeChildren"
+                                ],
+                                connect: [
+                                    nodeField: "children"
+                                    protoField: "children"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoDeclare: [
+                name: "Segment"
+                appinfo: "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node."
+                documentation: "http://HAnim.org/Specifications/HAnim2001/part1/Segment.html"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFString"
+                            name: "name"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFFloat"
+                            name: "mass"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "centerOfMass"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFFloat"
+                            name: "momentsOfInertia"
+                            value: "0 0 0 0 0 0 0 0 0"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxCenter"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxSize"
+                            value: "-1 -1 -1"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "children"
+                        ],
+                        field: [
+                            accessType: "inputOnly"
+                            type: "MFNode"
+                            name: "addChildren"
+                        ],
+                        field: [
+                            accessType: "inputOnly"
+                            type: "MFNode"
+                            name: "removeChildren"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFNode"
+                            name: "coord"
+                            appinfo: "contains Coordinate nodes"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "displacers"
+                            appinfo: "contains Displacer nodes"
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Group: [
+                            DEF: "SegmentGroup"
+                            IS: [
+                                connect: [
+                                    nodeField: "bboxSize"
+                                    protoField: "bboxSize"
+                                ],
+                                connect: [
+                                    nodeField: "bboxCenter"
+                                    protoField: "bboxCenter"
+                                ],
+                                connect: [
+                                    nodeField: "addChildren"
+                                    protoField: "addChildren"
+                                ],
+                                connect: [
+                                    nodeField: "removeChildren"
+                                    protoField: "removeChildren"
+                                ],
+                                connect: [
+                                    nodeField: "children"
+                                    protoField: "children"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoDeclare: [
+                name: "Site"
+                appinfo: "The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds)."
+                documentation: "http://HAnim.org/Specifications/HAnim2001/part1/Site.html"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFString"
+                            name: "name"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "translation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFRotation"
+                            name: "rotation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "scale"
+                            value: "1 1 1"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFRotation"
+                            name: "scaleOrientation"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFVec3f"
+                            name: "center"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxCenter"
+                        ],
+                        field: [
+                            accessType: "initializeOnly"
+                            type: "SFVec3f"
+                            name: "bboxSize"
+                            value: "-1 -1 -1"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFNode"
+                            name: "children"
+                        ],
+                        field: [
+                            accessType: "inputOnly"
+                            type: "MFNode"
+                            name: "addChildren"
+                        ],
+                        field: [
+                            accessType: "inputOnly"
+                            type: "MFNode"
+                            name: "removeChildren"
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        Transform: [
+                            DEF: "SiteTransform"
+                            IS: [
+                                connect: [
+                                    nodeField: "translation"
+                                    protoField: "translation"
+                                ],
+                                connect: [
+                                    nodeField: "rotation"
+                                    protoField: "rotation"
+                                ],
+                                connect: [
+                                    nodeField: "scale"
+                                    protoField: "scale"
+                                ],
+                                connect: [
+                                    nodeField: "scaleOrientation"
+                                    protoField: "scaleOrientation"
+                                ],
+                                connect: [
+                                    nodeField: "center"
+                                    protoField: "center"
+                                ],
+                                connect: [
+                                    nodeField: "bboxSize"
+                                    protoField: "bboxSize"
+                                ],
+                                connect: [
+                                    nodeField: "bboxCenter"
+                                    protoField: "bboxCenter"
+                                ],
+                                connect: [
+                                    nodeField: "addChildren"
+                                    protoField: "addChildren"
+                                ],
+                                connect: [
+                                    nodeField: "removeChildren"
+                                    protoField: "removeChildren"
+                                ],
+                                connect: [
+                                    nodeField: "children"
+                                    protoField: "children"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            ProtoDeclare: [
+                name: "Displacer"
+                appinfo: "A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment."
+                documentation: "http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html"
+                setProtoInterface: [
+                    ProtoInterface: [
+                        field: [
+                            accessType: "inputOutput"
+                            type: "SFString"
+                            name: "name"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFInt32"
+                            name: "coordIndex"
+                        ],
+                        field: [
+                            accessType: "inputOutput"
+                            type: "MFVec3f"
+                            name: "displacements"
+                        ]
+                    ]
+                ]
+                setProtoBody: [
+                    ProtoBody: [
+                        WorldInfo: [
+                            info: ["null body node"]
+                        ]
+                    ]
+                ]
+            ],
+            Shape: [
+                setAppearance: [
+                    Appearance: [
+                        setMaterial: [
+                            Material: [
+                                ambientIntensity: 0.25
+                                diffuseColor: [0.795918, 0.505869, 0.093315]
+                                specularColor: [0.923469, 0.428866, 0.006369]
+                                shininess: 0.39
+                            ]
+                        ]
+                    ]
+                ]
+                setGeometry: [
+                    Text: [
+                        string: ["Humanoid Animation", "(HAnim) prototype", "implementations"]
+                        setFontStyle: [
+                            FontStyle: [
+                                justify: ["MIDDLE", "MIDDLE"]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

@@ -29,23 +29,23 @@ X3D:
             ],
             meta: [
                 name: "reference"
-                content: "http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
+                content: "https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
             ],
             meta: [
                 name: "reference"
-                content: "http://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl"
+                content: "https://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl"
             ],
             meta: [
                 name: "reference"
-                content: "http://www.HAnim.org"
+                content: "https://www.HAnim.org"
             ],
             meta: [
                 name: "reference"
-                content: "http://HAnim.org/Models"
+                content: "https://HAnim.org/Models"
             ],
             meta: [
                 name: "reference"
-                content: "http://HAnim.org/Nodes"
+                content: "https://HAnim.org/Nodes"
             ],
             meta: [
                 name: "subject"

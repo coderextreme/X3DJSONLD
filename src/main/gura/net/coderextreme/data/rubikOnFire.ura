@@ -28,7 +28,7 @@ X3D:
     setScene: [
         Scene: [
             NavigationInfo: [
-                type: ["EXAMINE"]
+                type: ["ANY", "EXAMINE", "WALK", "FLY", "LOOKAT"]
             ],
             Viewpoint: [
                 description: "Rubiks Cube on Fire"

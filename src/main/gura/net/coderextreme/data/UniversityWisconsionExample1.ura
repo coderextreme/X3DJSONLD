@@ -1,0 +1,1745 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            component: [
+                name: "HAnim"
+                level: 3
+            ],
+            meta: [
+                name: "title"
+                content: "BvhUniversityWisconsionExample1.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "BVH file conversion: *enter description here, short-sentence summaries preferred*"
+            ],
+            meta: [
+                name: "creator"
+                content: "*enter name of original author here*"
+            ],
+            meta: [
+                name: "created"
+                content: "*enter date of initial version here*"
+            ],
+            meta: [
+                name: "translated"
+                content: "2 September 2023"
+            ],
+            meta: [
+                name: "modified"
+                content: "Mon, 15 Sep 2025 05:21:02 GMT"
+            ],
+            meta: [
+                name: "reference"
+                content: "BvhUniversityWIsconsionExample1.bvh"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://TODO/UniversityWIsconsionExample1.bvh"
+            ],
+            meta: [
+                name: "reference"
+                content: "https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#MOCAP"
+            ],
+            meta: [
+                name: "generator"
+                content: "Java BVH to X3D Converter, org.web3d.x3d.hanim.bvh package"
+            ],
+            meta: [
+                name: "generator"
+                content: "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "BvhUniversityWisconsionExample1.x3d"
+            ],
+            NavigationInfo: [ empty
+            ],
+            Group: [
+                DEF: "BvhUniversityWisconsionExample1_BvhToX3dConversionImportInformation"
+                setMetadata: [
+                    MetadataSet: [
+                        name: "BvhToHAnimNameConversionTable"
+                        MetadataString: [
+                            name: "ROOT_Hips"
+                            reference: "ROOT"
+                            value: ["humanoid_root", "sacrum"]
+                        ],
+                        MetadataString: [
+                            name: "Chest"
+                            reference: "JOINT"
+                            value: ["vl5", "l5"]
+                        ],
+                        MetadataString: [
+                            name: "Neck"
+                            reference: "JOINT"
+                            value: ["Neck", "vl5_to_Neck"]
+                        ],
+                        MetadataString: [
+                            name: "Head"
+                            reference: "JOINT"
+                            value: ["skullbase", "skull"]
+                        ],
+                        MetadataString: [
+                            name: "HeadSite"
+                            reference: "Site"
+                            value: ["skullbase_tip"]
+                        ],
+                        MetadataString: [
+                            name: "LeftCollar"
+                            reference: "JOINT"
+                            value: ["LeftCollar", "vl5_to_LeftCollar"]
+                        ],
+                        MetadataString: [
+                            name: "LeftUpArm"
+                            reference: "JOINT"
+                            value: ["LeftUpArm", "LeftCollar_to_LeftUpArm"]
+                        ],
+                        MetadataString: [
+                            name: "LeftLowArm"
+                            reference: "JOINT"
+                            value: ["LeftLowArm", "LeftUpArm_to_LeftLowArm"]
+                        ],
+                        MetadataString: [
+                            name: "LeftHand"
+                            reference: "JOINT"
+                            value: ["LeftHand", "LeftLowArm_to_LeftHand"]
+                        ],
+                        MetadataString: [
+                            name: "LeftHandSite"
+                            reference: "Site"
+                            value: ["LeftHand_tip"]
+                        ],
+                        MetadataString: [
+                            name: "RightCollar"
+                            reference: "JOINT"
+                            value: ["RightCollar", "vl5_to_RightCollar"]
+                        ],
+                        MetadataString: [
+                            name: "RightUpArm"
+                            reference: "JOINT"
+                            value: ["RightUpArm", "RightCollar_to_RightUpArm"]
+                        ],
+                        MetadataString: [
+                            name: "RightLowArm"
+                            reference: "JOINT"
+                            value: ["RightLowArm", "RightUpArm_to_RightLowArm"]
+                        ],
+                        MetadataString: [
+                            name: "RightHand"
+                            reference: "JOINT"
+                            value: ["RightHand", "RightLowArm_to_RightHand"]
+                        ],
+                        MetadataString: [
+                            name: "RightHandSite"
+                            reference: "Site"
+                            value: ["RightHand_tip"]
+                        ],
+                        MetadataString: [
+                            name: "LeftUpLeg"
+                            reference: "JOINT"
+                            value: ["LeftUpLeg", "humanoid_root_to_LeftUpLeg"]
+                        ],
+                        MetadataString: [
+                            name: "LeftLowLeg"
+                            reference: "JOINT"
+                            value: ["LeftLowLeg", "LeftUpLeg_to_LeftLowLeg"]
+                        ],
+                        MetadataString: [
+                            name: "LeftFoot"
+                            reference: "JOINT"
+                            value: ["LeftFoot", "LeftLowLeg_to_LeftFoot"]
+                        ],
+                        MetadataString: [
+                            name: "LeftFootSite"
+                            reference: "Site"
+                            value: ["LeftFoot_tip"]
+                        ],
+                        MetadataString: [
+                            name: "RightUpLeg"
+                            reference: "JOINT"
+                            value: ["RightUpLeg", "humanoid_root_to_RightUpLeg"]
+                        ],
+                        MetadataString: [
+                            name: "RightLowLeg"
+                            reference: "JOINT"
+                            value: ["RightLowLeg", "RightUpLeg_to_RightLowLeg"]
+                        ],
+                        MetadataString: [
+                            name: "RightFoot"
+                            reference: "JOINT"
+                            value: ["RightFoot", "RightLowLeg_to_RightFoot"]
+                        ],
+                        MetadataString: [
+                            name: "RightFootSite"
+                            reference: "Site"
+                            value: ["RightFoot_tip"]
+                        ]
+                    ]
+                ]
+            ],
+            Transform: [
+                DEF: "InitialPositionScaled"
+                translation: [0, 1.244, 0]
+                Viewpoint: [
+                    description: "BvhUniversityWisconsionExample1 model BVH to X3D conversion, from 8m"
+                    position: [0, 0, 8]
+                ],
+                Viewpoint: [
+                    description: "BvhUniversityWisconsionExample1 initial motion position"
+                    position: [0.803, 3.501, 16.836]
+                ],
+                Viewpoint: [
+                    description: "BvhUniversityWisconsionExample1 final motion position"
+                    position: [0.781, 3.51, 16.647]
+                ]
+            ],
+            HAnimHumanoid: [
+                DEF: "BvhUniversityWisconsionExample1_ROOT_Hips"
+                name: "ROOT_Hips"
+                setMetadata: [
+                    MetadataSet: [
+                        name: "HAnimHumanoid.info"
+                        reference: "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
+                        MetadataString: [
+                            name: "authorEmail"
+                            value: ["*TODO*"]
+                        ],
+                        MetadataString: [
+                            name: "authorName"
+                            value: ["*TODO*"]
+                        ],
+                        MetadataString: [
+                            name: "copyright"
+                            value: ["Copyright (c) 2023"]
+                        ],
+                        MetadataString: [
+                            name: "humanoidVersion"
+                            value: ["*TODO*"]
+                        ],
+                        MetadataString: [
+                            name: "usageDescription"
+                            value: ["*TODO*"]
+                        ]
+                    ]
+                ],
+                HAnimJoint: [
+                    DEF: "BvhUniversityWisconsionExample1_humanoid_root"
+                    name: "humanoid_root"
+                    translation: [0.7849403, 3.508388, 8.680851]
+                    rotation: [-0.0184530858032817, -0.992698784706892, -0.119199859336308, 2.9151883640198]
+                    scale: [0.1, 0.1, 0.1]
+                    containerField: "skeleton"
+                    HAnimSegment: [
+                        DEF: "BvhUniversityWisconsionExample1_sacrum"
+                        name: "sacrum"
+                        Switch: [
+                            whichChoice: 0
+                            Group: [
+                                TouchSensor: [
+                                    description: "HAnimHumanoid ROOT ROOT_Hips, HAnimSegment sacrum"
+                                ],
+                                Shape: [
+                                    DEF: "HAnimRootShape"
+                                    setAppearance: [
+                                        Appearance: [
+                                            setMaterial: [
+                                                Material: [
+                                                    DEF: "HAnimRootMaterial"
+                                                    diffuseColor: [0.8, 0, 0]
+                                                    transparency: 0.3
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                    setGeometry: [
+                                        Sphere: [
+                                            DEF: "HAnimJointSphere"
+                                            radius: 0.254
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            Shape: [
+                                DEF: "HAnimJointShape"
+                                setAppearance: [
+                                    Appearance: [
+                                        setMaterial: [
+                                            Material: [
+                                                DEF: "HAnimJointMaterial"
+                                                diffuseColor: [0, 0, 0.8]
+                                                transparency: 0.3
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                                setGeometry: [
+                                    Sphere: [
+                                        USE: "HAnimJointSphere"
+                                    ]
+                                ]
+                            ],
+                            Shape: [
+                                setGeometry: [
+                                    LineSet: [
+                                        vertexCount: [2]
+                                        setColor: [
+                                            ColorRGBA: [
+                                                DEF: "HAnimSegmentLineColorRGBA"
+                                                color: [1, 1, 0, 1, 1, 1, 0, 0.1]
+                                            ]
+                                        ]
+                                        setCoord: [
+                                            Coordinate: [
+                                                point: [0, 0, 0, 0, 0, 0]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            Shape: [
+                                DEF: "HAnimSiteShape"
+                                setAppearance: [
+                                    Appearance: [
+                                        setMaterial: [
+                                            Material: [
+                                                diffuseColor: [1, 0.5, 0]
+                                                transparency: 0.3
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                                setGeometry: [
+                                    IndexedFaceSet: [
+                                        DEF: "DiamondIFS"
+                                        solid: false
+                                        creaseAngle: 0.5
+                                        coordIndex: [0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1]
+                                        setCoord: [
+                                            Coordinate: [
+                                                point: [0, 0.254, 0, -0.254, 0, 0, 0, 0, 0.254, 0.254, 0, 0, 0, 0, -0.254, 0, -0.254, 0]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            Shape: [
+                                setGeometry: [
+                                    LineSet: [
+                                        vertexCount: [2]
+                                        setColor: [
+                                            ColorRGBA: [
+                                                DEF: "HAnimSiteLineColorRGBA"
+                                                color: [1, 0.5, 0, 1, 1, 0.5, 0, 0.1]
+                                            ]
+                                        ]
+                                        setCoord: [
+                                            Coordinate: [
+                                                point: [0, 0, 0, 0, 0, 0]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        Shape: [
+                            setGeometry: [
+                                LineSet: [
+                                    vertexCount: [2]
+                                    setColor: [
+                                        ColorRGBA: [
+                                            USE: "HAnimSegmentLineColorRGBA"
+                                        ]
+                                    ]
+                                    setCoord: [
+                                        Coordinate: [
+                                            point: [0, 0, 0, 0, 5.21, 0]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        Shape: [
+                            setGeometry: [
+                                LineSet: [
+                                    vertexCount: [2]
+                                    setColor: [
+                                        ColorRGBA: [
+                                            USE: "HAnimSegmentLineColorRGBA"
+                                        ]
+                                    ]
+                                    setCoord: [
+                                        Coordinate: [
+                                            point: [0, 0, 0, 3.91, 0, 0]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        Shape: [
+                            setGeometry: [
+                                LineSet: [
+                                    vertexCount: [2]
+                                    setColor: [
+                                        ColorRGBA: [
+                                            USE: "HAnimSegmentLineColorRGBA"
+                                        ]
+                                    ]
+                                    setCoord: [
+                                        Coordinate: [
+                                            point: [0, 0, 0, -3.91, 0, 0]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
+                    HAnimJoint: [
+                        DEF: "BvhUniversityWisconsionExample1_vl5"
+                        name: "vl5"
+                        rotation: [0.929559139694865, -0.360437334785587, 0.0774902155269029, 0.820797255601436]
+                        center: [0, 5.21, 0]
+                        HAnimSegment: [
+                            DEF: "BvhUniversityWisconsionExample1_l5"
+                            name: "l5"
+                            Transform: [
+                                translation: [0, 5.21, 0]
+                                TouchSensor: [
+                                    description: "HAnimJoint Chest vl5, HAnimSegment l5"
+                                ],
+                                Shape: [
+                                    USE: "HAnimJointShape"
+                                ],
+                                Shape: [
+                                    setGeometry: [
+                                        LineSet: [
+                                            vertexCount: [2]
+                                            setColor: [
+                                                ColorRGBA: [
+                                                    USE: "HAnimSegmentLineColorRGBA"
+                                                ]
+                                            ]
+                                            setCoord: [
+                                                Coordinate: [
+                                                    point: [0, 0, 0, 0, 18.65, 0]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ],
+                                Shape: [
+                                    setGeometry: [
+                                        LineSet: [
+                                            vertexCount: [2]
+                                            setColor: [
+                                                ColorRGBA: [
+                                                    USE: "HAnimSegmentLineColorRGBA"
+                                                ]
+                                            ]
+                                            setCoord: [
+                                                Coordinate: [
+                                                    point: [0, 0, 0, 1.12, 16.23, 1.87]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ],
+                                Shape: [
+                                    setGeometry: [
+                                        LineSet: [
+                                            vertexCount: [2]
+                                            setColor: [
+                                                ColorRGBA: [
+                                                    USE: "HAnimSegmentLineColorRGBA"
+                                                ]
+                                            ]
+                                            setCoord: [
+                                                Coordinate: [
+                                                    point: [0, 0, 0, -1.12, 16.23, 1.87]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        HAnimJoint: [
+                            DEF: "BvhUniversityWisconsionExample1_Neck"
+                            name: "Neck"
+                            rotation: [0.983970484111271, 0.0663053900569327, 0.16554661472597, 0.772979753553571]
+                            center: [0, 23.86, 0]
+                            HAnimSegment: [
+                                DEF: "BvhUniversityWisconsionExample1_vl5_to_Neck"
+                                name: "vl5_to_Neck"
+                                Transform: [
+                                    translation: [0, 23.86, 0]
+                                    TouchSensor: [
+                                        description: "HAnimJoint Neck Neck, HAnimSegment vl5_to_Neck"
+                                    ],
+                                    Shape: [
+                                        USE: "HAnimJointShape"
+                                    ],
+                                    Shape: [
+                                        setGeometry: [
+                                            LineSet: [
+                                                vertexCount: [2]
+                                                setColor: [
+                                                    ColorRGBA: [
+                                                        USE: "HAnimSegmentLineColorRGBA"
+                                                    ]
+                                                ]
+                                                setCoord: [
+                                                    Coordinate: [
+                                                        point: [0, 0, 0, 0, 5.45, 0]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            HAnimJoint: [
+                                DEF: "BvhUniversityWisconsionExample1_skullbase"
+                                name: "skullbase"
+                                rotation: [-0.979126474330309, 0.150183590569867, -0.136953409556093, 0.734508385229556]
+                                center: [0, 29.31, 0]
+                                HAnimSegment: [
+                                    DEF: "BvhUniversityWisconsionExample1_skull"
+                                    name: "skull"
+                                    Transform: [
+                                        translation: [0, 29.31, 0]
+                                        HAnimSite: [
+                                            DEF: "BvhUniversityWisconsionExample1_skull_tip"
+                                            name: "skull_tip"
+                                            translation: [0, 3.87, 0]
+                                            TouchSensor: [
+                                                description: "HAnimSite skull_tip"
+                                            ],
+                                            Shape: [
+                                                USE: "HAnimSiteShape"
+                                            ],
+                                            Shape: [
+                                                setGeometry: [
+                                                    LineSet: [
+                                                        vertexCount: [2]
+                                                        setColor: [
+                                                            ColorRGBA: [
+                                                                USE: "HAnimSiteLineColorRGBA"
+                                                            ]
+                                                        ]
+                                                        setCoord: [
+                                                            Coordinate: [
+                                                                point: [0, -3.87, 0, 0, 0, 0]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ],
+                                        TouchSensor: [
+                                            description: "HAnimJoint Head skullbase, HAnimSegment skull"
+                                        ],
+                                        Shape: [
+                                            USE: "HAnimJointShape"
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        HAnimJoint: [
+                            DEF: "BvhUniversityWisconsionExample1_LeftCollar"
+                            name: "LeftCollar"
+                            rotation: [-0.0400336310146056, 0.285571817840178, 0.957520780580368, 0.318543581718216]
+                            center: [1.12, 21.44, 1.87]
+                            HAnimSegment: [
+                                DEF: "BvhUniversityWisconsionExample1_vl5_to_LeftCollar"
+                                name: "vl5_to_LeftCollar"
+                                Transform: [
+                                    translation: [1.12, 21.44, 1.87]
+                                    TouchSensor: [
+                                        description: "HAnimJoint LeftCollar LeftCollar, HAnimSegment vl5_to_LeftCollar"
+                                    ],
+                                    Shape: [
+                                        USE: "HAnimJointShape"
+                                    ],
+                                    Shape: [
+                                        setGeometry: [
+                                            LineSet: [
+                                                vertexCount: [2]
+                                                setColor: [
+                                                    ColorRGBA: [
+                                                        USE: "HAnimSegmentLineColorRGBA"
+                                                    ]
+                                                ]
+                                                setCoord: [
+                                                    Coordinate: [
+                                                        point: [0, 0, 0, 5.54, 0, 0]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            HAnimJoint: [
+                                DEF: "BvhUniversityWisconsionExample1_LeftUpArm"
+                                name: "LeftUpArm"
+                                rotation: [-0.027309899849048, -0.170484979510911, 0.984981746598077, 1.66813504770243]
+                                center: [6.66, 21.44, 1.87]
+                                HAnimSegment: [
+                                    DEF: "BvhUniversityWisconsionExample1_LeftCollar_to_LeftUpArm"
+                                    name: "LeftCollar_to_LeftUpArm"
+                                    Transform: [
+                                        translation: [6.66, 21.44, 1.87]
+                                        TouchSensor: [
+                                            description: "HAnimJoint LeftUpArm LeftUpArm, HAnimSegment LeftCollar_to_LeftUpArm"
+                                        ],
+                                        Shape: [
+                                            USE: "HAnimJointShape"
+                                        ],
+                                        Shape: [
+                                            setGeometry: [
+                                                LineSet: [
+                                                    vertexCount: [2]
+                                                    setColor: [
+                                                        ColorRGBA: [
+                                                            USE: "HAnimSegmentLineColorRGBA"
+                                                        ]
+                                                    ]
+                                                    setCoord: [
+                                                        Coordinate: [
+                                                            point: [0, 0, 0, 0, -11.96, 0]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ],
+                                HAnimJoint: [
+                                    DEF: "BvhUniversityWisconsionExample1_LeftLowArm"
+                                    name: "LeftLowArm"
+                                    rotation: [-0.998249192144246, 0.0587758586859541, -0.00662939055192083, 1.65994762916941]
+                                    center: [6.66, 9.48, 1.87]
+                                    HAnimSegment: [
+                                        DEF: "BvhUniversityWisconsionExample1_LeftUpArm_to_LeftLowArm"
+                                        name: "LeftUpArm_to_LeftLowArm"
+                                        Transform: [
+                                            translation: [6.66, 9.48, 1.87]
+                                            TouchSensor: [
+                                                description: "HAnimJoint LeftLowArm LeftLowArm, HAnimSegment LeftUpArm_to_LeftLowArm"
+                                            ],
+                                            Shape: [
+                                                USE: "HAnimJointShape"
+                                            ],
+                                            Shape: [
+                                                setGeometry: [
+                                                    LineSet: [
+                                                        vertexCount: [2]
+                                                        setColor: [
+                                                            ColorRGBA: [
+                                                                USE: "HAnimSegmentLineColorRGBA"
+                                                            ]
+                                                        ]
+                                                        setCoord: [
+                                                            Coordinate: [
+                                                                point: [0, 0, 0, 0, -9.93, 0]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ],
+                                    HAnimJoint: [
+                                        DEF: "BvhUniversityWisconsionExample1_LeftHand"
+                                        name: "LeftHand"
+                                        rotation: [0.404520441533964, 0.00251538810905742, 0.914525497293667, 0.0133189030390886]
+                                        center: [6.66, -0.45, 1.87]
+                                        HAnimSegment: [
+                                            DEF: "BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand"
+                                            name: "LeftLowArm_to_LeftHand"
+                                            Transform: [
+                                                translation: [6.66, -0.45, 1.87]
+                                                HAnimSite: [
+                                                    DEF: "BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand_tip"
+                                                    name: "LeftLowArm_to_LeftHand_tip"
+                                                    translation: [0, -7, 0]
+                                                    TouchSensor: [
+                                                        description: "HAnimSite LeftLowArm_to_LeftHand_tip"
+                                                    ],
+                                                    Shape: [
+                                                        USE: "HAnimSiteShape"
+                                                    ],
+                                                    Shape: [
+                                                        setGeometry: [
+                                                            LineSet: [
+                                                                vertexCount: [2]
+                                                                setColor: [
+                                                                    ColorRGBA: [
+                                                                        USE: "HAnimSiteLineColorRGBA"
+                                                                    ]
+                                                                ]
+                                                                setCoord: [
+                                                                    Coordinate: [
+                                                                        point: [0, 7, 0, 0, 0, 0]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ],
+                                                TouchSensor: [
+                                                    description: "HAnimJoint LeftHand LeftHand, HAnimSegment LeftLowArm_to_LeftHand"
+                                                ],
+                                                Shape: [
+                                                    USE: "HAnimJointShape"
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        HAnimJoint: [
+                            DEF: "BvhUniversityWisconsionExample1_RightCollar"
+                            name: "RightCollar"
+                            rotation: [-0.0717927567877157, -0.898736438505571, -0.432572091304025, 0.383573753513759]
+                            center: [-1.12, 21.44, 1.87]
+                            HAnimSegment: [
+                                DEF: "BvhUniversityWisconsionExample1_vl5_to_RightCollar"
+                                name: "vl5_to_RightCollar"
+                                Transform: [
+                                    translation: [-1.12, 21.44, 1.87]
+                                    TouchSensor: [
+                                        description: "HAnimJoint RightCollar RightCollar, HAnimSegment vl5_to_RightCollar"
+                                    ],
+                                    Shape: [
+                                        USE: "HAnimJointShape"
+                                    ],
+                                    Shape: [
+                                        setGeometry: [
+                                            LineSet: [
+                                                vertexCount: [2]
+                                                setColor: [
+                                                    ColorRGBA: [
+                                                        USE: "HAnimSegmentLineColorRGBA"
+                                                    ]
+                                                ]
+                                                setCoord: [
+                                                    Coordinate: [
+                                                        point: [0, 0, 0, -6.07, 0, 0]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            HAnimJoint: [
+                                DEF: "BvhUniversityWisconsionExample1_RightUpArm"
+                                name: "RightUpArm"
+                                rotation: [-0.750052184733347, -0.545300751513553, -0.374257679380781, 1.93524054510947]
+                                center: [-7.19, 21.44, 1.87]
+                                HAnimSegment: [
+                                    DEF: "BvhUniversityWisconsionExample1_RightCollar_to_RightUpArm"
+                                    name: "RightCollar_to_RightUpArm"
+                                    Transform: [
+                                        translation: [-7.19, 21.44, 1.87]
+                                        TouchSensor: [
+                                            description: "HAnimJoint RightUpArm RightUpArm, HAnimSegment RightCollar_to_RightUpArm"
+                                        ],
+                                        Shape: [
+                                            USE: "HAnimJointShape"
+                                        ],
+                                        Shape: [
+                                            setGeometry: [
+                                                LineSet: [
+                                                    vertexCount: [2]
+                                                    setColor: [
+                                                        ColorRGBA: [
+                                                            USE: "HAnimSegmentLineColorRGBA"
+                                                        ]
+                                                    ]
+                                                    setCoord: [
+                                                        Coordinate: [
+                                                            point: [0, 0, 0, 0, -11.82, 0]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ],
+                                HAnimJoint: [
+                                    DEF: "BvhUniversityWisconsionExample1_RightLowArm"
+                                    name: "RightLowArm"
+                                    rotation: [-0.942326628906139, 0.260683574441484, 0.209915693722034, 1.36514284873355]
+                                    center: [-7.19, 9.62, 1.87]
+                                    HAnimSegment: [
+                                        DEF: "BvhUniversityWisconsionExample1_RightUpArm_to_RightLowArm"
+                                        name: "RightUpArm_to_RightLowArm"
+                                        Transform: [
+                                            translation: [-7.19, 9.62, 1.87]
+                                            TouchSensor: [
+                                                description: "HAnimJoint RightLowArm RightLowArm, HAnimSegment RightUpArm_to_RightLowArm"
+                                            ],
+                                            Shape: [
+                                                USE: "HAnimJointShape"
+                                            ],
+                                            Shape: [
+                                                setGeometry: [
+                                                    LineSet: [
+                                                        vertexCount: [2]
+                                                        setColor: [
+                                                            ColorRGBA: [
+                                                                USE: "HAnimSegmentLineColorRGBA"
+                                                            ]
+                                                        ]
+                                                        setCoord: [
+                                                            Coordinate: [
+                                                                point: [0, 0, 0, 0, -10.65, 0]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ],
+                                    HAnimJoint: [
+                                        DEF: "BvhUniversityWisconsionExample1_RightHand"
+                                        name: "RightHand"
+                                        rotation: [0.487401172792782, 0.00827736333346378, -0.87313892480885, 0.0323338299925714]
+                                        center: [-7.19, -1.03, 1.87]
+                                        HAnimSegment: [
+                                            DEF: "BvhUniversityWisconsionExample1_RightLowArm_to_RightHand"
+                                            name: "RightLowArm_to_RightHand"
+                                            Transform: [
+                                                translation: [-7.19, -1.03, 1.87]
+                                                HAnimSite: [
+                                                    DEF: "BvhUniversityWisconsionExample1_RightLowArm_to_RightHand_tip"
+                                                    name: "RightLowArm_to_RightHand_tip"
+                                                    translation: [0, -7, 0]
+                                                    TouchSensor: [
+                                                        description: "HAnimSite RightLowArm_to_RightHand_tip"
+                                                    ],
+                                                    Shape: [
+                                                        USE: "HAnimSiteShape"
+                                                    ],
+                                                    Shape: [
+                                                        setGeometry: [
+                                                            LineSet: [
+                                                                vertexCount: [2]
+                                                                setColor: [
+                                                                    ColorRGBA: [
+                                                                        USE: "HAnimSiteLineColorRGBA"
+                                                                    ]
+                                                                ]
+                                                                setCoord: [
+                                                                    Coordinate: [
+                                                                        point: [0, 7, 0, 0, 0, 0]
+                                                                    ]
+                                                                ]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ],
+                                                TouchSensor: [
+                                                    description: "HAnimJoint RightHand RightHand, HAnimSegment RightLowArm_to_RightHand"
+                                                ],
+                                                Shape: [
+                                                    USE: "HAnimJointShape"
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
+                    HAnimJoint: [
+                        DEF: "BvhUniversityWisconsionExample1_LeftUpLeg"
+                        name: "LeftUpLeg"
+                        rotation: [0.798274116909833, -0.0905296906431976, 0.595451769150005, 0.374616063385567]
+                        center: [3.91, 0, 0]
+                        HAnimSegment: [
+                            DEF: "BvhUniversityWisconsionExample1_humanoid_root_to_LeftUpLeg"
+                            name: "humanoid_root_to_LeftUpLeg"
+                            Transform: [
+                                translation: [3.91, 0, 0]
+                                TouchSensor: [
+                                    description: "HAnimJoint LeftUpLeg LeftUpLeg, HAnimSegment humanoid_root_to_LeftUpLeg"
+                                ],
+                                Shape: [
+                                    USE: "HAnimJointShape"
+                                ],
+                                Shape: [
+                                    setGeometry: [
+                                        LineSet: [
+                                            vertexCount: [2]
+                                            setColor: [
+                                                ColorRGBA: [
+                                                    USE: "HAnimSegmentLineColorRGBA"
+                                                ]
+                                            ]
+                                            setCoord: [
+                                                Coordinate: [
+                                                    point: [0, 0, 0, 0, -18.34, 0]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        HAnimJoint: [
+                            DEF: "BvhUniversityWisconsionExample1_LeftLowLeg"
+                            name: "LeftLowLeg"
+                            rotation: [0.969171949455709, 0.159020234805176, 0.188197495495361, 1.02828103886506]
+                            center: [3.91, -18.34, 0]
+                            HAnimSegment: [
+                                DEF: "BvhUniversityWisconsionExample1_LeftUpLeg_to_LeftLowLeg"
+                                name: "LeftUpLeg_to_LeftLowLeg"
+                                Transform: [
+                                    translation: [3.91, -18.34, 0]
+                                    TouchSensor: [
+                                        description: "HAnimJoint LeftLowLeg LeftLowLeg, HAnimSegment LeftUpLeg_to_LeftLowLeg"
+                                    ],
+                                    Shape: [
+                                        USE: "HAnimJointShape"
+                                    ],
+                                    Shape: [
+                                        setGeometry: [
+                                            LineSet: [
+                                                vertexCount: [2]
+                                                setColor: [
+                                                    ColorRGBA: [
+                                                        USE: "HAnimSegmentLineColorRGBA"
+                                                    ]
+                                                ]
+                                                setCoord: [
+                                                    Coordinate: [
+                                                        point: [0, 0, 0, 0, -17.37, 0]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            HAnimJoint: [
+                                DEF: "BvhUniversityWisconsionExample1_LeftFoot"
+                                name: "LeftFoot"
+                                rotation: [1.00000000000036, 0, 0, 0.0199134632110525]
+                                center: [3.91, -35.71, 0]
+                                HAnimSegment: [
+                                    DEF: "BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot"
+                                    name: "LeftLowLeg_to_LeftFoot"
+                                    Transform: [
+                                        translation: [3.91, -35.71, 0]
+                                        HAnimSite: [
+                                            DEF: "BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot_tip"
+                                            name: "LeftLowLeg_to_LeftFoot_tip"
+                                            translation: [0, -3.46, 0]
+                                            TouchSensor: [
+                                                description: "HAnimSite LeftLowLeg_to_LeftFoot_tip"
+                                            ],
+                                            Shape: [
+                                                USE: "HAnimSiteShape"
+                                            ],
+                                            Shape: [
+                                                setGeometry: [
+                                                    LineSet: [
+                                                        vertexCount: [2]
+                                                        setColor: [
+                                                            ColorRGBA: [
+                                                                USE: "HAnimSiteLineColorRGBA"
+                                                            ]
+                                                        ]
+                                                        setCoord: [
+                                                            Coordinate: [
+                                                                point: [0, 3.46, 0, 0, 0, 0]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ],
+                                        TouchSensor: [
+                                            description: "HAnimJoint LeftFoot LeftFoot, HAnimSegment LeftLowLeg_to_LeftFoot"
+                                        ],
+                                        Shape: [
+                                            USE: "HAnimJointShape"
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ],
+                    HAnimJoint: [
+                        DEF: "BvhUniversityWisconsionExample1_RightUpLeg"
+                        name: "RightUpLeg"
+                        rotation: [-0.529026768997627, -0.0781104813974245, -0.845002621522441, 0.345959390966261]
+                        center: [-3.91, 0, 0]
+                        HAnimSegment: [
+                            DEF: "BvhUniversityWisconsionExample1_humanoid_root_to_RightUpLeg"
+                            name: "humanoid_root_to_RightUpLeg"
+                            Transform: [
+                                translation: [-3.91, 0, 0]
+                                TouchSensor: [
+                                    description: "HAnimJoint RightUpLeg RightUpLeg, HAnimSegment humanoid_root_to_RightUpLeg"
+                                ],
+                                Shape: [
+                                    USE: "HAnimJointShape"
+                                ],
+                                Shape: [
+                                    setGeometry: [
+                                        LineSet: [
+                                            vertexCount: [2]
+                                            setColor: [
+                                                ColorRGBA: [
+                                                    USE: "HAnimSegmentLineColorRGBA"
+                                                ]
+                                            ]
+                                            setCoord: [
+                                                Coordinate: [
+                                                    point: [0, 0, 0, 0, -17.63, 0]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ],
+                        HAnimJoint: [
+                            DEF: "BvhUniversityWisconsionExample1_RightLowLeg"
+                            name: "RightLowLeg"
+                            rotation: [0.978057447453843, -0.194999101930461, 0.073341527979632, 0.971415273794883]
+                            center: [-3.91, -17.63, 0]
+                            HAnimSegment: [
+                                DEF: "BvhUniversityWisconsionExample1_RightUpLeg_to_RightLowLeg"
+                                name: "RightUpLeg_to_RightLowLeg"
+                                Transform: [
+                                    translation: [-3.91, -17.63, 0]
+                                    TouchSensor: [
+                                        description: "HAnimJoint RightLowLeg RightLowLeg, HAnimSegment RightUpLeg_to_RightLowLeg"
+                                    ],
+                                    Shape: [
+                                        USE: "HAnimJointShape"
+                                    ],
+                                    Shape: [
+                                        setGeometry: [
+                                            LineSet: [
+                                                vertexCount: [2]
+                                                setColor: [
+                                                    ColorRGBA: [
+                                                        USE: "HAnimSegmentLineColorRGBA"
+                                                    ]
+                                                ]
+                                                setCoord: [
+                                                    Coordinate: [
+                                                        point: [0, 0, 0, 0, -17.14, 0]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            HAnimJoint: [
+                                DEF: "BvhUniversityWisconsionExample1_RightFoot"
+                                name: "RightFoot"
+                                rotation: [-1, 0, 0, 0.446403006744384]
+                                center: [-3.91, -34.77, 0]
+                                HAnimSegment: [
+                                    DEF: "BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot"
+                                    name: "RightLowLeg_to_RightFoot"
+                                    Transform: [
+                                        translation: [-3.91, -34.77, 0]
+                                        HAnimSite: [
+                                            DEF: "BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot_tip"
+                                            name: "RightLowLeg_to_RightFoot_tip"
+                                            translation: [0, -3.75, 0]
+                                            TouchSensor: [
+                                                description: "HAnimSite RightLowLeg_to_RightFoot_tip"
+                                            ],
+                                            Shape: [
+                                                USE: "HAnimSiteShape"
+                                            ],
+                                            Shape: [
+                                                setGeometry: [
+                                                    LineSet: [
+                                                        vertexCount: [2]
+                                                        setColor: [
+                                                            ColorRGBA: [
+                                                                USE: "HAnimSiteLineColorRGBA"
+                                                            ]
+                                                        ]
+                                                        setCoord: [
+                                                            Coordinate: [
+                                                                point: [0, 3.75, 0, 0, 0, 0]
+                                                            ]
+                                                        ]
+                                                    ]
+                                                ]
+                                            ]
+                                        ],
+                                        TouchSensor: [
+                                            description: "HAnimJoint RightFoot RightFoot, HAnimSegment RightLowLeg_to_RightFoot"
+                                        ],
+                                        Shape: [
+                                            USE: "HAnimJointShape"
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_humanoid_root"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_vl5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_Neck"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_skullbase"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_LeftCollar"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_LeftUpArm"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_LeftLowArm"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_LeftHand"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_RightCollar"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_RightUpArm"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_RightLowArm"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_RightHand"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_LeftUpLeg"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_LeftLowLeg"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_LeftFoot"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_RightUpLeg"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_RightLowLeg"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "BvhUniversityWisconsionExample1_RightFoot"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_sacrum"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_l5"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_vl5_to_Neck"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_skull"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_vl5_to_LeftCollar"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_LeftCollar_to_LeftUpArm"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_LeftUpArm_to_LeftLowArm"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_vl5_to_RightCollar"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_RightCollar_to_RightUpArm"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_RightUpArm_to_RightLowArm"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_RightLowArm_to_RightHand"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_humanoid_root_to_LeftUpLeg"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_LeftUpLeg_to_LeftLowLeg"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_humanoid_root_to_RightUpLeg"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_RightUpLeg_to_RightLowLeg"
+                ],
+                HAnimSegment: [
+                    containerField: "segments"
+                    USE: "BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot"
+                ],
+                HAnimSite: [
+                    DEF: "BvhUniversityWisconsionExample1_humanoid_root_view"
+                    name: "humanoid_root_view"
+                    Viewpoint: [
+                        DEF: "BvhUniversityWisconsionExample1_humanoid_root_viewpoint"
+                        description: "BvhUniversityWisconsionExample1 front view towards HAnimHumanoid center"
+                        position: [0, 0, 80]
+                    ]
+                ],
+                HAnimSite: [
+                    containerField: "sites"
+                    USE: "BvhUniversityWisconsionExample1_skull_tip"
+                ],
+                HAnimSite: [
+                    containerField: "sites"
+                    USE: "BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand_tip"
+                ],
+                HAnimSite: [
+                    containerField: "sites"
+                    USE: "BvhUniversityWisconsionExample1_RightLowArm_to_RightHand_tip"
+                ],
+                HAnimSite: [
+                    containerField: "sites"
+                    USE: "BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot_tip"
+                ],
+                HAnimSite: [
+                    containerField: "sites"
+                    USE: "BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot_tip"
+                ],
+                HAnimSite: [
+                    containerField: "sites"
+                    USE: "BvhUniversityWisconsionExample1_humanoid_root_view"
+                ]
+            ],
+            Group: [
+                DEF: "BvhUniversityWisconsionExample1_MotionGroup"
+                TimeSensor: [
+                    DEF: "RealTimer"
+                    cycleInterval: 0.067
+                    loop: true
+                ],
+                TimeSensor: [
+                    DEF: "StepTimer"
+                    enabled: false
+                    cycleInterval: 2.0
+                    loop: true
+                ],
+                ScalarInterpolator: [
+                    DEF: "FrameStepper"
+                    key: [0, 1, 1]
+                    keyValue: [0, 0, 1]
+                ],
+                PositionInterpolator: [
+                    DEF: "Interpolator0_humanoid_root"
+                    key: [0, 1]
+                    keyValue: [0.803, 3.501, 8.836, 0.781, 3.51, 8.647]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator1_humanoid_root"
+                    key: [0, 1]
+                    keyValue: [-0.0118, -0.9911, -0.1325, 2.8785, -0.0199, -0.993, -0.1163, 2.9232]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator2_vl5"
+                    key: [0, 1]
+                    keyValue: [0.9093, -0.4082, 0.0806, 0.8073, 0.9336, -0.3501, 0.0768, 0.824]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator3_Neck"
+                    key: [0, 1]
+                    keyValue: [0.9834, 0.0677, 0.1685, 0.7761, 0.9841, 0.066, 0.1649, 0.7723]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator4_skullbase"
+                    key: [0, 1]
+                    keyValue: [-0.9778, 0.1629, -0.1317, 0.736, -0.9794, 0.1474, -0.1381, 0.7342]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator5_LeftCollar"
+                    key: [0, 1]
+                    keyValue: [-0.0626, 0.7102, 0.7012, 0.2502, -0.0355, 0.2109, 0.9769, 0.3411]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator6_LeftUpArm"
+                    key: [0, 1]
+                    keyValue: [-0.1561, -0.2157, 0.9639, 1.7536, 0.0022, -0.1597, 0.9872, 1.6521]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator7_LeftLowArm"
+                    key: [0, 1]
+                    keyValue: [-0.9933, -0.0526, -0.103, 1.6066, -0.9965, 0.0822, 0.0138, 1.6744]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator8_LeftHand"
+                    key: [0, 1]
+                    keyValue: [0.0434, 0.0003, 0.9991, 0.0121, 0.4673, 0.0029, 0.8841, 0.0138]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator9_RightCollar"
+                    key: [0, 1]
+                    keyValue: [-0.0734, -0.5964, -0.7993, 0.3057, -0.07, -0.9291, -0.3633, 0.4091]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator10_RightUpArm"
+                    key: [0, 1]
+                    keyValue: [-0.6801, -0.6074, -0.4106, 2.0536, -0.765, -0.5303, -0.3654, 1.9107]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator11_RightLowArm"
+                    key: [0, 1]
+                    keyValue: [-0.9378, 0.2739, 0.2135, 1.4058, -0.9433, 0.2577, 0.2091, 1.3563]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator12_RightHand"
+                    key: [0, 1]
+                    keyValue: [0.4025, 0.0061, -0.9154, 0.0299, 0.5037, 0.0087, -0.8638, 0.0329]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator13_LeftUpLeg"
+                    key: [0, 1]
+                    keyValue: [0.8595, -0.1039, 0.5004, 0.4748, 0.7784, -0.0864, 0.6217, 0.3536]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator14_LeftLowLeg"
+                    key: [0, 1]
+                    keyValue: [0.9184, 0.2378, 0.3162, 0.9291, 0.9762, 0.1432, 0.1627, 1.0525]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator15_LeftFoot"
+                    key: [0, 1]
+                    keyValue: [-1, 0, 0, 0.0199, 1, 0, 0, 0.0286]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator16_RightUpLeg"
+                    key: [0, 1]
+                    keyValue: [-0.5548, -0.0795, -0.8282, 0.3423, -0.5234, -0.0778, -0.8485, 0.3468]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator17_RightLowLeg"
+                    key: [0, 1]
+                    keyValue: [0.9694, -0.234, 0.0739, 0.9755, 0.9797, -0.1864, 0.0732, 0.9707]
+                ],
+                OrientationInterpolator: [
+                    DEF: "Interpolator18_RightFoot"
+                    key: [0, 1]
+                    keyValue: [-1, 0, 0, 0.418, -1, 0, 0, 0.4526]
+                ]
+            ],
+            ROUTE: [
+                fromNode: "StepTimer"
+                fromField: "fraction_changed"
+                toNode: "FrameStepper"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator0_humanoid_root"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator0_humanoid_root"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator0_humanoid_root"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_humanoid_root"
+                toField: "set_translation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator1_humanoid_root"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator1_humanoid_root"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator1_humanoid_root"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_humanoid_root"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator2_vl5"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator2_vl5"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator2_vl5"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_vl5"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator3_Neck"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator3_Neck"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator3_Neck"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_Neck"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator4_skullbase"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator4_skullbase"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator4_skullbase"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_skullbase"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator5_LeftCollar"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator5_LeftCollar"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator5_LeftCollar"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_LeftCollar"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator6_LeftUpArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator6_LeftUpArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator6_LeftUpArm"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_LeftUpArm"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator7_LeftLowArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator7_LeftLowArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator7_LeftLowArm"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_LeftLowArm"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator8_LeftHand"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator8_LeftHand"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator8_LeftHand"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_LeftHand"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator9_RightCollar"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator9_RightCollar"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator9_RightCollar"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_RightCollar"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator10_RightUpArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator10_RightUpArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator10_RightUpArm"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_RightUpArm"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator11_RightLowArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator11_RightLowArm"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator11_RightLowArm"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_RightLowArm"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator12_RightHand"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator12_RightHand"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator12_RightHand"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_RightHand"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator13_LeftUpLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator13_LeftUpLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator13_LeftUpLeg"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_LeftUpLeg"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator14_LeftLowLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator14_LeftLowLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator14_LeftLowLeg"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_LeftLowLeg"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator15_LeftFoot"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator15_LeftFoot"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator15_LeftFoot"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_LeftFoot"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator16_RightUpLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator16_RightUpLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator16_RightUpLeg"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_RightUpLeg"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator17_RightLowLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator17_RightLowLeg"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator17_RightLowLeg"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_RightLowLeg"
+                toField: "set_rotation"
+            ],
+            ROUTE: [
+                fromNode: "RealTimer"
+                fromField: "fraction_changed"
+                toNode: "Interpolator18_RightFoot"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "FrameStepper"
+                fromField: "value_changed"
+                toNode: "Interpolator18_RightFoot"
+                toField: "set_fraction"
+            ],
+            ROUTE: [
+                fromNode: "Interpolator18_RightFoot"
+                fromField: "value_changed"
+                toNode: "BvhUniversityWisconsionExample1_RightFoot"
+                toField: "set_rotation"
+            ]
+        ]
+    ]
