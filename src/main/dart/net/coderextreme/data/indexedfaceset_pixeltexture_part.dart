@@ -120,6 +120,7 @@ var X3D0 =  X3D(
 
             NavigationInfo(
               type_ : MFString([SFString("EXAMINE"), SFString("WALK"), SFString("FLY"), SFString("ANY")])),
+          /*<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>*/
 
             Shape(
               appearance_ : 
@@ -128,7 +129,10 @@ var X3D0 =  X3D(
                     Material(),
                   texture_ : 
                     PixelTexture(
-                      image_ : SFImage([SFInt32(2), SFInt32(2), SFInt32(4), SFInt32(4278190335), SFInt32(16711935), SFInt32(4294967295), SFInt32(4294902015)]))),
+                      image_ : SFImage([SFInt32(2), SFInt32(2), SFInt32(4), SFInt32(4278190335), SFInt32(16711935), SFInt32(4294967295), SFInt32(4294902015)]),
+                      textureProperties_ : 
+                        TextureProperties(
+                          magnificationFilter_ : SFString('NEAREST_PIXEL')))),
               geometry_ : 
                 IndexedFaceSet(
                   colorPerVertex_ : false,

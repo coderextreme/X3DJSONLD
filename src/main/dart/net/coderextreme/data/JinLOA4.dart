@@ -70,7 +70,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
 
             meta(
               name_ : SFString('license'),
@@ -6153,7 +6153,7 @@ var X3D0 =  X3D(
                   DEF_ : SFString('Stop_l_subtalar_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
-              /*<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>*/
+              /*<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>*/
 
                 OrientationInterpolator(
                   DEF_ : SFString('Stop_l_metatarsal_RotationInterpolator'),
@@ -6179,7 +6179,7 @@ var X3D0 =  X3D(
                   DEF_ : SFString('Stop_r_subtalar_RotationInterpolator'),
                   key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(1)]),
                   keyValue_ : MFRotation([SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0)])),
-              /*<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>*/
+              /*<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>*/
 
                 OrientationInterpolator(
                   DEF_ : SFString('Stop_r_metatarsal_RotationInterpolator'),

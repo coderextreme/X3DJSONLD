@@ -7,6 +7,10 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          component_ : 
+            component(
+              name_ : SFString('Scripting'),
+              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -34,11 +38,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html')),
-          component_ : 
-            component(
-              name_ : SFString('Scripting'),
-              level_ : 1)]),
+              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'))]),
       Scene_ : 
         Scene(
           children_ : [

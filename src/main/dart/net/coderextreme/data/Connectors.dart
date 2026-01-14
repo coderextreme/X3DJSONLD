@@ -22,7 +22,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('Titania V3.0.4, http://titania.create3000.de')),
+              content_ : SFString('Titania V3.0.4, https://titania.create3000.de')),
 
             meta(
               name_ : SFString('identifier'),

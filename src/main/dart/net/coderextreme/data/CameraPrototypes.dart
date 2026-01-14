@@ -54,7 +54,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d')),
+              content_ : SFString('https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d')),
 
             meta(
               name_ : SFString('generator'),

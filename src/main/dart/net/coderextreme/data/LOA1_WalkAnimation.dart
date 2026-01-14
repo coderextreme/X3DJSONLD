@@ -38,19 +38,19 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl')),
+              content_ : SFString('https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://HAnim.org/Specifications/HAnim2001')),
+              content_ : SFString('https://HAnim.org/Specifications/HAnim2001')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://HAnim.org/Models')),
+              content_ : SFString('https://HAnim.org/Models')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://HAnim.org/Nodes')),
+              content_ : SFString('https://HAnim.org/Nodes')),
 
             meta(
               name_ : SFString('subject'),

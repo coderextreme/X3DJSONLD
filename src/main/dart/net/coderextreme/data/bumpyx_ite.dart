@@ -7,6 +7,7 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          /*<component name='Shape' level='4'></component>*/
           component_ : 
             component(
               name_ : SFString('Scripting'),
@@ -39,7 +40,6 @@ var X3D0 =  X3D(
             component(
               name_ : SFString('Core'),
               level_ : 1),
-          /*<component name='Shape' level='4'></component>*/
           meta_ : [
             meta(
               name_ : SFString('title'),
