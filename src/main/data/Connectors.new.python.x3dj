@@ -1,3 +1,1203 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2b4d4693a1e88d6b9580167a568fb6d263112aff1f3194fac2dc1d47271509e
-size 28108
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Full",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"World of Titania",
+        "@name":"comment"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Fri, 04 Sep 2015 10:19:01 GMT",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Holger Seelig",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Titania V3.0.4, https://titania.create3000.de",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "ProtoDeclare":
+        {
+      {
+        "@name":"RoundedRectangle2D"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"cornerRadius",
+        "@type":"SFFloat",
+        "@value":"1"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"size",
+        "@type":"SFVec2f",
+        "@value":"[2, 2]"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"solid",
+        "@type":"SFBool",
+        "@value":"True"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "IndexedFaceSet":
+                {
+      {
+        "@DEF":"Geometry"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"solid",
+        "@protoField":"solid"
+      }
+    },
+                    }                    "Coordinate":
+                    {
+    },
+                }                "Script":
+                {
+      {
+        "@DEF":"RoundedRectangle2D",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	var point         = new SFVec3f (cornerRadius, 0, 0);
+&quot;+
+&quot;	var startRotation = new SFRotation ();
+&quot;+
+&quot;	var endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);
+&quot;+
+&quot;	var corner        = new MFVec3f ();
+&quot;+
+&quot;	var coordIndex    = new MFInt32 ();
+&quot;+
+&quot;	var points        = new MFVec3f ();
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension * 4; ++ i)
+&quot;+
+&quot;		coordIndex [coordIndex .length] = i;
+&quot;+
+&quot;
+&quot;+
+&quot;	geometry .coordIndex = coordIndex;
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++i)
+&quot;+
+&quot;		corner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (size .x / 2 - cornerRadius, size .y / 2 - cornerRadius, 0);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = corner [i] .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (-size .x / 2 + cornerRadius, size .y / 2 - cornerRadius, 0);
+&quot;+
+&quot;	var rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (-size .x / 2 + cornerRadius, -size .y / 2 + cornerRadius, 0);
+&quot;+
+&quot;	var rotation    = new SFRotation (0, 0, 1, Math .PI);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (size .x / 2 - cornerRadius, -size .y / 2 + cornerRadius, 0);
+&quot;+
+&quot;	var rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	geometry .coord .point = points;
+&quot;+
+&quot;}"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"cornerRadius",
+        "@protoField":"cornerRadius"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"size",
+        "@protoField":"size"
+      }
+    },
+                    }                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"cornerDimension",
+        "@type":"SFFloat",
+        "@value":"10"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"cornerRadius",
+        "@type":"SFFloat"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"size",
+        "@type":"SFVec2f"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"geometry",
+        "@type":"SFNode"
+      }
+                        "IndexedFaceSet":
+                        {
+      {
+        "@USE":"Geometry"
+      }
+    },
+                    }                }            }        }        "ProtoDeclare":
+        {
+      {
+        "@name":"Widget"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"fillColor",
+        "@type":"SFColor",
+        "@value":"[0.1, 0.1, 0.1]"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"lineColor",
+        "@type":"SFColor",
+        "@value":"[0.4, 0.4, 0.4]"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"linewidthScaleFactor",
+        "@type":"SFFloat",
+        "@value":"1"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"geometry",
+        "@type":"SFNode"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Transform":
+                {
+      {
+        "@DEF":"Shape"
+      }
+                    "Shape":
+                    {
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"geometry",
+        "@protoField":"geometry"
+      }
+    },
+                        }                        "Appearance":
+                        {
+                            "Material":
+                            {
+                                "IS":
+                                {
+                                    "connect":
+                                    {
+      {
+        "@nodeField":"diffuseColor",
+        "@protoField":"fillColor"
+      }
+    },
+                                }                            }                        }                    }                    "Shape":
+                    {
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"geometry",
+        "@protoField":"geometry"
+      }
+    },
+                        }                        "Appearance":
+                        {
+                            "FillProperties":
+                            {
+      {
+        "@filled":"false",
+        "@hatched":"false"
+      }
+    },
+                            "LineProperties":
+                            {
+                                "IS":
+                                {
+                                    "connect":
+                                    {
+      {
+        "@nodeField":"linewidthScaleFactor",
+        "@protoField":"linewidthScaleFactor"
+      }
+    },
+                                }                            }                            "Material":
+                            {
+      {
+        "@diffuseColor":"0 0 0"
+      }
+                                "IS":
+                                {
+                                    "connect":
+                                    {
+      {
+        "@nodeField":"emissiveColor",
+        "@protoField":"lineColor"
+      }
+    },
+                                }                            }                        }                    }                }            }        }        "ProtoDeclare":
+        {
+      {
+        "@name":"Node"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"translation",
+        "@type":"SFVec3f"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Group":
+                {
+                    "PlaneSensor":
+                    {
+      {
+        "@DEF":"PlaneSensor"
+      }
+    },
+                    "Transform":
+                    {
+      {
+        "@DEF":"Node"
+      }
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"translation",
+        "@protoField":"translation"
+      }
+    },
+                        }                        "ProtoInstance":
+                        {
+      {
+        "@name":"Widget"
+      }
+                            "fieldValue":
+                            {
+      {
+        "@name":"geometry"
+      }
+                                "ProtoInstance":
+                                {
+      {
+        "@name":"RoundedRectangle2D"
+      }
+                                    "fieldValue":
+                                    {
+      {
+        "@name":"cornerRadius",
+        "@value":"0.12"
+      }
+    },
+                                    "fieldValue":
+                                    {
+      {
+        "@name":"size",
+        "@value":"2 1"
+      }
+    },
+                                }                            }                        }                        "Transform":
+                        {
+      {
+        "@DEF":"Input",
+        "@translation":"-1 0 0"
+      }
+                            "ProtoInstance":
+                            {
+      {
+        "@name":"Widget"
+      }
+                                "fieldValue":
+                                {
+      {
+        "@name":"lineColor",
+        "@value":"0.72 0.14 0.23"
+      }
+    },
+                                "fieldValue":
+                                {
+      {
+        "@name":"geometry"
+      }
+                                    "Disk2D":
+                                    {
+      {
+        "@DEF":"Connector",
+        "@outerRadius":"0.2"
+      }
+    },
+                                }                            }                        }                        "Transform":
+                        {
+      {
+        "@DEF":"Output",
+        "@translation":"1 0 0"
+      }
+                            "ProtoInstance":
+                            {
+      {
+        "@name":"Widget"
+      }
+                                "fieldValue":
+                                {
+      {
+        "@name":"lineColor",
+        "@value":"0.44 0.5 0.72"
+      }
+    },
+                                "fieldValue":
+                                {
+      {
+        "@name":"geometry"
+      }
+                                    "Disk2D":
+                                    {
+      {
+        "@USE":"Connector"
+      }
+    },
+                                }                            }                        }                    }                }                "Script":
+                {
+      {
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;function initialize ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	sensor .offset = translation;
+&quot;+
+&quot;}"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"translation",
+        "@protoField":"translation"
+      }
+    },
+                    }                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"translation",
+        "@type":"SFVec3f"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"sensor",
+        "@type":"SFNode"
+      }
+                        "PlaneSensor":
+                        {
+      {
+        "@USE":"PlaneSensor"
+      }
+    },
+                    }                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"transform",
+        "@type":"SFNode"
+      }
+                        "Transform":
+                        {
+      {
+        "@USE":"Node"
+      }
+    },
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"PlaneSensor",
+        "@toField":"set_translation",
+        "@toNode":"Node"
+      }
+    },
+            }        }        "ProtoDeclare":
+        {
+      {
+        "@name":"Route"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"lineColor",
+        "@type":"SFColor",
+        "@value":"[0.43, 0.43, 0.98]"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"linewidthScaleFactor",
+        "@type":"SFFloat",
+        "@value":"2"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"output",
+        "@type":"SFNode"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"input",
+        "@type":"SFNode"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "LineProperties":
+                        {
+                            "IS":
+                            {
+                                "connect":
+                                {
+      {
+        "@nodeField":"linewidthScaleFactor",
+        "@protoField":"linewidthScaleFactor"
+      }
+    },
+                            }                        }                        "Material":
+                        {
+      {
+        "@diffuseColor":"0 0 0"
+      }
+                            "IS":
+                            {
+                                "connect":
+                                {
+      {
+        "@nodeField":"emissiveColor",
+        "@protoField":"lineColor"
+      }
+    },
+                            }                        }                    }                    "LineSet":
+                    {
+      {
+        "@DEF":"Geometry_1",
+        "@vertexCount":"2"
+      }
+                        "Coordinate":
+                        {
+      {
+        "@point":"-1 0 0 1 0 0"
+      }
+    },
+                    }                }                "Script":
+                {
+      {
+        "@DEF":"Route",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;function initialize ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
+&quot;+
+&quot;	Browser .addRoute (input,  'translation_changed', self, 'set_translation');
+&quot;+
+&quot;
+&quot;+
+&quot;	set_translation ();
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_translation ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	geometry .vertexCount [0] = routeDimension;
+&quot;+
+&quot;
+&quot;+
+&quot;	var outPoint = output .translation .add (new SFVec3f ( 1, 0, 0));
+&quot;+
+&quot;	var inPoint  = input  .translation .add (new SFVec3f (-1, 0, 0));
+&quot;+
+&quot;
+&quot;+
+&quot;	var w = inPoint .x - outPoint .x;
+&quot;+
+&quot;	var h = outPoint .y - inPoint .y;
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < routeDimension; ++ i)
+&quot;+
+&quot;	{
+&quot;+
+&quot;		var t = i / (routeDimension - 1);
+&quot;+
+&quot;		var y = h / 2 * (Math .cos (t * Math .PI) - 1);
+&quot;+
+&quot;
+&quot;+
+&quot;		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));
+&quot;+
+&quot;	}
+&quot;+
+&quot;}"
+      }
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"output",
+        "@protoField":"output"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"input",
+        "@protoField":"input"
+      }
+    },
+                    }                    "field":
+                    {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_translation",
+        "@type":"SFVec3f"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"routeDimension",
+        "@type":"SFInt32",
+        "@value":"21"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"output",
+        "@type":"SFNode"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"input",
+        "@type":"SFNode"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"geometry",
+        "@type":"SFNode"
+      }
+                        "LineSet":
+                        {
+      {
+        "@USE":"Geometry_1"
+      }
+    },
+                    }                    "field":
+                    {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"self",
+        "@type":"SFNode"
+      }
+                        "Script":
+                        {
+      {
+        "@USE":"Route"
+      }
+    },
+                    }                }            }        }        "NavigationInfo":
+        {
+      {
+        "@type":""FLY" "ANY""
+      }
+    },
+        "Background":
+        {
+      {
+        "@skyColor":"0.2 0.2 0.2"
+      }
+    },
+        "OrthoViewpoint":
+        {
+      {
+        "@centerOfRotation":"-3.13496 -4.19776 0",
+        "@description":"OthoViewpoint",
+        "@fieldOfView":"0 0 10 10",
+        "@position":"-3.13496 -4.19776 10"
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Viewpoint"
+      }
+    },
+        "Transform":
+        {
+      {
+        "@DEF":"Connectors"
+      }
+            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N1",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"-3.98323 2.88948 0"
+      }
+    },
+                    }                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N2",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"-0.0890862 2.96049 0"
+      }
+    },
+                    }                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N1",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N3",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"-0.104169 1.16371 0"
+      }
+    },
+                    }                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N1",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N4",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"-0.0998688 -0.40172 0"
+      }
+    },
+                    }                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N1",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N5",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"-0.0998687 -2.14742 0"
+      }
+    },
+                    }                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N2",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N6",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"3.55694 2.4116 0"
+      }
+    },
+                    }                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N3",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N6",
+        "@name":"Node"
+      }
+    },
+                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N4",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N7",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"3.75106 -0.0794556 0"
+      }
+    },
+                    }                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N5",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N7",
+        "@name":"Node"
+      }
+    },
+                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N6",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@DEF":"N8",
+        "@name":"Node"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"translation",
+        "@value":"7.68077 1.21228 0"
+      }
+    },
+                    }                }            }            "ProtoInstance":
+            {
+      {
+        "@name":"Route"
+      }
+                "fieldValue":
+                {
+      {
+        "@name":"output"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N7",
+        "@name":"Node"
+      }
+    },
+                }                "fieldValue":
+                {
+      {
+        "@name":"input"
+      }
+                    "ProtoInstance":
+                    {
+      {
+        "@USE":"N8",
+        "@name":"Node"
+      }
+    },
+                }            }            "ProtoInstance":
+            {
+      {
+        "@USE":"N1",
+        "@name":"Node"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@USE":"N2",
+        "@name":"Node"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@USE":"N3",
+        "@name":"Node"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@USE":"N4",
+        "@name":"Node"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@USE":"N5",
+        "@name":"Node"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@USE":"N6",
+        "@name":"Node"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@USE":"N7",
+        "@name":"Node"
+      }
+    },
+            "ProtoInstance":
+            {
+      {
+        "@USE":"N8",
+        "@name":"Node"
+      }
+    },
+        }    }}

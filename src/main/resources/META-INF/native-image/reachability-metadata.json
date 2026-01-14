@@ -1,6 +1,12 @@
 {
   "reflection": [
     {
+      "type": "UnknownClassName_IORMaterialExtension"
+    },
+    {
+      "type": "UnknownClassName_IridescenceMaterialExtension"
+    },
+    {
       "type": "UnknownClassName_VariationPhysicsModel"
     },
     {
@@ -617,6 +623,12 @@
           "parameterTypes": []
         },
         {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
           "name": "setInfo",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.MFString"
@@ -708,6 +720,12 @@
         },
         {
           "name": "setAppinfo",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setDocumentation",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -860,6 +878,18 @@
           "name": "setDEF",
           "parameterTypes": [
             "java.lang.String"
+          ]
+        },
+        {
+          "name": "setPort",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setSiteID",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
           ]
         }
       ]
@@ -1165,6 +1195,33 @@
       ]
     },
     {
+      "type": "org.web3d.x3d.jsail.EventUtilities.IntegerSequencer",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setKey",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setKeyValue",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFInt32"
+          ]
+        }
+      ]
+    },
+    {
       "type": "org.web3d.x3d.jsail.EventUtilities.TimeTrigger",
       "methods": [
         {
@@ -1202,6 +1259,33 @@
           "name": "setOuterRadius",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setSolid",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Geometry2D.Rectangle2D",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setSize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec2f"
           ]
         },
         {
@@ -2566,6 +2650,33 @@
       ]
     },
     {
+      "type": "org.web3d.x3d.jsail.Interpolation.ColorInterpolator",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setKey",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setKeyValue",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFColor"
+          ]
+        }
+      ]
+    },
+    {
       "type": "org.web3d.x3d.jsail.Interpolation.CoordinateInterpolator",
       "methods": [
         {
@@ -2682,6 +2793,12 @@
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.MFFloat"
           ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
         }
       ]
     },
@@ -2718,6 +2835,30 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setObjectType",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFString"
+          ]
+        },
+        {
+          "name": "setPickable",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
         }
       ]
     },
@@ -2832,6 +2973,24 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "setObjectType",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFString"
+          ]
+        },
+        {
+          "name": "setPickable",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
         }
       ]
     },
@@ -3072,6 +3231,78 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "setSolid",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setUClosed",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setUDimension",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setUKnot",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFDouble"
+          ]
+        },
+        {
+          "name": "setUOrder",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setUTessellation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setVClosed",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setVDimension",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setVKnot",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFDouble"
+          ]
+        },
+        {
+          "name": "setVOrder",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setVTessellation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setWeight",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFDouble"
+          ]
         }
       ]
     },
@@ -3160,6 +3391,57 @@
       ]
     },
     {
+      "type": "org.web3d.x3d.jsail.Navigation.LOD",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBboxCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setBboxDisplay",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setBboxSize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setCenter",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setForceTransitions",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setRange",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setVisible",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
       "type": "org.web3d.x3d.jsail.Navigation.NavigationInfo",
       "methods": [
         {
@@ -3224,6 +3506,75 @@
           "name": "setVisibilityLimit",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Navigation.OrthoViewpoint",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setCenterOfRotation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setDescription",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setFarDistance",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setFieldOfView",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFFloat"
+          ]
+        },
+        {
+          "name": "setJump",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setNearDistance",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setOrientation",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFRotation"
+          ]
+        },
+        {
+          "name": "setPosition",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFVec3f"
+          ]
+        },
+        {
+          "name": "setRetainUserOffsets",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setViewAll",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
           ]
         }
       ]
@@ -3380,6 +3731,27 @@
           "name": "setVisible",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Networking.EXPORT",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAS",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setLocalDEF",
+          "parameterTypes": [
+            "java.lang.String"
           ]
         }
       ]
@@ -3642,6 +4014,12 @@
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFVec3f"
           ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
         }
       ]
     },
@@ -3845,6 +4223,18 @@
           "parameterTypes": []
         },
         {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
           "name": "setVertexCount",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.MFInt32"
@@ -3858,6 +4248,18 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
         },
         {
           "name": "setVector",
@@ -3908,6 +4310,12 @@
           "name": "setMustEvaluate",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
           ]
         },
         {
@@ -3992,6 +4400,51 @@
           "name": "setUrl",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.MFString"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Shape.AcousticProperties",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAbsorption",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setDescription",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setDiffuse",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setRefraction",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setSpecular",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
           ]
         }
       ]
@@ -4115,6 +4568,12 @@
           ]
         },
         {
+          "name": "setDiffuseTextureMapping",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
           "name": "setEmissiveColor",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFColor"
@@ -4124,6 +4583,12 @@
           "name": "setNormalScale",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setNormalTextureMapping",
+          "parameterTypes": [
+            "java.lang.String"
           ]
         },
         {
@@ -4142,6 +4607,75 @@
           "name": "setSpecularColor",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFColor"
+          ]
+        },
+        {
+          "name": "setSpecularTextureMapping",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setTransparency",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setUSE",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Shape.PhysicalMaterial",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setBaseColor",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFColor"
+          ]
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setEmissiveColor",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFColor"
+          ]
+        },
+        {
+          "name": "setMetallic",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setNormalScale",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setOcclusionStrength",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setRoughness",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
           ]
         },
         {
@@ -4501,6 +5035,129 @@
       ]
     },
     {
+      "type": "org.web3d.x3d.jsail.Sound.BufferAudioSource",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAutoRefresh",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setAutoRefreshTimeLimit",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setBufferDuration",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setChannelCountMode",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setChannelInterpretation",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setDetune",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setGain",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setLoad",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setLoop",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setLoopEnd",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setLoopStart",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setNumberOfChannels",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setPlaybackRate",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setSampleRate",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        }
+      ]
+    },
+    {
       "type": "org.web3d.x3d.jsail.Sound.ChannelMerger",
       "methods": [
         {
@@ -4619,6 +5276,150 @@
           "name": "setGain",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Sound.Convolver",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setChannelCountMode",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setChannelInterpretation",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setGain",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setNormalize",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setTailTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Sound.Delay",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setChannelCountMode",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setChannelInterpretation",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setDelayTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setGain",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setMaxDelayTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setTailTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
           ]
         }
       ]
@@ -4879,6 +5680,108 @@
       ]
     },
     {
+      "type": "org.web3d.x3d.jsail.Sound.MicrophoneSource",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setGain",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Sound.OscillatorSource",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setDetune",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setFrequency",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setGain",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        }
+      ]
+    },
+    {
       "type": "org.web3d.x3d.jsail.Sound.Sound",
       "methods": [
         {
@@ -5110,6 +6013,132 @@
       ]
     },
     {
+      "type": "org.web3d.x3d.jsail.Sound.StreamAudioSource",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setChannelCountMode",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setChannelInterpretation",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setGain",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Sound.WaveShaper",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setChannelCountMode",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setChannelInterpretation",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setEnabled",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setGain",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setOversample",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setTailTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        }
+      ]
+    },
+    {
       "type": "org.web3d.x3d.jsail.Text.FontStyle",
       "methods": [
         {
@@ -5281,6 +6310,129 @@
       ]
     },
     {
+      "type": "org.web3d.x3d.jsail.Texturing.MovieTexture",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAutoRefresh",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setAutoRefreshTimeLimit",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setDescription",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setLoad",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setLoop",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setPauseTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setPitch",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setRepeatS",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setRepeatT",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setResumeTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setSpeed",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setStartTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setStopTime",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFTime"
+          ]
+        },
+        {
+          "name": "setUrl",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.MFString"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Texturing.MultiTextureCoordinate",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Texturing.MultiTextureTransform",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
       "type": "org.web3d.x3d.jsail.Texturing.PixelTexture",
       "methods": [
         {
@@ -5327,9 +6479,96 @@
           "parameterTypes": []
         },
         {
+          "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setMapping",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
           "name": "setPoint",
           "parameterTypes": [
             "org.web3d.x3d.jsail.fields.MFVec2f"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.Texturing.TextureProperties",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setAnisotropicDegree",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
+          ]
+        },
+        {
+          "name": "setBorderColor",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFColorRGBA"
+          ]
+        },
+        {
+          "name": "setBorderWidth",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFInt32"
+          ]
+        },
+        {
+          "name": "setBoundaryModeR",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setBoundaryModeS",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setBoundaryModeT",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setGenerateMipMaps",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFBool"
+          ]
+        },
+        {
+          "name": "setMagnificationFilter",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setMinificationFilter",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setTextureCompression",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setTexturePriority",
+          "parameterTypes": [
+            "org.web3d.x3d.jsail.fields.SFFloat"
           ]
         }
       ]
@@ -5349,6 +6588,12 @@
         },
         {
           "name": "setDEF",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "setMapping",
           "parameterTypes": [
             "java.lang.String"
           ]
@@ -5621,6 +6866,21 @@
     },
     {
       "type": "org.web3d.x3d.jsail.fields.SFColor",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        },
+        {
+          "name": "setValueByString",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.web3d.x3d.jsail.fields.SFColorRGBA",
       "methods": [
         {
           "name": "<init>",

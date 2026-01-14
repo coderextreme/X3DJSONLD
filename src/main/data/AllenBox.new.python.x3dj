@@ -1,3 +1,65 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:832e2f54a896d27b90cc05bde178aa32620c6abaf6fb667548ff67f92b3f4e63
-size 1298
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"AllenBox.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Allen Box",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"8 July 2025",
+        "@name":"created"
+      }
+    },
+    }    "Scene":
+    {
+        "WorldInfo":
+        {
+      {
+        "@title":"AllenBox.x3d"
+      }
+    }
+        "NavigationInfo":
+        {
+      {
+        "@avatarSize":"0.15 1.53 0.75",
+        "@speed":"0.5",
+        "@type":""EXAMINE""
+      }
+    },
+        "Transform":
+        {
+      {
+        "@DEF":"Floor",
+        "@scale":"1 0.0125 1",
+        "@translation":"0 -0.0125 0"
+      }
+            "Shape":
+            {
+                "Appearance":
+                {
+                    "Material":
+                    {
+    },
+                }                "Box":
+                {
+    },
+            }        }    }}

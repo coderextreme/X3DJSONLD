@@ -1,109 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Full' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <component level='1' name='Scripting'/>
+    <component level='3' name='EnvironmentalEffects'/>
+    <component level='1' name='Shaders'/>
+    <component level='1' name='CubeMapTexturing'/>
+    <component level='1' name='Texturing'/>
+    <component level='1' name='Rendering'/>
+    <component level='4' name='Shape'/>
+    <component level='3' name='Grouping'/>
+    <component level='1' name='Core'/>
+    <component level='2' name='DIS'/>
     <meta content='bumpyfreewrlsliders.x3d' name='title'/>
     <meta content='Bumpy Orbitals with Sliders for FreeWRL' name='description'/>
     <meta content='Doug Sanden, Christoph Valentin, John Carlson' name='creator'/>
     <meta content='https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d' name='identifier'/>
+    <meta content='license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
-    <ProtoDeclare name='SliderProto'>
-      <ProtoInterface>
-        <field name='sliderTranslation' accessType='inputOutput' type='SFVec3f' value='0 0.7 0'/>
-        <field name='transformTranslation' accessType='inputOutput' type='SFVec3f'/>
-        <field name='sensorTranslation' accessType='inputOutput' type='SFVec3f'/>
-        <field name='numberTranslation' accessType='inputOutput' type='SFVec3f' value='0.2 0 0'/>
-        <field name='textString' accessType='inputOutput' type='MFString' value='"a="'/>
-        <field name='parameterName' accessType='inputOutput' type='SFString' value='a'/>
-        <field name='parameterScale' accessType='inputOutput' type='SFFloat' value='30.0'/>
-        <field name='shaderNode' accessType='inputOutput' type='SFNode'/>
-      </ProtoInterface>
-      <ProtoBody>
-        <Group>
-          <Transform DEF='protoSlider'>
-            <IS>
-              <connect nodeField='translation' protoField='sliderTranslation'/>
-            </IS>
-            <Transform DEF='protoTransform'>
-              <IS>
-                <connect nodeField='translation' protoField='transformTranslation'/>
-                <connect nodeField='translation' protoField='sensorTranslation'/>
-              </IS>
-              <PlaneSensor DEF='protoSensor' maxPosition='2 0'/>
-              <Transform>
-                <TouchSensor DEF='protoTS'/>
-              </Transform>
-              <Transform>
-                <Shape>
-                  <Appearance>
-                    <Material diffuseColor='1 1 1'/>
-                  </Appearance>
-                  <Text DEF='protoText'>
-                    <IS>
-                      <connect nodeField='string' protoField='textString'/>
-                    </IS>
-                    <FontStyle size='0.2'/>
-                  </Text>
-                </Shape>
-                <Transform>
-                  <IS>
-                    <connect nodeField='translation' protoField='numberTranslation'/>
-                  </IS>
-                  <Shape>
-                    <Appearance>
-                      <Material diffuseColor='1 1 1'/>
-                    </Appearance>
-                    <Text DEF='protoNumber' string='"0"'>
-                      <FontStyle size='0.2'/>
-                    </Text>
-                  </Shape>
-                </Transform>
-              </Transform>
-            </Transform>
-          </Transform>
-          <Script DEF='protoValueTransformerScript' directOutput='true' mustEvaluate='true'>
-            <field name='protoScale' accessType='inputOutput' type='SFFloat'/>
-            <field name='shader' accessType='inputOutput' type='SFNode'/>
-            <field name='newTranslation' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-            <field name='protoValue_changed' accessType='inputOutput' type='SFFloat' value='1.0'/>
-            <field name='protoNumber_changed' accessType='inputOutput' type='MFString' value='"0.0"'/>
-            <field name='protoParameterName' accessType='inputOutput' type='SFString'/>
-            <IS>
-              <connect nodeField='protoScale' protoField='parameterScale'/>
-              <connect nodeField='shader' protoField='shaderNode'/>
-              <connect nodeField='protoParameterName' protoField='parameterName'/>
-            </IS>
-<![CDATA[
-ecmascript:
-	const newTranslation = function(Value) {
-	    protoValue_changed = Value[0] * protoScale;
-	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());
-	    Browser.println("In newTranslation:");
-	    Browser.println(shader);
-	    Browser.println(Value[0]);
-	    Browser.println(Value.x);
-	    Browser.println(protoScale);
-	    Browser.println(Value[0] * protoScale);
-	    Browser.println(protoParameterName);
-					// shader[protoParameterName] = Value[0] * protoScale;
-	};
-]]>
-          </Script>
-        </Group>
-        <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='set_translation' toNode='protoTransform'/>
-        <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='set_newTranslation' toNode='protoValueTransformerScript'/>
-        <ROUTE fromField='protoNumber_changed_changed' fromNode='protoValueTransformerScript' toField='set_string' toNode='protoNumber'/>
-      </ProtoBody>
-    </ProtoDeclare>
+    <!-- LayerSet with two layers, navigation happens in layer 1 -->
     <LayerSet activeLayer='1' order='1 2'>
+      <!-- the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" -->
+      <!-- the second layer contains the sliders that are moved with the user's display like a HUD (heads up display) -->
       <Layer>
+        <!-- basic nodes, which might be present in any scene -->
         <NavigationInfo avatarSize='0.25 1.75 0.75' type='"EXAMINE" "FLY" "LOOKAT" "ANY"'/>
         <DirectionalLight ambientIntensity='0.2' direction='0 -1 0'/>
         <DirectionalLight ambientIntensity='0.2' direction='-1 -0.1 -1'/>
         <Viewpoint description='My Overview' fieldOfView='1.570796' position='0 1.75 60'/>
+        <!-- this group contains the red/green/blue 3D crosshair -->
         <Group>
+          <!-- Arrow X -->
           <Transform rotation='0 0 -1 1.57' translation='25 0 0'>
             <Shape>
               <Appearance>
@@ -120,6 +49,7 @@ ecmascript:
               <Cone DEF='Tip' bottomRadius='0.8' height='3.0'/>
             </Shape>
           </Transform>
+          <!-- Arrow Y -->
           <Transform translation='0 25 0'>
             <Shape>
               <Appearance>
@@ -136,6 +66,7 @@ ecmascript:
               <Cone USE='Tip'/>
             </Shape>
           </Transform>
+          <!-- Arrow Z -->
           <Transform rotation='1 0 0 1.57' translation='0 0 25'>
             <Shape>
               <Appearance>
@@ -153,33 +84,56 @@ ecmascript:
             </Shape>
           </Transform>
         </Group>
+        <!-- the model that is being reviewed by the users of this scene -->
         <Transform DEF='FlowerTransform'>
+          <!-- <Inline DEF="Flower" url='"bumpyfreewrl.x3d"' /> -->
+          <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
           <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
           <Transform>
             <Shape>
+              <!-- <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet> -->
               <Appearance>
+                <!-- <ComposedShader DEF="freewrlShader" language="GLSL"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField="url" protoField="vertex"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField="url" protoField="fragment"/> </IS> </ShaderPart> </ComposedShader> -->
                 <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
                 <ComposedShader DEF='freewrlShader' language='GLSL'>
-                  <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32'/>
-                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
-                  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
-                  <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
-                  <field name='a' accessType='inputOutput' type='SFFloat' value='15.0'/>
-                  <field name='b' accessType='inputOutput' type='SFFloat' value='5.0'/>
-                  <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
-                  <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
-                  <field name='tdelta' accessType='inputOutput' type='SFFloat'/>
-                  <field name='pdelta' accessType='inputOutput' type='SFFloat'/>
-                  <ShaderPart/>
-                  <ShaderPart type='FRAGMENT'/>
+                  <!-- <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> -->
+                  <field accessType='inputOutput' name='fw_textureCoordGenType' type='SFInt32' value='0'/>
+                  <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
+                  <field accessType='inputOutput' name='bias' type='SFFloat' value='0.5'/>
+                  <field accessType='inputOutput' name='scale' type='SFFloat' value='0.5'/>
+                  <field accessType='inputOutput' name='power' type='SFFloat' value='2.0'/>
+                  <field accessType='inputOutput' name='a' type='SFFloat' value='15.0'/>
+                  <field accessType='inputOutput' name='b' type='SFFloat' value='5.0'/>
+                  <field accessType='inputOutput' name='c' type='SFFloat' value='20.0'/>
+                  <field accessType='inputOutput' name='d' type='SFFloat' value='20.0'/>
+                  <field accessType='inputOutput' name='tdelta' type='SFFloat' value='0.0'/>
+                  <field accessType='inputOutput' name='pdelta' type='SFFloat' value='0.0'/>
+                  <ShaderPart>
+                    <IS>
+                      <connect nodeField='url' protoField='vertex'/>
+                    </IS>
+                  </ShaderPart>
+                  <ShaderPart type='FRAGMENT'>
+                    <IS>
+                      <connect nodeField='url' protoField='fragment'/>
+                    </IS>
+                  </ShaderPart>
                 </ComposedShader>
-                <ComposedCubeMapTexture DEF='texture'/>
+                <ComposedCubeMapTexture DEF='texture'>
+                  <ImageTexture containerField='backTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+                  <ImageTexture containerField='bottomTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+                  <ImageTexture containerField='frontTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+                  <ImageTexture containerField='leftTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+                  <ImageTexture containerField='rightTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+                  <ImageTexture containerField='topTexture' url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+                </ComposedCubeMapTexture>
               </Appearance>
               <Sphere radius='5.0'/>
             </Shape>
           </Transform>
         </Transform>
+        <!-- <Script DEF="OrbitScript"> <field accessType="inputOutput" name="coordinates" type="MFVec3f"/> <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/> <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/> -->
+        <!-- DIS multiuser facilities -->
         <DISEntityManager DEF='EntityManager'>
           <DISEntityTypeMapping category='77' specific='1' url='"../data/Leif8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"'/>
           <DISEntityTypeMapping category='77' specific='2' url='"../data/Lily8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"'/>
@@ -187,10 +141,16 @@ ecmascript:
           <DISEntityTypeMapping category='77' specific='4' url='"../data/Gramps8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"'/>
         </DISEntityManager>
         <Collision>
-          <Group DEF='AvatarHolder' containerField='proxy'/>
+          <Group DEF='AvatarHolder'/>
         </Collision>
+        <ROUTE fromField='addedEntities' fromNode='EntityManager' toField='addChildren' toNode='AvatarHolder'/>
+        <ROUTE fromField='removedEntities' fromNode='EntityManager' toField='removeChildren' toNode='AvatarHolder'/>
       </Layer>
       <LayoutLayer>
+        <!-- positioning the LayoutLayer -->
+        <!-- clipping the LayoutLayer -->
+        <!-- the content (children) of the LayoutLayer -->
+        <!-- first, the slider for scaling the model -->
         <Transform translation='0 0 -3'>
           <Shape>
             <Appearance>
@@ -211,23 +171,121 @@ ecmascript:
             </Shape>
           </Transform>
         </Transform>
+        <ProtoDeclare name='SliderProto'>
+          <ProtoInterface>
+            <field accessType='inputOutput' name='sliderTranslation' type='SFVec3f' value='0 0.7 0'/>
+            <field accessType='inputOutput' name='transformTranslation' type='SFVec3f' value='0 0 0.1'/>
+            <field accessType='inputOutput' name='sensorTranslation' type='SFVec3f' value='0 0 0'/>
+            <field accessType='inputOutput' name='numberTranslation' type='SFVec3f' value='0.2 0 0'/>
+            <field accessType='inputOutput' name='textString' type='MFString' value='"a="'/>
+            <field accessType='inputOutput' name='parameterName' type='SFString' value='a'/>
+            <field accessType='inputOutput' name='parameterScale' type='SFFloat' value='30.0'/>
+            <field accessType='inputOutput' name='shaderNode' type='SFNode'/>
+          </ProtoInterface>
+          <ProtoBody>
+            <Group>
+              <Transform DEF='protoSlider' translation='0 0.7 0'>
+                <IS>
+                  <connect nodeField='translation' protoField='sliderTranslation'/>
+                </IS>
+                <Transform DEF='protoTransform' translation='0 0 0.1'>
+                  <IS>
+                    <connect nodeField='translation' protoField='sensorTranslation'/>
+                  </IS>
+                  <PlaneSensor DEF='protoSensor' maxPosition='2 0'/>
+                  <Transform>
+                    <TouchSensor DEF='protoTS'/>
+                  </Transform>
+                  <Transform>
+                    <Shape>
+                      <Appearance>
+                        <Material diffuseColor='1 1 1'/>
+                      </Appearance>
+                      <Text DEF='protoText' string='"a="'>
+                        <IS>
+                          <connect nodeField='string' protoField='textString'/>
+                        </IS>
+                        <FontStyle size='0.2'/>
+                      </Text>
+                    </Shape>
+                    <Transform>
+                      <IS>
+                        <connect nodeField='translation' protoField='numberTranslation'/>
+                      </IS>
+                      <Shape>
+                        <Appearance>
+                          <Material diffuseColor='1 1 1'/>
+                        </Appearance>
+                        <Text DEF='protoNumber' string='"0"'>
+                          <FontStyle size='0.2'/>
+                        </Text>
+                      </Shape>
+                    </Transform>
+                  </Transform>
+                </Transform>
+              </Transform>
+              <Script DEF='protoValueTransformerScript' directOutput='true' mustEvaluate='true'>
+                <field accessType='inputOutput' name='protoScale' type='SFFloat' value='30.0'/>
+                <field accessType='inputOutput' name='shader' type='SFNode'/>
+                <field accessType='inputOutput' name='newTranslation' type='SFVec3f' value='1 1 1'/>
+                <field accessType='inputOutput' name='protoValue_changed' type='SFFloat' value='1.0'/>
+                <field accessType='inputOutput' name='protoNumber_changed' type='MFString' value='"0.0"'/>
+                <field accessType='inputOutput' name='protoParameterName' type='SFString' value='a'/>
+                <IS>
+                  <connect nodeField='protoScale' protoField='parameterScale'/>
+                  <connect nodeField='protoParameterName' protoField='parameterName'/>
+                  <connect nodeField='shader' protoField='shaderNode'/>
+                </IS>
+<![CDATA[
+ecmascript:
+	const newTranslation = function(Value) {
+	    protoValue_changed = Value[0] * protoScale;
+	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());
+	    Browser.println("In newTranslation:");
+	    Browser.println(shader);
+	    Browser.println(Value[0]);
+	    Browser.println(Value.x);
+	    Browser.println(protoScale);
+	    Browser.println(Value[0] * protoScale);
+	    Browser.println(protoParameterName);
+					// shader[protoParameterName] = Value[0] * protoScale;
+	};
+]]>
+              </Script>
+              <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='set_translation' toNode='protoTransform'/>
+              <ROUTE fromField='translation_changed' fromNode='protoSensor' toField='newTranslation' toNode='protoValueTransformerScript'/>
+              <ROUTE fromField='protoNumber_changed' fromNode='protoValueTransformerScript' toField='string' toNode='protoNumber'/>
+            </Group>
+          </ProtoBody>
+        </ProtoDeclare>
         <ProtoInstance DEF='aPI' name='SliderProto'>
+          <fieldValue name='sliderTranslation' value='0 0.7 0'/>
+          <fieldValue name='transformTranslation' value='0 0 0.1'/>
+          <fieldValue name='sensorTranslation' value='0 0 0'/>
           <fieldValue name='numberTranslation' value='0.3 0 0'/>
+          <fieldValue name='textString' value='"a="'/>
+          <fieldValue name='parameterName' value='a'/>
+          <fieldValue name='parameterScale' value='30.0'/>
           <fieldValue name='shaderNode'>
             <ComposedShader USE='freewrlShader'/>
           </fieldValue>
         </ProtoInstance>
         <ProtoInstance DEF='bPI' name='SliderProto'>
           <fieldValue name='sliderTranslation' value='0 0.4 0'/>
+          <fieldValue name='transformTranslation' value='0 0 0.1'/>
+          <fieldValue name='sensorTranslation' value='0 0 0'/>
           <fieldValue name='numberTranslation' value='0.3 0 0'/>
           <fieldValue name='textString' value='"b="'/>
           <fieldValue name='parameterName' value='b'/>
+          <fieldValue name='parameterScale' value='30.0'/>
           <fieldValue name='shaderNode'>
             <ComposedShader USE='freewrlShader'/>
           </fieldValue>
         </ProtoInstance>
         <ProtoInstance DEF='cPI' name='SliderProto'>
           <fieldValue name='sliderTranslation' value='0 0.1 0'/>
+          <fieldValue name='transformTranslation' value='0 0 0.1'/>
+          <fieldValue name='sensorTranslation' value='0 0 0'/>
           <fieldValue name='numberTranslation' value='0.3 0 0'/>
           <fieldValue name='textString' value='"c="'/>
           <fieldValue name='parameterName' value='c'/>
@@ -238,6 +296,8 @@ ecmascript:
         </ProtoInstance>
         <ProtoInstance DEF='dPI' name='SliderProto'>
           <fieldValue name='sliderTranslation' value='0 -0.2 0'/>
+          <fieldValue name='transformTranslation' value='0 0 0.1'/>
+          <fieldValue name='sensorTranslation' value='0 0 0'/>
           <fieldValue name='numberTranslation' value='0.3 0 0'/>
           <fieldValue name='textString' value='"d="'/>
           <fieldValue name='parameterName' value='d'/>
@@ -248,6 +308,8 @@ ecmascript:
         </ProtoInstance>
         <ProtoInstance DEF='tdeltaPI' name='SliderProto'>
           <fieldValue name='sliderTranslation' value='0 -0.5 0'/>
+          <fieldValue name='transformTranslation' value='0 0 0.1'/>
+          <fieldValue name='sensorTranslation' value='0 0 0'/>
           <fieldValue name='numberTranslation' value='0.8 0 0'/>
           <fieldValue name='textString' value='"tdelta="'/>
           <fieldValue name='parameterName' value='tdelta'/>
@@ -258,6 +320,8 @@ ecmascript:
         </ProtoInstance>
         <ProtoInstance DEF='pdeltaPI' name='SliderProto'>
           <fieldValue name='sliderTranslation' value='0 -0.8 0'/>
+          <fieldValue name='transformTranslation' value='0 0 0.1'/>
+          <fieldValue name='sensorTranslation' value='0 0 0'/>
           <fieldValue name='numberTranslation' value='0.8 0 0'/>
           <fieldValue name='textString' value='"pdelta="'/>
           <fieldValue name='parameterName' value='pdelta'/>
@@ -270,7 +334,5 @@ ecmascript:
         <Viewport/>
       </LayoutLayer>
     </LayerSet>
-    <ROUTE fromField='addedEntities' fromNode='EntityManager' toField='addChildren' toNode='AvatarHolder'/>
-    <ROUTE fromField='removedEntities' fromNode='EntityManager' toField='removeChildren' toNode='AvatarHolder'/>
   </Scene>
 </X3D>

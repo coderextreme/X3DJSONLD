@@ -1,3 +1,535 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:842523d35f2e4135b887dfc95973a032b248cb07d8fc9d8b1afd1d985ff74564
-size 17203
+{
+  "string": "Scene",
+  "children": [
+    {
+      "string": " viewpoint",
+      "nodeType": "viewpoint",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 5
+      },
+      "description": "Only Viewpoint",
+      "children": []
+    },
+    {
+      "string": " background",
+      "nodeType": "background",
+      "skyColor": [
+        {
+          "r": 0.4,
+          "g": 0.4,
+          "b": 0.4
+        }
+      ],
+      "children": []
+    },
+    {
+      "string": " protodeclare",
+      "nodeType": "protodeclare",
+      "name": "point",
+      "children": [
+        {
+          "string": " protointerface",
+          "nodeType": "protointerface",
+          "children": [
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "inputOutput",
+              "name": "translation",
+              "value": "0 0 0",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " protobody",
+          "nodeType": "protobody",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "DEF": "node",
+              "children": [
+                {
+                  "string": " is",
+                  "nodeType": "is",
+                  "children": [
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "translation",
+                      "protoField": "translation",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "string": " shape",
+                  "nodeType": "shape",
+                  "children": [
+                    {
+                      "string": " sphere",
+                      "nodeType": "sphere",
+                      "radius": "0.1",
+                      "children": []
+                    },
+                    {
+                      "string": " appearance",
+                      "nodeType": "appearance",
+                      "children": [
+                        {
+                          "string": " material",
+                          "nodeType": "material",
+                          "diffuseColor": {
+                            "r": 1,
+                            "g": 0,
+                            "b": 0
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "string": " positioninterpolator",
+                  "nodeType": "positioninterpolator",
+                  "DEF": "PI1",
+                  "key": [
+                    "0",
+                    "1"
+                  ],
+                  "keyValue": [
+                    {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    {
+                      "x": 0,
+                      "y": 5,
+                      "z": 0
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "string": " script",
+                  "nodeType": "script",
+                  "DEF": "MB1",
+                  "children": [
+                    {
+                      "string": " field",
+                      "nodeType": "field",
+                      "name": "translation",
+                      "accessType": "inputOutput",
+                      "value": "50 50 0",
+                      "children": []
+                    },
+                    {
+                      "string": " field",
+                      "nodeType": "field",
+                      "name": "old",
+                      "accessType": "inputOutput",
+                      "value": "0 0 0",
+                      "children": []
+                    },
+                    {
+                      "string": " field",
+                      "nodeType": "field",
+                      "name": "set_location",
+                      "accessType": "inputOnly",
+                      "children": []
+                    },
+                    {
+                      "string": " field",
+                      "nodeType": "field",
+                      "name": "keyValue",
+                      "accessType": "inputOutput",
+                      "value": "0 0 0 0 5 0",
+                      "children": []
+                    },
+                    "<script>\necmascript:\n               function set_location(value) {\n                    old = translation;\n                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n                    keyValue = new MFVec3f([old, translation]);\n               }\n</Script>"
+                  ]
+                },
+                {
+                  "string": " timesensor",
+                  "nodeType": "timesensor",
+                  "DEF": "CL1",
+                  "cycleInterval": "3",
+                  "loop": "true",
+                  "children": []
+                },
+                {
+                  "string": " route",
+                  "nodeType": "route",
+                  "fromNode": "CL1",
+                  "fromField": "cycleTime",
+                  "toNode": "MB1",
+                  "toField": "set_location",
+                  "children": []
+                },
+                {
+                  "string": " route",
+                  "nodeType": "route",
+                  "fromNode": "CL1",
+                  "fromField": "fraction_changed",
+                  "toNode": "PI1",
+                  "toField": "set_fraction",
+                  "children": []
+                },
+                {
+                  "string": " route",
+                  "nodeType": "route",
+                  "fromNode": "MB1",
+                  "fromField": "keyValue",
+                  "toNode": "PI1",
+                  "toField": "keyValue",
+                  "children": []
+                },
+                {
+                  "string": " route",
+                  "nodeType": "route",
+                  "fromNode": "PI1",
+                  "fromField": "value_changed",
+                  "toNode": "node",
+                  "toField": "set_translation",
+                  "children": []
+                },
+                {
+                  "string": " route",
+                  "nodeType": "route",
+                  "fromNode": "MB1",
+                  "fromField": "translation_changed",
+                  "toNode": "node",
+                  "toField": "set_translation",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " transform",
+      "nodeType": "transform",
+      "DEF": "G1",
+      "children": [
+        {
+          "string": " protoinstance",
+          "nodeType": "protoinstance",
+          "name": "point",
+          "children": []
+        }
+      ]
+    },
+    {
+      "string": " transform",
+      "nodeType": "transform",
+      "DEF": "G2",
+      "children": [
+        {
+          "string": " protoinstance",
+          "nodeType": "protoinstance",
+          "name": "point",
+          "children": []
+        }
+      ]
+    },
+    {
+      "string": " transform",
+      "nodeType": "transform",
+      "DEF": "transC1",
+      "children": [
+        {
+          "string": " transform",
+          "nodeType": "transform",
+          "DEF": "rotscaleC1",
+          "children": [
+            {
+              "string": " shape",
+              "nodeType": "shape",
+              "children": [
+                {
+                  "string": " appearance",
+                  "nodeType": "appearance",
+                  "children": [
+                    {
+                      "string": " material",
+                      "nodeType": "material",
+                      "diffuseColor": {
+                        "r": 0.2,
+                        "g": 0.7,
+                        "b": 0.7
+                      },
+                      "transparency": ".5",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "string": " cylinder",
+                  "nodeType": "cylinder",
+                  "radius": ".05",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " protodeclare",
+      "nodeType": "protodeclare",
+      "name": "x3dconnector",
+      "children": [
+        {
+          "string": " protointerface",
+          "nodeType": "protointerface",
+          "children": [
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "name": "startnode",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "initializeOnly",
+              "name": "endnode",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "inputOutput",
+              "name": "transnode",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "inputOutput",
+              "name": "rotscalenode",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "inputOnly",
+              "name": "set_startpoint",
+              "children": []
+            },
+            {
+              "string": " field",
+              "nodeType": "field",
+              "accessType": "inputOnly",
+              "name": "set_endpoint",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " protobody",
+          "nodeType": "protobody",
+          "children": [
+            {
+              "string": " script",
+              "nodeType": "script",
+              "DEF": "S1",
+              "children": [
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "name": "startnode",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "name": "endnode",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "name": "transnode",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "initializeOnly",
+                  "name": "rotscalenode",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "inputOnly",
+                  "name": "set_startpoint",
+                  "children": []
+                },
+                {
+                  "string": " field",
+                  "nodeType": "field",
+                  "accessType": "inputOnly",
+                  "name": "set_endpoint",
+                  "children": []
+                },
+                {
+                  "string": " is",
+                  "nodeType": "is",
+                  "children": [
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "startnode",
+                      "protoField": "startnode",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "endnode",
+                      "protoField": "endnode",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "transnode",
+                      "protoField": "transnode",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "rotscalenode",
+                      "protoField": "rotscalenode",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "set_startpoint",
+                      "protoField": "set_startpoint",
+                      "children": []
+                    },
+                    {
+                      "string": " connect",
+                      "nodeType": "connect",
+                      "nodeField": "set_endpoint",
+                      "protoField": "set_endpoint",
+                      "children": []
+                    }
+                  ]
+                },
+                "<script>ecmascript:\n        function recompute(startpoint,endpoint){\n\t    if (typeof endpoint === 'undefined') {\n\t\treturn;\n\t    }\n            var dif = endpoint.subtract(startpoint);\n            var dist = dif.length()*0.5;\n            var dif2 = dif.multiply(0.5);\n            var norm = dif.normalize();\n            var transl = startpoint.add(dif2);\n\t    if (typeof Quaternion !== 'undefined') {\n\t\t    return {\n\t\t\t    scale : new SFVec3f(1.0,dist,1.0),\n\t\t\t    translation : transl,\n\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n\t\t    };\n\t    } else {\n\t\t    return {\n\t\t\t    scale : new SFVec3f(1.0,dist,1.0),\n\t\t\t    translation : transl,\n\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n\t\t    };\n\t    }\n\t}\n\tfunction recompute_and_route(startpoint, endpoint) {\n\t      var trafo = recompute(startpoint, endpoint);\n\t      if (trafo) {\n\t\t      transnode.translation = trafo.translation;\n\t\t      rotscalenode.rotation = trafo.rotation;\n\t\t      rotscalenode.scale = trafo.scale;\n\t      }\n\t}\n        function initialize(){\n            recompute_and_route(startnode.translation,endnode.translation);\n        }\n        function set_startpoint(val,t){\n            recompute_and_route(val,endnode.translation);\n        }\n        function set_endpoint(val,t){\n            recompute_and_route(startnode.translation,val);\n        }\n            </Script>"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "string": " protoinstance",
+      "nodeType": "protoinstance",
+      "name": "x3dconnector",
+      "DEF": "connector1",
+      "children": [
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "startnode",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "G1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "endnode",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "G2",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "transnode",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "transC1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "rotscalenode",
+          "children": [
+            {
+              "string": " transform",
+              "nodeType": "transform",
+              "USE": "rotscaleC1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "set_startpoint",
+          "children": []
+        },
+        {
+          "string": " fieldvalue",
+          "nodeType": "fieldvalue",
+          "name": "set_endpoint",
+          "children": []
+        }
+      ]
+    },
+    {
+      "string": " route",
+      "nodeType": "route",
+      "fromNode": "G1",
+      "fromField": "translation_changed",
+      "toNode": "connector1",
+      "toField": "set_startpoint",
+      "children": []
+    },
+    {
+      "string": " route",
+      "nodeType": "route",
+      "fromNode": "G2",
+      "fromField": "translation_changed",
+      "toNode": "connector1",
+      "toField": "set_endpoint",
+      "children": []
+    }
+  ]
+}

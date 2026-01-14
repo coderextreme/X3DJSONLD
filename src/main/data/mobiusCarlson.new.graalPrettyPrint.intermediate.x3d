@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Interchange' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='NURBS' level='4'/>
-    <component name='Shape' level='2'/>
-    <unit name='millimeters' category='length' conversionFactor='25.4'/>
+    <component level='4' name='NURBS'/>
+    <component level='2' name='Shape'/>
+    <unit category='length' conversionFactor='25.4' name='millimeters'/>
     <meta content='mobiusCarlson.x3d' name='title'/>
     <meta content='Vince Marchetti' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='https://kshell.com/mobiusCarlson.x3d' name='identifier'/>
+    <meta content='a mobius of 3 NURBS Patch Surfaces' name='description'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <Background skyColor='1 1 1'/>
@@ -49,7 +50,9 @@
     <Group DEF='triad'>
       <Shape>
         <Appearance>
-          <LineProperties linewidthScaleFactor='2.0'/>
+          <LineProperties linewidthScaleFactor='2.0'>
+            <!-- linetype='1' solid -->
+          </LineProperties>
           <Material emissiveColor='1 0 0'/>
         </Appearance>
         <LineSet vertexCount='2'>
@@ -58,7 +61,9 @@
       </Shape>
       <Shape>
         <Appearance>
-          <LineProperties linewidthScaleFactor='2.0'/>
+          <LineProperties linewidthScaleFactor='2.0'>
+            <!-- linetype='1' solid -->
+          </LineProperties>
           <Material emissiveColor='0 1 0'/>
         </Appearance>
         <LineSet vertexCount='2'>
@@ -67,7 +72,9 @@
       </Shape>
       <Shape>
         <Appearance>
-          <LineProperties linewidthScaleFactor='2.0'/>
+          <LineProperties linewidthScaleFactor='2.0'>
+            <!-- linetype='1' solid -->
+          </LineProperties>
           <Material emissiveColor='0 0 1'/>
         </Appearance>
         <LineSet vertexCount='2'>

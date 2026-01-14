@@ -1,3 +1,275 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26d3de38855fb37921093c6c6c0b267a628c2a9cd3773d11e836ce48ca684cd8
-size 6234
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"rubik.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"manual",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "ProtoDeclare":
+        {
+      {
+        "@name":"sphereproto"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"xtranslation",
+        "@type":"SFVec3f"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Transform":
+                {
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"translation",
+        "@protoField":"xtranslation"
+      }
+    },
+                    }                    "Shape":
+                    {
+                        "Appearance":
+                        {
+                            "Material":
+                            {
+      {
+        "@diffuseColor":"1 1 1"
+      }
+    },
+                        }                        "Sphere":
+                        {
+    },
+                    }                }            }        }        "ProtoDeclare":
+        {
+      {
+        "@name":"three"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"ytranslation",
+        "@type":"SFVec3f"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Transform":
+                {
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"translation",
+        "@protoField":"ytranslation"
+      }
+    },
+                    }                    "ProtoInstance":
+                    {
+      {
+        "@name":"sphereproto"
+      }
+    },
+                    "ProtoInstance":
+                    {
+      {
+        "@name":"sphereproto"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"xtranslation",
+        "@value":"2 0 0"
+      }
+    },
+                    }                    "ProtoInstance":
+                    {
+      {
+        "@name":"sphereproto"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"xtranslation",
+        "@value":"-2 0 0"
+      }
+    },
+                    }                }            }        }        "ProtoDeclare":
+        {
+      {
+        "@name":"nine"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"ztranslation",
+        "@type":"SFVec3f"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Transform":
+                {
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"translation",
+        "@protoField":"ztranslation"
+      }
+    },
+                    }                    "ProtoInstance":
+                    {
+      {
+        "@name":"three"
+      }
+    },
+                    "ProtoInstance":
+                    {
+      {
+        "@name":"three"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"ytranslation",
+        "@value":"0 2 0"
+      }
+    },
+                    }                    "ProtoInstance":
+                    {
+      {
+        "@name":"three"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"ytranslation",
+        "@value":"0 -2 0"
+      }
+    },
+                    }                }            }        }        "ProtoDeclare":
+        {
+      {
+        "@name":"twentyseven"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"ttranslation",
+        "@type":"SFVec3f"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Transform":
+                {
+                    "IS":
+                    {
+                        "connect":
+                        {
+      {
+        "@nodeField":"translation",
+        "@protoField":"ttranslation"
+      }
+    },
+                    }                    "ProtoInstance":
+                    {
+      {
+        "@name":"nine"
+      }
+    },
+                    "ProtoInstance":
+                    {
+      {
+        "@name":"nine"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"ztranslation",
+        "@value":"0 0 2"
+      }
+    },
+                    }                    "ProtoInstance":
+                    {
+      {
+        "@name":"nine"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"ztranslation",
+        "@value":"0 0 -2"
+      }
+    },
+                    }                }            }        }        "NavigationInfo":
+        {
+      {
+        "@type":""ANY" "EXAMINE" "WALK" "FLY" "LOOKAT""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Rubiks Cube",
+        "@position":"0 0 12"
+      }
+    },
+        "ProtoInstance":
+        {
+      {
+        "@name":"twentyseven"
+      }
+    },
+    }}
