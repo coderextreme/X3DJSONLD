@@ -9944,6 +9944,7 @@ SoProtoInstance1811->addChild(*SoField1814);
 SoField* SoField1815 = new SoField();
 SoField1815->setName(QString("hAnimBehaviorNodes"));
 SoProtoInstance* SoProtoInstance1816 = new SoProtoInstance();
+SoProtoInstance1816->setName(QString("HAnimBehavior"));
 SoProtoInstance1816->setUSE(QString("BehaviorTest1"));
 SoField1815->addChild(*SoProtoInstance1816);
 

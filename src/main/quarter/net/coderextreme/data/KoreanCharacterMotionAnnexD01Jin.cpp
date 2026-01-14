@@ -118,7 +118,7 @@ Sohead1->addMeta(*Someta15);
 
 Someta* Someta16 = new Someta();
 Someta16->setName(QString("generator"));
-Someta16->setContent(QString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"));
+Someta16->setContent(QString("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"));
 Sohead1->addMeta(*Someta16);
 
 Someta* Someta17 = new Someta();
@@ -128,7 +128,7 @@ Sohead1->addMeta(*Someta17);
 
 Someta* Someta18 = new Someta();
 Someta18->setName(QString("generator"));
-Someta18->setContent(QString("Gnu Image Manipulation Program, http://www.gimp.org"));
+Someta18->setContent(QString("Gnu Image Manipulation Program, https://www.gimp.org"));
 Sohead1->addMeta(*Someta18);
 
 Someta* Someta19 = new Someta();

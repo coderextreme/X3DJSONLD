@@ -75,7 +75,7 @@ SoSceneManager0->setHead(*Sohead1);
 
 SoNode* SoNode7 = new SoNode();
 SoNavigationInfo* SoNavigationInfo8 = new SoNavigationInfo();
-SoNavigationInfo8->setType(new QString[]{QString("EXAMINE")}, 1);
+SoNavigationInfo8->setType(new QString[]{QString("ANY"), QString("EXAMINE"), QString("WALK"), QString("FLY"), QString("LOOKAT")}, 5);
 SoNode7->addChild(*SoNavigationInfo8);
 
 SoViewpoint* SoViewpoint9 = new SoViewpoint();

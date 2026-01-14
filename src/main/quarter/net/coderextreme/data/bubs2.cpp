@@ -46,45 +46,45 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
-Someta* Someta2 = new Someta();
-Someta2->setName(QString("title"));
-Someta2->setContent(QString("bubs2.x3d"));
-Sohead1->addMeta(*Someta2);
+Socomponent* Socomponent2 = new Socomponent();
+Socomponent2->setName(QString("Scripting"));
+Socomponent2->setLevel(1);
+Sohead1->addChild(*Socomponent2);
 
 Someta* Someta3 = new Someta();
-Someta3->setName(QString("creator"));
-Someta3->setContent(QString("John Carlson"));
+Someta3->setName(QString("title"));
+Someta3->setContent(QString("bubs2.x3d"));
 Sohead1->addMeta(*Someta3);
 
 Someta* Someta4 = new Someta();
-Someta4->setName(QString("description"));
-Someta4->setContent(QString("Tour around a prismatic sphere"));
+Someta4->setName(QString("creator"));
+Someta4->setContent(QString("John Carlson"));
 Sohead1->addMeta(*Someta4);
 
 Someta* Someta5 = new Someta();
-Someta5->setName(QString("generator"));
-Someta5->setContent(QString("X3D-Edit, https://savage.nps.edu/X3D-Edit"));
+Someta5->setName(QString("description"));
+Someta5->setContent(QString("Tour around a prismatic sphere"));
 Sohead1->addMeta(*Someta5);
 
 Someta* Someta6 = new Someta();
-Someta6->setName(QString("identifier"));
-Someta6->setContent(QString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"));
+Someta6->setName(QString("generator"));
+Someta6->setContent(QString("X3D-Edit, https://savage.nps.edu/X3D-Edit"));
 Sohead1->addMeta(*Someta6);
 
 Someta* Someta7 = new Someta();
-Someta7->setName(QString("translated"));
-Someta7->setContent(QString("13 March 2016"));
+Someta7->setName(QString("identifier"));
+Someta7->setContent(QString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"));
 Sohead1->addMeta(*Someta7);
 
 Someta* Someta8 = new Someta();
-Someta8->setName(QString("generator"));
-Someta8->setContent(QString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"));
+Someta8->setName(QString("translated"));
+Someta8->setContent(QString("13 March 2016"));
 Sohead1->addMeta(*Someta8);
 
-Socomponent* Socomponent9 = new Socomponent();
-Socomponent9->setName(QString("Scripting"));
-Socomponent9->setLevel(1);
-Sohead1->addChild(*Socomponent9);
+Someta* Someta9 = new Someta();
+Someta9->setName(QString("generator"));
+Someta9->setContent(QString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"));
+Sohead1->addMeta(*Someta9);
 
 SoSceneManager0->setHead(*Sohead1);
 

@@ -46,6 +46,7 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
+//meta content='under development' name='warning'/
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("Shaders"));
 Socomponent2->setLevel(1);
@@ -146,7 +147,6 @@ Someta21->setName(QString("license"));
 Someta21->setContent(QString("../../license.html"));
 Sohead1->addMeta(*Someta21);
 
-//meta content='under development' name='warning'/
 SoSceneManager0->setHead(*Sohead1);
 
 SoNode* SoNode22 = new SoNode();

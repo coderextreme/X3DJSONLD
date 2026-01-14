@@ -63,7 +63,7 @@ Sohead1->addMeta(*Someta4);
 
 Someta* Someta5 = new Someta();
 Someta5->setName(QString("generator"));
-Someta5->setContent(QString("Titania V3.0.4, http://titania.create3000.de"));
+Someta5->setContent(QString("Titania V3.0.4, https://titania.create3000.de"));
 Sohead1->addMeta(*Someta5);
 
 Someta* Someta6 = new Someta();
@@ -172,7 +172,7 @@ SoIS26->addChild(*Soconnect28);
 SoScript20->addChild(*SoIS26);
 
 
-//SoScript20->setSourceCode(QString("vrmlscript:")+
+//SoScript20->setSourceCode(QString("ecmascript:")+
 //_T("function initialize ()")+
 //_T("{")+
 //_T("	var point         = new SFVec3f (cornerRadius, 0, 0);")+
@@ -452,7 +452,7 @@ SoIS85->addChild(*Soconnect86);
 SoScript79->addChild(*SoIS85);
 
 
-//SoScript79->setSourceCode(QString("vrmlscript:")+
+//SoScript79->setSourceCode(QString("ecmascript:")+
 //_T("function initialize ()")+
 //_T("{")+
 //_T("	sensor .offset = translation;")+
@@ -602,7 +602,7 @@ SoIS114->addChild(*Soconnect116);
 SoScript105->addChild(*SoIS114);
 
 
-//SoScript105->setSourceCode(QString("vrmlscript:")+
+//SoScript105->setSourceCode(QString("ecmascript:")+
 //_T("function initialize ()")+
 //_T("{")+
 //_T("	Browser .addRoute (output, 'translation_changed', self, 'set_translation');")+
@@ -630,7 +630,7 @@ SoProtoDeclare88->addChild(*SoProtoBody94);
 SoNode9->addChild(*SoProtoDeclare88);
 
 SoNavigationInfo* SoNavigationInfo117 = new SoNavigationInfo();
-SoNavigationInfo117->setType(new QString[]{QString(", "), QString("PLANE_create3000.deANY")}, 2);
+SoNavigationInfo117->setType(new QString[]{QString("FLY"), QString("ANY")}, 2);
 SoNode9->addChild(*SoNavigationInfo117);
 
 SoBackground* SoBackground118 = new SoBackground();

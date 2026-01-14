@@ -494,153 +494,123 @@ SoField90->addChild(*SoTransform91);
 
 SoProtoInstance83->addChild(*SoField90);
 
-SoField* SoField92 = new SoField();
-SoField92->setName(QString("set_startpoint"));
-SoField92->setValue(QString("0 0 0"));
-SoProtoInstance83->addChild(*SoField92);
-
-SoField* SoField93 = new SoField();
-SoField93->setName(QString("set_endpoint"));
-SoField93->setValue(QString("0 0 0"));
-SoProtoInstance83->addChild(*SoField93);
-
 SoNode10->addChild(*SoProtoInstance83);
 
-SoProtoInstance* SoProtoInstance94 = new SoProtoInstance();
-SoProtoInstance94->setName(QString("x3dconnector"));
-SoProtoInstance94->setDEF(QString("connector2"));
+SoProtoInstance* SoProtoInstance92 = new SoProtoInstance();
+SoProtoInstance92->setName(QString("x3dconnector"));
+SoProtoInstance92->setDEF(QString("connector2"));
+SoField* SoField93 = new SoField();
+SoField93->setName(QString("startnode"));
+SoTransform* SoTransform94 = new SoTransform();
+SoTransform94->setUSE(QString("G1"));
+SoField93->addChild(*SoTransform94);
+
+SoProtoInstance92->addChild(*SoField93);
+
 SoField* SoField95 = new SoField();
-SoField95->setName(QString("startnode"));
+SoField95->setName(QString("endnode"));
 SoTransform* SoTransform96 = new SoTransform();
-SoTransform96->setUSE(QString("G1"));
+SoTransform96->setUSE(QString("G3"));
 SoField95->addChild(*SoTransform96);
 
-SoProtoInstance94->addChild(*SoField95);
+SoProtoInstance92->addChild(*SoField95);
 
 SoField* SoField97 = new SoField();
-SoField97->setName(QString("endnode"));
+SoField97->setName(QString("transnode"));
 SoTransform* SoTransform98 = new SoTransform();
-SoTransform98->setUSE(QString("G3"));
+SoTransform98->setUSE(QString("transC2"));
 SoField97->addChild(*SoTransform98);
 
-SoProtoInstance94->addChild(*SoField97);
+SoProtoInstance92->addChild(*SoField97);
 
 SoField* SoField99 = new SoField();
-SoField99->setName(QString("transnode"));
+SoField99->setName(QString("rotscalenode"));
 SoTransform* SoTransform100 = new SoTransform();
-SoTransform100->setUSE(QString("transC2"));
+SoTransform100->setUSE(QString("rotscaleC2"));
 SoField99->addChild(*SoTransform100);
 
-SoProtoInstance94->addChild(*SoField99);
+SoProtoInstance92->addChild(*SoField99);
 
-SoField* SoField101 = new SoField();
-SoField101->setName(QString("rotscalenode"));
-SoTransform* SoTransform102 = new SoTransform();
-SoTransform102->setUSE(QString("rotscaleC2"));
-SoField101->addChild(*SoTransform102);
+SoNode10->addChild(*SoProtoInstance92);
 
-SoProtoInstance94->addChild(*SoField101);
+SoProtoInstance* SoProtoInstance101 = new SoProtoInstance();
+SoProtoInstance101->setName(QString("x3dconnector"));
+SoProtoInstance101->setDEF(QString("connector3"));
+SoField* SoField102 = new SoField();
+SoField102->setName(QString("startnode"));
+SoTransform* SoTransform103 = new SoTransform();
+SoTransform103->setUSE(QString("G1"));
+SoField102->addChild(*SoTransform103);
 
-SoField* SoField103 = new SoField();
-SoField103->setName(QString("set_startpoint"));
-SoField103->setValue(QString("0 0 0"));
-SoProtoInstance94->addChild(*SoField103);
+SoProtoInstance101->addChild(*SoField102);
 
 SoField* SoField104 = new SoField();
-SoField104->setName(QString("set_endpoint"));
-SoField104->setValue(QString("0 0 0"));
-SoProtoInstance94->addChild(*SoField104);
+SoField104->setName(QString("endnode"));
+SoTransform* SoTransform105 = new SoTransform();
+SoTransform105->setUSE(QString("G4"));
+SoField104->addChild(*SoTransform105);
 
-SoNode10->addChild(*SoProtoInstance94);
+SoProtoInstance101->addChild(*SoField104);
 
-SoProtoInstance* SoProtoInstance105 = new SoProtoInstance();
-SoProtoInstance105->setName(QString("x3dconnector"));
-SoProtoInstance105->setDEF(QString("connector3"));
 SoField* SoField106 = new SoField();
-SoField106->setName(QString("startnode"));
+SoField106->setName(QString("transnode"));
 SoTransform* SoTransform107 = new SoTransform();
-SoTransform107->setUSE(QString("G1"));
+SoTransform107->setUSE(QString("transC3"));
 SoField106->addChild(*SoTransform107);
 
-SoProtoInstance105->addChild(*SoField106);
+SoProtoInstance101->addChild(*SoField106);
 
 SoField* SoField108 = new SoField();
-SoField108->setName(QString("endnode"));
+SoField108->setName(QString("rotscalenode"));
 SoTransform* SoTransform109 = new SoTransform();
-SoTransform109->setUSE(QString("G4"));
+SoTransform109->setUSE(QString("rotscaleC3"));
 SoField108->addChild(*SoTransform109);
 
-SoProtoInstance105->addChild(*SoField108);
+SoProtoInstance101->addChild(*SoField108);
 
-SoField* SoField110 = new SoField();
-SoField110->setName(QString("transnode"));
-SoTransform* SoTransform111 = new SoTransform();
-SoTransform111->setUSE(QString("transC3"));
-SoField110->addChild(*SoTransform111);
+SoNode10->addChild(*SoProtoInstance101);
 
-SoProtoInstance105->addChild(*SoField110);
+SoROUTE* SoROUTE110 = new SoROUTE();
+SoROUTE110->setFromNode(QString("G1"));
+SoROUTE110->setFromField(QString("translation_changed"));
+SoROUTE110->setToNode(QString("connector1"));
+SoROUTE110->setToField(QString("set_startpoint"));
+SoNode10->addChild(*SoROUTE110);
 
-SoField* SoField112 = new SoField();
-SoField112->setName(QString("rotscalenode"));
-SoTransform* SoTransform113 = new SoTransform();
-SoTransform113->setUSE(QString("rotscaleC3"));
-SoField112->addChild(*SoTransform113);
+SoROUTE* SoROUTE111 = new SoROUTE();
+SoROUTE111->setFromNode(QString("G2"));
+SoROUTE111->setFromField(QString("translation_changed"));
+SoROUTE111->setToNode(QString("connector1"));
+SoROUTE111->setToField(QString("set_endpoint"));
+SoNode10->addChild(*SoROUTE111);
 
-SoProtoInstance105->addChild(*SoField112);
+SoROUTE* SoROUTE112 = new SoROUTE();
+SoROUTE112->setFromNode(QString("G1"));
+SoROUTE112->setFromField(QString("translation_changed"));
+SoROUTE112->setToNode(QString("connector2"));
+SoROUTE112->setToField(QString("set_startpoint"));
+SoNode10->addChild(*SoROUTE112);
 
-SoField* SoField114 = new SoField();
-SoField114->setName(QString("set_startpoint"));
-SoField114->setValue(QString("0 0 0"));
-SoProtoInstance105->addChild(*SoField114);
+SoROUTE* SoROUTE113 = new SoROUTE();
+SoROUTE113->setFromNode(QString("G3"));
+SoROUTE113->setFromField(QString("translation_changed"));
+SoROUTE113->setToNode(QString("connector2"));
+SoROUTE113->setToField(QString("set_endpoint"));
+SoNode10->addChild(*SoROUTE113);
 
-SoField* SoField115 = new SoField();
-SoField115->setName(QString("set_endpoint"));
-SoField115->setValue(QString("0 0 0"));
-SoProtoInstance105->addChild(*SoField115);
+SoROUTE* SoROUTE114 = new SoROUTE();
+SoROUTE114->setFromNode(QString("G1"));
+SoROUTE114->setFromField(QString("translation_changed"));
+SoROUTE114->setToNode(QString("connector3"));
+SoROUTE114->setToField(QString("set_startpoint"));
+SoNode10->addChild(*SoROUTE114);
 
-SoNode10->addChild(*SoProtoInstance105);
-
-SoROUTE* SoROUTE116 = new SoROUTE();
-SoROUTE116->setFromNode(QString("G1"));
-SoROUTE116->setFromField(QString("translation_changed"));
-SoROUTE116->setToNode(QString("connector1"));
-SoROUTE116->setToField(QString("set_startpoint"));
-SoNode10->addChild(*SoROUTE116);
-
-SoROUTE* SoROUTE117 = new SoROUTE();
-SoROUTE117->setFromNode(QString("G2"));
-SoROUTE117->setFromField(QString("translation_changed"));
-SoROUTE117->setToNode(QString("connector1"));
-SoROUTE117->setToField(QString("set_endpoint"));
-SoNode10->addChild(*SoROUTE117);
-
-SoROUTE* SoROUTE118 = new SoROUTE();
-SoROUTE118->setFromNode(QString("G1"));
-SoROUTE118->setFromField(QString("translation_changed"));
-SoROUTE118->setToNode(QString("connector2"));
-SoROUTE118->setToField(QString("set_startpoint"));
-SoNode10->addChild(*SoROUTE118);
-
-SoROUTE* SoROUTE119 = new SoROUTE();
-SoROUTE119->setFromNode(QString("G3"));
-SoROUTE119->setFromField(QString("translation_changed"));
-SoROUTE119->setToNode(QString("connector2"));
-SoROUTE119->setToField(QString("set_endpoint"));
-SoNode10->addChild(*SoROUTE119);
-
-SoROUTE* SoROUTE120 = new SoROUTE();
-SoROUTE120->setFromNode(QString("G1"));
-SoROUTE120->setFromField(QString("translation_changed"));
-SoROUTE120->setToNode(QString("connector3"));
-SoROUTE120->setToField(QString("set_startpoint"));
-SoNode10->addChild(*SoROUTE120);
-
-SoROUTE* SoROUTE121 = new SoROUTE();
-SoROUTE121->setFromNode(QString("G4"));
-SoROUTE121->setFromField(QString("translation_changed"));
-SoROUTE121->setToNode(QString("connector3"));
-SoROUTE121->setToField(QString("set_endpoint"));
-SoNode10->addChild(*SoROUTE121);
+SoROUTE* SoROUTE115 = new SoROUTE();
+SoROUTE115->setFromNode(QString("G4"));
+SoROUTE115->setFromField(QString("translation_changed"));
+SoROUTE115->setToNode(QString("connector3"));
+SoROUTE115->setToField(QString("set_endpoint"));
+SoNode10->addChild(*SoROUTE115);
 
 SoSceneManager0->setSceneGraph(*SoNode10);
 

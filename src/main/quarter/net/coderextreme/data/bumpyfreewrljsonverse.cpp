@@ -46,6 +46,8 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Full"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
+//<component name='Shape' level='4'></component>
+//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("Scripting"));
 Socomponent2->setLevel(1);
@@ -91,8 +93,6 @@ Socomponent10->setName(QString("DIS"));
 Socomponent10->setLevel(2);
 Sohead1->addChild(*Socomponent10);
 
-//<component name='Shape' level='4'></component>
-//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 Someta* Someta11 = new Someta();
 Someta11->setName(QString("title"));
 Someta11->setContent(QString("bumpyfreewrljsonverse.x3d"));
@@ -631,30 +631,25 @@ SoLayer37->addChild(*SoROUTE108);
 //DIS multiuser facilities
 SoDISEntityManager* SoDISEntityManager109 = new SoDISEntityManager();
 SoDISEntityManager109->setDEF(QString("EntityManager"));
-SoDISEntityManager109->setNetworkMode("networkReader");
 SoDISEntityTypeMapping* SoDISEntityTypeMapping110 = new SoDISEntityTypeMapping();
-SoDISEntityTypeMapping110->setReadInterval("3");
 SoDISEntityTypeMapping110->setCategory(77);
 SoDISEntityTypeMapping110->setSpecific(1);
 SoDISEntityTypeMapping110->setUrl(new QString[]{QString("../data/Gramps8Final.x3d"), QString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")}, 2);
 SoDISEntityManager109->setMapping(*SoDISEntityTypeMapping110);
 
 SoDISEntityTypeMapping* SoDISEntityTypeMapping111 = new SoDISEntityTypeMapping();
-SoDISEntityTypeMapping111->setReadInterval("3");
 SoDISEntityTypeMapping111->setCategory(77);
 SoDISEntityTypeMapping111->setSpecific(2);
 SoDISEntityTypeMapping111->setUrl(new QString[]{QString("../data/Leif8Final.x3d"), QString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")}, 2);
 SoDISEntityManager109->setMapping(*SoDISEntityTypeMapping111);
 
 SoDISEntityTypeMapping* SoDISEntityTypeMapping112 = new SoDISEntityTypeMapping();
-SoDISEntityTypeMapping112->setReadInterval("3");
 SoDISEntityTypeMapping112->setCategory(77);
 SoDISEntityTypeMapping112->setSpecific(3);
 SoDISEntityTypeMapping112->setUrl(new QString[]{QString("../data/Lily8Final.x3d"), QString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")}, 2);
 SoDISEntityManager109->setMapping(*SoDISEntityTypeMapping112);
 
 SoDISEntityTypeMapping* SoDISEntityTypeMapping113 = new SoDISEntityTypeMapping();
-SoDISEntityTypeMapping113->setReadInterval("3");
 SoDISEntityTypeMapping113->setCategory(77);
 SoDISEntityTypeMapping113->setSpecific(4);
 SoDISEntityTypeMapping113->setUrl(new QString[]{QString("../data/Tufani8Final.x3d"), QString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")}, 2);

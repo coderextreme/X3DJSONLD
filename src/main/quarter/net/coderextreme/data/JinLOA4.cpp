@@ -123,7 +123,7 @@ Sohead1->addMeta(*Someta16);
 
 Someta* Someta17 = new Someta();
 Someta17->setName(QString("generator"));
-Someta17->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Someta17->setContent(QString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 Sohead1->addMeta(*Someta17);
 
 Someta* Someta18 = new Someta();
@@ -7980,7 +7980,7 @@ SoOrientationInterpolator1791->setKey(new float[]{0.0,0.5,1.0}, 3);
 SoOrientationInterpolator1791->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 12);
 SoGroup1783->addChild(*SoOrientationInterpolator1791);
 
-//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 SoOrientationInterpolator* SoOrientationInterpolator1792 = new SoOrientationInterpolator();
 SoOrientationInterpolator1792->setDEF(QString("Stop_l_metatarsal_RotationInterpolator"));
 SoOrientationInterpolator1792->setKey(new float[]{0.0,0.5,1.0}, 3);
@@ -8011,7 +8011,7 @@ SoOrientationInterpolator1796->setKey(new float[]{0.0,0.5,1.0}, 3);
 SoOrientationInterpolator1796->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 12);
 SoGroup1783->addChild(*SoOrientationInterpolator1796);
 
-//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 SoOrientationInterpolator* SoOrientationInterpolator1797 = new SoOrientationInterpolator();
 SoOrientationInterpolator1797->setDEF(QString("Stop_r_metatarsal_RotationInterpolator"));
 SoOrientationInterpolator1797->setKey(new float[]{0.0,0.5,1.0}, 3);

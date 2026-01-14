@@ -46,6 +46,8 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
+//Scaled 1:1, Added Animations
+//Added Sites
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("HAnim"));
 Socomponent2->setLevel(1);
@@ -138,7 +140,7 @@ Sohead1->addMeta(*Someta19);
 
 Someta* Someta20 = new Someta();
 Someta20->setName(QString("generator"));
-Someta20->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Someta20->setContent(QString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 Sohead1->addMeta(*Someta20);
 
 Someta* Someta21 = new Someta();
@@ -146,8 +148,6 @@ Someta21->setName(QString("license"));
 Someta21->setContent(QString("../license.html"));
 Sohead1->addMeta(*Someta21);
 
-//Scaled 1:1, Added Animations
-//Added Sites
 SoSceneManager0->setHead(*Sohead1);
 
 SoNode* SoNode22 = new SoNode();
