@@ -372,7 +372,7 @@ VRMLScriptSerializer.prototype = {
 				let ch = "";
 				switch(node.nodeName) {
 				case "ProtoDeclare":
-					ch += "let "+node.nodeName+stack[0]+" = browser.createX3DFromString(`"+serializer.serializeToString({ "X3D" : { "version" : "4.0"}}, node)+"`);\n";
+					ch += "let "+node.nodeName+stack[0]+" = browser.createX3DFromString(`"+serializer.serializeToString({ "X3D" : { "version" : "4.1"}}, node)+"`);\n";
 
 					break;
 				case "head":

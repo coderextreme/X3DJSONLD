@@ -298,7 +298,7 @@ BashSerializer.prototype = {
 				this.preno++;
 				let ch = "";
 				if (node.nodeName === "ProtoDeclare") {
-					ch += "let "+node.nodeName+stack[0]+" = browser.createX3DFromString(`"+serializer.serializeToString({ "X3D" : { "version" : "4.0"}}, node)+"`);\n";
+					ch += "let "+node.nodeName+stack[0]+" = browser.createX3DFromString(`"+serializer.serializeToString({ "X3D" : { "version" : "4.1"}}, node)+"`);\n";
 
 				} else if (node.nodeName !== "Scene") {
 					ch += "let "+node.nodeName+stack[0]+" = browser.currentScene.createNode(\""+ node.nodeName+"\");\n";

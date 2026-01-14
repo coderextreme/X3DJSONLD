@@ -2,9 +2,9 @@ test_json =
 { "X3D": {
     "encoding":"UTF-8",
     "@profile":"Immersive",
-    "@version":"4.0",
-    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "@version":"4.1",
+    "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.1.xsd",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
     "head": {
         "meta": [
           {

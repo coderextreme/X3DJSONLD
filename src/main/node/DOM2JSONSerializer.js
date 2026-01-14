@@ -19,7 +19,7 @@ DOM2JSONSerializer.prototype = {
 			obj['X3D'] = {};
 		}
 		obj['X3D']['encoding'] = 'UTF-8';
-		obj['X3D']['JSON schema'] = 'https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json';
+		obj['X3D']['JSON schema'] = 'https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json';
 		if (typeof obj['X3D']['head'] !== 'undefined') {
 			var date = new Date();
 			var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ][date.getMonth()];

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2026/01/14 02:51:02",
-  "description": "Experimental JSON Schema for X3D V4.0",
+  "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
+  "title": "X3D V4.1 JSON Schema, generated 2026/01/14 02:51:02",
+  "description": "Experimental JSON Schema for X3D V4.1",
   "license": "Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
   "properties": {
@@ -8747,9 +8747,173 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "EnvironmentLight": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "@ambientIntensity": {
+              "maximum": 1,
+              "minimum": 0,
+              "default": 0,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@color": {
+              "maximum": 1,
+              "minimum": 0,
+              "$comment": "SFColor inputOutput",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 1,
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "-diffuse": {
+              "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
+            },
+            "@diffuseCoefficients": {
+              "$comment": "MFFloat inputOutput",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "-diffuseTexture": {
+              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
+            },
+            "@global": {
+              "default": false,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "@intensity": {
+              "minimum": 0,
+              "default": 1,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
+            "@location": {
+              "$comment": "SFVec3f inputOutput",
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "default": 0,
+                "type": "number"
+              }
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "@rotation": {
+              "$comment": "SFRotation inputOutput",
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "prefixItems": [
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                },
+                {
+                  "default": 1,
+                  "type": "number"
+                },
+                {
+                  "default": 0,
+                  "type": "number"
+                }
+              ],
+              "items": false
+            },
+            "@shadowIntensity": {
+              "maximum": 1,
+              "minimum": 0,
+              "default": 1,
+              "$comment": "SFFloat inputOutput",
+              "type": "number"
+            },
+            "@shadows": {
+              "default": false,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "-specularTexture": {
+              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@style": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             }
           },
           "additionalProperties": false
@@ -9951,6 +10115,122 @@
         }
       ]
     },
+    "FontLibrary": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "@autoRefresh": {
+              "minimum": 0,
+              "default": 0,
+              "$comment": "SFTime inputOutput",
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "minimum": 0,
+              "default": 3600,
+              "$comment": "SFTime inputOutput",
+              "type": "number"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@family": {
+              "$comment": "MFString inputOutput",
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "SANS",
+                      "SERIF",
+                      "TYPEWRITER"
+                    ]
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "type": "string"
+              }
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
+            "@load": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@url": {
+              "$comment": "MFString inputOutput",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "format": "iri-reference",
+                "type": "string"
+              }
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@style": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "FontStyle": {
       "type": "object",
       "oneOf": [
@@ -10646,9 +10926,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -12124,9 +12401,6 @@
         {
           "type": "object",
           "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -12161,6 +12435,9 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "-children": {
+              "$ref": "#/$defs/-HAnimPoseMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -12330,7 +12607,8 @@
             },
             "@version": {
               "enum": [
-                "2.0"
+                "2.0",
+                "2.1"
               ],
               "default": "2.0",
               "$comment": "SFString inputOutput",
@@ -12897,6 +13175,99 @@
               "items": {
                 "type": "number"
               }
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@style": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "HAnimPose": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-HAnimJointMFNode"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@enabled": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
+            "@loa": {
+              "maximum": 4,
+              "minimum": -1,
+              "default": -1,
+              "$comment": "SFInt32 inputOutput",
+              "type": "integer"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@name": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@transitionDuration": {
+              "minimum": 0,
+              "default": 0,
+              "$comment": "SFTime inputOutput",
+              "type": "number"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -13970,6 +14341,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -13996,9 +14370,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -14102,9 +14473,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -14200,6 +14568,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -14218,9 +14589,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -14316,6 +14684,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -14334,9 +14705,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -14432,6 +14800,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -14450,9 +14821,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -14548,6 +14916,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -14566,9 +14937,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -15303,8 +15671,8 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "CENTER",
                     "LEFT",
+                    "CENTER",
                     "RIGHT"
                   ],
                   "default": "CENTER",
@@ -15371,20 +15739,20 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "STRETCH",
+                    "NONE",
                     "PIXEL",
-                    "FRACTION",
-                    "NONE"
+                    "STRETCH",
+                    "FRACTION"
                   ],
                   "default": "NONE",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "STRETCH",
+                    "NONE",
                     "PIXEL",
-                    "FRACTION",
-                    "NONE"
+                    "STRETCH",
+                    "FRACTION"
                   ],
                   "default": "NONE",
                   "type": "string"
@@ -15990,9 +16358,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -18210,13 +18575,13 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "ANY",
                     "FLY",
-                    "EXAMINE",
-                    "WALK",
-                    "LOOKAT",
+                    "EXPLORE",
                     "NONE",
-                    "EXPLORE"
+                    "ANY",
+                    "WALK",
+                    "EXAMINE",
+                    "LOOKAT"
                   ],
                   "default": "EXAMINE",
                   "type": "string"
@@ -21969,9 +22334,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -23183,7 +23545,6 @@
             }
           },
           "required": [
-            "@name",
             "@USE"
           ],
           "additionalProperties": false
@@ -23420,6 +23781,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -23438,9 +23802,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -27787,6 +28148,83 @@
         }
       ]
     },
+    "Tangent": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@vector": {
+              "$comment": "MFVec4f inputOutput",
+              "type": "array",
+              "minItems": 4,
+              "items": {
+                "maximum": 1,
+                "minimum": -1,
+                "type": "number"
+              }
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@style": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "TexCoordChaser2D": {
       "type": "object",
       "oneOf": [
@@ -30572,6 +31010,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -30590,9 +31031,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -30680,6 +31118,9 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -30698,9 +31139,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -30876,6 +31314,9 @@
                 "type": "integer"
               }
             },
+            "-tangent": {
+              "$ref": "#/$defs/-X3DTangentNodeSFNode"
+            },
             "-texCoord": {
               "$ref": "#/$defs/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
@@ -30894,9 +31335,6 @@
             "@style": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -32605,212 +33043,6 @@
               "type": "string"
             },
             "@style": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "EnvironmentLight": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@class": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@USE": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string",
-                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@global": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@on": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@color": {
-              "maximum": 1,
-              "minimum": 0,
-              "$comment": "SFColor inputOutput",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 1,
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              }
-            },
-            "@intensity": {
-              "minimum": 0,
-              "default": 1,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@ambientIntensity": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@rotation": {
-              "minimum": -1,
-              "$comment": "SFRotation inputOutput",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "prefixItems": [
-                {
-                  "default": 0,
-                  "minimum": -1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "minimum": -1,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "minimum": -1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "minimum": -1,
-                  "type": "number"
-                }
-              ],
-              "items": false
-            },
-            "-diffuseTexture": {
-              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
-            },
-            "@diffuseCoefficients": {
-              "$comment": "MFFloat inputOutput",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
-            },
-            "-specularTexture": {
-              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
-            },
-            "@shadows": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@shadowIntensity": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 1,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@DEF": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "Tangent": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@class": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@USE": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string",
-                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@vector": {
-              "$comment": "MFVec4f inputOutput",
-              "type": "array",
-              "minItems": 4,
-              "items": {
-                "maximum": 1,
-                "minimum": -1,
-                "type": "number"
-              }
-            },
-            "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
             }
@@ -34682,9 +34914,10 @@
             "3.1",
             "3.2",
             "3.3",
-            "4.0"
+            "4.0",
+            "4.1"
           ],
-          "default": "4.0",
+          "default": "4.1",
           "$comment": "SFString inputOutput",
           "type": "string"
         }
@@ -35009,14 +35242,14 @@
           "DirectionalLight": {
             "$ref": "#/$defs/DirectionalLight"
           },
+          "EnvironmentLight": {
+            "$ref": "#/$defs/EnvironmentLight"
+          },
           "PointLight": {
             "$ref": "#/$defs/PointLight"
           },
           "SpotLight": {
             "$ref": "#/$defs/SpotLight"
-          },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
           },
           "CollidableOffset": {
             "$ref": "#/$defs/CollidableOffset"
@@ -35210,6 +35443,9 @@
           "EaseInEaseOut": {
             "$ref": "#/$defs/EaseInEaseOut"
           },
+          "FontLibrary": {
+            "$ref": "#/$defs/FontLibrary"
+          },
           "GeoLOD": {
             "$ref": "#/$defs/GeoLOD"
           },
@@ -35221,6 +35457,9 @@
           },
           "HAnimMotion": {
             "$ref": "#/$defs/HAnimMotion"
+          },
+          "HAnimPose": {
+            "$ref": "#/$defs/HAnimPose"
           },
           "Inline": {
             "$ref": "#/$defs/Inline"
@@ -35970,14 +36209,14 @@
         "DirectionalLight": {
           "$ref": "#/$defs/DirectionalLight"
         },
+        "EnvironmentLight": {
+          "$ref": "#/$defs/EnvironmentLight"
+        },
         "PointLight": {
           "$ref": "#/$defs/PointLight"
         },
         "SpotLight": {
           "$ref": "#/$defs/SpotLight"
-        },
-        "EnvironmentLight": {
-          "$ref": "#/$defs/EnvironmentLight"
         },
         "CollidableOffset": {
           "$ref": "#/$defs/CollidableOffset"
@@ -36171,6 +36410,9 @@
         "EaseInEaseOut": {
           "$ref": "#/$defs/EaseInEaseOut"
         },
+        "FontLibrary": {
+          "$ref": "#/$defs/FontLibrary"
+        },
         "GeoLOD": {
           "$ref": "#/$defs/GeoLOD"
         },
@@ -36182,6 +36424,9 @@
         },
         "HAnimMotion": {
           "$ref": "#/$defs/HAnimMotion"
+        },
+        "HAnimPose": {
+          "$ref": "#/$defs/HAnimPose"
         },
         "Inline": {
           "$ref": "#/$defs/Inline"
@@ -36531,11 +36776,35 @@
       },
       "additionalProperties": false
     },
-    "-TangentSFNode": {
+    "-X3DSingleTextureNodeSFNode": {
       "type": "object",
       "properties": {
-        "Tangent": {
-          "$ref": "#/$defs/Tangent"
+        "ImageTexture": {
+          "$ref": "#/$defs/ImageTexture"
+        },
+        "MovieTexture": {
+          "$ref": "#/$defs/MovieTexture"
+        },
+        "PixelTexture": {
+          "$ref": "#/$defs/PixelTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-X3DEnvironmentTextureNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "ComposedCubeMapTexture": {
+          "$ref": "#/$defs/ComposedCubeMapTexture"
+        },
+        "GeneratedCubeMapTexture": {
+          "$ref": "#/$defs/GeneratedCubeMapTexture"
+        },
+        "ImageCubeMapTexture": {
+          "$ref": "#/$defs/ImageCubeMapTexture"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
@@ -36850,14 +37119,14 @@
           "DirectionalLight": {
             "$ref": "#/$defs/DirectionalLight"
           },
+          "EnvironmentLight": {
+            "$ref": "#/$defs/EnvironmentLight"
+          },
           "PointLight": {
             "$ref": "#/$defs/PointLight"
           },
           "SpotLight": {
             "$ref": "#/$defs/SpotLight"
-          },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
           },
           "CollidableOffset": {
             "$ref": "#/$defs/CollidableOffset"
@@ -37048,6 +37317,9 @@
           "EaseInEaseOut": {
             "$ref": "#/$defs/EaseInEaseOut"
           },
+          "FontLibrary": {
+            "$ref": "#/$defs/FontLibrary"
+          },
           "GeoLOD": {
             "$ref": "#/$defs/GeoLOD"
           },
@@ -37059,6 +37331,9 @@
           },
           "HAnimMotion": {
             "$ref": "#/$defs/HAnimMotion"
+          },
+          "HAnimPose": {
+            "$ref": "#/$defs/HAnimPose"
           },
           "Inline": {
             "$ref": "#/$defs/Inline"
@@ -37117,6 +37392,9 @@
           "Normal": {
             "$ref": "#/$defs/Normal"
           },
+          "Tangent": {
+            "$ref": "#/$defs/Tangent"
+          },
           "TextureCoordinate": {
             "$ref": "#/$defs/TextureCoordinate"
           },
@@ -37146,9 +37424,6 @@
           },
           "HAnimDisplacer": {
             "$ref": "#/$defs/HAnimDisplacer"
-          },
-          "Tangent": {
-            "$ref": "#/$defs/Tangent"
           },
           "IndexedFaceSet": {
             "$ref": "#/$defs/IndexedFaceSet"
@@ -37430,6 +37705,26 @@
       },
       "additionalProperties": false
     },
+    "-HAnimPoseMFNode": {
+      "$comment": "MFNode inputOutput",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "HAnimPose": {
+            "$ref": "#/$defs/HAnimPose"
+          },
+          "ProtoInstance": {
+            "$ref": "#/$defs/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
     "-HAnimJointMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -37631,6 +37926,18 @@
         },
         "GeoCoordinate": {
           "$ref": "#/$defs/GeoCoordinate"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "-X3DTangentNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "Tangent": {
+          "$ref": "#/$defs/Tangent"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
@@ -37867,6 +38174,9 @@
           "DISEntityTypeMapping": {
             "$ref": "#/$defs/DISEntityTypeMapping"
           },
+          "FontLibrary": {
+            "$ref": "#/$defs/FontLibrary"
+          },
           "GeoMetadata": {
             "$ref": "#/$defs/GeoMetadata"
           },
@@ -37900,24 +38210,6 @@
         },
         "additionalProperties": false
       }
-    },
-    "-X3DSingleTextureNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ImageTexture": {
-          "$ref": "#/$defs/ImageTexture"
-        },
-        "MovieTexture": {
-          "$ref": "#/$defs/MovieTexture"
-        },
-        "PixelTexture": {
-          "$ref": "#/$defs/PixelTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
     },
     "-X3DMetadataObjectMFNode": {
       "$comment": "MFNode inputOutput",
@@ -38612,24 +38904,6 @@
       },
       "additionalProperties": false
     },
-    "-X3DEnvironmentTextureNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ComposedCubeMapTexture": {
-          "$ref": "#/$defs/ComposedCubeMapTexture"
-        },
-        "GeneratedCubeMapTexture": {
-          "$ref": "#/$defs/GeneratedCubeMapTexture"
-        },
-        "ImageCubeMapTexture": {
-          "$ref": "#/$defs/ImageCubeMapTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-X3DChildNode-X3DMetadataObject-LayerSetMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -38835,14 +39109,14 @@
           "DirectionalLight": {
             "$ref": "#/$defs/DirectionalLight"
           },
+          "EnvironmentLight": {
+            "$ref": "#/$defs/EnvironmentLight"
+          },
           "PointLight": {
             "$ref": "#/$defs/PointLight"
           },
           "SpotLight": {
             "$ref": "#/$defs/SpotLight"
-          },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
           },
           "CollidableOffset": {
             "$ref": "#/$defs/CollidableOffset"
@@ -39036,6 +39310,9 @@
           "EaseInEaseOut": {
             "$ref": "#/$defs/EaseInEaseOut"
           },
+          "FontLibrary": {
+            "$ref": "#/$defs/FontLibrary"
+          },
           "GeoLOD": {
             "$ref": "#/$defs/GeoLOD"
           },
@@ -39047,6 +39324,9 @@
           },
           "HAnimMotion": {
             "$ref": "#/$defs/HAnimMotion"
+          },
+          "HAnimPose": {
+            "$ref": "#/$defs/HAnimPose"
           },
           "Inline": {
             "$ref": "#/$defs/Inline"

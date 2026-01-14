@@ -32,7 +32,7 @@ DOMSerializer.prototype = {
 		return xmlstr;
 	},
 	serializeDOM : function(json, element, appendDocType) {
-		var version = "4.0";
+		var version = "4.1";
 		var encoding = "UTF-8";
 		/*
 		if (typeof json !== 'undefined') {
