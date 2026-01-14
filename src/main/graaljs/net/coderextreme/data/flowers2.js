@@ -147,4 +147,4 @@ ProtoInstance1
 ProtoInstance1
             .addFieldValue(new fieldValue().setName("transparency").setValue("0.5"));
     X3D0.toFileX3D("../data/flowers2.new.graal.x3d");
-    X3D0.toFileJSON("../data/flowers2.new.graal.json");
+    X3D0.toFileJSON("../data/flowers2.new.graal.x3dj");

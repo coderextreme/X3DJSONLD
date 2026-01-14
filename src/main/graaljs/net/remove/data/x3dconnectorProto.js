@@ -181,4 +181,4 @@ ProtoInstance2
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscaleC3")));
     X3D0.toFileX3D("../data/x3dconnectorProto.new.graal.x3d");
-    X3D0.toFileJSON("../data/x3dconnectorProto.new.graal.json");
+    X3D0.toFileJSON("../data/x3dconnectorProto.new.graal.x3dj");

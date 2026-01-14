@@ -8,7 +8,7 @@ function doubleToFloat(d) {
     if (Float32Array)
 	return new Float32Array(d);
 }
-      var X3D0 =  new X3D().setVersion("4.0").setProfile("Immersive")
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("Scripting.x3d")))
       .setScene(new Scene()
@@ -41,4 +41,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromNode("TS").setFromField("touchTime").setToNode("OpenVault").setToField("openVault"))
         .addChild(new ROUTE().setFromNode("OpenVault").setFromField("vaultUnlocked").setToNode("Click").setToField("startTime")))      ;
     X3D0.toFileX3D("../data/JoeExample.new.graal.x3d");
-    X3D0.toFileJSON("../data/JoeExample.new.graal.json");
+    X3D0.toFileJSON("../data/JoeExample.new.graal.x3dj");

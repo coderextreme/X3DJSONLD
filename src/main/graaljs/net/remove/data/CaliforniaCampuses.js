@@ -182,4 +182,4 @@ ProtoInstance1
 ProtoInstance2
           .addFieldValue(new fieldValue().setName("enabled").setValue("false"));
     X3D0.toFileX3D("../data/CaliforniaCampuses.new.graal.x3d");
-    X3D0.toFileJSON("../data/CaliforniaCampuses.new.graal.json");
+    X3D0.toFileJSON("../data/CaliforniaCampuses.new.graal.x3dj");

@@ -16,6 +16,8 @@ var ProtoInstance4 = null;
 var ProtoInstance5 = null;
       var X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
       .setHead(new head()
+        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
+        .addComments(new CommentsBlock("Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"))
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -25,8 +27,6 @@ var ProtoInstance5 = null;
         .addComponent(new component().setName("Grouping").setLevel(3))
         .addComponent(new component().setName("Core").setLevel(1))
         .addComponent(new component().setName("DIS").setLevel(2))
-        .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
-        .addComments(new CommentsBlock("Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"))
         .addMeta(new meta().setName("title").setContent("bumpyfreewrljsonverse.x3d"))
         .addMeta(new meta().setName("description").setContent("*enter description here, short-sentence summaries preferred*"))
         .addMeta(new meta().setName("creator").setContent("Doug Sanden, Christoph Valentin, John Carlson"))
@@ -179,11 +179,11 @@ function initialize() {
             .addChild(new ROUTE().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
             .addChild(new ROUTE().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates"))
             .addComments(new CommentsBlock("DIS multiuser facilities"))
-            .addChild(new DISEntityManager().setDEF("EntityManager").setNetworkMode("networkReader")
-              .addChild(new DISEntityTypeMapping().setReadInterval("3").setCategory(77).setSpecific(1).setUrl(Java.to(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"], Java.type("java.lang.String[]"))))
-              .addChild(new DISEntityTypeMapping().setReadInterval("3").setCategory(77).setSpecific(2).setUrl(Java.to(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"], Java.type("java.lang.String[]"))))
-              .addChild(new DISEntityTypeMapping().setReadInterval("3").setCategory(77).setSpecific(3).setUrl(Java.to(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"], Java.type("java.lang.String[]"))))
-              .addChild(new DISEntityTypeMapping().setReadInterval("3").setCategory(77).setSpecific(4).setUrl(Java.to(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"], Java.type("java.lang.String[]")))))
+            .addChild(new DISEntityManager().setDEF("EntityManager")
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(Java.to(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"], Java.type("java.lang.String[]"))))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(Java.to(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"], Java.type("java.lang.String[]"))))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(3).setUrl(Java.to(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"], Java.type("java.lang.String[]"))))
+              .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(4).setUrl(Java.to(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"], Java.type("java.lang.String[]")))))
             .addChild(new Collision().setEnabled(false)
               .addChild(new Group().setDEF("AvatarHolder")))
             .addChild(new ROUTE().setFromField("addedEntities").setFromNode("EntityManager").setToField("addChildren").setToNode("AvatarHolder"))
@@ -372,4 +372,4 @@ ProtoInstance5
               .addFieldValue(new fieldValue().setName("shaderNode")
                 .addChild(new ComposedShader().setUSE("freewrlShader")));
     X3D0.toFileX3D("../data/bumpyfreewrljsonverse.new.graal.x3d");
-    X3D0.toFileJSON("../data/bumpyfreewrljsonverse.new.graal.json");
+    X3D0.toFileJSON("../data/bumpyfreewrljsonverse.new.graal.x3dj");

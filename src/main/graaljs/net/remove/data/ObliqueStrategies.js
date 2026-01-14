@@ -127,4 +127,4 @@ function doubleToFloat(d) {
             .addChild(new Transform().setScale(Java.to(doubleToFloat([1.8,0.6,1]), Java.type("float[]")))
               .addChild(new Shape().setUSE("TransparentClickSurface"))))))      ;
     X3D0.toFileX3D("../data/ObliqueStrategies.new.graal.x3d");
-    X3D0.toFileJSON("../data/ObliqueStrategies.new.graal.json");
+    X3D0.toFileJSON("../data/ObliqueStrategies.new.graal.x3dj");

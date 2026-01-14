@@ -55,4 +55,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
         .addChild(new ROUTE().setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")))      ;
     X3D0.toFileX3D("../data/geobubbles.new.graal.x3d");
-    X3D0.toFileJSON("../data/geobubbles.new.graal.json");
+    X3D0.toFileJSON("../data/geobubbles.new.graal.x3dj");

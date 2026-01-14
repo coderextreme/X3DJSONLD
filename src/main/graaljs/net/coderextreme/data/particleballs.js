@@ -56,4 +56,4 @@ function doubleToFloat(d) {
                 .addParts(new ShaderPart().setType("FRAGMENT").setDEF("commonfs").setUrl(Java.to(["https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"], Java.type("java.lang.String[]")))))))
           .addComments(new CommentsBlock("</Shape>"))))      ;
     X3D0.toFileX3D("../data/particleballs.new.graal.x3d");
-    X3D0.toFileJSON("../data/particleballs.new.graal.json");
+    X3D0.toFileJSON("../data/particleballs.new.graal.x3dj");

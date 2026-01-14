@@ -38,4 +38,4 @@ function doubleToFloat(d) {
             .setSourceCode(`ecmascript:
 			    var me = '\"1\" \"\"2\" \"\\n3\"';`))))      ;
     X3D0.toFileX3D("../data/text3shapes.new.graal.x3d");
-    X3D0.toFileJSON("../data/text3shapes.new.graal.json");
+    X3D0.toFileJSON("../data/text3shapes.new.graal.x3dj");

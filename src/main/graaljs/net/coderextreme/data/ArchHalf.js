@@ -29,4 +29,4 @@ function doubleToFloat(d) {
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDEF("MaterialNode").setDiffuseColor(Java.to(doubleToFloat([1,0.75,0.25]), Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/ArchHalf.new.graal.x3d");
-    X3D0.toFileJSON("../data/ArchHalf.new.graal.json");
+    X3D0.toFileJSON("../data/ArchHalf.new.graal.x3dj");

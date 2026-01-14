@@ -34,4 +34,4 @@ function doubleToFloat(d) {
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([0.2,0.5,0.8]), Java.type("float[]")))))))      ;
     X3D0.toFileX3D("../data/IcosahedronSubdivisionLevel5.new.graal.x3d");
-    X3D0.toFileJSON("../data/IcosahedronSubdivisionLevel5.new.graal.json");
+    X3D0.toFileJSON("../data/IcosahedronSubdivisionLevel5.new.graal.x3dj");

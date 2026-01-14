@@ -341,4 +341,4 @@ function doubleToFloat(d) {
           .addSegments(new HAnimSegment("hanim_Hand_Left").setContainerFieldOverride("segments").setUSE("hanim_l_trapezium"))
           .addSegments(new HAnimSegment("hanim_Hand_Left").setContainerFieldOverride("segments").setUSE("hanim_l_trapezoid"))))      ;
     X3D0.toFileX3D("../data/HAnimModelHandLeft.new.graal.x3d");
-    X3D0.toFileJSON("../data/HAnimModelHandLeft.new.graal.json");
+    X3D0.toFileJSON("../data/HAnimModelHandLeft.new.graal.x3dj");

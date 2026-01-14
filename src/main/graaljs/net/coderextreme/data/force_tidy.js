@@ -136,4 +136,4 @@ ProtoInstance2
 ProtoInstance3
             .addFieldValue(new fieldValue().setName("position").setValue("0 1.388333 0"));
     X3D0.toFileX3D("../data/force_tidy.new.graal.x3d");
-    X3D0.toFileJSON("../data/force_tidy.new.graal.json");
+    X3D0.toFileJSON("../data/force_tidy.new.graal.x3dj");

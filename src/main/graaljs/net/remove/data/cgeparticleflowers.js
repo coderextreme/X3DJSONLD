@@ -143,4 +143,4 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromNode("Animate").setFromField("pdelta").setToNode("shader").setToField("pdelta"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("tdelta").setToNode("shader").setToField("tdelta"))))      ;
     X3D0.toFileX3D("../data/cgeparticleflowers.new.graal.x3d");
-    X3D0.toFileJSON("../data/cgeparticleflowers.new.graal.json");
+    X3D0.toFileJSON("../data/cgeparticleflowers.new.graal.x3dj");

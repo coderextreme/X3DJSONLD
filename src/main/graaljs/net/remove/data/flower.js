@@ -112,4 +112,4 @@ function set_fraction(fraction, eventTime) {
         .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
         .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")))      ;
     X3D0.toFileX3D("../data/flower.new.graal.x3d");
-    X3D0.toFileJSON("../data/flower.new.graal.json");
+    X3D0.toFileJSON("../data/flower.new.graal.x3dj");

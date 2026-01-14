@@ -51,4 +51,4 @@ var ProtoInstance2 = null;
         .addChild(new Transform().setTranslation(Java.to(doubleToFloat([0,2.5,0]), Java.type("float[]")))
           .addChild(ProtoInstance2 = new ProtoInstance().setName("Process"))))      ;
     X3D0.toFileX3D("../data/qq3.new.graal.x3d");
-    X3D0.toFileJSON("../data/qq3.new.graal.json");
+    X3D0.toFileJSON("../data/qq3.new.graal.x3dj");

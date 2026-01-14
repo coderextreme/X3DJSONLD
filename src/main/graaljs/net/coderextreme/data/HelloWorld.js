@@ -17,16 +17,16 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("modified").setContent("20 October 2019"))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
         .addMeta(new meta().setName("Image").setContent("HelloWorld.tall.png"))
-        .addMeta(new meta().setName("reference").setContent("http://en.wikipedia.org/wiki/Hello_world"))
+        .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Hello_world"))
         .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Hello#.22Hello.2C_World.22_computer_program"))
         .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"))
-        .addMeta(new meta().setName("reference").setContent("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
-        .addMeta(new meta().setName("reference").setContent("http://www.HelloWorldExample.net"))
+        .addMeta(new meta().setName("reference").setContent("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"))
+        .addMeta(new meta().setName("reference").setContent("https://www.HelloWorldExample.net"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/realtime-3d/news/internationalization-x3d"))
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"))
-        .addMeta(new meta().setName("reference").setContent("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
+        .addMeta(new meta().setName("reference").setContent("https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"))
+        .addMeta(new meta().setName("identifier").setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"))
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html"))
         .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("reference").setContent("HelloWorld.wrl"))
@@ -52,4 +52,4 @@ function doubleToFloat(d) {
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setUSE("MaterialLightBlue")))))))      ;
     X3D0.toFileX3D("../data/HelloWorld.new.graal.x3d");
-    X3D0.toFileJSON("../data/HelloWorld.new.graal.json");
+    X3D0.toFileJSON("../data/HelloWorld.new.graal.x3dj");

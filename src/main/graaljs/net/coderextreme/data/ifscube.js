@@ -8,7 +8,7 @@ function doubleToFloat(d) {
     if (Float32Array)
 	return new Float32Array(d);
 }
-      var X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ifscube.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
@@ -23,4 +23,4 @@ function doubleToFloat(d) {
               .setNormal(new Normal().setVector(Java.to(doubleToFloat([1,0,0,-1,0,0,0,1,0,0,0,-1,0,-1,0,0,0,1]), Java.type("float[]"))))
               .setColor(new Color().setColor(Java.to(doubleToFloat([0,1,0]), Java.type("float[]"))))))))      ;
     X3D0.toFileX3D("../data/ifscube.new.graal.x3d");
-    X3D0.toFileJSON("../data/ifscube.new.graal.json");
+    X3D0.toFileJSON("../data/ifscube.new.graal.x3dj");

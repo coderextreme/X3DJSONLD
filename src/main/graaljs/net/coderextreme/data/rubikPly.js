@@ -26,7 +26,7 @@ var ProtoInstance9 = null;
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/rubikFurnace.x3d"))
         .addMeta(new meta().setName("description").setContent("a green rubik cube")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(Java.to(["EXAMINE"], Java.type("java.lang.String[]"))))
+        .addChild(new NavigationInfo().setType(Java.to(["ANY","EXAMINE","WALK","FLY","LOOKAT"], Java.type("java.lang.String[]"))))
         .addChild(new Viewpoint().setDescription("Rubiks Cube on Fire").setPosition(Java.to(doubleToFloat([0,0,12]), Java.type("float[]"))))
         .addChild(new ProtoDeclare().setName("anyShape")
           .setProtoInterface(new ProtoInterface()
@@ -137,4 +137,4 @@ ProtoInstance9
                   .setCoord(new Coordinate().setPoint(Java.to(doubleToFloat([0,0,0,0,0,1,0,1,1,0,1,0,1,0,0,1,0,1,1,1,1,1,1,0]), Java.type("float[]"))))
                   .setColor(new Color().setColor(Java.to(doubleToFloat([1,1,1,1,1,1,1,1,1,1,1,1,0,0,0]), Java.type("float[]"))))))));
     X3D0.toFileX3D("../data/rubikPly.new.graal.x3d");
-    X3D0.toFileJSON("../data/rubikPly.new.graal.json");
+    X3D0.toFileJSON("../data/rubikPly.new.graal.x3dj");

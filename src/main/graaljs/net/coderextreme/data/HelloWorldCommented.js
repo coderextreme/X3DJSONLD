@@ -64,4 +64,4 @@ function doubleToFloat(d) {
           .addComments(new CommentsBlock("Transform complete")))
         .addComments(new CommentsBlock("Group complete")))      ;
     X3D0.toFileX3D("../data/HelloWorldCommented.new.graal.x3d");
-    X3D0.toFileJSON("../data/HelloWorldCommented.new.graal.json");
+    X3D0.toFileJSON("../data/HelloWorldCommented.new.graal.x3dj");

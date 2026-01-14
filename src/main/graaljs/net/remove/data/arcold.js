@@ -160,10 +160,10 @@ var ProtoInstance12 = null;
         .addChild(new ROUTE().setFromNode("G4").setFromField("translation_changed").setToNode("connector3").setToField("set_endpoint")))      ;
 ProtoInstance4
           .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance5 = new ProtoInstance().setUSE("G1")));
+            .addChild(ProtoInstance5 = new ProtoInstance().setName("point").setUSE("G1")));
 ProtoInstance4
           .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance6 = new ProtoInstance().setUSE("G2")));
+            .addChild(ProtoInstance6 = new ProtoInstance().setName("point").setUSE("G2")));
 ProtoInstance4
           .addFieldValue(new fieldValue().setName("transnode")
             .addChild(new Transform().setUSE("trans1")));
@@ -172,10 +172,10 @@ ProtoInstance4
             .addChild(new Transform().setUSE("rotscale1")));
 ProtoInstance7
           .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance8 = new ProtoInstance().setUSE("G1")));
+            .addChild(ProtoInstance8 = new ProtoInstance().setName("point").setUSE("G1")));
 ProtoInstance7
           .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance9 = new ProtoInstance().setUSE("G3")));
+            .addChild(ProtoInstance9 = new ProtoInstance().setName("point").setUSE("G3")));
 ProtoInstance7
           .addFieldValue(new fieldValue().setName("transnode")
             .addChild(new Transform().setUSE("trans2")));
@@ -184,10 +184,10 @@ ProtoInstance7
             .addChild(new Transform().setUSE("rotscale2")));
 ProtoInstance10
           .addFieldValue(new fieldValue().setName("startnode")
-            .addChild(ProtoInstance11 = new ProtoInstance().setUSE("G1")));
+            .addChild(ProtoInstance11 = new ProtoInstance().setName("point").setUSE("G1")));
 ProtoInstance10
           .addFieldValue(new fieldValue().setName("endnode")
-            .addChild(ProtoInstance12 = new ProtoInstance().setUSE("G4")));
+            .addChild(ProtoInstance12 = new ProtoInstance().setName("point").setUSE("G4")));
 ProtoInstance10
           .addFieldValue(new fieldValue().setName("transnode")
             .addChild(new Transform().setUSE("trans3")));
@@ -195,4 +195,4 @@ ProtoInstance10
           .addFieldValue(new fieldValue().setName("rotscalenode")
             .addChild(new Transform().setUSE("rotscale3")));
     X3D0.toFileX3D("../data/arcold.new.graal.x3d");
-    X3D0.toFileJSON("../data/arcold.new.graal.json");
+    X3D0.toFileJSON("../data/arcold.new.graal.x3dj");

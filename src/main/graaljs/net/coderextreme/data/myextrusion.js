@@ -41,4 +41,4 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
           .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("myextrusion").setToField("set_spine"))))      ;
     X3D0.toFileX3D("../data/myextrusion.new.graal.x3d");
-    X3D0.toFileJSON("../data/myextrusion.new.graal.json");
+    X3D0.toFileJSON("../data/myextrusion.new.graal.x3dj");

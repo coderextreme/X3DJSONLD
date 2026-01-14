@@ -64,4 +64,4 @@ function doubleToFloat(d) {
                 .setAppearance(new Appearance().setUSE("LineColor"))
                 .setGeometry(new IndexedLineSet().setUSE("Orbit1")))))))      ;
     X3D0.toFileX3D("../data/MainStage.new.graal.x3d");
-    X3D0.toFileJSON("../data/MainStage.new.graal.json");
+    X3D0.toFileJSON("../data/MainStage.new.graal.x3dj");

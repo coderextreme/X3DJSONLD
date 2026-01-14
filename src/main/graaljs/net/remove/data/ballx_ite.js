@@ -50,4 +50,4 @@ function doubleToFloat(d) {
                 .addParts(new ShaderPart().setType("VERTEX").setUrl(Java.to(["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"], Java.type("java.lang.String[]"))))
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(Java.to(["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"], Java.type("java.lang.String[]")))))))))      ;
     X3D0.toFileX3D("../data/ballx_ite.new.graal.x3d");
-    X3D0.toFileJSON("../data/ballx_ite.new.graal.json");
+    X3D0.toFileJSON("../data/ballx_ite.new.graal.x3dj");

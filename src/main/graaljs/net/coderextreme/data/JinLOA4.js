@@ -25,7 +25,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("generator").setContent("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"))
         .addMeta(new meta().setName("generator").setContent("Suwon HAnim Converter"))
         .addMeta(new meta().setName("generator").setContent("Gnu Image Manipulation Program, http://www.gimp.org"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setTitle("JinLOA4.x3d"))
@@ -1800,13 +1800,13 @@ function doubleToFloat(d) {
           .addChild(new OrientationInterpolator().setDEF("Stop_l_knee_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_l_talocrural_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_l_subtalar_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
-          .addComments(new CommentsBlock("<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>"))
+          .addComments(new CommentsBlock("<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>"))
           .addChild(new OrientationInterpolator().setDEF("Stop_l_metatarsal_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_r_hip_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_r_knee_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_r_talocrural_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_r_subtalar_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
-          .addComments(new CommentsBlock("<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>"))
+          .addComments(new CommentsBlock("<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>"))
           .addChild(new OrientationInterpolator().setDEF("Stop_r_metatarsal_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_vl5_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
           .addChild(new OrientationInterpolator().setDEF("Stop_vl4_RotationInterpolator").setKey(Java.to(doubleToFloat([0,0.5,1]), Java.type("float[]"))).setKeyValue(Java.to(doubleToFloat([0,0,1,0,0,0,1,0,0,0,1,0]), Java.type("float[]"))))
@@ -2787,4 +2787,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_stopTime").setToNode("KickTimer"))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("Stop_Touch").setToField("set_startTime").setToNode("StopTimer")))      ;
     X3D0.toFileX3D("../data/JinLOA4.new.graal.x3d");
-    X3D0.toFileJSON("../data/JinLOA4.new.graal.json");
+    X3D0.toFileJSON("../data/JinLOA4.new.graal.x3dj");

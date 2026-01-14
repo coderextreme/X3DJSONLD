@@ -91,4 +91,4 @@ ProtoInstance8
 ProtoInstance9
           .addFieldValue(new fieldValue().setName("ttranslation").setValue("0 0 0"));
     X3D0.toFileX3D("../data/ThreeDTexture.new.graal.x3d");
-    X3D0.toFileJSON("../data/ThreeDTexture.new.graal.json");
+    X3D0.toFileJSON("../data/ThreeDTexture.new.graal.x3dj");

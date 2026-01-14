@@ -23,4 +23,4 @@ function doubleToFloat(d) {
               .setMaterial(new Material().setDiffuseColor(Java.to(doubleToFloat([1,1,1]), Java.type("float[]")))))
             .setGeometry(new Sphere()))))      ;
     X3D0.toFileX3D("../data/asphere.new.graal.x3d");
-    X3D0.toFileJSON("../data/asphere.new.graal.json");
+    X3D0.toFileJSON("../data/asphere.new.graal.x3dj");

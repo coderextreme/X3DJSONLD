@@ -71,4 +71,4 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("Animate").setToField("set_fraction"))
           .addChild(new ROUTE().setFromNode("Animate").setFromField("values").setToNode("x_ite").setToField("x3d_ParticleValues"))))      ;
     X3D0.toFileX3D("../data/variationalflowers2.new.graal.x3d");
-    X3D0.toFileJSON("../data/variationalflowers2.new.graal.json");
+    X3D0.toFileJSON("../data/variationalflowers2.new.graal.x3dj");

@@ -72,4 +72,4 @@ function doubleToFloat(d) {
             .addChild(new Gain()
               .addChild(new AudioClip().setDescription("Saxophone").setLoop(true).setUrl(Java.to(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"], Java.type("java.lang.String[]"))))))))      ;
     X3D0.toFileX3D("../data/SpatialAudioCameraAnimation.new.graal.x3d");
-    X3D0.toFileJSON("../data/SpatialAudioCameraAnimation.new.graal.json");
+    X3D0.toFileJSON("../data/SpatialAudioCameraAnimation.new.graal.x3dj");

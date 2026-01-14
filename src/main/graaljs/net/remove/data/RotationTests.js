@@ -73,4 +73,4 @@ function doubleToFloat(d) {
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("DiscreteFrameStepper").setToField("set_fraction").setToNode("Interpolator3"))
         .addChild(new ROUTE().setFromField("value_changed").setFromNode("Interpolator3").setToField("set_rotation").setToNode("Transform3")))      ;
     X3D0.toFileX3D("../data/RotationTests.new.graal.x3d");
-    X3D0.toFileJSON("../data/RotationTests.new.graal.json");
+    X3D0.toFileJSON("../data/RotationTests.new.graal.x3dj");

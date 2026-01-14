@@ -360,4 +360,4 @@ function doubleToFloat(d) {
           .addSegments(new HAnimSegment().setContainerFieldOverride("segments").setUSE("hanim_r_tarsal_proximal_phalanx_4"))
           .addSegments(new HAnimSegment().setContainerFieldOverride("segments").setUSE("hanim_r_tarsal_proximal_phalanx_5"))))      ;
     X3D0.toFileX3D("../data/HAnimModelFootRight.new.graal.x3d");
-    X3D0.toFileJSON("../data/HAnimModelFootRight.new.graal.json");
+    X3D0.toFileJSON("../data/HAnimModelFootRight.new.graal.x3dj");

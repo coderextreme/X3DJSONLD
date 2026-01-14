@@ -53,4 +53,4 @@ ProtoInstance0
 ProtoInstance0
                   .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/common.fs\""));
     X3D0.toFileX3D("../data/x3domflowers.new.graal.x3d");
-    X3D0.toFileJSON("../data/x3domflowers.new.graal.json");
+    X3D0.toFileJSON("../data/x3domflowers.new.graal.x3dj");

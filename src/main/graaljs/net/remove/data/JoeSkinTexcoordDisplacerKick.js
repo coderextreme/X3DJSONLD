@@ -25,7 +25,7 @@ function doubleToFloat(d) {
         .addMeta(new meta().setName("info").setContent("modified to correct root and vc7 hierarchies"))
         .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d"))
         .addMeta(new meta().setName("generator").setContent("BS studio translation from .x3dv by Joe using BS Contact"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+        .addMeta(new meta().setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setInfo(Java.to(["X3D Humanoid V1 LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"], Java.type("java.lang.String[]"))).setTitle("X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"))
@@ -589,4 +589,4 @@ function doubleToFloat(d) {
                 .setMaterial(new Material().setDEF("circle2_Material").setDiffuseColor(Java.to(doubleToFloat([0.9,0,0.7]), Java.type("float[]"))).setEmissiveColor(Java.to(doubleToFloat([0.424956,0.483976,1]), Java.type("float[]")))))
               .setGeometry(new IndexedLineSet().setUSE("Orbit1"))))))      ;
     X3D0.toFileX3D("../data/JoeSkinTexcoordDisplacerKick.new.graal.x3d");
-    X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKick.new.graal.json");
+    X3D0.toFileJSON("../data/JoeSkinTexcoordDisplacerKick.new.graal.x3dj");
