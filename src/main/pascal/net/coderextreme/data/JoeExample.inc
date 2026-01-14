@@ -16,9 +16,9 @@ AudioClip14: TAudioClipNode;
 TouchSensor15: TTouchSensorNode;
 begin
 X3D0 := TX3DRootNode.Create;
+X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
-X3D0.Profile := 'Immersive';
 X3D0.Meta['title'] := 'Scripting.x3d';
 Group3 := TGroupNode.Create;
 Script4 := TScriptNode.Create;

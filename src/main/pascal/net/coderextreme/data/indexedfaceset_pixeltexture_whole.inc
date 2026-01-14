@@ -13,10 +13,11 @@ Shape31: TShapeNode;
 Appearance32: TAppearanceNode;
 Material33: TMaterialNode;
 PixelTexture34: TPixelTextureNode;
-IndexedFaceSet35: TIndexedFaceSetNode;
-Color36: TColorNode;
-Coordinate37: TCoordinateNode;
-TextureCoordinate38: TTextureCoordinateNode;
+TextureProperties35: TTexturePropertiesNode;
+IndexedFaceSet36: TIndexedFaceSetNode;
+Color37: TColorNode;
+Coordinate38: TCoordinateNode;
+TextureCoordinate39: TTextureCoordinateNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Interchange';
@@ -82,6 +83,7 @@ NavigationInfo30 := TNavigationInfoNode.Create;
 NavigationInfo30.SetType(['EXAMINE']);
 { .AddChildren }
 Group23.AddChildren([NavigationInfo30]);
+{ <Environment id="gamma" gammaCorrectionDefault="none"></Environment> }
 Shape31 := TShapeNode.Create;
 Appearance32 := TAppearanceNode.Create;
 Material33 := TMaterialNode.Create;
@@ -89,29 +91,33 @@ Material33 := TMaterialNode.Create;
 Appearance32.Material := Material33;
 PixelTexture34 := TPixelTextureNode.Create;
 PixelTexture34.Image := (2,2,4,-16776961,16711935,-1,-65281);
+TextureProperties35 := TTexturePropertiesNode.Create;
+TextureProperties35.MagnificationFilter := 'NEAREST_PIXEL';
+{ .SetTextureProperties }
+PixelTexture34.TextureProperties := TextureProperties35;
 { .SetTexture }
 Appearance32.Texture := PixelTexture34;
 { .SetAppearance }
 Shape31.Appearance := Appearance32;
-IndexedFaceSet35 := TIndexedFaceSetNode.Create;
-IndexedFaceSet35.ColorPerVertex := False;
-IndexedFaceSet35.SetCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-IndexedFaceSet35.CreaseAngle := 0.5;
-IndexedFaceSet35.SetTexCoordIndex([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
-Color36 := TColorNode.Create;
-Color36.SetColor([Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0)]);
+IndexedFaceSet36 := TIndexedFaceSetNode.Create;
+IndexedFaceSet36.ColorPerVertex := False;
+IndexedFaceSet36.SetCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+IndexedFaceSet36.CreaseAngle := 0.5;
+IndexedFaceSet36.SetTexCoordIndex([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
+Color37 := TColorNode.Create;
+Color37.SetColor([Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0)]);
 { .SetColor }
-IndexedFaceSet35.Color := Color36;
-Coordinate37 := TCoordinateNode.Create;
-Coordinate37.SetPoint([Vector3(-2,1,1),Vector3(-2,-1,1),Vector3(2,1,1),Vector3(2,-1,1),Vector3(2,1,-1),Vector3(2,-1,-1),Vector3(-2,1,-1),Vector3(-2,-1,-1)]);
+IndexedFaceSet36.Color := Color37;
+Coordinate38 := TCoordinateNode.Create;
+Coordinate38.SetPoint([Vector3(-2,1,1),Vector3(-2,-1,1),Vector3(2,1,1),Vector3(2,-1,1),Vector3(2,1,-1),Vector3(2,-1,-1),Vector3(-2,1,-1),Vector3(-2,-1,-1)]);
 { .SetCoord }
-IndexedFaceSet35.Coord := Coordinate37;
-TextureCoordinate38 := TTextureCoordinateNode.Create;
-TextureCoordinate38.SetPoint([Vector2(0,1),Vector2(0,0),Vector2(1,1),Vector2(1,0)]);
+IndexedFaceSet36.Coord := Coordinate38;
+TextureCoordinate39 := TTextureCoordinateNode.Create;
+TextureCoordinate39.SetPoint([Vector2(0,1),Vector2(0,0),Vector2(1,1),Vector2(1,0)]);
 { .SetTexCoord }
-IndexedFaceSet35.TexCoord := TextureCoordinate38;
+IndexedFaceSet36.TexCoord := TextureCoordinate39;
 { .SetGeometry }
-Shape31.Geometry := IndexedFaceSet35;
+Shape31.Geometry := IndexedFaceSet36;
 { .AddChildren }
 Group23.AddChildren([Shape31]);
 { .AddGroup }

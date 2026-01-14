@@ -262,6 +262,7 @@ X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
+{ BS studio translation from .x3dv by Joe using BS Contact }
 X3D0.Components['H-Anim'] := 1;
 X3D0.Meta['title'] := 'JoeSkinTexcoordDisplacerKick.x3d';
 X3D0.Meta['info'] := 'Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim';
@@ -275,7 +276,6 @@ X3D0.Meta['translators'] := 'Roy Walmsley and Don Brutzman';
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d';
 X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
-{ BS studio translation from .x3dv by Joe using BS Contact }
 Group15 := TGroupNode.Create;
 WorldInfo16 := TWorldInfoNode.Create;
 WorldInfo16.SetInfo(['X3D Humanoid V1 LOA3 skeleton','skin from hanim sites, surface features, and some added points','390 points']);

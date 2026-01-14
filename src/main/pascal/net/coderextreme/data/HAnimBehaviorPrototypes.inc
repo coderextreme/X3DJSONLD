@@ -10305,6 +10305,7 @@ ProtoInstance1811.FieldValue := fieldValue1814;
 fieldValue1815 := TfieldValueNode.Create;
 fieldValue1815.NameField := 'hAnimBehaviorNodes';
 ProtoInstance1816 := TProtoInstanceNode.Create;
+ProtoInstance1816.NameField := 'HAnimBehavior';
 ProtoInstance1816 := ProtoInstance1806;
 { .AddChildren }
 fieldValue1815.AddChildren([ProtoInstance1816]);

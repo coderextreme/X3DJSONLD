@@ -181,9 +181,9 @@ TimeSensor22.CycleInterval := 10;
 TimeSensor22.Loop := True;
 { .AddChildren }
 Transform11.AddChildren([TimeSensor22]);
-Transform11.AddRoute(Script16.EventTranslation_changed, 'DECLBubble_transform'.FdTranslation);
+Transform11.AddRoute(Script16.EventTranslation_changed, Transform11.FdTranslation);
 { .AddX3DRoute }
-Transform11.AddRoute(Script16.EventScale_changed, 'DECLBubble_transform'.FdScale);
+Transform11.AddRoute(Script16.EventScale_changed, Transform11.FdScale);
 { .AddX3DRoute }
 Transform11.AddRoute(TimeSensor22.EventFraction_changed, Script16.EventSet_fraction);
 { .AddX3DRoute }
@@ -287,9 +287,9 @@ TimeSensor37.CycleInterval := 10;
 TimeSensor37.Loop := True;
 { .AddChildren }
 Transform26.AddChildren([TimeSensor37]);
-Transform26.AddRoute(Script31.EventTranslation_changed, 'DECLBubble_transform'.FdTranslation);
+Transform26.AddRoute(Script31.EventTranslation_changed, Transform26.FdTranslation);
 { .AddX3DRoute }
-Transform26.AddRoute(Script31.EventScale_changed, 'DECLBubble_transform'.FdScale);
+Transform26.AddRoute(Script31.EventScale_changed, Transform26.FdScale);
 { .AddX3DRoute }
 Transform26.AddRoute(TimeSensor37.EventFraction_changed, Script31.EventSet_fraction);
 { .AddX3DRoute }
@@ -393,9 +393,9 @@ TimeSensor52.CycleInterval := 10;
 TimeSensor52.Loop := True;
 { .AddChildren }
 Transform41.AddChildren([TimeSensor52]);
-Transform41.AddRoute(Script46.EventTranslation_changed, 'DECLBubble_transform'.FdTranslation);
+Transform41.AddRoute(Script46.EventTranslation_changed, Transform41.FdTranslation);
 { .AddX3DRoute }
-Transform41.AddRoute(Script46.EventScale_changed, 'DECLBubble_transform'.FdScale);
+Transform41.AddRoute(Script46.EventScale_changed, Transform41.FdScale);
 { .AddX3DRoute }
 Transform41.AddRoute(TimeSensor52.EventFraction_changed, Script46.EventSet_fraction);
 { .AddX3DRoute }
@@ -499,9 +499,9 @@ TimeSensor67.CycleInterval := 10;
 TimeSensor67.Loop := True;
 { .AddChildren }
 Transform56.AddChildren([TimeSensor67]);
-Transform56.AddRoute(Script61.EventTranslation_changed, 'DECLBubble_transform'.FdTranslation);
+Transform56.AddRoute(Script61.EventTranslation_changed, Transform56.FdTranslation);
 { .AddX3DRoute }
-Transform56.AddRoute(Script61.EventScale_changed, 'DECLBubble_transform'.FdScale);
+Transform56.AddRoute(Script61.EventScale_changed, Transform56.FdScale);
 { .AddX3DRoute }
 Transform56.AddRoute(TimeSensor67.EventFraction_changed, Script61.EventSet_fraction);
 { .AddX3DRoute }

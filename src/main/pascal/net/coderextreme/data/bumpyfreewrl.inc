@@ -37,6 +37,7 @@ X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
+{ <component name='Shape' level='4'></component> }
 X3D0.Components['Scripting'] := 1;
 X3D0.Components['EnvironmentalEffects'] := 3;
 X3D0.Components['Shaders'] := 1;
@@ -45,7 +46,6 @@ X3D0.Components['Texturing'] := 1;
 X3D0.Components['Rendering'] := 1;
 X3D0.Components['Grouping'] := 3;
 X3D0.Components['Core'] := 1;
-{ <component name='Shape' level='4'></component> }
 X3D0.Meta['title'] := 'bumpyfreewrl.x3d';
 X3D0.Meta['creator'] := 'John Carlson';
 X3D0.Meta['description'] := 'A flower';
