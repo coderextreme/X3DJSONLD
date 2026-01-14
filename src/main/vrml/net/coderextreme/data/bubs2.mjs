@@ -5,6 +5,7 @@ const
    scene   = browser .currentScene;
 async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
+scene .addComponent (browser .getComponent ("Scripting", 1));
 scene.addMetaData("title", "bubs2.x3d");
 scene.addMetaData("creator", "John Carlson");
 scene.addMetaData("description", "Tour around a prismatic sphere");
@@ -12,7 +13,6 @@ scene.addMetaData("generator", "X3D-Edit, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d");
 scene.addMetaData("translated", "13 March 2016");
 scene.addMetaData("generator", "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html");
-scene .addComponent (browser .getComponent ("Scripting", 1));
 await browser .loadComponents (scene);
 let NavigationInfo11 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo11.type = new X3D.MFString([new X3D.SFString("EXAMINE")]);

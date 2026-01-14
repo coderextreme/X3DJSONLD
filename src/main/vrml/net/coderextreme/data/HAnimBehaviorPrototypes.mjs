@@ -9586,6 +9586,7 @@ ProtoInstance1811ZZZ.fieldValue[1] = fieldValue1814;
 let fieldValue1815 = browser.currentScene.createNode("fieldValue");
 fieldValue1815.name = "hAnimBehaviorNodes";
 let ProtoInstance1816 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1816.name = "HAnimBehavior";
 ProtoInstance1816.USE = "BehaviorTest1";
 fieldValue1815YYY.children = new X3D.MFNode();
 

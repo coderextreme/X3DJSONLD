@@ -5,6 +5,8 @@ const
    scene   = browser .currentScene;
 async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
+//Scaled 1:1, Added Animations
+//Added Sites
 scene .addComponent (browser .getComponent ("HAnim", 1));
 scene.addMetaData("title", "JinScaledV2L1LOA4OnlyMarkers11g.x3d");
 scene.addMetaData("creator", "Jin Hoon Lee and Min Joo Lee");
@@ -23,10 +25,8 @@ scene.addMetaData("generator", "3DS MAX, http://www.autodesk.com/products/autode
 scene.addMetaData("generator", "Suwon HAnim Converter");
 scene.addMetaData("generator", "johnRescaler+joedwillyNotePad");
 scene.addMetaData("generator", "Gnu Image Manipulation Program, http://www.gimp.org");
-scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../license.html");
-//Scaled 1:1, Added Animations
-//Added Sites
 await browser .loadComponents (scene);
 //https://www.web3d.org/documents/specifications/19774/V2.0/index.html
 //0 0 0 at floor between feet, default I pose (relaxed attention) model gaze toward +Z, +x to model left, +y up, right-hand rule.

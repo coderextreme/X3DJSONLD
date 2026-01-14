@@ -340,29 +340,22 @@ fieldValue60ZZZ.children[0] = Transform61;
 
 ProtoInstance53ZZZ.fieldValue[3] = fieldValue60;
 
-let fieldValue62 = browser.currentScene.createNode("fieldValue");
-fieldValue62.name = "set_startpoint";
-ProtoInstance53ZZZ.fieldValue[4] = fieldValue62;
-
-let fieldValue63 = browser.currentScene.createNode("fieldValue");
-fieldValue63.name = "set_endpoint";
-ProtoInstance53ZZZ.fieldValue[5] = fieldValue63;
-
+//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
 browser.currentScene.children[6] = ProtoInstance53;
 
-let ROUTE64 = browser.currentScene.createNode("ROUTE");
-ROUTE64.fromNode = "G1";
-ROUTE64.fromField = "translation_changed";
-ROUTE64.toNode = "connector1";
-ROUTE64.toField = "set_startpoint";
-browser.currentScene.children[7] = ROUTE64;
+let ROUTE62 = browser.currentScene.createNode("ROUTE");
+ROUTE62.fromNode = "G1";
+ROUTE62.fromField = "translation_changed";
+ROUTE62.toNode = "connector1";
+ROUTE62.toField = "set_startpoint";
+browser.currentScene.children[7] = ROUTE62;
 
-let ROUTE65 = browser.currentScene.createNode("ROUTE");
-ROUTE65.fromNode = "G2";
-ROUTE65.fromField = "translation_changed";
-ROUTE65.toNode = "connector1";
-ROUTE65.toField = "set_endpoint";
-browser.currentScene.children[8] = ROUTE65;
+let ROUTE63 = browser.currentScene.createNode("ROUTE");
+ROUTE63.fromNode = "G2";
+ROUTE63.fromField = "translation_changed";
+ROUTE63.toNode = "connector1";
+ROUTE63.toField = "set_endpoint";
+browser.currentScene.children[8] = ROUTE63;
 
 }
 main ();

@@ -5,6 +5,7 @@ const
    scene   = browser .currentScene;
 async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
+//meta content='under development' name='warning'/
 scene .addComponent (browser .getComponent ("Shaders", 1));
 scene.addMetaData("title", "SimpleShader.x3d");
 scene.addMetaData("description", "Simple shader example");
@@ -25,7 +26,6 @@ scene.addMetaData("outputStyle", "nicest");
 scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d");
 scene.addMetaData("license", "../../license.html");
-//meta content='under development' name='warning'/
 await browser .loadComponents (scene);
 let ProtoDeclare23 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">

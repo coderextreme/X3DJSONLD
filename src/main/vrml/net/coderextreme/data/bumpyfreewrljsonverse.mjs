@@ -5,6 +5,8 @@ const
    scene   = browser .currentScene;
 async function main () {
 scene.setProfile(browser.getProfile("Full"));
+//<component name='Shape' level='4'></component>
+//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 scene .addComponent (browser .getComponent ("Scripting", 1));
 scene .addComponent (browser .getComponent ("EnvironmentalEffects", 3));
 scene .addComponent (browser .getComponent ("Shaders", 1));
@@ -14,8 +16,6 @@ scene .addComponent (browser .getComponent ("Rendering", 1));
 scene .addComponent (browser .getComponent ("Grouping", 3));
 scene .addComponent (browser .getComponent ("Core", 1));
 scene .addComponent (browser .getComponent ("DIS", 2));
-//<component name='Shape' level='4'></component>
-//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
 scene.addMetaData("title", "bumpyfreewrljsonverse.x3d");
 scene.addMetaData("description", "*enter description here, short-sentence summaries preferred*");
 scene.addMetaData("creator", "Doug Sanden, Christoph Valentin, John Carlson");
@@ -424,9 +424,7 @@ Layer37ZZZ.children[4] = ROUTE108;
 //DIS multiuser facilities
 let DISEntityManager109 = browser.currentScene.createNode("DISEntityManager");
 DISEntityManager109.DEF = "EntityManager";
-DISEntityManager109.networkMode = "networkReader";
 let DISEntityTypeMapping110 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping110.readInterval = "3";
 DISEntityTypeMapping110.category = 77;
 DISEntityTypeMapping110.specific = 1;
 DISEntityTypeMapping110.url = new X3D.MFString([new X3D.SFString("../data/Gramps8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")]);
@@ -435,21 +433,18 @@ DISEntityManager109YYY.children = new X3D.MFNode();
 DISEntityManager109ZZZ.children[0] = DISEntityTypeMapping110;
 
 let DISEntityTypeMapping111 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping111.readInterval = "3";
 DISEntityTypeMapping111.category = 77;
 DISEntityTypeMapping111.specific = 2;
 DISEntityTypeMapping111.url = new X3D.MFString([new X3D.SFString("../data/Leif8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")]);
 DISEntityManager109ZZZ.children[1] = DISEntityTypeMapping111;
 
 let DISEntityTypeMapping112 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping112.readInterval = "3";
 DISEntityTypeMapping112.category = 77;
 DISEntityTypeMapping112.specific = 3;
 DISEntityTypeMapping112.url = new X3D.MFString([new X3D.SFString("../data/Lily8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")]);
 DISEntityManager109ZZZ.children[2] = DISEntityTypeMapping112;
 
 let DISEntityTypeMapping113 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping113.readInterval = "3";
 DISEntityTypeMapping113.category = 77;
 DISEntityTypeMapping113.specific = 4;
 DISEntityTypeMapping113.url = new X3D.MFString([new X3D.SFString("../data/Tufani8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")]);

@@ -20,7 +20,7 @@ scene.addMetaData("TODO", "Record information relating a certain skin coordinate
 scene.addMetaData("info", "modified to correct root and vc7 hierarchies");
 scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d");
 scene.addMetaData("generator", "BS studio translation from .x3dv by Joe using BS Contact");
-scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../license.html");
 await browser .loadComponents (scene);
 let WorldInfo20 = browser.currentScene.createNode("WorldInfo");

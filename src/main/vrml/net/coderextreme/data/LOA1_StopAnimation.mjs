@@ -12,10 +12,10 @@ scene.addMetaData("rights", "1997 3Name3D / Yglesias, Wallock, Divekar, Inc., al
 scene.addMetaData("translator", "Ozan APAYDIN");
 scene.addMetaData("created", "1 December 2001");
 scene.addMetaData("modified", "23 May 2020");
-scene.addMetaData("reference", "http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl");
-scene.addMetaData("reference", "http://www.HAnim.org");
-scene.addMetaData("reference", "http://HAnim.org/Models");
-scene.addMetaData("reference", "http://HAnim.org/Nodes");
+scene.addMetaData("reference", "https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl");
+scene.addMetaData("reference", "https://www.HAnim.org");
+scene.addMetaData("reference", "https://HAnim.org/Models");
+scene.addMetaData("reference", "https://HAnim.org/Nodes");
 scene.addMetaData("subject", "Nancy Stand Animation HAnim 2001");
 scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_StopAnimation.x3d");
 scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");

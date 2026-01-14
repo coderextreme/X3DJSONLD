@@ -5,6 +5,7 @@ const
    scene   = browser .currentScene;
 async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
+//BS studio translation from .x3dv by Joe using BS Contact
 scene .addComponent (browser .getComponent ("H-Anim", 1));
 scene.addMetaData("title", "JoeSkinTexcoordDisplacerKick.x3d");
 scene.addMetaData("info", "Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim");
@@ -18,7 +19,6 @@ scene.addMetaData("translators", "Roy Walmsley and Don Brutzman");
 scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d");
 scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../license.html");
-//BS studio translation from .x3dv by Joe using BS Contact
 await browser .loadComponents (scene);
 let WorldInfo16 = browser.currentScene.createNode("WorldInfo");
 WorldInfo16.info = new X3D.MFString([new X3D.SFString("X3D Humanoid V1 LOA3 skeleton"), new X3D.SFString("skin from hanim sites, surface features, and some added points"), new X3D.SFString("390 points")]);

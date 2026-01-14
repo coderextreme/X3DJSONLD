@@ -15,7 +15,7 @@ scene.addMetaData("drawing", "ViewFrustumComputation.png");
 scene.addMetaData("Image", "ViewFrustumOverheadView.png");
 scene.addMetaData("Image", "ViewFrustumObliqueView.png");
 scene.addMetaData("subject", "view culling frustum");
-scene.addMetaData("identifier", "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d");
+scene.addMetaData("identifier", "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d");
 scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../license.html");
 await browser .loadComponents (scene);

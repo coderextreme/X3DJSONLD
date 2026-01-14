@@ -5,6 +5,7 @@ const
    scene   = browser .currentScene;
 async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
+//<component name='Shape' level='4'></component>
 scene .addComponent (browser .getComponent ("Scripting", 1));
 scene .addComponent (browser .getComponent ("EnvironmentalEffects", 3));
 scene .addComponent (browser .getComponent ("Shaders", 1));
@@ -13,7 +14,6 @@ scene .addComponent (browser .getComponent ("Texturing", 1));
 scene .addComponent (browser .getComponent ("Rendering", 1));
 scene .addComponent (browser .getComponent ("Grouping", 3));
 scene .addComponent (browser .getComponent ("Core", 1));
-//<component name='Shape' level='4'></component>
 scene.addMetaData("title", "geo.x3d");
 scene.addMetaData("creator", "John Carlson");
 scene.addMetaData("generator", "manual");
