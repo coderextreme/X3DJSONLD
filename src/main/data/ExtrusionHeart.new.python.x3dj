@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:20 GMT",
+        "@content":"27 November 2015",
         "@name":"modified"
       }
     },
@@ -48,6 +48,20 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

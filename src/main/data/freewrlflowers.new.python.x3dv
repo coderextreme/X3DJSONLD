@@ -6,59 +6,8 @@ META "title" "freewrlflowers.x3d"
 META "creator" "John Carlson"
 META "description" "5 or more prismatic flowers"
 META "generator" "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-ExternProtoDeclare {
-      name "FlowerProto"
-      url ["../data/flowerprotofreewrl.x3d#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"]
-      children [
-        field {
-          accessType "inputOutput"
-          name "vertex"
-          type "MFString" 
-        }
-        field {
-          accessType "inputOutput"
-          name "fragment"
-          type "MFString" 
-        }
-        
-      ]
-    
-    }
-    ProtoDeclare {
-      name "flower"
-      ProtoInterface ProtoInterface { 
-      }
-      
-      ProtoBody ProtoBody {
-        children [
-          Group {
-            children [
-              ProtoInstance {
-                name "FlowerProto"
-                children [
-                  fieldValue {
-                    name "vertex"
-                    value "../shaders/freewrl_flowers_chromatic.vs" 
-                  }
-                  fieldValue {
-                    name "fragment"
-                    value "../shaders/freewrl.fs" 
-                  }
-                  
-                ]
-              
-              }
-              
-            ]
-          
-          }
-          
-        ]
-      
-      }
-      
-    }
-    NavigationInfo { 
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d"
+NavigationInfo { 
     }
     Viewpoint {
       description "Tour Views"
@@ -74,6 +23,55 @@ ExternProtoDeclare {
     }
     Group {
       children [
+        ExternProtoDeclare {
+          name "FlowerProto"
+          url ["../data/flowerprotofreewrl.x3d#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"]
+          children [
+            field {
+              accessType "inputOutput"
+              name "vertex"
+              type "MFString" 
+            }
+            field {
+              accessType "inputOutput"
+              name "fragment"
+              type "MFString" 
+            }
+            
+          ]
+        
+        }
+        ProtoDeclare {
+          name "flower"
+          ProtoBody ProtoBody {
+            children [
+              Group {
+                children [
+                  ProtoInstance {
+                    name "FlowerProto"
+                    children [
+                      fieldValue {
+                        name "vertex"
+                        value "../shaders/freewrl_flowers_chromatic.vs" 
+                      }
+                      fieldValue {
+                        name "fragment"
+                        value "../shaders/freewrl.fs" 
+                      }
+                      
+                    ]
+                  
+                  }
+                  
+                ]
+              
+              }
+              
+            ]
+          
+          }
+          
+        }
         ProtoInstance {
           name "flower" 
         }

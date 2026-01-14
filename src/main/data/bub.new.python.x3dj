@@ -11,6 +11,12 @@
         "component":
         {
       {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"EnvironmentalEffects"
       }
@@ -30,8 +36,26 @@
         "component":
         {
       {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "meta":
@@ -62,16 +86,41 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/bub.x3d",
+        "@name":"identifier"
+      }
+    },
     }    "Scene":
     {
+        "NavigationInfo":
+        {
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
+        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
+        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
+        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
+        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
+        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Look at the bubbles flying",
+        "@position":"0 0 20"
+      }
+    },
         "ProtoDeclare":
         {
       {
         "@name":"Bubble"
       }
-            "ProtoInterface":
-            {
-    },
             "ProtoBody":
             {
                 "Transform":
@@ -327,7 +376,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                     "field":
@@ -335,7 +385,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                     "field":
@@ -372,28 +423,7 @@
         "@toNode":"transform"
       }
     },
-            }        }        "NavigationInfo":
-        {
-    },
-        "Background":
-        {
-      {
-        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
-        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
-        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
-        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
-        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
-        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Look at the bubbles flying",
-        "@position":"0 0 20"
-      }
-    },
-        "ProtoInstance":
+            }        }        "ProtoInstance":
         {
       {
         "@name":"Bubble"

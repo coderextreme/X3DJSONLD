@@ -6,10 +6,12 @@ COMPONENT Geospatial:1
 META "title" "geobubbles.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"
+META "description" "geo bubbles"
 DEF Tour GeoViewpoint {
       description "Tour Views"
-      position 0.000111526768555608 0.00145927323148609 3.99999894946814 
+      orientation 1 0 0 0
+      position 0 0 4 
     }
     Background {
       backUrl ["../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
@@ -110,7 +112,7 @@ DEF Tour GeoViewpoint {
     
     ROUTE TourTime.cycleTime TO RandomTourTime.set_cycle
     
-    ROUTE RandomTourTime.position_changed TO TourPosition.set_keyValue
+    ROUTE RandomTourTime.position TO TourPosition.keyValue
     
     ROUTE TourTime.fraction_changed TO TourPosition.set_fraction
     

@@ -2,14 +2,19 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
+    <component name='Texturing'/>
+    <component name='Rendering'/>
     <component level='3' name='Grouping'/>
+    <component name='Core'/>
     <meta content='mirror.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d' name='identifier'/>
+    <meta content='sphere with alternating backgrounds' name='description'/>
   </head>
   <Scene>
     <Viewpoint description='Switch background and images texture' position='0 5 100'/>
@@ -104,19 +109,19 @@
 "        }]]>
       </Script>
       <TimeSensor DEF='Clock' cycleInterval='45' loop='true'/>
+      <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='UrlSelector'/>
+      <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='url' toNode='frontBackgroundTexture'/>
+      <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='url' toNode='backBackgroundTexture'/>
+      <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='url' toNode='leftBackgroundTexture'/>
+      <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='url' toNode='rightBackgroundTexture'/>
+      <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='url' toNode='topBackgroundTexture'/>
+      <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='url' toNode='bottomBackgroundTexture'/>
+      <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='url' toNode='frontShader'/>
+      <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='url' toNode='backShader'/>
+      <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='url' toNode='leftShader'/>
+      <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='url' toNode='rightShader'/>
+      <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='url' toNode='topShader'/>
+      <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='url' toNode='bottomShader'/>
     </Transform>
-    <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='UrlSelector'/>
-    <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='set_url' toNode='frontBackgroundTexture'/>
-    <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='set_url' toNode='backBackgroundTexture'/>
-    <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='set_url' toNode='leftBackgroundTexture'/>
-    <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='set_url' toNode='rightBackgroundTexture'/>
-    <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='set_url' toNode='topBackgroundTexture'/>
-    <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='set_url' toNode='bottomBackgroundTexture'/>
-    <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='set_url' toNode='frontShader'/>
-    <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='set_url' toNode='backShader'/>
-    <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='set_url' toNode='leftShader'/>
-    <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='set_url' toNode='rightShader'/>
-    <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='set_url' toNode='topShader'/>
-    <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='set_url' toNode='bottomShader'/>
   </Scene>
 </X3D>

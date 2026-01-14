@@ -45,15 +45,29 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"14 Jan 2023",
+        "@name":"modified"
       }
     },
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:38 GMT",
-        "@name":"modified"
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"9 November 2020",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -329,7 +343,7 @@
             "HAnimJoint":
             {
       {
-        "@USE":"hanim_l_tarsometatarsal_3 "
+        "@USE":"hanim_l_tarsometatarsal_3"
       }
     },
             "HAnimJoint":
@@ -497,7 +511,7 @@
             "HAnimJoint":
             {
       {
-        "@USE":"hanim_r_tarsometatarsal_3 "
+        "@USE":"hanim_r_tarsometatarsal_3"
       }
     },
             "HAnimJoint":
@@ -1607,7 +1621,7 @@
             "HAnimSegment":
             {
       {
-        "@USE":"hanim_l_carpal_proximal_phalanx_2 "
+        "@USE":"hanim_l_carpal_proximal_phalanx_2"
       }
     },
             "HAnimSegment":
@@ -1745,7 +1759,7 @@
             "HAnimSegment":
             {
       {
-        "@USE":"hanim_r_carpal_proximal_phalanx_2 "
+        "@USE":"hanim_r_carpal_proximal_phalanx_2"
       }
     },
             "HAnimSegment":
@@ -3817,8 +3831,8 @@
                                                 }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_l_tarsometatarsal_3 ",
-        "@name":"l_tarsometatarsal_3 "
+        "@DEF":"hanim_l_tarsometatarsal_3",
+        "@name":"l_tarsometatarsal_3"
       }
                                             "HAnimSegment":
                                             {
@@ -5189,8 +5203,8 @@
                                                 }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_r_tarsometatarsal_3 ",
-        "@name":"r_tarsometatarsal_3 "
+        "@DEF":"hanim_r_tarsometatarsal_3",
+        "@name":"r_tarsometatarsal_3"
       }
                                             "HAnimSegment":
                                             {
@@ -8592,8 +8606,8 @@
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_carpal_proximal_phalanx_2 ",
-        "@name":"l_carpal_proximal_phalanx_2 "
+        "@DEF":"hanim_l_carpal_proximal_phalanx_2",
+        "@name":"l_carpal_proximal_phalanx_2"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -10045,8 +10059,8 @@
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_carpal_proximal_phalanx_2 ",
-        "@name":"r_carpal_proximal_phalanx_2 "
+        "@DEF":"hanim_r_carpal_proximal_phalanx_2",
+        "@name":"r_carpal_proximal_phalanx_2"
       }
                                                                                                                         "Transform":
                                                                                                                         {

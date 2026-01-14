@@ -6,11 +6,12 @@ COMPONENT HAnim:3
 META "title" "blenderSkeleton.x3d"
 META "copyright" "2023"
 META "reference" "http://www.web3D.org"
+META "generator" "Blender 4.0.1"
 NavigationInfo { 
     }
     DEF WO_World Background {
-      groundColor [0.05087609 0.05087609 0.05087609]
-      skyColor [0.05087609 0.05087609 0.05087609] 
+      groundColor [0.05087608844041824 0.05087608844041824 0.05087608844041824]
+      skyColor [0.05087608844041824 0.05087608844041824 0.05087608844041824] 
     }
     Transform {
       children [
@@ -56,7 +57,7 @@ NavigationInfo {
       translation 4.07625 1.00545 5.90386
       children [
         DEF LA_Light PointLight {
-          location -8.940697e-08 -3.576279e-07 4.61936e-07
+          location -8.940696716308594e-08 -3.5762786865234375e-07 4.6193599700927734e-07
           radius 40 
         }
         
@@ -68,8 +69,9 @@ NavigationInfo {
       translation 7.35889 -6.92579 4.95831
       children [
         DEF CA_Camera Viewpoint {
-          fieldOfView 0.6911112
-          position -3.92708e-07 -2.123415e-07 2.384186e-07 
+          fieldOfView 0.6911112070083618
+          orientation -3.627339850709177e-08 -0.4730778932571411 -0.8810206651687622 0
+          position -3.927080456378462e-07 -2.123415470123291e-07 2.384185791015625e-07 
         }
         
       ]
@@ -5817,12 +5819,14 @@ NavigationInfo {
     
     }
     DEF Armature_Clock TimeSensor {
-      cycleInterval 10.4166666666667
+      cycleInterval 10.416666666666666
       loop TRUE 
     }
     DEF Armature_Close ProximitySensor {
       size 1000000 1000000 1000000 
     }
+    
+    ROUTE Armature_Close.enterTime TO Armature_Clock.startTime
     DEF Armature_OI_sacrum OrientationInterpolator {
       key [0 1]
       keyValue [0 0 0 0 0 0 0 0] 
@@ -6408,589 +6412,587 @@ NavigationInfo {
       keyValue [0 0 0 0 0 0 0 0] 
     }
     
-    ROUTE Armature_Close.enterTime TO Armature_Clock.set_startTime
-    
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_sacrum.set_fraction
     
-    ROUTE Armature_OI_sacrum.value_changed TO hanim_sacrum.set_rotation
+    ROUTE Armature_OI_sacrum.value_changed TO hanim_sacrum.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_pelvis.set_fraction
     
-    ROUTE Armature_OI_pelvis.value_changed TO hanim_pelvis.set_rotation
+    ROUTE Armature_OI_pelvis.value_changed TO hanim_pelvis.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_thigh.set_fraction
     
-    ROUTE Armature_OI_l_thigh.value_changed TO hanim_l_thigh.set_rotation
+    ROUTE Armature_OI_l_thigh.value_changed TO hanim_l_thigh.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_calf.set_fraction
     
-    ROUTE Armature_OI_l_calf.value_changed TO hanim_l_calf.set_rotation
+    ROUTE Armature_OI_l_calf.value_changed TO hanim_l_calf.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_talus.set_fraction
     
-    ROUTE Armature_OI_l_talus.value_changed TO hanim_l_talus.set_rotation
+    ROUTE Armature_OI_l_talus.value_changed TO hanim_l_talus.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_navicular.set_fraction
     
-    ROUTE Armature_OI_l_navicular.value_changed TO hanim_l_navicular.set_rotation
+    ROUTE Armature_OI_l_navicular.value_changed TO hanim_l_navicular.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_cuneiform_1.set_fraction
     
-    ROUTE Armature_OI_l_cuneiform_1.value_changed TO hanim_l_cuneiform_1.set_rotation
+    ROUTE Armature_OI_l_cuneiform_1.value_changed TO hanim_l_cuneiform_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metatarsal_1.set_fraction
     
-    ROUTE Armature_OI_l_metatarsal_1.value_changed TO hanim_l_metatarsal_1.set_rotation
+    ROUTE Armature_OI_l_metatarsal_1.value_changed TO hanim_l_metatarsal_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_proximal_phalanx_1.value_changed TO hanim_l_tarsal_proximal_phalanx_1.set_rotation
+    ROUTE Armature_OI_l_tarsal_proximal_phalanx_1.value_changed TO hanim_l_tarsal_proximal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_distal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_distal_phalanx_1.value_changed TO hanim_l_tarsal_distal_phalanx_1.set_rotation
+    ROUTE Armature_OI_l_tarsal_distal_phalanx_1.value_changed TO hanim_l_tarsal_distal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_cuneiform_2.set_fraction
     
-    ROUTE Armature_OI_l_cuneiform_2.value_changed TO hanim_l_cuneiform_2.set_rotation
+    ROUTE Armature_OI_l_cuneiform_2.value_changed TO hanim_l_cuneiform_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metatarsal_2.set_fraction
     
-    ROUTE Armature_OI_l_metatarsal_2.value_changed TO hanim_l_metatarsal_2.set_rotation
+    ROUTE Armature_OI_l_metatarsal_2.value_changed TO hanim_l_metatarsal_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_proximal_phalanx_2.value_changed TO hanim_l_tarsal_proximal_phalanx_2.set_rotation
+    ROUTE Armature_OI_l_tarsal_proximal_phalanx_2.value_changed TO hanim_l_tarsal_proximal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_middle_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_middle_phalanx_2.value_changed TO hanim_l_tarsal_middle_phalanx_2.set_rotation
+    ROUTE Armature_OI_l_tarsal_middle_phalanx_2.value_changed TO hanim_l_tarsal_middle_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_distal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_distal_phalanx_2.value_changed TO hanim_l_tarsal_distal_phalanx_2.set_rotation
+    ROUTE Armature_OI_l_tarsal_distal_phalanx_2.value_changed TO hanim_l_tarsal_distal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_cuneiform_3.set_fraction
     
-    ROUTE Armature_OI_l_cuneiform_3.value_changed TO hanim_l_cuneiform_3.set_rotation
+    ROUTE Armature_OI_l_cuneiform_3.value_changed TO hanim_l_cuneiform_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metatarsal_3.set_fraction
     
-    ROUTE Armature_OI_l_metatarsal_3.value_changed TO hanim_l_metatarsal_3.set_rotation
+    ROUTE Armature_OI_l_metatarsal_3.value_changed TO hanim_l_metatarsal_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_proximal_phalanx_3.value_changed TO hanim_l_tarsal_proximal_phalanx_3.set_rotation
+    ROUTE Armature_OI_l_tarsal_proximal_phalanx_3.value_changed TO hanim_l_tarsal_proximal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_middle_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_middle_phalanx_3.value_changed TO hanim_l_tarsal_middle_phalanx_3.set_rotation
+    ROUTE Armature_OI_l_tarsal_middle_phalanx_3.value_changed TO hanim_l_tarsal_middle_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_distal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_distal_phalanx_3.value_changed TO hanim_l_tarsal_distal_phalanx_3.set_rotation
+    ROUTE Armature_OI_l_tarsal_distal_phalanx_3.value_changed TO hanim_l_tarsal_distal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_calcaneus.set_fraction
     
-    ROUTE Armature_OI_l_calcaneus.value_changed TO hanim_l_calcaneus.set_rotation
+    ROUTE Armature_OI_l_calcaneus.value_changed TO hanim_l_calcaneus.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_cuboid.set_fraction
     
-    ROUTE Armature_OI_l_cuboid.value_changed TO hanim_l_cuboid.set_rotation
+    ROUTE Armature_OI_l_cuboid.value_changed TO hanim_l_cuboid.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metatarsal_4.set_fraction
     
-    ROUTE Armature_OI_l_metatarsal_4.value_changed TO hanim_l_metatarsal_4.set_rotation
+    ROUTE Armature_OI_l_metatarsal_4.value_changed TO hanim_l_metatarsal_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_proximal_phalanx_4.value_changed TO hanim_l_tarsal_proximal_phalanx_4.set_rotation
+    ROUTE Armature_OI_l_tarsal_proximal_phalanx_4.value_changed TO hanim_l_tarsal_proximal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_middle_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_middle_phalanx_4.value_changed TO hanim_l_tarsal_middle_phalanx_4.set_rotation
+    ROUTE Armature_OI_l_tarsal_middle_phalanx_4.value_changed TO hanim_l_tarsal_middle_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_distal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_distal_phalanx_4.value_changed TO hanim_l_tarsal_distal_phalanx_4.set_rotation
+    ROUTE Armature_OI_l_tarsal_distal_phalanx_4.value_changed TO hanim_l_tarsal_distal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metatarsal_5.set_fraction
     
-    ROUTE Armature_OI_l_metatarsal_5.value_changed TO hanim_l_metatarsal_5.set_rotation
+    ROUTE Armature_OI_l_metatarsal_5.value_changed TO hanim_l_metatarsal_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_proximal_phalanx_5.value_changed TO hanim_l_tarsal_proximal_phalanx_5.set_rotation
+    ROUTE Armature_OI_l_tarsal_proximal_phalanx_5.value_changed TO hanim_l_tarsal_proximal_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_middle_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_middle_phalanx_5.value_changed TO hanim_l_tarsal_middle_phalanx_5.set_rotation
+    ROUTE Armature_OI_l_tarsal_middle_phalanx_5.value_changed TO hanim_l_tarsal_middle_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_tarsal_distal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_l_tarsal_distal_phalanx_5.value_changed TO hanim_l_tarsal_distal_phalanx_5.set_rotation
+    ROUTE Armature_OI_l_tarsal_distal_phalanx_5.value_changed TO hanim_l_tarsal_distal_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_thigh.set_fraction
     
-    ROUTE Armature_OI_r_thigh.value_changed TO hanim_r_thigh.set_rotation
+    ROUTE Armature_OI_r_thigh.value_changed TO hanim_r_thigh.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_calf.set_fraction
     
-    ROUTE Armature_OI_r_calf.value_changed TO hanim_r_calf.set_rotation
+    ROUTE Armature_OI_r_calf.value_changed TO hanim_r_calf.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_talus.set_fraction
     
-    ROUTE Armature_OI_r_talus.value_changed TO hanim_r_talus.set_rotation
+    ROUTE Armature_OI_r_talus.value_changed TO hanim_r_talus.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_navicular.set_fraction
     
-    ROUTE Armature_OI_r_navicular.value_changed TO hanim_r_navicular.set_rotation
+    ROUTE Armature_OI_r_navicular.value_changed TO hanim_r_navicular.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_cuneiform_1.set_fraction
     
-    ROUTE Armature_OI_r_cuneiform_1.value_changed TO hanim_r_cuneiform_1.set_rotation
+    ROUTE Armature_OI_r_cuneiform_1.value_changed TO hanim_r_cuneiform_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metatarsal_1.set_fraction
     
-    ROUTE Armature_OI_r_metatarsal_1.value_changed TO hanim_r_metatarsal_1.set_rotation
+    ROUTE Armature_OI_r_metatarsal_1.value_changed TO hanim_r_metatarsal_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_proximal_phalanx_1.value_changed TO hanim_r_tarsal_proximal_phalanx_1.set_rotation
+    ROUTE Armature_OI_r_tarsal_proximal_phalanx_1.value_changed TO hanim_r_tarsal_proximal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_distal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_distal_phalanx_1.value_changed TO hanim_r_tarsal_distal_phalanx_1.set_rotation
+    ROUTE Armature_OI_r_tarsal_distal_phalanx_1.value_changed TO hanim_r_tarsal_distal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_cuneiform_2.set_fraction
     
-    ROUTE Armature_OI_r_cuneiform_2.value_changed TO hanim_r_cuneiform_2.set_rotation
+    ROUTE Armature_OI_r_cuneiform_2.value_changed TO hanim_r_cuneiform_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metatarsal_2.set_fraction
     
-    ROUTE Armature_OI_r_metatarsal_2.value_changed TO hanim_r_metatarsal_2.set_rotation
+    ROUTE Armature_OI_r_metatarsal_2.value_changed TO hanim_r_metatarsal_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_proximal_phalanx_2.value_changed TO hanim_r_tarsal_proximal_phalanx_2.set_rotation
+    ROUTE Armature_OI_r_tarsal_proximal_phalanx_2.value_changed TO hanim_r_tarsal_proximal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_middle_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_middle_phalanx_2.value_changed TO hanim_r_tarsal_middle_phalanx_2.set_rotation
+    ROUTE Armature_OI_r_tarsal_middle_phalanx_2.value_changed TO hanim_r_tarsal_middle_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_distal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_distal_phalanx_2.value_changed TO hanim_r_tarsal_distal_phalanx_2.set_rotation
+    ROUTE Armature_OI_r_tarsal_distal_phalanx_2.value_changed TO hanim_r_tarsal_distal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_cuneiform_3.set_fraction
     
-    ROUTE Armature_OI_r_cuneiform_3.value_changed TO hanim_r_cuneiform_3.set_rotation
+    ROUTE Armature_OI_r_cuneiform_3.value_changed TO hanim_r_cuneiform_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metatarsal_3.set_fraction
     
-    ROUTE Armature_OI_r_metatarsal_3.value_changed TO hanim_r_metatarsal_3.set_rotation
+    ROUTE Armature_OI_r_metatarsal_3.value_changed TO hanim_r_metatarsal_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_proximal_phalanx_3.value_changed TO hanim_r_tarsal_proximal_phalanx_3.set_rotation
+    ROUTE Armature_OI_r_tarsal_proximal_phalanx_3.value_changed TO hanim_r_tarsal_proximal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_middle_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_middle_phalanx_3.value_changed TO hanim_r_tarsal_middle_phalanx_3.set_rotation
+    ROUTE Armature_OI_r_tarsal_middle_phalanx_3.value_changed TO hanim_r_tarsal_middle_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_distal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_distal_phalanx_3.value_changed TO hanim_r_tarsal_distal_phalanx_3.set_rotation
+    ROUTE Armature_OI_r_tarsal_distal_phalanx_3.value_changed TO hanim_r_tarsal_distal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_calcaneus.set_fraction
     
-    ROUTE Armature_OI_r_calcaneus.value_changed TO hanim_r_calcaneus.set_rotation
+    ROUTE Armature_OI_r_calcaneus.value_changed TO hanim_r_calcaneus.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_cuboid.set_fraction
     
-    ROUTE Armature_OI_r_cuboid.value_changed TO hanim_r_cuboid.set_rotation
+    ROUTE Armature_OI_r_cuboid.value_changed TO hanim_r_cuboid.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metatarsal_4.set_fraction
     
-    ROUTE Armature_OI_r_metatarsal_4.value_changed TO hanim_r_metatarsal_4.set_rotation
+    ROUTE Armature_OI_r_metatarsal_4.value_changed TO hanim_r_metatarsal_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_proximal_phalanx_4.value_changed TO hanim_r_tarsal_proximal_phalanx_4.set_rotation
+    ROUTE Armature_OI_r_tarsal_proximal_phalanx_4.value_changed TO hanim_r_tarsal_proximal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_middle_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_middle_phalanx_4.value_changed TO hanim_r_tarsal_middle_phalanx_4.set_rotation
+    ROUTE Armature_OI_r_tarsal_middle_phalanx_4.value_changed TO hanim_r_tarsal_middle_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_distal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_distal_phalanx_4.value_changed TO hanim_r_tarsal_distal_phalanx_4.set_rotation
+    ROUTE Armature_OI_r_tarsal_distal_phalanx_4.value_changed TO hanim_r_tarsal_distal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metatarsal_5.set_fraction
     
-    ROUTE Armature_OI_r_metatarsal_5.value_changed TO hanim_r_metatarsal_5.set_rotation
+    ROUTE Armature_OI_r_metatarsal_5.value_changed TO hanim_r_metatarsal_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_proximal_phalanx_5.value_changed TO hanim_r_tarsal_proximal_phalanx_5.set_rotation
+    ROUTE Armature_OI_r_tarsal_proximal_phalanx_5.value_changed TO hanim_r_tarsal_proximal_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_middle_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_middle_phalanx_5.value_changed TO hanim_r_tarsal_middle_phalanx_5.set_rotation
+    ROUTE Armature_OI_r_tarsal_middle_phalanx_5.value_changed TO hanim_r_tarsal_middle_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_tarsal_distal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_r_tarsal_distal_phalanx_5.value_changed TO hanim_r_tarsal_distal_phalanx_5.set_rotation
+    ROUTE Armature_OI_r_tarsal_distal_phalanx_5.value_changed TO hanim_r_tarsal_distal_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l5.set_fraction
     
-    ROUTE Armature_OI_l5.value_changed TO hanim_l5.set_rotation
+    ROUTE Armature_OI_l5.value_changed TO hanim_l5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l4.set_fraction
     
-    ROUTE Armature_OI_l4.value_changed TO hanim_l4.set_rotation
+    ROUTE Armature_OI_l4.value_changed TO hanim_l4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l3.set_fraction
     
-    ROUTE Armature_OI_l3.value_changed TO hanim_l3.set_rotation
+    ROUTE Armature_OI_l3.value_changed TO hanim_l3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l2.set_fraction
     
-    ROUTE Armature_OI_l2.value_changed TO hanim_l2.set_rotation
+    ROUTE Armature_OI_l2.value_changed TO hanim_l2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l1.set_fraction
     
-    ROUTE Armature_OI_l1.value_changed TO hanim_l1.set_rotation
+    ROUTE Armature_OI_l1.value_changed TO hanim_l1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t12.set_fraction
     
-    ROUTE Armature_OI_t12.value_changed TO hanim_t12.set_rotation
+    ROUTE Armature_OI_t12.value_changed TO hanim_t12.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t11.set_fraction
     
-    ROUTE Armature_OI_t11.value_changed TO hanim_t11.set_rotation
+    ROUTE Armature_OI_t11.value_changed TO hanim_t11.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t10.set_fraction
     
-    ROUTE Armature_OI_t10.value_changed TO hanim_t10.set_rotation
+    ROUTE Armature_OI_t10.value_changed TO hanim_t10.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t9.set_fraction
     
-    ROUTE Armature_OI_t9.value_changed TO hanim_t9.set_rotation
+    ROUTE Armature_OI_t9.value_changed TO hanim_t9.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t8.set_fraction
     
-    ROUTE Armature_OI_t8.value_changed TO hanim_t8.set_rotation
+    ROUTE Armature_OI_t8.value_changed TO hanim_t8.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t7.set_fraction
     
-    ROUTE Armature_OI_t7.value_changed TO hanim_t7.set_rotation
+    ROUTE Armature_OI_t7.value_changed TO hanim_t7.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t6.set_fraction
     
-    ROUTE Armature_OI_t6.value_changed TO hanim_t6.set_rotation
+    ROUTE Armature_OI_t6.value_changed TO hanim_t6.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t5.set_fraction
     
-    ROUTE Armature_OI_t5.value_changed TO hanim_t5.set_rotation
+    ROUTE Armature_OI_t5.value_changed TO hanim_t5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t4.set_fraction
     
-    ROUTE Armature_OI_t4.value_changed TO hanim_t4.set_rotation
+    ROUTE Armature_OI_t4.value_changed TO hanim_t4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t3.set_fraction
     
-    ROUTE Armature_OI_t3.value_changed TO hanim_t3.set_rotation
+    ROUTE Armature_OI_t3.value_changed TO hanim_t3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t2.set_fraction
     
-    ROUTE Armature_OI_t2.value_changed TO hanim_t2.set_rotation
+    ROUTE Armature_OI_t2.value_changed TO hanim_t2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_t1.set_fraction
     
-    ROUTE Armature_OI_t1.value_changed TO hanim_t1.set_rotation
+    ROUTE Armature_OI_t1.value_changed TO hanim_t1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_c7.set_fraction
     
-    ROUTE Armature_OI_c7.value_changed TO hanim_c7.set_rotation
+    ROUTE Armature_OI_c7.value_changed TO hanim_c7.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_c6.set_fraction
     
-    ROUTE Armature_OI_c6.value_changed TO hanim_c6.set_rotation
+    ROUTE Armature_OI_c6.value_changed TO hanim_c6.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_c5.set_fraction
     
-    ROUTE Armature_OI_c5.value_changed TO hanim_c5.set_rotation
+    ROUTE Armature_OI_c5.value_changed TO hanim_c5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_c4.set_fraction
     
-    ROUTE Armature_OI_c4.value_changed TO hanim_c4.set_rotation
+    ROUTE Armature_OI_c4.value_changed TO hanim_c4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_c3.set_fraction
     
-    ROUTE Armature_OI_c3.value_changed TO hanim_c3.set_rotation
+    ROUTE Armature_OI_c3.value_changed TO hanim_c3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_c2.set_fraction
     
-    ROUTE Armature_OI_c2.value_changed TO hanim_c2.set_rotation
+    ROUTE Armature_OI_c2.value_changed TO hanim_c2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_c1.set_fraction
     
-    ROUTE Armature_OI_c1.value_changed TO hanim_c1.set_rotation
+    ROUTE Armature_OI_c1.value_changed TO hanim_c1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_skull.set_fraction
     
-    ROUTE Armature_OI_skull.value_changed TO hanim_skull.set_rotation
+    ROUTE Armature_OI_skull.value_changed TO hanim_skull.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_eyelid.set_fraction
     
-    ROUTE Armature_OI_l_eyelid.value_changed TO hanim_l_eyelid.set_rotation
+    ROUTE Armature_OI_l_eyelid.value_changed TO hanim_l_eyelid.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_eyelid.set_fraction
     
-    ROUTE Armature_OI_r_eyelid.value_changed TO hanim_r_eyelid.set_rotation
+    ROUTE Armature_OI_r_eyelid.value_changed TO hanim_r_eyelid.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_eyeball.set_fraction
     
-    ROUTE Armature_OI_l_eyeball.value_changed TO hanim_l_eyeball.set_rotation
+    ROUTE Armature_OI_l_eyeball.value_changed TO hanim_l_eyeball.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_eyeball.set_fraction
     
-    ROUTE Armature_OI_r_eyeball.value_changed TO hanim_r_eyeball.set_rotation
+    ROUTE Armature_OI_r_eyeball.value_changed TO hanim_r_eyeball.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_eyebrow.set_fraction
     
-    ROUTE Armature_OI_l_eyebrow.value_changed TO hanim_l_eyebrow.set_rotation
+    ROUTE Armature_OI_l_eyebrow.value_changed TO hanim_l_eyebrow.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_eyebrow.set_fraction
     
-    ROUTE Armature_OI_r_eyebrow.value_changed TO hanim_r_eyebrow.set_rotation
+    ROUTE Armature_OI_r_eyebrow.value_changed TO hanim_r_eyebrow.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_jaw.set_fraction
     
-    ROUTE Armature_OI_jaw.value_changed TO hanim_jaw.set_rotation
+    ROUTE Armature_OI_jaw.value_changed TO hanim_jaw.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_clavicle.set_fraction
     
-    ROUTE Armature_OI_l_clavicle.value_changed TO hanim_l_clavicle.set_rotation
+    ROUTE Armature_OI_l_clavicle.value_changed TO hanim_l_clavicle.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_scapula.set_fraction
     
-    ROUTE Armature_OI_l_scapula.value_changed TO hanim_l_scapula.set_rotation
+    ROUTE Armature_OI_l_scapula.value_changed TO hanim_l_scapula.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_upperarm.set_fraction
     
-    ROUTE Armature_OI_l_upperarm.value_changed TO hanim_l_upperarm.set_rotation
+    ROUTE Armature_OI_l_upperarm.value_changed TO hanim_l_upperarm.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_forearm.set_fraction
     
-    ROUTE Armature_OI_l_forearm.value_changed TO hanim_l_forearm.set_rotation
+    ROUTE Armature_OI_l_forearm.value_changed TO hanim_l_forearm.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal.set_fraction
     
-    ROUTE Armature_OI_l_carpal.value_changed TO hanim_l_carpal.set_rotation
+    ROUTE Armature_OI_l_carpal.value_changed TO hanim_l_carpal.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_trapezium.set_fraction
     
-    ROUTE Armature_OI_l_trapezium.value_changed TO hanim_l_trapezium.set_rotation
+    ROUTE Armature_OI_l_trapezium.value_changed TO hanim_l_trapezium.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metacarpal_1.set_fraction
     
-    ROUTE Armature_OI_l_metacarpal_1.value_changed TO hanim_l_metacarpal_1.set_rotation
+    ROUTE Armature_OI_l_metacarpal_1.value_changed TO hanim_l_metacarpal_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_proximal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_l_carpal_proximal_phalanx_1.value_changed TO hanim_l_carpal_proximal_phalanx_1.set_rotation
+    ROUTE Armature_OI_l_carpal_proximal_phalanx_1.value_changed TO hanim_l_carpal_proximal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_distal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_l_carpal_distal_phalanx_1.value_changed TO hanim_l_carpal_distal_phalanx_1.set_rotation
+    ROUTE Armature_OI_l_carpal_distal_phalanx_1.value_changed TO hanim_l_carpal_distal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_trapezoid.set_fraction
     
-    ROUTE Armature_OI_l_trapezoid.value_changed TO hanim_l_trapezoid.set_rotation
+    ROUTE Armature_OI_l_trapezoid.value_changed TO hanim_l_trapezoid.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metacarpal_2.set_fraction
     
-    ROUTE Armature_OI_l_metacarpal_2.value_changed TO hanim_l_metacarpal_2.set_rotation
+    ROUTE Armature_OI_l_metacarpal_2.value_changed TO hanim_l_metacarpal_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_proximal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_l_carpal_proximal_phalanx_2.value_changed TO hanim_l_carpal_proximal_phalanx_2.set_rotation
+    ROUTE Armature_OI_l_carpal_proximal_phalanx_2.value_changed TO hanim_l_carpal_proximal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_middle_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_l_carpal_middle_phalanx_2.value_changed TO hanim_l_carpal_middle_phalanx_2.set_rotation
+    ROUTE Armature_OI_l_carpal_middle_phalanx_2.value_changed TO hanim_l_carpal_middle_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_distal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_l_carpal_distal_phalanx_2.value_changed TO hanim_l_carpal_distal_phalanx_2.set_rotation
+    ROUTE Armature_OI_l_carpal_distal_phalanx_2.value_changed TO hanim_l_carpal_distal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_capitate.set_fraction
     
-    ROUTE Armature_OI_l_capitate.value_changed TO hanim_l_capitate.set_rotation
+    ROUTE Armature_OI_l_capitate.value_changed TO hanim_l_capitate.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metacarpal_3.set_fraction
     
-    ROUTE Armature_OI_l_metacarpal_3.value_changed TO hanim_l_metacarpal_3.set_rotation
+    ROUTE Armature_OI_l_metacarpal_3.value_changed TO hanim_l_metacarpal_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_proximal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_l_carpal_proximal_phalanx_3.value_changed TO hanim_l_carpal_proximal_phalanx_3.set_rotation
+    ROUTE Armature_OI_l_carpal_proximal_phalanx_3.value_changed TO hanim_l_carpal_proximal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_middle_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_l_carpal_middle_phalanx_3.value_changed TO hanim_l_carpal_middle_phalanx_3.set_rotation
+    ROUTE Armature_OI_l_carpal_middle_phalanx_3.value_changed TO hanim_l_carpal_middle_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_distal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_l_carpal_distal_phalanx_3.value_changed TO hanim_l_carpal_distal_phalanx_3.set_rotation
+    ROUTE Armature_OI_l_carpal_distal_phalanx_3.value_changed TO hanim_l_carpal_distal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_hamate.set_fraction
     
-    ROUTE Armature_OI_l_hamate.value_changed TO hanim_l_hamate.set_rotation
+    ROUTE Armature_OI_l_hamate.value_changed TO hanim_l_hamate.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metacarpal_4.set_fraction
     
-    ROUTE Armature_OI_l_metacarpal_4.value_changed TO hanim_l_metacarpal_4.set_rotation
+    ROUTE Armature_OI_l_metacarpal_4.value_changed TO hanim_l_metacarpal_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_proximal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_l_carpal_proximal_phalanx_4.value_changed TO hanim_l_carpal_proximal_phalanx_4.set_rotation
+    ROUTE Armature_OI_l_carpal_proximal_phalanx_4.value_changed TO hanim_l_carpal_proximal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_middle_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_l_carpal_middle_phalanx_4.value_changed TO hanim_l_carpal_middle_phalanx_4.set_rotation
+    ROUTE Armature_OI_l_carpal_middle_phalanx_4.value_changed TO hanim_l_carpal_middle_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_distal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_l_carpal_distal_phalanx_4.value_changed TO hanim_l_carpal_distal_phalanx_4.set_rotation
+    ROUTE Armature_OI_l_carpal_distal_phalanx_4.value_changed TO hanim_l_carpal_distal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_metacarpal_5.set_fraction
     
-    ROUTE Armature_OI_l_metacarpal_5.value_changed TO hanim_l_metacarpal_5.set_rotation
+    ROUTE Armature_OI_l_metacarpal_5.value_changed TO hanim_l_metacarpal_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_proximal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_l_carpal_proximal_phalanx_5.value_changed TO hanim_l_carpal_proximal_phalanx_5.set_rotation
+    ROUTE Armature_OI_l_carpal_proximal_phalanx_5.value_changed TO hanim_l_carpal_proximal_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_middle_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_l_carpal_middle_phalanx_5.value_changed TO hanim_l_carpal_middle_phalanx_5.set_rotation
+    ROUTE Armature_OI_l_carpal_middle_phalanx_5.value_changed TO hanim_l_carpal_middle_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_l_carpal_distal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_l_carpal_distal_phalanx_5.value_changed TO hanim_l_carpal_distal_phalanx_5.set_rotation
+    ROUTE Armature_OI_l_carpal_distal_phalanx_5.value_changed TO hanim_l_carpal_distal_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_clavicle.set_fraction
     
-    ROUTE Armature_OI_r_clavicle.value_changed TO hanim_r_clavicle.set_rotation
+    ROUTE Armature_OI_r_clavicle.value_changed TO hanim_r_clavicle.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_scapula.set_fraction
     
-    ROUTE Armature_OI_r_scapula.value_changed TO hanim_r_scapula.set_rotation
+    ROUTE Armature_OI_r_scapula.value_changed TO hanim_r_scapula.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_upperarm.set_fraction
     
-    ROUTE Armature_OI_r_upperarm.value_changed TO hanim_r_upperarm.set_rotation
+    ROUTE Armature_OI_r_upperarm.value_changed TO hanim_r_upperarm.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_forearm.set_fraction
     
-    ROUTE Armature_OI_r_forearm.value_changed TO hanim_r_forearm.set_rotation
+    ROUTE Armature_OI_r_forearm.value_changed TO hanim_r_forearm.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal.set_fraction
     
-    ROUTE Armature_OI_r_carpal.value_changed TO hanim_r_carpal.set_rotation
+    ROUTE Armature_OI_r_carpal.value_changed TO hanim_r_carpal.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_trapezium.set_fraction
     
-    ROUTE Armature_OI_r_trapezium.value_changed TO hanim_r_trapezium.set_rotation
+    ROUTE Armature_OI_r_trapezium.value_changed TO hanim_r_trapezium.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metacarpal_1.set_fraction
     
-    ROUTE Armature_OI_r_metacarpal_1.value_changed TO hanim_r_metacarpal_1.set_rotation
+    ROUTE Armature_OI_r_metacarpal_1.value_changed TO hanim_r_metacarpal_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_proximal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_r_carpal_proximal_phalanx_1.value_changed TO hanim_r_carpal_proximal_phalanx_1.set_rotation
+    ROUTE Armature_OI_r_carpal_proximal_phalanx_1.value_changed TO hanim_r_carpal_proximal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_distal_phalanx_1.set_fraction
     
-    ROUTE Armature_OI_r_carpal_distal_phalanx_1.value_changed TO hanim_r_carpal_distal_phalanx_1.set_rotation
+    ROUTE Armature_OI_r_carpal_distal_phalanx_1.value_changed TO hanim_r_carpal_distal_phalanx_1.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_trapezoid.set_fraction
     
-    ROUTE Armature_OI_r_trapezoid.value_changed TO hanim_r_trapezoid.set_rotation
+    ROUTE Armature_OI_r_trapezoid.value_changed TO hanim_r_trapezoid.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metacarpal_2.set_fraction
     
-    ROUTE Armature_OI_r_metacarpal_2.value_changed TO hanim_r_metacarpal_2.set_rotation
+    ROUTE Armature_OI_r_metacarpal_2.value_changed TO hanim_r_metacarpal_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_proximal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_r_carpal_proximal_phalanx_2.value_changed TO hanim_r_carpal_proximal_phalanx_2.set_rotation
+    ROUTE Armature_OI_r_carpal_proximal_phalanx_2.value_changed TO hanim_r_carpal_proximal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_middle_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_r_carpal_middle_phalanx_2.value_changed TO hanim_r_carpal_middle_phalanx_2.set_rotation
+    ROUTE Armature_OI_r_carpal_middle_phalanx_2.value_changed TO hanim_r_carpal_middle_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_distal_phalanx_2.set_fraction
     
-    ROUTE Armature_OI_r_carpal_distal_phalanx_2.value_changed TO hanim_r_carpal_distal_phalanx_2.set_rotation
+    ROUTE Armature_OI_r_carpal_distal_phalanx_2.value_changed TO hanim_r_carpal_distal_phalanx_2.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_capitate.set_fraction
     
-    ROUTE Armature_OI_r_capitate.value_changed TO hanim_r_capitate.set_rotation
+    ROUTE Armature_OI_r_capitate.value_changed TO hanim_r_capitate.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metacarpal_3.set_fraction
     
-    ROUTE Armature_OI_r_metacarpal_3.value_changed TO hanim_r_metacarpal_3.set_rotation
+    ROUTE Armature_OI_r_metacarpal_3.value_changed TO hanim_r_metacarpal_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_proximal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_r_carpal_proximal_phalanx_3.value_changed TO hanim_r_carpal_proximal_phalanx_3.set_rotation
+    ROUTE Armature_OI_r_carpal_proximal_phalanx_3.value_changed TO hanim_r_carpal_proximal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_middle_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_r_carpal_middle_phalanx_3.value_changed TO hanim_r_carpal_middle_phalanx_3.set_rotation
+    ROUTE Armature_OI_r_carpal_middle_phalanx_3.value_changed TO hanim_r_carpal_middle_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_distal_phalanx_3.set_fraction
     
-    ROUTE Armature_OI_r_carpal_distal_phalanx_3.value_changed TO hanim_r_carpal_distal_phalanx_3.set_rotation
+    ROUTE Armature_OI_r_carpal_distal_phalanx_3.value_changed TO hanim_r_carpal_distal_phalanx_3.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_hamate.set_fraction
     
-    ROUTE Armature_OI_r_hamate.value_changed TO hanim_r_hamate.set_rotation
+    ROUTE Armature_OI_r_hamate.value_changed TO hanim_r_hamate.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metacarpal_4.set_fraction
     
-    ROUTE Armature_OI_r_metacarpal_4.value_changed TO hanim_r_metacarpal_4.set_rotation
+    ROUTE Armature_OI_r_metacarpal_4.value_changed TO hanim_r_metacarpal_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_proximal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_r_carpal_proximal_phalanx_4.value_changed TO hanim_r_carpal_proximal_phalanx_4.set_rotation
+    ROUTE Armature_OI_r_carpal_proximal_phalanx_4.value_changed TO hanim_r_carpal_proximal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_middle_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_r_carpal_middle_phalanx_4.value_changed TO hanim_r_carpal_middle_phalanx_4.set_rotation
+    ROUTE Armature_OI_r_carpal_middle_phalanx_4.value_changed TO hanim_r_carpal_middle_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_distal_phalanx_4.set_fraction
     
-    ROUTE Armature_OI_r_carpal_distal_phalanx_4.value_changed TO hanim_r_carpal_distal_phalanx_4.set_rotation
+    ROUTE Armature_OI_r_carpal_distal_phalanx_4.value_changed TO hanim_r_carpal_distal_phalanx_4.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_metacarpal_5.set_fraction
     
-    ROUTE Armature_OI_r_metacarpal_5.value_changed TO hanim_r_metacarpal_5.set_rotation
+    ROUTE Armature_OI_r_metacarpal_5.value_changed TO hanim_r_metacarpal_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_proximal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_r_carpal_proximal_phalanx_5.value_changed TO hanim_r_carpal_proximal_phalanx_5.set_rotation
+    ROUTE Armature_OI_r_carpal_proximal_phalanx_5.value_changed TO hanim_r_carpal_proximal_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_middle_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_r_carpal_middle_phalanx_5.value_changed TO hanim_r_carpal_middle_phalanx_5.set_rotation
+    ROUTE Armature_OI_r_carpal_middle_phalanx_5.value_changed TO hanim_r_carpal_middle_phalanx_5.rotation
     
     ROUTE Armature_Clock.fraction_changed TO Armature_OI_r_carpal_distal_phalanx_5.set_fraction
     
-    ROUTE Armature_OI_r_carpal_distal_phalanx_5.value_changed TO hanim_r_carpal_distal_phalanx_5.set_rotation
+    ROUTE Armature_OI_r_carpal_distal_phalanx_5.value_changed TO hanim_r_carpal_distal_phalanx_5.rotation
     

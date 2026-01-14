@@ -52,7 +52,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:55 GMT",
+        "@content":"23 December 2021",
         "@name":"modified"
       }
     },
@@ -119,6 +119,20 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
         "WorldInfo":
@@ -157,25 +171,29 @@
                 "MetadataString":
                 {
       {
-        "@name":"authorName"
+        "@name":"authorName",
+        "@value":""Chul Hee Jung and Myeong Won Lee""
       }
     },
                 "MetadataString":
                 {
       {
-        "@name":"authorEmail"
+        "@name":"authorEmail",
+        "@value":""myeongwonlee@gmail.com""
       }
     },
                 "MetadataString":
                 {
       {
-        "@name":"creationDate"
+        "@name":"creationDate",
+        "@value":""31 March 2011""
       }
     },
                 "MetadataString":
                 {
       {
-        "@name":"gender"
+        "@name":"gender",
+        "@value":""female""
       }
     },
                 "MetadataFloat":
@@ -466,7 +484,7 @@
                 {
       {
         "@DEF":"hanim_l_hip",
-        "@center":"3.22 33.62 -0.2832",
+        "@center":"3.22 33.619999 -0.2832",
         "@name":"l_hip"
       }
                     "HAnimSegment":
@@ -478,7 +496,7 @@
                         "Transform":
                         {
       {
-        "@translation":"3.22 33.62 -0.2832"
+        "@translation":"3.22 33.619999 -0.2832"
       }
                             "Shape":
                             {
@@ -678,7 +696,7 @@
                 {
       {
         "@DEF":"hanim_r_hip",
-        "@center":"-3.22 33.62 -0.2832",
+        "@center":"-3.22 33.619999 -0.2832",
         "@name":"r_hip"
       }
                     "HAnimSegment":
@@ -690,7 +708,7 @@
                         "Transform":
                         {
       {
-        "@translation":"-3.22 33.62 -0.2832"
+        "@translation":"-3.22 33.619999 -0.2832"
       }
                             "Shape":
                             {
@@ -943,7 +961,7 @@
                     {
       {
         "@DEF":"hanim_l_shoulder",
-        "@center":"4.778 51.03 -2.069",
+        "@center":"4.778 51.029999 -2.069",
         "@name":"l_shoulder"
       }
                         "HAnimSegment":
@@ -955,7 +973,7 @@
                             "Transform":
                             {
       {
-        "@translation":"4.778 51.03 -2.069"
+        "@translation":"4.778 51.029999 -2.069"
       }
                                 "Shape":
                                 {
@@ -996,7 +1014,7 @@
                         {
       {
         "@DEF":"hanim_l_elbow",
-        "@center":"5.297 40.12 -2.055",
+        "@center":"5.297 40.119999 -2.055",
         "@name":"l_elbow"
       }
                             "HAnimSegment":
@@ -1008,7 +1026,7 @@
                                 "Transform":
                                 {
       {
-        "@translation":"5.297 40.12 -2.055"
+        "@translation":"5.297 40.119999 -2.055"
       }
                                     "Shape":
                                     {
@@ -1102,7 +1120,7 @@
                     {
       {
         "@DEF":"hanim_r_shoulder",
-        "@center":"-4.778 51.03 -2.069",
+        "@center":"-4.778 51.029999 -2.069",
         "@name":"r_shoulder"
       }
                         "HAnimSegment":
@@ -1114,7 +1132,7 @@
                             "Transform":
                             {
       {
-        "@translation":"-4.778 51.03 -2.069"
+        "@translation":"-4.778 51.029999 -2.069"
       }
                                 "Shape":
                                 {
@@ -1155,7 +1173,7 @@
                         {
       {
         "@DEF":"hanim_r_elbow",
-        "@center":"-5.297 40.12 -2.055",
+        "@center":"-5.297 40.119999 -2.055",
         "@name":"r_elbow"
       }
                             "HAnimSegment":
@@ -1167,7 +1185,7 @@
                                 "Transform":
                                 {
       {
-        "@translation":"-5.297 40.12 -2.055"
+        "@translation":"-5.297 40.119999 -2.055"
       }
                                     "Shape":
                                     {

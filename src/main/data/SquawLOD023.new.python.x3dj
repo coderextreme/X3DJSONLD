@@ -52,7 +52,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:11 GMT",
+        "@content":"20 January 2020",
         "@name":"modified"
       }
     },
@@ -82,6 +82,20 @@
       {
         "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
         "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

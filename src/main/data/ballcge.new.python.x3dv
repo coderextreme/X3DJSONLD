@@ -4,16 +4,21 @@
 PROFILE Immersive
 COMPONENT Shaders:1
 COMPONENT EnvironmentalEffects:3
+COMPONENT Rendering:1
+COMPONENT Texturing:1
 COMPONENT Grouping:3
 COMPONENT CubeMapTexturing:1
+COMPONENT Core:1
 META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"
 META "title" "ball.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
+META "description" "a prismatic sphere"
 WorldInfo {
       title "ball.x3d" 
     }
     NavigationInfo {
+      avatarSize [0.25 1.60000002384186 0.75]
       type ["ANY" "EXAMINE" "FLY" "LOOKAT"] 
     }
     Viewpoint {
@@ -33,7 +38,7 @@ WorldInfo {
         Shape {
           appearance Appearance {
             material Material {
-              diffuseColor 0.7 0.7 0.7
+              diffuseColor 0.699999988079071 0.699999988079071 0.699999988079071
               specularColor 0.5 0.5 0.5 
             }
             
@@ -45,7 +50,7 @@ WorldInfo {
                     accessType "initializeOnly"
                     name "chromaticDispertion"
                     type "SFVec3f"
-                    value [0.98, 1, 1.033] 
+                    value [0.980000019073486, 1, 1.03299999237061] 
                   }
                   field {
                     accessType "initializeOnly"

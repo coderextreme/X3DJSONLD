@@ -7,7 +7,7 @@ META "title" "HAnimBehaviorPrototypes.x3d"
 META "description" "Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors."
 META "creator" "Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor"
 META "created" "2 May 2006"
-META "modified" "Wed, 17 Sep 2025 23:47:34 GMT"
+META "modified" "4 July 2020"
 META "reference" "Web3D2007BlendedBehaviorsChangeableBodies.pdf"
 META "reference" "https://www.web3d.org/files/specifications/19774/V1.0"
 META "reference" "https://www.web3d.org/x3d/specifications/ISO-IEC-19775-X3DAbstractSpecification_Revision1_to_Part1/Part01/components/hanim.html"
@@ -16,7 +16,12 @@ META "reference" "ApaydinThesis.pdf"
 META "subject" "X3D HAnim humanoid animation behaviors"
 META "warning" "under development. should joint translations be exposed? upgrade to HAnim v2.2"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d"
-ProtoDeclare {
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
+WorldInfo {
+      title "HAnimBehaviorPrototypes.x3d" 
+    }
+    ProtoDeclare {
       appinfo "The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior."
       documentation "https://www.web3d.org/files/specifications/19774/V1.0/"
       name "HAnimBehavior"
@@ -2971,28 +2976,36 @@ ProtoDeclare {
                   protoField "startTime" 
                 }
                 connect {
-                  nodeField "resumeTime"
-                  protoField "resumeTime" 
+                  nodeField "stopTime"
+                  protoField "stopTime" 
                 }
                 connect {
                   nodeField "pauseTime"
                   protoField "pauseTime" 
                 }
                 connect {
-                  nodeField "stopTime"
-                  protoField "stopTime" 
+                  nodeField "resumeTime"
+                  protoField "resumeTime" 
                 }
                 connect {
-                  nodeField "isPaused"
-                  protoField "isPaused" 
+                  nodeField "cycleTime"
+                  protoField "cycleTime" 
                 }
                 connect {
                   nodeField "isActive"
                   protoField "isActive" 
                 }
                 connect {
-                  nodeField "cycleTime"
-                  protoField "cycleTime" 
+                  nodeField "isPaused"
+                  protoField "isPaused" 
+                }
+                connect {
+                  nodeField "elapsedTime"
+                  protoField "elapsedTime" 
+                }
+                connect {
+                  nodeField "time"
+                  protoField "time" 
                 }
                 connect {
                   nodeField "fraction_changed"
@@ -3038,6 +3051,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO HumanoidRootPI.set_fraction
           DEF HumanoidRootOI OrientationInterpolator {
             IS IS {
               children [
@@ -3059,6 +3074,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO HumanoidRootOI.set_fraction
           DEF c1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3080,6 +3097,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO c1_OI.set_fraction
           DEF c2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3101,6 +3120,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO c2_OI.set_fraction
           DEF c3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3122,6 +3143,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO c3_OI.set_fraction
           DEF c4_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3143,6 +3166,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO c4_OI.set_fraction
           DEF c5_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3164,6 +3189,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO c5_OI.set_fraction
           DEF c6_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3185,6 +3212,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO c6_OI.set_fraction
           DEF c7_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3206,6 +3235,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO c7_OI.set_fraction
           DEF jaw_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3227,6 +3258,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO jaw_OI.set_fraction
           DEF l1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3248,6 +3281,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l1_OI.set_fraction
           DEF l2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3269,6 +3304,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l2_OI.set_fraction
           DEF l3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3290,6 +3327,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l3_OI.set_fraction
           DEF l4_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3311,6 +3350,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l4_OI.set_fraction
           DEF l5_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3332,6 +3373,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l5_OI.set_fraction
           DEF l_acromioclavicular_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3353,6 +3396,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_acromioclavicular_OI.set_fraction
           DEF l_ankle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3374,6 +3419,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ankle_OI.set_fraction
           DEF l_calf_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3395,6 +3442,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_calf_OI.set_fraction
           DEF l_clavicle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3416,6 +3465,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_clavicle_OI.set_fraction
           DEF l_elbow_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3437,6 +3488,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_elbow_OI.set_fraction
           DEF l_eyeball_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3458,6 +3511,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_eyeball_OI.set_fraction
           DEF l_eyeball_joint_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3479,6 +3534,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_eyeball_joint_OI.set_fraction
           DEF l_eyebrow_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3500,6 +3557,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_eyebrow_OI.set_fraction
           DEF l_eyebrow_joint_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3521,6 +3580,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_eyebrow_joint_OI.set_fraction
           DEF l_eyelid_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3542,6 +3603,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_eyelid_OI.set_fraction
           DEF l_eyelid_joint_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3563,6 +3626,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_eyelid_joint_OI.set_fraction
           DEF l_forearm_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3584,6 +3649,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_forearm_OI.set_fraction
           DEF l_forefoot_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3605,6 +3672,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_forefoot_OI.set_fraction
           DEF l_hand_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3626,6 +3695,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_hand_OI.set_fraction
           DEF l_hindfoot_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3647,6 +3718,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_hindfoot_OI.set_fraction
           DEF l_hip_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3668,6 +3741,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_hip_OI.set_fraction
           DEF l_index0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3689,6 +3764,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index0_OI.set_fraction
           DEF l_index1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3710,6 +3787,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index1_OI.set_fraction
           DEF l_index2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3731,6 +3810,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index2_OI.set_fraction
           DEF l_index3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3752,6 +3833,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index3_OI.set_fraction
           DEF l_index_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3773,6 +3856,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index_distal_OI.set_fraction
           DEF l_index_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3794,6 +3879,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index_metacarpal_OI.set_fraction
           DEF l_index_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3815,6 +3902,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index_middle_OI.set_fraction
           DEF l_index_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3836,6 +3925,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_index_proximal_OI.set_fraction
           DEF l_knee_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3857,6 +3948,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_knee_OI.set_fraction
           DEF l_metatarsal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3878,6 +3971,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_metatarsal_OI.set_fraction
           DEF l_middistal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3899,6 +3994,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middistal_OI.set_fraction
           DEF l_middle0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3920,6 +4017,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle0_OI.set_fraction
           DEF l_middle1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3941,6 +4040,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle1_OI.set_fraction
           DEF l_middle2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3962,6 +4063,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle2_OI.set_fraction
           DEF l_middle3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -3983,6 +4086,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle3_OI.set_fraction
           DEF l_middle_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4004,6 +4109,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle_distal_OI.set_fraction
           DEF l_middle_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4025,6 +4132,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle_metacarpal_OI.set_fraction
           DEF l_middle_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4046,6 +4155,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle_middle_OI.set_fraction
           DEF l_middle_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4067,6 +4178,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_middle_proximal_OI.set_fraction
           DEF l_midproximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4088,6 +4201,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_midproximal_OI.set_fraction
           DEF l_midtarsal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4109,6 +4224,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_midtarsal_OI.set_fraction
           DEF l_pinky0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4130,6 +4247,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky0_OI.set_fraction
           DEF l_pinky1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4151,6 +4270,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky1_OI.set_fraction
           DEF l_pinky2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4172,6 +4293,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky2_OI.set_fraction
           DEF l_pinky3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4193,6 +4316,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky3_OI.set_fraction
           DEF l_pinky_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4214,6 +4339,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky_distal_OI.set_fraction
           DEF l_pinky_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4235,6 +4362,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky_metacarpal_OI.set_fraction
           DEF l_pinky_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4256,6 +4385,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky_middle_OI.set_fraction
           DEF l_pinky_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4277,6 +4408,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_pinky_proximal_OI.set_fraction
           DEF l_ring0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4298,6 +4431,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring0_OI.set_fraction
           DEF l_ring1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4319,6 +4454,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring1_OI.set_fraction
           DEF l_ring2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4340,6 +4477,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring2_OI.set_fraction
           DEF l_ring3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4361,6 +4500,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring3_OI.set_fraction
           DEF l_ring_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4382,6 +4523,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring_distal_OI.set_fraction
           DEF l_ring_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4403,6 +4546,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring_metacarpal_OI.set_fraction
           DEF l_ring_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4424,6 +4569,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring_middle_OI.set_fraction
           DEF l_ring_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4445,6 +4592,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_ring_proximal_OI.set_fraction
           DEF l_scapula_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4466,6 +4615,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_scapula_OI.set_fraction
           DEF l_shoulder_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4487,6 +4638,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_shoulder_OI.set_fraction
           DEF l_sternoclavicular_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4508,6 +4661,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_sternoclavicular_OI.set_fraction
           DEF l_subtalar_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4529,6 +4684,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_subtalar_OI.set_fraction
           DEF l_thigh_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4550,6 +4707,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_thigh_OI.set_fraction
           DEF l_thumb1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4571,6 +4730,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_thumb1_OI.set_fraction
           DEF l_thumb2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4592,6 +4753,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_thumb2_OI.set_fraction
           DEF l_thumb3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4613,6 +4776,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_thumb3_OI.set_fraction
           DEF l_thumb_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4634,6 +4799,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_thumb_distal_OI.set_fraction
           DEF l_thumb_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4655,6 +4822,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_thumb_metacarpal_OI.set_fraction
           DEF l_thumb_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4676,6 +4845,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_thumb_proximal_OI.set_fraction
           DEF l_upperarm_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4697,6 +4868,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_upperarm_OI.set_fraction
           DEF l_wrist_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4718,6 +4891,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO l_wrist_OI.set_fraction
           DEF pelvis_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4739,6 +4914,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO pelvis_OI.set_fraction
           DEF r_acromioclavicular_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4760,6 +4937,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_acromioclavicular_OI.set_fraction
           DEF r_ankle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4781,6 +4960,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ankle_OI.set_fraction
           DEF r_calf_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4802,6 +4983,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_calf_OI.set_fraction
           DEF r_clavicle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4823,6 +5006,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_clavicle_OI.set_fraction
           DEF r_elbow_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4844,6 +5029,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_elbow_OI.set_fraction
           DEF r_eyeball_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4865,6 +5052,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_eyeball_OI.set_fraction
           DEF r_eyeball_joint_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4886,6 +5075,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_eyeball_joint_OI.set_fraction
           DEF r_eyebrow_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4907,6 +5098,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_eyebrow_OI.set_fraction
           DEF r_eyebrow_joint_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4928,6 +5121,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_eyebrow_joint_OI.set_fraction
           DEF r_eyelid_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4949,6 +5144,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_eyelid_OI.set_fraction
           DEF r_eyelid_joint_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4970,6 +5167,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_eyelid_joint_OI.set_fraction
           DEF r_forearm_OI OrientationInterpolator {
             IS IS {
               children [
@@ -4991,6 +5190,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_forearm_OI.set_fraction
           DEF r_forefoot_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5012,6 +5213,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_forefoot_OI.set_fraction
           DEF r_hand_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5033,6 +5236,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_hand_OI.set_fraction
           DEF r_hindfoot_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5054,6 +5259,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_hindfoot_OI.set_fraction
           DEF r_hip_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5075,6 +5282,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_hip_OI.set_fraction
           DEF r_index0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5096,6 +5305,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index0_OI.set_fraction
           DEF r_index1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5117,6 +5328,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index1_OI.set_fraction
           DEF r_index2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5138,6 +5351,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index2_OI.set_fraction
           DEF r_index3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5159,6 +5374,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index3_OI.set_fraction
           DEF r_index_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5180,6 +5397,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index_distal_OI.set_fraction
           DEF r_index_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5201,6 +5420,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index_metacarpal_OI.set_fraction
           DEF r_index_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5222,6 +5443,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index_middle_OI.set_fraction
           DEF r_index_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5243,6 +5466,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_index_proximal_OI.set_fraction
           DEF r_knee_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5264,6 +5489,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_knee_OI.set_fraction
           DEF r_metatarsal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5285,6 +5512,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_metatarsal_OI.set_fraction
           DEF r_middistal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5306,6 +5535,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middistal_OI.set_fraction
           DEF r_middle0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5327,6 +5558,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle0_OI.set_fraction
           DEF r_middle1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5348,6 +5581,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle1_OI.set_fraction
           DEF r_middle2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5369,6 +5604,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle2_OI.set_fraction
           DEF r_middle3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5390,6 +5627,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle3_OI.set_fraction
           DEF r_middle_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5411,6 +5650,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle_distal_OI.set_fraction
           DEF r_middle_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5432,6 +5673,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle_metacarpal_OI.set_fraction
           DEF r_middle_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5453,6 +5696,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle_middle_OI.set_fraction
           DEF r_middle_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5474,6 +5719,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_middle_proximal_OI.set_fraction
           DEF r_midproximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5495,6 +5742,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_midproximal_OI.set_fraction
           DEF r_midtarsal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5516,6 +5765,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_midtarsal_OI.set_fraction
           DEF r_pinky0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5537,6 +5788,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky0_OI.set_fraction
           DEF r_pinky1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5558,6 +5811,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky1_OI.set_fraction
           DEF r_pinky2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5579,6 +5834,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky2_OI.set_fraction
           DEF r_pinky3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5600,6 +5857,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky3_OI.set_fraction
           DEF r_pinky_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5621,6 +5880,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky_distal_OI.set_fraction
           DEF r_pinky_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5642,6 +5903,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky_metacarpal_OI.set_fraction
           DEF r_pinky_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5663,6 +5926,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky_middle_OI.set_fraction
           DEF r_pinky_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5684,6 +5949,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_pinky_proximal_OI.set_fraction
           DEF r_ring0_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5705,6 +5972,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring0_OI.set_fraction
           DEF r_ring1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5726,6 +5995,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring1_OI.set_fraction
           DEF r_ring2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5747,6 +6018,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring2_OI.set_fraction
           DEF r_ring3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5768,6 +6041,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring3_OI.set_fraction
           DEF r_ring_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5789,6 +6064,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring_distal_OI.set_fraction
           DEF r_ring_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5810,6 +6087,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring_metacarpal_OI.set_fraction
           DEF r_ring_middle_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5831,6 +6110,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring_middle_OI.set_fraction
           DEF r_ring_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5852,6 +6133,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_ring_proximal_OI.set_fraction
           DEF r_scapula_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5873,6 +6156,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_scapula_OI.set_fraction
           DEF r_shoulder_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5894,6 +6179,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_shoulder_OI.set_fraction
           DEF r_sternoclavicular_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5915,6 +6202,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_sternoclavicular_OI.set_fraction
           DEF r_subtalar_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5936,6 +6225,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_subtalar_OI.set_fraction
           DEF r_thigh_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5957,6 +6248,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_thigh_OI.set_fraction
           DEF r_thumb1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5978,6 +6271,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_thumb1_OI.set_fraction
           DEF r_thumb2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -5999,6 +6294,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_thumb2_OI.set_fraction
           DEF r_thumb3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6020,6 +6317,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_thumb3_OI.set_fraction
           DEF r_thumb_distal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6041,6 +6340,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_thumb_distal_OI.set_fraction
           DEF r_thumb_metacarpal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6062,6 +6363,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_thumb_metacarpal_OI.set_fraction
           DEF r_thumb_proximal_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6083,6 +6386,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_thumb_proximal_OI.set_fraction
           DEF r_upperarm_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6104,6 +6409,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_upperarm_OI.set_fraction
           DEF r_wrist_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6125,6 +6432,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO r_wrist_OI.set_fraction
           DEF sacroiliac_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6146,6 +6455,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO sacroiliac_OI.set_fraction
           DEF sacrum_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6167,6 +6478,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO sacrum_OI.set_fraction
           DEF skull_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6188,6 +6501,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO skull_OI.set_fraction
           DEF skullbase_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6209,6 +6524,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO skullbase_OI.set_fraction
           DEF t1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6230,6 +6547,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t1_OI.set_fraction
           DEF t2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6251,6 +6570,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t2_OI.set_fraction
           DEF t3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6272,6 +6593,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t3_OI.set_fraction
           DEF t4_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6293,6 +6616,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t4_OI.set_fraction
           DEF t5_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6314,6 +6639,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t5_OI.set_fraction
           DEF t6_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6335,6 +6662,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t6_OI.set_fraction
           DEF t7_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6356,6 +6685,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t7_OI.set_fraction
           DEF t8_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6377,6 +6708,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t8_OI.set_fraction
           DEF t9_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6398,6 +6731,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t9_OI.set_fraction
           DEF t10_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6419,6 +6754,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t10_OI.set_fraction
           DEF t11_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6440,6 +6777,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t11_OI.set_fraction
           DEF t12_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6461,6 +6800,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO t12_OI.set_fraction
           DEF temporomandibular_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6482,6 +6823,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO temporomandibular_OI.set_fraction
           DEF vc1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6503,6 +6846,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vc1_OI.set_fraction
           DEF vc2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6524,6 +6869,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vc2_OI.set_fraction
           DEF vc3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6545,6 +6892,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vc3_OI.set_fraction
           DEF vc4_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6566,6 +6915,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vc4_OI.set_fraction
           DEF vc5_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6587,6 +6938,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vc5_OI.set_fraction
           DEF vc6_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6608,6 +6961,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vc6_OI.set_fraction
           DEF vc7_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6629,6 +6984,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vc7_OI.set_fraction
           DEF vl1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6650,6 +7007,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vl1_OI.set_fraction
           DEF vl2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6671,6 +7030,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vl2_OI.set_fraction
           DEF vl3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6692,6 +7053,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vl3_OI.set_fraction
           DEF vl4_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6713,6 +7076,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vl4_OI.set_fraction
           DEF vl5_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6734,6 +7099,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vl5_OI.set_fraction
           DEF vt1_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6755,6 +7122,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt1_OI.set_fraction
           DEF vt2_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6776,6 +7145,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt2_OI.set_fraction
           DEF vt3_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6797,6 +7168,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt3_OI.set_fraction
           DEF vt4_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6818,6 +7191,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt4_OI.set_fraction
           DEF vt5_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6839,6 +7214,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt5_OI.set_fraction
           DEF vt6_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6860,6 +7237,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt6_OI.set_fraction
           DEF vt7_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6881,6 +7260,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt7_OI.set_fraction
           DEF vt8_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6902,6 +7283,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt8_OI.set_fraction
           DEF vt9_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6923,6 +7306,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt9_OI.set_fraction
           DEF vt10_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6944,6 +7329,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt10_OI.set_fraction
           DEF vt11_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6965,6 +7352,8 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE BehaviorClock.fraction_changed TO vt11_OI.set_fraction
           DEF vt12_OI OrientationInterpolator {
             IS IS {
               children [
@@ -6986,382 +7375,6 @@ ProtoDeclare {
             }
              
           }
-          
-          ROUTE BehaviorClock.fraction_changed TO HumanoidRootPI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO HumanoidRootOI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO c1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO c2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO c3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO c4_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO c5_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO c6_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO c7_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO jaw_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l4_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l5_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_acromioclavicular_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ankle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_calf_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_clavicle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_elbow_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_eyeball_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_eyeball_joint_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_eyebrow_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_eyebrow_joint_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_eyelid_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_eyelid_joint_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_forearm_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_forefoot_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_hand_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_hindfoot_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_hip_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_index_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_knee_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_metatarsal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middistal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_middle_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_midproximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_midtarsal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_pinky_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_ring_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_scapula_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_shoulder_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_sternoclavicular_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_subtalar_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_thigh_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_thumb1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_thumb2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_thumb3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_thumb_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_thumb_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_thumb_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_upperarm_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO l_wrist_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO pelvis_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_acromioclavicular_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ankle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_calf_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_clavicle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_elbow_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_eyeball_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_eyeball_joint_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_eyebrow_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_eyebrow_joint_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_eyelid_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_eyelid_joint_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_forearm_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_forefoot_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_hand_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_hindfoot_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_hip_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_index_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_knee_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_metatarsal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middistal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_middle_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_midproximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_midtarsal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_pinky_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring0_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring_middle_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_ring_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_scapula_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_shoulder_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_sternoclavicular_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_subtalar_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_thigh_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_thumb1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_thumb2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_thumb3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_thumb_distal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_thumb_metacarpal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_thumb_proximal_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_upperarm_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO r_wrist_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO sacroiliac_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO sacrum_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO skull_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO skullbase_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t4_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t5_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t6_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t7_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t8_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t9_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t10_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t11_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO t12_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO temporomandibular_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vc1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vc2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vc3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vc4_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vc5_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vc6_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vc7_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vl1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vl2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vl3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vl4_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vl5_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt1_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt2_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt3_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt4_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt5_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt6_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt7_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt8_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt9_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt10_OI.set_fraction
-          
-          ROUTE BehaviorClock.fraction_changed TO vt11_OI.set_fraction
           
           ROUTE BehaviorClock.fraction_changed TO vt12_OI.set_fraction
           
@@ -7629,9 +7642,6 @@ ProtoDeclare {
       
       }
       
-    }
-    WorldInfo {
-      title "HAnimBehaviorPrototypes.x3d" 
     }
     ProtoInstance {
       name "HAnimBehavior"

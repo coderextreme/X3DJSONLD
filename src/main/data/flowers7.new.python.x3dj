@@ -11,6 +11,12 @@
         "component":
         {
       {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"EnvironmentalEffects"
       }
@@ -30,6 +36,18 @@
         "component":
         {
       {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"4",
         "@name":"Shape"
       }
@@ -39,6 +57,12 @@
       {
         "@level":"3",
         "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "meta":
@@ -65,8 +89,15 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a flower",
+        "@name":"description"
       }
     },
     }    "Scene":
@@ -306,7 +337,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"bias",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                         "field":
@@ -314,7 +346,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"scale",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"0.5"
       }
     },
                         "field":
@@ -322,7 +355,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"power",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"2"
       }
     },
                         "field":
@@ -330,7 +364,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"a",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"10"
       }
     },
                         "field":
@@ -338,7 +373,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"b",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"1"
       }
     },
                         "field":
@@ -346,7 +382,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"c",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"20"
       }
     },
                         "field":
@@ -354,7 +391,8 @@
       {
         "@accessType":"inputOnly",
         "@name":"d",
-        "@type":"SFFloat"
+        "@type":"SFFloat",
+        "@value":"20"
       }
     },
                         "field":
@@ -708,7 +746,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"a_changed",
+        "@fromField":"a",
         "@fromNode":"Animate",
         "@toField":"a",
         "@toNode":"x_ite"
@@ -717,7 +755,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"b_changed",
+        "@fromField":"b",
         "@fromNode":"Animate",
         "@toField":"b",
         "@toNode":"x_ite"
@@ -726,7 +764,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"c_changed",
+        "@fromField":"c",
         "@fromNode":"Animate",
         "@toField":"c",
         "@toNode":"x_ite"
@@ -735,7 +773,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"d_changed",
+        "@fromField":"d",
         "@fromNode":"Animate",
         "@toField":"d",
         "@toNode":"x_ite"
@@ -744,7 +782,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"pdelta_changed",
+        "@fromField":"pdelta",
         "@fromNode":"Animate",
         "@toField":"pdelta",
         "@toNode":"x_ite"
@@ -753,7 +791,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"tdelta_changed",
+        "@fromField":"tdelta",
         "@fromNode":"Animate",
         "@toField":"tdelta",
         "@toNode":"x_ite"
@@ -762,54 +800,54 @@
         "ROUTE":
         {
       {
-        "@fromField":"a_changed",
+        "@fromField":"a",
         "@fromNode":"Animate",
-        "@toField":"set_a",
+        "@toField":"a",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"b_changed",
+        "@fromField":"b",
         "@fromNode":"Animate",
-        "@toField":"set_b",
+        "@toField":"b",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"c_changed",
+        "@fromField":"c",
         "@fromNode":"Animate",
-        "@toField":"set_c",
+        "@toField":"c",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"d_changed",
+        "@fromField":"d",
         "@fromNode":"Animate",
-        "@toField":"set_d",
+        "@toField":"d",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"pdelta_changed",
+        "@fromField":"pdelta",
         "@fromNode":"Animate",
-        "@toField":"set_pdelta",
+        "@toField":"pdelta",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"tdelta_changed",
+        "@fromField":"tdelta",
         "@fromNode":"Animate",
-        "@toField":"set_tdelta",
+        "@toField":"tdelta",
         "@toNode":"x3dom"
       }
     },

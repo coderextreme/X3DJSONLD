@@ -32,7 +32,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:20 GMT",
+        "@content":"20 October 2019",
         "@name":"modified"
       }
     },
@@ -76,6 +76,20 @@
       {
         "@content":"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

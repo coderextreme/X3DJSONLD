@@ -4,9 +4,11 @@
 PROFILE Immersive
 META "creator" "John W Carlson"
 META "created" "December 13 2015"
-META "modified" "Wed, 17 Sep 2025 23:48:41 GMT"
+META "modified" "November 9 2024"
 META "title" "myextrusion.x3d"
 META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"
+META "description" "beginnings of a force directed graph in 3D"
+META "generator" "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
 Group {
       children [
         Shape {
@@ -66,11 +68,11 @@ Group {
         
         }
         
+        ROUTE TourTime.cycleTime TO MoveCylinder.set_cycle
+        
+        ROUTE MoveCylinder.spine_changed TO myextrusion.set_spine
+        
       ]
     
     }
-    
-    ROUTE TourTime.cycleTime TO MoveCylinder.set_cycle
-    
-    ROUTE MoveCylinder.spine_changed TO myextrusion.set_spine
     

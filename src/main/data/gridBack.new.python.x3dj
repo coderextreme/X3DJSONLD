@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:24 GMT",
+        "@content":"12 January 2014",
         "@name":"modified"
       }
     },
@@ -69,6 +69,20 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

@@ -5,11 +5,15 @@ PROFILE Immersive
 COMPONENT EnvironmentalEffects:3
 COMPONENT Shaders:1
 COMPONENT CubeMapTexturing:1
+COMPONENT Texturing:1
+COMPONENT Rendering:1
 COMPONENT Grouping:3
+COMPONENT Core:1
 COMPONENT ParticleSystems:3
 META "title" "particleflowers.x3d"
 META "creator" "John Carlson"
 META "description" "A flower proto with configurable shaders"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"
 WorldInfo {
       title "particleflowers.x3d" 
     }

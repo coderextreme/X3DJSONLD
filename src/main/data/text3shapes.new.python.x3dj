@@ -43,6 +43,13 @@
         "@name":"description"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
     }    "Scene":
     {
         "Transform":
@@ -97,7 +104,7 @@
       {
         "@sourceCode":"ecmascript:
 &quot;+
-&quot;			    var me = '&quot;1&quot; &quot;\&quot;2&quot; &quot;\n3&quot;';"
+&quot;			    var me = '&quot;1&quot; &quot;&quot;2&quot; &quot;\n3&quot;';"
       }
                 "field":
                 {

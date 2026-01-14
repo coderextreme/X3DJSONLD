@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:10 GMT",
+        "@content":"5 December 2021",
         "@name":"modified"
       }
     },
@@ -60,13 +60,6 @@
         "meta":
         {
       {
-        "@content":"https://www.medialab.hmu.gr/minipages/x3domAudio",
-        "@name":"reference"
-      }
-    },
-        "meta":
-        {
-      {
         "@content":"credit for audio files",
         "@name":"TODO"
       }
@@ -74,8 +67,29 @@
         "meta":
         {
       {
+        "@content":"https://www.medialab.hmu.gr/minipages/x3domAudio",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -105,8 +119,8 @@
       {
         "@DEF":"Camera001",
         "@description":"Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the &quot;ears of the user&quot;. So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view",
-        "@orientation":"0.15721416558858 -0.783487503224753 -0.601191349263219 4.19464068856512",
-        "@position":"0 2000 1214.97"
+        "@orientation":"1 0 0 -0.523599",
+        "@position":"0 2000 3500"
       }
     },
         "TimeSensor":
@@ -131,6 +145,42 @@
         "@DEF":"Camera001-ROT-INTERP",
         "@key":"0 0.25 0.5 0.75 1",
         "@keyValue":"1 0 0 -0.523599 0.99999 0.003554 0.002727 -1.309007 0 -0.965926 -0.258819 -3.141593 0.002282 -0.793351 -0.60876 -3.135645 1 -1e-06 0 -0.523599"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"TIMER",
+        "@toField":"set_fraction",
+        "@toNode":"Camera001-POS-INTERP"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"Camera001-POS-INTERP",
+        "@toField":"set_position",
+        "@toNode":"Camera001"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"TIMER",
+        "@toField":"set_fraction",
+        "@toNode":"Camera001-ROT-INTERP"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"Camera001-ROT-INTERP",
+        "@toField":"set_orientation",
+        "@toNode":"Camera001"
       }
     },
         "Transform":
@@ -162,7 +212,7 @@
         {
       {
         "@DEF":"TransformAudio1",
-        "@translation":"-933.1235 0 -926.2532"
+        "@translation":"-933.123474 0 -926.253235"
       }
             "Shape":
             {
@@ -222,7 +272,7 @@
         {
       {
         "@DEF":"TransformAudio2",
-        "@translation":"933.4756 0 924.4232"
+        "@translation":"933.475586 0 924.423218"
       }
             "Shape":
             {
@@ -315,40 +365,4 @@
         "@url":""sound/saxophone.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3""
       }
     },
-                }            }        }        "ROUTE":
-        {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"TIMER",
-        "@toField":"set_fraction",
-        "@toNode":"Camera001-POS-INTERP"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"Camera001-POS-INTERP",
-        "@toField":"set_position",
-        "@toNode":"Camera001"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"TIMER",
-        "@toField":"set_fraction",
-        "@toNode":"Camera001-ROT-INTERP"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"Camera001-ROT-INTERP",
-        "@toField":"set_orientation",
-        "@toNode":"Camera001"
-      }
-    },
-    }}
+                }            }        }    }}

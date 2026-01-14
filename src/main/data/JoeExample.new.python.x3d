@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='Scripting.x3d' name='title'/>
+  </head>
   <Scene>
     <Script DEF='OpenVault'>
       <field accessType='inputOnly' name='openVault' type='SFTime'/>
@@ -45,6 +48,6 @@
     <TouchSensor DEF='TS'/>
     <ROUTE fromField='isOver' fromNode='TS' toField='combinationEntered' toNode='OpenVault'/>
     <ROUTE fromField='touchTime' fromNode='TS' toField='openVault' toNode='OpenVault'/>
-    <ROUTE fromField='vaultUnlocked' fromNode='OpenVault' toField='set_startTime' toNode='Click'/>
+    <ROUTE fromField='vaultUnlocked' fromNode='OpenVault' toField='startTime' toNode='Click'/>
   </Scene>
 </X3D>

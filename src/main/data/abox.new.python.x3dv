@@ -5,7 +5,8 @@ PROFILE Immersive
 META "title" "abox.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"
+META "description" "a box"
 ProtoDeclare {
       name "anyShape"
       ProtoInterface ProtoInterface {
@@ -15,7 +16,7 @@ ProtoDeclare {
             name "myShape"
             type "MFNode"
             children [
-              DEF _1 Shape {
+              Shape {
                 geometry Sphere { 
                 }
                  
@@ -59,7 +60,7 @@ ProtoDeclare {
             name "myShape"
             type "MFNode"
             children [
-              DEF _2 Shape {
+              Shape {
                 geometry Cylinder { 
                 }
                  
@@ -107,7 +108,7 @@ ProtoDeclare {
         fieldValue {
           name "myShape"
           children [
-            DEF _3 Shape {
+            Shape {
               geometry Box {
                 size 140 140 140 
               }

@@ -6,10 +6,11 @@
     <meta content='geobubbles.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d' name='identifier'/>
+    <meta content='geo bubbles' name='description'/>
   </head>
   <Scene>
-    <GeoViewpoint DEF='Tour' description='Tour Views' position='0.000111526768555608 0.00145927323148609 3.99999894946814'/>
+    <GeoViewpoint DEF='Tour' description='Tour Views' orientation='1 0 0 0' position='0 0 4'/>
     <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'/>
     <Transform>
       <Shape>
@@ -61,7 +62,7 @@
 "               }]]>
     </Script>
     <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
-    <ROUTE fromField='position_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourPosition'/>
+    <ROUTE fromField='position' fromNode='RandomTourTime' toField='keyValue' toNode='TourPosition'/>
     <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourPosition'/>
     <ROUTE fromField='geovalue_changed' fromNode='TourPosition' toField='set_position' toNode='Tour'/>
   </Scene>

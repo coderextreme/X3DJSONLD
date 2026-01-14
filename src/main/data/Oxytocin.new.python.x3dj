@@ -53,7 +53,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:08 GMT",
+        "@content":"2 JAN 2025",
         "@name":"modified"
       }
     },
@@ -113,6 +113,20 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Oxytocin.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
         "ProtoDeclare":
@@ -127,7 +141,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -217,7 +232,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -308,7 +324,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -398,7 +415,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -488,7 +506,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -577,7 +596,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -614,7 +634,8 @@
                                 "Material":
                                 {
       {
-        "@DEF":"atoSi_mat"
+        "@DEF":"atoSi_mat",
+        "@diffuseColor":"0.8 0.8 0.8"
       }
                                     "IS":
                                     {
@@ -664,7 +685,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -756,7 +778,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -848,7 +871,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -939,7 +963,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -1031,7 +1056,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -1122,7 +1148,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -2659,7 +2686,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"-4.629 0.8473 0 -4.1385 -0.6132 0"
+        "@value":"-4.6290000000000004 0.8473 0 -4.1385000000000005 -0.6132 0"
       }
     },
             }            "ProtoInstance":
@@ -2841,7 +2868,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"-8.6871 0.3568 0 -9.1888 1.8507 0"
+        "@value":"-8.687100000000001 0.3568 0 -9.1888 1.8507 0"
       }
     },
             }            "ProtoInstance":
@@ -3010,7 +3037,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"5.1864 5.4405 0 5.2199 6.9791 0"
+        "@value":"5.186400000000001 5.4405 0 5.2199 6.9791 0"
       }
     },
             }            "ProtoInstance":
@@ -3023,7 +3050,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"5.2264 5.4405 0 5.2599 6.9791 0"
+        "@value":"5.2264 5.4405 0 5.259899999999999 6.9791 0"
       }
     },
             }            "ProtoInstance":
@@ -3114,7 +3141,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"-12.3504 -1.6054 0 -11.8822 -3.0659 0"
+        "@value":"-12.350399999999999 -1.6054 0 -11.8822 -3.0659 0"
       }
     },
             }            "ProtoInstance":
@@ -3192,7 +3219,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"6.7426 -4.2253 0 7.222 -5.7193 0"
+        "@value":"6.7425999999999995 -4.2253 0 7.2219999999999995 -5.7193 0"
       }
     },
             }            "ProtoInstance":
@@ -3270,7 +3297,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"9.2622 3.3669 0 10.4997 4.3034 0"
+        "@value":"9.2622 3.3669 0 10.499699999999999 4.3034 0"
       }
     },
             }            "ProtoInstance":
@@ -3465,7 +3492,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"10.3037 -4.8943 0 11.5412 -5.8085 0"
+        "@value":"10.303700000000001 -4.8943 0 11.5412 -5.8085 0"
       }
     },
             }            "ProtoInstance":
@@ -3478,7 +3505,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"10.3437 -4.8943 0 11.5812 -5.8085 0"
+        "@value":"10.3437 -4.8943 0 11.581199999999999 -5.8085 0"
       }
     },
             }            "ProtoInstance":
@@ -3517,7 +3544,7 @@
                 {
       {
         "@name":"bond_set",
-        "@value":"8.9055 -5.5297 0 8.7383 -7.0794 0"
+        "@value":"8.9055 -5.5297 0 8.738299999999999 -7.0794 0"
       }
     },
             }            "ProtoInstance":

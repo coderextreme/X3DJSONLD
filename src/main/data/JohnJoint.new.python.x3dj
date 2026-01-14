@@ -45,15 +45,22 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"John Carlson",
+        "@name":"creator"
       }
     },
         "meta":
         {
       {
-        "@content":"John Carlson",
-        "@name":"creator"
+        "@content":"12 January 2023",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

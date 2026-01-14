@@ -36,62 +36,16 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/glflowers.x3d",
+        "@name":"identifier"
+      }
+    },
     }    "Scene":
     {
-        "ExternProtoDeclare":
-        {
-      {
-        "@name":"FlowerProto",
-        "@url":""../data/flowerproto.x3d#FlowerProto""
-      }
-            "field":
-            {
-      {
-        "@accessType":"inputOutput",
-        "@name":"vertex",
-        "@type":"MFString"
-      }
-    },
-            "field":
-            {
-      {
-        "@accessType":"inputOutput",
-        "@name":"fragment",
-        "@type":"MFString"
-      }
-    },
-        }        "ProtoDeclare":
-        {
-      {
-        "@name":"flower"
-      }
-            "ProtoInterface":
-            {
-    },
-            "ProtoBody":
-            {
-                "Group":
-                {
-                    "ProtoInstance":
-                    {
-      {
-        "@name":"FlowerProto"
-      }
-                        "fieldValue":
-                        {
-      {
-        "@name":"vertex",
-        "@value":""../shaders/gl_flowers_chromatic.vs""
-      }
-    },
-                        "fieldValue":
-                        {
-      {
-        "@name":"fragment",
-        "@value":""../shaders/common.fs""
-      }
-    },
-                    }                }            }        }        "NavigationInfo":
+        "NavigationInfo":
         {
     },
         "Background":
@@ -107,7 +61,57 @@
     },
         "Group":
         {
-            "ProtoInstance":
+            "ExternProtoDeclare":
+            {
+      {
+        "@name":"FlowerProto",
+        "@url":""../data/flowerproto.x3d#FlowerProto""
+      }
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"vertex",
+        "@type":"MFString"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"fragment",
+        "@type":"MFString"
+      }
+    },
+            }            "ProtoDeclare":
+            {
+      {
+        "@name":"flower"
+      }
+                "ProtoBody":
+                {
+                    "Group":
+                    {
+                        "ProtoInstance":
+                        {
+      {
+        "@name":"FlowerProto"
+      }
+                            "fieldValue":
+                            {
+      {
+        "@name":"vertex",
+        "@value":""../shaders/gl_flowers_chromatic.vs""
+      }
+    },
+                            "fieldValue":
+                            {
+      {
+        "@name":"fragment",
+        "@value":""../shaders/common.fs""
+      }
+    },
+                        }                    }                }            }            "ProtoInstance":
             {
       {
         "@name":"flower"

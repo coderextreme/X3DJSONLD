@@ -8,6 +8,12 @@
         "@profile":"Immersive",
     "head":
     {
+        "component":
+        {
+      {
+        "@name":"Scripting"
+      }
+    },
         "meta":
         {
       {
@@ -36,16 +42,45 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d",
+        "@name":"identifier"
+      }
+    },
     }    "Scene":
     {
+        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Bubbles in action",
+        "@orientation":"1 0 0 0",
+        "@position":"0 0 4"
+      }
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"",
+        "@bottomUrl":""../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"",
+        "@frontUrl":""../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"",
+        "@leftUrl":""../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"",
+        "@rightUrl":""../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"",
+        "@topUrl":""../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png""
+      }
+    },
         "ProtoDeclare":
         {
       {
         "@name":"Bubble"
       }
-            "ProtoInterface":
-            {
-    },
             "ProtoBody":
             {
                 "Transform":
@@ -166,7 +201,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -174,7 +210,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -182,7 +219,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"scalvel",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -201,8 +239,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"translation_changed",
         "@fromNode":"bounce1",
@@ -210,8 +248,8 @@
         "@toNode":"body_trans"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"scale_changed",
         "@fromNode":"bounce1",
@@ -219,8 +257,8 @@
         "@toNode":"body_trans"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"bubbleClock",
@@ -228,31 +266,7 @@
         "@toNode":"bounce1"
       }
     },
-            }        }        "NavigationInfo":
-        {
-      {
-        "@type":""EXAMINE""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Bubbles in action",
-        "@position":"0 0 4"
-      }
-    },
-        "Background":
-        {
-      {
-        "@backUrl":""../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"",
-        "@bottomUrl":""../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"",
-        "@frontUrl":""../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"",
-        "@leftUrl":""../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"",
-        "@rightUrl":""../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"",
-        "@topUrl":""../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png""
-      }
-    },
-        "ProtoInstance":
+                }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"bubbleA",

@@ -5,15 +5,24 @@ PROFILE Immersive
 META "title" "arc.x3d"
 META "creator" "Lost, Doug Sanden I think"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
-ProtoDeclare {
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"
+META "description" "a generic proto to connect two objects"
+Viewpoint {
+      description "Only Viewpoint"
+      position 0 0 5 
+    }
+    Background {
+      skyColor [0.4 0.4 0.4] 
+    }
+    ProtoDeclare {
       name "point"
       ProtoInterface ProtoInterface {
         children [
           field {
             accessType "inputOutput"
             name "translation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           
         ]
@@ -76,7 +85,8 @@ ProtoDeclare {
                   field {
                     accessType "inputOutput"
                     name "old"
-                    type "SFVec3f" 
+                    type "SFVec3f"
+                    value [0, 0, 0] 
                   }
                   field {
                     accessType "inputOnly"
@@ -98,17 +108,17 @@ ProtoDeclare {
                 loop TRUE 
               }
               
+              ROUTE CL1.cycleTime TO MB1.set_location
+              
+              ROUTE CL1.fraction_changed TO PI1.set_fraction
+              
+              ROUTE MB1.keyValue TO PI1.keyValue
+              
+              ROUTE PI1.value_changed TO node.set_translation
+              
             ]
           
           }
-          
-          ROUTE CL1.cycleTime TO MB1.set_location
-          
-          ROUTE CL1.fraction_changed TO PI1.set_fraction
-          
-          ROUTE MB1.keyValue_changed TO PI1.set_keyValue
-          
-          ROUTE PI1.value_changed TO node.set_translation
           
         ]
       
@@ -342,52 +352,46 @@ ProtoDeclare {
       }
       
     }
-    Viewpoint {
-      description "Only Viewpoint"
-      position 0 0 5 
-    }
-    Background {
-      skyColor [0.4 0.4 0.4] 
+    ProtoInstance {
+      name "point" 
     }
     ProtoInstance {
-      name "point"
+      name "point" 
+    }
+    ProtoInstance {
+      name "point" 
+    }
+    ProtoInstance {
+      name "point" 
+    }
+    ProtoInstance {
+      name "x3dconnector"
       children [
         fieldValue {
-          name "translation"
-          value 0 0.4116666 0 
-        }
+          name "startnode"
+          children [
+            ProtoInstance {
+              name "point" 
+            }
+            
+          ]
         
-      ]
-    
-    }
-    ProtoInstance {
-      name "point"
-      children [
-        fieldValue {
-          name "translation"
-          value 0 0.4116666 0 
         }
-        
-      ]
-    
-    }
-    ProtoInstance {
-      name "point"
-      children [
         fieldValue {
-          name "translation"
-          value 0 0.4116666 0 
+          name "endnode"
+          children [
+            ProtoInstance {
+              name "point" 
+            }
+            
+          ]
+        
         }
-        
-      ]
-    
-    }
-    ProtoInstance {
-      name "point"
-      children [
         fieldValue {
-          name "translation"
-          value 0 0.4116666 0 
+          name "set_startpoint" 
+        }
+        fieldValue {
+          name "set_endpoint" 
         }
         
       ]
@@ -416,32 +420,11 @@ ProtoDeclare {
           ]
         
         }
-        
-      ]
-    
-    }
-    ProtoInstance {
-      name "x3dconnector"
-      children [
         fieldValue {
-          name "startnode"
-          children [
-            ProtoInstance {
-              name "point" 
-            }
-            
-          ]
-        
+          name "set_startpoint" 
         }
         fieldValue {
-          name "endnode"
-          children [
-            ProtoInstance {
-              name "point" 
-            }
-            
-          ]
-        
+          name "set_endpoint" 
         }
         
       ]
@@ -470,20 +453,26 @@ ProtoDeclare {
           ]
         
         }
+        fieldValue {
+          name "set_startpoint" 
+        }
+        fieldValue {
+          name "set_endpoint" 
+        }
         
       ]
     
     }
     
-    ROUTE G1.translation_changed TO connector1.set_startpoint
+    ROUTE G1.translation TO connector1.set_startpoint
     
-    ROUTE G2.translation_changed TO connector1.set_endpoint
+    ROUTE G2.translation TO connector1.set_endpoint
     
-    ROUTE G1.translation_changed TO connector2.set_startpoint
+    ROUTE G1.translation TO connector2.set_startpoint
     
-    ROUTE G3.translation_changed TO connector2.set_endpoint
+    ROUTE G3.translation TO connector2.set_endpoint
     
-    ROUTE G1.translation_changed TO connector3.set_startpoint
+    ROUTE G1.translation TO connector3.set_startpoint
     
-    ROUTE G4.translation_changed TO connector3.set_endpoint
+    ROUTE G4.translation TO connector3.set_endpoint
     

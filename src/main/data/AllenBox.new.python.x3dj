@@ -29,6 +29,13 @@
         "@name":"created"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
         "WorldInfo":

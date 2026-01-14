@@ -6,14 +6,16 @@ META "title" "CameraPrototypes.x3d"
 META "description" "Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."
 META "creator" "Don Brutzman and Jeff Weekley"
 META "created" "16 March 2009"
-META "modified" "Wed, 17 Sep 2025 23:46:18 GMT"
+META "modified" "25 October 2016"
 META "TODO" "Schematron rules, backed up by initialize() checks"
 META "reference" "BeyondViewpointCameraNodesWeb3D2009.pdf"
 META "reference" "https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"
-META "reference" "CameraExamples.x3d"
-META "reference" "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
 META "subject" "Camera nodes for Viewpoint navigation control"
+META "reference" "CameraExamples.x3d"
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
+META "reference" "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 ProtoDeclare {
       appinfo "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images."
       name "Camera"
@@ -36,7 +38,8 @@ ProtoDeclare {
             accessType "inputOutput"
             appinfo "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"
             name "orientation"
-            type "SFRotation" 
+            type "SFRotation"
+            value [0, 0, 1, 0] 
           }
           field {
             accessType "inputOutput"
@@ -179,10 +182,6 @@ ProtoDeclare {
             IS IS {
               children [
                 connect {
-                  nodeField "set_bind"
-                  protoField "set_bind" 
-                }
-                connect {
                   nodeField "description"
                   protoField "description" 
                 }
@@ -199,12 +198,16 @@ ProtoDeclare {
                   protoField "fieldOfView" 
                 }
                 connect {
-                  nodeField "isBound"
-                  protoField "isBound" 
+                  nodeField "set_bind"
+                  protoField "set_bind" 
                 }
                 connect {
                   nodeField "bindTime"
                   protoField "bindTime" 
+                }
+                connect {
+                  nodeField "isBound"
+                  protoField "isBound" 
                 }
                 
               ]
@@ -286,6 +289,10 @@ ProtoDeclare {
             }
              
           }
+          
+          ROUTE CameraPositionInterpolator.value_changed TO CameraViewpoint.position
+          
+          ROUTE CameraOrientationInterpolator.value_changed TO CameraViewpoint.orientation
           DEF CameraScript Script {
             directOutput TRUE
             mustEvaluate TRUE
@@ -1261,19 +1268,15 @@ ProtoDeclare {
           
           }
           
-          ROUTE CameraPositionInterpolator.value_changed TO CameraViewpoint.set_position
+          ROUTE CameraScript.position TO CameraViewpoint.position
           
-          ROUTE CameraOrientationInterpolator.value_changed TO CameraViewpoint.set_orientation
-          
-          ROUTE CameraScript.position_changed TO CameraViewpoint.set_position
-          
-          ROUTE CameraScript.orientation_changed TO CameraViewpoint.set_orientation
+          ROUTE CameraScript.orientation TO CameraViewpoint.orientation
           
           ROUTE CameraScript.isActive TO CameraViewpoint.set_bind
           
           ROUTE CameraScript.isActive TO CameraNavInfo.set_bind
           
-          ROUTE CameraScript.isActive TO CameraDirectionalLight.set_on
+          ROUTE CameraScript.isActive TO CameraDirectionalLight.on
           
         ]
       
@@ -1315,13 +1318,15 @@ ProtoDeclare {
             accessType "inputOutput"
             appinfo "Setup to reinitialize camera rotation for this shot"
             name "initialOrientation"
-            type "SFRotation" 
+            type "SFRotation"
+            value [0, 0, 1, 0] 
           }
           field {
             accessType "inputOutput"
             appinfo "Setup to reinitialize aimpoint (relative location for camera direction) for this shot"
             name "initialAimPoint"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
@@ -1748,7 +1753,8 @@ ProtoDeclare {
             accessType "inputOutput"
             appinfo "Goal camera rotation for this move"
             name "goalOrientation"
-            type "SFRotation" 
+            type "SFRotation"
+            value [0, 0, 1, 0] 
           }
           field {
             accessType "inputOutput"
@@ -1760,7 +1766,8 @@ ProtoDeclare {
             accessType "inputOutput"
             appinfo "Goal aimPoint for this move, ignored if tracking=false"
             name "goalAimPoint"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"

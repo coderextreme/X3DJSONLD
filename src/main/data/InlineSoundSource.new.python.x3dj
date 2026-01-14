@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:38 GMT",
+        "@content":"4 August 2021",
         "@name":"modified"
       }
     },
@@ -60,13 +60,6 @@
         "meta":
         {
       {
-        "@content":"https://medialab.hmu.gr/minipages/x3domAudio",
-        "@name":"reference"
-      }
-    },
-        "meta":
-        {
-      {
         "@content":"credit for audio files",
         "@name":"TODO"
       }
@@ -74,8 +67,29 @@
         "meta":
         {
       {
+        "@content":"https://medialab.hmu.gr/minipages/x3domAudio",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/InlineSoundSource.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

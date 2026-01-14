@@ -67,7 +67,7 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
+        "@content":"x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
@@ -81,8 +81,29 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:24 GMT",
+        "@content":"Sat, 16 Aug 2025 02:34:42 GMT",
         "@name":"modified"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"30 April 2017",
+        "@name":"translated"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"9 August 2025",
+        "@name":"translated"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding",
+        "@name":"reference"
       }
     },
     }    "Scene":
@@ -90,7 +111,7 @@
         "NavigationInfo":
         {
       {
-        "@type":""EXAMINE" "FLY" "WALK" "ANY""
+        "@type":"", " "EXAMINE, " "FLY, " "WALKANY""
       }
     },
         "Group":

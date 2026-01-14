@@ -7,7 +7,7 @@ META "description" "Humanoid animation prototype reusable by any Humanoid."
 META "creator" "Tom Miller"
 META "translator" "Curt Blais"
 META "translated" "1 December 2001"
-META "modified" "Wed, 17 Sep 2025 23:47:56 GMT"
+META "modified" "23 May 2020"
 META "reference" "https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
 META "reference" "https://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl"
 META "reference" "https://www.HAnim.org"
@@ -15,7 +15,12 @@ META "reference" "https://HAnim.org/Models"
 META "reference" "https://HAnim.org/Nodes"
 META "subject" "Nancy kneel Animation HAnim 2001"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_KneelAnimation.x3d"
-ProtoDeclare {
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
+WorldInfo {
+      title "LOA1_KneelAnimation.x3d" 
+    }
+    ProtoDeclare {
       name "LOA1_KneelAnimation"
       ProtoInterface ProtoInterface {
         children [
@@ -44,7 +49,8 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "stopTime"
-            type "SFTime" 
+            type "SFTime"
+            value -1 
           }
           field {
             accessType "outputOnly"
@@ -164,12 +170,12 @@ ProtoDeclare {
                 IS IS {
                   children [
                     connect {
-                      nodeField "enabled"
-                      protoField "enabled" 
-                    }
-                    connect {
                       nodeField "cycleInterval"
                       protoField "cycleInterval" 
+                    }
+                    connect {
+                      nodeField "enabled"
+                      protoField "enabled" 
                     }
                     connect {
                       nodeField "loop"
@@ -184,12 +190,12 @@ ProtoDeclare {
                       protoField "stopTime" 
                     }
                     connect {
-                      nodeField "isActive"
-                      protoField "isActive" 
-                    }
-                    connect {
                       nodeField "fraction_changed"
                       protoField "fraction_changed" 
+                    }
+                    connect {
+                      nodeField "isActive"
+                      protoField "isActive" 
                     }
                     
                   ]
@@ -427,9 +433,6 @@ ProtoDeclare {
       
       }
       
-    }
-    WorldInfo {
-      title "LOA1_KneelAnimation.x3d" 
     }
     Anchor {
       description "InterchangableActorsViaDynamicRouting"

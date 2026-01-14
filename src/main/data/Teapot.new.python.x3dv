@@ -5,7 +5,7 @@ PROFILE Interchange
 META "title" "Teapot.x3d"
 META "description" "A watertight (solid) Utah Teapot Model converted from obj format."
 META "created" "20 March 2016"
-META "modified" "Wed, 17 Sep 2025 23:48:11 GMT"
+META "modified" "20 October 2019"
 META "creator" "Pyarelal Knowles"
 META "translator" "Don Brutzman"
 META "reference" "wt_teapot.obj"
@@ -16,6 +16,8 @@ META "reference" "https://en.wikipedia.org/wiki/List_of_common_3D_test_models"
 META "reference" "http://www.realtimerendering.com/udacity/?load=demo/unit1-teapot-demo.js"
 META "identifier" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/Teapot.x3d"
 META "generator" "Meshlab X3D Exported, http://meshlab.sourceforge.net"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "Teapot.x3d" 
     }

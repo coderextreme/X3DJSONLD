@@ -6,21 +6,23 @@
     <meta content='Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.' name='description'/>
     <meta content='Don Brutzman and Jeff Weekley' name='creator'/>
     <meta content='16 March 2009' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:46:18 GMT' name='modified'/>
+    <meta content='25 October 2016' name='modified'/>
     <meta content='Schematron rules, backed up by initialize() checks' name='TODO'/>
     <meta content='BeyondViewpointCameraNodesWeb3D2009.pdf' name='reference'/>
     <meta content='https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html' name='reference'/>
-    <meta content='CameraExamples.x3d' name='reference'/>
-    <meta content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='reference'/>
     <meta content='Camera nodes for Viewpoint navigation control' name='subject'/>
+    <meta content='CameraExamples.x3d' name='reference'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='identifier'/>
+    <meta content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='reference'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <ProtoDeclare appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.' name='Camera'>
       <ProtoInterface>
         <field accessType='inputOutput' appinfo='Text description to be displayed for this Camera' name='description' type='SFString'/>
         <field accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='position' type='SFVec3f' value='0 0 10'/>
-        <field accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='orientation' type='SFRotation'/>
+        <field accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='orientation' type='SFRotation' value='0 0 1 0'/>
         <field accessType='inputOutput' appinfo='pi/4' name='fieldOfView' type='SFFloat' value='0.7854'/>
         <field accessType='inputOnly' appinfo='input fraction drives interpolators' name='set_fraction' type='SFFloat'/>
         <field accessType='inputOnly' appinfo='input event binds or unbinds this Camera' name='set_bind' type='SFBool'/>
@@ -45,13 +47,13 @@
       <ProtoBody>
         <Viewpoint DEF='CameraViewpoint'>
           <IS>
-            <connect nodeField='set_bind' protoField='set_bind'/>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='position' protoField='position'/>
             <connect nodeField='orientation' protoField='orientation'/>
             <connect nodeField='fieldOfView' protoField='fieldOfView'/>
-            <connect nodeField='isBound' protoField='isBound'/>
+            <connect nodeField='set_bind' protoField='set_bind'/>
             <connect nodeField='bindTime' protoField='bindTime'/>
+            <connect nodeField='isBound' protoField='isBound'/>
           </IS>
         </Viewpoint>
         <NavigationInfo DEF='CameraNavInfo' type='"EXAMINE" "FLY" "ANY"'>
@@ -78,6 +80,8 @@
             <connect nodeField='set_fraction' protoField='set_fraction'/>
           </IS>
         </OrientationInterpolator>
+        <ROUTE fromField='value_changed' fromNode='CameraPositionInterpolator' toField='position' toNode='CameraViewpoint'/>
+        <ROUTE fromField='value_changed' fromNode='CameraOrientationInterpolator' toField='orientation' toNode='CameraViewpoint'/>
         <Script DEF='CameraScript' directOutput='true' mustEvaluate='true'>
           <IS>
             <connect nodeField='description' protoField='description'/>
@@ -819,13 +823,11 @@
 "+
 "}]]>
         </Script>
-        <ROUTE fromField='value_changed' fromNode='CameraPositionInterpolator' toField='set_position' toNode='CameraViewpoint'/>
-        <ROUTE fromField='value_changed' fromNode='CameraOrientationInterpolator' toField='set_orientation' toNode='CameraViewpoint'/>
-        <ROUTE fromField='position_changed' fromNode='CameraScript' toField='set_position' toNode='CameraViewpoint'/>
-        <ROUTE fromField='orientation_changed' fromNode='CameraScript' toField='set_orientation' toNode='CameraViewpoint'/>
+        <ROUTE fromField='position' fromNode='CameraScript' toField='position' toNode='CameraViewpoint'/>
+        <ROUTE fromField='orientation' fromNode='CameraScript' toField='orientation' toNode='CameraViewpoint'/>
         <ROUTE fromField='isActive' fromNode='CameraScript' toField='set_bind' toNode='CameraViewpoint'/>
         <ROUTE fromField='isActive' fromNode='CameraScript' toField='set_bind' toNode='CameraNavInfo'/>
-        <ROUTE fromField='isActive' fromNode='CameraScript' toField='set_on' toNode='CameraDirectionalLight'/>
+        <ROUTE fromField='isActive' fromNode='CameraScript' toField='on' toNode='CameraDirectionalLight'/>
       </ProtoBody>
     </ProtoDeclare>
     <ProtoDeclare appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot.' name='CameraShot'>
@@ -834,8 +836,8 @@
         <field accessType='inputOutput' appinfo='Whether this CameraShot can be activated' name='enabled' type='SFBool' value='true'/>
         <field accessType='inputOutput' appinfo='Set of CameraMovement nodes' name='moves' type='MFNode'/>
         <field accessType='inputOutput' appinfo='Setup to reinitialize camera position for this shot' name='initialPosition' type='SFVec3f' value='0 0 10'/>
-        <field accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' name='initialOrientation' type='SFRotation'/>
-        <field accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' name='initialAimPoint' type='SFVec3f'/>
+        <field accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' name='initialOrientation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' name='initialAimPoint' type='SFVec3f' value='0 0 0'/>
         <field accessType='inputOutput' appinfo='pi/4' name='initialFieldOfView' type='SFFloat' value='0.7854'/>
         <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='initialFStop' type='SFFloat' value='5.6'/>
         <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='initialFocusDistance' type='SFFloat' value='10'/>
@@ -1068,9 +1070,9 @@
         <field accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' name='enabled' type='SFBool' value='true'/>
         <field accessType='inputOutput' appinfo='Duration in seconds for this move' name='duration' type='SFFloat'/>
         <field accessType='inputOutput' appinfo='Goal camera position for this move' name='goalPosition' type='SFVec3f' value='0 0 10'/>
-        <field accessType='inputOutput' appinfo='Goal camera rotation for this move' name='goalOrientation' type='SFRotation'/>
+        <field accessType='inputOutput' appinfo='Goal camera rotation for this move' name='goalOrientation' type='SFRotation' value='0 0 1 0'/>
         <field accessType='inputOutput' appinfo='Whether or not camera direction is tracking towards the aimPoint' name='tracking' type='SFBool'/>
-        <field accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' name='goalAimPoint' type='SFVec3f'/>
+        <field accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' name='goalAimPoint' type='SFVec3f' value='0 0 0'/>
         <field accessType='inputOutput' appinfo='Goal fieldOfView for this move' name='goalFieldOfView' type='SFFloat' value='0.7854'/>
         <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='goalFStop' type='SFFloat' value='5.6'/>
         <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='goalFocusDistance' type='SFFloat' value='10'/>

@@ -6,8 +6,10 @@ META "title" "Bubbles.x3d"
 META "description" "Bubble animation used by Nancy Diving example."
 META "creator" "Etsuko Lippi"
 META "created" "24 January 2001"
-META "modified" "Wed, 17 Sep 2025 23:46:18 GMT"
+META "modified" "23 May 2020"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "Bubbles.x3d" 
     }
@@ -25,7 +27,7 @@ WorldInfo {
             }
             DEF BubblePath2 PositionInterpolator {
               key [0 0.3 0.64 0.85 1]
-              keyValue [0.1 0.1 0.1 0.2 0.4 0.25 0.3 0.5 0.46 0.75 0.5 0.575 0.03848348 1.989 1.098373] 
+              keyValue [0.1 0.1 0.1 0.2 0.4 0.25 0.3 0.5 0.46 0.75 0.5 0.575 0.038483478 1.989 1.098373] 
             }
             DEF BubblePath3 PositionInterpolator {
               key [0 0.1 0.45 0.7 1]
@@ -62,7 +64,6 @@ WorldInfo {
             Transform {
               children [
                 DEF bubble1 Transform {
-                  translation 0.16925 0.16925 0.16925
                   children [
                     Shape {
                       appearance Appearance {
@@ -83,7 +84,6 @@ WorldInfo {
                 
                 }
                 DEF bubble2 Transform {
-                  translation 0.1376111 0.2128333 0.1564167
                   children [
                     Shape {
                       appearance Appearance {
@@ -104,7 +104,6 @@ WorldInfo {
                 
                 }
                 DEF bubble3 Transform {
-                  translation 0.261 0.3591667 0.004536666
                   children [
                     Shape {
                       appearance Appearance {
@@ -125,7 +124,6 @@ WorldInfo {
                 
                 }
                 DEF bubble4 Transform {
-                  translation 0.1128333 0.1128333 0.001128333
                   children [
                     Shape {
                       appearance Appearance {
@@ -146,7 +144,6 @@ WorldInfo {
                 
                 }
                 DEF bubble5 Transform {
-                  translation 0.2256666 0.2256666 0.002256666
                   children [
                     Shape {
                       appearance Appearance {
@@ -167,7 +164,6 @@ WorldInfo {
                 
                 }
                 DEF bubble6 Transform {
-                  translation 0.1767722 0.2598927 0.004137222
                   children [
                     Shape {
                       appearance Appearance {
@@ -188,7 +184,6 @@ WorldInfo {
                 
                 }
                 DEF bubble7 Transform {
-                  translation 0.0574403 0.1035275 0.001558728
                   children [
                     Shape {
                       appearance Appearance {
@@ -209,7 +204,6 @@ WorldInfo {
                 
                 }
                 DEF bubble8 Transform {
-                  translation 0.1238349 0.0502907 0.001253255
                   children [
                     Shape {
                       appearance Appearance {
@@ -230,7 +224,6 @@ WorldInfo {
                 
                 }
                 DEF bubble9 Transform {
-                  translation 0.6291718 0.2527671 0.00565187
                   children [
                     Shape {
                       appearance Appearance {
@@ -251,7 +244,6 @@ WorldInfo {
                 
                 }
                 DEF bubble10 Transform {
-                  translation 0.3849022 0.4809182 0.005787181
                   children [
                     Shape {
                       appearance Appearance {
@@ -272,6 +264,46 @@ WorldInfo {
                 
                 }
                 
+                ROUTE BubbleClock.fraction_changed TO BubblePath1.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath2.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath3.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath4.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath5.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath6.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath7.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath8.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath9.set_fraction
+                
+                ROUTE BubbleClock.fraction_changed TO BubblePath10.set_fraction
+                
+                ROUTE BubblePath1.value_changed TO bubble1.set_translation
+                
+                ROUTE BubblePath2.value_changed TO bubble2.set_translation
+                
+                ROUTE BubblePath3.value_changed TO bubble3.set_translation
+                
+                ROUTE BubblePath4.value_changed TO bubble4.set_translation
+                
+                ROUTE BubblePath5.value_changed TO bubble5.set_translation
+                
+                ROUTE BubblePath6.value_changed TO bubble6.set_translation
+                
+                ROUTE BubblePath7.value_changed TO bubble7.set_translation
+                
+                ROUTE BubblePath8.value_changed TO bubble8.set_translation
+                
+                ROUTE BubblePath9.value_changed TO bubble9.set_translation
+                
+                ROUTE BubblePath10.value_changed TO bubble10.set_translation
+                
               ]
             
             }
@@ -286,44 +318,4 @@ WorldInfo {
     Background {
       skyColor [0 0 0.6] 
     }
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath1.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath2.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath3.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath4.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath5.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath6.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath7.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath8.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath9.set_fraction
-    
-    ROUTE BubbleClock.fraction_changed TO BubblePath10.set_fraction
-    
-    ROUTE BubblePath1.value_changed TO bubble1.set_translation
-    
-    ROUTE BubblePath2.value_changed TO bubble2.set_translation
-    
-    ROUTE BubblePath3.value_changed TO bubble3.set_translation
-    
-    ROUTE BubblePath4.value_changed TO bubble4.set_translation
-    
-    ROUTE BubblePath5.value_changed TO bubble5.set_translation
-    
-    ROUTE BubblePath6.value_changed TO bubble6.set_translation
-    
-    ROUTE BubblePath7.value_changed TO bubble7.set_translation
-    
-    ROUTE BubblePath8.value_changed TO bubble8.set_translation
-    
-    ROUTE BubblePath9.value_changed TO bubble9.set_translation
-    
-    ROUTE BubblePath10.value_changed TO bubble10.set_translation
     

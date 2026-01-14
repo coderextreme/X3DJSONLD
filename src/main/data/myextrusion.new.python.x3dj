@@ -25,7 +25,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:41 GMT",
+        "@content":"November 9 2024",
         "@name":"modified"
       }
     },
@@ -41,6 +41,20 @@
       {
         "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"beginnings of a force directed graph in 3D",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -116,8 +130,8 @@
         "@value":"[(-50, -50, 0), (50, 50, 0)]"
       }
     },
-            }        }        "ROUTE":
-        {
+            }            "ROUTE":
+            {
       {
         "@fromField":"cycleTime",
         "@fromNode":"TourTime",
@@ -125,8 +139,8 @@
         "@toNode":"MoveCylinder"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"spine_changed",
         "@fromNode":"MoveCylinder",
@@ -134,4 +148,4 @@
         "@toNode":"myextrusion"
       }
     },
-    }}
+        }    }}

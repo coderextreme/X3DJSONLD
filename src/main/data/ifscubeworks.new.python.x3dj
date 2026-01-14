@@ -50,6 +50,13 @@
         "@name":"license"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
     }    "Scene":
     {
         "WorldInfo":

@@ -8,7 +8,7 @@ META "creator" "Jin Hoon Lee and Min Joo Lee"
 META "translator" "Chul Hee Jung and Myeong Won Lee"
 META "created" "31 March 2011"
 META "translated" "1 November 2014"
-META "modified" "Wed, 17 Sep 2025 23:47:55 GMT"
+META "modified" "23 December 2021"
 META "description" "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."
 META "reference" "KoreanCharacter00ReadMe.txt"
 META "reference" "KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
@@ -17,6 +17,8 @@ META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/
 META "generator" "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
 META "generator" "Suwon University HAnim Editor"
 META "generator" "Gnu Image Manipulation Program, https://www.gimp.org"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "KoreanCharacter01Jin.x3d" 
     }
@@ -36,16 +38,20 @@ WorldInfo {
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
         children [
           MetadataString {
-            name "authorName" 
+            name "authorName"
+            value ["Chul Hee Jung and Myeong Won Lee"] 
           }
           MetadataString {
-            name "authorEmail" 
+            name "authorEmail"
+            value ["myeongwonlee@gmail.com"] 
           }
           MetadataString {
-            name "creationDate" 
+            name "creationDate"
+            value ["31 March 2011"] 
           }
           MetadataString {
-            name "gender" 
+            name "gender"
+            value ["female"] 
           }
           MetadataFloat {
             name "height"
@@ -70,14 +76,14 @@ WorldInfo {
     
       children [
         DEF hanim_humanoid_root HAnimJoint {
-          center 0 35.8 -0.7076
+          center 0 35.799999 -0.7076
           name "humanoid_root"
           children [
             DEF hanim_sacrum HAnimSegment {
               name "sacrum"
               children [
                 Transform {
-                  translation 0 35.8 -0.7076
+                  translation 0 35.799999 -0.7076
                   children [
                     Shape {
                       appearance Appearance {
@@ -483,14 +489,14 @@ WorldInfo {
              
             }
             DEF hanim_sacroiliac HAnimJoint {
-              center 0 30.53 -0.7076
+              center 0 30.530001 -0.7076
               name "sacroiliac"
               children [
                 DEF hanim_pelvis HAnimSegment {
                   name "pelvis"
                   children [
                     Transform {
-                      translation 0 30.53 -0.7076
+                      translation 0 30.530001 -0.7076
                       children [
                         Shape {
                           appearance Appearance {
@@ -567,14 +573,14 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_elbow HAnimJoint {
-                      center 8.093 40.38 -0.2502
+                      center 8.093 40.380001 -0.2502
                       name "l_elbow"
                       children [
                         DEF hanim_l_forearm HAnimSegment {
                           name "l_forearm"
                           children [
                             Transform {
-                              translation 8.093 40.38 -0.2502
+                              translation 8.093 40.380001 -0.2502
                               children [
                                 Shape {
                                   appearance Appearance {
@@ -609,14 +615,14 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_radiocarpal HAnimJoint {
-                          center 7.808 31.46 -0.05849
+                          center 7.808 31.459999 -0.05849
                           name "l_radiocarpal"
                           children [
                             DEF hanim_l_carpal HAnimSegment {
                               name "l_carpal"
                               children [
                                 Transform {
-                                  translation 7.808 31.46 -0.05849
+                                  translation 7.808 31.459999 -0.05849
                                   children [
                                     Shape {
                                       appearance Appearance {
@@ -705,14 +711,14 @@ WorldInfo {
                      
                     }
                     DEF hanim_r_elbow HAnimJoint {
-                      center -8.093 40.38 -0.2502
+                      center -8.093 40.380001 -0.2502
                       name "r_elbow"
                       children [
                         DEF hanim_r_forearm HAnimSegment {
                           name "r_forearm"
                           children [
                             Transform {
-                              translation -8.093 40.38 -0.2502
+                              translation -8.093 40.380001 -0.2502
                               children [
                                 Shape {
                                   appearance Appearance {
@@ -747,14 +753,14 @@ WorldInfo {
                          
                         }
                         DEF hanim_r_radiocarpal HAnimJoint {
-                          center -7.808 31.46 -0.05849
+                          center -7.808 31.459999 -0.05849
                           name "r_radiocarpal"
                           children [
                             DEF hanim_r_carpal HAnimSegment {
                               name "r_carpal"
                               children [
                                 Transform {
-                                  translation -7.808 31.46 -0.05849
+                                  translation -7.808 31.459999 -0.05849
                                   children [
                                     Shape {
                                       appearance Appearance {

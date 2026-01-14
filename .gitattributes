@@ -6,3 +6,4 @@
 *.bat           text eol=crlf
 # Binary files should be left untouched
 *.jar           binary
+X3DJSAIL.4.0.full.jar filter=lfs diff=lfs merge=lfs -binary

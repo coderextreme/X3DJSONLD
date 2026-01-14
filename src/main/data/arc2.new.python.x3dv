@@ -5,7 +5,8 @@ PROFILE Immersive
 META "title" "arc2.x3d"
 META "creator" "Lost, Doug Sanden I think"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"
+META "description" "a generic proto to connect two objects"
 Viewpoint {
       description "Only Viewpoint"
       position 0 0 5 
@@ -16,7 +17,6 @@ Viewpoint {
     DEF G1 Transform {
       children [
         DEF DECLpoint_INSTANCE_node Transform {
-          translation 0 0.5166668 0
           children [
             Shape {
               appearance Appearance {
@@ -51,12 +51,14 @@ Viewpoint {
                 field {
                   accessType "inputOutput"
                   name "translation"
-                  type "SFVec3f" 
+                  type "SFVec3f"
+                  value [0, 0, 0] 
                 }
                 field {
                   accessType "inputOutput"
                   name "old"
-                  type "SFVec3f" 
+                  type "SFVec3f"
+                  value [0, 0, 0] 
                 }
                 field {
                   accessType "inputOnly"
@@ -78,6 +80,16 @@ Viewpoint {
               loop TRUE 
             }
             
+            ROUTE DECLpoint_INSTANCE_CL1.cycleTime TO DECLpoint_INSTANCE_MB1.set_location
+            
+            ROUTE DECLpoint_INSTANCE_CL1.fraction_changed TO DECLpoint_INSTANCE_PI1.set_fraction
+            
+            ROUTE DECLpoint_INSTANCE_MB1.keyValue TO DECLpoint_INSTANCE_PI1.keyValue
+            
+            ROUTE DECLpoint_INSTANCE_PI1.value_changed TO DECLpoint_INSTANCE_node.set_translation
+            
+            ROUTE DECLpoint_INSTANCE_MB1.translation_changed TO DECLpoint_INSTANCE_node.set_translation
+            
           ]
         
         }
@@ -88,7 +100,6 @@ Viewpoint {
     DEF G2 Transform {
       children [
         DEF DECLpoint_INSTANCE1000_node Transform {
-          translation 0 0.5166668 0
           children [
             Shape {
               appearance Appearance {
@@ -123,12 +134,14 @@ Viewpoint {
                 field {
                   accessType "inputOutput"
                   name "translation"
-                  type "SFVec3f" 
+                  type "SFVec3f"
+                  value [0, 0, 0] 
                 }
                 field {
                   accessType "inputOutput"
                   name "old"
-                  type "SFVec3f" 
+                  type "SFVec3f"
+                  value [0, 0, 0] 
                 }
                 field {
                   accessType "inputOnly"
@@ -149,6 +162,16 @@ Viewpoint {
               cycleInterval 3
               loop TRUE 
             }
+            
+            ROUTE DECLpoint_INSTANCE1000_CL1.cycleTime TO DECLpoint_INSTANCE1000_MB1.set_location
+            
+            ROUTE DECLpoint_INSTANCE1000_CL1.fraction_changed TO DECLpoint_INSTANCE1000_PI1.set_fraction
+            
+            ROUTE DECLpoint_INSTANCE1000_MB1.keyValue TO DECLpoint_INSTANCE1000_PI1.keyValue
+            
+            ROUTE DECLpoint_INSTANCE1000_PI1.value_changed TO DECLpoint_INSTANCE1000_node.set_translation
+            
+            ROUTE DECLpoint_INSTANCE1000_MB1.translation_changed TO DECLpoint_INSTANCE1000_node.set_translation
             
           ]
         
@@ -312,26 +335,6 @@ Viewpoint {
       ]
     
     }
-    
-    ROUTE DECLpoint_INSTANCE_CL1.cycleTime TO DECLpoint_INSTANCE_MB1.set_location
-    
-    ROUTE DECLpoint_INSTANCE_CL1.fraction_changed TO DECLpoint_INSTANCE_PI1.set_fraction
-    
-    ROUTE DECLpoint_INSTANCE_MB1.keyValue_changed TO DECLpoint_INSTANCE_PI1.set_keyValue
-    
-    ROUTE DECLpoint_INSTANCE_PI1.value_changed TO DECLpoint_INSTANCE_node.set_translation
-    
-    ROUTE DECLpoint_INSTANCE_MB1.translation_changed TO DECLpoint_INSTANCE_node.set_translation
-    
-    ROUTE DECLpoint_INSTANCE1000_CL1.cycleTime TO DECLpoint_INSTANCE1000_MB1.set_location
-    
-    ROUTE DECLpoint_INSTANCE1000_CL1.fraction_changed TO DECLpoint_INSTANCE1000_PI1.set_fraction
-    
-    ROUTE DECLpoint_INSTANCE1000_MB1.keyValue_changed TO DECLpoint_INSTANCE1000_PI1.set_keyValue
-    
-    ROUTE DECLpoint_INSTANCE1000_PI1.value_changed TO DECLpoint_INSTANCE1000_node.set_translation
-    
-    ROUTE DECLpoint_INSTANCE1000_MB1.translation_changed TO DECLpoint_INSTANCE1000_node.set_translation
     
     ROUTE G1.translation_changed TO DECLx3dconnector_connector1_S1.set_startpoint
     

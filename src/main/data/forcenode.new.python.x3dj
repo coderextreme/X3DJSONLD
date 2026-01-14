@@ -25,7 +25,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:24 GMT",
+        "@content":"July 14 2025",
         "@name":"modified"
       }
     },
@@ -43,6 +43,20 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"beginnings of a force directed graph in 3D",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
     }    "Scene":
     {
         "ProtoDeclare":
@@ -57,7 +71,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
             }            "ProtoBody":
@@ -158,7 +173,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -185,8 +201,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"cycleTime",
         "@fromNode":"nodeClock",
@@ -194,8 +210,8 @@
         "@toNode":"MoveBall"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"nodeClock",
@@ -203,17 +219,17 @@
         "@toNode":"NodePosition"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"keyValue",
         "@fromNode":"MoveBall",
-        "@toField":"set_keyValue",
+        "@toField":"keyValue",
         "@toNode":"NodePosition"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"NodePosition",
@@ -221,7 +237,7 @@
         "@toNode":"transform"
       }
     },
-            }        }        "ProtoDeclare":
+                }            }        }        "ProtoDeclare":
         {
       {
         "@name":"cyl"
@@ -281,7 +297,7 @@
 &quot;+
 &quot;                }
 &quot;+
-&quot;                
+&quot;
 &quot;+
 &quot;                function set_endB(value) {
 &quot;+
@@ -330,16 +346,16 @@
         "@type":"SFVec3f"
       }
     },
-                    }                }                "ROUTE":
-                {
+                    }                    "ROUTE":
+                    {
       {
-        "@fromField":"spine_changed",
+        "@fromField":"spine",
         "@fromNode":"MoveCylinder",
         "@toField":"set_spine",
         "@toNode":"extrusion"
       }
     },
-            }        }        "Transform":
+                }            }        }        "Transform":
         {
       {
         "@DEF":"HoldsContent",
@@ -364,7 +380,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.7216668 0"
+        "@value":"0 0 0"
       }
     },
             }            "ProtoInstance":
@@ -377,7 +393,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.7216668 0"
+        "@value":"50 50 50"
       }
     },
             }            "ProtoInstance":
@@ -390,7 +406,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.7216668 0"
+        "@value":"-50 -50 -50"
       }
     },
             }            "ProtoInstance":
@@ -403,7 +419,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.7216668 0"
+        "@value":"50 50 -50"
       }
     },
             }            "ProtoInstance":
@@ -412,61 +428,22 @@
         "@DEF":"linkA",
         "@name":"cyl"
       }
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionA",
-        "@value":"0 0.7216668 0"
-      }
     },
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionB",
-        "@value":"0 0.7216668 0"
-      }
-    },
-            }            "ProtoInstance":
+            "ProtoInstance":
             {
       {
         "@DEF":"linkB",
         "@name":"cyl"
       }
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionA",
-        "@value":"0 0.7216668 0"
-      }
     },
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionB",
-        "@value":"0 0.7216668 0"
-      }
-    },
-            }            "ProtoInstance":
+            "ProtoInstance":
             {
       {
         "@DEF":"linkC",
         "@name":"cyl"
       }
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionA",
-        "@value":"0 0.7216668 0"
-      }
     },
-                "fieldValue":
-                {
-      {
-        "@name":"set_positionB",
-        "@value":"0 0.7216668 0"
-      }
-    },
-            }        }        "Script":
+        }        "Script":
         {
       {
         "@DEF":"clickHandler",
@@ -502,7 +479,7 @@
 &quot;+
 &quot;			});
 &quot;+
-&quot;                
+&quot;
 &quot;+
 &quot;        }"
       }
@@ -542,54 +519,54 @@
         "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeA",
-        "@toField":"set_set_positionA",
+        "@toField":"set_positionA",
         "@toNode":"linkA"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeB",
-        "@toField":"set_set_positionB",
+        "@toField":"set_positionB",
         "@toNode":"linkA"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeA",
-        "@toField":"set_set_positionA",
+        "@toField":"set_positionA",
         "@toNode":"linkB"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeC",
-        "@toField":"set_set_positionB",
+        "@toField":"set_positionB",
         "@toNode":"linkB"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeA",
-        "@toField":"set_set_positionA",
+        "@toField":"set_positionA",
         "@toNode":"linkC"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeD",
-        "@toField":"set_set_positionB",
+        "@toField":"set_positionB",
         "@toNode":"linkC"
       }
     },

@@ -5,7 +5,8 @@ PROFILE Immersive
 META "title" "flower3.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"
+META "description" "a flower"
 NavigationInfo { 
     }
     DirectionalLight {
@@ -46,7 +47,7 @@ NavigationInfo {
     DEF OrbitScript Script {
       url "ecmascript:
 "+
-"    
+"
 "+
 "var e = 5;
 "+
@@ -222,7 +223,7 @@ NavigationInfo {
     
     ROUTE OrbitScript.coordIndexes TO Orbit.set_coordIndex
     
-    ROUTE OrbitScript.coordinates TO OrbitCoordinates.set_point
+    ROUTE OrbitScript.coordinates TO OrbitCoordinates.point
     
     ROUTE Clock.fraction_changed TO OrbitScript.set_fraction
     

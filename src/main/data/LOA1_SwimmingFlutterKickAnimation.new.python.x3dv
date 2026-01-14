@@ -6,14 +6,19 @@ META "title" "LOA1_SwimmingFlutterKickAnimation.x3d"
 META "description" "Humanoid animation prototype reusable by any Humanoid."
 META "creator" "Etsuko Lippi"
 META "created" "13 December 2001"
-META "modified" "Wed, 17 Sep 2025 23:47:56 GMT"
+META "modified" "23 May 2020"
 META "warning" "not yet tested, need to compare with NancyDivingExample interpolators"
 META "reference" "https://www.HAnim.org"
 META "reference" "https://HAnim.org/Models"
 META "reference" "https://HAnim.org/Nodes"
 META "subject" "Swimming flutter kick Animation HAnim 2001"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d"
-ProtoDeclare {
+META "generator" "X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
+WorldInfo {
+      title "LOA1_SwimmingFlutterKickAnimation.x3d" 
+    }
+    ProtoDeclare {
       name "LOA1_DivingAnimation"
       ProtoInterface ProtoInterface {
         children [
@@ -43,7 +48,8 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "stopTime"
-            type "SFTime" 
+            type "SFTime"
+            value -1 
           }
           field {
             accessType "outputOnly"
@@ -160,15 +166,16 @@ ProtoDeclare {
           Group {
             children [
               DEF TIMER TimeSensor {
+                loop TRUE
                 IS IS {
                   children [
                     connect {
-                      nodeField "enabled"
-                      protoField "enabled" 
-                    }
-                    connect {
                       nodeField "cycleInterval"
                       protoField "cycleInterval" 
+                    }
+                    connect {
+                      nodeField "enabled"
+                      protoField "enabled" 
                     }
                     connect {
                       nodeField "loop"
@@ -183,12 +190,12 @@ ProtoDeclare {
                       protoField "stopTime" 
                     }
                     connect {
-                      nodeField "isActive"
-                      protoField "isActive" 
-                    }
-                    connect {
                       nodeField "fraction_changed"
                       protoField "fraction_changed" 
+                    }
+                    connect {
+                      nodeField "isActive"
+                      protoField "isActive" 
                     }
                     
                   ]
@@ -477,9 +484,6 @@ ProtoDeclare {
       
       }
       
-    }
-    WorldInfo {
-      title "LOA1_SwimmingFlutterKickAnimation.x3d" 
     }
     Viewpoint {
       description "LOA1_SwimmingFlutterKickAnimation scene"

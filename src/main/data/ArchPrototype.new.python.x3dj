@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:17 GMT",
+        "@content":"27 November 2015",
         "@name":"modified"
       }
     },
@@ -69,6 +69,20 @@
       {
         "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -239,15 +253,15 @@
                                     "connect":
                                     {
       {
-        "@nodeField":"diffuseColor",
-        "@protoField":"diffuseColor"
+        "@nodeField":"emissiveColor",
+        "@protoField":"emissiveColor"
       }
     },
                                     "connect":
                                     {
       {
-        "@nodeField":"emissiveColor",
-        "@protoField":"emissiveColor"
+        "@nodeField":"diffuseColor",
+        "@protoField":"diffuseColor"
       }
     },
                                 }                            }                        }                        "IndexedFaceSet":
@@ -295,15 +309,15 @@
                         "connect":
                         {
       {
-        "@nodeField":"topAbutmentHeight",
-        "@protoField":"topAbutmentHeight"
+        "@nodeField":"pierWidth",
+        "@protoField":"pierWidth"
       }
     },
                         "connect":
                         {
       {
-        "@nodeField":"pierWidth",
-        "@protoField":"pierWidth"
+        "@nodeField":"topAbutmentHeight",
+        "@protoField":"topAbutmentHeight"
       }
     },
                         "connect":
@@ -495,7 +509,7 @@
       {
         "@fromField":"computedScale",
         "@fromNode":"ArchPrototypeScript",
-        "@toField":"set_scale",
+        "@toField":"scale",
         "@toNode":"ArchTransform"
       }
     },
@@ -504,7 +518,7 @@
       {
         "@fromField":"pointOut",
         "@fromNode":"ArchPrototypeScript",
-        "@toField":"set_point",
+        "@toField":"point",
         "@toNode":"ArchChord"
       }
     },

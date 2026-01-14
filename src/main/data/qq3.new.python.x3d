@@ -6,12 +6,13 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='John Carlson' name='translator'/>
     <meta content='11 Jan 2015' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:48:43 GMT' name='modified'/>
+    <meta content='05 May 2017' name='modified'/>
     <meta content='12 extrusions' name='description'/>
+    <meta content='https://coderextreme.net/x3d/qq3.x3d' name='identifier'/>
+    <meta content='manual' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='Process'>
-      <ProtoInterface/>
       <ProtoBody>
         <Group>
           <Transform scale='0.5 0.5 0.5'>

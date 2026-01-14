@@ -203,4 +203,7 @@ ecmascript:
     <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
     <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector2'/>
     <ROUTE fromField='translation_changed' fromNode='G3' toField='set_endpoint' toNode='connector2'/>
-    <ROUTE fromField='translation_changed' fromN
+    <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector3'/>
+    <ROUTE fromField='translation_changed' fromNode='G4' toField='set_endpoint' toNode='connector3'/>
+  </Scene>
+</X3D>

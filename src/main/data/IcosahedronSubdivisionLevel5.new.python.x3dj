@@ -25,6 +25,34 @@
         "meta":
         {
       {
+        "@content":"Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles.",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"13 September 2014",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"27 September 2014",
+        "@name":"modified"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Don Brutzman",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"Icosahedron.x3d",
         "@name":"reference"
       }
@@ -60,34 +88,6 @@
         "meta":
         {
       {
-        "@content":"Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles.",
-        "@name":"description"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"13 September 2014",
-        "@name":"created"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Wed, 17 Sep 2025 23:47:38 GMT",
-        "@name":"modified"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Don Brutzman",
-        "@name":"creator"
-      }
-    },
-        "meta":
-        {
-      {
         "@content":"http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d",
         "@name":"identifier"
       }
@@ -97,6 +97,20 @@
       {
         "@content":"Meshlab X3D Exported, http://meshlab.sourceforge.net",
         "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

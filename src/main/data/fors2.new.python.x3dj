@@ -8,6 +8,12 @@
         "@profile":"Immersive",
     "head":
     {
+        "component":
+        {
+      {
+        "@name":"Scripting"
+      }
+    },
         "meta":
         {
       {
@@ -25,7 +31,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:24 GMT",
+        "@content":"July 14 2025",
         "@name":"modified"
       }
     },
@@ -43,6 +49,20 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"beginnings of a force directed graph in 3D",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
     }    "Scene":
     {
         "ProtoDeclare":
@@ -57,7 +77,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"position",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
             }            "ProtoBody":
@@ -129,7 +150,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -156,8 +178,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"cycleTime",
         "@fromNode":"nodeClock",
@@ -165,8 +187,8 @@
         "@toNode":"MoveBall"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"nodeClock",
@@ -174,17 +196,17 @@
         "@toNode":"NodePosition"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"keyValue",
         "@fromNode":"MoveBall",
-        "@toField":"set_keyValue",
+        "@toField":"keyValue",
         "@toNode":"NodePosition"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"NodePosition",
@@ -192,7 +214,7 @@
         "@toNode":"transform"
       }
     },
-            }        }        "ProtoDeclare":
+                }            }        }        "ProtoDeclare":
         {
       {
         "@name":"cyl"
@@ -288,7 +310,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"endA",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -296,19 +319,20 @@
       {
         "@accessType":"inputOutput",
         "@name":"endB",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[50, 50, 50]"
       }
     },
-                    }                }                "ROUTE":
-                {
+                    }                    "ROUTE":
+                    {
       {
-        "@fromField":"spine_changed",
+        "@fromField":"spine",
         "@fromNode":"MoveCylinder",
         "@toField":"set_spine",
         "@toNode":"extrusion"
       }
     },
-            }        }        "Transform":
+                }            }        }        "Transform":
         {
       {
         "@scale":"0.1 0.1 0.1"
@@ -323,7 +347,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.8083332 0"
+        "@value":"-50 -50 -50"
       }
     },
             }            "ProtoInstance":
@@ -336,7 +360,7 @@
                 {
       {
         "@name":"position",
-        "@value":"0 0.8083332 0"
+        "@value":"50 50 50"
       }
     },
             }            "ProtoInstance":
@@ -345,35 +369,22 @@
         "@DEF":"linkA",
         "@name":"cyl"
       }
-                "fieldValue":
-                {
-      {
-        "@name":"positionA",
-        "@value":"0 0.8083332 0"
-      }
     },
-                "fieldValue":
-                {
-      {
-        "@name":"positionB",
-        "@value":"0 0.8083332 0"
-      }
-    },
-            }        }        "ROUTE":
+        }        "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeA",
-        "@toField":"set_positionA",
+        "@toField":"positionA",
         "@toNode":"linkA"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"nodeB",
-        "@toField":"set_positionB",
+        "@toField":"positionB",
         "@toNode":"linkA"
       }
     },

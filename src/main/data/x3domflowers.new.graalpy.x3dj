@@ -7,6 +7,10 @@
     "head": {
         "component": [
           {
+            "@name":"Scripting",
+            "@level":1
+          },
+          {
             "@name":"EnvironmentalEffects",
             "@level":3
           },
@@ -19,8 +23,20 @@
             "@level":1
           },
           {
+            "@name":"Texturing",
+            "@level":1
+          },
+          {
+            "@name":"Rendering",
+            "@level":1
+          },
+          {
             "@name":"Grouping",
             "@level":3
+          },
+          {
+            "@name":"Core",
+            "@level":1
           }
         ],
         "meta": [
@@ -41,8 +57,16 @@
             "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit"
           },
           {
+            "@name":"identifier",
+            "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"
+          },
+          {
+            "@name":"generator",
+            "@content":"X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html"
+          },
+          {
             "@name":"translated",
-            "@content":"17 September 2025"
+            "@content":"14 January 2026"
           },
           {
             "@name":"generator",
@@ -56,59 +80,12 @@
     },
     "Scene": {
         "-children":[
-          { "ExternProtoDeclare":
-            {
-              "@name":"FlowerProto",
-              "@url":["../data/flowerproto.json#FlowerProto"],
-              "field": [
-                {
-                  "@name":"vertex",
-                  "@accessType":"inputOutput",
-                  "@type":"MFString"
-                },
-                {
-                  "@name":"fragment",
-                  "@accessType":"inputOutput",
-                  "@type":"MFString"
-                }
-              ]
-            }
-          },
-          { "ProtoDeclare":
-            {
-              "@name":"flower",
-              "ProtoInterface": {
-              },
-              "ProtoBody": {
-                  "-children":[
-                    { "Group":
-                      {
-                        "-children":[
-                          { "ProtoInstance":
-                            {
-                              "@name":"FlowerProto",
-                              "fieldValue": [
-                                {
-                                  "@name":"vertex",
-                                  "@value":["../shaders/x3dom_flowers_chromatic.vs"]
-                                },
-                                {
-                                  "@name":"fragment",
-                                  "@value":["../shaders/common.fs"]
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-              }
-            }
-          },
           { "NavigationInfo":
             {
             }
+          },
+          {
+            "#comment":"Images courtesy of Paul Debevec's Light Probe Image Gallery"
           },
           { "Background":
             {
@@ -123,6 +100,54 @@
           { "Group":
             {
               "-children":[
+                { "ExternProtoDeclare":
+                  {
+                    "@name":"FlowerProto",
+                    "@url":["../data/flowerproto.json#FlowerProto"],
+                    "field": [
+                      {
+                        "@name":"vertex",
+                        "@accessType":"inputOutput",
+                        "@type":"MFString"
+                      },
+                      {
+                        "@name":"fragment",
+                        "@accessType":"inputOutput",
+                        "@type":"MFString"
+                      }
+                    ]
+                  }
+                },
+                { "ProtoDeclare":
+                  {
+                    "@name":"flower",
+                    "ProtoBody": {
+                        "-children":[
+                          { "Group":
+                            {
+                              "-children":[
+                                { "ProtoInstance":
+                                  {
+                                    "@name":"FlowerProto",
+                                    "fieldValue": [
+                                      {
+                                        "@name":"vertex",
+                                        "@value":["../shaders/x3dom_flowers_chromatic.vs"]
+                                      },
+                                      {
+                                        "@name":"fragment",
+                                        "@value":["../shaders/common.fs"]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                    }
+                  }
+                },
                 { "ProtoInstance":
                   {
                     "@name":"flower"

@@ -14,6 +14,13 @@
         "@name":"HAnim"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"JinScaledV2L1LOA4MinimumSkeleton20f.x3d",
+        "@name":"title"
+      }
+    },
     }    "Scene":
     {
         "WorldInfo":

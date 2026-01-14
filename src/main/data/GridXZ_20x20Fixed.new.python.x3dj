@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"3.0",
         "@profile":"Immersive",
     "head":
     {
@@ -32,7 +32,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:34 GMT",
+        "@content":"28 November 2019",
         "@name":"modified"
       }
     },
@@ -62,6 +62,20 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":

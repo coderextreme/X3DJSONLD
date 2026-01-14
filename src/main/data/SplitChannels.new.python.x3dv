@@ -7,11 +7,13 @@ META "description" "This X3D scene includes a simple sound source which can be m
 META "info" "This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."
 META "creator" "Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"
 META "created" "28 October 2020"
-META "modified" "Wed, 17 Sep 2025 23:48:10 GMT"
+META "modified" "23 April 2023"
 META "reference" "CHANGELOG.txt"
-META "reference" "http://www.medialab.hmu.gr/minipages/x3domAudio"
 META "TODO" "credit for audio files"
+META "reference" "http://www.medialab.hmu.gr/minipages/x3domAudio"
 META "identifier" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"
+META "generator" "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "SplitChannels.x3d" 
     }
@@ -227,18 +229,14 @@ WorldInfo {
               children [
                 ChannelSelector {
                   children [
-                    Gain { 
-                    }
-                    
+                    USE ChannelSplitter 
                   ]
                 
                 }
                 ChannelSelector {
                   channelSelection 1
                   children [
-                    Gain { 
-                    }
-                    
+                    USE ChannelSplitter 
                   ]
                 
                 }
