@@ -36,14 +36,15 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='AllenBox.x3d'),
-    NavigationInfo(avatarSize=[0.15,1.53,0.75],speed=0.5,type='"EXAMINE"'),
+    NavigationInfo(avatarSize=[0.15,1.53,0.75],speed=0.5,type=["EXAMINE"]),
     Transform(DEF='Floor',scale=(1.0,0.0125,1.0),translation=(0.0,-0.0125,0.0),
       children=[
       Shape(
         geometry=Box(),
         appearance=Appearance(
           material=Material(),))])])
-) # X3D model complete
+)
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

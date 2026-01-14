@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='HAnim' level='1'/>
+    <component level='1' name='HAnim'/>
     <meta content='Humanoid0.x3d' name='title'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
     <meta content='h2.pl' name='generator'/>
     <meta content='14 Jan 2023' name='modified'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='9 November 2020' name='created'/>
     <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <Transform>
@@ -58,11 +58,11 @@
     </Group>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='default' position='0 1 3'/>
-    <HAnimHumanoid DEF='hanim_HAnim' name='HAnim' info='"humanoidVersion=2.0"' version='2.0'>
+    <HAnimHumanoid DEF='hanim_HAnim' info='"humanoidVersion=2.0"' name='HAnim' version='2.0'>
+      <HAnimJoint DEF='hanim_humanoid_root' containerField='skeleton' name='humanoid_root'/>
       <!-- <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) -->
       <!-- </LOD> -->
-      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton'/>
-      <HAnimJoint USE='hanim_' containerField='joints'/>
+      <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
       <Shape DEF='SkinShape' containerField='skin'>
         <Appearance DEF='SkinAppearance'>
           <Material DEF='SkinMaterial' ambientIntensity='0.6' diffuseColor='1 1 1' shininess='0.6' transparency='1.0'/>

@@ -39,7 +39,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='generator',content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type='"EXAMINE"'),
+    NavigationInfo(type=["EXAMINE"]),
     Viewpoint(position=(0,0,4),orientation=(1,0,0,0),description='Bubbles in action'),
     Background(backUrl=["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"],bottomUrl=["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"],frontUrl=["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"],leftUrl=["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"],rightUrl=["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"],topUrl=["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]),
     ProtoDeclare(name='Bubble',

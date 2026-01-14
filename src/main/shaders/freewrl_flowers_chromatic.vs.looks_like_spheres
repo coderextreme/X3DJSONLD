@@ -1,0 +1,81 @@
+#version 310
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+/* parameters (from X3D fields) */
+uniform vec3 chromaticDispertion;
+uniform float bias;
+uniform float scale;
+uniform float power;
+uniform float a;
+uniform float b;
+uniform float c;
+uniform float d;
+uniform float tdelta;
+uniform float pdelta;
+
+/* varyings to pass to fragment shader */
+varying vec3 t;
+varying vec3 tr;
+varying vec3 tg;
+varying vec3 tb;
+varying float rfac;
+
+/* geometry helpers (your original functions) */
+vec3 cart2sphere(vec3 p) {
+     float r = length(p);
+     float theta = acos(p.y / r);
+     float phi = atan(p.z, p.x);
+     return vec3(r, theta, phi);
+}
+     
+vec3 rose(vec3 p) {
+     float rho = a + b * cos(c * p.y + tdelta) * cos(d * p.z + pdelta);
+     float x = rho * cos(p.z) * cos(p.y);
+     float z = rho * cos(p.z) * sin(p.y);
+     float y = rho * sin(p.z);
+     return vec3(x, y, z);
+}
+
+vec3 rose_normal(vec3 p) {
+     vec3 base = cart2sphere(p);
+     vec3 td = base + vec3(0.0, 0.0001, 0.0);
+     vec3 pd = base + vec3(0.0, 0.0, 0.0001);
+     vec3 br = rose(base);
+     vec3 bt = rose(td);
+     vec3 bp = rose(pd);
+     return normalize(cross(bt - br, bp - br));
+}
+
+vec4 rose_position(vec3 p) {
+    return vec4(rose(cart2sphere(p)), 1.0);
+}
+
+void main()
+{
+    vec3 position = fw_Vertex.xyz;
+
+    /* 3x3 part of modelview for transforming normals */
+    mat3 mvm3 = mat3(
+        fw_ModelViewMatrix[0].x, fw_ModelViewMatrix[0].y, fw_ModelViewMatrix[0].z,
+        fw_ModelViewMatrix[1].x, fw_ModelViewMatrix[1].y, fw_ModelViewMatrix[1].z,
+        fw_ModelViewMatrix[2].x, fw_ModelViewMatrix[2].y, fw_ModelViewMatrix[2].z
+    );
+
+    /* position */
+    gl_Position = fw_ProjectionMatrix * fw_ModelViewMatrix * rose_position(position);
+
+    /* normal and incident in eye-space */
+    vec3 fragNormal = normalize(mvm3 * rose_normal(position));
+    vec3 incident = normalize((fw_ModelViewMatrix * rose_position(position)).xyz);
+
+    /* compute reflection and chromatic refraction directions in eye-space */
+    t  = (reflect(incident, fragNormal)); /* reflection vector */
+    tr = (refract(incident, fragNormal, chromaticDispertion.x));
+    tg = (refract(incident, fragNormal, chromaticDispertion.y));
+    tb = (refract(incident, fragNormal, chromaticDispertion.z));
+
+    /* compute fresnel-like factor */
+    rfac = bias + scale * pow(0.5 + 0.5 * dot(incident, fragNormal), power);
+}

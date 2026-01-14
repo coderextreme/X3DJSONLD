@@ -17,7 +17,7 @@ meta3.content = "JohnJoint.x3d"
 head1.children.append(meta3)
 meta4 = x3d.meta()
 meta4.name = "identifier"
-meta4.content = "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d"
+meta4.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
@@ -58,9 +58,11 @@ IndexedLineSet13.colorIndex = [0,1,2]
 IndexedLineSet13.colorPerVertex = False
 IndexedLineSet13.coordIndex = [0,1,-1,0,2,-1,0,3,-1]
 Coordinate14 = x3d.Coordinate()
+Coordinate14.point = [(0, 0, 0),(0.1, 0, 0),(0, 0.1, 0),(0, 0, 0.1)]
 
 IndexedLineSet13.coord = Coordinate14
 Color15 = x3d.Color()
+Color15.color = [(1, 0, 0),(0, 0.6, 0),(0, 0, 1)]
 
 IndexedLineSet13.color = Color15
 
@@ -102,9 +104,11 @@ LineSet25 = x3d.LineSet()
 LineSet25.vertexCount = [2]
 ColorRGBA26 = x3d.ColorRGBA()
 ColorRGBA26.DEF = "HAnimSegmentLineColorRGBA"
+ColorRGBA26.color = [(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 LineSet25.color = ColorRGBA26
 Coordinate27 = x3d.Coordinate()
+Coordinate27.point = [(-0.05, 0, 0),(0.05, 0, 0)]
 
 LineSet25.coord = Coordinate27
 
@@ -1890,6 +1894,9 @@ X3D0.Scene = Scene10
 f = open("../data/JohnJoint.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/JohnJoint.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/JohnJoint.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/JohnJoint.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

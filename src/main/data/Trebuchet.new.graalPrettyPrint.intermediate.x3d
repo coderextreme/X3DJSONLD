@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='Trebuchet.x3d' name='title'/>
     <meta content='Working model of a 14th century Trebuchet Catapult.' name='description'/>
     <meta content='LT Joe Roth' name='creator'/>
     <meta content='20 June 2001' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:48:11 GMT' name='modified'/>
+    <meta content='20 October 2019' name='modified'/>
     <meta content='7.8' name='version'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d' name='identifier'/>
     <meta content='http://trebuchet.com' name='reference'/>
     <meta content='http://members.home.net/dimona' name='reference'/>
+    <meta content='trebuchet catapult Monty Python' name='subject'/>
     <meta content='Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under "Fair Use" clause of the DMCA' name='reference'/>
     <meta content='https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm' name='reference'/>
     <meta content='http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm' name='reference'/>
-    <meta content='trebuchet catapult Monty Python' name='subject'/>
+    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='Trebuchet.x3d'/>
@@ -170,6 +172,7 @@
       </Transform>
       <Transform DEF='verticalsupport' rotation='0 0 1 1.57' scale='0.9 1 1' translation='0 11 0'>
         <Shape USE='plank'/>
+        <!-- Main Verticle Support -->
       </Transform>
       <Transform DEF='horizontalsupport' scale='0.4 1 1' translation='0 10 0'>
         <Shape USE='plank'/>
@@ -220,8 +223,10 @@
               </Appearance>
               <Sphere radius='1.5'/>
             </Shape>
+            <!-- knott -->
           </Transform>
         </Transform>
+        <!-- The Unicorn -->
         <Transform rotation='0 0 1 1.2' scale='0.2 0.2 0.2' translation='-18.3 0.3 0'>
           <Shape>
             <Appearance>
@@ -230,12 +235,14 @@
             <Cylinder height='10.0'/>
           </Shape>
           <Transform translation='0 -2.5 0'>
+            <!-- The Unicorn -->
             <Shape USE='Torus'/>
             <Transform translation='-2 0 0'>
               <Shape>
                 <Appearance USE='rope'/>
                 <Sphere radius='1.5'/>
               </Shape>
+              <!-- Knott -->
             </Transform>
           </Transform>
           <Transform rotation='0 0 1 1.2' translation='15 55 -11'>
@@ -249,6 +256,7 @@
         </Transform>
         <Transform rotation='1 0 0 -1.7' translation='-17 -4.5 0'>
           <Transform scale='0.2 0.2 0.2'>
+            <!-- Knot -->
             <Shape USE='Torus'/>
             <Transform translation='-1 0 1.7'>
               <Shape>
@@ -348,6 +356,7 @@
           </Appearance>
           <Cylinder height='8.0' radius='0.4'/>
         </Shape>
+        <!-- Top Pivot -->
       </Transform>
       <Transform DEF='verticalweight'>
         <Transform translation='4 18 1.8'>
@@ -363,6 +372,7 @@
           </Shape>
         </Transform>
         <Transform translation='4 14 2.5'>
+          <!-- CounterWeight -->
           <Shape>
             <Appearance>
               <Material diffuseColor='0 0 0' specularColor='1 1 1'/>
@@ -394,6 +404,7 @@
         <Transform translation='0 0 7'>
           <Transform USE='screw'/>
         </Transform>
+        <!-- Release Pin -->
         <Transform DEF='Pin' rotation='1 0 0 -1.57' translation='0 0 -3'>
           <Transform USE='screw'/>
         </Transform>
@@ -508,9 +519,9 @@
           </Transform>
         </Transform>
         <Script DEF='WeightScript'>
-          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
-          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
-          <field name='CounterWeight' accessType='outputOnly' type='SFFloat'/>
+          <field accessType='inputOnly' name='set_boolean' type='SFBool'/>
+          <field accessType='outputOnly' name='whichchoice' type='SFInt32'/>
+          <field accessType='outputOnly' name='CounterWeight' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 
@@ -538,9 +549,9 @@ function set_boolean ( boolean_input, eventTime)
 ]]>
         </Script>
         <Script DEF='LauncheeScript'>
-          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
-          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
-          <field name='ProjectileWeight' accessType='outputOnly' type='SFFloat'/>
+          <field accessType='inputOnly' name='set_boolean' type='SFBool'/>
+          <field accessType='outputOnly' name='whichchoice' type='SFInt32'/>
+          <field accessType='outputOnly' name='ProjectileWeight' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 
@@ -558,8 +569,8 @@ function set_boolean (boolean_input, eventTime)
 ]]>
         </Script>
         <Script DEF='PigdogMonkScript'>
-          <field name='set_boolean' accessType='inputOnly' type='SFBool'/>
-          <field name='whichchoice' accessType='outputOnly' type='SFInt32'/>
+          <field accessType='inputOnly' name='set_boolean' type='SFBool'/>
+          <field accessType='outputOnly' name='whichchoice' type='SFInt32'/>
 <![CDATA[
 ecmascript:
 
@@ -576,13 +587,13 @@ function set_boolean (boolean_input, eventTime)
 ]]>
         </Script>
         <Script DEF='Mover'>
-          <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
-          <field name='set_MassCounterWeight' accessType='inputOnly' type='SFFloat'/>
-          <field name='set_MassProjectileWeight' accessType='inputOnly' type='SFFloat'/>
-          <field name='MassCounterWeight' accessType='initializeOnly' type='SFFloat' value='1.0'/>
-          <field name='MassProjectileWeight' accessType='initializeOnly' type='SFFloat' value='1.0'/>
-          <field name='transparent' accessType='outputOnly' type='SFVec3f'/>
-          <field name='value_changed' accessType='outputOnly' type='SFVec3f'/>
+          <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+          <field accessType='inputOnly' name='set_MassCounterWeight' type='SFFloat'/>
+          <field accessType='inputOnly' name='set_MassProjectileWeight' type='SFFloat'/>
+          <field accessType='initializeOnly' name='MassCounterWeight' type='SFFloat' value='1.0'/>
+          <field accessType='initializeOnly' name='MassProjectileWeight' type='SFFloat' value='1.0'/>
+          <field accessType='outputOnly' name='transparent' type='SFVec3f'/>
+          <field accessType='outputOnly' name='value_changed' type='SFVec3f'/>
 <![CDATA[
 ecmascript:
 
@@ -646,15 +657,15 @@ function set_fraction ( fraction, eventTime )
     <ROUTE fromField='isActive' fromNode='Launch' toField='set_boolean' toNode='PigdogMonkScript'/>
     <ROUTE fromField='touchTime' fromNode='Launch' toField='set_startTime' toNode='PigDogSound'/>
     <ROUTE fromField='touchTime' fromNode='Launch' toField='set_startTime' toNode='MonkSound'/>
-    <ROUTE fromField='whichchoice' fromNode='PigdogMonkScript' toField='set_whichChoice' toNode='PigdogMonk'/>
+    <ROUTE fromField='whichchoice' fromNode='PigdogMonkScript' toField='whichChoice' toNode='PigdogMonk'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='HolyHandGrenadeSound'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='CowSound'/>
     <ROUTE fromField='touchTime' fromNode='LauncheeChoice' toField='set_startTime' toNode='HamsterSound'/>
     <ROUTE fromField='isActive' fromNode='LauncheeChoice' toField='set_boolean' toNode='LauncheeScript'/>
-    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='set_whichChoice' toNode='projectile'/>
-    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='set_whichChoice' toNode='projectilename'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectile'/>
+    <ROUTE fromField='whichchoice' fromNode='LauncheeScript' toField='whichChoice' toNode='projectilename'/>
     <ROUTE fromField='isActive' fromNode='weightselector' toField='set_boolean' toNode='WeightScript'/>
-    <ROUTE fromField='whichchoice' fromNode='WeightScript' toField='set_whichChoice' toNode='Weight'/>
+    <ROUTE fromField='whichchoice' fromNode='WeightScript' toField='whichChoice' toNode='Weight'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='flingerangles'/>
     <ROUTE fromField='value_changed' fromNode='flingerangles' toField='set_rotation' toNode='flinger'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='verticalweightpath'/>

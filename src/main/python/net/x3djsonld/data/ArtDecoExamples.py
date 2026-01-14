@@ -729,7 +729,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 fontStyle=FontStyle(USE='Style')))])])])]),
     ROUTE(fromField='fraction_changed',fromNode='Close_Time',toField='set_fraction',toNode='Close_Mover'),
     ROUTE(fromField='value_changed',fromNode='Close_Mover',toField='set_translation',toNode='Close_travel')])
-) # X3D model complete
+)
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

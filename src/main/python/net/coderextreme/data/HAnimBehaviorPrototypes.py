@@ -9903,6 +9903,7 @@ ProtoInstance1811.fieldValue.append(fieldValue1814)
 fieldValue1815 = x3d.fieldValue()
 fieldValue1815.name = "hAnimBehaviorNodes"
 ProtoInstance1816 = x3d.ProtoInstance()
+ProtoInstance1816.name = "HAnimBehavior"
 ProtoInstance1816.USE = "BehaviorTest1"
 
 fieldValue1815.children.append(ProtoInstance1816)
@@ -9920,6 +9921,9 @@ X3D0.Scene = Scene18
 f = open("../data/HAnimBehaviorPrototypes.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/HAnimBehaviorPrototypes.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/HAnimBehaviorPrototypes.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/HAnimBehaviorPrototypes.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

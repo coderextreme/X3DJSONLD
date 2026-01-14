@@ -65,51 +65,61 @@ Group13.children.append(TimeSensor14)
 PositionInterpolator15 = x3d.PositionInterpolator()
 PositionInterpolator15.DEF = "BubblePath1"
 PositionInterpolator15.key = [0,0.5,0.8,0.9,1]
+PositionInterpolator15.keyValue = [(0, 0, 0),(0.75, 0.75, 0.75),(0.86, 0.86, 0.86),(0.99, 0.998, 0.9876),(1.272, 1.9044, 0.9509)]
 
 Group13.children.append(PositionInterpolator15)
 PositionInterpolator16 = x3d.PositionInterpolator()
 PositionInterpolator16.DEF = "BubblePath2"
 PositionInterpolator16.key = [0,0.3,0.64,0.85,1]
+PositionInterpolator16.keyValue = [(0.1, 0.1, 0.1),(0.2, 0.4, 0.25),(0.3, 0.5, 0.46),(0.75, 0.5, 0.575),(0.038483478, 1.989, 1.098373)]
 
 Group13.children.append(PositionInterpolator16)
 PositionInterpolator17 = x3d.PositionInterpolator()
 PositionInterpolator17.DEF = "BubblePath3"
 PositionInterpolator17.key = [0,0.1,0.45,0.7,1]
+PositionInterpolator17.keyValue = [(0.01, 0.01, 0.01),(0.25, 0.35, 0.0045),(0.55, 0.6, 0.0055),(0.66, 0.665, 0.00655),(1.555, 1.09043, 0.005734)]
 
 Group13.children.append(PositionInterpolator17)
 PositionInterpolator18 = x3d.PositionInterpolator()
 PositionInterpolator18.DEF = "BubblePath4"
 PositionInterpolator18.key = [0,0.5,0.6,0.8,1]
+PositionInterpolator18.keyValue = [(0, 0, 0),(0.5, 0.5, 0.005),(0.6, 0.6, 0.006),(0.75, 0.75, 0.0075),(1.948594, 1.3983, 0.009009349)]
 
 Group13.children.append(PositionInterpolator18)
 PositionInterpolator19 = x3d.PositionInterpolator()
 PositionInterpolator19.DEF = "BubblePath5"
 PositionInterpolator19.key = [0,0.25,0.35,0.65,1]
+PositionInterpolator19.keyValue = [(0, 0, 0),(0.5, 0.5, 0.005),(0.6, 0.6, 0.006),(0.75, 0.75, 0.0075),(1.84444, 1.22222, 0.1)]
 
 Group13.children.append(PositionInterpolator19)
 PositionInterpolator20 = x3d.PositionInterpolator()
 PositionInterpolator20.DEF = "BubblePath6"
 PositionInterpolator20.key = [0,0.15,0.22235,0.55565,1]
+PositionInterpolator20.keyValue = [(0, 0, 0),(0.235, 0.3455, 0.0055),(0.356, 0.676, 0.00456),(0.5675, 0.75, 0.0074565),(1.098, 1.0343, 0.14)]
 
 Group13.children.append(PositionInterpolator20)
 PositionInterpolator21 = x3d.PositionInterpolator()
 PositionInterpolator21.DEF = "BubblePath7"
 PositionInterpolator21.key = [0,0.2425,0.4535,0.6775,1]
+PositionInterpolator21.keyValue = [(0, 0, 0),(0.12345, 0.2225, 0.00335),(0.786, 0.456, 0.00666),(0.74555, 0.7335, 0.00234575),(0.08787, 1.022, 0.12)]
 
 Group13.children.append(PositionInterpolator21)
 PositionInterpolator22 = x3d.PositionInterpolator()
 PositionInterpolator22.DEF = "BubblePath8"
 PositionInterpolator22.key = [0,0.1125,0.5535,0.97865,1]
+PositionInterpolator22.keyValue = [(0, 0, 0),(0.1235, 0.05, 0.00125),(0.5666, 0.4346, 0.005556),(0.8975, 0.34575, 0.0098775),(1.8787, 1.686, 0.86)]
 
 Group13.children.append(PositionInterpolator22)
 PositionInterpolator23 = x3d.PositionInterpolator()
 PositionInterpolator23.DEF = "BubblePath9"
 PositionInterpolator23.key = [0,0.0025,0.035,0.65,1]
+PositionInterpolator23.keyValue = [(0, 0, 0),(0.522, 0.5445, 0.0057),(0.6543, 0.226, 0.0055),(0.45575, 0.4375, 0.0067),(1.8787, 2, 0.1545)]
 
 Group13.children.append(PositionInterpolator23)
 PositionInterpolator24 = x3d.PositionInterpolator()
 PositionInterpolator24.DEF = "BubblePath10"
 PositionInterpolator24.key = [0,0.00025,0.035,0.6895,1]
+PositionInterpolator24.keyValue = [(0, 0, 0),(0.8765, 0.445, 0.00335),(0.3336, 0.4446, 0.005556),(0.765, 0.75, 0.0075),(1, 1, 0.1)]
 
 Group13.children.append(PositionInterpolator24)
 Transform25 = x3d.Transform()
@@ -450,6 +460,7 @@ Transform12.children.append(Group13)
 
 Scene10.children.append(Transform12)
 Background96 = x3d.Background()
+Background96.skyColor = [(0, 0, 0.6)]
 
 Scene10.children.append(Background96)
 
@@ -457,6 +468,9 @@ X3D0.Scene = Scene10
 f = open("../data/Bubbles.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/Bubbles.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/Bubbles.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/Bubbles.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

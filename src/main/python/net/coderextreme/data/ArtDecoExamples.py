@@ -349,6 +349,7 @@ Transform56.DEF = "Close_travel"
 PositionInterpolator57 = x3d.PositionInterpolator()
 PositionInterpolator57.DEF = "Close_Mover"
 PositionInterpolator57.key = [0,0.25,0.5,0.75,1]
+PositionInterpolator57.keyValue = [(0, 2.5, 0),(0, 0, 0),(0, -2.5, 0),(0, 0, 0),(0, 2.5, 0)]
 
 Transform56.children.append(PositionInterpolator57)
 TimeSensor58 = x3d.TimeSensor()
@@ -2409,6 +2410,9 @@ X3D0.Scene = Scene13
 f = open("../data/ArtDecoExamples.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/ArtDecoExamples.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/ArtDecoExamples.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/ArtDecoExamples.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

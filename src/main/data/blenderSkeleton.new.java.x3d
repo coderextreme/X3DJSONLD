@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='HAnim' level='3'/>
+    <component level='3' name='HAnim'/>
     <meta content='blenderSkeleton.x3d' name='title'/>
     <meta content='2023' name='copyright'/>
     <meta content='http://www.web3D.org' name='reference'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -35,7 +35,7 @@
     </Transform>
     <Transform DEF='Armature_TRANSFORM'>
       <HAnimHumanoid DEF='hanim_humanoid' name='humanoid' version='2.0'>
-        <HAnimJoint DEF='hanim_Armature' name='Armature'>
+        <HAnimJoint DEF='hanim_Armature' containerField='skeleton' name='Armature'>
           <HAnimSegment DEF='hanim_SEGMENT_FOR_Armature' name='SEGMENT_FOR_Armature'>
             <TouchSensor description='joint Armature segment SEGMENT_FOR_Armature'/>
             <Transform>
@@ -47,7 +47,7 @@
               </Transform>
             </HAnimSite>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_sacrum' name='sacrum' center='-2.0E-4 -0.1178 0.8174'>
+          <HAnimJoint DEF='hanim_sacrum' center='-2.0E-4 -0.1178 0.8174' name='sacrum'>
             <HAnimSegment DEF='hanim_SEGMENT_FOR_sacrum' name='SEGMENT_FOR_sacrum'>
               <TouchSensor description='joint sacrum segment SEGMENT_FOR_sacrum'/>
               <Transform translation='-2.0E-4 -0.1178 0.8174'>
@@ -59,7 +59,7 @@
                 </Transform>
               </HAnimSite>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_pelvis' name='pelvis' center='-2.0E-4 -0.1178 0.6986'>
+            <HAnimJoint DEF='hanim_pelvis' center='-2.0E-4 -0.1178 0.6986' name='pelvis'>
               <HAnimSegment DEF='hanim_SEGMENT_FOR_pelvis' name='SEGMENT_FOR_pelvis'>
                 <TouchSensor description='joint pelvis segment SEGMENT_FOR_pelvis'/>
                 <Transform translation='-2.0E-4 -0.1178 0.6986'>
@@ -71,7 +71,7 @@
                   </Transform>
                 </HAnimSite>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_thigh' name='l_thigh' center='0.0945 -0.1202 0.8181'>
+              <HAnimJoint DEF='hanim_l_thigh' center='0.0945 -0.1202 0.8181' name='l_thigh'>
                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_thigh' name='SEGMENT_FOR_l_thigh'>
                   <TouchSensor description='joint l_thigh segment SEGMENT_FOR_l_thigh'/>
                   <Transform translation='0.0945 -0.1202 0.8181'>
@@ -83,7 +83,7 @@
                     </Transform>
                   </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_calf' name='l_calf' center='0.0924 -0.1213 0.4003'>
+                <HAnimJoint DEF='hanim_l_calf' center='0.0924 -0.1213 0.4003' name='l_calf'>
                   <HAnimSegment DEF='hanim_SEGMENT_FOR_l_calf' name='SEGMENT_FOR_l_calf'>
                     <TouchSensor description='joint l_calf segment SEGMENT_FOR_l_calf'/>
                     <Transform translation='0.0924 -0.1213 0.4003'>
@@ -95,7 +95,7 @@
                       </Transform>
                     </HAnimSite>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_talus' name='l_talus' center='0.0886 -0.1123 0.0869'>
+                  <HAnimJoint DEF='hanim_l_talus' center='0.0886 -0.1123 0.0869' name='l_talus'>
                     <HAnimSegment DEF='hanim_SEGMENT_FOR_l_talus' name='SEGMENT_FOR_l_talus'>
                       <TouchSensor description='joint l_talus segment SEGMENT_FOR_l_talus'/>
                       <Transform translation='0.0886 -0.1123 0.0869'>
@@ -107,7 +107,7 @@
                         </Transform>
                       </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_navicular' name='l_navicular' center='0.0781 -0.097 0.0283'>
+                    <HAnimJoint DEF='hanim_l_navicular' center='0.0781 -0.097 0.0283' name='l_navicular'>
                       <HAnimSegment DEF='hanim_SEGMENT_FOR_l_navicular' name='SEGMENT_FOR_l_navicular'>
                         <TouchSensor description='joint l_navicular segment SEGMENT_FOR_l_navicular'/>
                         <Transform translation='0.0781 -0.097 0.0283'>
@@ -119,7 +119,7 @@
                           </Transform>
                         </HAnimSite>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_cuneiform_1' name='l_cuneiform_1' center='0.0672 -0.0835 0.0235'>
+                      <HAnimJoint DEF='hanim_l_cuneiform_1' center='0.0672 -0.0835 0.0235' name='l_cuneiform_1'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuneiform_1' name='SEGMENT_FOR_l_cuneiform_1'>
                           <TouchSensor description='joint l_cuneiform_1 segment SEGMENT_FOR_l_cuneiform_1'/>
                           <Transform translation='0.0672 -0.0835 0.0235'>
@@ -131,7 +131,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_metatarsal_1' name='l_metatarsal_1' center='0.0644 -0.0577 0.0147'>
+                        <HAnimJoint DEF='hanim_l_metatarsal_1' center='0.0644 -0.0577 0.0147' name='l_metatarsal_1'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_1' name='SEGMENT_FOR_l_metatarsal_1'>
                             <TouchSensor description='joint l_metatarsal_1 segment SEGMENT_FOR_l_metatarsal_1'/>
                             <Transform translation='0.0644 -0.0577 0.0147'>
@@ -143,7 +143,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1' center='0.0619 -0.0083 0.0059'>
+                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_1' center='0.0619 -0.0083 0.0059' name='l_tarsal_proximal_phalanx_1'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_1' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_1'>
                               <TouchSensor description='joint l_tarsal_proximal_phalanx_1 segment SEGMENT_FOR_l_tarsal_proximal_phalanx_1'/>
                               <Transform translation='0.0619 -0.0083 0.0059'>
@@ -171,7 +171,7 @@
                           </HAnimJoint>
                         </HAnimJoint>
                       </HAnimJoint>
-                      <HAnimJoint DEF='hanim_l_cuneiform_2' name='l_cuneiform_2' center='0.0812 -0.0805 0.025'>
+                      <HAnimJoint DEF='hanim_l_cuneiform_2' center='0.0812 -0.0805 0.025' name='l_cuneiform_2'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuneiform_2' name='SEGMENT_FOR_l_cuneiform_2'>
                           <TouchSensor description='joint l_cuneiform_2 segment SEGMENT_FOR_l_cuneiform_2'/>
                           <Transform translation='0.0812 -0.0805 0.025'>
@@ -183,7 +183,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_metatarsal_2' name='l_metatarsal_2' center='0.08 -0.0608 0.0175'>
+                        <HAnimJoint DEF='hanim_l_metatarsal_2' center='0.08 -0.0608 0.0175' name='l_metatarsal_2'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_2' name='SEGMENT_FOR_l_metatarsal_2'>
                             <TouchSensor description='joint l_metatarsal_2 segment SEGMENT_FOR_l_metatarsal_2'/>
                             <Transform translation='0.08 -0.0608 0.0175'>
@@ -195,7 +195,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2' center='0.0824 -0.004 0.0064'>
+                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_2' center='0.0824 -0.004 0.0064' name='l_tarsal_proximal_phalanx_2'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_2' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_2'>
                               <TouchSensor description='joint l_tarsal_proximal_phalanx_2 segment SEGMENT_FOR_l_tarsal_proximal_phalanx_2'/>
                               <Transform translation='0.0824 -0.004 0.0064'>
@@ -207,7 +207,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2' center='0.0841 0.0121 0.0041'>
+                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_2' center='0.0841 0.0121 0.0041' name='l_tarsal_middle_phalanx_2'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_2' name='SEGMENT_FOR_l_tarsal_middle_phalanx_2'>
                                 <TouchSensor description='joint l_tarsal_middle_phalanx_2 segment SEGMENT_FOR_l_tarsal_middle_phalanx_2'/>
                                 <Transform translation='0.0841 0.0121 0.0041'>
@@ -219,7 +219,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_2' name='l_tarsal_distal_phalanx_2' center='0.0841 0.0216 0.0013'>
+                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_2' center='0.0841 0.0216 0.0013' name='l_tarsal_distal_phalanx_2'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_2' name='SEGMENT_FOR_l_tarsal_distal_phalanx_2'>
                                   <TouchSensor description='joint l_tarsal_distal_phalanx_2 segment SEGMENT_FOR_l_tarsal_distal_phalanx_2'/>
                                   <Transform translation='0.0841 0.0216 0.0013'>
@@ -236,7 +236,7 @@
                           </HAnimJoint>
                         </HAnimJoint>
                       </HAnimJoint>
-                      <HAnimJoint DEF='hanim_l_cuneiform_3' name='l_cuneiform_3' center='0.0928 -0.0821 0.0248'>
+                      <HAnimJoint DEF='hanim_l_cuneiform_3' center='0.0928 -0.0821 0.0248' name='l_cuneiform_3'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuneiform_3' name='SEGMENT_FOR_l_cuneiform_3'>
                           <TouchSensor description='joint l_cuneiform_3 segment SEGMENT_FOR_l_cuneiform_3'/>
                           <Transform translation='0.0928 -0.0821 0.0248'>
@@ -248,7 +248,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_metatarsal_3' name='l_metatarsal_3' center='0.0944 -0.0625 0.0175'>
+                        <HAnimJoint DEF='hanim_l_metatarsal_3' center='0.0944 -0.0625 0.0175' name='l_metatarsal_3'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_3' name='SEGMENT_FOR_l_metatarsal_3'>
                             <TouchSensor description='joint l_metatarsal_3 segment SEGMENT_FOR_l_metatarsal_3'/>
                             <Transform translation='0.0944 -0.0625 0.0175'>
@@ -260,7 +260,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3' center='0.0963 -0.0065 0.0065'>
+                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_3' center='0.0963 -0.0065 0.0065' name='l_tarsal_proximal_phalanx_3'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_3' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_3'>
                               <TouchSensor description='joint l_tarsal_proximal_phalanx_3 segment SEGMENT_FOR_l_tarsal_proximal_phalanx_3'/>
                               <Transform translation='0.0963 -0.0065 0.0065'>
@@ -272,7 +272,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3' center='0.0987 0.0086 0.0034'>
+                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_3' center='0.0987 0.0086 0.0034' name='l_tarsal_middle_phalanx_3'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_3' name='SEGMENT_FOR_l_tarsal_middle_phalanx_3'>
                                 <TouchSensor description='joint l_tarsal_middle_phalanx_3 segment SEGMENT_FOR_l_tarsal_middle_phalanx_3'/>
                                 <Transform translation='0.0987 0.0086 0.0034'>
@@ -284,7 +284,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_3' name='l_tarsal_distal_phalanx_3' center='0.1002 0.0178 0.0013'>
+                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_3' center='0.1002 0.0178 0.0013' name='l_tarsal_distal_phalanx_3'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_3' name='SEGMENT_FOR_l_tarsal_distal_phalanx_3'>
                                   <TouchSensor description='joint l_tarsal_distal_phalanx_3 segment SEGMENT_FOR_l_tarsal_distal_phalanx_3'/>
                                   <Transform translation='0.1002 0.0178 0.0013'>
@@ -302,7 +302,7 @@
                         </HAnimJoint>
                       </HAnimJoint>
                     </HAnimJoint>
-                    <HAnimJoint DEF='hanim_l_calcaneus' name='l_calcaneus' center='0.0889 -0.1278 0.0494'>
+                    <HAnimJoint DEF='hanim_l_calcaneus' center='0.0889 -0.1278 0.0494' name='l_calcaneus'>
                       <HAnimSegment DEF='hanim_SEGMENT_FOR_l_calcaneus' name='SEGMENT_FOR_l_calcaneus'>
                         <TouchSensor description='joint l_calcaneus segment SEGMENT_FOR_l_calcaneus'/>
                         <Transform translation='0.0889 -0.1278 0.0494'>
@@ -314,7 +314,7 @@
                           </Transform>
                         </HAnimSite>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_cuboid' name='l_cuboid' center='0.1105 -0.0998 0.0267'>
+                      <HAnimJoint DEF='hanim_l_cuboid' center='0.1105 -0.0998 0.0267' name='l_cuboid'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_l_cuboid' name='SEGMENT_FOR_l_cuboid'>
                           <TouchSensor description='joint l_cuboid segment SEGMENT_FOR_l_cuboid'/>
                           <Transform translation='0.1105 -0.0998 0.0267'>
@@ -326,7 +326,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_metatarsal_4' name='l_metatarsal_4' center='0.1063 -0.0634 0.016'>
+                        <HAnimJoint DEF='hanim_l_metatarsal_4' center='0.1063 -0.0634 0.016' name='l_metatarsal_4'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_4' name='SEGMENT_FOR_l_metatarsal_4'>
                             <TouchSensor description='joint l_metatarsal_4 segment SEGMENT_FOR_l_metatarsal_4'/>
                             <Transform translation='0.1063 -0.0634 0.016'>
@@ -338,7 +338,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4' center='0.1097 -0.0107 0.0058'>
+                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_4' center='0.1097 -0.0107 0.0058' name='l_tarsal_proximal_phalanx_4'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_4' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_4'>
                               <TouchSensor description='joint l_tarsal_proximal_phalanx_4 segment SEGMENT_FOR_l_tarsal_proximal_phalanx_4'/>
                               <Transform translation='0.1097 -0.0107 0.0058'>
@@ -350,7 +350,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4' center='0.114 0.0044 0.0037'>
+                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_4' center='0.114 0.0044 0.0037' name='l_tarsal_middle_phalanx_4'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_4' name='SEGMENT_FOR_l_tarsal_middle_phalanx_4'>
                                 <TouchSensor description='joint l_tarsal_middle_phalanx_4 segment SEGMENT_FOR_l_tarsal_middle_phalanx_4'/>
                                 <Transform translation='0.114 0.0044 0.0037'>
@@ -362,7 +362,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_4' name='l_tarsal_distal_phalanx_4' center='0.1155 0.0118 8.0E-4'>
+                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_4' center='0.1155 0.0118 8.0E-4' name='l_tarsal_distal_phalanx_4'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_4' name='SEGMENT_FOR_l_tarsal_distal_phalanx_4'>
                                   <TouchSensor description='joint l_tarsal_distal_phalanx_4 segment SEGMENT_FOR_l_tarsal_distal_phalanx_4'/>
                                   <Transform translation='0.1155 0.0118 8.0E-4'>
@@ -378,7 +378,7 @@
                             </HAnimJoint>
                           </HAnimJoint>
                         </HAnimJoint>
-                        <HAnimJoint DEF='hanim_l_metatarsal_5' name='l_metatarsal_5' center='0.1206 -0.0671 0.0124'>
+                        <HAnimJoint DEF='hanim_l_metatarsal_5' center='0.1206 -0.0671 0.0124' name='l_metatarsal_5'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metatarsal_5' name='SEGMENT_FOR_l_metatarsal_5'>
                             <TouchSensor description='joint l_metatarsal_5 segment SEGMENT_FOR_l_metatarsal_5'/>
                             <Transform translation='0.1206 -0.0671 0.0124'>
@@ -390,7 +390,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5' center='0.1239 -0.0153 0.0051'>
+                          <HAnimJoint DEF='hanim_l_tarsal_proximal_phalanx_5' center='0.1239 -0.0153 0.0051' name='l_tarsal_proximal_phalanx_5'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_proximal_phalanx_5' name='SEGMENT_FOR_l_tarsal_proximal_phalanx_5'>
                               <TouchSensor description='joint l_tarsal_proximal_phalanx_5 segment SEGMENT_FOR_l_tarsal_proximal_phalanx_5'/>
                               <Transform translation='0.1239 -0.0153 0.0051'>
@@ -402,7 +402,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5' center='0.1262 -0.0077 0.0023'>
+                            <HAnimJoint DEF='hanim_l_tarsal_middle_phalanx_5' center='0.1262 -0.0077 0.0023' name='l_tarsal_middle_phalanx_5'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_middle_phalanx_5' name='SEGMENT_FOR_l_tarsal_middle_phalanx_5'>
                                 <TouchSensor description='joint l_tarsal_middle_phalanx_5 segment SEGMENT_FOR_l_tarsal_middle_phalanx_5'/>
                                 <Transform translation='0.1262 -0.0077 0.0023'>
@@ -414,7 +414,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_5' name='l_tarsal_distal_phalanx_5' center='0.1271 0 0'>
+                              <HAnimJoint DEF='hanim_l_tarsal_distal_phalanx_5' center='0.1271 0 0' name='l_tarsal_distal_phalanx_5'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_tarsal_distal_phalanx_5' name='SEGMENT_FOR_l_tarsal_distal_phalanx_5'>
                                   <TouchSensor description='joint l_tarsal_distal_phalanx_5 segment SEGMENT_FOR_l_tarsal_distal_phalanx_5'/>
                                   <Transform translation='0.1271 0 0'>
@@ -435,7 +435,7 @@
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
-              <HAnimJoint DEF='hanim_r_thigh' name='r_thigh' center='-0.0948 -0.1202 0.8181'>
+              <HAnimJoint DEF='hanim_r_thigh' center='-0.0948 -0.1202 0.8181' name='r_thigh'>
                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_thigh' name='SEGMENT_FOR_r_thigh'>
                   <TouchSensor description='joint r_thigh segment SEGMENT_FOR_r_thigh'/>
                   <Transform translation='-0.0948 -0.1202 0.8181'>
@@ -447,7 +447,7 @@
                     </Transform>
                   </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_calf' name='r_calf' center='-0.0928 -0.1213 0.4003'>
+                <HAnimJoint DEF='hanim_r_calf' center='-0.0928 -0.1213 0.4003' name='r_calf'>
                   <HAnimSegment DEF='hanim_SEGMENT_FOR_r_calf' name='SEGMENT_FOR_r_calf'>
                     <TouchSensor description='joint r_calf segment SEGMENT_FOR_r_calf'/>
                     <Transform translation='-0.0928 -0.1213 0.4003'>
@@ -459,7 +459,7 @@
                       </Transform>
                     </HAnimSite>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_talus' name='r_talus' center='-0.0886 -0.1123 0.0869'>
+                  <HAnimJoint DEF='hanim_r_talus' center='-0.0886 -0.1123 0.0869' name='r_talus'>
                     <HAnimSegment DEF='hanim_SEGMENT_FOR_r_talus' name='SEGMENT_FOR_r_talus'>
                       <TouchSensor description='joint r_talus segment SEGMENT_FOR_r_talus'/>
                       <Transform translation='-0.0886 -0.1123 0.0869'>
@@ -471,7 +471,7 @@
                         </Transform>
                       </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_navicular' name='r_navicular' center='-0.0781 -0.097 0.0283'>
+                    <HAnimJoint DEF='hanim_r_navicular' center='-0.0781 -0.097 0.0283' name='r_navicular'>
                       <HAnimSegment DEF='hanim_SEGMENT_FOR_r_navicular' name='SEGMENT_FOR_r_navicular'>
                         <TouchSensor description='joint r_navicular segment SEGMENT_FOR_r_navicular'/>
                         <Transform translation='-0.0781 -0.097 0.0283'>
@@ -483,7 +483,7 @@
                           </Transform>
                         </HAnimSite>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_cuneiform_1' name='r_cuneiform_1' center='-0.0672 -0.0835 0.0235'>
+                      <HAnimJoint DEF='hanim_r_cuneiform_1' center='-0.0672 -0.0835 0.0235' name='r_cuneiform_1'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuneiform_1' name='SEGMENT_FOR_r_cuneiform_1'>
                           <TouchSensor description='joint r_cuneiform_1 segment SEGMENT_FOR_r_cuneiform_1'/>
                           <Transform translation='-0.0672 -0.0835 0.0235'>
@@ -495,7 +495,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_metatarsal_1' name='r_metatarsal_1' center='-0.0644 -0.0577 0.0147'>
+                        <HAnimJoint DEF='hanim_r_metatarsal_1' center='-0.0644 -0.0577 0.0147' name='r_metatarsal_1'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_1' name='SEGMENT_FOR_r_metatarsal_1'>
                             <TouchSensor description='joint r_metatarsal_1 segment SEGMENT_FOR_r_metatarsal_1'/>
                             <Transform translation='-0.0644 -0.0577 0.0147'>
@@ -507,7 +507,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1' center='-0.0619 -0.0083 0.0059'>
+                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_1' center='-0.0619 -0.0083 0.0059' name='r_tarsal_proximal_phalanx_1'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_1' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_1'>
                               <TouchSensor description='joint r_tarsal_proximal_phalanx_1 segment SEGMENT_FOR_r_tarsal_proximal_phalanx_1'/>
                               <Transform translation='-0.0619 -0.0083 0.0059'>
@@ -535,7 +535,7 @@
                           </HAnimJoint>
                         </HAnimJoint>
                       </HAnimJoint>
-                      <HAnimJoint DEF='hanim_r_cuneiform_2' name='r_cuneiform_2' center='-0.0812 -0.0805 0.025'>
+                      <HAnimJoint DEF='hanim_r_cuneiform_2' center='-0.0812 -0.0805 0.025' name='r_cuneiform_2'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuneiform_2' name='SEGMENT_FOR_r_cuneiform_2'>
                           <TouchSensor description='joint r_cuneiform_2 segment SEGMENT_FOR_r_cuneiform_2'/>
                           <Transform translation='-0.0812 -0.0805 0.025'>
@@ -547,7 +547,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_metatarsal_2' name='r_metatarsal_2' center='-0.08 -0.0608 0.0175'>
+                        <HAnimJoint DEF='hanim_r_metatarsal_2' center='-0.08 -0.0608 0.0175' name='r_metatarsal_2'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_2' name='SEGMENT_FOR_r_metatarsal_2'>
                             <TouchSensor description='joint r_metatarsal_2 segment SEGMENT_FOR_r_metatarsal_2'/>
                             <Transform translation='-0.08 -0.0608 0.0175'>
@@ -559,7 +559,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2' center='-0.0823 -0.004 0.0064'>
+                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_2' center='-0.0823 -0.004 0.0064' name='r_tarsal_proximal_phalanx_2'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_2' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_2'>
                               <TouchSensor description='joint r_tarsal_proximal_phalanx_2 segment SEGMENT_FOR_r_tarsal_proximal_phalanx_2'/>
                               <Transform translation='-0.0823 -0.004 0.0064'>
@@ -571,7 +571,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2' center='-0.0841 0.0121 0.0041'>
+                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_2' center='-0.0841 0.0121 0.0041' name='r_tarsal_middle_phalanx_2'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_2' name='SEGMENT_FOR_r_tarsal_middle_phalanx_2'>
                                 <TouchSensor description='joint r_tarsal_middle_phalanx_2 segment SEGMENT_FOR_r_tarsal_middle_phalanx_2'/>
                                 <Transform translation='-0.0841 0.0121 0.0041'>
@@ -583,7 +583,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_2' name='r_tarsal_distal_phalanx_2' center='-0.0841 0.0216 0.0013'>
+                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_2' center='-0.0841 0.0216 0.0013' name='r_tarsal_distal_phalanx_2'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_2' name='SEGMENT_FOR_r_tarsal_distal_phalanx_2'>
                                   <TouchSensor description='joint r_tarsal_distal_phalanx_2 segment SEGMENT_FOR_r_tarsal_distal_phalanx_2'/>
                                   <Transform translation='-0.0841 0.0216 0.0013'>
@@ -600,7 +600,7 @@
                           </HAnimJoint>
                         </HAnimJoint>
                       </HAnimJoint>
-                      <HAnimJoint DEF='hanim_r_cuneiform_3' name='r_cuneiform_3' center='-0.0928 -0.0821 0.0248'>
+                      <HAnimJoint DEF='hanim_r_cuneiform_3' center='-0.0928 -0.0821 0.0248' name='r_cuneiform_3'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuneiform_3' name='SEGMENT_FOR_r_cuneiform_3'>
                           <TouchSensor description='joint r_cuneiform_3 segment SEGMENT_FOR_r_cuneiform_3'/>
                           <Transform translation='-0.0928 -0.0821 0.0248'>
@@ -612,7 +612,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_metatarsal_3' name='r_metatarsal_3' center='-0.0944 -0.0625 0.0175'>
+                        <HAnimJoint DEF='hanim_r_metatarsal_3' center='-0.0944 -0.0625 0.0175' name='r_metatarsal_3'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_3' name='SEGMENT_FOR_r_metatarsal_3'>
                             <TouchSensor description='joint r_metatarsal_3 segment SEGMENT_FOR_r_metatarsal_3'/>
                             <Transform translation='-0.0944 -0.0625 0.0175'>
@@ -624,7 +624,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3' center='-0.0963 -0.0065 0.0065'>
+                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_3' center='-0.0963 -0.0065 0.0065' name='r_tarsal_proximal_phalanx_3'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_3' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_3'>
                               <TouchSensor description='joint r_tarsal_proximal_phalanx_3 segment SEGMENT_FOR_r_tarsal_proximal_phalanx_3'/>
                               <Transform translation='-0.0963 -0.0065 0.0065'>
@@ -636,7 +636,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3' center='-0.0987 0.0086 0.0034'>
+                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_3' center='-0.0987 0.0086 0.0034' name='r_tarsal_middle_phalanx_3'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_3' name='SEGMENT_FOR_r_tarsal_middle_phalanx_3'>
                                 <TouchSensor description='joint r_tarsal_middle_phalanx_3 segment SEGMENT_FOR_r_tarsal_middle_phalanx_3'/>
                                 <Transform translation='-0.0987 0.0086 0.0034'>
@@ -648,7 +648,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_3' name='r_tarsal_distal_phalanx_3' center='-0.1002 0.0178 0.0013'>
+                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_3' center='-0.1002 0.0178 0.0013' name='r_tarsal_distal_phalanx_3'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_3' name='SEGMENT_FOR_r_tarsal_distal_phalanx_3'>
                                   <TouchSensor description='joint r_tarsal_distal_phalanx_3 segment SEGMENT_FOR_r_tarsal_distal_phalanx_3'/>
                                   <Transform translation='-0.1002 0.0178 0.0013'>
@@ -666,7 +666,7 @@
                         </HAnimJoint>
                       </HAnimJoint>
                     </HAnimJoint>
-                    <HAnimJoint DEF='hanim_r_calcaneus' name='r_calcaneus' center='-0.0889 -0.1278 0.0494'>
+                    <HAnimJoint DEF='hanim_r_calcaneus' center='-0.0889 -0.1278 0.0494' name='r_calcaneus'>
                       <HAnimSegment DEF='hanim_SEGMENT_FOR_r_calcaneus' name='SEGMENT_FOR_r_calcaneus'>
                         <TouchSensor description='joint r_calcaneus segment SEGMENT_FOR_r_calcaneus'/>
                         <Transform translation='-0.0889 -0.1278 0.0494'>
@@ -678,7 +678,7 @@
                           </Transform>
                         </HAnimSite>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_cuboid' name='r_cuboid' center='-0.1105 -0.0998 0.0267'>
+                      <HAnimJoint DEF='hanim_r_cuboid' center='-0.1105 -0.0998 0.0267' name='r_cuboid'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_r_cuboid' name='SEGMENT_FOR_r_cuboid'>
                           <TouchSensor description='joint r_cuboid segment SEGMENT_FOR_r_cuboid'/>
                           <Transform translation='-0.1105 -0.0998 0.0267'>
@@ -690,7 +690,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_metatarsal_4' name='r_metatarsal_4' center='-0.1063 -0.0634 0.016'>
+                        <HAnimJoint DEF='hanim_r_metatarsal_4' center='-0.1063 -0.0634 0.016' name='r_metatarsal_4'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_4' name='SEGMENT_FOR_r_metatarsal_4'>
                             <TouchSensor description='joint r_metatarsal_4 segment SEGMENT_FOR_r_metatarsal_4'/>
                             <Transform translation='-0.1063 -0.0634 0.016'>
@@ -702,7 +702,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4' center='-0.1097 -0.0107 0.0058'>
+                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_4' center='-0.1097 -0.0107 0.0058' name='r_tarsal_proximal_phalanx_4'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_4' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_4'>
                               <TouchSensor description='joint r_tarsal_proximal_phalanx_4 segment SEGMENT_FOR_r_tarsal_proximal_phalanx_4'/>
                               <Transform translation='-0.1097 -0.0107 0.0058'>
@@ -714,7 +714,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4' center='-0.114 0.0044 0.0037'>
+                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_4' center='-0.114 0.0044 0.0037' name='r_tarsal_middle_phalanx_4'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_4' name='SEGMENT_FOR_r_tarsal_middle_phalanx_4'>
                                 <TouchSensor description='joint r_tarsal_middle_phalanx_4 segment SEGMENT_FOR_r_tarsal_middle_phalanx_4'/>
                                 <Transform translation='-0.114 0.0044 0.0037'>
@@ -726,7 +726,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_4' name='r_tarsal_distal_phalanx_4' center='-0.1155 0.0118 8.0E-4'>
+                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_4' center='-0.1155 0.0118 8.0E-4' name='r_tarsal_distal_phalanx_4'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_4' name='SEGMENT_FOR_r_tarsal_distal_phalanx_4'>
                                   <TouchSensor description='joint r_tarsal_distal_phalanx_4 segment SEGMENT_FOR_r_tarsal_distal_phalanx_4'/>
                                   <Transform translation='-0.1155 0.0118 8.0E-4'>
@@ -742,7 +742,7 @@
                             </HAnimJoint>
                           </HAnimJoint>
                         </HAnimJoint>
-                        <HAnimJoint DEF='hanim_r_metatarsal_5' name='r_metatarsal_5' center='-0.1206 -0.0671 0.0124'>
+                        <HAnimJoint DEF='hanim_r_metatarsal_5' center='-0.1206 -0.0671 0.0124' name='r_metatarsal_5'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metatarsal_5' name='SEGMENT_FOR_r_metatarsal_5'>
                             <TouchSensor description='joint r_metatarsal_5 segment SEGMENT_FOR_r_metatarsal_5'/>
                             <Transform translation='-0.1206 -0.0671 0.0124'>
@@ -754,7 +754,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5' center='-0.1239 -0.0153 0.0051'>
+                          <HAnimJoint DEF='hanim_r_tarsal_proximal_phalanx_5' center='-0.1239 -0.0153 0.0051' name='r_tarsal_proximal_phalanx_5'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_proximal_phalanx_5' name='SEGMENT_FOR_r_tarsal_proximal_phalanx_5'>
                               <TouchSensor description='joint r_tarsal_proximal_phalanx_5 segment SEGMENT_FOR_r_tarsal_proximal_phalanx_5'/>
                               <Transform translation='-0.1239 -0.0153 0.0051'>
@@ -766,7 +766,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5' center='-0.1262 -0.0077 0.0023'>
+                            <HAnimJoint DEF='hanim_r_tarsal_middle_phalanx_5' center='-0.1262 -0.0077 0.0023' name='r_tarsal_middle_phalanx_5'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_middle_phalanx_5' name='SEGMENT_FOR_r_tarsal_middle_phalanx_5'>
                                 <TouchSensor description='joint r_tarsal_middle_phalanx_5 segment SEGMENT_FOR_r_tarsal_middle_phalanx_5'/>
                                 <Transform translation='-0.1262 -0.0077 0.0023'>
@@ -778,7 +778,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_5' name='r_tarsal_distal_phalanx_5' center='-0.1271 0 0'>
+                              <HAnimJoint DEF='hanim_r_tarsal_distal_phalanx_5' center='-0.1271 0 0' name='r_tarsal_distal_phalanx_5'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_tarsal_distal_phalanx_5' name='SEGMENT_FOR_r_tarsal_distal_phalanx_5'>
                                   <TouchSensor description='joint r_tarsal_distal_phalanx_5 segment SEGMENT_FOR_r_tarsal_distal_phalanx_5'/>
                                   <Transform translation='-0.1271 0 0'>
@@ -800,7 +800,7 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_l5' name='l5' center='-2.0E-4 -0.1156 0.9169'>
+            <HAnimJoint DEF='hanim_l5' center='-2.0E-4 -0.1156 0.9169' name='l5'>
               <HAnimSegment DEF='hanim_SEGMENT_FOR_l5' name='SEGMENT_FOR_l5'>
                 <TouchSensor description='joint l5 segment SEGMENT_FOR_l5'/>
                 <Transform translation='-2.0E-4 -0.1156 0.9169'>
@@ -812,7 +812,7 @@
                   </Transform>
                 </HAnimSite>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l4' name='l4' center='-2.0E-4 -0.1156 0.9412'>
+              <HAnimJoint DEF='hanim_l4' center='-2.0E-4 -0.1156 0.9412' name='l4'>
                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l4' name='SEGMENT_FOR_l4'>
                   <TouchSensor description='joint l4 segment SEGMENT_FOR_l4'/>
                   <Transform translation='-2.0E-4 -0.1156 0.9412'>
@@ -824,7 +824,7 @@
                     </Transform>
                   </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l3' name='l3' center='-2.0E-4 -0.1156 0.9574'>
+                <HAnimJoint DEF='hanim_l3' center='-2.0E-4 -0.1156 0.9574' name='l3'>
                   <HAnimSegment DEF='hanim_SEGMENT_FOR_l3' name='SEGMENT_FOR_l3'>
                     <TouchSensor description='joint l3 segment SEGMENT_FOR_l3'/>
                     <Transform translation='-2.0E-4 -0.1156 0.9574'>
@@ -836,7 +836,7 @@
                       </Transform>
                     </HAnimSite>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l2' name='l2' center='-2.0E-4 -0.1156 0.9738'>
+                  <HAnimJoint DEF='hanim_l2' center='-2.0E-4 -0.1156 0.9738' name='l2'>
                     <HAnimSegment DEF='hanim_SEGMENT_FOR_l2' name='SEGMENT_FOR_l2'>
                       <TouchSensor description='joint l2 segment SEGMENT_FOR_l2'/>
                       <Transform translation='-2.0E-4 -0.1156 0.9738'>
@@ -848,7 +848,7 @@
                         </Transform>
                       </HAnimSite>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l1' name='l1' center='-2.0E-4 -0.1156 0.9911'>
+                    <HAnimJoint DEF='hanim_l1' center='-2.0E-4 -0.1156 0.9911' name='l1'>
                       <HAnimSegment DEF='hanim_SEGMENT_FOR_l1' name='SEGMENT_FOR_l1'>
                         <TouchSensor description='joint l1 segment SEGMENT_FOR_l1'/>
                         <Transform translation='-2.0E-4 -0.1156 0.9911'>
@@ -860,7 +860,7 @@
                           </Transform>
                         </HAnimSite>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_t12' name='t12' center='-2.0E-4 -0.1156 1.0145'>
+                      <HAnimJoint DEF='hanim_t12' center='-2.0E-4 -0.1156 1.0145' name='t12'>
                         <HAnimSegment DEF='hanim_SEGMENT_FOR_t12' name='SEGMENT_FOR_t12'>
                           <TouchSensor description='joint t12 segment SEGMENT_FOR_t12'/>
                           <Transform translation='-2.0E-4 -0.1156 1.0145'>
@@ -872,7 +872,7 @@
                             </Transform>
                           </HAnimSite>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_t11' name='t11' center='-2.0E-4 -0.1156 1.0381'>
+                        <HAnimJoint DEF='hanim_t11' center='-2.0E-4 -0.1156 1.0381' name='t11'>
                           <HAnimSegment DEF='hanim_SEGMENT_FOR_t11' name='SEGMENT_FOR_t11'>
                             <TouchSensor description='joint t11 segment SEGMENT_FOR_t11'/>
                             <Transform translation='-2.0E-4 -0.1156 1.0381'>
@@ -884,7 +884,7 @@
                               </Transform>
                             </HAnimSite>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_t10' name='t10' center='-2.0E-4 -0.1157 1.0552'>
+                          <HAnimJoint DEF='hanim_t10' center='-2.0E-4 -0.1157 1.0552' name='t10'>
                             <HAnimSegment DEF='hanim_SEGMENT_FOR_t10' name='SEGMENT_FOR_t10'>
                               <TouchSensor description='joint t10 segment SEGMENT_FOR_t10'/>
                               <Transform translation='-2.0E-4 -0.1157 1.0552'>
@@ -896,7 +896,7 @@
                                 </Transform>
                               </HAnimSite>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_t9' name='t9' center='-2.0E-4 -0.1156 1.0699'>
+                            <HAnimJoint DEF='hanim_t9' center='-2.0E-4 -0.1156 1.0699' name='t9'>
                               <HAnimSegment DEF='hanim_SEGMENT_FOR_t9' name='SEGMENT_FOR_t9'>
                                 <TouchSensor description='joint t9 segment SEGMENT_FOR_t9'/>
                                 <Transform translation='-2.0E-4 -0.1156 1.0699'>
@@ -908,7 +908,7 @@
                                   </Transform>
                                 </HAnimSite>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_t8' name='t8' center='-2.0E-4 -0.1156 1.0845'>
+                              <HAnimJoint DEF='hanim_t8' center='-2.0E-4 -0.1156 1.0845' name='t8'>
                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_t8' name='SEGMENT_FOR_t8'>
                                   <TouchSensor description='joint t8 segment SEGMENT_FOR_t8'/>
                                   <Transform translation='-2.0E-4 -0.1156 1.0845'>
@@ -920,7 +920,7 @@
                                     </Transform>
                                   </HAnimSite>
                                 </HAnimSegment>
-                                <HAnimJoint DEF='hanim_t7' name='t7' center='-2.0E-4 -0.1156 1.1002'>
+                                <HAnimJoint DEF='hanim_t7' center='-2.0E-4 -0.1156 1.1002' name='t7'>
                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_t7' name='SEGMENT_FOR_t7'>
                                     <TouchSensor description='joint t7 segment SEGMENT_FOR_t7'/>
                                     <Transform translation='-2.0E-4 -0.1156 1.1002'>
@@ -932,7 +932,7 @@
                                       </Transform>
                                     </HAnimSite>
                                   </HAnimSegment>
-                                  <HAnimJoint DEF='hanim_t6' name='t6' center='-2.0E-4 -0.1156 1.1131'>
+                                  <HAnimJoint DEF='hanim_t6' center='-2.0E-4 -0.1156 1.1131' name='t6'>
                                     <HAnimSegment DEF='hanim_SEGMENT_FOR_t6' name='SEGMENT_FOR_t6'>
                                       <TouchSensor description='joint t6 segment SEGMENT_FOR_t6'/>
                                       <Transform translation='-2.0E-4 -0.1156 1.1131'>
@@ -944,7 +944,7 @@
                                         </Transform>
                                       </HAnimSite>
                                     </HAnimSegment>
-                                    <HAnimJoint DEF='hanim_t5' name='t5' center='-2.0E-4 -0.1156 1.1286'>
+                                    <HAnimJoint DEF='hanim_t5' center='-2.0E-4 -0.1156 1.1286' name='t5'>
                                       <HAnimSegment DEF='hanim_SEGMENT_FOR_t5' name='SEGMENT_FOR_t5'>
                                         <TouchSensor description='joint t5 segment SEGMENT_FOR_t5'/>
                                         <Transform translation='-2.0E-4 -0.1156 1.1286'>
@@ -956,7 +956,7 @@
                                           </Transform>
                                         </HAnimSite>
                                       </HAnimSegment>
-                                      <HAnimJoint DEF='hanim_t4' name='t4' center='-2.0E-4 -0.1156 1.1439'>
+                                      <HAnimJoint DEF='hanim_t4' center='-2.0E-4 -0.1156 1.1439' name='t4'>
                                         <HAnimSegment DEF='hanim_SEGMENT_FOR_t4' name='SEGMENT_FOR_t4'>
                                           <TouchSensor description='joint t4 segment SEGMENT_FOR_t4'/>
                                           <Transform translation='-2.0E-4 -0.1156 1.1439'>
@@ -968,7 +968,7 @@
                                             </Transform>
                                           </HAnimSite>
                                         </HAnimSegment>
-                                        <HAnimJoint DEF='hanim_t3' name='t3' center='-2.0E-4 -0.1156 1.1623'>
+                                        <HAnimJoint DEF='hanim_t3' center='-2.0E-4 -0.1156 1.1623' name='t3'>
                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_t3' name='SEGMENT_FOR_t3'>
                                             <TouchSensor description='joint t3 segment SEGMENT_FOR_t3'/>
                                             <Transform translation='-2.0E-4 -0.1156 1.1623'>
@@ -980,7 +980,7 @@
                                               </Transform>
                                             </HAnimSite>
                                           </HAnimSegment>
-                                          <HAnimJoint DEF='hanim_t2' name='t2' center='-2.0E-4 -0.1157 1.1871'>
+                                          <HAnimJoint DEF='hanim_t2' center='-2.0E-4 -0.1157 1.1871' name='t2'>
                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_t2' name='SEGMENT_FOR_t2'>
                                               <TouchSensor description='joint t2 segment SEGMENT_FOR_t2'/>
                                               <Transform translation='-2.0E-4 -0.1157 1.1871'>
@@ -992,7 +992,7 @@
                                                 </Transform>
                                               </HAnimSite>
                                             </HAnimSegment>
-                                            <HAnimJoint DEF='hanim_t1' name='t1' center='-2.0E-4 -0.1156 1.2109'>
+                                            <HAnimJoint DEF='hanim_t1' center='-2.0E-4 -0.1156 1.2109' name='t1'>
                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_t1' name='SEGMENT_FOR_t1'>
                                                 <TouchSensor description='joint t1 segment SEGMENT_FOR_t1'/>
                                                 <Transform translation='-2.0E-4 -0.1156 1.2109'>
@@ -1004,7 +1004,7 @@
                                                   </Transform>
                                                 </HAnimSite>
                                               </HAnimSegment>
-                                              <HAnimJoint DEF='hanim_c7' name='c7' center='-2.0E-4 -0.1169 1.2368'>
+                                              <HAnimJoint DEF='hanim_c7' center='-2.0E-4 -0.1169 1.2368' name='c7'>
                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_c7' name='SEGMENT_FOR_c7'>
                                                   <TouchSensor description='joint c7 segment SEGMENT_FOR_c7'/>
                                                   <Transform translation='-2.0E-4 -0.1169 1.2368'>
@@ -1016,7 +1016,7 @@
                                                     </Transform>
                                                   </HAnimSite>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_c6' name='c6' center='-2.0E-4 -0.1169 1.249'>
+                                                <HAnimJoint DEF='hanim_c6' center='-2.0E-4 -0.1169 1.249' name='c6'>
                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_c6' name='SEGMENT_FOR_c6'>
                                                     <TouchSensor description='joint c6 segment SEGMENT_FOR_c6'/>
                                                     <Transform translation='-2.0E-4 -0.1169 1.249'>
@@ -1028,7 +1028,7 @@
                                                       </Transform>
                                                     </HAnimSite>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_c5' name='c5' center='-2.0E-4 -0.1169 1.2613'>
+                                                  <HAnimJoint DEF='hanim_c5' center='-2.0E-4 -0.1169 1.2613' name='c5'>
                                                     <HAnimSegment DEF='hanim_SEGMENT_FOR_c5' name='SEGMENT_FOR_c5'>
                                                       <TouchSensor description='joint c5 segment SEGMENT_FOR_c5'/>
                                                       <Transform translation='-2.0E-4 -0.1169 1.2613'>
@@ -1040,7 +1040,7 @@
                                                         </Transform>
                                                       </HAnimSite>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_c4' name='c4' center='-2.0E-4 -0.1169 1.2737'>
+                                                    <HAnimJoint DEF='hanim_c4' center='-2.0E-4 -0.1169 1.2737' name='c4'>
                                                       <HAnimSegment DEF='hanim_SEGMENT_FOR_c4' name='SEGMENT_FOR_c4'>
                                                         <TouchSensor description='joint c4 segment SEGMENT_FOR_c4'/>
                                                         <Transform translation='-2.0E-4 -0.1169 1.2737'>
@@ -1052,7 +1052,7 @@
                                                           </Transform>
                                                         </HAnimSite>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_c3' name='c3' center='-2.0E-4 -0.1169 1.2865'>
+                                                      <HAnimJoint DEF='hanim_c3' center='-2.0E-4 -0.1169 1.2865' name='c3'>
                                                         <HAnimSegment DEF='hanim_SEGMENT_FOR_c3' name='SEGMENT_FOR_c3'>
                                                           <TouchSensor description='joint c3 segment SEGMENT_FOR_c3'/>
                                                           <Transform translation='-2.0E-4 -0.1169 1.2865'>
@@ -1064,7 +1064,7 @@
                                                             </Transform>
                                                           </HAnimSite>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_c2' name='c2' center='-2.0E-4 -0.1169 1.2982'>
+                                                        <HAnimJoint DEF='hanim_c2' center='-2.0E-4 -0.1169 1.2982' name='c2'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_c2' name='SEGMENT_FOR_c2'>
                                                             <TouchSensor description='joint c2 segment SEGMENT_FOR_c2'/>
                                                             <Transform translation='-2.0E-4 -0.1169 1.2982'>
@@ -1076,7 +1076,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_c1' name='c1' center='-2.0E-4 -0.1169 1.3099'>
+                                                          <HAnimJoint DEF='hanim_c1' center='-2.0E-4 -0.1169 1.3099' name='c1'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_c1' name='SEGMENT_FOR_c1'>
                                                               <TouchSensor description='joint c1 segment SEGMENT_FOR_c1'/>
                                                               <Transform translation='-2.0E-4 -0.1169 1.3099'>
@@ -1088,7 +1088,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_skull' name='skull' center='-2.0E-4 -0.1173 1.3041'>
+                                                            <HAnimJoint DEF='hanim_skull' center='-2.0E-4 -0.1173 1.3041' name='skull'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_skull' name='SEGMENT_FOR_skull'>
                                                                 <TouchSensor description='joint skull segment SEGMENT_FOR_skull'/>
                                                                 <Transform translation='-2.0E-4 -0.1173 1.3041'>
@@ -1100,7 +1100,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_eyelid' name='l_eyelid' center='0.0503 -0.0689 1.4157'>
+                                                              <HAnimJoint DEF='hanim_l_eyelid' center='0.0503 -0.0689 1.4157' name='l_eyelid'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_eyelid' name='SEGMENT_FOR_l_eyelid'>
                                                                   <TouchSensor description='joint l_eyelid segment SEGMENT_FOR_l_eyelid'/>
                                                                   <Transform translation='0.0503 -0.0689 1.4157'>
@@ -1113,7 +1113,7 @@
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
                                                               </HAnimJoint>
-                                                              <HAnimJoint DEF='hanim_r_eyelid' name='r_eyelid' center='-0.0507 -0.0689 1.4157'>
+                                                              <HAnimJoint DEF='hanim_r_eyelid' center='-0.0507 -0.0689 1.4157' name='r_eyelid'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_eyelid' name='SEGMENT_FOR_r_eyelid'>
                                                                   <TouchSensor description='joint r_eyelid segment SEGMENT_FOR_r_eyelid'/>
                                                                   <Transform translation='-0.0507 -0.0689 1.4157'>
@@ -1126,7 +1126,7 @@
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
                                                               </HAnimJoint>
-                                                              <HAnimJoint DEF='hanim_l_eyeball' name='l_eyeball' center='0.0479 -0.0188 1.3963'>
+                                                              <HAnimJoint DEF='hanim_l_eyeball' center='0.0479 -0.0188 1.3963' name='l_eyeball'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_eyeball' name='SEGMENT_FOR_l_eyeball'>
                                                                   <TouchSensor description='joint l_eyeball segment SEGMENT_FOR_l_eyeball'/>
                                                                   <Transform translation='0.0479 -0.0188 1.3963'>
@@ -1139,7 +1139,7 @@
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
                                                               </HAnimJoint>
-                                                              <HAnimJoint DEF='hanim_r_eyeball' name='r_eyeball' center='-0.0483 -0.0188 1.3963'>
+                                                              <HAnimJoint DEF='hanim_r_eyeball' center='-0.0483 -0.0188 1.3963' name='r_eyeball'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_eyeball' name='SEGMENT_FOR_r_eyeball'>
                                                                   <TouchSensor description='joint r_eyeball segment SEGMENT_FOR_r_eyeball'/>
                                                                   <Transform translation='-0.0483 -0.0188 1.3963'>
@@ -1152,7 +1152,7 @@
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
                                                               </HAnimJoint>
-                                                              <HAnimJoint DEF='hanim_l_eyebrow' name='l_eyebrow' center='0.0216 0.0051 1.4053'>
+                                                              <HAnimJoint DEF='hanim_l_eyebrow' center='0.0216 0.0051 1.4053' name='l_eyebrow'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_eyebrow' name='SEGMENT_FOR_l_eyebrow'>
                                                                   <TouchSensor description='joint l_eyebrow segment SEGMENT_FOR_l_eyebrow'/>
                                                                   <Transform translation='0.0216 0.0051 1.4053'>
@@ -1165,7 +1165,7 @@
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
                                                               </HAnimJoint>
-                                                              <HAnimJoint DEF='hanim_r_eyebrow' name='r_eyebrow' center='-0.0219 0.0051 1.4053'>
+                                                              <HAnimJoint DEF='hanim_r_eyebrow' center='-0.0219 0.0051 1.4053' name='r_eyebrow'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_eyebrow' name='SEGMENT_FOR_r_eyebrow'>
                                                                   <TouchSensor description='joint r_eyebrow segment SEGMENT_FOR_r_eyebrow'/>
                                                                   <Transform translation='-0.0219 0.0051 1.4053'>
@@ -1178,7 +1178,7 @@
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
                                                               </HAnimJoint>
-                                                              <HAnimJoint DEF='hanim_jaw' name='jaw' center='-2.0E-4 -0.0865 1.3043'>
+                                                              <HAnimJoint DEF='hanim_jaw' center='-2.0E-4 -0.0865 1.3043' name='jaw'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_jaw' name='SEGMENT_FOR_jaw'>
                                                                   <TouchSensor description='joint jaw segment SEGMENT_FOR_jaw'/>
                                                                   <Transform translation='-2.0E-4 -0.0865 1.3043'>
@@ -1199,7 +1199,7 @@
                                                   </HAnimJoint>
                                                 </HAnimJoint>
                                               </HAnimJoint>
-                                              <HAnimJoint DEF='hanim_l_clavicle' name='l_clavicle' center='0.1228 -0.1148 1.1833'>
+                                              <HAnimJoint DEF='hanim_l_clavicle' center='0.1228 -0.1148 1.1833' name='l_clavicle'>
                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_clavicle' name='SEGMENT_FOR_l_clavicle'>
                                                   <TouchSensor description='joint l_clavicle segment SEGMENT_FOR_l_clavicle'/>
                                                   <Transform translation='0.1228 -0.1148 1.1833'>
@@ -1211,7 +1211,7 @@
                                                     </Transform>
                                                   </HAnimSite>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_l_scapula' name='l_scapula' center='0.0383 -0.1157 1.2001'>
+                                                <HAnimJoint DEF='hanim_l_scapula' center='0.0383 -0.1157 1.2001' name='l_scapula'>
                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_l_scapula' name='SEGMENT_FOR_l_scapula'>
                                                     <TouchSensor description='joint l_scapula segment SEGMENT_FOR_l_scapula'/>
                                                     <Transform translation='0.0383 -0.1157 1.2001'>
@@ -1223,7 +1223,7 @@
                                                       </Transform>
                                                     </HAnimSite>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_l_upperarm' name='l_upperarm' center='0.1649 -0.1051 1.17'>
+                                                  <HAnimJoint DEF='hanim_l_upperarm' center='0.1649 -0.1051 1.17' name='l_upperarm'>
                                                     <HAnimSegment DEF='hanim_SEGMENT_FOR_l_upperarm' name='SEGMENT_FOR_l_upperarm'>
                                                       <TouchSensor description='joint l_upperarm segment SEGMENT_FOR_l_upperarm'/>
                                                       <Transform translation='0.1649 -0.1051 1.17'>
@@ -1235,7 +1235,7 @@
                                                         </Transform>
                                                       </HAnimSite>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_l_forearm' name='l_forearm' center='0.1819 -0.1075 0.9202'>
+                                                    <HAnimJoint DEF='hanim_l_forearm' center='0.1819 -0.1075 0.9202' name='l_forearm'>
                                                       <HAnimSegment DEF='hanim_SEGMENT_FOR_l_forearm' name='SEGMENT_FOR_l_forearm'>
                                                         <TouchSensor description='joint l_forearm segment SEGMENT_FOR_l_forearm'/>
                                                         <Transform translation='0.1819 -0.1075 0.9202'>
@@ -1247,7 +1247,7 @@
                                                           </Transform>
                                                         </HAnimSite>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_l_carpal' name='l_carpal' center='0.1818 -0.1069 0.7157'>
+                                                      <HAnimJoint DEF='hanim_l_carpal' center='0.1818 -0.1069 0.7157' name='l_carpal'>
                                                         <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal' name='SEGMENT_FOR_l_carpal'>
                                                           <TouchSensor description='joint l_carpal segment SEGMENT_FOR_l_carpal'/>
                                                           <Transform translation='0.1818 -0.1069 0.7157'>
@@ -1259,7 +1259,7 @@
                                                             </Transform>
                                                           </HAnimSite>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_trapezium' name='l_trapezium' center='0.1811 -0.0826 0.6975'>
+                                                        <HAnimJoint DEF='hanim_l_trapezium' center='0.1811 -0.0826 0.6975' name='l_trapezium'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_trapezium' name='SEGMENT_FOR_l_trapezium'>
                                                             <TouchSensor description='joint l_trapezium segment SEGMENT_FOR_l_trapezium'/>
                                                             <Transform translation='0.1811 -0.0826 0.6975'>
@@ -1271,7 +1271,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpal_1' name='l_metacarpal_1' center='0.1803 -0.0759 0.684'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpal_1' center='0.1803 -0.0759 0.684' name='l_metacarpal_1'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_1' name='SEGMENT_FOR_l_metacarpal_1'>
                                                               <TouchSensor description='joint l_metacarpal_1 segment SEGMENT_FOR_l_metacarpal_1'/>
                                                               <Transform translation='0.1803 -0.0759 0.684'>
@@ -1283,7 +1283,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_1' name='l_carpal_proximal_phalanx_1' center='0.1809 -0.0661 0.6642'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_1' center='0.1809 -0.0661 0.6642' name='l_carpal_proximal_phalanx_1'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_1' name='SEGMENT_FOR_l_carpal_proximal_phalanx_1'>
                                                                 <TouchSensor description='joint l_carpal_proximal_phalanx_1 segment SEGMENT_FOR_l_carpal_proximal_phalanx_1'/>
                                                                 <Transform translation='0.1809 -0.0661 0.6642'>
@@ -1295,7 +1295,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_1' name='l_carpal_distal_phalanx_1' center='0.1825 -0.0522 0.6455'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_1' center='0.1825 -0.0522 0.6455' name='l_carpal_distal_phalanx_1'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_1' name='SEGMENT_FOR_l_carpal_distal_phalanx_1'>
                                                                   <TouchSensor description='joint l_carpal_distal_phalanx_1 segment SEGMENT_FOR_l_carpal_distal_phalanx_1'/>
                                                                   <Transform translation='0.1825 -0.0522 0.6455'>
@@ -1311,7 +1311,7 @@
                                                             </HAnimJoint>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='hanim_l_trapezoid' name='l_trapezoid' center='0.1811 -0.0935 0.6984'>
+                                                        <HAnimJoint DEF='hanim_l_trapezoid' center='0.1811 -0.0935 0.6984' name='l_trapezoid'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_trapezoid' name='SEGMENT_FOR_l_trapezoid'>
                                                             <TouchSensor description='joint l_trapezoid segment SEGMENT_FOR_l_trapezoid'/>
                                                             <Transform translation='0.1811 -0.0935 0.6984'>
@@ -1323,7 +1323,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpal_2' name='l_metacarpal_2' center='0.1811 -0.0922 0.679'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpal_2' center='0.1811 -0.0922 0.679' name='l_metacarpal_2'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_2' name='SEGMENT_FOR_l_metacarpal_2'>
                                                               <TouchSensor description='joint l_metacarpal_2 segment SEGMENT_FOR_l_metacarpal_2'/>
                                                               <Transform translation='0.1811 -0.0922 0.679'>
@@ -1335,7 +1335,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_2' name='l_carpal_proximal_phalanx_2' center='0.1836 -0.0868 0.6286'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_2' center='0.1836 -0.0868 0.6286' name='l_carpal_proximal_phalanx_2'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_2' name='SEGMENT_FOR_l_carpal_proximal_phalanx_2'>
                                                                 <TouchSensor description='joint l_carpal_proximal_phalanx_2 segment SEGMENT_FOR_l_carpal_proximal_phalanx_2'/>
                                                                 <Transform translation='0.1836 -0.0868 0.6286'>
@@ -1347,7 +1347,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_2' name='l_carpal_middle_phalanx_2' center='0.1815 -0.0877 0.5983'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_2' center='0.1815 -0.0877 0.5983' name='l_carpal_middle_phalanx_2'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_2' name='SEGMENT_FOR_l_carpal_middle_phalanx_2'>
                                                                   <TouchSensor description='joint l_carpal_middle_phalanx_2 segment SEGMENT_FOR_l_carpal_middle_phalanx_2'/>
                                                                   <Transform translation='0.1815 -0.0877 0.5983'>
@@ -1359,7 +1359,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_2' name='l_carpal_distal_phalanx_2' center='0.1805 -0.0885 0.5731'>
+                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_2' center='0.1805 -0.0885 0.5731' name='l_carpal_distal_phalanx_2'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_2' name='SEGMENT_FOR_l_carpal_distal_phalanx_2'>
                                                                     <TouchSensor description='joint l_carpal_distal_phalanx_2 segment SEGMENT_FOR_l_carpal_distal_phalanx_2'/>
                                                                     <Transform translation='0.1805 -0.0885 0.5731'>
@@ -1376,7 +1376,7 @@
                                                             </HAnimJoint>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='hanim_l_capitate' name='l_capitate' center='0.1809 -0.1067 0.7'>
+                                                        <HAnimJoint DEF='hanim_l_capitate' center='0.1809 -0.1067 0.7' name='l_capitate'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_capitate' name='SEGMENT_FOR_l_capitate'>
                                                             <TouchSensor description='joint l_capitate segment SEGMENT_FOR_l_capitate'/>
                                                             <Transform translation='0.1809 -0.1067 0.7'>
@@ -1388,7 +1388,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpal_3' name='l_metacarpal_3' center='0.1809 -0.1081 0.6772'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpal_3' center='0.1809 -0.1081 0.6772' name='l_metacarpal_3'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_3' name='SEGMENT_FOR_l_metacarpal_3'>
                                                               <TouchSensor description='joint l_metacarpal_3 segment SEGMENT_FOR_l_metacarpal_3'/>
                                                               <Transform translation='0.1809 -0.1081 0.6772'>
@@ -1400,7 +1400,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_3' name='l_carpal_proximal_phalanx_3' center='0.1835 -0.1058 0.6264'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_3' center='0.1835 -0.1058 0.6264' name='l_carpal_proximal_phalanx_3'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_3' name='SEGMENT_FOR_l_carpal_proximal_phalanx_3'>
                                                                 <TouchSensor description='joint l_carpal_proximal_phalanx_3 segment SEGMENT_FOR_l_carpal_proximal_phalanx_3'/>
                                                                 <Transform translation='0.1835 -0.1058 0.6264'>
@@ -1412,7 +1412,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_3' name='l_carpal_middle_phalanx_3' center='0.1815 -0.1054 0.5947'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_3' center='0.1815 -0.1054 0.5947' name='l_carpal_middle_phalanx_3'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_3' name='SEGMENT_FOR_l_carpal_middle_phalanx_3'>
                                                                   <TouchSensor description='joint l_carpal_middle_phalanx_3 segment SEGMENT_FOR_l_carpal_middle_phalanx_3'/>
                                                                   <Transform translation='0.1815 -0.1054 0.5947'>
@@ -1424,7 +1424,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_3' name='l_carpal_distal_phalanx_3' center='0.1805 -0.1056 0.5668'>
+                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_3' center='0.1805 -0.1056 0.5668' name='l_carpal_distal_phalanx_3'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_3' name='SEGMENT_FOR_l_carpal_distal_phalanx_3'>
                                                                     <TouchSensor description='joint l_carpal_distal_phalanx_3 segment SEGMENT_FOR_l_carpal_distal_phalanx_3'/>
                                                                     <Transform translation='0.1805 -0.1056 0.5668'>
@@ -1441,7 +1441,7 @@
                                                             </HAnimJoint>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='hanim_l_hamate' name='l_hamate' center='0.1809 -0.1276 0.6973'>
+                                                        <HAnimJoint DEF='hanim_l_hamate' center='0.1809 -0.1276 0.6973' name='l_hamate'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_l_hamate' name='SEGMENT_FOR_l_hamate'>
                                                             <TouchSensor description='joint l_hamate segment SEGMENT_FOR_l_hamate'/>
                                                             <Transform translation='0.1809 -0.1276 0.6973'>
@@ -1453,7 +1453,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpal_4' name='l_metacarpal_4' center='0.1809 -0.1218 0.6777'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpal_4' center='0.1809 -0.1218 0.6777' name='l_metacarpal_4'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_4' name='SEGMENT_FOR_l_metacarpal_4'>
                                                               <TouchSensor description='joint l_metacarpal_4 segment SEGMENT_FOR_l_metacarpal_4'/>
                                                               <Transform translation='0.1809 -0.1218 0.6777'>
@@ -1465,7 +1465,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_4' name='l_carpal_proximal_phalanx_4' center='0.1835 -0.1233 0.6255'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_4' center='0.1835 -0.1233 0.6255' name='l_carpal_proximal_phalanx_4'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_4' name='SEGMENT_FOR_l_carpal_proximal_phalanx_4'>
                                                                 <TouchSensor description='joint l_carpal_proximal_phalanx_4 segment SEGMENT_FOR_l_carpal_proximal_phalanx_4'/>
                                                                 <Transform translation='0.1835 -0.1233 0.6255'>
@@ -1477,7 +1477,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_4' name='l_carpal_middle_phalanx_4' center='0.1815 -0.1225 0.598'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_4' center='0.1815 -0.1225 0.598' name='l_carpal_middle_phalanx_4'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_4' name='SEGMENT_FOR_l_carpal_middle_phalanx_4'>
                                                                   <TouchSensor description='joint l_carpal_middle_phalanx_4 segment SEGMENT_FOR_l_carpal_middle_phalanx_4'/>
                                                                   <Transform translation='0.1815 -0.1225 0.598'>
@@ -1489,7 +1489,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_4' name='l_carpal_distal_phalanx_4' center='0.1805 -0.1217 0.5722'>
+                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_4' center='0.1805 -0.1217 0.5722' name='l_carpal_distal_phalanx_4'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_4' name='SEGMENT_FOR_l_carpal_distal_phalanx_4'>
                                                                     <TouchSensor description='joint l_carpal_distal_phalanx_4 segment SEGMENT_FOR_l_carpal_distal_phalanx_4'/>
                                                                     <Transform translation='0.1805 -0.1217 0.5722'>
@@ -1505,7 +1505,7 @@
                                                               </HAnimJoint>
                                                             </HAnimJoint>
                                                           </HAnimJoint>
-                                                          <HAnimJoint DEF='hanim_l_metacarpal_5' name='l_metacarpal_5' center='0.1815 -0.1347 0.6797'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpal_5' center='0.1815 -0.1347 0.6797' name='l_metacarpal_5'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_l_metacarpal_5' name='SEGMENT_FOR_l_metacarpal_5'>
                                                               <TouchSensor description='joint l_metacarpal_5 segment SEGMENT_FOR_l_metacarpal_5'/>
                                                               <Transform translation='0.1815 -0.1347 0.6797'>
@@ -1517,7 +1517,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_5' name='l_carpal_proximal_phalanx_5' center='0.1832 -0.1389 0.6295'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_phalanx_5' center='0.1832 -0.1389 0.6295' name='l_carpal_proximal_phalanx_5'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_proximal_phalanx_5' name='SEGMENT_FOR_l_carpal_proximal_phalanx_5'>
                                                                 <TouchSensor description='joint l_carpal_proximal_phalanx_5 segment SEGMENT_FOR_l_carpal_proximal_phalanx_5'/>
                                                                 <Transform translation='0.1832 -0.1389 0.6295'>
@@ -1529,7 +1529,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_5' name='l_carpal_middle_phalanx_5' center='0.1815 -0.139 0.6124'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_middle_phalanx_5' center='0.1815 -0.139 0.6124' name='l_carpal_middle_phalanx_5'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_middle_phalanx_5' name='SEGMENT_FOR_l_carpal_middle_phalanx_5'>
                                                                   <TouchSensor description='joint l_carpal_middle_phalanx_5 segment SEGMENT_FOR_l_carpal_middle_phalanx_5'/>
                                                                   <Transform translation='0.1815 -0.139 0.6124'>
@@ -1541,7 +1541,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_5' name='l_carpal_distal_phalanx_5' center='0.1806 -0.1388 0.5938'>
+                                                                <HAnimJoint DEF='hanim_l_carpal_distal_phalanx_5' center='0.1806 -0.1388 0.5938' name='l_carpal_distal_phalanx_5'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_l_carpal_distal_phalanx_5' name='SEGMENT_FOR_l_carpal_distal_phalanx_5'>
                                                                     <TouchSensor description='joint l_carpal_distal_phalanx_5 segment SEGMENT_FOR_l_carpal_distal_phalanx_5'/>
                                                                     <Transform translation='0.1806 -0.1388 0.5938'>
@@ -1563,7 +1563,7 @@
                                                   </HAnimJoint>
                                                 </HAnimJoint>
                                               </HAnimJoint>
-                                              <HAnimJoint DEF='hanim_r_clavicle' name='r_clavicle' center='-0.1231 -0.1148 1.1833'>
+                                              <HAnimJoint DEF='hanim_r_clavicle' center='-0.1231 -0.1148 1.1833' name='r_clavicle'>
                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_clavicle' name='SEGMENT_FOR_r_clavicle'>
                                                   <TouchSensor description='joint r_clavicle segment SEGMENT_FOR_r_clavicle'/>
                                                   <Transform translation='-0.1231 -0.1148 1.1833'>
@@ -1575,7 +1575,7 @@
                                                     </Transform>
                                                   </HAnimSite>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_r_scapula' name='r_scapula' center='-0.0387 -0.1157 1.2001'>
+                                                <HAnimJoint DEF='hanim_r_scapula' center='-0.0387 -0.1157 1.2001' name='r_scapula'>
                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_r_scapula' name='SEGMENT_FOR_r_scapula'>
                                                     <TouchSensor description='joint r_scapula segment SEGMENT_FOR_r_scapula'/>
                                                     <Transform translation='-0.0387 -0.1157 1.2001'>
@@ -1587,7 +1587,7 @@
                                                       </Transform>
                                                     </HAnimSite>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_r_upperarm' name='r_upperarm' center='-0.1649 -0.1051 1.17'>
+                                                  <HAnimJoint DEF='hanim_r_upperarm' center='-0.1649 -0.1051 1.17' name='r_upperarm'>
                                                     <HAnimSegment DEF='hanim_SEGMENT_FOR_r_upperarm' name='SEGMENT_FOR_r_upperarm'>
                                                       <TouchSensor description='joint r_upperarm segment SEGMENT_FOR_r_upperarm'/>
                                                       <Transform translation='-0.1649 -0.1051 1.17'>
@@ -1599,7 +1599,7 @@
                                                         </Transform>
                                                       </HAnimSite>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_r_forearm' name='r_forearm' center='-0.1819 -0.1075 0.9202'>
+                                                    <HAnimJoint DEF='hanim_r_forearm' center='-0.1819 -0.1075 0.9202' name='r_forearm'>
                                                       <HAnimSegment DEF='hanim_SEGMENT_FOR_r_forearm' name='SEGMENT_FOR_r_forearm'>
                                                         <TouchSensor description='joint r_forearm segment SEGMENT_FOR_r_forearm'/>
                                                         <Transform translation='-0.1819 -0.1075 0.9202'>
@@ -1611,7 +1611,7 @@
                                                           </Transform>
                                                         </HAnimSite>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_r_carpal' name='r_carpal' center='-0.1818 -0.1069 0.7157'>
+                                                      <HAnimJoint DEF='hanim_r_carpal' center='-0.1818 -0.1069 0.7157' name='r_carpal'>
                                                         <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal' name='SEGMENT_FOR_r_carpal'>
                                                           <TouchSensor description='joint r_carpal segment SEGMENT_FOR_r_carpal'/>
                                                           <Transform translation='-0.1818 -0.1069 0.7157'>
@@ -1623,7 +1623,7 @@
                                                             </Transform>
                                                           </HAnimSite>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_trapezium' name='r_trapezium' center='-0.1811 -0.0826 0.6975'>
+                                                        <HAnimJoint DEF='hanim_r_trapezium' center='-0.1811 -0.0826 0.6975' name='r_trapezium'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_trapezium' name='SEGMENT_FOR_r_trapezium'>
                                                             <TouchSensor description='joint r_trapezium segment SEGMENT_FOR_r_trapezium'/>
                                                             <Transform translation='-0.1811 -0.0826 0.6975'>
@@ -1635,7 +1635,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpal_1' name='r_metacarpal_1' center='-0.1803 -0.0759 0.684'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpal_1' center='-0.1803 -0.0759 0.684' name='r_metacarpal_1'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_1' name='SEGMENT_FOR_r_metacarpal_1'>
                                                               <TouchSensor description='joint r_metacarpal_1 segment SEGMENT_FOR_r_metacarpal_1'/>
                                                               <Transform translation='-0.1803 -0.0759 0.684'>
@@ -1647,7 +1647,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1' center='-0.1808 -0.0661 0.6642'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_1' center='-0.1808 -0.0661 0.6642' name='r_carpal_proximal_phalanx_1'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_1' name='SEGMENT_FOR_r_carpal_proximal_phalanx_1'>
                                                                 <TouchSensor description='joint r_carpal_proximal_phalanx_1 segment SEGMENT_FOR_r_carpal_proximal_phalanx_1'/>
                                                                 <Transform translation='-0.1808 -0.0661 0.6642'>
@@ -1659,7 +1659,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_1' name='r_carpal_distal_phalanx_1' center='-0.1825 -0.0522 0.6455'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_1' center='-0.1825 -0.0522 0.6455' name='r_carpal_distal_phalanx_1'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_1' name='SEGMENT_FOR_r_carpal_distal_phalanx_1'>
                                                                   <TouchSensor description='joint r_carpal_distal_phalanx_1 segment SEGMENT_FOR_r_carpal_distal_phalanx_1'/>
                                                                   <Transform translation='-0.1825 -0.0522 0.6455'>
@@ -1675,7 +1675,7 @@
                                                             </HAnimJoint>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='hanim_r_trapezoid' name='r_trapezoid' center='-0.1811 -0.0935 0.6984'>
+                                                        <HAnimJoint DEF='hanim_r_trapezoid' center='-0.1811 -0.0935 0.6984' name='r_trapezoid'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_trapezoid' name='SEGMENT_FOR_r_trapezoid'>
                                                             <TouchSensor description='joint r_trapezoid segment SEGMENT_FOR_r_trapezoid'/>
                                                             <Transform translation='-0.1811 -0.0935 0.6984'>
@@ -1687,7 +1687,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpal_2' name='r_metacarpal_2' center='-0.1811 -0.0922 0.679'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpal_2' center='-0.1811 -0.0922 0.679' name='r_metacarpal_2'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_2' name='SEGMENT_FOR_r_metacarpal_2'>
                                                               <TouchSensor description='joint r_metacarpal_2 segment SEGMENT_FOR_r_metacarpal_2'/>
                                                               <Transform translation='-0.1811 -0.0922 0.679'>
@@ -1699,7 +1699,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_2' name='r_carpal_proximal_phalanx_2' center='-0.1835 -0.0868 0.6286'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_2' center='-0.1835 -0.0868 0.6286' name='r_carpal_proximal_phalanx_2'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_2' name='SEGMENT_FOR_r_carpal_proximal_phalanx_2'>
                                                                 <TouchSensor description='joint r_carpal_proximal_phalanx_2 segment SEGMENT_FOR_r_carpal_proximal_phalanx_2'/>
                                                                 <Transform translation='-0.1835 -0.0868 0.6286'>
@@ -1711,7 +1711,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2' center='-0.1815 -0.0877 0.5983'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_2' center='-0.1815 -0.0877 0.5983' name='r_carpal_middle_phalanx_2'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_2' name='SEGMENT_FOR_r_carpal_middle_phalanx_2'>
                                                                   <TouchSensor description='joint r_carpal_middle_phalanx_2 segment SEGMENT_FOR_r_carpal_middle_phalanx_2'/>
                                                                   <Transform translation='-0.1815 -0.0877 0.5983'>
@@ -1723,7 +1723,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_2' name='r_carpal_distal_phalanx_2' center='-0.1805 -0.0885 0.5731'>
+                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_2' center='-0.1805 -0.0885 0.5731' name='r_carpal_distal_phalanx_2'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_2' name='SEGMENT_FOR_r_carpal_distal_phalanx_2'>
                                                                     <TouchSensor description='joint r_carpal_distal_phalanx_2 segment SEGMENT_FOR_r_carpal_distal_phalanx_2'/>
                                                                     <Transform translation='-0.1805 -0.0885 0.5731'>
@@ -1740,7 +1740,7 @@
                                                             </HAnimJoint>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='hanim_r_capitate' name='r_capitate' center='-0.1809 -0.1067 0.7'>
+                                                        <HAnimJoint DEF='hanim_r_capitate' center='-0.1809 -0.1067 0.7' name='r_capitate'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_capitate' name='SEGMENT_FOR_r_capitate'>
                                                             <TouchSensor description='joint r_capitate segment SEGMENT_FOR_r_capitate'/>
                                                             <Transform translation='-0.1809 -0.1067 0.7'>
@@ -1752,7 +1752,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpal_3' name='r_metacarpal_3' center='-0.1809 -0.1081 0.6772'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpal_3' center='-0.1809 -0.1081 0.6772' name='r_metacarpal_3'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_3' name='SEGMENT_FOR_r_metacarpal_3'>
                                                               <TouchSensor description='joint r_metacarpal_3 segment SEGMENT_FOR_r_metacarpal_3'/>
                                                               <Transform translation='-0.1809 -0.1081 0.6772'>
@@ -1764,7 +1764,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3' center='-0.1835 -0.1058 0.6264'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_3' center='-0.1835 -0.1058 0.6264' name='r_carpal_proximal_phalanx_3'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_3' name='SEGMENT_FOR_r_carpal_proximal_phalanx_3'>
                                                                 <TouchSensor description='joint r_carpal_proximal_phalanx_3 segment SEGMENT_FOR_r_carpal_proximal_phalanx_3'/>
                                                                 <Transform translation='-0.1835 -0.1058 0.6264'>
@@ -1776,7 +1776,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3' center='-0.1815 -0.1054 0.5947'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_3' center='-0.1815 -0.1054 0.5947' name='r_carpal_middle_phalanx_3'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_3' name='SEGMENT_FOR_r_carpal_middle_phalanx_3'>
                                                                   <TouchSensor description='joint r_carpal_middle_phalanx_3 segment SEGMENT_FOR_r_carpal_middle_phalanx_3'/>
                                                                   <Transform translation='-0.1815 -0.1054 0.5947'>
@@ -1788,7 +1788,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_3' name='r_carpal_distal_phalanx_3' center='-0.1805 -0.1056 0.5668'>
+                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_3' center='-0.1805 -0.1056 0.5668' name='r_carpal_distal_phalanx_3'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_3' name='SEGMENT_FOR_r_carpal_distal_phalanx_3'>
                                                                     <TouchSensor description='joint r_carpal_distal_phalanx_3 segment SEGMENT_FOR_r_carpal_distal_phalanx_3'/>
                                                                     <Transform translation='-0.1805 -0.1056 0.5668'>
@@ -1805,7 +1805,7 @@
                                                             </HAnimJoint>
                                                           </HAnimJoint>
                                                         </HAnimJoint>
-                                                        <HAnimJoint DEF='hanim_r_hamate' name='r_hamate' center='-0.1809 -0.1276 0.6973'>
+                                                        <HAnimJoint DEF='hanim_r_hamate' center='-0.1809 -0.1276 0.6973' name='r_hamate'>
                                                           <HAnimSegment DEF='hanim_SEGMENT_FOR_r_hamate' name='SEGMENT_FOR_r_hamate'>
                                                             <TouchSensor description='joint r_hamate segment SEGMENT_FOR_r_hamate'/>
                                                             <Transform translation='-0.1809 -0.1276 0.6973'>
@@ -1817,7 +1817,7 @@
                                                               </Transform>
                                                             </HAnimSite>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpal_4' name='r_metacarpal_4' center='-0.1809 -0.1218 0.6777'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpal_4' center='-0.1809 -0.1218 0.6777' name='r_metacarpal_4'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_4' name='SEGMENT_FOR_r_metacarpal_4'>
                                                               <TouchSensor description='joint r_metacarpal_4 segment SEGMENT_FOR_r_metacarpal_4'/>
                                                               <Transform translation='-0.1809 -0.1218 0.6777'>
@@ -1829,7 +1829,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4' center='-0.1835 -0.1233 0.6255'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_4' center='-0.1835 -0.1233 0.6255' name='r_carpal_proximal_phalanx_4'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_4' name='SEGMENT_FOR_r_carpal_proximal_phalanx_4'>
                                                                 <TouchSensor description='joint r_carpal_proximal_phalanx_4 segment SEGMENT_FOR_r_carpal_proximal_phalanx_4'/>
                                                                 <Transform translation='-0.1835 -0.1233 0.6255'>
@@ -1841,7 +1841,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4' center='-0.1815 -0.1225 0.598'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_4' center='-0.1815 -0.1225 0.598' name='r_carpal_middle_phalanx_4'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_4' name='SEGMENT_FOR_r_carpal_middle_phalanx_4'>
                                                                   <TouchSensor description='joint r_carpal_middle_phalanx_4 segment SEGMENT_FOR_r_carpal_middle_phalanx_4'/>
                                                                   <Transform translation='-0.1815 -0.1225 0.598'>
@@ -1853,7 +1853,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_4' name='r_carpal_distal_phalanx_4' center='-0.1805 -0.1217 0.5722'>
+                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_4' center='-0.1805 -0.1217 0.5722' name='r_carpal_distal_phalanx_4'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_4' name='SEGMENT_FOR_r_carpal_distal_phalanx_4'>
                                                                     <TouchSensor description='joint r_carpal_distal_phalanx_4 segment SEGMENT_FOR_r_carpal_distal_phalanx_4'/>
                                                                     <Transform translation='-0.1805 -0.1217 0.5722'>
@@ -1869,7 +1869,7 @@
                                                               </HAnimJoint>
                                                             </HAnimJoint>
                                                           </HAnimJoint>
-                                                          <HAnimJoint DEF='hanim_r_metacarpal_5' name='r_metacarpal_5' center='-0.1814 -0.1347 0.6797'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpal_5' center='-0.1814 -0.1347 0.6797' name='r_metacarpal_5'>
                                                             <HAnimSegment DEF='hanim_SEGMENT_FOR_r_metacarpal_5' name='SEGMENT_FOR_r_metacarpal_5'>
                                                               <TouchSensor description='joint r_metacarpal_5 segment SEGMENT_FOR_r_metacarpal_5'/>
                                                               <Transform translation='-0.1814 -0.1347 0.6797'>
@@ -1881,7 +1881,7 @@
                                                                 </Transform>
                                                               </HAnimSite>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5' center='-0.1832 -0.1389 0.6295'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_phalanx_5' center='-0.1832 -0.1389 0.6295' name='r_carpal_proximal_phalanx_5'>
                                                               <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_proximal_phalanx_5' name='SEGMENT_FOR_r_carpal_proximal_phalanx_5'>
                                                                 <TouchSensor description='joint r_carpal_proximal_phalanx_5 segment SEGMENT_FOR_r_carpal_proximal_phalanx_5'/>
                                                                 <Transform translation='-0.1832 -0.1389 0.6295'>
@@ -1893,7 +1893,7 @@
                                                                   </Transform>
                                                                 </HAnimSite>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5' center='-0.1815 -0.139 0.6124'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_middle_phalanx_5' center='-0.1815 -0.139 0.6124' name='r_carpal_middle_phalanx_5'>
                                                                 <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_middle_phalanx_5' name='SEGMENT_FOR_r_carpal_middle_phalanx_5'>
                                                                   <TouchSensor description='joint r_carpal_middle_phalanx_5 segment SEGMENT_FOR_r_carpal_middle_phalanx_5'/>
                                                                   <Transform translation='-0.1815 -0.139 0.6124'>
@@ -1905,7 +1905,7 @@
                                                                     </Transform>
                                                                   </HAnimSite>
                                                                 </HAnimSegment>
-                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_5' name='r_carpal_distal_phalanx_5' center='-0.1806 -0.1388 0.5938'>
+                                                                <HAnimJoint DEF='hanim_r_carpal_distal_phalanx_5' center='-0.1806 -0.1388 0.5938' name='r_carpal_distal_phalanx_5'>
                                                                   <HAnimSegment DEF='hanim_SEGMENT_FOR_r_carpal_distal_phalanx_5' name='SEGMENT_FOR_r_carpal_distal_phalanx_5'>
                                                                     <TouchSensor description='joint r_carpal_distal_phalanx_5 segment SEGMENT_FOR_r_carpal_distal_phalanx_5'/>
                                                                     <Transform translation='-0.1806 -0.1388 0.5938'>
@@ -1946,152 +1946,152 @@
             </HAnimJoint>
           </HAnimJoint>
         </HAnimJoint>
-        <HAnimJoint USE='hanim_sacrum'/>
-        <HAnimJoint USE='hanim_pelvis'/>
-        <HAnimJoint USE='hanim_l_thigh'/>
-        <HAnimJoint USE='hanim_l_calf'/>
-        <HAnimJoint USE='hanim_l_talus'/>
-        <HAnimJoint USE='hanim_l_navicular'/>
-        <HAnimJoint USE='hanim_l_cuneiform_1'/>
-        <HAnimJoint USE='hanim_l_metatarsal_1'/>
-        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_1'/>
-        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_1'/>
-        <HAnimJoint USE='hanim_l_cuneiform_2'/>
-        <HAnimJoint USE='hanim_l_metatarsal_2'/>
-        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_2'/>
-        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_2'/>
-        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_2'/>
-        <HAnimJoint USE='hanim_l_cuneiform_3'/>
-        <HAnimJoint USE='hanim_l_metatarsal_3'/>
-        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_3'/>
-        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_3'/>
-        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_3'/>
-        <HAnimJoint USE='hanim_l_calcaneus'/>
-        <HAnimJoint USE='hanim_l_cuboid'/>
-        <HAnimJoint USE='hanim_l_metatarsal_4'/>
-        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_4'/>
-        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_4'/>
-        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_4'/>
-        <HAnimJoint USE='hanim_l_metatarsal_5'/>
-        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_5'/>
-        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_5'/>
-        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_5'/>
-        <HAnimJoint USE='hanim_r_thigh'/>
-        <HAnimJoint USE='hanim_r_calf'/>
-        <HAnimJoint USE='hanim_r_talus'/>
-        <HAnimJoint USE='hanim_r_navicular'/>
-        <HAnimJoint USE='hanim_r_cuneiform_1'/>
-        <HAnimJoint USE='hanim_r_metatarsal_1'/>
-        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_1'/>
-        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_1'/>
-        <HAnimJoint USE='hanim_r_cuneiform_2'/>
-        <HAnimJoint USE='hanim_r_metatarsal_2'/>
-        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_2'/>
-        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_2'/>
-        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_2'/>
-        <HAnimJoint USE='hanim_r_cuneiform_3'/>
-        <HAnimJoint USE='hanim_r_metatarsal_3'/>
-        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_3'/>
-        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_3'/>
-        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_3'/>
-        <HAnimJoint USE='hanim_r_calcaneus'/>
-        <HAnimJoint USE='hanim_r_cuboid'/>
-        <HAnimJoint USE='hanim_r_metatarsal_4'/>
-        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_4'/>
-        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_4'/>
-        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_4'/>
-        <HAnimJoint USE='hanim_r_metatarsal_5'/>
-        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_5'/>
-        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_5'/>
-        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_5'/>
-        <HAnimJoint USE='hanim_l5'/>
-        <HAnimJoint USE='hanim_l4'/>
-        <HAnimJoint USE='hanim_l3'/>
-        <HAnimJoint USE='hanim_l2'/>
-        <HAnimJoint USE='hanim_l1'/>
-        <HAnimJoint USE='hanim_t12'/>
-        <HAnimJoint USE='hanim_t11'/>
-        <HAnimJoint USE='hanim_t10'/>
-        <HAnimJoint USE='hanim_t9'/>
-        <HAnimJoint USE='hanim_t8'/>
-        <HAnimJoint USE='hanim_t7'/>
-        <HAnimJoint USE='hanim_t6'/>
-        <HAnimJoint USE='hanim_t5'/>
-        <HAnimJoint USE='hanim_t4'/>
-        <HAnimJoint USE='hanim_t3'/>
-        <HAnimJoint USE='hanim_t2'/>
-        <HAnimJoint USE='hanim_t1'/>
-        <HAnimJoint USE='hanim_c7'/>
-        <HAnimJoint USE='hanim_c6'/>
-        <HAnimJoint USE='hanim_c5'/>
-        <HAnimJoint USE='hanim_c4'/>
-        <HAnimJoint USE='hanim_c3'/>
-        <HAnimJoint USE='hanim_c2'/>
-        <HAnimJoint USE='hanim_c1'/>
-        <HAnimJoint USE='hanim_skull'/>
-        <HAnimJoint USE='hanim_l_eyelid'/>
-        <HAnimJoint USE='hanim_r_eyelid'/>
-        <HAnimJoint USE='hanim_l_eyeball'/>
-        <HAnimJoint USE='hanim_r_eyeball'/>
-        <HAnimJoint USE='hanim_l_eyebrow'/>
-        <HAnimJoint USE='hanim_r_eyebrow'/>
-        <HAnimJoint USE='hanim_jaw'/>
-        <HAnimJoint USE='hanim_l_clavicle'/>
-        <HAnimJoint USE='hanim_l_scapula'/>
-        <HAnimJoint USE='hanim_l_upperarm'/>
-        <HAnimJoint USE='hanim_l_forearm'/>
-        <HAnimJoint USE='hanim_l_carpal'/>
-        <HAnimJoint USE='hanim_l_trapezium'/>
-        <HAnimJoint USE='hanim_l_metacarpal_1'/>
-        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_1'/>
-        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_1'/>
-        <HAnimJoint USE='hanim_l_trapezoid'/>
-        <HAnimJoint USE='hanim_l_metacarpal_2'/>
-        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_2'/>
-        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_2'/>
-        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_2'/>
-        <HAnimJoint USE='hanim_l_capitate'/>
-        <HAnimJoint USE='hanim_l_metacarpal_3'/>
-        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_3'/>
-        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_3'/>
-        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_3'/>
-        <HAnimJoint USE='hanim_l_hamate'/>
-        <HAnimJoint USE='hanim_l_metacarpal_4'/>
-        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_4'/>
-        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_4'/>
-        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_4'/>
-        <HAnimJoint USE='hanim_l_metacarpal_5'/>
-        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_5'/>
-        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_5'/>
-        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_5'/>
-        <HAnimJoint USE='hanim_r_clavicle'/>
-        <HAnimJoint USE='hanim_r_scapula'/>
-        <HAnimJoint USE='hanim_r_upperarm'/>
-        <HAnimJoint USE='hanim_r_forearm'/>
-        <HAnimJoint USE='hanim_r_carpal'/>
-        <HAnimJoint USE='hanim_r_trapezium'/>
-        <HAnimJoint USE='hanim_r_metacarpal_1'/>
-        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_1'/>
-        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_1'/>
-        <HAnimJoint USE='hanim_r_trapezoid'/>
-        <HAnimJoint USE='hanim_r_metacarpal_2'/>
-        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_2'/>
-        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_2'/>
-        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_2'/>
-        <HAnimJoint USE='hanim_r_capitate'/>
-        <HAnimJoint USE='hanim_r_metacarpal_3'/>
-        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_3'/>
-        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_3'/>
-        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_3'/>
-        <HAnimJoint USE='hanim_r_hamate'/>
-        <HAnimJoint USE='hanim_r_metacarpal_4'/>
-        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_4'/>
-        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_4'/>
-        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_4'/>
-        <HAnimJoint USE='hanim_r_metacarpal_5'/>
-        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_5'/>
-        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_5'/>
-        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_5'/>
+        <HAnimJoint USE='hanim_sacrum' containerField='joints'/>
+        <HAnimJoint USE='hanim_pelvis' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_thigh' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_calf' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_talus' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_navicular' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_cuneiform_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metatarsal_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_cuneiform_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metatarsal_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_cuneiform_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metatarsal_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_calcaneus' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_cuboid' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metatarsal_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metatarsal_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_proximal_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_middle_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_tarsal_distal_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_thigh' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_calf' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_talus' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_navicular' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_cuneiform_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metatarsal_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_cuneiform_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metatarsal_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_cuneiform_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metatarsal_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_calcaneus' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_cuboid' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metatarsal_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metatarsal_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_proximal_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_middle_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_tarsal_distal_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l1' containerField='joints'/>
+        <HAnimJoint USE='hanim_t12' containerField='joints'/>
+        <HAnimJoint USE='hanim_t11' containerField='joints'/>
+        <HAnimJoint USE='hanim_t10' containerField='joints'/>
+        <HAnimJoint USE='hanim_t9' containerField='joints'/>
+        <HAnimJoint USE='hanim_t8' containerField='joints'/>
+        <HAnimJoint USE='hanim_t7' containerField='joints'/>
+        <HAnimJoint USE='hanim_t6' containerField='joints'/>
+        <HAnimJoint USE='hanim_t5' containerField='joints'/>
+        <HAnimJoint USE='hanim_t4' containerField='joints'/>
+        <HAnimJoint USE='hanim_t3' containerField='joints'/>
+        <HAnimJoint USE='hanim_t2' containerField='joints'/>
+        <HAnimJoint USE='hanim_t1' containerField='joints'/>
+        <HAnimJoint USE='hanim_c7' containerField='joints'/>
+        <HAnimJoint USE='hanim_c6' containerField='joints'/>
+        <HAnimJoint USE='hanim_c5' containerField='joints'/>
+        <HAnimJoint USE='hanim_c4' containerField='joints'/>
+        <HAnimJoint USE='hanim_c3' containerField='joints'/>
+        <HAnimJoint USE='hanim_c2' containerField='joints'/>
+        <HAnimJoint USE='hanim_c1' containerField='joints'/>
+        <HAnimJoint USE='hanim_skull' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_eyelid' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_eyelid' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_eyeball' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_eyeball' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_eyebrow' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_eyebrow' containerField='joints'/>
+        <HAnimJoint USE='hanim_jaw' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_clavicle' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_scapula' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_upperarm' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_forearm' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_trapezium' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metacarpal_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_trapezoid' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metacarpal_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_capitate' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metacarpal_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_hamate' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metacarpal_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_metacarpal_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_proximal_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_middle_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_l_carpal_distal_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_clavicle' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_scapula' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_upperarm' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_forearm' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_trapezium' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metacarpal_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_1' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_trapezoid' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metacarpal_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_2' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_capitate' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metacarpal_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_3' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_hamate' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metacarpal_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_4' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_metacarpal_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_proximal_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_middle_phalanx_5' containerField='joints'/>
+        <HAnimJoint USE='hanim_r_carpal_distal_phalanx_5' containerField='joints'/>
       </HAnimHumanoid>
     </Transform>
     <TimeSensor DEF='Armature_Clock' cycleInterval='10.4166666666667' loop='true'/>

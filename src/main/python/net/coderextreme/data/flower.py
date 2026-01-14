@@ -42,6 +42,7 @@ DirectionalLight9.intensity = 0.5
 
 Scene7.children.append(DirectionalLight9)
 Background10 = x3d.Background()
+Background10.skyColor = [(1, 1, 1)]
 
 Scene7.children.append(Background10)
 Viewpoint11 = x3d.Viewpoint()
@@ -71,6 +72,7 @@ IndexedFaceSet16.coordIndex = [0,1,2,-1]
 IndexedFaceSet16.DEF = "Orbit"
 Coordinate17 = x3d.Coordinate()
 Coordinate17.DEF = "OrbitCoordinates"
+Coordinate17.point = [(0, 0, 1),(0, 1, 0),(1, 0, 0)]
 
 IndexedFaceSet16.coord = Coordinate17
 
@@ -211,6 +213,9 @@ X3D0.Scene = Scene7
 f = open("../data/flower.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/flower.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/flower.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/flower.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

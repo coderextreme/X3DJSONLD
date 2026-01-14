@@ -186,6 +186,7 @@ IndexedLineSet40 = x3d.IndexedLineSet()
 IndexedLineSet40.DEF = "RCToMC12"
 IndexedLineSet40.coordIndex = [0,1]
 Coordinate41 = x3d.Coordinate()
+Coordinate41.point = [(0, 0, 0),(-0.1, 0.1, 0)]
 
 IndexedLineSet40.coord = Coordinate41
 
@@ -204,6 +205,7 @@ IndexedLineSet45 = x3d.IndexedLineSet()
 IndexedLineSet45.DEF = "RCToMC3"
 IndexedLineSet45.coordIndex = [0,1]
 Coordinate46 = x3d.Coordinate()
+Coordinate46.point = [(0, 0, 0),(0, 0.07, 0)]
 
 IndexedLineSet45.coord = Coordinate46
 
@@ -222,6 +224,7 @@ IndexedLineSet50 = x3d.IndexedLineSet()
 IndexedLineSet50.DEF = "RCToMC45"
 IndexedLineSet50.coordIndex = [0,1]
 Coordinate51 = x3d.Coordinate()
+Coordinate51.point = [(0, 0, 0),(0.1, 0.1, 0)]
 
 IndexedLineSet50.coord = Coordinate51
 
@@ -272,6 +275,7 @@ IndexedLineSet62 = x3d.IndexedLineSet()
 IndexedLineSet62.DEF = "MC12toCMC1"
 IndexedLineSet62.coordIndex = [0,1]
 Coordinate63 = x3d.Coordinate()
+Coordinate63.point = [(-0.1, 0.1, 0),(-0.2, 0.15, 0)]
 
 IndexedLineSet62.coord = Coordinate63
 
@@ -310,6 +314,7 @@ IndexedLineSet71 = x3d.IndexedLineSet()
 IndexedLineSet71.DEF = "CMC1toMCP1xxx"
 IndexedLineSet71.coordIndex = [0,1]
 Coordinate72 = x3d.Coordinate()
+Coordinate72.point = [(-0.2, 0.15, 0),(-0.3, 0.3, 0)]
 
 IndexedLineSet71.coord = Coordinate72
 
@@ -347,6 +352,7 @@ IndexedLineSet80 = x3d.IndexedLineSet()
 IndexedLineSet80.DEF = "MCP11toIP1"
 IndexedLineSet80.coordIndex = [0,1]
 Coordinate81 = x3d.Coordinate()
+Coordinate81.point = [(-0.3, 0.3, 0),(-0.35, 0.4, 0)]
 
 IndexedLineSet80.coord = Coordinate81
 
@@ -384,6 +390,7 @@ IndexedLineSet89 = x3d.IndexedLineSet()
 IndexedLineSet89.DEF = "fingertip_r_carpal_interphalangeal_1"
 IndexedLineSet89.coordIndex = [0,1]
 Coordinate90 = x3d.Coordinate()
+Coordinate90.point = [(-0.35, 0.4, 0),(-0.36, 0.45, 0)]
 
 IndexedLineSet89.coord = Coordinate90
 
@@ -430,6 +437,7 @@ IndexedLineSet98 = x3d.IndexedLineSet()
 IndexedLineSet98.DEF = "MC12toCMC2"
 IndexedLineSet98.coordIndex = [0,1]
 Coordinate99 = x3d.Coordinate()
+Coordinate99.point = [(-0.1, 0.1, 0),(-0.1, 0.2, 0)]
 
 IndexedLineSet98.coord = Coordinate99
 
@@ -468,6 +476,7 @@ IndexedLineSet107 = x3d.IndexedLineSet()
 IndexedLineSet107.DEF = "CMC2toMCP2"
 IndexedLineSet107.coordIndex = [0,1]
 Coordinate108 = x3d.Coordinate()
+Coordinate108.point = [(-0.1, 0.2, 0),(-0.15, 0.5, 0)]
 
 IndexedLineSet107.coord = Coordinate108
 
@@ -505,6 +514,7 @@ IndexedLineSet116 = x3d.IndexedLineSet()
 IndexedLineSet116.DEF = "MCP2toPIP2"
 IndexedLineSet116.coordIndex = [0,1]
 Coordinate117 = x3d.Coordinate()
+Coordinate117.point = [(-0.15, 0.5, 0),(-0.2, 0.7, 0)]
 
 IndexedLineSet116.coord = Coordinate117
 
@@ -542,6 +552,7 @@ IndexedLineSet125 = x3d.IndexedLineSet()
 IndexedLineSet125.DEF = "PIP2toDIP2"
 IndexedLineSet125.coordIndex = [0,1]
 Coordinate126 = x3d.Coordinate()
+Coordinate126.point = [(-0.2, 0.7, 0),(-0.24, 0.87, 0)]
 
 IndexedLineSet125.coord = Coordinate126
 
@@ -579,6 +590,7 @@ IndexedLineSet134 = x3d.IndexedLineSet()
 IndexedLineSet134.DEF = "fingertip_r_carpal_distal_interphalangeal_2"
 IndexedLineSet134.coordIndex = [0,1]
 Coordinate135 = x3d.Coordinate()
+Coordinate135.point = [(-0.24, 0.87, 0),(-0.26, 0.93, 0)]
 
 IndexedLineSet134.coord = Coordinate135
 
@@ -627,6 +639,7 @@ IndexedLineSet143 = x3d.IndexedLineSet()
 IndexedLineSet143.DEF = "MC3toCMC3"
 IndexedLineSet143.coordIndex = [0,1]
 Coordinate144 = x3d.Coordinate()
+Coordinate144.point = [(0, 0.07, 0),(0, 0.2, 0)]
 
 IndexedLineSet143.coord = Coordinate144
 
@@ -665,6 +678,7 @@ IndexedLineSet152 = x3d.IndexedLineSet()
 IndexedLineSet152.DEF = "CMC3toMCP3"
 IndexedLineSet152.coordIndex = [0,1]
 Coordinate153 = x3d.Coordinate()
+Coordinate153.point = [(0, 0.2, 0),(-0.03, 0.5, 0)]
 
 IndexedLineSet152.coord = Coordinate153
 
@@ -702,6 +716,7 @@ IndexedLineSet161 = x3d.IndexedLineSet()
 IndexedLineSet161.DEF = "MCP3toPIP3"
 IndexedLineSet161.coordIndex = [0,1]
 Coordinate162 = x3d.Coordinate()
+Coordinate162.point = [(-0.03, 0.5, 0),(-0.05, 0.75, 0)]
 
 IndexedLineSet161.coord = Coordinate162
 
@@ -739,6 +754,7 @@ IndexedLineSet170 = x3d.IndexedLineSet()
 IndexedLineSet170.DEF = "PIP3toDIP3"
 IndexedLineSet170.coordIndex = [0,1]
 Coordinate171 = x3d.Coordinate()
+Coordinate171.point = [(-0.05, 0.75, 0),(-0.08, 0.96, 0)]
 
 IndexedLineSet170.coord = Coordinate171
 
@@ -776,6 +792,7 @@ IndexedLineSet179 = x3d.IndexedLineSet()
 IndexedLineSet179.DEF = "fingertip_r_carpal_distal_interphalangeal_3"
 IndexedLineSet179.coordIndex = [0,1]
 Coordinate180 = x3d.Coordinate()
+Coordinate180.point = [(-0.08, 0.96, 0),(-0.09, 1.05, 0)]
 
 IndexedLineSet179.coord = Coordinate180
 
@@ -824,6 +841,7 @@ IndexedLineSet188 = x3d.IndexedLineSet()
 IndexedLineSet188.DEF = "MC45toCMC4"
 IndexedLineSet188.coordIndex = [0,1]
 Coordinate189 = x3d.Coordinate()
+Coordinate189.point = [(0.1, 0.1, 0),(0.1, 0.2, 0)]
 
 IndexedLineSet188.coord = Coordinate189
 
@@ -842,6 +860,7 @@ IndexedLineSet193 = x3d.IndexedLineSet()
 IndexedLineSet193.DEF = "MC45toCMC5"
 IndexedLineSet193.coordIndex = [0,1]
 Coordinate194 = x3d.Coordinate()
+Coordinate194.point = [(0.1, 0.1, 0),(0.15, 0.17, 0)]
 
 IndexedLineSet193.coord = Coordinate194
 
@@ -880,6 +899,7 @@ IndexedLineSet202 = x3d.IndexedLineSet()
 IndexedLineSet202.DEF = "CMC4toMCP4"
 IndexedLineSet202.coordIndex = [0,1]
 Coordinate203 = x3d.Coordinate()
+Coordinate203.point = [(0.1, 0.2, 0),(0.1, 0.47, 0)]
 
 IndexedLineSet202.coord = Coordinate203
 
@@ -917,6 +937,7 @@ IndexedLineSet211 = x3d.IndexedLineSet()
 IndexedLineSet211.DEF = "MCP4toPIP4"
 IndexedLineSet211.coordIndex = [0,1]
 Coordinate212 = x3d.Coordinate()
+Coordinate212.point = [(0.1, 0.47, 0),(0.1, 0.7, 0)]
 
 IndexedLineSet211.coord = Coordinate212
 
@@ -954,6 +975,7 @@ IndexedLineSet220 = x3d.IndexedLineSet()
 IndexedLineSet220.DEF = "PIP4toDIP4"
 IndexedLineSet220.coordIndex = [0,1]
 Coordinate221 = x3d.Coordinate()
+Coordinate221.point = [(0.1, 0.7, 0),(0.1, 0.93, 0)]
 
 IndexedLineSet220.coord = Coordinate221
 
@@ -991,6 +1013,7 @@ IndexedLineSet229 = x3d.IndexedLineSet()
 IndexedLineSet229.DEF = "fingertip_r_carpal_distal_interphalangeal_4"
 IndexedLineSet229.coordIndex = [0,1]
 Coordinate230 = x3d.Coordinate()
+Coordinate230.point = [(0.1, 0.93, 0),(0.1, 1, 0)]
 
 IndexedLineSet229.coord = Coordinate230
 
@@ -1037,6 +1060,7 @@ IndexedLineSet238 = x3d.IndexedLineSet()
 IndexedLineSet238.DEF = "CMC5toMCP5"
 IndexedLineSet238.coordIndex = [0,1]
 Coordinate239 = x3d.Coordinate()
+Coordinate239.point = [(0.15, 0.17, 0),(0.2, 0.4, 0)]
 
 IndexedLineSet238.coord = Coordinate239
 
@@ -1074,6 +1098,7 @@ IndexedLineSet247 = x3d.IndexedLineSet()
 IndexedLineSet247.DEF = "MCP5toPIP5"
 IndexedLineSet247.coordIndex = [0,1]
 Coordinate248 = x3d.Coordinate()
+Coordinate248.point = [(0.2, 0.4, 0),(0.23, 0.63, 0)]
 
 IndexedLineSet247.coord = Coordinate248
 
@@ -1111,6 +1136,7 @@ IndexedLineSet256 = x3d.IndexedLineSet()
 IndexedLineSet256.DEF = "PIP5toDIP5"
 IndexedLineSet256.coordIndex = [0,1]
 Coordinate257 = x3d.Coordinate()
+Coordinate257.point = [(0.23, 0.63, 0),(0.25, 0.79, 0)]
 
 IndexedLineSet256.coord = Coordinate257
 
@@ -1148,6 +1174,7 @@ IndexedLineSet265 = x3d.IndexedLineSet()
 IndexedLineSet265.DEF = "fingertip_r_carpal_distal_interphalangeal_5"
 IndexedLineSet265.coordIndex = [0,1]
 Coordinate266 = x3d.Coordinate()
+Coordinate266.point = [(0.25, 0.79, 0),(0.26, 0.85, 0)]
 
 IndexedLineSet265.coord = Coordinate266
 
@@ -1373,6 +1400,9 @@ X3D0.Scene = Scene24
 f = open("../data/HAnimModelHandRight.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/HAnimModelHandRight.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/HAnimModelHandRight.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/HAnimModelHandRight.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

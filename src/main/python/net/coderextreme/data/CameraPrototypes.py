@@ -62,7 +62,7 @@ meta12.content = "https://www.web3d.org/x3d/content/examples/Basic/development/C
 head1.children.append(meta12)
 meta13 = x3d.meta()
 meta13.name = "reference"
-meta13.content = "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
+meta13.content = "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
 
 head1.children.append(meta13)
 meta14 = x3d.meta()
@@ -359,6 +359,7 @@ ProtoBody42.children.append(DirectionalLight57)
 PositionInterpolator62 = x3d.PositionInterpolator()
 PositionInterpolator62.DEF = "CameraPositionInterpolator"
 PositionInterpolator62.key = [0,1]
+PositionInterpolator62.keyValue = [(0, 0, 0),(0, 0, 0)]
 IS63 = x3d.IS()
 connect64 = x3d.connect()
 connect64.nodeField = "set_fraction"
@@ -372,6 +373,7 @@ ProtoBody42.children.append(PositionInterpolator62)
 OrientationInterpolator65 = x3d.OrientationInterpolator()
 OrientationInterpolator65.DEF = "CameraOrientationInterpolator"
 OrientationInterpolator65.key = [0,1]
+OrientationInterpolator65.keyValue = [(0, 1, 0, 0),(0, 1, 0, 0)]
 IS66 = x3d.IS()
 connect67 = x3d.connect()
 connect67.nodeField = "set_fraction"
@@ -2151,6 +2153,7 @@ ProtoDeclare216.ProtoBody = ProtoBody229
 Scene16.children.append(ProtoDeclare216)
 """=============== Launch Prototype Example =============="""
 Background254 = x3d.Background()
+Background254.skyColor = [(0.282353, 0.380392, 0.470588)]
 
 Scene16.children.append(Background254)
 Anchor255 = x3d.Anchor()
@@ -2184,6 +2187,9 @@ X3D0.Scene = Scene16
 f = open("../data/CameraPrototypes.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/CameraPrototypes.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/CameraPrototypes.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/CameraPrototypes.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

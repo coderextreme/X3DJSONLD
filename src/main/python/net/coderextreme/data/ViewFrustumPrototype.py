@@ -57,7 +57,7 @@ meta11.content = "view culling frustum"
 head1.children.append(meta11)
 meta12 = x3d.meta()
 meta12.name = "identifier"
-meta12.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"
+meta12.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"
 
 head1.children.append(meta12)
 meta13 = x3d.meta()
@@ -162,6 +162,7 @@ IndexedLineSet32.DEF = "FrustumLines"
 IndexedLineSet32.coordIndex = [0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1]
 Coordinate33 = x3d.Coordinate()
 Coordinate33.DEF = "FrustumCoordinate"
+Coordinate33.point = [(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0)]
 
 IndexedLineSet32.coord = Coordinate33
 
@@ -433,6 +434,9 @@ X3D0.Scene = Scene15
 f = open("../data/ViewFrustumPrototype.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/ViewFrustumPrototype.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/ViewFrustumPrototype.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/ViewFrustumPrototype.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

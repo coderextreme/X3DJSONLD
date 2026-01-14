@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='HAnim' level='1'/>
+    <component level='1' name='HAnim'/>
     <meta content='Humanoid1.x3d' name='title'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid1.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
     <meta content='h2.pl' name='generator'/>
     <meta content='14 Jan 2023' name='modified'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='9 November 2020' name='created'/>
     <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <Transform>
@@ -58,10 +58,8 @@
     </Group>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='default' position='0 1 3'/>
-    <HAnimHumanoid DEF='hanim_HAnim' name='HAnim' info='"humanoidVersion=2.0"' version='2.0'>
-      <!-- <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) -->
-      <!-- </LOD> -->
-      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.824 0.0277'>
+    <HAnimHumanoid DEF='hanim_HAnim' info='"humanoidVersion=2.0"' name='HAnim' version='2.0'>
+      <HAnimJoint DEF='hanim_humanoid_root' containerField='skeleton' center='0 0.824 0.0277' name='humanoid_root'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
           <Transform translation='0 0.824 0.0277'>
             <Transform>
@@ -84,7 +82,7 @@
             </LineSet>
           </Shape>
         </HAnimSegment>
-        <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0 0.9149 0.0016'>
+        <HAnimJoint DEF='hanim_sacroiliac' center='0 0.9149 0.0016' name='sacroiliac'>
           <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
             <Transform translation='0 0.9149 0.0016'>
               <Transform>
@@ -217,7 +215,7 @@
               </LineSet>
             </Shape>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_hip' name='l_hip' center='0.0961 0.9124 -1.0E-4'>
+          <HAnimJoint DEF='hanim_l_hip' center='0.0961 0.9124 -1.0E-4' name='l_hip'>
             <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
               <Transform translation='0.0961 0.9124 -1.0E-4'>
                 <Transform>
@@ -277,7 +275,7 @@
                 </Billboard>
               </HAnimSite>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_knee' name='l_knee' center='0.104 0.4867 0.0308'>
+            <HAnimJoint DEF='hanim_l_knee' center='0.104 0.4867 0.0308' name='l_knee'>
               <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
                 <Transform translation='0.104 0.4867 0.0308'>
                   <Transform>
@@ -326,7 +324,7 @@
                   </Billboard>
                 </HAnimSite>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_talocrural' name='l_talocrural' center='0.1101 0.0656 -0.0736'>
+              <HAnimJoint DEF='hanim_l_talocrural' center='0.1101 0.0656 -0.0736' name='l_talocrural'>
                 <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
                   <Transform rotation='1 0 0 -1.57' scale='0.15 0.15 0.15' translation='0.08 0.06 -0.025'>
                     <!-- Transform left foot -->
@@ -365,11 +363,11 @@
                     </Billboard>
                   </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2' center='0.0824 0.0064 -0.004'/>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='0.0824 0.0064 -0.004' name='l_metatarsophalangeal_2'/>
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_hip' name='r_hip' center='-0.095 0.9171 0.0029'>
+          <HAnimJoint DEF='hanim_r_hip' center='-0.095 0.9171 0.0029' name='r_hip'>
             <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
               <Transform translation='-0.095 0.9171 0.0029'>
                 <Transform>
@@ -429,7 +427,7 @@
                 </Billboard>
               </HAnimSite>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_knee' name='r_knee' center='-0.0867 0.4913 0.0318'>
+            <HAnimJoint DEF='hanim_r_knee' center='-0.0867 0.4913 0.0318' name='r_knee'>
               <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
                 <Transform translation='-0.0867 0.4913 0.0318'>
                   <Transform>
@@ -478,7 +476,7 @@
                   </Billboard>
                 </HAnimSite>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' center='-0.0801 0.0712 -0.0766'>
+              <HAnimJoint DEF='hanim_r_talocrural' center='-0.0801 0.0712 -0.0766' name='r_talocrural'>
                 <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
                   <Transform rotation='1 0 0 -1.57' scale='0.15 0.15 0.15' translation='-0.05 0.06 -0.025'>
                     <!-- Transform right foot -->
@@ -517,12 +515,12 @@
                     </Billboard>
                   </HAnimSite>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='-0.0823 0.0064 -0.004'/>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-0.0823 0.0064 -0.004' name='r_metatarsophalangeal_2'/>
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
         </HAnimJoint>
-        <HAnimJoint DEF='hanim_vl5' name='vl5' center='0.0028 1.0568 -0.0776'>
+        <HAnimJoint DEF='hanim_vl5' center='0.0028 1.0568 -0.0776' name='vl5'>
           <HAnimSegment DEF='hanim_l5' name='l5'>
             <Transform translation='0.0028 1.0568 -0.0776'>
               <Transform>
@@ -871,8 +869,8 @@
               </LineSet>
             </Shape>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_skullbase' name='skullbase' center='0.0044 1.6209 0.0236'/>
-          <HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder' center='0.2029 1.4376 -0.0387'>
+          <HAnimJoint DEF='hanim_skullbase' center='0.0044 1.6209 0.0236' name='skullbase'/>
+          <HAnimJoint DEF='hanim_l_shoulder' center='0.2029 1.4376 -0.0387' name='l_shoulder'>
             <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
               <Transform translation='0.2029 1.4376 -0.0387'>
                 <Transform>
@@ -910,7 +908,7 @@
                 </Billboard>
               </HAnimSite>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_elbow' name='l_elbow' center='0.2014 1.1357 -0.0682'>
+            <HAnimJoint DEF='hanim_l_elbow' center='0.2014 1.1357 -0.0682' name='l_elbow'>
               <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
                 <Transform translation='0.2014 1.1357 -0.0682'>
                   <Transform>
@@ -970,10 +968,10 @@
                   </Billboard>
                 </HAnimSite>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_radiocarpal' name='l_radiocarpal' center='0.1984 0.8663 -0.0583'/>
+              <HAnimJoint DEF='hanim_l_radiocarpal' center='0.1984 0.8663 -0.0583' name='l_radiocarpal'/>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder' center='-0.1907 1.4407 -0.0325'>
+          <HAnimJoint DEF='hanim_r_shoulder' center='-0.1907 1.4407 -0.0325' name='r_shoulder'>
             <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
               <Transform translation='-0.1907 1.4407 -0.0325'>
                 <Transform>
@@ -1011,7 +1009,7 @@
                 </Billboard>
               </HAnimSite>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_elbow' name='r_elbow' center='-0.1949 1.1388 -0.062'>
+            <HAnimJoint DEF='hanim_r_elbow' center='-0.1949 1.1388 -0.062' name='r_elbow'>
               <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
                 <Transform translation='-0.1949 1.1388 -0.062'>
                   <Transform>
@@ -1071,11 +1069,13 @@
                   </Billboard>
                 </HAnimSite>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_radiocarpal' name='r_radiocarpal' center='-0.1959 0.8694 -0.0521'/>
+              <HAnimJoint DEF='hanim_r_radiocarpal' center='-0.1959 0.8694 -0.0521' name='r_radiocarpal'/>
             </HAnimJoint>
           </HAnimJoint>
         </HAnimJoint>
       </HAnimJoint>
+      <!-- <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) -->
+      <!-- </LOD> -->
       <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
       <HAnimJoint USE='hanim_sacroiliac' containerField='joints'/>
       <HAnimJoint USE='hanim_l_hip' containerField='joints'/>

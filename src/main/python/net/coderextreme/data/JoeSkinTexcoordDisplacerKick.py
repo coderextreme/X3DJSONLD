@@ -82,7 +82,7 @@ meta16.content = "BS studio translation from .x3dv by Joe using BS Contact"
 head1.children.append(meta16)
 meta17 = x3d.meta()
 meta17.name = "generator"
-meta17.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+meta17.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
 
 head1.children.append(meta17)
 meta18 = x3d.meta()
@@ -214,9 +214,11 @@ IndexedLineSet40.colorIndex = [0,1,2]
 IndexedLineSet40.colorPerVertex = False
 IndexedLineSet40.coordIndex = [0,1,-1,0,2,-1,0,3,-1]
 Coordinate41 = x3d.Coordinate()
+Coordinate41.point = [(0, 0, 0),(1, 0, 0),(0, 1, 0),(0, 0, 1)]
 
 IndexedLineSet40.coord = Coordinate41
 Color42 = x3d.Color()
+Color42.color = [(1, 0, 0),(0, 0.6, 0),(0, 0, 1)]
 
 IndexedLineSet40.color = Color42
 
@@ -529,6 +531,7 @@ HAnimDisplacer81 = x3d.HAnimDisplacer()
 HAnimDisplacer81.name = "skull_tip_raiser_action"
 HAnimDisplacer81.DEF = "Joe_skull_tip_raiser_action"
 HAnimDisplacer81.coordIndex = [0,1,2,3,4,5,6,7,8,9]
+HAnimDisplacer81.displacements = [(0, 0.15, 0),(0, 0, 0.15),(-0.1, 0, 0.15),(0.1, 0, 0.05),(0, -0.02, 0.05),(-0.15, 0, 0),(-0.05, 0, 0),(0.15, 0, 0),(0.05, 0, 0),(0, 0, -0.15)]
 
 HAnimJoint80.displacers.append(HAnimDisplacer81)
 HAnimJoint82 = x3d.HAnimJoint()
@@ -1146,9 +1149,11 @@ IndexedFaceSet142.coordIndex = [0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4
 IndexedFaceSet142.creaseAngle = 3.14
 Coordinate143 = x3d.Coordinate()
 Coordinate143.DEF = "Joe_SkinCoord"
+Coordinate143.point = [(0, 1.77, 0),(0, 1.665, 0.09),(-0.033, 1.62, 0.087),(0.033, 1.62, 0.087),(0, 1.55, 0.097),(-0.077, 1.64, -0.01),(-0.0527, 1.58, 0.015),(0.077, 1.64, -0.01),(0.0527, 1.58, 0.015),(0, 1.625, -0.0925),(-0.03, 1.46, 0.035),(0, 1.44, 0.03),(0.03, 1.46, 0.035),(-0.1135, 1.318, 0.095),(0.1135, 1.318, 0.095),(0, 1.25, 0.113),(-0.087, 1.19, 0.09),(-0.0935, 1.03, 0.075),(0.087, 1.19, 0.09),(0.0935, 1.03, 0.075),(-0.1425, 1.065, 0.0033),(-0.15, 0.9, -0.01),(0.1425, 1.065, 0.0033),(0.15, 0.9, -0.01),(0, 1.53, -0.084),(0.0049, 1.1908, -0.1113),(-0.0773, 1.019, -0.12),(0.0773, 1.019, -0.12),(0.005, 1.0915, -0.1091),(-0.178, 1.4825, -0.0625),(-0.17, 1.38, 0.007),(-0.1884, 0.8676, -0.036),(-0.16, 1.38, -0.127),(-0.2, 1.1388, -0.08),(-0.244, 1.1388, -0.04),(-0.165, 1.1388, -0.04),(-0.23, 1.133, -0.055),(-0.1977, 0.8169, -0.0177),(-0.1941, 0.6772, -0.0423),(-0.2117, 0.8562, -0.0584),(-0.1929, 0.789, -0.1064),(0.175, 1.4825, -0.06),(0.17, 1.38, 0.007),(0.1901, 0.8645, -0.0415),(0.16, 1.38, -0.125),(0.2, 1.1388, -0.08),(0.165, 1.1388, -0.04),(0.244, 1.1388, -0.04),(0.23, 1.133, -0.055),(0.2009, 0.8139, -0.0237),(0.2056, 0.6743, -0.0482),(0.2142, 0.8529, -0.0648),(0.1929, 0.786, -0.1122),(-0.1, 0.4913, -0.03),(-0.17, 0.466, 0),(-0.05, 0.466, 0),(-0.165, 0.01, 0.12),(-0.15, 0.07, 0),(-0.085, 0.086, 0.0125),(-0.09, 0.056, 0.0125),(-0.115, 0.02, 0.122),(-0.115, 0.04, -0.055),(-0.11, 0.011, 0.19),(0.0993, 0.4881, -0.0309),(0.17, 0.466, 0),(0.05, 0.4867, 0),(0.165, 0.01, 0.12),(0.15, 0.07, 0),(0.085, 0.086, 0.0125),(0.09, 0.056, 0.0125),(0.115, 0.02, 0.122),(0.115, 0.04, -0.055),(0.11, 0.011, 0.19),(0, 0.875, 0),(-0.0646, 1.5149, -0.038),(0.0646, 1.5149, -0.038),(0, 1.07225, 0.09),(-0.11, 1.427, -0.1375),(-0.235, 1.42, -0.0625),(0.11, 1.427, -0.1375),(0.235, 1.42, -0.0625),(0, 1.41, -0.145),(0, 0.925, 0.08),(-0.087, 1.19, -0.09),(0.087, 1.19, -0.09),(0.172, 1.32, -0.03),(-0.172, 1.32, -0.03),(0.15, 1.23, -0.015),(-0.15, 1.23, -0.015),(0.079, 0.92, -0.14),(0.1, 0.9, 0.077),(-0.079, 0.92, -0.14),(-0.1, 0.9, 0.075),(0, 0.87, 0),(0.171, 0.65, 0),(0.02, 0.65, 0),(0.1, 0.65, -0.08),(0.1, 0.65, 0.07),(-0.171, 0.65, 0),(-0.02, 0.65, 0),(-0.1, 0.65, -0.08),(-0.1, 0.65, 0.07),(0.25, 1.27, -0.04),(0.17, 1.27, -0.04),(0.2, 1.27, -0.09),(0.2, 1.27, 0.02),(0.244, 1.1388, -0.04),(0.165, 1.1388, -0.04),(0.2, 1.1388, -0.08),(0.2, 1.1388, -0.013),(0.225, 1, -0.01),(0.225, 1, -0.07),(0.185, 1, -0.01),(0.185, 1, -0.07),(0.2, 1.1388, -0.04),(0.225, 0.92, -0.04),(0.175, 0.92, -0.04),(0.2, 0.92, -0.065),(0.2, 0.92, -0.015),(0.225, 0.89, -0.04),(0.175, 0.89, -0.04),(0.2, 0.89, -0.065),(0.2, 0.89, -0.015),(0.218, 0.86, -0.04),(0.184, 0.86, -0.04),(0.2, 0.87, -0.07),(0.2, 0.87, 0),(0.21, 0.85, 0),(0.1854, 0.85, 0),(0.212, 0.84, -0.015),(0.183, 0.84, -0.015),(0.213, 0.835, -0.04),(0.19, 0.835, -0.04),(0.211, 0.835, -0.065),(0.192, 0.835, -0.065),(0.208, 0.84, -0.085),(0.19, 0.84, -0.085),(0.2, 0.84, -0.095),(0.215, 0.82, 0),(0.193, 0.815, 0.005),(0.198, 0.8, 0.012),(0.21, 0.82, 0.03),(0.19, 0.82, 0.03),(0.2, 0.835, 0.039),(0.212, 0.8, 0.05),(0.188, 0.8, 0.05),(0.2, 0.807, 0.057),(0.2, 0.793, 0.035),(0.2, 0.774, 0.076),(0.212, 0.78, 0.07),(0.188, 0.78, 0.07),(0.2, 0.785, 0.075),(0.2, 0.77, 0.062),(0.215, 0.793, -0.015),(0.187, 0.793, -0.015),(0.2, 0.793, -0.005),(0.215, 0.788, -0.04),(0.187, 0.788, -0.04),(0.215, 0.793, -0.065),(0.187, 0.793, -0.065),(0.21, 0.79, -0.085),(0.19, 0.79, -0.085),(0.2, 0.79, -0.095),(0.19, 0.77, -0.0275),(0.19, 0.77, -0.0525),(0.19, 0.78, -0.0775),(0.212, 0.745, -0.015),(0.188, 0.745, -0.02),(0.2, 0.745, -0.0255),(0.2, 0.745, -0.0045),(0.211, 0.72, -0.015),(0.189, 0.72, -0.015),(0.2, 0.72, -0.0252),(0.2, 0.72, -0.0048),(0.21, 0.695, -0.015),(0.19, 0.695, -0.015),(0.2, 0.695, -0.025),(0.2, 0.695, -0.005),(0.2, 0.685, -0.015),(0.215, 0.74, -0.04),(0.185, 0.74, -0.04),(0.2, 0.74, -0.055),(0.2, 0.74, -0.025),(0.21, 0.7142, -0.04),(0.19, 0.7142, -0.04),(0.2, 0.7142, -0.053),(0.2, 0.7142, -0.027),(0.21, 0.68, -0.04),(0.19, 0.68, -0.04),(0.2, 0.68, -0.05),(0.2, 0.68, -0.03),(0.2, 0.67, -0.04),(0.212, 0.74, -0.065),(0.188, 0.74, -0.065),(0.2, 0.74, -0.0756),(0.2, 0.74, -0.0542),(0.21, 0.7177, -0.065),(0.19, 0.7177, -0.065),(0.2, 0.7177, -0.0751),(0.2, 0.7177, -0.0549),(0.21, 0.695, -0.065),(0.19, 0.695, -0.065),(0.2, 0.695, -0.075),(0.2, 0.695, -0.055),(0.2, 0.685, -0.065),(0.211, 0.755, -0.085),(0.189, 0.755, -0.085),(0.2, 0.755, -0.0952),(0.2, 0.755, -0.0748),(0.21, 0.735, -0.085),(0.19, 0.735, -0.085),(0.2, 0.735, -0.0951),(0.2, 0.735, -0.0749),(0.21, 0.72, -0.085),(0.19, 0.72, -0.085),(0.2, 0.72, -0.095),(0.2, 0.72, -0.075),(0.2, 0.71, -0.085),(-0.23, 1.23, -0.04),(-0.16, 1.23, -0.04),(-0.2, 1.235, -0.105),(-0.2, 1.255, 0.02),(-0.244, 1.1388, -0.04),(-0.165, 1.1388, -0.04),(-0.2, 1.1388, -0.08),(-0.2, 1.1388, 0.013),(-0.225, 1, -0.01),(-0.225, 1, -0.07),(-0.185, 1, -0.01),(-0.185, 1, -0.07),(-0.2, 1.1388, -0.04),(-0.225, 0.92, -0.04),(-0.175, 0.92, -0.04),(-0.2, 0.92, -0.065),(-0.2, 0.92, -0.015),(-0.225, 0.89, -0.04),(-0.175, 0.89, -0.04),(-0.2, 0.89, -0.065),(-0.2, 0.89, -0.015),(-0.218, 0.86, -0.04),(-0.184, 0.86, -0.04),(-0.2, 0.87, -0.07),(-0.2, 0.87, 0),(-0.21, 0.85, 0),(-0.1854, 0.85, 0),(-0.212, 0.84, -0.015),(-0.183, 0.84, -0.015),(-0.213, 0.835, -0.04),(-0.19, 0.835, -0.04),(-0.211, 0.835, -0.065),(-0.192, 0.835, -0.065),(-0.208, 0.84, -0.085),(-0.19, 0.84, -0.085),(-0.2, 0.84, -0.095),(-0.215, 0.82, 0),(-0.193, 0.815, 0.005),(-0.198, 0.8, 0.012),(-0.21, 0.82, 0.03),(-0.19, 0.82, 0.03),(-0.2, 0.835, 0.039),(-0.212, 0.8, 0.05),(-0.188, 0.8, 0.05),(-0.2, 0.807, 0.057),(-0.2, 0.793, 0.035),(-0.2, 0.774, 0.076),(-0.212, 0.78, 0.07),(-0.188, 0.78, 0.07),(-0.2, 0.785, 0.075),(-0.2, 0.77, 0.062),(-0.215, 0.793, -0.015),(-0.187, 0.793, -0.015),(-0.2, 0.793, -0.005),(-0.215, 0.788, -0.04),(-0.187, 0.788, -0.04),(-0.215, 0.793, -0.065),(-0.187, 0.793, -0.065),(-0.21, 0.79, -0.085),(-0.19, 0.79, -0.085),(-0.2, 0.79, -0.095),(-0.19, 0.77, -0.0275),(-0.19, 0.77, -0.0525),(-0.19, 0.78, -0.0775),(-0.212, 0.745, -0.015),(-0.188, 0.745, -0.02),(-0.2, 0.745, -0.0255),(-0.2, 0.745, -0.0045),(-0.211, 0.72, -0.015),(-0.189, 0.72, -0.015),(-0.2, 0.72, -0.0252),(-0.2, 0.72, -0.0048),(-0.21, 0.695, -0.015),(-0.19, 0.695, -0.015),(-0.2, 0.695, -0.025),(-0.2, 0.695, -0.005),(-0.2, 0.685, -0.015),(-0.215, 0.74, -0.04),(-0.185, 0.74, -0.04),(-0.2, 0.74, -0.055),(-0.2, 0.74, -0.025),(-0.21, 0.7142, -0.04),(-0.19, 0.7142, -0.04),(-0.2, 0.7142, -0.053),(-0.2, 0.7142, -0.027),(-0.21, 0.68, -0.04),(-0.19, 0.68, -0.04),(-0.2, 0.68, -0.05),(-0.2, 0.68, -0.03),(-0.2, 0.67, -0.04),(-0.212, 0.74, -0.065),(-0.188, 0.74, -0.065),(-0.2, 0.74, -0.0756),(-0.2, 0.74, -0.0542),(-0.21, 0.7177, -0.065),(-0.19, 0.7177, -0.065),(-0.2, 0.7177, -0.0751),(-0.2, 0.7177, -0.0549),(-0.21, 0.695, -0.065),(-0.19, 0.695, -0.065),(-0.2, 0.695, -0.075),(-0.2, 0.695, -0.055),(-0.2, 0.685, -0.065),(-0.211, 0.755, -0.085),(-0.189, 0.755, -0.085),(-0.2, 0.755, -0.0952),(-0.2, 0.755, -0.0748),(-0.21, 0.735, -0.085),(-0.19, 0.735, -0.085),(-0.2, 0.735, -0.0951),(-0.2, 0.735, -0.0749),(-0.21, 0.72, -0.085),(-0.19, 0.72, -0.085),(-0.2, 0.72, -0.095),(-0.2, 0.72, -0.075),(-0.2, 0.71, -0.085),(0.115, 0.466, 0.06),(0.115, 0.466, -0.055),(0.15, 0.466, 0),(0.05, 0.466, 0),(0.17, 0.3, 0),(0.06, 0.3, 0),(0.1, 0.3, -0.05),(0.1, 0.3, 0.05),(0.15, 0.07, 0),(0.085, 0.086, 0.0125),(0.115, 0.069, -0.045),(0.117, 0.0975, 0.0615),(0.1375, 0.006, -0.03),(0.095, 0.006, -0.03),(0.115, 0.015, -0.045),(0.115, 0.06, 0.1),(0.115, 0, 0.07),(0.165, 0, 0.07),(0.095, 0, 0.07),(0.115, 0.04, 0.13),(0.125, 0, 0.12),(0.165, 0, 0.12),(0.087, 0, 0.122),(0.09, 0.012, 0.188),(0.11, 0.011, 0.19),(0.128, 0.011, 0.185),(0.142, 0.011, 0.178),(0.154, 0.01, 0.168),(-0.115, 0.466, 0.06),(-0.115, 0.466, -0.055),(-0.17, 0.466, 0),(-0.05, 0.466, 0),(-0.17, 0.3, 0),(-0.06, 0.3, 0),(-0.1, 0.3, -0.05),(-0.1, 0.3, 0.05),(-0.15, 0.07, 0),(-0.085, 0.086, 0.0125),(-0.115, 0.069, -0.045),(-0.117, 0.0975, 0.0615),(-0.1375, 0.006, -0.03),(-0.095, 0.006, -0.03),(-0.095, 0.006, -0.03),(-0.115, 0.06, 0.1),(-0.115, 0, 0.07),(-0.165, 0, 0.07),(-0.095, 0, 0.07),(-0.115, 0.04, 0.13),(-0.125, 0, 0.12),(-0.165, 0, 0.12),(-0.087, 0, 0.122),(-0.09, 0.012, 0.188),(-0.11, 0.011, 0.19),(-0.128, 0.011, 0.185),(-0.142, 0.011, 0.178),(-0.154, 0.01, 0.168)]
 
 IndexedFaceSet142.coord = Coordinate143
 TextureCoordinate144 = x3d.TextureCoordinate()
+TextureCoordinate144.point = [(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5),(0.5, 0),(0, 0.5),(0, 0),(0.5, 0.5)]
 
 IndexedFaceSet142.texCoord = TextureCoordinate144
 
@@ -1558,476 +1563,571 @@ Group242.children.append(TimeSensor243)
 OrientationInterpolator244 = x3d.OrientationInterpolator()
 OrientationInterpolator244.DEF = "HumanoidRoot_RotationInterpolator"
 OrientationInterpolator244.key = [0,0.1,0.4,0.6,1]
+OrientationInterpolator244.keyValue = [(1, 0, 0, 0.5),(1, 0, 0, 0.5),(-1, 0, 0, 0.1),(-1, 0, 0, 0.5),(-1, 0, 0, 0.5)]
 
 Group242.children.append(OrientationInterpolator244)
 PositionInterpolator245 = x3d.PositionInterpolator()
 PositionInterpolator245.DEF = "HumanoidRoot_TranslationInterpolator"
 PositionInterpolator245.key = [0,0.2,0.6,1]
+PositionInterpolator245.keyValue = [(1, 0.3, -1),(0.4, -0.04, -0.4),(-0.18, 0.1, 0),(-0.2, 0.15, 0.15)]
 
 Group242.children.append(PositionInterpolator245)
 OrientationInterpolator246 = x3d.OrientationInterpolator()
 OrientationInterpolator246.DEF = "sacroiliac_RotationInterpolator"
 OrientationInterpolator246.key = [0,0.5,1]
+OrientationInterpolator246.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator246)
 OrientationInterpolator247 = x3d.OrientationInterpolator()
 OrientationInterpolator247.DEF = "l_hip_RotationInterpolator"
 OrientationInterpolator247.key = [0,0.1,0.3,0.45,1]
+OrientationInterpolator247.keyValue = [(-1, 0, 0, 1.5),(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 0.5),(1, 0, 0, 1)]
 
 Group242.children.append(OrientationInterpolator247)
 OrientationInterpolator248 = x3d.OrientationInterpolator()
 OrientationInterpolator248.DEF = "l_knee_RotationInterpolator"
 OrientationInterpolator248.key = [0,0.2,0.35,0.5,1]
+OrientationInterpolator248.keyValue = [(1, 0, 0, 1),(0, 0, 1, 0),(0, 0, 1, 0.2),(1, 0, 1, 0.5),(1, 0, 0, 1.4)]
 
 Group242.children.append(OrientationInterpolator248)
 OrientationInterpolator249 = x3d.OrientationInterpolator()
 OrientationInterpolator249.DEF = "l_ankle_RotationInterpolator"
 OrientationInterpolator249.key = [0,0.25,1]
+OrientationInterpolator249.keyValue = [(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 1)]
 
 Group242.children.append(OrientationInterpolator249)
 OrientationInterpolator250 = x3d.OrientationInterpolator()
 OrientationInterpolator250.DEF = "l_subtalar_RotationInterpolator"
 OrientationInterpolator250.key = [0,0.5,1]
+OrientationInterpolator250.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator250)
 OrientationInterpolator251 = x3d.OrientationInterpolator()
 OrientationInterpolator251.DEF = "l_midtarsal_RotationInterpolator"
 OrientationInterpolator251.key = [0,0.5,1]
+OrientationInterpolator251.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator251)
 OrientationInterpolator252 = x3d.OrientationInterpolator()
 OrientationInterpolator252.DEF = "l_metatarsal_RotationInterpolator"
 OrientationInterpolator252.key = [0,0.5,1]
+OrientationInterpolator252.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator252)
 OrientationInterpolator253 = x3d.OrientationInterpolator()
 OrientationInterpolator253.DEF = "r_hip_RotationInterpolator"
 OrientationInterpolator253.key = [0,0.25,0.5,0.75,1]
+OrientationInterpolator253.keyValue = [(1, 0, 0, 1),(1, 0, 0, 1),(-1, 0, 0, 1),(-1, 0, 0, 1),(-1, 0, 0, 1)]
 
 Group242.children.append(OrientationInterpolator253)
 OrientationInterpolator254 = x3d.OrientationInterpolator()
 OrientationInterpolator254.DEF = "r_knee_RotationInterpolator"
 OrientationInterpolator254.key = [0,0.25,0.5,0.75,1]
+OrientationInterpolator254.keyValue = [(1, 0, 0, 0.1),(0, 0, 1, 0),(1, 0, 0, 1),(1, 0, 0, 1),(1, 0, 0, 1.5)]
 
 Group242.children.append(OrientationInterpolator254)
 OrientationInterpolator255 = x3d.OrientationInterpolator()
 OrientationInterpolator255.DEF = "r_ankle_RotationInterpolator"
 OrientationInterpolator255.key = [0,0.25,0.5,0.75,1]
+OrientationInterpolator255.keyValue = [(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 1),(1, 0, 0, 1),(1, 0, 0, 0.5)]
 
 Group242.children.append(OrientationInterpolator255)
 OrientationInterpolator256 = x3d.OrientationInterpolator()
 OrientationInterpolator256.DEF = "r_subtalar_RotationInterpolator"
 OrientationInterpolator256.key = [0,0.5,1]
+OrientationInterpolator256.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator256)
 OrientationInterpolator257 = x3d.OrientationInterpolator()
 OrientationInterpolator257.DEF = "r_midtarsal_RotationInterpolator"
 OrientationInterpolator257.key = [0,0.5,1]
+OrientationInterpolator257.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator257)
 OrientationInterpolator258 = x3d.OrientationInterpolator()
 OrientationInterpolator258.DEF = "r_metatarsal_RotationInterpolator"
 OrientationInterpolator258.key = [0,0.5,1]
+OrientationInterpolator258.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator258)
 OrientationInterpolator259 = x3d.OrientationInterpolator()
 OrientationInterpolator259.DEF = "vl5_RotationInterpolator"
 OrientationInterpolator259.key = [0,0.5,1]
+OrientationInterpolator259.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator259)
 OrientationInterpolator260 = x3d.OrientationInterpolator()
 OrientationInterpolator260.DEF = "vl4_RotationInterpolator"
 OrientationInterpolator260.key = [0,0.5,1]
+OrientationInterpolator260.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator260)
 OrientationInterpolator261 = x3d.OrientationInterpolator()
 OrientationInterpolator261.DEF = "vl3_RotationInterpolator"
 OrientationInterpolator261.key = [0,0.5,1]
+OrientationInterpolator261.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator261)
 OrientationInterpolator262 = x3d.OrientationInterpolator()
 OrientationInterpolator262.DEF = "vl2_RotationInterpolator"
 OrientationInterpolator262.key = [0,0.5,1]
+OrientationInterpolator262.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator262)
 OrientationInterpolator263 = x3d.OrientationInterpolator()
 OrientationInterpolator263.DEF = "vl1_RotationInterpolator"
 OrientationInterpolator263.key = [0,0.5,1]
+OrientationInterpolator263.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator263)
 OrientationInterpolator264 = x3d.OrientationInterpolator()
 OrientationInterpolator264.DEF = "vt12_RotationInterpolator"
 OrientationInterpolator264.key = [0,0.5,1]
+OrientationInterpolator264.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator264)
 OrientationInterpolator265 = x3d.OrientationInterpolator()
 OrientationInterpolator265.DEF = "vt11_RotationInterpolator"
 OrientationInterpolator265.key = [0,0.5,1]
+OrientationInterpolator265.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator265)
 OrientationInterpolator266 = x3d.OrientationInterpolator()
 OrientationInterpolator266.DEF = "vt10_RotationInterpolator"
 OrientationInterpolator266.key = [0,0.5,1]
+OrientationInterpolator266.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator266)
 OrientationInterpolator267 = x3d.OrientationInterpolator()
 OrientationInterpolator267.DEF = "vt9_RotationInterpolator"
 OrientationInterpolator267.key = [0,0.5,1]
+OrientationInterpolator267.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator267)
 OrientationInterpolator268 = x3d.OrientationInterpolator()
 OrientationInterpolator268.DEF = "vt8_RotationInterpolator"
 OrientationInterpolator268.key = [0,0.5,1]
+OrientationInterpolator268.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator268)
 OrientationInterpolator269 = x3d.OrientationInterpolator()
 OrientationInterpolator269.DEF = "vt7_RotationInterpolator"
 OrientationInterpolator269.key = [0,0.5,1]
+OrientationInterpolator269.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator269)
 OrientationInterpolator270 = x3d.OrientationInterpolator()
 OrientationInterpolator270.DEF = "vt6_RotationInterpolator"
 OrientationInterpolator270.key = [0,0.5,1]
+OrientationInterpolator270.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator270)
 OrientationInterpolator271 = x3d.OrientationInterpolator()
 OrientationInterpolator271.DEF = "vt5_RotationInterpolator"
 OrientationInterpolator271.key = [0,0.5,1]
+OrientationInterpolator271.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator271)
 OrientationInterpolator272 = x3d.OrientationInterpolator()
 OrientationInterpolator272.DEF = "vt4_RotationInterpolator"
 OrientationInterpolator272.key = [0,0.5,1]
+OrientationInterpolator272.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator272)
 OrientationInterpolator273 = x3d.OrientationInterpolator()
 OrientationInterpolator273.DEF = "vt3_RotationInterpolator"
 OrientationInterpolator273.key = [0,0.5,1]
+OrientationInterpolator273.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator273)
 OrientationInterpolator274 = x3d.OrientationInterpolator()
 OrientationInterpolator274.DEF = "vt2_RotationInterpolator"
 OrientationInterpolator274.key = [0,0.5,1]
+OrientationInterpolator274.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator274)
 OrientationInterpolator275 = x3d.OrientationInterpolator()
 OrientationInterpolator275.DEF = "vt1_RotationInterpolator"
 OrientationInterpolator275.key = [0,0.5,1]
+OrientationInterpolator275.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator275)
 OrientationInterpolator276 = x3d.OrientationInterpolator()
 OrientationInterpolator276.DEF = "vc7_RotationInterpolator"
 OrientationInterpolator276.key = [0,0.5,1]
+OrientationInterpolator276.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator276)
 OrientationInterpolator277 = x3d.OrientationInterpolator()
 OrientationInterpolator277.DEF = "vc6_RotationInterpolator"
 OrientationInterpolator277.key = [0,0.5,1]
+OrientationInterpolator277.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator277)
 OrientationInterpolator278 = x3d.OrientationInterpolator()
 OrientationInterpolator278.DEF = "vc5_RotationInterpolator"
 OrientationInterpolator278.key = [0,0.5,1]
+OrientationInterpolator278.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator278)
 OrientationInterpolator279 = x3d.OrientationInterpolator()
 OrientationInterpolator279.DEF = "vc4_RotationInterpolator"
 OrientationInterpolator279.key = [0,0.3,0.4,1]
+OrientationInterpolator279.keyValue = [(1, 0, 1, 0.25),(-1, 0, -1, 0.35),(1, 0, 0, 0.75),(1, 0, 1, 0.5)]
 
 Group242.children.append(OrientationInterpolator279)
 OrientationInterpolator280 = x3d.OrientationInterpolator()
 OrientationInterpolator280.DEF = "vc3_RotationInterpolator"
 OrientationInterpolator280.key = [0,0.5,1]
+OrientationInterpolator280.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator280)
 OrientationInterpolator281 = x3d.OrientationInterpolator()
 OrientationInterpolator281.DEF = "vc2_RotationInterpolator"
 OrientationInterpolator281.key = [0,0.5,1]
+OrientationInterpolator281.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator281)
 OrientationInterpolator282 = x3d.OrientationInterpolator()
 OrientationInterpolator282.DEF = "vc1_RotationInterpolator"
 OrientationInterpolator282.key = [0,0.5,1]
+OrientationInterpolator282.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator282)
 OrientationInterpolator283 = x3d.OrientationInterpolator()
 OrientationInterpolator283.DEF = "skullbase_RotationInterpolator"
 OrientationInterpolator283.key = [0,0.2,0.75,1]
+OrientationInterpolator283.keyValue = [(0, -1, 0, 0.5),(0, 0, 1, 0),(0, 0, 1, 0),(0, 1, 0, 0.35)]
 
 Group242.children.append(OrientationInterpolator283)
 OrientationInterpolator284 = x3d.OrientationInterpolator()
 OrientationInterpolator284.DEF = "l_eyelid_joint_RotationInterpolator"
 OrientationInterpolator284.key = [0,0.5,1]
+OrientationInterpolator284.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator284)
 OrientationInterpolator285 = x3d.OrientationInterpolator()
 OrientationInterpolator285.DEF = "l_eyeball_joint_RotationInterpolator"
 OrientationInterpolator285.key = [0,0.5,1]
+OrientationInterpolator285.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator285)
 OrientationInterpolator286 = x3d.OrientationInterpolator()
 OrientationInterpolator286.DEF = "l_eyebrow_joint_RotationInterpolator"
 OrientationInterpolator286.key = [0,0.5,1]
+OrientationInterpolator286.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator286)
 OrientationInterpolator287 = x3d.OrientationInterpolator()
 OrientationInterpolator287.DEF = "r_eyelid_joint_RotationInterpolator"
 OrientationInterpolator287.key = [0,0.5,1]
+OrientationInterpolator287.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator287)
 OrientationInterpolator288 = x3d.OrientationInterpolator()
 OrientationInterpolator288.DEF = "r_eyeball_joint_RotationInterpolator"
 OrientationInterpolator288.key = [0,0.5,1]
+OrientationInterpolator288.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator288)
 OrientationInterpolator289 = x3d.OrientationInterpolator()
 OrientationInterpolator289.DEF = "r_eyebrow_joint_RotationInterpolator"
 OrientationInterpolator289.key = [0,0.5,1]
+OrientationInterpolator289.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator289)
 OrientationInterpolator290 = x3d.OrientationInterpolator()
 OrientationInterpolator290.DEF = "temporomandibular_RotationInterpolator"
 OrientationInterpolator290.key = [0,0.5,1]
+OrientationInterpolator290.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator290)
 OrientationInterpolator291 = x3d.OrientationInterpolator()
 OrientationInterpolator291.DEF = "l_sternoclavicular_RotationInterpolator"
 OrientationInterpolator291.key = [0,0.5,1]
+OrientationInterpolator291.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator291)
 OrientationInterpolator292 = x3d.OrientationInterpolator()
 OrientationInterpolator292.DEF = "l_acromioclavicular_RotationInterpolator"
 OrientationInterpolator292.key = [0,0.5,1]
+OrientationInterpolator292.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator292)
 OrientationInterpolator293 = x3d.OrientationInterpolator()
 OrientationInterpolator293.DEF = "l_shoulder_RotationInterpolator"
 OrientationInterpolator293.key = [0,0.4,1]
+OrientationInterpolator293.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.5),(-1, 0, 1, 1.75)]
 
 Group242.children.append(OrientationInterpolator293)
 OrientationInterpolator294 = x3d.OrientationInterpolator()
 OrientationInterpolator294.DEF = "l_elbow_RotationInterpolator"
 OrientationInterpolator294.key = [0,0.5,1]
+OrientationInterpolator294.keyValue = [(-1, 0, 0, 3),(-1, 0, 0, 0.75),(-1, -1, 0, 0.5)]
 
 Group242.children.append(OrientationInterpolator294)
 OrientationInterpolator295 = x3d.OrientationInterpolator()
 OrientationInterpolator295.DEF = "l_wrist_RotationInterpolator"
 OrientationInterpolator295.key = [0,0.4,0.8,1]
+OrientationInterpolator295.keyValue = [(0, 0, 1, 0),(0, 1, 0, 1.3),(0, -0.5, 1, 1.3),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator295)
 OrientationInterpolator296 = x3d.OrientationInterpolator()
 OrientationInterpolator296.DEF = "l_thumb1_RotationInterpolator"
 OrientationInterpolator296.key = [0,0.5,1]
+OrientationInterpolator296.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator296)
 OrientationInterpolator297 = x3d.OrientationInterpolator()
 OrientationInterpolator297.DEF = "l_thumb2_RotationInterpolator"
 OrientationInterpolator297.key = [0,0.5,1]
+OrientationInterpolator297.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator297)
 OrientationInterpolator298 = x3d.OrientationInterpolator()
 OrientationInterpolator298.DEF = "l_thumb3_RotationInterpolator"
 OrientationInterpolator298.key = [0,0.5,1]
+OrientationInterpolator298.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator298)
 OrientationInterpolator299 = x3d.OrientationInterpolator()
 OrientationInterpolator299.DEF = "l_index0_RotationInterpolator"
 OrientationInterpolator299.key = [0,0.5,1]
+OrientationInterpolator299.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator299)
 OrientationInterpolator300 = x3d.OrientationInterpolator()
 OrientationInterpolator300.DEF = "l_index1_RotationInterpolator"
 OrientationInterpolator300.key = [0,0.5,1]
+OrientationInterpolator300.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator300)
 OrientationInterpolator301 = x3d.OrientationInterpolator()
 OrientationInterpolator301.DEF = "l_index2_RotationInterpolator"
 OrientationInterpolator301.key = [0,0.5,1]
+OrientationInterpolator301.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator301)
 OrientationInterpolator302 = x3d.OrientationInterpolator()
 OrientationInterpolator302.DEF = "l_index3_RotationInterpolator"
 OrientationInterpolator302.key = [0,0.5,1]
+OrientationInterpolator302.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator302)
 OrientationInterpolator303 = x3d.OrientationInterpolator()
 OrientationInterpolator303.DEF = "l_middle0_RotationInterpolator"
 OrientationInterpolator303.key = [0,0.5,1]
+OrientationInterpolator303.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator303)
 OrientationInterpolator304 = x3d.OrientationInterpolator()
 OrientationInterpolator304.DEF = "l_middle1_RotationInterpolator"
 OrientationInterpolator304.key = [0,0.5,1]
+OrientationInterpolator304.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator304)
 OrientationInterpolator305 = x3d.OrientationInterpolator()
 OrientationInterpolator305.DEF = "l_middle2_RotationInterpolator"
 OrientationInterpolator305.key = [0,0.5,1]
+OrientationInterpolator305.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator305)
 OrientationInterpolator306 = x3d.OrientationInterpolator()
 OrientationInterpolator306.DEF = "l_middle3_RotationInterpolator"
 OrientationInterpolator306.key = [0,0.5,1]
+OrientationInterpolator306.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator306)
 OrientationInterpolator307 = x3d.OrientationInterpolator()
 OrientationInterpolator307.DEF = "l_ring0_RotationInterpolator"
 OrientationInterpolator307.key = [0,0.5,1]
+OrientationInterpolator307.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator307)
 OrientationInterpolator308 = x3d.OrientationInterpolator()
 OrientationInterpolator308.DEF = "l_ring1_RotationInterpolator"
 OrientationInterpolator308.key = [0,0.5,1]
+OrientationInterpolator308.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator308)
 OrientationInterpolator309 = x3d.OrientationInterpolator()
 OrientationInterpolator309.DEF = "l_ring2_RotationInterpolator"
 OrientationInterpolator309.key = [0,0.5,1]
+OrientationInterpolator309.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator309)
 OrientationInterpolator310 = x3d.OrientationInterpolator()
 OrientationInterpolator310.DEF = "l_ring3_RotationInterpolator"
 OrientationInterpolator310.key = [0,0.5,1]
+OrientationInterpolator310.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator310)
 OrientationInterpolator311 = x3d.OrientationInterpolator()
 OrientationInterpolator311.DEF = "l_pinky0_RotationInterpolator"
 OrientationInterpolator311.key = [0,0.5,1]
+OrientationInterpolator311.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator311)
 OrientationInterpolator312 = x3d.OrientationInterpolator()
 OrientationInterpolator312.DEF = "l_pinky1_RotationInterpolator"
 OrientationInterpolator312.key = [0,0.5,1]
+OrientationInterpolator312.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator312)
 OrientationInterpolator313 = x3d.OrientationInterpolator()
 OrientationInterpolator313.DEF = "l_pinky2_RotationInterpolator"
 OrientationInterpolator313.key = [0,0.5,1]
+OrientationInterpolator313.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator313)
 OrientationInterpolator314 = x3d.OrientationInterpolator()
 OrientationInterpolator314.DEF = "l_pinky3_RotationInterpolator"
 OrientationInterpolator314.key = [0,0.5,1]
+OrientationInterpolator314.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator314)
 OrientationInterpolator315 = x3d.OrientationInterpolator()
 OrientationInterpolator315.DEF = "r_sternoclavicular_RotationInterpolator"
 OrientationInterpolator315.key = [0,0.5,1]
+OrientationInterpolator315.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator315)
 OrientationInterpolator316 = x3d.OrientationInterpolator()
 OrientationInterpolator316.DEF = "r_acromioclavicular_RotationInterpolator"
 OrientationInterpolator316.key = [0,0.5,1]
+OrientationInterpolator316.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator316)
 OrientationInterpolator317 = x3d.OrientationInterpolator()
 OrientationInterpolator317.DEF = "r_shoulder_RotationInterpolator"
 OrientationInterpolator317.key = [0,0.5,1]
+OrientationInterpolator317.keyValue = [(0, 0, -1, 2.5),(0, 0, -1, 1.5),(0, 0, -1, 1.75)]
 
 Group242.children.append(OrientationInterpolator317)
 OrientationInterpolator318 = x3d.OrientationInterpolator()
 OrientationInterpolator318.DEF = "r_elbow_RotationInterpolator"
 OrientationInterpolator318.key = [0,0.5,1]
+OrientationInterpolator318.keyValue = [(-1, 0, 0, 3),(-1, 0, 0, 0.75),(-1, -1, 0, 0.5)]
 
 Group242.children.append(OrientationInterpolator318)
 OrientationInterpolator319 = x3d.OrientationInterpolator()
 OrientationInterpolator319.DEF = "r_wrist_RotationInterpolator"
 OrientationInterpolator319.key = [0,0.5,0.7,1]
+OrientationInterpolator319.keyValue = [(0, 1, 0, 0.3),(0, 0, 1, 0),(0, 0, -1, 1),(0, -1, 0, 0.3)]
 
 Group242.children.append(OrientationInterpolator319)
 OrientationInterpolator320 = x3d.OrientationInterpolator()
 OrientationInterpolator320.DEF = "r_thumb1_RotationInterpolator"
 OrientationInterpolator320.key = [0,0.5,1]
+OrientationInterpolator320.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator320)
 OrientationInterpolator321 = x3d.OrientationInterpolator()
 OrientationInterpolator321.DEF = "r_thumb2_RotationInterpolator"
 OrientationInterpolator321.key = [0,0.5,1]
+OrientationInterpolator321.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator321)
 OrientationInterpolator322 = x3d.OrientationInterpolator()
 OrientationInterpolator322.DEF = "r_thumb3_RotationInterpolator"
 OrientationInterpolator322.key = [0,0.5,1]
+OrientationInterpolator322.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator322)
 OrientationInterpolator323 = x3d.OrientationInterpolator()
 OrientationInterpolator323.DEF = "r_index0_RotationInterpolator"
 OrientationInterpolator323.key = [0,0.5,0.75,1]
+OrientationInterpolator323.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator323)
 OrientationInterpolator324 = x3d.OrientationInterpolator()
 OrientationInterpolator324.DEF = "r_index1_RotationInterpolator"
 OrientationInterpolator324.key = [0,0.5,0.75,1]
+OrientationInterpolator324.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator324)
 OrientationInterpolator325 = x3d.OrientationInterpolator()
 OrientationInterpolator325.DEF = "r_index2_RotationInterpolator"
 OrientationInterpolator325.key = [0,0.5,0.75,1]
+OrientationInterpolator325.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator325)
 OrientationInterpolator326 = x3d.OrientationInterpolator()
 OrientationInterpolator326.DEF = "r_index3_RotationInterpolator"
 OrientationInterpolator326.key = [0,0.5,0.75,1]
+OrientationInterpolator326.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator326)
 OrientationInterpolator327 = x3d.OrientationInterpolator()
 OrientationInterpolator327.DEF = "r_middle0_RotationInterpolator"
 OrientationInterpolator327.key = [0,0.5,0.75,1]
+OrientationInterpolator327.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator327)
 OrientationInterpolator328 = x3d.OrientationInterpolator()
 OrientationInterpolator328.DEF = "r_middle1_RotationInterpolator"
 OrientationInterpolator328.key = [0,0.5,0.75,1]
+OrientationInterpolator328.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator328)
 OrientationInterpolator329 = x3d.OrientationInterpolator()
 OrientationInterpolator329.DEF = "r_middle2_RotationInterpolator"
 OrientationInterpolator329.key = [0,0.5,0.75,1]
+OrientationInterpolator329.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator329)
 OrientationInterpolator330 = x3d.OrientationInterpolator()
 OrientationInterpolator330.DEF = "r_middle3_RotationInterpolator"
 OrientationInterpolator330.key = [0,0.5,0.75,1]
+OrientationInterpolator330.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator330)
 OrientationInterpolator331 = x3d.OrientationInterpolator()
 OrientationInterpolator331.DEF = "r_ring0_RotationInterpolator"
 OrientationInterpolator331.key = [0,0.5,0.75,1]
+OrientationInterpolator331.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator331)
 OrientationInterpolator332 = x3d.OrientationInterpolator()
 OrientationInterpolator332.DEF = "r_ring1_RotationInterpolator"
 OrientationInterpolator332.key = [0,0.5,0.75,1]
+OrientationInterpolator332.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator332)
 OrientationInterpolator333 = x3d.OrientationInterpolator()
 OrientationInterpolator333.DEF = "r_ring2_RotationInterpolator"
 OrientationInterpolator333.key = [0,0.5,0.75,1]
+OrientationInterpolator333.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator333)
 OrientationInterpolator334 = x3d.OrientationInterpolator()
 OrientationInterpolator334.DEF = "r_ring3_RotationInterpolator"
 OrientationInterpolator334.key = [0,0.5,0.75,1]
+OrientationInterpolator334.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator334)
 OrientationInterpolator335 = x3d.OrientationInterpolator()
 OrientationInterpolator335.DEF = "r_pinky0_RotationInterpolator"
 OrientationInterpolator335.key = [0,0.5,0.75,1]
+OrientationInterpolator335.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator335)
 OrientationInterpolator336 = x3d.OrientationInterpolator()
 OrientationInterpolator336.DEF = "r_pinky1_RotationInterpolator"
 OrientationInterpolator336.key = [0,0.5,0.75,1]
+OrientationInterpolator336.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator336)
 OrientationInterpolator337 = x3d.OrientationInterpolator()
 OrientationInterpolator337.DEF = "r_pinky2_RotationInterpolator"
 OrientationInterpolator337.key = [0,0.5,0.75,1]
+OrientationInterpolator337.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator337)
 OrientationInterpolator338 = x3d.OrientationInterpolator()
 OrientationInterpolator338.DEF = "r_pinky3_RotationInterpolator"
 OrientationInterpolator338.key = [0,0.5,0.75,1]
+OrientationInterpolator338.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group242.children.append(OrientationInterpolator338)
 
@@ -3440,6 +3540,7 @@ IndexedFaceSet543.DEF = "ball_IndexedFaceSet"
 IndexedFaceSet543.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]
 Coordinate544 = x3d.Coordinate()
 Coordinate544.DEF = "Ball_Coordinates"
+Coordinate544.point = [(0, 0.4675, 0),(0, 0.4049, -0.2338),(-0.1169, 0.4049, -0.2024),(-0.2024, 0.4049, -0.1169),(-0.2338, 0.4049, 0),(-0.2024, 0.4049, 0.1169),(-0.1169, 0.4049, 0.2024),(0, 0.4049, 0.2338),(0.1169, 0.4049, 0.2024),(0.2024, 0.4049, 0.1169),(0.2338, 0.4049, 0),(0.2024, 0.4049, -0.1169),(0.1169, 0.4049, -0.2024),(0, 0.2338, -0.4049),(-0.2024, 0.2338, -0.3506),(-0.3506, 0.2338, -0.2024),(-0.4049, 0.2338, 0),(-0.3506, 0.2338, 0.2024),(-0.2024, 0.2338, 0.3506),(0, 0.2338, 0.4049),(0.2024, 0.2338, 0.3506),(0.3506, 0.2338, 0.2024),(0.4049, 0.2338, 0),(0.3506, 0.2338, -0.2024),(0.2024, 0.2338, -0.3506),(0, 0, -0.4675),(-0.2338, 0, -0.4049),(-0.4049, 0, -0.2338),(-0.4675, 0, 0),(-0.4049, 0, 0.2338),(-0.2338, 0, 0.4049),(0, 0, 0.4675),(0.2338, 0, 0.4049),(0.4049, 0, 0.2338),(0.4675, 0, 0),(0.4049, 0, -0.2338),(0.2338, 0, -0.4049),(0, -0.2338, -0.4049),(-0.2024, -0.2338, -0.3506),(-0.3506, -0.2338, -0.2024),(-0.4049, -0.2338, 0),(-0.3506, -0.2338, 0.2024),(-0.2024, -0.2338, 0.3506),(0, -0.2338, 0.4049),(0.2024, -0.2338, 0.3506),(0.3506, -0.2338, 0.2024),(0.4049, -0.2338, 0),(0.3506, -0.2338, -0.2024),(0.2024, -0.2338, -0.3506),(0, -0.4049, -0.2338),(-0.1169, -0.4049, -0.2024),(-0.2024, -0.4049, -0.1169),(-0.2338, -0.4049, 0),(-0.2024, -0.4049, 0.1169),(-0.1169, -0.4049, 0.2024),(0, -0.4049, 0.2338),(0.1169, -0.4049, 0.2024),(0.2024, -0.4049, 0.1169),(0.2338, -0.4049, 0),(0.2024, -0.4049, -0.1169),(0.1169, -0.4049, -0.2024),(0, -0.4675, 0)]
 
 IndexedFaceSet543.coord = Coordinate544
 
@@ -3457,11 +3558,13 @@ Group537.children.append(Transform538)
 PositionInterpolator546 = x3d.PositionInterpolator()
 PositionInterpolator546.DEF = "ball_TranslationInterpolator"
 PositionInterpolator546.key = [0,0.4,0.409,1]
+PositionInterpolator546.keyValue = [(-1, 0.4, -1),(0, 0.07, 0),(0.05, 0.06, 0.05),(2, 4, 10)]
 
 Group537.children.append(PositionInterpolator546)
 OrientationInterpolator547 = x3d.OrientationInterpolator()
 OrientationInterpolator547.DEF = "ball_RotationInterpolator"
 OrientationInterpolator547.key = [0,0.4,0.41,0.71,1]
+OrientationInterpolator547.keyValue = [(1, 0, 1, 0.25),(-1, 0, -1, 1.35),(-1, 1, -1, 3.35),(-1, 0.2, -1, 3),(-1, 0.2, -1, 3)]
 
 Group537.children.append(OrientationInterpolator547)
 """Ball Animation Routes"""
@@ -3525,6 +3628,7 @@ IndexedLineSet559.DEF = "Orbit1"
 IndexedLineSet559.coordIndex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]
 Coordinate560 = x3d.Coordinate()
 Coordinate560.DEF = "circle_Coordinates"
+Coordinate560.point = [(1, 0, 0),(0.995, 0, -0.105),(0.979, 0, -0.208),(0.951, 0, -0.309),(0.914, 0, -0.407),(0.866, 0, -0.5),(0.809, 0, -0.588),(0.743, 0, -0.669),(0.669, 0, -0.743),(0.588, 0, -0.809),(0.5, 0, -0.866),(0.407, 0, -0.914),(0.309, 0, -0.951),(0.208, 0, -0.978),(0.105, 0, -0.995),(0, 0, -1),(-0.105, 0, -0.994522),(-0.208, 0, -0.978),(-0.309, 0, -0.951),(-0.407, 0, -0.914),(-0.5, 0, -0.866),(-0.588, 0, -0.809),(-0.669, 0, -0.743),(-0.743, 0, -0.669),(-0.809, 0, -0.588),(-0.866, 0, -0.5),(-0.914, 0, -0.407),(-0.951, 0, -0.309),(-0.978, 0, -0.208),(-0.995, 0, -0.105),(-1, 0, 0),(-0.995, 0, 0.105),(-0.978, 0, 0.208),(-0.951, 0, 0.309),(-0.914, 0, 0.407),(-0.866, 0, 0.5),(-0.809, 0, 0.588),(-0.743, 0, 0.669),(-0.669, 0, 0.743),(-0.588, 0, 0.809),(-0.5, 0, 0.866),(-0.407, 0, 0.914),(-0.309, 0, 0.951),(-0.208, 0, 0.978),(-0.105, 0, 0.995),(0, 0, 1),(0.105, 0, 0.995),(0.208, 0, 0.978),(0.309, 0, 0.951),(0.407, 0, 0.914),(0.5, 0, 0.866),(0.588, 0, 0.809),(0.669, 0, 0.743),(0.743, 0, 0.669),(0.809, 0, 0.588),(0.866, 0, 0.5),(0.914, 0, 0.407),(0.951, 0, 0.309),(0.978, 0, 0.208),(0.995, 0, 0.104),(1, 0, 0)]
 
 IndexedLineSet559.coord = Coordinate560
 
@@ -3586,6 +3690,9 @@ X3D0.Scene = Scene19
 f = open("../data/JoeSkinTexcoordDisplacerKick.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/JoeSkinTexcoordDisplacerKick.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/JoeSkinTexcoordDisplacerKick.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/JoeSkinTexcoordDisplacerKick.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

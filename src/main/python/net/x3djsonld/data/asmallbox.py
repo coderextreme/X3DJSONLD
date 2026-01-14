@@ -29,17 +29,17 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    meta(name='title',content='asmallbox.x3d'),
-    meta(name='creator',content='John Carlson'),
-    meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d'),
-    meta(name='description',content='a box')]),
+    meta(content='asmallbox.x3d',name='title'),
+    meta(content='John Carlson',name='creator'),
+    meta(content='manual',name='generator'),
+    meta(content='https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d',name='identifier'),
+    meta(content='a box',name='description')]),
   Scene=Scene(
     children=[
     ProtoDeclare(name='anyShape',
       ProtoInterface=ProtoInterface(
         field=[
-        field(name='myShape',accessType='inputOutput',type='MFNode',
+        field(accessType='inputOutput',name='myShape',type='MFNode',
           children=[
           Shape(
             geometry=Sphere(),)])]),
@@ -52,7 +52,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     ProtoDeclare(name='one',
       ProtoInterface=ProtoInterface(
         field=[
-        field(name='myShape',accessType='inputOutput',type='MFNode',
+        field(accessType='inputOutput',name='myShape',type='MFNode',
           children=[
           Shape(
             geometry=Cylinder(),)])]),
@@ -70,7 +70,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         children=[
         Shape(
           geometry=Box(),)])])])
-) # X3D model complete
+)
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

@@ -5,6 +5,8 @@ X3D0 = x3d.X3D()
 X3D0.profile = "Full"
 X3D0.version = "4.0"
 head1 = x3d.head()
+"""<component name='Shape' level='4'></component>"""
+"""Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"""
 component2 = x3d.component()
 component2.name = "Scripting"
 component2.level = 1
@@ -50,8 +52,6 @@ component10.name = "DIS"
 component10.level = 2
 
 head1.children.append(component10)
-"""<component name='Shape' level='4'></component>"""
-"""Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"""
 meta11 = x3d.meta()
 meta11.name = "title"
 meta11.content = "bumpyfreewrljsonverse.x3d"
@@ -592,30 +592,25 @@ Layer37.children.append(ROUTE108)
 """DIS multiuser facilities"""
 DISEntityManager109 = x3d.DISEntityManager()
 DISEntityManager109.DEF = "EntityManager"
-DISEntityManager109.networkMode = "networkReader"
 DISEntityTypeMapping110 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping110.readInterval = "3"
 DISEntityTypeMapping110.category = 77
 DISEntityTypeMapping110.specific = 1
 DISEntityTypeMapping110.url = ["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]
 
 DISEntityManager109.children.append(DISEntityTypeMapping110)
 DISEntityTypeMapping111 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping111.readInterval = "3"
 DISEntityTypeMapping111.category = 77
 DISEntityTypeMapping111.specific = 2
 DISEntityTypeMapping111.url = ["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]
 
 DISEntityManager109.children.append(DISEntityTypeMapping111)
 DISEntityTypeMapping112 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping112.readInterval = "3"
 DISEntityTypeMapping112.category = 77
 DISEntityTypeMapping112.specific = 3
 DISEntityTypeMapping112.url = ["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]
 
 DISEntityManager109.children.append(DISEntityTypeMapping112)
 DISEntityTypeMapping113 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping113.readInterval = "3"
 DISEntityTypeMapping113.category = 77
 DISEntityTypeMapping113.specific = 4
 DISEntityTypeMapping113.url = ["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]
@@ -1222,6 +1217,9 @@ X3D0.Scene = Scene31
 f = open("../data/bumpyfreewrljsonverse.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/bumpyfreewrljsonverse.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/bumpyfreewrljsonverse.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/bumpyfreewrljsonverse.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

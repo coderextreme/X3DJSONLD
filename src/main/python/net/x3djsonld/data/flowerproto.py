@@ -48,8 +48,8 @@ newModel=X3D(profile='Immersive',version='4.0',
     ProtoDeclare(name='FlowerProto',
       ProtoInterface=ProtoInterface(
         field=[
-        field(accessType='inputOutput',name='vertex',type='MFString',value=["https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]),
-        field(accessType='inputOutput',name='fragment',type='MFString',value=["https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"])]),
+        field(accessType='inputOnly',name='vertex',type='MFString',value=["../shaders/gl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]),
+        field(accessType='inputOnly',name='fragment',type='MFString',value=["../shaders/pc_flowers.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"])]),
       ProtoBody=ProtoBody(
         children=[
         Transform(DEF='transform',
@@ -66,23 +66,23 @@ newModel=X3D(profile='Immersive',version='4.0',
                 topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
               shaders=[
               ComposedShader(DEF='shader',language='GLSL',
-                field=[
-                field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
-                #  
-		       <field name='cube' type='SFNode' accessType="inputOutput">
-			  <ComposedCubeMapTexture USE="texture"/>
-		  </field>
+                # 
+                  <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
 		  
+                field=[
+                field(name='cube',type='SFNode',accessType='inputOnly',
+                  children=[
+                  ComposedCubeMapTexture(USE='texture')]),
                 field(name='chromaticDispertion',accessType='initializeOnly',type='SFVec3f',value=(0.98,1.0,1.033)),
-                field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
-                field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
-                field(name='power',type='SFFloat',accessType='inputOutput',value=2),
-                field(name='a',type='SFFloat',accessType='inputOutput',value=10),
-                field(name='b',type='SFFloat',accessType='inputOutput',value=1),
-                field(name='c',type='SFFloat',accessType='inputOutput',value=20),
-                field(name='d',type='SFFloat',accessType='inputOutput',value=20),
-                field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
-                field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
+                field(name='bias',type='SFFloat',accessType='inputOnly',value=0.5),
+                field(name='scale',type='SFFloat',accessType='inputOnly',value=0.5),
+                field(name='power',type='SFFloat',accessType='inputOnly',value=2),
+                field(name='a',type='SFFloat',accessType='inputOnly',value=10),
+                field(name='b',type='SFFloat',accessType='inputOnly',value=1),
+                field(name='c',type='SFFloat',accessType='inputOnly',value=20),
+                field(name='d',type='SFFloat',accessType='inputOnly',value=20),
+                field(name='tdelta',type='SFFloat',accessType='inputOnly',value=0),
+                field(name='pdelta',type='SFFloat',accessType='inputOnly',value=0)],
                 parts=[
                 ShaderPart(
                   IS=IS(
@@ -103,17 +103,17 @@ ecmascript:
 
 """)])]),
             geometry=Sphere(),),
-          Script(DEF='Animate',
+          Script(DEF='Animate',directOutput=True,
             field=[
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
-            field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
+            field(name='velocity',accessType='outputOnly',type='SFVec3f',value=(0,0,0)),
             field(name='set_fraction',accessType='inputOnly',type='SFFloat'),
-            field(name='a',type='SFFloat',accessType='inputOutput',value=0.5),
-            field(name='b',type='SFFloat',accessType='inputOutput',value=0.5),
-            field(name='c',type='SFFloat',accessType='inputOutput',value=3),
-            field(name='d',type='SFFloat',accessType='inputOutput',value=3),
-            field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0.5),
-            field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0.5)],
+            field(name='a',type='SFFloat',accessType='outputOnly',value=0.5),
+            field(name='b',type='SFFloat',accessType='outputOnly',value=0.5),
+            field(name='c',type='SFFloat',accessType='outputOnly',value=3),
+            field(name='d',type='SFFloat',accessType='outputOnly',value=3),
+            field(name='tdelta',type='SFFloat',accessType='outputOnly',value=0.5),
+            field(name='pdelta',type='SFFloat',accessType='outputOnly',value=0.5)],
 
           sourceCode="""
 ecmascript:

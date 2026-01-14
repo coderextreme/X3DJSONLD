@@ -44,7 +44,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='generator',content='3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview'),
     meta(name='generator',content='Suwon HAnim Converter'),
     meta(name='generator',content='Gnu Image Manipulation Program, http://www.gimp.org'),
-    meta(name='generator',content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'),
+    meta(name='generator',content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit'),
     meta(name='license',content='../license.html')]),
   Scene=Scene(
     children=[

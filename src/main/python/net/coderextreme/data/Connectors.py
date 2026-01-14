@@ -22,7 +22,7 @@ meta4.content = "Holger Seelig"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "generator"
-meta5.content = "Titania V3.0.4, http://titania.create3000.de"
+meta5.content = "Titania V3.0.4, https://titania.create3000.de"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
@@ -432,10 +432,10 @@ Script79.sourceCode = '''ecmascript:\n"+
 
 ProtoBody58.children.append(Script79)
 ROUTE87 = x3d.ROUTE()
-ROUTE87.fromField = "translation_changed"
 ROUTE87.fromNode = "PlaneSensor"
-ROUTE87.toField = "set_translation"
+ROUTE87.fromField = "translation_changed"
 ROUTE87.toNode = "Node"
+ROUTE87.toField = "set_translation"
 
 ProtoBody58.children.append(ROUTE87)
 
@@ -505,6 +505,7 @@ LineSet103 = x3d.LineSet()
 LineSet103.DEF = "Geometry_1"
 LineSet103.vertexCount = [2]
 Coordinate104 = x3d.Coordinate()
+Coordinate104.point = [(-1, 0, 0),(1, 0, 0)]
 
 LineSet103.coord = Coordinate104
 
@@ -611,13 +612,14 @@ NavigationInfo117.type = ["FLY","ANY"]
 
 Scene9.children.append(NavigationInfo117)
 Background118 = x3d.Background()
+Background118.skyColor = [(0.2, 0.2, 0.2)]
 
 Scene9.children.append(Background118)
 OrthoViewpoint119 = x3d.OrthoViewpoint()
-OrthoViewpoint119.centerOfRotation = [-3.13496,-4.19776,0]
 OrthoViewpoint119.description = "OthoViewpoint"
-OrthoViewpoint119.fieldOfView = [0,0,10,10]
 OrthoViewpoint119.position = [-3.13496,-4.19776,10]
+OrthoViewpoint119.centerOfRotation = [-3.13496,-4.19776,0]
+OrthoViewpoint119.fieldOfView = [0,0,10,10]
 
 Scene9.children.append(OrthoViewpoint119)
 Viewpoint120 = x3d.Viewpoint()
@@ -933,6 +935,9 @@ X3D0.Scene = Scene9
 f = open("../data/Connectors.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/Connectors.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/Connectors.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/Connectors.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

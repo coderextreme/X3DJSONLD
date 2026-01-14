@@ -29,14 +29,14 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    meta(name='title',content='arc1.x3d'),
-    meta(name='creator',content='Lost, Doug Sanden I think'),
-    meta(name='generator',content='manual'),
-    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d'),
-    meta(name='description',content='a generic proto to connect two objects')]),
+    meta(content='arc1.x3d',name='title'),
+    meta(content='Lost, Doug Sanden I think',name='creator'),
+    meta(content='manual',name='generator'),
+    meta(content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d',name='identifier'),
+    meta(content='a generic proto to connect two objects',name='description')]),
   Scene=Scene(
     children=[
-    Viewpoint(position=(0,0,5),description='Only Viewpoint'),
+    Viewpoint(description='Only Viewpoint',position=(0,0,5)),
     Background(skyColor=[(0.4,0.4,0.4)]),
     ProtoDeclare(name='point',
       ProtoInterface=ProtoInterface(
@@ -56,10 +56,10 @@ newModel=X3D(profile='Immersive',version='4.0',
           PositionInterpolator(DEF='PI1',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
           Script(DEF='MB1',
             field=[
-            field(name='translation',accessType='inputOutput',type='SFVec3f',value=(50,50,0)),
-            field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
-            field(name='set_location',accessType='inputOnly',type='SFTime'),
-            field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
+            field(accessType='inputOutput',name='translation',type='SFVec3f',value=(50,50,0)),
+            field(accessType='inputOutput',name='old',type='SFVec3f',value=(0,0,0)),
+            field(accessType='inputOnly',name='set_location',type='SFTime'),
+            field(accessType='inputOutput',name='keyValue',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
 
           sourceCode="""
 ecmascript:
@@ -70,11 +70,11 @@ ecmascript:
                }
 """),
           TimeSensor(DEF='CL1',cycleInterval=3,loop=True),
-          ROUTE(fromNode='CL1',fromField='cycleTime',toNode='MB1',toField='set_location'),
-          ROUTE(fromNode='CL1',fromField='fraction_changed',toNode='PI1',toField='set_fraction'),
-          ROUTE(fromNode='MB1',fromField='keyValue',toNode='PI1',toField='keyValue'),
-          ROUTE(fromNode='PI1',fromField='value_changed',toNode='node',toField='set_translation'),
-          ROUTE(fromNode='MB1',fromField='translation_changed',toNode='node',toField='set_translation')])])),
+          ROUTE(fromField='cycleTime',fromNode='CL1',toField='set_location',toNode='MB1'),
+          ROUTE(fromField='fraction_changed',fromNode='CL1',toField='set_fraction',toNode='PI1'),
+          ROUTE(fromField='keyValue',fromNode='MB1',toField='keyValue',toNode='PI1'),
+          ROUTE(fromField='value_changed',fromNode='PI1',toField='set_translation',toNode='node'),
+          ROUTE(fromField='translation_changed',fromNode='MB1',toField='set_translation',toNode='node')])])),
     Transform(DEF='G1',
       children=[
       ProtoInstance(name='point')]),
@@ -160,7 +160,7 @@ ecmascript:
             recompute_and_route(startnode.translation,val);
         }
 """)])),
-    ProtoInstance(name='x3dconnector',DEF='connector1',
+    ProtoInstance(DEF='connector1',name='x3dconnector',
       fieldValue=[
       fieldValue(name='startnode',
         children=[
@@ -176,9 +176,10 @@ ecmascript:
         Transform(USE='rotscaleC1')]),
       fieldValue(name='set_startpoint'),
       fieldValue(name='set_endpoint')]),
-    ROUTE(fromNode='G1',fromField='translation_changed',toNode='connector1',toField='set_startpoint'),
-    ROUTE(fromNode='G2',fromField='translation_changed',toNode='connector1',toField='set_endpoint')])
-) # X3D model complete
+    ROUTE(fromField='translation_changed',fromNode='G1',toField='set_startpoint',toNode='connector1'),
+    ROUTE(fromField='translation_changed',fromNode='G2',toField='set_endpoint',toNode='connector1')])
+)
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

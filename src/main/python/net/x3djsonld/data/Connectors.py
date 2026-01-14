@@ -32,7 +32,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(name='comment',content='World of Titania'),
     meta(name='created',content='Fri, 04 Sep 2015 10:19:01 GMT'),
     meta(name='creator',content='Holger Seelig'),
-    meta(name='generator',content='Titania V3.0.4, http://titania.create3000.de'),
+    meta(name='generator',content='Titania V3.0.4, https://titania.create3000.de'),
     meta(name='identifier',content='file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d'),
     meta(name='modified',content='Tue, 25 Jul 2017 09:42:17 GMT'),
     meta(name='title',content='Connectors')]),
@@ -270,7 +270,7 @@ function set_translation ()
 	}
 }
 """)])),
-    NavigationInfo(type='"FLY" "ANY"'),
+    NavigationInfo(type=["FLY","ANY"]),
     Background(skyColor=[(0.2,0.2,0.2)]),
     OrthoViewpoint(description='OthoViewpoint',position=(-3.13496,-4.19776,10),centerOfRotation=(-3.13496,-4.19776,0),fieldOfView=(0,0,10,10)),
     Viewpoint(description='Viewpoint'),

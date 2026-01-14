@@ -47,7 +47,9 @@ Group10 = x3d.Group()
 Shape11 = x3d.Shape()
 Extrusion12 = x3d.Extrusion()
 Extrusion12.DEF = "myextrusion"
+Extrusion12.spine = [(-50, -50, 0),(50, 50, 0)]
 Extrusion12.creaseAngle = 0.785
+Extrusion12.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
 
 Shape11.geometry = Extrusion12
 Appearance13 = x3d.Appearance()
@@ -76,6 +78,7 @@ field18 = x3d.field()
 field18.name = "spine"
 field18.accessType = "inputOutput"
 field18.type = "MFVec3f"
+field18.value = [(-50, -50, 0),(50, 50, 0)]
 
 Script16.field.append(field18)
 
@@ -113,6 +116,9 @@ X3D0.Scene = Scene9
 f = open("../data/myextrusion.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/myextrusion.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/myextrusion.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/myextrusion.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

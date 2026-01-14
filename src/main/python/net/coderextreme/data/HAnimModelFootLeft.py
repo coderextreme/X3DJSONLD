@@ -176,6 +176,7 @@ IndexedLineSet38 = x3d.IndexedLineSet()
 IndexedLineSet38.DEF = "TCtoTCN"
 IndexedLineSet38.coordIndex = [0,1]
 Coordinate39 = x3d.Coordinate()
+Coordinate39.point = [(0, 0, 0),(0, -0.3, 0)]
 
 IndexedLineSet38.coord = Coordinate39
 
@@ -194,6 +195,7 @@ IndexedLineSet43 = x3d.IndexedLineSet()
 IndexedLineSet43.DEF = "TCtoCC"
 IndexedLineSet43.coordIndex = [0,1]
 Coordinate44 = x3d.Coordinate()
+Coordinate44.point = [(0, 0, 0),(0.2, 0.3, 0)]
 
 IndexedLineSet43.coord = Coordinate44
 
@@ -232,6 +234,7 @@ IndexedLineSet52 = x3d.IndexedLineSet()
 IndexedLineSet52.DEF = "TCNtoCN1"
 IndexedLineSet52.coordIndex = [0,1]
 Coordinate53 = x3d.Coordinate()
+Coordinate53.point = [(0, -0.3, 0),(-0.1, -0.45, 0)]
 
 IndexedLineSet52.coord = Coordinate53
 
@@ -250,6 +253,7 @@ IndexedLineSet57 = x3d.IndexedLineSet()
 IndexedLineSet57.DEF = "TCNtoCN2"
 IndexedLineSet57.coordIndex = [0,1]
 Coordinate58 = x3d.Coordinate()
+Coordinate58.point = [(0, -0.3, 0),(0, -0.45, 0)]
 
 IndexedLineSet57.coord = Coordinate58
 
@@ -268,6 +272,7 @@ IndexedLineSet62 = x3d.IndexedLineSet()
 IndexedLineSet62.DEF = "TCNtoCN3"
 IndexedLineSet62.coordIndex = [0,1]
 Coordinate63 = x3d.Coordinate()
+Coordinate63.point = [(0, -0.3, 0),(0.1, -0.4, 0)]
 
 IndexedLineSet62.coord = Coordinate63
 
@@ -306,6 +311,7 @@ IndexedLineSet71 = x3d.IndexedLineSet()
 IndexedLineSet71.DEF = "CN1toTMT1"
 IndexedLineSet71.coordIndex = [0,1]
 Coordinate72 = x3d.Coordinate()
+Coordinate72.point = [(-0.1, -0.45, 0),(-0.1, -0.6, 0)]
 
 IndexedLineSet71.coord = Coordinate72
 
@@ -343,6 +349,7 @@ IndexedLineSet80 = x3d.IndexedLineSet()
 IndexedLineSet80.DEF = "TMT1toMTP1"
 IndexedLineSet80.coordIndex = [0,1]
 Coordinate81 = x3d.Coordinate()
+Coordinate81.point = [(-0.1, -0.6, 0),(-0.1, -0.9, 0)]
 
 IndexedLineSet80.coord = Coordinate81
 
@@ -380,6 +387,7 @@ IndexedLineSet89 = x3d.IndexedLineSet()
 IndexedLineSet89.DEF = "MTP1toIP1"
 IndexedLineSet89.coordIndex = [0,1]
 Coordinate90 = x3d.Coordinate()
+Coordinate90.point = [(-0.1, -0.9, 0),(-0.1, -1.05, 0)]
 
 IndexedLineSet89.coord = Coordinate90
 
@@ -417,6 +425,7 @@ IndexedLineSet98 = x3d.IndexedLineSet()
 IndexedLineSet98.DEF = "tiptoe_l_tarsal_distal_interphalangeal_1"
 IndexedLineSet98.coordIndex = [0,1]
 Coordinate99 = x3d.Coordinate()
+Coordinate99.point = [(-0.1, -1.05, 0),(-0.1, -1.1, 0)]
 
 IndexedLineSet98.coord = Coordinate99
 
@@ -463,6 +472,7 @@ IndexedLineSet107 = x3d.IndexedLineSet()
 IndexedLineSet107.DEF = "CN2toTMT2"
 IndexedLineSet107.coordIndex = [0,1]
 Coordinate108 = x3d.Coordinate()
+Coordinate108.point = [(0, -0.45, 0),(0.05, -0.6, 0)]
 
 IndexedLineSet107.coord = Coordinate108
 
@@ -500,6 +510,7 @@ IndexedLineSet116 = x3d.IndexedLineSet()
 IndexedLineSet116.DEF = "TMT2toMTP2"
 IndexedLineSet116.coordIndex = [0,1]
 Coordinate117 = x3d.Coordinate()
+Coordinate117.point = [(0.05, -0.6, 0),(0.05, -0.9, 0)]
 
 IndexedLineSet116.coord = Coordinate117
 
@@ -537,6 +548,7 @@ IndexedLineSet125 = x3d.IndexedLineSet()
 IndexedLineSet125.DEF = "MTP2toPIP2"
 IndexedLineSet125.coordIndex = [0,1]
 Coordinate126 = x3d.Coordinate()
+Coordinate126.point = [(0.05, -0.9, 0),(0.05, -1.05, 0)]
 
 IndexedLineSet125.coord = Coordinate126
 
@@ -574,6 +586,7 @@ IndexedLineSet134 = x3d.IndexedLineSet()
 IndexedLineSet134.DEF = "PIP2toDIP2"
 IndexedLineSet134.coordIndex = [0,1]
 Coordinate135 = x3d.Coordinate()
+Coordinate135.point = [(0.05, -1.05, 0),(0.05, -1.12, 0)]
 
 IndexedLineSet134.coord = Coordinate135
 
@@ -611,6 +624,7 @@ IndexedLineSet143 = x3d.IndexedLineSet()
 IndexedLineSet143.DEF = "tiptoe_l_tarsal_distal_phalanx_2"
 IndexedLineSet143.coordIndex = [0,1]
 Coordinate144 = x3d.Coordinate()
+Coordinate144.point = [(0.05, -1.12, 0),(0.05, -1.16, 0)]
 
 IndexedLineSet143.coord = Coordinate144
 
@@ -659,6 +673,7 @@ IndexedLineSet152 = x3d.IndexedLineSet()
 IndexedLineSet152.DEF = "CN3toTMT3"
 IndexedLineSet152.coordIndex = [0,1]
 Coordinate153 = x3d.Coordinate()
+Coordinate153.point = [(0.1, -0.4, 0),(0.15, -0.6, 0)]
 
 IndexedLineSet152.coord = Coordinate153
 
@@ -696,6 +711,7 @@ IndexedLineSet161 = x3d.IndexedLineSet()
 IndexedLineSet161.DEF = "TMT3toMTP3"
 IndexedLineSet161.coordIndex = [0,1]
 Coordinate162 = x3d.Coordinate()
+Coordinate162.point = [(0.15, -0.6, 0),(0.15, -0.9, 0)]
 
 IndexedLineSet161.coord = Coordinate162
 
@@ -733,6 +749,7 @@ IndexedLineSet170 = x3d.IndexedLineSet()
 IndexedLineSet170.DEF = "MTP3toPIP3"
 IndexedLineSet170.coordIndex = [0,1]
 Coordinate171 = x3d.Coordinate()
+Coordinate171.point = [(0.15, -0.9, 0),(0.15, -1.05, 0)]
 
 IndexedLineSet170.coord = Coordinate171
 
@@ -770,6 +787,7 @@ IndexedLineSet179 = x3d.IndexedLineSet()
 IndexedLineSet179.DEF = "PIP3toDIP3"
 IndexedLineSet179.coordIndex = [0,1]
 Coordinate180 = x3d.Coordinate()
+Coordinate180.point = [(0.15, -1.05, 0),(0.15, -1.13, 0)]
 
 IndexedLineSet179.coord = Coordinate180
 
@@ -807,6 +825,7 @@ IndexedLineSet188 = x3d.IndexedLineSet()
 IndexedLineSet188.DEF = "tiptoe_l_tarsal_distal_interphalangeal_3"
 IndexedLineSet188.coordIndex = [0,1]
 Coordinate189 = x3d.Coordinate()
+Coordinate189.point = [(0.15, -1.13, 0),(0.15, -1.16, 0)]
 
 IndexedLineSet188.coord = Coordinate189
 
@@ -857,6 +876,7 @@ IndexedLineSet197 = x3d.IndexedLineSet()
 IndexedLineSet197.DEF = "CCtoTT"
 IndexedLineSet197.coordIndex = [0,1]
 Coordinate198 = x3d.Coordinate()
+Coordinate198.point = [(0.2, 0.3, 0),(0.21, -0.3, 0)]
 
 IndexedLineSet197.coord = Coordinate198
 
@@ -895,6 +915,7 @@ IndexedLineSet206 = x3d.IndexedLineSet()
 IndexedLineSet206.DEF = "TTtoTMT4"
 IndexedLineSet206.coordIndex = [0,1]
 Coordinate207 = x3d.Coordinate()
+Coordinate207.point = [(0.21, -0.3, 0),(0.25, -0.58, 0)]
 
 IndexedLineSet206.coord = Coordinate207
 
@@ -913,6 +934,7 @@ IndexedLineSet211 = x3d.IndexedLineSet()
 IndexedLineSet211.DEF = "TTtoTMT5"
 IndexedLineSet211.coordIndex = [0,1]
 Coordinate212 = x3d.Coordinate()
+Coordinate212.point = [(0.21, -0.3, 0),(0.33, -0.52, 0)]
 
 IndexedLineSet211.coord = Coordinate212
 
@@ -951,6 +973,7 @@ IndexedLineSet220 = x3d.IndexedLineSet()
 IndexedLineSet220.DEF = "TMT4toMTP4"
 IndexedLineSet220.coordIndex = [0,1]
 Coordinate221 = x3d.Coordinate()
+Coordinate221.point = [(0.25, -0.58, 0),(0.25, -0.87, 0)]
 
 IndexedLineSet220.coord = Coordinate221
 
@@ -988,6 +1011,7 @@ IndexedLineSet229 = x3d.IndexedLineSet()
 IndexedLineSet229.DEF = "MTP4toPIP4"
 IndexedLineSet229.coordIndex = [0,1]
 Coordinate230 = x3d.Coordinate()
+Coordinate230.point = [(0.25, -0.87, 0),(0.25, -1, 0)]
 
 IndexedLineSet229.coord = Coordinate230
 
@@ -1025,6 +1049,7 @@ IndexedLineSet238 = x3d.IndexedLineSet()
 IndexedLineSet238.DEF = "PIP4toDIP4"
 IndexedLineSet238.coordIndex = [0,1]
 Coordinate239 = x3d.Coordinate()
+Coordinate239.point = [(0.25, -1, 0),(0.25, -1.1, 0)]
 
 IndexedLineSet238.coord = Coordinate239
 
@@ -1062,6 +1087,7 @@ IndexedLineSet247 = x3d.IndexedLineSet()
 IndexedLineSet247.DEF = "tiptoe_l_tarsal_distal_interphalangeal_4"
 IndexedLineSet247.coordIndex = [0,1]
 Coordinate248 = x3d.Coordinate()
+Coordinate248.point = [(0.25, -1.1, 0),(0.25, -1.15, 0)]
 
 IndexedLineSet247.coord = Coordinate248
 
@@ -1108,6 +1134,7 @@ IndexedLineSet256 = x3d.IndexedLineSet()
 IndexedLineSet256.DEF = "TMT5toMTP5"
 IndexedLineSet256.coordIndex = [0,1]
 Coordinate257 = x3d.Coordinate()
+Coordinate257.point = [(0.33, -0.52, 0),(0.34, -0.8, 0)]
 
 IndexedLineSet256.coord = Coordinate257
 
@@ -1145,6 +1172,7 @@ IndexedLineSet265 = x3d.IndexedLineSet()
 IndexedLineSet265.DEF = "MTP5toPIP5"
 IndexedLineSet265.coordIndex = [0,1]
 Coordinate266 = x3d.Coordinate()
+Coordinate266.point = [(0.34, -0.8, 0),(0.34, -0.95, 0)]
 
 IndexedLineSet265.coord = Coordinate266
 
@@ -1182,6 +1210,7 @@ IndexedLineSet274 = x3d.IndexedLineSet()
 IndexedLineSet274.DEF = "PIP5toDIP5"
 IndexedLineSet274.coordIndex = [0,1]
 Coordinate275 = x3d.Coordinate()
+Coordinate275.point = [(0.34, -0.95, 0),(0.34, -1.05, 0)]
 
 IndexedLineSet274.coord = Coordinate275
 
@@ -1219,6 +1248,7 @@ IndexedLineSet283 = x3d.IndexedLineSet()
 IndexedLineSet283.DEF = "tiptoe_l_tarsal_distal_interphalangeal_5"
 IndexedLineSet283.coordIndex = [0,1]
 Coordinate284 = x3d.Coordinate()
+Coordinate284.point = [(0.34, -1.05, 0),(0.34, -1.08, 0)]
 
 IndexedLineSet283.coord = Coordinate284
 
@@ -1462,6 +1492,9 @@ X3D0.Scene = Scene22
 f = open("../data/HAnimModelFootLeft.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/HAnimModelFootLeft.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/HAnimModelFootLeft.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/HAnimModelFootLeft.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

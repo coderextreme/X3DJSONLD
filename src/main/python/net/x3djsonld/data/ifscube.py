@@ -26,7 +26,7 @@
 
 from x3d import *
 
-newModel=X3D(profile='Interchange',version='4.0',
+newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     meta(name='title',content='ifscube.x3d'),

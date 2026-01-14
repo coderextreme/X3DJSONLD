@@ -2838,7 +2838,7 @@ ecmascript:
       fieldValue(name='whichBody',value=0),
       fieldValue(name='hAnimBehaviorNodes',
         children=[
-        ProtoInstance(USE='BehaviorTest1')]),
+        ProtoInstance(USE='BehaviorTest1',name='HAnimBehavior')]),
       fieldValue(name='enabledBehaviorsArray',value=[True])])])
 ) # X3D model complete
 

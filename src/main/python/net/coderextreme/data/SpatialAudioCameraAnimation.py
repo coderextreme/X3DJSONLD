@@ -100,11 +100,13 @@ Scene14.children.append(TimeSensor19)
 PositionInterpolator20 = x3d.PositionInterpolator()
 PositionInterpolator20.DEF = "Camera001-POS-INTERP"
 PositionInterpolator20.key = [0,0.25,0.5,0.75,1]
+PositionInterpolator20.keyValue = [(0, 2000, 3500),(0, 2000, 0),(0, 2000, -3500),(0, 2000, 0),(0, 2000, 3500)]
 
 Scene14.children.append(PositionInterpolator20)
 OrientationInterpolator21 = x3d.OrientationInterpolator()
 OrientationInterpolator21.DEF = "Camera001-ROT-INTERP"
 OrientationInterpolator21.key = [0,0.25,0.5,0.75,1]
+OrientationInterpolator21.keyValue = [(1, 0, 0, -0.523599),(0.99999, 0.003554, 0.002727, -1.309007),(0, -0.965926, -0.258819, -3.141593),(0.002282, -0.793351, -0.60876, -3.135645),(1, -0.000001, 0, -0.523599)]
 
 Scene14.children.append(OrientationInterpolator21)
 ROUTE22 = x3d.ROUTE()
@@ -297,6 +299,9 @@ X3D0.Scene = Scene14
 f = open("../data/SpatialAudioCameraAnimation.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/SpatialAudioCameraAnimation.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/SpatialAudioCameraAnimation.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/SpatialAudioCameraAnimation.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()
