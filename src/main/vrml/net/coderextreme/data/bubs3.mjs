@@ -33,7 +33,7 @@ Background10.topUrl = new X3D.MFString([new X3D.SFString("../resources/images/TP
 browser.currentScene.children[2] = Background10;
 
 let Transform11 = browser.currentScene.createNode("Transform");
-Transform11.DEF = "DECLBubble_bubbleA";
+Transform11.DEF = "DECLBubble_transformA";
 let Shape12 = browser.currentScene.createNode("Shape");
 let Sphere13 = browser.currentScene.createNode("Sphere");
 Sphere13.radius = 0.25;
@@ -118,14 +118,14 @@ Transform11ZZZ.children[2] = TimeSensor22;
 let ROUTE23 = browser.currentScene.createNode("ROUTE");
 ROUTE23.fromNode = "DECLBubble_bubbleA_bounce";
 ROUTE23.fromField = "translation_changed";
-ROUTE23.toNode = "DECLBubble_transform";
+ROUTE23.toNode = "DECLBubble_transformA";
 ROUTE23.toField = "set_translation";
 Transform11ZZZ.children[3] = ROUTE23;
 
 let ROUTE24 = browser.currentScene.createNode("ROUTE");
 ROUTE24.fromNode = "DECLBubble_bubbleA_bounce";
 ROUTE24.fromField = "scale_changed";
-ROUTE24.toNode = "DECLBubble_transform";
+ROUTE24.toNode = "DECLBubble_transformA";
 ROUTE24.toField = "set_scale";
 Transform11ZZZ.children[4] = ROUTE24;
 
@@ -139,7 +139,7 @@ Transform11ZZZ.children[5] = ROUTE25;
 browser.currentScene.children[3] = Transform11;
 
 let Transform26 = browser.currentScene.createNode("Transform");
-Transform26.DEF = "DECLBubble_bubbleB";
+Transform26.DEF = "DECLBubble_transformB";
 let Shape27 = browser.currentScene.createNode("Shape");
 let Sphere28 = browser.currentScene.createNode("Sphere");
 Sphere28.radius = 0.25;
@@ -224,14 +224,14 @@ Transform26ZZZ.children[2] = TimeSensor37;
 let ROUTE38 = browser.currentScene.createNode("ROUTE");
 ROUTE38.fromNode = "DECLBubble_bubbleB_bounce";
 ROUTE38.fromField = "translation_changed";
-ROUTE38.toNode = "DECLBubble_transform";
+ROUTE38.toNode = "DECLBubble_transformB";
 ROUTE38.toField = "set_translation";
 Transform26ZZZ.children[3] = ROUTE38;
 
 let ROUTE39 = browser.currentScene.createNode("ROUTE");
 ROUTE39.fromNode = "DECLBubble_bubbleB_bounce";
 ROUTE39.fromField = "scale_changed";
-ROUTE39.toNode = "DECLBubble_transform";
+ROUTE39.toNode = "DECLBubble_transformB";
 ROUTE39.toField = "set_scale";
 Transform26ZZZ.children[4] = ROUTE39;
 
@@ -245,7 +245,7 @@ Transform26ZZZ.children[5] = ROUTE40;
 browser.currentScene.children[4] = Transform26;
 
 let Transform41 = browser.currentScene.createNode("Transform");
-Transform41.DEF = "DECLBubble_bubbleC";
+Transform41.DEF = "DECLBubble_transformC";
 let Shape42 = browser.currentScene.createNode("Shape");
 let Sphere43 = browser.currentScene.createNode("Sphere");
 Sphere43.radius = 0.25;
@@ -330,14 +330,14 @@ Transform41ZZZ.children[2] = TimeSensor52;
 let ROUTE53 = browser.currentScene.createNode("ROUTE");
 ROUTE53.fromNode = "DECLBubble_bubbleC_bounce";
 ROUTE53.fromField = "translation_changed";
-ROUTE53.toNode = "DECLBubble_transform";
+ROUTE53.toNode = "DECLBubble_transformC";
 ROUTE53.toField = "set_translation";
 Transform41ZZZ.children[3] = ROUTE53;
 
 let ROUTE54 = browser.currentScene.createNode("ROUTE");
 ROUTE54.fromNode = "DECLBubble_bubbleC_bounce";
 ROUTE54.fromField = "scale_changed";
-ROUTE54.toNode = "DECLBubble_transform";
+ROUTE54.toNode = "DECLBubble_transformC";
 ROUTE54.toField = "set_scale";
 Transform41ZZZ.children[4] = ROUTE54;
 
@@ -351,7 +351,7 @@ Transform41ZZZ.children[5] = ROUTE55;
 browser.currentScene.children[5] = Transform41;
 
 let Transform56 = browser.currentScene.createNode("Transform");
-Transform56.DEF = "DECLBubble_bubbleD";
+Transform56.DEF = "DECLBubble_transformD";
 let Shape57 = browser.currentScene.createNode("Shape");
 let Sphere58 = browser.currentScene.createNode("Sphere");
 Sphere58.radius = 0.25;
@@ -436,14 +436,14 @@ Transform56ZZZ.children[2] = TimeSensor67;
 let ROUTE68 = browser.currentScene.createNode("ROUTE");
 ROUTE68.fromNode = "DECLBubble_bubbleD_bounce";
 ROUTE68.fromField = "translation_changed";
-ROUTE68.toNode = "DECLBubble_transform";
+ROUTE68.toNode = "DECLBubble_transformD";
 ROUTE68.toField = "set_translation";
 Transform56ZZZ.children[3] = ROUTE68;
 
 let ROUTE69 = browser.currentScene.createNode("ROUTE");
 ROUTE69.fromNode = "DECLBubble_bubbleD_bounce";
 ROUTE69.fromField = "scale_changed";
-ROUTE69.toNode = "DECLBubble_transform";
+ROUTE69.toNode = "DECLBubble_transformD";
 ROUTE69.toField = "set_scale";
 Transform56ZZZ.children[4] = ROUTE69;
 

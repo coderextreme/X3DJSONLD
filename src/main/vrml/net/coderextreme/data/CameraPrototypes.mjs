@@ -16,7 +16,7 @@ scene.addMetaData("reference", "https://www.web3d.org/x3d/specifications/ISO-IEC
 scene.addMetaData("subject", "Camera nodes for Viewpoint navigation control");
 scene.addMetaData("reference", "CameraExamples.x3d");
 scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d");
-scene.addMetaData("reference", "http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d");
+scene.addMetaData("reference", "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d");
 scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../license.html");
 await browser .loadComponents (scene);

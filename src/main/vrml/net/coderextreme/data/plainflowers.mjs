@@ -39,7 +39,7 @@ Group10ZZZ.children[0] = ExternProtoDeclare11;
 
 let ProtoDeclare14 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x_ite_flowers_plain.vs&quot;"></fieldValue>
+<ProtoDeclare name="flower" ><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/gl_flowers_plain.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/plain.fs&quot;"></fieldValue>
 </ProtoInstance>
 </Group>
@@ -52,7 +52,7 @@ let ProtoInstance17 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance17.name = "FlowerProto";
 let fieldValue18 = browser.currentScene.createNode("fieldValue");
 fieldValue18.name = "vertex";
-fieldValue18.value = "\"../shaders/x_ite_flowers_plain.vs\"";
+fieldValue18.value = "\"../shaders/gl_flowers_plain.vs\"";
 ProtoInstance17YYY.fieldValue = new X3D.MFNode();
 
 ProtoInstance17ZZZ.fieldValue[0] = fieldValue18;

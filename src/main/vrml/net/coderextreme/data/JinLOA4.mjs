@@ -20,7 +20,7 @@ scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/Huma
 scene.addMetaData("generator", "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview");
 scene.addMetaData("generator", "Suwon HAnim Converter");
 scene.addMetaData("generator", "Gnu Image Manipulation Program, http://www.gimp.org");
-scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "license.html");
 await browser .loadComponents (scene);
 let WorldInfo20 = browser.currentScene.createNode("WorldInfo");
@@ -8753,7 +8753,7 @@ OrientationInterpolator1791.key = new X3D.MFFloat([0,0.5,1]);
 OrientationInterpolator1791.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
 Group1783ZZZ.children[7] = OrientationInterpolator1791;
 
-//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 let OrientationInterpolator1792 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator1792.DEF = "Stop_l_metatarsal_RotationInterpolator";
 OrientationInterpolator1792.key = new X3D.MFFloat([0,0.5,1]);
@@ -8784,7 +8784,7 @@ OrientationInterpolator1796.key = new X3D.MFFloat([0,0.5,1]);
 OrientationInterpolator1796.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0,0,0,1,0]);
 Group1783ZZZ.children[12] = OrientationInterpolator1796;
 
-//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+//<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>
 let OrientationInterpolator1797 = browser.currentScene.createNode("OrientationInterpolator");
 OrientationInterpolator1797.DEF = "Stop_r_metatarsal_RotationInterpolator";
 OrientationInterpolator1797.key = new X3D.MFFloat([0,0.5,1]);

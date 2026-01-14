@@ -11,1127 +11,1072 @@ scene .addComponent (browser .getComponent ("Shaders", 1));
 scene .addComponent (browser .getComponent ("CubeMapTexturing", 1));
 scene .addComponent (browser .getComponent ("Texturing", 1));
 scene .addComponent (browser .getComponent ("Rendering", 1));
+scene .addComponent (browser .getComponent ("Shape", 4));
 scene .addComponent (browser .getComponent ("Grouping", 3));
 scene .addComponent (browser .getComponent ("Core", 1));
 scene .addComponent (browser .getComponent ("DIS", 2));
-//<component name='Shape' level='4'></component>
-//Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
-scene.addMetaData("title", "bumpfreewrlsliders.x3d");
-scene.addMetaData("description", "*enter description here, short-sentence summaries preferred*");
+scene.addMetaData("title", "bumpyfreewrlsliders.x3d");
+scene.addMetaData("description", "Bumpy Orbitals with Sliders for FreeWRL");
 scene.addMetaData("creator", "Doug Sanden, Christoph Valentin, John Carlson");
-scene.addMetaData("translator", "*if manually translating VRML-to-X3D, enter name of person translating here*");
-scene.addMetaData("created", "*enter date of initial version here*");
-scene.addMetaData("translated", "*enter date of translation here*");
-scene.addMetaData("modified", "*enter date of latest revision here*");
-scene.addMetaData("version", "*enter version here, if any*");
-scene.addMetaData("reference", "*enter reference citation or relative/online url here*");
-scene.addMetaData("reference", "*enter additional url/bibliographic reference information here*");
-scene.addMetaData("requires", "*enter reference resource here if required to support function, delivery, or coherence of content*");
-scene.addMetaData("rights", "*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024");
-scene.addMetaData("drawing", "*enter drawing filename/url here*");
-scene.addMetaData("MovingImage", "*enter movie filename/url here*");
-scene.addMetaData("photo", "*enter photo filename/url here*");
-scene.addMetaData("subject", "*enter subject keywords here*");
-scene.addMetaData("accessRights", "*enter permission statements or url here*");
-scene.addMetaData("identifier", "*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*");
-scene.addMetaData("generator", "PSPad, http://www.pspad.com/");
+scene.addMetaData("identifier", "https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d");
 scene.addMetaData("license", "license.html");
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
 await browser .loadComponents (scene);
 //LayerSet with two layers, navigation happens in layer 1
-let LayerSet32 = browser.currentScene.createNode("LayerSet");
-LayerSet32.activeLayer = 1;
-LayerSet32.order = new X3D.MFInt32([1,2]);
+let LayerSet18 = browser.currentScene.createNode("LayerSet");
+LayerSet18.activeLayer = 1;
+LayerSet18.order = new X3D.MFInt32([1,2]);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
 //the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
-let Layer33 = browser.currentScene.createNode("Layer");
-Layer33.pickable = True;
-Layer33.objectType = new X3D.MFString([new X3D.SFString("ALL")]);
+let Layer19 = browser.currentScene.createNode("Layer");
+Layer19.pickable = True;
+Layer19.objectType = new X3D.MFString([new X3D.SFString("ALL")]);
 //basic nodes, which might be present in any scene
-let NavigationInfo34 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo34.type = new X3D.MFString([new X3D.SFString("EXAMINE")]);
-NavigationInfo34.avatarSize = new X3D.MFFloat([0.25,1.75,0.75]);
-Layer33YYY.children = new X3D.MFNode();
+let NavigationInfo20 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo20.type = new X3D.MFString([new X3D.SFString("EXAMINE"), new X3D.SFString("FLY"), new X3D.SFString("LOOKAT"), new X3D.SFString("ANY")]);
+NavigationInfo20.avatarSize = new X3D.MFFloat([0.25,1.75,0.75]);
+Layer19YYY.children = new X3D.MFNode();
 
-Layer33ZZZ.children[0] = NavigationInfo34;
+Layer19ZZZ.children[0] = NavigationInfo20;
 
-let DirectionalLight35 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight35.ambientIntensity = 0.2;
-DirectionalLight35.direction = new X3D.SFVec3f([0,-1,0]);
-Layer33ZZZ.children[1] = DirectionalLight35;
+let DirectionalLight21 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight21.ambientIntensity = 0.2;
+DirectionalLight21.direction = new X3D.SFVec3f([0,-1,0]);
+Layer19ZZZ.children[1] = DirectionalLight21;
 
-let DirectionalLight36 = browser.currentScene.createNode("DirectionalLight");
-DirectionalLight36.ambientIntensity = 0.2;
-DirectionalLight36.direction = new X3D.SFVec3f([-1,-0.1,-1]);
-Layer33ZZZ.children[2] = DirectionalLight36;
+let DirectionalLight22 = browser.currentScene.createNode("DirectionalLight");
+DirectionalLight22.ambientIntensity = 0.2;
+DirectionalLight22.direction = new X3D.SFVec3f([-1,-0.1,-1]);
+Layer19ZZZ.children[2] = DirectionalLight22;
 
-let Viewpoint37 = browser.currentScene.createNode("Viewpoint");
-Viewpoint37.description = "My Overview";
-Viewpoint37.fieldOfView = 1.570796;
-Viewpoint37.position = new X3D.SFVec3f([0,1.75,60]);
-Layer33ZZZ.children[3] = Viewpoint37;
+let Viewpoint23 = browser.currentScene.createNode("Viewpoint");
+Viewpoint23.description = "My Overview";
+Viewpoint23.fieldOfView = 1.570796;
+Viewpoint23.position = new X3D.SFVec3f([0,1.75,60]);
+Layer19ZZZ.children[3] = Viewpoint23;
 
 //this group contains the red/green/blue 3D crosshair
-let Group38 = browser.currentScene.createNode("Group");
+let Group24 = browser.currentScene.createNode("Group");
 //Arrow X
-let Transform39 = browser.currentScene.createNode("Transform");
-Transform39.translation = new X3D.SFVec3f([25,0,0]);
-Transform39.rotation = new X3D.SFRotation([0,0,-1,1.57]);
-let Shape40 = browser.currentScene.createNode("Shape");
-let Cylinder41 = browser.currentScene.createNode("Cylinder");
-Cylinder41.DEF = "Shaft";
-Cylinder41.radius = 0.35;
-Cylinder41.height = 50;
-geometry = Cylinder41;
+let Transform25 = browser.currentScene.createNode("Transform");
+Transform25.translation = new X3D.SFVec3f([25,0,0]);
+Transform25.rotation = new X3D.SFRotation([0,0,-1,1.57]);
+let Shape26 = browser.currentScene.createNode("Shape");
+let Cylinder27 = browser.currentScene.createNode("Cylinder");
+Cylinder27.DEF = "Shaft";
+Cylinder27.radius = 0.35;
+Cylinder27.height = 50;
+geometry = Cylinder27;
 
-let Appearance42 = browser.currentScene.createNode("Appearance");
-let Material43 = browser.currentScene.createNode("Material");
-Material43.DEF = "RED";
-Material43.diffuseColor = new X3D.SFColor([1,0,0]);
-Material43.emissiveColor = new X3D.SFColor([1,0,0]);
-material = Material43;
+let Appearance28 = browser.currentScene.createNode("Appearance");
+let Material29 = browser.currentScene.createNode("Material");
+Material29.DEF = "RED";
+Material29.diffuseColor = new X3D.SFColor([1,0,0]);
+Material29.emissiveColor = new X3D.SFColor([1,0,0]);
+material = Material29;
 
-appearance = Appearance42;
+appearance = Appearance28;
 
-Transform39YYY.child = new X3D.undefined();
+Transform25YYY.child = new X3D.undefined();
 
-Transform39ZZZ.child[0] = Shape40;
+Transform25ZZZ.child[0] = Shape26;
 
-Group38YYY.children = new X3D.MFNode();
+Group24YYY.children = new X3D.MFNode();
 
-Group38ZZZ.children[0] = Transform39;
+Group24ZZZ.children[0] = Transform25;
 
-let Transform44 = browser.currentScene.createNode("Transform");
-Transform44.translation = new X3D.SFVec3f([50,0,0]);
-Transform44.rotation = new X3D.SFRotation([0,0,-1,1.57]);
-let Shape45 = browser.currentScene.createNode("Shape");
-let Cone46 = browser.currentScene.createNode("Cone");
-Cone46.DEF = "Tip";
-Cone46.bottomRadius = 0.8;
-Cone46.height = 3;
-geometry = Cone46;
+let Transform30 = browser.currentScene.createNode("Transform");
+Transform30.translation = new X3D.SFVec3f([50,0,0]);
+Transform30.rotation = new X3D.SFRotation([0,0,-1,1.57]);
+let Shape31 = browser.currentScene.createNode("Shape");
+let Cone32 = browser.currentScene.createNode("Cone");
+Cone32.DEF = "Tip";
+Cone32.bottomRadius = 0.8;
+Cone32.height = 3;
+geometry = Cone32;
 
-let Appearance47 = browser.currentScene.createNode("Appearance");
-let Material48 = browser.currentScene.createNode("Material");
-Material48.USE = "RED";
-material = Material48;
+let Appearance33 = browser.currentScene.createNode("Appearance");
+let Material34 = browser.currentScene.createNode("Material");
+Material34.USE = "RED";
+material = Material34;
 
-appearance = Appearance47;
+appearance = Appearance33;
 
-Transform44YYY.child = new X3D.undefined();
+Transform30YYY.child = new X3D.undefined();
 
-Transform44ZZZ.child[0] = Shape45;
+Transform30ZZZ.child[0] = Shape31;
 
-Group38ZZZ.children[1] = Transform44;
+Group24ZZZ.children[1] = Transform30;
 
 //Arrow Y
-let Transform49 = browser.currentScene.createNode("Transform");
-Transform49.translation = new X3D.SFVec3f([0,25,0]);
-let Shape50 = browser.currentScene.createNode("Shape");
-let Cylinder51 = browser.currentScene.createNode("Cylinder");
-Cylinder51.USE = "Shaft";
-geometry = Cylinder51;
+let Transform35 = browser.currentScene.createNode("Transform");
+Transform35.translation = new X3D.SFVec3f([0,25,0]);
+let Shape36 = browser.currentScene.createNode("Shape");
+let Cylinder37 = browser.currentScene.createNode("Cylinder");
+Cylinder37.USE = "Shaft";
+geometry = Cylinder37;
 
-let Appearance52 = browser.currentScene.createNode("Appearance");
-let Material53 = browser.currentScene.createNode("Material");
-Material53.DEF = "GREEN";
-Material53.diffuseColor = new X3D.SFColor([0,1,0]);
-Material53.emissiveColor = new X3D.SFColor([0,1,0]);
-material = Material53;
+let Appearance38 = browser.currentScene.createNode("Appearance");
+let Material39 = browser.currentScene.createNode("Material");
+Material39.DEF = "GREEN";
+Material39.diffuseColor = new X3D.SFColor([0,1,0]);
+Material39.emissiveColor = new X3D.SFColor([0,1,0]);
+material = Material39;
 
-appearance = Appearance52;
+appearance = Appearance38;
 
-Transform49YYY.child = new X3D.undefined();
+Transform35YYY.child = new X3D.undefined();
 
-Transform49ZZZ.child[0] = Shape50;
+Transform35ZZZ.child[0] = Shape36;
 
-Group38ZZZ.children[2] = Transform49;
+Group24ZZZ.children[2] = Transform35;
 
-let Transform54 = browser.currentScene.createNode("Transform");
-Transform54.translation = new X3D.SFVec3f([0,50,0]);
-let Shape55 = browser.currentScene.createNode("Shape");
-let Cone56 = browser.currentScene.createNode("Cone");
-Cone56.USE = "Tip";
-geometry = Cone56;
+let Transform40 = browser.currentScene.createNode("Transform");
+Transform40.translation = new X3D.SFVec3f([0,50,0]);
+let Shape41 = browser.currentScene.createNode("Shape");
+let Cone42 = browser.currentScene.createNode("Cone");
+Cone42.USE = "Tip";
+geometry = Cone42;
 
-let Appearance57 = browser.currentScene.createNode("Appearance");
-let Material58 = browser.currentScene.createNode("Material");
-Material58.USE = "GREEN";
-material = Material58;
+let Appearance43 = browser.currentScene.createNode("Appearance");
+let Material44 = browser.currentScene.createNode("Material");
+Material44.USE = "GREEN";
+material = Material44;
 
-appearance = Appearance57;
+appearance = Appearance43;
 
-Transform54YYY.child = new X3D.undefined();
+Transform40YYY.child = new X3D.undefined();
 
-Transform54ZZZ.child[0] = Shape55;
+Transform40ZZZ.child[0] = Shape41;
 
-Group38ZZZ.children[3] = Transform54;
+Group24ZZZ.children[3] = Transform40;
 
 //Arrow Z
-let Transform59 = browser.currentScene.createNode("Transform");
-Transform59.translation = new X3D.SFVec3f([0,0,25]);
-Transform59.rotation = new X3D.SFRotation([1,0,0,1.57]);
-let Shape60 = browser.currentScene.createNode("Shape");
-let Cylinder61 = browser.currentScene.createNode("Cylinder");
-Cylinder61.USE = "Shaft";
-geometry = Cylinder61;
+let Transform45 = browser.currentScene.createNode("Transform");
+Transform45.translation = new X3D.SFVec3f([0,0,25]);
+Transform45.rotation = new X3D.SFRotation([1,0,0,1.57]);
+let Shape46 = browser.currentScene.createNode("Shape");
+let Cylinder47 = browser.currentScene.createNode("Cylinder");
+Cylinder47.USE = "Shaft";
+geometry = Cylinder47;
 
-let Appearance62 = browser.currentScene.createNode("Appearance");
-let Material63 = browser.currentScene.createNode("Material");
-Material63.DEF = "BLUE";
-Material63.diffuseColor = new X3D.SFColor([0,0,1]);
-Material63.emissiveColor = new X3D.SFColor([0,0,1]);
-material = Material63;
+let Appearance48 = browser.currentScene.createNode("Appearance");
+let Material49 = browser.currentScene.createNode("Material");
+Material49.DEF = "BLUE";
+Material49.diffuseColor = new X3D.SFColor([0,0,1]);
+Material49.emissiveColor = new X3D.SFColor([0,0,1]);
+material = Material49;
 
-appearance = Appearance62;
+appearance = Appearance48;
 
-Transform59YYY.child = new X3D.undefined();
+Transform45YYY.child = new X3D.undefined();
 
-Transform59ZZZ.child[0] = Shape60;
+Transform45ZZZ.child[0] = Shape46;
 
-Group38ZZZ.children[4] = Transform59;
+Group24ZZZ.children[4] = Transform45;
 
-let Transform64 = browser.currentScene.createNode("Transform");
-Transform64.translation = new X3D.SFVec3f([0,0,50]);
-Transform64.rotation = new X3D.SFRotation([1,0,0,1.57]);
-let Shape65 = browser.currentScene.createNode("Shape");
-let Cone66 = browser.currentScene.createNode("Cone");
-Cone66.USE = "Tip";
-geometry = Cone66;
+let Transform50 = browser.currentScene.createNode("Transform");
+Transform50.translation = new X3D.SFVec3f([0,0,50]);
+Transform50.rotation = new X3D.SFRotation([1,0,0,1.57]);
+let Shape51 = browser.currentScene.createNode("Shape");
+let Cone52 = browser.currentScene.createNode("Cone");
+Cone52.USE = "Tip";
+geometry = Cone52;
 
-let Appearance67 = browser.currentScene.createNode("Appearance");
-let Material68 = browser.currentScene.createNode("Material");
-Material68.USE = "BLUE";
-material = Material68;
+let Appearance53 = browser.currentScene.createNode("Appearance");
+let Material54 = browser.currentScene.createNode("Material");
+Material54.USE = "BLUE";
+material = Material54;
 
-appearance = Appearance67;
+appearance = Appearance53;
 
-Transform64YYY.child = new X3D.undefined();
+Transform50YYY.child = new X3D.undefined();
 
-Transform64ZZZ.child[0] = Shape65;
+Transform50ZZZ.child[0] = Shape51;
 
-Group38ZZZ.children[5] = Transform64;
+Group24ZZZ.children[5] = Transform50;
 
-Layer33ZZZ.children[4] = Group38;
+Layer19ZZZ.children[4] = Group24;
 
 //the model that is being reviewed by the users of this scene
-let Transform69 = browser.currentScene.createNode("Transform");
-Transform69.DEF = "FlowerTransform";
+let Transform55 = browser.currentScene.createNode("Transform");
+Transform55.DEF = "FlowerTransform";
 //<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />
 //Images courtesy of Paul Debevec's Light Probe Image Gallery
-let Background70 = browser.currentScene.createNode("Background");
-Background70.backUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
-Background70.bottomUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
-Background70.frontUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
-Background70.leftUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
-Background70.rightUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
-Background70.topUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
-Transform69YYY.children = new X3D.MFNode();
+let Background56 = browser.currentScene.createNode("Background");
+Background56.backUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
+Background56.bottomUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
+Background56.frontUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
+Background56.leftUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
+Background56.rightUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
+Background56.topUrl = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
+Transform55YYY.children = new X3D.MFNode();
 
-Transform69ZZZ.children[0] = Background70;
+Transform55ZZZ.children[0] = Background56;
 
-let Shape71 = browser.currentScene.createNode("Shape");
-let Sphere72 = browser.currentScene.createNode("Sphere");
-Sphere72.radius = 0.01;
-geometry = Sphere72;
+let Transform57 = browser.currentScene.createNode("Transform");
+let Shape58 = browser.currentScene.createNode("Shape");
+let Sphere59 = browser.currentScene.createNode("Sphere");
+Sphere59.radius = 5;
+geometry = Sphere59;
 
-let Appearance73 = browser.currentScene.createNode("Appearance");
-let Material74 = browser.currentScene.createNode("Material");
-Material74.diffuseColor = new X3D.SFColor([0.7,0.7,0.7]);
-Material74.specularColor = new X3D.SFColor([0.5,0.5,0.5]);
-material = Material74;
+//<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+let Appearance60 = browser.currentScene.createNode("Appearance");
+let Material61 = browser.currentScene.createNode("Material");
+Material61.diffuseColor = new X3D.SFColor([0.7,0.7,0.7]);
+Material61.specularColor = new X3D.SFColor([0.5,0.5,0.5]);
+material = Material61;
 
-let ComposedCubeMapTexture75 = browser.currentScene.createNode("ComposedCubeMapTexture");
-ComposedCubeMapTexture75.DEF = "texture";
-let ImageTexture76 = browser.currentScene.createNode("ImageTexture");
-ImageTexture76.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
-topTexture = ImageTexture76;
+let ComposedCubeMapTexture62 = browser.currentScene.createNode("ComposedCubeMapTexture");
+ComposedCubeMapTexture62.DEF = "texture";
+let ImageTexture63 = browser.currentScene.createNode("ImageTexture");
+ImageTexture63.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), new X3D.SFString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]);
+topTexture = ImageTexture63;
 
-let ImageTexture77 = browser.currentScene.createNode("ImageTexture");
-ImageTexture77.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
-topTexture = ImageTexture77;
+let ImageTexture64 = browser.currentScene.createNode("ImageTexture");
+ImageTexture64.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), new X3D.SFString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]);
+topTexture = ImageTexture64;
 
-let ImageTexture78 = browser.currentScene.createNode("ImageTexture");
-ImageTexture78.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
-topTexture = ImageTexture78;
+let ImageTexture65 = browser.currentScene.createNode("ImageTexture");
+ImageTexture65.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_front.png"), new X3D.SFString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png")]);
+topTexture = ImageTexture65;
 
-let ImageTexture79 = browser.currentScene.createNode("ImageTexture");
-ImageTexture79.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
-topTexture = ImageTexture79;
+let ImageTexture66 = browser.currentScene.createNode("ImageTexture");
+ImageTexture66.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_left.png"), new X3D.SFString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png")]);
+topTexture = ImageTexture66;
 
-let ImageTexture80 = browser.currentScene.createNode("ImageTexture");
-ImageTexture80.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
-topTexture = ImageTexture80;
+let ImageTexture67 = browser.currentScene.createNode("ImageTexture");
+ImageTexture67.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_right.png"), new X3D.SFString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png")]);
+topTexture = ImageTexture67;
 
-let ImageTexture81 = browser.currentScene.createNode("ImageTexture");
-ImageTexture81.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
-topTexture = ImageTexture81;
+let ImageTexture68 = browser.currentScene.createNode("ImageTexture");
+ImageTexture68.url = new X3D.MFString([new X3D.SFString("../resources/images/all_probes/stpeters_cross/stpeters_top.png"), new X3D.SFString("https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png")]);
+topTexture = ImageTexture68;
 
-texture = ComposedCubeMapTexture75;
+texture = ComposedCubeMapTexture62;
 
-let ComposedShader82 = browser.currentScene.createNode("ComposedShader");
-ComposedShader82.DEF = "freewrlShader";
-ComposedShader82.language = "GLSL";
-ComposedShader83.getField("chromaticDispertion").setValue("0.98 1 1.033");
-ComposedShader82YYY.field = new X3D.MFNode();
+let ComposedShader69 = browser.currentScene.createNode("ComposedShader");
+ComposedShader69.DEF = "freewrlShader";
+ComposedShader69.language = "GLSL";
+ComposedShader70.getField("fw_textureCoordGenType").setValue("0");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader84.getField("fw_textureCoordGenType").setValue("0");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader71.getField("chromaticDispertion").setValue("0.98 1 1.033");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader85.getField("bias").setValue("0.5");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader72.getField("bias").setValue("0.5");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader86.getField("scale").setValue("0.5");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader73.getField("scale").setValue("0.5");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader87.getField("power").setValue("2");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader74.getField("power").setValue("2");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader88.getField("a").setValue("15");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader75.getField("a").setValue("15");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader89.getField("b").setValue("5");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader76.getField("b").setValue("5");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader90.getField("c").setValue("5");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader77.getField("c").setValue("20");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader91.getField("d").setValue("5");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader78.getField("d").setValue("20");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader92.getField("tdelta").setValue("0");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader79.getField("tdelta").setValue("0");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-ComposedShader93.getField("pdelta").setValue("0");
-ComposedShader82YYY.field = new X3D.MFNode();
+ComposedShader80.getField("pdelta").setValue("0");
+ComposedShader69YYY.field = new X3D.MFNode();
 
-let ShaderPart94 = browser.currentScene.createNode("ShaderPart");
-ShaderPart94.url = new X3D.MFString([new X3D.SFString("../shaders/freewrl_flowers_chromatic.vs"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs")]);
-ShaderPart94.type = "VERTEX";
-ComposedShader82YYY.parts = new X3D.MFNode();
+//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+let ShaderPart81 = browser.currentScene.createNode("ShaderPart");
+ShaderPart81.type = "VERTEX";
+let IS82 = browser.currentScene.createNode("IS");
+let connect83 = browser.currentScene.createNode("connect");
+connect83.nodeField = "url";
+connect83.protoField = "vertex";
+IS82YYY.connect = new X3D.MFNode();
 
-ComposedShader82ZZZ.parts[0] = ShaderPart94;
+IS82ZZZ.connect[0] = connect83;
 
-let ShaderPart95 = browser.currentScene.createNode("ShaderPart");
-ShaderPart95.url = new X3D.MFString([new X3D.SFString("../shaders/freewrl_bubbles.fs"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs")]);
-ShaderPart95.type = "FRAGMENT";
-ComposedShader82ZZZ.parts[1] = ShaderPart95;
+iS = IS82;
 
-Appearance73YYY.shaders = new X3D.MFNode();
+ComposedShader69YYY.parts = new X3D.MFNode();
 
-Appearance73ZZZ.shaders[0] = ComposedShader82;
+ComposedShader69ZZZ.parts[0] = ShaderPart81;
 
-appearance = Appearance73;
+let ShaderPart84 = browser.currentScene.createNode("ShaderPart");
+ShaderPart84.type = "FRAGMENT";
+let IS85 = browser.currentScene.createNode("IS");
+let connect86 = browser.currentScene.createNode("connect");
+connect86.nodeField = "url";
+connect86.protoField = "fragment";
+IS85YYY.connect = new X3D.MFNode();
 
-Transform69ZZZ.child[1] = Shape71;
+IS85ZZZ.connect[0] = connect86;
 
-Layer33ZZZ.children[5] = Transform69;
+iS = IS85;
 
+ComposedShader69ZZZ.parts[1] = ShaderPart84;
+
+Appearance60YYY.shaders = new X3D.MFNode();
+
+Appearance60ZZZ.shaders[0] = ComposedShader69;
+
+//<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>
+appearance = Appearance60;
+
+Transform57YYY.child = new X3D.undefined();
+
+Transform57ZZZ.child[0] = Shape58;
+
+Transform55ZZZ.children[1] = Transform57;
+
+Layer19ZZZ.children[5] = Transform55;
+
+//<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>
 //DIS multiuser facilities
-let DISEntityManager96 = browser.currentScene.createNode("DISEntityManager");
-DISEntityManager96.DEF = "EntityManager";
-DISEntityManager96.networkMode = "networkReader";
-let DISEntityTypeMapping97 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping97.category = 77;
-DISEntityTypeMapping97.specific = 1;
-DISEntityTypeMapping97.url = new X3D.MFString([new X3D.SFString("../data/Leif8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")]);
-DISEntityManager96YYY.children = new X3D.MFNode();
+let DISEntityManager87 = browser.currentScene.createNode("DISEntityManager");
+DISEntityManager87.DEF = "EntityManager";
+let DISEntityTypeMapping88 = browser.currentScene.createNode("DISEntityTypeMapping");
+DISEntityTypeMapping88.category = 77;
+DISEntityTypeMapping88.specific = 1;
+DISEntityTypeMapping88.url = new X3D.MFString([new X3D.SFString("../data/Leif8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")]);
+DISEntityManager87YYY.children = new X3D.MFNode();
 
-DISEntityManager96ZZZ.children[0] = DISEntityTypeMapping97;
+DISEntityManager87ZZZ.children[0] = DISEntityTypeMapping88;
 
-let DISEntityTypeMapping98 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping98.category = 77;
-DISEntityTypeMapping98.specific = 2;
-DISEntityTypeMapping98.url = new X3D.MFString([new X3D.SFString("../data/Lily8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")]);
-DISEntityManager96ZZZ.children[1] = DISEntityTypeMapping98;
+let DISEntityTypeMapping89 = browser.currentScene.createNode("DISEntityTypeMapping");
+DISEntityTypeMapping89.category = 77;
+DISEntityTypeMapping89.specific = 2;
+DISEntityTypeMapping89.url = new X3D.MFString([new X3D.SFString("../data/Lily8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")]);
+DISEntityManager87ZZZ.children[1] = DISEntityTypeMapping89;
 
-let DISEntityTypeMapping99 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping99.category = 77;
-DISEntityTypeMapping99.specific = 3;
-DISEntityTypeMapping99.url = new X3D.MFString([new X3D.SFString("../data/Tufani8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")]);
-DISEntityManager96ZZZ.children[2] = DISEntityTypeMapping99;
+let DISEntityTypeMapping90 = browser.currentScene.createNode("DISEntityTypeMapping");
+DISEntityTypeMapping90.category = 77;
+DISEntityTypeMapping90.specific = 3;
+DISEntityTypeMapping90.url = new X3D.MFString([new X3D.SFString("../data/Tufani8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")]);
+DISEntityManager87ZZZ.children[2] = DISEntityTypeMapping90;
 
-let DISEntityTypeMapping100 = browser.currentScene.createNode("DISEntityTypeMapping");
-DISEntityTypeMapping100.category = 77;
-DISEntityTypeMapping100.specific = 4;
-DISEntityTypeMapping100.url = new X3D.MFString([new X3D.SFString("../data/Gramps8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")]);
-DISEntityManager96ZZZ.children[3] = DISEntityTypeMapping100;
+let DISEntityTypeMapping91 = browser.currentScene.createNode("DISEntityTypeMapping");
+DISEntityTypeMapping91.category = 77;
+DISEntityTypeMapping91.specific = 4;
+DISEntityTypeMapping91.url = new X3D.MFString([new X3D.SFString("../data/Gramps8Final.x3d"), new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")]);
+DISEntityManager87ZZZ.children[3] = DISEntityTypeMapping91;
 
-Layer33ZZZ.children[6] = DISEntityManager96;
+Layer19ZZZ.children[6] = DISEntityManager87;
 
-let Collision101 = browser.currentScene.createNode("Collision");
-Collision101.enabled = False;
-let Group102 = browser.currentScene.createNode("Group");
-Group102.DEF = "AvatarHolder";
-proxy = Group102;
+let Collision92 = browser.currentScene.createNode("Collision");
+let Group93 = browser.currentScene.createNode("Group");
+Group93.DEF = "AvatarHolder";
+proxy = Group93;
 
-Layer33ZZZ.children[7] = Collision101;
+Layer19ZZZ.children[7] = Collision92;
 
-let ROUTE103 = browser.currentScene.createNode("ROUTE");
-ROUTE103.fromField = "addedEntities";
-ROUTE103.fromNode = "EntityManager";
-ROUTE103.toField = "addChildren";
-ROUTE103.toNode = "AvatarHolder";
-Layer33ZZZ.children[8] = ROUTE103;
+let ROUTE94 = browser.currentScene.createNode("ROUTE");
+ROUTE94.fromField = "addedEntities";
+ROUTE94.fromNode = "EntityManager";
+ROUTE94.toField = "addChildren";
+ROUTE94.toNode = "AvatarHolder";
+Layer19ZZZ.children[8] = ROUTE94;
 
-let ROUTE104 = browser.currentScene.createNode("ROUTE");
-ROUTE104.fromField = "removedEntities";
-ROUTE104.fromNode = "EntityManager";
-ROUTE104.toField = "removeChildren";
-ROUTE104.toNode = "AvatarHolder";
-Layer33ZZZ.children[9] = ROUTE104;
+let ROUTE95 = browser.currentScene.createNode("ROUTE");
+ROUTE95.fromField = "removedEntities";
+ROUTE95.fromNode = "EntityManager";
+ROUTE95.toField = "removeChildren";
+ROUTE95.toNode = "AvatarHolder";
+Layer19ZZZ.children[9] = ROUTE95;
 
-LayerSet32YYY.layers = new X3D.MFNode();
+LayerSet18YYY.layers = new X3D.MFNode();
 
-LayerSet32ZZZ.layers[0] = Layer33;
+LayerSet18ZZZ.layers[0] = Layer19;
 
-let LayoutLayer105 = browser.currentScene.createNode("LayoutLayer");
-LayoutLayer105.pickable = True;
-LayoutLayer105.objectType = new X3D.MFString([new X3D.SFString("ALL")]);
+let LayoutLayer96 = browser.currentScene.createNode("LayoutLayer");
+LayoutLayer96.pickable = True;
+LayoutLayer96.objectType = new X3D.MFString([new X3D.SFString("ALL")]);
 //positioning the LayoutLayer
 //clipping the LayoutLayer
 //the content (children) of the LayoutLayer
 //first, the slider for scaling the model
-let Transform106 = browser.currentScene.createNode("Transform");
-Transform106.translation = new X3D.SFVec3f([0,0,-3]);
-let Shape107 = browser.currentScene.createNode("Shape");
-let Appearance108 = browser.currentScene.createNode("Appearance");
-let Material109 = browser.currentScene.createNode("Material");
-Material109.diffuseColor = new X3D.SFColor([0,0,0]);
-Material109.transparency = 0.7;
-material = Material109;
+let Transform97 = browser.currentScene.createNode("Transform");
+Transform97.translation = new X3D.SFVec3f([0,0,-3]);
+let Shape98 = browser.currentScene.createNode("Shape");
+let Appearance99 = browser.currentScene.createNode("Appearance");
+let Material100 = browser.currentScene.createNode("Material");
+Material100.diffuseColor = new X3D.SFColor([0.1,0.1,0.1]);
+Material100.transparency = 1;
+material = Material100;
+
+appearance = Appearance99;
+
+let Box101 = browser.currentScene.createNode("Box");
+Box101.size = new X3D.SFVec3f([100,100,0.02]);
+geometry = Box101;
+
+Transform97YYY.child = new X3D.undefined();
+
+Transform97ZZZ.child[0] = Shape98;
+
+LayoutLayer96YYY.children = new X3D.MFNode();
+
+LayoutLayer96ZZZ.children[0] = Transform97;
+
+let Transform102 = browser.currentScene.createNode("Transform");
+Transform102.DEF = "equationTransform";
+let Transform103 = browser.currentScene.createNode("Transform");
+Transform103.translation = new X3D.SFVec3f([0,0,-20]);
+let Shape104 = browser.currentScene.createNode("Shape");
+let Text105 = browser.currentScene.createNode("Text");
+Text105.DEF = "equation";
+Text105.string = new X3D.MFString([new X3D.SFString("r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)")]);
+let FontStyle106 = browser.currentScene.createNode("FontStyle");
+FontStyle106.size = 0.09;
+fontStyle = FontStyle106;
+
+geometry = Text105;
+
+let Appearance107 = browser.currentScene.createNode("Appearance");
+let Material108 = browser.currentScene.createNode("Material");
+Material108.diffuseColor = new X3D.SFColor([0,1,1]);
+material = Material108;
+
+appearance = Appearance107;
+
+Transform103YYY.child = new X3D.undefined();
+
+Transform103ZZZ.child[0] = Shape104;
+
+Transform102YYY.children = new X3D.MFNode();
+
+Transform102ZZZ.children[0] = Transform103;
+
+LayoutLayer96ZZZ.children[1] = Transform102;
+
+let ProtoDeclare109 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+<ProtoDeclare name="SliderProto" ><ProtoInterface><field name="sliderTranslation" accessType="inputOutput" type="SFVec3f" value="0 0.7 0"></field>
+<field name="transformTranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0.1"></field>
+<field name="sensorTranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="numberTranslation" accessType="inputOutput" type="SFVec3f" value="0.2 0 0"></field>
+<field name="textString" accessType="inputOutput" type="MFString" value="&quot;a=&quot;"></field>
+<field name="parameterName" accessType="inputOutput" type="SFString" value="a"></field>
+<field name="parameterScale" accessType="inputOutput" type="SFFloat" value="30"></field>
+<field name="shaderNode" accessType="inputOutput" type="SFNode"></field>
+</ProtoInterface>
+<ProtoBody><Group><Transform DEF="protoSlider" translation="0 0.7 0"><IS><connect nodeField="translation" protoField="sliderTranslation"></connect>
+</IS>
+<Transform DEF="protoTransform" translation="0 0 0.1"><IS><connect nodeField="translation" protoField="sensorTranslation"></connect>
+</IS>
+<PlaneSensor DEF="protoSensor" maxPosition="2 0"></PlaneSensor>
+<Transform translation="0 0 0"><TouchSensor DEF="protoTS"></TouchSensor>
+</Transform>
+<Transform><Shape><Text DEF="protoText" string="&quot;a=&quot;"><IS><connect nodeField="string" protoField="textString"></connect>
+</IS>
+<FontStyle containerField="fontStyle" size="0.2"></FontStyle>
+</Text>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+</Appearance>
+</Shape>
+<Transform><IS><connect nodeField="translation" protoField="numberTranslation"></connect>
+</IS>
+<Shape><Text DEF="protoNumber" string="&quot;0&quot;"><FontStyle containerField="fontStyle" size="0.2"></FontStyle>
+</Text>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+</Appearance>
+</Shape>
+</Transform>
+</Transform>
+</Transform>
+</Transform>
+<Script DEF="protoValueTransformerScript" directOutput="true" mustEvaluate="true"><field name="protoScale" accessType="inputOutput" type="SFFloat" value="30"></field>
+<field name="shader" accessType="inputOutput" type="SFNode"></field>
+<field name="newTranslation" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
+<field name="protoValue_changed" accessType="inputOutput" type="SFFloat" value="1"></field>
+<field name="protoNumber_changed" accessType="inputOutput" type="MFString" value="&quot;0.0&quot;"></field>
+<field name="protoParameterName" accessType="inputOutput" type="SFString" value="a"></field>
+<IS><connect nodeField="protoScale" protoField="parameterScale"></connect>
+<connect nodeField="protoParameterName" protoField="parameterName"></connect>
+<connect nodeField="shader" protoField="shaderNode"></connect>
+</IS>
+<![CDATA[ecmascript:
+	const newTranslation = function(Value) {
+	    protoValue_changed = Value[0] * protoScale;
+	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());
+	    Browser.println("In newTranslation:");
+	    Browser.println(shader);
+	    Browser.println(Value[0]);
+	    Browser.println(Value.x);
+	    Browser.println(protoScale);
+	    Browser.println(Value[0] * protoScale);
+	    Browser.println(protoParameterName);
+					// shader[protoParameterName] = Value[0] * protoScale;
+	};]]></Script>
+<ROUTE fromField="translation_changed" fromNode="protoSensor" toField="set_translation" toNode="protoTransform"></ROUTE>
+<ROUTE fromField="translation_changed" fromNode="protoSensor" toField="newTranslation" toNode="protoValueTransformerScript"></ROUTE>
+<ROUTE fromField="protoNumber_changed" fromNode="protoValueTransformerScript" toField="string" toNode="protoNumber"></ROUTE>
+</Group>
+</ProtoBody>
+</ProtoDeclare>`);
+ProtoDeclare109.name = "SliderProto";
+ProtoInterface111.getField("sliderTranslation").setValue("0 0.7 0");
+ProtoInterface110YYY.field = new X3D.MFNode();
+
+ProtoInterface112.getField("transformTranslation").setValue("0 0 0.1");
+ProtoInterface110YYY.field = new X3D.MFNode();
+
+ProtoInterface113.getField("sensorTranslation").setValue("0 0 0");
+ProtoInterface110YYY.field = new X3D.MFNode();
+
+ProtoInterface114.getField("numberTranslation").setValue("0.2 0 0");
+ProtoInterface110YYY.field = new X3D.MFNode();
+
+ProtoInterface115.getField("textString").setValue("\"a=\"");
+ProtoInterface110YYY.field = new X3D.MFNode();
+
+ProtoInterface116.getField("parameterName").setValue("a");
+ProtoInterface110YYY.field = new X3D.MFNode();
+
+ProtoInterface117.getField("parameterScale").setValue("30");
+ProtoInterface110YYY.field = new X3D.MFNode();
+
+ProtoInterface118.getField("shaderNode")ProtoInterface110YYY.field = new X3D.MFNode();
+
+protoInterface = ProtoInterface110;
+
+let ProtoBody119 = browser.currentScene.createNode("ProtoBody");
+let Group120 = browser.currentScene.createNode("Group");
+let Transform121 = browser.currentScene.createNode("Transform");
+Transform121.DEF = "protoSlider";
+Transform121.translation = new X3D.SFVec3f([0,0.7,0]);
+let IS122 = browser.currentScene.createNode("IS");
+let connect123 = browser.currentScene.createNode("connect");
+connect123.nodeField = "translation";
+connect123.protoField = "sliderTranslation";
+IS122YYY.connect = new X3D.MFNode();
+
+IS122ZZZ.connect[0] = connect123;
+
+iS = IS122;
 
-appearance = Appearance108;
+let Transform124 = browser.currentScene.createNode("Transform");
+Transform124.DEF = "protoTransform";
+Transform124.translation = new X3D.SFVec3f([0,0,0.1]);
+let IS125 = browser.currentScene.createNode("IS");
+let connect126 = browser.currentScene.createNode("connect");
+connect126.nodeField = "translation";
+connect126.protoField = "sensorTranslation";
+IS125YYY.connect = new X3D.MFNode();
 
-let Box110 = browser.currentScene.createNode("Box");
-Box110.size = new X3D.SFVec3f([100,100,0.02]);
-geometry = Box110;
+IS125ZZZ.connect[0] = connect126;
 
-Transform106YYY.child = new X3D.undefined();
+iS = IS125;
 
-Transform106ZZZ.child[0] = Shape107;
+let PlaneSensor127 = browser.currentScene.createNode("PlaneSensor");
+PlaneSensor127.DEF = "protoSensor";
+PlaneSensor127.maxPosition = new X3D.SFVec2f([2,0]);
+Transform124YYY.children = new X3D.MFNode();
 
-LayoutLayer105YYY.children = new X3D.MFNode();
+Transform124ZZZ.children[0] = PlaneSensor127;
 
-LayoutLayer105ZZZ.children[0] = Transform106;
+let Transform128 = browser.currentScene.createNode("Transform");
+Transform128.translation = new X3D.SFVec3f([0,0,0]);
+let TouchSensor129 = browser.currentScene.createNode("TouchSensor");
+TouchSensor129.DEF = "protoTS";
+Transform128YYY.children = new X3D.MFNode();
 
-//the plane sensors
-let Transform111 = browser.currentScene.createNode("Transform");
-Transform111.DEF = "aSlider";
-Transform111.translation = new X3D.SFVec3f([0,0.7,0]);
-let Transform112 = browser.currentScene.createNode("Transform");
-Transform112.rotation = new X3D.SFRotation([0,0,1,1.57]);
-let Shape113 = browser.currentScene.createNode("Shape");
-let Appearance114 = browser.currentScene.createNode("Appearance");
-let Material115 = browser.currentScene.createNode("Material");
-material = Material115;
+Transform128ZZZ.children[0] = TouchSensor129;
 
-appearance = Appearance114;
+Transform124ZZZ.children[1] = Transform128;
 
-let Cylinder116 = browser.currentScene.createNode("Cylinder");
-Cylinder116.radius = 0.05;
-Cylinder116.height = 2.5;
-geometry = Cylinder116;
+let Transform130 = browser.currentScene.createNode("Transform");
+let Shape131 = browser.currentScene.createNode("Shape");
+let Text132 = browser.currentScene.createNode("Text");
+Text132.DEF = "protoText";
+Text132.string = new X3D.MFString([new X3D.SFString("a=")]);
+let IS133 = browser.currentScene.createNode("IS");
+let connect134 = browser.currentScene.createNode("connect");
+connect134.nodeField = "string";
+connect134.protoField = "textString";
+IS133YYY.connect = new X3D.MFNode();
 
-Transform112YYY.child = new X3D.undefined();
+IS133ZZZ.connect[0] = connect134;
 
-Transform112ZZZ.child[0] = Shape113;
+iS = IS133;
 
-Transform111YYY.children = new X3D.MFNode();
+let FontStyle135 = browser.currentScene.createNode("FontStyle");
+FontStyle135.size = 0.2;
+fontStyle = FontStyle135;
 
-Transform111ZZZ.children[0] = Transform112;
+geometry = Text132;
 
-let Transform117 = browser.currentScene.createNode("Transform");
-Transform117.DEF = "aTransform";
-Transform117.translation = new X3D.SFVec3f([0,0,0.1]);
-let PlaneSensor118 = browser.currentScene.createNode("PlaneSensor");
-PlaneSensor118.DEF = "aSensor";
-PlaneSensor118.minPosition = new X3D.SFVec2f([-20,0]);
-PlaneSensor118.maxPosition = new X3D.SFVec2f([20,0]);
-Transform117YYY.children = new X3D.MFNode();
+let Appearance136 = browser.currentScene.createNode("Appearance");
+let Material137 = browser.currentScene.createNode("Material");
+Material137.diffuseColor = new X3D.SFColor([1,1,1]);
+material = Material137;
 
-Transform117ZZZ.children[0] = PlaneSensor118;
+appearance = Appearance136;
 
-let Transform119 = browser.currentScene.createNode("Transform");
-Transform119.translation = new X3D.SFVec3f([0,0,0]);
-let TouchSensor120 = browser.currentScene.createNode("TouchSensor");
-TouchSensor120.DEF = "aTS";
-Transform119YYY.children = new X3D.MFNode();
+Transform130YYY.child = new X3D.undefined();
 
-Transform119ZZZ.children[0] = TouchSensor120;
+Transform130ZZZ.child[0] = Shape131;
 
-let Shape121 = browser.currentScene.createNode("Shape");
-let Sphere122 = browser.currentScene.createNode("Sphere");
-Sphere122.radius = 0.08;
-geometry = Sphere122;
+let Transform138 = browser.currentScene.createNode("Transform");
+let IS139 = browser.currentScene.createNode("IS");
+let connect140 = browser.currentScene.createNode("connect");
+connect140.nodeField = "translation";
+connect140.protoField = "numberTranslation";
+IS139YYY.connect = new X3D.MFNode();
 
-let Appearance123 = browser.currentScene.createNode("Appearance");
-let Material124 = browser.currentScene.createNode("Material");
-Material124.diffuseColor = new X3D.SFColor([1,0,0]);
-material = Material124;
+IS139ZZZ.connect[0] = connect140;
 
-appearance = Appearance123;
+iS = IS139;
 
-Transform119ZZZ.child[1] = Shape121;
+let Shape141 = browser.currentScene.createNode("Shape");
+let Text142 = browser.currentScene.createNode("Text");
+Text142.DEF = "protoNumber";
+Text142.string = new X3D.MFString([new X3D.SFString("0")]);
+let FontStyle143 = browser.currentScene.createNode("FontStyle");
+FontStyle143.size = 0.2;
+fontStyle = FontStyle143;
+
+geometry = Text142;
+
+let Appearance144 = browser.currentScene.createNode("Appearance");
+let Material145 = browser.currentScene.createNode("Material");
+Material145.diffuseColor = new X3D.SFColor([1,1,1]);
+material = Material145;
+
+appearance = Appearance144;
+
+Transform138YYY.child = new X3D.undefined();
 
-Transform117ZZZ.children[1] = Transform119;
+Transform138ZZZ.child[0] = Shape141;
 
-let Shape125 = browser.currentScene.createNode("Shape");
-let Cylinder126 = browser.currentScene.createNode("Cylinder");
-Cylinder126.radius = 0.05;
-Cylinder126.height = 0.3;
-geometry = Cylinder126;
+Transform130ZZZ.children[1] = Transform138;
 
-let Appearance127 = browser.currentScene.createNode("Appearance");
-let Material128 = browser.currentScene.createNode("Material");
-material = Material128;
+Transform124ZZZ.children[2] = Transform130;
+
+Transform121YYY.children = new X3D.MFNode();
+
+Transform121ZZZ.children[0] = Transform124;
+
+Group120YYY.children = new X3D.MFNode();
 
-appearance = Appearance127;
+Group120ZZZ.children[0] = Transform121;
+
+let Script146 = browser.currentScene.createNode("Script");
+Script146.DEF = "protoValueTransformerScript";
+Script146.directOutput = True;
+Script146.mustEvaluate = True;
+Script147.getField("protoScale").setValue("30");
+Script146YYY.field = new X3D.MFNode();
 
-Transform117ZZZ.child[2] = Shape125;
+Script148.getField("shader")Script146YYY.field = new X3D.MFNode();
+
+Script149.getField("newTranslation").setValue("1 1 1");
+Script146YYY.field = new X3D.MFNode();
+
+Script150.getField("protoValue_changed").setValue("1");
+Script146YYY.field = new X3D.MFNode();
+
+Script151.getField("protoNumber_changed").setValue("\"0.0\"");
+Script146YYY.field = new X3D.MFNode();
+
+Script152.getField("protoParameterName").setValue("a");
+Script146YYY.field = new X3D.MFNode();
+
+let IS153 = browser.currentScene.createNode("IS");
+let connect154 = browser.currentScene.createNode("connect");
+connect154.nodeField = "protoScale";
+connect154.protoField = "parameterScale";
+IS153YYY.connect = new X3D.MFNode();
+
+IS153ZZZ.connect[0] = connect154;
+
+let connect155 = browser.currentScene.createNode("connect");
+connect155.nodeField = "protoParameterName";
+connect155.protoField = "parameterName";
+IS153ZZZ.connect[1] = connect155;
+
+let connect156 = browser.currentScene.createNode("connect");
+connect156.nodeField = "shader";
+connect156.protoField = "shaderNode";
+IS153ZZZ.connect[2] = connect156;
 
-Transform111ZZZ.children[1] = Transform117;
-
-let Transform129 = browser.currentScene.createNode("Transform");
-Transform129.rotation = new X3D.SFRotation([0,0,1,1.57]);
-let Shape130 = browser.currentScene.createNode("Shape");
-let Appearance131 = browser.currentScene.createNode("Appearance");
-let Material132 = browser.currentScene.createNode("Material");
-material = Material132;
-
-appearance = Appearance131;
-
-let Cylinder133 = browser.currentScene.createNode("Cylinder");
-Cylinder133.radius = 0.05;
-Cylinder133.height = 2.5;
-geometry = Cylinder133;
-
-Transform129YYY.child = new X3D.undefined();
-
-Transform129ZZZ.child[0] = Shape130;
-
-Transform111ZZZ.children[2] = Transform129;
-
-LayoutLayer105ZZZ.children[1] = Transform111;
-
-let Transform134 = browser.currentScene.createNode("Transform");
-Transform134.DEF = "bSlider";
-Transform134.translation = new X3D.SFVec3f([0,0.4,0]);
-let Transform135 = browser.currentScene.createNode("Transform");
-Transform135.rotation = new X3D.SFRotation([0,0,1,1.57]);
-let Shape136 = browser.currentScene.createNode("Shape");
-let Appearance137 = browser.currentScene.createNode("Appearance");
-let Material138 = browser.currentScene.createNode("Material");
-material = Material138;
-
-appearance = Appearance137;
-
-let Cylinder139 = browser.currentScene.createNode("Cylinder");
-Cylinder139.radius = 0.05;
-Cylinder139.height = 2.5;
-geometry = Cylinder139;
-
-Transform135YYY.child = new X3D.undefined();
-
-Transform135ZZZ.child[0] = Shape136;
-
-Transform134YYY.children = new X3D.MFNode();
-
-Transform134ZZZ.children[0] = Transform135;
-
-let Transform140 = browser.currentScene.createNode("Transform");
-Transform140.DEF = "bTransform";
-Transform140.translation = new X3D.SFVec3f([0,0,0.1]);
-let PlaneSensor141 = browser.currentScene.createNode("PlaneSensor");
-PlaneSensor141.DEF = "bSensor";
-PlaneSensor141.minPosition = new X3D.SFVec2f([-20,0]);
-PlaneSensor141.maxPosition = new X3D.SFVec2f([20,0]);
-Transform140YYY.children = new X3D.MFNode();
-
-Transform140ZZZ.children[0] = PlaneSensor141;
-
-let Transform142 = browser.currentScene.createNode("Transform");
-Transform142.translation = new X3D.SFVec3f([0,0,0]);
-let TouchSensor143 = browser.currentScene.createNode("TouchSensor");
-TouchSensor143.DEF = "bTS";
-Transform142YYY.children = new X3D.MFNode();
-
-Transform142ZZZ.children[0] = TouchSensor143;
-
-let Shape144 = browser.currentScene.createNode("Shape");
-let Sphere145 = browser.currentScene.createNode("Sphere");
-Sphere145.radius = 0.08;
-geometry = Sphere145;
-
-let Appearance146 = browser.currentScene.createNode("Appearance");
-let Material147 = browser.currentScene.createNode("Material");
-Material147.diffuseColor = new X3D.SFColor([1,0,0]);
-material = Material147;
-
-appearance = Appearance146;
-
-Transform142ZZZ.child[1] = Shape144;
-
-Transform140ZZZ.children[1] = Transform142;
-
-let Shape148 = browser.currentScene.createNode("Shape");
-let Cylinder149 = browser.currentScene.createNode("Cylinder");
-Cylinder149.radius = 0.05;
-Cylinder149.height = 0.3;
-geometry = Cylinder149;
-
-let Appearance150 = browser.currentScene.createNode("Appearance");
-let Material151 = browser.currentScene.createNode("Material");
-material = Material151;
-
-appearance = Appearance150;
-
-Transform140ZZZ.child[2] = Shape148;
-
-Transform134ZZZ.children[1] = Transform140;
-
-LayoutLayer105ZZZ.children[2] = Transform134;
-
-let Transform152 = browser.currentScene.createNode("Transform");
-Transform152.DEF = "cSlider";
-Transform152.translation = new X3D.SFVec3f([0,0.1,0]);
-let Transform153 = browser.currentScene.createNode("Transform");
-Transform153.rotation = new X3D.SFRotation([0,0,1,1.57]);
-let Shape154 = browser.currentScene.createNode("Shape");
-let Appearance155 = browser.currentScene.createNode("Appearance");
-let Material156 = browser.currentScene.createNode("Material");
-material = Material156;
-
-appearance = Appearance155;
-
-let Cylinder157 = browser.currentScene.createNode("Cylinder");
-Cylinder157.radius = 0.05;
-Cylinder157.height = 2.5;
-geometry = Cylinder157;
-
-Transform153YYY.child = new X3D.undefined();
-
-Transform153ZZZ.child[0] = Shape154;
-
-Transform152YYY.children = new X3D.MFNode();
-
-Transform152ZZZ.children[0] = Transform153;
-
-let Transform158 = browser.currentScene.createNode("Transform");
-Transform158.DEF = "cTransform";
-Transform158.translation = new X3D.SFVec3f([0,0,0.1]);
-let PlaneSensor159 = browser.currentScene.createNode("PlaneSensor");
-PlaneSensor159.DEF = "cSensor";
-PlaneSensor159.minPosition = new X3D.SFVec2f([-20,0]);
-PlaneSensor159.maxPosition = new X3D.SFVec2f([20,0]);
-Transform158YYY.children = new X3D.MFNode();
-
-Transform158ZZZ.children[0] = PlaneSensor159;
-
-let Transform160 = browser.currentScene.createNode("Transform");
-Transform160.translation = new X3D.SFVec3f([0,0,0]);
-let TouchSensor161 = browser.currentScene.createNode("TouchSensor");
-TouchSensor161.DEF = "cTS";
-Transform160YYY.children = new X3D.MFNode();
-
-Transform160ZZZ.children[0] = TouchSensor161;
-
-let Shape162 = browser.currentScene.createNode("Shape");
-let Sphere163 = browser.currentScene.createNode("Sphere");
-Sphere163.radius = 0.08;
-geometry = Sphere163;
-
-let Appearance164 = browser.currentScene.createNode("Appearance");
-let Material165 = browser.currentScene.createNode("Material");
-Material165.diffuseColor = new X3D.SFColor([1,0,0]);
-material = Material165;
-
-appearance = Appearance164;
-
-Transform160ZZZ.child[1] = Shape162;
-
-Transform158ZZZ.children[1] = Transform160;
-
-let Shape166 = browser.currentScene.createNode("Shape");
-let Cylinder167 = browser.currentScene.createNode("Cylinder");
-Cylinder167.radius = 0.05;
-Cylinder167.height = 0.3;
-geometry = Cylinder167;
-
-let Appearance168 = browser.currentScene.createNode("Appearance");
-let Material169 = browser.currentScene.createNode("Material");
-material = Material169;
-
-appearance = Appearance168;
-
-Transform158ZZZ.child[2] = Shape166;
-
-Transform152ZZZ.children[1] = Transform158;
-
-LayoutLayer105ZZZ.children[3] = Transform152;
-
-let Transform170 = browser.currentScene.createNode("Transform");
-Transform170.DEF = "dSlider";
-Transform170.translation = new X3D.SFVec3f([0,-0.2,0]);
-let Transform171 = browser.currentScene.createNode("Transform");
-Transform171.rotation = new X3D.SFRotation([0,0,1,1.57]);
-let Shape172 = browser.currentScene.createNode("Shape");
-let Appearance173 = browser.currentScene.createNode("Appearance");
-let Material174 = browser.currentScene.createNode("Material");
-material = Material174;
-
-appearance = Appearance173;
-
-let Cylinder175 = browser.currentScene.createNode("Cylinder");
-Cylinder175.radius = 0.05;
-Cylinder175.height = 2.5;
-geometry = Cylinder175;
-
-Transform171YYY.child = new X3D.undefined();
-
-Transform171ZZZ.child[0] = Shape172;
-
-Transform170YYY.children = new X3D.MFNode();
-
-Transform170ZZZ.children[0] = Transform171;
-
-let Transform176 = browser.currentScene.createNode("Transform");
-Transform176.DEF = "dTransform";
-Transform176.translation = new X3D.SFVec3f([0,0,0.1]);
-let PlaneSensor177 = browser.currentScene.createNode("PlaneSensor");
-PlaneSensor177.DEF = "dSensor";
-PlaneSensor177.minPosition = new X3D.SFVec2f([-20,0]);
-PlaneSensor177.maxPosition = new X3D.SFVec2f([20,0]);
-Transform176YYY.children = new X3D.MFNode();
-
-Transform176ZZZ.children[0] = PlaneSensor177;
-
-let Transform178 = browser.currentScene.createNode("Transform");
-Transform178.translation = new X3D.SFVec3f([0,0,0]);
-let TouchSensor179 = browser.currentScene.createNode("TouchSensor");
-TouchSensor179.DEF = "dTS";
-Transform178YYY.children = new X3D.MFNode();
-
-Transform178ZZZ.children[0] = TouchSensor179;
-
-let Shape180 = browser.currentScene.createNode("Shape");
-let Sphere181 = browser.currentScene.createNode("Sphere");
-Sphere181.radius = 0.08;
-geometry = Sphere181;
-
-let Appearance182 = browser.currentScene.createNode("Appearance");
-let Material183 = browser.currentScene.createNode("Material");
-Material183.diffuseColor = new X3D.SFColor([1,0,0]);
-material = Material183;
-
-appearance = Appearance182;
-
-Transform178ZZZ.child[1] = Shape180;
-
-Transform176ZZZ.children[1] = Transform178;
-
-let Shape184 = browser.currentScene.createNode("Shape");
-let Cylinder185 = browser.currentScene.createNode("Cylinder");
-Cylinder185.radius = 0.05;
-Cylinder185.height = 0.3;
-geometry = Cylinder185;
-
-let Appearance186 = browser.currentScene.createNode("Appearance");
-let Material187 = browser.currentScene.createNode("Material");
-material = Material187;
-
-appearance = Appearance186;
-
-Transform176ZZZ.child[2] = Shape184;
-
-Transform170ZZZ.children[1] = Transform176;
-
-LayoutLayer105ZZZ.children[4] = Transform170;
-
-let Transform188 = browser.currentScene.createNode("Transform");
-Transform188.DEF = "pdeltaSlider";
-Transform188.translation = new X3D.SFVec3f([0,-0.5,0]);
-let Transform189 = browser.currentScene.createNode("Transform");
-Transform189.rotation = new X3D.SFRotation([0,0,1,1.57]);
-let Shape190 = browser.currentScene.createNode("Shape");
-let Appearance191 = browser.currentScene.createNode("Appearance");
-let Material192 = browser.currentScene.createNode("Material");
-material = Material192;
-
-appearance = Appearance191;
-
-let Cylinder193 = browser.currentScene.createNode("Cylinder");
-Cylinder193.radius = 0.05;
-Cylinder193.height = 2.5;
-geometry = Cylinder193;
-
-Transform189YYY.child = new X3D.undefined();
-
-Transform189ZZZ.child[0] = Shape190;
-
-Transform188YYY.children = new X3D.MFNode();
-
-Transform188ZZZ.children[0] = Transform189;
-
-let Transform194 = browser.currentScene.createNode("Transform");
-Transform194.DEF = "pdeltaTransform";
-Transform194.translation = new X3D.SFVec3f([0,0,0.1]);
-let PlaneSensor195 = browser.currentScene.createNode("PlaneSensor");
-PlaneSensor195.DEF = "pdeltaSensor";
-PlaneSensor195.minPosition = new X3D.SFVec2f([-20,0]);
-PlaneSensor195.maxPosition = new X3D.SFVec2f([20,0]);
-Transform194YYY.children = new X3D.MFNode();
-
-Transform194ZZZ.children[0] = PlaneSensor195;
-
-let Transform196 = browser.currentScene.createNode("Transform");
-Transform196.translation = new X3D.SFVec3f([0,0,0]);
-let TouchSensor197 = browser.currentScene.createNode("TouchSensor");
-TouchSensor197.DEF = "pdeltaTS";
-Transform196YYY.children = new X3D.MFNode();
-
-Transform196ZZZ.children[0] = TouchSensor197;
-
-let Shape198 = browser.currentScene.createNode("Shape");
-let Sphere199 = browser.currentScene.createNode("Sphere");
-Sphere199.radius = 0.08;
-geometry = Sphere199;
-
-let Appearance200 = browser.currentScene.createNode("Appearance");
-let Material201 = browser.currentScene.createNode("Material");
-Material201.diffuseColor = new X3D.SFColor([1,0,0]);
-material = Material201;
-
-appearance = Appearance200;
-
-Transform196ZZZ.child[1] = Shape198;
-
-Transform194ZZZ.children[1] = Transform196;
-
-let Shape202 = browser.currentScene.createNode("Shape");
-let Cylinder203 = browser.currentScene.createNode("Cylinder");
-Cylinder203.radius = 0.05;
-Cylinder203.height = 0.3;
-geometry = Cylinder203;
-
-let Appearance204 = browser.currentScene.createNode("Appearance");
-let Material205 = browser.currentScene.createNode("Material");
-material = Material205;
-
-appearance = Appearance204;
-
-Transform194ZZZ.child[2] = Shape202;
-
-Transform188ZZZ.children[1] = Transform194;
-
-LayoutLayer105ZZZ.children[5] = Transform188;
-
-let Transform206 = browser.currentScene.createNode("Transform");
-Transform206.DEF = "tdeltaSlider";
-Transform206.translation = new X3D.SFVec3f([0,-0.8,0]);
-let Transform207 = browser.currentScene.createNode("Transform");
-Transform207.rotation = new X3D.SFRotation([0,0,1,1.57]);
-let Shape208 = browser.currentScene.createNode("Shape");
-let Appearance209 = browser.currentScene.createNode("Appearance");
-let Material210 = browser.currentScene.createNode("Material");
-material = Material210;
-
-appearance = Appearance209;
-
-let Cylinder211 = browser.currentScene.createNode("Cylinder");
-Cylinder211.radius = 0.05;
-Cylinder211.height = 2.5;
-geometry = Cylinder211;
-
-Transform207YYY.child = new X3D.undefined();
-
-Transform207ZZZ.child[0] = Shape208;
-
-Transform206YYY.children = new X3D.MFNode();
-
-Transform206ZZZ.children[0] = Transform207;
-
-let Transform212 = browser.currentScene.createNode("Transform");
-Transform212.DEF = "tdeltaTransform";
-Transform212.translation = new X3D.SFVec3f([0,0,0.1]);
-let PlaneSensor213 = browser.currentScene.createNode("PlaneSensor");
-PlaneSensor213.DEF = "tdeltaSensor";
-PlaneSensor213.minPosition = new X3D.SFVec2f([-20,0]);
-PlaneSensor213.maxPosition = new X3D.SFVec2f([20,0]);
-Transform212YYY.children = new X3D.MFNode();
-
-Transform212ZZZ.children[0] = PlaneSensor213;
-
-let Transform214 = browser.currentScene.createNode("Transform");
-Transform214.translation = new X3D.SFVec3f([0,0,0]);
-let TouchSensor215 = browser.currentScene.createNode("TouchSensor");
-TouchSensor215.DEF = "tdeltaTS";
-Transform214YYY.children = new X3D.MFNode();
-
-Transform214ZZZ.children[0] = TouchSensor215;
-
-let Shape216 = browser.currentScene.createNode("Shape");
-let Sphere217 = browser.currentScene.createNode("Sphere");
-Sphere217.radius = 0.08;
-geometry = Sphere217;
-
-let Appearance218 = browser.currentScene.createNode("Appearance");
-let Material219 = browser.currentScene.createNode("Material");
-Material219.diffuseColor = new X3D.SFColor([1,0,0]);
-material = Material219;
-
-appearance = Appearance218;
-
-Transform214ZZZ.child[1] = Shape216;
-
-Transform212ZZZ.children[1] = Transform214;
-
-let Shape220 = browser.currentScene.createNode("Shape");
-let Cylinder221 = browser.currentScene.createNode("Cylinder");
-Cylinder221.radius = 0.05;
-Cylinder221.height = 0.3;
-geometry = Cylinder221;
-
-let Appearance222 = browser.currentScene.createNode("Appearance");
-let Material223 = browser.currentScene.createNode("Material");
-material = Material223;
-
-appearance = Appearance222;
-
-Transform212ZZZ.child[2] = Shape220;
-
-Transform206ZZZ.children[1] = Transform212;
-
-LayoutLayer105ZZZ.children[6] = Transform206;
-
-let Script224 = browser.currentScene.createNode("Script");
-Script224.DEF = "aValueTransformerScript";
-Script224.directOutput = True;
-Script224.mustEvaluate = True;
-Script225.getField("newTranslation").setValue("1 1 1");
-Script224YYY.field = new X3D.MFNode();
-
-Script226.getField("aValue").setValue("1");
-Script224YYY.field = new X3D.MFNode();
-
-
-Script224.setSourceCode(`ecmascript: function newTranslation(Value) { aValue = Value.x * 30; }`)
-LayoutLayer105ZZZ.children[7] = Script224;
-
-let Script227 = browser.currentScene.createNode("Script");
-Script227.DEF = "bValueTransformerScript";
-Script227.directOutput = True;
-Script227.mustEvaluate = True;
-Script228.getField("newTranslation").setValue("1 1 1");
-Script227YYY.field = new X3D.MFNode();
-
-Script229.getField("bValue").setValue("1");
-Script227YYY.field = new X3D.MFNode();
-
-
-Script227.setSourceCode(`ecmascript: function newTranslation(Value) { bValue = Value.x * 30; }`)
-LayoutLayer105ZZZ.children[8] = Script227;
-
-let Script230 = browser.currentScene.createNode("Script");
-Script230.DEF = "cValueTransformerScript";
-Script230.directOutput = True;
-Script230.mustEvaluate = True;
-Script231.getField("newTranslation").setValue("1 1 1");
-Script230YYY.field = new X3D.MFNode();
-
-Script232.getField("cValue").setValue("1");
-Script230YYY.field = new X3D.MFNode();
-
-
-Script230.setSourceCode(`ecmascript: function newTranslation(Value) { cValue = Value.x * 5; }`)
-LayoutLayer105ZZZ.children[9] = Script230;
-
-let Script233 = browser.currentScene.createNode("Script");
-Script233.DEF = "dValueTransformerScript";
-Script233.directOutput = True;
-Script233.mustEvaluate = True;
-Script234.getField("newTranslation").setValue("1 1 1");
-Script233YYY.field = new X3D.MFNode();
-
-Script235.getField("dValue").setValue("1");
-Script233YYY.field = new X3D.MFNode();
-
-
-Script233.setSourceCode(`ecmascript: function newTranslation(Value) { dValue = Value.x * 5; }`)
-LayoutLayer105ZZZ.children[10] = Script233;
-
-let Script236 = browser.currentScene.createNode("Script");
-Script236.DEF = "pdeltaValueTransformerScript";
-Script236.directOutput = True;
-Script236.mustEvaluate = True;
-Script237.getField("newTranslation").setValue("1 1 1");
-Script236YYY.field = new X3D.MFNode();
-
-Script238.getField("pdeltaValue").setValue("1");
-Script236YYY.field = new X3D.MFNode();
-
-
-Script236.setSourceCode(`ecmascript: function newTranslation(Value) { pdeltaValue = Value.x; }`)
-LayoutLayer105ZZZ.children[11] = Script236;
-
-let Script239 = browser.currentScene.createNode("Script");
-Script239.DEF = "tdeltaValueTransformerScript";
-Script239.directOutput = True;
-Script239.mustEvaluate = True;
-Script240.getField("newTranslation").setValue("1 1 1");
-Script239YYY.field = new X3D.MFNode();
-
-Script241.getField("tdeltaValue").setValue("1");
-Script239YYY.field = new X3D.MFNode();
-
-
-Script239.setSourceCode(`ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }`)
-LayoutLayer105ZZZ.children[12] = Script239;
-
-let ROUTE242 = browser.currentScene.createNode("ROUTE");
-ROUTE242.fromField = "translation_changed";
-ROUTE242.fromNode = "aSensor";
-ROUTE242.toField = "set_translation";
-ROUTE242.toNode = "aTransform";
-LayoutLayer105ZZZ.children[13] = ROUTE242;
-
-let ROUTE243 = browser.currentScene.createNode("ROUTE");
-ROUTE243.fromField = "translation_changed";
-ROUTE243.fromNode = "bSensor";
-ROUTE243.toField = "set_translation";
-ROUTE243.toNode = "bTransform";
-LayoutLayer105ZZZ.children[14] = ROUTE243;
-
-let ROUTE244 = browser.currentScene.createNode("ROUTE");
-ROUTE244.fromField = "translation_changed";
-ROUTE244.fromNode = "cSensor";
-ROUTE244.toField = "set_translation";
-ROUTE244.toNode = "cTransform";
-LayoutLayer105ZZZ.children[15] = ROUTE244;
-
-let ROUTE245 = browser.currentScene.createNode("ROUTE");
-ROUTE245.fromField = "translation_changed";
-ROUTE245.fromNode = "dSensor";
-ROUTE245.toField = "set_translation";
-ROUTE245.toNode = "dTransform";
-LayoutLayer105ZZZ.children[16] = ROUTE245;
-
-let ROUTE246 = browser.currentScene.createNode("ROUTE");
-ROUTE246.fromField = "translation_changed";
-ROUTE246.fromNode = "pdeltaSensor";
-ROUTE246.toField = "set_translation";
-ROUTE246.toNode = "pdeltaTransform";
-LayoutLayer105ZZZ.children[17] = ROUTE246;
-
-let ROUTE247 = browser.currentScene.createNode("ROUTE");
-ROUTE247.fromField = "translation_changed";
-ROUTE247.fromNode = "tdeltaSensor";
-ROUTE247.toField = "set_translation";
-ROUTE247.toNode = "tdeltaTransform";
-LayoutLayer105ZZZ.children[18] = ROUTE247;
-
-let ROUTE248 = browser.currentScene.createNode("ROUTE");
-ROUTE248.fromField = "translation_changed";
-ROUTE248.fromNode = "aSensor";
-ROUTE248.toField = "newTranslation";
-ROUTE248.toNode = "aValueTransformerScript";
-LayoutLayer105ZZZ.children[19] = ROUTE248;
-
-let ROUTE249 = browser.currentScene.createNode("ROUTE");
-ROUTE249.fromField = "translation_changed";
-ROUTE249.fromNode = "bSensor";
-ROUTE249.toField = "newTranslation";
-ROUTE249.toNode = "bValueTransformerScript";
-LayoutLayer105ZZZ.children[20] = ROUTE249;
-
-let ROUTE250 = browser.currentScene.createNode("ROUTE");
-ROUTE250.fromField = "translation_changed";
-ROUTE250.fromNode = "cSensor";
-ROUTE250.toField = "newTranslation";
-ROUTE250.toNode = "cValueTransformerScript";
-LayoutLayer105ZZZ.children[21] = ROUTE250;
-
-let ROUTE251 = browser.currentScene.createNode("ROUTE");
-ROUTE251.fromField = "translation_changed";
-ROUTE251.fromNode = "dSensor";
-ROUTE251.toField = "newTranslation";
-ROUTE251.toNode = "dValueTransformerScript";
-LayoutLayer105ZZZ.children[22] = ROUTE251;
-
-let ROUTE252 = browser.currentScene.createNode("ROUTE");
-ROUTE252.fromField = "translation_changed";
-ROUTE252.fromNode = "pdeltaSensor";
-ROUTE252.toField = "newTranslation";
-ROUTE252.toNode = "pdeltaValueTransformerScript";
-LayoutLayer105ZZZ.children[23] = ROUTE252;
-
-let ROUTE253 = browser.currentScene.createNode("ROUTE");
-ROUTE253.fromField = "translation_changed";
-ROUTE253.fromNode = "tdeltaSensor";
-ROUTE253.toField = "newTranslation";
-ROUTE253.toNode = "tdeltaValueTransformerScript";
-LayoutLayer105ZZZ.children[24] = ROUTE253;
-
-let ROUTE254 = browser.currentScene.createNode("ROUTE");
-ROUTE254.fromField = "aValue";
-ROUTE254.fromNode = "aValueTransformerScript";
-ROUTE254.toField = "a";
-ROUTE254.toNode = "freewrlShader";
-LayoutLayer105ZZZ.children[25] = ROUTE254;
-
-let ROUTE255 = browser.currentScene.createNode("ROUTE");
-ROUTE255.fromField = "bValue";
-ROUTE255.fromNode = "bValueTransformerScript";
-ROUTE255.toField = "b";
-ROUTE255.toNode = "freewrlShader";
-LayoutLayer105ZZZ.children[26] = ROUTE255;
-
-let ROUTE256 = browser.currentScene.createNode("ROUTE");
-ROUTE256.fromField = "cValue";
-ROUTE256.fromNode = "cValueTransformerScript";
-ROUTE256.toField = "c";
-ROUTE256.toNode = "freewrlShader";
-LayoutLayer105ZZZ.children[27] = ROUTE256;
-
-let ROUTE257 = browser.currentScene.createNode("ROUTE");
-ROUTE257.fromField = "dValue";
-ROUTE257.fromNode = "dValueTransformerScript";
-ROUTE257.toField = "d";
-ROUTE257.toNode = "freewrlShader";
-LayoutLayer105ZZZ.children[28] = ROUTE257;
-
-let ROUTE258 = browser.currentScene.createNode("ROUTE");
-ROUTE258.fromField = "pdeltaValue";
-ROUTE258.fromNode = "pdeltaValueTransformerScript";
-ROUTE258.toField = "pdelta";
-ROUTE258.toNode = "freewrlShader";
-LayoutLayer105ZZZ.children[29] = ROUTE258;
-
-let ROUTE259 = browser.currentScene.createNode("ROUTE");
-ROUTE259.fromField = "tdeltaValue";
-ROUTE259.fromNode = "tdeltaValueTransformerScript";
-ROUTE259.toField = "tdelta";
-ROUTE259.toNode = "freewrlShader";
-LayoutLayer105ZZZ.children[30] = ROUTE259;
-
-let Layout260 = browser.currentScene.createNode("Layout");
-Layout260.align = new X3D.MFString([new X3D.SFString("RIGHT"), new X3D.SFString("BOTTOM")]);
-Layout260.offset = new X3D.MFFloat([0,0]);
-Layout260.offsetUnits = new X3D.MFString([new X3D.SFString("WORLD"), new X3D.SFString("WORLD")]);
-Layout260.scaleMode = new X3D.MFString([new X3D.SFString("NONE"), new X3D.SFString("NONE")]);
-Layout260.size = new X3D.MFFloat([0.4,1]);
-Layout260.sizeUnits = new X3D.MFString([new X3D.SFString("WORLD"), new X3D.SFString("WORLD")]);
-layout = Layout260;
-
-let Viewport261 = browser.currentScene.createNode("Viewport");
-Viewport261.clipBoundary = new X3D.MFFloat([0,1,0,1]);
-viewport = Viewport261;
-
-LayerSet32ZZZ.layers[1] = LayoutLayer105;
+iS = IS153;
+
+
+Script146.setSourceCode(`ecmascript:\n"+
+"	const newTranslation = function(Value) {\n"+
+"	    protoValue_changed = Value[0] * protoScale;\n"+
+"	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());\n"+
+"	    Browser.println(\"In newTranslation:\");\n"+
+"	    Browser.println(shader);\n"+
+"	    Browser.println(Value[0]);\n"+
+"	    Browser.println(Value.x);\n"+
+"	    Browser.println(protoScale);\n"+
+"	    Browser.println(Value[0] * protoScale);\n"+
+"	    Browser.println(protoParameterName);\n"+
+"					// shader[protoParameterName] = Value[0] * protoScale;\n"+
+"	};`)
+Group120ZZZ.children[1] = Script146;
+
+let ROUTE157 = browser.currentScene.createNode("ROUTE");
+ROUTE157.fromField = "translation_changed";
+ROUTE157.fromNode = "protoSensor";
+ROUTE157.toField = "set_translation";
+ROUTE157.toNode = "protoTransform";
+Group120ZZZ.children[2] = ROUTE157;
+
+let ROUTE158 = browser.currentScene.createNode("ROUTE");
+ROUTE158.fromField = "translation_changed";
+ROUTE158.fromNode = "protoSensor";
+ROUTE158.toField = "newTranslation";
+ROUTE158.toNode = "protoValueTransformerScript";
+Group120ZZZ.children[3] = ROUTE158;
+
+let ROUTE159 = browser.currentScene.createNode("ROUTE");
+ROUTE159.fromField = "protoNumber_changed";
+ROUTE159.fromNode = "protoValueTransformerScript";
+ROUTE159.toField = "string";
+ROUTE159.toNode = "protoNumber";
+Group120ZZZ.children[4] = ROUTE159;
+
+ProtoBody119YYY.children = new X3D.MFNode();
+
+ProtoBody119ZZZ.children[0] = Group120;
+
+protoBody = ProtoBody119;
+
+LayoutLayer96ZZZ.children[2] = ProtoDeclare109;
+
+let ProtoInstance160 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance160.name = "SliderProto";
+ProtoInstance160.DEF = "aPI";
+let fieldValue161 = browser.currentScene.createNode("fieldValue");
+fieldValue161.name = "sliderTranslation";
+fieldValue161.value = "0 0.7 0";
+ProtoInstance160YYY.fieldValue = new X3D.MFNode();
+
+ProtoInstance160ZZZ.fieldValue[0] = fieldValue161;
+
+let fieldValue162 = browser.currentScene.createNode("fieldValue");
+fieldValue162.name = "transformTranslation";
+fieldValue162.value = "0 0 0.1";
+ProtoInstance160ZZZ.fieldValue[1] = fieldValue162;
+
+let fieldValue163 = browser.currentScene.createNode("fieldValue");
+fieldValue163.name = "sensorTranslation";
+fieldValue163.value = "0 0 0";
+ProtoInstance160ZZZ.fieldValue[2] = fieldValue163;
+
+let fieldValue164 = browser.currentScene.createNode("fieldValue");
+fieldValue164.name = "numberTranslation";
+fieldValue164.value = "0.3 0 0";
+ProtoInstance160ZZZ.fieldValue[3] = fieldValue164;
+
+let fieldValue165 = browser.currentScene.createNode("fieldValue");
+fieldValue165.name = "textString";
+fieldValue165.value = "\"a=\"";
+ProtoInstance160ZZZ.fieldValue[4] = fieldValue165;
+
+let fieldValue166 = browser.currentScene.createNode("fieldValue");
+fieldValue166.name = "parameterName";
+fieldValue166.value = "a";
+ProtoInstance160ZZZ.fieldValue[5] = fieldValue166;
+
+let fieldValue167 = browser.currentScene.createNode("fieldValue");
+fieldValue167.name = "parameterScale";
+fieldValue167.value = "30";
+ProtoInstance160ZZZ.fieldValue[6] = fieldValue167;
+
+let fieldValue168 = browser.currentScene.createNode("fieldValue");
+fieldValue168.name = "shaderNode";
+let ComposedShader169 = browser.currentScene.createNode("ComposedShader");
+ComposedShader169.USE = "freewrlShader";
+fieldValue168YYY.children = new X3D.MFNode();
+
+fieldValue168ZZZ.children[0] = ComposedShader169;
+
+ProtoInstance160ZZZ.fieldValue[7] = fieldValue168;
+
+LayoutLayer96ZZZ.children[3] = ProtoInstance160;
+
+let ProtoInstance170 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance170.name = "SliderProto";
+ProtoInstance170.DEF = "bPI";
+let fieldValue171 = browser.currentScene.createNode("fieldValue");
+fieldValue171.name = "sliderTranslation";
+fieldValue171.value = "0 0.4 0";
+ProtoInstance170YYY.fieldValue = new X3D.MFNode();
+
+ProtoInstance170ZZZ.fieldValue[0] = fieldValue171;
+
+let fieldValue172 = browser.currentScene.createNode("fieldValue");
+fieldValue172.name = "transformTranslation";
+fieldValue172.value = "0 0 0.1";
+ProtoInstance170ZZZ.fieldValue[1] = fieldValue172;
+
+let fieldValue173 = browser.currentScene.createNode("fieldValue");
+fieldValue173.name = "sensorTranslation";
+fieldValue173.value = "0 0 0";
+ProtoInstance170ZZZ.fieldValue[2] = fieldValue173;
+
+let fieldValue174 = browser.currentScene.createNode("fieldValue");
+fieldValue174.name = "numberTranslation";
+fieldValue174.value = "0.3 0 0";
+ProtoInstance170ZZZ.fieldValue[3] = fieldValue174;
+
+let fieldValue175 = browser.currentScene.createNode("fieldValue");
+fieldValue175.name = "textString";
+fieldValue175.value = "\"b=\"";
+ProtoInstance170ZZZ.fieldValue[4] = fieldValue175;
+
+let fieldValue176 = browser.currentScene.createNode("fieldValue");
+fieldValue176.name = "parameterName";
+fieldValue176.value = "b";
+ProtoInstance170ZZZ.fieldValue[5] = fieldValue176;
+
+let fieldValue177 = browser.currentScene.createNode("fieldValue");
+fieldValue177.name = "parameterScale";
+fieldValue177.value = "30";
+ProtoInstance170ZZZ.fieldValue[6] = fieldValue177;
+
+let fieldValue178 = browser.currentScene.createNode("fieldValue");
+fieldValue178.name = "shaderNode";
+let ComposedShader179 = browser.currentScene.createNode("ComposedShader");
+ComposedShader179.USE = "freewrlShader";
+fieldValue178YYY.children = new X3D.MFNode();
+
+fieldValue178ZZZ.children[0] = ComposedShader179;
+
+ProtoInstance170ZZZ.fieldValue[7] = fieldValue178;
+
+LayoutLayer96ZZZ.children[4] = ProtoInstance170;
+
+let ProtoInstance180 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance180.name = "SliderProto";
+ProtoInstance180.DEF = "cPI";
+let fieldValue181 = browser.currentScene.createNode("fieldValue");
+fieldValue181.name = "sliderTranslation";
+fieldValue181.value = "0 0.1 0";
+ProtoInstance180YYY.fieldValue = new X3D.MFNode();
+
+ProtoInstance180ZZZ.fieldValue[0] = fieldValue181;
+
+let fieldValue182 = browser.currentScene.createNode("fieldValue");
+fieldValue182.name = "transformTranslation";
+fieldValue182.value = "0 0 0.1";
+ProtoInstance180ZZZ.fieldValue[1] = fieldValue182;
+
+let fieldValue183 = browser.currentScene.createNode("fieldValue");
+fieldValue183.name = "sensorTranslation";
+fieldValue183.value = "0 0 0";
+ProtoInstance180ZZZ.fieldValue[2] = fieldValue183;
+
+let fieldValue184 = browser.currentScene.createNode("fieldValue");
+fieldValue184.name = "numberTranslation";
+fieldValue184.value = "0.3 0 0";
+ProtoInstance180ZZZ.fieldValue[3] = fieldValue184;
+
+let fieldValue185 = browser.currentScene.createNode("fieldValue");
+fieldValue185.name = "textString";
+fieldValue185.value = "\"c=\"";
+ProtoInstance180ZZZ.fieldValue[4] = fieldValue185;
+
+let fieldValue186 = browser.currentScene.createNode("fieldValue");
+fieldValue186.name = "parameterName";
+fieldValue186.value = "c";
+ProtoInstance180ZZZ.fieldValue[5] = fieldValue186;
+
+let fieldValue187 = browser.currentScene.createNode("fieldValue");
+fieldValue187.name = "parameterScale";
+fieldValue187.value = "20";
+ProtoInstance180ZZZ.fieldValue[6] = fieldValue187;
+
+let fieldValue188 = browser.currentScene.createNode("fieldValue");
+fieldValue188.name = "shaderNode";
+let ComposedShader189 = browser.currentScene.createNode("ComposedShader");
+ComposedShader189.USE = "freewrlShader";
+fieldValue188YYY.children = new X3D.MFNode();
+
+fieldValue188ZZZ.children[0] = ComposedShader189;
+
+ProtoInstance180ZZZ.fieldValue[7] = fieldValue188;
+
+LayoutLayer96ZZZ.children[5] = ProtoInstance180;
+
+let ProtoInstance190 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance190.name = "SliderProto";
+ProtoInstance190.DEF = "dPI";
+let fieldValue191 = browser.currentScene.createNode("fieldValue");
+fieldValue191.name = "sliderTranslation";
+fieldValue191.value = "0 -0.2 0";
+ProtoInstance190YYY.fieldValue = new X3D.MFNode();
+
+ProtoInstance190ZZZ.fieldValue[0] = fieldValue191;
+
+let fieldValue192 = browser.currentScene.createNode("fieldValue");
+fieldValue192.name = "transformTranslation";
+fieldValue192.value = "0 0 0.1";
+ProtoInstance190ZZZ.fieldValue[1] = fieldValue192;
+
+let fieldValue193 = browser.currentScene.createNode("fieldValue");
+fieldValue193.name = "sensorTranslation";
+fieldValue193.value = "0 0 0";
+ProtoInstance190ZZZ.fieldValue[2] = fieldValue193;
+
+let fieldValue194 = browser.currentScene.createNode("fieldValue");
+fieldValue194.name = "numberTranslation";
+fieldValue194.value = "0.3 0 0";
+ProtoInstance190ZZZ.fieldValue[3] = fieldValue194;
+
+let fieldValue195 = browser.currentScene.createNode("fieldValue");
+fieldValue195.name = "textString";
+fieldValue195.value = "\"d=\"";
+ProtoInstance190ZZZ.fieldValue[4] = fieldValue195;
+
+let fieldValue196 = browser.currentScene.createNode("fieldValue");
+fieldValue196.name = "parameterName";
+fieldValue196.value = "d";
+ProtoInstance190ZZZ.fieldValue[5] = fieldValue196;
+
+let fieldValue197 = browser.currentScene.createNode("fieldValue");
+fieldValue197.name = "parameterScale";
+fieldValue197.value = "20";
+ProtoInstance190ZZZ.fieldValue[6] = fieldValue197;
+
+let fieldValue198 = browser.currentScene.createNode("fieldValue");
+fieldValue198.name = "shaderNode";
+let ComposedShader199 = browser.currentScene.createNode("ComposedShader");
+ComposedShader199.USE = "freewrlShader";
+fieldValue198YYY.children = new X3D.MFNode();
+
+fieldValue198ZZZ.children[0] = ComposedShader199;
+
+ProtoInstance190ZZZ.fieldValue[7] = fieldValue198;
+
+LayoutLayer96ZZZ.children[6] = ProtoInstance190;
+
+let ProtoInstance200 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance200.name = "SliderProto";
+ProtoInstance200.DEF = "tdeltaPI";
+let fieldValue201 = browser.currentScene.createNode("fieldValue");
+fieldValue201.name = "sliderTranslation";
+fieldValue201.value = "0 -0.5 0";
+ProtoInstance200YYY.fieldValue = new X3D.MFNode();
+
+ProtoInstance200ZZZ.fieldValue[0] = fieldValue201;
+
+let fieldValue202 = browser.currentScene.createNode("fieldValue");
+fieldValue202.name = "transformTranslation";
+fieldValue202.value = "0 0 0.1";
+ProtoInstance200ZZZ.fieldValue[1] = fieldValue202;
+
+let fieldValue203 = browser.currentScene.createNode("fieldValue");
+fieldValue203.name = "sensorTranslation";
+fieldValue203.value = "0 0 0";
+ProtoInstance200ZZZ.fieldValue[2] = fieldValue203;
+
+let fieldValue204 = browser.currentScene.createNode("fieldValue");
+fieldValue204.name = "numberTranslation";
+fieldValue204.value = "0.8 0 0";
+ProtoInstance200ZZZ.fieldValue[3] = fieldValue204;
+
+let fieldValue205 = browser.currentScene.createNode("fieldValue");
+fieldValue205.name = "textString";
+fieldValue205.value = "\"tdelta=\"";
+ProtoInstance200ZZZ.fieldValue[4] = fieldValue205;
+
+let fieldValue206 = browser.currentScene.createNode("fieldValue");
+fieldValue206.name = "parameterName";
+fieldValue206.value = "tdelta";
+ProtoInstance200ZZZ.fieldValue[5] = fieldValue206;
+
+let fieldValue207 = browser.currentScene.createNode("fieldValue");
+fieldValue207.name = "parameterScale";
+fieldValue207.value = "6.28";
+ProtoInstance200ZZZ.fieldValue[6] = fieldValue207;
+
+let fieldValue208 = browser.currentScene.createNode("fieldValue");
+fieldValue208.name = "shaderNode";
+let ComposedShader209 = browser.currentScene.createNode("ComposedShader");
+ComposedShader209.USE = "freewrlShader";
+fieldValue208YYY.children = new X3D.MFNode();
+
+fieldValue208ZZZ.children[0] = ComposedShader209;
+
+ProtoInstance200ZZZ.fieldValue[7] = fieldValue208;
+
+LayoutLayer96ZZZ.children[7] = ProtoInstance200;
+
+let ProtoInstance210 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance210.name = "SliderProto";
+ProtoInstance210.DEF = "pdeltaPI";
+let fieldValue211 = browser.currentScene.createNode("fieldValue");
+fieldValue211.name = "sliderTranslation";
+fieldValue211.value = "0 -0.8 0";
+ProtoInstance210YYY.fieldValue = new X3D.MFNode();
+
+ProtoInstance210ZZZ.fieldValue[0] = fieldValue211;
+
+let fieldValue212 = browser.currentScene.createNode("fieldValue");
+fieldValue212.name = "transformTranslation";
+fieldValue212.value = "0 0 0.1";
+ProtoInstance210ZZZ.fieldValue[1] = fieldValue212;
+
+let fieldValue213 = browser.currentScene.createNode("fieldValue");
+fieldValue213.name = "sensorTranslation";
+fieldValue213.value = "0 0 0";
+ProtoInstance210ZZZ.fieldValue[2] = fieldValue213;
+
+let fieldValue214 = browser.currentScene.createNode("fieldValue");
+fieldValue214.name = "numberTranslation";
+fieldValue214.value = "0.8 0 0";
+ProtoInstance210ZZZ.fieldValue[3] = fieldValue214;
+
+let fieldValue215 = browser.currentScene.createNode("fieldValue");
+fieldValue215.name = "textString";
+fieldValue215.value = "\"pdelta=\"";
+ProtoInstance210ZZZ.fieldValue[4] = fieldValue215;
+
+let fieldValue216 = browser.currentScene.createNode("fieldValue");
+fieldValue216.name = "parameterName";
+fieldValue216.value = "pdelta";
+ProtoInstance210ZZZ.fieldValue[5] = fieldValue216;
+
+let fieldValue217 = browser.currentScene.createNode("fieldValue");
+fieldValue217.name = "parameterScale";
+fieldValue217.value = "6.28";
+ProtoInstance210ZZZ.fieldValue[6] = fieldValue217;
+
+let fieldValue218 = browser.currentScene.createNode("fieldValue");
+fieldValue218.name = "shaderNode";
+let ComposedShader219 = browser.currentScene.createNode("ComposedShader");
+ComposedShader219.USE = "freewrlShader";
+fieldValue218YYY.children = new X3D.MFNode();
+
+fieldValue218ZZZ.children[0] = ComposedShader219;
+
+ProtoInstance210ZZZ.fieldValue[7] = fieldValue218;
+
+LayoutLayer96ZZZ.children[8] = ProtoInstance210;
+
+let Layout220 = browser.currentScene.createNode("Layout");
+Layout220.align = new X3D.MFString([new X3D.SFString("LEFT"), new X3D.SFString("BOTTOM")]);
+Layout220.offset = new X3D.MFFloat([-0.5,0]);
+layout = Layout220;
+
+let Viewport221 = browser.currentScene.createNode("Viewport");
+viewport = Viewport221;
+
+LayerSet18ZZZ.layers[1] = LayoutLayer96;
 
 browser.currentScene.layerSet = new X3D.undefined();
 
-browser.currentScene.layerSet[0] = LayerSet32;
+browser.currentScene.layerSet[0] = LayerSet18;
 
 }
 main ();
