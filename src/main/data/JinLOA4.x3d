@@ -2672,7 +2672,10 @@
       <OrientationInterpolator DEF='Stop_l_talocrural_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_l_subtalar_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <!--
-      <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+	      <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='
+		      0 0 1 0
+		      0 0 1 0
+		      0 0 1 0'/>
       -->
       <OrientationInterpolator DEF='Stop_l_metatarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_r_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
@@ -2680,7 +2683,10 @@
       <OrientationInterpolator DEF='Stop_r_talocrural_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_r_subtalar_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <!--
-      <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
+	      <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='
+		      0 0 1 0
+		      0 0 1 0
+		      0 0 1 0'/>
       -->
       <OrientationInterpolator DEF='Stop_r_metatarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_vl5_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>

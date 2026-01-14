@@ -93,10 +93,10 @@
 			      <Script DEF="OrbitScript">
 				<field name="coordinates" type="MFVec3f" accessType="inputOutput"/>
 				<field name="coordIndexes" type="MFInt32" accessType="inputOutput"/>
-				<field name="e" type="SFFloat" accessType="inputOutput" value="5"/>
-				<field name="f" type="SFFloat" accessType="inputOutput" value="5"/>
-				<field name="g" type="SFFloat" accessType="inputOutput" value="5"/>
-				<field name="h" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name="a" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name="b" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name="c" type="SFFloat" accessType="inputOutput" value="5"/>
+				<field name="d" type="SFFloat" accessType="inputOutput" value="5"/>
 				<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
 				<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
 				<field name="resolution" type="SFInt32" accessType="inputOutput" value="50"/>
@@ -114,23 +114,23 @@
 				}
 			    }
 			}
-			function set_e(value) {
-				e = value;
+			function set_a(value) {
+				a = value;
 				generateCoordinates();
 			}
 
-			function set_f(value) {
-				f = value;
+			function set_b(value) {
+				b = value;
 				generateCoordinates();
 			}
 
-			function set_g(value) {
-				g = value;
+			function set_c(value) {
+				c = value;
 				generateCoordinates();
 			}
 
-			function set_h(value) {
-				h = value;
+			function set_d(value) {
+				d = value;
 				generateCoordinates();
 			}
 
@@ -156,7 +156,7 @@
 			     var arrIndex = 0;
 			     for (var i = 0; i < resolution; i++) {
 				for (var j = 0; j < resolution; j++) {
-					var rho = e + f * Math.cos(g * theta + tdelta) * Math.cos(h * phi + pdelta);
+					var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);
 					coordinates[arrIndex++] = new SFVec3f(
 						rho * Math.cos(phi) * Math.cos(theta),
 						rho * Math.cos(phi) * Math.sin(theta),

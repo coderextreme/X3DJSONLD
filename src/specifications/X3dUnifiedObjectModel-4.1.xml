@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.1 of X3D -->
-<!-- Generated 2026-01-13-08:00 13:24:48.5679303-08:00 -->
+<!-- Generated 2026-01-13-08:00 20:42:15.3208327-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.1"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -17574,7 +17574,8 @@
          </InterfaceDefinition>
       </ConcreteNode>
       <ConcreteNode name="EnvironmentLight">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/lighting.html#EnvironmentLight">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/lighting.html#EnvironmentLight"
+                              appinfo="EnvironmentLight defines image-based lighting (IBL).">
             <componentInfo name="Lighting" level="1"/>
             <Inheritance baseType="X3DLightNode"/>
             <field name="ambientIntensity"
@@ -17584,35 +17585,44 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="unitIntervalType"/>
+                   baseType="unitIntervalType"
+                   description="Brightness of ambient (nondirectional background) emission from the light."/>
             <field name="color"
                    type="SFColor"
                    accessType="inputOutput"
                    default="1 1 1"
                    minInclusive="0"
                    maxInclusive="1"
-                   inheritedFrom="X3DLightNode"/>
+                   inheritedFrom="X3DLightNode"
+                   description="color of light, applied to colors of objects."/>
             <field name="diffuse"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureNode"/>
-            <field name="diffuseCoefficients" type="MFFloat" accessType="inputOutput"/>
+                   acceptableNodeTypes="X3DSingleTextureNode"
+                   description="When applying diffuseColor for this light node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
+            <field name="diffuseCoefficients"
+                   type="MFFloat"
+                   accessType="inputOutput"
+                   description="diffuseCoefficients field provides a 3 x 9 array of float values that declares spherical harmonic coefficients for irradiance up to l=2, corresponding to glTF irradianceCoefficients field."/>
             <field name="diffuseTexture"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DEnvironmentTextureNode"/>
+                   acceptableNodeTypes="X3DEnvironmentTextureNode"
+                   description="When applying diffuseColor for this light node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
             <field name="global"
                    type="SFBool"
                    accessType="inputOutput"
-                   default="false"/>
+                   default="false"
+                   description="Global lights illuminate all objects within their volume of lighting influence."/>
             <field name="intensity"
                    type="SFFloat"
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   inheritedFrom="X3DLightNode"/>
+                   inheritedFrom="X3DLightNode"
+                   description="Brightness of direct emission from the light."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -17622,22 +17632,26 @@
             <field name="location"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"/>
+                   default="0 0 0"
+                   description="Position of light relative to local coordinate system for observing the surrounding environment."/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMetadataObject"
-                   inheritedFrom="X3DNode"/>
+                   inheritedFrom="X3DNode"
+                   description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="on"
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"
-                   inheritedFrom="X3DLightNode"/>
+                   inheritedFrom="X3DLightNode"
+                   description="Enables/disables this light source."/>
             <field name="rotation"
                    type="SFRotation"
                    accessType="inputOutput"
-                   default="0 0 1 0"/>
+                   default="0 0 1 0"
+                   description="Orientation (axis, angle in radians) of light rotation relative to local coordinate system."/>
             <field name="shadowIntensity"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -17645,17 +17659,20 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="unitIntervalType"/>
+                   baseType="unitIntervalType"
+                   description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
             <field name="shadows"
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"
-                   inheritedFrom="X3DLightNode"/>
+                   inheritedFrom="X3DLightNode"
+                   description="shadows field indicates whether or not this light casts a shadow behind illuminated X3DShapeNode geometry."/>
             <field name="specularTexture"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DEnvironmentTextureNode"/>
+                   acceptableNodeTypes="X3DEnvironmentTextureNode"
+                   description="When applying specularColor for this light node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -22994,6 +23011,11 @@
                               appinfo="HAnimPose nodes support setting HAnimJoint values in a corresponding HAnimHumanoid skeleton.">
             <componentInfo name="HAnim" level="2"/>
             <Inheritance baseType="X3DChildNode"/>
+            <field name="children"
+                   type="MFNode"
+                   accessType="inputOutput"
+                   acceptableNodeTypes="HAnimJoint"
+                   description="the children field contains HAnimJoint nodes that provide translation, rotation, and scale values which are applied to corresponding HAnimJoint nodes with the same name in the parent HAnimHumanoid skeleton."/>
             <field name="commencePose"
                    type="SFBool"
                    accessType="inputOnly"
