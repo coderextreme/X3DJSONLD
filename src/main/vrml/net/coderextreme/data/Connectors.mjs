@@ -8,7 +8,7 @@ scene.setProfile(browser.getProfile("Full"));
 scene.addMetaData("comment", "World of Titania");
 scene.addMetaData("created", "Fri, 04 Sep 2015 10:19:01 GMT");
 scene.addMetaData("creator", "Holger Seelig");
-scene.addMetaData("generator", "Titania V3.0.4, http://titania.create3000.de");
+scene.addMetaData("generator", "Titania V3.0.4, https://titania.create3000.de");
 scene.addMetaData("identifier", "file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d");
 scene.addMetaData("modified", "Tue, 25 Jul 2017 09:42:17 GMT");
 scene.addMetaData("title", "Connectors");
@@ -31,7 +31,7 @@ let ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <IS><connect nodeField="cornerRadius" protoField="cornerRadius"></connect>
 <connect nodeField="size" protoField="size"></connect>
 </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 
 function initialize ()
 {
@@ -143,7 +143,7 @@ IS26ZZZ.connect[1] = connect28;
 iS = IS26;
 
 
-Script20.setSourceCode(`vrmlscript:\n"+
+Script20.setSourceCode(`ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -358,7 +358,7 @@ let ProtoDeclare55 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </field>
 <IS><connect nodeField="translation" protoField="translation"></connect>
 </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 function initialize ()
 {
 	sensor .offset = translation;
@@ -515,7 +515,7 @@ IS85ZZZ.connect[0] = connect86;
 iS = IS85;
 
 
-Script79.setSourceCode(`vrmlscript:\n"+
+Script79.setSourceCode(`ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
@@ -561,7 +561,7 @@ let ProtoDeclare88 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <IS><connect nodeField="output" protoField="output"></connect>
 <connect nodeField="input" protoField="input"></connect>
 </IS>
-<![CDATA[vrmlscript:
+<![CDATA[ecmascript:
 function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -692,7 +692,7 @@ IS114ZZZ.connect[1] = connect116;
 iS = IS114;
 
 
-Script105.setSourceCode(`vrmlscript:\n"+
+Script105.setSourceCode(`ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\n"+
@@ -726,7 +726,7 @@ protoBody = ProtoBody94;
 browser.currentScene.children[3] = ProtoDeclare88;
 
 let NavigationInfo117 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo117.type = new X3D.MFString([new X3D.SFString(", "), new X3D.SFString("PLANE_create3000.deANY")]);
+NavigationInfo117.type = new X3D.MFString([new X3D.SFString("FLY"), new X3D.SFString("ANY")]);
 browser.currentScene.children[4] = NavigationInfo117;
 
 let Background118 = browser.currentScene.createNode("Background");

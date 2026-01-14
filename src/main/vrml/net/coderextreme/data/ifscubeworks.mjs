@@ -4,7 +4,7 @@ const
    browser = canvas .browser,
    scene   = browser .currentScene;
 async function main () {
-scene.setProfile(browser.getProfile("Interchange"));
+scene.setProfile(browser.getProfile("Immersive"));
 scene.addMetaData("title", "ifscubeworks.x3d");
 scene.addMetaData("identifier", "http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d");
 scene.addMetaData("description", "Template for an Indexed Face Set");

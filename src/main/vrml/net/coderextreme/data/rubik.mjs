@@ -12,7 +12,7 @@ scene.addMetaData("identifier", "https://coderextreme.net/X3DJSONLD/src/main/dat
 scene.addMetaData("description", "a kind of rubik cube with spheres");
 await browser .loadComponents (scene);
 let NavigationInfo8 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo8.type = new X3D.MFString([new X3D.SFString("EXAMINE")]);
+NavigationInfo8.type = new X3D.MFString([new X3D.SFString("ANY"), new X3D.SFString("EXAMINE"), new X3D.SFString("WALK"), new X3D.SFString("FLY"), new X3D.SFString("LOOKAT")]);
 browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = NavigationInfo8;

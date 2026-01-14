@@ -7,7 +7,7 @@ async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
 scene .addComponent (browser .getComponent ("HAnim", 1));
 scene.addMetaData("title", "JohnJoint.x3d");
-scene.addMetaData("identifier", "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d");
+scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d");
 scene.addMetaData("description", "An attempt at a standard LOA-4 skeleton");
 scene.addMetaData("generator", "h6.pl");
 scene.addMetaData("creator", "John Carlson");

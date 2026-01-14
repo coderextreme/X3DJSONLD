@@ -446,6 +446,7 @@ ProtoInstance77.DEF = "connector1";
 let fieldValue78 = browser.currentScene.createNode("fieldValue");
 fieldValue78.name = "startnode";
 let ProtoInstance79 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance79.name = "point";
 ProtoInstance79.USE = "G1";
 fieldValue78YYY.children = new X3D.MFNode();
 
@@ -458,6 +459,7 @@ ProtoInstance77ZZZ.fieldValue[0] = fieldValue78;
 let fieldValue80 = browser.currentScene.createNode("fieldValue");
 fieldValue80.name = "endnode";
 let ProtoInstance81 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance81.name = "point";
 ProtoInstance81.USE = "G2";
 fieldValue80YYY.children = new X3D.MFNode();
 
@@ -493,6 +495,7 @@ ProtoInstance86.DEF = "connector2";
 let fieldValue87 = browser.currentScene.createNode("fieldValue");
 fieldValue87.name = "startnode";
 let ProtoInstance88 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance88.name = "point";
 ProtoInstance88.USE = "G1";
 fieldValue87YYY.children = new X3D.MFNode();
 
@@ -505,6 +508,7 @@ ProtoInstance86ZZZ.fieldValue[0] = fieldValue87;
 let fieldValue89 = browser.currentScene.createNode("fieldValue");
 fieldValue89.name = "endnode";
 let ProtoInstance90 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance90.name = "point";
 ProtoInstance90.USE = "G3";
 fieldValue89YYY.children = new X3D.MFNode();
 
@@ -540,6 +544,7 @@ ProtoInstance95.DEF = "connector3";
 let fieldValue96 = browser.currentScene.createNode("fieldValue");
 fieldValue96.name = "startnode";
 let ProtoInstance97 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance97.name = "point";
 ProtoInstance97.USE = "G1";
 fieldValue96YYY.children = new X3D.MFNode();
 
@@ -552,6 +557,7 @@ ProtoInstance95ZZZ.fieldValue[0] = fieldValue96;
 let fieldValue98 = browser.currentScene.createNode("fieldValue");
 fieldValue98.name = "endnode";
 let ProtoInstance99 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance99.name = "point";
 ProtoInstance99.USE = "G4";
 fieldValue98YYY.children = new X3D.MFNode();
 

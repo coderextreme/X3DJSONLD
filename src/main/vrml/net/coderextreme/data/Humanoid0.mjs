@@ -7,7 +7,7 @@ async function main () {
 scene.setProfile(browser.getProfile("Immersive"));
 scene .addComponent (browser .getComponent ("HAnim", 1));
 scene.addMetaData("title", "Humanoid0.x3d");
-scene.addMetaData("identifier", "http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d");
+scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d");
 scene.addMetaData("description", "An attempt at a standard LOA-4 skeleton");
 scene.addMetaData("generator", "h2.pl");
 scene.addMetaData("modified", "14 Jan 2023");
@@ -199,7 +199,7 @@ HAnimJoint47.llimit = new X3D.MFFloat([0,0,0]);
 joints[1] = HAnimJoint47;
 
 let HAnimJoint48 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint48.USE = "hanim_";
+HAnimJoint48.USE = "hanim_humanoid_root";
 joints[2] = HAnimJoint48;
 
 browser.currentScene.children[4] = HAnimHumanoid38;

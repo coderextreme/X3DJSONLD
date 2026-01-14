@@ -17,7 +17,7 @@ scene.addMetaData("modified", "13 January 2014");
 scene.addMetaData("description", "Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry.");
 scene.addMetaData("identifier", "https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d");
 scene.addMetaData("generator", "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html");
-scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../../license.html");
 await browser .loadComponents (scene);
 let Viewpoint17 = browser.currentScene.createNode("Viewpoint");
@@ -60,6 +60,7 @@ let NavigationInfo23 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo23.type = new X3D.MFString([new X3D.SFString("EXAMINE"), new X3D.SFString("WALK"), new X3D.SFString("FLY"), new X3D.SFString("ANY")]);
 browser.currentScene.children[6] = NavigationInfo23;
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 let Shape24 = browser.currentScene.createNode("Shape");
 let Appearance25 = browser.currentScene.createNode("Appearance");
 let Material26 = browser.currentScene.createNode("Material");
@@ -69,17 +70,21 @@ let PixelTexture27 = browser.currentScene.createNode("PixelTexture");
 PixelTexture27.image = new X3D.SFImage([2,2,4,-16776961,16711935,-1,-65281]);
 PixelTexture27.repeatS = False;
 PixelTexture27.repeatT = False;
+let TextureProperties28 = browser.currentScene.createNode("TextureProperties");
+TextureProperties28.magnificationFilter = "NEAREST_PIXEL";
+textureProperties = TextureProperties28;
+
 texture = PixelTexture27;
 
 appearance = Appearance25;
 
-let IndexedFaceSet28 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet28.coordIndex = new X3D.MFInt32([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-let Coordinate29 = browser.currentScene.createNode("Coordinate");
-Coordinate29.point = new X3D.MFVec3f([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]);
-coord = Coordinate29;
+let IndexedFaceSet29 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet29.coordIndex = new X3D.MFInt32([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+let Coordinate30 = browser.currentScene.createNode("Coordinate");
+Coordinate30.point = new X3D.MFVec3f([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]);
+coord = Coordinate30;
 
-geometry = IndexedFaceSet28;
+geometry = IndexedFaceSet29;
 
 browser.currentScene.children[7] = Shape24;
 

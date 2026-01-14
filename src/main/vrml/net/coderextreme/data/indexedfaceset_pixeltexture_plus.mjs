@@ -66,6 +66,7 @@ let NavigationInfo29 = browser.currentScene.createNode("NavigationInfo");
 NavigationInfo29.type = new X3D.MFString([new X3D.SFString("EXAMINE"), new X3D.SFString("WALK"), new X3D.SFString("FLY"), new X3D.SFString("ANY")]);
 browser.currentScene.children[6] = NavigationInfo29;
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 let Shape30 = browser.currentScene.createNode("Shape");
 let Appearance31 = browser.currentScene.createNode("Appearance");
 let Material32 = browser.currentScene.createNode("Material");
@@ -73,28 +74,32 @@ material = Material32;
 
 let PixelTexture33 = browser.currentScene.createNode("PixelTexture");
 PixelTexture33.image = new X3D.SFImage([2,2,4,-16776961,16711935,-1,-65281]);
+let TextureProperties34 = browser.currentScene.createNode("TextureProperties");
+TextureProperties34.magnificationFilter = "NEAREST_PIXEL";
+textureProperties = TextureProperties34;
+
 texture = PixelTexture33;
 
 appearance = Appearance31;
 
-let IndexedFaceSet34 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet34.colorPerVertex = False;
-IndexedFaceSet34.coordIndex = new X3D.MFInt32([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-IndexedFaceSet34.creaseAngle = 0.5;
-IndexedFaceSet34.texCoordIndex = new X3D.MFInt32([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
-let Color35 = browser.currentScene.createNode("Color");
-Color35.color = new X3D.MFColor([0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]);
-color = Color35;
+let IndexedFaceSet35 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet35.colorPerVertex = False;
+IndexedFaceSet35.coordIndex = new X3D.MFInt32([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+IndexedFaceSet35.creaseAngle = 0.5;
+IndexedFaceSet35.texCoordIndex = new X3D.MFInt32([0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]);
+let Color36 = browser.currentScene.createNode("Color");
+Color36.color = new X3D.MFColor([0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0]);
+color = Color36;
 
-let Coordinate36 = browser.currentScene.createNode("Coordinate");
-Coordinate36.point = new X3D.MFVec3f([-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]);
-coord = Coordinate36;
+let Coordinate37 = browser.currentScene.createNode("Coordinate");
+Coordinate37.point = new X3D.MFVec3f([-2,1,1,-2,-1,1,2,1,1,2,-1,1,2,1,-1,2,-1,-1,-2,1,-1,-2,-1,-1]);
+coord = Coordinate37;
 
-let TextureCoordinate37 = browser.currentScene.createNode("TextureCoordinate");
-TextureCoordinate37.point = new X3D.MFVec2f([-1,2,-1,-1,2,2,2,-1]);
-texCoord = TextureCoordinate37;
+let TextureCoordinate38 = browser.currentScene.createNode("TextureCoordinate");
+TextureCoordinate38.point = new X3D.MFVec2f([-1,2,-1,-1,2,2,2,-1]);
+texCoord = TextureCoordinate38;
 
-geometry = IndexedFaceSet34;
+geometry = IndexedFaceSet35;
 
 browser.currentScene.children[7] = Shape30;
 

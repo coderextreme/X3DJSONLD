@@ -25,7 +25,7 @@ scene.addMetaData("generator", "3DS MAX, http://www.autodesk.com/products/autode
 scene.addMetaData("generator", "Suwon HAnim Converter");
 scene.addMetaData("generator", "johnRescaler+joedwillyNotePad");
 scene.addMetaData("generator", "Gnu Image Manipulation Program, http://www.gimp.org");
-scene.addMetaData("generator", "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+scene.addMetaData("generator", "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit");
 scene.addMetaData("license", "../license.html");
 await browser .loadComponents (scene);
 //https://www.web3d.org/documents/specifications/19774/V2.0/index.html
@@ -12461,7 +12461,7 @@ HAnimSegment2690ZZZ.children[1] = Shape2692;
 
 let HAnimSite2693 = browser.currentScene.createNode("HAnimSite");
 HAnimSite2693.name = "r_tarsal_distal_phalanx_5";
-HAnimSite2693.DEF = "hanim_";
+HAnimSite2693.DEF = "hanim_r_tarsal_distal_phalanx_5";
 HAnimSite2693.translation = new X3D.SFVec3f([-0.125,0.016,0.115]);
 let Transform2694 = browser.currentScene.createNode("Transform");
 Transform2694.USE = "r_tarsal_distal_phalanx_5_tip_SiteShape";
