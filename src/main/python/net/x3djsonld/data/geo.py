@@ -45,7 +45,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='description',content='a sphere')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type='"ANY" "EXAMINE" "FLY" "LOOKAT"'),
+    NavigationInfo(type=["ANY","EXAMINE","FLY","LOOKAT"]),
     Viewpoint(DEF='Tour',description='Tour Views'),
     # Viewpoint position='0 0 4' description='sphere in road'/
     Background(backUrl=["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"],bottomUrl=["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"],frontUrl=["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"],leftUrl=["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"],rightUrl=["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"],topUrl=["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]),

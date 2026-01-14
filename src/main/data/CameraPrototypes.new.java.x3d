@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='CameraPrototypes.x3d' name='title'/>
     <meta content='Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.' name='description'/>
@@ -15,33 +14,34 @@
     <meta content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='reference'/>
     <meta content='Camera nodes for Viewpoint navigation control' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d' name='identifier'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
-    <ProtoDeclare name='Camera' appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.'>
+    <ProtoDeclare appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.' name='Camera'>
       <ProtoInterface>
-        <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this Camera' type='SFString'/>
-        <field name='position' accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFVec3f' value='0 0 10'/>
-        <field name='orientation' accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFRotation'/>
-        <field name='fieldOfView' accessType='inputOutput' appinfo='pi/4' type='SFFloat' value='0.7854'/>
-        <field name='set_fraction' accessType='inputOnly' appinfo='input fraction drives interpolators' type='SFFloat'/>
-        <field name='set_bind' accessType='inputOnly' appinfo='input event binds or unbinds this Camera' type='SFBool'/>
-        <field name='bindTime' accessType='outputOnly' appinfo='output event indicates when this Camera is bound' type='SFTime'/>
-        <field name='isBound' accessType='outputOnly' appinfo='output event indicates whether this Camera is bound or unbound' type='SFBool'/>
-        <field name='nearClipPlane' accessType='inputOutput' appinfo='Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]' type='SFFloat' value='0.25'/>
-        <field name='farClipPlane' accessType='inputOutput' appinfo='Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit' type='SFFloat'/>
-        <field name='shots' accessType='inputOutput' appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes' type='MFNode'/>
-        <field name='headlight' accessType='inputOutput' appinfo='Whether camera headlight is on or off' type='SFBool' value='true'/>
-        <field name='headlightColor' accessType='inputOutput' appinfo='Camera headlight color' type='SFColor' value='1 1 1'/>
-        <field name='headlightIntensity' accessType='inputOutput' appinfo='Camera headlight intensity' type='SFFloat' value='1.0'/>
-        <field name='filterColor' accessType='inputOutput' appinfo='Camera filter color that modifies virtual lens capture' type='SFColor' value='1 1 1'/>
-        <field name='filterTransparency' accessType='inputOutput' appinfo='Camera filter transparency that modifies virtual lens capture' type='SFFloat' value='1.0'/>
-        <field name='upVector' accessType='inputOutput' appinfo='upVector changes modify camera orientation (and possibly vice versa)' type='SFVec3f' value='0 1 0'/>
-        <field name='fStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat' value='5.6'/>
-        <field name='focusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat' value='10.0'/>
-        <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-        <field name='totalDuration' accessType='outputOnly' appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' type='SFTime'/>
-        <field name='offlineRender' accessType='inputOutput' appinfo='OfflineRender node' type='SFNode'/>
-        <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+        <field accessType='inputOutput' appinfo='Text description to be displayed for this Camera' name='description' type='SFString'/>
+        <field accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='position' type='SFVec3f' value='0 0 10'/>
+        <field accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='orientation' type='SFRotation'/>
+        <field accessType='inputOutput' appinfo='pi/4' name='fieldOfView' type='SFFloat' value='0.7854'/>
+        <field accessType='inputOnly' appinfo='input fraction drives interpolators' name='set_fraction' type='SFFloat'/>
+        <field accessType='inputOnly' appinfo='input event binds or unbinds this Camera' name='set_bind' type='SFBool'/>
+        <field accessType='outputOnly' appinfo='output event indicates when this Camera is bound' name='bindTime' type='SFTime'/>
+        <field accessType='outputOnly' appinfo='output event indicates whether this Camera is bound or unbound' name='isBound' type='SFBool'/>
+        <field accessType='inputOutput' appinfo='Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]' name='nearClipPlane' type='SFFloat' value='0.25'/>
+        <field accessType='inputOutput' appinfo='Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit' name='farClipPlane' type='SFFloat'/>
+        <field accessType='inputOutput' appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes' name='shots' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='Whether camera headlight is on or off' name='headlight' type='SFBool' value='true'/>
+        <field accessType='inputOutput' appinfo='Camera headlight color' name='headlightColor' type='SFColor' value='1 1 1'/>
+        <field accessType='inputOutput' appinfo='Camera headlight intensity' name='headlightIntensity' type='SFFloat' value='1.0'/>
+        <field accessType='inputOutput' appinfo='Camera filter color that modifies virtual lens capture' name='filterColor' type='SFColor' value='1 1 1'/>
+        <field accessType='inputOutput' appinfo='Camera filter transparency that modifies virtual lens capture' name='filterTransparency' type='SFFloat' value='1.0'/>
+        <field accessType='inputOutput' appinfo='upVector changes modify camera orientation (and possibly vice versa)' name='upVector' type='SFVec3f' value='0 1 0'/>
+        <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='fStop' type='SFFloat' value='5.6'/>
+        <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='focusDistance' type='SFFloat' value='10.0'/>
+        <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+        <field accessType='outputOnly' appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' name='totalDuration' type='SFTime'/>
+        <field accessType='inputOutput' appinfo='OfflineRender node' name='offlineRender' type='SFNode'/>
+        <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
         <Viewpoint DEF='CameraViewpoint'>
@@ -80,46 +80,46 @@
           </IS>
         </OrientationInterpolator>
         <Script DEF='CameraScript' directOutput='true' mustEvaluate='true'>
-          <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this Camera' type='SFString'/>
-          <field name='position' accessType='inputOutput' appinfo='Camera position in local transformation frame' type='SFVec3f'/>
-          <field name='orientation' accessType='inputOutput' appinfo='Camera rotation in local transformation frame' type='SFRotation'/>
-          <field name='set_fraction' accessType='inputOnly' appinfo='input fraction drives interpolators' type='SFFloat'/>
-          <field name='set_bind' accessType='inputOnly' appinfo='input event binds or unbinds this Camera' type='SFBool'/>
-          <field name='fieldOfView' accessType='inputOutput' appinfo='pi/4' type='SFFloat'/>
-          <field name='nearClipPlane' accessType='inputOutput' appinfo='Vector distance to near clipping plane' type='SFFloat'/>
-          <field name='farClipPlane' accessType='inputOutput' appinfo='Vector distance to far clipping plane' type='SFFloat'/>
-          <field name='shots' accessType='inputOutput' appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes' type='MFNode'/>
-          <field name='filterColor' accessType='inputOutput' appinfo='Camera filter color that modifies virtual lens capture' type='SFColor'/>
-          <field name='filterTransparency' accessType='inputOutput' appinfo='Camera filter transparency that modifies virtual lens capture' type='SFFloat'/>
-          <field name='upVector' accessType='inputOutput' appinfo='upVector changes modify camera orientation (and possibly vice versa)' type='SFVec3f'/>
-          <field name='fStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat'/>
-          <field name='focusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat'/>
-          <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-          <field name='totalDuration' accessType='outputOnly' appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' type='SFTime'/>
-          <field name='offlineRender' accessType='inputOutput' appinfo='OfflineRender node' type='SFNode'/>
-          <field name='ViewpointNode' accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' type='SFNode'>
+          <field accessType='inputOutput' appinfo='Text description to be displayed for this Camera' name='description' type='SFString'/>
+          <field accessType='inputOutput' appinfo='Camera position in local transformation frame' name='position' type='SFVec3f'/>
+          <field accessType='inputOutput' appinfo='Camera rotation in local transformation frame' name='orientation' type='SFRotation'/>
+          <field accessType='inputOnly' appinfo='input fraction drives interpolators' name='set_fraction' type='SFFloat'/>
+          <field accessType='inputOnly' appinfo='input event binds or unbinds this Camera' name='set_bind' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='pi/4' name='fieldOfView' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Vector distance to near clipping plane' name='nearClipPlane' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Vector distance to far clipping plane' name='farClipPlane' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes' name='shots' type='MFNode'/>
+          <field accessType='inputOutput' appinfo='Camera filter color that modifies virtual lens capture' name='filterColor' type='SFColor'/>
+          <field accessType='inputOutput' appinfo='Camera filter transparency that modifies virtual lens capture' name='filterTransparency' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='upVector changes modify camera orientation (and possibly vice versa)' name='upVector' type='SFVec3f'/>
+          <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='fStop' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='focusDistance' type='SFFloat'/>
+          <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+          <field accessType='outputOnly' appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' name='totalDuration' type='SFTime'/>
+          <field accessType='inputOutput' appinfo='OfflineRender node' name='offlineRender' type='SFNode'/>
+          <field accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' name='ViewpointNode' type='SFNode'>
             <Viewpoint USE='CameraViewpoint'/>
           </field>
-          <field name='NavInfoNode' accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' type='SFNode'>
+          <field accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' name='NavInfoNode' type='SFNode'>
             <NavigationInfo USE='CameraNavInfo'/>
           </field>
-          <field name='CameraPI' accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' type='SFNode'>
+          <field accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' name='CameraPI' type='SFNode'>
             <PositionInterpolator USE='CameraPositionInterpolator'/>
           </field>
-          <field name='CameraOI' accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' type='SFNode'>
+          <field accessType='initializeOnly' appinfo='node reference to permit getting setting fields from within Script' name='CameraOI' type='SFNode'>
             <OrientationInterpolator USE='CameraOrientationInterpolator'/>
           </field>
-          <field name='key' accessType='inputOutput' appinfo='key array for interpolators' type='MFFloat'/>
-          <field name='keyValuePosition' accessType='inputOutput' appinfo='keyValue array for PositionInterpolator' type='MFVec3f'/>
-          <field name='keyValueOrientation' accessType='inputOutput' appinfo='keyValue array for OrientationInterpolator' type='MFRotation'/>
-          <field name='animated' accessType='inputOutput' appinfo='whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events' type='SFBool'/>
-          <field name='initialized' accessType='initializeOnly' appinfo='perform checkShots() function once immediately after initialization' type='SFBool'/>
-          <field name='shotCount' accessType='initializeOnly' appinfo='how many CameraShot nodes are contained in shots array' type='SFInt32'/>
-          <field name='movesCount' accessType='initializeOnly' appinfo='how many CameraMove nodes are contained in moves array' type='SFInt32'/>
-          <field name='frameCount' accessType='initializeOnly' appinfo='how many frames were created in current loop' type='SFFloat'/>
-          <field name='startTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime' value='0.0'/>
-          <field name='priorTraceTime' accessType='initializeOnly' appinfo='holding variable' type='SFTime' value='0.0'/>
-          <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='key array for interpolators' name='key' type='MFFloat'/>
+          <field accessType='inputOutput' appinfo='keyValue array for PositionInterpolator' name='keyValuePosition' type='MFVec3f'/>
+          <field accessType='inputOutput' appinfo='keyValue array for OrientationInterpolator' name='keyValueOrientation' type='MFRotation'/>
+          <field accessType='inputOutput' appinfo='whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events' name='animated' type='SFBool'/>
+          <field accessType='initializeOnly' appinfo='perform checkShots() function once immediately after initialization' name='initialized' type='SFBool'/>
+          <field accessType='initializeOnly' appinfo='how many CameraShot nodes are contained in shots array' name='shotCount' type='SFInt32'/>
+          <field accessType='initializeOnly' appinfo='how many CameraMove nodes are contained in moves array' name='movesCount' type='SFInt32'/>
+          <field accessType='initializeOnly' appinfo='how many frames were created in current loop' name='frameCount' type='SFFloat'/>
+          <field accessType='initializeOnly' appinfo='holding variable' name='startTime' type='SFTime' value='0.0'/>
+          <field accessType='initializeOnly' appinfo='holding variable' name='priorTraceTime' type='SFTime' value='0.0'/>
+          <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='position' protoField='position'/>
@@ -492,38 +492,38 @@ function alwaysPrint (outputValue)
         <ROUTE fromField='isActive' fromNode='CameraScript' toField='set_on' toNode='CameraDirectionalLight'/>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='CameraShot' appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot.'>
+    <ProtoDeclare appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot.' name='CameraShot'>
       <ProtoInterface>
-        <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' type='SFString'/>
-        <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraShot can be activated' type='SFBool' value='true'/>
-        <field name='moves' accessType='inputOutput' appinfo='Set of CameraMovement nodes' type='MFNode'/>
-        <field name='initialPosition' accessType='inputOutput' appinfo='Setup to reinitialize camera position for this shot' type='SFVec3f' value='0 0 10'/>
-        <field name='initialOrientation' accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' type='SFRotation'/>
-        <field name='initialAimPoint' accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' type='SFVec3f'/>
-        <field name='initialFieldOfView' accessType='inputOutput' appinfo='pi/4' type='SFFloat' value='0.7854'/>
-        <field name='initialFStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat' value='5.6'/>
-        <field name='initialFocusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat' value='10.0'/>
-        <field name='shotDuration' accessType='outputOnly' appinfo='Subtotal duration of contained CameraMovement move durations' type='SFTime'/>
-        <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-        <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+        <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' name='description' type='SFString'/>
+        <field accessType='inputOutput' appinfo='Whether this CameraShot can be activated' name='enabled' type='SFBool' value='true'/>
+        <field accessType='inputOutput' appinfo='Set of CameraMovement nodes' name='moves' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='Setup to reinitialize camera position for this shot' name='initialPosition' type='SFVec3f' value='0 0 10'/>
+        <field accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' name='initialOrientation' type='SFRotation'/>
+        <field accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' name='initialAimPoint' type='SFVec3f'/>
+        <field accessType='inputOutput' appinfo='pi/4' name='initialFieldOfView' type='SFFloat' value='0.7854'/>
+        <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='initialFStop' type='SFFloat' value='5.6'/>
+        <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='initialFocusDistance' type='SFFloat' value='10.0'/>
+        <field accessType='outputOnly' appinfo='Subtotal duration of contained CameraMovement move durations' name='shotDuration' type='SFTime'/>
+        <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+        <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
         <Script DEF='CameraShotScript' directOutput='true' mustEvaluate='true'>
-          <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' type='SFString'/>
-          <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraShot can be activated' type='SFBool'/>
-          <field name='moves' accessType='inputOutput' appinfo='Set of CameraMovement nodes' type='MFNode'/>
-          <field name='initialPosition' accessType='inputOutput' appinfo='Setup to reinitialize camera position for this shot' type='SFVec3f'/>
-          <field name='initialOrientation' accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' type='SFRotation'/>
-          <field name='initialAimPoint' accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' type='SFVec3f'/>
-          <field name='initialFieldOfView' accessType='inputOutput' appinfo='pi/4' type='SFFloat'/>
-          <field name='initialFStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat'/>
-          <field name='initialFocusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat'/>
-          <field name='shotDuration' accessType='outputOnly' appinfo='Subtotal duration of contained CameraMovement move durations' type='SFTime'/>
-          <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-          <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
-          <field name='key' accessType='inputOutput' appinfo='key array for interpolators' type='MFFloat'/>
-          <field name='keyValuePosition' accessType='inputOutput' appinfo='keyValue array for PositionInterpolator' type='MFVec3f'/>
-          <field name='keyValueOrientation' accessType='inputOutput' appinfo='keyValue array for OrientationInterpolator' type='MFRotation'/>
+          <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' name='description' type='SFString'/>
+          <field accessType='inputOutput' appinfo='Whether this CameraShot can be activated' name='enabled' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='Set of CameraMovement nodes' name='moves' type='MFNode'/>
+          <field accessType='inputOutput' appinfo='Setup to reinitialize camera position for this shot' name='initialPosition' type='SFVec3f'/>
+          <field accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' name='initialOrientation' type='SFRotation'/>
+          <field accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' name='initialAimPoint' type='SFVec3f'/>
+          <field accessType='inputOutput' appinfo='pi/4' name='initialFieldOfView' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='initialFStop' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='initialFocusDistance' type='SFFloat'/>
+          <field accessType='outputOnly' appinfo='Subtotal duration of contained CameraMovement move durations' name='shotDuration' type='SFTime'/>
+          <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+          <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='key array for interpolators' name='key' type='MFFloat'/>
+          <field accessType='inputOutput' appinfo='keyValue array for PositionInterpolator' name='keyValuePosition' type='MFVec3f'/>
+          <field accessType='inputOutput' appinfo='keyValue array for OrientationInterpolator' name='keyValueOrientation' type='MFRotation'/>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='enabled' protoField='enabled'/>
@@ -636,35 +636,35 @@ function alwaysPrint (outputValue)
         </Script>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='CameraMovement' appinfo='CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.'>
+    <ProtoDeclare appinfo='CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.' name='CameraMovement'>
       <ProtoInterface>
-        <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' type='SFString'/>
-        <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' type='SFBool' value='true'/>
-        <field name='duration' accessType='inputOutput' appinfo='Duration in seconds for this move' type='SFFloat'/>
-        <field name='goalPosition' accessType='inputOutput' appinfo='Goal camera position for this move' type='SFVec3f' value='0 0 10'/>
-        <field name='goalOrientation' accessType='inputOutput' appinfo='Goal camera rotation for this move' type='SFRotation'/>
-        <field name='tracking' accessType='inputOutput' appinfo='Whether or not camera direction is tracking towards the aimPoint' type='SFBool'/>
-        <field name='goalAimPoint' accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' type='SFVec3f'/>
-        <field name='goalFieldOfView' accessType='inputOutput' appinfo='Goal fieldOfView for this move' type='SFFloat' value='0.7854'/>
-        <field name='goalFStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat' value='5.6'/>
-        <field name='goalFocusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat' value='10.0'/>
-        <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-        <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+        <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' name='description' type='SFString'/>
+        <field accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' name='enabled' type='SFBool' value='true'/>
+        <field accessType='inputOutput' appinfo='Duration in seconds for this move' name='duration' type='SFFloat'/>
+        <field accessType='inputOutput' appinfo='Goal camera position for this move' name='goalPosition' type='SFVec3f' value='0 0 10'/>
+        <field accessType='inputOutput' appinfo='Goal camera rotation for this move' name='goalOrientation' type='SFRotation'/>
+        <field accessType='inputOutput' appinfo='Whether or not camera direction is tracking towards the aimPoint' name='tracking' type='SFBool'/>
+        <field accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' name='goalAimPoint' type='SFVec3f'/>
+        <field accessType='inputOutput' appinfo='Goal fieldOfView for this move' name='goalFieldOfView' type='SFFloat' value='0.7854'/>
+        <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='goalFStop' type='SFFloat' value='5.6'/>
+        <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='goalFocusDistance' type='SFFloat' value='10.0'/>
+        <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+        <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
         <Script DEF='CameraMovementScript' directOutput='true' mustEvaluate='true'>
-          <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' type='SFString'/>
-          <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' type='SFBool'/>
-          <field name='duration' accessType='inputOutput' appinfo='Duration in seconds for this move' type='SFFloat'/>
-          <field name='goalPosition' accessType='inputOutput' appinfo='Goal camera position for this move' type='SFVec3f'/>
-          <field name='goalOrientation' accessType='inputOutput' appinfo='Goal camera rotation for this move' type='SFRotation'/>
-          <field name='tracking' accessType='inputOutput' appinfo='Whether or not camera direction is tracking towards the aimPoint' type='SFBool'/>
-          <field name='goalAimPoint' accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' type='SFVec3f'/>
-          <field name='goalFieldOfView' accessType='inputOutput' appinfo='Goal fieldOfView for this move' type='SFFloat'/>
-          <field name='goalFStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat'/>
-          <field name='goalFocusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat'/>
-          <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-          <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' name='description' type='SFString'/>
+          <field accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' name='enabled' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='Duration in seconds for this move' name='duration' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Goal camera position for this move' name='goalPosition' type='SFVec3f'/>
+          <field accessType='inputOutput' appinfo='Goal camera rotation for this move' name='goalOrientation' type='SFRotation'/>
+          <field accessType='inputOutput' appinfo='Whether or not camera direction is tracking towards the aimPoint' name='tracking' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' name='goalAimPoint' type='SFVec3f'/>
+          <field accessType='inputOutput' appinfo='Goal fieldOfView for this move' name='goalFieldOfView' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='goalFStop' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='goalFocusDistance' type='SFFloat'/>
+          <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+          <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='enabled' protoField='enabled'/>
@@ -774,33 +774,33 @@ function alwaysPrint (outputValue)
         </Script>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='OfflineRender' appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).'>
+    <ProtoDeclare appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).' name='OfflineRender'>
       <ProtoInterface>
-        <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' type='SFString'/>
-        <field name='enabled' accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' type='SFBool' value='true'/>
-        <field name='frameRate' accessType='inputOutput' appinfo='Frames per second recorded for this rendering' type='SFFloat' value='30.0'/>
-        <field name='frameSize' accessType='inputOutput' appinfo='Size of frame in number of pixels width and height' type='SFVec2f' value='640 480'/>
-        <field name='pixelAspectRatio' accessType='inputOutput' appinfo='Relative dimensions of pixel height/width typically 1.33 or 1' type='SFFloat' value='1.33'/>
-        <field name='set_startTime' accessType='inputOnly' appinfo='Begin render operation' type='SFTime'/>
-        <field name='progress' accessType='outputOnly' appinfo='Progress performing render operation (0..1)' type='SFFloat'/>
-        <field name='renderCompleteTime' accessType='outputOnly' appinfo='Render operation complete' type='SFTime'/>
-        <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' type='MFString' value='"mpeg"'/>
-        <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' type='MFString' value='"png"'/>
-        <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+        <field accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' name='description' type='SFString'/>
+        <field accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' name='enabled' type='SFBool' value='true'/>
+        <field accessType='inputOutput' appinfo='Frames per second recorded for this rendering' name='frameRate' type='SFFloat' value='30.0'/>
+        <field accessType='inputOutput' appinfo='Size of frame in number of pixels width and height' name='frameSize' type='SFVec2f' value='640 480'/>
+        <field accessType='inputOutput' appinfo='Relative dimensions of pixel height/width typically 1.33 or 1' name='pixelAspectRatio' type='SFFloat' value='1.33'/>
+        <field accessType='inputOnly' appinfo='Begin render operation' name='set_startTime' type='SFTime'/>
+        <field accessType='outputOnly' appinfo='Progress performing render operation (0..1)' name='progress' type='SFFloat'/>
+        <field accessType='outputOnly' appinfo='Render operation complete' name='renderCompleteTime' type='SFTime'/>
+        <field accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' name='movieFormat' type='MFString' value='"mpeg"'/>
+        <field accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' name='imageFormat' type='MFString' value='"png"'/>
+        <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
         <Script DEF='OfflineRenderScript' mustEvaluate='true'>
-          <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' type='SFString'/>
-          <field name='enabled' accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' type='SFBool'/>
-          <field name='frameRate' accessType='inputOutput' appinfo='Frames per second recorded for this rendering' type='SFFloat'/>
-          <field name='frameSize' accessType='inputOutput' appinfo='Size of frame in number of pixels width and height' type='SFVec2f'/>
-          <field name='pixelAspectRatio' accessType='inputOutput' appinfo='Relative dimensions of pixel height/width typically 1.33 or 1' type='SFFloat'/>
-          <field name='set_startTime' accessType='inputOnly' appinfo='Begin render operation' type='SFTime'/>
-          <field name='progress' accessType='outputOnly' appinfo='Progress performing render operation (0..1)' type='SFFloat'/>
-          <field name='renderCompleteTime' accessType='outputOnly' appinfo='Render operation complete' type='SFTime'/>
-          <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.)' type='MFString'/>
-          <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.)' type='MFString'/>
-          <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' name='description' type='SFString'/>
+          <field accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' name='enabled' type='SFBool'/>
+          <field accessType='inputOutput' appinfo='Frames per second recorded for this rendering' name='frameRate' type='SFFloat'/>
+          <field accessType='inputOutput' appinfo='Size of frame in number of pixels width and height' name='frameSize' type='SFVec2f'/>
+          <field accessType='inputOutput' appinfo='Relative dimensions of pixel height/width typically 1.33 or 1' name='pixelAspectRatio' type='SFFloat'/>
+          <field accessType='inputOnly' appinfo='Begin render operation' name='set_startTime' type='SFTime'/>
+          <field accessType='outputOnly' appinfo='Progress performing render operation (0..1)' name='progress' type='SFFloat'/>
+          <field accessType='outputOnly' appinfo='Render operation complete' name='renderCompleteTime' type='SFTime'/>
+          <field accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.)' name='movieFormat' type='MFString'/>
+          <field accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.)' name='imageFormat' type='MFString'/>
+          <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='enabled' protoField='enabled'/>

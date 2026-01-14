@@ -36,10 +36,10 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type='"EXAMINE"'),
+    NavigationInfo(type=["EXAMINE"]),
     Viewpoint(position=(0,0,4),orientation=(1,0,0,0),description='Bubbles in action'),
     Background(backUrl=["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"],bottomUrl=["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"],frontUrl=["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"],leftUrl=["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"],rightUrl=["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"],topUrl=["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]),
-    Transform(DEF='DECLBubble_bubbleA',
+    Transform(DEF='DECLBubble_transformA',
       children=[
       Shape(
         geometry=Sphere(radius=0.25),
@@ -95,10 +95,10 @@ function set_fraction(value) {
 }
 """),
       TimeSensor(DEF='DECLBubble_bubbleA_bubbleClock',cycleInterval=10.0,loop=True),
-      ROUTE(fromNode='DECLBubble_bubbleA_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
-      ROUTE(fromNode='DECLBubble_bubbleA_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
+      ROUTE(fromNode='DECLBubble_bubbleA_bounce',fromField='translation_changed',toNode='DECLBubble_transformA',toField='set_translation'),
+      ROUTE(fromNode='DECLBubble_bubbleA_bounce',fromField='scale_changed',toNode='DECLBubble_transformA',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleA_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleA_bounce',toField='set_fraction')]),
-    Transform(DEF='DECLBubble_bubbleB',
+    Transform(DEF='DECLBubble_transformB',
       children=[
       Shape(
         geometry=Sphere(radius=0.25),
@@ -154,10 +154,10 @@ function set_fraction(value) {
 }
 """),
       TimeSensor(DEF='DECLBubble_bubbleB_bubbleClock',cycleInterval=10.0,loop=True),
-      ROUTE(fromNode='DECLBubble_bubbleB_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
-      ROUTE(fromNode='DECLBubble_bubbleB_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
+      ROUTE(fromNode='DECLBubble_bubbleB_bounce',fromField='translation_changed',toNode='DECLBubble_transformB',toField='set_translation'),
+      ROUTE(fromNode='DECLBubble_bubbleB_bounce',fromField='scale_changed',toNode='DECLBubble_transformB',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleB_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleB_bounce',toField='set_fraction')]),
-    Transform(DEF='DECLBubble_bubbleC',
+    Transform(DEF='DECLBubble_transformC',
       children=[
       Shape(
         geometry=Sphere(radius=0.25),
@@ -213,10 +213,10 @@ function set_fraction(value) {
 }
 """),
       TimeSensor(DEF='DECLBubble_bubbleC_bubbleClock',cycleInterval=10.0,loop=True),
-      ROUTE(fromNode='DECLBubble_bubbleC_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
-      ROUTE(fromNode='DECLBubble_bubbleC_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
+      ROUTE(fromNode='DECLBubble_bubbleC_bounce',fromField='translation_changed',toNode='DECLBubble_transformC',toField='set_translation'),
+      ROUTE(fromNode='DECLBubble_bubbleC_bounce',fromField='scale_changed',toNode='DECLBubble_transformC',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleC_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleC_bounce',toField='set_fraction')]),
-    Transform(DEF='DECLBubble_bubbleD',
+    Transform(DEF='DECLBubble_transformD',
       children=[
       Shape(
         geometry=Sphere(radius=0.25),
@@ -272,8 +272,8 @@ function set_fraction(value) {
 }
 """),
       TimeSensor(DEF='DECLBubble_bubbleD_bubbleClock',cycleInterval=10.0,loop=True),
-      ROUTE(fromNode='DECLBubble_bubbleD_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
-      ROUTE(fromNode='DECLBubble_bubbleD_bounce',fromField='scale_changed',toNode='DECLBubble_transform',toField='set_scale'),
+      ROUTE(fromNode='DECLBubble_bubbleD_bounce',fromField='translation_changed',toNode='DECLBubble_transformD',toField='set_translation'),
+      ROUTE(fromNode='DECLBubble_bubbleD_bounce',fromField='scale_changed',toNode='DECLBubble_transformD',toField='set_scale'),
       ROUTE(fromNode='DECLBubble_bubbleD_bubbleClock',fromField='fraction_changed',toNode='DECLBubble_bubbleD_bounce',toField='set_fraction')])])
 ) # X3D model complete
 

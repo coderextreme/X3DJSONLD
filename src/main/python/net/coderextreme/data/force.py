@@ -113,6 +113,7 @@ Group15.children.append(Transform16)
 PositionInterpolator29 = x3d.PositionInterpolator()
 PositionInterpolator29.DEF = "NodePosition"
 PositionInterpolator29.key = [0,1]
+PositionInterpolator29.keyValue = [(0, 0, 0),(0, 5, 0)]
 
 Group15.children.append(PositionInterpolator29)
 Script30 = x3d.Script()
@@ -217,6 +218,8 @@ Shape46 = x3d.Shape()
 Extrusion47 = x3d.Extrusion()
 Extrusion47.DEF = "extrusion"
 Extrusion47.creaseAngle = 0.785
+Extrusion47.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
+Extrusion47.spine = [(0, -50, 0),(0, 0, 0),(0, 50, 0)]
 
 Shape46.geometry = Extrusion47
 Appearance48 = x3d.Appearance()
@@ -234,6 +237,7 @@ field51 = x3d.field()
 field51.name = "spine"
 field51.accessType = "inputOutput"
 field51.type = "MFVec3f"
+field51.value = [(0, -50, 0),(0, 0, 0),(0, 50, 0)]
 
 Script50.field.append(field51)
 field52 = x3d.field()
@@ -446,6 +450,9 @@ X3D0.Scene = Scene10
 f = open("../data/force.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/force.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/force.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/force.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

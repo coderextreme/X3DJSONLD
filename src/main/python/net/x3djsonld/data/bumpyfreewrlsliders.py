@@ -2,7 +2,7 @@
 #
 # Invoking X3D model self-test:
 #
-#   $ python bumpfreewrlsliders.py
+#   $ python bumpyfreewrlsliders.py
 #
 # Python package x3d.py package is available on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
@@ -35,35 +35,15 @@ newModel=X3D(profile='Full',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    component(name='Shape',level=4),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     component(name='DIS',level=2),
-    meta(content='bumpfreewrlsliders.x3d',name='title'),
-    meta(content='*enter description here, short-sentence summaries preferred*',name='description'),
+    meta(content='bumpyfreewrlsliders.x3d',name='title'),
+    meta(content='Bumpy Orbitals with Sliders for FreeWRL',name='description'),
     meta(content='Doug Sanden, Christoph Valentin, John Carlson',name='creator'),
-    meta(content='*if manually translating VRML-to-X3D, enter name of person translating here*',name='translator'),
-    meta(content='*enter date of initial version here*',name='created'),
-    meta(content='*enter date of translation here*',name='translated'),
-    meta(content='*enter date of latest revision here*',name='modified'),
-    meta(content='*enter version here, if any*',name='version'),
-    meta(content='*enter reference citation or relative/online url here*',name='reference'),
-    meta(content='*enter additional url/bibliographic reference information here*',name='reference'),
-    meta(content='*enter reference resource here if required to support function, delivery, or coherence of content*',name='requires'),
-    meta(content='*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024',name='rights'),
-    meta(content='*enter drawing filename/url here*',name='drawing'),
-    meta(content='*enter movie filename/url here*',name='MovingImage'),
-    meta(content='*enter photo filename/url here*',name='photo'),
-    meta(content='*enter subject keywords here*',name='subject'),
-    meta(content='*enter permission statements or url here*',name='accessRights'),
-    meta(content='*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*',name='identifier'),
-    meta(content='PSPad, http://www.pspad.com/',name='generator'),
-    meta(content='license.html',name='license'),
-    #  Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L 
-    ]),
-  #  "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,
-     It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
-     open for their "discussion about the teapot" 
+    meta(content='https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d',name='identifier'),
+    meta(content='license.html',name='license')]),
   Scene=Scene(
     #  LayerSet with two layers, navigation happens in layer 1 
     children=[
@@ -73,7 +53,7 @@ newModel=X3D(profile='Full',version='4.0',
       Layer(pickable=True,objectType=["ALL"],
         #  basic nodes, which might be present in any scene 
         children=[
-        NavigationInfo(type='"EXAMINE"',avatarSize=[0.25,1.75,0.75]),
+        NavigationInfo(type=["EXAMINE","FLY","LOOKAT","ANY"],avatarSize=[0.25,1.75,0.75]),
         DirectionalLight(ambientIntensity=.2,direction=(0,-1,-0)),
         DirectionalLight(ambientIntensity=.2,direction=(-1,-.1,-1)),
         Viewpoint(description='My Overview',fieldOfView=1.570796,position=(0,1.75,60)),
@@ -84,13 +64,13 @@ newModel=X3D(profile='Full',version='4.0',
           Transform(translation=(25,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
-              geometry=Cylinder(DEF='Shaft',radius=.35,height=50.0),
+              geometry=Cylinder(DEF='Shaft',radius=.35,height=50),
               appearance=Appearance(
                 material=Material(DEF='RED',diffuseColor=(1,0,0),emissiveColor=(1,0,0))))]),
           Transform(translation=(50,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
-              geometry=Cone(DEF='Tip',bottomRadius=.8,height=3.0),
+              geometry=Cone(DEF='Tip',bottomRadius=.8,height=3),
               appearance=Appearance(
                 material=Material(USE='RED')))]),
           #  Arrow Y 
@@ -127,42 +107,145 @@ newModel=X3D(profile='Full',version='4.0',
           #  Images courtesy of Paul Debevec's Light Probe Image Gallery 
           children=[
           Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
-          Shape(
-            geometry=Sphere(radius=0.01),
-            appearance=Appearance(
-              material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5)),
-              texture=ComposedCubeMapTexture(DEF='texture',
-                backTexture=ImageTexture(id_='backShader',url=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
-                bottomTexture=ImageTexture(id_='bottomShader',url=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
-                frontTexture=ImageTexture(id_='frontShader',url=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
-                leftTexture=ImageTexture(id_='leftShader',url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
-                rightTexture=ImageTexture(id_='rightShader',url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
-                topTexture=ImageTexture(id_='topShader',url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
-              shaders=[
-              ComposedShader(DEF='freewrlShader',language='GLSL',
-                field=[
-                field(name='chromaticDispertion',accessType='inputOnly',type='SFVec3f',value=(0.98,1.0,1.033)),
-                field(name='fw_textureCoordGenType',accessType='inputOnly',type='SFInt32',value=0),
-                field(name='bias',type='SFFloat',accessType='inputOnly',value=0.5),
-                field(name='scale',type='SFFloat',accessType='inputOnly',value=0.5),
-                field(name='power',type='SFFloat',accessType='inputOnly',value=2),
-                field(name='a',type='SFFloat',accessType='inputOutput',value=15),
-                field(name='b',type='SFFloat',accessType='inputOutput',value=5),
-                field(name='c',type='SFFloat',accessType='inputOutput',value=5),
-                field(name='d',type='SFFloat',accessType='inputOutput',value=5),
-                field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
-                field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
-                parts=[
-                ShaderPart(url=["../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"]),
-                ShaderPart(url=["../shaders/freewrl_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"],type='FRAGMENT')])]))]),
+          Transform(
+            children=[
+            Shape(
+              geometry=Sphere(radius=5),
+              # 
+                <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
+                    <Coordinate DEF="OrbitCoordinates"/>
+                </IndexedFaceSet>
+		
+              appearance=Appearance(
+                material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5)),
+                texture=ComposedCubeMapTexture(DEF='texture',
+                  backTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
+                  bottomTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
+                  frontTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]),
+                  leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
+                  rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
+                  topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
+                shaders=[
+                ComposedShader(DEF='freewrlShader',language='GLSL',
+                  field=[
+                  field(name='fw_textureCoordGenType',accessType='inputOutput',type='SFInt32',value=0),
+                  # 
+                  <field name='cube' type='SFNode' accessType="inputOutput">
+		    <ComposedCubeMapTexture USE="texture"/>
+		  </field>
+		  
+                  field(name='chromaticDispertion',accessType='initializeOnly',type='SFVec3f',value=(0.98,1.0,1.033)),
+                  field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
+                  field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
+                  field(name='power',type='SFFloat',accessType='inputOutput',value=2),
+                  field(name='a',type='SFFloat',accessType='inputOutput',value=15),
+                  field(name='b',type='SFFloat',accessType='inputOutput',value=5),
+                  field(name='c',type='SFFloat',accessType='inputOutput',value=20),
+                  field(name='d',type='SFFloat',accessType='inputOutput',value=20),
+                  field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
+                  field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
+                  parts=[
+                  ShaderPart(
+                    IS=IS(
+                      connect=[
+                      connect(nodeField='url',protoField='vertex')]),
+
+                  sourceCode="""
+ecmascript:
+
+"""),
+                  ShaderPart(type='FRAGMENT',
+                    IS=IS(
+                      connect=[
+                      connect(nodeField='url',protoField='fragment')]),
+
+                  sourceCode="""
+ecmascript:
+
+""")]),]
+                # 
+               <ComposedShader DEF="freewrlShader" language="GLSL">
+                  <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
+                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+                  <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
+                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
+                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+                                <ShaderPart type='VERTEX'>
+					<IS>
+					<connect nodeField="url" protoField="vertex"/>
+					</IS>
+                                </ShaderPart>
+                                <ShaderPart type='FRAGMENT'>
+					<IS>
+					<connect nodeField="url" protoField="fragment"/>
+					</IS>
+                                </ShaderPart>
+                    </ComposedShader>
+	       
+                ))])]),
+        # 
+        <Script DEF="OrbitScript">
+            <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
+            <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
+	    <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+	    <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>
+	    <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>
+	    <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>
+	    <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+	    <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+<![CDATA[ecmascript:
+function initialize() {
+     var resolution = 300;
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var crds = new MFVec3f();
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);
+		crds.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = crds;
+
+
+     var cis = new MFInt32();
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     cis.push(i*resolution+j);
+	     cis.push(i*resolution+j+1);
+	     cis.push((i+1)*resolution+j+1);
+	     cis.push((i+1)*resolution+j);
+	     cis.push(-1);
+	}
+    }
+    coordIndexes = cis;
+}
+
+      ]]></Script>
+      <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/>
+      <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/>
+      
         #  DIS multiuser facilities 
-        DISEntityManager(DEF='EntityManager',networkMode='networkReader',
+        DISEntityManager(DEF='EntityManager',
           children=[
           DISEntityTypeMapping(category=77,specific=1,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
           DISEntityTypeMapping(category=77,specific=2,url=["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]),
           DISEntityTypeMapping(category=77,specific=3,url=["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"]),
           DISEntityTypeMapping(category=77,specific=4,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])]),
-        Collision(enabled=False,
+        Collision(
           children=[
           Group(DEF='AvatarHolder')]),
         ROUTE(fromField='addedEntities',fromNode='EntityManager',toField='addChildren',toNode='AvatarHolder'),
@@ -171,9 +254,9 @@ newModel=X3D(profile='Full',version='4.0',
          like a HUD (heads up display) 
       LayoutLayer(pickable=True,objectType=["ALL"],
         #  positioning the LayoutLayer 
-        layout=Layout(align=["RIGHT","BOTTOM"],offset=[0.0,0.0],offsetUnits=["WORLD","WORLD"],scaleMode=["NONE","NONE"],size=[0.4,1.0],sizeUnits=["WORLD","WORLD"]),
+        layout=Layout(align=["LEFT","BOTTOM"],offset=[-0.50,0]),
         #  clipping the LayoutLayer 
-        viewport=Viewport(clipBoundary=[0,1,0,1]),
+        viewport=Viewport(),
         #  the content (children) of the LayoutLayer 
         #  first, the slider for scaling the model 
         children=[
@@ -181,220 +264,180 @@ newModel=X3D(profile='Full',version='4.0',
           children=[
           Shape(
             appearance=Appearance(
-              material=Material(diffuseColor=(0,0,0),transparency=0.7)),
+              material=Material(diffuseColor=(0.1,0.1,0.1),transparency=1.0)),
             geometry=Box(size=(100,100,0.02)))]),
-        #   the plane sensors  
-        Transform(DEF='aSlider',translation=(0,0.7,0),
+        Transform(DEF='equationTransform',
           children=[
-          Transform(rotation=(0,0,1,1.57),
+          Transform(translation=(0,0,-20),
             children=[
             Shape(
+              geometry=Text(DEF='equation',string=["r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"],
+                fontStyle=FontStyle(size=0.09)),
               appearance=Appearance(
-                material=Material(),),
-              geometry=Cylinder(radius=.05,height=2.5))]),
-          Transform(DEF='aTransform',translation=(0,0,0.1),
+                material=Material(diffuseColor=(0,1,1))))])]),
+        ProtoDeclare(name='SliderProto',
+          ProtoInterface=ProtoInterface(
+            field=[
+            field(accessType='inputOutput',name='sliderTranslation',type='SFVec3f',value=(0,0.7,0)),
+            field(accessType='inputOutput',name='transformTranslation',type='SFVec3f',value=(0,0,0.1)),
+            field(accessType='inputOutput',name='sensorTranslation',type='SFVec3f',value=(0,0,0.0)),
+            field(accessType='inputOutput',name='numberTranslation',type='SFVec3f',value=(0.2,0,0.0)),
+            field(accessType='inputOutput',name='textString',type='MFString',value=["a="]),
+            field(accessType='inputOutput',name='parameterName',type='SFString',value='a'),
+            field(accessType='inputOutput',name='parameterScale',type='SFFloat',value=30),
+            field(accessType='inputOutput',name='shaderNode',type='SFNode')]),
+          ProtoBody=ProtoBody(
             children=[
-            PlaneSensor(DEF='aSensor',minPosition=(-20,0),maxPosition=(20,0)),
-            Transform(translation=(0,0.0,0),
+            Group(
               children=[
-              TouchSensor(DEF='aTS'),
-              Shape(
-                geometry=Sphere(radius=0.08),
-                appearance=Appearance(
-                  material=Material(diffuseColor=(1,0,0))))]),
-            Shape(
-              geometry=Cylinder(radius=0.05,height=0.3),
-              appearance=Appearance(
-                material=Material(),))]),
-          Transform(rotation=(0,0,1,1.57),
-            children=[
-            Shape(
-              appearance=Appearance(
-                material=Material(),),
-              geometry=Cylinder(radius=.05,height=2.5))])]),
-        Transform(DEF='bSlider',translation=(0,0.4,0),
-          children=[
-          Transform(rotation=(0,0,1,1.57),
-            children=[
-            Shape(
-              appearance=Appearance(
-                material=Material(),),
-              geometry=Cylinder(radius=.05,height=2.5))]),
-          Transform(DEF='bTransform',translation=(0,0,0.1),
-            children=[
-            PlaneSensor(DEF='bSensor',minPosition=(-20,0),maxPosition=(20,0)),
-            Transform(translation=(0,0.0,0),
-              children=[
-              TouchSensor(DEF='bTS'),
-              Shape(
-                geometry=Sphere(radius=0.08),
-                appearance=Appearance(
-                  material=Material(diffuseColor=(1,0,0))))]),
-            Shape(
-              geometry=Cylinder(radius=0.05,height=0.3),
-              appearance=Appearance(
-                material=Material(),))])]),
-        Transform(DEF='cSlider',translation=(0,0.1,0),
-          children=[
-          Transform(rotation=(0,0,1,1.57),
-            children=[
-            Shape(
-              appearance=Appearance(
-                material=Material(),),
-              geometry=Cylinder(radius=.05,height=2.5))]),
-          Transform(DEF='cTransform',translation=(0,0,0.1),
-            children=[
-            PlaneSensor(DEF='cSensor',minPosition=(-20,0),maxPosition=(20,0)),
-            Transform(translation=(0,0.0,0),
-              children=[
-              TouchSensor(DEF='cTS'),
-              Shape(
-                geometry=Sphere(radius=0.08),
-                appearance=Appearance(
-                  material=Material(diffuseColor=(1,0,0))))]),
-            Shape(
-              geometry=Cylinder(radius=0.05,height=0.3),
-              appearance=Appearance(
-                material=Material(),))])]),
-        Transform(DEF='dSlider',translation=(0,-0.2,0),
-          children=[
-          Transform(rotation=(0,0,1,1.57),
-            children=[
-            Shape(
-              appearance=Appearance(
-                material=Material(),),
-              geometry=Cylinder(radius=.05,height=2.5))]),
-          Transform(DEF='dTransform',translation=(0,0,0.1),
-            children=[
-            PlaneSensor(DEF='dSensor',minPosition=(-20,0),maxPosition=(20,0)),
-            Transform(translation=(0,0.0,0),
-              children=[
-              TouchSensor(DEF='dTS'),
-              Shape(
-                geometry=Sphere(radius=0.08),
-                appearance=Appearance(
-                  material=Material(diffuseColor=(1,0,0))))]),
-            Shape(
-              geometry=Cylinder(radius=0.05,height=0.3),
-              appearance=Appearance(
-                material=Material(),))])]),
-        Transform(DEF='pdeltaSlider',translation=(0,-0.5,0),
-          children=[
-          Transform(rotation=(0,0,1,1.57),
-            children=[
-            Shape(
-              appearance=Appearance(
-                material=Material(),),
-              geometry=Cylinder(radius=.05,height=2.5))]),
-          Transform(DEF='pdeltaTransform',translation=(0,0,0.1),
-            children=[
-            PlaneSensor(DEF='pdeltaSensor',minPosition=(-20,0),maxPosition=(20,0)),
-            Transform(translation=(0,0.0,0),
-              children=[
-              TouchSensor(DEF='pdeltaTS'),
-              Shape(
-                geometry=Sphere(radius=0.08),
-                appearance=Appearance(
-                  material=Material(diffuseColor=(1,0,0))))]),
-            Shape(
-              geometry=Cylinder(radius=0.05,height=0.3),
-              appearance=Appearance(
-                material=Material(),))])]),
-        Transform(DEF='tdeltaSlider',translation=(0,-0.8,0),
-          children=[
-          Transform(rotation=(0,0,1,1.57),
-            children=[
-            Shape(
-              appearance=Appearance(
-                material=Material(),),
-              geometry=Cylinder(radius=.05,height=2.5))]),
-          Transform(DEF='tdeltaTransform',translation=(0,0,0.1),
-            children=[
-            PlaneSensor(DEF='tdeltaSensor',minPosition=(-20,0),maxPosition=(20,0)),
-            Transform(translation=(0,0.0,0),
-              children=[
-              TouchSensor(DEF='tdeltaTS'),
-              Shape(
-                geometry=Sphere(radius=0.08),
-                appearance=Appearance(
-                  material=Material(diffuseColor=(1,0,0))))]),
-            Shape(
-              geometry=Cylinder(radius=0.05,height=0.3),
-              appearance=Appearance(
-                material=Material(),))])]),
-        Script(DEF='aValueTransformerScript',directOutput=True,mustEvaluate=True,
-          field=[
-          field(accessType='inputOnly',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
-          field(accessType='outputOnly',name='aValue',type='SFFloat',value=1.0)],
+              Transform(DEF='protoSlider',translation=(0,0.7,0),
+                IS=IS(
+                  connect=[
+                  connect(nodeField='translation',protoField='sliderTranslation')]),
+                children=[
+                Transform(DEF='protoTransform',translation=(0,0,0.1),
+                  IS=IS(
+                    connect=[
+                    connect(nodeField='translation',protoField='transformTranslation')]),
+                  children=[
+                  PlaneSensor(DEF='protoSensor',maxPosition=(2,0)),
+                  IS=IS(
+                    connect=[
+                    connect(nodeField='translation',protoField='sensorTranslation')]),
+                  Transform(translation=(0,0.0,0),
+                    children=[
+                    TouchSensor(DEF='protoTS')]),
+                  Transform(
+                    children=[
+                    Shape(
+                      geometry=Text(DEF='protoText',string=["a="],
+                        IS=IS(
+                          connect=[
+                          connect(nodeField='string',protoField='textString')]),
+                        fontStyle=FontStyle(size=0.20)),
+                      appearance=Appearance(
+                        material=Material(diffuseColor=(1,1,1)))),
+                    Transform(
+                      IS=IS(
+                        connect=[
+                        connect(nodeField='translation',protoField='numberTranslation')]),
+                      children=[
+                      Shape(
+                        geometry=Text(DEF='protoNumber',string=["0"],
+                          fontStyle=FontStyle(size=0.20)),
+                        appearance=Appearance(
+                          material=Material(diffuseColor=(1,1,1))))])])])]),
+              Script(DEF='protoValueTransformerScript',directOutput=True,mustEvaluate=True,
+                field=[
+                field(accessType='inputOutput',name='protoScale',type='SFFloat',value=30),
+                field(accessType='inputOutput',name='shader',type='SFNode'),
+                field(accessType='inputOutput',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
+                field(accessType='inputOutput',name='protoValue_changed',type='SFFloat',value=1.0),
+                field(accessType='inputOutput',name='protoNumber_changed',type='MFString',value=["0.0"]),
+                field(accessType='inputOutput',name='protoParameterName',type='SFString',value='a')],
+                IS=IS(
+                  connect=[
+                  connect(nodeField='protoScale',protoField='parameterScale'),
+                  connect(nodeField='protoParameterName',protoField='parameterName'),
+                  connect(nodeField='shader',protoField='shaderNode')]),
 
-        sourceCode="""
-ecmascript: function newTranslation(Value) { aValue = Value.x * 30; }
+              sourceCode="""
+ecmascript:
+	const newTranslation = function(Value) {
+	    protoValue_changed = Value[0] * protoScale;
+	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());
+	    Browser.println("In newTranslation:");
+	    Browser.println(shader);
+	    Browser.println(Value[0]);
+	    Browser.println(Value.x);
+	    Browser.println(protoScale);
+	    Browser.println(Value[0] * protoScale);
+	    Browser.println(protoParameterName);
+					// shader[protoParameterName] = Value[0] * protoScale;
+	};
 """),
-        Script(DEF='bValueTransformerScript',directOutput=True,mustEvaluate=True,
-          field=[
-          field(accessType='inputOnly',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
-          field(accessType='outputOnly',name='bValue',type='SFFloat',value=1.0)],
-
-        sourceCode="""
-ecmascript: function newTranslation(Value) { bValue = Value.x * 30; }
-"""),
-        Script(DEF='cValueTransformerScript',directOutput=True,mustEvaluate=True,
-          field=[
-          field(accessType='inputOnly',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
-          field(accessType='outputOnly',name='cValue',type='SFFloat',value=1.0)],
-
-        sourceCode="""
-ecmascript: function newTranslation(Value) { cValue = Value.x * 5; }
-"""),
-        Script(DEF='dValueTransformerScript',directOutput=True,mustEvaluate=True,
-          field=[
-          field(accessType='inputOnly',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
-          field(accessType='outputOnly',name='dValue',type='SFFloat',value=1.0)],
-
-        sourceCode="""
-ecmascript: function newTranslation(Value) { dValue = Value.x * 5; }
-"""),
-        Script(DEF='pdeltaValueTransformerScript',directOutput=True,mustEvaluate=True,
-          field=[
-          field(accessType='inputOnly',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
-          field(accessType='outputOnly',name='pdeltaValue',type='SFFloat',value=1.0)],
-
-        sourceCode="""
-ecmascript: function newTranslation(Value) { pdeltaValue = Value.x; }
-"""),
-        Script(DEF='tdeltaValueTransformerScript',directOutput=True,mustEvaluate=True,
-          field=[
-          field(accessType='inputOnly',name='newTranslation',type='SFVec3f',value=(1.0,1.0,1.0)),
-          field(accessType='outputOnly',name='tdeltaValue',type='SFFloat',value=1.0)],
-
-        sourceCode="""
-ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }
-"""),
-        ROUTE(fromField='translation_changed',fromNode='aSensor',toField='set_translation',toNode='aTransform'),
-        ROUTE(fromField='translation_changed',fromNode='bSensor',toField='set_translation',toNode='bTransform'),
-        ROUTE(fromField='translation_changed',fromNode='cSensor',toField='set_translation',toNode='cTransform'),
-        ROUTE(fromField='translation_changed',fromNode='dSensor',toField='set_translation',toNode='dTransform'),
-        ROUTE(fromField='translation_changed',fromNode='pdeltaSensor',toField='set_translation',toNode='pdeltaTransform'),
-        ROUTE(fromField='translation_changed',fromNode='tdeltaSensor',toField='set_translation',toNode='tdeltaTransform'),
-        ROUTE(fromField='translation_changed',fromNode='aSensor',toField='newTranslation',toNode='aValueTransformerScript'),
-        ROUTE(fromField='translation_changed',fromNode='bSensor',toField='newTranslation',toNode='bValueTransformerScript'),
-        ROUTE(fromField='translation_changed',fromNode='cSensor',toField='newTranslation',toNode='cValueTransformerScript'),
-        ROUTE(fromField='translation_changed',fromNode='dSensor',toField='newTranslation',toNode='dValueTransformerScript'),
-        ROUTE(fromField='translation_changed',fromNode='pdeltaSensor',toField='newTranslation',toNode='pdeltaValueTransformerScript'),
-        ROUTE(fromField='translation_changed',fromNode='tdeltaSensor',toField='newTranslation',toNode='tdeltaValueTransformerScript'),
-        ROUTE(fromField='aValue',fromNode='aValueTransformerScript',toField='a',toNode='freewrlShader'),
-        ROUTE(fromField='bValue',fromNode='bValueTransformerScript',toField='b',toNode='freewrlShader'),
-        ROUTE(fromField='cValue',fromNode='cValueTransformerScript',toField='c',toNode='freewrlShader'),
-        ROUTE(fromField='dValue',fromNode='dValueTransformerScript',toField='d',toNode='freewrlShader'),
-        ROUTE(fromField='pdeltaValue',fromNode='pdeltaValueTransformerScript',toField='pdelta',toNode='freewrlShader'),
-        ROUTE(fromField='tdeltaValue',fromNode='tdeltaValueTransformerScript',toField='tdelta',toNode='freewrlShader')])])])
+              ROUTE(fromField='translation_changed',fromNode='protoSensor',toField='set_translation',toNode='protoTransform'),
+              ROUTE(fromField='translation_changed',fromNode='protoSensor',toField='newTranslation',toNode='protoValueTransformerScript'),
+              ROUTE(fromField='protoNumber_changed',fromNode='protoValueTransformerScript',toField='string',toNode='protoNumber')])])),
+        ProtoInstance(DEF='aPI',name='SliderProto',
+          fieldValue=[
+          fieldValue(name='sliderTranslation',value=(0,0.7,0)),
+          fieldValue(name='transformTranslation',value=(0,0,0.1)),
+          fieldValue(name='sensorTranslation',value=(0,0,0.0)),
+          fieldValue(name='numberTranslation',value=(0.3,0,0.0)),
+          fieldValue(name='textString',value=["a="]),
+          fieldValue(name='parameterName',value='a'),
+          fieldValue(name='parameterScale',value=30),
+          fieldValue(name='shaderNode',
+            children=[
+            ComposedShader(USE='freewrlShader')])]),
+        ProtoInstance(DEF='bPI',name='SliderProto',
+          fieldValue=[
+          fieldValue(name='sliderTranslation',value=(0,0.4,0)),
+          fieldValue(name='transformTranslation',value=(0,0,0.1)),
+          fieldValue(name='sensorTranslation',value=(0,0,0.0)),
+          fieldValue(name='numberTranslation',value=(0.3,0,0.0)),
+          fieldValue(name='textString',value=["b="]),
+          fieldValue(name='parameterName',value='b'),
+          fieldValue(name='parameterScale',value=30),
+          fieldValue(name='shaderNode',
+            children=[
+            ComposedShader(USE='freewrlShader')])]),
+        ProtoInstance(DEF='cPI',name='SliderProto',
+          fieldValue=[
+          fieldValue(name='sliderTranslation',value=(0,0.1,0)),
+          fieldValue(name='transformTranslation',value=(0,0,0.1)),
+          fieldValue(name='sensorTranslation',value=(0,0,0.0)),
+          fieldValue(name='numberTranslation',value=(0.3,0,0.0)),
+          fieldValue(name='textString',value=["c="]),
+          fieldValue(name='parameterName',value='c'),
+          fieldValue(name='parameterScale',value=20),
+          fieldValue(name='shaderNode',
+            children=[
+            ComposedShader(USE='freewrlShader')])]),
+        ProtoInstance(DEF='dPI',name='SliderProto',
+          fieldValue=[
+          fieldValue(name='sliderTranslation',value=(0,-0.2,0)),
+          fieldValue(name='transformTranslation',value=(0,0,0.1)),
+          fieldValue(name='sensorTranslation',value=(0,0,0.0)),
+          fieldValue(name='numberTranslation',value=(0.3,0,0.0)),
+          fieldValue(name='textString',value=["d="]),
+          fieldValue(name='parameterName',value='d'),
+          fieldValue(name='parameterScale',value=20),
+          fieldValue(name='shaderNode',
+            children=[
+            ComposedShader(USE='freewrlShader')])]),
+        ProtoInstance(DEF='tdeltaPI',name='SliderProto',
+          fieldValue=[
+          fieldValue(name='sliderTranslation',value=(0,-0.5,0)),
+          fieldValue(name='transformTranslation',value=(0,0,0.1)),
+          fieldValue(name='sensorTranslation',value=(0,0,0.0)),
+          fieldValue(name='numberTranslation',value=(0.8,0,0.0)),
+          fieldValue(name='textString',value=["tdelta="]),
+          fieldValue(name='parameterName',value='tdelta'),
+          fieldValue(name='parameterScale',value=6.28),
+          fieldValue(name='shaderNode',
+            children=[
+            ComposedShader(USE='freewrlShader')])]),
+        ProtoInstance(DEF='pdeltaPI',name='SliderProto',
+          fieldValue=[
+          fieldValue(name='sliderTranslation',value=(0,-0.8,0)),
+          fieldValue(name='transformTranslation',value=(0,0,0.1)),
+          fieldValue(name='sensorTranslation',value=(0,0,0.0)),
+          fieldValue(name='numberTranslation',value=(0.8,0,0.0)),
+          fieldValue(name='textString',value=["pdelta="]),
+          fieldValue(name='parameterName',value='pdelta'),
+          fieldValue(name='parameterScale',value=6.28),
+          fieldValue(name='shaderNode',
+            children=[
+            ComposedShader(USE='freewrlShader')])])])])])
 ) # X3D model complete
 
 ####################################################################################################
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for bumpfreewrlsliders.py:')
+print('Self-test diagnostics for bumpyfreewrlsliders.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -423,4 +466,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python bumpfreewrlsliders.py load and self-test diagnostics complete.")
+print("python bumpyfreewrlsliders.py load and self-test diagnostics complete.")

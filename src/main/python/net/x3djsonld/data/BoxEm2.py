@@ -36,7 +36,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='description',content='3 boxes')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type='"EXAMINE"'),
+    NavigationInfo(type=["EXAMINE"]),
     Viewpoint(description='Cubes on Fire',position=(0,0,12)),
     ProtoDeclare(name='anyShape',
       ProtoInterface=ProtoInterface(

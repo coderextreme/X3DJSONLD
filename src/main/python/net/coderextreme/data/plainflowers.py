@@ -71,7 +71,7 @@ ProtoInstance17 = x3d.ProtoInstance()
 ProtoInstance17.name = "FlowerProto"
 fieldValue18 = x3d.fieldValue()
 fieldValue18.name = "vertex"
-fieldValue18.value = "\"../shaders/x_ite_flowers_plain.vs\""
+fieldValue18.value = "\"../shaders/gl_flowers_plain.vs\""
 
 ProtoInstance17.fieldValue.append(fieldValue18)
 fieldValue19 = x3d.fieldValue()
@@ -118,6 +118,9 @@ X3D0.Scene = Scene7
 f = open("../data/plainflowers.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/plainflowers.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/plainflowers.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/plainflowers.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

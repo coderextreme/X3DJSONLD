@@ -65,7 +65,9 @@ Appearance16.material = Material17
 
 Shape15.appearance = Appearance16
 Extrusion18 = x3d.Extrusion()
+Extrusion18.spine = [(-2.5, 0, 0),(-2, 0, 0),(-1.5, 0, 0)]
 Extrusion18.creaseAngle = 0.785
+Extrusion18.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
 
 Shape15.geometry = Extrusion18
 
@@ -85,7 +87,9 @@ Appearance21.material = Material22
 
 Shape20.appearance = Appearance21
 Extrusion23 = x3d.Extrusion()
+Extrusion23.spine = [(1.5, 0, 0),(2, 0, 0),(2.5, 0, 0)]
 Extrusion23.creaseAngle = 0.785
+Extrusion23.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
 
 Shape20.geometry = Extrusion23
 
@@ -150,6 +154,9 @@ X3D0.Scene = Scene10
 f = open("../data/qq3.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/qq3.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/qq3.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/qq3.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

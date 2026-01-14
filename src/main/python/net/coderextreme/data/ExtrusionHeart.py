@@ -59,7 +59,10 @@ Transform12.translation = [0,-0.5,0]
 Shape13 = x3d.Shape()
 Extrusion14 = x3d.Extrusion()
 Extrusion14.creaseAngle = 3.14159
+Extrusion14.crossSection = [(0, 0.8),(0.2, 1),(0.7, 0.95),(1, 0.5),(0.8, 0),(0.5, -0.3),(0, -0.7),(-0.5, -0.3),(-0.8, 0),(-1, 0.5),(-0.7, 0.95),(-0.2, 1),(0, 0.8)]
+Extrusion14.scale = [(0.01, 0.01),(0.8, 0.8),(1, 1),(0.8, 0.8),(0.01, 0.01)]
 Extrusion14.solid = False
+Extrusion14.spine = [(0, 0, 0),(0, 0.1, 0),(0, 0.5, 0),(0, 0.9, 0),(0, 1, 0)]
 
 Shape13.geometry = Extrusion14
 Appearance15 = x3d.Appearance()
@@ -78,6 +81,9 @@ X3D0.Scene = Scene10
 f = open("../data/ExtrusionHeart.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/ExtrusionHeart.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/ExtrusionHeart.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/ExtrusionHeart.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

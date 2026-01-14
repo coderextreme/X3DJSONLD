@@ -67,7 +67,7 @@ meta13.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
 head1.children.append(meta13)
 meta14 = x3d.meta()
 meta14.name = "generator"
-meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+meta14.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
 
 head1.children.append(meta14)
 meta15 = x3d.meta()
@@ -116,6 +116,7 @@ NavigationInfo23 = x3d.NavigationInfo()
 NavigationInfo23.type = ["EXAMINE","WALK","FLY","ANY"]
 
 Scene16.children.append(NavigationInfo23)
+"""<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"""
 Shape24 = x3d.Shape()
 Appearance25 = x3d.Appearance()
 Material26 = x3d.Material()
@@ -125,17 +126,22 @@ PixelTexture27 = x3d.PixelTexture()
 PixelTexture27.image = [2,2,4,-16776961,16711935,-1,-65281]
 PixelTexture27.repeatS = False
 PixelTexture27.repeatT = False
+TextureProperties28 = x3d.TextureProperties()
+TextureProperties28.magnificationFilter = "NEAREST_PIXEL"
+
+PixelTexture27.textureProperties = TextureProperties28
 
 Appearance25.texture = PixelTexture27
 
 Shape24.appearance = Appearance25
-IndexedFaceSet28 = x3d.IndexedFaceSet()
-IndexedFaceSet28.coordIndex = [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]
-Coordinate29 = x3d.Coordinate()
+IndexedFaceSet29 = x3d.IndexedFaceSet()
+IndexedFaceSet29.coordIndex = [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]
+Coordinate30 = x3d.Coordinate()
+Coordinate30.point = [(-2, 1.5, 1),(-2, -1.5, 1),(2, 1.5, 1),(2, -1.5, 1),(2, 1.5, -1),(2, -1.5, -1),(-2, 1.5, -1),(-2, -1.5, -1)]
 
-IndexedFaceSet28.coord = Coordinate29
+IndexedFaceSet29.coord = Coordinate30
 
-Shape24.geometry = IndexedFaceSet28
+Shape24.geometry = IndexedFaceSet29
 
 Scene16.children.append(Shape24)
 
@@ -143,6 +149,9 @@ X3D0.Scene = Scene16
 f = open("../data/indexedfaceset_pixeltexture_entire.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/indexedfaceset_pixeltexture_entire.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/indexedfaceset_pixeltexture_entire.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/indexedfaceset_pixeltexture_entire.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

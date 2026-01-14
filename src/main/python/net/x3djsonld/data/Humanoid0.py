@@ -31,7 +31,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     component(level=1,name='HAnim'),
     meta(content='Humanoid0.x3d',name='title'),
-    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d'),
+    meta(name='identifier',content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d'),
     meta(name='description',content='An attempt at a standard LOA-4 skeleton'),
     meta(name='generator',content='h2.pl'),
     meta(name='modified',content='14 Jan 2023'),
@@ -90,7 +90,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  </LOD> 
       skinCoord=Coordinate(USE='TheSkinCoord'),
       joints=[
-      HAnimJoint(USE='hanim_',ulimit=[0,0,0],llimit=[0,0,0])],)])
+      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0])],)])
 ) # X3D model complete
 
 ####################################################################################################

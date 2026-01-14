@@ -38,7 +38,7 @@ meta7.content = "HelloWorld.tall.png"
 head1.children.append(meta7)
 meta8 = x3d.meta()
 meta8.name = "reference"
-meta8.content = "http://en.wikipedia.org/wiki/Hello_world"
+meta8.content = "https://en.wikipedia.org/wiki/Hello_world"
 
 head1.children.append(meta8)
 meta9 = x3d.meta()
@@ -53,12 +53,12 @@ meta10.content = "https://en.wikipedia.org/wiki/\"Hello,_World!\"_program"
 head1.children.append(meta10)
 meta11 = x3d.meta()
 meta11.name = "reference"
-meta11.content = "http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+meta11.content = "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
 
 head1.children.append(meta11)
 meta12 = x3d.meta()
 meta12.name = "reference"
-meta12.content = "http://www.HelloWorldExample.net"
+meta12.content = "https://www.HelloWorldExample.net"
 
 head1.children.append(meta12)
 meta13 = x3d.meta()
@@ -78,12 +78,12 @@ meta15.content = "https://www.web3d.org/x3d/content/examples/HelloWorld.x3d"
 head1.children.append(meta15)
 meta16 = x3d.meta()
 meta16.name = "reference"
-meta16.content = "http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"
+meta16.content = "https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d"
 
 head1.children.append(meta16)
 meta17 = x3d.meta()
 meta17.name = "identifier"
-meta17.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"
+meta17.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d"
 
 head1.children.append(meta17)
 meta18 = x3d.meta()
@@ -191,6 +191,9 @@ X3D0.Scene = Scene25
 f = open("../data/HelloWorld.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/HelloWorld.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/HelloWorld.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/HelloWorld.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

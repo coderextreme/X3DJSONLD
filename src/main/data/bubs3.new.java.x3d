@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='bubs3.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='Tour around a prismatic sphere' name='description'/>
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d' name='identifier'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Bubbles in action' position='0 0 4'/>
+    <Viewpoint description='Bubbles in action' orientation='1 0 0 0' position='0 0 4'/>
     <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'/>
     <Transform DEF='DECLBubble_transformA'>
       <Shape>
@@ -20,11 +21,11 @@
         <Sphere radius='0.25'/>
       </Shape>
       <Script DEF='DECLBubble_bubbleA_bounce'>
-        <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
-        <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
-        <field name='scalvel' accessType='inputOutput' type='SFVec3f'/>
-        <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+        <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='scalvel' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 function initialize() {
@@ -68,6 +69,9 @@ function set_fraction(value) {
 ]]>
       </Script>
       <TimeSensor DEF='DECLBubble_bubbleA_bubbleClock' cycleInterval='10.0' loop='true'/>
+      <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleA_bounce' toField='set_translation' toNode='DECLBubble_transformA'/>
+      <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleA_bounce' toField='set_scale' toNode='DECLBubble_transformA'/>
+      <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleA_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleA_bounce'/>
     </Transform>
     <Transform DEF='DECLBubble_transformB'>
       <Shape>
@@ -77,11 +81,11 @@ function set_fraction(value) {
         <Sphere radius='0.25'/>
       </Shape>
       <Script DEF='DECLBubble_bubbleB_bounce'>
-        <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
-        <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
-        <field name='scalvel' accessType='inputOutput' type='SFVec3f'/>
-        <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+        <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='scalvel' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 function initialize() {
@@ -125,6 +129,9 @@ function set_fraction(value) {
 ]]>
       </Script>
       <TimeSensor DEF='DECLBubble_bubbleB_bubbleClock' cycleInterval='10.0' loop='true'/>
+      <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleB_bounce' toField='set_translation' toNode='DECLBubble_transformB'/>
+      <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleB_bounce' toField='set_scale' toNode='DECLBubble_transformB'/>
+      <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleB_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleB_bounce'/>
     </Transform>
     <Transform DEF='DECLBubble_transformC'>
       <Shape>
@@ -134,11 +141,11 @@ function set_fraction(value) {
         <Sphere radius='0.25'/>
       </Shape>
       <Script DEF='DECLBubble_bubbleC_bounce'>
-        <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
-        <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
-        <field name='scalvel' accessType='inputOutput' type='SFVec3f'/>
-        <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+        <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='scalvel' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 function initialize() {
@@ -182,6 +189,9 @@ function set_fraction(value) {
 ]]>
       </Script>
       <TimeSensor DEF='DECLBubble_bubbleC_bubbleClock' cycleInterval='10.0' loop='true'/>
+      <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleC_bounce' toField='set_translation' toNode='DECLBubble_transformC'/>
+      <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleC_bounce' toField='set_scale' toNode='DECLBubble_transformC'/>
+      <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleC_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleC_bounce'/>
     </Transform>
     <Transform DEF='DECLBubble_transformD'>
       <Shape>
@@ -191,11 +201,11 @@ function set_fraction(value) {
         <Sphere radius='0.25'/>
       </Shape>
       <Script DEF='DECLBubble_bubbleD_bounce'>
-        <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
-        <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
-        <field name='scalvel' accessType='inputOutput' type='SFVec3f'/>
-        <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+        <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='scalvel' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 function initialize() {
@@ -239,18 +249,9 @@ function set_fraction(value) {
 ]]>
       </Script>
       <TimeSensor DEF='DECLBubble_bubbleD_bubbleClock' cycleInterval='10.0' loop='true'/>
+      <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleD_bounce' toField='set_translation' toNode='DECLBubble_transformD'/>
+      <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleD_bounce' toField='set_scale' toNode='DECLBubble_transformD'/>
+      <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleD_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleD_bounce'/>
     </Transform>
-    <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleA_bounce' toField='set_translation' toNode='DECLBubble_transformA'/>
-    <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleA_bounce' toField='set_scale' toNode='DECLBubble_transformA'/>
-    <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleA_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleA_bounce'/>
-    <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleB_bounce' toField='set_translation' toNode='DECLBubble_transformB'/>
-    <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleB_bounce' toField='set_scale' toNode='DECLBubble_transformB'/>
-    <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleB_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleB_bounce'/>
-    <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleC_bounce' toField='set_translation' toNode='DECLBubble_transformC'/>
-    <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleC_bounce' toField='set_scale' toNode='DECLBubble_transformC'/>
-    <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleC_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleC_bounce'/>
-    <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleD_bounce' toField='set_translation' toNode='DECLBubble_transformD'/>
-    <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleD_bounce' toField='set_scale' toNode='DECLBubble_transformD'/>
-    <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleD_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleD_bounce'/>
   </Scene>
 </X3D>

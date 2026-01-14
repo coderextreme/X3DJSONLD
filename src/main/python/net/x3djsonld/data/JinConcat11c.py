@@ -49,7 +49,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Suwon HAnim Converter',name='generator'),
     meta(content='johnRescaler+joedwillyNotePad',name='generator'),
     meta(content='Gnu Image Manipulation Program, http://www.gimp.org',name='generator'),
-    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     #  https://www.web3d.org/documents/specifications/19774/V2.0/index.html 
@@ -3475,7 +3475,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                               children=[
                               Transform(USE='r_tarsal_distal_interphalangeal_5_JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_5_Segment'),
-                              HAnimSite(DEF='hanim_',name='r_tarsal_distal_phalanx_5',translation=(-0.125,0.016,0.115),
+                              HAnimSite(DEF='hanim_r_tarsal_distal_phalanx_5',name='r_tarsal_distal_phalanx_5',translation=(-0.125,0.016,0.115),
                                 children=[
                                 Transform(USE='r_tarsal_distal_phalanx_5_tip_SiteShape')]),
                               Shape(USE='r_tarsal_distal_interphalangeal_5-to-r_tarsal_distal_phalanx_5_tip')])])])])])])])])])])]),

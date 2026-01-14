@@ -2,7 +2,7 @@ print('<!--')
 import x3d
 print('-->')
 X3D0 = x3d.X3D()
-X3D0.profile = "Interchange"
+X3D0.profile = "Immersive"
 X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
@@ -43,12 +43,15 @@ IndexedFaceSet10.normalIndex = [0,-1,0,-1,1,-1,2,-1,3,-1,4,-1,5,-1]
 IndexedFaceSet10.normalPerVertex = False
 IndexedFaceSet10.colorIndex = [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]
 Coordinate11 = x3d.Coordinate()
+Coordinate11.point = [(0, 0, 1),(0, 1, 1),(1, 1, 1),(1, 0, 1)]
 
 IndexedFaceSet10.coord = Coordinate11
 Normal12 = x3d.Normal()
+Normal12.vector = [(1, 0, 0),(-1, 0, 0),(0, 1, 0),(0, 0, -1),(0, -1, 0),(0, 0, 1)]
 
 IndexedFaceSet10.normal = Normal12
 Color13 = x3d.Color()
+Color13.color = [(0, 1, 0)]
 
 IndexedFaceSet10.color = Color13
 
@@ -62,6 +65,9 @@ X3D0.Scene = Scene7
 f = open("../data/ifscube.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/ifscube.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/ifscube.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/ifscube.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

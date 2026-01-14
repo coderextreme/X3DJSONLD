@@ -57,11 +57,15 @@ newModel=X3D(profile='Interchange',version='4.0',
     Viewpoint(description='Bottom View',orientation=(1,0,0,1.57),position=(0,-10,0)),
     Viewpoint(description='Right View',orientation=(0,1,0,1.57),position=(10,0,0)),
     Viewpoint(description='Left View',orientation=(0,1,0,-1.57),position=(-10,0,0)),
-    NavigationInfo(type='"EXAMINE" "WALK" "FLY" "ANY"'),
+    NavigationInfo(type=["EXAMINE","WALK","FLY","ANY"]),
+    # 
+    <Environment id="gamma" gammaCorrectionDefault="none"></Environment>
+    
     Shape(
       appearance=Appearance(
         material=Material(),
-        texture=PixelTexture(image=[2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF])),
+        texture=PixelTexture(image=[2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF],
+          textureProperties=TextureProperties(magnificationFilter='NEAREST_PIXEL'))),
       geometry=IndexedFaceSet(colorPerVertex=False,coordIndex=[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1],creaseAngle=0.5,texCoordIndex=[0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1],
         color=Color(color=[(0,1,0),(0,1,0),(0,1,0),(0,1,0),(0,1,0),(0,1,0)]),
         coord=Coordinate(point=[(-2,1,1),(-2,-1,1),(2,1,1),(2,-1,1),(2,1,-1),(2,-1,-1),(-2,1,-1),(-2,-1,-1)]),

@@ -34,9 +34,11 @@ IndexedLineSet8.colorIndex = [0,1,2]
 IndexedLineSet8.colorPerVertex = False
 IndexedLineSet8.coordIndex = [0,1,-1,0,2,-1,0,3,-1]
 Color9 = x3d.Color()
+Color9.color = [(1, 0, 0),(0, 0.6, 0),(0, 0, 1)]
 
 IndexedLineSet8.color = Color9
 Coordinate10 = x3d.Coordinate()
+Coordinate10.point = [(0, 0, 0),(0.1, 0, 0),(0, 0.1, 0),(0, 0, 0.1)]
 
 IndexedLineSet8.coord = Coordinate10
 
@@ -99,9 +101,11 @@ IndexedFaceSet23.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,
 IndexedFaceSet23.creaseAngle = 0.5
 IndexedFaceSet23.solid = False
 ColorRGBA24 = x3d.ColorRGBA()
+ColorRGBA24.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet23.color = ColorRGBA24
 Coordinate25 = x3d.Coordinate()
+Coordinate25.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet23.coord = Coordinate25
 
@@ -146,9 +150,11 @@ IndexedFaceSet35.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,
 IndexedFaceSet35.creaseAngle = 0.5
 IndexedFaceSet35.solid = False
 ColorRGBA36 = x3d.ColorRGBA()
+ColorRGBA36.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet35.color = ColorRGBA36
 Coordinate37 = x3d.Coordinate()
+Coordinate37.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet35.coord = Coordinate37
 
@@ -193,9 +199,11 @@ IndexedFaceSet47.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,
 IndexedFaceSet47.creaseAngle = 0.5
 IndexedFaceSet47.solid = False
 ColorRGBA48 = x3d.ColorRGBA()
+ColorRGBA48.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet47.color = ColorRGBA48
 Coordinate49 = x3d.Coordinate()
+Coordinate49.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet47.coord = Coordinate49
 
@@ -240,9 +248,11 @@ IndexedFaceSet59.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,
 IndexedFaceSet59.creaseAngle = 0.5
 IndexedFaceSet59.solid = False
 ColorRGBA60 = x3d.ColorRGBA()
+ColorRGBA60.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet59.color = ColorRGBA60
 Coordinate61 = x3d.Coordinate()
+Coordinate61.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet59.coord = Coordinate61
 
@@ -287,9 +297,11 @@ IndexedFaceSet71.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,
 IndexedFaceSet71.creaseAngle = 0.5
 IndexedFaceSet71.solid = False
 ColorRGBA72 = x3d.ColorRGBA()
+ColorRGBA72.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet71.color = ColorRGBA72
 Coordinate73 = x3d.Coordinate()
+Coordinate73.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet71.coord = Coordinate73
 
@@ -334,9 +346,11 @@ IndexedFaceSet83.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,
 IndexedFaceSet83.creaseAngle = 0.5
 IndexedFaceSet83.solid = False
 ColorRGBA84 = x3d.ColorRGBA()
+ColorRGBA84.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet83.color = ColorRGBA84
 Coordinate85 = x3d.Coordinate()
+Coordinate85.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet83.coord = Coordinate85
 
@@ -381,9 +395,11 @@ IndexedFaceSet95.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,
 IndexedFaceSet95.creaseAngle = 0.5
 IndexedFaceSet95.solid = False
 ColorRGBA96 = x3d.ColorRGBA()
+ColorRGBA96.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet95.color = ColorRGBA96
 Coordinate97 = x3d.Coordinate()
+Coordinate97.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet95.coord = Coordinate97
 
@@ -428,9 +444,11 @@ IndexedFaceSet107.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet107.creaseAngle = 0.5
 IndexedFaceSet107.solid = False
 ColorRGBA108 = x3d.ColorRGBA()
+ColorRGBA108.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet107.color = ColorRGBA108
 Coordinate109 = x3d.Coordinate()
+Coordinate109.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet107.coord = Coordinate109
 
@@ -475,9 +493,11 @@ IndexedFaceSet119.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet119.creaseAngle = 0.5
 IndexedFaceSet119.solid = False
 ColorRGBA120 = x3d.ColorRGBA()
+ColorRGBA120.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet119.color = ColorRGBA120
 Coordinate121 = x3d.Coordinate()
+Coordinate121.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet119.coord = Coordinate121
 
@@ -522,9 +542,11 @@ IndexedFaceSet131.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet131.creaseAngle = 0.5
 IndexedFaceSet131.solid = False
 ColorRGBA132 = x3d.ColorRGBA()
+ColorRGBA132.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet131.color = ColorRGBA132
 Coordinate133 = x3d.Coordinate()
+Coordinate133.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet131.coord = Coordinate133
 
@@ -552,9 +574,11 @@ Shape138 = x3d.Shape()
 LineSet139 = x3d.LineSet()
 LineSet139.vertexCount = [2]
 ColorRGBA140 = x3d.ColorRGBA()
+ColorRGBA140.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet139.color = ColorRGBA140
 Coordinate141 = x3d.Coordinate()
+Coordinate141.point = [(0, 0.826, 0.02),(0, 0.77, 0)]
 
 LineSet139.coord = Coordinate141
 
@@ -593,9 +617,11 @@ IndexedFaceSet149.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet149.creaseAngle = 0.5
 IndexedFaceSet149.solid = False
 ColorRGBA150 = x3d.ColorRGBA()
+ColorRGBA150.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet149.color = ColorRGBA150
 Coordinate151 = x3d.Coordinate()
+Coordinate151.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet149.coord = Coordinate151
 
@@ -640,9 +666,11 @@ IndexedFaceSet161.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet161.creaseAngle = 0.5
 IndexedFaceSet161.solid = False
 ColorRGBA162 = x3d.ColorRGBA()
+ColorRGBA162.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet161.color = ColorRGBA162
 Coordinate163 = x3d.Coordinate()
+Coordinate163.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet161.coord = Coordinate163
 
@@ -687,9 +715,11 @@ IndexedFaceSet173.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet173.creaseAngle = 0.5
 IndexedFaceSet173.solid = False
 ColorRGBA174 = x3d.ColorRGBA()
+ColorRGBA174.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet173.color = ColorRGBA174
 Coordinate175 = x3d.Coordinate()
+Coordinate175.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet173.coord = Coordinate175
 
@@ -734,9 +764,11 @@ IndexedFaceSet185.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet185.creaseAngle = 0.5
 IndexedFaceSet185.solid = False
 ColorRGBA186 = x3d.ColorRGBA()
+ColorRGBA186.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet185.color = ColorRGBA186
 Coordinate187 = x3d.Coordinate()
+Coordinate187.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet185.coord = Coordinate187
 
@@ -764,9 +796,11 @@ Shape192 = x3d.Shape()
 LineSet193 = x3d.LineSet()
 LineSet193.vertexCount = [2]
 ColorRGBA194 = x3d.ColorRGBA()
+ColorRGBA194.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet193.color = ColorRGBA194
 Coordinate195 = x3d.Coordinate()
+Coordinate195.point = [(0.095, 0.8266, -0.0183),(0, 0.826, 0.02)]
 
 LineSet193.coord = Coordinate195
 
@@ -805,9 +839,11 @@ IndexedFaceSet203.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet203.creaseAngle = 0.5
 IndexedFaceSet203.solid = False
 ColorRGBA204 = x3d.ColorRGBA()
+ColorRGBA204.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet203.color = ColorRGBA204
 Coordinate205 = x3d.Coordinate()
+Coordinate205.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet203.coord = Coordinate205
 
@@ -852,9 +888,11 @@ IndexedFaceSet215.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet215.creaseAngle = 0.5
 IndexedFaceSet215.solid = False
 ColorRGBA216 = x3d.ColorRGBA()
+ColorRGBA216.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet215.color = ColorRGBA216
 Coordinate217 = x3d.Coordinate()
+Coordinate217.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet215.coord = Coordinate217
 
@@ -899,9 +937,11 @@ IndexedFaceSet227.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet227.creaseAngle = 0.5
 IndexedFaceSet227.solid = False
 ColorRGBA228 = x3d.ColorRGBA()
+ColorRGBA228.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet227.color = ColorRGBA228
 Coordinate229 = x3d.Coordinate()
+Coordinate229.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet227.coord = Coordinate229
 
@@ -929,9 +969,11 @@ Shape234 = x3d.Shape()
 LineSet235 = x3d.LineSet()
 LineSet235.vertexCount = [2]
 ColorRGBA236 = x3d.ColorRGBA()
+ColorRGBA236.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet235.color = ColorRGBA236
 Coordinate237 = x3d.Coordinate()
+Coordinate237.point = [(0.0926, 0.4088, -0.01944),(0.095, 0.8266, -0.0183)]
 
 LineSet235.coord = Coordinate237
 
@@ -970,9 +1012,11 @@ IndexedFaceSet245.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet245.creaseAngle = 0.5
 IndexedFaceSet245.solid = False
 ColorRGBA246 = x3d.ColorRGBA()
+ColorRGBA246.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet245.color = ColorRGBA246
 Coordinate247 = x3d.Coordinate()
+Coordinate247.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet245.coord = Coordinate247
 
@@ -1017,9 +1061,11 @@ IndexedFaceSet257.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet257.creaseAngle = 0.5
 IndexedFaceSet257.solid = False
 ColorRGBA258 = x3d.ColorRGBA()
+ColorRGBA258.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet257.color = ColorRGBA258
 Coordinate259 = x3d.Coordinate()
+Coordinate259.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet257.coord = Coordinate259
 
@@ -1047,9 +1093,11 @@ Shape264 = x3d.Shape()
 LineSet265 = x3d.LineSet()
 LineSet265.vertexCount = [2]
 ColorRGBA266 = x3d.ColorRGBA()
+ColorRGBA266.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet265.color = ColorRGBA266
 Coordinate267 = x3d.Coordinate()
+Coordinate267.point = [(0.0888, 0.09545, -0.01045),(0.0926, 0.4088, -0.01944)]
 
 LineSet265.coord = Coordinate267
 
@@ -1071,9 +1119,11 @@ Shape270 = x3d.Shape()
 LineSet271 = x3d.LineSet()
 LineSet271.vertexCount = [2]
 ColorRGBA272 = x3d.ColorRGBA()
+ColorRGBA272.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet271.color = ColorRGBA272
 Coordinate273 = x3d.Coordinate()
+Coordinate273.point = [(0.0783, 0.0369, 0.0049),(0.0888, 0.09545, -0.01045)]
 
 LineSet271.coord = Coordinate273
 
@@ -1095,9 +1145,11 @@ Shape276 = x3d.Shape()
 LineSet277 = x3d.LineSet()
 LineSet277.vertexCount = [2]
 ColorRGBA278 = x3d.ColorRGBA()
+ColorRGBA278.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet277.color = ColorRGBA278
 Coordinate279 = x3d.Coordinate()
+Coordinate279.point = [(0.0674, 0.0321, 0.0184),(0.0783, 0.0369, 0.0049)]
 
 LineSet277.coord = Coordinate279
 
@@ -1119,9 +1171,11 @@ Shape282 = x3d.Shape()
 LineSet283 = x3d.LineSet()
 LineSet283.vertexCount = [2]
 ColorRGBA284 = x3d.ColorRGBA()
+ColorRGBA284.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet283.color = ColorRGBA284
 Coordinate285 = x3d.Coordinate()
+Coordinate285.point = [(0.0646, 0.02324, 0.0442),(0.0674, 0.0321, 0.0184)]
 
 LineSet283.coord = Coordinate285
 
@@ -1160,9 +1214,11 @@ IndexedFaceSet293.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet293.creaseAngle = 0.5
 IndexedFaceSet293.solid = False
 ColorRGBA294 = x3d.ColorRGBA()
+ColorRGBA294.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet293.color = ColorRGBA294
 Coordinate295 = x3d.Coordinate()
+Coordinate295.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet293.coord = Coordinate295
 
@@ -1190,9 +1246,11 @@ Shape300 = x3d.Shape()
 LineSet301 = x3d.LineSet()
 LineSet301.vertexCount = [2]
 ColorRGBA302 = x3d.ColorRGBA()
+ColorRGBA302.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet301.color = ColorRGBA302
 Coordinate303 = x3d.Coordinate()
+Coordinate303.point = [(0.0621, 0.01442, 0.0936),(0.0646, 0.02324, 0.0442)]
 
 LineSet301.coord = Coordinate303
 
@@ -1231,9 +1289,11 @@ IndexedFaceSet311.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet311.creaseAngle = 0.5
 IndexedFaceSet311.solid = False
 ColorRGBA312 = x3d.ColorRGBA()
+ColorRGBA312.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet311.color = ColorRGBA312
 Coordinate313 = x3d.Coordinate()
+Coordinate313.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet311.coord = Coordinate313
 
@@ -1261,9 +1321,11 @@ Shape318 = x3d.Shape()
 LineSet319 = x3d.LineSet()
 LineSet319.vertexCount = [2]
 ColorRGBA320 = x3d.ColorRGBA()
+ColorRGBA320.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet319.color = ColorRGBA320
 Coordinate321 = x3d.Coordinate()
+Coordinate321.point = [(0.062, 0.012, 0.115),(0.0621, 0.01442, 0.0936)]
 
 LineSet319.coord = Coordinate321
 
@@ -1293,9 +1355,11 @@ Shape324 = x3d.Shape()
 LineSet325 = x3d.LineSet()
 LineSet325.vertexCount = [2]
 ColorRGBA326 = x3d.ColorRGBA()
+ColorRGBA326.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet325.color = ColorRGBA326
 Coordinate327 = x3d.Coordinate()
+Coordinate327.point = [(0.0814, 0.0335, 0.02143),(0.0783, 0.0369, 0.0049)]
 
 LineSet325.coord = Coordinate327
 
@@ -1317,9 +1381,11 @@ Shape330 = x3d.Shape()
 LineSet331 = x3d.LineSet()
 LineSet331.vertexCount = [2]
 ColorRGBA332 = x3d.ColorRGBA()
+ColorRGBA332.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet331.color = ColorRGBA332
 Coordinate333 = x3d.Coordinate()
+Coordinate333.point = [(0.0802, 0.0261, 0.0411),(0.0814, 0.0335, 0.02143)]
 
 LineSet331.coord = Coordinate333
 
@@ -1341,9 +1407,11 @@ Shape336 = x3d.Shape()
 LineSet337 = x3d.LineSet()
 LineSet337.vertexCount = [2]
 ColorRGBA338 = x3d.ColorRGBA()
+ColorRGBA338.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet337.color = ColorRGBA338
 Coordinate339 = x3d.Coordinate()
+Coordinate339.point = [(0.0825, 0.01497, 0.09783),(0.0802, 0.0261, 0.0411)]
 
 LineSet337.coord = Coordinate339
 
@@ -1365,9 +1433,11 @@ Shape342 = x3d.Shape()
 LineSet343 = x3d.LineSet()
 LineSet343.vertexCount = [2]
 ColorRGBA344 = x3d.ColorRGBA()
+ColorRGBA344.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet343.color = ColorRGBA344
 Coordinate345 = x3d.Coordinate()
+Coordinate345.point = [(0.0843, 0.01265, 0.114),(0.0825, 0.01497, 0.09783)]
 
 LineSet343.coord = Coordinate345
 
@@ -1406,9 +1476,11 @@ IndexedFaceSet353.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet353.creaseAngle = 0.5
 IndexedFaceSet353.solid = False
 ColorRGBA354 = x3d.ColorRGBA()
+ColorRGBA354.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet353.color = ColorRGBA354
 Coordinate355 = x3d.Coordinate()
+Coordinate355.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet353.coord = Coordinate355
 
@@ -1436,9 +1508,11 @@ Shape360 = x3d.Shape()
 LineSet361 = x3d.LineSet()
 LineSet361.vertexCount = [2]
 ColorRGBA362 = x3d.ColorRGBA()
+ColorRGBA362.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet361.color = ColorRGBA362
 Coordinate363 = x3d.Coordinate()
+Coordinate363.point = [(0.0843, 0.00982, 0.123435),(0.0843, 0.01265, 0.114)]
 
 LineSet361.coord = Coordinate363
 
@@ -1470,9 +1544,11 @@ Shape366 = x3d.Shape()
 LineSet367 = x3d.LineSet()
 LineSet367.vertexCount = [2]
 ColorRGBA368 = x3d.ColorRGBA()
+ColorRGBA368.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet367.color = ColorRGBA368
 Coordinate369 = x3d.Coordinate()
+Coordinate369.point = [(0.09297, 0.0334, 0.01982),(0.0783, 0.0369, 0.0049)]
 
 LineSet367.coord = Coordinate369
 
@@ -1494,9 +1570,11 @@ Shape372 = x3d.Shape()
 LineSet373 = x3d.LineSet()
 LineSet373.vertexCount = [2]
 ColorRGBA374 = x3d.ColorRGBA()
+ColorRGBA374.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet373.color = ColorRGBA374
 Coordinate375 = x3d.Coordinate()
+Coordinate375.point = [(0.09459, 0.0261, 0.0394),(0.09297, 0.0334, 0.01982)]
 
 LineSet373.coord = Coordinate375
 
@@ -1518,9 +1596,11 @@ Shape378 = x3d.Shape()
 LineSet379 = x3d.LineSet()
 LineSet379.vertexCount = [2]
 ColorRGBA380 = x3d.ColorRGBA()
+ColorRGBA380.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet379.color = ColorRGBA380
 Coordinate381 = x3d.Coordinate()
+Coordinate381.point = [(0.0965, 0.01505, 0.0954),(0.09459, 0.0261, 0.0394)]
 
 LineSet379.coord = Coordinate381
 
@@ -1542,9 +1622,11 @@ Shape384 = x3d.Shape()
 LineSet385 = x3d.LineSet()
 LineSet385.vertexCount = [2]
 ColorRGBA386 = x3d.ColorRGBA()
+ColorRGBA386.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet385.color = ColorRGBA386
 Coordinate387 = x3d.Coordinate()
+Coordinate387.point = [(0.09886, 0.01192, 0.11047),(0.0965, 0.01505, 0.0954)]
 
 LineSet385.coord = Coordinate387
 
@@ -1583,9 +1665,11 @@ IndexedFaceSet395.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet395.creaseAngle = 0.5
 IndexedFaceSet395.solid = False
 ColorRGBA396 = x3d.ColorRGBA()
+ColorRGBA396.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet395.color = ColorRGBA396
 Coordinate397 = x3d.Coordinate()
+Coordinate397.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet395.coord = Coordinate397
 
@@ -1613,9 +1697,11 @@ Shape402 = x3d.Shape()
 LineSet403 = x3d.LineSet()
 LineSet403.vertexCount = [2]
 ColorRGBA404 = x3d.ColorRGBA()
+ColorRGBA404.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet403.color = ColorRGBA404
 Coordinate405 = x3d.Coordinate()
+Coordinate405.point = [(0.1004, 0.00983, 0.1197),(0.09886, 0.01192, 0.11047)]
 
 LineSet403.coord = Coordinate405
 
@@ -1649,9 +1735,11 @@ Shape408 = x3d.Shape()
 LineSet409 = x3d.LineSet()
 LineSet409.vertexCount = [2]
 ColorRGBA410 = x3d.ColorRGBA()
+ColorRGBA410.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet409.color = ColorRGBA410
 Coordinate411 = x3d.Coordinate()
+Coordinate411.point = [(0.0891, 0.05798, -0.0259),(0.0888, 0.09545, -0.01045)]
 
 LineSet409.coord = Coordinate411
 
@@ -1673,9 +1761,11 @@ Shape414 = x3d.Shape()
 LineSet415 = x3d.LineSet()
 LineSet415.vertexCount = [2]
 ColorRGBA416 = x3d.ColorRGBA()
+ColorRGBA416.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet415.color = ColorRGBA416
 Coordinate417 = x3d.Coordinate()
+Coordinate417.point = [(0.11063, 0.03528, 0.0021),(0.0891, 0.05798, -0.0259)]
 
 LineSet415.coord = Coordinate417
 
@@ -1697,9 +1787,11 @@ Shape420 = x3d.Shape()
 LineSet421 = x3d.LineSet()
 LineSet421.vertexCount = [2]
 ColorRGBA422 = x3d.ColorRGBA()
+ColorRGBA422.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet421.color = ColorRGBA422
 Coordinate423 = x3d.Coordinate()
+Coordinate423.point = [(0.10649, 0.02454, 0.03843),(0.11063, 0.03528, 0.0021)]
 
 LineSet421.coord = Coordinate423
 
@@ -1721,9 +1813,11 @@ Shape426 = x3d.Shape()
 LineSet427 = x3d.LineSet()
 LineSet427.vertexCount = [2]
 ColorRGBA428 = x3d.ColorRGBA()
+ColorRGBA428.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet427.color = ColorRGBA428
 Coordinate429 = x3d.Coordinate()
+Coordinate429.point = [(0.109867, 0.01435, 0.09117),(0.10649, 0.02454, 0.03843)]
 
 LineSet427.coord = Coordinate429
 
@@ -1745,9 +1839,11 @@ Shape432 = x3d.Shape()
 LineSet433 = x3d.LineSet()
 LineSet433.vertexCount = [2]
 ColorRGBA434 = x3d.ColorRGBA()
+ColorRGBA434.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet433.color = ColorRGBA434
 Coordinate435 = x3d.Coordinate()
+Coordinate435.point = [(0.11416, 0.01224, 0.10631),(0.109867, 0.01435, 0.09117)]
 
 LineSet433.coord = Coordinate435
 
@@ -1786,9 +1882,11 @@ IndexedFaceSet443.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet443.creaseAngle = 0.5
 IndexedFaceSet443.solid = False
 ColorRGBA444 = x3d.ColorRGBA()
+ColorRGBA444.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet443.color = ColorRGBA444
 Coordinate445 = x3d.Coordinate()
+Coordinate445.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet443.coord = Coordinate445
 
@@ -1816,9 +1914,11 @@ Shape450 = x3d.Shape()
 LineSet451 = x3d.LineSet()
 LineSet451.vertexCount = [2]
 ColorRGBA452 = x3d.ColorRGBA()
+ColorRGBA452.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet451.color = ColorRGBA452
 Coordinate453 = x3d.Coordinate()
+Coordinate453.point = [(0.11567, 0.00936, 0.11369),(0.11416, 0.01224, 0.10631)]
 
 LineSet451.coord = Coordinate453
 
@@ -1848,9 +1948,11 @@ Shape456 = x3d.Shape()
 LineSet457 = x3d.LineSet()
 LineSet457.vertexCount = [2]
 ColorRGBA458 = x3d.ColorRGBA()
+ColorRGBA458.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet457.color = ColorRGBA458
 Coordinate459 = x3d.Coordinate()
+Coordinate459.point = [(0.1208, 0.02094, 0.03474),(0.11063, 0.03528, 0.0021)]
 
 LineSet457.coord = Coordinate459
 
@@ -1872,9 +1974,11 @@ Shape462 = x3d.Shape()
 LineSet463 = x3d.LineSet()
 LineSet463.vertexCount = [2]
 ColorRGBA464 = x3d.ColorRGBA()
+ColorRGBA464.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet463.color = ColorRGBA464
 Coordinate465 = x3d.Coordinate()
+Coordinate465.point = [(0.124065, 0.01367, 0.08656),(0.1208, 0.02094, 0.03474)]
 
 LineSet463.coord = Coordinate465
 
@@ -1913,9 +2017,11 @@ IndexedFaceSet473.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet473.creaseAngle = 0.5
 IndexedFaceSet473.solid = False
 ColorRGBA474 = x3d.ColorRGBA()
+ColorRGBA474.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet473.color = ColorRGBA474
 Coordinate475 = x3d.Coordinate()
+Coordinate475.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet473.coord = Coordinate475
 
@@ -1943,9 +2049,11 @@ Shape480 = x3d.Shape()
 LineSet481 = x3d.LineSet()
 LineSet481.vertexCount = [2]
 ColorRGBA482 = x3d.ColorRGBA()
+ColorRGBA482.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet481.color = ColorRGBA482
 Coordinate483 = x3d.Coordinate()
+Coordinate483.point = [(0.12638, 0.01086, 0.09414),(0.124065, 0.01367, 0.08656)]
 
 LineSet481.coord = Coordinate483
 
@@ -1984,9 +2092,11 @@ IndexedFaceSet491.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet491.creaseAngle = 0.5
 IndexedFaceSet491.solid = False
 ColorRGBA492 = x3d.ColorRGBA()
+ColorRGBA492.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet491.color = ColorRGBA492
 Coordinate493 = x3d.Coordinate()
+Coordinate493.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet491.coord = Coordinate493
 
@@ -2014,9 +2124,11 @@ Shape498 = x3d.Shape()
 LineSet499 = x3d.LineSet()
 LineSet499.vertexCount = [2]
 ColorRGBA500 = x3d.ColorRGBA()
+ColorRGBA500.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet499.color = ColorRGBA500
 Coordinate501 = x3d.Coordinate()
+Coordinate501.point = [(0.12728, 0.00856, 0.10188),(0.12638, 0.01086, 0.09414)]
 
 LineSet499.coord = Coordinate501
 
@@ -2073,9 +2185,11 @@ IndexedFaceSet509.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet509.creaseAngle = 0.5
 IndexedFaceSet509.solid = False
 ColorRGBA510 = x3d.ColorRGBA()
+ColorRGBA510.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet509.color = ColorRGBA510
 Coordinate511 = x3d.Coordinate()
+Coordinate511.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet509.coord = Coordinate511
 
@@ -2120,9 +2234,11 @@ IndexedFaceSet521.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet521.creaseAngle = 0.5
 IndexedFaceSet521.solid = False
 ColorRGBA522 = x3d.ColorRGBA()
+ColorRGBA522.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet521.color = ColorRGBA522
 Coordinate523 = x3d.Coordinate()
+Coordinate523.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet521.coord = Coordinate523
 
@@ -2167,9 +2283,11 @@ IndexedFaceSet533.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet533.creaseAngle = 0.5
 IndexedFaceSet533.solid = False
 ColorRGBA534 = x3d.ColorRGBA()
+ColorRGBA534.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet533.color = ColorRGBA534
 Coordinate535 = x3d.Coordinate()
+Coordinate535.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet533.coord = Coordinate535
 
@@ -2214,9 +2332,11 @@ IndexedFaceSet545.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet545.creaseAngle = 0.5
 IndexedFaceSet545.solid = False
 ColorRGBA546 = x3d.ColorRGBA()
+ColorRGBA546.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet545.color = ColorRGBA546
 Coordinate547 = x3d.Coordinate()
+Coordinate547.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet545.coord = Coordinate547
 
@@ -2244,9 +2364,11 @@ Shape552 = x3d.Shape()
 LineSet553 = x3d.LineSet()
 LineSet553.vertexCount = [2]
 ColorRGBA554 = x3d.ColorRGBA()
+ColorRGBA554.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet553.color = ColorRGBA554
 Coordinate555 = x3d.Coordinate()
+Coordinate555.point = [(-0.09466, 0.82665, -0.01835),(0, 0.826, 0.02)]
 
 LineSet553.coord = Coordinate555
 
@@ -2285,9 +2407,11 @@ IndexedFaceSet563.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet563.creaseAngle = 0.5
 IndexedFaceSet563.solid = False
 ColorRGBA564 = x3d.ColorRGBA()
+ColorRGBA564.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet563.color = ColorRGBA564
 Coordinate565 = x3d.Coordinate()
+Coordinate565.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet563.coord = Coordinate565
 
@@ -2332,9 +2456,11 @@ IndexedFaceSet575.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet575.creaseAngle = 0.5
 IndexedFaceSet575.solid = False
 ColorRGBA576 = x3d.ColorRGBA()
+ColorRGBA576.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet575.color = ColorRGBA576
 Coordinate577 = x3d.Coordinate()
+Coordinate577.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet575.coord = Coordinate577
 
@@ -2379,9 +2505,11 @@ IndexedFaceSet587.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet587.creaseAngle = 0.5
 IndexedFaceSet587.solid = False
 ColorRGBA588 = x3d.ColorRGBA()
+ColorRGBA588.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet587.color = ColorRGBA588
 Coordinate589 = x3d.Coordinate()
+Coordinate589.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet587.coord = Coordinate589
 
@@ -2409,9 +2537,11 @@ Shape594 = x3d.Shape()
 LineSet595 = x3d.LineSet()
 LineSet595.vertexCount = [2]
 ColorRGBA596 = x3d.ColorRGBA()
+ColorRGBA596.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet595.color = ColorRGBA596
 Coordinate597 = x3d.Coordinate()
+Coordinate597.point = [(-0.0926, 0.408825, -0.01944),(-0.09466, 0.82665, -0.01835)]
 
 LineSet595.coord = Coordinate597
 
@@ -2450,9 +2580,11 @@ IndexedFaceSet605.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet605.creaseAngle = 0.5
 IndexedFaceSet605.solid = False
 ColorRGBA606 = x3d.ColorRGBA()
+ColorRGBA606.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet605.color = ColorRGBA606
 Coordinate607 = x3d.Coordinate()
+Coordinate607.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet605.coord = Coordinate607
 
@@ -2497,9 +2629,11 @@ IndexedFaceSet617.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet617.creaseAngle = 0.5
 IndexedFaceSet617.solid = False
 ColorRGBA618 = x3d.ColorRGBA()
+ColorRGBA618.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet617.color = ColorRGBA618
 Coordinate619 = x3d.Coordinate()
+Coordinate619.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet617.coord = Coordinate619
 
@@ -2527,9 +2661,11 @@ Shape624 = x3d.Shape()
 LineSet625 = x3d.LineSet()
 LineSet625.vertexCount = [2]
 ColorRGBA626 = x3d.ColorRGBA()
+ColorRGBA626.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet625.color = ColorRGBA626
 Coordinate627 = x3d.Coordinate()
+Coordinate627.point = [(-0.08845, 0.09544, -0.01045),(-0.0926, 0.408825, -0.01944)]
 
 LineSet625.coord = Coordinate627
 
@@ -2551,9 +2687,11 @@ Shape630 = x3d.Shape()
 LineSet631 = x3d.LineSet()
 LineSet631.vertexCount = [2]
 ColorRGBA632 = x3d.ColorRGBA()
+ColorRGBA632.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet631.color = ColorRGBA632
 Coordinate633 = x3d.Coordinate()
+Coordinate633.point = [(-0.07794, 0.0369, 0.00486),(-0.08845, 0.09544, -0.01045)]
 
 LineSet631.coord = Coordinate633
 
@@ -2575,9 +2713,11 @@ Shape636 = x3d.Shape()
 LineSet637 = x3d.LineSet()
 LineSet637.vertexCount = [2]
 ColorRGBA638 = x3d.ColorRGBA()
+ColorRGBA638.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet637.color = ColorRGBA638
 Coordinate639 = x3d.Coordinate()
+Coordinate639.point = [(-0.06698, 0.032107, 0.01839),(-0.07794, 0.0369, 0.00486)]
 
 LineSet637.coord = Coordinate639
 
@@ -2599,9 +2739,11 @@ Shape642 = x3d.Shape()
 LineSet643 = x3d.LineSet()
 LineSet643.vertexCount = [2]
 ColorRGBA644 = x3d.ColorRGBA()
+ColorRGBA644.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet643.color = ColorRGBA644
 Coordinate645 = x3d.Coordinate()
+Coordinate645.point = [(-0.064, 0.02324, 0.04419),(-0.06698, 0.032107, 0.01839)]
 
 LineSet643.coord = Coordinate645
 
@@ -2640,9 +2782,11 @@ IndexedFaceSet653.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet653.creaseAngle = 0.5
 IndexedFaceSet653.solid = False
 ColorRGBA654 = x3d.ColorRGBA()
+ColorRGBA654.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet653.color = ColorRGBA654
 Coordinate655 = x3d.Coordinate()
+Coordinate655.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet653.coord = Coordinate655
 
@@ -2670,9 +2814,11 @@ Shape660 = x3d.Shape()
 LineSet661 = x3d.LineSet()
 LineSet661.vertexCount = [2]
 ColorRGBA662 = x3d.ColorRGBA()
+ColorRGBA662.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet661.color = ColorRGBA662
 Coordinate663 = x3d.Coordinate()
+Coordinate663.point = [(-0.06176, 0.014425, 0.09362),(-0.064, 0.02324, 0.04419)]
 
 LineSet661.coord = Coordinate663
 
@@ -2711,9 +2857,11 @@ IndexedFaceSet671.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet671.creaseAngle = 0.5
 IndexedFaceSet671.solid = False
 ColorRGBA672 = x3d.ColorRGBA()
+ColorRGBA672.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet671.color = ColorRGBA672
 Coordinate673 = x3d.Coordinate()
+Coordinate673.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet671.coord = Coordinate673
 
@@ -2741,9 +2889,11 @@ Shape678 = x3d.Shape()
 LineSet679 = x3d.LineSet()
 LineSet679.vertexCount = [2]
 ColorRGBA680 = x3d.ColorRGBA()
+ColorRGBA680.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet679.color = ColorRGBA680
 Coordinate681 = x3d.Coordinate()
+Coordinate681.point = [(-0.06174, 0.0121, 0.1153),(-0.06176, 0.014425, 0.09362)]
 
 LineSet679.coord = Coordinate681
 
@@ -2773,9 +2923,11 @@ Shape684 = x3d.Shape()
 LineSet685 = x3d.LineSet()
 LineSet685.vertexCount = [2]
 ColorRGBA686 = x3d.ColorRGBA()
+ColorRGBA686.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet685.color = ColorRGBA686
 Coordinate687 = x3d.Coordinate()
+Coordinate687.point = [(-0.081, 0.0335, 0.02142),(-0.07794, 0.0369, 0.00486)]
 
 LineSet685.coord = Coordinate687
 
@@ -2797,9 +2949,11 @@ Shape690 = x3d.Shape()
 LineSet691 = x3d.LineSet()
 LineSet691.vertexCount = [2]
 ColorRGBA692 = x3d.ColorRGBA()
+ColorRGBA692.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet691.color = ColorRGBA692
 Coordinate693 = x3d.Coordinate()
+Coordinate693.point = [(-0.07983, 0.0261, 0.04106),(-0.081, 0.0335, 0.02142)]
 
 LineSet691.coord = Coordinate693
 
@@ -2821,9 +2975,11 @@ Shape696 = x3d.Shape()
 LineSet697 = x3d.LineSet()
 LineSet697.vertexCount = [2]
 ColorRGBA698 = x3d.ColorRGBA()
+ColorRGBA698.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet697.color = ColorRGBA698
 Coordinate699 = x3d.Coordinate()
+Coordinate699.point = [(-0.0821, 0.01497, 0.09783),(-0.07983, 0.0261, 0.04106)]
 
 LineSet697.coord = Coordinate699
 
@@ -2845,9 +3001,11 @@ Shape702 = x3d.Shape()
 LineSet703 = x3d.LineSet()
 LineSet703.vertexCount = [2]
 ColorRGBA704 = x3d.ColorRGBA()
+ColorRGBA704.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet703.color = ColorRGBA704
 Coordinate705 = x3d.Coordinate()
+Coordinate705.point = [(-0.0839, 0.012647, 0.114),(-0.0821, 0.01497, 0.09783)]
 
 LineSet703.coord = Coordinate705
 
@@ -2886,9 +3044,11 @@ IndexedFaceSet713.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet713.creaseAngle = 0.5
 IndexedFaceSet713.solid = False
 ColorRGBA714 = x3d.ColorRGBA()
+ColorRGBA714.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet713.color = ColorRGBA714
 Coordinate715 = x3d.Coordinate()
+Coordinate715.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet713.coord = Coordinate715
 
@@ -2916,9 +3076,11 @@ Shape720 = x3d.Shape()
 LineSet721 = x3d.LineSet()
 LineSet721.vertexCount = [2]
 ColorRGBA722 = x3d.ColorRGBA()
+ColorRGBA722.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet721.color = ColorRGBA722
 Coordinate723 = x3d.Coordinate()
+Coordinate723.point = [(-0.0839, 0.009825, 0.123435),(-0.0839, 0.012647, 0.114)]
 
 LineSet721.coord = Coordinate723
 
@@ -2950,9 +3112,11 @@ Shape726 = x3d.Shape()
 LineSet727 = x3d.LineSet()
 LineSet727.vertexCount = [2]
 ColorRGBA728 = x3d.ColorRGBA()
+ColorRGBA728.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet727.color = ColorRGBA728
 Coordinate729 = x3d.Coordinate()
+Coordinate729.point = [(-0.09261, 0.03339, 0.01982),(-0.07794, 0.0369, 0.00486)]
 
 LineSet727.coord = Coordinate729
 
@@ -2974,9 +3138,11 @@ Shape732 = x3d.Shape()
 LineSet733 = x3d.LineSet()
 LineSet733.vertexCount = [2]
 ColorRGBA734 = x3d.ColorRGBA()
+ColorRGBA734.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet733.color = ColorRGBA734
 Coordinate735 = x3d.Coordinate()
+Coordinate735.point = [(-0.09423, 0.0261, 0.0394),(-0.09261, 0.03339, 0.01982)]
 
 LineSet733.coord = Coordinate735
 
@@ -2998,9 +3164,11 @@ Shape738 = x3d.Shape()
 LineSet739 = x3d.LineSet()
 LineSet739.vertexCount = [2]
 ColorRGBA740 = x3d.ColorRGBA()
+ColorRGBA740.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet739.color = ColorRGBA740
 Coordinate741 = x3d.Coordinate()
+Coordinate741.point = [(-0.0961, 0.01505, 0.09542),(-0.09423, 0.0261, 0.0394)]
 
 LineSet739.coord = Coordinate741
 
@@ -3022,9 +3190,11 @@ Shape744 = x3d.Shape()
 LineSet745 = x3d.LineSet()
 LineSet745.vertexCount = [2]
 ColorRGBA746 = x3d.ColorRGBA()
+ColorRGBA746.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet745.color = ColorRGBA746
 Coordinate747 = x3d.Coordinate()
+Coordinate747.point = [(-0.0985, 0.01192, 0.11047),(-0.0961, 0.01505, 0.09542)]
 
 LineSet745.coord = Coordinate747
 
@@ -3063,9 +3233,11 @@ IndexedFaceSet755.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet755.creaseAngle = 0.5
 IndexedFaceSet755.solid = False
 ColorRGBA756 = x3d.ColorRGBA()
+ColorRGBA756.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet755.color = ColorRGBA756
 Coordinate757 = x3d.Coordinate()
+Coordinate757.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet755.coord = Coordinate757
 
@@ -3093,9 +3265,11 @@ Shape762 = x3d.Shape()
 LineSet763 = x3d.LineSet()
 LineSet763.vertexCount = [2]
 ColorRGBA764 = x3d.ColorRGBA()
+ColorRGBA764.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet763.color = ColorRGBA764
 Coordinate765 = x3d.Coordinate()
+Coordinate765.point = [(-0.100035, 0.00982, 0.1197),(-0.0985, 0.01192, 0.11047)]
 
 LineSet763.coord = Coordinate765
 
@@ -3129,9 +3303,11 @@ Shape768 = x3d.Shape()
 LineSet769 = x3d.LineSet()
 LineSet769.vertexCount = [2]
 ColorRGBA770 = x3d.ColorRGBA()
+ColorRGBA770.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet769.color = ColorRGBA770
 Coordinate771 = x3d.Coordinate()
+Coordinate771.point = [(-0.088717, 0.05798, -0.025965),(-0.08845, 0.09544, -0.01045)]
 
 LineSet769.coord = Coordinate771
 
@@ -3153,9 +3329,11 @@ Shape774 = x3d.Shape()
 LineSet775 = x3d.LineSet()
 LineSet775.vertexCount = [2]
 ColorRGBA776 = x3d.ColorRGBA()
+ColorRGBA776.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet775.color = ColorRGBA776
 Coordinate777 = x3d.Coordinate()
+Coordinate777.point = [(-0.11027, 0.03528, 0.0021),(-0.088717, 0.05798, -0.025965)]
 
 LineSet775.coord = Coordinate777
 
@@ -3177,9 +3355,11 @@ Shape780 = x3d.Shape()
 LineSet781 = x3d.LineSet()
 LineSet781.vertexCount = [2]
 ColorRGBA782 = x3d.ColorRGBA()
+ColorRGBA782.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet781.color = ColorRGBA782
 Coordinate783 = x3d.Coordinate()
+Coordinate783.point = [(-0.10613, 0.02454, 0.03843),(-0.11027, 0.03528, 0.0021)]
 
 LineSet781.coord = Coordinate783
 
@@ -3201,9 +3381,11 @@ Shape786 = x3d.Shape()
 LineSet787 = x3d.LineSet()
 LineSet787.vertexCount = [2]
 ColorRGBA788 = x3d.ColorRGBA()
+ColorRGBA788.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet787.color = ColorRGBA788
 Coordinate789 = x3d.Coordinate()
+Coordinate789.point = [(-0.1095, 0.01435, 0.09117),(-0.10613, 0.02454, 0.03843)]
 
 LineSet787.coord = Coordinate789
 
@@ -3225,9 +3407,11 @@ Shape792 = x3d.Shape()
 LineSet793 = x3d.LineSet()
 LineSet793.vertexCount = [2]
 ColorRGBA794 = x3d.ColorRGBA()
+ColorRGBA794.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet793.color = ColorRGBA794
 Coordinate795 = x3d.Coordinate()
+Coordinate795.point = [(-0.11378, 0.01224, 0.1063),(-0.1095, 0.01435, 0.09117)]
 
 LineSet793.coord = Coordinate795
 
@@ -3266,9 +3450,11 @@ IndexedFaceSet803.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet803.creaseAngle = 0.5
 IndexedFaceSet803.solid = False
 ColorRGBA804 = x3d.ColorRGBA()
+ColorRGBA804.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet803.color = ColorRGBA804
 Coordinate805 = x3d.Coordinate()
+Coordinate805.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet803.coord = Coordinate805
 
@@ -3296,9 +3482,11 @@ Shape810 = x3d.Shape()
 LineSet811 = x3d.LineSet()
 LineSet811.vertexCount = [2]
 ColorRGBA812 = x3d.ColorRGBA()
+ColorRGBA812.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet811.color = ColorRGBA812
 Coordinate813 = x3d.Coordinate()
+Coordinate813.point = [(-0.1153, 0.00937, 0.11369),(-0.11378, 0.01224, 0.1063)]
 
 LineSet811.coord = Coordinate813
 
@@ -3328,9 +3516,11 @@ Shape816 = x3d.Shape()
 LineSet817 = x3d.LineSet()
 LineSet817.vertexCount = [2]
 ColorRGBA818 = x3d.ColorRGBA()
+ColorRGBA818.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet817.color = ColorRGBA818
 Coordinate819 = x3d.Coordinate()
+Coordinate819.point = [(-0.12044, 0.020945, 0.03474),(-0.11027, 0.03528, 0.0021)]
 
 LineSet817.coord = Coordinate819
 
@@ -3352,9 +3542,11 @@ Shape822 = x3d.Shape()
 LineSet823 = x3d.LineSet()
 LineSet823.vertexCount = [2]
 ColorRGBA824 = x3d.ColorRGBA()
+ColorRGBA824.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet823.color = ColorRGBA824
 Coordinate825 = x3d.Coordinate()
+Coordinate825.point = [(-0.12368, 0.01367, 0.08656),(-0.12044, 0.020945, 0.03474)]
 
 LineSet823.coord = Coordinate825
 
@@ -3393,9 +3585,11 @@ IndexedFaceSet833.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet833.creaseAngle = 0.5
 IndexedFaceSet833.solid = False
 ColorRGBA834 = x3d.ColorRGBA()
+ColorRGBA834.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet833.color = ColorRGBA834
 Coordinate835 = x3d.Coordinate()
+Coordinate835.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet833.coord = Coordinate835
 
@@ -3423,9 +3617,11 @@ Shape840 = x3d.Shape()
 LineSet841 = x3d.LineSet()
 LineSet841.vertexCount = [2]
 ColorRGBA842 = x3d.ColorRGBA()
+ColorRGBA842.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet841.color = ColorRGBA842
 Coordinate843 = x3d.Coordinate()
+Coordinate843.point = [(-0.126, 0.01086, 0.09414),(-0.12368, 0.01367, 0.08656)]
 
 LineSet841.coord = Coordinate843
 
@@ -3464,9 +3660,11 @@ IndexedFaceSet851.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet851.creaseAngle = 0.5
 IndexedFaceSet851.solid = False
 ColorRGBA852 = x3d.ColorRGBA()
+ColorRGBA852.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet851.color = ColorRGBA852
 Coordinate853 = x3d.Coordinate()
+Coordinate853.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet851.coord = Coordinate853
 
@@ -3494,9 +3692,11 @@ Shape858 = x3d.Shape()
 LineSet859 = x3d.LineSet()
 LineSet859.vertexCount = [2]
 ColorRGBA860 = x3d.ColorRGBA()
+ColorRGBA860.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet859.color = ColorRGBA860
 Coordinate861 = x3d.Coordinate()
+Coordinate861.point = [(-0.1269, 0.00856, 0.10188),(-0.126, 0.01086, 0.09414)]
 
 LineSet859.coord = Coordinate861
 
@@ -3555,9 +3755,11 @@ IndexedFaceSet869.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet869.creaseAngle = 0.5
 IndexedFaceSet869.solid = False
 ColorRGBA870 = x3d.ColorRGBA()
+ColorRGBA870.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet869.color = ColorRGBA870
 Coordinate871 = x3d.Coordinate()
+Coordinate871.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet869.coord = Coordinate871
 
@@ -3602,9 +3804,11 @@ IndexedFaceSet881.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet881.creaseAngle = 0.5
 IndexedFaceSet881.solid = False
 ColorRGBA882 = x3d.ColorRGBA()
+ColorRGBA882.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet881.color = ColorRGBA882
 Coordinate883 = x3d.Coordinate()
+Coordinate883.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet881.coord = Coordinate883
 
@@ -3649,9 +3853,11 @@ IndexedFaceSet893.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet893.creaseAngle = 0.5
 IndexedFaceSet893.solid = False
 ColorRGBA894 = x3d.ColorRGBA()
+ColorRGBA894.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet893.color = ColorRGBA894
 Coordinate895 = x3d.Coordinate()
+Coordinate895.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet893.coord = Coordinate895
 
@@ -3696,9 +3902,11 @@ IndexedFaceSet905.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet905.creaseAngle = 0.5
 IndexedFaceSet905.solid = False
 ColorRGBA906 = x3d.ColorRGBA()
+ColorRGBA906.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet905.color = ColorRGBA906
 Coordinate907 = x3d.Coordinate()
+Coordinate907.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet905.coord = Coordinate907
 
@@ -3743,9 +3951,11 @@ IndexedFaceSet917.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet917.creaseAngle = 0.5
 IndexedFaceSet917.solid = False
 ColorRGBA918 = x3d.ColorRGBA()
+ColorRGBA918.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet917.color = ColorRGBA918
 Coordinate919 = x3d.Coordinate()
+Coordinate919.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet917.coord = Coordinate919
 
@@ -3773,9 +3983,11 @@ Shape924 = x3d.Shape()
 LineSet925 = x3d.LineSet()
 LineSet925.vertexCount = [2]
 ColorRGBA926 = x3d.ColorRGBA()
+ColorRGBA926.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet925.color = ColorRGBA926
 Coordinate927 = x3d.Coordinate()
+Coordinate927.point = [(0, 0.9254, -0.01376),(0, 0.77, 0)]
 
 LineSet925.coord = Coordinate927
 
@@ -3797,9 +4009,11 @@ Shape930 = x3d.Shape()
 LineSet931 = x3d.LineSet()
 LineSet931.vertexCount = [2]
 ColorRGBA932 = x3d.ColorRGBA()
+ColorRGBA932.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet931.color = ColorRGBA932
 Coordinate933 = x3d.Coordinate()
+Coordinate933.point = [(0, 0.9497, -0.01376),(0, 0.9254, -0.01376)]
 
 LineSet931.coord = Coordinate933
 
@@ -3821,9 +4035,11 @@ Shape936 = x3d.Shape()
 LineSet937 = x3d.LineSet()
 LineSet937.vertexCount = [2]
 ColorRGBA938 = x3d.ColorRGBA()
+ColorRGBA938.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet937.color = ColorRGBA938
 Coordinate939 = x3d.Coordinate()
+Coordinate939.point = [(0, 0.9659, -0.01376),(0, 0.9497, -0.01376)]
 
 LineSet937.coord = Coordinate939
 
@@ -3862,9 +4078,11 @@ IndexedFaceSet947.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet947.creaseAngle = 0.5
 IndexedFaceSet947.solid = False
 ColorRGBA948 = x3d.ColorRGBA()
+ColorRGBA948.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet947.color = ColorRGBA948
 Coordinate949 = x3d.Coordinate()
+Coordinate949.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet947.coord = Coordinate949
 
@@ -3909,9 +4127,11 @@ IndexedFaceSet959.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet959.creaseAngle = 0.5
 IndexedFaceSet959.solid = False
 ColorRGBA960 = x3d.ColorRGBA()
+ColorRGBA960.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet959.color = ColorRGBA960
 Coordinate961 = x3d.Coordinate()
+Coordinate961.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet959.coord = Coordinate961
 
@@ -3939,9 +4159,11 @@ Shape966 = x3d.Shape()
 LineSet967 = x3d.LineSet()
 LineSet967.vertexCount = [2]
 ColorRGBA968 = x3d.ColorRGBA()
+ColorRGBA968.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet967.color = ColorRGBA968
 Coordinate969 = x3d.Coordinate()
+Coordinate969.point = [(0, 0.98235, -0.01376),(0, 0.9659, -0.01376)]
 
 LineSet967.coord = Coordinate969
 
@@ -3963,9 +4185,11 @@ Shape972 = x3d.Shape()
 LineSet973 = x3d.LineSet()
 LineSet973.vertexCount = [2]
 ColorRGBA974 = x3d.ColorRGBA()
+ColorRGBA974.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet973.color = ColorRGBA974
 Coordinate975 = x3d.Coordinate()
+Coordinate975.point = [(0, 0.99967, -0.01376),(0, 0.98235, -0.01376)]
 
 LineSet973.coord = Coordinate975
 
@@ -3987,9 +4211,11 @@ Shape978 = x3d.Shape()
 LineSet979 = x3d.LineSet()
 LineSet979.vertexCount = [2]
 ColorRGBA980 = x3d.ColorRGBA()
+ColorRGBA980.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet979.color = ColorRGBA980
 Coordinate981 = x3d.Coordinate()
+Coordinate981.point = [(0, 1.0231, -0.01376),(0, 0.99967, -0.01376)]
 
 LineSet979.coord = Coordinate981
 
@@ -4011,9 +4237,11 @@ Shape984 = x3d.Shape()
 LineSet985 = x3d.LineSet()
 LineSet985.vertexCount = [2]
 ColorRGBA986 = x3d.ColorRGBA()
+ColorRGBA986.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet985.color = ColorRGBA986
 Coordinate987 = x3d.Coordinate()
+Coordinate987.point = [(0, 1.0467, -0.01376),(0, 1.0231, -0.01376)]
 
 LineSet985.coord = Coordinate987
 
@@ -4052,9 +4280,11 @@ IndexedFaceSet995.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3
 IndexedFaceSet995.creaseAngle = 0.5
 IndexedFaceSet995.solid = False
 ColorRGBA996 = x3d.ColorRGBA()
+ColorRGBA996.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet995.color = ColorRGBA996
 Coordinate997 = x3d.Coordinate()
+Coordinate997.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet995.coord = Coordinate997
 
@@ -4099,9 +4329,11 @@ IndexedFaceSet1007.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1007.creaseAngle = 0.5
 IndexedFaceSet1007.solid = False
 ColorRGBA1008 = x3d.ColorRGBA()
+ColorRGBA1008.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1007.color = ColorRGBA1008
 Coordinate1009 = x3d.Coordinate()
+Coordinate1009.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1007.coord = Coordinate1009
 
@@ -4129,9 +4361,11 @@ Shape1014 = x3d.Shape()
 LineSet1015 = x3d.LineSet()
 LineSet1015.vertexCount = [2]
 ColorRGBA1016 = x3d.ColorRGBA()
+ColorRGBA1016.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1015.color = ColorRGBA1016
 Coordinate1017 = x3d.Coordinate()
+Coordinate1017.point = [(0, 1.0638, -0.01378),(0, 1.0467, -0.01376)]
 
 LineSet1015.coord = Coordinate1017
 
@@ -4170,9 +4404,11 @@ IndexedFaceSet1025.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1025.creaseAngle = 0.5
 IndexedFaceSet1025.solid = False
 ColorRGBA1026 = x3d.ColorRGBA()
+ColorRGBA1026.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1025.color = ColorRGBA1026
 Coordinate1027 = x3d.Coordinate()
+Coordinate1027.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1025.coord = Coordinate1027
 
@@ -4217,9 +4453,11 @@ IndexedFaceSet1037.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1037.creaseAngle = 0.5
 IndexedFaceSet1037.solid = False
 ColorRGBA1038 = x3d.ColorRGBA()
+ColorRGBA1038.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1037.color = ColorRGBA1038
 Coordinate1039 = x3d.Coordinate()
+Coordinate1039.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1037.coord = Coordinate1039
 
@@ -4264,9 +4502,11 @@ IndexedFaceSet1049.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1049.creaseAngle = 0.5
 IndexedFaceSet1049.solid = False
 ColorRGBA1050 = x3d.ColorRGBA()
+ColorRGBA1050.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1049.color = ColorRGBA1050
 Coordinate1051 = x3d.Coordinate()
+Coordinate1051.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1049.coord = Coordinate1051
 
@@ -4311,9 +4551,11 @@ IndexedFaceSet1061.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1061.creaseAngle = 0.5
 IndexedFaceSet1061.solid = False
 ColorRGBA1062 = x3d.ColorRGBA()
+ColorRGBA1062.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1061.color = ColorRGBA1062
 Coordinate1063 = x3d.Coordinate()
+Coordinate1063.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1061.coord = Coordinate1063
 
@@ -4358,9 +4600,11 @@ IndexedFaceSet1073.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1073.creaseAngle = 0.5
 IndexedFaceSet1073.solid = False
 ColorRGBA1074 = x3d.ColorRGBA()
+ColorRGBA1074.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1073.color = ColorRGBA1074
 Coordinate1075 = x3d.Coordinate()
+Coordinate1075.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1073.coord = Coordinate1075
 
@@ -4388,9 +4632,11 @@ Shape1080 = x3d.Shape()
 LineSet1081 = x3d.LineSet()
 LineSet1081.vertexCount = [2]
 ColorRGBA1082 = x3d.ColorRGBA()
+ColorRGBA1082.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1081.color = ColorRGBA1082
 Coordinate1083 = x3d.Coordinate()
+Coordinate1083.point = [(0, 1.0784, -0.01376),(0, 1.0638, -0.01378)]
 
 LineSet1081.coord = Coordinate1083
 
@@ -4412,9 +4658,11 @@ Shape1086 = x3d.Shape()
 LineSet1087 = x3d.LineSet()
 LineSet1087.vertexCount = [2]
 ColorRGBA1088 = x3d.ColorRGBA()
+ColorRGBA1088.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1087.color = ColorRGBA1088
 Coordinate1089 = x3d.Coordinate()
+Coordinate1089.point = [(0, 1.093, -0.01376),(0, 1.0784, -0.01376)]
 
 LineSet1087.coord = Coordinate1089
 
@@ -4436,9 +4684,11 @@ Shape1092 = x3d.Shape()
 LineSet1093 = x3d.LineSet()
 LineSet1093.vertexCount = [2]
 ColorRGBA1094 = x3d.ColorRGBA()
+ColorRGBA1094.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1093.color = ColorRGBA1094
 Coordinate1095 = x3d.Coordinate()
+Coordinate1095.point = [(0, 1.1088, -0.01376),(0, 1.093, -0.01376)]
 
 LineSet1093.coord = Coordinate1095
 
@@ -4460,9 +4710,11 @@ Shape1098 = x3d.Shape()
 LineSet1099 = x3d.LineSet()
 LineSet1099.vertexCount = [2]
 ColorRGBA1100 = x3d.ColorRGBA()
+ColorRGBA1100.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1099.color = ColorRGBA1100
 Coordinate1101 = x3d.Coordinate()
+Coordinate1101.point = [(0, 1.1216, -0.01376),(0, 1.1088, -0.01376)]
 
 LineSet1099.coord = Coordinate1101
 
@@ -4484,9 +4736,11 @@ Shape1104 = x3d.Shape()
 LineSet1105 = x3d.LineSet()
 LineSet1105.vertexCount = [2]
 ColorRGBA1106 = x3d.ColorRGBA()
+ColorRGBA1106.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1105.color = ColorRGBA1106
 Coordinate1107 = x3d.Coordinate()
+Coordinate1107.point = [(0, 1.137, -0.01376),(0, 1.1216, -0.01376)]
 
 LineSet1105.coord = Coordinate1107
 
@@ -4508,9 +4762,11 @@ Shape1110 = x3d.Shape()
 LineSet1111 = x3d.LineSet()
 LineSet1111.vertexCount = [2]
 ColorRGBA1112 = x3d.ColorRGBA()
+ColorRGBA1112.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1111.color = ColorRGBA1112
 Coordinate1113 = x3d.Coordinate()
+Coordinate1113.point = [(0, 1.1524, -0.01376),(0, 1.137, -0.01376)]
 
 LineSet1111.coord = Coordinate1113
 
@@ -4532,9 +4788,11 @@ Shape1116 = x3d.Shape()
 LineSet1117 = x3d.LineSet()
 LineSet1117.vertexCount = [2]
 ColorRGBA1118 = x3d.ColorRGBA()
+ColorRGBA1118.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1117.color = ColorRGBA1118
 Coordinate1119 = x3d.Coordinate()
+Coordinate1119.point = [(0, 1.1709, -0.01376),(0, 1.1524, -0.01376)]
 
 LineSet1117.coord = Coordinate1119
 
@@ -4556,9 +4814,11 @@ Shape1122 = x3d.Shape()
 LineSet1123 = x3d.LineSet()
 LineSet1123.vertexCount = [2]
 ColorRGBA1124 = x3d.ColorRGBA()
+ColorRGBA1124.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1123.color = ColorRGBA1124
 Coordinate1125 = x3d.Coordinate()
+Coordinate1125.point = [(0, 1.1956, -0.01378),(0, 1.1709, -0.01376)]
 
 LineSet1123.coord = Coordinate1125
 
@@ -4597,9 +4857,11 @@ IndexedFaceSet1133.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1133.creaseAngle = 0.5
 IndexedFaceSet1133.solid = False
 ColorRGBA1134 = x3d.ColorRGBA()
+ColorRGBA1134.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1133.color = ColorRGBA1134
 Coordinate1135 = x3d.Coordinate()
+Coordinate1135.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1133.coord = Coordinate1135
 
@@ -4644,9 +4906,11 @@ IndexedFaceSet1145.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1145.creaseAngle = 0.5
 IndexedFaceSet1145.solid = False
 ColorRGBA1146 = x3d.ColorRGBA()
+ColorRGBA1146.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1145.color = ColorRGBA1146
 Coordinate1147 = x3d.Coordinate()
+Coordinate1147.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1145.coord = Coordinate1147
 
@@ -4674,9 +4938,11 @@ Shape1152 = x3d.Shape()
 LineSet1153 = x3d.LineSet()
 LineSet1153.vertexCount = [2]
 ColorRGBA1154 = x3d.ColorRGBA()
+ColorRGBA1154.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1153.color = ColorRGBA1154
 Coordinate1155 = x3d.Coordinate()
+Coordinate1155.point = [(0, 1.22, -0.0138),(0, 1.1956, -0.01378)]
 
 LineSet1153.coord = Coordinate1155
 
@@ -4715,9 +4981,11 @@ IndexedFaceSet1163.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1163.creaseAngle = 0.5
 IndexedFaceSet1163.solid = False
 ColorRGBA1164 = x3d.ColorRGBA()
+ColorRGBA1164.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1163.color = ColorRGBA1164
 Coordinate1165 = x3d.Coordinate()
+Coordinate1165.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1163.coord = Coordinate1165
 
@@ -4762,9 +5030,11 @@ IndexedFaceSet1175.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1175.creaseAngle = 0.5
 IndexedFaceSet1175.solid = False
 ColorRGBA1176 = x3d.ColorRGBA()
+ColorRGBA1176.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1175.color = ColorRGBA1176
 Coordinate1177 = x3d.Coordinate()
+Coordinate1177.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1175.coord = Coordinate1177
 
@@ -4792,9 +5062,11 @@ Shape1182 = x3d.Shape()
 LineSet1183 = x3d.LineSet()
 LineSet1183.vertexCount = [2]
 ColorRGBA1184 = x3d.ColorRGBA()
+ColorRGBA1184.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1183.color = ColorRGBA1184
 Coordinate1185 = x3d.Coordinate()
+Coordinate1185.point = [(0, 1.2453, -0.01506),(0, 1.22, -0.0138)]
 
 LineSet1183.coord = Coordinate1185
 
@@ -4816,9 +5088,11 @@ Shape1188 = x3d.Shape()
 LineSet1189 = x3d.LineSet()
 LineSet1189.vertexCount = [2]
 ColorRGBA1190 = x3d.ColorRGBA()
+ColorRGBA1190.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1189.color = ColorRGBA1190
 Coordinate1191 = x3d.Coordinate()
+Coordinate1191.point = [(0, 1.2575, -0.01506),(0, 1.2453, -0.01506)]
 
 LineSet1189.coord = Coordinate1191
 
@@ -4840,9 +5114,11 @@ Shape1194 = x3d.Shape()
 LineSet1195 = x3d.LineSet()
 LineSet1195.vertexCount = [2]
 ColorRGBA1196 = x3d.ColorRGBA()
+ColorRGBA1196.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1195.color = ColorRGBA1196
 Coordinate1197 = x3d.Coordinate()
+Coordinate1197.point = [(0, 1.2699, -0.01506),(0, 1.2575, -0.01506)]
 
 LineSet1195.coord = Coordinate1197
 
@@ -4864,9 +5140,11 @@ Shape1200 = x3d.Shape()
 LineSet1201 = x3d.LineSet()
 LineSet1201.vertexCount = [2]
 ColorRGBA1202 = x3d.ColorRGBA()
+ColorRGBA1202.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1201.color = ColorRGBA1202
 Coordinate1203 = x3d.Coordinate()
+Coordinate1203.point = [(0, 1.28227, -0.01506),(0, 1.2699, -0.01506)]
 
 LineSet1201.coord = Coordinate1203
 
@@ -4888,9 +5166,11 @@ Shape1206 = x3d.Shape()
 LineSet1207 = x3d.LineSet()
 LineSet1207.vertexCount = [2]
 ColorRGBA1208 = x3d.ColorRGBA()
+ColorRGBA1208.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1207.color = ColorRGBA1208
 Coordinate1209 = x3d.Coordinate()
+Coordinate1209.point = [(0, 1.2951, -0.01506),(0, 1.28227, -0.01506)]
 
 LineSet1207.coord = Coordinate1209
 
@@ -4929,9 +5209,11 @@ IndexedFaceSet1217.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1217.creaseAngle = 0.5
 IndexedFaceSet1217.solid = False
 ColorRGBA1218 = x3d.ColorRGBA()
+ColorRGBA1218.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1217.color = ColorRGBA1218
 Coordinate1219 = x3d.Coordinate()
+Coordinate1219.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1217.coord = Coordinate1219
 
@@ -4959,9 +5241,11 @@ Shape1224 = x3d.Shape()
 LineSet1225 = x3d.LineSet()
 LineSet1225.vertexCount = [2]
 ColorRGBA1226 = x3d.ColorRGBA()
+ColorRGBA1226.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1225.color = ColorRGBA1226
 Coordinate1227 = x3d.Coordinate()
+Coordinate1227.point = [(0, 1.307, -0.015),(0, 1.2951, -0.01506)]
 
 LineSet1225.coord = Coordinate1227
 
@@ -4983,9 +5267,11 @@ Shape1230 = x3d.Shape()
 LineSet1231 = x3d.LineSet()
 LineSet1231.vertexCount = [2]
 ColorRGBA1232 = x3d.ColorRGBA()
+ColorRGBA1232.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1231.color = ColorRGBA1232
 Coordinate1233 = x3d.Coordinate()
+Coordinate1233.point = [(0, 1.3185, -0.0151),(0, 1.307, -0.015)]
 
 LineSet1231.coord = Coordinate1233
 
@@ -5024,9 +5310,11 @@ IndexedFaceSet1241.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1241.creaseAngle = 0.5
 IndexedFaceSet1241.solid = False
 ColorRGBA1242 = x3d.ColorRGBA()
+ColorRGBA1242.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1241.color = ColorRGBA1242
 Coordinate1243 = x3d.Coordinate()
+Coordinate1243.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1241.coord = Coordinate1243
 
@@ -5071,9 +5359,11 @@ IndexedFaceSet1253.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1253.creaseAngle = 0.5
 IndexedFaceSet1253.solid = False
 ColorRGBA1254 = x3d.ColorRGBA()
+ColorRGBA1254.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1253.color = ColorRGBA1254
 Coordinate1255 = x3d.Coordinate()
+Coordinate1255.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1253.coord = Coordinate1255
 
@@ -5118,9 +5408,11 @@ IndexedFaceSet1265.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1265.creaseAngle = 0.5
 IndexedFaceSet1265.solid = False
 ColorRGBA1266 = x3d.ColorRGBA()
+ColorRGBA1266.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1265.color = ColorRGBA1266
 Coordinate1267 = x3d.Coordinate()
+Coordinate1267.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1265.coord = Coordinate1267
 
@@ -5165,9 +5457,11 @@ IndexedFaceSet1277.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1277.creaseAngle = 0.5
 IndexedFaceSet1277.solid = False
 ColorRGBA1278 = x3d.ColorRGBA()
+ColorRGBA1278.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1277.color = ColorRGBA1278
 Coordinate1279 = x3d.Coordinate()
+Coordinate1279.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1277.coord = Coordinate1279
 
@@ -5212,9 +5506,11 @@ IndexedFaceSet1289.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1289.creaseAngle = 0.5
 IndexedFaceSet1289.solid = False
 ColorRGBA1290 = x3d.ColorRGBA()
+ColorRGBA1290.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1289.color = ColorRGBA1290
 Coordinate1291 = x3d.Coordinate()
+Coordinate1291.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1289.coord = Coordinate1291
 
@@ -5259,9 +5555,11 @@ IndexedFaceSet1301.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1301.creaseAngle = 0.5
 IndexedFaceSet1301.solid = False
 ColorRGBA1302 = x3d.ColorRGBA()
+ColorRGBA1302.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1301.color = ColorRGBA1302
 Coordinate1303 = x3d.Coordinate()
+Coordinate1303.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1301.coord = Coordinate1303
 
@@ -5306,9 +5604,11 @@ IndexedFaceSet1313.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1313.creaseAngle = 0.5
 IndexedFaceSet1313.solid = False
 ColorRGBA1314 = x3d.ColorRGBA()
+ColorRGBA1314.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1313.color = ColorRGBA1314
 Coordinate1315 = x3d.Coordinate()
+Coordinate1315.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1313.coord = Coordinate1315
 
@@ -5353,9 +5653,11 @@ IndexedFaceSet1325.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1325.creaseAngle = 0.5
 IndexedFaceSet1325.solid = False
 ColorRGBA1326 = x3d.ColorRGBA()
+ColorRGBA1326.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1325.color = ColorRGBA1326
 Coordinate1327 = x3d.Coordinate()
+Coordinate1327.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1325.coord = Coordinate1327
 
@@ -5400,9 +5702,11 @@ IndexedFaceSet1337.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1337.creaseAngle = 0.5
 IndexedFaceSet1337.solid = False
 ColorRGBA1338 = x3d.ColorRGBA()
+ColorRGBA1338.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1337.color = ColorRGBA1338
 Coordinate1339 = x3d.Coordinate()
+Coordinate1339.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1337.coord = Coordinate1339
 
@@ -5447,9 +5751,11 @@ IndexedFaceSet1349.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1349.creaseAngle = 0.5
 IndexedFaceSet1349.solid = False
 ColorRGBA1350 = x3d.ColorRGBA()
+ColorRGBA1350.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1349.color = ColorRGBA1350
 Coordinate1351 = x3d.Coordinate()
+Coordinate1351.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1349.coord = Coordinate1351
 
@@ -5494,9 +5800,11 @@ IndexedFaceSet1361.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1361.creaseAngle = 0.5
 IndexedFaceSet1361.solid = False
 ColorRGBA1362 = x3d.ColorRGBA()
+ColorRGBA1362.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1361.color = ColorRGBA1362
 Coordinate1363 = x3d.Coordinate()
+Coordinate1363.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1361.coord = Coordinate1363
 
@@ -5524,9 +5832,11 @@ Shape1368 = x3d.Shape()
 LineSet1369 = x3d.LineSet()
 LineSet1369.vertexCount = [2]
 ColorRGBA1370 = x3d.ColorRGBA()
+ColorRGBA1370.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1369.color = ColorRGBA1370
 Coordinate1371 = x3d.Coordinate()
+Coordinate1371.point = [(0, 1.3126, -0.0154),(0, 1.3185, -0.0151)]
 
 LineSet1369.coord = Coordinate1371
 
@@ -5565,9 +5875,11 @@ IndexedFaceSet1379.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1379.creaseAngle = 0.5
 IndexedFaceSet1379.solid = False
 ColorRGBA1380 = x3d.ColorRGBA()
+ColorRGBA1380.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1379.color = ColorRGBA1380
 Coordinate1381 = x3d.Coordinate()
+Coordinate1381.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1379.coord = Coordinate1381
 
@@ -5595,9 +5907,11 @@ Shape1386 = x3d.Shape()
 LineSet1387 = x3d.LineSet()
 LineSet1387.vertexCount = [2]
 ColorRGBA1388 = x3d.ColorRGBA()
+ColorRGBA1388.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1387.color = ColorRGBA1388
 Coordinate1389 = x3d.Coordinate()
+Coordinate1389.point = [(0.0505, 1.42425, 0.03294),(0, 1.3126, -0.0154)]
 
 LineSet1387.coord = Coordinate1389
 
@@ -5638,9 +5952,11 @@ IndexedFaceSet1397.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1397.creaseAngle = 0.5
 IndexedFaceSet1397.solid = False
 ColorRGBA1398 = x3d.ColorRGBA()
+ColorRGBA1398.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1397.color = ColorRGBA1398
 Coordinate1399 = x3d.Coordinate()
+Coordinate1399.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1397.coord = Coordinate1399
 
@@ -5668,9 +5984,11 @@ Shape1404 = x3d.Shape()
 LineSet1405 = x3d.LineSet()
 LineSet1405.vertexCount = [2]
 ColorRGBA1406 = x3d.ColorRGBA()
+ColorRGBA1406.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1405.color = ColorRGBA1406
 Coordinate1407 = x3d.Coordinate()
+Coordinate1407.point = [(-0.0505, 1.42425, 0.03294),(0, 1.3126, -0.0154)]
 
 LineSet1405.coord = Coordinate1407
 
@@ -5711,9 +6029,11 @@ IndexedFaceSet1415.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1415.creaseAngle = 0.5
 IndexedFaceSet1415.solid = False
 ColorRGBA1416 = x3d.ColorRGBA()
+ColorRGBA1416.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1415.color = ColorRGBA1416
 Coordinate1417 = x3d.Coordinate()
+Coordinate1417.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1415.coord = Coordinate1417
 
@@ -5741,9 +6061,11 @@ Shape1422 = x3d.Shape()
 LineSet1423 = x3d.LineSet()
 LineSet1423.vertexCount = [2]
 ColorRGBA1424 = x3d.ColorRGBA()
+ColorRGBA1424.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1423.color = ColorRGBA1424
 Coordinate1425 = x3d.Coordinate()
+Coordinate1425.point = [(0.048127, 1.4049, 0.08305),(0, 1.3126, -0.0154)]
 
 LineSet1423.coord = Coordinate1425
 
@@ -5784,9 +6106,11 @@ IndexedFaceSet1433.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1433.creaseAngle = 0.5
 IndexedFaceSet1433.solid = False
 ColorRGBA1434 = x3d.ColorRGBA()
+ColorRGBA1434.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1433.color = ColorRGBA1434
 Coordinate1435 = x3d.Coordinate()
+Coordinate1435.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1433.coord = Coordinate1435
 
@@ -5814,9 +6138,11 @@ Shape1440 = x3d.Shape()
 LineSet1441 = x3d.LineSet()
 LineSet1441.vertexCount = [2]
 ColorRGBA1442 = x3d.ColorRGBA()
+ColorRGBA1442.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1441.color = ColorRGBA1442
 Coordinate1443 = x3d.Coordinate()
+Coordinate1443.point = [(-0.04813, 1.4049, 0.08305),(0, 1.3126, -0.0154)]
 
 LineSet1441.coord = Coordinate1443
 
@@ -5857,9 +6183,11 @@ IndexedFaceSet1451.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1451.creaseAngle = 0.5
 IndexedFaceSet1451.solid = False
 ColorRGBA1452 = x3d.ColorRGBA()
+ColorRGBA1452.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1451.color = ColorRGBA1452
 Coordinate1453 = x3d.Coordinate()
+Coordinate1453.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1451.coord = Coordinate1453
 
@@ -5887,9 +6215,11 @@ Shape1458 = x3d.Shape()
 LineSet1459 = x3d.LineSet()
 LineSet1459.vertexCount = [2]
 ColorRGBA1460 = x3d.ColorRGBA()
+ColorRGBA1460.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1459.color = ColorRGBA1460
 Coordinate1461 = x3d.Coordinate()
+Coordinate1461.point = [(0.02175, 1.4139, 0.1069),(0, 1.3126, -0.0154)]
 
 LineSet1459.coord = Coordinate1461
 
@@ -5930,9 +6260,11 @@ IndexedFaceSet1469.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1469.creaseAngle = 0.5
 IndexedFaceSet1469.solid = False
 ColorRGBA1470 = x3d.ColorRGBA()
+ColorRGBA1470.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1469.color = ColorRGBA1470
 Coordinate1471 = x3d.Coordinate()
+Coordinate1471.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1469.coord = Coordinate1471
 
@@ -5960,9 +6292,11 @@ Shape1476 = x3d.Shape()
 LineSet1477 = x3d.LineSet()
 LineSet1477.vertexCount = [2]
 ColorRGBA1478 = x3d.ColorRGBA()
+ColorRGBA1478.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1477.color = ColorRGBA1478
 Coordinate1479 = x3d.Coordinate()
+Coordinate1479.point = [(-0.02175, 1.4139, 0.10694),(0, 1.3126, -0.0154)]
 
 LineSet1477.coord = Coordinate1479
 
@@ -6003,9 +6337,11 @@ IndexedFaceSet1487.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1487.creaseAngle = 0.5
 IndexedFaceSet1487.solid = False
 ColorRGBA1488 = x3d.ColorRGBA()
+ColorRGBA1488.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1487.color = ColorRGBA1488
 Coordinate1489 = x3d.Coordinate()
+Coordinate1489.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1487.coord = Coordinate1489
 
@@ -6050,9 +6386,11 @@ IndexedFaceSet1499.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1499.creaseAngle = 0.5
 IndexedFaceSet1499.solid = False
 ColorRGBA1500 = x3d.ColorRGBA()
+ColorRGBA1500.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1499.color = ColorRGBA1500
 Coordinate1501 = x3d.Coordinate()
+Coordinate1501.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1499.coord = Coordinate1501
 
@@ -6097,9 +6435,11 @@ IndexedFaceSet1511.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1511.creaseAngle = 0.5
 IndexedFaceSet1511.solid = False
 ColorRGBA1512 = x3d.ColorRGBA()
+ColorRGBA1512.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1511.color = ColorRGBA1512
 Coordinate1513 = x3d.Coordinate()
+Coordinate1513.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1511.coord = Coordinate1513
 
@@ -6144,9 +6484,11 @@ IndexedFaceSet1523.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1523.creaseAngle = 0.5
 IndexedFaceSet1523.solid = False
 ColorRGBA1524 = x3d.ColorRGBA()
+ColorRGBA1524.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1523.color = ColorRGBA1524
 Coordinate1525 = x3d.Coordinate()
+Coordinate1525.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1523.coord = Coordinate1525
 
@@ -6174,9 +6516,11 @@ Shape1530 = x3d.Shape()
 LineSet1531 = x3d.LineSet()
 LineSet1531.vertexCount = [2]
 ColorRGBA1532 = x3d.ColorRGBA()
+ColorRGBA1532.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1531.color = ColorRGBA1532
 Coordinate1533 = x3d.Coordinate()
+Coordinate1533.point = [(0, 1.3128, 0.01538),(0, 1.3126, -0.0154)]
 
 LineSet1531.coord = Coordinate1533
 
@@ -6233,9 +6577,11 @@ IndexedFaceSet1541.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1541.creaseAngle = 0.5
 IndexedFaceSet1541.solid = False
 ColorRGBA1542 = x3d.ColorRGBA()
+ColorRGBA1542.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1541.color = ColorRGBA1542
 Coordinate1543 = x3d.Coordinate()
+Coordinate1543.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1541.coord = Coordinate1543
 
@@ -6263,9 +6609,11 @@ Shape1548 = x3d.Shape()
 LineSet1549 = x3d.LineSet()
 LineSet1549.vertexCount = [2]
 ColorRGBA1550 = x3d.ColorRGBA()
+ColorRGBA1550.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1549.color = ColorRGBA1550
 Coordinate1551 = x3d.Coordinate()
+Coordinate1551.point = [(0.03847, 1.2087, -0.01378),(0, 1.22, -0.0138)]
 
 LineSet1549.coord = Coordinate1551
 
@@ -6304,9 +6652,11 @@ IndexedFaceSet1559.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1559.creaseAngle = 0.5
 IndexedFaceSet1559.solid = False
 ColorRGBA1560 = x3d.ColorRGBA()
+ColorRGBA1560.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1559.color = ColorRGBA1560
 Coordinate1561 = x3d.Coordinate()
+Coordinate1561.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1559.coord = Coordinate1561
 
@@ -6351,9 +6701,11 @@ IndexedFaceSet1571.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1571.creaseAngle = 0.5
 IndexedFaceSet1571.solid = False
 ColorRGBA1572 = x3d.ColorRGBA()
+ColorRGBA1572.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1571.color = ColorRGBA1572
 Coordinate1573 = x3d.Coordinate()
+Coordinate1573.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1571.coord = Coordinate1573
 
@@ -6398,9 +6750,11 @@ IndexedFaceSet1583.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1583.creaseAngle = 0.5
 IndexedFaceSet1583.solid = False
 ColorRGBA1584 = x3d.ColorRGBA()
+ColorRGBA1584.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1583.color = ColorRGBA1584
 Coordinate1585 = x3d.Coordinate()
+Coordinate1585.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1583.coord = Coordinate1585
 
@@ -6445,9 +6799,11 @@ IndexedFaceSet1595.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1595.creaseAngle = 0.5
 IndexedFaceSet1595.solid = False
 ColorRGBA1596 = x3d.ColorRGBA()
+ColorRGBA1596.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1595.color = ColorRGBA1596
 Coordinate1597 = x3d.Coordinate()
+Coordinate1597.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1595.coord = Coordinate1597
 
@@ -6475,9 +6831,11 @@ Shape1602 = x3d.Shape()
 LineSet1603 = x3d.LineSet()
 LineSet1603.vertexCount = [2]
 ColorRGBA1604 = x3d.ColorRGBA()
+ColorRGBA1604.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1603.color = ColorRGBA1604
 Coordinate1605 = x3d.Coordinate()
+Coordinate1605.point = [(0.12294, 1.191825, -0.0129),(0.03847, 1.2087, -0.01378)]
 
 LineSet1603.coord = Coordinate1605
 
@@ -6516,9 +6874,11 @@ IndexedFaceSet1613.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1613.creaseAngle = 0.5
 IndexedFaceSet1613.solid = False
 ColorRGBA1614 = x3d.ColorRGBA()
+ColorRGBA1614.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1613.color = ColorRGBA1614
 Coordinate1615 = x3d.Coordinate()
+Coordinate1615.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1613.coord = Coordinate1615
 
@@ -6563,9 +6923,11 @@ IndexedFaceSet1625.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1625.creaseAngle = 0.5
 IndexedFaceSet1625.solid = False
 ColorRGBA1626 = x3d.ColorRGBA()
+ColorRGBA1626.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1625.color = ColorRGBA1626
 Coordinate1627 = x3d.Coordinate()
+Coordinate1627.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1625.coord = Coordinate1627
 
@@ -6610,9 +6972,11 @@ IndexedFaceSet1637.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1637.creaseAngle = 0.5
 IndexedFaceSet1637.solid = False
 ColorRGBA1638 = x3d.ColorRGBA()
+ColorRGBA1638.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1637.color = ColorRGBA1638
 Coordinate1639 = x3d.Coordinate()
+Coordinate1639.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1637.coord = Coordinate1639
 
@@ -6657,9 +7021,11 @@ IndexedFaceSet1649.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1649.creaseAngle = 0.5
 IndexedFaceSet1649.solid = False
 ColorRGBA1650 = x3d.ColorRGBA()
+ColorRGBA1650.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1649.color = ColorRGBA1650
 Coordinate1651 = x3d.Coordinate()
+Coordinate1651.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1649.coord = Coordinate1651
 
@@ -6687,9 +7053,11 @@ Shape1656 = x3d.Shape()
 LineSet1657 = x3d.LineSet()
 LineSet1657.vertexCount = [2]
 ColorRGBA1658 = x3d.ColorRGBA()
+ColorRGBA1658.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1657.color = ColorRGBA1658
 Coordinate1659 = x3d.Coordinate()
+Coordinate1659.point = [(0.16506, 1.17855, -0.00327),(0.12294, 1.191825, -0.0129)]
 
 LineSet1657.coord = Coordinate1659
 
@@ -6728,9 +7096,11 @@ IndexedFaceSet1667.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1667.creaseAngle = 0.5
 IndexedFaceSet1667.solid = False
 ColorRGBA1668 = x3d.ColorRGBA()
+ColorRGBA1668.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1667.color = ColorRGBA1668
 Coordinate1669 = x3d.Coordinate()
+Coordinate1669.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1667.coord = Coordinate1669
 
@@ -6775,9 +7145,11 @@ IndexedFaceSet1679.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1679.creaseAngle = 0.5
 IndexedFaceSet1679.solid = False
 ColorRGBA1680 = x3d.ColorRGBA()
+ColorRGBA1680.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1679.color = ColorRGBA1680
 Coordinate1681 = x3d.Coordinate()
+Coordinate1681.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1679.coord = Coordinate1681
 
@@ -6805,9 +7177,11 @@ Shape1686 = x3d.Shape()
 LineSet1687 = x3d.LineSet()
 LineSet1687.vertexCount = [2]
 ColorRGBA1688 = x3d.ColorRGBA()
+ColorRGBA1688.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1687.color = ColorRGBA1688
 Coordinate1689 = x3d.Coordinate()
+Coordinate1689.point = [(0.18209, 0.9288, -0.00563),(0.16506, 1.17855, -0.00327)]
 
 LineSet1687.coord = Coordinate1689
 
@@ -6846,9 +7220,11 @@ IndexedFaceSet1697.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1697.creaseAngle = 0.5
 IndexedFaceSet1697.solid = False
 ColorRGBA1698 = x3d.ColorRGBA()
+ColorRGBA1698.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1697.color = ColorRGBA1698
 Coordinate1699 = x3d.Coordinate()
+Coordinate1699.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1697.coord = Coordinate1699
 
@@ -6876,9 +7252,11 @@ Shape1704 = x3d.Shape()
 LineSet1705 = x3d.LineSet()
 LineSet1705.vertexCount = [2]
 ColorRGBA1706 = x3d.ColorRGBA()
+ColorRGBA1706.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1705.color = ColorRGBA1706
 Coordinate1707 = x3d.Coordinate()
+Coordinate1707.point = [(0.1819, 0.72427, -0.005),(0.18209, 0.9288, -0.00563)]
 
 LineSet1705.coord = Coordinate1707
 
@@ -6900,9 +7278,11 @@ Shape1710 = x3d.Shape()
 LineSet1711 = x3d.LineSet()
 LineSet1711.vertexCount = [2]
 ColorRGBA1712 = x3d.ColorRGBA()
+ColorRGBA1712.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1711.color = ColorRGBA1712
 Coordinate1713 = x3d.Coordinate()
+Coordinate1713.point = [(0.1813, 0.706, 0.0193),(0.1819, 0.72427, -0.005)]
 
 LineSet1711.coord = Coordinate1713
 
@@ -6941,9 +7321,11 @@ IndexedFaceSet1721.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1721.creaseAngle = 0.5
 IndexedFaceSet1721.solid = False
 ColorRGBA1722 = x3d.ColorRGBA()
+ColorRGBA1722.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1721.color = ColorRGBA1722
 Coordinate1723 = x3d.Coordinate()
+Coordinate1723.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1721.coord = Coordinate1723
 
@@ -6971,9 +7353,11 @@ Shape1728 = x3d.Shape()
 LineSet1729 = x3d.LineSet()
 LineSet1729.vertexCount = [2]
 ColorRGBA1730 = x3d.ColorRGBA()
+ColorRGBA1730.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1729.color = ColorRGBA1730
 Coordinate1731 = x3d.Coordinate()
+Coordinate1731.point = [(0.1805, 0.69255, 0.026),(0.1813, 0.706, 0.0193)]
 
 LineSet1729.coord = Coordinate1731
 
@@ -6995,9 +7379,11 @@ Shape1734 = x3d.Shape()
 LineSet1735 = x3d.LineSet()
 LineSet1735.vertexCount = [2]
 ColorRGBA1736 = x3d.ColorRGBA()
+ColorRGBA1736.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1735.color = ColorRGBA1736
 Coordinate1737 = x3d.Coordinate()
+Coordinate1737.point = [(0.181, 0.6727, 0.03577),(0.1805, 0.69255, 0.026)]
 
 LineSet1735.coord = Coordinate1737
 
@@ -7036,9 +7422,11 @@ IndexedFaceSet1745.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1745.creaseAngle = 0.5
 IndexedFaceSet1745.solid = False
 ColorRGBA1746 = x3d.ColorRGBA()
+ColorRGBA1746.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1745.color = ColorRGBA1746
 Coordinate1747 = x3d.Coordinate()
+Coordinate1747.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1745.coord = Coordinate1747
 
@@ -7066,9 +7454,11 @@ Shape1752 = x3d.Shape()
 LineSet1753 = x3d.LineSet()
 LineSet1753.vertexCount = [2]
 ColorRGBA1754 = x3d.ColorRGBA()
+ColorRGBA1754.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1753.color = ColorRGBA1754
 Coordinate1755 = x3d.Coordinate()
+Coordinate1755.point = [(0.1826, 0.654, 0.04966),(0.181, 0.6727, 0.03577)]
 
 LineSet1753.coord = Coordinate1755
 
@@ -7098,9 +7488,11 @@ Shape1758 = x3d.Shape()
 LineSet1759 = x3d.LineSet()
 LineSet1759.vertexCount = [2]
 ColorRGBA1760 = x3d.ColorRGBA()
+ColorRGBA1760.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1759.color = ColorRGBA1760
 Coordinate1761 = x3d.Coordinate()
+Coordinate1761.point = [(0.18128, 0.70695, 0.00842),(0.1819, 0.72427, -0.005)]
 
 LineSet1759.coord = Coordinate1761
 
@@ -7122,9 +7514,11 @@ Shape1764 = x3d.Shape()
 LineSet1765 = x3d.LineSet()
 LineSet1765.vertexCount = [2]
 ColorRGBA1766 = x3d.ColorRGBA()
+ColorRGBA1766.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1765.color = ColorRGBA1766
 Coordinate1767 = x3d.Coordinate()
+Coordinate1767.point = [(0.18128, 0.6876, 0.0098),(0.18128, 0.70695, 0.00842)]
 
 LineSet1765.coord = Coordinate1767
 
@@ -7146,9 +7540,11 @@ Shape1770 = x3d.Shape()
 LineSet1771 = x3d.LineSet()
 LineSet1771.vertexCount = [2]
 ColorRGBA1772 = x3d.ColorRGBA()
+ColorRGBA1772.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1771.color = ColorRGBA1772
 Coordinate1773 = x3d.Coordinate()
+Coordinate1773.point = [(0.1837, 0.6372, 0.01507),(0.18128, 0.6876, 0.0098)]
 
 LineSet1771.coord = Coordinate1773
 
@@ -7170,9 +7566,11 @@ Shape1776 = x3d.Shape()
 LineSet1777 = x3d.LineSet()
 LineSet1777.vertexCount = [2]
 ColorRGBA1778 = x3d.ColorRGBA()
+ColorRGBA1778.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1777.color = ColorRGBA1778
 Coordinate1779 = x3d.Coordinate()
+Coordinate1779.point = [(0.18171, 0.6068, 0.01418),(0.1837, 0.6372, 0.01507)]
 
 LineSet1777.coord = Coordinate1779
 
@@ -7211,9 +7609,11 @@ IndexedFaceSet1787.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1787.creaseAngle = 0.5
 IndexedFaceSet1787.solid = False
 ColorRGBA1788 = x3d.ColorRGBA()
+ColorRGBA1788.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1787.color = ColorRGBA1788
 Coordinate1789 = x3d.Coordinate()
+Coordinate1789.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1787.coord = Coordinate1789
 
@@ -7258,9 +7658,11 @@ IndexedFaceSet1799.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1799.creaseAngle = 0.5
 IndexedFaceSet1799.solid = False
 ColorRGBA1800 = x3d.ColorRGBA()
+ColorRGBA1800.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1799.color = ColorRGBA1800
 Coordinate1801 = x3d.Coordinate()
+Coordinate1801.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1799.coord = Coordinate1801
 
@@ -7288,9 +7690,11 @@ Shape1806 = x3d.Shape()
 LineSet1807 = x3d.LineSet()
 LineSet1807.vertexCount = [2]
 ColorRGBA1808 = x3d.ColorRGBA()
+ColorRGBA1808.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1807.color = ColorRGBA1808
 Coordinate1809 = x3d.Coordinate()
+Coordinate1809.point = [(0.18067, 0.5816, 0.01338),(0.18171, 0.6068, 0.01418)]
 
 LineSet1807.coord = Coordinate1809
 
@@ -7322,9 +7726,11 @@ Shape1812 = x3d.Shape()
 LineSet1813 = x3d.LineSet()
 LineSet1813.vertexCount = [2]
 ColorRGBA1814 = x3d.ColorRGBA()
+ColorRGBA1814.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1813.color = ColorRGBA1814
 Coordinate1815 = x3d.Coordinate()
+Coordinate1815.point = [(0.18108, 0.708525, -0.0048),(0.1819, 0.72427, -0.005)]
 
 LineSet1813.coord = Coordinate1815
 
@@ -7363,9 +7769,11 @@ IndexedFaceSet1823.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1823.creaseAngle = 0.5
 IndexedFaceSet1823.solid = False
 ColorRGBA1824 = x3d.ColorRGBA()
+ColorRGBA1824.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1823.color = ColorRGBA1824
 Coordinate1825 = x3d.Coordinate()
+Coordinate1825.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1823.coord = Coordinate1825
 
@@ -7393,9 +7801,11 @@ Shape1830 = x3d.Shape()
 LineSet1831 = x3d.LineSet()
 LineSet1831.vertexCount = [2]
 ColorRGBA1832 = x3d.ColorRGBA()
+ColorRGBA1832.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1831.color = ColorRGBA1832
 Coordinate1833 = x3d.Coordinate()
+Coordinate1833.point = [(0.18108, 0.6858, -0.00625),(0.18108, 0.708525, -0.0048)]
 
 LineSet1831.coord = Coordinate1833
 
@@ -7417,9 +7827,11 @@ Shape1836 = x3d.Shape()
 LineSet1837 = x3d.LineSet()
 LineSet1837.vertexCount = [2]
 ColorRGBA1838 = x3d.ColorRGBA()
+ColorRGBA1838.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1837.color = ColorRGBA1838
 Coordinate1839 = x3d.Coordinate()
+Coordinate1839.point = [(0.18369, 0.6349, -0.0039),(0.18108, 0.6858, -0.00625)]
 
 LineSet1837.coord = Coordinate1839
 
@@ -7441,9 +7853,11 @@ Shape1842 = x3d.Shape()
 LineSet1843 = x3d.LineSet()
 LineSet1843.vertexCount = [2]
 ColorRGBA1844 = x3d.ColorRGBA()
+ColorRGBA1844.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1843.color = ColorRGBA1844
 Coordinate1845 = x3d.Coordinate()
+Coordinate1845.point = [(0.18171, 0.6032, -0.0035),(0.18369, 0.6349, -0.0039)]
 
 LineSet1843.coord = Coordinate1845
 
@@ -7482,9 +7896,11 @@ IndexedFaceSet1853.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1853.creaseAngle = 0.5
 IndexedFaceSet1853.solid = False
 ColorRGBA1854 = x3d.ColorRGBA()
+ColorRGBA1854.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1853.color = ColorRGBA1854
 Coordinate1855 = x3d.Coordinate()
+Coordinate1855.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1853.coord = Coordinate1855
 
@@ -7512,9 +7928,11 @@ Shape1860 = x3d.Shape()
 LineSet1861 = x3d.LineSet()
 LineSet1861.vertexCount = [2]
 ColorRGBA1862 = x3d.ColorRGBA()
+ColorRGBA1862.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1861.color = ColorRGBA1862
 Coordinate1863 = x3d.Coordinate()
+Coordinate1863.point = [(0.1807, 0.5753, -0.0037),(0.18171, 0.6032, -0.0035)]
 
 LineSet1861.coord = Coordinate1863
 
@@ -7546,9 +7964,11 @@ Shape1866 = x3d.Shape()
 LineSet1867 = x3d.LineSet()
 LineSet1867.vertexCount = [2]
 ColorRGBA1868 = x3d.ColorRGBA()
+ColorRGBA1868.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1867.color = ColorRGBA1868
 Coordinate1869 = x3d.Coordinate()
+Coordinate1869.point = [(0.18108, 0.70582, -0.02574),(0.1819, 0.72427, -0.005)]
 
 LineSet1867.coord = Coordinate1869
 
@@ -7570,9 +7990,11 @@ Shape1872 = x3d.Shape()
 LineSet1873 = x3d.LineSet()
 LineSet1873.vertexCount = [2]
 ColorRGBA1874 = x3d.ColorRGBA()
+ColorRGBA1874.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1873.color = ColorRGBA1874
 Coordinate1875 = x3d.Coordinate()
+Coordinate1875.point = [(0.1811, 0.68625, -0.0199),(0.18108, 0.70582, -0.02574)]
 
 LineSet1873.coord = Coordinate1875
 
@@ -7594,9 +8016,11 @@ Shape1878 = x3d.Shape()
 LineSet1879 = x3d.LineSet()
 LineSet1879.vertexCount = [2]
 ColorRGBA1880 = x3d.ColorRGBA()
+ColorRGBA1880.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1879.color = ColorRGBA1880
 Coordinate1881 = x3d.Coordinate()
+Coordinate1881.point = [(0.18369, 0.63405, -0.02144),(0.1811, 0.68625, -0.0199)]
 
 LineSet1879.coord = Coordinate1881
 
@@ -7618,9 +8042,11 @@ Shape1884 = x3d.Shape()
 LineSet1885 = x3d.LineSet()
 LineSet1885.vertexCount = [2]
 ColorRGBA1886 = x3d.ColorRGBA()
+ColorRGBA1886.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1885.color = ColorRGBA1886
 Coordinate1887 = x3d.Coordinate()
+Coordinate1887.point = [(0.1817, 0.6066, -0.02064),(0.18369, 0.63405, -0.02144)]
 
 LineSet1885.coord = Coordinate1887
 
@@ -7659,9 +8085,11 @@ IndexedFaceSet1895.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1895.creaseAngle = 0.5
 IndexedFaceSet1895.solid = False
 ColorRGBA1896 = x3d.ColorRGBA()
+ColorRGBA1896.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1895.color = ColorRGBA1896
 Coordinate1897 = x3d.Coordinate()
+Coordinate1897.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1895.coord = Coordinate1897
 
@@ -7689,9 +8117,11 @@ Shape1902 = x3d.Shape()
 LineSet1903 = x3d.LineSet()
 LineSet1903.vertexCount = [2]
 ColorRGBA1904 = x3d.ColorRGBA()
+ColorRGBA1904.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1903.color = ColorRGBA1904
 Coordinate1905 = x3d.Coordinate()
+Coordinate1905.point = [(0.18067, 0.580725, -0.01977),(0.1817, 0.6066, -0.02064)]
 
 LineSet1903.coord = Coordinate1905
 
@@ -7740,9 +8170,11 @@ IndexedFaceSet1913.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1913.creaseAngle = 0.5
 IndexedFaceSet1913.solid = False
 ColorRGBA1914 = x3d.ColorRGBA()
+ColorRGBA1914.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1913.color = ColorRGBA1914
 Coordinate1915 = x3d.Coordinate()
+Coordinate1915.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1913.coord = Coordinate1915
 
@@ -7770,9 +8202,11 @@ Shape1920 = x3d.Shape()
 LineSet1921 = x3d.LineSet()
 LineSet1921.vertexCount = [2]
 ColorRGBA1922 = x3d.ColorRGBA()
+ColorRGBA1922.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1921.color = ColorRGBA1922
 Coordinate1923 = x3d.Coordinate()
+Coordinate1923.point = [(0.18164, 0.68827, -0.03278),(0.1819, 0.72427, -0.005)]
 
 LineSet1921.coord = Coordinate1923
 
@@ -7794,9 +8228,11 @@ Shape1926 = x3d.Shape()
 LineSet1927 = x3d.LineSet()
 LineSet1927.vertexCount = [2]
 ColorRGBA1928 = x3d.ColorRGBA()
+ColorRGBA1928.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1927.color = ColorRGBA1928
 Coordinate1929 = x3d.Coordinate()
+Coordinate1929.point = [(0.1833, 0.6381, -0.037),(0.18164, 0.68827, -0.03278)]
 
 LineSet1927.coord = Coordinate1929
 
@@ -7818,9 +8254,11 @@ Shape1932 = x3d.Shape()
 LineSet1933 = x3d.LineSet()
 LineSet1933.vertexCount = [2]
 ColorRGBA1934 = x3d.ColorRGBA()
+ColorRGBA1934.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1933.color = ColorRGBA1934
 Coordinate1935 = x3d.Coordinate()
+Coordinate1935.point = [(0.18166, 0.621, -0.03715),(0.1833, 0.6381, -0.037)]
 
 LineSet1933.coord = Coordinate1935
 
@@ -7859,9 +8297,11 @@ IndexedFaceSet1943.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1943.creaseAngle = 0.5
 IndexedFaceSet1943.solid = False
 ColorRGBA1944 = x3d.ColorRGBA()
+ColorRGBA1944.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1943.color = ColorRGBA1944
 Coordinate1945 = x3d.Coordinate()
+Coordinate1945.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1943.coord = Coordinate1945
 
@@ -7889,9 +8329,11 @@ Shape1950 = x3d.Shape()
 LineSet1951 = x3d.LineSet()
 LineSet1951.vertexCount = [2]
 ColorRGBA1952 = x3d.ColorRGBA()
+ColorRGBA1952.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1951.color = ColorRGBA1952
 Coordinate1953 = x3d.Coordinate()
+Coordinate1953.point = [(0.1808, 0.6023, -0.0369),(0.18166, 0.621, -0.03715)]
 
 LineSet1951.coord = Coordinate1953
 
@@ -7948,9 +8390,11 @@ IndexedFaceSet1961.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1961.creaseAngle = 0.5
 IndexedFaceSet1961.solid = False
 ColorRGBA1962 = x3d.ColorRGBA()
+ColorRGBA1962.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1961.color = ColorRGBA1962
 Coordinate1963 = x3d.Coordinate()
+Coordinate1963.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1961.coord = Coordinate1963
 
@@ -7978,9 +8422,11 @@ Shape1968 = x3d.Shape()
 LineSet1969 = x3d.LineSet()
 LineSet1969.vertexCount = [2]
 ColorRGBA1970 = x3d.ColorRGBA()
+ColorRGBA1970.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet1969.color = ColorRGBA1970
 Coordinate1971 = x3d.Coordinate()
+Coordinate1971.point = [(-0.03847, 1.2087, -0.0138),(0, 1.22, -0.0138)]
 
 LineSet1969.coord = Coordinate1971
 
@@ -8019,9 +8465,11 @@ IndexedFaceSet1979.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1979.creaseAngle = 0.5
 IndexedFaceSet1979.solid = False
 ColorRGBA1980 = x3d.ColorRGBA()
+ColorRGBA1980.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1979.color = ColorRGBA1980
 Coordinate1981 = x3d.Coordinate()
+Coordinate1981.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1979.coord = Coordinate1981
 
@@ -8066,9 +8514,11 @@ IndexedFaceSet1991.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet1991.creaseAngle = 0.5
 IndexedFaceSet1991.solid = False
 ColorRGBA1992 = x3d.ColorRGBA()
+ColorRGBA1992.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet1991.color = ColorRGBA1992
 Coordinate1993 = x3d.Coordinate()
+Coordinate1993.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet1991.coord = Coordinate1993
 
@@ -8113,9 +8563,11 @@ IndexedFaceSet2003.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2003.creaseAngle = 0.5
 IndexedFaceSet2003.solid = False
 ColorRGBA2004 = x3d.ColorRGBA()
+ColorRGBA2004.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2003.color = ColorRGBA2004
 Coordinate2005 = x3d.Coordinate()
+Coordinate2005.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2003.coord = Coordinate2005
 
@@ -8160,9 +8612,11 @@ IndexedFaceSet2015.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2015.creaseAngle = 0.5
 IndexedFaceSet2015.solid = False
 ColorRGBA2016 = x3d.ColorRGBA()
+ColorRGBA2016.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2015.color = ColorRGBA2016
 Coordinate2017 = x3d.Coordinate()
+Coordinate2017.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2015.coord = Coordinate2017
 
@@ -8190,9 +8644,11 @@ Shape2022 = x3d.Shape()
 LineSet2023 = x3d.LineSet()
 LineSet2023.vertexCount = [2]
 ColorRGBA2024 = x3d.ColorRGBA()
+ColorRGBA2024.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2023.color = ColorRGBA2024
 Coordinate2025 = x3d.Coordinate()
+Coordinate2025.point = [(-0.1229, 1.19182, -0.0129),(-0.03847, 1.2087, -0.0138)]
 
 LineSet2023.coord = Coordinate2025
 
@@ -8231,9 +8687,11 @@ IndexedFaceSet2033.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2033.creaseAngle = 0.5
 IndexedFaceSet2033.solid = False
 ColorRGBA2034 = x3d.ColorRGBA()
+ColorRGBA2034.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2033.color = ColorRGBA2034
 Coordinate2035 = x3d.Coordinate()
+Coordinate2035.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2033.coord = Coordinate2035
 
@@ -8278,9 +8736,11 @@ IndexedFaceSet2045.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2045.creaseAngle = 0.5
 IndexedFaceSet2045.solid = False
 ColorRGBA2046 = x3d.ColorRGBA()
+ColorRGBA2046.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2045.color = ColorRGBA2046
 Coordinate2047 = x3d.Coordinate()
+Coordinate2047.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2045.coord = Coordinate2047
 
@@ -8325,9 +8785,11 @@ IndexedFaceSet2057.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2057.creaseAngle = 0.5
 IndexedFaceSet2057.solid = False
 ColorRGBA2058 = x3d.ColorRGBA()
+ColorRGBA2058.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2057.color = ColorRGBA2058
 Coordinate2059 = x3d.Coordinate()
+Coordinate2059.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2057.coord = Coordinate2059
 
@@ -8372,9 +8834,11 @@ IndexedFaceSet2069.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2069.creaseAngle = 0.5
 IndexedFaceSet2069.solid = False
 ColorRGBA2070 = x3d.ColorRGBA()
+ColorRGBA2070.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2069.color = ColorRGBA2070
 Coordinate2071 = x3d.Coordinate()
+Coordinate2071.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2069.coord = Coordinate2071
 
@@ -8402,9 +8866,11 @@ Shape2076 = x3d.Shape()
 LineSet2077 = x3d.LineSet()
 LineSet2077.vertexCount = [2]
 ColorRGBA2078 = x3d.ColorRGBA()
+ColorRGBA2078.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2077.color = ColorRGBA2078
 Coordinate2079 = x3d.Coordinate()
+Coordinate2079.point = [(-0.1647, 1.17855, -0.00327),(-0.1229, 1.19182, -0.0129)]
 
 LineSet2077.coord = Coordinate2079
 
@@ -8443,9 +8909,11 @@ IndexedFaceSet2087.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2087.creaseAngle = 0.5
 IndexedFaceSet2087.solid = False
 ColorRGBA2088 = x3d.ColorRGBA()
+ColorRGBA2088.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2087.color = ColorRGBA2088
 Coordinate2089 = x3d.Coordinate()
+Coordinate2089.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2087.coord = Coordinate2089
 
@@ -8490,9 +8958,11 @@ IndexedFaceSet2099.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2099.creaseAngle = 0.5
 IndexedFaceSet2099.solid = False
 ColorRGBA2100 = x3d.ColorRGBA()
+ColorRGBA2100.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2099.color = ColorRGBA2100
 Coordinate2101 = x3d.Coordinate()
+Coordinate2101.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2099.coord = Coordinate2101
 
@@ -8520,9 +8990,11 @@ Shape2106 = x3d.Shape()
 LineSet2107 = x3d.LineSet()
 LineSet2107.vertexCount = [2]
 ColorRGBA2108 = x3d.ColorRGBA()
+ColorRGBA2108.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2107.color = ColorRGBA2108
 Coordinate2109 = x3d.Coordinate()
+Coordinate2109.point = [(-0.1817, 0.9288, -0.00564),(-0.1647, 1.17855, -0.00327)]
 
 LineSet2107.coord = Coordinate2109
 
@@ -8561,9 +9033,11 @@ IndexedFaceSet2117.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2117.creaseAngle = 0.5
 IndexedFaceSet2117.solid = False
 ColorRGBA2118 = x3d.ColorRGBA()
+ColorRGBA2118.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2117.color = ColorRGBA2118
 Coordinate2119 = x3d.Coordinate()
+Coordinate2119.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2117.coord = Coordinate2119
 
@@ -8591,9 +9065,11 @@ Shape2124 = x3d.Shape()
 LineSet2125 = x3d.LineSet()
 LineSet2125.vertexCount = [2]
 ColorRGBA2126 = x3d.ColorRGBA()
+ColorRGBA2126.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2125.color = ColorRGBA2126
 Coordinate2127 = x3d.Coordinate()
+Coordinate2127.point = [(-0.1816, 0.7242, -0.005),(-0.1817, 0.9288, -0.00564)]
 
 LineSet2125.coord = Coordinate2127
 
@@ -8615,9 +9091,11 @@ Shape2130 = x3d.Shape()
 LineSet2131 = x3d.LineSet()
 LineSet2131.vertexCount = [2]
 ColorRGBA2132 = x3d.ColorRGBA()
+ColorRGBA2132.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2131.color = ColorRGBA2132
 Coordinate2133 = x3d.Coordinate()
+Coordinate2133.point = [(-0.18097, 0.70605, 0.0193),(-0.1816, 0.7242, -0.005)]
 
 LineSet2131.coord = Coordinate2133
 
@@ -8656,9 +9134,11 @@ IndexedFaceSet2141.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2141.creaseAngle = 0.5
 IndexedFaceSet2141.solid = False
 ColorRGBA2142 = x3d.ColorRGBA()
+ColorRGBA2142.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2141.color = ColorRGBA2142
 Coordinate2143 = x3d.Coordinate()
+Coordinate2143.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2141.coord = Coordinate2143
 
@@ -8686,9 +9166,11 @@ Shape2148 = x3d.Shape()
 LineSet2149 = x3d.LineSet()
 LineSet2149.vertexCount = [2]
 ColorRGBA2150 = x3d.ColorRGBA()
+ColorRGBA2150.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2149.color = ColorRGBA2150
 Coordinate2151 = x3d.Coordinate()
+Coordinate2151.point = [(-0.18, 0.69255, 0.02598),(-0.18097, 0.70605, 0.0193)]
 
 LineSet2149.coord = Coordinate2151
 
@@ -8710,9 +9192,11 @@ Shape2154 = x3d.Shape()
 LineSet2155 = x3d.LineSet()
 LineSet2155.vertexCount = [2]
 ColorRGBA2156 = x3d.ColorRGBA()
+ColorRGBA2156.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2155.color = ColorRGBA2156
 Coordinate2157 = x3d.Coordinate()
+Coordinate2157.point = [(-0.18065, 0.67275, 0.03577),(-0.18, 0.69255, 0.02598)]
 
 LineSet2155.coord = Coordinate2157
 
@@ -8751,9 +9235,11 @@ IndexedFaceSet2165.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2165.creaseAngle = 0.5
 IndexedFaceSet2165.solid = False
 ColorRGBA2166 = x3d.ColorRGBA()
+ColorRGBA2166.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2165.color = ColorRGBA2166
 Coordinate2167 = x3d.Coordinate()
+Coordinate2167.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2165.coord = Coordinate2167
 
@@ -8781,9 +9267,11 @@ Shape2172 = x3d.Shape()
 LineSet2173 = x3d.LineSet()
 LineSet2173.vertexCount = [2]
 ColorRGBA2174 = x3d.ColorRGBA()
+ColorRGBA2174.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2173.color = ColorRGBA2174
 Coordinate2175 = x3d.Coordinate()
+Coordinate2175.point = [(-0.18227, 0.654, 0.0496),(-0.18065, 0.67275, 0.03577)]
 
 LineSet2173.coord = Coordinate2175
 
@@ -8813,9 +9301,11 @@ Shape2178 = x3d.Shape()
 LineSet2179 = x3d.LineSet()
 LineSet2179.vertexCount = [2]
 ColorRGBA2180 = x3d.ColorRGBA()
+ColorRGBA2180.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2179.color = ColorRGBA2180
 Coordinate2181 = x3d.Coordinate()
+Coordinate2181.point = [(-0.18097, 0.70695, 0.0084),(-0.1816, 0.7242, -0.005)]
 
 LineSet2179.coord = Coordinate2181
 
@@ -8837,9 +9327,11 @@ Shape2184 = x3d.Shape()
 LineSet2185 = x3d.LineSet()
 LineSet2185.vertexCount = [2]
 ColorRGBA2186 = x3d.ColorRGBA()
+ColorRGBA2186.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2185.color = ColorRGBA2186
 Coordinate2187 = x3d.Coordinate()
+Coordinate2187.point = [(-0.1809, 0.6876, 0.0097),(-0.18097, 0.70695, 0.0084)]
 
 LineSet2185.coord = Coordinate2187
 
@@ -8861,9 +9353,11 @@ Shape2190 = x3d.Shape()
 LineSet2191 = x3d.LineSet()
 LineSet2191.vertexCount = [2]
 ColorRGBA2192 = x3d.ColorRGBA()
+ColorRGBA2192.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2191.color = ColorRGBA2192
 Coordinate2193 = x3d.Coordinate()
+Coordinate2193.point = [(-0.18335, 0.6372, 0.01507),(-0.1809, 0.6876, 0.0097)]
 
 LineSet2191.coord = Coordinate2193
 
@@ -8885,9 +9379,11 @@ Shape2196 = x3d.Shape()
 LineSet2197 = x3d.LineSet()
 LineSet2197.vertexCount = [2]
 ColorRGBA2198 = x3d.ColorRGBA()
+ColorRGBA2198.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2197.color = ColorRGBA2198
 Coordinate2199 = x3d.Coordinate()
+Coordinate2199.point = [(-0.1813, 0.6068, 0.01418),(-0.18335, 0.6372, 0.01507)]
 
 LineSet2197.coord = Coordinate2199
 
@@ -8926,9 +9422,11 @@ IndexedFaceSet2207.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2207.creaseAngle = 0.5
 IndexedFaceSet2207.solid = False
 ColorRGBA2208 = x3d.ColorRGBA()
+ColorRGBA2208.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2207.color = ColorRGBA2208
 Coordinate2209 = x3d.Coordinate()
+Coordinate2209.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2207.coord = Coordinate2209
 
@@ -8973,9 +9471,11 @@ IndexedFaceSet2219.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2219.creaseAngle = 0.5
 IndexedFaceSet2219.solid = False
 ColorRGBA2220 = x3d.ColorRGBA()
+ColorRGBA2220.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2219.color = ColorRGBA2220
 Coordinate2221 = x3d.Coordinate()
+Coordinate2221.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2219.coord = Coordinate2221
 
@@ -9003,9 +9503,11 @@ Shape2226 = x3d.Shape()
 LineSet2227 = x3d.LineSet()
 LineSet2227.vertexCount = [2]
 ColorRGBA2228 = x3d.ColorRGBA()
+ColorRGBA2228.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2227.color = ColorRGBA2228
 Coordinate2229 = x3d.Coordinate()
+Coordinate2229.point = [(-0.1803, 0.5816, 0.01338),(-0.1813, 0.6068, 0.01418)]
 
 LineSet2227.coord = Coordinate2229
 
@@ -9037,9 +9539,11 @@ Shape2232 = x3d.Shape()
 LineSet2233 = x3d.LineSet()
 LineSet2233.vertexCount = [2]
 ColorRGBA2234 = x3d.ColorRGBA()
+ColorRGBA2234.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2233.color = ColorRGBA2234
 Coordinate2235 = x3d.Coordinate()
+Coordinate2235.point = [(-0.18072, 0.708525, -0.004797),(-0.1816, 0.7242, -0.005)]
 
 LineSet2233.coord = Coordinate2235
 
@@ -9078,9 +9582,11 @@ IndexedFaceSet2243.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2243.creaseAngle = 0.5
 IndexedFaceSet2243.solid = False
 ColorRGBA2244 = x3d.ColorRGBA()
+ColorRGBA2244.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2243.color = ColorRGBA2244
 Coordinate2245 = x3d.Coordinate()
+Coordinate2245.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2243.coord = Coordinate2245
 
@@ -9108,9 +9614,11 @@ Shape2250 = x3d.Shape()
 LineSet2251 = x3d.LineSet()
 LineSet2251.vertexCount = [2]
 ColorRGBA2252 = x3d.ColorRGBA()
+ColorRGBA2252.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2251.color = ColorRGBA2252
 Coordinate2253 = x3d.Coordinate()
+Coordinate2253.point = [(-0.18072, 0.6858, -0.00625),(-0.18072, 0.708525, -0.004797)]
 
 LineSet2251.coord = Coordinate2253
 
@@ -9132,9 +9640,11 @@ Shape2256 = x3d.Shape()
 LineSet2257 = x3d.LineSet()
 LineSet2257.vertexCount = [2]
 ColorRGBA2258 = x3d.ColorRGBA()
+ColorRGBA2258.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2257.color = ColorRGBA2258
 Coordinate2259 = x3d.Coordinate()
+Coordinate2259.point = [(-0.1833, 0.63495, -0.0039),(-0.18072, 0.6858, -0.00625)]
 
 LineSet2257.coord = Coordinate2259
 
@@ -9156,9 +9666,11 @@ Shape2262 = x3d.Shape()
 LineSet2263 = x3d.LineSet()
 LineSet2263.vertexCount = [2]
 ColorRGBA2264 = x3d.ColorRGBA()
+ColorRGBA2264.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2263.color = ColorRGBA2264
 Coordinate2265 = x3d.Coordinate()
+Coordinate2265.point = [(-0.1813, 0.6032, -0.0035),(-0.1833, 0.63495, -0.0039)]
 
 LineSet2263.coord = Coordinate2265
 
@@ -9197,9 +9709,11 @@ IndexedFaceSet2273.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2273.creaseAngle = 0.5
 IndexedFaceSet2273.solid = False
 ColorRGBA2274 = x3d.ColorRGBA()
+ColorRGBA2274.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2273.color = ColorRGBA2274
 Coordinate2275 = x3d.Coordinate()
+Coordinate2275.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2273.coord = Coordinate2275
 
@@ -9227,9 +9741,11 @@ Shape2280 = x3d.Shape()
 LineSet2281 = x3d.LineSet()
 LineSet2281.vertexCount = [2]
 ColorRGBA2282 = x3d.ColorRGBA()
+ColorRGBA2282.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2281.color = ColorRGBA2282
 Coordinate2283 = x3d.Coordinate()
+Coordinate2283.point = [(-0.18029, 0.5753, -0.00375),(-0.1813, 0.6032, -0.0035)]
 
 LineSet2281.coord = Coordinate2283
 
@@ -9261,9 +9777,11 @@ Shape2286 = x3d.Shape()
 LineSet2287 = x3d.LineSet()
 LineSet2287.vertexCount = [2]
 ColorRGBA2288 = x3d.ColorRGBA()
+ColorRGBA2288.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2287.color = ColorRGBA2288
 Coordinate2289 = x3d.Coordinate()
+Coordinate2289.point = [(-0.18072, 0.70583, -0.02574),(-0.1816, 0.7242, -0.005)]
 
 LineSet2287.coord = Coordinate2289
 
@@ -9285,9 +9803,11 @@ Shape2292 = x3d.Shape()
 LineSet2293 = x3d.LineSet()
 LineSet2293.vertexCount = [2]
 ColorRGBA2294 = x3d.ColorRGBA()
+ColorRGBA2294.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2293.color = ColorRGBA2294
 Coordinate2295 = x3d.Coordinate()
+Coordinate2295.point = [(-0.18072, 0.68625, -0.01992),(-0.18072, 0.70583, -0.02574)]
 
 LineSet2293.coord = Coordinate2295
 
@@ -9309,9 +9829,11 @@ Shape2298 = x3d.Shape()
 LineSet2299 = x3d.LineSet()
 LineSet2299.vertexCount = [2]
 ColorRGBA2300 = x3d.ColorRGBA()
+ColorRGBA2300.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2299.color = ColorRGBA2300
 Coordinate2301 = x3d.Coordinate()
+Coordinate2301.point = [(-0.1833, 0.63405, -0.02144),(-0.18072, 0.68625, -0.01992)]
 
 LineSet2299.coord = Coordinate2301
 
@@ -9333,9 +9855,11 @@ Shape2304 = x3d.Shape()
 LineSet2305 = x3d.LineSet()
 LineSet2305.vertexCount = [2]
 ColorRGBA2306 = x3d.ColorRGBA()
+ColorRGBA2306.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2305.color = ColorRGBA2306
 Coordinate2307 = x3d.Coordinate()
+Coordinate2307.point = [(-0.1813, 0.6066, -0.02064),(-0.1833, 0.63405, -0.02144)]
 
 LineSet2305.coord = Coordinate2307
 
@@ -9374,9 +9898,11 @@ IndexedFaceSet2315.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2315.creaseAngle = 0.5
 IndexedFaceSet2315.solid = False
 ColorRGBA2316 = x3d.ColorRGBA()
+ColorRGBA2316.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2315.color = ColorRGBA2316
 Coordinate2317 = x3d.Coordinate()
+Coordinate2317.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2315.coord = Coordinate2317
 
@@ -9404,9 +9930,11 @@ Shape2322 = x3d.Shape()
 LineSet2323 = x3d.LineSet()
 LineSet2323.vertexCount = [2]
 ColorRGBA2324 = x3d.ColorRGBA()
+ColorRGBA2324.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2323.color = ColorRGBA2324
 Coordinate2325 = x3d.Coordinate()
+Coordinate2325.point = [(-0.18029, 0.5807, -0.01978),(-0.1813, 0.6066, -0.02064)]
 
 LineSet2323.coord = Coordinate2325
 
@@ -9455,9 +9983,11 @@ IndexedFaceSet2333.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2333.creaseAngle = 0.5
 IndexedFaceSet2333.solid = False
 ColorRGBA2334 = x3d.ColorRGBA()
+ColorRGBA2334.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2333.color = ColorRGBA2334
 Coordinate2335 = x3d.Coordinate()
+Coordinate2335.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2333.coord = Coordinate2335
 
@@ -9485,9 +10015,11 @@ Shape2340 = x3d.Shape()
 LineSet2341 = x3d.LineSet()
 LineSet2341.vertexCount = [2]
 ColorRGBA2342 = x3d.ColorRGBA()
+ColorRGBA2342.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2341.color = ColorRGBA2342
 Coordinate2343 = x3d.Coordinate()
+Coordinate2343.point = [(-0.18126, 0.68827, -0.03278),(-0.1816, 0.7242, -0.005)]
 
 LineSet2341.coord = Coordinate2343
 
@@ -9509,9 +10041,11 @@ Shape2346 = x3d.Shape()
 LineSet2347 = x3d.LineSet()
 LineSet2347.vertexCount = [2]
 ColorRGBA2348 = x3d.ColorRGBA()
+ColorRGBA2348.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2347.color = ColorRGBA2348
 Coordinate2349 = x3d.Coordinate()
+Coordinate2349.point = [(-0.18297, 0.6381, -0.0371),(-0.18126, 0.68827, -0.03278)]
 
 LineSet2347.coord = Coordinate2349
 
@@ -9533,9 +10067,11 @@ Shape2352 = x3d.Shape()
 LineSet2353 = x3d.LineSet()
 LineSet2353.vertexCount = [2]
 ColorRGBA2354 = x3d.ColorRGBA()
+ColorRGBA2354.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2353.color = ColorRGBA2354
 Coordinate2355 = x3d.Coordinate()
+Coordinate2355.point = [(-0.1813, 0.621, -0.03715),(-0.18297, 0.6381, -0.0371)]
 
 LineSet2353.coord = Coordinate2355
 
@@ -9574,9 +10110,11 @@ IndexedFaceSet2363.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,
 IndexedFaceSet2363.creaseAngle = 0.5
 IndexedFaceSet2363.solid = False
 ColorRGBA2364 = x3d.ColorRGBA()
+ColorRGBA2364.color = [(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1),(1, 1, 0, 1),(1, 1, 0, 0.1)]
 
 IndexedFaceSet2363.color = ColorRGBA2364
 Coordinate2365 = x3d.Coordinate()
+Coordinate2365.point = [(0, 0.01, 0),(-0.01, 0, 0),(0, 0, 0.01),(0.01, 0, 0),(0, 0, -0.01),(0, -0.01, 0)]
 
 IndexedFaceSet2363.coord = Coordinate2365
 
@@ -9604,9 +10142,11 @@ Shape2370 = x3d.Shape()
 LineSet2371 = x3d.LineSet()
 LineSet2371.vertexCount = [2]
 ColorRGBA2372 = x3d.ColorRGBA()
+ColorRGBA2372.color = [(1, 1, 0, 1),(1, 1, 0, 1)]
 
 LineSet2371.color = ColorRGBA2372
 Coordinate2373 = x3d.Coordinate()
+Coordinate2373.point = [(-0.18045, 0.602325, -0.03697),(-0.1813, 0.621, -0.03715)]
 
 LineSet2371.coord = Coordinate2373
 
@@ -9677,6 +10217,8 @@ NavigationInfo2374.headlight = False
 Scene4.children.append(NavigationInfo2374)
 Background2375 = x3d.Background()
 Background2375.DEF = "Background1"
+Background2375.groundColor = [(0.5, 0.5, 0.5)]
+Background2375.skyColor = [(0.4, 0.4, 0.4)]
 
 Scene4.children.append(Background2375)
 DirectionalLight2376 = x3d.DirectionalLight()
@@ -9715,6 +10257,9 @@ X3D0.Scene = Scene4
 f = open("../data/Jin20fSegmented.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/Jin20fSegmented.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/Jin20fSegmented.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/Jin20fSegmented.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

@@ -34,7 +34,7 @@ head1.children.append(meta6)
 X3D0.head = head1
 Scene7 = x3d.Scene()
 NavigationInfo8 = x3d.NavigationInfo()
-NavigationInfo8.type = ["EXAMINE"]
+NavigationInfo8.type = ["ANY","EXAMINE","WALK","FLY","LOOKAT"]
 
 Scene7.children.append(NavigationInfo8)
 Viewpoint9 = x3d.Viewpoint()
@@ -404,9 +404,11 @@ IndexedFaceSet100.convex = False
 IndexedFaceSet100.coordIndex = [0,1,2,-1,0,2,3,-1,7,6,5,4,-1,0,4,5,1,-1,1,5,6,2,-1,2,6,7,3,-1,3,7,4,0]
 IndexedFaceSet100.colorIndex = [0,1,2,-1,0,2,3,-1,7,6,5,4,-1,0,4,5,1,-1,1,5,6,2,-1,2,6,7,3,-1,3,7,4,0]
 Coordinate101 = x3d.Coordinate()
+Coordinate101.point = [(0, 0, 0),(0, 0, 1),(0, 1, 1),(0, 1, 0),(1, 0, 0),(1, 0, 1),(1, 1, 1),(1, 1, 0)]
 
 IndexedFaceSet100.coord = Coordinate101
 Color102 = x3d.Color()
+Color102.color = [(1, 0, 0),(1, 0, 0),(1, 0, 0),(1, 0, 0),(0, 0, 1),(0, 0, 1),(0, 0, 1),(0, 0, 1)]
 
 IndexedFaceSet100.color = Color102
 
@@ -417,9 +419,11 @@ Shape103 = x3d.Shape()
 IndexedLineSet104 = x3d.IndexedLineSet()
 IndexedLineSet104.coordIndex = [0,1,-1,1,2,-1,2,3,-1,3,0,-1,2,0,-1]
 Coordinate105 = x3d.Coordinate()
+Coordinate105.point = [(0, 0, 0),(0, 0, 1),(0, 1, 1),(0, 1, 0),(1, 0, 0),(1, 0, 1),(1, 1, 1),(1, 1, 0)]
 
 IndexedLineSet104.coord = Coordinate105
 Color106 = x3d.Color()
+Color106.color = [(1, 1, 1),(1, 1, 1),(1, 1, 1),(1, 1, 1),(0, 0, 0)]
 
 IndexedLineSet104.color = Color106
 
@@ -437,6 +441,9 @@ X3D0.Scene = Scene7
 f = open("../data/rubikPly.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/rubikPly.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/rubikPly.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/rubikPly.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

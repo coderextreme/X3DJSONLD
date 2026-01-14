@@ -89,6 +89,7 @@ Viewpoint18.description = "Hello MFString syntax"
 
 Scene17.children.append(Viewpoint18)
 Background19 = x3d.Background()
+Background19.skyColor = [(0.6, 1, 0.8)]
 
 Scene17.children.append(Background19)
 Shape20 = x3d.Shape()
@@ -117,6 +118,9 @@ X3D0.Scene = Scene17
 f = open("../data/StringArrayEncodingExamples.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/StringArrayEncodingExamples.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/StringArrayEncodingExamples.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/StringArrayEncodingExamples.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

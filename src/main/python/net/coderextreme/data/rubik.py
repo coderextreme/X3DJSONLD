@@ -34,7 +34,7 @@ head1.children.append(meta6)
 X3D0.head = head1
 Scene7 = x3d.Scene()
 NavigationInfo8 = x3d.NavigationInfo()
-NavigationInfo8.type = ["EXAMINE"]
+NavigationInfo8.type = ["ANY","EXAMINE","WALK","FLY","LOOKAT"]
 
 Scene7.children.append(NavigationInfo8)
 Viewpoint9 = x3d.Viewpoint()
@@ -262,6 +262,9 @@ X3D0.Scene = Scene7
 f = open("../data/rubik.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/rubik.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/rubik.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/rubik.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

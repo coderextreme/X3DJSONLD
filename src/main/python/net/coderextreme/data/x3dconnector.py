@@ -39,6 +39,7 @@ Viewpoint8.description = "Only Viewpoint"
 
 Scene7.children.append(Viewpoint8)
 Background9 = x3d.Background()
+Background9.skyColor = [(0.4, 0.4, 0.4)]
 
 Scene7.children.append(Background9)
 Transform10 = x3d.Transform()
@@ -344,6 +345,9 @@ X3D0.Scene = Scene7
 f = open("../data/x3dconnector.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/x3dconnector.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/x3dconnector.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/x3dconnector.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()
