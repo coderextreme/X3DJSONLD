@@ -55,7 +55,7 @@ code += "CommentsBlock = JavaUtilities.get_proxy_class(\"org.web3d.x3d.jsail.Cor
 
 classes = {}
 
-with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
+with open("../../specifications/X3dUnifiedObjectModel-4.1.xml") as fp:
     soup = BeautifulSoup(fp, 'xml')
 
 

@@ -53,7 +53,7 @@ code += "ConfigurationProperties = java.type('org.web3d.x3d.jsail.ConfigurationP
 
 classes = {}
 
-with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
+with open("../../specifications/X3dUnifiedObjectModel-4.1.xml") as fp:
     soup = BeautifulSoup(fp, 'xml')
 
 

@@ -103,7 +103,7 @@ code = "let mapToMethod;\n"
 
 code += "export default mapToMethod = {"
 
-soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
+soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.1.xml")).getroot()
 
 classes = {}
 

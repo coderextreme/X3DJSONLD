@@ -1,11 +1,15 @@
+import requests
 from bs4 import BeautifulSoup
 
-with open("X3dUnifiedObjectModel-4.0.xml") as fx3duom:
+with open("X3dUnifiedObjectModel-4.1.xml") as fx3duom:
     x3duom = BeautifulSoup(fx3duom, features="xml")
 with open("X_ITE.xml") as fx_iteuom:
     x_ite = BeautifulSoup(fx_iteuom, features="xml")
 
 parent = x3duom.find("SimpleTypeEnumerations")
+if parent is None:
+    print("Error: SimpleTypeEnumerations not found in X3dUnifiedObjectModel-4.1.xml")
+    exit(1)
 stsuom = parent.find_all("SimpleType")
 sts = x_ite.find_all("SimpleType")
 for st in sts:
