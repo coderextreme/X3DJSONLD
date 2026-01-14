@@ -473,12 +473,13 @@ PythonSerializer.prototype = {
 					(method === ".texCoord" && element.nodeName !== "MultiTextureCoordinate") ||
 					method === ".skinNormal" ||
 					method === ".coord" ||
+					method === ".tangent" ||
 					method === ".normal" ||
 					method === ".source" ||
 					method === ".layerSet" ||
 					(method === ".textureTransform" && element.nodeName === "Appearance") ||
 					(method === ".baseTexture" && element.nodeName === "PhysicalMaterial") ||
-  					((method === ".ambientTexture" || method === ".diffuseTexture" || method === ".emissiveTexture" || method === ".normalTexture" || method === ".occlusionTexture" || method === ".shininessTexture" || method === ".specularTexture") && element.nodeName === "Material") ||
+  					((method === ".ambientTexture" || method === ".diffuseTexture" || method === ".emissiveTexture" || method === ".normalTexture" || method === ".occlusionTexture" || method === ".shininessTexture" || method === ".specularTexture") && element.nodeName.endsWith("Material")) ||
 					method === ".acousticProperties" ||
 					method === ".topTexture" ||
 					method === ".bottomTexture" ||
