@@ -205,7 +205,7 @@ imports += "import java.util.List;\n"
 imports += "import org.web3d.x3d.jsail.fields.MFNode;\n"
 imports += "import org.web3d.x3d.jsail.fields.SFNode;\n"
 
-soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
+soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.1.xml")).getroot()
 
 classes = {}
 
