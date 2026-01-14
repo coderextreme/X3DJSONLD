@@ -183,11 +183,11 @@ def printNodeDefs(soup):
     return s
 
 
-with open('../schema/x3d-4.0-JSONSchema.json') as json_data:
+with open('../schema/x3d-4.1-JSONSchema.json') as json_data:
     x3duom = json.load(json_data)
 
 
-soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
+soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.1.xml")).getroot()
 
 classes = {}
 regex = {}

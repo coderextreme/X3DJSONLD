@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-tree = ET.parse("../../specifications/X3dUnifiedObjectModel-4.0.xml")
+tree = ET.parse("../../specifications/X3dUnifiedObjectModel-4.1.xml")
 
 root = tree.getroot()
 

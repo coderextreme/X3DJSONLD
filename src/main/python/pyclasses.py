@@ -47,7 +47,7 @@ class ClassPrinter:
 
 code = "from x3d import *\n\nX3dClassLookup = {\n"
 
-soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.0.xml"), "xml")
+soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.1.xml"), "xml")
 
 
 classes = {}
