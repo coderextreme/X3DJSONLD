@@ -99,211 +99,211 @@ var X3D0 =  new X3D({
               name : new SFString("ArtDeco00"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00","ArtDecoPrototypes.wrl#ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco01"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01","ArtDecoPrototypes.wrl#ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco02"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02","ArtDecoPrototypes.wrl#ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco03"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco03","ArtDecoPrototypes.wrl#ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco03"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco04"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco04","ArtDecoPrototypes.wrl#ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco04"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco05"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco05","ArtDecoPrototypes.wrl#ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco05"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco06"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco06","ArtDecoPrototypes.wrl#ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco06"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco07"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco07","ArtDecoPrototypes.wrl#ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco07"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco08"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco08","ArtDecoPrototypes.wrl#ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco08"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco09"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco09","ArtDecoPrototypes.wrl#ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco09"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco10"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco10","ArtDecoPrototypes.wrl#ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco10"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco11"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco11","ArtDecoPrototypes.wrl#ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco11"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco12"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco12","ArtDecoPrototypes.wrl#ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco12"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco13"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco13","ArtDecoPrototypes.wrl#ArtDeco13","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco13"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco14"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco14","ArtDecoPrototypes.wrl#ArtDeco14","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco14"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco15"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco15","ArtDecoPrototypes.wrl#ArtDeco15","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco15"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco16"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco16","ArtDecoPrototypes.wrl#ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco16"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco17"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco17","ArtDecoPrototypes.wrl#ArtDeco17","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco17"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco18"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco18","ArtDecoPrototypes.wrl#ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco18"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco19"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco19","ArtDecoPrototypes.wrl#ArtDeco19","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco19"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco20"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco20","ArtDecoPrototypes.wrl#ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco20"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco21"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco21","ArtDecoPrototypes.wrl#ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco21"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco22"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco22","ArtDecoPrototypes.wrl#ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco22"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco23"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco23","ArtDecoPrototypes.wrl#ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco23"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco24"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco24","ArtDecoPrototypes.wrl#ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco24"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco25"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco25","ArtDecoPrototypes.wrl#ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco25"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco26"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco26","ArtDecoPrototypes.wrl#ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco26"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco27"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco27","ArtDecoPrototypes.wrl#ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco27"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco28"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco28","ArtDecoPrototypes.wrl#ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco28"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco29"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco29","ArtDecoPrototypes.wrl#ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco29"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco30"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco30","ArtDecoPrototypes.wrl#ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco30"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco31"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco31","ArtDecoPrototypes.wrl#ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco31"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco32"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32","ArtDecoPrototypes.wrl#ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco33"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33","ArtDecoPrototypes.wrl#ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"])}),
 
             new ExternProtoDeclare({
               name : new SFString("ArtDeco34"),
               appinfo : new SFString("UniversalMediaMaterials prototype"),
               documentation : new SFString("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
-              url : new MFString(["../data/ArtDecoPrototypes.x3d#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"])}),
+              url : new MFString(["../data/ArtDecoPrototypes.json#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34","ArtDecoPrototypes.wrl#ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"])}),
 
             new Group({
               children : new MFNode([
@@ -366,7 +366,7 @@ var X3D0 =  new X3D({
                       translation : new SFVec3f([0,0,-0.5]),
                       children : new MFNode([
                         new Inline({
-                          url : new MFString(["../data/gridBack.x3d","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"])})])})])}),
+                          url : new MFString(["../data/gridBack.json","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d","gridBack.wrl","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"])})])})])}),
 
                 new Viewpoint({
                   DEF : new SFString("View00"),
@@ -397,7 +397,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco00 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -445,7 +445,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco01 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -488,7 +488,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco02 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -531,7 +531,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco03 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -574,7 +574,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco04 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -617,7 +617,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco05 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -660,7 +660,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco06 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -703,7 +703,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco07 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -746,7 +746,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco08 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -789,7 +789,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco09 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -832,7 +832,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco10 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -875,7 +875,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco11 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -918,7 +918,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco12 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -961,7 +961,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco13 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1004,7 +1004,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco14 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1047,7 +1047,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco15 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1090,7 +1090,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco16 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1133,7 +1133,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco17 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1176,7 +1176,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco18 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1219,7 +1219,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco19 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1262,7 +1262,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco20 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1305,7 +1305,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco21 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1348,7 +1348,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco22 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1391,7 +1391,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco23 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1434,7 +1434,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco24 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1477,7 +1477,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco25 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1520,7 +1520,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco26 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1563,7 +1563,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco27 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1606,7 +1606,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco28 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1649,7 +1649,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco29 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1692,7 +1692,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco30 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1735,7 +1735,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco31 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1778,7 +1778,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco32 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1821,7 +1821,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco33 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(
@@ -1864,7 +1864,7 @@ var X3D0 =  new X3D({
                         new Anchor({
                           description : new SFString("ArtDeco34 view source documentation"),
                           parameter : new MFString(["target=_source"]),
-                          url : new MFString(["ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]),
+                          url : new MFString(["../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34","https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"]),
                           children : new MFNode([
                             new Shape({
                               appearance : new SFNode(

@@ -60,7 +60,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://en.wikipedia.org/wiki/Hello_world")}),
+              content : new SFString("https://en.wikipedia.org/wiki/Hello_world")}),
 
             new meta({
               name : new SFString("reference"),
@@ -72,11 +72,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world")}),
+              content : new SFString("https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world")}),
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://www.HelloWorldExample.net")}),
+              content : new SFString("https://www.HelloWorldExample.net")}),
 
             new meta({
               name : new SFString("reference"),
@@ -92,11 +92,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("http://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d")}),
+              content : new SFString("https://X3dGraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorld.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d")}),
+              content : new SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter01TechnicalOverview/HelloWorld.x3d")}),
 
             new meta({
               name : new SFString("license"),

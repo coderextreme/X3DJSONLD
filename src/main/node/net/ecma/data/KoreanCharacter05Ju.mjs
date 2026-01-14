@@ -99,7 +99,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview")}),
+              content : new SFString("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview")}),
 
             new meta({
               name : new SFString("generator"),
@@ -107,7 +107,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Gnu Image Manipulation Program, http://www.gimp.org")}),
+              content : new SFString("Gnu Image Manipulation Program, https://www.gimp.org")}),
 
             new meta({
               name : new SFString("generator"),

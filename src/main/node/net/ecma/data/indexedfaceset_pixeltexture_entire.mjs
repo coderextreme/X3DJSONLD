@@ -21,6 +21,7 @@ var Material = require('./x3d.mjs');
 var PixelTexture = require('./x3d.mjs');
 var SFImage = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
+var TextureProperties = require('./x3d.mjs');
 var IndexedFaceSet = require('./x3d.mjs');
 var MFInt32 = require('./x3d.mjs');
 var Coordinate = require('./x3d.mjs');
@@ -82,7 +83,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),
@@ -120,6 +121,7 @@ var X3D0 =  new X3D({
 
             new NavigationInfo({
               type : ["EXAMINE","WALK","FLY","ANY"]}),
+          /*<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>*/
 
             new Shape({
               appearance : new SFNode(
@@ -130,7 +132,10 @@ var X3D0 =  new X3D({
                     new PixelTexture({
                       image : new SFImage([2,2,4,4278190335,16711935,4294967295,4294902015]),
                       repeatS : new SFBool(false),
-                      repeatT : new SFBool(false)}))})),
+                      repeatT : new SFBool(false),
+                      textureProperties : new SFNode(
+                        new TextureProperties({
+                          magnificationFilter : new SFString("NEAREST_PIXEL")}))}))})),
               geometry : new SFNode(
                 new IndexedFaceSet({
                   coordIndex : new MFInt32([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]),

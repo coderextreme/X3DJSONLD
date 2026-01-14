@@ -125,7 +125,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),

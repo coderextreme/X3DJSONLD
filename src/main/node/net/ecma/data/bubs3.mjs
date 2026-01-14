@@ -76,7 +76,7 @@ var X3D0 =  new X3D({
               topUrl : new MFString(["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"])}),
 
             new Transform({
-              DEF : new SFString("DECLBubble_bubbleA"),
+              DEF : new SFString("DECLBubble_transformA"),
               child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
@@ -169,13 +169,13 @@ ecmascript:eval (0
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleA_bounce"),
                   fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformA"),
                   toField : new SFString("set_translation")}),
 
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleA_bounce"),
                   fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformA"),
                   toField : new SFString("set_scale")}),
 
                 new ROUTE({
@@ -185,7 +185,7 @@ ecmascript:eval (0
                   toField : new SFString("set_fraction")})])}),
 
             new Transform({
-              DEF : new SFString("DECLBubble_bubbleB"),
+              DEF : new SFString("DECLBubble_transformB"),
               child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
@@ -278,13 +278,13 @@ ecmascript:eval (0
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleB_bounce"),
                   fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformB"),
                   toField : new SFString("set_translation")}),
 
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleB_bounce"),
                   fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformB"),
                   toField : new SFString("set_scale")}),
 
                 new ROUTE({
@@ -294,7 +294,7 @@ ecmascript:eval (0
                   toField : new SFString("set_fraction")})])}),
 
             new Transform({
-              DEF : new SFString("DECLBubble_bubbleC"),
+              DEF : new SFString("DECLBubble_transformC"),
               child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
@@ -387,13 +387,13 @@ ecmascript:eval (0
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleC_bounce"),
                   fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformC"),
                   toField : new SFString("set_translation")}),
 
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleC_bounce"),
                   fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformC"),
                   toField : new SFString("set_scale")}),
 
                 new ROUTE({
@@ -403,7 +403,7 @@ ecmascript:eval (0
                   toField : new SFString("set_fraction")})])}),
 
             new Transform({
-              DEF : new SFString("DECLBubble_bubbleD"),
+              DEF : new SFString("DECLBubble_transformD"),
               child : new SFNode(
                 new Shape({
                   geometry : new SFNode(
@@ -496,13 +496,13 @@ ecmascript:eval (0
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleD_bounce"),
                   fromField : new SFString("translation_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformD"),
                   toField : new SFString("set_translation")}),
 
                 new ROUTE({
                   fromNode : new SFString("DECLBubble_bubbleD_bounce"),
                   fromField : new SFString("scale_changed"),
-                  toNode : new SFString("DECLBubble_transform"),
+                  toNode : new SFString("DECLBubble_transformD"),
                   toField : new SFString("set_scale")}),
 
                 new ROUTE({

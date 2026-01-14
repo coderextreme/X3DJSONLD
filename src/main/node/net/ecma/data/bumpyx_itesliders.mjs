@@ -34,31 +34,39 @@ var Material = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
 var Cone = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
-var Sphere = require('./x3d.mjs');
+var IndexedFaceSet = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
 var ComposedCubeMapTexture = require('./x3d.mjs');
 var ImageTexture = require('./x3d.mjs');
 var ComposedShader = require('./x3d.mjs');
 var field = require('./x3d.mjs');
 var ShaderPart = require('./x3d.mjs');
-var DISEntityManager = require('./x3d.mjs');
-var undefined = require('./x3d.mjs');
-var DISEntityTypeMapping = require('./x3d.mjs');
-var Collision = require('./x3d.mjs');
+var Script = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
 var LayoutLayer = require('./x3d.mjs');
+var Layout = require('./x3d.mjs');
+var Viewport = require('./x3d.mjs');
 var Box = require('./x3d.mjs');
+var Text = require('./x3d.mjs');
+var FontStyle = require('./x3d.mjs');
+var ProtoDeclare = require('./x3d.mjs');
+var ProtoInterface = require('./x3d.mjs');
+var ProtoBody = require('./x3d.mjs');
+var IS = require('./x3d.mjs');
+var connect = require('./x3d.mjs');
 var PlaneSensor = require('./x3d.mjs');
 var SFVec2f = require('./x3d.mjs');
 var TouchSensor = require('./x3d.mjs');
-var Script = require('./x3d.mjs');
-var Layout = require('./x3d.mjs');
-var Viewport = require('./x3d.mjs');
+var ProtoInstance = require('./x3d.mjs');
+var fieldValue = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          /*<component name='Shape' level='4'></component>*/
+          /*<component name='DIS' level='2'></component>*/
           component : new SFNode(
             new component({
               name : new SFString("Scripting"),
@@ -91,12 +99,6 @@ var X3D0 =  new X3D({
             new component({
               name : new SFString("Core"),
               level : new SFInt32(1)})),
-          component : new SFNode(
-            new component({
-              name : new SFString("DIS"),
-              level : new SFInt32(2)})),
-          /*<component name='Shape' level='4'></component>*/
-          /*Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -104,71 +106,15 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("description"),
-              content : new SFString("*enter description here, short-sentence summaries preferred*")}),
+              content : new SFString("*Bumpy flower with prototype sliders*")}),
 
             new meta({
               name : new SFString("creator"),
               content : new SFString("Doug Sanden, Christoph Valentin, John Carlson")}),
 
             new meta({
-              name : new SFString("translator"),
-              content : new SFString("*if manually translating VRML-to-X3D, enter name of person translating here*")}),
-
-            new meta({
-              name : new SFString("created"),
-              content : new SFString("*enter date of initial version here*")}),
-
-            new meta({
-              name : new SFString("translated"),
-              content : new SFString("*enter date of translation here*")}),
-
-            new meta({
-              name : new SFString("modified"),
-              content : new SFString("*enter date of latest revision here*")}),
-
-            new meta({
-              name : new SFString("version"),
-              content : new SFString("*enter version here, if any*")}),
-
-            new meta({
-              name : new SFString("reference"),
-              content : new SFString("*enter reference citation or relative/online url here*")}),
-
-            new meta({
-              name : new SFString("reference"),
-              content : new SFString("*enter additional url/bibliographic reference information here*")}),
-
-            new meta({
-              name : new SFString("requires"),
-              content : new SFString("*enter reference resource here if required to support function, delivery, or coherence of content*")}),
-
-            new meta({
-              name : new SFString("rights"),
-              content : new SFString("*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024")}),
-
-            new meta({
-              name : new SFString("drawing"),
-              content : new SFString("*enter drawing filename/url here*")}),
-
-            new meta({
-              name : new SFString("MovingImage"),
-              content : new SFString("*enter movie filename/url here*")}),
-
-            new meta({
-              name : new SFString("photo"),
-              content : new SFString("*enter photo filename/url here*")}),
-
-            new meta({
-              name : new SFString("subject"),
-              content : new SFString("*enter subject keywords here*")}),
-
-            new meta({
-              name : new SFString("accessRights"),
-              content : new SFString("*enter permission statements or url here*")}),
-
-            new meta({
               name : new SFString("identifier"),
-              content : new SFString("*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*")}),
+              content : new SFString("https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -184,9 +130,8 @@ var X3D0 =  new X3D({
           layerSet : new SFNode(
             new LayerSet({
               activeLayer : new SFInt32(1),
-              order : new MFInt32([1,2]),
+              order : new MFInt32([1,2,3]),
               /*the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"*/
-              /*the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)*/
               layers : new SFNode(
                 new Layer({
                   pickable : new SFBool(true),
@@ -325,9 +270,14 @@ var X3D0 =  new X3D({
                         new Transform({
                           child : new SFNode(
                             new Shape({
+                              /*<Sphere radius='40'></Sphere>*/
                               geometry : new SFNode(
-                                new Sphere({
-                                  radius : new SFFloat(40)})),
+                                new IndexedFaceSet({
+                                  convex : new SFBool(false),
+                                  DEF : new SFString("Orbit"),
+                                  coord : new SFNode(
+                                    new Coordinate({
+                                      DEF : new SFString("OrbitCoordinates")}))})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
@@ -339,22 +289,22 @@ var X3D0 =  new X3D({
                                       DEF : new SFString("texture"),
                                       topTexture : new SFNode(
                                         new ImageTexture({
-                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])})),
+                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])})),
                                       topTexture : new SFNode(
                                         new ImageTexture({
-                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
+                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])})),
                                       topTexture : new SFNode(
                                         new ImageTexture({
-                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])})),
+                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"])})),
                                       topTexture : new SFNode(
                                         new ImageTexture({
-                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])})),
+                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"])})),
                                       topTexture : new SFNode(
                                         new ImageTexture({
-                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])})),
+                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"])})),
                                       topTexture : new SFNode(
                                         new ImageTexture({
-                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
+                                          url : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])}))})),
                                   shaders : new SFNode(
                                     new ComposedShader({
                                       DEF : new SFString("x_iteShader"),
@@ -435,48 +385,115 @@ var X3D0 =  new X3D({
                                         new ShaderPart({
                                           type : "FRAGMENT",
                                           url : new MFString(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])})),
-                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>*/}))}))}))})])}),
-                  /*DIS multiuser facilities*/
+                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>*/}))}))}))})])}),
 
-                    new DISEntityManager({
-                      DEF : new SFString("EntityManager"),
-                      networkMode : new undefined("networkReader"),
-                      children : new MFNode([
-                        new DISEntityTypeMapping({
-                          category : new SFInt32(77),
-                          specific : new SFInt32(1),
-                          url : new MFString(["Leif8Final.x3d"])}),
+                    new Script({
+                      DEF : new SFString("OrbitScript"),
+                      field : new MFNode([
+                        new field({
+                          type : field.TYPE_MFVEC3F,
+                          name : new SFString("coordinates"),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
 
-                        new DISEntityTypeMapping({
-                          category : new SFInt32(77),
-                          specific : new SFInt32(2),
-                          url : new MFString(["Lily8Final.x3d"])})])}),
+                        new field({
+                          type : field.TYPE_MFINT32,
+                          name : new SFString("coordIndexes"),
+                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY)}),
 
-                    new Collision({
-                      enabled : new SFBool(false),
-                      proxy : new SFNode(
-                        new Group({
-                          DEF : new SFString("AvatarHolder")}))}),
+                        new field({
+                          type : field.TYPE_SFFLOAT,
+                          name : new SFString("a"),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                          value : new SFString("10")}),
+
+                        new field({
+                          type : field.TYPE_SFFLOAT,
+                          name : new SFString("b"),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                          value : new SFString("10")}),
+
+                        new field({
+                          type : field.TYPE_SFFLOAT,
+                          name : new SFString("c"),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                          value : new SFString("2")}),
+
+                        new field({
+                          type : field.TYPE_SFFLOAT,
+                          name : new SFString("d"),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                          value : new SFString("2")}),
+
+                        new field({
+                          type : field.TYPE_SFFLOAT,
+                          name : new SFString("pdelta"),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                          value : new SFString("0")}),
+
+                        new field({
+                          type : field.TYPE_SFFLOAT,
+                          name : new SFString("tdelta"),
+                          accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                          value : new SFString("0")}),
+                      ]),
+ecmascript:eval (0
+, function initialize() {
+     var resolution = 300;
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var crds = new MFVec3f();
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);
+		crds.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = crds;
+
+
+     var cis = new MFInt32();
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     cis.push(i*resolution+j);
+	     cis.push(i*resolution+j+1);
+	     cis.push((i+1)*resolution+j+1);
+	     cis.push((i+1)*resolution+j);
+	     cis.push(-1);
+	}
+    }
+    coordIndexes = cis;
+})}),
 
                     new ROUTE({
-                      fromField : new SFString("addedEntities"),
-                      fromNode : new SFString("EntityManager"),
-                      toField : new SFString("addChildren"),
-                      toNode : new SFString("AvatarHolder")}),
+                      fromField : new SFString("coordIndexes"),
+                      fromNode : new SFString("OrbitScript"),
+                      toField : new SFString("set_coordIndex"),
+                      toNode : new SFString("Orbit")}),
 
                     new ROUTE({
-                      fromField : new SFString("removedEntities"),
-                      fromNode : new SFString("EntityManager"),
-                      toField : new SFString("removeChildren"),
-                      toNode : new SFString("AvatarHolder")})])})),
+                      fromField : new SFString("coordinates"),
+                      fromNode : new SFString("OrbitScript"),
+                      toField : new SFString("set_point"),
+                      toNode : new SFString("OrbitCoordinates")})])})),
               layers : new SFNode(
                 new LayoutLayer({
                   pickable : new SFBool(true),
                   objectType : new MFString(["ALL"]),
-                  /*positioning the LayoutLayer*/
-                  /*clipping the LayoutLayer*/
-                  /*the content (children) of the LayoutLayer*/
-                  /*first, the slider for scaling the model*/
+                  layout : new SFNode(
+                    new Layout({
+                      align : new MFString(["LEFT","BOTTOM"]),
+                      offset : new MFFloat([-0.2,0.19]),
+                      size : new MFFloat([0.4,0.6])})),
+                  viewport : new SFNode(
+                    new Viewport({
+                      clipBoundary : new MFFloat([0,1,0,1])})),
                   children : new MFNode([
                     new Transform({
                       translation : new SFVec3f([0,0,-3]),
@@ -491,563 +508,459 @@ var X3D0 =  new X3D({
                           geometry : new SFNode(
                             new Box({
                               size : new SFVec3f([100,100,0.02])}))}))}),
-                  /*the plane sensors*/
 
                     new Transform({
-                      DEF : new SFString("aSlider"),
-                      translation : new SFVec3f([0,0.7,0]),
+                      DEF : new SFString("equationTransform"),
                       children : new MFNode([
                         new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
+                          translation : new SFVec3f([0,0,-20]),
                           child : new SFNode(
                             new Shape({
+                              geometry : new SFNode(
+                                new Text({
+                                  DEF : new SFString("equation"),
+                                  string : new MFString(["r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"]),
+                                  fontStyle : new SFNode(
+                                    new FontStyle({
+                                      size : new SFFloat(0.09)}))})),
                               appearance : new SFNode(
                                 new Appearance({
                                   material : new SFNode(
-                                    new Material({}))})),
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(2.5)}))}))}),
+                                    new Material({
+                                      diffuseColor : new SFColor([1,1,0])}))}))}))})])}),
 
-                        new Transform({
-                          DEF : new SFString("aTransform"),
-                          translation : new SFVec3f([0,0,0.1]),
+                    new ProtoDeclare({
+                      name : new SFString("SliderProto"),
+                      ProtoInterface : new SFNode(
+                        new ProtoInterface({
+                          field : new MFNode([
+                            new field({
+                              type : field.TYPE_SFVEC3F,
+                              name : new SFString("sliderTranslation"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("0 0.7 0")}),
+
+                            new field({
+                              type : field.TYPE_SFVEC3F,
+                              name : new SFString("transformTranslation"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("0 0 0.1")}),
+
+                            new field({
+                              type : field.TYPE_SFVEC3F,
+                              name : new SFString("sensorTranslation"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("0 0 0")}),
+
+                            new field({
+                              type : field.TYPE_MFSTRING,
+                              name : new SFString("textString"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("\"a=\"")}),
+
+                            new field({
+                              type : field.TYPE_SFFLOAT,
+                              name : new SFString("parameterScale"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("30")}),
+
+                            new field({
+                              type : field.TYPE_SFSTRING,
+                              name : new SFString("parameterName"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT),
+                              value : new SFString("a")}),
+
+                            new field({
+                              type : field.TYPE_MFSTRING,
+                              name : new SFString("petNames"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+
+                            new field({
+                              type : field.TYPE_SFNODE,
+                              name : new SFString("shaderNode"),
+                              accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)})])})),
+                      ProtoBody : new SFNode(
+                        new ProtoBody({
                           children : new MFNode([
-                            new PlaneSensor({
-                              DEF : new SFString("aSensor"),
-                              minPosition : new SFVec2f([-20,0]),
-                              maxPosition : new SFVec2f([20,0])}),
-
-                            new Transform({
-                              translation : new SFVec3f([0,0,0]),
+                            new Group({
                               children : new MFNode([
-                                new TouchSensor({
-                                  DEF : new SFString("aTS")}),
-                              child : new SFNode(
-                                new Shape({
-                                  geometry : new SFNode(
-                                    new Sphere({
-                                      radius : new SFFloat(0.08)})),
-                                  appearance : new SFNode(
-                                    new Appearance({
-                                      material : new SFNode(
-                                        new Material({
-                                          diffuseColor : new SFColor([1,0,0])}))}))})])}),
-                          child : new SFNode(
-                            new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(0.3)})),
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))}))})])}),
+                                new Transform({
+                                  DEF : new SFString("protoSlider"),
+                                  translation : new SFVec3f([0,0.7,0]),
+                                  IS : new SFNode(
+                                    new IS({
+                                      connect : new MFNode([
+                                        new connect({
+                                          nodeField : new SFString("translation"),
+                                          protoField : new SFString("sliderTranslation")})])})),
+                                  children : new MFNode([
+                                    new Transform({
+                                      DEF : new SFString("protoTransform"),
+                                      translation : new SFVec3f([0,0,0.1]),
+                                      IS : new SFNode(
+                                        new IS({
+                                          connect : new MFNode([
+                                            new connect({
+                                              nodeField : new SFString("translation"),
+                                              protoField : new SFString("sensorTranslation")})])})),
+                                      children : new MFNode([
+                                        new PlaneSensor({
+                                          DEF : new SFString("protoSensor"),
+                                          description : new SFString("Grab with mouse to adjust slider"),
+                                          maxPosition : new SFVec2f([1,0])}),
 
-                        new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
-                          child : new SFNode(
-                            new Shape({
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))})),
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(2.5)}))}))})])}),
+                                        new Transform({
+                                          translation : new SFVec3f([0,0,0]),
+                                          children : new MFNode([
+                                            new TouchSensor({
+                                              DEF : new SFString("protoTS")})])}),
 
-                    new Transform({
-                      DEF : new SFString("bSlider"),
-                      translation : new SFVec3f([0,0.4,0]),
+                                        new Transform({
+                                          child : new SFNode(
+                                            new Shape({
+                                              geometry : new SFNode(
+                                                new Text({
+                                                  DEF : new SFString("protoText"),
+                                                  string : new MFString(["a="]),
+                                                  IS : new SFNode(
+                                                    new IS({
+                                                      connect : new MFNode([
+                                                        new connect({
+                                                          nodeField : new SFString("string"),
+                                                          protoField : new SFString("textString")})])})),
+                                                  fontStyle : new SFNode(
+                                                    new FontStyle({
+                                                      size : new SFFloat(0.23)}))})),
+                                              appearance : new SFNode(
+                                                new Appearance({
+                                                  material : new SFNode(
+                                                    new Material({}))}))}))})])})])}),
+
+                                new Script({
+                                  url : new MFString(["../javascripts/X3DUser.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js"]),
+                                  DEF : new SFString("protoValueTransformerScript"),
+                                  directOutput : new SFBool(true),
+                                  mustEvaluate : new SFBool(true),
+                                  field : new MFNode([
+                                    new field({
+                                      type : field.TYPE_SFFLOAT,
+                                      name : new SFString("protoScale"),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+
+                                    new field({
+                                      type : field.TYPE_MFSTRING,
+                                      name : new SFString("petNames"),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+
+                                    new field({
+                                      type : field.TYPE_SFSTRING,
+                                      name : new SFString("protoParameterName"),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+
+                                    new field({
+                                      type : field.TYPE_SFNODE,
+                                      name : new SFString("shader"),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTOUTPUT)}),
+
+                                    new field({
+                                      type : field.TYPE_SFVEC3F,
+                                      name : new SFString("newTranslation"),
+                                      accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
+                                      value : new SFString("1 1 1")}),
+
+                                    new field({
+                                      type : field.TYPE_SFFLOAT,
+                                      name : new SFString("protoValue_changed"),
+                                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
+                                      value : new SFString("1")}),
+
+                                    new field({
+                                      type : field.TYPE_MFSTRING,
+                                      name : new SFString("protoText_changed"),
+                                      accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
+                                      value : new SFString("\"1.0\"")}),
+                                  IS : new SFNode(
+                                    new IS({
+                                      connect : new MFNode([
+                                        new connect({
+                                          nodeField : new SFString("protoScale"),
+                                          protoField : new SFString("parameterScale")}),
+
+                                        new connect({
+                                          nodeField : new SFString("petNames"),
+                                          protoField : new SFString("petNames")}),
+
+                                        new connect({
+                                          nodeField : new SFString("protoParameterName"),
+                                          protoField : new SFString("parameterName")}),
+
+                                        new connect({
+                                          nodeField : new SFString("shader"),
+                                          protoField : new SFString("shaderNode")})])})])}),
+
+                                new ROUTE({
+                                  fromField : new SFString("translation_changed"),
+                                  fromNode : new SFString("protoSensor"),
+                                  toField : new SFString("set_translation"),
+                                  toNode : new SFString("protoTransform")}),
+
+                                new ROUTE({
+                                  fromField : new SFString("translation_changed"),
+                                  fromNode : new SFString("protoSensor"),
+                                  toField : new SFString("newTranslation"),
+                                  toNode : new SFString("protoValueTransformerScript")}),
+
+                                new ROUTE({
+                                  fromField : new SFString("protoText_changed"),
+                                  fromNode : new SFString("protoValueTransformerScript"),
+                                  toField : new SFString("string"),
+                                  toNode : new SFString("protoText")})])})])}))}),
+
+                    new ProtoInstance({
+                      name : new SFString("SliderProto"),
+                      DEF : new SFString("aPI"),
+                      fieldValue : new MFNode([
+                        new fieldValue({
+                          name : new SFString("sliderTranslation"),
+                          value : new SFString("0 0.7 0")}),
+
+                        new fieldValue({
+                          name : new SFString("transformTranslation"),
+                          value : new SFString("0 0 0.1")}),
+
+                        new fieldValue({
+                          name : new SFString("sensorTranslation"),
+                          value : new SFString("0 0 0")}),
+
+                        new fieldValue({
+                          name : new SFString("textString"),
+                          value : new SFString("\"a=\"")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterScale"),
+                          value : new SFString("30")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterName"),
+                          value : new SFString("a")}),
+
+                        new fieldValue({
+                          name : new SFString("petNames"),
+                          value : new SFString("\"yottzumm\" \"group1-petname\"")}),
+
+                        new fieldValue({
+                          name : new SFString("shaderNode"),
+                          children : new MFNode([
+                            new ComposedShader({
+                              USE : new SFString("x_iteShader")})])})])}),
+
+                    new ProtoInstance({
+                      name : new SFString("SliderProto"),
+                      DEF : new SFString("bPI"),
+                      fieldValue : new MFNode([
+                        new fieldValue({
+                          name : new SFString("sliderTranslation"),
+                          value : new SFString("0 0.4 0")}),
+
+                        new fieldValue({
+                          name : new SFString("transformTranslation"),
+                          value : new SFString("0 0 0.1")}),
+
+                        new fieldValue({
+                          name : new SFString("sensorTranslation"),
+                          value : new SFString("0 0 0")}),
+
+                        new fieldValue({
+                          name : new SFString("textString"),
+                          value : new SFString("\"b=\"")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterScale"),
+                          value : new SFString("30")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterName"),
+                          value : new SFString("b")}),
+
+                        new fieldValue({
+                          name : new SFString("petNames"),
+                          value : new SFString("\"yottzumm\" \"group1-petname\"")}),
+
+                        new fieldValue({
+                          name : new SFString("shaderNode"),
+                          children : new MFNode([
+                            new ComposedShader({
+                              USE : new SFString("x_iteShader")})])})])}),
+
+                    new ProtoInstance({
+                      name : new SFString("SliderProto"),
+                      DEF : new SFString("cPI"),
+                      fieldValue : new MFNode([
+                        new fieldValue({
+                          name : new SFString("sliderTranslation"),
+                          value : new SFString("0 0.1 0")}),
+
+                        new fieldValue({
+                          name : new SFString("transformTranslation"),
+                          value : new SFString("0 0 0.1")}),
+
+                        new fieldValue({
+                          name : new SFString("sensorTranslation"),
+                          value : new SFString("0 0 0")}),
+
+                        new fieldValue({
+                          name : new SFString("textString"),
+                          value : new SFString("\"c=\"")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterScale"),
+                          value : new SFString("20")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterName"),
+                          value : new SFString("c")}),
+
+                        new fieldValue({
+                          name : new SFString("petNames"),
+                          value : new SFString("\"yottzumm\" \"yottzumm2\" \"group1-petname\"")}),
+
+                        new fieldValue({
+                          name : new SFString("shaderNode"),
+                          children : new MFNode([
+                            new ComposedShader({
+                              USE : new SFString("x_iteShader")})])})])}),
+
+                    new ProtoInstance({
+                      name : new SFString("SliderProto"),
+                      DEF : new SFString("dPI"),
+                      fieldValue : new MFNode([
+                        new fieldValue({
+                          name : new SFString("sliderTranslation"),
+                          value : new SFString("0 -0.2 0")}),
+
+                        new fieldValue({
+                          name : new SFString("transformTranslation"),
+                          value : new SFString("0 0 0.1")}),
+
+                        new fieldValue({
+                          name : new SFString("sensorTranslation"),
+                          value : new SFString("0 0 0")}),
+
+                        new fieldValue({
+                          name : new SFString("textString"),
+                          value : new SFString("\"d=\"")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterScale"),
+                          value : new SFString("20")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterName"),
+                          value : new SFString("d")}),
+
+                        new fieldValue({
+                          name : new SFString("petNames"),
+                          value : new SFString("\"yottzumm\" \"yottzumm2\" \"group1-petname\"")}),
+
+                        new fieldValue({
+                          name : new SFString("shaderNode"),
+                          children : new MFNode([
+                            new ComposedShader({
+                              USE : new SFString("x_iteShader")})])})])}),
+
+                    new ProtoInstance({
+                      name : new SFString("SliderProto"),
+                      DEF : new SFString("tdeltaPI"),
+                      fieldValue : new MFNode([
+                        new fieldValue({
+                          name : new SFString("sliderTranslation"),
+                          value : new SFString("0 -0.5 0")}),
+
+                        new fieldValue({
+                          name : new SFString("transformTranslation"),
+                          value : new SFString("0 0 0.1")}),
+
+                        new fieldValue({
+                          name : new SFString("sensorTranslation"),
+                          value : new SFString("0 0 0")}),
+
+                        new fieldValue({
+                          name : new SFString("textString"),
+                          value : new SFString("\"tdelta=\"")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterScale"),
+                          value : new SFString("6.28")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterName"),
+                          value : new SFString("tdelta")}),
+
+                        new fieldValue({
+                          name : new SFString("petNames"),
+                          value : new SFString("\"yottzumm2\" \"group1-petname\"")}),
+
+                        new fieldValue({
+                          name : new SFString("shaderNode"),
+                          children : new MFNode([
+                            new ComposedShader({
+                              USE : new SFString("x_iteShader")})])})])}),
+
+                    new ProtoInstance({
+                      name : new SFString("SliderProto"),
+                      DEF : new SFString("pdeltaPI"),
+                      fieldValue : new MFNode([
+                        new fieldValue({
+                          name : new SFString("sliderTranslation"),
+                          value : new SFString("0 -0.8 0")}),
+
+                        new fieldValue({
+                          name : new SFString("transformTranslation"),
+                          value : new SFString("0 0 0.1")}),
+
+                        new fieldValue({
+                          name : new SFString("sensorTranslation"),
+                          value : new SFString("0 0 0")}),
+
+                        new fieldValue({
+                          name : new SFString("textString"),
+                          value : new SFString("\"pdelta=\"")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterScale"),
+                          value : new SFString("6.28")}),
+
+                        new fieldValue({
+                          name : new SFString("parameterName"),
+                          value : new SFString("pdelta")}),
+
+                        new fieldValue({
+                          name : new SFString("petNames"),
+                          value : new SFString("\"yottzumm2\" \"group1-petname\"")}),
+
+                        new fieldValue({
+                          name : new SFString("shaderNode"),
+                          children : new MFNode([
+                            new ComposedShader({
+                              USE : new SFString("x_iteShader")})])})])})])})),
+              layers : new SFNode(
+                new Layer({
+                  pickable : new SFBool(true),
+                  objectType : new MFString(["ALL"]),
+                  children : new MFNode([
+                    new Viewpoint({
+                      description : new SFString("My Humanoids"),
+                      fieldOfView : new SFFloat(1.570796),
+                      position : new SFVec3f([0,1.75,80])}),
+
+                    new Script({
+                      url : new MFString(["../javascripts/X3DAvatar.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js"]),
+                      DEF : new SFString("HumanoidScript"),
+                      directOutput : new SFBool(true),
+                      mustEvaluate : new SFBool(true)}),
+
+                    new Group({
+                      DEF : new SFString("humanoidGroup"),
                       children : new MFNode([
-                        new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
-                          child : new SFNode(
-                            new Shape({
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))})),
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(2.5)}))}))}),
-
-                        new Transform({
-                          DEF : new SFString("bTransform"),
-                          translation : new SFVec3f([0,0,0.1]),
-                          children : new MFNode([
-                            new PlaneSensor({
-                              DEF : new SFString("bSensor"),
-                              minPosition : new SFVec2f([-20,0]),
-                              maxPosition : new SFVec2f([20,0])}),
-
-                            new Transform({
-                              translation : new SFVec3f([0,0,0]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  DEF : new SFString("bTS")}),
-                              child : new SFNode(
-                                new Shape({
-                                  geometry : new SFNode(
-                                    new Sphere({
-                                      radius : new SFFloat(0.08)})),
-                                  appearance : new SFNode(
-                                    new Appearance({
-                                      material : new SFNode(
-                                        new Material({
-                                          diffuseColor : new SFColor([1,0,0])}))}))})])}),
-                          child : new SFNode(
-                            new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(0.3)})),
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))}))})])})])}),
-
-                    new Transform({
-                      DEF : new SFString("cSlider"),
-                      translation : new SFVec3f([0,0.1,0]),
-                      children : new MFNode([
-                        new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
-                          child : new SFNode(
-                            new Shape({
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))})),
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(2.5)}))}))}),
-
-                        new Transform({
-                          DEF : new SFString("cTransform"),
-                          translation : new SFVec3f([0,0,0.1]),
-                          children : new MFNode([
-                            new PlaneSensor({
-                              DEF : new SFString("cSensor"),
-                              minPosition : new SFVec2f([-20,0]),
-                              maxPosition : new SFVec2f([20,0])}),
-
-                            new Transform({
-                              translation : new SFVec3f([0,0,0]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  DEF : new SFString("cTS")}),
-                              child : new SFNode(
-                                new Shape({
-                                  geometry : new SFNode(
-                                    new Sphere({
-                                      radius : new SFFloat(0.08)})),
-                                  appearance : new SFNode(
-                                    new Appearance({
-                                      material : new SFNode(
-                                        new Material({
-                                          diffuseColor : new SFColor([1,0,0])}))}))})])}),
-                          child : new SFNode(
-                            new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(0.3)})),
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))}))})])})])}),
-
-                    new Transform({
-                      DEF : new SFString("dSlider"),
-                      translation : new SFVec3f([0,-0.2,0]),
-                      children : new MFNode([
-                        new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
-                          child : new SFNode(
-                            new Shape({
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))})),
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(2.5)}))}))}),
-
-                        new Transform({
-                          DEF : new SFString("dTransform"),
-                          translation : new SFVec3f([0,0,0.1]),
-                          children : new MFNode([
-                            new PlaneSensor({
-                              DEF : new SFString("dSensor"),
-                              minPosition : new SFVec2f([-20,0]),
-                              maxPosition : new SFVec2f([20,0])}),
-
-                            new Transform({
-                              translation : new SFVec3f([0,0,0]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  DEF : new SFString("dTS")}),
-                              child : new SFNode(
-                                new Shape({
-                                  geometry : new SFNode(
-                                    new Sphere({
-                                      radius : new SFFloat(0.08)})),
-                                  appearance : new SFNode(
-                                    new Appearance({
-                                      material : new SFNode(
-                                        new Material({
-                                          diffuseColor : new SFColor([1,0,0])}))}))})])}),
-                          child : new SFNode(
-                            new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(0.3)})),
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))}))})])})])}),
-
-                    new Transform({
-                      DEF : new SFString("pdeltaSlider"),
-                      translation : new SFVec3f([0,-0.5,0]),
-                      children : new MFNode([
-                        new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
-                          child : new SFNode(
-                            new Shape({
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))})),
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(2.5)}))}))}),
-
-                        new Transform({
-                          DEF : new SFString("pdeltaTransform"),
-                          translation : new SFVec3f([0,0,0.1]),
-                          children : new MFNode([
-                            new PlaneSensor({
-                              DEF : new SFString("pdeltaSensor"),
-                              minPosition : new SFVec2f([-20,0]),
-                              maxPosition : new SFVec2f([20,0])}),
-
-                            new Transform({
-                              translation : new SFVec3f([0,0,0]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  DEF : new SFString("pdeltaTS")}),
-                              child : new SFNode(
-                                new Shape({
-                                  geometry : new SFNode(
-                                    new Sphere({
-                                      radius : new SFFloat(0.08)})),
-                                  appearance : new SFNode(
-                                    new Appearance({
-                                      material : new SFNode(
-                                        new Material({
-                                          diffuseColor : new SFColor([1,0,0])}))}))})])}),
-                          child : new SFNode(
-                            new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(0.3)})),
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))}))})])})])}),
-
-                    new Transform({
-                      DEF : new SFString("tdeltaSlider"),
-                      translation : new SFVec3f([0,-0.8,0]),
-                      children : new MFNode([
-                        new Transform({
-                          rotation : new SFRotation([0,0,1,1.57]),
-                          child : new SFNode(
-                            new Shape({
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))})),
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(2.5)}))}))}),
-
-                        new Transform({
-                          DEF : new SFString("tdeltaTransform"),
-                          translation : new SFVec3f([0,0,0.1]),
-                          children : new MFNode([
-                            new PlaneSensor({
-                              DEF : new SFString("tdeltaSensor"),
-                              minPosition : new SFVec2f([-20,0]),
-                              maxPosition : new SFVec2f([20,0])}),
-
-                            new Transform({
-                              translation : new SFVec3f([0,0,0]),
-                              children : new MFNode([
-                                new TouchSensor({
-                                  DEF : new SFString("tdeltaTS")}),
-                              child : new SFNode(
-                                new Shape({
-                                  geometry : new SFNode(
-                                    new Sphere({
-                                      radius : new SFFloat(0.08)})),
-                                  appearance : new SFNode(
-                                    new Appearance({
-                                      material : new SFNode(
-                                        new Material({
-                                          diffuseColor : new SFColor([1,0,0])}))}))})])}),
-                          child : new SFNode(
-                            new Shape({
-                              geometry : new SFNode(
-                                new Cylinder({
-                                  radius : new SFFloat(0.05),
-                                  height : new SFFloat(0.3)})),
-                              appearance : new SFNode(
-                                new Appearance({
-                                  material : new SFNode(
-                                    new Material({}))}))})])})])}),
-
-                    new Script({
-                      DEF : new SFString("aValueTransformerScript"),
-                      directOutput : new SFBool(true),
-                      mustEvaluate : new SFBool(true),
-                      field : new MFNode([
-                        new field({
-                          type : field.TYPE_SFVEC3F,
-                          name : new SFString("newTranslation"),
-                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
-                          value : new SFString("1 1 1")}),
-
-                        new field({
-                          type : field.TYPE_SFFLOAT,
-                          name : new SFString("aValue_changed"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                          value : new SFString("1")}),
-                      ]),
-ecmascript:eval (0 , function newTranslation(Value) { aValue_changed = Value.x * 30; })}),
-
-                    new Script({
-                      DEF : new SFString("bValueTransformerScript"),
-                      directOutput : new SFBool(true),
-                      mustEvaluate : new SFBool(true),
-                      field : new MFNode([
-                        new field({
-                          type : field.TYPE_SFVEC3F,
-                          name : new SFString("newTranslation"),
-                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
-                          value : new SFString("1 1 1")}),
-
-                        new field({
-                          type : field.TYPE_SFFLOAT,
-                          name : new SFString("bValue_changed"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                          value : new SFString("1")}),
-                      ]),
-ecmascript:eval (0 , function newTranslation(Value) { bValue_changed = Value.x * 30; })}),
-
-                    new Script({
-                      DEF : new SFString("cValueTransformerScript"),
-                      directOutput : new SFBool(true),
-                      mustEvaluate : new SFBool(true),
-                      field : new MFNode([
-                        new field({
-                          type : field.TYPE_SFVEC3F,
-                          name : new SFString("newTranslation"),
-                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
-                          value : new SFString("1 1 1")}),
-
-                        new field({
-                          type : field.TYPE_SFFLOAT,
-                          name : new SFString("cValue_changed"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                          value : new SFString("1")}),
-                      ]),
-ecmascript:eval (0 , function newTranslation(Value) { cValue_changed = Value.x * 5; })}),
-
-                    new Script({
-                      DEF : new SFString("dValueTransformerScript"),
-                      directOutput : new SFBool(true),
-                      mustEvaluate : new SFBool(true),
-                      field : new MFNode([
-                        new field({
-                          type : field.TYPE_SFVEC3F,
-                          name : new SFString("newTranslation"),
-                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
-                          value : new SFString("1 1 1")}),
-
-                        new field({
-                          type : field.TYPE_SFFLOAT,
-                          name : new SFString("dValue_changed"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                          value : new SFString("1")}),
-                      ]),
-ecmascript:eval (0 , function newTranslation(Value) { dValue_changed = Value.x * 5; })}),
-
-                    new Script({
-                      DEF : new SFString("pdeltaValueTransformerScript"),
-                      directOutput : new SFBool(true),
-                      mustEvaluate : new SFBool(true),
-                      field : new MFNode([
-                        new field({
-                          type : field.TYPE_SFVEC3F,
-                          name : new SFString("newTranslation"),
-                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
-                          value : new SFString("1 1 1")}),
-
-                        new field({
-                          type : field.TYPE_SFFLOAT,
-                          name : new SFString("pdeltaValue_changed"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                          value : new SFString("1")}),
-                      ]),
-ecmascript:eval (0 , function newTranslation(Value) { pdeltaValue_changed = Value.x; })}),
-
-                    new Script({
-                      DEF : new SFString("tdeltaValueTransformerScript"),
-                      directOutput : new SFBool(true),
-                      mustEvaluate : new SFBool(true),
-                      field : new MFNode([
-                        new field({
-                          type : field.TYPE_SFVEC3F,
-                          name : new SFString("newTranslation"),
-                          accessType : new SFString(field.ACCESSTYPE_INPUTONLY),
-                          value : new SFString("1 1 1")}),
-
-                        new field({
-                          type : field.TYPE_SFFLOAT,
-                          name : new SFString("tdeltaValue_changed"),
-                          accessType : new SFString(field.ACCESSTYPE_OUTPUTONLY),
-                          value : new SFString("1")}),
-                      ]),
-ecmascript:eval (0 , function newTranslation(Value) { tdeltaValue_changed = Value.x; })}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("aSensor"),
-                      toField : new SFString("set_translation"),
-                      toNode : new SFString("aTransform")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("bSensor"),
-                      toField : new SFString("set_translation"),
-                      toNode : new SFString("bTransform")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("cSensor"),
-                      toField : new SFString("set_translation"),
-                      toNode : new SFString("cTransform")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("dSensor"),
-                      toField : new SFString("set_translation"),
-                      toNode : new SFString("dTransform")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("pdeltaSensor"),
-                      toField : new SFString("set_translation"),
-                      toNode : new SFString("pdeltaTransform")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("tdeltaSensor"),
-                      toField : new SFString("set_translation"),
-                      toNode : new SFString("tdeltaTransform")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("aSensor"),
-                      toField : new SFString("newTranslation"),
-                      toNode : new SFString("aValueTransformerScript")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("bSensor"),
-                      toField : new SFString("newTranslation"),
-                      toNode : new SFString("bValueTransformerScript")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("cSensor"),
-                      toField : new SFString("newTranslation"),
-                      toNode : new SFString("cValueTransformerScript")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("dSensor"),
-                      toField : new SFString("newTranslation"),
-                      toNode : new SFString("dValueTransformerScript")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("pdeltaSensor"),
-                      toField : new SFString("newTranslation"),
-                      toNode : new SFString("pdeltaValueTransformerScript")}),
-
-                    new ROUTE({
-                      fromField : new SFString("translation_changed"),
-                      fromNode : new SFString("tdeltaSensor"),
-                      toField : new SFString("newTranslation"),
-                      toNode : new SFString("tdeltaValueTransformerScript")}),
-
-                    new ROUTE({
-                      fromField : new SFString("aValue_changed"),
-                      fromNode : new SFString("aValueTransformerScript"),
-                      toField : new SFString("a"),
-                      toNode : new SFString("x_iteShader")}),
-
-                    new ROUTE({
-                      fromField : new SFString("bValue_changed"),
-                      fromNode : new SFString("bValueTransformerScript"),
-                      toField : new SFString("b"),
-                      toNode : new SFString("x_iteShader")}),
-
-                    new ROUTE({
-                      fromField : new SFString("cValue_changed"),
-                      fromNode : new SFString("cValueTransformerScript"),
-                      toField : new SFString("c"),
-                      toNode : new SFString("x_iteShader")}),
-
-                    new ROUTE({
-                      fromField : new SFString("dValue_changed"),
-                      fromNode : new SFString("dValueTransformerScript"),
-                      toField : new SFString("d"),
-                      toNode : new SFString("x_iteShader")}),
-
-                    new ROUTE({
-                      fromField : new SFString("pdeltaValue_changed"),
-                      fromNode : new SFString("pdeltaValueTransformerScript"),
-                      toField : new SFString("pdelta"),
-                      toNode : new SFString("x_iteShader")}),
-
-                    new ROUTE({
-                      fromField : new SFString("tdeltaValue_changed"),
-                      fromNode : new SFString("tdeltaValueTransformerScript"),
-                      toField : new SFString("tdelta"),
-                      toNode : new SFString("x_iteShader")}),
-                  layout : new SFNode(
-                    new Layout({
-                      align : new MFString(["RIGHT","BOTTOM"]),
-                      offset : new MFFloat([0,0.2]),
-                      offsetUnits : new MFString(["WORLD","WORLD"]),
-                      scaleMode : new MFString(["NONE","NONE"]),
-                      size : new MFFloat([0.4,0.6]),
-                      sizeUnits : new MFString(["WORLD","WORLD"])})]),
-                  viewport : new SFNode(
-                    new Viewport({
-                      clipBoundary : new MFFloat([0,1,0,1])}))}))}))}))});
+                        new Group({})])})])}))}))}))});
 console.log(X3D0.toXMLNode());

@@ -62,6 +62,8 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          /*Scaled 1:1, Added Animations*/
+          /*Added Sites*/
           component : new SFNode(
             new component({
               name : new SFString("HAnim"),
@@ -137,13 +139,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("../license.html")}),
-          /*Scaled 1:1, Added Animations*/
-          /*Added Sites*/])})),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           /*https://www.web3d.org/documents/specifications/19774/V2.0/index.html Jin loa4 v2 1:1 https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes and Sites that will be used to compose the character. This allows the skeleton structure user code to be simplified. example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='sacrum_Shape'/> <Group USE='sacrum_Sites'/> </HAnimSegment> ... entire sheleton hierarchy ,,, </HAnimJoint Please Run the example. It starts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 Markers - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointsAndConnections - DEF user code for Joint center location markers and connection hierarchy SurfacesAndSites - DEF user code for the various Shape nodes and Site location markers hanim_JinLOA4S - This Humanoid USE assets in JointsAndConnections and SurfacesAndSites example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='sacrum_Shape'/> <Group USE='sacrum_Sites'/> </HAnimSegment> ... entire skeleton hierarchy ,,, </HAnimJoint DefaultAnimation_loa4 Default pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation TimerControls Selection of timer for animation*/

@@ -41,6 +41,7 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          /*meta content='under development' name='warning'/*/
           component : new SFNode(
             new component({
               name : new SFString("Shaders"),
@@ -120,8 +121,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("../../license.html")}),
-          /*meta content='under development' name='warning'/*/])})),
+              content : new SFString("../../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

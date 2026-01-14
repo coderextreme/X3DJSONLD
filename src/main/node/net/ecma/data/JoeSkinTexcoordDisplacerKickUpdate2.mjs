@@ -60,6 +60,7 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          /*BS studio translation from .x3dv by Joe using BS Contact*/
           component : new SFNode(
             new component({
               name : new SFString("H-Anim"),
@@ -111,8 +112,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("license"),
-              content : new SFString("../license.html")}),
-          /*BS studio translation from .x3dv by Joe using BS Contact*/])})),
+              content : new SFString("../license.html")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([

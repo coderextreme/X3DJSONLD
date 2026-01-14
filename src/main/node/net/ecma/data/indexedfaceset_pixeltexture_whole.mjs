@@ -20,6 +20,7 @@ var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var PixelTexture = require('./x3d.mjs');
 var SFImage = require('./x3d.mjs');
+var TextureProperties = require('./x3d.mjs');
 var IndexedFaceSet = require('./x3d.mjs');
 var SFBool = require('./x3d.mjs');
 var MFInt32 = require('./x3d.mjs');
@@ -153,6 +154,7 @@ var X3D0 =  new X3D({
 
             new NavigationInfo({
               type : ["EXAMINE"]}),
+          /*<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>*/
 
             new Shape({
               appearance : new SFNode(
@@ -161,7 +163,10 @@ var X3D0 =  new X3D({
                     new Material({})),
                   texture : new SFNode(
                     new PixelTexture({
-                      image : new SFImage([2,2,4,4278190335,16711935,4294967295,4294902015])}))})),
+                      image : new SFImage([2,2,4,4278190335,16711935,4294967295,4294902015]),
+                      textureProperties : new SFNode(
+                        new TextureProperties({
+                          magnificationFilter : new SFString("NEAREST_PIXEL")}))}))})),
               geometry : new SFNode(
                 new IndexedFaceSet({
                   colorPerVertex : new SFBool(false),
