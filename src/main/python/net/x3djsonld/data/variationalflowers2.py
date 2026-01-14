@@ -44,7 +44,7 @@ newModel=X3D(profile='Full',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='variationalflowers.x3d'),
-    NavigationInfo(type='"ANY" "EXAMINE" "FLY" "LOOKAT"'),
+    NavigationInfo(type=["ANY","EXAMINE","FLY","LOOKAT"]),
     Viewpoint(description='Tour Views',position=(0,0,12)),
     Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
     Transform(

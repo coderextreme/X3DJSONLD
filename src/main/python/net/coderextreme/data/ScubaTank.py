@@ -234,6 +234,7 @@ Transform12.children.append(Transform51)
 
 Scene10.children.append(Transform12)
 Background56 = x3d.Background()
+Background56.skyColor = [(0.6, 0.6, 0.6)]
 
 Scene10.children.append(Background56)
 
@@ -241,6 +242,9 @@ X3D0.Scene = Scene10
 f = open("../data/ScubaTank.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/ScubaTank.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/ScubaTank.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/ScubaTank.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

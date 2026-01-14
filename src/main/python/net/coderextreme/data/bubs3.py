@@ -53,7 +53,7 @@ Background10.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3
 
 Scene7.children.append(Background10)
 Transform11 = x3d.Transform()
-Transform11.DEF = "DECLBubble_bubbleA"
+Transform11.DEF = "DECLBubble_transformA"
 Shape12 = x3d.Shape()
 Sphere13 = x3d.Sphere()
 Sphere13.radius = 0.25
@@ -156,14 +156,14 @@ Transform11.children.append(TimeSensor22)
 ROUTE23 = x3d.ROUTE()
 ROUTE23.fromNode = "DECLBubble_bubbleA_bounce"
 ROUTE23.fromField = "translation_changed"
-ROUTE23.toNode = "DECLBubble_transform"
+ROUTE23.toNode = "DECLBubble_transformA"
 ROUTE23.toField = "set_translation"
 
 Transform11.children.append(ROUTE23)
 ROUTE24 = x3d.ROUTE()
 ROUTE24.fromNode = "DECLBubble_bubbleA_bounce"
 ROUTE24.fromField = "scale_changed"
-ROUTE24.toNode = "DECLBubble_transform"
+ROUTE24.toNode = "DECLBubble_transformA"
 ROUTE24.toField = "set_scale"
 
 Transform11.children.append(ROUTE24)
@@ -177,7 +177,7 @@ Transform11.children.append(ROUTE25)
 
 Scene7.children.append(Transform11)
 Transform26 = x3d.Transform()
-Transform26.DEF = "DECLBubble_bubbleB"
+Transform26.DEF = "DECLBubble_transformB"
 Shape27 = x3d.Shape()
 Sphere28 = x3d.Sphere()
 Sphere28.radius = 0.25
@@ -280,14 +280,14 @@ Transform26.children.append(TimeSensor37)
 ROUTE38 = x3d.ROUTE()
 ROUTE38.fromNode = "DECLBubble_bubbleB_bounce"
 ROUTE38.fromField = "translation_changed"
-ROUTE38.toNode = "DECLBubble_transform"
+ROUTE38.toNode = "DECLBubble_transformB"
 ROUTE38.toField = "set_translation"
 
 Transform26.children.append(ROUTE38)
 ROUTE39 = x3d.ROUTE()
 ROUTE39.fromNode = "DECLBubble_bubbleB_bounce"
 ROUTE39.fromField = "scale_changed"
-ROUTE39.toNode = "DECLBubble_transform"
+ROUTE39.toNode = "DECLBubble_transformB"
 ROUTE39.toField = "set_scale"
 
 Transform26.children.append(ROUTE39)
@@ -301,7 +301,7 @@ Transform26.children.append(ROUTE40)
 
 Scene7.children.append(Transform26)
 Transform41 = x3d.Transform()
-Transform41.DEF = "DECLBubble_bubbleC"
+Transform41.DEF = "DECLBubble_transformC"
 Shape42 = x3d.Shape()
 Sphere43 = x3d.Sphere()
 Sphere43.radius = 0.25
@@ -404,14 +404,14 @@ Transform41.children.append(TimeSensor52)
 ROUTE53 = x3d.ROUTE()
 ROUTE53.fromNode = "DECLBubble_bubbleC_bounce"
 ROUTE53.fromField = "translation_changed"
-ROUTE53.toNode = "DECLBubble_transform"
+ROUTE53.toNode = "DECLBubble_transformC"
 ROUTE53.toField = "set_translation"
 
 Transform41.children.append(ROUTE53)
 ROUTE54 = x3d.ROUTE()
 ROUTE54.fromNode = "DECLBubble_bubbleC_bounce"
 ROUTE54.fromField = "scale_changed"
-ROUTE54.toNode = "DECLBubble_transform"
+ROUTE54.toNode = "DECLBubble_transformC"
 ROUTE54.toField = "set_scale"
 
 Transform41.children.append(ROUTE54)
@@ -425,7 +425,7 @@ Transform41.children.append(ROUTE55)
 
 Scene7.children.append(Transform41)
 Transform56 = x3d.Transform()
-Transform56.DEF = "DECLBubble_bubbleD"
+Transform56.DEF = "DECLBubble_transformD"
 Shape57 = x3d.Shape()
 Sphere58 = x3d.Sphere()
 Sphere58.radius = 0.25
@@ -528,14 +528,14 @@ Transform56.children.append(TimeSensor67)
 ROUTE68 = x3d.ROUTE()
 ROUTE68.fromNode = "DECLBubble_bubbleD_bounce"
 ROUTE68.fromField = "translation_changed"
-ROUTE68.toNode = "DECLBubble_transform"
+ROUTE68.toNode = "DECLBubble_transformD"
 ROUTE68.toField = "set_translation"
 
 Transform56.children.append(ROUTE68)
 ROUTE69 = x3d.ROUTE()
 ROUTE69.fromNode = "DECLBubble_bubbleD_bounce"
 ROUTE69.fromField = "scale_changed"
-ROUTE69.toNode = "DECLBubble_transform"
+ROUTE69.toNode = "DECLBubble_transformD"
 ROUTE69.toField = "set_scale"
 
 Transform56.children.append(ROUTE69)
@@ -553,6 +553,9 @@ X3D0.Scene = Scene7
 f = open("../data/bubs3.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/bubs3.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/bubs3.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/bubs3.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

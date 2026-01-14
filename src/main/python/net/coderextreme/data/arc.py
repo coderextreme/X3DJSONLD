@@ -39,6 +39,7 @@ Viewpoint8.description = "Only Viewpoint"
 
 Scene7.children.append(Viewpoint8)
 Background9 = x3d.Background()
+Background9.skyColor = [(0.4, 0.4, 0.4)]
 
 Scene7.children.append(Background9)
 ProtoDeclare10 = x3d.ProtoDeclare()
@@ -81,6 +82,7 @@ Transform14.children.append(Shape17)
 PositionInterpolator21 = x3d.PositionInterpolator()
 PositionInterpolator21.DEF = "PI1"
 PositionInterpolator21.key = [0,1]
+PositionInterpolator21.keyValue = [(0, 0, 0),(0, 5, 0)]
 
 Transform14.children.append(PositionInterpolator21)
 Script22 = x3d.Script()
@@ -109,6 +111,7 @@ field26 = x3d.field()
 field26.name = "keyValue"
 field26.accessType = "inputOutput"
 field26.type = "MFVec3f"
+field26.value = [(0, 0, 0),(0, 5, 0)]
 
 Script22.field.append(field26)
 
@@ -365,6 +368,7 @@ ProtoInstance64.DEF = "connector1"
 fieldValue65 = x3d.fieldValue()
 fieldValue65.name = "startnode"
 ProtoInstance66 = x3d.ProtoInstance()
+ProtoInstance66.name = "point"
 ProtoInstance66.USE = "G1"
 
 fieldValue65.children.append(ProtoInstance66)
@@ -373,6 +377,7 @@ ProtoInstance64.fieldValue.append(fieldValue65)
 fieldValue67 = x3d.fieldValue()
 fieldValue67.name = "endnode"
 ProtoInstance68 = x3d.ProtoInstance()
+ProtoInstance68.name = "point"
 ProtoInstance68.USE = "G2"
 
 fieldValue67.children.append(ProtoInstance68)
@@ -394,6 +399,7 @@ ProtoInstance71.DEF = "connector2"
 fieldValue72 = x3d.fieldValue()
 fieldValue72.name = "startnode"
 ProtoInstance73 = x3d.ProtoInstance()
+ProtoInstance73.name = "point"
 ProtoInstance73.USE = "G1"
 
 fieldValue72.children.append(ProtoInstance73)
@@ -402,6 +408,7 @@ ProtoInstance71.fieldValue.append(fieldValue72)
 fieldValue74 = x3d.fieldValue()
 fieldValue74.name = "endnode"
 ProtoInstance75 = x3d.ProtoInstance()
+ProtoInstance75.name = "point"
 ProtoInstance75.USE = "G3"
 
 fieldValue74.children.append(ProtoInstance75)
@@ -423,6 +430,7 @@ ProtoInstance78.DEF = "connector3"
 fieldValue79 = x3d.fieldValue()
 fieldValue79.name = "startnode"
 ProtoInstance80 = x3d.ProtoInstance()
+ProtoInstance80.name = "point"
 ProtoInstance80.USE = "G1"
 
 fieldValue79.children.append(ProtoInstance80)
@@ -431,6 +439,7 @@ ProtoInstance78.fieldValue.append(fieldValue79)
 fieldValue81 = x3d.fieldValue()
 fieldValue81.name = "endnode"
 ProtoInstance82 = x3d.ProtoInstance()
+ProtoInstance82.name = "point"
 ProtoInstance82.USE = "G4"
 
 fieldValue81.children.append(ProtoInstance82)
@@ -493,6 +502,9 @@ X3D0.Scene = Scene7
 f = open("../data/arc.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/arc.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/arc.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/arc.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

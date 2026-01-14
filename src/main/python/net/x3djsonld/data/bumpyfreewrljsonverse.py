@@ -59,7 +59,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*',name='identifier'),
     meta(content='PSPad, http://www.pspad.com/',name='generator'),
     meta(content='license.html',name='license'),
-    #  Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L 
+    #  Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L 
     ]),
   #  "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,
      It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
@@ -67,7 +67,7 @@ newModel=X3D(profile='Full',version='4.0',
   Scene=Scene(
     #  basic nodes, which might be present in any scene 
     children=[
-    NavigationInfo(type='"EXAMINE"',avatarSize=[0.25,1.75,0.75]),
+    NavigationInfo(type=["EXAMINE"],avatarSize=[0.25,1.75,0.75]),
     DirectionalLight(ambientIntensity=.2,direction=(0,-1,-0)),
     DirectionalLight(ambientIntensity=.2,direction=(-1,-.1,-1)),
     Viewpoint(description='My Overview',fieldOfView=1.570796,position=(0,1.75,60)),
@@ -221,12 +221,12 @@ function initialize() {
         ROUTE(fromField='coordIndexes',fromNode='OrbitScript',toField='set_coordIndex',toNode='Orbit'),
         ROUTE(fromField='coordinates',fromNode='OrbitScript',toField='set_point',toNode='OrbitCoordinates'),
         #  DIS multiuser facilities 
-        DISEntityManager(DEF='EntityManager',networkMode='networkReader',
+        DISEntityManager(DEF='EntityManager',
           children=[
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=1,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]),
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=2,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=3,url=["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]),
-          DISEntityTypeMapping(readInterval=3.0,category=77,specific=4,url=["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])]),
+          DISEntityTypeMapping(category=77,specific=1,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=2,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=3,url=["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"]),
+          DISEntityTypeMapping(category=77,specific=4,url=["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])]),
         Collision(enabled=False,
           children=[
           Group(DEF='AvatarHolder')]),

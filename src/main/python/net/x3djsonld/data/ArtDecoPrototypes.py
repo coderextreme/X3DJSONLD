@@ -52,7 +52,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         children=[
         Material(ambientIntensity=0.254777,diffuseColor=(0.685208,0.134679,0.332385),shininess=0.071429,specularColor=(0.122449,0.050035,0.050035))])),
     ProtoDeclare(appinfo='UniversalMediaMaterials prototype',documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials',name='ArtDeco02',
-      #  computed conversion ambientIntensity=1.745282, normalized to 1.0 
+      children=[
+      Comment(' computed conversion ambientIntensity=1.745282, normalized to 1.0 '),
       ProtoBody=ProtoBody(
         children=[
         Material(ambientIntensity=1.0,diffuseColor=(0.536861,0.0529,0.245479),shininess=0.832432,specularColor=(0.805292,0.765198,0.747416))])),
@@ -149,7 +150,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         children=[
         Material(ambientIntensity=0.25641,diffuseColor=(0.795918,0.505869,0.093315),shininess=0.397959,specularColor=(0.923469,0.428866,0.006369))])),
     ProtoDeclare(appinfo='UniversalMediaMaterials prototype',documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials',name='ArtDeco26',
-      #  computed conversion ambientIntensity=2.226234, normalized to 1.0 
+      children=[
+      Comment(' computed conversion ambientIntensity=2.226234, normalized to 1.0 '),
       ProtoBody=ProtoBody(
         children=[
         Material(ambientIntensity=1.0,diffuseColor=(0.331633,0.296582,0.279057),shininess=0.096939,specularColor=(0.311224,0.25183,0.133042))])),
@@ -192,7 +194,8 @@ newModel=X3D(profile='Immersive',version='4.0',
           material=Material(diffuseColor=(0.8,0.4,0))),
         geometry=Text(string=["ArtDecoExamples.x3d","is a Materials Prototype declaration file.","","For an example scene using these node,","click this text and view","ArtDecoExamples.x3d"],
           fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],size=0.8)))])])
-) # X3D model complete
+)
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

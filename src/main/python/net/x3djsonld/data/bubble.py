@@ -36,7 +36,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type='"EXAMINE"'),
+    NavigationInfo(type=["EXAMINE"]),
     Viewpoint(position=(0,0,4),orientation=(1,0,0,0),description='Bubble in action'),
     ProtoDeclare(name='Bubble',
       ProtoBody=ProtoBody(

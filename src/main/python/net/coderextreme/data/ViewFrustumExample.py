@@ -67,7 +67,7 @@ meta13.content = "view culling frustum"
 head1.children.append(meta13)
 meta14 = x3d.meta()
 meta14.name = "identifier"
-meta14.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
+meta14.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"
 
 head1.children.append(meta14)
 meta15 = x3d.meta()
@@ -241,6 +241,9 @@ X3D0.Scene = Scene17
 f = open("../data/ViewFrustumExample.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/ViewFrustumExample.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/ViewFrustumExample.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/ViewFrustumExample.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

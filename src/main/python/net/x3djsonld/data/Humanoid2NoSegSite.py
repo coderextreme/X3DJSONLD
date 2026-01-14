@@ -31,7 +31,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     component(level=1,name='HAnim'),
     meta(content='Humanoid2NoSegSite.x3d',name='title'),
-    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid2NoSegSite.x3d'),
+    meta(name='identifier',content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid2NoSegSite.x3d'),
     meta(name='description',content='An attempt at a standard LOA-4 skeleton'),
     meta(name='generator',content='h2.pl'),
     meta(name='modified',content='14 Jan 2023'),

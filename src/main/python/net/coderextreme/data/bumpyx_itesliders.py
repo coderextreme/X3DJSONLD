@@ -5,6 +5,8 @@ X3D0 = x3d.X3D()
 X3D0.profile = "Full"
 X3D0.version = "4.0"
 head1 = x3d.head()
+"""<component name='Shape' level='4'></component>"""
+"""<component name='DIS' level='2'></component>"""
 component2 = x3d.component()
 component2.name = "Scripting"
 component2.level = 1
@@ -45,166 +47,148 @@ component9.name = "Core"
 component9.level = 1
 
 head1.children.append(component9)
-component10 = x3d.component()
-component10.name = "DIS"
-component10.level = 2
+meta10 = x3d.meta()
+meta10.name = "title"
+meta10.content = "bumpyx_itesliders.x3d"
 
-head1.children.append(component10)
-"""<component name='Shape' level='4'></component>"""
-"""Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"""
+head1.children.append(meta10)
 meta11 = x3d.meta()
-meta11.name = "title"
-meta11.content = "bumpyx_itesliders.x3d"
+meta11.name = "description"
+meta11.content = "*Bumpy flower with prototype sliders*"
 
 head1.children.append(meta11)
 meta12 = x3d.meta()
-meta12.name = "description"
-meta12.content = "*enter description here, short-sentence summaries preferred*"
+meta12.name = "creator"
+meta12.content = "Doug Sanden, Christoph Valentin, John Carlson"
 
 head1.children.append(meta12)
 meta13 = x3d.meta()
-meta13.name = "creator"
-meta13.content = "Doug Sanden, Christoph Valentin, John Carlson"
+meta13.name = "identifier"
+meta13.content = "https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d"
 
 head1.children.append(meta13)
 meta14 = x3d.meta()
-meta14.name = "translator"
-meta14.content = "*if manually translating VRML-to-X3D, enter name of person translating here*"
+meta14.name = "generator"
+meta14.content = "PSPad, http://www.pspad.com/"
 
 head1.children.append(meta14)
 meta15 = x3d.meta()
-meta15.name = "created"
-meta15.content = "*enter date of initial version here*"
+meta15.name = "license"
+meta15.content = "license.html"
 
 head1.children.append(meta15)
-meta16 = x3d.meta()
-meta16.name = "translated"
-meta16.content = "*enter date of translation here*"
-
-head1.children.append(meta16)
-meta17 = x3d.meta()
-meta17.name = "modified"
-meta17.content = "*enter date of latest revision here*"
-
-head1.children.append(meta17)
-meta18 = x3d.meta()
-meta18.name = "version"
-meta18.content = "*enter version here, if any*"
-
-head1.children.append(meta18)
-meta19 = x3d.meta()
-meta19.name = "reference"
-meta19.content = "*enter reference citation or relative/online url here*"
-
-head1.children.append(meta19)
-meta20 = x3d.meta()
-meta20.name = "reference"
-meta20.content = "*enter additional url/bibliographic reference information here*"
-
-head1.children.append(meta20)
-meta21 = x3d.meta()
-meta21.name = "requires"
-meta21.content = "*enter reference resource here if required to support function, delivery, or coherence of content*"
-
-head1.children.append(meta21)
-meta22 = x3d.meta()
-meta22.name = "rights"
-meta22.content = "*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024"
-
-head1.children.append(meta22)
-meta23 = x3d.meta()
-meta23.name = "drawing"
-meta23.content = "*enter drawing filename/url here*"
-
-head1.children.append(meta23)
-meta24 = x3d.meta()
-meta24.name = "MovingImage"
-meta24.content = "*enter movie filename/url here*"
-
-head1.children.append(meta24)
-meta25 = x3d.meta()
-meta25.name = "photo"
-meta25.content = "*enter photo filename/url here*"
-
-head1.children.append(meta25)
-meta26 = x3d.meta()
-meta26.name = "subject"
-meta26.content = "*enter subject keywords here*"
-
-head1.children.append(meta26)
-meta27 = x3d.meta()
-meta27.name = "accessRights"
-meta27.content = "*enter permission statements or url here*"
-
-head1.children.append(meta27)
-meta28 = x3d.meta()
-meta28.name = "identifier"
-meta28.content = "*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*"
-
-head1.children.append(meta28)
-meta29 = x3d.meta()
-meta29.name = "generator"
-meta29.content = "PSPad, http://www.pspad.com/"
-
-head1.children.append(meta29)
-meta30 = x3d.meta()
-meta30.name = "license"
-meta30.content = "license.html"
-
-head1.children.append(meta30)
 
 X3D0.head = head1
 """\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\""""
-Scene31 = x3d.Scene()
+Scene16 = x3d.Scene()
 """LayerSet with two layers, navigation happens in layer 1"""
-LayerSet32 = x3d.LayerSet()
-LayerSet32.activeLayer = 1
-LayerSet32.order = [1,2]
+LayerSet17 = x3d.LayerSet()
+LayerSet17.activeLayer = 1
+LayerSet17.order = [1,2,3]
 """the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""""
-"""the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"""
-Layer33 = x3d.Layer()
-Layer33.pickable = True
-Layer33.objectType = ["ALL"]
+Layer18 = x3d.Layer()
+Layer18.pickable = True
+Layer18.objectType = ["ALL"]
 """basic nodes, which might be present in any scene"""
-NavigationInfo34 = x3d.NavigationInfo()
-NavigationInfo34.type = ["EXAMINE"]
-NavigationInfo34.avatarSize = [0.25,1.75,0.75]
+NavigationInfo19 = x3d.NavigationInfo()
+NavigationInfo19.type = ["EXAMINE"]
+NavigationInfo19.avatarSize = [0.25,1.75,0.75]
 
-Layer33.children.append(NavigationInfo34)
-DirectionalLight35 = x3d.DirectionalLight()
-DirectionalLight35.ambientIntensity = 0.2
-DirectionalLight35.direction = [0,-1,0]
+Layer18.children.append(NavigationInfo19)
+DirectionalLight20 = x3d.DirectionalLight()
+DirectionalLight20.ambientIntensity = 0.2
+DirectionalLight20.direction = [0,-1,0]
 
-Layer33.children.append(DirectionalLight35)
-DirectionalLight36 = x3d.DirectionalLight()
-DirectionalLight36.ambientIntensity = 0.2
-DirectionalLight36.direction = [-1,-0.1,-1]
+Layer18.children.append(DirectionalLight20)
+DirectionalLight21 = x3d.DirectionalLight()
+DirectionalLight21.ambientIntensity = 0.2
+DirectionalLight21.direction = [-1,-0.1,-1]
 
-Layer33.children.append(DirectionalLight36)
-Viewpoint37 = x3d.Viewpoint()
-Viewpoint37.description = "My Overview"
-Viewpoint37.fieldOfView = 1.570796
-Viewpoint37.position = [0,1.75,60]
+Layer18.children.append(DirectionalLight21)
+Viewpoint22 = x3d.Viewpoint()
+Viewpoint22.description = "My Overview"
+Viewpoint22.fieldOfView = 1.570796
+Viewpoint22.position = [0,1.75,60]
 
-Layer33.children.append(Viewpoint37)
+Layer18.children.append(Viewpoint22)
 """this group contains the red/green/blue 3D crosshair"""
-Group38 = x3d.Group()
+Group23 = x3d.Group()
 """Arrow X"""
-Transform39 = x3d.Transform()
-Transform39.translation = [25,0,0]
-Transform39.rotation = [0,0,-1,1.57]
-Shape40 = x3d.Shape()
-Cylinder41 = x3d.Cylinder()
-Cylinder41.DEF = "Shaft"
-Cylinder41.radius = 0.35
-Cylinder41.height = 50
+Transform24 = x3d.Transform()
+Transform24.translation = [25,0,0]
+Transform24.rotation = [0,0,-1,1.57]
+Shape25 = x3d.Shape()
+Cylinder26 = x3d.Cylinder()
+Cylinder26.DEF = "Shaft"
+Cylinder26.radius = 0.35
+Cylinder26.height = 50
 
-Shape40.geometry = Cylinder41
+Shape25.geometry = Cylinder26
+Appearance27 = x3d.Appearance()
+Material28 = x3d.Material()
+Material28.DEF = "RED"
+Material28.diffuseColor = [1,0,0]
+Material28.emissiveColor = [1,0,0]
+
+Appearance27.material = Material28
+
+Shape25.appearance = Appearance27
+
+Transform24.children.append(Shape25)
+
+Group23.children.append(Transform24)
+Transform29 = x3d.Transform()
+Transform29.translation = [50,0,0]
+Transform29.rotation = [0,0,-1,1.57]
+Shape30 = x3d.Shape()
+Cone31 = x3d.Cone()
+Cone31.DEF = "Tip"
+Cone31.bottomRadius = 0.8
+Cone31.height = 3
+
+Shape30.geometry = Cone31
+Appearance32 = x3d.Appearance()
+Material33 = x3d.Material()
+Material33.USE = "RED"
+
+Appearance32.material = Material33
+
+Shape30.appearance = Appearance32
+
+Transform29.children.append(Shape30)
+
+Group23.children.append(Transform29)
+"""Arrow Y"""
+Transform34 = x3d.Transform()
+Transform34.translation = [0,25,0]
+Shape35 = x3d.Shape()
+Cylinder36 = x3d.Cylinder()
+Cylinder36.USE = "Shaft"
+
+Shape35.geometry = Cylinder36
+Appearance37 = x3d.Appearance()
+Material38 = x3d.Material()
+Material38.DEF = "GREEN"
+Material38.diffuseColor = [0,1,0]
+Material38.emissiveColor = [0,1,0]
+
+Appearance37.material = Material38
+
+Shape35.appearance = Appearance37
+
+Transform34.children.append(Shape35)
+
+Group23.children.append(Transform34)
+Transform39 = x3d.Transform()
+Transform39.translation = [0,50,0]
+Shape40 = x3d.Shape()
+Cone41 = x3d.Cone()
+Cone41.USE = "Tip"
+
+Shape40.geometry = Cone41
 Appearance42 = x3d.Appearance()
 Material43 = x3d.Material()
-Material43.DEF = "RED"
-Material43.diffuseColor = [1,0,0]
-Material43.emissiveColor = [1,0,0]
+Material43.USE = "GREEN"
 
 Appearance42.material = Material43
 
@@ -212,20 +196,21 @@ Shape40.appearance = Appearance42
 
 Transform39.children.append(Shape40)
 
-Group38.children.append(Transform39)
+Group23.children.append(Transform39)
+"""Arrow Z"""
 Transform44 = x3d.Transform()
-Transform44.translation = [50,0,0]
-Transform44.rotation = [0,0,-1,1.57]
+Transform44.translation = [0,0,25]
+Transform44.rotation = [1,0,0,1.57]
 Shape45 = x3d.Shape()
-Cone46 = x3d.Cone()
-Cone46.DEF = "Tip"
-Cone46.bottomRadius = 0.8
-Cone46.height = 3
+Cylinder46 = x3d.Cylinder()
+Cylinder46.USE = "Shaft"
 
-Shape45.geometry = Cone46
+Shape45.geometry = Cylinder46
 Appearance47 = x3d.Appearance()
 Material48 = x3d.Material()
-Material48.USE = "RED"
+Material48.DEF = "BLUE"
+Material48.diffuseColor = [0,0,1]
+Material48.emissiveColor = [0,0,1]
 
 Appearance47.material = Material48
 
@@ -233,20 +218,18 @@ Shape45.appearance = Appearance47
 
 Transform44.children.append(Shape45)
 
-Group38.children.append(Transform44)
-"""Arrow Y"""
+Group23.children.append(Transform44)
 Transform49 = x3d.Transform()
-Transform49.translation = [0,25,0]
+Transform49.translation = [0,0,50]
+Transform49.rotation = [1,0,0,1.57]
 Shape50 = x3d.Shape()
-Cylinder51 = x3d.Cylinder()
-Cylinder51.USE = "Shaft"
+Cone51 = x3d.Cone()
+Cone51.USE = "Tip"
 
-Shape50.geometry = Cylinder51
+Shape50.geometry = Cone51
 Appearance52 = x3d.Appearance()
 Material53 = x3d.Material()
-Material53.DEF = "GREEN"
-Material53.diffuseColor = [0,1,0]
-Material53.emissiveColor = [0,1,0]
+Material53.USE = "BLUE"
 
 Appearance52.material = Material53
 
@@ -254,1013 +237,898 @@ Shape50.appearance = Appearance52
 
 Transform49.children.append(Shape50)
 
-Group38.children.append(Transform49)
-Transform54 = x3d.Transform()
-Transform54.translation = [0,50,0]
-Shape55 = x3d.Shape()
-Cone56 = x3d.Cone()
-Cone56.USE = "Tip"
+Group23.children.append(Transform49)
 
-Shape55.geometry = Cone56
-Appearance57 = x3d.Appearance()
-Material58 = x3d.Material()
-Material58.USE = "GREEN"
-
-Appearance57.material = Material58
-
-Shape55.appearance = Appearance57
-
-Transform54.children.append(Shape55)
-
-Group38.children.append(Transform54)
-"""Arrow Z"""
-Transform59 = x3d.Transform()
-Transform59.translation = [0,0,25]
-Transform59.rotation = [1,0,0,1.57]
-Shape60 = x3d.Shape()
-Cylinder61 = x3d.Cylinder()
-Cylinder61.USE = "Shaft"
-
-Shape60.geometry = Cylinder61
-Appearance62 = x3d.Appearance()
-Material63 = x3d.Material()
-Material63.DEF = "BLUE"
-Material63.diffuseColor = [0,0,1]
-Material63.emissiveColor = [0,0,1]
-
-Appearance62.material = Material63
-
-Shape60.appearance = Appearance62
-
-Transform59.children.append(Shape60)
-
-Group38.children.append(Transform59)
-Transform64 = x3d.Transform()
-Transform64.translation = [0,0,50]
-Transform64.rotation = [1,0,0,1.57]
-Shape65 = x3d.Shape()
-Cone66 = x3d.Cone()
-Cone66.USE = "Tip"
-
-Shape65.geometry = Cone66
-Appearance67 = x3d.Appearance()
-Material68 = x3d.Material()
-Material68.USE = "BLUE"
-
-Appearance67.material = Material68
-
-Shape65.appearance = Appearance67
-
-Transform64.children.append(Shape65)
-
-Group38.children.append(Transform64)
-
-Layer33.children.append(Group38)
+Layer18.children.append(Group23)
 """the model that is being reviewed by the users of this scene"""
-Transform69 = x3d.Transform()
-Transform69.DEF = "FlowerTransform"
+Transform54 = x3d.Transform()
+Transform54.DEF = "FlowerTransform"
 """<Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />"""
 """Images courtesy of Paul Debevec's Light Probe Image Gallery"""
-Background70 = x3d.Background()
-Background70.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-Background70.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-Background70.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-Background70.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-Background70.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-Background70.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+Background55 = x3d.Background()
+Background55.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background55.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Background55.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background55.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background55.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background55.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-Transform69.children.append(Background70)
-Transform71 = x3d.Transform()
-Shape72 = x3d.Shape()
-Sphere73 = x3d.Sphere()
-Sphere73.radius = 40
+Transform54.children.append(Background55)
+Transform56 = x3d.Transform()
+Shape57 = x3d.Shape()
+"""<Sphere radius='40'></Sphere>"""
+IndexedFaceSet58 = x3d.IndexedFaceSet()
+IndexedFaceSet58.convex = False
+IndexedFaceSet58.DEF = "Orbit"
+Coordinate59 = x3d.Coordinate()
+Coordinate59.DEF = "OrbitCoordinates"
 
-Shape72.geometry = Sphere73
-Appearance74 = x3d.Appearance()
-Material75 = x3d.Material()
-Material75.diffuseColor = [0.7,0.7,0.7]
-Material75.specularColor = [0.5,0.5,0.5]
+IndexedFaceSet58.coord = Coordinate59
 
-Appearance74.material = Material75
-ComposedCubeMapTexture76 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture76.DEF = "texture"
-ImageTexture77 = x3d.ImageTexture()
-ImageTexture77.url = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Shape57.geometry = IndexedFaceSet58
+Appearance60 = x3d.Appearance()
+Material61 = x3d.Material()
+Material61.diffuseColor = [0.7,0.7,0.7]
+Material61.specularColor = [0.5,0.5,0.5]
 
-ComposedCubeMapTexture76.backTexture = ImageTexture77
-ImageTexture78 = x3d.ImageTexture()
-ImageTexture78.url = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Appearance60.material = Material61
+ComposedCubeMapTexture62 = x3d.ComposedCubeMapTexture()
+ComposedCubeMapTexture62.DEF = "texture"
+ImageTexture63 = x3d.ImageTexture()
+ImageTexture63.url = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
 
-ComposedCubeMapTexture76.bottomTexture = ImageTexture78
-ImageTexture79 = x3d.ImageTexture()
-ImageTexture79.url = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+ComposedCubeMapTexture62.backTexture = ImageTexture63
+ImageTexture64 = x3d.ImageTexture()
+ImageTexture64.url = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
 
-ComposedCubeMapTexture76.frontTexture = ImageTexture79
-ImageTexture80 = x3d.ImageTexture()
-ImageTexture80.url = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+ComposedCubeMapTexture62.bottomTexture = ImageTexture64
+ImageTexture65 = x3d.ImageTexture()
+ImageTexture65.url = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
 
-ComposedCubeMapTexture76.leftTexture = ImageTexture80
-ImageTexture81 = x3d.ImageTexture()
-ImageTexture81.url = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+ComposedCubeMapTexture62.frontTexture = ImageTexture65
+ImageTexture66 = x3d.ImageTexture()
+ImageTexture66.url = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
 
-ComposedCubeMapTexture76.rightTexture = ImageTexture81
-ImageTexture82 = x3d.ImageTexture()
-ImageTexture82.url = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+ComposedCubeMapTexture62.leftTexture = ImageTexture66
+ImageTexture67 = x3d.ImageTexture()
+ImageTexture67.url = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
 
-ComposedCubeMapTexture76.topTexture = ImageTexture82
+ComposedCubeMapTexture62.rightTexture = ImageTexture67
+ImageTexture68 = x3d.ImageTexture()
+ImageTexture68.url = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-Appearance74.texture = ComposedCubeMapTexture76
-ComposedShader83 = x3d.ComposedShader()
-ComposedShader83.DEF = "x_iteShader"
-ComposedShader83.language = "GLSL"
-field84 = x3d.field()
-field84.name = "chromaticDispertion"
-field84.accessType = "inputOnly"
-field84.type = "SFVec3f"
-field84.value = [0.98,1,1.033]
+ComposedCubeMapTexture62.topTexture = ImageTexture68
 
-ComposedShader83.field.append(field84)
+Appearance60.texture = ComposedCubeMapTexture62
+ComposedShader69 = x3d.ComposedShader()
+ComposedShader69.DEF = "x_iteShader"
+ComposedShader69.language = "GLSL"
+field70 = x3d.field()
+field70.name = "chromaticDispertion"
+field70.accessType = "inputOnly"
+field70.type = "SFVec3f"
+field70.value = [0.98,1,1.033]
+
+ComposedShader69.field.append(field70)
+field71 = x3d.field()
+field71.name = "cube"
+field71.type = "SFNode"
+field71.accessType = "inputOnly"
+ComposedCubeMapTexture72 = x3d.ComposedCubeMapTexture()
+ComposedCubeMapTexture72.USE = "texture"
+
+field71.children.append(ComposedCubeMapTexture72)
+
+ComposedShader69.field.append(field71)
+field73 = x3d.field()
+field73.name = "bias"
+field73.type = "SFFloat"
+field73.accessType = "inputOnly"
+field73.value = 0.5
+
+ComposedShader69.field.append(field73)
+field74 = x3d.field()
+field74.name = "scale"
+field74.type = "SFFloat"
+field74.accessType = "inputOnly"
+field74.value = 0.5
+
+ComposedShader69.field.append(field74)
+field75 = x3d.field()
+field75.name = "power"
+field75.type = "SFFloat"
+field75.accessType = "inputOnly"
+field75.value = 2
+
+ComposedShader69.field.append(field75)
+field76 = x3d.field()
+field76.name = "a"
+field76.type = "SFFloat"
+field76.accessType = "inputOutput"
+field76.value = 15
+
+ComposedShader69.field.append(field76)
+field77 = x3d.field()
+field77.name = "b"
+field77.type = "SFFloat"
+field77.accessType = "inputOutput"
+field77.value = 5
+
+ComposedShader69.field.append(field77)
+field78 = x3d.field()
+field78.name = "c"
+field78.type = "SFFloat"
+field78.accessType = "inputOutput"
+field78.value = 5
+
+ComposedShader69.field.append(field78)
+field79 = x3d.field()
+field79.name = "d"
+field79.type = "SFFloat"
+field79.accessType = "inputOutput"
+field79.value = 5
+
+ComposedShader69.field.append(field79)
+field80 = x3d.field()
+field80.name = "tdelta"
+field80.type = "SFFloat"
+field80.accessType = "inputOutput"
+field80.value = 0
+
+ComposedShader69.field.append(field80)
+field81 = x3d.field()
+field81.name = "pdelta"
+field81.type = "SFFloat"
+field81.accessType = "inputOutput"
+field81.value = 0
+
+ComposedShader69.field.append(field81)
+ShaderPart82 = x3d.ShaderPart()
+ShaderPart82.url = ["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
+ShaderPart82.type = "VERTEX"
+
+ComposedShader69.parts.append(ShaderPart82)
+ShaderPart83 = x3d.ShaderPart()
+ShaderPart83.url = ["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
+ShaderPart83.type = "FRAGMENT"
+
+ComposedShader69.parts.append(ShaderPart83)
+"""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""
+
+Appearance60.shaders.append(ComposedShader69)
+
+Shape57.appearance = Appearance60
+
+Transform56.children.append(Shape57)
+
+Transform54.children.append(Transform56)
+
+Layer18.children.append(Transform54)
+Script84 = x3d.Script()
+Script84.DEF = "OrbitScript"
 field85 = x3d.field()
-field85.name = "cube"
-field85.type = "SFNode"
-field85.accessType = "inputOnly"
-ComposedCubeMapTexture86 = x3d.ComposedCubeMapTexture()
-ComposedCubeMapTexture86.USE = "texture"
+field85.name = "coordinates"
+field85.accessType = "inputOutput"
+field85.type = "MFVec3f"
 
-field85.children.append(ComposedCubeMapTexture86)
+Script84.field.append(field85)
+field86 = x3d.field()
+field86.name = "coordIndexes"
+field86.accessType = "outputOnly"
+field86.type = "MFInt32"
 
-ComposedShader83.field.append(field85)
+Script84.field.append(field86)
 field87 = x3d.field()
-field87.name = "bias"
+field87.name = "a"
 field87.type = "SFFloat"
-field87.accessType = "inputOnly"
-field87.value = 0.5
+field87.accessType = "inputOutput"
+field87.value = 10
 
-ComposedShader83.field.append(field87)
+Script84.field.append(field87)
 field88 = x3d.field()
-field88.name = "scale"
+field88.name = "b"
 field88.type = "SFFloat"
-field88.accessType = "inputOnly"
-field88.value = 0.5
+field88.accessType = "inputOutput"
+field88.value = 10
 
-ComposedShader83.field.append(field88)
+Script84.field.append(field88)
 field89 = x3d.field()
-field89.name = "power"
+field89.name = "c"
 field89.type = "SFFloat"
-field89.accessType = "inputOnly"
+field89.accessType = "inputOutput"
 field89.value = 2
 
-ComposedShader83.field.append(field89)
+Script84.field.append(field89)
 field90 = x3d.field()
-field90.name = "a"
+field90.name = "d"
 field90.type = "SFFloat"
 field90.accessType = "inputOutput"
-field90.value = 15
+field90.value = 2
 
-ComposedShader83.field.append(field90)
+Script84.field.append(field90)
 field91 = x3d.field()
-field91.name = "b"
+field91.name = "pdelta"
 field91.type = "SFFloat"
 field91.accessType = "inputOutput"
-field91.value = 5
+field91.value = 0
 
-ComposedShader83.field.append(field91)
+Script84.field.append(field91)
 field92 = x3d.field()
-field92.name = "c"
+field92.name = "tdelta"
 field92.type = "SFFloat"
 field92.accessType = "inputOutput"
-field92.value = 5
+field92.value = 0
 
-ComposedShader83.field.append(field92)
-field93 = x3d.field()
-field93.name = "d"
-field93.type = "SFFloat"
-field93.accessType = "inputOutput"
-field93.value = 5
+Script84.field.append(field92)
 
-ComposedShader83.field.append(field93)
-field94 = x3d.field()
-field94.name = "tdelta"
-field94.type = "SFFloat"
-field94.accessType = "inputOutput"
-field94.value = 0
+Script84.sourceCode = '''ecmascript:\n"+
+"function initialize() {\n"+
+"     var resolution = 300;\n"+
+"     var theta = 0.0;\n"+
+"     var phi = 0.0;\n"+
+"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
+"     var crds = new MFVec3f();\n"+
+"     for ( i = 0; i < resolution; i++) {\n"+
+"     	for ( j = 0; j < resolution; j++) {\n"+
+"		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);\n"+
+"		crds.push(new SFVec3f(\n"+
+"			rho * Math.cos(phi) * Math.cos(theta),\n"+
+"			rho * Math.cos(phi) * Math.sin(theta),\n"+
+"			rho * Math.sin(phi)\n"+
+"		));\n"+
+"		theta += delta;\n"+
+"	}\n"+
+"	phi += delta;\n"+
+"     }\n"+
+"     coordinates = crds;\n"+
+"\n"+
+"\n"+
+"     var cis = new MFInt32();\n"+
+"     for ( i = 0; i < resolution-1; i++) {\n"+
+"     	for ( j = 0; j < resolution-1; j++) {\n"+
+"	     cis.push(i*resolution+j);\n"+
+"	     cis.push(i*resolution+j+1);\n"+
+"	     cis.push((i+1)*resolution+j+1);\n"+
+"	     cis.push((i+1)*resolution+j);\n"+
+"	     cis.push(-1);\n"+
+"	}\n"+
+"    }\n"+
+"    coordIndexes = cis;\n"+
+"}'''
 
-ComposedShader83.field.append(field94)
-field95 = x3d.field()
-field95.name = "pdelta"
-field95.type = "SFFloat"
-field95.accessType = "inputOutput"
-field95.value = 0
+Layer18.children.append(Script84)
+ROUTE93 = x3d.ROUTE()
+ROUTE93.fromField = "coordIndexes"
+ROUTE93.fromNode = "OrbitScript"
+ROUTE93.toField = "set_coordIndex"
+ROUTE93.toNode = "Orbit"
 
-ComposedShader83.field.append(field95)
-ShaderPart96 = x3d.ShaderPart()
-ShaderPart96.url = ["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]
-ShaderPart96.type = "VERTEX"
+Layer18.children.append(ROUTE93)
+ROUTE94 = x3d.ROUTE()
+ROUTE94.fromField = "coordinates"
+ROUTE94.fromNode = "OrbitScript"
+ROUTE94.toField = "set_point"
+ROUTE94.toNode = "OrbitCoordinates"
 
-ComposedShader83.parts.append(ShaderPart96)
-ShaderPart97 = x3d.ShaderPart()
-ShaderPart97.url = ["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"]
-ShaderPart97.type = "FRAGMENT"
+Layer18.children.append(ROUTE94)
 
-ComposedShader83.parts.append(ShaderPart97)
-"""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>"""
+LayerSet17.layers.append(Layer18)
+LayoutLayer95 = x3d.LayoutLayer()
+LayoutLayer95.pickable = True
+LayoutLayer95.objectType = ["ALL"]
+Layout96 = x3d.Layout()
+Layout96.align = ["LEFT","BOTTOM"]
+Layout96.offset = [-0.2,0.19]
+Layout96.size = [0.4,0.6]
 
-Appearance74.shaders.append(ComposedShader83)
+LayoutLayer95.layout = Layout96
+Viewport97 = x3d.Viewport()
+Viewport97.clipBoundary = [0,1,0,1]
 
-Shape72.appearance = Appearance74
+LayoutLayer95.viewport = Viewport97
+Transform98 = x3d.Transform()
+Transform98.translation = [0,0,-3]
+Shape99 = x3d.Shape()
+Appearance100 = x3d.Appearance()
+Material101 = x3d.Material()
+Material101.diffuseColor = [0,0,0]
+Material101.transparency = 0.7
 
-Transform71.children.append(Shape72)
+Appearance100.material = Material101
 
-Transform69.children.append(Transform71)
+Shape99.appearance = Appearance100
+Box102 = x3d.Box()
+Box102.size = [100,100,0.02]
 
-Layer33.children.append(Transform69)
-"""DIS multiuser facilities"""
-DISEntityManager98 = x3d.DISEntityManager()
-DISEntityManager98.DEF = "EntityManager"
-DISEntityManager98.networkMode = "networkReader"
-DISEntityTypeMapping99 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping99.category = 77
-DISEntityTypeMapping99.specific = 1
-DISEntityTypeMapping99.url = ["Leif8Final.x3d"]
+Shape99.geometry = Box102
 
-DISEntityManager98.children.append(DISEntityTypeMapping99)
-DISEntityTypeMapping100 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping100.category = 77
-DISEntityTypeMapping100.specific = 2
-DISEntityTypeMapping100.url = ["Lily8Final.x3d"]
+Transform98.children.append(Shape99)
 
-DISEntityManager98.children.append(DISEntityTypeMapping100)
+LayoutLayer95.children.append(Transform98)
+Transform103 = x3d.Transform()
+Transform103.DEF = "equationTransform"
+Transform104 = x3d.Transform()
+Transform104.translation = [0,0,-20]
+Shape105 = x3d.Shape()
+Text106 = x3d.Text()
+Text106.DEF = "equation"
+Text106.string = ["r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)"]
+FontStyle107 = x3d.FontStyle()
+FontStyle107.size = 0.09
 
-Layer33.children.append(DISEntityManager98)
-Collision101 = x3d.Collision()
-Collision101.enabled = False
-Group102 = x3d.Group()
-Group102.DEF = "AvatarHolder"
+Text106.fontStyle = FontStyle107
 
-Collision101.proxy = Group102
-
-Layer33.children.append(Collision101)
-ROUTE103 = x3d.ROUTE()
-ROUTE103.fromField = "addedEntities"
-ROUTE103.fromNode = "EntityManager"
-ROUTE103.toField = "addChildren"
-ROUTE103.toNode = "AvatarHolder"
-
-Layer33.children.append(ROUTE103)
-ROUTE104 = x3d.ROUTE()
-ROUTE104.fromField = "removedEntities"
-ROUTE104.fromNode = "EntityManager"
-ROUTE104.toField = "removeChildren"
-ROUTE104.toNode = "AvatarHolder"
-
-Layer33.children.append(ROUTE104)
-
-LayerSet32.layers.append(Layer33)
-LayoutLayer105 = x3d.LayoutLayer()
-LayoutLayer105.pickable = True
-LayoutLayer105.objectType = ["ALL"]
-"""positioning the LayoutLayer"""
-"""clipping the LayoutLayer"""
-"""the content (children) of the LayoutLayer"""
-"""first, the slider for scaling the model"""
-Transform106 = x3d.Transform()
-Transform106.translation = [0,0,-3]
-Shape107 = x3d.Shape()
+Shape105.geometry = Text106
 Appearance108 = x3d.Appearance()
 Material109 = x3d.Material()
-Material109.diffuseColor = [0,0,0]
-Material109.transparency = 0.7
+Material109.diffuseColor = [1,1,0]
 
 Appearance108.material = Material109
 
-Shape107.appearance = Appearance108
-Box110 = x3d.Box()
-Box110.size = [100,100,0.02]
+Shape105.appearance = Appearance108
 
-Shape107.geometry = Box110
+Transform104.children.append(Shape105)
 
-Transform106.children.append(Shape107)
+Transform103.children.append(Transform104)
 
-LayoutLayer105.children.append(Transform106)
-"""the plane sensors"""
-Transform111 = x3d.Transform()
-Transform111.DEF = "aSlider"
-Transform111.translation = [0,0.7,0]
-Transform112 = x3d.Transform()
-Transform112.rotation = [0,0,1,1.57]
-Shape113 = x3d.Shape()
-Appearance114 = x3d.Appearance()
-Material115 = x3d.Material()
+LayoutLayer95.children.append(Transform103)
+ProtoDeclare110 = x3d.ProtoDeclare()
+ProtoDeclare110.name = "SliderProto"
+ProtoInterface111 = x3d.ProtoInterface()
+field112 = x3d.field()
+field112.name = "sliderTranslation"
+field112.accessType = "inputOutput"
+field112.type = "SFVec3f"
+field112.value = [0,0.7,0]
 
-Appearance114.material = Material115
+ProtoInterface111.field.append(field112)
+field113 = x3d.field()
+field113.name = "transformTranslation"
+field113.accessType = "inputOutput"
+field113.type = "SFVec3f"
+field113.value = [0,0,0.1]
 
-Shape113.appearance = Appearance114
-Cylinder116 = x3d.Cylinder()
-Cylinder116.radius = 0.05
-Cylinder116.height = 2.5
+ProtoInterface111.field.append(field113)
+field114 = x3d.field()
+field114.name = "sensorTranslation"
+field114.accessType = "inputOutput"
+field114.type = "SFVec3f"
+field114.value = [0,0,0]
 
-Shape113.geometry = Cylinder116
+ProtoInterface111.field.append(field114)
+field115 = x3d.field()
+field115.name = "textString"
+field115.accessType = "inputOutput"
+field115.type = "MFString"
+field115.value = ["a="]
 
-Transform112.children.append(Shape113)
+ProtoInterface111.field.append(field115)
+field116 = x3d.field()
+field116.name = "parameterScale"
+field116.accessType = "inputOutput"
+field116.type = "SFFloat"
+field116.value = 30
 
-Transform111.children.append(Transform112)
-Transform117 = x3d.Transform()
-Transform117.DEF = "aTransform"
-Transform117.translation = [0,0,0.1]
-PlaneSensor118 = x3d.PlaneSensor()
-PlaneSensor118.DEF = "aSensor"
-PlaneSensor118.minPosition = [-20,0]
-PlaneSensor118.maxPosition = [20,0]
+ProtoInterface111.field.append(field116)
+field117 = x3d.field()
+field117.name = "parameterName"
+field117.accessType = "inputOutput"
+field117.type = "SFString"
+field117.value = "a"
 
-Transform117.children.append(PlaneSensor118)
-Transform119 = x3d.Transform()
-Transform119.translation = [0,0,0]
-TouchSensor120 = x3d.TouchSensor()
-TouchSensor120.DEF = "aTS"
+ProtoInterface111.field.append(field117)
+field118 = x3d.field()
+field118.name = "petNames"
+field118.accessType = "inputOutput"
+field118.type = "MFString"
 
-Transform119.children.append(TouchSensor120)
-Shape121 = x3d.Shape()
-Sphere122 = x3d.Sphere()
-Sphere122.radius = 0.08
+ProtoInterface111.field.append(field118)
+field119 = x3d.field()
+field119.name = "shaderNode"
+field119.accessType = "inputOutput"
+field119.type = "SFNode"
 
-Shape121.geometry = Sphere122
-Appearance123 = x3d.Appearance()
-Material124 = x3d.Material()
-Material124.diffuseColor = [1,0,0]
+ProtoInterface111.field.append(field119)
 
-Appearance123.material = Material124
+ProtoDeclare110.ProtoInterface = ProtoInterface111
+ProtoBody120 = x3d.ProtoBody()
+Group121 = x3d.Group()
+Transform122 = x3d.Transform()
+Transform122.DEF = "protoSlider"
+Transform122.translation = [0,0.7,0]
+IS123 = x3d.IS()
+connect124 = x3d.connect()
+connect124.nodeField = "translation"
+connect124.protoField = "sliderTranslation"
 
-Shape121.appearance = Appearance123
+IS123.connect.append(connect124)
 
-Transform119.children.append(Shape121)
+Transform122.IS = IS123
+Transform125 = x3d.Transform()
+Transform125.DEF = "protoTransform"
+Transform125.translation = [0,0,0.1]
+IS126 = x3d.IS()
+connect127 = x3d.connect()
+connect127.nodeField = "translation"
+connect127.protoField = "sensorTranslation"
 
-Transform117.children.append(Transform119)
-Shape125 = x3d.Shape()
-Cylinder126 = x3d.Cylinder()
-Cylinder126.radius = 0.05
-Cylinder126.height = 0.3
+IS126.connect.append(connect127)
 
-Shape125.geometry = Cylinder126
-Appearance127 = x3d.Appearance()
-Material128 = x3d.Material()
+Transform125.IS = IS126
+PlaneSensor128 = x3d.PlaneSensor()
+PlaneSensor128.DEF = "protoSensor"
+PlaneSensor128.description = "Grab with mouse to adjust slider"
+PlaneSensor128.maxPosition = [1,0]
 
-Appearance127.material = Material128
-
-Shape125.appearance = Appearance127
-
-Transform117.children.append(Shape125)
-
-Transform111.children.append(Transform117)
+Transform125.children.append(PlaneSensor128)
 Transform129 = x3d.Transform()
-Transform129.rotation = [0,0,1,1.57]
-Shape130 = x3d.Shape()
-Appearance131 = x3d.Appearance()
-Material132 = x3d.Material()
+Transform129.translation = [0,0,0]
+TouchSensor130 = x3d.TouchSensor()
+TouchSensor130.DEF = "protoTS"
 
-Appearance131.material = Material132
+Transform129.children.append(TouchSensor130)
 
-Shape130.appearance = Appearance131
-Cylinder133 = x3d.Cylinder()
-Cylinder133.radius = 0.05
-Cylinder133.height = 2.5
+Transform125.children.append(Transform129)
+Transform131 = x3d.Transform()
+Shape132 = x3d.Shape()
+Text133 = x3d.Text()
+Text133.DEF = "protoText"
+Text133.string = ["a="]
+IS134 = x3d.IS()
+connect135 = x3d.connect()
+connect135.nodeField = "string"
+connect135.protoField = "textString"
 
-Shape130.geometry = Cylinder133
+IS134.connect.append(connect135)
 
-Transform129.children.append(Shape130)
+Text133.IS = IS134
+FontStyle136 = x3d.FontStyle()
+FontStyle136.size = 0.23
 
-Transform111.children.append(Transform129)
+Text133.fontStyle = FontStyle136
 
-LayoutLayer105.children.append(Transform111)
-Transform134 = x3d.Transform()
-Transform134.DEF = "bSlider"
-Transform134.translation = [0,0.4,0]
-Transform135 = x3d.Transform()
-Transform135.rotation = [0,0,1,1.57]
-Shape136 = x3d.Shape()
+Shape132.geometry = Text133
 Appearance137 = x3d.Appearance()
 Material138 = x3d.Material()
 
 Appearance137.material = Material138
 
-Shape136.appearance = Appearance137
-Cylinder139 = x3d.Cylinder()
-Cylinder139.radius = 0.05
-Cylinder139.height = 2.5
-
-Shape136.geometry = Cylinder139
-
-Transform135.children.append(Shape136)
-
-Transform134.children.append(Transform135)
-Transform140 = x3d.Transform()
-Transform140.DEF = "bTransform"
-Transform140.translation = [0,0,0.1]
-PlaneSensor141 = x3d.PlaneSensor()
-PlaneSensor141.DEF = "bSensor"
-PlaneSensor141.minPosition = [-20,0]
-PlaneSensor141.maxPosition = [20,0]
-
-Transform140.children.append(PlaneSensor141)
-Transform142 = x3d.Transform()
-Transform142.translation = [0,0,0]
-TouchSensor143 = x3d.TouchSensor()
-TouchSensor143.DEF = "bTS"
-
-Transform142.children.append(TouchSensor143)
-Shape144 = x3d.Shape()
-Sphere145 = x3d.Sphere()
-Sphere145.radius = 0.08
-
-Shape144.geometry = Sphere145
-Appearance146 = x3d.Appearance()
-Material147 = x3d.Material()
-Material147.diffuseColor = [1,0,0]
-
-Appearance146.material = Material147
-
-Shape144.appearance = Appearance146
-
-Transform142.children.append(Shape144)
-
-Transform140.children.append(Transform142)
-Shape148 = x3d.Shape()
-Cylinder149 = x3d.Cylinder()
-Cylinder149.radius = 0.05
-Cylinder149.height = 0.3
-
-Shape148.geometry = Cylinder149
-Appearance150 = x3d.Appearance()
-Material151 = x3d.Material()
-
-Appearance150.material = Material151
-
-Shape148.appearance = Appearance150
-
-Transform140.children.append(Shape148)
-
-Transform134.children.append(Transform140)
-
-LayoutLayer105.children.append(Transform134)
-Transform152 = x3d.Transform()
-Transform152.DEF = "cSlider"
-Transform152.translation = [0,0.1,0]
-Transform153 = x3d.Transform()
-Transform153.rotation = [0,0,1,1.57]
-Shape154 = x3d.Shape()
-Appearance155 = x3d.Appearance()
-Material156 = x3d.Material()
-
-Appearance155.material = Material156
-
-Shape154.appearance = Appearance155
-Cylinder157 = x3d.Cylinder()
-Cylinder157.radius = 0.05
-Cylinder157.height = 2.5
-
-Shape154.geometry = Cylinder157
-
-Transform153.children.append(Shape154)
-
-Transform152.children.append(Transform153)
-Transform158 = x3d.Transform()
-Transform158.DEF = "cTransform"
-Transform158.translation = [0,0,0.1]
-PlaneSensor159 = x3d.PlaneSensor()
-PlaneSensor159.DEF = "cSensor"
-PlaneSensor159.minPosition = [-20,0]
-PlaneSensor159.maxPosition = [20,0]
-
-Transform158.children.append(PlaneSensor159)
-Transform160 = x3d.Transform()
-Transform160.translation = [0,0,0]
-TouchSensor161 = x3d.TouchSensor()
-TouchSensor161.DEF = "cTS"
-
-Transform160.children.append(TouchSensor161)
-Shape162 = x3d.Shape()
-Sphere163 = x3d.Sphere()
-Sphere163.radius = 0.08
-
-Shape162.geometry = Sphere163
-Appearance164 = x3d.Appearance()
-Material165 = x3d.Material()
-Material165.diffuseColor = [1,0,0]
-
-Appearance164.material = Material165
-
-Shape162.appearance = Appearance164
-
-Transform160.children.append(Shape162)
-
-Transform158.children.append(Transform160)
-Shape166 = x3d.Shape()
-Cylinder167 = x3d.Cylinder()
-Cylinder167.radius = 0.05
-Cylinder167.height = 0.3
-
-Shape166.geometry = Cylinder167
-Appearance168 = x3d.Appearance()
-Material169 = x3d.Material()
-
-Appearance168.material = Material169
-
-Shape166.appearance = Appearance168
-
-Transform158.children.append(Shape166)
-
-Transform152.children.append(Transform158)
-
-LayoutLayer105.children.append(Transform152)
-Transform170 = x3d.Transform()
-Transform170.DEF = "dSlider"
-Transform170.translation = [0,-0.2,0]
-Transform171 = x3d.Transform()
-Transform171.rotation = [0,0,1,1.57]
-Shape172 = x3d.Shape()
-Appearance173 = x3d.Appearance()
-Material174 = x3d.Material()
-
-Appearance173.material = Material174
-
-Shape172.appearance = Appearance173
-Cylinder175 = x3d.Cylinder()
-Cylinder175.radius = 0.05
-Cylinder175.height = 2.5
-
-Shape172.geometry = Cylinder175
-
-Transform171.children.append(Shape172)
-
-Transform170.children.append(Transform171)
-Transform176 = x3d.Transform()
-Transform176.DEF = "dTransform"
-Transform176.translation = [0,0,0.1]
-PlaneSensor177 = x3d.PlaneSensor()
-PlaneSensor177.DEF = "dSensor"
-PlaneSensor177.minPosition = [-20,0]
-PlaneSensor177.maxPosition = [20,0]
-
-Transform176.children.append(PlaneSensor177)
-Transform178 = x3d.Transform()
-Transform178.translation = [0,0,0]
-TouchSensor179 = x3d.TouchSensor()
-TouchSensor179.DEF = "dTS"
-
-Transform178.children.append(TouchSensor179)
-Shape180 = x3d.Shape()
-Sphere181 = x3d.Sphere()
-Sphere181.radius = 0.08
-
-Shape180.geometry = Sphere181
-Appearance182 = x3d.Appearance()
-Material183 = x3d.Material()
-Material183.diffuseColor = [1,0,0]
-
-Appearance182.material = Material183
-
-Shape180.appearance = Appearance182
-
-Transform178.children.append(Shape180)
-
-Transform176.children.append(Transform178)
-Shape184 = x3d.Shape()
-Cylinder185 = x3d.Cylinder()
-Cylinder185.radius = 0.05
-Cylinder185.height = 0.3
-
-Shape184.geometry = Cylinder185
-Appearance186 = x3d.Appearance()
-Material187 = x3d.Material()
-
-Appearance186.material = Material187
-
-Shape184.appearance = Appearance186
-
-Transform176.children.append(Shape184)
-
-Transform170.children.append(Transform176)
-
-LayoutLayer105.children.append(Transform170)
-Transform188 = x3d.Transform()
-Transform188.DEF = "pdeltaSlider"
-Transform188.translation = [0,-0.5,0]
-Transform189 = x3d.Transform()
-Transform189.rotation = [0,0,1,1.57]
-Shape190 = x3d.Shape()
-Appearance191 = x3d.Appearance()
-Material192 = x3d.Material()
-
-Appearance191.material = Material192
-
-Shape190.appearance = Appearance191
-Cylinder193 = x3d.Cylinder()
-Cylinder193.radius = 0.05
-Cylinder193.height = 2.5
-
-Shape190.geometry = Cylinder193
-
-Transform189.children.append(Shape190)
-
-Transform188.children.append(Transform189)
-Transform194 = x3d.Transform()
-Transform194.DEF = "pdeltaTransform"
-Transform194.translation = [0,0,0.1]
-PlaneSensor195 = x3d.PlaneSensor()
-PlaneSensor195.DEF = "pdeltaSensor"
-PlaneSensor195.minPosition = [-20,0]
-PlaneSensor195.maxPosition = [20,0]
-
-Transform194.children.append(PlaneSensor195)
-Transform196 = x3d.Transform()
-Transform196.translation = [0,0,0]
-TouchSensor197 = x3d.TouchSensor()
-TouchSensor197.DEF = "pdeltaTS"
-
-Transform196.children.append(TouchSensor197)
-Shape198 = x3d.Shape()
-Sphere199 = x3d.Sphere()
-Sphere199.radius = 0.08
-
-Shape198.geometry = Sphere199
-Appearance200 = x3d.Appearance()
-Material201 = x3d.Material()
-Material201.diffuseColor = [1,0,0]
-
-Appearance200.material = Material201
-
-Shape198.appearance = Appearance200
-
-Transform196.children.append(Shape198)
-
-Transform194.children.append(Transform196)
-Shape202 = x3d.Shape()
-Cylinder203 = x3d.Cylinder()
-Cylinder203.radius = 0.05
-Cylinder203.height = 0.3
-
-Shape202.geometry = Cylinder203
-Appearance204 = x3d.Appearance()
-Material205 = x3d.Material()
-
-Appearance204.material = Material205
-
-Shape202.appearance = Appearance204
-
-Transform194.children.append(Shape202)
-
-Transform188.children.append(Transform194)
-
-LayoutLayer105.children.append(Transform188)
-Transform206 = x3d.Transform()
-Transform206.DEF = "tdeltaSlider"
-Transform206.translation = [0,-0.8,0]
-Transform207 = x3d.Transform()
-Transform207.rotation = [0,0,1,1.57]
-Shape208 = x3d.Shape()
-Appearance209 = x3d.Appearance()
-Material210 = x3d.Material()
-
-Appearance209.material = Material210
-
-Shape208.appearance = Appearance209
-Cylinder211 = x3d.Cylinder()
-Cylinder211.radius = 0.05
-Cylinder211.height = 2.5
-
-Shape208.geometry = Cylinder211
-
-Transform207.children.append(Shape208)
-
-Transform206.children.append(Transform207)
-Transform212 = x3d.Transform()
-Transform212.DEF = "tdeltaTransform"
-Transform212.translation = [0,0,0.1]
-PlaneSensor213 = x3d.PlaneSensor()
-PlaneSensor213.DEF = "tdeltaSensor"
-PlaneSensor213.minPosition = [-20,0]
-PlaneSensor213.maxPosition = [20,0]
-
-Transform212.children.append(PlaneSensor213)
-Transform214 = x3d.Transform()
-Transform214.translation = [0,0,0]
-TouchSensor215 = x3d.TouchSensor()
-TouchSensor215.DEF = "tdeltaTS"
-
-Transform214.children.append(TouchSensor215)
-Shape216 = x3d.Shape()
-Sphere217 = x3d.Sphere()
-Sphere217.radius = 0.08
-
-Shape216.geometry = Sphere217
-Appearance218 = x3d.Appearance()
-Material219 = x3d.Material()
-Material219.diffuseColor = [1,0,0]
-
-Appearance218.material = Material219
-
-Shape216.appearance = Appearance218
-
-Transform214.children.append(Shape216)
-
-Transform212.children.append(Transform214)
-Shape220 = x3d.Shape()
-Cylinder221 = x3d.Cylinder()
-Cylinder221.radius = 0.05
-Cylinder221.height = 0.3
-
-Shape220.geometry = Cylinder221
-Appearance222 = x3d.Appearance()
-Material223 = x3d.Material()
-
-Appearance222.material = Material223
-
-Shape220.appearance = Appearance222
-
-Transform212.children.append(Shape220)
-
-Transform206.children.append(Transform212)
-
-LayoutLayer105.children.append(Transform206)
-Script224 = x3d.Script()
-Script224.DEF = "aValueTransformerScript"
-Script224.directOutput = True
-Script224.mustEvaluate = True
-field225 = x3d.field()
-field225.name = "newTranslation"
-field225.accessType = "inputOnly"
-field225.type = "SFVec3f"
-field225.value = [1,1,1]
-
-Script224.field.append(field225)
-field226 = x3d.field()
-field226.name = "aValue_changed"
-field226.accessType = "outputOnly"
-field226.type = "SFFloat"
-field226.value = 1
-
-Script224.field.append(field226)
-
-Script224.sourceCode = '''ecmascript: function newTranslation(Value) { aValue_changed = Value.x * 30; }'''
-
-LayoutLayer105.children.append(Script224)
-Script227 = x3d.Script()
-Script227.DEF = "bValueTransformerScript"
-Script227.directOutput = True
-Script227.mustEvaluate = True
-field228 = x3d.field()
-field228.name = "newTranslation"
-field228.accessType = "inputOnly"
-field228.type = "SFVec3f"
-field228.value = [1,1,1]
-
-Script227.field.append(field228)
-field229 = x3d.field()
-field229.name = "bValue_changed"
-field229.accessType = "outputOnly"
-field229.type = "SFFloat"
-field229.value = 1
-
-Script227.field.append(field229)
-
-Script227.sourceCode = '''ecmascript: function newTranslation(Value) { bValue_changed = Value.x * 30; }'''
-
-LayoutLayer105.children.append(Script227)
-Script230 = x3d.Script()
-Script230.DEF = "cValueTransformerScript"
-Script230.directOutput = True
-Script230.mustEvaluate = True
-field231 = x3d.field()
-field231.name = "newTranslation"
-field231.accessType = "inputOnly"
-field231.type = "SFVec3f"
-field231.value = [1,1,1]
-
-Script230.field.append(field231)
-field232 = x3d.field()
-field232.name = "cValue_changed"
-field232.accessType = "outputOnly"
-field232.type = "SFFloat"
-field232.value = 1
-
-Script230.field.append(field232)
-
-Script230.sourceCode = '''ecmascript: function newTranslation(Value) { cValue_changed = Value.x * 5; }'''
-
-LayoutLayer105.children.append(Script230)
-Script233 = x3d.Script()
-Script233.DEF = "dValueTransformerScript"
-Script233.directOutput = True
-Script233.mustEvaluate = True
-field234 = x3d.field()
-field234.name = "newTranslation"
-field234.accessType = "inputOnly"
-field234.type = "SFVec3f"
-field234.value = [1,1,1]
-
-Script233.field.append(field234)
-field235 = x3d.field()
-field235.name = "dValue_changed"
-field235.accessType = "outputOnly"
-field235.type = "SFFloat"
-field235.value = 1
-
-Script233.field.append(field235)
-
-Script233.sourceCode = '''ecmascript: function newTranslation(Value) { dValue_changed = Value.x * 5; }'''
-
-LayoutLayer105.children.append(Script233)
-Script236 = x3d.Script()
-Script236.DEF = "pdeltaValueTransformerScript"
-Script236.directOutput = True
-Script236.mustEvaluate = True
-field237 = x3d.field()
-field237.name = "newTranslation"
-field237.accessType = "inputOnly"
-field237.type = "SFVec3f"
-field237.value = [1,1,1]
-
-Script236.field.append(field237)
-field238 = x3d.field()
-field238.name = "pdeltaValue_changed"
-field238.accessType = "outputOnly"
-field238.type = "SFFloat"
-field238.value = 1
-
-Script236.field.append(field238)
-
-Script236.sourceCode = '''ecmascript: function newTranslation(Value) { pdeltaValue_changed = Value.x; }'''
-
-LayoutLayer105.children.append(Script236)
-Script239 = x3d.Script()
-Script239.DEF = "tdeltaValueTransformerScript"
-Script239.directOutput = True
-Script239.mustEvaluate = True
-field240 = x3d.field()
-field240.name = "newTranslation"
-field240.accessType = "inputOnly"
-field240.type = "SFVec3f"
-field240.value = [1,1,1]
-
-Script239.field.append(field240)
-field241 = x3d.field()
-field241.name = "tdeltaValue_changed"
-field241.accessType = "outputOnly"
-field241.type = "SFFloat"
-field241.value = 1
-
-Script239.field.append(field241)
-
-Script239.sourceCode = '''ecmascript: function newTranslation(Value) { tdeltaValue_changed = Value.x; }'''
-
-LayoutLayer105.children.append(Script239)
-ROUTE242 = x3d.ROUTE()
-ROUTE242.fromField = "translation_changed"
-ROUTE242.fromNode = "aSensor"
-ROUTE242.toField = "set_translation"
-ROUTE242.toNode = "aTransform"
-
-LayoutLayer105.children.append(ROUTE242)
-ROUTE243 = x3d.ROUTE()
-ROUTE243.fromField = "translation_changed"
-ROUTE243.fromNode = "bSensor"
-ROUTE243.toField = "set_translation"
-ROUTE243.toNode = "bTransform"
-
-LayoutLayer105.children.append(ROUTE243)
-ROUTE244 = x3d.ROUTE()
-ROUTE244.fromField = "translation_changed"
-ROUTE244.fromNode = "cSensor"
-ROUTE244.toField = "set_translation"
-ROUTE244.toNode = "cTransform"
-
-LayoutLayer105.children.append(ROUTE244)
-ROUTE245 = x3d.ROUTE()
-ROUTE245.fromField = "translation_changed"
-ROUTE245.fromNode = "dSensor"
-ROUTE245.toField = "set_translation"
-ROUTE245.toNode = "dTransform"
-
-LayoutLayer105.children.append(ROUTE245)
-ROUTE246 = x3d.ROUTE()
-ROUTE246.fromField = "translation_changed"
-ROUTE246.fromNode = "pdeltaSensor"
-ROUTE246.toField = "set_translation"
-ROUTE246.toNode = "pdeltaTransform"
-
-LayoutLayer105.children.append(ROUTE246)
-ROUTE247 = x3d.ROUTE()
-ROUTE247.fromField = "translation_changed"
-ROUTE247.fromNode = "tdeltaSensor"
-ROUTE247.toField = "set_translation"
-ROUTE247.toNode = "tdeltaTransform"
-
-LayoutLayer105.children.append(ROUTE247)
-ROUTE248 = x3d.ROUTE()
-ROUTE248.fromField = "translation_changed"
-ROUTE248.fromNode = "aSensor"
-ROUTE248.toField = "newTranslation"
-ROUTE248.toNode = "aValueTransformerScript"
-
-LayoutLayer105.children.append(ROUTE248)
-ROUTE249 = x3d.ROUTE()
-ROUTE249.fromField = "translation_changed"
-ROUTE249.fromNode = "bSensor"
-ROUTE249.toField = "newTranslation"
-ROUTE249.toNode = "bValueTransformerScript"
-
-LayoutLayer105.children.append(ROUTE249)
-ROUTE250 = x3d.ROUTE()
-ROUTE250.fromField = "translation_changed"
-ROUTE250.fromNode = "cSensor"
-ROUTE250.toField = "newTranslation"
-ROUTE250.toNode = "cValueTransformerScript"
-
-LayoutLayer105.children.append(ROUTE250)
-ROUTE251 = x3d.ROUTE()
-ROUTE251.fromField = "translation_changed"
-ROUTE251.fromNode = "dSensor"
-ROUTE251.toField = "newTranslation"
-ROUTE251.toNode = "dValueTransformerScript"
-
-LayoutLayer105.children.append(ROUTE251)
-ROUTE252 = x3d.ROUTE()
-ROUTE252.fromField = "translation_changed"
-ROUTE252.fromNode = "pdeltaSensor"
-ROUTE252.toField = "newTranslation"
-ROUTE252.toNode = "pdeltaValueTransformerScript"
-
-LayoutLayer105.children.append(ROUTE252)
-ROUTE253 = x3d.ROUTE()
-ROUTE253.fromField = "translation_changed"
-ROUTE253.fromNode = "tdeltaSensor"
-ROUTE253.toField = "newTranslation"
-ROUTE253.toNode = "tdeltaValueTransformerScript"
-
-LayoutLayer105.children.append(ROUTE253)
-ROUTE254 = x3d.ROUTE()
-ROUTE254.fromField = "aValue_changed"
-ROUTE254.fromNode = "aValueTransformerScript"
-ROUTE254.toField = "a"
-ROUTE254.toNode = "x_iteShader"
-
-LayoutLayer105.children.append(ROUTE254)
-ROUTE255 = x3d.ROUTE()
-ROUTE255.fromField = "bValue_changed"
-ROUTE255.fromNode = "bValueTransformerScript"
-ROUTE255.toField = "b"
-ROUTE255.toNode = "x_iteShader"
-
-LayoutLayer105.children.append(ROUTE255)
-ROUTE256 = x3d.ROUTE()
-ROUTE256.fromField = "cValue_changed"
-ROUTE256.fromNode = "cValueTransformerScript"
-ROUTE256.toField = "c"
-ROUTE256.toNode = "x_iteShader"
-
-LayoutLayer105.children.append(ROUTE256)
-ROUTE257 = x3d.ROUTE()
-ROUTE257.fromField = "dValue_changed"
-ROUTE257.fromNode = "dValueTransformerScript"
-ROUTE257.toField = "d"
-ROUTE257.toNode = "x_iteShader"
-
-LayoutLayer105.children.append(ROUTE257)
-ROUTE258 = x3d.ROUTE()
-ROUTE258.fromField = "pdeltaValue_changed"
-ROUTE258.fromNode = "pdeltaValueTransformerScript"
-ROUTE258.toField = "pdelta"
-ROUTE258.toNode = "x_iteShader"
-
-LayoutLayer105.children.append(ROUTE258)
-ROUTE259 = x3d.ROUTE()
-ROUTE259.fromField = "tdeltaValue_changed"
-ROUTE259.fromNode = "tdeltaValueTransformerScript"
-ROUTE259.toField = "tdelta"
-ROUTE259.toNode = "x_iteShader"
-
-LayoutLayer105.children.append(ROUTE259)
-Layout260 = x3d.Layout()
-Layout260.align = ["RIGHT","BOTTOM"]
-Layout260.offset = [0,0.2]
-Layout260.offsetUnits = ["WORLD","WORLD"]
-Layout260.scaleMode = ["NONE","NONE"]
-Layout260.size = [0.4,0.6]
-Layout260.sizeUnits = ["WORLD","WORLD"]
-
-LayoutLayer105.layout = Layout260
-Viewport261 = x3d.Viewport()
-Viewport261.clipBoundary = [0,1,0,1]
-
-LayoutLayer105.viewport = Viewport261
-
-LayerSet32.layers.append(LayoutLayer105)
-
-Scene31.layerSet = LayerSet32
-
-X3D0.Scene = Scene31
+Shape132.appearance = Appearance137
+
+Transform131.children.append(Shape132)
+
+Transform125.children.append(Transform131)
+
+Transform122.children.append(Transform125)
+
+Group121.children.append(Transform122)
+Script139 = x3d.Script()
+Script139.url = ["../javascripts/X3DUser.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DUser.js"]
+Script139.DEF = "protoValueTransformerScript"
+Script139.directOutput = True
+Script139.mustEvaluate = True
+field140 = x3d.field()
+field140.name = "protoScale"
+field140.accessType = "inputOutput"
+field140.type = "SFFloat"
+
+Script139.field.append(field140)
+field141 = x3d.field()
+field141.name = "petNames"
+field141.accessType = "inputOutput"
+field141.type = "MFString"
+
+Script139.field.append(field141)
+field142 = x3d.field()
+field142.name = "protoParameterName"
+field142.accessType = "inputOutput"
+field142.type = "SFString"
+
+Script139.field.append(field142)
+field143 = x3d.field()
+field143.name = "shader"
+field143.accessType = "inputOutput"
+field143.type = "SFNode"
+
+Script139.field.append(field143)
+field144 = x3d.field()
+field144.name = "newTranslation"
+field144.accessType = "inputOnly"
+field144.type = "SFVec3f"
+field144.value = [1,1,1]
+
+Script139.field.append(field144)
+field145 = x3d.field()
+field145.name = "protoValue_changed"
+field145.accessType = "outputOnly"
+field145.type = "SFFloat"
+field145.value = 1
+
+Script139.field.append(field145)
+field146 = x3d.field()
+field146.name = "protoText_changed"
+field146.accessType = "outputOnly"
+field146.type = "MFString"
+field146.value = ["1.0"]
+
+Script139.field.append(field146)
+IS147 = x3d.IS()
+connect148 = x3d.connect()
+connect148.nodeField = "protoScale"
+connect148.protoField = "parameterScale"
+
+IS147.connect.append(connect148)
+connect149 = x3d.connect()
+connect149.nodeField = "petNames"
+connect149.protoField = "petNames"
+
+IS147.connect.append(connect149)
+connect150 = x3d.connect()
+connect150.nodeField = "protoParameterName"
+connect150.protoField = "parameterName"
+
+IS147.connect.append(connect150)
+connect151 = x3d.connect()
+connect151.nodeField = "shader"
+connect151.protoField = "shaderNode"
+
+IS147.connect.append(connect151)
+
+Script139.IS = IS147
+
+Group121.children.append(Script139)
+ROUTE152 = x3d.ROUTE()
+ROUTE152.fromField = "translation_changed"
+ROUTE152.fromNode = "protoSensor"
+ROUTE152.toField = "set_translation"
+ROUTE152.toNode = "protoTransform"
+
+Group121.children.append(ROUTE152)
+ROUTE153 = x3d.ROUTE()
+ROUTE153.fromField = "translation_changed"
+ROUTE153.fromNode = "protoSensor"
+ROUTE153.toField = "newTranslation"
+ROUTE153.toNode = "protoValueTransformerScript"
+
+Group121.children.append(ROUTE153)
+ROUTE154 = x3d.ROUTE()
+ROUTE154.fromField = "protoText_changed"
+ROUTE154.fromNode = "protoValueTransformerScript"
+ROUTE154.toField = "string"
+ROUTE154.toNode = "protoText"
+
+Group121.children.append(ROUTE154)
+
+ProtoBody120.children.append(Group121)
+
+ProtoDeclare110.ProtoBody = ProtoBody120
+
+LayoutLayer95.children.append(ProtoDeclare110)
+ProtoInstance155 = x3d.ProtoInstance()
+ProtoInstance155.name = "SliderProto"
+ProtoInstance155.DEF = "aPI"
+fieldValue156 = x3d.fieldValue()
+fieldValue156.name = "sliderTranslation"
+fieldValue156.value = "0 0.7 0"
+
+ProtoInstance155.fieldValue.append(fieldValue156)
+fieldValue157 = x3d.fieldValue()
+fieldValue157.name = "transformTranslation"
+fieldValue157.value = "0 0 0.1"
+
+ProtoInstance155.fieldValue.append(fieldValue157)
+fieldValue158 = x3d.fieldValue()
+fieldValue158.name = "sensorTranslation"
+fieldValue158.value = "0 0 0"
+
+ProtoInstance155.fieldValue.append(fieldValue158)
+fieldValue159 = x3d.fieldValue()
+fieldValue159.name = "textString"
+fieldValue159.value = "\"a=\""
+
+ProtoInstance155.fieldValue.append(fieldValue159)
+fieldValue160 = x3d.fieldValue()
+fieldValue160.name = "parameterScale"
+fieldValue160.value = "30"
+
+ProtoInstance155.fieldValue.append(fieldValue160)
+fieldValue161 = x3d.fieldValue()
+fieldValue161.name = "parameterName"
+fieldValue161.value = "a"
+
+ProtoInstance155.fieldValue.append(fieldValue161)
+fieldValue162 = x3d.fieldValue()
+fieldValue162.name = "petNames"
+fieldValue162.value = "\"yottzumm\" \"group1-petname\""
+
+ProtoInstance155.fieldValue.append(fieldValue162)
+fieldValue163 = x3d.fieldValue()
+fieldValue163.name = "shaderNode"
+ComposedShader164 = x3d.ComposedShader()
+ComposedShader164.USE = "x_iteShader"
+
+fieldValue163.children.append(ComposedShader164)
+
+ProtoInstance155.fieldValue.append(fieldValue163)
+
+LayoutLayer95.children.append(ProtoInstance155)
+ProtoInstance165 = x3d.ProtoInstance()
+ProtoInstance165.name = "SliderProto"
+ProtoInstance165.DEF = "bPI"
+fieldValue166 = x3d.fieldValue()
+fieldValue166.name = "sliderTranslation"
+fieldValue166.value = "0 0.4 0"
+
+ProtoInstance165.fieldValue.append(fieldValue166)
+fieldValue167 = x3d.fieldValue()
+fieldValue167.name = "transformTranslation"
+fieldValue167.value = "0 0 0.1"
+
+ProtoInstance165.fieldValue.append(fieldValue167)
+fieldValue168 = x3d.fieldValue()
+fieldValue168.name = "sensorTranslation"
+fieldValue168.value = "0 0 0"
+
+ProtoInstance165.fieldValue.append(fieldValue168)
+fieldValue169 = x3d.fieldValue()
+fieldValue169.name = "textString"
+fieldValue169.value = "\"b=\""
+
+ProtoInstance165.fieldValue.append(fieldValue169)
+fieldValue170 = x3d.fieldValue()
+fieldValue170.name = "parameterScale"
+fieldValue170.value = "30"
+
+ProtoInstance165.fieldValue.append(fieldValue170)
+fieldValue171 = x3d.fieldValue()
+fieldValue171.name = "parameterName"
+fieldValue171.value = "b"
+
+ProtoInstance165.fieldValue.append(fieldValue171)
+fieldValue172 = x3d.fieldValue()
+fieldValue172.name = "petNames"
+fieldValue172.value = "\"yottzumm\" \"group1-petname\""
+
+ProtoInstance165.fieldValue.append(fieldValue172)
+fieldValue173 = x3d.fieldValue()
+fieldValue173.name = "shaderNode"
+ComposedShader174 = x3d.ComposedShader()
+ComposedShader174.USE = "x_iteShader"
+
+fieldValue173.children.append(ComposedShader174)
+
+ProtoInstance165.fieldValue.append(fieldValue173)
+
+LayoutLayer95.children.append(ProtoInstance165)
+ProtoInstance175 = x3d.ProtoInstance()
+ProtoInstance175.name = "SliderProto"
+ProtoInstance175.DEF = "cPI"
+fieldValue176 = x3d.fieldValue()
+fieldValue176.name = "sliderTranslation"
+fieldValue176.value = "0 0.1 0"
+
+ProtoInstance175.fieldValue.append(fieldValue176)
+fieldValue177 = x3d.fieldValue()
+fieldValue177.name = "transformTranslation"
+fieldValue177.value = "0 0 0.1"
+
+ProtoInstance175.fieldValue.append(fieldValue177)
+fieldValue178 = x3d.fieldValue()
+fieldValue178.name = "sensorTranslation"
+fieldValue178.value = "0 0 0"
+
+ProtoInstance175.fieldValue.append(fieldValue178)
+fieldValue179 = x3d.fieldValue()
+fieldValue179.name = "textString"
+fieldValue179.value = "\"c=\""
+
+ProtoInstance175.fieldValue.append(fieldValue179)
+fieldValue180 = x3d.fieldValue()
+fieldValue180.name = "parameterScale"
+fieldValue180.value = "20"
+
+ProtoInstance175.fieldValue.append(fieldValue180)
+fieldValue181 = x3d.fieldValue()
+fieldValue181.name = "parameterName"
+fieldValue181.value = "c"
+
+ProtoInstance175.fieldValue.append(fieldValue181)
+fieldValue182 = x3d.fieldValue()
+fieldValue182.name = "petNames"
+fieldValue182.value = "\"yottzumm\" \"yottzumm2\" \"group1-petname\""
+
+ProtoInstance175.fieldValue.append(fieldValue182)
+fieldValue183 = x3d.fieldValue()
+fieldValue183.name = "shaderNode"
+ComposedShader184 = x3d.ComposedShader()
+ComposedShader184.USE = "x_iteShader"
+
+fieldValue183.children.append(ComposedShader184)
+
+ProtoInstance175.fieldValue.append(fieldValue183)
+
+LayoutLayer95.children.append(ProtoInstance175)
+ProtoInstance185 = x3d.ProtoInstance()
+ProtoInstance185.name = "SliderProto"
+ProtoInstance185.DEF = "dPI"
+fieldValue186 = x3d.fieldValue()
+fieldValue186.name = "sliderTranslation"
+fieldValue186.value = "0 -0.2 0"
+
+ProtoInstance185.fieldValue.append(fieldValue186)
+fieldValue187 = x3d.fieldValue()
+fieldValue187.name = "transformTranslation"
+fieldValue187.value = "0 0 0.1"
+
+ProtoInstance185.fieldValue.append(fieldValue187)
+fieldValue188 = x3d.fieldValue()
+fieldValue188.name = "sensorTranslation"
+fieldValue188.value = "0 0 0"
+
+ProtoInstance185.fieldValue.append(fieldValue188)
+fieldValue189 = x3d.fieldValue()
+fieldValue189.name = "textString"
+fieldValue189.value = "\"d=\""
+
+ProtoInstance185.fieldValue.append(fieldValue189)
+fieldValue190 = x3d.fieldValue()
+fieldValue190.name = "parameterScale"
+fieldValue190.value = "20"
+
+ProtoInstance185.fieldValue.append(fieldValue190)
+fieldValue191 = x3d.fieldValue()
+fieldValue191.name = "parameterName"
+fieldValue191.value = "d"
+
+ProtoInstance185.fieldValue.append(fieldValue191)
+fieldValue192 = x3d.fieldValue()
+fieldValue192.name = "petNames"
+fieldValue192.value = "\"yottzumm\" \"yottzumm2\" \"group1-petname\""
+
+ProtoInstance185.fieldValue.append(fieldValue192)
+fieldValue193 = x3d.fieldValue()
+fieldValue193.name = "shaderNode"
+ComposedShader194 = x3d.ComposedShader()
+ComposedShader194.USE = "x_iteShader"
+
+fieldValue193.children.append(ComposedShader194)
+
+ProtoInstance185.fieldValue.append(fieldValue193)
+
+LayoutLayer95.children.append(ProtoInstance185)
+ProtoInstance195 = x3d.ProtoInstance()
+ProtoInstance195.name = "SliderProto"
+ProtoInstance195.DEF = "tdeltaPI"
+fieldValue196 = x3d.fieldValue()
+fieldValue196.name = "sliderTranslation"
+fieldValue196.value = "0 -0.5 0"
+
+ProtoInstance195.fieldValue.append(fieldValue196)
+fieldValue197 = x3d.fieldValue()
+fieldValue197.name = "transformTranslation"
+fieldValue197.value = "0 0 0.1"
+
+ProtoInstance195.fieldValue.append(fieldValue197)
+fieldValue198 = x3d.fieldValue()
+fieldValue198.name = "sensorTranslation"
+fieldValue198.value = "0 0 0"
+
+ProtoInstance195.fieldValue.append(fieldValue198)
+fieldValue199 = x3d.fieldValue()
+fieldValue199.name = "textString"
+fieldValue199.value = "\"tdelta=\""
+
+ProtoInstance195.fieldValue.append(fieldValue199)
+fieldValue200 = x3d.fieldValue()
+fieldValue200.name = "parameterScale"
+fieldValue200.value = "6.28"
+
+ProtoInstance195.fieldValue.append(fieldValue200)
+fieldValue201 = x3d.fieldValue()
+fieldValue201.name = "parameterName"
+fieldValue201.value = "tdelta"
+
+ProtoInstance195.fieldValue.append(fieldValue201)
+fieldValue202 = x3d.fieldValue()
+fieldValue202.name = "petNames"
+fieldValue202.value = "\"yottzumm2\" \"group1-petname\""
+
+ProtoInstance195.fieldValue.append(fieldValue202)
+fieldValue203 = x3d.fieldValue()
+fieldValue203.name = "shaderNode"
+ComposedShader204 = x3d.ComposedShader()
+ComposedShader204.USE = "x_iteShader"
+
+fieldValue203.children.append(ComposedShader204)
+
+ProtoInstance195.fieldValue.append(fieldValue203)
+
+LayoutLayer95.children.append(ProtoInstance195)
+ProtoInstance205 = x3d.ProtoInstance()
+ProtoInstance205.name = "SliderProto"
+ProtoInstance205.DEF = "pdeltaPI"
+fieldValue206 = x3d.fieldValue()
+fieldValue206.name = "sliderTranslation"
+fieldValue206.value = "0 -0.8 0"
+
+ProtoInstance205.fieldValue.append(fieldValue206)
+fieldValue207 = x3d.fieldValue()
+fieldValue207.name = "transformTranslation"
+fieldValue207.value = "0 0 0.1"
+
+ProtoInstance205.fieldValue.append(fieldValue207)
+fieldValue208 = x3d.fieldValue()
+fieldValue208.name = "sensorTranslation"
+fieldValue208.value = "0 0 0"
+
+ProtoInstance205.fieldValue.append(fieldValue208)
+fieldValue209 = x3d.fieldValue()
+fieldValue209.name = "textString"
+fieldValue209.value = "\"pdelta=\""
+
+ProtoInstance205.fieldValue.append(fieldValue209)
+fieldValue210 = x3d.fieldValue()
+fieldValue210.name = "parameterScale"
+fieldValue210.value = "6.28"
+
+ProtoInstance205.fieldValue.append(fieldValue210)
+fieldValue211 = x3d.fieldValue()
+fieldValue211.name = "parameterName"
+fieldValue211.value = "pdelta"
+
+ProtoInstance205.fieldValue.append(fieldValue211)
+fieldValue212 = x3d.fieldValue()
+fieldValue212.name = "petNames"
+fieldValue212.value = "\"yottzumm2\" \"group1-petname\""
+
+ProtoInstance205.fieldValue.append(fieldValue212)
+fieldValue213 = x3d.fieldValue()
+fieldValue213.name = "shaderNode"
+ComposedShader214 = x3d.ComposedShader()
+ComposedShader214.USE = "x_iteShader"
+
+fieldValue213.children.append(ComposedShader214)
+
+ProtoInstance205.fieldValue.append(fieldValue213)
+
+LayoutLayer95.children.append(ProtoInstance205)
+
+LayerSet17.layers.append(LayoutLayer95)
+Layer215 = x3d.Layer()
+Layer215.pickable = True
+Layer215.objectType = ["ALL"]
+Viewpoint216 = x3d.Viewpoint()
+Viewpoint216.description = "My Humanoids"
+Viewpoint216.fieldOfView = 1.570796
+Viewpoint216.position = [0,1.75,80]
+
+Layer215.children.append(Viewpoint216)
+Script217 = x3d.Script()
+Script217.url = ["../javascripts/X3DAvatar.js","https://raw.githubusercontent.com/coderextreme/JSONverse/refs/heads/main/public/javascripts/X3DAvatar.js"]
+Script217.DEF = "HumanoidScript"
+Script217.directOutput = True
+Script217.mustEvaluate = True
+
+Layer215.children.append(Script217)
+Group218 = x3d.Group()
+Group218.DEF = "humanoidGroup"
+Group219 = x3d.Group()
+
+Group218.children.append(Group219)
+
+Layer215.children.append(Group218)
+
+LayerSet17.layers.append(Layer215)
+
+Scene16.layerSet = LayerSet17
+
+X3D0.Scene = Scene16
 f = open("../data/bumpyx_itesliders.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/bumpyx_itesliders.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/bumpyx_itesliders.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/bumpyx_itesliders.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

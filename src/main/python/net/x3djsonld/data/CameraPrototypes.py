@@ -40,7 +40,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Camera nodes for Viewpoint navigation control',name='subject'),
     meta(content='CameraExamples.x3d',name='reference'),
     meta(content='https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d',name='identifier'),
-    meta(content='http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d',name='reference'),
+    meta(content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d',name='reference'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
@@ -90,7 +90,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             connect(nodeField='bindTime',protoField='bindTime'),
             connect(nodeField='isBound',protoField='isBound')])),
         #  NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation 
-        NavigationInfo(DEF='CameraNavInfo',type='"EXAMINE" "FLY" "ANY"',
+        NavigationInfo(DEF='CameraNavInfo',type=["EXAMINE","FLY","ANY"],
           IS=IS(
             connect=[
             connect(nodeField='set_bind',protoField='set_bind'),

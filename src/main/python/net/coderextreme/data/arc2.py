@@ -39,6 +39,7 @@ Viewpoint8.description = "Only Viewpoint"
 
 Scene7.children.append(Viewpoint8)
 Background9 = x3d.Background()
+Background9.skyColor = [(0.4, 0.4, 0.4)]
 
 Scene7.children.append(Background9)
 Transform10 = x3d.Transform()
@@ -62,6 +63,7 @@ Transform11.children.append(Shape12)
 PositionInterpolator16 = x3d.PositionInterpolator()
 PositionInterpolator16.DEF = "DECLpoint_INSTANCE_PI1"
 PositionInterpolator16.key = [0,1]
+PositionInterpolator16.keyValue = [(0, 0, 0),(0, 5, 0)]
 
 Transform11.children.append(PositionInterpolator16)
 Script17 = x3d.Script()
@@ -90,6 +92,7 @@ field21 = x3d.field()
 field21.name = "keyValue"
 field21.accessType = "inputOutput"
 field21.type = "MFVec3f"
+field21.value = [(0, 0, 0),(0, 5, 0)]
 
 Script17.field.append(field21)
 
@@ -167,6 +170,7 @@ Transform29.children.append(Shape30)
 PositionInterpolator34 = x3d.PositionInterpolator()
 PositionInterpolator34.DEF = "DECLpoint_INSTANCE1000_PI1"
 PositionInterpolator34.key = [0,1]
+PositionInterpolator34.keyValue = [(0, 0, 0),(0, 5, 0)]
 
 Transform29.children.append(PositionInterpolator34)
 Script35 = x3d.Script()
@@ -195,6 +199,7 @@ field39 = x3d.field()
 field39.name = "keyValue"
 field39.accessType = "inputOutput"
 field39.type = "MFVec3f"
+field39.value = [(0, 0, 0),(0, 5, 0)]
 
 Script35.field.append(field39)
 
@@ -389,6 +394,9 @@ X3D0.Scene = Scene7
 f = open("../data/arc2.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/arc2.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/arc2.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/arc2.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

@@ -38,6 +38,8 @@ NavigationInfo8 = x3d.NavigationInfo()
 Scene7.children.append(NavigationInfo8)
 Background9 = x3d.Background()
 Background9.DEF = "WO_World"
+Background9.groundColor = [(0.05087608844041824, 0.05087608844041824, 0.05087608844041824)]
+Background9.skyColor = [(0.05087608844041824, 0.05087608844041824, 0.05087608844041824)]
 
 Scene7.children.append(Background9)
 Transform10 = x3d.Transform()
@@ -6295,731 +6297,877 @@ Scene7.children.append(ROUTE1350)
 OrientationInterpolator1351 = x3d.OrientationInterpolator()
 OrientationInterpolator1351.DEF = "Armature_OI_sacrum"
 OrientationInterpolator1351.key = [0,1]
+OrientationInterpolator1351.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1351)
 OrientationInterpolator1352 = x3d.OrientationInterpolator()
 OrientationInterpolator1352.DEF = "Armature_OI_pelvis"
 OrientationInterpolator1352.key = [0,1]
+OrientationInterpolator1352.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1352)
 OrientationInterpolator1353 = x3d.OrientationInterpolator()
 OrientationInterpolator1353.DEF = "Armature_OI_l_thigh"
 OrientationInterpolator1353.key = [0,1]
+OrientationInterpolator1353.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1353)
 OrientationInterpolator1354 = x3d.OrientationInterpolator()
 OrientationInterpolator1354.DEF = "Armature_OI_l_calf"
 OrientationInterpolator1354.key = [0,1]
+OrientationInterpolator1354.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1354)
 OrientationInterpolator1355 = x3d.OrientationInterpolator()
 OrientationInterpolator1355.DEF = "Armature_OI_l_talus"
 OrientationInterpolator1355.key = [0,1]
+OrientationInterpolator1355.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1355)
 OrientationInterpolator1356 = x3d.OrientationInterpolator()
 OrientationInterpolator1356.DEF = "Armature_OI_l_navicular"
 OrientationInterpolator1356.key = [0,1]
+OrientationInterpolator1356.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1356)
 OrientationInterpolator1357 = x3d.OrientationInterpolator()
 OrientationInterpolator1357.DEF = "Armature_OI_l_cuneiform_1"
 OrientationInterpolator1357.key = [0,1]
+OrientationInterpolator1357.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1357)
 OrientationInterpolator1358 = x3d.OrientationInterpolator()
 OrientationInterpolator1358.DEF = "Armature_OI_l_metatarsal_1"
 OrientationInterpolator1358.key = [0,1]
+OrientationInterpolator1358.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1358)
 OrientationInterpolator1359 = x3d.OrientationInterpolator()
 OrientationInterpolator1359.DEF = "Armature_OI_l_tarsal_proximal_phalanx_1"
 OrientationInterpolator1359.key = [0,1]
+OrientationInterpolator1359.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1359)
 OrientationInterpolator1360 = x3d.OrientationInterpolator()
 OrientationInterpolator1360.DEF = "Armature_OI_l_tarsal_distal_phalanx_1"
 OrientationInterpolator1360.key = [0,1]
+OrientationInterpolator1360.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1360)
 OrientationInterpolator1361 = x3d.OrientationInterpolator()
 OrientationInterpolator1361.DEF = "Armature_OI_l_cuneiform_2"
 OrientationInterpolator1361.key = [0,1]
+OrientationInterpolator1361.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1361)
 OrientationInterpolator1362 = x3d.OrientationInterpolator()
 OrientationInterpolator1362.DEF = "Armature_OI_l_metatarsal_2"
 OrientationInterpolator1362.key = [0,1]
+OrientationInterpolator1362.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1362)
 OrientationInterpolator1363 = x3d.OrientationInterpolator()
 OrientationInterpolator1363.DEF = "Armature_OI_l_tarsal_proximal_phalanx_2"
 OrientationInterpolator1363.key = [0,1]
+OrientationInterpolator1363.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1363)
 OrientationInterpolator1364 = x3d.OrientationInterpolator()
 OrientationInterpolator1364.DEF = "Armature_OI_l_tarsal_middle_phalanx_2"
 OrientationInterpolator1364.key = [0,1]
+OrientationInterpolator1364.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1364)
 OrientationInterpolator1365 = x3d.OrientationInterpolator()
 OrientationInterpolator1365.DEF = "Armature_OI_l_tarsal_distal_phalanx_2"
 OrientationInterpolator1365.key = [0,1]
+OrientationInterpolator1365.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1365)
 OrientationInterpolator1366 = x3d.OrientationInterpolator()
 OrientationInterpolator1366.DEF = "Armature_OI_l_cuneiform_3"
 OrientationInterpolator1366.key = [0,1]
+OrientationInterpolator1366.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1366)
 OrientationInterpolator1367 = x3d.OrientationInterpolator()
 OrientationInterpolator1367.DEF = "Armature_OI_l_metatarsal_3"
 OrientationInterpolator1367.key = [0,1]
+OrientationInterpolator1367.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1367)
 OrientationInterpolator1368 = x3d.OrientationInterpolator()
 OrientationInterpolator1368.DEF = "Armature_OI_l_tarsal_proximal_phalanx_3"
 OrientationInterpolator1368.key = [0,1]
+OrientationInterpolator1368.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1368)
 OrientationInterpolator1369 = x3d.OrientationInterpolator()
 OrientationInterpolator1369.DEF = "Armature_OI_l_tarsal_middle_phalanx_3"
 OrientationInterpolator1369.key = [0,1]
+OrientationInterpolator1369.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1369)
 OrientationInterpolator1370 = x3d.OrientationInterpolator()
 OrientationInterpolator1370.DEF = "Armature_OI_l_tarsal_distal_phalanx_3"
 OrientationInterpolator1370.key = [0,1]
+OrientationInterpolator1370.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1370)
 OrientationInterpolator1371 = x3d.OrientationInterpolator()
 OrientationInterpolator1371.DEF = "Armature_OI_l_calcaneus"
 OrientationInterpolator1371.key = [0,1]
+OrientationInterpolator1371.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1371)
 OrientationInterpolator1372 = x3d.OrientationInterpolator()
 OrientationInterpolator1372.DEF = "Armature_OI_l_cuboid"
 OrientationInterpolator1372.key = [0,1]
+OrientationInterpolator1372.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1372)
 OrientationInterpolator1373 = x3d.OrientationInterpolator()
 OrientationInterpolator1373.DEF = "Armature_OI_l_metatarsal_4"
 OrientationInterpolator1373.key = [0,1]
+OrientationInterpolator1373.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1373)
 OrientationInterpolator1374 = x3d.OrientationInterpolator()
 OrientationInterpolator1374.DEF = "Armature_OI_l_tarsal_proximal_phalanx_4"
 OrientationInterpolator1374.key = [0,1]
+OrientationInterpolator1374.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1374)
 OrientationInterpolator1375 = x3d.OrientationInterpolator()
 OrientationInterpolator1375.DEF = "Armature_OI_l_tarsal_middle_phalanx_4"
 OrientationInterpolator1375.key = [0,1]
+OrientationInterpolator1375.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1375)
 OrientationInterpolator1376 = x3d.OrientationInterpolator()
 OrientationInterpolator1376.DEF = "Armature_OI_l_tarsal_distal_phalanx_4"
 OrientationInterpolator1376.key = [0,1]
+OrientationInterpolator1376.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1376)
 OrientationInterpolator1377 = x3d.OrientationInterpolator()
 OrientationInterpolator1377.DEF = "Armature_OI_l_metatarsal_5"
 OrientationInterpolator1377.key = [0,1]
+OrientationInterpolator1377.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1377)
 OrientationInterpolator1378 = x3d.OrientationInterpolator()
 OrientationInterpolator1378.DEF = "Armature_OI_l_tarsal_proximal_phalanx_5"
 OrientationInterpolator1378.key = [0,1]
+OrientationInterpolator1378.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1378)
 OrientationInterpolator1379 = x3d.OrientationInterpolator()
 OrientationInterpolator1379.DEF = "Armature_OI_l_tarsal_middle_phalanx_5"
 OrientationInterpolator1379.key = [0,1]
+OrientationInterpolator1379.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1379)
 OrientationInterpolator1380 = x3d.OrientationInterpolator()
 OrientationInterpolator1380.DEF = "Armature_OI_l_tarsal_distal_phalanx_5"
 OrientationInterpolator1380.key = [0,1]
+OrientationInterpolator1380.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1380)
 OrientationInterpolator1381 = x3d.OrientationInterpolator()
 OrientationInterpolator1381.DEF = "Armature_OI_r_thigh"
 OrientationInterpolator1381.key = [0,1]
+OrientationInterpolator1381.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1381)
 OrientationInterpolator1382 = x3d.OrientationInterpolator()
 OrientationInterpolator1382.DEF = "Armature_OI_r_calf"
 OrientationInterpolator1382.key = [0,1]
+OrientationInterpolator1382.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1382)
 OrientationInterpolator1383 = x3d.OrientationInterpolator()
 OrientationInterpolator1383.DEF = "Armature_OI_r_talus"
 OrientationInterpolator1383.key = [0,1]
+OrientationInterpolator1383.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1383)
 OrientationInterpolator1384 = x3d.OrientationInterpolator()
 OrientationInterpolator1384.DEF = "Armature_OI_r_navicular"
 OrientationInterpolator1384.key = [0,1]
+OrientationInterpolator1384.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1384)
 OrientationInterpolator1385 = x3d.OrientationInterpolator()
 OrientationInterpolator1385.DEF = "Armature_OI_r_cuneiform_1"
 OrientationInterpolator1385.key = [0,1]
+OrientationInterpolator1385.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1385)
 OrientationInterpolator1386 = x3d.OrientationInterpolator()
 OrientationInterpolator1386.DEF = "Armature_OI_r_metatarsal_1"
 OrientationInterpolator1386.key = [0,1]
+OrientationInterpolator1386.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1386)
 OrientationInterpolator1387 = x3d.OrientationInterpolator()
 OrientationInterpolator1387.DEF = "Armature_OI_r_tarsal_proximal_phalanx_1"
 OrientationInterpolator1387.key = [0,1]
+OrientationInterpolator1387.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1387)
 OrientationInterpolator1388 = x3d.OrientationInterpolator()
 OrientationInterpolator1388.DEF = "Armature_OI_r_tarsal_distal_phalanx_1"
 OrientationInterpolator1388.key = [0,1]
+OrientationInterpolator1388.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1388)
 OrientationInterpolator1389 = x3d.OrientationInterpolator()
 OrientationInterpolator1389.DEF = "Armature_OI_r_cuneiform_2"
 OrientationInterpolator1389.key = [0,1]
+OrientationInterpolator1389.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1389)
 OrientationInterpolator1390 = x3d.OrientationInterpolator()
 OrientationInterpolator1390.DEF = "Armature_OI_r_metatarsal_2"
 OrientationInterpolator1390.key = [0,1]
+OrientationInterpolator1390.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1390)
 OrientationInterpolator1391 = x3d.OrientationInterpolator()
 OrientationInterpolator1391.DEF = "Armature_OI_r_tarsal_proximal_phalanx_2"
 OrientationInterpolator1391.key = [0,1]
+OrientationInterpolator1391.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1391)
 OrientationInterpolator1392 = x3d.OrientationInterpolator()
 OrientationInterpolator1392.DEF = "Armature_OI_r_tarsal_middle_phalanx_2"
 OrientationInterpolator1392.key = [0,1]
+OrientationInterpolator1392.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1392)
 OrientationInterpolator1393 = x3d.OrientationInterpolator()
 OrientationInterpolator1393.DEF = "Armature_OI_r_tarsal_distal_phalanx_2"
 OrientationInterpolator1393.key = [0,1]
+OrientationInterpolator1393.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1393)
 OrientationInterpolator1394 = x3d.OrientationInterpolator()
 OrientationInterpolator1394.DEF = "Armature_OI_r_cuneiform_3"
 OrientationInterpolator1394.key = [0,1]
+OrientationInterpolator1394.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1394)
 OrientationInterpolator1395 = x3d.OrientationInterpolator()
 OrientationInterpolator1395.DEF = "Armature_OI_r_metatarsal_3"
 OrientationInterpolator1395.key = [0,1]
+OrientationInterpolator1395.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1395)
 OrientationInterpolator1396 = x3d.OrientationInterpolator()
 OrientationInterpolator1396.DEF = "Armature_OI_r_tarsal_proximal_phalanx_3"
 OrientationInterpolator1396.key = [0,1]
+OrientationInterpolator1396.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1396)
 OrientationInterpolator1397 = x3d.OrientationInterpolator()
 OrientationInterpolator1397.DEF = "Armature_OI_r_tarsal_middle_phalanx_3"
 OrientationInterpolator1397.key = [0,1]
+OrientationInterpolator1397.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1397)
 OrientationInterpolator1398 = x3d.OrientationInterpolator()
 OrientationInterpolator1398.DEF = "Armature_OI_r_tarsal_distal_phalanx_3"
 OrientationInterpolator1398.key = [0,1]
+OrientationInterpolator1398.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1398)
 OrientationInterpolator1399 = x3d.OrientationInterpolator()
 OrientationInterpolator1399.DEF = "Armature_OI_r_calcaneus"
 OrientationInterpolator1399.key = [0,1]
+OrientationInterpolator1399.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1399)
 OrientationInterpolator1400 = x3d.OrientationInterpolator()
 OrientationInterpolator1400.DEF = "Armature_OI_r_cuboid"
 OrientationInterpolator1400.key = [0,1]
+OrientationInterpolator1400.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1400)
 OrientationInterpolator1401 = x3d.OrientationInterpolator()
 OrientationInterpolator1401.DEF = "Armature_OI_r_metatarsal_4"
 OrientationInterpolator1401.key = [0,1]
+OrientationInterpolator1401.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1401)
 OrientationInterpolator1402 = x3d.OrientationInterpolator()
 OrientationInterpolator1402.DEF = "Armature_OI_r_tarsal_proximal_phalanx_4"
 OrientationInterpolator1402.key = [0,1]
+OrientationInterpolator1402.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1402)
 OrientationInterpolator1403 = x3d.OrientationInterpolator()
 OrientationInterpolator1403.DEF = "Armature_OI_r_tarsal_middle_phalanx_4"
 OrientationInterpolator1403.key = [0,1]
+OrientationInterpolator1403.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1403)
 OrientationInterpolator1404 = x3d.OrientationInterpolator()
 OrientationInterpolator1404.DEF = "Armature_OI_r_tarsal_distal_phalanx_4"
 OrientationInterpolator1404.key = [0,1]
+OrientationInterpolator1404.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1404)
 OrientationInterpolator1405 = x3d.OrientationInterpolator()
 OrientationInterpolator1405.DEF = "Armature_OI_r_metatarsal_5"
 OrientationInterpolator1405.key = [0,1]
+OrientationInterpolator1405.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1405)
 OrientationInterpolator1406 = x3d.OrientationInterpolator()
 OrientationInterpolator1406.DEF = "Armature_OI_r_tarsal_proximal_phalanx_5"
 OrientationInterpolator1406.key = [0,1]
+OrientationInterpolator1406.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1406)
 OrientationInterpolator1407 = x3d.OrientationInterpolator()
 OrientationInterpolator1407.DEF = "Armature_OI_r_tarsal_middle_phalanx_5"
 OrientationInterpolator1407.key = [0,1]
+OrientationInterpolator1407.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1407)
 OrientationInterpolator1408 = x3d.OrientationInterpolator()
 OrientationInterpolator1408.DEF = "Armature_OI_r_tarsal_distal_phalanx_5"
 OrientationInterpolator1408.key = [0,1]
+OrientationInterpolator1408.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1408)
 OrientationInterpolator1409 = x3d.OrientationInterpolator()
 OrientationInterpolator1409.DEF = "Armature_OI_l5"
 OrientationInterpolator1409.key = [0,1]
+OrientationInterpolator1409.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1409)
 OrientationInterpolator1410 = x3d.OrientationInterpolator()
 OrientationInterpolator1410.DEF = "Armature_OI_l4"
 OrientationInterpolator1410.key = [0,1]
+OrientationInterpolator1410.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1410)
 OrientationInterpolator1411 = x3d.OrientationInterpolator()
 OrientationInterpolator1411.DEF = "Armature_OI_l3"
 OrientationInterpolator1411.key = [0,1]
+OrientationInterpolator1411.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1411)
 OrientationInterpolator1412 = x3d.OrientationInterpolator()
 OrientationInterpolator1412.DEF = "Armature_OI_l2"
 OrientationInterpolator1412.key = [0,1]
+OrientationInterpolator1412.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1412)
 OrientationInterpolator1413 = x3d.OrientationInterpolator()
 OrientationInterpolator1413.DEF = "Armature_OI_l1"
 OrientationInterpolator1413.key = [0,1]
+OrientationInterpolator1413.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1413)
 OrientationInterpolator1414 = x3d.OrientationInterpolator()
 OrientationInterpolator1414.DEF = "Armature_OI_t12"
 OrientationInterpolator1414.key = [0,1]
+OrientationInterpolator1414.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1414)
 OrientationInterpolator1415 = x3d.OrientationInterpolator()
 OrientationInterpolator1415.DEF = "Armature_OI_t11"
 OrientationInterpolator1415.key = [0,1]
+OrientationInterpolator1415.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1415)
 OrientationInterpolator1416 = x3d.OrientationInterpolator()
 OrientationInterpolator1416.DEF = "Armature_OI_t10"
 OrientationInterpolator1416.key = [0,1]
+OrientationInterpolator1416.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1416)
 OrientationInterpolator1417 = x3d.OrientationInterpolator()
 OrientationInterpolator1417.DEF = "Armature_OI_t9"
 OrientationInterpolator1417.key = [0,1]
+OrientationInterpolator1417.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1417)
 OrientationInterpolator1418 = x3d.OrientationInterpolator()
 OrientationInterpolator1418.DEF = "Armature_OI_t8"
 OrientationInterpolator1418.key = [0,1]
+OrientationInterpolator1418.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1418)
 OrientationInterpolator1419 = x3d.OrientationInterpolator()
 OrientationInterpolator1419.DEF = "Armature_OI_t7"
 OrientationInterpolator1419.key = [0,1]
+OrientationInterpolator1419.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1419)
 OrientationInterpolator1420 = x3d.OrientationInterpolator()
 OrientationInterpolator1420.DEF = "Armature_OI_t6"
 OrientationInterpolator1420.key = [0,1]
+OrientationInterpolator1420.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1420)
 OrientationInterpolator1421 = x3d.OrientationInterpolator()
 OrientationInterpolator1421.DEF = "Armature_OI_t5"
 OrientationInterpolator1421.key = [0,1]
+OrientationInterpolator1421.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1421)
 OrientationInterpolator1422 = x3d.OrientationInterpolator()
 OrientationInterpolator1422.DEF = "Armature_OI_t4"
 OrientationInterpolator1422.key = [0,1]
+OrientationInterpolator1422.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1422)
 OrientationInterpolator1423 = x3d.OrientationInterpolator()
 OrientationInterpolator1423.DEF = "Armature_OI_t3"
 OrientationInterpolator1423.key = [0,1]
+OrientationInterpolator1423.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1423)
 OrientationInterpolator1424 = x3d.OrientationInterpolator()
 OrientationInterpolator1424.DEF = "Armature_OI_t2"
 OrientationInterpolator1424.key = [0,1]
+OrientationInterpolator1424.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1424)
 OrientationInterpolator1425 = x3d.OrientationInterpolator()
 OrientationInterpolator1425.DEF = "Armature_OI_t1"
 OrientationInterpolator1425.key = [0,1]
+OrientationInterpolator1425.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1425)
 OrientationInterpolator1426 = x3d.OrientationInterpolator()
 OrientationInterpolator1426.DEF = "Armature_OI_c7"
 OrientationInterpolator1426.key = [0,1]
+OrientationInterpolator1426.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1426)
 OrientationInterpolator1427 = x3d.OrientationInterpolator()
 OrientationInterpolator1427.DEF = "Armature_OI_c6"
 OrientationInterpolator1427.key = [0,1]
+OrientationInterpolator1427.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1427)
 OrientationInterpolator1428 = x3d.OrientationInterpolator()
 OrientationInterpolator1428.DEF = "Armature_OI_c5"
 OrientationInterpolator1428.key = [0,1]
+OrientationInterpolator1428.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1428)
 OrientationInterpolator1429 = x3d.OrientationInterpolator()
 OrientationInterpolator1429.DEF = "Armature_OI_c4"
 OrientationInterpolator1429.key = [0,1]
+OrientationInterpolator1429.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1429)
 OrientationInterpolator1430 = x3d.OrientationInterpolator()
 OrientationInterpolator1430.DEF = "Armature_OI_c3"
 OrientationInterpolator1430.key = [0,1]
+OrientationInterpolator1430.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1430)
 OrientationInterpolator1431 = x3d.OrientationInterpolator()
 OrientationInterpolator1431.DEF = "Armature_OI_c2"
 OrientationInterpolator1431.key = [0,1]
+OrientationInterpolator1431.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1431)
 OrientationInterpolator1432 = x3d.OrientationInterpolator()
 OrientationInterpolator1432.DEF = "Armature_OI_c1"
 OrientationInterpolator1432.key = [0,1]
+OrientationInterpolator1432.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1432)
 OrientationInterpolator1433 = x3d.OrientationInterpolator()
 OrientationInterpolator1433.DEF = "Armature_OI_skull"
 OrientationInterpolator1433.key = [0,1]
+OrientationInterpolator1433.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1433)
 OrientationInterpolator1434 = x3d.OrientationInterpolator()
 OrientationInterpolator1434.DEF = "Armature_OI_l_eyelid"
 OrientationInterpolator1434.key = [0,1]
+OrientationInterpolator1434.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1434)
 OrientationInterpolator1435 = x3d.OrientationInterpolator()
 OrientationInterpolator1435.DEF = "Armature_OI_r_eyelid"
 OrientationInterpolator1435.key = [0,1]
+OrientationInterpolator1435.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1435)
 OrientationInterpolator1436 = x3d.OrientationInterpolator()
 OrientationInterpolator1436.DEF = "Armature_OI_l_eyeball"
 OrientationInterpolator1436.key = [0,1]
+OrientationInterpolator1436.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1436)
 OrientationInterpolator1437 = x3d.OrientationInterpolator()
 OrientationInterpolator1437.DEF = "Armature_OI_r_eyeball"
 OrientationInterpolator1437.key = [0,1]
+OrientationInterpolator1437.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1437)
 OrientationInterpolator1438 = x3d.OrientationInterpolator()
 OrientationInterpolator1438.DEF = "Armature_OI_l_eyebrow"
 OrientationInterpolator1438.key = [0,1]
+OrientationInterpolator1438.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1438)
 OrientationInterpolator1439 = x3d.OrientationInterpolator()
 OrientationInterpolator1439.DEF = "Armature_OI_r_eyebrow"
 OrientationInterpolator1439.key = [0,1]
+OrientationInterpolator1439.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1439)
 OrientationInterpolator1440 = x3d.OrientationInterpolator()
 OrientationInterpolator1440.DEF = "Armature_OI_jaw"
 OrientationInterpolator1440.key = [0,1]
+OrientationInterpolator1440.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1440)
 OrientationInterpolator1441 = x3d.OrientationInterpolator()
 OrientationInterpolator1441.DEF = "Armature_OI_l_clavicle"
 OrientationInterpolator1441.key = [0,1]
+OrientationInterpolator1441.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1441)
 OrientationInterpolator1442 = x3d.OrientationInterpolator()
 OrientationInterpolator1442.DEF = "Armature_OI_l_scapula"
 OrientationInterpolator1442.key = [0,1]
+OrientationInterpolator1442.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1442)
 OrientationInterpolator1443 = x3d.OrientationInterpolator()
 OrientationInterpolator1443.DEF = "Armature_OI_l_upperarm"
 OrientationInterpolator1443.key = [0,1]
+OrientationInterpolator1443.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1443)
 OrientationInterpolator1444 = x3d.OrientationInterpolator()
 OrientationInterpolator1444.DEF = "Armature_OI_l_forearm"
 OrientationInterpolator1444.key = [0,1]
+OrientationInterpolator1444.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1444)
 OrientationInterpolator1445 = x3d.OrientationInterpolator()
 OrientationInterpolator1445.DEF = "Armature_OI_l_carpal"
 OrientationInterpolator1445.key = [0,1]
+OrientationInterpolator1445.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1445)
 OrientationInterpolator1446 = x3d.OrientationInterpolator()
 OrientationInterpolator1446.DEF = "Armature_OI_l_trapezium"
 OrientationInterpolator1446.key = [0,1]
+OrientationInterpolator1446.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1446)
 OrientationInterpolator1447 = x3d.OrientationInterpolator()
 OrientationInterpolator1447.DEF = "Armature_OI_l_metacarpal_1"
 OrientationInterpolator1447.key = [0,1]
+OrientationInterpolator1447.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1447)
 OrientationInterpolator1448 = x3d.OrientationInterpolator()
 OrientationInterpolator1448.DEF = "Armature_OI_l_carpal_proximal_phalanx_1"
 OrientationInterpolator1448.key = [0,1]
+OrientationInterpolator1448.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1448)
 OrientationInterpolator1449 = x3d.OrientationInterpolator()
 OrientationInterpolator1449.DEF = "Armature_OI_l_carpal_distal_phalanx_1"
 OrientationInterpolator1449.key = [0,1]
+OrientationInterpolator1449.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1449)
 OrientationInterpolator1450 = x3d.OrientationInterpolator()
 OrientationInterpolator1450.DEF = "Armature_OI_l_trapezoid"
 OrientationInterpolator1450.key = [0,1]
+OrientationInterpolator1450.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1450)
 OrientationInterpolator1451 = x3d.OrientationInterpolator()
 OrientationInterpolator1451.DEF = "Armature_OI_l_metacarpal_2"
 OrientationInterpolator1451.key = [0,1]
+OrientationInterpolator1451.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1451)
 OrientationInterpolator1452 = x3d.OrientationInterpolator()
 OrientationInterpolator1452.DEF = "Armature_OI_l_carpal_proximal_phalanx_2"
 OrientationInterpolator1452.key = [0,1]
+OrientationInterpolator1452.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1452)
 OrientationInterpolator1453 = x3d.OrientationInterpolator()
 OrientationInterpolator1453.DEF = "Armature_OI_l_carpal_middle_phalanx_2"
 OrientationInterpolator1453.key = [0,1]
+OrientationInterpolator1453.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1453)
 OrientationInterpolator1454 = x3d.OrientationInterpolator()
 OrientationInterpolator1454.DEF = "Armature_OI_l_carpal_distal_phalanx_2"
 OrientationInterpolator1454.key = [0,1]
+OrientationInterpolator1454.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1454)
 OrientationInterpolator1455 = x3d.OrientationInterpolator()
 OrientationInterpolator1455.DEF = "Armature_OI_l_capitate"
 OrientationInterpolator1455.key = [0,1]
+OrientationInterpolator1455.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1455)
 OrientationInterpolator1456 = x3d.OrientationInterpolator()
 OrientationInterpolator1456.DEF = "Armature_OI_l_metacarpal_3"
 OrientationInterpolator1456.key = [0,1]
+OrientationInterpolator1456.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1456)
 OrientationInterpolator1457 = x3d.OrientationInterpolator()
 OrientationInterpolator1457.DEF = "Armature_OI_l_carpal_proximal_phalanx_3"
 OrientationInterpolator1457.key = [0,1]
+OrientationInterpolator1457.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1457)
 OrientationInterpolator1458 = x3d.OrientationInterpolator()
 OrientationInterpolator1458.DEF = "Armature_OI_l_carpal_middle_phalanx_3"
 OrientationInterpolator1458.key = [0,1]
+OrientationInterpolator1458.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1458)
 OrientationInterpolator1459 = x3d.OrientationInterpolator()
 OrientationInterpolator1459.DEF = "Armature_OI_l_carpal_distal_phalanx_3"
 OrientationInterpolator1459.key = [0,1]
+OrientationInterpolator1459.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1459)
 OrientationInterpolator1460 = x3d.OrientationInterpolator()
 OrientationInterpolator1460.DEF = "Armature_OI_l_hamate"
 OrientationInterpolator1460.key = [0,1]
+OrientationInterpolator1460.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1460)
 OrientationInterpolator1461 = x3d.OrientationInterpolator()
 OrientationInterpolator1461.DEF = "Armature_OI_l_metacarpal_4"
 OrientationInterpolator1461.key = [0,1]
+OrientationInterpolator1461.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1461)
 OrientationInterpolator1462 = x3d.OrientationInterpolator()
 OrientationInterpolator1462.DEF = "Armature_OI_l_carpal_proximal_phalanx_4"
 OrientationInterpolator1462.key = [0,1]
+OrientationInterpolator1462.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1462)
 OrientationInterpolator1463 = x3d.OrientationInterpolator()
 OrientationInterpolator1463.DEF = "Armature_OI_l_carpal_middle_phalanx_4"
 OrientationInterpolator1463.key = [0,1]
+OrientationInterpolator1463.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1463)
 OrientationInterpolator1464 = x3d.OrientationInterpolator()
 OrientationInterpolator1464.DEF = "Armature_OI_l_carpal_distal_phalanx_4"
 OrientationInterpolator1464.key = [0,1]
+OrientationInterpolator1464.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1464)
 OrientationInterpolator1465 = x3d.OrientationInterpolator()
 OrientationInterpolator1465.DEF = "Armature_OI_l_metacarpal_5"
 OrientationInterpolator1465.key = [0,1]
+OrientationInterpolator1465.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1465)
 OrientationInterpolator1466 = x3d.OrientationInterpolator()
 OrientationInterpolator1466.DEF = "Armature_OI_l_carpal_proximal_phalanx_5"
 OrientationInterpolator1466.key = [0,1]
+OrientationInterpolator1466.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1466)
 OrientationInterpolator1467 = x3d.OrientationInterpolator()
 OrientationInterpolator1467.DEF = "Armature_OI_l_carpal_middle_phalanx_5"
 OrientationInterpolator1467.key = [0,1]
+OrientationInterpolator1467.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1467)
 OrientationInterpolator1468 = x3d.OrientationInterpolator()
 OrientationInterpolator1468.DEF = "Armature_OI_l_carpal_distal_phalanx_5"
 OrientationInterpolator1468.key = [0,1]
+OrientationInterpolator1468.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1468)
 OrientationInterpolator1469 = x3d.OrientationInterpolator()
 OrientationInterpolator1469.DEF = "Armature_OI_r_clavicle"
 OrientationInterpolator1469.key = [0,1]
+OrientationInterpolator1469.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1469)
 OrientationInterpolator1470 = x3d.OrientationInterpolator()
 OrientationInterpolator1470.DEF = "Armature_OI_r_scapula"
 OrientationInterpolator1470.key = [0,1]
+OrientationInterpolator1470.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1470)
 OrientationInterpolator1471 = x3d.OrientationInterpolator()
 OrientationInterpolator1471.DEF = "Armature_OI_r_upperarm"
 OrientationInterpolator1471.key = [0,1]
+OrientationInterpolator1471.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1471)
 OrientationInterpolator1472 = x3d.OrientationInterpolator()
 OrientationInterpolator1472.DEF = "Armature_OI_r_forearm"
 OrientationInterpolator1472.key = [0,1]
+OrientationInterpolator1472.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1472)
 OrientationInterpolator1473 = x3d.OrientationInterpolator()
 OrientationInterpolator1473.DEF = "Armature_OI_r_carpal"
 OrientationInterpolator1473.key = [0,1]
+OrientationInterpolator1473.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1473)
 OrientationInterpolator1474 = x3d.OrientationInterpolator()
 OrientationInterpolator1474.DEF = "Armature_OI_r_trapezium"
 OrientationInterpolator1474.key = [0,1]
+OrientationInterpolator1474.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1474)
 OrientationInterpolator1475 = x3d.OrientationInterpolator()
 OrientationInterpolator1475.DEF = "Armature_OI_r_metacarpal_1"
 OrientationInterpolator1475.key = [0,1]
+OrientationInterpolator1475.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1475)
 OrientationInterpolator1476 = x3d.OrientationInterpolator()
 OrientationInterpolator1476.DEF = "Armature_OI_r_carpal_proximal_phalanx_1"
 OrientationInterpolator1476.key = [0,1]
+OrientationInterpolator1476.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1476)
 OrientationInterpolator1477 = x3d.OrientationInterpolator()
 OrientationInterpolator1477.DEF = "Armature_OI_r_carpal_distal_phalanx_1"
 OrientationInterpolator1477.key = [0,1]
+OrientationInterpolator1477.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1477)
 OrientationInterpolator1478 = x3d.OrientationInterpolator()
 OrientationInterpolator1478.DEF = "Armature_OI_r_trapezoid"
 OrientationInterpolator1478.key = [0,1]
+OrientationInterpolator1478.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1478)
 OrientationInterpolator1479 = x3d.OrientationInterpolator()
 OrientationInterpolator1479.DEF = "Armature_OI_r_metacarpal_2"
 OrientationInterpolator1479.key = [0,1]
+OrientationInterpolator1479.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1479)
 OrientationInterpolator1480 = x3d.OrientationInterpolator()
 OrientationInterpolator1480.DEF = "Armature_OI_r_carpal_proximal_phalanx_2"
 OrientationInterpolator1480.key = [0,1]
+OrientationInterpolator1480.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1480)
 OrientationInterpolator1481 = x3d.OrientationInterpolator()
 OrientationInterpolator1481.DEF = "Armature_OI_r_carpal_middle_phalanx_2"
 OrientationInterpolator1481.key = [0,1]
+OrientationInterpolator1481.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1481)
 OrientationInterpolator1482 = x3d.OrientationInterpolator()
 OrientationInterpolator1482.DEF = "Armature_OI_r_carpal_distal_phalanx_2"
 OrientationInterpolator1482.key = [0,1]
+OrientationInterpolator1482.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1482)
 OrientationInterpolator1483 = x3d.OrientationInterpolator()
 OrientationInterpolator1483.DEF = "Armature_OI_r_capitate"
 OrientationInterpolator1483.key = [0,1]
+OrientationInterpolator1483.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1483)
 OrientationInterpolator1484 = x3d.OrientationInterpolator()
 OrientationInterpolator1484.DEF = "Armature_OI_r_metacarpal_3"
 OrientationInterpolator1484.key = [0,1]
+OrientationInterpolator1484.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1484)
 OrientationInterpolator1485 = x3d.OrientationInterpolator()
 OrientationInterpolator1485.DEF = "Armature_OI_r_carpal_proximal_phalanx_3"
 OrientationInterpolator1485.key = [0,1]
+OrientationInterpolator1485.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1485)
 OrientationInterpolator1486 = x3d.OrientationInterpolator()
 OrientationInterpolator1486.DEF = "Armature_OI_r_carpal_middle_phalanx_3"
 OrientationInterpolator1486.key = [0,1]
+OrientationInterpolator1486.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1486)
 OrientationInterpolator1487 = x3d.OrientationInterpolator()
 OrientationInterpolator1487.DEF = "Armature_OI_r_carpal_distal_phalanx_3"
 OrientationInterpolator1487.key = [0,1]
+OrientationInterpolator1487.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1487)
 OrientationInterpolator1488 = x3d.OrientationInterpolator()
 OrientationInterpolator1488.DEF = "Armature_OI_r_hamate"
 OrientationInterpolator1488.key = [0,1]
+OrientationInterpolator1488.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1488)
 OrientationInterpolator1489 = x3d.OrientationInterpolator()
 OrientationInterpolator1489.DEF = "Armature_OI_r_metacarpal_4"
 OrientationInterpolator1489.key = [0,1]
+OrientationInterpolator1489.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1489)
 OrientationInterpolator1490 = x3d.OrientationInterpolator()
 OrientationInterpolator1490.DEF = "Armature_OI_r_carpal_proximal_phalanx_4"
 OrientationInterpolator1490.key = [0,1]
+OrientationInterpolator1490.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1490)
 OrientationInterpolator1491 = x3d.OrientationInterpolator()
 OrientationInterpolator1491.DEF = "Armature_OI_r_carpal_middle_phalanx_4"
 OrientationInterpolator1491.key = [0,1]
+OrientationInterpolator1491.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1491)
 OrientationInterpolator1492 = x3d.OrientationInterpolator()
 OrientationInterpolator1492.DEF = "Armature_OI_r_carpal_distal_phalanx_4"
 OrientationInterpolator1492.key = [0,1]
+OrientationInterpolator1492.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1492)
 OrientationInterpolator1493 = x3d.OrientationInterpolator()
 OrientationInterpolator1493.DEF = "Armature_OI_r_metacarpal_5"
 OrientationInterpolator1493.key = [0,1]
+OrientationInterpolator1493.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1493)
 OrientationInterpolator1494 = x3d.OrientationInterpolator()
 OrientationInterpolator1494.DEF = "Armature_OI_r_carpal_proximal_phalanx_5"
 OrientationInterpolator1494.key = [0,1]
+OrientationInterpolator1494.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1494)
 OrientationInterpolator1495 = x3d.OrientationInterpolator()
 OrientationInterpolator1495.DEF = "Armature_OI_r_carpal_middle_phalanx_5"
 OrientationInterpolator1495.key = [0,1]
+OrientationInterpolator1495.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1495)
 OrientationInterpolator1496 = x3d.OrientationInterpolator()
 OrientationInterpolator1496.DEF = "Armature_OI_r_carpal_distal_phalanx_5"
 OrientationInterpolator1496.key = [0,1]
+OrientationInterpolator1496.keyValue = [(0, 0, 0, 0),(0, 0, 0, 0)]
 
 Scene7.children.append(OrientationInterpolator1496)
 ROUTE1497 = x3d.ROUTE()
@@ -9071,6 +9219,9 @@ X3D0.Scene = Scene7
 f = open("../data/blenderSkeleton.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/blenderSkeleton.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/blenderSkeleton.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/blenderSkeleton.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

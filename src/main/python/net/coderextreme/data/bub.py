@@ -5,6 +5,7 @@ X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
 X3D0.version = "4.0"
 head1 = x3d.head()
+"""<component name='Shape' level='4'></component>"""
 component2 = x3d.component()
 component2.name = "Scripting"
 component2.level = 1
@@ -45,7 +46,6 @@ component9.name = "Core"
 component9.level = 1
 
 head1.children.append(component9)
-"""<component name='Shape' level='4'></component>"""
 meta10 = x3d.meta()
 meta10.name = "title"
 meta10.content = "bub.x3d"
@@ -337,6 +337,9 @@ X3D0.Scene = Scene15
 f = open("../data/bub.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/bub.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/bub.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/bub.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

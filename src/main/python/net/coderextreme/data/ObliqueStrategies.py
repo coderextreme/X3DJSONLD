@@ -172,6 +172,7 @@ NavigationInfo35.type = ["NONE"]
 
 Scene33.children.append(NavigationInfo35)
 Background36 = x3d.Background()
+Background36.skyColor = [(0.419608, 0.427451, 1)]
 
 Scene33.children.append(Background36)
 Transform37 = x3d.Transform()
@@ -211,6 +212,7 @@ IndexedFaceSet46 = x3d.IndexedFaceSet()
 IndexedFaceSet46.coordIndex = [0,1,2,3,-1]
 IndexedFaceSet46.solid = False
 Coordinate47 = x3d.Coordinate()
+Coordinate47.point = [(1, 1, 0),(1, -1, 0),(-1, -1, 0),(-1, 1, 0)]
 
 IndexedFaceSet46.coord = Coordinate47
 
@@ -402,6 +404,7 @@ IndexedFaceSet80 = x3d.IndexedFaceSet()
 IndexedFaceSet80.coordIndex = [0,1,2,3,-1]
 IndexedFaceSet80.solid = False
 Coordinate81 = x3d.Coordinate()
+Coordinate81.point = [(1, 1, 0),(1, -1, 0),(-1, -1, 0),(-1, 1, 0)]
 
 IndexedFaceSet80.coord = Coordinate81
 
@@ -545,6 +548,9 @@ X3D0.Scene = Scene33
 f = open("../data/ObliqueStrategies.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/ObliqueStrategies.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/ObliqueStrategies.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/ObliqueStrategies.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

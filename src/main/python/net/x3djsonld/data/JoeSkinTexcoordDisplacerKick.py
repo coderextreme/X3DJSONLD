@@ -44,7 +44,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='modified to correct root and vc7 hierarchies',name='info'),
     meta(content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/JoeSkinTexcoordDisplacerKick.x3d',name='identifier'),
     meta(content='BS studio translation from .x3dv by Joe using BS Contact',name='generator'),
-    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[

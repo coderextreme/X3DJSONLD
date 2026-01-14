@@ -5,6 +5,7 @@ X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
 X3D0.version = "4.0"
 head1 = x3d.head()
+"""meta content='under development' name='warning'/"""
 component2 = x3d.component()
 component2.name = "Shaders"
 component2.level = 1
@@ -105,7 +106,6 @@ meta21.name = "license"
 meta21.content = "../../license.html"
 
 head1.children.append(meta21)
-"""meta content='under development' name='warning'/"""
 
 X3D0.head = head1
 Scene22 = x3d.Scene()
@@ -279,6 +279,9 @@ X3D0.Scene = Scene22
 f = open("../data/SimpleShader.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/SimpleShader.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/SimpleShader.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/SimpleShader.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

@@ -2,8 +2,8 @@ print('<!--')
 import x3d
 print('-->')
 X3D0 = x3d.X3D()
-X3D0.version = "4.0"
 X3D0.profile = "Immersive"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -113,6 +113,9 @@ X3D0.Scene = Scene3
 f = open("../data/JoeExample.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/JoeExample.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/JoeExample.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/JoeExample.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

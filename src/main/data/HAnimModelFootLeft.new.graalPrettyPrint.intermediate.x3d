@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='HAnim' level='1'/>
+    <component level='1' name='HAnim'/>
     <meta content='HAnimModelFootLeft.x3d' name='title'/>
     <meta content='Left foot, using high-fidelity definitions for HAnim version 2.0' name='description'/>
     <meta content='Kwan-Hee YOO, Don Brutzman and Joe Williams' name='creator'/>
     <meta content='26 January 2015' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:47:34 GMT' name='modified'/>
+    <meta content='23 December 2021' name='modified'/>
     <meta content='not yet to scale' name='warning'/>
     <meta content='TODO will X3D HAnim component add a new level to support LOA-4 functionality?' name='warning'/>
     <meta content='TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body' name='info'/>
@@ -21,15 +20,19 @@
     <meta content='X3D HAnim humanoid animation' name='subject'/>
     <meta content='Integrate and confirm Segment/Joint names, Viewpoints.' name='TODO'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='HAnimModelFootLeft.x3d'/>
-    <HAnimHumanoid DEF='hanim_Foot_Left' name='Foot_Left' loa='4' version='2.0'>
-      <MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
-        <MetadataString name='authorName'/>
+    <HAnimHumanoid DEF='hanim_Foot_Left' loa='4' name='Foot_Left' version='2.0'>
+      <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
+        <MetadataString name='authorName' value='"Kwan-Hee YOO, Don Brutzman and Joe Williams"'/>
       </MetadataSet>
-      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton'>
-        <HAnimJoint DEF='hanim_l_talocrural' name='l_talocrural' description='connection joint of foot to leg above'>
+      <HAnimJoint DEF='hanim_humanoid_root' containerField='skeleton' name='humanoid_root'>
+        <!-- Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model -->
+        <HAnimJoint DEF='hanim_l_talocrural' description='connection joint of foot to leg above' name='l_talocrural'>
           <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
             <Transform>
               <Shape DEF='HAnimJointShape'>
@@ -56,7 +59,8 @@
               </IndexedLineSet>
             </Shape>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_talocalcaneonavicular' name='l_talocalcaneonavicular' center='0 -0.3 0'>
+          <!-- TCN -->
+          <HAnimJoint DEF='hanim_l_talocalcaneonavicular' center='0 -0.3 0' name='l_talocalcaneonavicular'>
             <HAnimSegment DEF='hanim_l_navicular' name='l_navicular'>
               <Transform translation='0 -0.3 0'>
                 <Shape USE='HAnimJointShape'/>
@@ -86,7 +90,8 @@
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_cuneonavicular_1' name='l_cuneonavicular_1' center='-0.1 -0.45 0'>
+            <!-- CN1 -->
+            <HAnimJoint DEF='hanim_l_cuneonavicular_1' center='-0.1 -0.45 0' name='l_cuneonavicular_1'>
               <HAnimSegment DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'>
                 <Transform translation='-0.1 -0.45 0'>
                   <Shape USE='HAnimJointShape'/>
@@ -100,7 +105,7 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_1' name='l_tarsometatarsal_1' center='-0.1 -0.6 0'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_1' center='-0.1 -0.6 0' name='l_tarsometatarsal_1'>
                 <HAnimSegment DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'>
                   <Transform translation='-0.1 -0.6 0'>
                     <Shape USE='HAnimJointShape'/>
@@ -114,7 +119,7 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' name='l_metatarsophalangeal_1' center='-0.1 -0.9 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' center='-0.1 -0.9 0' name='l_metatarsophalangeal_1'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'>
                     <Transform translation='-0.1 -0.9 0'>
                       <Shape USE='HAnimJointShape'/>
@@ -128,7 +133,7 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_interphalangeal_1' name='l_tarsal_interphalangeal_1' center='-0.1 -1.05 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_interphalangeal_1' center='-0.1 -1.05 0' name='l_tarsal_interphalangeal_1'>
                     <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_1' name='l_tarsal_distal_phalanx_1'>
                       <Transform translation='-0.1 -1.05 0'>
                         <Shape USE='HAnimJointShape'/>
@@ -146,7 +151,8 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_l_cuneonavicular_2' name='l_cuneonavicular_2' center='0 -0.45 0'>
+            <!-- CN2 -->
+            <HAnimJoint DEF='hanim_l_cuneonavicular_2' center='0 -0.45 0' name='l_cuneonavicular_2'>
               <HAnimSegment DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'>
                 <Transform translation='0 -0.45 0'>
                   <Shape USE='HAnimJointShape'/>
@@ -160,7 +166,7 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_2' name='l_tarsometatarsal_2' center='0.05 -0.6 0'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_2' center='0.05 -0.6 0' name='l_tarsometatarsal_2'>
                 <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
                   <Transform translation='0.05 -0.6 0'>
                     <Shape USE='HAnimJointShape'/>
@@ -174,7 +180,7 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2' center='0.05 -0.9 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='0.05 -0.9 0' name='l_metatarsophalangeal_2'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
                     <Transform translation='0.05 -0.9 0'>
                       <Shape USE='HAnimJointShape'/>
@@ -188,7 +194,7 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' name='l_tarsal_proximal_interphalangeal_2' center='0.05 -1.05 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' center='0.05 -1.05 0' name='l_tarsal_proximal_interphalangeal_2'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'>
                       <Transform translation='0.05 -1.05 0'>
                         <Shape USE='HAnimJointShape'/>
@@ -202,7 +208,7 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' name='l_tarsal_distal_interphalangeal_2' center='0.05 -1.12 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' center='0.05 -1.12 0' name='l_tarsal_distal_interphalangeal_2'>
                       <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_2' name='l_tarsal_distal_phalanx_2'>
                         <Transform translation='0.05 -1.12 0'>
                           <Shape USE='HAnimJointShape'/>
@@ -221,7 +227,8 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_l_cuneonavicular_3' name='l_cuneonavicular_3' center='0.1 -0.4 0'>
+            <!-- CN3 -->
+            <HAnimJoint DEF='hanim_l_cuneonavicular_3' center='0.1 -0.4 0' name='l_cuneonavicular_3'>
               <HAnimSegment DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'>
                 <Transform translation='0.1 -0.4 0'>
                   <Shape USE='HAnimJointShape'/>
@@ -235,7 +242,7 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_3' name='l_tarsometatarsal_3' center='0.15 -0.6 0'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_3' center='0.15 -0.6 0' name='l_tarsometatarsal_3'>
                 <HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'>
                   <Transform translation='0.15 -0.6 0'>
                     <Shape USE='HAnimJointShape'/>
@@ -249,7 +256,7 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' name='l_metatarsophalangeal_3' center='0.15 -0.9 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' center='0.15 -0.9 0' name='l_metatarsophalangeal_3'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'>
                     <Transform translation='0.15 -0.9 0'>
                       <Shape USE='HAnimJointShape'/>
@@ -263,7 +270,7 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' name='l_tarsal_proximal_interphalangeal_3' center='0.15 -1.05 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' center='0.15 -1.05 0' name='l_tarsal_proximal_interphalangeal_3'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'>
                       <Transform translation='0.15 -1.05 0'>
                         <Shape USE='HAnimJointShape'/>
@@ -277,7 +284,7 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' name='l_tarsal_distal_interphalangeal_3' center='0.15 -1.13 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' center='0.15 -1.13 0' name='l_tarsal_distal_interphalangeal_3'>
                       <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_3' name='l_tarsal_distal_phalanx_3'>
                         <Transform translation='0.15 -1.13 0'>
                           <Shape USE='HAnimJointShape'/>
@@ -297,7 +304,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_l_calcaneocuboid' name='l_calcaneocuboid' center='0.2 0.3 0'>
+          <!-- CC -->
+          <HAnimJoint DEF='hanim_l_calcaneocuboid' center='0.2 0.3 0' name='l_calcaneocuboid'>
             <HAnimSegment DEF='hanim_l_calcaneus' name='l_calcaneus'>
               <Transform translation='0.2 0.3 0'>
                 <Shape USE='HAnimJointShape'/>
@@ -311,7 +319,8 @@
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_transversetarsal' name='l_transversetarsal' center='0.21 -0.3 0'>
+            <!-- TT -->
+            <HAnimJoint DEF='hanim_l_transversetarsal' center='0.21 -0.3 0' name='l_transversetarsal'>
               <HAnimSegment DEF='hanim_l_cuboid' name='l_cuboid'>
                 <Transform translation='0.21 -0.3 0'>
                   <Shape USE='HAnimJointShape'/>
@@ -333,7 +342,8 @@
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_4' name='l_tarsometatarsal_4' center='0.25 -0.58 0'>
+              <!-- TMT4 -->
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_4' center='0.25 -0.58 0' name='l_tarsometatarsal_4'>
                 <HAnimSegment DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'>
                   <Transform translation='0.25 -0.58 0'>
                     <Shape USE='HAnimJointShape'/>
@@ -347,7 +357,7 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' name='l_metatarsophalangeal_4' center='0.25 -0.87 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' center='0.25 -0.87 0' name='l_metatarsophalangeal_4'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'>
                     <Transform translation='0.25 -0.87 0'>
                       <Shape USE='HAnimJointShape'/>
@@ -361,7 +371,7 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' name='l_tarsal_proximal_interphalangeal_4' center='0.25 -1 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' center='0.25 -1 0' name='l_tarsal_proximal_interphalangeal_4'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'>
                       <Transform translation='0.25 -1 0'>
                         <Shape USE='HAnimJointShape'/>
@@ -375,7 +385,7 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' name='l_tarsal_distal_interphalangeal_4' center='0.25 -1.1 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' center='0.25 -1.1 0' name='l_tarsal_distal_interphalangeal_4'>
                       <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_4' name='l_tarsal_distal_phalanx_4'>
                         <Transform translation='0.25 -1.1 0'>
                           <Shape USE='HAnimJointShape'/>
@@ -393,7 +403,8 @@
                   </HAnimJoint>
                 </HAnimJoint>
               </HAnimJoint>
-              <HAnimJoint DEF='hanim_l_tarsometatarsal_5' name='l_tarsometatarsal_5' center='0.33 -0.52 0'>
+              <!-- TMT5 -->
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_5' center='0.33 -0.52 0' name='l_tarsometatarsal_5'>
                 <HAnimSegment DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'>
                   <Transform translation='0.33 -0.52 0'>
                     <Shape USE='HAnimJointShape'/>
@@ -407,7 +418,7 @@
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' name='l_metatarsophalangeal_5' center='0.34 -0.8 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' center='0.34 -0.8 0' name='l_metatarsophalangeal_5'>
                   <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'>
                     <Transform translation='0.34 -0.8 0'>
                       <Shape USE='HAnimJointShape'/>
@@ -421,7 +432,7 @@
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' name='l_tarsal_proximal_interphalangeal_5' center='0.34 -0.95 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' center='0.34 -0.95 0' name='l_tarsal_proximal_interphalangeal_5'>
                     <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'>
                       <Transform translation='0.34 -0.95 0'>
                         <Shape USE='HAnimJointShape'/>
@@ -435,7 +446,7 @@
                         </IndexedLineSet>
                       </Shape>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' name='l_tarsal_distal_interphalangeal_5' center='0.34 -1.05 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' center='0.34 -1.05 0' name='l_tarsal_distal_interphalangeal_5'>
                       <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_5' name='l_tarsal_distal_phalanx_5'>
                         <Transform translation='0.34 -1.05 0'>
                           <Shape USE='HAnimJointShape'/>
@@ -457,6 +468,7 @@
           </HAnimJoint>
         </HAnimJoint>
       </HAnimJoint>
+      <!-- original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' -->
       <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
       <HAnimJoint USE='hanim_l_calcaneocuboid' containerField='joints'/>
       <HAnimJoint USE='hanim_l_cuneonavicular_1' containerField='joints'/>

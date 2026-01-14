@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='Menu.x3d' name='title'/>
+    <meta content='X3D scene with a Switch of Inlines controlled by a menu' name='description'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
+    <!-- Viewpoint and any other scene setup -->
+    <Viewpoint position='0 20 110'/>
+    <!-- Menu prototype declaration -->
     <ProtoDeclare name='Menu'>
       <ProtoInterface>
-        <field name='menuItems' accessType='initializeOnly' type='MFString'/>
+        <field accessType='initializeOnly' name='menuItems' type='MFString'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -66,14 +70,15 @@
             <Inline DEF='OPTION29' url='"../resources/JinBlink.x3d" "JinBlink.x3d"'/>
             <Inline DEF='OPTION30' url='"../resources/JinWink.x3d" "JinWink.x3d"'/>
           </Switch>
+          <!-- Script to handle selection logic -->
           <Script DEF='MenuScript'>
-            <field name='menuItems' accessType='initializeOnly' type='MFString'/>
-            <field name='selection' accessType='outputOnly' type='SFInt32'/>
-            <field name='touchPoint' accessType='inputOnly' type='SFVec3f'/>
-            <field name='spacing' accessType='initializeOnly' type='SFFloat' value='1.2'/>
-            <field name='size' accessType='initializeOnly' type='SFFloat' value='2.4'/>
-            <field name='menuCenterY' accessType='initializeOnly' type='SFFloat'/>
-            <field name='itemHeight' accessType='initializeOnly' type='SFFloat'/>
+            <field accessType='initializeOnly' name='menuItems' type='MFString'/>
+            <field accessType='outputOnly' name='selection' type='SFInt32'/>
+            <field accessType='inputOnly' name='touchPoint' type='SFVec3f'/>
+            <field accessType='initializeOnly' name='spacing' type='SFFloat' value='1.2'/>
+            <field accessType='initializeOnly' name='size' type='SFFloat' value='2.4'/>
+            <field accessType='initializeOnly' name='menuCenterY' type='SFFloat'/>
+            <field accessType='initializeOnly' name='itemHeight' type='SFFloat'/>
             <IS>
               <connect nodeField='menuItems' protoField='menuItems'/>
             </IS>
@@ -88,22 +93,24 @@ ecmascript:
         }
 
         function touchPoint(value) {
-          Browser.print("Hit "+value+" "+selection+"\n");
+          Browser.print("Hit "+value+" "+selection+"
+");
           var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
 
           selection = index - 2;
           if (selection >= 0 && selection < menuItems.length) {
-            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\n");
+            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"
+");
           }
         }
 ]]>
           </Script>
+          <!-- ROUTEs to connect everything -->
+          <ROUTE fromField='hitPoint_changed' fromNode='MenuTouchSensor' toField='touchPoint' toNode='MenuScript'/>
+          <ROUTE fromField='selection' fromNode='MenuScript' toField='whichChoice' toNode='SceneSwitcher'/>
         </Group>
-        <ROUTE fromField='hitPoint_changed' fromNode='MenuTouchSensor' toField='touchPoint' toNode='MenuScript'/>
-        <ROUTE fromField='selection' fromNode='MenuScript' toField='set_whichChoice' toNode='SceneSwitcher'/>
       </ProtoBody>
     </ProtoDeclare>
-    <Viewpoint position='0 20 110'/>
     <ProtoInstance DEF='MainMenu' name='Menu'>
       <fieldValue name='menuItems' value='"JinInnerBrowRaiser.x3d" "JinOuterBrowRaiser.x3d" "JinBrowLowerer.x3d" "JinUpperLidRaiser.x3d" "JinCheekRaiser.x3d" "JinLidTightener.x3d" "JinNoseWrinkler.x3d" "JinUpperLipRaiser.x3d" "JinNasolabialDeepener.x3d" "JinLipCornerPuller.x3d" "JinCheekPuffer.x3d" "JinDimpler.x3d" "JinLipCornerDepressor.x3d" "JinLowerLipDepressor.x3d" "JinChinRaiser.x3d" "JinLipPuckerer.x3d" "JinLipStretcher.x3d" "JinLipFunneler.x3d" "JinLipTightener.x3d" "JinLipPressor.x3d" "JinLipsPart.x3d" "JinJawDrop.x3d" "JinMouthStretch.x3d" "JinLipSuck.x3d" "JinLidDroop.x3d" "JinSlit.x3d" "JinEyesClosed.x3d" "JinSquint.x3d" "JinBlink.x3d" "JinWink.x3d"'/>
     </ProtoInstance>

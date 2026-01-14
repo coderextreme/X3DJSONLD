@@ -76,6 +76,7 @@ NavigationInfo16 = x3d.NavigationInfo()
 
 Scene14.children.append(NavigationInfo16)
 Background17 = x3d.Background()
+Background17.skyColor = [(0.2, 0.2, 0.2)]
 
 Scene14.children.append(Background17)
 Viewpoint18 = x3d.Viewpoint()
@@ -287,6 +288,9 @@ X3D0.Scene = Scene14
 f = open("../data/Filters.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/Filters.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/Filters.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/Filters.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

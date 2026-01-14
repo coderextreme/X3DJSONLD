@@ -151,6 +151,7 @@ NavigationInfo30 = x3d.NavigationInfo()
 NavigationInfo30.type = ["EXAMINE"]
 
 Scene23.children.append(NavigationInfo30)
+"""<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"""
 Shape31 = x3d.Shape()
 Appearance32 = x3d.Appearance()
 Material33 = x3d.Material()
@@ -158,26 +159,33 @@ Material33 = x3d.Material()
 Appearance32.material = Material33
 PixelTexture34 = x3d.PixelTexture()
 PixelTexture34.image = [2,2,4,-16776961,16711935,-1,-65281]
+TextureProperties35 = x3d.TextureProperties()
+TextureProperties35.magnificationFilter = "NEAREST_PIXEL"
+
+PixelTexture34.textureProperties = TextureProperties35
 
 Appearance32.texture = PixelTexture34
 
 Shape31.appearance = Appearance32
-IndexedFaceSet35 = x3d.IndexedFaceSet()
-IndexedFaceSet35.colorPerVertex = False
-IndexedFaceSet35.coordIndex = [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]
-IndexedFaceSet35.creaseAngle = 0.5
-IndexedFaceSet35.texCoordIndex = [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]
-Color36 = x3d.Color()
+IndexedFaceSet36 = x3d.IndexedFaceSet()
+IndexedFaceSet36.colorPerVertex = False
+IndexedFaceSet36.coordIndex = [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]
+IndexedFaceSet36.creaseAngle = 0.5
+IndexedFaceSet36.texCoordIndex = [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]
+Color37 = x3d.Color()
+Color37.color = [(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0)]
 
-IndexedFaceSet35.color = Color36
-Coordinate37 = x3d.Coordinate()
+IndexedFaceSet36.color = Color37
+Coordinate38 = x3d.Coordinate()
+Coordinate38.point = [(-2, 1, 1),(-2, -1, 1),(2, 1, 1),(2, -1, 1),(2, 1, -1),(2, -1, -1),(-2, 1, -1),(-2, -1, -1)]
 
-IndexedFaceSet35.coord = Coordinate37
-TextureCoordinate38 = x3d.TextureCoordinate()
+IndexedFaceSet36.coord = Coordinate38
+TextureCoordinate39 = x3d.TextureCoordinate()
+TextureCoordinate39.point = [(0, 1),(0, 0),(1, 1),(1, 0)]
 
-IndexedFaceSet35.texCoord = TextureCoordinate38
+IndexedFaceSet36.texCoord = TextureCoordinate39
 
-Shape31.geometry = IndexedFaceSet35
+Shape31.geometry = IndexedFaceSet36
 
 Scene23.children.append(Shape31)
 
@@ -185,6 +193,9 @@ X3D0.Scene = Scene23
 f = open("../data/indexedfaceset_pixeltexture_whole.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/indexedfaceset_pixeltexture_whole.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/indexedfaceset_pixeltexture_whole.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/indexedfaceset_pixeltexture_whole.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

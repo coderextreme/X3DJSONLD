@@ -42,7 +42,8 @@ newModel=X3D(profile='Immersive',version='4.0',
           material=Material(diffuseColor=(1,0,0))),
         geometry=Box(),)]),
     Transform(rotation=(7,8,9,3.14),scale=(4,5,6),translation=(1,2,3))])
-) # X3D model complete
+)
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

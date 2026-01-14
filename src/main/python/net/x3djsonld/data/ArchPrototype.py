@@ -44,19 +44,19 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     ProtoDeclare(appinfo='Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.',name='ArchPrototype',
       ProtoInterface=ProtoInterface(
-        #  COLOR OF ARCH 
-        field=[
+        children=[
+        Comment(' COLOR OF ARCH '),
         field(accessType='inputOutput',appinfo='color of arch',name='diffuseColor',type='SFColor',value=(0.2,0.8,0.8)),
         field(accessType='inputOutput',appinfo='color of arch',name='emissiveColor',type='SFColor',value=(0.2,0.8,0.8)),
-        #  INPUT PARAMETERS 
-        #  General parameters: measures in meters 
+        Comment(' INPUT PARAMETERS '),
+        Comment(' General parameters: measures in meters '),
         field(accessType='initializeOnly',appinfo='clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference',name='clearSpanWidth',type='SFFloat',value=4),
         field(accessType='initializeOnly',appinfo='riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference',name='riseHeight',type='SFFloat',value=2),
         field(accessType='initializeOnly',appinfo='depth',name='depth',type='SFFloat',value=3),
         field(accessType='initializeOnly',appinfo='topAbutmentHeight:topAbutmentHeight=0 means no topAbutment',name='topAbutmentHeight',type='SFFloat',value=0.5),
         field(accessType='initializeOnly',appinfo='pierWidth:pierWidtht=0 means no pierWidth',name='pierWidth',type='SFFloat',value=0.5),
         field(accessType='initializeOnly',appinfo='pierHeight: pierHeight=0 means no pierHeight',name='pierHeight',type='SFFloat',value=1),
-        #  Parameters to create to create shapes related to arch: put true to apply 
+        Comment(' Parameters to create to create shapes related to arch: put true to apply '),
         field(accessType='initializeOnly',appinfo='archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width',name='archHalf',type='SFBool',value=False),
         field(accessType='initializeOnly',appinfo='archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information.',name='archHalfExtensionWidth',type='SFFloat',value=0),
         field(accessType='initializeOnly',appinfo='onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true.',name='onlyIntrados',type='SFBool',value=False),
@@ -64,13 +64,13 @@ newModel=X3D(profile='Immersive',version='4.0',
         field(accessType='initializeOnly',appinfo='archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width.',name='archHalfFilled',type='SFBool',value=False),
         field(accessType='initializeOnly',appinfo='lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true.',name='lintel',type='SFBool',value=False)]),
       ProtoBody=ProtoBody(
-        #  First node determines node type of this prototype 
-        #  IndexedFaceset creates arch 
         children=[
+        Comment(' First node determines node type of this prototype '),
+        Comment(' IndexedFaceset creates arch '),
         Transform(DEF='ArchTransform',
           children=[
           Shape(DEF='Arch',
-            #  note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly 
+            # note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
             geometry=IndexedFaceSet(DEF='ArchIndex',convex=False,solid=False,
               coord=Coordinate(DEF='ArchChord')),
             appearance=Appearance(
@@ -79,14 +79,13 @@ newModel=X3D(profile='Immersive',version='4.0',
                   connect=[
                   connect(nodeField='emissiveColor',protoField='emissiveColor'),
                   connect(nodeField='diffuseColor',protoField='diffuseColor')]))))]),
-        #  Subsequent nodes do not render, but still must be a valid X3D subgraph 
-        #  This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs 
+        Comment(' Subsequent nodes do not render, but still must be a valid X3D subgraph '),
+        Comment(' This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs '),
         Script(DEF='ArchPrototypeScript',url=["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"],
-          #  INPUT PARAMETERS 
-          #  General parameters 
-          #  Parameters to create to create shapes related to arch: put true to apply 
-          #  OUTPUT PARAMETERS 
-          field=[
+          # INPUT PARAMETERS
+          # General parameters
+          # Parameters to create to create shapes related to arch: put true to apply
+          # OUTPUT PARAMETERS
           field(accessType='initializeOnly',appinfo='user or default input for clearSpanWidth parameter',name='clearSpanWidth',type='SFFloat'),
           field(accessType='initializeOnly',appinfo='user or default input for riseHeight parameter',name='riseHeight',type='SFFloat'),
           field(accessType='initializeOnly',appinfo='user or default input for depth parameter',name='depth',type='SFFloat'),
@@ -134,9 +133,10 @@ ecmascript:
       fieldValue(name='topAbutmentHeight',value=0.6),
       fieldValue(name='pierWidth',value=1),
       fieldValue(name='pierHeight',value=2)]),
-    #  Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) 
+    Comment(' Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) '),
     Inline(DEF='CoordinateAxes',url=["../data/CoordinateAxes.x3d"])])
-) # X3D model complete
+)
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

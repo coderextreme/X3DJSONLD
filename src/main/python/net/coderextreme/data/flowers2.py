@@ -110,6 +110,7 @@ Group23.children.append(TimeSensor24)
 OrientationInterpolator25 = x3d.OrientationInterpolator()
 OrientationInterpolator25.DEF = "OrbitPath"
 OrientationInterpolator25.key = [0,0.5,1]
+OrientationInterpolator25.keyValue = [(1, 0, 0, 0),(1, 0, 0, 3.14),(1, 0, 0, 6.28)]
 
 Group23.children.append(OrientationInterpolator25)
 Transform26 = x3d.Transform()
@@ -155,6 +156,7 @@ IndexedFaceSet36.coordIndex = [0,1,2,-1]
 IndexedFaceSet36.DEF = "Orbit"
 Coordinate37 = x3d.Coordinate()
 Coordinate37.DEF = "OrbitCoordinates"
+Coordinate37.point = [(0, 0, 1),(0, 1, 0),(1, 0, 0)]
 
 IndexedFaceSet36.coord = Coordinate37
 
@@ -382,6 +384,9 @@ X3D0.Scene = Scene11
 f = open("../data/flowers2.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/flowers2.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/flowers2.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/flowers2.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()

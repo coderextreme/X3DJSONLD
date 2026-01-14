@@ -83,16 +83,16 @@ ProtoDeclare17.name = "FlowerProto"
 ProtoInterface18 = x3d.ProtoInterface()
 field19 = x3d.field()
 field19.name = "vertex"
-field19.accessType = "inputOutput"
+field19.accessType = "inputOnly"
 field19.type = "MFString"
-field19.value = ["https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]
+field19.value = ["../shaders/gl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"]
 
 ProtoInterface18.field.append(field19)
 field20 = x3d.field()
 field20.name = "fragment"
-field20.accessType = "inputOutput"
+field20.accessType = "inputOnly"
 field20.type = "MFString"
-field20.value = ["https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"]
+field20.value = ["../shaders/pc_flowers.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"]
 
 ProtoInterface18.field.append(field20)
 
@@ -138,183 +138,187 @@ Appearance24.texture = ComposedCubeMapTexture26
 ComposedShader33 = x3d.ComposedShader()
 ComposedShader33.DEF = "shader"
 ComposedShader33.language = "GLSL"
+"""<field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>"""
 field34 = x3d.field()
 field34.name = "cube"
-field34.type = "SFInt32"
-field34.accessType = "inputOutput"
-field34.value = 0
+field34.type = "SFNode"
+field34.accessType = "inputOnly"
+ComposedCubeMapTexture35 = x3d.ComposedCubeMapTexture()
+ComposedCubeMapTexture35.USE = "texture"
+
+field34.children.append(ComposedCubeMapTexture35)
 
 ComposedShader33.field.append(field34)
-field35 = x3d.field()
-field35.name = "chromaticDispertion"
-field35.accessType = "initializeOnly"
-field35.type = "SFVec3f"
-field35.value = [0.98,1,1.033]
-
-ComposedShader33.field.append(field35)
 field36 = x3d.field()
-field36.name = "bias"
-field36.type = "SFFloat"
-field36.accessType = "inputOutput"
-field36.value = 0.5
+field36.name = "chromaticDispertion"
+field36.accessType = "initializeOnly"
+field36.type = "SFVec3f"
+field36.value = [0.98,1,1.033]
 
 ComposedShader33.field.append(field36)
 field37 = x3d.field()
-field37.name = "scale"
+field37.name = "bias"
 field37.type = "SFFloat"
-field37.accessType = "inputOutput"
+field37.accessType = "inputOnly"
 field37.value = 0.5
 
 ComposedShader33.field.append(field37)
 field38 = x3d.field()
-field38.name = "power"
+field38.name = "scale"
 field38.type = "SFFloat"
-field38.accessType = "inputOutput"
-field38.value = 2
+field38.accessType = "inputOnly"
+field38.value = 0.5
 
 ComposedShader33.field.append(field38)
 field39 = x3d.field()
-field39.name = "a"
+field39.name = "power"
 field39.type = "SFFloat"
-field39.accessType = "inputOutput"
-field39.value = 10
+field39.accessType = "inputOnly"
+field39.value = 2
 
 ComposedShader33.field.append(field39)
 field40 = x3d.field()
-field40.name = "b"
+field40.name = "a"
 field40.type = "SFFloat"
-field40.accessType = "inputOutput"
-field40.value = 1
+field40.accessType = "inputOnly"
+field40.value = 10
 
 ComposedShader33.field.append(field40)
 field41 = x3d.field()
-field41.name = "c"
+field41.name = "b"
 field41.type = "SFFloat"
-field41.accessType = "inputOutput"
-field41.value = 20
+field41.accessType = "inputOnly"
+field41.value = 1
 
 ComposedShader33.field.append(field41)
 field42 = x3d.field()
-field42.name = "d"
+field42.name = "c"
 field42.type = "SFFloat"
-field42.accessType = "inputOutput"
+field42.accessType = "inputOnly"
 field42.value = 20
 
 ComposedShader33.field.append(field42)
 field43 = x3d.field()
-field43.name = "tdelta"
+field43.name = "d"
 field43.type = "SFFloat"
-field43.accessType = "inputOutput"
-field43.value = 0
+field43.accessType = "inputOnly"
+field43.value = 20
 
 ComposedShader33.field.append(field43)
 field44 = x3d.field()
-field44.name = "pdelta"
+field44.name = "tdelta"
 field44.type = "SFFloat"
-field44.accessType = "inputOutput"
+field44.accessType = "inputOnly"
 field44.value = 0
 
 ComposedShader33.field.append(field44)
-"""<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"""
-ShaderPart45 = x3d.ShaderPart()
-ShaderPart45.type = "VERTEX"
-IS46 = x3d.IS()
-connect47 = x3d.connect()
-connect47.nodeField = "url"
-connect47.protoField = "vertex"
+field45 = x3d.field()
+field45.name = "pdelta"
+field45.type = "SFFloat"
+field45.accessType = "inputOnly"
+field45.value = 0
 
-IS46.connect.append(connect47)
+ComposedShader33.field.append(field45)
+ShaderPart46 = x3d.ShaderPart()
+ShaderPart46.type = "VERTEX"
+IS47 = x3d.IS()
+connect48 = x3d.connect()
+connect48.nodeField = "url"
+connect48.protoField = "vertex"
 
-ShaderPart45.IS = IS46
+IS47.connect.append(connect48)
 
-ComposedShader33.parts.append(ShaderPart45)
-ShaderPart48 = x3d.ShaderPart()
-ShaderPart48.type = "FRAGMENT"
-IS49 = x3d.IS()
-connect50 = x3d.connect()
-connect50.nodeField = "url"
-connect50.protoField = "fragment"
+ShaderPart46.IS = IS47
 
-IS49.connect.append(connect50)
+ComposedShader33.parts.append(ShaderPart46)
+ShaderPart49 = x3d.ShaderPart()
+ShaderPart49.type = "FRAGMENT"
+IS50 = x3d.IS()
+connect51 = x3d.connect()
+connect51.nodeField = "url"
+connect51.protoField = "fragment"
 
-ShaderPart48.IS = IS49
+IS50.connect.append(connect51)
 
-ComposedShader33.parts.append(ShaderPart48)
+ShaderPart49.IS = IS50
+
+ComposedShader33.parts.append(ShaderPart49)
 
 Appearance24.shaders.append(ComposedShader33)
 
 Shape23.appearance = Appearance24
-Sphere51 = x3d.Sphere()
+Sphere52 = x3d.Sphere()
 
-Shape23.geometry = Sphere51
+Shape23.geometry = Sphere52
 
 Transform22.children.append(Shape23)
-Script52 = x3d.Script()
-Script52.DEF = "Animate"
-field53 = x3d.field()
-field53.name = "translation"
-field53.accessType = "inputOutput"
-field53.type = "SFVec3f"
-field53.value = [0,0,0]
-
-Script52.field.append(field53)
+Script53 = x3d.Script()
+Script53.DEF = "Animate"
+Script53.directOutput = True
 field54 = x3d.field()
-field54.name = "velocity"
+field54.name = "translation"
 field54.accessType = "inputOutput"
 field54.type = "SFVec3f"
 field54.value = [0,0,0]
 
-Script52.field.append(field54)
+Script53.field.append(field54)
 field55 = x3d.field()
-field55.name = "set_fraction"
-field55.accessType = "inputOnly"
-field55.type = "SFFloat"
+field55.name = "velocity"
+field55.accessType = "outputOnly"
+field55.type = "SFVec3f"
+field55.value = [0,0,0]
 
-Script52.field.append(field55)
+Script53.field.append(field55)
 field56 = x3d.field()
-field56.name = "a"
+field56.name = "set_fraction"
+field56.accessType = "inputOnly"
 field56.type = "SFFloat"
-field56.accessType = "inputOutput"
-field56.value = 0.5
 
-Script52.field.append(field56)
+Script53.field.append(field56)
 field57 = x3d.field()
-field57.name = "b"
+field57.name = "a"
 field57.type = "SFFloat"
-field57.accessType = "inputOutput"
+field57.accessType = "outputOnly"
 field57.value = 0.5
 
-Script52.field.append(field57)
+Script53.field.append(field57)
 field58 = x3d.field()
-field58.name = "c"
+field58.name = "b"
 field58.type = "SFFloat"
-field58.accessType = "inputOutput"
-field58.value = 3
+field58.accessType = "outputOnly"
+field58.value = 0.5
 
-Script52.field.append(field58)
+Script53.field.append(field58)
 field59 = x3d.field()
-field59.name = "d"
+field59.name = "c"
 field59.type = "SFFloat"
-field59.accessType = "inputOutput"
+field59.accessType = "outputOnly"
 field59.value = 3
 
-Script52.field.append(field59)
+Script53.field.append(field59)
 field60 = x3d.field()
-field60.name = "tdelta"
+field60.name = "d"
 field60.type = "SFFloat"
-field60.accessType = "inputOutput"
-field60.value = 0.5
+field60.accessType = "outputOnly"
+field60.value = 3
 
-Script52.field.append(field60)
+Script53.field.append(field60)
 field61 = x3d.field()
-field61.name = "pdelta"
+field61.name = "tdelta"
 field61.type = "SFFloat"
-field61.accessType = "inputOutput"
+field61.accessType = "outputOnly"
 field61.value = 0.5
 
-Script52.field.append(field61)
+Script53.field.append(field61)
+field62 = x3d.field()
+field62.name = "pdelta"
+field62.type = "SFFloat"
+field62.accessType = "outputOnly"
+field62.value = 0.5
 
-Script52.sourceCode = '''ecmascript:\n"+
+Script53.field.append(field62)
+
+Script53.sourceCode = '''ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -381,69 +385,69 @@ Script52.sourceCode = '''ecmascript:\n"+
 "				}\n"+
 "			}'''
 
-Transform22.children.append(Script52)
-TimeSensor62 = x3d.TimeSensor()
-TimeSensor62.DEF = "TourTime"
-TimeSensor62.cycleInterval = 5
-TimeSensor62.loop = True
+Transform22.children.append(Script53)
+TimeSensor63 = x3d.TimeSensor()
+TimeSensor63.DEF = "TourTime"
+TimeSensor63.cycleInterval = 5
+TimeSensor63.loop = True
 
-Transform22.children.append(TimeSensor62)
-ROUTE63 = x3d.ROUTE()
-ROUTE63.fromNode = "TourTime"
-ROUTE63.fromField = "fraction_changed"
-ROUTE63.toNode = "Animate"
-ROUTE63.toField = "set_fraction"
-
-Transform22.children.append(ROUTE63)
+Transform22.children.append(TimeSensor63)
 ROUTE64 = x3d.ROUTE()
-ROUTE64.fromNode = "Animate"
-ROUTE64.fromField = "translation_changed"
-ROUTE64.toNode = "transform"
-ROUTE64.toField = "set_translation"
+ROUTE64.fromNode = "TourTime"
+ROUTE64.fromField = "fraction_changed"
+ROUTE64.toNode = "Animate"
+ROUTE64.toField = "set_fraction"
 
 Transform22.children.append(ROUTE64)
 ROUTE65 = x3d.ROUTE()
 ROUTE65.fromNode = "Animate"
-ROUTE65.fromField = "a"
-ROUTE65.toNode = "shader"
-ROUTE65.toField = "a"
+ROUTE65.fromField = "translation_changed"
+ROUTE65.toNode = "transform"
+ROUTE65.toField = "set_translation"
 
 Transform22.children.append(ROUTE65)
 ROUTE66 = x3d.ROUTE()
 ROUTE66.fromNode = "Animate"
-ROUTE66.fromField = "b"
+ROUTE66.fromField = "a"
 ROUTE66.toNode = "shader"
-ROUTE66.toField = "b"
+ROUTE66.toField = "a"
 
 Transform22.children.append(ROUTE66)
 ROUTE67 = x3d.ROUTE()
 ROUTE67.fromNode = "Animate"
-ROUTE67.fromField = "c"
+ROUTE67.fromField = "b"
 ROUTE67.toNode = "shader"
-ROUTE67.toField = "c"
+ROUTE67.toField = "b"
 
 Transform22.children.append(ROUTE67)
 ROUTE68 = x3d.ROUTE()
 ROUTE68.fromNode = "Animate"
-ROUTE68.fromField = "d"
+ROUTE68.fromField = "c"
 ROUTE68.toNode = "shader"
-ROUTE68.toField = "d"
+ROUTE68.toField = "c"
 
 Transform22.children.append(ROUTE68)
 ROUTE69 = x3d.ROUTE()
 ROUTE69.fromNode = "Animate"
-ROUTE69.fromField = "tdelta"
+ROUTE69.fromField = "d"
 ROUTE69.toNode = "shader"
-ROUTE69.toField = "tdelta"
+ROUTE69.toField = "d"
 
 Transform22.children.append(ROUTE69)
 ROUTE70 = x3d.ROUTE()
 ROUTE70.fromNode = "Animate"
-ROUTE70.fromField = "pdelta"
+ROUTE70.fromField = "tdelta"
 ROUTE70.toNode = "shader"
-ROUTE70.toField = "pdelta"
+ROUTE70.toField = "tdelta"
 
 Transform22.children.append(ROUTE70)
+ROUTE71 = x3d.ROUTE()
+ROUTE71.fromNode = "Animate"
+ROUTE71.fromField = "pdelta"
+ROUTE71.toNode = "shader"
+ROUTE71.toField = "pdelta"
+
+Transform22.children.append(ROUTE71)
 
 ProtoBody21.children.append(Transform22)
 
@@ -455,6 +459,9 @@ X3D0.Scene = Scene16
 f = open("../data/flowerproto.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()
-f = open("../data/flowerproto.new.python.json", mode="w", encoding="utf-8")
+f = open("../data/flowerproto.new.python.x3dv", mode="w", encoding="utf-8")
+f.write(X3D0.VRML())
+f.close()
+f = open("../data/flowerproto.new.python.x3dj", mode="w", encoding="utf-8")
 f.write(X3D0.JSON())
 f.close()
