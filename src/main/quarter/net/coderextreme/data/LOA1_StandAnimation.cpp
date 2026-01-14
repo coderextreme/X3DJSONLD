@@ -88,22 +88,22 @@ Sohead1->addMeta(*Someta9);
 
 Someta* Someta10 = new Someta();
 Someta10->setName(QString("reference"));
-Someta10->setContent(QString("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"));
+Someta10->setContent(QString("https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"));
 Sohead1->addMeta(*Someta10);
 
 Someta* Someta11 = new Someta();
 Someta11->setName(QString("reference"));
-Someta11->setContent(QString("http://www.HAnim.org"));
+Someta11->setContent(QString("https://www.HAnim.org"));
 Sohead1->addMeta(*Someta11);
 
 Someta* Someta12 = new Someta();
 Someta12->setName(QString("reference"));
-Someta12->setContent(QString("http://HAnim.org/Models"));
+Someta12->setContent(QString("https://HAnim.org/Models"));
 Sohead1->addMeta(*Someta12);
 
 Someta* Someta13 = new Someta();
 Someta13->setName(QString("reference"));
-Someta13->setContent(QString("http://HAnim.org/Nodes"));
+Someta13->setContent(QString("https://HAnim.org/Nodes"));
 Sohead1->addMeta(*Someta13);
 
 Someta* Someta14 = new Someta();

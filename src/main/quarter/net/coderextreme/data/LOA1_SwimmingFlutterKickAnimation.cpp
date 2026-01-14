@@ -78,17 +78,17 @@ Sohead1->addMeta(*Someta7);
 
 Someta* Someta8 = new Someta();
 Someta8->setName(QString("reference"));
-Someta8->setContent(QString("http://www.HAnim.org"));
+Someta8->setContent(QString("https://www.HAnim.org"));
 Sohead1->addMeta(*Someta8);
 
 Someta* Someta9 = new Someta();
 Someta9->setName(QString("reference"));
-Someta9->setContent(QString("http://HAnim.org/Models"));
+Someta9->setContent(QString("https://HAnim.org/Models"));
 Sohead1->addMeta(*Someta9);
 
 Someta* Someta10 = new Someta();
 Someta10->setName(QString("reference"));
-Someta10->setContent(QString("http://HAnim.org/Nodes"));
+Someta10->setContent(QString("https://HAnim.org/Nodes"));
 Sohead1->addMeta(*Someta10);
 
 Someta* Someta11 = new Someta();

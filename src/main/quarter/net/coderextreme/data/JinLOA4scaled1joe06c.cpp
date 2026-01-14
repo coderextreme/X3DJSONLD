@@ -46,6 +46,8 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
+//Scaled 1:1, Added Animations
+//Added Sites
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("HAnim"));
 Socomponent2->setLevel(1);
@@ -138,7 +140,7 @@ Sohead1->addMeta(*Someta19);
 
 Someta* Someta20 = new Someta();
 Someta20->setName(QString("generator"));
-Someta20->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Someta20->setContent(QString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 Sohead1->addMeta(*Someta20);
 
 Someta* Someta21 = new Someta();
@@ -146,8 +148,6 @@ Someta21->setName(QString("license"));
 Someta21->setContent(QString("../license.html"));
 Sohead1->addMeta(*Someta21);
 
-//Scaled 1:1, Added Animations
-//Added Sites
 SoSceneManager0->setHead(*Sohead1);
 
 SoNode* SoNode22 = new SoNode();
@@ -256,6 +256,7 @@ SoShape38->setGeometry(*SoIndexedFaceSet42);
 SoHAnimSegment37->addChild(*SoShape38);
 
 SoHAnimSite* SoHAnimSite45 = new SoHAnimSite();
+SoHAnimSite45->X3DNode::setName(QString("sacrum"));
 SoHAnimSite45->setDEF(QString("sacrum_Sites"));
 //None
 SoHAnimSegment37->addChild(*SoHAnimSite45);
@@ -301,6 +302,7 @@ SoShape48->setGeometry(*SoIndexedFaceSet52);
 SoHAnimSegment47->addChild(*SoShape48);
 
 SoHAnimSite* SoHAnimSite55 = new SoHAnimSite();
+SoHAnimSite55->X3DNode::setName(QString("pelvis"));
 SoHAnimSite55->setDEF(QString("pelvis_Sites"));
 //(r_iliocristale -0.1525 1.0628 0.0035) (r_trochanterion -0.1689 0.8419 0.0352) (l_iliocristale 0.1612 1.0537 0.0008) (l_trochanterion 0.1677 0.8336 0.0303) (r_asis -0.0887 1.0021 0.1112) (l_asis 0.0774 1.0190 -0.1151) (r_psis -0.0716 1.0190 -0.1138) (l_psis 0.0774 1.0190 -0.1151) (crotch 0.0034 0.8266 0.0257)
 SoHAnimSegment47->addChild(*SoHAnimSite55);
@@ -346,6 +348,7 @@ SoShape58->setGeometry(*SoIndexedFaceSet62);
 SoHAnimSegment57->addChild(*SoShape58);
 
 SoHAnimSite* SoHAnimSite65 = new SoHAnimSite();
+SoHAnimSite65->X3DNode::setName(QString("l_thigh"));
 SoHAnimSite65->setDEF(QString("l_thigh_Sites"));
 //(l_knee_crease 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella x y z)
 SoHAnimSegment57->addChild(*SoHAnimSite65);
@@ -391,6 +394,7 @@ SoShape68->setGeometry(*SoIndexedFaceSet72);
 SoHAnimSegment67->addChild(*SoShape68);
 
 SoHAnimSite* SoHAnimSite75 = new SoHAnimSite();
+SoHAnimSite75->X3DNode::setName(QString("l_calf"));
 SoHAnimSite75->setDEF(QString("l_calf_Sites"));
 //(l_tibiale x y z) (l_medial_malleolus 0.0890 0.0716 -0.0881) (l_lateral_malleolus 0.1308 0.0597 -0.1032)
 SoHAnimSegment67->addChild(*SoHAnimSite75);
@@ -436,6 +440,7 @@ SoShape78->setGeometry(*SoIndexedFaceSet82);
 SoHAnimSegment77->addChild(*SoShape78);
 
 SoHAnimSite* SoHAnimSite85 = new SoHAnimSite();
+SoHAnimSite85->X3DNode::setName(QString("l_talus"));
 SoHAnimSite85->setDEF(QString("l_talus_Sites"));
 //(l_sphyrion 0.0890 0.0575 -0.0943) (l_calcaneous_posterior 0.0974 0.0259 -0.1171)
 SoHAnimSegment77->addChild(*SoHAnimSite85);
@@ -481,6 +486,7 @@ SoShape88->setGeometry(*SoIndexedFaceSet92);
 SoHAnimSegment87->addChild(*SoShape88);
 
 SoHAnimSite* SoHAnimSite95 = new SoHAnimSite();
+SoHAnimSite95->X3DNode::setName(QString("l_navicular"));
 SoHAnimSite95->setDEF(QString("l_navicular_Sites"));
 //None
 SoHAnimSegment87->addChild(*SoHAnimSite95);
@@ -526,6 +532,7 @@ SoShape98->setGeometry(*SoIndexedFaceSet102);
 SoHAnimSegment97->addChild(*SoShape98);
 
 SoHAnimSite* SoHAnimSite105 = new SoHAnimSite();
+SoHAnimSite105->X3DNode::setName(QString("l_cuneiform_1"));
 SoHAnimSite105->setDEF(QString("l_cuneiform_1_Sites"));
 //None
 SoHAnimSegment97->addChild(*SoHAnimSite105);
@@ -571,6 +578,7 @@ SoShape108->setGeometry(*SoIndexedFaceSet112);
 SoHAnimSegment107->addChild(*SoShape108);
 
 SoHAnimSite* SoHAnimSite115 = new SoHAnimSite();
+SoHAnimSite115->X3DNode::setName(QString("l_metatarsal_1"));
 SoHAnimSite115->setDEF(QString("l_metatarsal_1_Sites"));
 //None
 SoHAnimSegment107->addChild(*SoHAnimSite115);
@@ -616,6 +624,7 @@ SoShape118->setGeometry(*SoIndexedFaceSet122);
 SoHAnimSegment117->addChild(*SoShape118);
 
 SoHAnimSite* SoHAnimSite125 = new SoHAnimSite();
+SoHAnimSite125->X3DNode::setName(QString("l_tarsal_proximal_phalanx_1"));
 SoHAnimSite125->setDEF(QString("l_tarsal_proximal_phalanx_1_Sites"));
 //(l_metatarsal_phalanx_1 0.0816 0.0232 0.0106)
 SoHAnimSegment117->addChild(*SoHAnimSite125);
@@ -661,6 +670,7 @@ SoShape128->setGeometry(*SoIndexedFaceSet132);
 SoHAnimSegment127->addChild(*SoShape128);
 
 SoHAnimSite* SoHAnimSite135 = new SoHAnimSite();
+SoHAnimSite135->X3DNode::setName(QString("l_tarsal_distal_phalanx_1"));
 SoHAnimSite135->setDEF(QString("l_tarsal_distal_phalanx_1_Sites"));
 //(l_tarsal_distal_phalanx_1_tip 0.090 0.012 0.188)
 SoHAnimSegment127->addChild(*SoHAnimSite135);
@@ -714,6 +724,7 @@ SoShape138->setGeometry(*SoIndexedFaceSet142);
 SoHAnimSegment137->addChild(*SoShape138);
 
 SoHAnimSite* SoHAnimSite145 = new SoHAnimSite();
+SoHAnimSite145->X3DNode::setName(QString("l_cuneiform_2"));
 SoHAnimSite145->setDEF(QString("l_cuneiform_2_Sites"));
 //None
 SoHAnimSegment137->addChild(*SoHAnimSite145);
@@ -759,6 +770,7 @@ SoShape148->setGeometry(*SoIndexedFaceSet152);
 SoHAnimSegment147->addChild(*SoShape148);
 
 SoHAnimSite* SoHAnimSite155 = new SoHAnimSite();
+SoHAnimSite155->X3DNode::setName(QString("l_metatarsal_2"));
 SoHAnimSite155->setDEF(QString("l_metatarsal_2_Sites"));
 //None
 SoHAnimSegment147->addChild(*SoHAnimSite155);
@@ -804,6 +816,7 @@ SoShape158->setGeometry(*SoIndexedFaceSet162);
 SoHAnimSegment157->addChild(*SoShape158);
 
 SoHAnimSite* SoHAnimSite165 = new SoHAnimSite();
+SoHAnimSite165->X3DNode::setName(QString("l_tarsal_proximal_phalanx_2"));
 SoHAnimSite165->setDEF(QString("l_tarsal_proximal_phalanx_2_Sites"));
 //None
 SoHAnimSegment157->addChild(*SoHAnimSite165);
@@ -849,6 +862,7 @@ SoShape168->setGeometry(*SoIndexedFaceSet172);
 SoHAnimSegment167->addChild(*SoShape168);
 
 SoHAnimSite* SoHAnimSite175 = new SoHAnimSite();
+SoHAnimSite175->X3DNode::setName(QString("l_tarsal_middle_phalanx_2"));
 SoHAnimSite175->setDEF(QString("l_tarsal_middle_phalanx_2_Sites"));
 //None
 SoHAnimSegment167->addChild(*SoHAnimSite175);
@@ -894,7 +908,8 @@ SoShape178->setGeometry(*SoIndexedFaceSet182);
 SoHAnimSegment177->addChild(*SoShape178);
 
 SoHAnimSite* SoHAnimSite185 = new SoHAnimSite();
-SoHAnimSite185->setDEF(QString("l_tarsal_distal_phalanx_2"));
+SoHAnimSite185->X3DNode::setName(QString("l_tarsal_distal_phalanx_2"));
+SoHAnimSite185->setDEF(QString("l_tarsal_distal_phalanx_2_Sites"));
 //(l_tarsal_distal_phalanx_2_tip 0.110 0.011 0.19)
 SoHAnimSegment177->addChild(*SoHAnimSite185);
 
@@ -949,6 +964,7 @@ SoShape188->setGeometry(*SoIndexedFaceSet192);
 SoHAnimSegment187->addChild(*SoShape188);
 
 SoHAnimSite* SoHAnimSite195 = new SoHAnimSite();
+SoHAnimSite195->X3DNode::setName(QString("l_cuneiform_3"));
 SoHAnimSite195->setDEF(QString("l_cuneiform_3_Sites"));
 //None
 SoHAnimSegment187->addChild(*SoHAnimSite195);
@@ -994,6 +1010,7 @@ SoShape198->setGeometry(*SoIndexedFaceSet202);
 SoHAnimSegment197->addChild(*SoShape198);
 
 SoHAnimSite* SoHAnimSite205 = new SoHAnimSite();
+SoHAnimSite205->X3DNode::setName(QString("l_metatarsal_3"));
 SoHAnimSite205->setDEF(QString("l_metatarsal_3_Sites"));
 //None
 SoHAnimSegment197->addChild(*SoHAnimSite205);
@@ -1039,6 +1056,7 @@ SoShape208->setGeometry(*SoIndexedFaceSet212);
 SoHAnimSegment207->addChild(*SoShape208);
 
 SoHAnimSite* SoHAnimSite215 = new SoHAnimSite();
+SoHAnimSite215->X3DNode::setName(QString("l_tarsal_proximal_phalanx_3"));
 SoHAnimSite215->setDEF(QString("l_tarsal_proximal_phalanx_3_Sites"));
 //None
 SoHAnimSegment207->addChild(*SoHAnimSite215);
@@ -1084,6 +1102,7 @@ SoShape218->setGeometry(*SoIndexedFaceSet222);
 SoHAnimSegment217->addChild(*SoShape218);
 
 SoHAnimSite* SoHAnimSite225 = new SoHAnimSite();
+SoHAnimSite225->X3DNode::setName(QString("l_tarsal_middle_phalanx_3"));
 SoHAnimSite225->setDEF(QString("l_tarsal_middle_phalanx_3_Sites"));
 //None
 SoHAnimSegment217->addChild(*SoHAnimSite225);
@@ -1129,6 +1148,7 @@ SoShape228->setGeometry(*SoIndexedFaceSet232);
 SoHAnimSegment227->addChild(*SoShape228);
 
 SoHAnimSite* SoHAnimSite235 = new SoHAnimSite();
+SoHAnimSite235->X3DNode::setName(QString("l_tarsal_distal_phalanx_3"));
 SoHAnimSite235->setDEF(QString("l_tarsal_distal_phalanx_3_Sites"));
 //(l_tarsal_distal_phalanx_3_tip 0.128 0.011 0.185)
 SoHAnimSegment227->addChild(*SoHAnimSite235);
@@ -1186,6 +1206,7 @@ SoShape238->setGeometry(*SoIndexedFaceSet242);
 SoHAnimSegment237->addChild(*SoShape238);
 
 SoHAnimSite* SoHAnimSite245 = new SoHAnimSite();
+SoHAnimSite245->X3DNode::setName(QString("l_calcaneus"));
 SoHAnimSite245->setDEF(QString("l_calcaneus_Sites"));
 //None
 SoHAnimSegment237->addChild(*SoHAnimSite245);
@@ -1231,6 +1252,7 @@ SoShape248->setGeometry(*SoIndexedFaceSet252);
 SoHAnimSegment247->addChild(*SoShape248);
 
 SoHAnimSite* SoHAnimSite255 = new SoHAnimSite();
+SoHAnimSite255->X3DNode::setName(QString("l_cuboid"));
 SoHAnimSite255->setDEF(QString("l_cuboid_Sites"));
 //None
 SoHAnimSegment247->addChild(*SoHAnimSite255);
@@ -1276,6 +1298,7 @@ SoShape258->setGeometry(*SoIndexedFaceSet262);
 SoHAnimSegment257->addChild(*SoShape258);
 
 SoHAnimSite* SoHAnimSite265 = new SoHAnimSite();
+SoHAnimSite265->X3DNode::setName(QString("l_metatarsal_4"));
 SoHAnimSite265->setDEF(QString("l_metatarsal_4_Sites"));
 //None
 SoHAnimSegment257->addChild(*SoHAnimSite265);
@@ -1321,6 +1344,7 @@ SoShape268->setGeometry(*SoIndexedFaceSet272);
 SoHAnimSegment267->addChild(*SoShape268);
 
 SoHAnimSite* SoHAnimSite275 = new SoHAnimSite();
+SoHAnimSite275->X3DNode::setName(QString("l_tarsal_proximal_phalanx_4"));
 SoHAnimSite275->setDEF(QString("l_tarsal_proximal_phalanx_4_Sites"));
 //None
 SoHAnimSegment267->addChild(*SoHAnimSite275);
@@ -1366,6 +1390,7 @@ SoShape278->setGeometry(*SoIndexedFaceSet282);
 SoHAnimSegment277->addChild(*SoShape278);
 
 SoHAnimSite* SoHAnimSite285 = new SoHAnimSite();
+SoHAnimSite285->X3DNode::setName(QString("l_tarsal_middle_phalanx_4"));
 SoHAnimSite285->setDEF(QString("l_tarsal_middle_phalanx_4_Sites"));
 //None
 SoHAnimSegment277->addChild(*SoHAnimSite285);
@@ -1411,6 +1436,7 @@ SoShape288->setGeometry(*SoIndexedFaceSet292);
 SoHAnimSegment287->addChild(*SoShape288);
 
 SoHAnimSite* SoHAnimSite295 = new SoHAnimSite();
+SoHAnimSite295->X3DNode::setName(QString("l_tarsal_distal_phalanx_4"));
 SoHAnimSite295->setDEF(QString("l_tarsal_distal_phalanx_4_Sites"));
 //(l_tarsal_distal_phalanx_4_tip 0.142 0.011 0.178)
 SoHAnimSegment287->addChild(*SoHAnimSite295);
@@ -1464,6 +1490,7 @@ SoShape298->setGeometry(*SoIndexedFaceSet302);
 SoHAnimSegment297->addChild(*SoShape298);
 
 SoHAnimSite* SoHAnimSite305 = new SoHAnimSite();
+SoHAnimSite305->X3DNode::setName(QString("l_metatarsal_5"));
 SoHAnimSite305->setDEF(QString("l_metatarsal_5_Sites"));
 //None
 SoHAnimSegment297->addChild(*SoHAnimSite305);
@@ -1509,6 +1536,7 @@ SoShape308->setGeometry(*SoIndexedFaceSet312);
 SoHAnimSegment307->addChild(*SoShape308);
 
 SoHAnimSite* SoHAnimSite315 = new SoHAnimSite();
+SoHAnimSite315->X3DNode::setName(QString("l_tarsal_proximal_phalanx_5"));
 SoHAnimSite315->setDEF(QString("l_tarsal_proximal_phalanx_5_Sites"));
 //None
 SoHAnimSegment307->addChild(*SoHAnimSite315);
@@ -1554,6 +1582,7 @@ SoShape318->setGeometry(*SoIndexedFaceSet322);
 SoHAnimSegment317->addChild(*SoShape318);
 
 SoHAnimSite* SoHAnimSite325 = new SoHAnimSite();
+SoHAnimSite325->X3DNode::setName(QString("l_tarsal_middle_phalanx_5"));
 SoHAnimSite325->setDEF(QString("l_tarsal_middle_phalanx_5_Sites"));
 //(l_metatarsal_phalanx_5 0.1825 0.0070 0.0928)
 SoHAnimSegment317->addChild(*SoHAnimSite325);
@@ -1599,6 +1628,7 @@ SoShape328->setGeometry(*SoIndexedFaceSet332);
 SoHAnimSegment327->addChild(*SoShape328);
 
 SoHAnimSite* SoHAnimSite335 = new SoHAnimSite();
+SoHAnimSite335->X3DNode::setName(QString("l_tarsal_distal_phalanx_5"));
 SoHAnimSite335->setDEF(QString("l_tarsal_distal_phalanx_5_Sites"));
 //(l_tarsal_distal_phalanx_5_tip 0.154 0.010 0.168)
 SoHAnimSegment327->addChild(*SoHAnimSite335);
@@ -1662,6 +1692,7 @@ SoShape338->setGeometry(*SoIndexedFaceSet342);
 SoHAnimSegment337->addChild(*SoShape338);
 
 SoHAnimSite* SoHAnimSite345 = new SoHAnimSite();
+SoHAnimSite345->X3DNode::setName(QString("r_thigh"));
 SoHAnimSite345->setDEF(QString("r_thigh_Sites"));
 //(r_knee_crease -0.0825 0.4932 -0.0326) (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) (r_femoral_medial_epicn -0.0221 0.5014 0.0289) (r_suprapatella x y z)
 SoHAnimSegment337->addChild(*SoHAnimSite345);
@@ -1707,6 +1738,7 @@ SoShape348->setGeometry(*SoIndexedFaceSet352);
 SoHAnimSegment347->addChild(*SoShape348);
 
 SoHAnimSite* SoHAnimSite355 = new SoHAnimSite();
+SoHAnimSite355->X3DNode::setName(QString("r_calf"));
 SoHAnimSite355->setDEF(QString("r_calf_Sites"));
 //(r_tibiale x y z) (r_medial_malleolus -0.0591 0.0760 -0.0928) (r_lateral_malleolus -0.1006 0.0658 -0.1075)
 SoHAnimSegment347->addChild(*SoHAnimSite355);
@@ -1752,6 +1784,7 @@ SoShape358->setGeometry(*SoIndexedFaceSet362);
 SoHAnimSegment357->addChild(*SoShape358);
 
 SoHAnimSite* SoHAnimSite365 = new SoHAnimSite();
+SoHAnimSite365->X3DNode::setName(QString("r_talus"));
 SoHAnimSite365->setDEF(QString("r_talus_Sites"));
 //(r_sphyrion -0.0603 0.0610 -0.1002) (r_calcaneous_posterior -0.0692 0.0297 -0.1221)
 SoHAnimSegment357->addChild(*SoHAnimSite365);
@@ -1797,6 +1830,7 @@ SoShape368->setGeometry(*SoIndexedFaceSet372);
 SoHAnimSegment367->addChild(*SoShape368);
 
 SoHAnimSite* SoHAnimSite375 = new SoHAnimSite();
+SoHAnimSite375->X3DNode::setName(QString("r_navicular"));
 SoHAnimSite375->setDEF(QString("r_navicular_Sites"));
 //None
 SoHAnimSegment367->addChild(*SoHAnimSite375);
@@ -1842,6 +1876,7 @@ SoShape378->setGeometry(*SoIndexedFaceSet382);
 SoHAnimSegment377->addChild(*SoShape378);
 
 SoHAnimSite* SoHAnimSite385 = new SoHAnimSite();
+SoHAnimSite385->X3DNode::setName(QString("r_cuneiform_1"));
 SoHAnimSite385->setDEF(QString("r_cuneiform_1_Sites"));
 //None
 SoHAnimSegment377->addChild(*SoHAnimSite385);
@@ -1887,6 +1922,7 @@ SoShape388->setGeometry(*SoIndexedFaceSet392);
 SoHAnimSegment387->addChild(*SoShape388);
 
 SoHAnimSite* SoHAnimSite395 = new SoHAnimSite();
+SoHAnimSite395->X3DNode::setName(QString("r_metatarsal_1"));
 SoHAnimSite395->setDEF(QString("r_metatarsal_1_Sites"));
 //None
 SoHAnimSegment387->addChild(*SoHAnimSite395);
@@ -1932,6 +1968,7 @@ SoShape398->setGeometry(*SoIndexedFaceSet402);
 SoHAnimSegment397->addChild(*SoShape398);
 
 SoHAnimSite* SoHAnimSite405 = new SoHAnimSite();
+SoHAnimSite405->X3DNode::setName(QString("r_tarsal_proximal_phalanx_1"));
 SoHAnimSite405->setDEF(QString("r_tarsal_proximal_phalanx_1_Sites"));
 //None
 SoHAnimSegment397->addChild(*SoHAnimSite405);
@@ -1977,6 +2014,7 @@ SoShape408->setGeometry(*SoIndexedFaceSet412);
 SoHAnimSegment407->addChild(*SoShape408);
 
 SoHAnimSite* SoHAnimSite415 = new SoHAnimSite();
+SoHAnimSite415->X3DNode::setName(QString("r_tarsal_distal_phalanx_1"));
 SoHAnimSite415->setDEF(QString("r_tarsal_distal_phalanx_1_Sites"));
 //(r_metatarsal_phalanx_1 x y z) (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)
 SoHAnimSegment407->addChild(*SoHAnimSite415);
@@ -2030,6 +2068,7 @@ SoShape418->setGeometry(*SoIndexedFaceSet422);
 SoHAnimSegment417->addChild(*SoShape418);
 
 SoHAnimSite* SoHAnimSite425 = new SoHAnimSite();
+SoHAnimSite425->X3DNode::setName(QString("r_cuneiform_2"));
 SoHAnimSite425->setDEF(QString("r_cuneiform_2_Sites"));
 //None
 SoHAnimSegment417->addChild(*SoHAnimSite425);
@@ -2075,6 +2114,7 @@ SoShape428->setGeometry(*SoIndexedFaceSet432);
 SoHAnimSegment427->addChild(*SoShape428);
 
 SoHAnimSite* SoHAnimSite435 = new SoHAnimSite();
+SoHAnimSite435->X3DNode::setName(QString("r_metatarsal_2"));
 SoHAnimSite435->setDEF(QString("r_metatarsal_2_Sites"));
 //None
 SoHAnimSegment427->addChild(*SoHAnimSite435);
@@ -2120,6 +2160,7 @@ SoShape438->setGeometry(*SoIndexedFaceSet442);
 SoHAnimSegment437->addChild(*SoShape438);
 
 SoHAnimSite* SoHAnimSite445 = new SoHAnimSite();
+SoHAnimSite445->X3DNode::setName(QString("r_tarsal_proximal_phalanx_2"));
 SoHAnimSite445->setDEF(QString("r_tarsal_proximal_phalanx_2_Sites"));
 //None
 SoHAnimSegment437->addChild(*SoHAnimSite445);
@@ -2165,6 +2206,7 @@ SoShape448->setGeometry(*SoIndexedFaceSet452);
 SoHAnimSegment447->addChild(*SoShape448);
 
 SoHAnimSite* SoHAnimSite455 = new SoHAnimSite();
+SoHAnimSite455->X3DNode::setName(QString("r_tarsal_middle_phalanx_2"));
 SoHAnimSite455->setDEF(QString("r_tarsal_middle_phalanx_2_Sites"));
 //None
 SoHAnimSegment447->addChild(*SoHAnimSite455);
@@ -2210,6 +2252,7 @@ SoShape458->setGeometry(*SoIndexedFaceSet462);
 SoHAnimSegment457->addChild(*SoShape458);
 
 SoHAnimSite* SoHAnimSite465 = new SoHAnimSite();
+SoHAnimSite465->X3DNode::setName(QString("r_tarsal_distal_phalanx_2"));
 SoHAnimSite465->setDEF(QString("r_tarsal_distal_phalanx_2_Sites"));
 //(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19)
 SoHAnimSegment457->addChild(*SoHAnimSite465);
@@ -2265,6 +2308,7 @@ SoShape468->setGeometry(*SoIndexedFaceSet472);
 SoHAnimSegment467->addChild(*SoShape468);
 
 SoHAnimSite* SoHAnimSite475 = new SoHAnimSite();
+SoHAnimSite475->X3DNode::setName(QString("r_cuneiform_3"));
 SoHAnimSite475->setDEF(QString("r_cuneiform_3_Sites"));
 //None
 SoHAnimSegment467->addChild(*SoHAnimSite475);
@@ -2310,6 +2354,7 @@ SoShape478->setGeometry(*SoIndexedFaceSet482);
 SoHAnimSegment477->addChild(*SoShape478);
 
 SoHAnimSite* SoHAnimSite485 = new SoHAnimSite();
+SoHAnimSite485->X3DNode::setName(QString("r_metatarsal_3"));
 SoHAnimSite485->setDEF(QString("r_metatarsal_3_Sites"));
 //None
 SoHAnimSegment477->addChild(*SoHAnimSite485);
@@ -2355,6 +2400,7 @@ SoShape488->setGeometry(*SoIndexedFaceSet492);
 SoHAnimSegment487->addChild(*SoShape488);
 
 SoHAnimSite* SoHAnimSite495 = new SoHAnimSite();
+SoHAnimSite495->X3DNode::setName(QString("r_tarsal_proximal_phalanx_3"));
 SoHAnimSite495->setDEF(QString("r_tarsal_proximal_phalanx_3_Sites"));
 //None
 SoHAnimSegment487->addChild(*SoHAnimSite495);
@@ -2400,6 +2446,7 @@ SoShape498->setGeometry(*SoIndexedFaceSet502);
 SoHAnimSegment497->addChild(*SoShape498);
 
 SoHAnimSite* SoHAnimSite505 = new SoHAnimSite();
+SoHAnimSite505->X3DNode::setName(QString("r_tarsal_middle_phalanx_3"));
 SoHAnimSite505->setDEF(QString("r_tarsal_middle_phalanx_3_Sites"));
 //None
 SoHAnimSegment497->addChild(*SoHAnimSite505);
@@ -2445,6 +2492,7 @@ SoShape508->setGeometry(*SoIndexedFaceSet512);
 SoHAnimSegment507->addChild(*SoShape508);
 
 SoHAnimSite* SoHAnimSite515 = new SoHAnimSite();
+SoHAnimSite515->X3DNode::setName(QString("r_tarsal_distal_phalanx_3"));
 SoHAnimSite515->setDEF(QString("r_tarsal_distal_phalanx_3_Sites"));
 //(r_tarsal_distal_phalanx_3_tip -0.128 0.011 0.185)
 SoHAnimSegment507->addChild(*SoHAnimSite515);
@@ -2502,6 +2550,7 @@ SoShape518->setGeometry(*SoIndexedFaceSet522);
 SoHAnimSegment517->addChild(*SoShape518);
 
 SoHAnimSite* SoHAnimSite525 = new SoHAnimSite();
+SoHAnimSite525->X3DNode::setName(QString("r_calcaneus"));
 SoHAnimSite525->setDEF(QString("r_calcaneus_Sites"));
 //None
 SoHAnimSegment517->addChild(*SoHAnimSite525);
@@ -2547,6 +2596,7 @@ SoShape528->setGeometry(*SoIndexedFaceSet532);
 SoHAnimSegment527->addChild(*SoShape528);
 
 SoHAnimSite* SoHAnimSite535 = new SoHAnimSite();
+SoHAnimSite535->X3DNode::setName(QString("r_cuboid"));
 SoHAnimSite535->setDEF(QString("r_cuboid_Sites"));
 //None
 SoHAnimSegment527->addChild(*SoHAnimSite535);
@@ -2592,6 +2642,7 @@ SoShape538->setGeometry(*SoIndexedFaceSet542);
 SoHAnimSegment537->addChild(*SoShape538);
 
 SoHAnimSite* SoHAnimSite545 = new SoHAnimSite();
+SoHAnimSite545->X3DNode::setName(QString("r_metatarsal_4"));
 SoHAnimSite545->setDEF(QString("r_metatarsal_4_Sites"));
 //None
 SoHAnimSegment537->addChild(*SoHAnimSite545);
@@ -2637,6 +2688,7 @@ SoShape548->setGeometry(*SoIndexedFaceSet552);
 SoHAnimSegment547->addChild(*SoShape548);
 
 SoHAnimSite* SoHAnimSite555 = new SoHAnimSite();
+SoHAnimSite555->X3DNode::setName(QString("r_tarsal_proximal_phalanx_4"));
 SoHAnimSite555->setDEF(QString("r_tarsal_proximal_phalanx_4_Sites"));
 //None
 SoHAnimSegment547->addChild(*SoHAnimSite555);
@@ -2682,6 +2734,7 @@ SoShape558->setGeometry(*SoIndexedFaceSet562);
 SoHAnimSegment557->addChild(*SoShape558);
 
 SoHAnimSite* SoHAnimSite565 = new SoHAnimSite();
+SoHAnimSite565->X3DNode::setName(QString("r_tarsal_middle_phalanx_4"));
 SoHAnimSite565->setDEF(QString("r_tarsal_middle_phalanx_4_Sites"));
 //None
 SoHAnimSegment557->addChild(*SoHAnimSite565);
@@ -2727,6 +2780,7 @@ SoShape568->setGeometry(*SoIndexedFaceSet572);
 SoHAnimSegment567->addChild(*SoShape568);
 
 SoHAnimSite* SoHAnimSite575 = new SoHAnimSite();
+SoHAnimSite575->X3DNode::setName(QString("r_tarsal_distal_phalanx_4"));
 SoHAnimSite575->setDEF(QString("r_tarsal_distal_phalanx_4_Sites"));
 //(r_tarsal_distal_phalanx_4_tip -0.142 0.011 0.178)
 SoHAnimSegment567->addChild(*SoHAnimSite575);
@@ -2780,6 +2834,7 @@ SoShape578->setGeometry(*SoIndexedFaceSet582);
 SoHAnimSegment577->addChild(*SoShape578);
 
 SoHAnimSite* SoHAnimSite585 = new SoHAnimSite();
+SoHAnimSite585->X3DNode::setName(QString("r_metatarsal_"));
 SoHAnimSite585->setDEF(QString("r_metatarsal__Sites"));
 //None
 SoHAnimSegment577->addChild(*SoHAnimSite585);
@@ -2825,6 +2880,7 @@ SoShape588->setGeometry(*SoIndexedFaceSet592);
 SoHAnimSegment587->addChild(*SoShape588);
 
 SoHAnimSite* SoHAnimSite595 = new SoHAnimSite();
+SoHAnimSite595->X3DNode::setName(QString("r_tarsal_proximal_phalanx_5"));
 SoHAnimSite595->setDEF(QString("r_tarsal_proximal_phalanx_5_Sites"));
 //None
 SoHAnimSegment587->addChild(*SoHAnimSite595);
@@ -2870,6 +2926,7 @@ SoShape598->setGeometry(*SoIndexedFaceSet602);
 SoHAnimSegment597->addChild(*SoShape598);
 
 SoHAnimSite* SoHAnimSite605 = new SoHAnimSite();
+SoHAnimSite605->X3DNode::setName(QString("r_tarsal_middle_phalanx_5"));
 SoHAnimSite605->setDEF(QString("r_tarsal_middle_phalanx_5_Sites"));
 //(r_metatarsal_phalanx_5 x y z)
 SoHAnimSegment597->addChild(*SoHAnimSite605);
@@ -2915,6 +2972,7 @@ SoShape608->setGeometry(*SoIndexedFaceSet612);
 SoHAnimSegment607->addChild(*SoShape608);
 
 SoHAnimSite* SoHAnimSite615 = new SoHAnimSite();
+SoHAnimSite615->X3DNode::setName(QString("r_tarsal_distal_phalanx_5"));
 SoHAnimSite615->setDEF(QString("r_tarsal_distal_phalanx_5_Sites"));
 //(r_tarsal_distal_phalanx_5_tip -0.154 0.010 0.168)
 SoHAnimSegment607->addChild(*SoHAnimSite615);
@@ -2978,6 +3036,7 @@ SoShape618->setGeometry(*SoIndexedFaceSet622);
 SoHAnimSegment617->addChild(*SoShape618);
 
 SoHAnimSite* SoHAnimSite625 = new SoHAnimSite();
+SoHAnimSite625->X3DNode::setName(QString("l5"));
 SoHAnimSite625->setDEF(QString("l5_Sites"));
 //(spine_2_lower_back x y z) (waist_preferred_anterior x y z) (waist_preferred_posterior 0.2900 1.0915 -0.1091)
 SoHAnimSegment617->addChild(*SoHAnimSite625);
@@ -3023,6 +3082,7 @@ SoShape628->setGeometry(*SoIndexedFaceSet632);
 SoHAnimSegment627->addChild(*SoShape628);
 
 SoHAnimSite* SoHAnimSite635 = new SoHAnimSite();
+SoHAnimSite635->X3DNode::setName(QString("l4"));
 SoHAnimSite635->setDEF(QString("l4_Sites"));
 //None
 SoHAnimSegment627->addChild(*SoHAnimSite635);
@@ -3068,6 +3128,7 @@ SoShape638->setGeometry(*SoIndexedFaceSet642);
 SoHAnimSegment637->addChild(*SoShape638);
 
 SoHAnimSite* SoHAnimSite645 = new SoHAnimSite();
+SoHAnimSite645->X3DNode::setName(QString("l3"));
 SoHAnimSite645->setDEF(QString("l3_Sites"));
 //None
 SoHAnimSegment637->addChild(*SoHAnimSite645);
@@ -3113,6 +3174,7 @@ SoShape648->setGeometry(*SoIndexedFaceSet652);
 SoHAnimSegment647->addChild(*SoShape648);
 
 SoHAnimSite* SoHAnimSite655 = new SoHAnimSite();
+SoHAnimSite655->X3DNode::setName(QString("l2"));
 SoHAnimSite655->setDEF(QString("l2_Sites"));
 //(l_rib_10 0.0871 1.1925 0.0992) (r_rib_10 -0.0711 1.1941 0.1016) (rib_10_midspine 0.0049 1.1908 -0.1113)
 SoHAnimSegment647->addChild(*SoHAnimSite655);
@@ -3158,6 +3220,7 @@ SoShape658->setGeometry(*SoIndexedFaceSet662);
 SoHAnimSegment657->addChild(*SoShape658);
 
 SoHAnimSite* SoHAnimSite665 = new SoHAnimSite();
+SoHAnimSite665->X3DNode::setName(QString("l1"));
 SoHAnimSite665->setDEF(QString("l1_Sites"));
 //None
 SoHAnimSegment657->addChild(*SoHAnimSite665);
@@ -3203,6 +3266,7 @@ SoShape668->setGeometry(*SoIndexedFaceSet672);
 SoHAnimSegment667->addChild(*SoShape668);
 
 SoHAnimSite* SoHAnimSite675 = new SoHAnimSite();
+SoHAnimSite675->X3DNode::setName(QString("t12"));
 SoHAnimSite675->setDEF(QString("t12_Sites"));
 //None
 SoHAnimSegment667->addChild(*SoHAnimSite675);
@@ -3248,6 +3312,7 @@ SoShape678->setGeometry(*SoIndexedFaceSet682);
 SoHAnimSegment677->addChild(*SoShape678);
 
 SoHAnimSite* SoHAnimSite685 = new SoHAnimSite();
+SoHAnimSite685->X3DNode::setName(QString("t11"));
 SoHAnimSite685->setDEF(QString("t11_Sites"));
 //None
 SoHAnimSegment677->addChild(*SoHAnimSite685);
@@ -3293,6 +3358,7 @@ SoShape688->setGeometry(*SoIndexedFaceSet692);
 SoHAnimSegment687->addChild(*SoShape688);
 
 SoHAnimSite* SoHAnimSite695 = new SoHAnimSite();
+SoHAnimSite695->X3DNode::setName(QString("t10"));
 SoHAnimSite695->setDEF(QString("t10_Sites"));
 //(substernale 0.0085 1.2995 0.1147) (mesosternale x y z)
 SoHAnimSegment687->addChild(*SoHAnimSite695);
@@ -3338,6 +3404,7 @@ SoShape698->setGeometry(*SoIndexedFaceSet702);
 SoHAnimSegment697->addChild(*SoShape698);
 
 SoHAnimSite* SoHAnimSite705 = new SoHAnimSite();
+SoHAnimSite705->X3DNode::setName(QString("t9"));
 SoHAnimSite705->setDEF(QString("t9_Sites"));
 //(l_thelion 0.0918 1.3382 0.1192) (r_thelion -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane x y z) (l_chest_midsagittal_plane x y z) (r_chest_midsagittal_plane x y z)
 SoHAnimSegment697->addChild(*SoHAnimSite705);
@@ -3383,6 +3450,7 @@ SoShape708->setGeometry(*SoIndexedFaceSet712);
 SoHAnimSegment707->addChild(*SoShape708);
 
 SoHAnimSite* SoHAnimSite715 = new SoHAnimSite();
+SoHAnimSite715->X3DNode::setName(QString("t8"));
 SoHAnimSite715->setDEF(QString("t8_Sites"));
 //None
 SoHAnimSegment707->addChild(*SoHAnimSite715);
@@ -3428,6 +3496,7 @@ SoShape718->setGeometry(*SoIndexedFaceSet722);
 SoHAnimSegment717->addChild(*SoShape718);
 
 SoHAnimSite* SoHAnimSite725 = new SoHAnimSite();
+SoHAnimSite725->X3DNode::setName(QString("t7"));
 SoHAnimSite725->setDEF(QString("t7_Sites"));
 //None
 SoHAnimSegment717->addChild(*SoHAnimSite725);
@@ -3473,6 +3542,7 @@ SoShape728->setGeometry(*SoIndexedFaceSet732);
 SoHAnimSegment727->addChild(*SoShape728);
 
 SoHAnimSite* SoHAnimSite735 = new SoHAnimSite();
+SoHAnimSite735->X3DNode::setName(QString("t6"));
 SoHAnimSite735->setDEF(QString("t6_Sites"));
 //None
 SoHAnimSegment727->addChild(*SoHAnimSite735);
@@ -3518,6 +3588,7 @@ SoShape738->setGeometry(*SoIndexedFaceSet742);
 SoHAnimSegment737->addChild(*SoShape738);
 
 SoHAnimSite* SoHAnimSite745 = new SoHAnimSite();
+SoHAnimSite745->X3DNode::setName(QString("t5"));
 SoHAnimSite745->setDEF(QString("t5_Sites"));
 //None
 SoHAnimSegment737->addChild(*SoHAnimSite745);
@@ -3563,6 +3634,7 @@ SoShape748->setGeometry(*SoIndexedFaceSet752);
 SoHAnimSegment747->addChild(*SoShape748);
 
 SoHAnimSite* SoHAnimSite755 = new SoHAnimSite();
+SoHAnimSite755->X3DNode::setName(QString("t4"));
 SoHAnimSite755->setDEF(QString("t4_Sites"));
 //None
 SoHAnimSegment747->addChild(*SoHAnimSite755);
@@ -3608,6 +3680,7 @@ SoShape758->setGeometry(*SoIndexedFaceSet762);
 SoHAnimSegment757->addChild(*SoShape758);
 
 SoHAnimSite* SoHAnimSite765 = new SoHAnimSite();
+SoHAnimSite765->X3DNode::setName(QString("t3"));
 SoHAnimSite765->setDEF(QString("t3_Sites"));
 //None
 SoHAnimSegment757->addChild(*SoHAnimSite765);
@@ -3653,6 +3726,7 @@ SoShape768->setGeometry(*SoIndexedFaceSet772);
 SoHAnimSegment767->addChild(*SoShape768);
 
 SoHAnimSite* SoHAnimSite775 = new SoHAnimSite();
+SoHAnimSite775->X3DNode::setName(QString("t2"));
 SoHAnimSite775->setDEF(QString("t2_Sites"));
 //None
 SoHAnimSegment767->addChild(*SoHAnimSite775);
@@ -3698,6 +3772,7 @@ SoShape778->setGeometry(*SoIndexedFaceSet782);
 SoHAnimSegment777->addChild(*SoShape778);
 
 SoHAnimSite* SoHAnimSite785 = new SoHAnimSite();
+SoHAnimSite785->X3DNode::setName(QString("t1"));
 SoHAnimSite785->setDEF(QString("t1_Sites"));
 //(suprasternale 0.0084 1.4714 0.0551) (cervicale 0.0064 1.520 -0.0815)
 SoHAnimSegment777->addChild(*SoHAnimSite785);
@@ -3743,6 +3818,7 @@ SoShape788->setGeometry(*SoIndexedFaceSet792);
 SoHAnimSegment787->addChild(*SoShape788);
 
 SoHAnimSite* SoHAnimSite795 = new SoHAnimSite();
+SoHAnimSite795->X3DNode::setName(QString("c7"));
 SoHAnimSite795->setDEF(QString("c7_Sites"));
 //(l_neck_base 0.0646 1.5141 -0.0380) (r_neck_base -0.0419 1.5149 -0.0220)
 SoHAnimSegment787->addChild(*SoHAnimSite795);
@@ -3788,6 +3864,7 @@ SoShape798->setGeometry(*SoIndexedFaceSet802);
 SoHAnimSegment797->addChild(*SoShape798);
 
 SoHAnimSite* SoHAnimSite805 = new SoHAnimSite();
+SoHAnimSite805->X3DNode::setName(QString("c6"));
 SoHAnimSite805->setDEF(QString("c6_Sites"));
 //None
 SoHAnimSegment797->addChild(*SoHAnimSite805);
@@ -3833,6 +3910,7 @@ SoShape808->setGeometry(*SoIndexedFaceSet812);
 SoHAnimSegment807->addChild(*SoShape808);
 
 SoHAnimSite* SoHAnimSite815 = new SoHAnimSite();
+SoHAnimSite815->X3DNode::setName(QString("c5"));
 SoHAnimSite815->setDEF(QString("c5_Sites"));
 //None
 SoHAnimSegment807->addChild(*SoHAnimSite815);
@@ -3878,6 +3956,7 @@ SoShape818->setGeometry(*SoIndexedFaceSet822);
 SoHAnimSegment817->addChild(*SoShape818);
 
 SoHAnimSite* SoHAnimSite825 = new SoHAnimSite();
+SoHAnimSite825->X3DNode::setName(QString("c4"));
 SoHAnimSite825->setDEF(QString("c4_Sites"));
 //None
 SoHAnimSegment817->addChild(*SoHAnimSite825);
@@ -3923,6 +4002,7 @@ SoShape828->setGeometry(*SoIndexedFaceSet832);
 SoHAnimSegment827->addChild(*SoShape828);
 
 SoHAnimSite* SoHAnimSite835 = new SoHAnimSite();
+SoHAnimSite835->X3DNode::setName(QString("c3"));
 SoHAnimSite835->setDEF(QString("c3_Sites"));
 //None
 SoHAnimSegment827->addChild(*SoHAnimSite835);
@@ -3968,6 +4048,7 @@ SoShape838->setGeometry(*SoIndexedFaceSet842);
 SoHAnimSegment837->addChild(*SoShape838);
 
 SoHAnimSite* SoHAnimSite845 = new SoHAnimSite();
+SoHAnimSite845->X3DNode::setName(QString("c2"));
 SoHAnimSite845->setDEF(QString("c2_Sites"));
 //None
 SoHAnimSegment837->addChild(*SoHAnimSite845);
@@ -4013,6 +4094,7 @@ SoShape848->setGeometry(*SoIndexedFaceSet852);
 SoHAnimSegment847->addChild(*SoShape848);
 
 SoHAnimSite* SoHAnimSite855 = new SoHAnimSite();
+SoHAnimSite855->X3DNode::setName(QString("c1"));
 SoHAnimSite855->setDEF(QString("c1_Sites"));
 //None
 SoHAnimSegment847->addChild(*SoHAnimSite855);
@@ -4058,6 +4140,7 @@ SoShape858->setGeometry(*SoIndexedFaceSet862);
 SoHAnimSegment857->addChild(*SoShape858);
 
 SoHAnimSite* SoHAnimSite865 = new SoHAnimSite();
+SoHAnimSite865->X3DNode::setName(QString("skull"));
 SoHAnimSite865->setDEF(QString("skull_Sites"));
 //(skull_vertex 0.0050 1.7504 0.0055) (sellion 0.0058 1.6316 0.0852) (r_infraorbitale -0.0237 1.6171 0.0752) (l_infraorbitale 0.0341 1.6171 0.0752) (r_tragion -0.0646 1.6347 0.0302) (l_tragion 0.0739 1.6348 0.0282) (nuchale 0.0039 1.5972 -0.0796) (opisthocranion x y z) (glabella x y z) (l_ectocanthus x y z) (r_ectocanthus x y z)
 SoHAnimSegment857->addChild(*SoHAnimSite865);
@@ -4103,6 +4186,7 @@ SoShape868->setGeometry(*SoIndexedFaceSet872);
 SoHAnimSegment867->addChild(*SoShape868);
 
 SoHAnimSite* SoHAnimSite875 = new SoHAnimSite();
+SoHAnimSite875->X3DNode::setName(QString("l_eyelid"));
 SoHAnimSite875->setDEF(QString("l_eyelid_Sites"));
 //(l_eyelid_tip x y z)
 SoHAnimSegment867->addChild(*SoHAnimSite875);
@@ -4150,6 +4234,7 @@ SoShape878->setGeometry(*SoIndexedFaceSet882);
 SoHAnimSegment877->addChild(*SoShape878);
 
 SoHAnimSite* SoHAnimSite885 = new SoHAnimSite();
+SoHAnimSite885->X3DNode::setName(QString("r_eyelid"));
 SoHAnimSite885->setDEF(QString("r_eyelid_Sites"));
 //(r_eyelid_tip x y z)
 SoHAnimSegment877->addChild(*SoHAnimSite885);
@@ -4197,6 +4282,7 @@ SoShape888->setGeometry(*SoIndexedFaceSet892);
 SoHAnimSegment887->addChild(*SoShape888);
 
 SoHAnimSite* SoHAnimSite895 = new SoHAnimSite();
+SoHAnimSite895->X3DNode::setName(QString("l_eyeball"));
 SoHAnimSite895->setDEF(QString("l_eyeball_Sites"));
 //(l_eyeball_tip x y z)
 SoHAnimSegment887->addChild(*SoHAnimSite895);
@@ -4244,6 +4330,7 @@ SoShape898->setGeometry(*SoIndexedFaceSet902);
 SoHAnimSegment897->addChild(*SoShape898);
 
 SoHAnimSite* SoHAnimSite905 = new SoHAnimSite();
+SoHAnimSite905->X3DNode::setName(QString("r_eyeball"));
 SoHAnimSite905->setDEF(QString("r_eyeball_Sites"));
 //(r_eyeball_tip x y z)
 SoHAnimSegment897->addChild(*SoHAnimSite905);
@@ -4291,6 +4378,7 @@ SoShape908->setGeometry(*SoIndexedFaceSet912);
 SoHAnimSegment907->addChild(*SoShape908);
 
 SoHAnimSite* SoHAnimSite915 = new SoHAnimSite();
+SoHAnimSite915->X3DNode::setName(QString("l_eyebrow"));
 SoHAnimSite915->setDEF(QString("l_eyebrow_Sites"));
 //(l_eyebrow_tip x y z)
 SoHAnimSegment907->addChild(*SoHAnimSite915);
@@ -4338,6 +4426,7 @@ SoShape918->setGeometry(*SoIndexedFaceSet922);
 SoHAnimSegment917->addChild(*SoShape918);
 
 SoHAnimSite* SoHAnimSite925 = new SoHAnimSite();
+SoHAnimSite925->X3DNode::setName(QString("r_eyebrow"));
 SoHAnimSite925->setDEF(QString("r_eyebrow_Sites"));
 //(r_eyebrow_tip x y z)
 SoHAnimSegment917->addChild(*SoHAnimSite925);
@@ -4385,6 +4474,7 @@ SoShape928->setGeometry(*SoIndexedFaceSet932);
 SoHAnimSegment927->addChild(*SoShape928);
 
 SoHAnimSite* SoHAnimSite935 = new SoHAnimSite();
+SoHAnimSite935->X3DNode::setName(QString("jaw"));
 SoHAnimSite935->setDEF(QString("jaw_Sites"));
 //(r_gonion -0.0520 1.5529 0.0347) (l_gonion 0.0631 1.5530 0.0330) (supramenton 0.0061 1.5410 0.0805) (menton x y z)
 SoHAnimSegment927->addChild(*SoHAnimSite935);
@@ -4448,6 +4538,7 @@ SoShape938->setGeometry(*SoIndexedFaceSet942);
 SoHAnimSegment937->addChild(*SoShape938);
 
 SoHAnimSite* SoHAnimSite945 = new SoHAnimSite();
+SoHAnimSite945->X3DNode::setName(QString("l_clavicle"));
 SoHAnimSite945->setDEF(QString("l_clavicle_Sites"));
 //(l_clavicale 0.0271 1.4943 0.0394)
 SoHAnimSegment937->addChild(*SoHAnimSite945);
@@ -4493,6 +4584,7 @@ SoShape948->setGeometry(*SoIndexedFaceSet952);
 SoHAnimSegment947->addChild(*SoShape948);
 
 SoHAnimSite* SoHAnimSite955 = new SoHAnimSite();
+SoHAnimSite955->X3DNode::setName(QString("l_scapula"));
 SoHAnimSite955->setDEF(QString("l_scapula_Sites"));
 //(l_acromion 0.2032 1.4760 -0.0490) (l_axilla_proximal 0.1777 1.4065 -0.0075) (l_axilla_distal 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds x y z)
 SoHAnimSegment947->addChild(*SoHAnimSite955);
@@ -4538,6 +4630,7 @@ SoShape958->setGeometry(*SoIndexedFaceSet962);
 SoHAnimSegment957->addChild(*SoShape958);
 
 SoHAnimSite* SoHAnimSite965 = new SoHAnimSite();
+SoHAnimSite965->X3DNode::setName(QString("l_upperarm"));
 SoHAnimSite965->setDEF(QString("l_upperarm_Sites"));
 //(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) (l_radiale 0.2182 1.1212 -0.1167) (l_bideltoid x y z)
 SoHAnimSegment957->addChild(*SoHAnimSite965);
@@ -4583,6 +4676,7 @@ SoShape968->setGeometry(*SoIndexedFaceSet972);
 SoHAnimSegment967->addChild(*SoShape968);
 
 SoHAnimSite* SoHAnimSite975 = new SoHAnimSite();
+SoHAnimSite975->X3DNode::setName(QString("l_forearm"));
 SoHAnimSite975->setDEF(QString("l_forearm_Sites"));
 //(l_radial_styloid 0.1901 0.8645 -0.0415) (l_olecranon -0.1962 1.1375 -0.1123)
 SoHAnimSegment967->addChild(*SoHAnimSite975);
@@ -4628,6 +4722,7 @@ SoShape978->setGeometry(*SoIndexedFaceSet982);
 SoHAnimSegment977->addChild(*SoShape978);
 
 SoHAnimSite* SoHAnimSite985 = new SoHAnimSite();
+SoHAnimSite985->X3DNode::setName(QString("l_carpal"));
 SoHAnimSite985->setDEF(QString("l_carpal_Sites"));
 //(l_ulnar_styloid -0.2142 0.8529 -0.0648)
 SoHAnimSegment977->addChild(*SoHAnimSite985);
@@ -4673,6 +4768,7 @@ SoShape988->setGeometry(*SoIndexedFaceSet992);
 SoHAnimSegment987->addChild(*SoShape988);
 
 SoHAnimSite* SoHAnimSite995 = new SoHAnimSite();
+SoHAnimSite995->X3DNode::setName(QString("l_trapezium"));
 SoHAnimSite995->setDEF(QString("l_trapezium_Sites"));
 //None
 SoHAnimSegment987->addChild(*SoHAnimSite995);
@@ -4718,6 +4814,7 @@ SoShape998->setGeometry(*SoIndexedFaceSet1002);
 SoHAnimSegment997->addChild(*SoShape998);
 
 SoHAnimSite* SoHAnimSite1005 = new SoHAnimSite();
+SoHAnimSite1005->X3DNode::setName(QString("l_metacarpal_1"));
 SoHAnimSite1005->setDEF(QString("l_metacarpal_1_Sites"));
 //(l_metacarpal_phalanx_2 0.2009 0.8139 -0.0237)
 SoHAnimSegment997->addChild(*SoHAnimSite1005);
@@ -4763,6 +4860,7 @@ SoShape1008->setGeometry(*SoIndexedFaceSet1012);
 SoHAnimSegment1007->addChild(*SoShape1008);
 
 SoHAnimSite* SoHAnimSite1015 = new SoHAnimSite();
+SoHAnimSite1015->X3DNode::setName(QString("l_carpal_proximal_phalanx_1"));
 SoHAnimSite1015->setDEF(QString("l_carpal_proximal_phalanx_1_Sites"));
 //None
 SoHAnimSegment1007->addChild(*SoHAnimSite1015);
@@ -4808,6 +4906,7 @@ SoShape1018->setGeometry(*SoIndexedFaceSet1022);
 SoHAnimSegment1017->addChild(*SoShape1018);
 
 SoHAnimSite* SoHAnimSite1025 = new SoHAnimSite();
+SoHAnimSite1025->X3DNode::setName(QString("l_carpal_distal_phalanx_1"));
 SoHAnimSite1025->setDEF(QString("l_carpal_distal_phalanx_1_Sites"));
 //(l_carpal_distal_phalanx_1_tip 0.1982 0.8061 0.0759)
 SoHAnimSegment1017->addChild(*SoHAnimSite1025);
@@ -4861,6 +4960,7 @@ SoShape1028->setGeometry(*SoIndexedFaceSet1032);
 SoHAnimSegment1027->addChild(*SoShape1028);
 
 SoHAnimSite* SoHAnimSite1035 = new SoHAnimSite();
+SoHAnimSite1035->X3DNode::setName(QString("l_trapezoid"));
 SoHAnimSite1035->setDEF(QString("l_trapezoid_Sites"));
 //None
 SoHAnimSegment1027->addChild(*SoHAnimSite1035);
@@ -4906,6 +5006,7 @@ SoShape1038->setGeometry(*SoIndexedFaceSet1042);
 SoHAnimSegment1037->addChild(*SoShape1038);
 
 SoHAnimSite* SoHAnimSite1045 = new SoHAnimSite();
+SoHAnimSite1045->X3DNode::setName(QString("l_metacarpal_2"));
 SoHAnimSite1045->setDEF(QString("l_metacarpal_2_Sites"));
 //None
 SoHAnimSegment1037->addChild(*SoHAnimSite1045);
@@ -4951,6 +5052,7 @@ SoShape1048->setGeometry(*SoIndexedFaceSet1052);
 SoHAnimSegment1047->addChild(*SoShape1048);
 
 SoHAnimSite* SoHAnimSite1055 = new SoHAnimSite();
+SoHAnimSite1055->X3DNode::setName(QString("l_carpal_proximal_phalanx_2"));
 SoHAnimSite1055->setDEF(QString("l_carpal_proximal_phalanx_2_Sites"));
 //None
 SoHAnimSegment1047->addChild(*SoHAnimSite1055);
@@ -4996,6 +5098,7 @@ SoShape1058->setGeometry(*SoIndexedFaceSet1062);
 SoHAnimSegment1057->addChild(*SoShape1058);
 
 SoHAnimSite* SoHAnimSite1065 = new SoHAnimSite();
+SoHAnimSite1065->X3DNode::setName(QString("l_carpal_middle_phalanx_2"));
 SoHAnimSite1065->setDEF(QString("l_carpal_middle_phalanx_2_Sites"));
 //None
 SoHAnimSegment1057->addChild(*SoHAnimSite1065);
@@ -5041,6 +5144,7 @@ SoShape1068->setGeometry(*SoIndexedFaceSet1072);
 SoHAnimSegment1067->addChild(*SoShape1068);
 
 SoHAnimSite* SoHAnimSite1075 = new SoHAnimSite();
+SoHAnimSite1075->X3DNode::setName(QString("l_carpal_distal_phalanx_2"));
 SoHAnimSite1075->setDEF(QString("l_carpal_distal_phalanx_2_Sites"));
 //(l_carpal_distal_phalanx_2_tip 0.2089 0.6858 -0.0245)
 SoHAnimSegment1067->addChild(*SoHAnimSite1075);
@@ -5096,6 +5200,7 @@ SoShape1078->setGeometry(*SoIndexedFaceSet1082);
 SoHAnimSegment1077->addChild(*SoShape1078);
 
 SoHAnimSite* SoHAnimSite1085 = new SoHAnimSite();
+SoHAnimSite1085->X3DNode::setName(QString("l_capitate"));
 SoHAnimSite1085->setDEF(QString("l_capitate_Sites"));
 //None
 SoHAnimSegment1077->addChild(*SoHAnimSite1085);
@@ -5141,6 +5246,7 @@ SoShape1088->setGeometry(*SoIndexedFaceSet1092);
 SoHAnimSegment1087->addChild(*SoShape1088);
 
 SoHAnimSite* SoHAnimSite1095 = new SoHAnimSite();
+SoHAnimSite1095->X3DNode::setName(QString("l_metacarpal_3"));
 SoHAnimSite1095->setDEF(QString("l_metacarpal_3_Sites"));
 //None
 SoHAnimSegment1087->addChild(*SoHAnimSite1095);
@@ -5186,6 +5292,7 @@ SoShape1098->setGeometry(*SoIndexedFaceSet1102);
 SoHAnimSegment1097->addChild(*SoShape1098);
 
 SoHAnimSite* SoHAnimSite1105 = new SoHAnimSite();
+SoHAnimSite1105->X3DNode::setName(QString("l_carpal_proximal_phalanx_3"));
 SoHAnimSite1105->setDEF(QString("l_carpal_proximal_phalanx_3_Sites"));
 //None
 SoHAnimSegment1097->addChild(*SoHAnimSite1105);
@@ -5231,6 +5338,7 @@ SoShape1108->setGeometry(*SoIndexedFaceSet1112);
 SoHAnimSegment1107->addChild(*SoShape1108);
 
 SoHAnimSite* SoHAnimSite1115 = new SoHAnimSite();
+SoHAnimSite1115->X3DNode::setName(QString("l_carpal_middle_phalanx_3"));
 SoHAnimSite1115->setDEF(QString("l_carpal_middle_phalanx_3_Sites"));
 //None
 SoHAnimSegment1107->addChild(*SoHAnimSite1115);
@@ -5276,6 +5384,7 @@ SoShape1118->setGeometry(*SoIndexedFaceSet1122);
 SoHAnimSegment1117->addChild(*SoShape1118);
 
 SoHAnimSite* SoHAnimSite1125 = new SoHAnimSite();
+SoHAnimSite1125->X3DNode::setName(QString("l_carpal_distal_phalanx_3"));
 SoHAnimSite1125->setDEF(QString("l_carpal_distal_phalanx_3_Sites"));
 //(l_dactylion 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
 SoHAnimSegment1117->addChild(*SoHAnimSite1125);
@@ -5331,6 +5440,7 @@ SoShape1128->setGeometry(*SoIndexedFaceSet1132);
 SoHAnimSegment1127->addChild(*SoShape1128);
 
 SoHAnimSite* SoHAnimSite1135 = new SoHAnimSite();
+SoHAnimSite1135->X3DNode::setName(QString("l_hamate"));
 SoHAnimSite1135->setDEF(QString("l_hamate_Sites"));
 //None
 SoHAnimSegment1127->addChild(*SoHAnimSite1135);
@@ -5376,6 +5486,7 @@ SoShape1138->setGeometry(*SoIndexedFaceSet1142);
 SoHAnimSegment1137->addChild(*SoShape1138);
 
 SoHAnimSite* SoHAnimSite1145 = new SoHAnimSite();
+SoHAnimSite1145->X3DNode::setName(QString("l_metacarpal_4"));
 SoHAnimSite1145->setDEF(QString("l_metacarpal_4_Sites"));
 //None
 SoHAnimSegment1137->addChild(*SoHAnimSite1145);
@@ -5421,6 +5532,7 @@ SoShape1148->setGeometry(*SoIndexedFaceSet1152);
 SoHAnimSegment1147->addChild(*SoShape1148);
 
 SoHAnimSite* SoHAnimSite1155 = new SoHAnimSite();
+SoHAnimSite1155->X3DNode::setName(QString("l_carpal_proximal_phalanx_4"));
 SoHAnimSite1155->setDEF(QString("l_carpal_proximal_phalanx_4_Sites"));
 //None
 SoHAnimSegment1147->addChild(*SoHAnimSite1155);
@@ -5466,6 +5578,7 @@ SoShape1158->setGeometry(*SoIndexedFaceSet1162);
 SoHAnimSegment1157->addChild(*SoShape1158);
 
 SoHAnimSite* SoHAnimSite1165 = new SoHAnimSite();
+SoHAnimSite1165->X3DNode::setName(QString("l_carpal_middle_phalanx_4"));
 SoHAnimSite1165->setDEF(QString("l_carpal_middle_phalanx_4_Sites"));
 //None
 SoHAnimSegment1157->addChild(*SoHAnimSite1165);
@@ -5511,6 +5624,7 @@ SoShape1168->setGeometry(*SoIndexedFaceSet1172);
 SoHAnimSegment1167->addChild(*SoShape1168);
 
 SoHAnimSite* SoHAnimSite1175 = new SoHAnimSite();
+SoHAnimSite1175->X3DNode::setName(QString("l_carpal_distal_phalanx_4"));
 SoHAnimSite1175->setDEF(QString("l_carpal_distal_phalanx_4_Sites"));
 //(l_carpal_distal_phalanx_4_tip 0.2035 0.6750 -0.0756)
 SoHAnimSegment1167->addChild(*SoHAnimSite1175);
@@ -5566,6 +5680,7 @@ SoShape1178->setGeometry(*SoIndexedFaceSet1182);
 SoHAnimSegment1177->addChild(*SoShape1178);
 
 SoHAnimSite* SoHAnimSite1185 = new SoHAnimSite();
+SoHAnimSite1185->X3DNode::setName(QString("l_metacarpal_5"));
 SoHAnimSite1185->setDEF(QString("l_metacarpal_5_Sites"));
 //(l_metacarpal_phalanx_5 0.1929 0.7860 -0.1122)
 SoHAnimSegment1177->addChild(*SoHAnimSite1185);
@@ -5611,6 +5726,7 @@ SoShape1188->setGeometry(*SoIndexedFaceSet1192);
 SoHAnimSegment1187->addChild(*SoShape1188);
 
 SoHAnimSite* SoHAnimSite1195 = new SoHAnimSite();
+SoHAnimSite1195->X3DNode::setName(QString("l_carpal_proximal_phalanx_5"));
 SoHAnimSite1195->setDEF(QString("l_carpal_proximal_phalanx_5_Sites"));
 //None
 SoHAnimSegment1187->addChild(*SoHAnimSite1195);
@@ -5656,6 +5772,7 @@ SoShape1198->setGeometry(*SoIndexedFaceSet1202);
 SoHAnimSegment1197->addChild(*SoShape1198);
 
 SoHAnimSite* SoHAnimSite1205 = new SoHAnimSite();
+SoHAnimSite1205->X3DNode::setName(QString("l_carpal_middle_phalanx_5"));
 SoHAnimSite1205->setDEF(QString("l_carpal_middle_phalanx_5_Sites"));
 //None
 SoHAnimSegment1197->addChild(*SoHAnimSite1205);
@@ -5701,6 +5818,7 @@ SoShape1208->setGeometry(*SoIndexedFaceSet1212);
 SoHAnimSegment1207->addChild(*SoShape1208);
 
 SoHAnimSite* SoHAnimSite1215 = new SoHAnimSite();
+SoHAnimSite1215->X3DNode::setName(QString("l_carpal_distal_phalanx_5"));
 SoHAnimSite1215->setDEF(QString("l_carpal_distal_phalanx_5_Sites"));
 //(l_carpal_distal_phalanx_5_tip 0.2014 0.7009 -0.1012)
 SoHAnimSegment1207->addChild(*SoHAnimSite1215);
@@ -5764,6 +5882,7 @@ SoShape1218->setGeometry(*SoIndexedFaceSet1222);
 SoHAnimSegment1217->addChild(*SoShape1218);
 
 SoHAnimSite* SoHAnimSite1225 = new SoHAnimSite();
+SoHAnimSite1225->X3DNode::setName(QString("r_clavicle"));
 SoHAnimSite1225->setDEF(QString("r_clavicle_Sites"));
 //(r_clavicale -0.0115 1.4943 0.0400)
 SoHAnimSegment1217->addChild(*SoHAnimSite1225);
@@ -5809,6 +5928,7 @@ SoShape1228->setGeometry(*SoIndexedFaceSet1232);
 SoHAnimSegment1227->addChild(*SoShape1228);
 
 SoHAnimSite* SoHAnimSite1235 = new SoHAnimSite();
+SoHAnimSite1235->X3DNode::setName(QString("r_scapula"));
 SoHAnimSite1235->setDEF(QString("r_scapula_Sites"));
 //(r_acromion -0.1905 1.4791 -0.0431) (r_axilla_proximal -0.1626 1.4072 -0.0031) (r_axilla_distal -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds x y z)
 SoHAnimSegment1227->addChild(*SoHAnimSite1235);
@@ -5854,6 +5974,7 @@ SoShape1238->setGeometry(*SoIndexedFaceSet1242);
 SoHAnimSegment1237->addChild(*SoShape1238);
 
 SoHAnimSite* SoHAnimSite1245 = new SoHAnimSite();
+SoHAnimSite1245->X3DNode::setName(QString("r_upperarm"));
 SoHAnimSite1245->setDEF(QString("r_upperarm_Sites"));
 //(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) (r_radiale -0.2130 1.1305 -0.1091) (r_bideltoid x y z)
 SoHAnimSegment1237->addChild(*SoHAnimSite1245);
@@ -5899,6 +6020,7 @@ SoShape1248->setGeometry(*SoIndexedFaceSet1252);
 SoHAnimSegment1247->addChild(*SoShape1248);
 
 SoHAnimSite* SoHAnimSite1255 = new SoHAnimSite();
+SoHAnimSite1255->X3DNode::setName(QString("r_forearm"));
 SoHAnimSite1255->setDEF(QString("r_forearm_Sites"));
 //(r_radial_styloid -0.1884 0.8676 -0.0360) (r_olecranon -0.1907 1.1405 -0.1065)
 SoHAnimSegment1247->addChild(*SoHAnimSite1255);
@@ -5944,6 +6066,7 @@ SoShape1258->setGeometry(*SoIndexedFaceSet1262);
 SoHAnimSegment1257->addChild(*SoShape1258);
 
 SoHAnimSite* SoHAnimSite1265 = new SoHAnimSite();
+SoHAnimSite1265->X3DNode::setName(QString("r_carpal"));
 SoHAnimSite1265->setDEF(QString("r_carpal_Sites"));
 //(r_ulnar_styloid -0.2117 0.8562 -0.0584)
 SoHAnimSegment1257->addChild(*SoHAnimSite1265);
@@ -5989,6 +6112,7 @@ SoShape1268->setGeometry(*SoIndexedFaceSet1272);
 SoHAnimSegment1267->addChild(*SoShape1268);
 
 SoHAnimSite* SoHAnimSite1275 = new SoHAnimSite();
+SoHAnimSite1275->X3DNode::setName(QString("r_trapezium"));
 SoHAnimSite1275->setDEF(QString("r_trapezium_Sites"));
 //None
 SoHAnimSegment1267->addChild(*SoHAnimSite1275);
@@ -6034,6 +6158,7 @@ SoShape1278->setGeometry(*SoIndexedFaceSet1282);
 SoHAnimSegment1277->addChild(*SoShape1278);
 
 SoHAnimSite* SoHAnimSite1285 = new SoHAnimSite();
+SoHAnimSite1285->X3DNode::setName(QString("r_metacarpal_1"));
 SoHAnimSite1285->setDEF(QString("r_metacarpal_1_Sites"));
 //(r_metacarpal_phalanx_2 -0.1977 0.8169 -0.0177)
 SoHAnimSegment1277->addChild(*SoHAnimSite1285);
@@ -6079,6 +6204,7 @@ SoShape1288->setGeometry(*SoIndexedFaceSet1292);
 SoHAnimSegment1287->addChild(*SoShape1288);
 
 SoHAnimSite* SoHAnimSite1295 = new SoHAnimSite();
+SoHAnimSite1295->X3DNode::setName(QString("r_carpal_proximal_phalanx_1"));
 SoHAnimSite1295->setDEF(QString("r_carpal_proximal_phalanx_1_Sites"));
 //None
 SoHAnimSegment1287->addChild(*SoHAnimSite1295);
@@ -6124,6 +6250,7 @@ SoShape1298->setGeometry(*SoIndexedFaceSet1302);
 SoHAnimSegment1297->addChild(*SoShape1298);
 
 SoHAnimSite* SoHAnimSite1305 = new SoHAnimSite();
+SoHAnimSite1305->X3DNode::setName(QString("r_carpal_distal_phalanx_1"));
 SoHAnimSite1305->setDEF(QString("r_carpal_distal_phalanx_1_Sites"));
 //(r_carpal_distal_phalanx_1_tip -0.1869 0.8090 0.0820)
 SoHAnimSegment1297->addChild(*SoHAnimSite1305);
@@ -6177,6 +6304,7 @@ SoShape1308->setGeometry(*SoIndexedFaceSet1312);
 SoHAnimSegment1307->addChild(*SoShape1308);
 
 SoHAnimSite* SoHAnimSite1315 = new SoHAnimSite();
+SoHAnimSite1315->X3DNode::setName(QString("r_trapezoid"));
 SoHAnimSite1315->setDEF(QString("r_trapezoid_Sites"));
 //None
 SoHAnimSegment1307->addChild(*SoHAnimSite1315);
@@ -6222,6 +6350,7 @@ SoShape1318->setGeometry(*SoIndexedFaceSet1322);
 SoHAnimSegment1317->addChild(*SoShape1318);
 
 SoHAnimSite* SoHAnimSite1325 = new SoHAnimSite();
+SoHAnimSite1325->X3DNode::setName(QString("r_metacarpal_2"));
 SoHAnimSite1325->setDEF(QString("r_metacarpal_2_Sites"));
 //None
 SoHAnimSegment1317->addChild(*SoHAnimSite1325);
@@ -6267,6 +6396,7 @@ SoShape1328->setGeometry(*SoIndexedFaceSet1332);
 SoHAnimSegment1327->addChild(*SoShape1328);
 
 SoHAnimSite* SoHAnimSite1335 = new SoHAnimSite();
+SoHAnimSite1335->X3DNode::setName(QString("r_carpal_proximal_phalanx_2"));
 SoHAnimSite1335->setDEF(QString("r_carpal_proximal_phalanx_2_Sites"));
 //None
 SoHAnimSegment1327->addChild(*SoHAnimSite1335);
@@ -6312,6 +6442,7 @@ SoShape1338->setGeometry(*SoIndexedFaceSet1342);
 SoHAnimSegment1337->addChild(*SoShape1338);
 
 SoHAnimSite* SoHAnimSite1345 = new SoHAnimSite();
+SoHAnimSite1345->X3DNode::setName(QString("r_carpal_middle_phalanx_2"));
 SoHAnimSite1345->setDEF(QString("r_carpal_middle_phalanx_2_Sites"));
 //None
 SoHAnimSegment1337->addChild(*SoHAnimSite1345);
@@ -6357,6 +6488,7 @@ SoShape1348->setGeometry(*SoIndexedFaceSet1352);
 SoHAnimSegment1347->addChild(*SoShape1348);
 
 SoHAnimSite* SoHAnimSite1355 = new SoHAnimSite();
+SoHAnimSite1355->X3DNode::setName(QString("r_carpal_distal_phalanx_2"));
 SoHAnimSite1355->setDEF(QString("r_carpal_distal_phalanx_2_Sites"));
 //(r_carpal_distal_phalanx_2_tip -0.1980 0.6883 -0.0180)
 SoHAnimSegment1347->addChild(*SoHAnimSite1355);
@@ -6412,6 +6544,7 @@ SoShape1358->setGeometry(*SoIndexedFaceSet1362);
 SoHAnimSegment1357->addChild(*SoShape1358);
 
 SoHAnimSite* SoHAnimSite1365 = new SoHAnimSite();
+SoHAnimSite1365->X3DNode::setName(QString("r_capitate"));
 SoHAnimSite1365->setDEF(QString("r_capitate_Sites"));
 //None
 SoHAnimSegment1357->addChild(*SoHAnimSite1365);
@@ -6457,6 +6590,7 @@ SoShape1368->setGeometry(*SoIndexedFaceSet1372);
 SoHAnimSegment1367->addChild(*SoShape1368);
 
 SoHAnimSite* SoHAnimSite1375 = new SoHAnimSite();
+SoHAnimSite1375->X3DNode::setName(QString("r_metacarpal_3"));
 SoHAnimSite1375->setDEF(QString("r_metacarpal_3_Sites"));
 //(r_metacarpal_phalanx_3 x y z)
 SoHAnimSegment1367->addChild(*SoHAnimSite1375);
@@ -6502,6 +6636,7 @@ SoShape1378->setGeometry(*SoIndexedFaceSet1382);
 SoHAnimSegment1377->addChild(*SoShape1378);
 
 SoHAnimSite* SoHAnimSite1385 = new SoHAnimSite();
+SoHAnimSite1385->X3DNode::setName(QString("r_carpal_proximal_phalanx_3"));
 SoHAnimSite1385->setDEF(QString("r_carpal_proximal_phalanx_3_Sites"));
 //None
 SoHAnimSegment1377->addChild(*SoHAnimSite1385);
@@ -6547,6 +6682,7 @@ SoShape1388->setGeometry(*SoIndexedFaceSet1392);
 SoHAnimSegment1387->addChild(*SoShape1388);
 
 SoHAnimSite* SoHAnimSite1395 = new SoHAnimSite();
+SoHAnimSite1395->X3DNode::setName(QString("r_carpal_middle_phalanx_3"));
 SoHAnimSite1395->setDEF(QString("r_carpal_middle_phalanx_3_Sites"));
 //None
 SoHAnimSegment1387->addChild(*SoHAnimSite1395);
@@ -6592,6 +6728,7 @@ SoShape1398->setGeometry(*SoIndexedFaceSet1402);
 SoHAnimSegment1397->addChild(*SoShape1398);
 
 SoHAnimSite* SoHAnimSite1405 = new SoHAnimSite();
+SoHAnimSite1405->X3DNode::setName(QString("r_carpal_distal_phalanx_3"));
 SoHAnimSite1405->setDEF(QString("r_carpal_distal_phalanx_3_Sites"));
 //(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion -0.1941 0.6772 -0.0423
 SoHAnimSegment1397->addChild(*SoHAnimSite1405);
@@ -6647,6 +6784,7 @@ SoShape1408->setGeometry(*SoIndexedFaceSet1412);
 SoHAnimSegment1407->addChild(*SoShape1408);
 
 SoHAnimSite* SoHAnimSite1415 = new SoHAnimSite();
+SoHAnimSite1415->X3DNode::setName(QString("r_hamate"));
 SoHAnimSite1415->setDEF(QString("r_hamate_Sites"));
 //None
 SoHAnimSegment1407->addChild(*SoHAnimSite1415);
@@ -6692,6 +6830,7 @@ SoShape1418->setGeometry(*SoIndexedFaceSet1422);
 SoHAnimSegment1417->addChild(*SoShape1418);
 
 SoHAnimSite* SoHAnimSite1425 = new SoHAnimSite();
+SoHAnimSite1425->X3DNode::setName(QString("r_metacarpal_4"));
 SoHAnimSite1425->setDEF(QString("r_metacarpal_4_Sites"));
 //None
 SoHAnimSegment1417->addChild(*SoHAnimSite1425);
@@ -6737,6 +6876,7 @@ SoShape1428->setGeometry(*SoIndexedFaceSet1432);
 SoHAnimSegment1427->addChild(*SoShape1428);
 
 SoHAnimSite* SoHAnimSite1435 = new SoHAnimSite();
+SoHAnimSite1435->X3DNode::setName(QString("r_carpal_proximal_phalanx_4"));
 SoHAnimSite1435->setDEF(QString("r_carpal_proximal_phalanx_4_Sites"));
 //None
 SoHAnimSegment1427->addChild(*SoHAnimSite1435);
@@ -6782,6 +6922,7 @@ SoShape1438->setGeometry(*SoIndexedFaceSet1442);
 SoHAnimSegment1437->addChild(*SoShape1438);
 
 SoHAnimSite* SoHAnimSite1445 = new SoHAnimSite();
+SoHAnimSite1445->X3DNode::setName(QString("r_carpal_middle_phalanx_4"));
 SoHAnimSite1445->setDEF(QString("r_carpal_middle_phalanx_4_Sites"));
 //None
 SoHAnimSegment1437->addChild(*SoHAnimSite1445);
@@ -6827,6 +6968,7 @@ SoShape1448->setGeometry(*SoIndexedFaceSet1452);
 SoHAnimSegment1447->addChild(*SoShape1448);
 
 SoHAnimSite* SoHAnimSite1455 = new SoHAnimSite();
+SoHAnimSite1455->X3DNode::setName(QString("hanim_r_carpal_distal_phalanx_4"));
 SoHAnimSite1455->setDEF(QString("hanim_r_carpal_distal_phalanx_4_Sites"));
 //(r_carpal_distal_phalanx_4_tip -0.1934 0.6778 -0.0693)
 SoHAnimSegment1447->addChild(*SoHAnimSite1455);
@@ -6882,6 +7024,7 @@ SoShape1458->setGeometry(*SoIndexedFaceSet1462);
 SoHAnimSegment1457->addChild(*SoShape1458);
 
 SoHAnimSite* SoHAnimSite1465 = new SoHAnimSite();
+SoHAnimSite1465->X3DNode::setName(QString("r_metacarpal_5"));
 SoHAnimSite1465->setDEF(QString("r_metacarpal_5_Sites"));
 //(r_metacarpal_phalanx_5 -0.1929 0.7890 -0.1064)
 SoHAnimSegment1457->addChild(*SoHAnimSite1465);
@@ -6927,6 +7070,7 @@ SoShape1468->setGeometry(*SoIndexedFaceSet1472);
 SoHAnimSegment1467->addChild(*SoShape1468);
 
 SoHAnimSite* SoHAnimSite1475 = new SoHAnimSite();
+SoHAnimSite1475->X3DNode::setName(QString("r_carpal_proximal_phalanx_5"));
 SoHAnimSite1475->setDEF(QString("r_carpal_proximal_phalanx_5_Sites"));
 //None
 SoHAnimSegment1467->addChild(*SoHAnimSite1475);
@@ -6972,6 +7116,7 @@ SoShape1478->setGeometry(*SoIndexedFaceSet1482);
 SoHAnimSegment1477->addChild(*SoShape1478);
 
 SoHAnimSite* SoHAnimSite1485 = new SoHAnimSite();
+SoHAnimSite1485->X3DNode::setName(QString("r_carpal_middle_phalanx_5"));
 SoHAnimSite1485->setDEF(QString("r_carpal_middle_phalanx_5_Sites"));
 //None
 SoHAnimSegment1477->addChild(*SoHAnimSite1485);
@@ -7017,6 +7162,7 @@ SoShape1488->setGeometry(*SoIndexedFaceSet1492);
 SoHAnimSegment1487->addChild(*SoShape1488);
 
 SoHAnimSite* SoHAnimSite1495 = new SoHAnimSite();
+SoHAnimSite1495->X3DNode::setName(QString("r_carpal_distal_phalanx_5"));
 SoHAnimSite1495->setDEF(QString("r_carpal_distal_phalanx_5_Sites"));
 //(r_carpal_distal_phalanx_5_tip -0.1938 0.7035 -0.0949)
 SoHAnimSegment1487->addChild(*SoHAnimSite1495);

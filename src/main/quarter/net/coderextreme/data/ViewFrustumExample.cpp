@@ -108,7 +108,7 @@ Sohead1->addMeta(*Someta13);
 
 Someta* Someta14 = new Someta();
 Someta14->setName(QString("identifier"));
-Someta14->setContent(QString("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"));
+Someta14->setContent(QString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"));
 Sohead1->addMeta(*Someta14);
 
 Someta* Someta15 = new Someta();

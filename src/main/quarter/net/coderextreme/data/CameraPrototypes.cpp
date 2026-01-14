@@ -103,7 +103,7 @@ Sohead1->addMeta(*Someta12);
 
 Someta* Someta13 = new Someta();
 Someta13->setName(QString("reference"));
-Someta13->setContent(QString("http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"));
+Someta13->setContent(QString("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"));
 Sohead1->addMeta(*Someta13);
 
 Someta* Someta14 = new Someta();

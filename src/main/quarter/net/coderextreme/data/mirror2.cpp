@@ -46,6 +46,7 @@ SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
 SoSceneManager0->setVersion(QString("4.0"));
 Sohead* Sohead1 = new Sohead();
+//<component name='Shape' level='4'></component>
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("Scripting"));
 Socomponent2->setLevel(1);
@@ -86,7 +87,6 @@ Socomponent9->setName(QString("Core"));
 Socomponent9->setLevel(1);
 Sohead1->addChild(*Socomponent9);
 
-//<component name='Shape' level='4'></component>
 Someta* Someta10 = new Someta();
 Someta10->setName(QString("title"));
 Someta10->setContent(QString("mirror2.x3d"));

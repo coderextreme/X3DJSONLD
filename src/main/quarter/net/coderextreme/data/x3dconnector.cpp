@@ -364,29 +364,22 @@ SoField60->addChild(*SoTransform61);
 
 SoProtoInstance53->addChild(*SoField60);
 
-SoField* SoField62 = new SoField();
-SoField62->setName(QString("set_startpoint"));
-SoProtoInstance53->addChild(*SoField62);
-
-SoField* SoField63 = new SoField();
-SoField63->setName(QString("set_endpoint"));
-SoProtoInstance53->addChild(*SoField63);
-
+//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
 SoNode7->addChild(*SoProtoInstance53);
 
-SoROUTE* SoROUTE64 = new SoROUTE();
-SoROUTE64->setFromNode(QString("G1"));
-SoROUTE64->setFromField(QString("translation_changed"));
-SoROUTE64->setToNode(QString("connector1"));
-SoROUTE64->setToField(QString("set_startpoint"));
-SoNode7->addChild(*SoROUTE64);
+SoROUTE* SoROUTE62 = new SoROUTE();
+SoROUTE62->setFromNode(QString("G1"));
+SoROUTE62->setFromField(QString("translation_changed"));
+SoROUTE62->setToNode(QString("connector1"));
+SoROUTE62->setToField(QString("set_startpoint"));
+SoNode7->addChild(*SoROUTE62);
 
-SoROUTE* SoROUTE65 = new SoROUTE();
-SoROUTE65->setFromNode(QString("G2"));
-SoROUTE65->setFromField(QString("translation_changed"));
-SoROUTE65->setToNode(QString("connector1"));
-SoROUTE65->setToField(QString("set_endpoint"));
-SoNode7->addChild(*SoROUTE65);
+SoROUTE* SoROUTE63 = new SoROUTE();
+SoROUTE63->setFromNode(QString("G2"));
+SoROUTE63->setFromField(QString("translation_changed"));
+SoROUTE63->setToNode(QString("connector1"));
+SoROUTE63->setToField(QString("set_endpoint"));
+SoNode7->addChild(*SoROUTE63);
 
 SoSceneManager0->setSceneGraph(*SoNode7);
 

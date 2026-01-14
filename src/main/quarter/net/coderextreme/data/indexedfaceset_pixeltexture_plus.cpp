@@ -187,6 +187,7 @@ SoNavigationInfo* SoNavigationInfo29 = new SoNavigationInfo();
 SoNavigationInfo29->setType(new QString[]{QString("EXAMINE"), QString("WALK"), QString("FLY"), QString("ANY")}, 4);
 SoNode22->addChild(*SoNavigationInfo29);
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 SoShape* SoShape30 = new SoShape();
 SoVRMLAppearance* SoVRMLAppearance31 = new SoVRMLAppearance();
 SoMaterial* SoMaterial32 = new SoMaterial();
@@ -194,28 +195,32 @@ SoVRMLAppearance31->addChild(*SoMaterial32);
 
 SoPixelTexture* SoPixelTexture33 = new SoPixelTexture();
 SoPixelTexture33->setImage(QString("2 2 4 4278190335 16711935 4294967295 4294902015"));
+SoTextureProperties* SoTextureProperties34 = new SoTextureProperties();
+SoTextureProperties34->setMagnificationFilter(QString("NEAREST_PIXEL"));
+SoPixelTexture33->setTextureProperties(SoTextureProperties34);
+
 SoVRMLAppearance31->addChild(*SoPixelTexture33);
 
 SoShape30->addChild(*SoVRMLAppearance31);
 
-SoIndexedFaceSet* SoIndexedFaceSet34 = new SoIndexedFaceSet();
-SoIndexedFaceSet34->setColorPerVertex(false);
-SoIndexedFaceSet34->setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
-SoIndexedFaceSet34->setCreaseAngle(0.5);
-SoIndexedFaceSet34->setTexCoordIndex(new int32_t[]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
-SoColor* SoColor35 = new SoColor();
-SoColor35->setColor(new float[]{0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0}, 18);
-SoIndexedFaceSet34->setColor(*SoColor35);
+SoIndexedFaceSet* SoIndexedFaceSet35 = new SoIndexedFaceSet();
+SoIndexedFaceSet35->setColorPerVertex(false);
+SoIndexedFaceSet35->setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
+SoIndexedFaceSet35->setCreaseAngle(0.5);
+SoIndexedFaceSet35->setTexCoordIndex(new int32_t[]{0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1}, 30);
+SoColor* SoColor36 = new SoColor();
+SoColor36->setColor(new float[]{0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0}, 18);
+SoIndexedFaceSet35->setColor(*SoColor36);
 
-SoCoordinate* SoCoordinate36 = new SoCoordinate();
-SoCoordinate36->setPoint(new float[]{-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0}, 24);
-SoIndexedFaceSet34->setCoord(*SoCoordinate36);
+SoCoordinate* SoCoordinate37 = new SoCoordinate();
+SoCoordinate37->setPoint(new float[]{-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0}, 24);
+SoIndexedFaceSet35->setCoord(*SoCoordinate37);
 
-SoTextureCoordinate* SoTextureCoordinate37 = new SoTextureCoordinate();
-SoTextureCoordinate37->setPoint(new float[]{-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0}, 8);
-SoIndexedFaceSet34->setTexCoord(*SoTextureCoordinate37);
+SoTextureCoordinate* SoTextureCoordinate38 = new SoTextureCoordinate();
+SoTextureCoordinate38->setPoint(new float[]{-1.0,2.0,-1.0,-1.0,2.0,2.0,2.0,-1.0}, 8);
+SoIndexedFaceSet35->setTexCoord(*SoTextureCoordinate38);
 
-SoShape30->setGeometry(*SoIndexedFaceSet34);
+SoShape30->setGeometry(*SoIndexedFaceSet35);
 
 SoNode22->addChild(*SoShape30);
 

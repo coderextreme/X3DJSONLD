@@ -108,7 +108,7 @@ Sohead1->addMeta(*Someta13);
 
 Someta* Someta14 = new Someta();
 Someta14->setName(QString("generator"));
-Someta14->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Someta14->setContent(QString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
 Sohead1->addMeta(*Someta14);
 
 Someta* Someta15 = new Someta();
@@ -157,6 +157,7 @@ SoNavigationInfo* SoNavigationInfo23 = new SoNavigationInfo();
 SoNavigationInfo23->setType(new QString[]{QString("EXAMINE"), QString("WALK"), QString("FLY"), QString("ANY")}, 4);
 SoNode16->addChild(*SoNavigationInfo23);
 
+//<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>
 SoShape* SoShape24 = new SoShape();
 SoVRMLAppearance* SoVRMLAppearance25 = new SoVRMLAppearance();
 SoMaterial* SoMaterial26 = new SoMaterial();
@@ -166,17 +167,21 @@ SoPixelTexture* SoPixelTexture27 = new SoPixelTexture();
 SoPixelTexture27->setImage(QString("2 2 4 4278190335 16711935 4294967295 4294902015"));
 SoPixelTexture27->setRepeatS(false);
 SoPixelTexture27->setRepeatT(false);
+SoTextureProperties* SoTextureProperties28 = new SoTextureProperties();
+SoTextureProperties28->setMagnificationFilter(QString("NEAREST_PIXEL"));
+SoPixelTexture27->setTextureProperties(SoTextureProperties28);
+
 SoVRMLAppearance25->addChild(*SoPixelTexture27);
 
 SoShape24->addChild(*SoVRMLAppearance25);
 
-SoIndexedFaceSet* SoIndexedFaceSet28 = new SoIndexedFaceSet();
-SoIndexedFaceSet28->setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
-SoCoordinate* SoCoordinate29 = new SoCoordinate();
-SoCoordinate29->setPoint(new float[]{-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0}, 24);
-SoIndexedFaceSet28->setCoord(*SoCoordinate29);
+SoIndexedFaceSet* SoIndexedFaceSet29 = new SoIndexedFaceSet();
+SoIndexedFaceSet29->setCoordIndex(new int32_t[]{0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1}, 30);
+SoCoordinate* SoCoordinate30 = new SoCoordinate();
+SoCoordinate30->setPoint(new float[]{-2.0,1.5,1.0,-2.0,-1.5,1.0,2.0,1.5,1.0,2.0,-1.5,1.0,2.0,1.5,-1.0,2.0,-1.5,-1.0,-2.0,1.5,-1.0,-2.0,-1.5,-1.0}, 24);
+SoIndexedFaceSet29->setCoord(*SoCoordinate30);
 
-SoShape24->setGeometry(*SoIndexedFaceSet28);
+SoShape24->setGeometry(*SoIndexedFaceSet29);
 
 SoNode16->addChild(*SoShape24);
 

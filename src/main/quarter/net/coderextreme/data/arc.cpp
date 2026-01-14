@@ -409,6 +409,7 @@ SoProtoInstance64->setDEF(QString("connector1"));
 SoField* SoField65 = new SoField();
 SoField65->setName(QString("startnode"));
 SoProtoInstance* SoProtoInstance66 = new SoProtoInstance();
+SoProtoInstance66->setName(QString("point"));
 SoProtoInstance66->setUSE(QString("G1"));
 SoField65->addChild(*SoProtoInstance66);
 
@@ -417,6 +418,7 @@ SoProtoInstance64->addChild(*SoField65);
 SoField* SoField67 = new SoField();
 SoField67->setName(QString("endnode"));
 SoProtoInstance* SoProtoInstance68 = new SoProtoInstance();
+SoProtoInstance68->setName(QString("point"));
 SoProtoInstance68->setUSE(QString("G2"));
 SoField67->addChild(*SoProtoInstance68);
 
@@ -438,6 +440,7 @@ SoProtoInstance71->setDEF(QString("connector2"));
 SoField* SoField72 = new SoField();
 SoField72->setName(QString("startnode"));
 SoProtoInstance* SoProtoInstance73 = new SoProtoInstance();
+SoProtoInstance73->setName(QString("point"));
 SoProtoInstance73->setUSE(QString("G1"));
 SoField72->addChild(*SoProtoInstance73);
 
@@ -446,6 +449,7 @@ SoProtoInstance71->addChild(*SoField72);
 SoField* SoField74 = new SoField();
 SoField74->setName(QString("endnode"));
 SoProtoInstance* SoProtoInstance75 = new SoProtoInstance();
+SoProtoInstance75->setName(QString("point"));
 SoProtoInstance75->setUSE(QString("G3"));
 SoField74->addChild(*SoProtoInstance75);
 
@@ -467,6 +471,7 @@ SoProtoInstance78->setDEF(QString("connector3"));
 SoField* SoField79 = new SoField();
 SoField79->setName(QString("startnode"));
 SoProtoInstance* SoProtoInstance80 = new SoProtoInstance();
+SoProtoInstance80->setName(QString("point"));
 SoProtoInstance80->setUSE(QString("G1"));
 SoField79->addChild(*SoProtoInstance80);
 
@@ -475,6 +480,7 @@ SoProtoInstance78->addChild(*SoField79);
 SoField* SoField81 = new SoField();
 SoField81->setName(QString("endnode"));
 SoProtoInstance* SoProtoInstance82 = new SoProtoInstance();
+SoProtoInstance82->setName(QString("point"));
 SoProtoInstance82->setUSE(QString("G4"));
 SoField81->addChild(*SoProtoInstance82);
 
