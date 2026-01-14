@@ -8,11 +8,13 @@ META "description" "ESRI GeoVRML export subscene of Squaw Valley California USA.
 META "creator" "Salvador Bayarri, ESRI"
 META "translator" "Don Brutzman"
 META "translated" "22 April 2003"
-META "modified" "Wed, 17 Sep 2025 23:48:11 GMT"
+META "modified" "20 January 2020"
 META "reference" "http://www.geovrml.org/examples"
 META "subject" "X3D geospatial example"
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/Geospatial/SquawLOD023.x3d"
 META "generator" "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+META "generator" "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "SquawLOD023.x3d" 
     }

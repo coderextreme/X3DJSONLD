@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:56 GMT",
+        "@content":"23 May 2020",
         "@name":"modified"
       }
     },
@@ -85,8 +85,28 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
+        "WorldInfo":
+        {
+      {
+        "@title":"LOA1_SwimmingFlutterKickAnimation.x3d"
+      }
+    }
         "ProtoDeclare":
         {
       {
@@ -134,7 +154,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"stopTime",
-        "@type":"SFTime"
+        "@type":"SFTime",
+        "@value":"-1"
       }
     },
                 "field":
@@ -312,22 +333,23 @@
                     "TimeSensor":
                     {
       {
-        "@DEF":"TIMER"
+        "@DEF":"TIMER",
+        "@loop":"true"
       }
                         "IS":
                         {
                             "connect":
                             {
       {
-        "@nodeField":"enabled",
-        "@protoField":"enabled"
+        "@nodeField":"cycleInterval",
+        "@protoField":"cycleInterval"
       }
     },
                             "connect":
                             {
       {
-        "@nodeField":"cycleInterval",
-        "@protoField":"cycleInterval"
+        "@nodeField":"enabled",
+        "@protoField":"enabled"
       }
     },
                             "connect":
@@ -354,15 +376,15 @@
                             "connect":
                             {
       {
-        "@nodeField":"isActive",
-        "@protoField":"isActive"
+        "@nodeField":"fraction_changed",
+        "@protoField":"fraction_changed"
       }
     },
                             "connect":
                             {
       {
-        "@nodeField":"fraction_changed",
-        "@protoField":"fraction_changed"
+        "@nodeField":"isActive",
+        "@protoField":"isActive"
       }
     },
                         }                    }                    "PositionInterpolator":
@@ -765,13 +787,7 @@
         "@toNode":"R_WRIST_ANIMATOR"
       }
     },
-            }        }        "WorldInfo":
-        {
-      {
-        "@title":"LOA1_SwimmingFlutterKickAnimation.x3d"
-      }
-    }
-        "Viewpoint":
+            }        }        "Viewpoint":
         {
       {
         "@description":"LOA1_SwimmingFlutterKickAnimation scene",

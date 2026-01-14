@@ -128,4 +128,7 @@ ecmascript:
         <Transform USE='rotscaleC1'/>
       </fieldValue>
     </ProtoInstance>
-    <ROUTE fromFi
+    <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
+    <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
+  </Scene>
+</X3D>

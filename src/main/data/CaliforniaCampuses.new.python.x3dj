@@ -45,7 +45,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:18 GMT",
+        "@content":"20 October 2019",
         "@name":"modified"
       }
     },
@@ -80,13 +80,6 @@
         "meta":
         {
       {
-        "@content":"http://mmog.ern.nps.edu/California/California.x3d",
-        "@name":"reference"
-      }
-    },
-        "meta":
-        {
-      {
         "@content":"X3D Earth",
         "@name":"subject"
       }
@@ -96,6 +89,13 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/Basic/Geospatial/CaliforniaCampuses.x3d",
         "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"http://mmog.ern.nps.edu/California/California.x3d",
+        "@name":"reference"
       }
     },
         "meta":
@@ -119,9 +119,367 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://savage.nps.edu/Savage/license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
-        "ExternProtoDeclare":
+        "WorldInfo":
+        {
+      {
+        "@title":"CaliforniaCampuses.x3d"
+      }
+    }
+        "Switch":
+        {
+      {
+        "@DEF":"SwitchGlobes",
+        "@whichChoice":"0"
+      }
+            "Inline":
+            {
+      {
+        "@url":""http://x3d-earth.nps.edu/osmdemo.x3d""
+      }
+    },
+        }        "NavigationInfo":
+        {
+      {
+        "@transitionType":""ANIMATE""
+      }
+    },
+        "Group":
+        {
+      {
+        "@DEF":"PlacemarkGroup"
+      }
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View01",
+        "@description":"Naval Postgraduate School",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"36.595599 -121.877148 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View02",
+        "@description":"University of California Davis",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"38.53650615157984 -121.7489628616831 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View03",
+        "@description":"University of California Berkeley",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"37.86963434512325 -122.2593873127355 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View04",
+        "@description":"University of California San Francisco",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"37.76340647188392 -122.4582475377715 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View05",
+        "@description":"University of California Santa Cruz",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"36.99628443046043 -122.0534325473795 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View06",
+        "@description":"University of California Merced",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"37.365508575977 -120.4252597059142 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View07",
+        "@description":"University of California Santa Barbara",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"34.41124450961521 -119.8479940053906 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View08",
+        "@description":"University of California Los Angeles",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"34.07224474392262 -118.4408472225642 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View09",
+        "@description":"University of California Irvine",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"33.64623283675919 -117.8427064139082 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View10",
+        "@description":"University of California Riverside",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"33.97350567066717 -117.3281649569839 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View11",
+        "@description":"University of California San Diego",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"32.87612136607509 -117.2367298240259 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View12",
+        "@description":"Humboldt State University",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"40.87630235623448 -124.0785789217266 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View13",
+        "@description":"California State University, Chico",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"39.73031527724385 -121.8453722745223 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View14",
+        "@description":"California State University Sacramento",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"38.5626517618963 -121.4244636520556 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View15",
+        "@description":"Sonoma State University",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"38.33922929793606 -122.6744333530031 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View16",
+        "@description":"California Maritime Academy",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"38.06907065059484 -122.2309147135222 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View17",
+        "@description":"San Francisco State University",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"37.722876 -122.4781512190666 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View18",
+        "@description":"California State University, East Bay",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"37.65707914139907 -122.0569190659761 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View19",
+        "@description":"California State University Stanislaus",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"37.52552478005697 -120.8563508560606 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View20",
+        "@description":"San Jose State University",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"37.33580940527095 -121.8815343755784 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View21",
+        "@description":"California State University, Monterey Bay",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"36.6538071781493 -121.7984465276711 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View22",
+        "@description":"Fresno State University",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"36.812166 -119.7451552005852 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View23",
+        "@description":"California State University, Bakersfield",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"35.350804 -119.1043226128032 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View24",
+        "@description":"California Polytechnic State University",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"35.30115692599171 -120.6595761796351 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View25",
+        "@description":"California State University, Channel Islands",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"34.1624126428852 -119.0425264841287 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View26",
+        "@description":"California State University, Northridge",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"34.23959265263849 -118.5284272400904 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View27",
+        "@description":"California State University, Los Angeles",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"34.06645996626264 -118.1682050902557 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View28",
+        "@description":"California State Polytechnic University, Pomona",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"34.05727150000314 -117.8215320234812 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View29",
+        "@description":"California State University, San Bernardino",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"34.18180116432101 -117.3243676664719 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View30",
+        "@description":"California State University, Fullerton",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"33.882522 -117.8868367869023 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View31",
+        "@description":"California State University Dominguez Hills",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"33.86463396857103 -118.2553596272055 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View32",
+        "@description":"California State University, Long Beach",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"33.78196696470824 -118.112678253688 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View33",
+        "@description":"California State University, San Marcos",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"33.12837619265174 -117.1600194071002 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View34",
+        "@description":"San Diego State University",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"32.77593126586385 -117.0722876242553 250000"
+      }
+    },
+            "GeoViewpoint":
+            {
+      {
+        "@DEF":"View35",
+        "@description":"CENIC",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"33.879947 -118.027903 250000"
+      }
+    },
+        }        "ExternProtoDeclare":
         {
       {
         "@appinfo":"CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point",
@@ -171,6 +529,40 @@
         "@appinfo":"distance in front of HUD viewpoint",
         "@name":"positionOffsetFromCamera",
         "@type":"SFVec3f"
+      }
+    },
+        }        "ProtoInstance":
+        {
+      {
+        "@DEF":"CrossHairInstance",
+        "@name":"CrossHair"
+      }
+            "fieldValue":
+            {
+      {
+        "@name":"enabled",
+        "@value":"true"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"markerColor",
+        "@value":"0.1 0.8 0.1"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"scale",
+        "@value":"0.5 0.5 0.5"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"positionOffsetFromCamera",
+        "@value":"0 0 -5"
       }
     },
         }        "ExternProtoDeclare":
@@ -313,417 +705,19 @@
         "@type":"SFBool"
       }
     },
-        }        "ExternProtoDeclare":
-        {
-      {
-        "@appinfo":"ViewPositionOrientation provides provides console output of local position and orientation as user navigates",
-        "@name":"ViewPositionOrientation",
-        "@url":""../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation""
-      }
-            "field":
-            {
-      {
-        "@accessType":"inputOutput",
-        "@appinfo":"Whether or not ViewPositionOrientation sends output to console",
-        "@name":"enabled",
-        "@type":"SFBool"
-      }
-    },
-            "field":
-            {
-      {
-        "@accessType":"initializeOnly",
-        "@appinfo":"Output internal trace messages for debugging this node, intended for developer use only",
-        "@name":"traceEnabled",
-        "@type":"SFBool"
-      }
-    },
-            "field":
-            {
-      {
-        "@accessType":"inputOnly",
-        "@appinfo":"Ability to turn output tracing on/off at runtime",
-        "@name":"set_traceEnabled",
-        "@type":"SFBool"
-      }
-    },
-            "field":
-            {
-      {
-        "@accessType":"outputOnly",
-        "@appinfo":"Output local position",
-        "@name":"position_changed",
-        "@type":"SFVec3f"
-      }
-    },
-            "field":
-            {
-      {
-        "@accessType":"outputOnly",
-        "@appinfo":"Output local orientation",
-        "@name":"orientation_changed",
-        "@type":"SFRotation"
-      }
-    },
-            "field":
-            {
-      {
-        "@accessType":"outputOnly",
-        "@appinfo":"MFString value of new Viewpoint",
-        "@name":"outputViewpointString",
-        "@type":"MFString"
-      }
-    },
-        }        "WorldInfo":
-        {
-      {
-        "@title":"CaliforniaCampuses.x3d"
-      }
-    }
-        "Switch":
-        {
-      {
-        "@DEF":"SwitchGlobes",
-        "@whichChoice":"0"
-      }
-            "Inline":
-            {
-      {
-        "@url":""http://x3d-earth.nps.edu/osmdemo.x3d""
-      }
-    },
-        }        "NavigationInfo":
-        {
-      {
-        "@transitionType":""ANIMATE""
-      }
-    },
-        "Group":
-        {
-      {
-        "@DEF":"PlacemarkGroup"
-      }
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View01",
-        "@description":"Naval Postgraduate School",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"36.595599 -121.877148 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View02",
-        "@description":"University of California Davis",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"38.5365061515798 -121.748962861683 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View03",
-        "@description":"University of California Berkeley",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"37.8696343451233 -122.259387312736 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View04",
-        "@description":"University of California San Francisco",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"37.7634064718839 -122.458247537772 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View05",
-        "@description":"University of California Santa Cruz",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"36.9962844304604 -122.05343254738 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View06",
-        "@description":"University of California Merced",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"37.365508575977 -120.425259705914 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View07",
-        "@description":"University of California Santa Barbara",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"34.4112445096152 -119.847994005391 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View08",
-        "@description":"University of California Los Angeles",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"34.0722447439226 -118.440847222564 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View09",
-        "@description":"University of California Irvine",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"33.6462328367592 -117.842706413908 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View10",
-        "@description":"University of California Riverside",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"33.9735056706672 -117.328164956984 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View11",
-        "@description":"University of California San Diego",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"32.8761213660751 -117.236729824026 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View12",
-        "@description":"Humboldt State University",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"40.8763023562345 -124.078578921727 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View13",
-        "@description":"California State University, Chico",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"39.7303152772439 -121.845372274522 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View14",
-        "@description":"California State University Sacramento",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"38.5626517618963 -121.424463652056 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View15",
-        "@description":"Sonoma State University",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"38.3392292979361 -122.674433353003 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View16",
-        "@description":"California Maritime Academy",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"38.0690706505948 -122.230914713522 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View17",
-        "@description":"San Francisco State University",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"37.722876 -122.478151219067 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View18",
-        "@description":"California State University, East Bay",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"37.6570791413991 -122.056919065976 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View19",
-        "@description":"California State University Stanislaus",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"37.525524780057 -120.856350856061 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View20",
-        "@description":"San Jose State University",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"37.335809405271 -121.881534375578 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View21",
-        "@description":"California State University, Monterey Bay",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"36.6538071781493 -121.798446527671 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View22",
-        "@description":"Fresno State University",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"36.812166 -119.745155200585 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View23",
-        "@description":"California State University, Bakersfield",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"35.350804 -119.104322612803 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View24",
-        "@description":"California Polytechnic State University",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"35.3011569259917 -120.659576179635 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View25",
-        "@description":"California State University, Channel Islands",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"34.1624126428852 -119.042526484129 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View26",
-        "@description":"California State University, Northridge",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"34.2395926526385 -118.52842724009 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View27",
-        "@description":"California State University, Los Angeles",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"34.0664599662626 -118.168205090256 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View28",
-        "@description":"California State Polytechnic University, Pomona",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"34.0572715000031 -117.821532023481 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View29",
-        "@description":"California State University, San Bernardino",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"34.181801164321 -117.324367666472 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View30",
-        "@description":"California State University, Fullerton",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"33.882522 -117.886836786902 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View31",
-        "@description":"California State University Dominguez Hills",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"33.864633968571 -118.255359627206 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View32",
-        "@description":"California State University, Long Beach",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"33.7819669647082 -118.112678253688 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View33",
-        "@description":"California State University, San Marcos",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"33.1283761926517 -117.1600194071 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View34",
-        "@description":"San Diego State University",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"32.7759312658639 -117.072287624255 250000"
-      }
-    },
-            "GeoViewpoint":
-            {
-      {
-        "@DEF":"View35",
-        "@description":"CENIC",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"33.879947 -118.027903 250000"
-      }
-    },
         }        "ProtoInstance":
         {
       {
-        "@DEF":"CrossHairInstance",
-        "@name":"CrossHair"
+        "@DEF":"ViewpointTour",
+        "@name":"ViewpointSequencer"
       }
+            "fieldValue":
+            {
+      {
+        "@name":"interval",
+        "@value":"30"
+      }
+    },
             "fieldValue":
             {
       {
@@ -734,30 +728,10 @@
             "fieldValue":
             {
       {
-        "@name":"markerColor",
-        "@value":"0.1 0.8 0.1"
+        "@name":"toggleMessage",
+        "@value":""ViewpointSequencer tour""
       }
     },
-            "fieldValue":
-            {
-      {
-        "@name":"scale",
-        "@value":"0.5 0.5 0.5"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"positionOffsetFromCamera",
-        "@value":"0 0 -5"
-      }
-    },
-        }        "ProtoInstance":
-        {
-      {
-        "@DEF":"ViewpointTour",
-        "@name":"ViewpointSequencer"
-      }
             "fieldValue":
             {
       {
@@ -982,28 +956,7 @@
         "@position":"-10 0 0"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"interval",
-        "@value":"30"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"enabled",
-        "@value":"true"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"toggleMessage",
-        "@value":""ViewpointSequencer tour""
-      }
-    },
-        }        "GeoLocation":
+            }        }        "GeoLocation":
         {
       {
         "@geoCoords":"36.595599 -121.877148 624990"
@@ -1050,6 +1003,85 @@
         "@DEF":"TourToggle"
       }
     },
+            "ROUTE":
+            {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"TourTouch",
+        "@toField":"set_boolean",
+        "@toNode":"TourToggle"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"toggle",
+        "@fromNode":"TourToggle",
+        "@toField":"set_enabled",
+        "@toNode":"ViewpointTour"
+      }
+    },
+        }        "ExternProtoDeclare":
+        {
+      {
+        "@appinfo":"ViewPositionOrientation provides provides console output of local position and orientation as user navigates",
+        "@name":"ViewPositionOrientation",
+        "@url":""../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation""
+      }
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@appinfo":"Whether or not ViewPositionOrientation sends output to console",
+        "@name":"enabled",
+        "@type":"SFBool"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"initializeOnly",
+        "@appinfo":"Output internal trace messages for debugging this node, intended for developer use only",
+        "@name":"traceEnabled",
+        "@type":"SFBool"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOnly",
+        "@appinfo":"Ability to turn output tracing on/off at runtime",
+        "@name":"set_traceEnabled",
+        "@type":"SFBool"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"outputOnly",
+        "@appinfo":"Output local position",
+        "@name":"position_changed",
+        "@type":"SFVec3f"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"outputOnly",
+        "@appinfo":"Output local orientation",
+        "@name":"orientation_changed",
+        "@type":"SFRotation"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"outputOnly",
+        "@appinfo":"MFString value of new Viewpoint",
+        "@name":"outputViewpointString",
+        "@type":"MFString"
+      }
+    },
         }        "ProtoInstance":
         {
       {
@@ -1063,22 +1095,4 @@
         "@value":"false"
       }
     },
-        }        "ROUTE":
-        {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"TourTouch",
-        "@toField":"set_boolean",
-        "@toNode":"TourToggle"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"toggle_changed",
-        "@fromNode":"TourToggle",
-        "@toField":"set_enabled",
-        "@toNode":"ViewpointTour"
-      }
-    },
-    }}
+        }    }}

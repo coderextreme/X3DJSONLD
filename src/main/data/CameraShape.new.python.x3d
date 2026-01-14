@@ -7,10 +7,12 @@
     <meta content='Jeff Weekley and Don Brutzman' name='creator'/>
     <meta content='2 June 2009' name='created'/>
     <meta content='2 June 2009' name='translated'/>
-    <meta content='Wed, 17 Sep 2025 23:46:18 GMT' name='modified'/>
+    <meta content='13 January 2014' name='modified'/>
     <meta content='CameraExamples.x3d' name='reference'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d' name='identifier'/>
     <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo info='"VRML2.0 created with Version 1.3, from Alias Maya 2008"' title='SimpleCamera.x3d'/>

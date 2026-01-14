@@ -16,10 +16,12 @@ META "disclaimer" "This file was provided by the National Institute of Standards
 META "info" "Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"
 META "translator" "Michael Kass NIST, Don Brutzman NPS"
 META "translated" "21 January 2001"
-META "modified" "Wed, 17 Sep 2025 23:48:24 GMT"
+META "modified" "13 January 2014"
 META "description" "Test of browser ability to map a 3 times multiple of an PixelTexture onto an IndexedFaceSet geometry. A 3 by 3 matrix of four equal sized red, green, white and yellow squares in the pixel texture map all the faces of the cube."
 META "identifier" "https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_plus.x3d"
 META "generator" "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../../license.html"
 Viewpoint {
       description "Front View" 
     }

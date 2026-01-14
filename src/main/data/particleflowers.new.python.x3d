@@ -5,12 +5,16 @@
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
+    <component name='Texturing'/>
+    <component name='Rendering'/>
     <component level='3' name='Grouping'/>
+    <component name='Core'/>
     <component level='3' name='ParticleSystems'/>
     <meta content='particleflowers.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower particle system' name='description'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d' name='identifier'/>
+    <meta content='Vim' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='particleflowers.x3d'/>
@@ -54,8 +58,8 @@
         </BoundedPhysicsModel>
       </ParticleSystem>
       <Script DEF='Animate'>
-        <field accessType='inputOutput' name='translation' type='SFVec3f'/>
-        <field accessType='inputOutput' name='velocity' type='SFVec3f'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
         <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
         <field accessType='inputOutput' name='a' type='SFFloat' value='0.5'/>
         <field accessType='inputOutput' name='b' type='SFFloat' value='0.5'/>
@@ -198,13 +202,13 @@
 "			}]]>
       </Script>
       <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'/>
+      <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+      <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
+      <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>
+      <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x_ite'/>
+      <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x_ite'/>
+      <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
+      <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
     </Group>
-    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
-    <ROUTE fromField='a_changed' fromNode='Animate' toField='set_a' toNode='x_ite'/>
-    <ROUTE fromField='b_changed' fromNode='Animate' toField='set_b' toNode='x_ite'/>
-    <ROUTE fromField='c_changed' fromNode='Animate' toField='set_c' toNode='x_ite'/>
-    <ROUTE fromField='d_changed' fromNode='Animate' toField='set_d' toNode='x_ite'/>
-    <ROUTE fromField='pdelta_changed' fromNode='Animate' toField='set_pdelta' toNode='x_ite'/>
-    <ROUTE fromField='tdelta_changed' fromNode='Animate' toField='set_tdelta' toNode='x_ite'/>
   </Scene>
 </X3D>

@@ -135,4 +135,23 @@
                         "@name":"frontUrls",
                         "@accessType":"initializeOnly",
                         "@type":"MFString",
-                        "@value":["rnl_front.png","uffizi
+                        "@value":["rnl_front.png","uffizi_front.png"]
+                      }
+                    ],
+                    "#sourceCode":[
+"",
+"",
+"ecmascript:",
+"\t\t\t    var me = '\"1\" ""2\" \"\n3\"';",
+"",
+""
+]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    }
+  }
+}

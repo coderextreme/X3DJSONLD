@@ -8,6 +8,12 @@
         "@profile":"Immersive",
     "head":
     {
+        "component":
+        {
+      {
+        "@name":"Scripting"
+      }
+    },
         "meta":
         {
       {
@@ -32,7 +38,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:24 GMT",
+        "@content":"9 November 2024",
         "@name":"modified"
       }
     },
@@ -50,17 +56,49 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"manually written",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
-        "ProtoDeclare":
+        "NavigationInfo":
         {
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Two mathematical orbitals",
+        "@position":"0 0 50"
+      }
+    },
+        "Group":
+        {
+            "DirectionalLight":
+            {
+      {
+        "@direction":"1 1 1"
+      }
+    },
+            "ProtoDeclare":
+            {
       {
         "@name":"orbit"
       }
-            "ProtoInterface":
-            {
-                "field":
+                "ProtoInterface":
                 {
+                    "field":
+                    {
       {
         "@accessType":"inputOutput",
         "@name":"translation",
@@ -68,8 +106,8 @@
         "@value":"[-8, 0, 0]"
       }
     },
-                "field":
-                {
+                    "field":
+                    {
       {
         "@accessType":"inputOutput",
         "@name":"diffuseColor",
@@ -77,8 +115,8 @@
         "@value":"[1, 0.5, 0]"
       }
     },
-                "field":
-                {
+                    "field":
+                    {
       {
         "@accessType":"inputOutput",
         "@name":"specularColor",
@@ -86,8 +124,8 @@
         "@value":"[1, 0.5, 0]"
       }
     },
-                "field":
-                {
+                    "field":
+                    {
       {
         "@accessType":"inputOutput",
         "@name":"transparency",
@@ -95,86 +133,86 @@
         "@value":"0.75"
       }
     },
-            }            "ProtoBody":
-            {
-                "Group":
+                }                "ProtoBody":
                 {
-                    "TimeSensor":
+                    "Group":
                     {
+                        "TimeSensor":
+                        {
       {
         "@DEF":"Clock",
         "@cycleInterval":"16",
         "@loop":"true"
       }
     },
-                    "OrientationInterpolator":
-                    {
+                        "OrientationInterpolator":
+                        {
       {
         "@DEF":"OrbitPath",
         "@key":"0 0.5 1",
         "@keyValue":"1 0 0 0 1 0 0 3.14 1 0 0 6.28"
       }
     },
-                    "Transform":
-                    {
+                        "Transform":
+                        {
       {
         "@DEF":"OrbitTransform"
       }
-                        "IS":
-                        {
-                            "connect":
+                            "IS":
                             {
+                                "connect":
+                                {
       {
         "@nodeField":"translation",
         "@protoField":"translation"
       }
     },
-                        }                        "Shape":
-                        {
-                            "Appearance":
+                            }                            "Shape":
                             {
-                                "Material":
+                                "Appearance":
                                 {
-                                    "IS":
+                                    "Material":
                                     {
-                                        "connect":
+                                        "IS":
                                         {
+                                            "connect":
+                                            {
       {
         "@nodeField":"diffuseColor",
         "@protoField":"diffuseColor"
       }
     },
-                                        "connect":
-                                        {
+                                            "connect":
+                                            {
       {
         "@nodeField":"specularColor",
         "@protoField":"specularColor"
       }
     },
-                                        "connect":
-                                        {
+                                            "connect":
+                                            {
       {
         "@nodeField":"transparency",
         "@protoField":"transparency"
       }
     },
-                                    }                                }                            }                            "IndexedFaceSet":
-                            {
+                                        }                                    }                                }                                "IndexedFaceSet":
+                                {
       {
         "@DEF":"Orbit",
         "@ccw":"false",
         "@convex":"false",
         "@coordIndex":"0 1 2 -1"
       }
-                                "Coordinate":
-                                {
+                                    "Coordinate":
+                                    {
       {
         "@DEF":"OrbitCoordinates",
         "@point":"0 0 1 0 1 0 1 0 0"
       }
     },
-                            }                        }                    }                    "Script":
-                    {
+                                }                            }                        }                        "Script":
+                        {
       {
         "@DEF":"OrbitScript",
         "@sourceCode":"ecmascript:
@@ -307,32 +345,32 @@
 &quot;+
 &quot;			}"
       }
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOnly",
         "@name":"set_fraction",
         "@type":"SFFloat"
       }
     },
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOutput",
         "@name":"coordinates",
         "@type":"MFVec3f"
       }
     },
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOutput",
         "@name":"coordIndexes",
         "@type":"MFInt32"
       }
     },
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOutput",
         "@name":"e",
@@ -340,8 +378,8 @@
         "@value":"5"
       }
     },
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOutput",
         "@name":"f",
@@ -349,8 +387,8 @@
         "@value":"5"
       }
     },
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOutput",
         "@name":"g",
@@ -358,8 +396,8 @@
         "@value":"5"
       }
     },
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOutput",
         "@name":"h",
@@ -367,8 +405,8 @@
         "@value":"5"
       }
     },
-                        "field":
-                        {
+                            "field":
+                            {
       {
         "@accessType":"inputOutput",
         "@name":"resolution",
@@ -376,26 +414,26 @@
         "@value":"50"
       }
     },
-                    }                }                "ROUTE":
-                {
+                        }                        "ROUTE":
+                        {
       {
-        "@fromField":"coordIndexes_changed",
+        "@fromField":"coordIndexes",
         "@fromNode":"OrbitScript",
         "@toField":"set_coordIndex",
         "@toNode":"Orbit"
       }
     },
-                "ROUTE":
-                {
+                        "ROUTE":
+                        {
       {
-        "@fromField":"coordinates_changed",
+        "@fromField":"coordinates",
         "@fromNode":"OrbitScript",
-        "@toField":"set_point",
+        "@toField":"point",
         "@toNode":"OrbitCoordinates"
       }
     },
-                "ROUTE":
-                {
+                        "ROUTE":
+                        {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"Clock",
@@ -403,17 +441,17 @@
         "@toNode":"OrbitScript"
       }
     },
-                "ROUTE":
-                {
+                        "ROUTE":
+                        {
       {
         "@fromField":"value_changed",
         "@fromNode":"OrbitPath",
-        "@toField":"set_rotation",
+        "@toField":"rotation",
         "@toNode":"OrbitTransform"
       }
     },
-                "ROUTE":
-                {
+                        "ROUTE":
+                        {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"Clock",
@@ -421,31 +459,40 @@
         "@toNode":"OrbitPath"
       }
     },
-            }        }        "NavigationInfo":
-        {
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Two mathematical orbitals",
-        "@position":"0 0 50"
-      }
-    },
-        "Group":
-        {
-            "DirectionalLight":
-            {
-      {
-        "@direction":"1 1 1"
-      }
-    },
-            "ProtoInstance":
+                    }                }            }            "ProtoInstance":
             {
       {
         "@name":"orbit"
       }
+                "fieldValue":
+                {
+      {
+        "@name":"translation",
+        "@value":"-8 0 0"
+      }
     },
-            "ProtoInstance":
+                "fieldValue":
+                {
+      {
+        "@name":"diffuseColor",
+        "@value":"1 0.5 0"
+      }
+    },
+                "fieldValue":
+                {
+      {
+        "@name":"specularColor",
+        "@value":"1 0.5 0"
+      }
+    },
+                "fieldValue":
+                {
+      {
+        "@name":"transparency",
+        "@value":"0.75"
+      }
+    },
+            }            "ProtoInstance":
             {
       {
         "@name":"orbit"

@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:11 GMT",
+        "@content":"20 October 2019",
         "@name":"modified"
       }
     },
@@ -74,6 +74,13 @@
         "meta":
         {
       {
+        "@content":"trebuchet catapult Monty Python",
+        "@name":"subject"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under &quot;Fair Use&quot; clause of the DMCA",
         "@name":"reference"
       }
@@ -95,8 +102,15 @@
         "meta":
         {
       {
-        "@content":"trebuchet catapult Monty Python",
-        "@name":"subject"
+        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -2220,7 +2234,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"PigdogMonkScript",
-        "@toField":"set_whichChoice",
+        "@toField":"whichChoice",
         "@toNode":"PigdogMonk"
       }
     },
@@ -2265,7 +2279,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"LauncheeScript",
-        "@toField":"set_whichChoice",
+        "@toField":"whichChoice",
         "@toNode":"projectile"
       }
     },
@@ -2274,7 +2288,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"LauncheeScript",
-        "@toField":"set_whichChoice",
+        "@toField":"whichChoice",
         "@toNode":"projectilename"
       }
     },
@@ -2292,7 +2306,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"WeightScript",
-        "@toField":"set_whichChoice",
+        "@toField":"whichChoice",
         "@toNode":"Weight"
       }
     },

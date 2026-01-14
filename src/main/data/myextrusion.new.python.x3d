@@ -4,9 +4,11 @@
   <head>
     <meta content='John W Carlson' name='creator'/>
     <meta content='December 13 2015' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:48:41 GMT' name='modified'/>
+    <meta content='November 9 2024' name='modified'/>
     <meta content='myextrusion.x3d' name='title'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d' name='identifier'/>
+    <meta content='beginnings of a force directed graph in 3D' name='description'/>
+    <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
   </head>
   <Scene>
     <Group>
@@ -42,8 +44,8 @@
 "+
 "                }]]>
       </Script>
+      <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='MoveCylinder'/>
+      <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='myextrusion'/>
     </Group>
-    <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='MoveCylinder'/>
-    <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='myextrusion'/>
   </Scene>
 </X3D>

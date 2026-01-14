@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:18 GMT",
+        "@content":"25 October 2016",
         "@name":"modified"
       }
     },
@@ -67,8 +67,22 @@
         "meta":
         {
       {
+        "@content":"Camera nodes for Viewpoint navigation control",
+        "@name":"subject"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"CameraExamples.x3d",
         "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d",
+        "@name":"identifier"
       }
     },
         "meta":
@@ -81,15 +95,15 @@
         "meta":
         {
       {
-        "@content":"Camera nodes for Viewpoint navigation control",
-        "@name":"subject"
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d",
-        "@name":"identifier"
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -127,7 +141,8 @@
         "@accessType":"inputOutput",
         "@appinfo":"Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated",
         "@name":"orientation",
-        "@type":"SFRotation"
+        "@type":"SFRotation",
+        "@value":"[0, 0, 1, 0]"
       }
     },
                 "field":
@@ -332,13 +347,6 @@
                         "connect":
                         {
       {
-        "@nodeField":"set_bind",
-        "@protoField":"set_bind"
-      }
-    },
-                        "connect":
-                        {
-      {
         "@nodeField":"description",
         "@protoField":"description"
       }
@@ -367,8 +375,8 @@
                         "connect":
                         {
       {
-        "@nodeField":"isBound",
-        "@protoField":"isBound"
+        "@nodeField":"set_bind",
+        "@protoField":"set_bind"
       }
     },
                         "connect":
@@ -376,6 +384,13 @@
       {
         "@nodeField":"bindTime",
         "@protoField":"bindTime"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"isBound",
+        "@protoField":"isBound"
       }
     },
                     }                }                "NavigationInfo":
@@ -468,7 +483,25 @@
         "@protoField":"set_fraction"
       }
     },
-                    }                }                "Script":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"CameraPositionInterpolator",
+        "@toField":"position",
+        "@toNode":"CameraViewpoint"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"CameraOrientationInterpolator",
+        "@toField":"orientation",
+        "@toNode":"CameraViewpoint"
+      }
+    },
+                "Script":
                 {
       {
         "@DEF":"CameraScript",
@@ -1593,36 +1626,18 @@
                 }                "ROUTE":
                 {
       {
-        "@fromField":"value_changed",
-        "@fromNode":"CameraPositionInterpolator",
-        "@toField":"set_position",
-        "@toNode":"CameraViewpoint"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"CameraOrientationInterpolator",
-        "@toField":"set_orientation",
-        "@toNode":"CameraViewpoint"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"position_changed",
+        "@fromField":"position",
         "@fromNode":"CameraScript",
-        "@toField":"set_position",
+        "@toField":"position",
         "@toNode":"CameraViewpoint"
       }
     },
                 "ROUTE":
                 {
       {
-        "@fromField":"orientation_changed",
+        "@fromField":"orientation",
         "@fromNode":"CameraScript",
-        "@toField":"set_orientation",
+        "@toField":"orientation",
         "@toNode":"CameraViewpoint"
       }
     },
@@ -1649,7 +1664,7 @@
       {
         "@fromField":"isActive",
         "@fromNode":"CameraScript",
-        "@toField":"set_on",
+        "@toField":"on",
         "@toNode":"CameraDirectionalLight"
       }
     },
@@ -1705,7 +1720,8 @@
         "@accessType":"inputOutput",
         "@appinfo":"Setup to reinitialize camera rotation for this shot",
         "@name":"initialOrientation",
-        "@type":"SFRotation"
+        "@type":"SFRotation",
+        "@value":"[0, 0, 1, 0]"
       }
     },
                 "field":
@@ -1714,7 +1730,8 @@
         "@accessType":"inputOutput",
         "@appinfo":"Setup to reinitialize aimpoint (relative location for camera direction) for this shot",
         "@name":"initialAimPoint",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -2241,7 +2258,8 @@
         "@accessType":"inputOutput",
         "@appinfo":"Goal camera rotation for this move",
         "@name":"goalOrientation",
-        "@type":"SFRotation"
+        "@type":"SFRotation",
+        "@value":"[0, 0, 1, 0]"
       }
     },
                 "field":
@@ -2259,7 +2277,8 @@
         "@accessType":"inputOutput",
         "@appinfo":"Goal aimPoint for this move, ignored if tracking=false",
         "@name":"goalAimPoint",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":

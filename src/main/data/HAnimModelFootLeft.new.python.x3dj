@@ -45,7 +45,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:34 GMT",
+        "@content":"23 December 2021",
         "@name":"modified"
       }
     },
@@ -133,6 +133,20 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
         "WorldInfo":
@@ -157,7 +171,8 @@
                 "MetadataString":
                 {
       {
-        "@name":"authorName"
+        "@name":"authorName",
+        "@value":""Kwan-Hee YOO, Don Brutzman and Joe Williams""
       }
     },
             }            "HAnimJoint":

@@ -32,8 +32,15 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a generic proto to connect two objects",
+        "@name":"description"
       }
     },
     }    "Scene":
@@ -54,8 +61,7 @@
         "Transform":
         {
       {
-        "@DEF":"DECLpoint_G1_node",
-        "@translation":"0 0.6049997 0"
+        "@DEF":"DECLpoint_G1_node"
       }
             "Shape":
             {
@@ -104,7 +110,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -112,7 +119,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -140,11 +148,46 @@
         "@loop":"true"
       }
     },
+            "ROUTE":
+            {
+      {
+        "@fromField":"cycleTime",
+        "@fromNode":"DECLpoint_G1_CL1",
+        "@toField":"set_location",
+        "@toNode":"DECLpoint_G1_MB1"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"DECLpoint_G1_CL1",
+        "@toField":"set_fraction",
+        "@toNode":"DECLpoint_G1_PI1"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"keyValue",
+        "@fromNode":"DECLpoint_G1_MB1",
+        "@toField":"keyValue",
+        "@toNode":"DECLpoint_G1_PI1"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"DECLpoint_G1_PI1",
+        "@toField":"set_translation",
+        "@toNode":"DECLpoint_G1_node"
+      }
+    },
         }        "Transform":
         {
       {
-        "@DEF":"DECLpoint_G2_node",
-        "@translation":"0 0.6049997 0"
+        "@DEF":"DECLpoint_G2_node"
       }
             "Shape":
             {
@@ -193,7 +236,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -201,7 +245,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -227,6 +272,42 @@
         "@DEF":"DECLpoint_G2_CL1",
         "@cycleInterval":"3",
         "@loop":"true"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"cycleTime",
+        "@fromNode":"DECLpoint_G2_CL1",
+        "@toField":"set_location",
+        "@toNode":"DECLpoint_G2_MB1"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"DECLpoint_G2_CL1",
+        "@toField":"set_fraction",
+        "@toNode":"DECLpoint_G2_PI1"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"keyValue",
+        "@fromNode":"DECLpoint_G2_MB1",
+        "@toField":"keyValue",
+        "@toNode":"DECLpoint_G2_PI1"
+      }
+    },
+            "ROUTE":
+            {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"DECLpoint_G2_PI1",
+        "@toField":"set_translation",
+        "@toNode":"DECLpoint_G2_node"
       }
     },
         }        "Group":
@@ -443,78 +524,6 @@
       }
     },
             }        }        "ROUTE":
-        {
-      {
-        "@fromField":"cycleTime",
-        "@fromNode":"DECLpoint_G1_CL1",
-        "@toField":"set_location",
-        "@toNode":"DECLpoint_G1_MB1"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"DECLpoint_G1_CL1",
-        "@toField":"set_fraction",
-        "@toNode":"DECLpoint_G1_PI1"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"keyValue_changed",
-        "@fromNode":"DECLpoint_G1_MB1",
-        "@toField":"set_keyValue",
-        "@toNode":"DECLpoint_G1_PI1"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"DECLpoint_G1_PI1",
-        "@toField":"set_translation",
-        "@toNode":"DECLpoint_G1_node"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"cycleTime",
-        "@fromNode":"DECLpoint_G2_CL1",
-        "@toField":"set_location",
-        "@toNode":"DECLpoint_G2_MB1"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"DECLpoint_G2_CL1",
-        "@toField":"set_fraction",
-        "@toNode":"DECLpoint_G2_PI1"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"keyValue_changed",
-        "@fromNode":"DECLpoint_G2_MB1",
-        "@toField":"set_keyValue",
-        "@toNode":"DECLpoint_G2_PI1"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"DECLpoint_G2_PI1",
-        "@toField":"set_translation",
-        "@toNode":"DECLpoint_G2_node"
-      }
-    },
-        "ROUTE":
         {
       {
         "@fromField":"translation_changed",

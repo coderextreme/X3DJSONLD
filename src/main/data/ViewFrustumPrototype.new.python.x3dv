@@ -6,14 +6,19 @@ META "title" "ViewFrustumPrototype.x3d"
 META "description" "Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype."
 META "creator" "Don Brutzman"
 META "translated" "16 August 2008"
-META "modified" "Wed, 17 Sep 2025 23:48:14 GMT"
+META "modified" "20 October 2019"
 META "reference" "ViewFrustumExample.x3d"
 META "drawing" "ViewFrustumComputation.png"
 META "Image" "ViewFrustumOverheadView.png"
 META "Image" "ViewFrustumObliqueView.png"
 META "subject" "view culling frustum"
 META "identifier" "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"
-ProtoDeclare {
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
+WorldInfo {
+      title "ViewFrustumPrototype.x3d" 
+    }
+    ProtoDeclare {
       appinfo "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"
       name "ViewFrustum"
       ProtoInterface ProtoInterface {
@@ -274,25 +279,22 @@ ProtoDeclare {
           
           }
           
-          ROUTE GeometryComputationScript.visibilitySwitchSelection TO VisibilitySwitch.set_whichChoice
+          ROUTE GeometryComputationScript.visibilitySwitchSelection TO VisibilitySwitch.whichChoice
           
-          ROUTE GeometryComputationScript.position_changed TO PositionTransform.set_translation
+          ROUTE GeometryComputationScript.position_changed TO PositionTransform.translation
           
-          ROUTE GeometryComputationScript.orientation_changed TO OrientationTransform.set_rotation
+          ROUTE GeometryComputationScript.orientation_changed TO OrientationTransform.rotation
           
           ROUTE GeometryComputationScript.spine_changed TO FrustumExtrusion.set_spine
           
           ROUTE GeometryComputationScript.scale_changed TO FrustumExtrusion.set_scale
           
-          ROUTE GeometryComputationScript.point_changed TO FrustumCoordinate.set_point
+          ROUTE GeometryComputationScript.point_changed TO FrustumCoordinate.point
           
         ]
       
       }
       
-    }
-    WorldInfo {
-      title "ViewFrustumPrototype.x3d" 
     }
     Anchor {
       description "ViewFrustum Example"

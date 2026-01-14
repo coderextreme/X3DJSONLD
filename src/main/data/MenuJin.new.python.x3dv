@@ -3,6 +3,7 @@
 
 PROFILE Immersive
 META "title" "Menu.x3d"
+META "description" "X3D scene with a Switch of Inlines controlled by a menu"
 Viewpoint {
       position 0 20 110 
     }
@@ -1191,7 +1192,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1201,6 +1202,10 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinBlink_Sensor.touchTime TO Choice0.touchTime
+        
+        ROUTE Choice0.choice TO SceneSwitcher.whichChoice
         Transform {
           translation 48 60.4 0
           children [
@@ -1237,7 +1242,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1247,8 +1252,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinBrowLowerer_Sensor.touchTime TO Choice1.touchTime
+        
+        ROUTE Choice1.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 57.4 0
+          translation 48 57.39999999999999 0
           children [
             DEF JinCheekPuffer_Sensor TouchSensor {
               description "TSJinCheekPuffer" 
@@ -1283,7 +1292,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1293,8 +1302,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinCheekPuffer_Sensor.touchTime TO Choice2.touchTime
+        
+        ROUTE Choice2.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 54.4 0
+          translation 48 54.39999999999999 0
           children [
             DEF JinCheekRaiser_Sensor TouchSensor {
               description "TSJinCheekRaiser" 
@@ -1329,7 +1342,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1339,8 +1352,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinCheekRaiser_Sensor.touchTime TO Choice3.touchTime
+        
+        ROUTE Choice3.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 51.4 0
+          translation 48 51.39999999999999 0
           children [
             DEF JinChinRaiser_Sensor TouchSensor {
               description "TSJinChinRaiser" 
@@ -1375,7 +1392,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1385,8 +1402,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinChinRaiser_Sensor.touchTime TO Choice4.touchTime
+        
+        ROUTE Choice4.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 48.4 0
+          translation 48 48.39999999999999 0
           children [
             DEF JinDimpler_Sensor TouchSensor {
               description "TSJinDimpler" 
@@ -1421,7 +1442,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1431,8 +1452,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinDimpler_Sensor.touchTime TO Choice5.touchTime
+        
+        ROUTE Choice5.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 45.4 0
+          translation 48 45.39999999999999 0
           children [
             DEF JinEyesClosed_Sensor TouchSensor {
               description "TSJinEyesClosed" 
@@ -1467,7 +1492,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1477,8 +1502,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinEyesClosed_Sensor.touchTime TO Choice6.touchTime
+        
+        ROUTE Choice6.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 42.4 0
+          translation 48 42.39999999999999 0
           children [
             DEF JinInnerBrowRaiser_Sensor TouchSensor {
               description "TSJinInnerBrowRaiser" 
@@ -1513,7 +1542,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1523,8 +1552,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinInnerBrowRaiser_Sensor.touchTime TO Choice7.touchTime
+        
+        ROUTE Choice7.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 39.4 0
+          translation 48 39.39999999999999 0
           children [
             DEF JinJawDrop_Sensor TouchSensor {
               description "TSJinJawDrop" 
@@ -1559,7 +1592,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1569,8 +1602,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinJawDrop_Sensor.touchTime TO Choice8.touchTime
+        
+        ROUTE Choice8.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 36.4 0
+          translation 48 36.39999999999999 0
           children [
             DEF JinLidDroop_Sensor TouchSensor {
               description "TSJinLidDroop" 
@@ -1605,7 +1642,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1615,8 +1652,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLidDroop_Sensor.touchTime TO Choice9.touchTime
+        
+        ROUTE Choice9.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 33.4 0
+          translation 48 33.39999999999999 0
           children [
             DEF JinLidTightener_Sensor TouchSensor {
               description "TSJinLidTightener" 
@@ -1651,7 +1692,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1661,8 +1702,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLidTightener_Sensor.touchTime TO Choice10.touchTime
+        
+        ROUTE Choice10.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 30.4 0
+          translation 48 30.399999999999995 0
           children [
             DEF JinLipCornerDepressor_Sensor TouchSensor {
               description "TSJinLipCornerDepressor" 
@@ -1697,7 +1742,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1707,8 +1752,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipCornerDepressor_Sensor.touchTime TO Choice11.touchTime
+        
+        ROUTE Choice11.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 27.4 0
+          translation 48 27.399999999999995 0
           children [
             DEF JinLipCornerPuller_Sensor TouchSensor {
               description "TSJinLipCornerPuller" 
@@ -1743,7 +1792,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1753,8 +1802,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipCornerPuller_Sensor.touchTime TO Choice12.touchTime
+        
+        ROUTE Choice12.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 24.4 0
+          translation 48 24.399999999999995 0
           children [
             DEF JinLipFunneler_Sensor TouchSensor {
               description "TSJinLipFunneler" 
@@ -1789,7 +1842,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1799,8 +1852,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipFunneler_Sensor.touchTime TO Choice13.touchTime
+        
+        ROUTE Choice13.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 21.4 0
+          translation 48 21.399999999999995 0
           children [
             DEF JinLipPressor_Sensor TouchSensor {
               description "TSJinLipPressor" 
@@ -1835,7 +1892,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1845,6 +1902,10 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipPressor_Sensor.touchTime TO Choice14.touchTime
+        
+        ROUTE Choice14.choice TO SceneSwitcher.whichChoice
         Transform {
           translation 48 18.4 0
           children [
@@ -1881,7 +1942,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1891,8 +1952,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipPuckerer_Sensor.touchTime TO Choice15.touchTime
+        
+        ROUTE Choice15.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 15.4 0
+          translation 48 15.399999999999997 0
           children [
             DEF JinLipsPart_Sensor TouchSensor {
               description "TSJinLipsPart" 
@@ -1927,7 +1992,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1937,8 +2002,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipsPart_Sensor.touchTime TO Choice16.touchTime
+        
+        ROUTE Choice16.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 12.4 0
+          translation 48 12.399999999999999 0
           children [
             DEF JinLipStretcher_Sensor TouchSensor {
               description "TSJinLipStretcher" 
@@ -1973,7 +2042,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -1983,8 +2052,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipStretcher_Sensor.touchTime TO Choice17.touchTime
+        
+        ROUTE Choice17.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 9.4 0
+          translation 48 9.399999999999999 0
           children [
             DEF JinLipSuck_Sensor TouchSensor {
               description "TSJinLipSuck" 
@@ -2019,7 +2092,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2029,8 +2102,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipSuck_Sensor.touchTime TO Choice18.touchTime
+        
+        ROUTE Choice18.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 6.4 0
+          translation 48 6.399999999999999 0
           children [
             DEF JinLipTightener_Sensor TouchSensor {
               description "TSJinLipTightener" 
@@ -2065,7 +2142,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2075,8 +2152,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLipTightener_Sensor.touchTime TO Choice19.touchTime
+        
+        ROUTE Choice19.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 3.4 0
+          translation 48 3.399999999999995 0
           children [
             DEF JinLowerLipDepressor_Sensor TouchSensor {
               description "TSJinLowerLipDepressor" 
@@ -2111,7 +2192,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2121,8 +2202,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinLowerLipDepressor_Sensor.touchTime TO Choice20.touchTime
+        
+        ROUTE Choice20.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 0.4 0
+          translation 48 0.399999999999995 0
           children [
             DEF JinMouthStretch_Sensor TouchSensor {
               description "TSJinMouthStretch" 
@@ -2157,7 +2242,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2167,8 +2252,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinMouthStretch_Sensor.touchTime TO Choice21.touchTime
+        
+        ROUTE Choice21.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 -2.6 0
+          translation 48 -2.6000000000000085 0
           children [
             DEF JinNasolabialDeepener_Sensor TouchSensor {
               description "TSJinNasolabialDeepener" 
@@ -2203,7 +2292,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2213,8 +2302,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinNasolabialDeepener_Sensor.touchTime TO Choice22.touchTime
+        
+        ROUTE Choice22.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 -5.6 0
+          translation 48 -5.6000000000000085 0
           children [
             DEF JinNoseWrinkler_Sensor TouchSensor {
               description "TSJinNoseWrinkler" 
@@ -2249,7 +2342,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2259,8 +2352,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinNoseWrinkler_Sensor.touchTime TO Choice23.touchTime
+        
+        ROUTE Choice23.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 -8.6 0
+          translation 48 -8.600000000000009 0
           children [
             DEF JinOuterBrowRaiser_Sensor TouchSensor {
               description "TSJinOuterBrowRaiser" 
@@ -2295,7 +2392,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2305,8 +2402,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinOuterBrowRaiser_Sensor.touchTime TO Choice24.touchTime
+        
+        ROUTE Choice24.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 -11.6 0
+          translation 48 -11.600000000000009 0
           children [
             DEF JinSlit_Sensor TouchSensor {
               description "TSJinSlit" 
@@ -2341,7 +2442,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2351,8 +2452,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinSlit_Sensor.touchTime TO Choice25.touchTime
+        
+        ROUTE Choice25.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 -14.6 0
+          translation 48 -14.600000000000001 0
           children [
             DEF JinSquint_Sensor TouchSensor {
               description "TSJinSquint" 
@@ -2387,7 +2492,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2397,6 +2502,10 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinSquint_Sensor.touchTime TO Choice26.touchTime
+        
+        ROUTE Choice26.choice TO SceneSwitcher.whichChoice
         Transform {
           translation 48 -17.6 0
           children [
@@ -2433,7 +2542,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2443,6 +2552,10 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinUpperLidRaiser_Sensor.touchTime TO Choice27.touchTime
+        
+        ROUTE Choice27.choice TO SceneSwitcher.whichChoice
         Transform {
           translation 48 -20.6 0
           children [
@@ -2479,7 +2592,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2489,8 +2602,12 @@ Viewpoint {
           ]
         
         }
+        
+        ROUTE JinUpperLipRaiser_Sensor.touchTime TO Choice28.touchTime
+        
+        ROUTE Choice28.choice TO SceneSwitcher.whichChoice
         Transform {
-          translation 48 -23.6 0
+          translation 48 -23.599999999999994 0
           children [
             DEF JinWink_Sensor TouchSensor {
               description "TSJinWink" 
@@ -2525,7 +2642,7 @@ Viewpoint {
               geometry IndexedFaceSet {
                 coordIndex [0 1 2 3 -1]
                 coord Coordinate {
-                  point [20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1] 
+                  point [20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1] 
                 }
                  
               }
@@ -2536,127 +2653,11 @@ Viewpoint {
         
         }
         
+        ROUTE JinWink_Sensor.touchTime TO Choice29.touchTime
+        
+        ROUTE Choice29.choice TO SceneSwitcher.whichChoice
+        
       ]
     
     }
-    
-    ROUTE JinBlink_Sensor.touchTime TO Choice0.touchTime
-    
-    ROUTE Choice0.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinBrowLowerer_Sensor.touchTime TO Choice1.touchTime
-    
-    ROUTE Choice1.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinCheekPuffer_Sensor.touchTime TO Choice2.touchTime
-    
-    ROUTE Choice2.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinCheekRaiser_Sensor.touchTime TO Choice3.touchTime
-    
-    ROUTE Choice3.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinChinRaiser_Sensor.touchTime TO Choice4.touchTime
-    
-    ROUTE Choice4.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinDimpler_Sensor.touchTime TO Choice5.touchTime
-    
-    ROUTE Choice5.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinEyesClosed_Sensor.touchTime TO Choice6.touchTime
-    
-    ROUTE Choice6.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinInnerBrowRaiser_Sensor.touchTime TO Choice7.touchTime
-    
-    ROUTE Choice7.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinJawDrop_Sensor.touchTime TO Choice8.touchTime
-    
-    ROUTE Choice8.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLidDroop_Sensor.touchTime TO Choice9.touchTime
-    
-    ROUTE Choice9.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLidTightener_Sensor.touchTime TO Choice10.touchTime
-    
-    ROUTE Choice10.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipCornerDepressor_Sensor.touchTime TO Choice11.touchTime
-    
-    ROUTE Choice11.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipCornerPuller_Sensor.touchTime TO Choice12.touchTime
-    
-    ROUTE Choice12.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipFunneler_Sensor.touchTime TO Choice13.touchTime
-    
-    ROUTE Choice13.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipPressor_Sensor.touchTime TO Choice14.touchTime
-    
-    ROUTE Choice14.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipPuckerer_Sensor.touchTime TO Choice15.touchTime
-    
-    ROUTE Choice15.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipsPart_Sensor.touchTime TO Choice16.touchTime
-    
-    ROUTE Choice16.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipStretcher_Sensor.touchTime TO Choice17.touchTime
-    
-    ROUTE Choice17.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipSuck_Sensor.touchTime TO Choice18.touchTime
-    
-    ROUTE Choice18.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLipTightener_Sensor.touchTime TO Choice19.touchTime
-    
-    ROUTE Choice19.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinLowerLipDepressor_Sensor.touchTime TO Choice20.touchTime
-    
-    ROUTE Choice20.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinMouthStretch_Sensor.touchTime TO Choice21.touchTime
-    
-    ROUTE Choice21.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinNasolabialDeepener_Sensor.touchTime TO Choice22.touchTime
-    
-    ROUTE Choice22.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinNoseWrinkler_Sensor.touchTime TO Choice23.touchTime
-    
-    ROUTE Choice23.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinOuterBrowRaiser_Sensor.touchTime TO Choice24.touchTime
-    
-    ROUTE Choice24.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinSlit_Sensor.touchTime TO Choice25.touchTime
-    
-    ROUTE Choice25.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinSquint_Sensor.touchTime TO Choice26.touchTime
-    
-    ROUTE Choice26.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinUpperLidRaiser_Sensor.touchTime TO Choice27.touchTime
-    
-    ROUTE Choice27.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinUpperLipRaiser_Sensor.touchTime TO Choice28.touchTime
-    
-    ROUTE Choice28.choice TO SceneSwitcher.set_whichChoice
-    
-    ROUTE JinWink_Sensor.touchTime TO Choice29.touchTime
-    
-    ROUTE Choice29.choice TO SceneSwitcher.set_whichChoice
     

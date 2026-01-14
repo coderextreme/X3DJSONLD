@@ -32,8 +32,15 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a flower",
+        "@name":"description"
       }
     },
     }    "Scene":
@@ -96,7 +103,7 @@
         "@DEF":"OrbitScript",
         "@sourceCode":"ecmascript:
 &quot;+
-&quot;    
+&quot;
 &quot;+
 &quot;var e = 5;
 &quot;+
@@ -292,7 +299,7 @@
       {
         "@fromField":"coordinates",
         "@fromNode":"OrbitScript",
-        "@toField":"set_point",
+        "@toField":"point",
         "@toNode":"OrbitCoordinates"
       }
     },

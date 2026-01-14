@@ -6,10 +6,12 @@ META "title" "Marine.x3d"
 META "description" "Marine model"
 META "creator" "Pat Sullivan"
 META "created" "25 November 2006"
-META "modified" "Wed, 17 Sep 2025 23:48:02 GMT"
+META "modified" "9 May 2020"
 META "warning" "Not HAnim compliant"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Polygonal/Marine.x3d"
 META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
+META "Vizthumbnail" "Thumb_marine_x3d21897981139112986.jpg"
 WorldInfo {
       info ["This Web3D World was created with Vizx3D, a Web3D authoring tool" "www.vizx3d.com"]
       title "marine" 

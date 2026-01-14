@@ -10,11 +10,14 @@ META "created" "4 April 2017"
 META "generator" "convertStlToJson.js:  https://github.com/coderextreme/X3DJSONLD/src/main/node/convertStlToJson.js"
 META "generator" "X3DJSONLD: https://github.com/coderextreme/X3DJSONLD"
 META "generator" "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "generator" "x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy"
 META "license" "../license.html"
-META "modified" "Wed, 17 Sep 2025 23:48:24 GMT"
+META "modified" "Sat, 16 Aug 2025 02:34:42 GMT"
+META "translated" "30 April 2017"
+META "translated" "9 August 2025"
+META "reference" "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
 NavigationInfo {
-      type ["EXAMINE" "FLY" "WALK" "ANY"] 
+      type [", " "EXAMINE, " "FLY, " "WALKANY"] 
     }
     Group {
       children [

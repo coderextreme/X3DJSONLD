@@ -7,8 +7,10 @@
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
     <meta content='h2.pl' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
-    <meta content='Wed, 17 Sep 2025 23:47:38 GMT' name='modified'/>
+    <meta content='18 Jan 2023' name='modified'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='9 November 2020' name='created'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <Group>

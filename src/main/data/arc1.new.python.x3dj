@@ -32,12 +32,32 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a generic proto to connect two objects",
+        "@name":"description"
       }
     },
     }    "Scene":
     {
+        "Viewpoint":
+        {
+      {
+        "@description":"Only Viewpoint",
+        "@position":"0 0 5"
+      }
+    },
+        "Background":
+        {
+      {
+        "@skyColor":"0.4 0.4 0.4"
+      }
+    },
         "ProtoDeclare":
         {
       {
@@ -50,7 +70,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
             }            "ProtoBody":
@@ -123,7 +144,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -151,8 +173,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"cycleTime",
         "@fromNode":"CL1",
@@ -160,8 +182,8 @@
         "@toNode":"MB1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"CL1",
@@ -169,17 +191,17 @@
         "@toNode":"PI1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
-        "@fromField":"keyValue_changed",
+        "@fromField":"keyValue",
         "@fromNode":"MB1",
-        "@toField":"set_keyValue",
+        "@toField":"keyValue",
         "@toNode":"PI1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"PI1",
@@ -187,8 +209,8 @@
         "@toNode":"node"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"translation_changed",
         "@fromNode":"MB1",
@@ -196,7 +218,56 @@
         "@toNode":"node"
       }
     },
-            }        }        "ProtoDeclare":
+                }            }        }        "Transform":
+        {
+      {
+        "@DEF":"G1"
+      }
+            "ProtoInstance":
+            {
+      {
+        "@name":"point"
+      }
+    },
+        }        "Transform":
+        {
+      {
+        "@DEF":"G2"
+      }
+            "ProtoInstance":
+            {
+      {
+        "@name":"point"
+      }
+    },
+        }        "Transform":
+        {
+      {
+        "@DEF":"transC1"
+      }
+            "Transform":
+            {
+      {
+        "@DEF":"rotscaleC1"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0.2 0.7 0.7",
+        "@transparency":"0.5"
+      }
+    },
+                    }                    "Cylinder":
+                    {
+      {
+        "@radius":"0.05"
+      }
+    },
+                }            }        }        "ProtoDeclare":
         {
       {
         "@name":"x3dconnector"
@@ -358,6 +429,20 @@
                         "connect":
                         {
       {
+        "@nodeField":"transnode",
+        "@protoField":"transnode"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"rotscalenode",
+        "@protoField":"rotscalenode"
+      }
+    },
+                        "connect":
+                        {
+      {
         "@nodeField":"set_startpoint",
         "@protoField":"set_startpoint"
       }
@@ -417,80 +502,6 @@
         "@type":"SFVec3f"
       }
     },
-                }            }        }        "Viewpoint":
-        {
-      {
-        "@description":"Only Viewpoint",
-        "@position":"0 0 5"
-      }
-    },
-        "Background":
-        {
-      {
-        "@skyColor":"0.4 0.4 0.4"
-      }
-    },
-        "Transform":
-        {
-      {
-        "@DEF":"G1"
-      }
-            "ProtoInstance":
-            {
-      {
-        "@name":"point"
-      }
-                "fieldValue":
-                {
-      {
-        "@name":"translation",
-        "@value":"0 0.4650003 0"
-      }
-    },
-            }        }        "Transform":
-        {
-      {
-        "@DEF":"G2"
-      }
-            "ProtoInstance":
-            {
-      {
-        "@name":"point"
-      }
-                "fieldValue":
-                {
-      {
-        "@name":"translation",
-        "@value":"0 0.4650003 0"
-      }
-    },
-            }        }        "Transform":
-        {
-      {
-        "@DEF":"transC1"
-      }
-            "Transform":
-            {
-      {
-        "@DEF":"rotscaleC1"
-      }
-                "Shape":
-                {
-                    "Appearance":
-                    {
-                        "Material":
-                        {
-      {
-        "@diffuseColor":"0.2 0.7 0.7",
-        "@transparency":"0.5"
-      }
-    },
-                    }                    "Cylinder":
-                    {
-      {
-        "@radius":"0.05"
-      }
-    },
                 }            }        }        "ProtoInstance":
         {
       {
@@ -541,7 +552,19 @@
         "@USE":"rotscaleC1"
       }
     },
-            }        }        "ROUTE":
+            }            "fieldValue":
+            {
+      {
+        "@name":"set_startpoint"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"set_endpoint"
+      }
+    },
+        }        "ROUTE":
         {
       {
         "@fromField":"translation_changed",

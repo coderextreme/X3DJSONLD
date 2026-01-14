@@ -5,15 +5,24 @@ PROFILE Immersive
 META "title" "rubik.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
-ProtoDeclare {
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d"
+META "description" "a kind of rubik cube with spheres"
+NavigationInfo {
+      type ["ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"] 
+    }
+    Viewpoint {
+      description "Rubiks Cube"
+      position 0 0 12 
+    }
+    ProtoDeclare {
       name "sphereproto"
       ProtoInterface ProtoInterface {
         children [
           field {
             accessType "inputOutput"
             name "xtranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           
         ]
@@ -64,7 +73,8 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ytranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           
         ]
@@ -87,7 +97,15 @@ ProtoDeclare {
             
             children [
               ProtoInstance {
-                name "sphereproto" 
+                name "sphereproto"
+                children [
+                  fieldValue {
+                    name "xtranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "sphereproto"
@@ -128,7 +146,8 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ztranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           
         ]
@@ -151,7 +170,15 @@ ProtoDeclare {
             
             children [
               ProtoInstance {
-                name "three" 
+                name "three"
+                children [
+                  fieldValue {
+                    name "ytranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "three"
@@ -192,7 +219,8 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ttranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           
         ]
@@ -215,7 +243,15 @@ ProtoDeclare {
             
             children [
               ProtoInstance {
-                name "nine" 
+                name "nine"
+                children [
+                  fieldValue {
+                    name "ztranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "nine"
@@ -249,14 +285,15 @@ ProtoDeclare {
       }
       
     }
-    NavigationInfo {
-      type ["ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"] 
-    }
-    Viewpoint {
-      description "Rubiks Cube"
-      position 0 0 12 
-    }
     ProtoInstance {
-      name "twentyseven" 
+      name "twentyseven"
+      children [
+        fieldValue {
+          name "ttranslation"
+          value 0 0 0 
+        }
+        
+      ]
+    
     }
     

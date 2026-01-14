@@ -7,10 +7,12 @@ META "description" "Create an arch. Can modify general parameters: clearSpanWidt
 META "description" "Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information."
 META "creator" "Michele Foti, Don Brutzman"
 META "created" "15 December 2014"
-META "modified" "Wed, 17 Sep 2025 23:46:17 GMT"
+META "modified" "27 November 2015"
 META "reference" "ArchModelingDiagrams.pdf"
 META "reference" "https://en.wikipedia.org/wiki/Arch"
 META "identifier" "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 ProtoDeclare {
       appinfo "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."
       name "ArchPrototype"
@@ -123,12 +125,12 @@ ProtoDeclare {
                     IS IS {
                       children [
                         connect {
-                          nodeField "diffuseColor"
-                          protoField "diffuseColor" 
-                        }
-                        connect {
                           nodeField "emissiveColor"
                           protoField "emissiveColor" 
+                        }
+                        connect {
+                          nodeField "diffuseColor"
+                          protoField "diffuseColor" 
                         }
                         
                       ]
@@ -169,12 +171,12 @@ ProtoDeclare {
                   protoField "depth" 
                 }
                 connect {
-                  nodeField "topAbutmentHeight"
-                  protoField "topAbutmentHeight" 
-                }
-                connect {
                   nodeField "pierWidth"
                   protoField "pierWidth" 
+                }
+                connect {
+                  nodeField "topAbutmentHeight"
+                  protoField "topAbutmentHeight" 
                 }
                 connect {
                   nodeField "pierHeight"
@@ -305,9 +307,9 @@ ProtoDeclare {
           
           }
           
-          ROUTE ArchPrototypeScript.computedScale TO ArchTransform.set_scale
+          ROUTE ArchPrototypeScript.computedScale TO ArchTransform.scale
           
-          ROUTE ArchPrototypeScript.pointOut TO ArchChord.set_point
+          ROUTE ArchPrototypeScript.pointOut TO ArchChord.point
           
           ROUTE ArchPrototypeScript.indexOut TO ArchIndex.set_coordIndex
           

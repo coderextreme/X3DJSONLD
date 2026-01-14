@@ -5,7 +5,8 @@
     <meta content='flower.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d' name='identifier'/>
+    <meta content='a flower' name='description'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -180,7 +181,7 @@
     </Script>
     <TimeSensor DEF='Clock' cycleInterval='16' loop='true'/>
     <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
-    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
+    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='point' toNode='OrbitCoordinates'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
   </Scene>
 </X3D>

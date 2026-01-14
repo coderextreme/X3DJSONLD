@@ -8,6 +8,7 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='4 April 2017' name='created'/>
     <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
+    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='ifscubeworks.x3d'/>

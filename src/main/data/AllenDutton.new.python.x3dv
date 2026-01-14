@@ -9,7 +9,7 @@ META "creator" "Allen Dutton"
 META "translator" "Ozan APAYDIN"
 META "created" "8 June 2001"
 META "translated" "9 January 2002"
-META "modified" "Wed, 17 Sep 2025 23:46:17 GMT"
+META "modified" "17 July 2025"
 META "TODO" "remove colors bleeding into camo"
 META "reference" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/ALLEN.wrl"
 META "reference" "http://www.cyberware.com"
@@ -19,6 +19,8 @@ META "reference" "http://www.HAnim.org"
 META "reference" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDutton.x3d"
 META "reference" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/AllenDuttonVillage.x3d"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d"
+META "generator" "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "AllenDutton.x3d" 
     }
@@ -1049,7 +1051,7 @@ WorldInfo {
               keyValue [0 0 0 0 0 0] 
             }
             DEF Stand_Time TimeSensor {
-              cycleInterval 0.00999999977648258 
+              cycleInterval 0.009999999776482582 
             }
             
           ]
@@ -1307,37 +1309,37 @@ WorldInfo {
     
     }
     
-    ROUTE Stand_Touch.touchTime TO Walk_Time.set_stopTime
+    ROUTE Stand_Touch.touchTime TO Walk_Time.stopTime
     
-    ROUTE Stand_Touch.touchTime TO Run_Time.set_stopTime
+    ROUTE Stand_Touch.touchTime TO Run_Time.stopTime
     
-    ROUTE Stand_Touch.touchTime TO Jump_Time.set_stopTime
+    ROUTE Stand_Touch.touchTime TO Jump_Time.stopTime
     
-    ROUTE Stand_Touch.touchTime TO Stand_Time.set_startTime
+    ROUTE Stand_Touch.touchTime TO Stand_Time.startTime
     
-    ROUTE Walk_Touch.touchTime TO Stand_Time.set_stopTime
+    ROUTE Walk_Touch.touchTime TO Stand_Time.stopTime
     
-    ROUTE Walk_Touch.touchTime TO Run_Time.set_stopTime
+    ROUTE Walk_Touch.touchTime TO Run_Time.stopTime
     
-    ROUTE Walk_Touch.touchTime TO Jump_Time.set_stopTime
+    ROUTE Walk_Touch.touchTime TO Jump_Time.stopTime
     
-    ROUTE Walk_Touch.touchTime TO Walk_Time.set_startTime
+    ROUTE Walk_Touch.touchTime TO Walk_Time.startTime
     
-    ROUTE Run_Touch.touchTime TO Stand_Time.set_stopTime
+    ROUTE Run_Touch.touchTime TO Stand_Time.stopTime
     
-    ROUTE Run_Touch.touchTime TO Walk_Time.set_stopTime
+    ROUTE Run_Touch.touchTime TO Walk_Time.stopTime
     
-    ROUTE Run_Touch.touchTime TO Jump_Time.set_stopTime
+    ROUTE Run_Touch.touchTime TO Jump_Time.stopTime
     
-    ROUTE Run_Touch.touchTime TO Run_Time.set_startTime
+    ROUTE Run_Touch.touchTime TO Run_Time.startTime
     
-    ROUTE Jump_Touch.touchTime TO Stand_Time.set_stopTime
+    ROUTE Jump_Touch.touchTime TO Stand_Time.stopTime
     
-    ROUTE Jump_Touch.touchTime TO Walk_Time.set_stopTime
+    ROUTE Jump_Touch.touchTime TO Walk_Time.stopTime
     
-    ROUTE Jump_Touch.touchTime TO Run_Time.set_stopTime
+    ROUTE Jump_Touch.touchTime TO Run_Time.stopTime
     
-    ROUTE Jump_Touch.touchTime TO Jump_Time.set_startTime
+    ROUTE Jump_Touch.touchTime TO Jump_Time.startTime
     
     ROUTE Stand_Time.fraction_changed TO r_ankle_RotationInterpolator_Stand.set_fraction
     

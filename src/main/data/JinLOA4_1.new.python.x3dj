@@ -52,7 +52,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:42 GMT",
+        "@content":"13 March 2021",
         "@name":"modified"
       }
     },
@@ -110,6 +110,20 @@
       {
         "@content":"Gnu Image Manipulation Program, http://www.gimp.org",
         "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -1946,7 +1960,7 @@
             {
       {
         "@DEF":"hanim_humanoid_root",
-        "@center":"0 36.71 -0.7076",
+        "@center":"0 36.709999 -0.7076",
         "@name":"humanoid_root"
       }
                 "HAnimSegment":
@@ -1958,7 +1972,7 @@
                     "Transform":
                     {
       {
-        "@translation":"0 36.71 -0.7076"
+        "@translation":"0 36.709999 -0.7076"
       }
                         "Shape":
                         {
@@ -2053,7 +2067,7 @@
                     {
       {
         "@DEF":"hanim_l_hip",
-        "@center":"4.207 36.74 -0.8155",
+        "@center":"4.207 36.740002 -0.8155",
         "@name":"l_hip"
       }
                         "HAnimSegment":
@@ -2065,7 +2079,7 @@
                             "Transform":
                             {
       {
-        "@translation":"4.207 36.74 -0.8155"
+        "@translation":"4.207 36.740002 -0.8155"
       }
                                 "Shape":
                                 {
@@ -3537,7 +3551,7 @@
                     {
       {
         "@DEF":"hanim_r_hip",
-        "@center":"-4.207 36.74 -0.8155",
+        "@center":"-4.207 36.740002 -0.8155",
         "@name":"r_hip"
       }
                         "HAnimSegment":
@@ -3549,7 +3563,7 @@
                             "Transform":
                             {
       {
-        "@translation":"-4.207 36.74 -0.8155"
+        "@translation":"-4.207 36.740002 -0.8155"
       }
                                 "Shape":
                                 {
@@ -5021,7 +5035,7 @@
                     {
       {
         "@DEF":"hanim_vl5",
-        "@center":"0 41.13 -0.6117",
+        "@center":"0 41.130001 -0.6117",
         "@name":"vl5"
       }
                         "HAnimSegment":
@@ -5033,7 +5047,7 @@
                             "Transform":
                             {
       {
-        "@translation":"0 41.13 -0.6117"
+        "@translation":"0 41.130001 -0.6117"
       }
                                 "Shape":
                                 {
@@ -5074,7 +5088,7 @@
                         {
       {
         "@DEF":"hanim_vl4",
-        "@center":"0 42.21 -0.6117",
+        "@center":"0 42.209999 -0.6117",
         "@name":"vl4"
       }
                             "HAnimSegment":
@@ -5086,7 +5100,7 @@
                                 "Transform":
                                 {
       {
-        "@translation":"0 42.21 -0.6117"
+        "@translation":"0 42.209999 -0.6117"
       }
                                     "Shape":
                                     {
@@ -5286,7 +5300,7 @@
                                         {
       {
         "@DEF":"hanim_vt12",
-        "@center":"0 45.47 -0.6117",
+        "@center":"0 45.470001 -0.6117",
         "@name":"vt12"
       }
                                             "HAnimSegment":
@@ -5298,7 +5312,7 @@
                                                 "Transform":
                                                 {
       {
-        "@translation":"0 45.47 -0.6117"
+        "@translation":"0 45.470001 -0.6117"
       }
                                                     "Shape":
                                                     {
@@ -5392,7 +5406,7 @@
                                                 {
       {
         "@DEF":"hanim_vt10",
-        "@center":"0 47.28 -0.6127",
+        "@center":"0 47.279999 -0.6127",
         "@name":"vt10"
       }
                                                     "HAnimSegment":
@@ -5404,7 +5418,7 @@
                                                         "Transform":
                                                         {
       {
-        "@translation":"0 47.28 -0.6127"
+        "@translation":"0 47.279999 -0.6127"
       }
                                                             "Shape":
                                                             {
@@ -5498,7 +5512,7 @@
                                                         {
       {
         "@DEF":"hanim_vt8",
-        "@center":"0 48.58 -0.6117",
+        "@center":"0 48.580002 -0.6117",
         "@name":"vt8"
       }
                                                             "HAnimSegment":
@@ -5510,7 +5524,7 @@
                                                                 "Transform":
                                                                 {
       {
-        "@translation":"0 48.58 -0.6117"
+        "@translation":"0 48.580002 -0.6117"
       }
                                                                     "Shape":
                                                                     {
@@ -5551,7 +5565,7 @@
                                                             {
       {
         "@DEF":"hanim_vt7",
-        "@center":"0 49.28 -0.6117",
+        "@center":"0 49.279999 -0.6117",
         "@name":"vt7"
       }
                                                                 "HAnimSegment":
@@ -5563,7 +5577,7 @@
                                                                     "Transform":
                                                                     {
       {
-        "@translation":"0 49.28 -0.6117"
+        "@translation":"0 49.279999 -0.6117"
       }
                                                                         "Shape":
                                                                         {
@@ -5604,7 +5618,7 @@
                                                                 {
       {
         "@DEF":"hanim_vt6",
-        "@center":"0 49.85 -0.6117",
+        "@center":"0 49.849998 -0.6117",
         "@name":"vt6"
       }
                                                                     "HAnimSegment":
@@ -5616,7 +5630,7 @@
                                                                         "Transform":
                                                                         {
       {
-        "@translation":"0 49.85 -0.6117"
+        "@translation":"0 49.849998 -0.6117"
       }
                                                                             "Shape":
                                                                             {
@@ -5657,7 +5671,7 @@
                                                                     {
       {
         "@DEF":"hanim_vt5",
-        "@center":"0 50.54 -0.6117",
+        "@center":"0 50.540001 -0.6117",
         "@name":"vt5"
       }
                                                                         "HAnimSegment":
@@ -5669,7 +5683,7 @@
                                                                             "Transform":
                                                                             {
       {
-        "@translation":"0 50.54 -0.6117"
+        "@translation":"0 50.540001 -0.6117"
       }
                                                                                 "Shape":
                                                                                 {
@@ -5710,7 +5724,7 @@
                                                                         {
       {
         "@DEF":"hanim_vt4",
-        "@center":"0 51.22 -0.6117",
+        "@center":"0 51.220001 -0.6117",
         "@name":"vt4"
       }
                                                                             "HAnimSegment":
@@ -5722,7 +5736,7 @@
                                                                                 "Transform":
                                                                                 {
       {
-        "@translation":"0 51.22 -0.6117"
+        "@translation":"0 51.220001 -0.6117"
       }
                                                                                     "Shape":
                                                                                     {
@@ -5763,7 +5777,7 @@
                                                                             {
       {
         "@DEF":"hanim_vt3",
-        "@center":"0 52.04 -0.6117",
+        "@center":"0 52.040001 -0.6117",
         "@name":"vt3"
       }
                                                                                 "HAnimSegment":
@@ -5775,7 +5789,7 @@
                                                                                     "Transform":
                                                                                     {
       {
-        "@translation":"0 52.04 -0.6117"
+        "@translation":"0 52.040001 -0.6117"
       }
                                                                                         "Shape":
                                                                                         {
@@ -5816,7 +5830,7 @@
                                                                                 {
       {
         "@DEF":"hanim_vt2",
-        "@center":"0 53.14 -0.6127",
+        "@center":"0 53.139999 -0.6127",
         "@name":"vt2"
       }
                                                                                     "HAnimSegment":
@@ -5828,7 +5842,7 @@
                                                                                         "Transform":
                                                                                         {
       {
-        "@translation":"0 53.14 -0.6127"
+        "@translation":"0 53.139999 -0.6127"
       }
                                                                                             "Shape":
                                                                                             {
@@ -5869,7 +5883,7 @@
                                                                                     {
       {
         "@DEF":"hanim_vt1",
-        "@center":"0 54.2 -0.6117",
+        "@center":"0 54.200001 -0.6117",
         "@name":"vt1"
       }
                                                                                         "HAnimSegment":
@@ -5881,7 +5895,7 @@
                                                                                             "Transform":
                                                                                             {
       {
-        "@translation":"0 54.2 -0.6117"
+        "@translation":"0 54.200001 -0.6117"
       }
                                                                                                 "Shape":
                                                                                                 {
@@ -5922,7 +5936,7 @@
                                                                                         {
       {
         "@DEF":"hanim_vc7",
-        "@center":"0 55.35 -0.6695",
+        "@center":"0 55.349998 -0.6695",
         "@name":"vc7"
       }
                                                                                             "HAnimSegment":
@@ -5934,7 +5948,7 @@
                                                                                                 "Transform":
                                                                                                 {
       {
-        "@translation":"0 55.35 -0.6695"
+        "@translation":"0 55.349998 -0.6695"
       }
                                                                                                     "Shape":
                                                                                                     {
@@ -5975,7 +5989,7 @@
                                                                                             {
       {
         "@DEF":"hanim_vc6",
-        "@center":"0 55.89 -0.6695",
+        "@center":"0 55.889999 -0.6695",
         "@name":"vc6"
       }
                                                                                                 "HAnimSegment":
@@ -5987,7 +6001,7 @@
                                                                                                     "Transform":
                                                                                                     {
       {
-        "@translation":"0 55.89 -0.6695"
+        "@translation":"0 55.889999 -0.6695"
       }
                                                                                                         "Shape":
                                                                                                         {
@@ -6028,7 +6042,7 @@
                                                                                                 {
       {
         "@DEF":"hanim_vc5",
-        "@center":"0 56.44 -0.6695",
+        "@center":"0 56.439999 -0.6695",
         "@name":"vc5"
       }
                                                                                                     "HAnimSegment":
@@ -6040,7 +6054,7 @@
                                                                                                         "Transform":
                                                                                                         {
       {
-        "@translation":"0 56.44 -0.6695"
+        "@translation":"0 56.439999 -0.6695"
       }
                                                                                                             "Shape":
                                                                                                             {
@@ -6081,7 +6095,7 @@
                                                                                                     {
       {
         "@DEF":"hanim_vc4",
-        "@center":"0 56.99 -0.6695",
+        "@center":"0 56.990002 -0.6695",
         "@name":"vc4"
       }
                                                                                                         "HAnimSegment":
@@ -6093,7 +6107,7 @@
                                                                                                             "Transform":
                                                                                                             {
       {
-        "@translation":"0 56.99 -0.6695"
+        "@translation":"0 56.990002 -0.6695"
       }
                                                                                                                 "Shape":
                                                                                                                 {
@@ -6134,7 +6148,7 @@
                                                                                                         {
       {
         "@DEF":"hanim_vc3",
-        "@center":"0 57.56 -0.6695",
+        "@center":"0 57.560001 -0.6695",
         "@name":"vc3"
       }
                                                                                                             "HAnimSegment":
@@ -6146,7 +6160,7 @@
                                                                                                                 "Transform":
                                                                                                                 {
       {
-        "@translation":"0 57.56 -0.6695"
+        "@translation":"0 57.560001 -0.6695"
       }
                                                                                                                     "Shape":
                                                                                                                     {
@@ -6187,7 +6201,7 @@
                                                                                                             {
       {
         "@DEF":"hanim_vc2",
-        "@center":"0 58.08 -0.6695",
+        "@center":"0 58.080002 -0.6695",
         "@name":"vc2"
       }
                                                                                                                 "HAnimSegment":
@@ -6199,7 +6213,7 @@
                                                                                                                     "Transform":
                                                                                                                     {
       {
-        "@translation":"0 58.08 -0.6695"
+        "@translation":"0 58.080002 -0.6695"
       }
                                                                                                                         "Shape":
                                                                                                                         {
@@ -6240,7 +6254,7 @@
                                                                                                                 {
       {
         "@DEF":"hanim_vc1",
-        "@center":"0 58.6 -0.6695",
+        "@center":"0 58.599998 -0.6695",
         "@name":"vc1"
       }
                                                                                                                     "HAnimSegment":
@@ -6252,7 +6266,7 @@
                                                                                                                         "Transform":
                                                                                                                         {
       {
-        "@translation":"0 58.6 -0.6695"
+        "@translation":"0 58.599998 -0.6695"
       }
                                                                                                                             "Shape":
                                                                                                                             {
@@ -6346,7 +6360,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_l_eyelid_joint",
-        "@center":"2.245 63.3 1.464",
+        "@center":"2.245 63.299999 1.464",
         "@name":"l_eyelid_joint"
       }
                                                                                                                             "HAnimSegment":
@@ -6358,7 +6372,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"2.245 63.3 1.464"
+        "@translation":"2.245 63.299999 1.464"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -6399,7 +6413,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_r_eyelid_joint",
-        "@center":"-2.245 63.3 1.464",
+        "@center":"-2.245 63.299999 1.464",
         "@name":"r_eyelid_joint"
       }
                                                                                                                             "HAnimSegment":
@@ -6411,7 +6425,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"-2.245 63.3 1.464"
+        "@translation":"-2.245 63.299999 1.464"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -6452,7 +6466,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_l_eyeball_joint",
-        "@center":"2.139 62.44 3.691",
+        "@center":"2.139 62.439999 3.691",
         "@name":"l_eyeball_joint"
       }
                                                                                                                             "HAnimSegment":
@@ -6464,7 +6478,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"2.139 62.44 3.691"
+        "@translation":"2.139 62.439999 3.691"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -6505,7 +6519,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_r_eyeball_joint",
-        "@center":"-2.139 62.44 3.691",
+        "@center":"-2.139 62.439999 3.691",
         "@name":"r_eyeball_joint"
       }
                                                                                                                             "HAnimSegment":
@@ -6517,7 +6531,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"-2.139 62.44 3.691"
+        "@translation":"-2.139 62.439999 3.691"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -6664,7 +6678,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_temporomandibular",
-        "@center":"0 58.35 0.6835",
+        "@center":"0 58.349998 0.6835",
         "@name":"temporomandibular"
       }
                                                                                                                             "HAnimSegment":
@@ -6676,7 +6690,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"0 58.35 0.6835"
+        "@translation":"0 58.349998 0.6835"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -6717,7 +6731,7 @@
                                                                                         {
       {
         "@DEF":"hanim_l_acromioclavicular",
-        "@center":"1.71 53.72 -0.6127",
+        "@center":"1.71 53.720001 -0.6127",
         "@name":"l_acromioclavicular"
       }
                                                                                             "HAnimSegment":
@@ -6729,7 +6743,7 @@
                                                                                                 "Transform":
                                                                                                 {
       {
-        "@translation":"1.71 53.72 -0.6127"
+        "@translation":"1.71 53.720001 -0.6127"
       }
                                                                                                     "Shape":
                                                                                                     {
@@ -6770,7 +6784,7 @@
                                                                                             {
       {
         "@DEF":"hanim_l_sternoclavicular",
-        "@center":"5.464 52.97 -0.5732",
+        "@center":"5.464 52.970001 -0.5732",
         "@name":"l_sternoclavicular"
       }
                                                                                                 "HAnimSegment":
@@ -6782,7 +6796,7 @@
                                                                                                     "Transform":
                                                                                                     {
       {
-        "@translation":"5.464 52.97 -0.5732"
+        "@translation":"5.464 52.970001 -0.5732"
       }
                                                                                                         "Shape":
                                                                                                         {
@@ -6823,7 +6837,7 @@
                                                                                                 {
       {
         "@DEF":"hanim_l_shoulder",
-        "@center":"7.336 52.38 -0.1452",
+        "@center":"7.336 52.380001 -0.1452",
         "@name":"l_shoulder"
       }
                                                                                                     "HAnimSegment":
@@ -6835,7 +6849,7 @@
                                                                                                         "Transform":
                                                                                                         {
       {
-        "@translation":"7.336 52.38 -0.1452"
+        "@translation":"7.336 52.380001 -0.1452"
       }
                                                                                                             "Shape":
                                                                                                             {
@@ -6876,7 +6890,7 @@
                                                                                                     {
       {
         "@DEF":"hanim_l_elbow",
-        "@center":"8.093 41.28 -0.2502",
+        "@center":"8.093 41.279999 -0.2502",
         "@name":"l_elbow"
       }
                                                                                                         "HAnimSegment":
@@ -6888,7 +6902,7 @@
                                                                                                             "Transform":
                                                                                                             {
       {
-        "@translation":"8.093 41.28 -0.2502"
+        "@translation":"8.093 41.279999 -0.2502"
       }
                                                                                                                 "Shape":
                                                                                                                 {
@@ -6929,7 +6943,7 @@
                                                                                                         {
       {
         "@DEF":"hanim_l_radiocarpal",
-        "@center":"8.086 32.19 -0.2233",
+        "@center":"8.086 32.189999 -0.2233",
         "@name":"l_radiocarpal"
       }
                                                                                                             "HAnimSegment":
@@ -6941,7 +6955,7 @@
                                                                                                                 "Transform":
                                                                                                                 {
       {
-        "@translation":"8.086 32.19 -0.2233"
+        "@translation":"8.086 32.189999 -0.2233"
       }
                                                                                                                     "Shape":
                                                                                                                     {
@@ -6982,7 +6996,7 @@
                                                                                                             {
       {
         "@DEF":"hanim_l_midcarpal_1",
-        "@center":"8.057 31.38 0.859",
+        "@center":"8.057 31.379999 0.859",
         "@name":"l_midcarpal_1"
       }
                                                                                                                 "HAnimSegment":
@@ -6994,7 +7008,7 @@
                                                                                                                     "Transform":
                                                                                                                     {
       {
-        "@translation":"8.057 31.38 0.859"
+        "@translation":"8.057 31.379999 0.859"
       }
                                                                                                                         "Shape":
                                                                                                                         {
@@ -7035,7 +7049,7 @@
                                                                                                                 {
       {
         "@DEF":"hanim_l_carpometacarpal_1",
-        "@center":"8.022 30.78 1.155",
+        "@center":"8.022 30.780001 1.155",
         "@name":"l_carpometacarpal_1"
       }
                                                                                                                     "HAnimSegment":
@@ -7047,7 +7061,7 @@
                                                                                                                         "Transform":
                                                                                                                         {
       {
-        "@translation":"8.022 30.78 1.155"
+        "@translation":"8.022 30.780001 1.155"
       }
                                                                                                                             "Shape":
                                                                                                                             {
@@ -7247,7 +7261,7 @@
                                                                                                                 {
       {
         "@DEF":"hanim_l_carpometacarpal_2",
-        "@center":"8.057 30.56 0.4324",
+        "@center":"8.057 30.559999 0.4324",
         "@name":"l_carpometacarpal_2"
       }
                                                                                                                     "HAnimSegment":
@@ -7259,7 +7273,7 @@
                                                                                                                         "Transform":
                                                                                                                         {
       {
-        "@translation":"8.057 30.56 0.4324"
+        "@translation":"8.057 30.559999 0.4324"
       }
                                                                                                                             "Shape":
                                                                                                                             {
@@ -7353,7 +7367,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
-        "@center":"8.076 26.97 0.6304",
+        "@center":"8.076 26.969999 0.6304",
         "@name":"l_carpal_proximal_interphalangeal_2"
       }
                                                                                                                             "HAnimSegment":
@@ -7365,7 +7379,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"8.076 26.97 0.6304"
+        "@translation":"8.076 26.969999 0.6304"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -7565,7 +7579,7 @@
                                                                                                                     {
       {
         "@DEF":"hanim_l_metacarpophalangeal_3",
-        "@center":"8.164 28.22 -0.1741",
+        "@center":"8.164 28.219999 -0.1741",
         "@name":"l_metacarpophalangeal_3"
       }
                                                                                                                         "HAnimSegment":
@@ -7577,7 +7591,7 @@
                                                                                                                             "Transform":
                                                                                                                             {
       {
-        "@translation":"8.164 28.22 -0.1741"
+        "@translation":"8.164 28.219999 -0.1741"
       }
                                                                                                                                 "Shape":
                                                                                                                                 {
@@ -7618,7 +7632,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
-        "@center":"8.076 26.81 -0.1572",
+        "@center":"8.076 26.809999 -0.1572",
         "@name":"l_carpal_proximal_interphalangeal_3"
       }
                                                                                                                             "HAnimSegment":
@@ -7630,7 +7644,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"8.076 26.81 -0.1572"
+        "@translation":"8.076 26.809999 -0.1572"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -7724,7 +7738,7 @@
                                                                                                             {
       {
         "@DEF":"hanim_l_midcarpal_4_5",
-        "@center":"8.048 31.37 -1.144",
+        "@center":"8.048 31.370001 -1.144",
         "@name":"l_midcarpal_4_5"
       }
                                                                                                                 "HAnimSegment":
@@ -7736,7 +7750,7 @@
                                                                                                                     "Transform":
                                                                                                                     {
       {
-        "@translation":"8.048 31.37 -1.144"
+        "@translation":"8.048 31.370001 -1.144"
       }
                                                                                                                         "Shape":
                                                                                                                         {
@@ -7883,7 +7897,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
-        "@center":"8.076 26.96 -0.9176",
+        "@center":"8.076 26.959999 -0.9176",
         "@name":"l_carpal_proximal_interphalangeal_4"
       }
                                                                                                                             "HAnimSegment":
@@ -7895,7 +7909,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"8.076 26.96 -0.9176"
+        "@translation":"8.076 26.959999 -0.9176"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -7936,7 +7950,7 @@
                                                                                                                             {
       {
         "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
-        "@center":"8.03 25.81 -0.879",
+        "@center":"8.03 25.809999 -0.879",
         "@name":"l_carpal_distal_interphalangeal_4"
       }
                                                                                                                                 "HAnimSegment":
@@ -7948,7 +7962,7 @@
                                                                                                                                     "Transform":
                                                                                                                                     {
       {
-        "@translation":"8.03 25.81 -0.879"
+        "@translation":"8.03 25.809999 -0.879"
       }
                                                                                                                                         "Shape":
                                                                                                                                         {
@@ -8042,7 +8056,7 @@
                                                                                                                 {
       {
         "@DEF":"hanim_l_metacarpophalangeal_5",
-        "@center":"8.148 28.36 -1.647",
+        "@center":"8.148 28.360001 -1.647",
         "@name":"l_metacarpophalangeal_5"
       }
                                                                                                                     "HAnimSegment":
@@ -8054,7 +8068,7 @@
                                                                                                                         "Transform":
                                                                                                                         {
       {
-        "@translation":"8.148 28.36 -1.647"
+        "@translation":"8.148 28.360001 -1.647"
       }
                                                                                                                             "Shape":
                                                                                                                             {
@@ -8201,7 +8215,7 @@
                                                                                         {
       {
         "@DEF":"hanim_r_acromioclavicular",
-        "@center":"-1.71 53.72 -0.6127",
+        "@center":"-1.71 53.720001 -0.6127",
         "@name":"r_acromioclavicular"
       }
                                                                                             "HAnimSegment":
@@ -8213,7 +8227,7 @@
                                                                                                 "Transform":
                                                                                                 {
       {
-        "@translation":"-1.71 53.72 -0.6127"
+        "@translation":"-1.71 53.720001 -0.6127"
       }
                                                                                                     "Shape":
                                                                                                     {
@@ -8254,7 +8268,7 @@
                                                                                             {
       {
         "@DEF":"hanim_r_sternoclavicular",
-        "@center":"-5.464 52.97 -0.5732",
+        "@center":"-5.464 52.970001 -0.5732",
         "@name":"r_sternoclavicular"
       }
                                                                                                 "HAnimSegment":
@@ -8266,7 +8280,7 @@
                                                                                                     "Transform":
                                                                                                     {
       {
-        "@translation":"-5.464 52.97 -0.5732"
+        "@translation":"-5.464 52.970001 -0.5732"
       }
                                                                                                         "Shape":
                                                                                                         {
@@ -8307,7 +8321,7 @@
                                                                                                 {
       {
         "@DEF":"hanim_r_shoulder",
-        "@center":"-7.32 52.38 -0.1452",
+        "@center":"-7.32 52.380001 -0.1452",
         "@name":"r_shoulder"
       }
                                                                                                     "HAnimSegment":
@@ -8319,7 +8333,7 @@
                                                                                                         "Transform":
                                                                                                         {
       {
-        "@translation":"-7.32 52.38 -0.1452"
+        "@translation":"-7.32 52.380001 -0.1452"
       }
                                                                                                             "Shape":
                                                                                                             {
@@ -8360,7 +8374,7 @@
                                                                                                     {
       {
         "@DEF":"hanim_r_elbow",
-        "@center":"-8.077 41.28 -0.2502",
+        "@center":"-8.077 41.279999 -0.2502",
         "@name":"r_elbow"
       }
                                                                                                         "HAnimSegment":
@@ -8372,7 +8386,7 @@
                                                                                                             "Transform":
                                                                                                             {
       {
-        "@translation":"-8.077 41.28 -0.2502"
+        "@translation":"-8.077 41.279999 -0.2502"
       }
                                                                                                                 "Shape":
                                                                                                                 {
@@ -8413,7 +8427,7 @@
                                                                                                         {
       {
         "@DEF":"hanim_r_radiocarpal",
-        "@center":"-8.07 32.19 -0.2232",
+        "@center":"-8.07 32.189999 -0.2232",
         "@name":"r_radiocarpal"
       }
                                                                                                             "HAnimSegment":
@@ -8425,7 +8439,7 @@
                                                                                                                 "Transform":
                                                                                                                 {
       {
-        "@translation":"-8.07 32.19 -0.2232"
+        "@translation":"-8.07 32.189999 -0.2232"
       }
                                                                                                                     "Shape":
                                                                                                                     {
@@ -8466,7 +8480,7 @@
                                                                                                             {
       {
         "@DEF":"hanim_r_midcarpal_1",
-        "@center":"-8.043 31.38 0.859",
+        "@center":"-8.043 31.379999 0.859",
         "@name":"r_midcarpal_1"
       }
                                                                                                                 "HAnimSegment":
@@ -8478,7 +8492,7 @@
                                                                                                                     "Transform":
                                                                                                                     {
       {
-        "@translation":"-8.043 31.38 0.859"
+        "@translation":"-8.043 31.379999 0.859"
       }
                                                                                                                         "Shape":
                                                                                                                         {
@@ -8519,7 +8533,7 @@
                                                                                                                 {
       {
         "@DEF":"hanim_r_carpometacarpal_1",
-        "@center":"-8.006 30.78 1.155",
+        "@center":"-8.006 30.780001 1.155",
         "@name":"r_carpometacarpal_1"
       }
                                                                                                                     "HAnimSegment":
@@ -8531,7 +8545,7 @@
                                                                                                                         "Transform":
                                                                                                                         {
       {
-        "@translation":"-8.006 30.78 1.155"
+        "@translation":"-8.006 30.780001 1.155"
       }
                                                                                                                             "Shape":
                                                                                                                             {
@@ -8731,7 +8745,7 @@
                                                                                                                 {
       {
         "@DEF":"hanim_r_carpometacarpal_2",
-        "@center":"-8.04 30.56 0.4324",
+        "@center":"-8.04 30.559999 0.4324",
         "@name":"r_carpometacarpal_2"
       }
                                                                                                                     "HAnimSegment":
@@ -8743,7 +8757,7 @@
                                                                                                                         "Transform":
                                                                                                                         {
       {
-        "@translation":"-8.04 30.56 0.4324"
+        "@translation":"-8.04 30.559999 0.4324"
       }
                                                                                                                             "Shape":
                                                                                                                             {
@@ -8837,7 +8851,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
-        "@center":"-8.059 26.97 0.6304",
+        "@center":"-8.059 26.969999 0.6304",
         "@name":"r_carpal_proximal_interphalangeal_2"
       }
                                                                                                                             "HAnimSegment":
@@ -8849,7 +8863,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"-8.059 26.97 0.6304"
+        "@translation":"-8.059 26.969999 0.6304"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -9049,7 +9063,7 @@
                                                                                                                     {
       {
         "@DEF":"hanim_r_metacarpophalangeal_3",
-        "@center":"-8.147 28.22 -0.1741",
+        "@center":"-8.147 28.219999 -0.1741",
         "@name":"r_metacarpophalangeal_3"
       }
                                                                                                                         "HAnimSegment":
@@ -9061,7 +9075,7 @@
                                                                                                                             "Transform":
                                                                                                                             {
       {
-        "@translation":"-8.147 28.22 -0.1741"
+        "@translation":"-8.147 28.219999 -0.1741"
       }
                                                                                                                                 "Shape":
                                                                                                                                 {
@@ -9102,7 +9116,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
-        "@center":"-8.059 26.81 -0.1572",
+        "@center":"-8.059 26.809999 -0.1572",
         "@name":"r_carpal_proximal_interphalangeal_3"
       }
                                                                                                                             "HAnimSegment":
@@ -9114,7 +9128,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"-8.059 26.81 -0.1572"
+        "@translation":"-8.059 26.809999 -0.1572"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -9208,7 +9222,7 @@
                                                                                                             {
       {
         "@DEF":"hanim_r_midcarpal_4_5",
-        "@center":"-8.032 31.37 -1.144",
+        "@center":"-8.032 31.370001 -1.144",
         "@name":"r_midcarpal_4_5"
       }
                                                                                                                 "HAnimSegment":
@@ -9220,7 +9234,7 @@
                                                                                                                     "Transform":
                                                                                                                     {
       {
-        "@translation":"-8.032 31.37 -1.144"
+        "@translation":"-8.032 31.370001 -1.144"
       }
                                                                                                                         "Shape":
                                                                                                                         {
@@ -9367,7 +9381,7 @@
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
-        "@center":"-8.059 26.96 -0.9176",
+        "@center":"-8.059 26.959999 -0.9176",
         "@name":"r_carpal_proximal_interphalangeal_4"
       }
                                                                                                                             "HAnimSegment":
@@ -9379,7 +9393,7 @@
                                                                                                                                 "Transform":
                                                                                                                                 {
       {
-        "@translation":"-8.059 26.96 -0.9176"
+        "@translation":"-8.059 26.959999 -0.9176"
       }
                                                                                                                                     "Shape":
                                                                                                                                     {
@@ -9420,7 +9434,7 @@
                                                                                                                             {
       {
         "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
-        "@center":"-8.013 25.81 -0.879",
+        "@center":"-8.013 25.809999 -0.879",
         "@name":"r_carpal_distal_interphalangeal_4"
       }
                                                                                                                                 "HAnimSegment":
@@ -9432,7 +9446,7 @@
                                                                                                                                     "Transform":
                                                                                                                                     {
       {
-        "@translation":"-8.013 25.81 -0.879"
+        "@translation":"-8.013 25.809999 -0.879"
       }
                                                                                                                                         "Shape":
                                                                                                                                         {
@@ -9526,7 +9540,7 @@
                                                                                                                 {
       {
         "@DEF":"hanim_r_metacarpophalangeal_5",
-        "@center":"-8.132 28.36 -1.647",
+        "@center":"-8.132 28.360001 -1.647",
         "@name":"r_metacarpophalangeal_5"
       }
                                                                                                                     "HAnimSegment":
@@ -9538,7 +9552,7 @@
                                                                                                                         "Transform":
                                                                                                                         {
       {
-        "@translation":"-8.132 28.36 -1.647"
+        "@translation":"-8.132 28.360001 -1.647"
       }
                                                                                                                             "Shape":
                                                                                                                             {

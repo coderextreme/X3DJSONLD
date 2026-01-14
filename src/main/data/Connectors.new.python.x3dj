@@ -39,8 +39,22 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Tue, 25 Jul 2017 09:42:17 GMT",
+        "@name":"modified"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Connectors",
+        "@name":"title"
       }
     },
     }    "Scene":

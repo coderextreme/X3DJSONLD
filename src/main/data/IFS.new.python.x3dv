@@ -7,8 +7,10 @@ META "title" "IFS.x3d"
 META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d"
 META "description" "An attempt at a standard LOA-4 skeleton"
 META "generator" "h2.pl"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
-META "modified" "Wed, 17 Sep 2025 23:47:38 GMT"
+META "modified" "18 Jan 2023"
+META "creator" "John Carlson"
+META "created" "9 November 2020"
+META "license" "../license.html"
 Group {
       children [
         Transform {

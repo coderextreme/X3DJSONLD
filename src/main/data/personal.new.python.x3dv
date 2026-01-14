@@ -5,6 +5,7 @@ PROFILE Full
 META "title" "personal.x3d"
 META "identifier" "https://someAddress/somePath/personal.x3d"
 META "description" "John's Portfolio"
+META "generator" "vim and X3D-Edit, https://savage.nps.edu/X3D-Edit"
 Viewpoint {
       description "Tour Views"
       position 0 0 12 

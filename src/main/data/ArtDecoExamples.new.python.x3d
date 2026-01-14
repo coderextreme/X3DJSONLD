@@ -7,12 +7,15 @@
     <meta content='David Roussel' name='creator'/>
     <meta content='James Harney, Don Brutzman NPS' name='translator'/>
     <meta content='7 April 2002' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:46:17 GMT' name='modified'/>
+    <meta content='19 January 2025' name='modified'/>
     <meta content='http://vrmlstuff.free.fr/materials' name='reference'/>
     <meta content='Universal Media Material Library' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d' name='identifier'/>
+    <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
+    <WorldInfo title='ArtDecoExamples.x3d'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco00' url='"../data/ArtDecoPrototypes.json#ArtDeco00" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00" "ArtDecoPrototypes.wrl#ArtDeco00" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco01' url='"../data/ArtDecoPrototypes.json#ArtDeco01" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01" "ArtDecoPrototypes.wrl#ArtDeco01" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco02' url='"../data/ArtDecoPrototypes.json#ArtDeco02" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02" "ArtDecoPrototypes.wrl#ArtDeco02" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"'/>
@@ -48,14 +51,13 @@
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco32' url='"../data/ArtDecoPrototypes.json#ArtDeco32" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32" "ArtDecoPrototypes.wrl#ArtDeco32" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco33' url='"../data/ArtDecoPrototypes.json#ArtDeco33" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33" "ArtDecoPrototypes.wrl#ArtDeco33" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco34' url='"../data/ArtDecoPrototypes.json#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34" "ArtDecoPrototypes.wrl#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"'/>
-    <WorldInfo title='ArtDecoExamples.x3d'/>
     <Group>
       <NavigationInfo headlight='false'/>
       <Viewpoint DEF='Front' description='Front view' position='0 0 12'/>
       <Viewpoint DEF='PersRight' description='Low Right' orientation='0.74291 0.30772 0.59447 1.2171' position='6.9282 -6.9282 6.9282'/>
       <Viewpoint DEF='PersLeft' description='Low Left' orientation='0.74291 -0.30772 -0.59447 1.2171' position='-6.9282 -6.9282 6.9282'/>
       <Viewpoint DEF='Back' description='Back view' orientation='0 1 0 3.1416' position='0 0 -12'/>
-      <Transform DEF='Close_travel' translation='0 -2.443333 0'>
+      <Transform DEF='Close_travel'>
         <PositionInterpolator DEF='Close_Mover' key='0 0.25 0.5 0.75 1' keyValue='0 2.5 0 0 0 0 0 -2.5 0 0 0 0 0 2.5 0'/>
         <TimeSensor DEF='Close_Time' cycleInterval='12' loop='true'/>
         <Viewpoint DEF='Close' description='Close Front' position='0 0 6'/>

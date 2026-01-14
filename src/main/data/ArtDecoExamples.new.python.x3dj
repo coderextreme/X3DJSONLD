@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:46:17 GMT",
+        "@content":"19 January 2025",
         "@name":"modified"
       }
     },
@@ -71,8 +71,28 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
+        "WorldInfo":
+        {
+      {
+        "@title":"ArtDecoExamples.x3d"
+      }
+    }
         "ExternProtoDeclare":
         {
       {
@@ -388,12 +408,6 @@
         "@url":""../data/ArtDecoPrototypes.json#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34" "ArtDecoPrototypes.wrl#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34""
       }
     },
-        "WorldInfo":
-        {
-      {
-        "@title":"ArtDecoExamples.x3d"
-      }
-    }
         "Group":
         {
             "NavigationInfo":
@@ -440,8 +454,7 @@
             "Transform":
             {
       {
-        "@DEF":"Close_travel",
-        "@translation":"0 -2.443333 0"
+        "@DEF":"Close_travel"
       }
                 "PositionInterpolator":
                 {

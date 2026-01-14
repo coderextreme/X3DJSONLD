@@ -6,7 +6,7 @@
     <meta content='Hello World minimal example scene.' name='description'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='19 January 2020' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:47:36 GMT' name='modified'/>
+    <meta content='24 January 2020' name='modified'/>
     <meta content='https://helloworldcollection.de' name='reference'/>
     <meta content='https://en.wiktionary.org/wiki/Hello_World' name='reference'/>
     <meta content='https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program' name='reference'/>
@@ -15,6 +15,8 @@
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes' name='reference'/>
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html' name='reference'/>
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='HelloWorldMinimal.x3d'/>

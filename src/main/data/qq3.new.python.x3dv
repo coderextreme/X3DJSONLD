@@ -6,13 +6,12 @@ META "title" "qq3.x3d"
 META "creator" "John Carlson"
 META "translator" "John Carlson"
 META "created" "11 Jan 2015"
-META "modified" "Wed, 17 Sep 2025 23:48:43 GMT"
+META "modified" "05 May 2017"
 META "description" "12 extrusions"
+META "identifier" "https://coderextreme.net/x3d/qq3.x3d"
+META "generator" "manual"
 ProtoDeclare {
       name "Process"
-      ProtoInterface ProtoInterface { 
-      }
-      
       ProtoBody ProtoBody {
         children [
           Group {

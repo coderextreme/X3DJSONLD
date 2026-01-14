@@ -11,6 +11,12 @@
         "component":
         {
       {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"EnvironmentalEffects"
       }
@@ -30,8 +36,26 @@
         "component":
         {
       {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "meta":
@@ -58,8 +82,15 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a mirrored sphere",
+        "@name":"description"
       }
     },
     }    "Scene":
@@ -438,8 +469,8 @@
         "@loop":"true"
       }
     },
-        }        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"Clock",
@@ -447,112 +478,112 @@
         "@toNode":"UrlSelector"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"front_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_frontUrl",
+        "@toField":"frontUrl",
         "@toNode":"cube"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"back_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_backUrl",
+        "@toField":"backUrl",
         "@toNode":"cube"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"left_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_leftUrl",
+        "@toField":"leftUrl",
         "@toNode":"cube"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"right_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_rightUrl",
+        "@toField":"rightUrl",
         "@toNode":"cube"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"top_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_topUrl",
+        "@toField":"topUrl",
         "@toNode":"cube"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"bottom_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_bottomUrl",
+        "@toField":"bottomUrl",
         "@toNode":"cube"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"front_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_url",
+        "@toField":"url",
         "@toNode":"frontShader"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"back_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_url",
+        "@toField":"url",
         "@toNode":"backShader"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"left_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_url",
+        "@toField":"url",
         "@toNode":"leftShader"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"right_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_url",
+        "@toField":"url",
         "@toNode":"rightShader"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"top_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_url",
+        "@toField":"url",
         "@toNode":"topShader"
       }
     },
-        "ROUTE":
-        {
+            "ROUTE":
+            {
       {
         "@fromField":"bottom_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"set_url",
+        "@toField":"url",
         "@toNode":"bottomShader"
       }
     },
-    }}
+        }    }}

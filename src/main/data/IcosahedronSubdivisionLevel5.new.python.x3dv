@@ -4,17 +4,19 @@
 PROFILE Interchange
 META "title" "IcosahedronSubdivisionLevel5.x3d"
 META "reference" "IcosahedronSubdivisionLevel5.ply"
+META "description" "Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."
+META "created" "13 September 2014"
+META "modified" "27 September 2014"
+META "creator" "Don Brutzman"
 META "reference" "Icosahedron.x3d"
 META "reference" "https://en.wikipedia.org/wiki/Icosahedron"
 META "reference" "https://en.wiktionary.org/wiki/icosahedron"
 META "reference" "https://en.wikipedia.org/wiki/Platonic_solid"
 META "reference" "https://en.wikipedia.org/wiki/Geodesic_grid"
-META "description" "Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles."
-META "created" "13 September 2014"
-META "modified" "Wed, 17 Sep 2025 23:47:38 GMT"
-META "creator" "Don Brutzman"
 META "identifier" "http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d"
 META "generator" "Meshlab X3D Exported, http://meshlab.sourceforge.net"
+META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 Background {
       skyColor [0.5 1 0.9] 
     }

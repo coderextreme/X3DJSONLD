@@ -59,7 +59,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:48:09 GMT",
+        "@content":"20 October 2019",
         "@name":"modified"
       }
     },
@@ -87,6 +87,13 @@
         "meta":
         {
       {
+        "@content":"X3D shader example",
+        "@name":"subject"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"originals/simpleShader.x3dv",
         "@name":"reference"
       }
@@ -101,15 +108,22 @@
         "meta":
         {
       {
-        "@content":"X3D shader example",
-        "@name":"subject"
+        "@content":"Titania V3.0.3, http://titania.create3000.de",
+        "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"Titania V3.0.3, http://titania.create3000.de",
-        "@name":"generator"
+        "@content":"World of Titania",
+        "@name":"info"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"nicest",
+        "@name":"outputStyle"
       }
     },
         "meta":
@@ -122,15 +136,15 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d",
+        "@name":"identifier"
       }
     },
         "meta":
         {
       {
-        "@content":"World of Titania",
-        "@name":"info"
+        "@content":"../../license.html",
+        "@name":"license"
       }
     },
     }    "Scene":
@@ -220,6 +234,7 @@
                                 "ShaderPart":
                                 {
       {
+        "@DEF":"_1",
         "@type":"FRAGMENT"
       }
     },

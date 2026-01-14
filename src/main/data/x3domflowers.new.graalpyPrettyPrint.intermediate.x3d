@@ -31,4 +31,17 @@
           <Group>
             <ProtoInstance name='FlowerProto'>
               <fieldValue name='vertex' value='"../shaders/x3dom_flowers_chromatic.vs"'/>
-              <fieldValue name='fragment' value='"../shaders/common.f
+              <fieldValue name='fragment' value='"../shaders/common.fs"'/>
+            </ProtoInstance>
+          </Group>
+        </ProtoBody>
+      </ProtoDeclare>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+      <ProtoInstance name='flower'/>
+    </Group>
+  </Scene>
+</X3D>

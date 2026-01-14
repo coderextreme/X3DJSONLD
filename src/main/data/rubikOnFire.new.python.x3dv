@@ -5,22 +5,31 @@ PROFILE Immersive
 META "title" "rubikOnFire.x3d"
 META "creator" "John Carlson"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
-ProtoDeclare {
+META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"
+META "description" "a white rubik cube"
+NavigationInfo {
+      type ["ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"] 
+    }
+    Viewpoint {
+      description "Rubiks Cube on Fire"
+      position 0 0 12 
+    }
+    ProtoDeclare {
       name "anyShape"
       ProtoInterface ProtoInterface {
         children [
           field {
             accessType "inputOutput"
             name "xtranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "SFNode"
             children [
-              DEF _1 Sphere { 
+              Sphere { 
               }
               
             ]
@@ -83,14 +92,15 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ytranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "SFNode"
             children [
-              DEF _2 Sphere { 
+              Sphere { 
               }
               
             ]
@@ -128,7 +138,15 @@ ProtoDeclare {
                   ]
                 
                 }
-                 
+                
+                children [
+                  fieldValue {
+                    name "xtranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "anyShape"
@@ -191,14 +209,15 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ztranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "SFNode"
             children [
-              DEF _3 Sphere { 
+              Sphere { 
               }
               
             ]
@@ -236,7 +255,15 @@ ProtoDeclare {
                   ]
                 
                 }
-                 
+                
+                children [
+                  fieldValue {
+                    name "ytranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "three"
@@ -299,14 +326,15 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "ttranslation"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           field {
             accessType "inputOutput"
             name "myShape"
             type "SFNode"
             children [
-              DEF _4 Sphere { 
+              Sphere { 
               }
               
             ]
@@ -344,7 +372,15 @@ ProtoDeclare {
                   ]
                 
                 }
-                 
+                
+                children [
+                  fieldValue {
+                    name "ztranslation"
+                    value 0 0 0 
+                  }
+                  
+                ]
+              
               }
               ProtoInstance {
                 name "nine"
@@ -400,20 +436,17 @@ ProtoDeclare {
       }
       
     }
-    NavigationInfo {
-      type ["ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"] 
-    }
-    Viewpoint {
-      description "Rubiks Cube on Fire"
-      position 0 0 12 
-    }
     ProtoInstance {
       name "twentyseven"
       children [
         fieldValue {
+          name "ttranslation"
+          value 0 0 0 
+        }
+        fieldValue {
           name "myShape"
           children [
-            DEF _5 Box {
+            Box {
               size 1 1 1 
             }
             

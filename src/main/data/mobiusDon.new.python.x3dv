@@ -8,7 +8,8 @@ UNIT length millimeters 25.4
 META "title" "mobiusDon.x3d"
 META "creator" "Vince Marchetti"
 META "generator" "manual"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "https://kshell.com/mobiusDon.x3d"
+META "description" "a mobius of 3 NURBS Patch Surfaces"
 Background {
       skyColor [1 1 1] 
     }

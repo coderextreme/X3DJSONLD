@@ -32,12 +32,32 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a white rubik cube",
+        "@name":"description"
       }
     },
     }    "Scene":
     {
+        "NavigationInfo":
+        {
+      {
+        "@type":""ANY" "EXAMINE" "WALK" "FLY" "LOOKAT""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Rubiks Cube on Fire",
+        "@position":"0 0 12"
+      }
+    },
         "ProtoDeclare":
         {
       {
@@ -50,7 +70,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"xtranslation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -62,9 +83,6 @@
       }
                     "Sphere":
                     {
-      {
-        "@DEF":"_1"
-      }
     },
                 }            }            "ProtoBody":
             {
@@ -110,7 +128,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"ytranslation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -122,9 +141,6 @@
       }
                     "Sphere":
                     {
-      {
-        "@DEF":"_2"
-      }
     },
                 }            }            "ProtoBody":
             {
@@ -153,7 +169,14 @@
         "@protoField":"myShape"
       }
     },
-                        }                    }                    "ProtoInstance":
+                        }                        "fieldValue":
+                        {
+      {
+        "@name":"xtranslation",
+        "@value":"0 0 0"
+      }
+    },
+                    }                    "ProtoInstance":
                     {
       {
         "@name":"anyShape"
@@ -207,7 +230,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"ztranslation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -219,9 +243,6 @@
       }
                     "Sphere":
                     {
-      {
-        "@DEF":"_3"
-      }
     },
                 }            }            "ProtoBody":
             {
@@ -250,7 +271,14 @@
         "@protoField":"myShape"
       }
     },
-                        }                    }                    "ProtoInstance":
+                        }                        "fieldValue":
+                        {
+      {
+        "@name":"ytranslation",
+        "@value":"0 0 0"
+      }
+    },
+                    }                    "ProtoInstance":
                     {
       {
         "@name":"three"
@@ -304,7 +332,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"ttranslation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                 "field":
@@ -316,9 +345,6 @@
       }
                     "Sphere":
                     {
-      {
-        "@DEF":"_4"
-      }
     },
                 }            }            "ProtoBody":
             {
@@ -347,7 +373,14 @@
         "@protoField":"myShape"
       }
     },
-                        }                    }                    "ProtoInstance":
+                        }                        "fieldValue":
+                        {
+      {
+        "@name":"ztranslation",
+        "@value":"0 0 0"
+      }
+    },
+                    }                    "ProtoInstance":
                     {
       {
         "@name":"nine"
@@ -389,24 +422,18 @@
         "@value":"0 0 -2"
       }
     },
-                    }                }            }        }        "NavigationInfo":
-        {
-      {
-        "@type":""ANY" "EXAMINE" "WALK" "FLY" "LOOKAT""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Rubiks Cube on Fire",
-        "@position":"0 0 12"
-      }
-    },
-        "ProtoInstance":
+                    }                }            }        }        "ProtoInstance":
         {
       {
         "@name":"twentyseven"
       }
+            "fieldValue":
+            {
+      {
+        "@name":"ttranslation",
+        "@value":"0 0 0"
+      }
+    },
             "fieldValue":
             {
       {
@@ -415,7 +442,6 @@
                 "Box":
                 {
       {
-        "@DEF":"_5",
         "@size":"1 1 1"
       }
     },

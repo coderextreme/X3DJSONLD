@@ -4,9 +4,11 @@
 PROFILE Immersive
 META "creator" "John W Carlson"
 META "created" "December 13 2015"
-META "modified" "Wed, 17 Sep 2025 23:48:24 GMT"
+META "modified" "July 14 2025"
 META "title" "forcenode.x3d"
 META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
+META "description" "beginnings of a force directed graph in 3D"
+META "generator" "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
 ProtoDeclare {
       name "node"
       ProtoInterface ProtoInterface {
@@ -14,7 +16,8 @@ ProtoDeclare {
           field {
             accessType "inputOutput"
             name "position"
-            type "SFVec3f" 
+            type "SFVec3f"
+            value [0, 0, 0] 
           }
           
         ]
@@ -107,7 +110,8 @@ ProtoDeclare {
                   field {
                     accessType "inputOutput"
                     name "old"
-                    type "SFVec3f" 
+                    type "SFVec3f"
+                    value [0, 0, 0] 
                   }
                   field {
                     accessType "inputOnly"
@@ -128,17 +132,17 @@ ProtoDeclare {
                 loop TRUE 
               }
               
+              ROUTE nodeClock.cycleTime TO MoveBall.set_cycle
+              
+              ROUTE nodeClock.fraction_changed TO NodePosition.set_fraction
+              
+              ROUTE MoveBall.keyValue TO NodePosition.keyValue
+              
+              ROUTE NodePosition.value_changed TO transform.set_translation
+              
             ]
           
           }
-          
-          ROUTE nodeClock.cycleTime TO MoveBall.set_cycle
-          
-          ROUTE nodeClock.fraction_changed TO NodePosition.set_fraction
-          
-          ROUTE MoveBall.keyValue TO NodePosition.set_keyValue
-          
-          ROUTE NodePosition.value_changed TO transform.set_translation
           
         ]
       
@@ -194,7 +198,7 @@ ProtoDeclare {
 "+
 "                }
 "+
-"                
+"
 "+
 "                function set_endB(value) {
 "+
@@ -238,11 +242,11 @@ ProtoDeclare {
               
               }
               
+              ROUTE MoveCylinder.spine TO extrusion.set_spine
+              
             ]
           
           }
-          
-          ROUTE MoveCylinder.spine_changed TO extrusion.set_spine
           
         ]
       
@@ -262,7 +266,7 @@ ProtoDeclare {
           children [
             fieldValue {
               name "position"
-              value 0 0.7216668 0 
+              value 0 0 0 
             }
             
           ]
@@ -273,7 +277,7 @@ ProtoDeclare {
           children [
             fieldValue {
               name "position"
-              value 0 0.7216668 0 
+              value 50 50 50 
             }
             
           ]
@@ -284,7 +288,7 @@ ProtoDeclare {
           children [
             fieldValue {
               name "position"
-              value 0 0.7216668 0 
+              value -50 -50 -50 
             }
             
           ]
@@ -295,56 +299,20 @@ ProtoDeclare {
           children [
             fieldValue {
               name "position"
-              value 0 0.7216668 0 
+              value 50 50 -50 
             }
             
           ]
         
         }
         ProtoInstance {
-          name "cyl"
-          children [
-            fieldValue {
-              name "set_positionA"
-              value 0 0.7216668 0 
-            }
-            fieldValue {
-              name "set_positionB"
-              value 0 0.7216668 0 
-            }
-            
-          ]
-        
+          name "cyl" 
         }
         ProtoInstance {
-          name "cyl"
-          children [
-            fieldValue {
-              name "set_positionA"
-              value 0 0.7216668 0 
-            }
-            fieldValue {
-              name "set_positionB"
-              value 0 0.7216668 0 
-            }
-            
-          ]
-        
+          name "cyl" 
         }
         ProtoInstance {
-          name "cyl"
-          children [
-            fieldValue {
-              name "set_positionA"
-              value 0 0.7216668 0 
-            }
-            fieldValue {
-              name "set_positionB"
-              value 0 0.7216668 0 
-            }
-            
-          ]
-        
+          name "cyl" 
         }
         
       ]
@@ -383,7 +351,7 @@ ProtoDeclare {
 "+
 "			});
 "+
-"                
+"
 "+
 "        }"
       children [
@@ -409,15 +377,15 @@ ProtoDeclare {
     
     ROUTE clickGenerator.isActive TO clickHandler.add_node
     
-    ROUTE nodeA.position_changed TO linkA.set_set_positionA
+    ROUTE nodeA.position TO linkA.set_positionA
     
-    ROUTE nodeB.position_changed TO linkA.set_set_positionB
+    ROUTE nodeB.position TO linkA.set_positionB
     
-    ROUTE nodeA.position_changed TO linkB.set_set_positionA
+    ROUTE nodeA.position TO linkB.set_positionA
     
-    ROUTE nodeC.position_changed TO linkB.set_set_positionB
+    ROUTE nodeC.position TO linkB.set_positionB
     
-    ROUTE nodeA.position_changed TO linkC.set_set_positionA
+    ROUTE nodeA.position TO linkC.set_positionA
     
-    ROUTE nodeD.position_changed TO linkC.set_set_positionB
+    ROUTE nodeD.position TO linkC.set_positionB
     

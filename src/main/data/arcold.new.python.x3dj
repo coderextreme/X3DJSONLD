@@ -32,13 +32,111 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"an attempt to implement an arc in a graph",
+        "@name":"description"
       }
     },
     }    "Scene":
     {
-        "ProtoDeclare":
+        "Viewpoint":
+        {
+      {
+        "@description":"a moving graph",
+        "@position":"0 0 5"
+      }
+    },
+        "Background":
+        {
+      {
+        "@skyColor":"0.4 0.4 0.4"
+      }
+    },
+        "Transform":
+        {
+      {
+        "@DEF":"trans1"
+      }
+            "Transform":
+            {
+      {
+        "@DEF":"rotscale1"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0.2 0.7 0.7"
+      }
+    },
+                    }                    "Cylinder":
+                    {
+      {
+        "@radius":"0.1"
+      }
+    },
+                }            }        }        "Transform":
+        {
+      {
+        "@DEF":"trans2"
+      }
+            "Transform":
+            {
+      {
+        "@DEF":"rotscale2"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0.2 0.7 0.7"
+      }
+    },
+                    }                    "Cylinder":
+                    {
+      {
+        "@radius":"0.1"
+      }
+    },
+                }            }        }        "Transform":
+        {
+      {
+        "@DEF":"trans3"
+      }
+            "Transform":
+            {
+      {
+        "@DEF":"rotscale3"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0.2 0.7 0.7"
+      }
+    },
+                    }                    "Cylinder":
+                    {
+      {
+        "@radius":"0.1"
+      }
+    },
+                }            }        }        "ProtoDeclare":
         {
       {
         "@name":"point"
@@ -50,7 +148,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
             }            "ProtoBody":
@@ -125,7 +224,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -152,8 +252,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"cycleTime",
         "@fromNode":"CL1",
@@ -161,8 +261,8 @@
         "@toNode":"MB1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"CL1",
@@ -170,17 +270,17 @@
         "@toNode":"PI1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"keyValue",
         "@fromNode":"MB1",
-        "@toField":"set_keyValue",
+        "@toField":"keyValue",
         "@toNode":"PI1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"PI1",
@@ -188,7 +288,7 @@
         "@toNode":"node"
       }
     },
-            }        }        "ProtoDeclare":
+                }            }        }        "ProtoDeclare":
         {
       {
         "@name":"x3dconnector"
@@ -427,150 +527,35 @@
         "@type":"SFVec3f"
       }
     },
-                }            }        }        "Viewpoint":
-        {
-      {
-        "@description":"a moving graph",
-        "@position":"0 0 5"
-      }
-    },
-        "Background":
-        {
-      {
-        "@skyColor":"0.4 0.4 0.4"
-      }
-    },
-        "Transform":
-        {
-      {
-        "@DEF":"trans1"
-      }
-            "Transform":
-            {
-      {
-        "@DEF":"rotscale1"
-      }
-                "Shape":
-                {
-                    "Appearance":
-                    {
-                        "Material":
-                        {
-      {
-        "@diffuseColor":"0.2 0.7 0.7"
-      }
-    },
-                    }                    "Cylinder":
-                    {
-      {
-        "@radius":"0.1"
-      }
-    },
-                }            }        }        "Transform":
-        {
-      {
-        "@DEF":"trans2"
-      }
-            "Transform":
-            {
-      {
-        "@DEF":"rotscale2"
-      }
-                "Shape":
-                {
-                    "Appearance":
-                    {
-                        "Material":
-                        {
-      {
-        "@diffuseColor":"0.2 0.7 0.7"
-      }
-    },
-                    }                    "Cylinder":
-                    {
-      {
-        "@radius":"0.1"
-      }
-    },
-                }            }        }        "Transform":
-        {
-      {
-        "@DEF":"trans3"
-      }
-            "Transform":
-            {
-      {
-        "@DEF":"rotscale3"
-      }
-                "Shape":
-                {
-                    "Appearance":
-                    {
-                        "Material":
-                        {
-      {
-        "@diffuseColor":"0.2 0.7 0.7"
-      }
-    },
-                    }                    "Cylinder":
-                    {
-      {
-        "@radius":"0.1"
-      }
-    },
                 }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"G1",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.6833333 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"G2",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.6833333 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"G3",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.6833333 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"G4",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.6833333 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"connector1",

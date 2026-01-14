@@ -6,7 +6,9 @@ META "comment" "World of Titania"
 META "created" "Fri, 04 Sep 2015 10:19:01 GMT"
 META "creator" "Holger Seelig"
 META "generator" "Titania V3.0.4, https://titania.create3000.de"
-META "generator" "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+META "identifier" "file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d"
+META "modified" "Tue, 25 Jul 2017 09:42:17 GMT"
+META "title" "Connectors"
 ProtoDeclare {
       name "RoundedRectangle2D"
       ProtoInterface ProtoInterface {

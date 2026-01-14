@@ -8,7 +8,7 @@ META "creator" "Jin Hoon Lee and Min Joo Lee"
 META "translator" "Chul Hee Jung and Myeong Won Lee"
 META "created" "31 March 2011"
 META "translated" "1 November 2014"
-META "modified" "Wed, 17 Sep 2025 23:47:56 GMT"
+META "modified" "14 October 2023"
 META "description" "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."
 META "reference" "KoreanCharacter00ReadMe.txt"
 META "reference" "KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
@@ -19,6 +19,8 @@ META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/
 META "generator" "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
 META "generator" "Suwon HAnim Converter"
 META "generator" "Gnu Image Manipulation Program, https://www.gimp.org"
+META "generator" "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 NavigationInfo {
       speed 1.5 
     }
@@ -578,7 +580,6 @@ NavigationInfo {
                     DEF hanim_l_shoulder HAnimJoint {
                       center 5.975 52 -0.1452
                       name "l_shoulder"
-                      rotation -1 0 0 2.94675922393799
                       children [
                         DEF hanim_l_upperarm HAnimSegment {
                           name "l_upperarm"
@@ -717,7 +718,6 @@ NavigationInfo {
                     DEF hanim_r_shoulder HAnimJoint {
                       center -5.975 52 -0.1452
                       name "r_shoulder"
-                      rotation -1 0 0 2.94675922393799
                       children [
                         DEF hanim_r_upperarm HAnimSegment {
                           name "r_upperarm"
@@ -952,83 +952,83 @@ NavigationInfo {
           keyValue [0 0 0 0 0 0 0 0] 
         }
         
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_HumanoidRootTranslation.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_HumanoidRootOrientation.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_sacroiliac.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_shoulder.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_elbow.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_radiocarpal.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_shoulder.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_elbow.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_radiocarpal.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_vl5.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_skullbase.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_hip.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_knee.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_talocrural.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_metatarsophalangeal.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_hip.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_knee.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_talocrural.set_fraction
+        
+        ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_metatarsophalangeal.set_fraction
+        
+        ROUTE Keyframe_HumanoidRootTranslation.value_changed TO hanim_HumanoidRoot.translation
+        
+        ROUTE Keyframe_HumanoidRootOrientation.value_changed TO hanim_HumanoidRoot.rotation
+        
+        ROUTE Keyframe_sacroiliac.value_changed TO hanim_sacroiliac.rotation
+        
+        ROUTE Keyframe_l_shoulder.value_changed TO hanim_l_shoulder.rotation
+        
+        ROUTE Keyframe_l_elbow.value_changed TO hanim_l_elbow.rotation
+        
+        ROUTE Keyframe_l_radiocarpal.value_changed TO hanim_l_radiocarpal.rotation
+        
+        ROUTE Keyframe_r_shoulder.value_changed TO hanim_r_shoulder.rotation
+        
+        ROUTE Keyframe_r_elbow.value_changed TO hanim_r_elbow.rotation
+        
+        ROUTE Keyframe_r_radiocarpal.value_changed TO hanim_r_radiocarpal.rotation
+        
+        ROUTE Keyframe_vl5.value_changed TO hanim_vl5.rotation
+        
+        ROUTE Keyframe_skullbase.value_changed TO hanim_skullbase.rotation
+        
+        ROUTE Keyframe_l_hip.value_changed TO hanim_l_hip.rotation
+        
+        ROUTE Keyframe_l_knee.value_changed TO hanim_l_knee.rotation
+        
+        ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_talocrural.rotation
+        
+        ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_metatarsophalangeal.rotation
+        
+        ROUTE Keyframe_r_hip.value_changed TO hanim_r_hip.rotation
+        
+        ROUTE Keyframe_r_knee.value_changed TO hanim_r_knee.rotation
+        
+        ROUTE Keyframe_l_talocrural.value_changed TO hanim_r_talocrural.rotation
+        
+        ROUTE Keyframe_l_talocrural.value_changed TO hanim_r_metatarsophalangeal.rotation
+        
       ]
     
     }
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_HumanoidRootTranslation.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_HumanoidRootOrientation.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_sacroiliac.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_shoulder.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_elbow.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_radiocarpal.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_shoulder.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_elbow.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_radiocarpal.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_vl5.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_skullbase.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_hip.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_knee.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_talocrural.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_l_metatarsophalangeal.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_hip.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_knee.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_talocrural.set_fraction
-    
-    ROUTE KeyframeTimer.fraction_changed TO Keyframe_r_metatarsophalangeal.set_fraction
-    
-    ROUTE Keyframe_HumanoidRootTranslation.value_changed TO hanim_HumanoidRoot.set_translation
-    
-    ROUTE Keyframe_HumanoidRootOrientation.value_changed TO hanim_HumanoidRoot.set_rotation
-    
-    ROUTE Keyframe_sacroiliac.value_changed TO hanim_sacroiliac.set_rotation
-    
-    ROUTE Keyframe_l_shoulder.value_changed TO hanim_l_shoulder.set_rotation
-    
-    ROUTE Keyframe_l_elbow.value_changed TO hanim_l_elbow.set_rotation
-    
-    ROUTE Keyframe_l_radiocarpal.value_changed TO hanim_l_radiocarpal.set_rotation
-    
-    ROUTE Keyframe_r_shoulder.value_changed TO hanim_r_shoulder.set_rotation
-    
-    ROUTE Keyframe_r_elbow.value_changed TO hanim_r_elbow.set_rotation
-    
-    ROUTE Keyframe_r_radiocarpal.value_changed TO hanim_r_radiocarpal.set_rotation
-    
-    ROUTE Keyframe_vl5.value_changed TO hanim_vl5.set_rotation
-    
-    ROUTE Keyframe_skullbase.value_changed TO hanim_skullbase.set_rotation
-    
-    ROUTE Keyframe_l_hip.value_changed TO hanim_l_hip.set_rotation
-    
-    ROUTE Keyframe_l_knee.value_changed TO hanim_l_knee.set_rotation
-    
-    ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_talocrural.set_rotation
-    
-    ROUTE Keyframe_l_talocrural.value_changed TO hanim_l_metatarsophalangeal.set_rotation
-    
-    ROUTE Keyframe_r_hip.value_changed TO hanim_r_hip.set_rotation
-    
-    ROUTE Keyframe_r_knee.value_changed TO hanim_r_knee.set_rotation
-    
-    ROUTE Keyframe_l_talocrural.value_changed TO hanim_r_talocrural.set_rotation
-    
-    ROUTE Keyframe_l_talocrural.value_changed TO hanim_r_metatarsophalangeal.set_rotation
     

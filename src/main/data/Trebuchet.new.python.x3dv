@@ -6,15 +6,17 @@ META "title" "Trebuchet.x3d"
 META "description" "Working model of a 14th century Trebuchet Catapult."
 META "creator" "LT Joe Roth"
 META "created" "20 June 2001"
-META "modified" "Wed, 17 Sep 2025 23:48:11 GMT"
+META "modified" "20 October 2019"
 META "version" "7.8"
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d"
 META "reference" "http://trebuchet.com"
 META "reference" "http://members.home.net/dimona"
+META "subject" "trebuchet catapult Monty Python"
 META "reference" "Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under "Fair Use" clause of the DMCA"
 META "reference" "https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm"
 META "reference" "http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"
-META "subject" "trebuchet catapult Monty Python"
+META "generator" "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+META "license" "../license.html"
 WorldInfo {
       title "Trebuchet.x3d" 
     }
@@ -1654,7 +1656,7 @@ WorldInfo {
     
     ROUTE Launch.touchTime TO MonkSound.set_startTime
     
-    ROUTE PigdogMonkScript.whichchoice TO PigdogMonk.set_whichChoice
+    ROUTE PigdogMonkScript.whichchoice TO PigdogMonk.whichChoice
     
     ROUTE LauncheeChoice.touchTime TO HolyHandGrenadeSound.set_startTime
     
@@ -1664,13 +1666,13 @@ WorldInfo {
     
     ROUTE LauncheeChoice.isActive TO LauncheeScript.set_boolean
     
-    ROUTE LauncheeScript.whichchoice TO projectile.set_whichChoice
+    ROUTE LauncheeScript.whichchoice TO projectile.whichChoice
     
-    ROUTE LauncheeScript.whichchoice TO projectilename.set_whichChoice
+    ROUTE LauncheeScript.whichchoice TO projectilename.whichChoice
     
     ROUTE weightselector.isActive TO WeightScript.set_boolean
     
-    ROUTE WeightScript.whichchoice TO Weight.set_whichChoice
+    ROUTE WeightScript.whichchoice TO Weight.whichChoice
     
     ROUTE clock.fraction_changed TO flingerangles.set_fraction
     

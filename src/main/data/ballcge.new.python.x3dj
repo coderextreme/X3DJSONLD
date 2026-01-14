@@ -24,6 +24,18 @@
         "component":
         {
       {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
         "@level":"3",
         "@name":"Grouping"
       }
@@ -32,6 +44,12 @@
         {
       {
         "@name":"CubeMapTexturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
       }
     },
         "meta":
@@ -62,6 +80,13 @@
         "@name":"generator"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"a prismatic sphere",
+        "@name":"description"
+      }
+    },
     }    "Scene":
     {
         "WorldInfo":
@@ -73,6 +98,7 @@
         "NavigationInfo":
         {
       {
+        "@avatarSize":"0.25 1.60000002384186 0.75",
         "@type":""ANY" "EXAMINE" "FLY" "LOOKAT""
       }
     },
@@ -103,7 +129,7 @@
                     "Material":
                     {
       {
-        "@diffuseColor":"0.7 0.7 0.7",
+        "@diffuseColor":"0.699999988079071 0.699999988079071 0.699999988079071",
         "@specularColor":"0.5 0.5 0.5"
       }
     },
@@ -118,7 +144,7 @@
         "@accessType":"initializeOnly",
         "@name":"chromaticDispertion",
         "@type":"SFVec3f",
-        "@value":"[0.98, 1, 1.033]"
+        "@value":"[0.980000019073486, 1, 1.03299999237061]"
       }
     },
                         "field":

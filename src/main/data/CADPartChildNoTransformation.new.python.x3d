@@ -2,6 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='CADInterchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <component level='2' name='CADGeometry'/>
     <component name='EnvironmentalEffects'/>
     <meta content='CADPartChildNoTransformation.x3d' name='title'/>
     <meta content='Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children.' name='description'/>
@@ -10,8 +11,10 @@
     <meta content='https://www.web3d.org/member-only/mantis/view.php?id=528' name='reference'/>
     <meta content='This scene is intended for specification development only.' name='warning'/>
     <meta content='29 June 2012' name='created'/>
-    <meta content='Wed, 17 Sep 2025 23:46:18 GMT' name='modified'/>
+    <meta content='20 October 2019' name='modified'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d' name='identifier'/>
+    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='CADPartChildNoTransformation.x3d'/>

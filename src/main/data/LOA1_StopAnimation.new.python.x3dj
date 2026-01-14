@@ -53,7 +53,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:56 GMT",
+        "@content":"23 May 2020",
         "@name":"modified"
       }
     },
@@ -99,8 +99,28 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
+        "WorldInfo":
+        {
+      {
+        "@title":"LOA1_StopAnimation.x3d"
+      }
+    }
         "ProtoDeclare":
         {
       {
@@ -114,7 +134,7 @@
         "@accessType":"inputOutput",
         "@name":"cycleInterval",
         "@type":"SFTime",
-        "@value":"0.00999999977648258"
+        "@value":"0.009999999776482582"
       }
     },
                 "field":
@@ -148,7 +168,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"stopTime",
-        "@type":"SFTime"
+        "@type":"SFTime",
+        "@value":"-1"
       }
     },
                 "field":
@@ -333,15 +354,15 @@
                             "connect":
                             {
       {
-        "@nodeField":"enabled",
-        "@protoField":"enabled"
+        "@nodeField":"cycleInterval",
+        "@protoField":"cycleInterval"
       }
     },
                             "connect":
                             {
       {
-        "@nodeField":"cycleInterval",
-        "@protoField":"cycleInterval"
+        "@nodeField":"enabled",
+        "@protoField":"enabled"
       }
     },
                             "connect":
@@ -368,15 +389,15 @@
                             "connect":
                             {
       {
-        "@nodeField":"isActive",
-        "@protoField":"isActive"
+        "@nodeField":"fraction_changed",
+        "@protoField":"fraction_changed"
       }
     },
                             "connect":
                             {
       {
-        "@nodeField":"fraction_changed",
-        "@protoField":"fraction_changed"
+        "@nodeField":"isActive",
+        "@protoField":"isActive"
       }
     },
                         }                    }                    "PositionInterpolator":
@@ -854,13 +875,7 @@
         "@toNode":"R_WRIST_ANIMATOR"
       }
     },
-            }        }        "WorldInfo":
-        {
-      {
-        "@title":"LOA1_StopAnimation.x3d"
-      }
-    }
-        "Anchor":
+            }        }        "Anchor":
         {
       {
         "@description":"InterchangableActorsViaDynamicRouting",

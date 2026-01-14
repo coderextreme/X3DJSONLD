@@ -45,7 +45,7 @@
         "meta":
         {
       {
-        "@content":"Wed, 17 Sep 2025 23:47:34 GMT",
+        "@content":"4 July 2020",
         "@name":"modified"
       }
     },
@@ -105,8 +105,28 @@
         "@name":"identifier"
       }
     },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
     }    "Scene":
     {
+        "WorldInfo":
+        {
+      {
+        "@title":"HAnimBehaviorPrototypes.x3d"
+      }
+    }
         "ProtoDeclare":
         {
       {
@@ -4821,8 +4841,8 @@
                         "connect":
                         {
       {
-        "@nodeField":"resumeTime",
-        "@protoField":"resumeTime"
+        "@nodeField":"stopTime",
+        "@protoField":"stopTime"
       }
     },
                         "connect":
@@ -4835,15 +4855,15 @@
                         "connect":
                         {
       {
-        "@nodeField":"stopTime",
-        "@protoField":"stopTime"
+        "@nodeField":"resumeTime",
+        "@protoField":"resumeTime"
       }
     },
                         "connect":
                         {
       {
-        "@nodeField":"isPaused",
-        "@protoField":"isPaused"
+        "@nodeField":"cycleTime",
+        "@protoField":"cycleTime"
       }
     },
                         "connect":
@@ -4856,8 +4876,22 @@
                         "connect":
                         {
       {
-        "@nodeField":"cycleTime",
-        "@protoField":"cycleTime"
+        "@nodeField":"isPaused",
+        "@protoField":"isPaused"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"elapsedTime",
+        "@protoField":"elapsedTime"
+      }
+    },
+                        "connect":
+                        {
+      {
+        "@nodeField":"time",
+        "@protoField":"time"
       }
     },
                         "connect":
@@ -4909,7 +4943,16 @@
         "@protoField":"HumanoidRoot_translation_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"HumanoidRootPI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"HumanoidRootOI"
@@ -4937,7 +4980,16 @@
         "@protoField":"HumanoidRoot_rotation_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"HumanoidRootOI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"c1_OI"
@@ -4965,7 +5017,16 @@
         "@protoField":"c1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"c1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"c2_OI"
@@ -4993,7 +5054,16 @@
         "@protoField":"c2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"c2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"c3_OI"
@@ -5021,7 +5091,16 @@
         "@protoField":"c3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"c3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"c4_OI"
@@ -5049,7 +5128,16 @@
         "@protoField":"c4_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"c4_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"c5_OI"
@@ -5077,7 +5165,16 @@
         "@protoField":"c5_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"c5_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"c6_OI"
@@ -5105,7 +5202,16 @@
         "@protoField":"c6_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"c6_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"c7_OI"
@@ -5133,7 +5239,16 @@
         "@protoField":"c7_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"c7_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"jaw_OI"
@@ -5161,7 +5276,16 @@
         "@protoField":"jaw_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"jaw_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l1_OI"
@@ -5189,7 +5313,16 @@
         "@protoField":"l1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l2_OI"
@@ -5217,7 +5350,16 @@
         "@protoField":"l2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l3_OI"
@@ -5245,7 +5387,16 @@
         "@protoField":"l3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l4_OI"
@@ -5273,7 +5424,16 @@
         "@protoField":"l4_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l4_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l5_OI"
@@ -5301,7 +5461,16 @@
         "@protoField":"l5_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l5_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_acromioclavicular_OI"
@@ -5329,7 +5498,16 @@
         "@protoField":"l_acromioclavicular_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_acromioclavicular_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ankle_OI"
@@ -5357,7 +5535,16 @@
         "@protoField":"l_ankle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ankle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_calf_OI"
@@ -5385,7 +5572,16 @@
         "@protoField":"l_calf_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_calf_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_clavicle_OI"
@@ -5413,7 +5609,16 @@
         "@protoField":"l_clavicle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_clavicle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_elbow_OI"
@@ -5441,7 +5646,16 @@
         "@protoField":"l_elbow_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_elbow_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_eyeball_OI"
@@ -5469,7 +5683,16 @@
         "@protoField":"l_eyeball_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_eyeball_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_eyeball_joint_OI"
@@ -5497,7 +5720,16 @@
         "@protoField":"l_eyeball_joint_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_eyeball_joint_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_eyebrow_OI"
@@ -5525,7 +5757,16 @@
         "@protoField":"l_eyebrow_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_eyebrow_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_eyebrow_joint_OI"
@@ -5553,7 +5794,16 @@
         "@protoField":"l_eyebrow_joint_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_eyebrow_joint_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_eyelid_OI"
@@ -5581,7 +5831,16 @@
         "@protoField":"l_eyelid_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_eyelid_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_eyelid_joint_OI"
@@ -5609,7 +5868,16 @@
         "@protoField":"l_eyelid_joint_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_eyelid_joint_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_forearm_OI"
@@ -5637,7 +5905,16 @@
         "@protoField":"l_forearm_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_forearm_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_forefoot_OI"
@@ -5665,7 +5942,16 @@
         "@protoField":"l_forefoot_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_forefoot_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_hand_OI"
@@ -5693,7 +5979,16 @@
         "@protoField":"l_hand_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_hand_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_hindfoot_OI"
@@ -5721,7 +6016,16 @@
         "@protoField":"l_hindfoot_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_hindfoot_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_hip_OI"
@@ -5749,7 +6053,16 @@
         "@protoField":"l_hip_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_hip_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index0_OI"
@@ -5777,7 +6090,16 @@
         "@protoField":"l_index0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index1_OI"
@@ -5805,7 +6127,16 @@
         "@protoField":"l_index1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index2_OI"
@@ -5833,7 +6164,16 @@
         "@protoField":"l_index2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index3_OI"
@@ -5861,7 +6201,16 @@
         "@protoField":"l_index3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index_distal_OI"
@@ -5889,7 +6238,16 @@
         "@protoField":"l_index_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index_metacarpal_OI"
@@ -5917,7 +6275,16 @@
         "@protoField":"l_index_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index_middle_OI"
@@ -5945,7 +6312,16 @@
         "@protoField":"l_index_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_index_proximal_OI"
@@ -5973,7 +6349,16 @@
         "@protoField":"l_index_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_index_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_knee_OI"
@@ -6001,7 +6386,16 @@
         "@protoField":"l_knee_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_knee_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_metatarsal_OI"
@@ -6029,7 +6423,16 @@
         "@protoField":"l_metatarsal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_metatarsal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middistal_OI"
@@ -6057,7 +6460,16 @@
         "@protoField":"l_middistal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middistal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle0_OI"
@@ -6085,7 +6497,16 @@
         "@protoField":"l_middle0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle1_OI"
@@ -6113,7 +6534,16 @@
         "@protoField":"l_middle1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle2_OI"
@@ -6141,7 +6571,16 @@
         "@protoField":"l_middle2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle3_OI"
@@ -6169,7 +6608,16 @@
         "@protoField":"l_middle3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle_distal_OI"
@@ -6197,7 +6645,16 @@
         "@protoField":"l_middle_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle_metacarpal_OI"
@@ -6225,7 +6682,16 @@
         "@protoField":"l_middle_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle_middle_OI"
@@ -6253,7 +6719,16 @@
         "@protoField":"l_middle_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_middle_proximal_OI"
@@ -6281,7 +6756,16 @@
         "@protoField":"l_middle_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_middle_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_midproximal_OI"
@@ -6309,7 +6793,16 @@
         "@protoField":"l_midproximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_midproximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_midtarsal_OI"
@@ -6337,7 +6830,16 @@
         "@protoField":"l_midtarsal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_midtarsal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky0_OI"
@@ -6365,7 +6867,16 @@
         "@protoField":"l_pinky0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky1_OI"
@@ -6393,7 +6904,16 @@
         "@protoField":"l_pinky1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky2_OI"
@@ -6421,7 +6941,16 @@
         "@protoField":"l_pinky2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky3_OI"
@@ -6449,7 +6978,16 @@
         "@protoField":"l_pinky3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky_distal_OI"
@@ -6477,7 +7015,16 @@
         "@protoField":"l_pinky_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky_metacarpal_OI"
@@ -6505,7 +7052,16 @@
         "@protoField":"l_pinky_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky_middle_OI"
@@ -6533,7 +7089,16 @@
         "@protoField":"l_pinky_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_pinky_proximal_OI"
@@ -6561,7 +7126,16 @@
         "@protoField":"l_pinky_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_pinky_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring0_OI"
@@ -6589,7 +7163,16 @@
         "@protoField":"l_ring0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring1_OI"
@@ -6617,7 +7200,16 @@
         "@protoField":"l_ring1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring2_OI"
@@ -6645,7 +7237,16 @@
         "@protoField":"l_ring2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring3_OI"
@@ -6673,7 +7274,16 @@
         "@protoField":"l_ring3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring_distal_OI"
@@ -6701,7 +7311,16 @@
         "@protoField":"l_ring_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring_metacarpal_OI"
@@ -6729,7 +7348,16 @@
         "@protoField":"l_ring_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring_middle_OI"
@@ -6757,7 +7385,16 @@
         "@protoField":"l_ring_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_ring_proximal_OI"
@@ -6785,7 +7422,16 @@
         "@protoField":"l_ring_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_ring_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_scapula_OI"
@@ -6813,7 +7459,16 @@
         "@protoField":"l_scapula_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_scapula_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_shoulder_OI"
@@ -6841,7 +7496,16 @@
         "@protoField":"l_shoulder_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_shoulder_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_sternoclavicular_OI"
@@ -6869,7 +7533,16 @@
         "@protoField":"l_sternoclavicular_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_sternoclavicular_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_subtalar_OI"
@@ -6897,7 +7570,16 @@
         "@protoField":"l_subtalar_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_subtalar_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_thigh_OI"
@@ -6925,7 +7607,16 @@
         "@protoField":"l_thigh_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_thigh_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_thumb1_OI"
@@ -6953,7 +7644,16 @@
         "@protoField":"l_thumb1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_thumb1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_thumb2_OI"
@@ -6981,7 +7681,16 @@
         "@protoField":"l_thumb2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_thumb2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_thumb3_OI"
@@ -7009,7 +7718,16 @@
         "@protoField":"l_thumb3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_thumb3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_thumb_distal_OI"
@@ -7037,7 +7755,16 @@
         "@protoField":"l_thumb_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_thumb_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_thumb_metacarpal_OI"
@@ -7065,7 +7792,16 @@
         "@protoField":"l_thumb_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_thumb_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_thumb_proximal_OI"
@@ -7093,7 +7829,16 @@
         "@protoField":"l_thumb_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_thumb_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_upperarm_OI"
@@ -7121,7 +7866,16 @@
         "@protoField":"l_upperarm_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_upperarm_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"l_wrist_OI"
@@ -7149,7 +7903,16 @@
         "@protoField":"l_wrist_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"l_wrist_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"pelvis_OI"
@@ -7177,7 +7940,16 @@
         "@protoField":"pelvis_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"pelvis_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_acromioclavicular_OI"
@@ -7205,7 +7977,16 @@
         "@protoField":"r_acromioclavicular_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_acromioclavicular_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ankle_OI"
@@ -7233,7 +8014,16 @@
         "@protoField":"r_ankle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ankle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_calf_OI"
@@ -7261,7 +8051,16 @@
         "@protoField":"r_calf_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_calf_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_clavicle_OI"
@@ -7289,7 +8088,16 @@
         "@protoField":"r_clavicle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_clavicle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_elbow_OI"
@@ -7317,7 +8125,16 @@
         "@protoField":"r_elbow_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_elbow_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_eyeball_OI"
@@ -7345,7 +8162,16 @@
         "@protoField":"r_eyeball_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_eyeball_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_eyeball_joint_OI"
@@ -7373,7 +8199,16 @@
         "@protoField":"r_eyeball_joint_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_eyeball_joint_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_eyebrow_OI"
@@ -7401,7 +8236,16 @@
         "@protoField":"r_eyebrow_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_eyebrow_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_eyebrow_joint_OI"
@@ -7429,7 +8273,16 @@
         "@protoField":"r_eyebrow_joint_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_eyebrow_joint_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_eyelid_OI"
@@ -7457,7 +8310,16 @@
         "@protoField":"r_eyelid_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_eyelid_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_eyelid_joint_OI"
@@ -7485,7 +8347,16 @@
         "@protoField":"r_eyelid_joint_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_eyelid_joint_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_forearm_OI"
@@ -7513,7 +8384,16 @@
         "@protoField":"r_forearm_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_forearm_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_forefoot_OI"
@@ -7541,7 +8421,16 @@
         "@protoField":"r_forefoot_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_forefoot_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_hand_OI"
@@ -7569,7 +8458,16 @@
         "@protoField":"r_hand_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_hand_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_hindfoot_OI"
@@ -7597,7 +8495,16 @@
         "@protoField":"r_hindfoot_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_hindfoot_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_hip_OI"
@@ -7625,7 +8532,16 @@
         "@protoField":"r_hip_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_hip_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index0_OI"
@@ -7653,7 +8569,16 @@
         "@protoField":"r_index0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index1_OI"
@@ -7681,7 +8606,16 @@
         "@protoField":"r_index1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index2_OI"
@@ -7709,7 +8643,16 @@
         "@protoField":"r_index2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index3_OI"
@@ -7737,7 +8680,16 @@
         "@protoField":"r_index3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index_distal_OI"
@@ -7765,7 +8717,16 @@
         "@protoField":"r_index_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index_metacarpal_OI"
@@ -7793,7 +8754,16 @@
         "@protoField":"r_index_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index_middle_OI"
@@ -7821,7 +8791,16 @@
         "@protoField":"r_index_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_index_proximal_OI"
@@ -7849,7 +8828,16 @@
         "@protoField":"r_index_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_index_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_knee_OI"
@@ -7877,7 +8865,16 @@
         "@protoField":"r_knee_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_knee_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_metatarsal_OI"
@@ -7905,7 +8902,16 @@
         "@protoField":"r_metatarsal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_metatarsal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middistal_OI"
@@ -7933,7 +8939,16 @@
         "@protoField":"r_middistal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middistal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle0_OI"
@@ -7961,7 +8976,16 @@
         "@protoField":"r_middle0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle1_OI"
@@ -7989,7 +9013,16 @@
         "@protoField":"r_middle1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle2_OI"
@@ -8017,7 +9050,16 @@
         "@protoField":"r_middle2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle3_OI"
@@ -8045,7 +9087,16 @@
         "@protoField":"r_middle3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle_distal_OI"
@@ -8073,7 +9124,16 @@
         "@protoField":"r_middle_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle_metacarpal_OI"
@@ -8101,7 +9161,16 @@
         "@protoField":"r_middle_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle_middle_OI"
@@ -8129,7 +9198,16 @@
         "@protoField":"r_middle_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_middle_proximal_OI"
@@ -8157,7 +9235,16 @@
         "@protoField":"r_middle_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_middle_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_midproximal_OI"
@@ -8185,7 +9272,16 @@
         "@protoField":"r_midproximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_midproximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_midtarsal_OI"
@@ -8213,7 +9309,16 @@
         "@protoField":"r_midtarsal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_midtarsal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky0_OI"
@@ -8241,7 +9346,16 @@
         "@protoField":"r_pinky0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky1_OI"
@@ -8269,7 +9383,16 @@
         "@protoField":"r_pinky1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky2_OI"
@@ -8297,7 +9420,16 @@
         "@protoField":"r_pinky2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky3_OI"
@@ -8325,7 +9457,16 @@
         "@protoField":"r_pinky3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky_distal_OI"
@@ -8353,7 +9494,16 @@
         "@protoField":"r_pinky_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky_metacarpal_OI"
@@ -8381,7 +9531,16 @@
         "@protoField":"r_pinky_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky_middle_OI"
@@ -8409,7 +9568,16 @@
         "@protoField":"r_pinky_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_pinky_proximal_OI"
@@ -8437,7 +9605,16 @@
         "@protoField":"r_pinky_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_pinky_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring0_OI"
@@ -8465,7 +9642,16 @@
         "@protoField":"r_ring0_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring0_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring1_OI"
@@ -8493,7 +9679,16 @@
         "@protoField":"r_ring1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring2_OI"
@@ -8521,7 +9716,16 @@
         "@protoField":"r_ring2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring3_OI"
@@ -8549,7 +9753,16 @@
         "@protoField":"r_ring3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring_distal_OI"
@@ -8577,7 +9790,16 @@
         "@protoField":"r_ring_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring_metacarpal_OI"
@@ -8605,7 +9827,16 @@
         "@protoField":"r_ring_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring_middle_OI"
@@ -8633,7 +9864,16 @@
         "@protoField":"r_ring_middle_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring_middle_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_ring_proximal_OI"
@@ -8661,7 +9901,16 @@
         "@protoField":"r_ring_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_ring_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_scapula_OI"
@@ -8689,7 +9938,16 @@
         "@protoField":"r_scapula_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_scapula_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_shoulder_OI"
@@ -8717,7 +9975,16 @@
         "@protoField":"r_shoulder_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_shoulder_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_sternoclavicular_OI"
@@ -8745,7 +10012,16 @@
         "@protoField":"r_sternoclavicular_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_sternoclavicular_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_subtalar_OI"
@@ -8773,7 +10049,16 @@
         "@protoField":"r_subtalar_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_subtalar_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_thigh_OI"
@@ -8801,7 +10086,16 @@
         "@protoField":"r_thigh_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_thigh_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_thumb1_OI"
@@ -8829,7 +10123,16 @@
         "@protoField":"r_thumb1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_thumb1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_thumb2_OI"
@@ -8857,7 +10160,16 @@
         "@protoField":"r_thumb2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_thumb2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_thumb3_OI"
@@ -8885,7 +10197,16 @@
         "@protoField":"r_thumb3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_thumb3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_thumb_distal_OI"
@@ -8913,7 +10234,16 @@
         "@protoField":"r_thumb_distal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_thumb_distal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_thumb_metacarpal_OI"
@@ -8941,7 +10271,16 @@
         "@protoField":"r_thumb_metacarpal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_thumb_metacarpal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_thumb_proximal_OI"
@@ -8969,7 +10308,16 @@
         "@protoField":"r_thumb_proximal_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_thumb_proximal_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_upperarm_OI"
@@ -8997,7 +10345,16 @@
         "@protoField":"r_upperarm_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_upperarm_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"r_wrist_OI"
@@ -9025,7 +10382,16 @@
         "@protoField":"r_wrist_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"r_wrist_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"sacroiliac_OI"
@@ -9053,7 +10419,16 @@
         "@protoField":"sacroiliac_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"sacroiliac_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"sacrum_OI"
@@ -9081,7 +10456,16 @@
         "@protoField":"sacrum_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"sacrum_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"skull_OI"
@@ -9109,7 +10493,16 @@
         "@protoField":"skull_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"skull_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"skullbase_OI"
@@ -9137,7 +10530,16 @@
         "@protoField":"skullbase_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"skullbase_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t1_OI"
@@ -9165,7 +10567,16 @@
         "@protoField":"t1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t2_OI"
@@ -9193,7 +10604,16 @@
         "@protoField":"t2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t3_OI"
@@ -9221,7 +10641,16 @@
         "@protoField":"t3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t4_OI"
@@ -9249,7 +10678,16 @@
         "@protoField":"t4_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t4_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t5_OI"
@@ -9277,7 +10715,16 @@
         "@protoField":"t5_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t5_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t6_OI"
@@ -9305,7 +10752,16 @@
         "@protoField":"t6_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t6_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t7_OI"
@@ -9333,7 +10789,16 @@
         "@protoField":"t7_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t7_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t8_OI"
@@ -9361,7 +10826,16 @@
         "@protoField":"t8_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t8_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t9_OI"
@@ -9389,7 +10863,16 @@
         "@protoField":"t9_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t9_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t10_OI"
@@ -9417,7 +10900,16 @@
         "@protoField":"t10_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t10_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t11_OI"
@@ -9445,7 +10937,16 @@
         "@protoField":"t11_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t11_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"t12_OI"
@@ -9473,7 +10974,16 @@
         "@protoField":"t12_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"t12_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"temporomandibular_OI"
@@ -9501,7 +11011,16 @@
         "@protoField":"temporomandibular_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"temporomandibular_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vc1_OI"
@@ -9529,7 +11048,16 @@
         "@protoField":"vc1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vc1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vc2_OI"
@@ -9557,7 +11085,16 @@
         "@protoField":"vc2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vc2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vc3_OI"
@@ -9585,7 +11122,16 @@
         "@protoField":"vc3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vc3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vc4_OI"
@@ -9613,7 +11159,16 @@
         "@protoField":"vc4_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vc4_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vc5_OI"
@@ -9641,7 +11196,16 @@
         "@protoField":"vc5_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vc5_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vc6_OI"
@@ -9669,7 +11233,16 @@
         "@protoField":"vc6_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vc6_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vc7_OI"
@@ -9697,7 +11270,16 @@
         "@protoField":"vc7_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vc7_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vl1_OI"
@@ -9725,7 +11307,16 @@
         "@protoField":"vl1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vl1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vl2_OI"
@@ -9753,7 +11344,16 @@
         "@protoField":"vl2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vl2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vl3_OI"
@@ -9781,7 +11381,16 @@
         "@protoField":"vl3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vl3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vl4_OI"
@@ -9809,7 +11418,16 @@
         "@protoField":"vl4_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vl4_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vl5_OI"
@@ -9837,7 +11455,16 @@
         "@protoField":"vl5_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vl5_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt1_OI"
@@ -9865,7 +11492,16 @@
         "@protoField":"vt1_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt1_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt2_OI"
@@ -9893,7 +11529,16 @@
         "@protoField":"vt2_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt2_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt3_OI"
@@ -9921,7 +11566,16 @@
         "@protoField":"vt3_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt3_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt4_OI"
@@ -9949,7 +11603,16 @@
         "@protoField":"vt4_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt4_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt5_OI"
@@ -9977,7 +11640,16 @@
         "@protoField":"vt5_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt5_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt6_OI"
@@ -10005,7 +11677,16 @@
         "@protoField":"vt6_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt6_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt7_OI"
@@ -10033,7 +11714,16 @@
         "@protoField":"vt7_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt7_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt8_OI"
@@ -10061,7 +11751,16 @@
         "@protoField":"vt8_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt8_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt9_OI"
@@ -10089,7 +11788,16 @@
         "@protoField":"vt9_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt9_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt10_OI"
@@ -10117,7 +11825,16 @@
         "@protoField":"vt10_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt10_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt11_OI"
@@ -10145,7 +11862,16 @@
         "@protoField":"vt11_changed"
       }
     },
-                    }                }                "OrientationInterpolator":
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"BehaviorClock",
+        "@toField":"set_fraction",
+        "@toNode":"vt11_OI"
+      }
+    },
+                "OrientationInterpolator":
                 {
       {
         "@DEF":"vt12_OI"
@@ -10174,1698 +11900,6 @@
       }
     },
                     }                }                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"HumanoidRootPI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"HumanoidRootOI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"c1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"c2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"c3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"c4_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"c5_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"c6_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"c7_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"jaw_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l4_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l5_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_acromioclavicular_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ankle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_calf_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_clavicle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_elbow_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_eyeball_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_eyeball_joint_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_eyebrow_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_eyebrow_joint_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_eyelid_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_eyelid_joint_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_forearm_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_forefoot_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_hand_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_hindfoot_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_hip_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_index_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_knee_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_metatarsal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middistal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_middle_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_midproximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_midtarsal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_pinky_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_ring_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_scapula_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_shoulder_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_sternoclavicular_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_subtalar_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_thigh_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_thumb1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_thumb2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_thumb3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_thumb_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_thumb_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_thumb_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_upperarm_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"l_wrist_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"pelvis_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_acromioclavicular_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ankle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_calf_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_clavicle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_elbow_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_eyeball_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_eyeball_joint_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_eyebrow_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_eyebrow_joint_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_eyelid_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_eyelid_joint_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_forearm_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_forefoot_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_hand_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_hindfoot_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_hip_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_index_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_knee_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_metatarsal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middistal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_middle_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_midproximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_midtarsal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_pinky_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring0_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring_middle_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_ring_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_scapula_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_shoulder_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_sternoclavicular_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_subtalar_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_thigh_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_thumb1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_thumb2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_thumb3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_thumb_distal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_thumb_metacarpal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_thumb_proximal_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_upperarm_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"r_wrist_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"sacroiliac_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"sacrum_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"skull_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"skullbase_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t4_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t5_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t6_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t7_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t8_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t9_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t10_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t11_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"t12_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"temporomandibular_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vc1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vc2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vc3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vc4_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vc5_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vc6_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vc7_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vl1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vl2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vl3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vl4_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vl5_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt1_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt2_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt3_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt4_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt5_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt6_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt7_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt8_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt9_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt10_OI"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"BehaviorClock",
-        "@toField":"set_fraction",
-        "@toNode":"vt11_OI"
-      }
-    },
-                "ROUTE":
                 {
       {
         "@fromField":"fraction_changed",
@@ -12221,13 +12255,7 @@
         "@value":"True"
       }
     },
-                }            }        }        "WorldInfo":
-        {
-      {
-        "@title":"HAnimBehaviorPrototypes.x3d"
-      }
-    }
-        "ProtoInstance":
+                }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"BehaviorTest1",

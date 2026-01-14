@@ -32,12 +32,32 @@
         "meta":
         {
       {
-        "@content":"x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy",
-        "@name":"generator"
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a generic proto to connect two objects",
+        "@name":"description"
       }
     },
     }    "Scene":
     {
+        "Viewpoint":
+        {
+      {
+        "@description":"Only Viewpoint",
+        "@position":"0 0 5"
+      }
+    },
+        "Background":
+        {
+      {
+        "@skyColor":"0.4 0.4 0.4"
+      }
+    },
         "ProtoDeclare":
         {
       {
@@ -50,7 +70,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
             }            "ProtoBody":
@@ -125,7 +146,8 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f"
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
       }
     },
                         "field":
@@ -153,8 +175,8 @@
         "@loop":"true"
       }
     },
-                }                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"cycleTime",
         "@fromNode":"CL1",
@@ -162,8 +184,8 @@
         "@toNode":"MB1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"CL1",
@@ -171,17 +193,17 @@
         "@toNode":"PI1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
-        "@fromField":"keyValue_changed",
+        "@fromField":"keyValue",
         "@fromNode":"MB1",
-        "@toField":"set_keyValue",
+        "@toField":"keyValue",
         "@toNode":"PI1"
       }
     },
-                "ROUTE":
-                {
+                    "ROUTE":
+                    {
       {
         "@fromField":"value_changed",
         "@fromNode":"PI1",
@@ -189,7 +211,7 @@
         "@toNode":"node"
       }
     },
-            }        }        "ProtoDeclare":
+                }            }        }        "ProtoDeclare":
         {
       {
         "@name":"x3dconnector"
@@ -443,72 +465,35 @@
         "@type":"SFVec3f"
       }
     },
-                    }                }            }        }        "Viewpoint":
-        {
-      {
-        "@description":"Only Viewpoint",
-        "@position":"0 0 5"
-      }
-    },
-        "Background":
-        {
-      {
-        "@skyColor":"0.4 0.4 0.4"
-      }
-    },
-        "ProtoInstance":
+                    }                }            }        }        "ProtoInstance":
         {
       {
         "@DEF":"G1",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.4116666 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"G2",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.4116666 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"G3",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.4116666 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"G4",
         "@name":"point"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"translation",
-        "@value":"0 0.4116666 0"
-      }
     },
-        }        "ProtoInstance":
+        "ProtoInstance":
         {
       {
         "@DEF":"connector1",
@@ -538,7 +523,19 @@
         "@name":"point"
       }
     },
-            }        }        "ProtoInstance":
+            }            "fieldValue":
+            {
+      {
+        "@name":"set_startpoint"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"set_endpoint"
+      }
+    },
+        }        "ProtoInstance":
         {
       {
         "@DEF":"connector2",
@@ -568,7 +565,19 @@
         "@name":"point"
       }
     },
-            }        }        "ProtoInstance":
+            }            "fieldValue":
+            {
+      {
+        "@name":"set_startpoint"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"set_endpoint"
+      }
+    },
+        }        "ProtoInstance":
         {
       {
         "@DEF":"connector3",
@@ -598,10 +607,22 @@
         "@name":"point"
       }
     },
-            }        }        "ROUTE":
+            }            "fieldValue":
+            {
+      {
+        "@name":"set_startpoint"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"set_endpoint"
+      }
+    },
+        }        "ROUTE":
         {
       {
-        "@fromField":"translation_changed",
+        "@fromField":"translation",
         "@fromNode":"G1",
         "@toField":"set_startpoint",
         "@toNode":"connector1"
@@ -610,7 +631,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation_changed",
+        "@fromField":"translation",
         "@fromNode":"G2",
         "@toField":"set_endpoint",
         "@toNode":"connector1"
@@ -619,7 +640,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation_changed",
+        "@fromField":"translation",
         "@fromNode":"G1",
         "@toField":"set_startpoint",
         "@toNode":"connector2"
@@ -628,7 +649,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation_changed",
+        "@fromField":"translation",
         "@fromNode":"G3",
         "@toField":"set_endpoint",
         "@toNode":"connector2"
@@ -637,7 +658,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation_changed",
+        "@fromField":"translation",
         "@fromNode":"G1",
         "@toField":"set_startpoint",
         "@toNode":"connector3"
@@ -646,7 +667,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation_changed",
+        "@fromField":"translation",
         "@fromNode":"G4",
         "@toField":"set_endpoint",
         "@toNode":"connector3"
