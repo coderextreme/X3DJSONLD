@@ -16,13 +16,12 @@ var Scene = require('./x3d.mjs');
 var WorldInfo = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
-var SFBool = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var SpotLight = require('./x3d.mjs');
-var SFFloat = require('./x3d.mjs');
 var SFColor = require('./x3d.mjs');
+var SFFloat = require('./x3d.mjs');
 var PointLight = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
 var Group = require('./x3d.mjs');
@@ -30,22 +29,23 @@ var HAnimHumanoid = require('./x3d.mjs');
 var MetadataSet = require('./x3d.mjs');
 var MetadataString = require('./x3d.mjs');
 var HAnimJoint = require('./x3d.mjs');
-var MFFloat = require('./x3d.mjs');
 var HAnimSegment = require('./x3d.mjs');
 var HAnimSite = require('./x3d.mjs');
 var Transform = require('./x3d.mjs');
 var Shape = require('./x3d.mjs');
 var IndexedLineSet = require('./x3d.mjs');
+var SFBool = require('./x3d.mjs');
 var MFInt32 = require('./x3d.mjs');
-var Coordinate = require('./x3d.mjs');
-var MFVec3f = require('./x3d.mjs');
 var Color = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
+var Coordinate = require('./x3d.mjs');
+var MFVec3f = require('./x3d.mjs');
 var Appearance = require('./x3d.mjs');
 var Material = require('./x3d.mjs');
 var ImageTexture = require('./x3d.mjs');
 var TextureTransform = require('./x3d.mjs');
 var IndexedFaceSet = require('./x3d.mjs');
+var MFFloat = require('./x3d.mjs');
 var HAnimDisplacer = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
@@ -72,11 +72,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("created"),
-              content : new SFString("May through September 2023")}),
+              content : new SFString("1 May 2023")}),
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("2 June 2023")}),
+              content : new SFString("Mon, 15 Sep 2025 05:21:02 GMT")}),
 
             new meta({
               name : new SFString("reference"),
@@ -92,26 +92,21 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/WinterAndSpringTest.x3d")}),
-
-            new meta({
-              name : new SFString("license"),
-              content : new SFString("../license.html")})])})),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/WinterAndSpringTest.x3d")})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
             new WorldInfo({
-              info : new MFString(["X3D Humanoid LOA3 skeleton plus others","Lots points"]),
-              title : new SFString("X3D HANIM LOA3 (modified) Skeleton, Lots points Skin, texcoords, Displacer, translations")}),
+              title : new SFString("X3D HANIM LOA3 (modified) Skeleton, Lots points Skin, texcoords, Displacer, translations"),
+              info : new MFString(["X3D Humanoid LOA3 skeleton plus others","Lots points"])}),
 
             new NavigationInfo({
-              DEF : new SFString("Start_NavigationInfo"),
-              headlight : new SFBool(false)}),
+              DEF : new SFString("Start_NavigationInfo")}),
 
             new Viewpoint({
-              centerOfRotation : new SFVec3f([0,1,0]),
               description : new SFString("Male"),
-              position : new SFVec3f([0,1,-2])}),
+              position : new SFVec3f([0,1,-2]),
+              centerOfRotation : new SFVec3f([0,1,0])}),
 
             new Background({
               DEF : new SFString("gray_Background")}),
@@ -127,105 +122,103 @@ var X3D0 =  new X3D({
 
             new SpotLight({
               DEF : new SFString("light1"),
-              ambientIntensity : new SFFloat(0.7),
-              beamWidth : new SFFloat(1.5),
               color : new SFColor([0.8,0.8,1]),
-              cutOffAngle : new SFFloat(0.6),
-              direction : new SFVec3f([0,0,0]),
+              ambientIntensity : new SFFloat(0.7),
               location : new SFVec3f([0,3,3]),
-              radius : new SFFloat(10)}),
+              direction : new SFVec3f([0,0,0]),
+              radius : new SFFloat(10),
+              beamWidth : new SFFloat(1.5),
+              cutOffAngle : new SFFloat(0.6)}),
 
             new PointLight({
               DEF : new SFString("light2"),
-              ambientIntensity : new SFFloat(0.7),
               color : new SFColor([0.8,0.8,1]),
+              ambientIntensity : new SFFloat(0.7),
               location : new SFVec3f([0,10,-7])}),
-          /*External from the Humanoid viewpoints*/
 
             new Viewpoint({
               DEF : new SFString("Scene_InclinedView"),
-              centerOfRotation : new SFVec3f([0,0.85,0]),
               description : new SFString("Scene_Inclined View"),
+              position : new SFVec3f([1.62,1.05,3.06]),
               orientation : new SFRotation([-0.113,0.993,0.0347,0.671]),
-              position : new SFVec3f([1.62,1.05,3.06])}),
+              centerOfRotation : new SFVec3f([0,0.85,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_IFrontView"),
-              centerOfRotation : new SFVec3f([0,0.8,0]),
               description : new SFString("Scene_Front View"),
-              position : new SFVec3f([0,0.8,2.58])}),
+              position : new SFVec3f([0,0.8,2.58]),
+              centerOfRotation : new SFVec3f([0,0.8,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_OldMan_ISideView"),
-              centerOfRotation : new SFVec3f([0,0.8,0]),
               description : new SFString("Scene_Side View"),
+              position : new SFVec3f([-2.6,1.5,1]),
               orientation : new SFRotation([0,1,0,1.5708]),
-              position : new SFVec3f([-2.6,1.5,1])}),
+              centerOfRotation : new SFVec3f([0,0.8,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_ISideView"),
-              centerOfRotation : new SFVec3f([0,0.8,0]),
               description : new SFString("Scene_Side View"),
+              position : new SFVec3f([-5,1.5,1]),
               orientation : new SFRotation([0,1,0,1.5708]),
-              position : new SFVec3f([-5,1.5,1])}),
+              centerOfRotation : new SFVec3f([0,0.8,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_Full_ISideView"),
-              centerOfRotation : new SFVec3f([0,0.8,0]),
               description : new SFString("Scene_Side View"),
+              position : new SFVec3f([-10,1.5,1]),
               orientation : new SFRotation([0,1,0,1.5708]),
-              position : new SFVec3f([-10,1.5,1])}),
+              centerOfRotation : new SFVec3f([0,0.8,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_OneBush_ISideView"),
-              centerOfRotation : new SFVec3f([0,0.8,0]),
               description : new SFString("Scene_Side View"),
+              position : new SFVec3f([-20,1.5,1]),
               orientation : new SFRotation([0,1,0,1.5708]),
-              position : new SFVec3f([-20,1.5,1])}),
+              centerOfRotation : new SFVec3f([0,0.8,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_TwoBush_ISideView"),
-              centerOfRotation : new SFVec3f([0,0.8,0]),
               description : new SFString("Scene_Side View"),
+              position : new SFVec3f([-10,1.5,1]),
               orientation : new SFRotation([0,1,0,1.5708]),
-              position : new SFVec3f([-10,1.5,1])}),
+              centerOfRotation : new SFVec3f([0,0.8,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_BackView"),
-              centerOfRotation : new SFVec3f([0,1.5,0]),
               description : new SFString("Scene_Back View"),
+              position : new SFVec3f([0,1.5,-5]),
               orientation : new SFRotation([0,1,0,3.14]),
-              position : new SFVec3f([0,1.5,-5])}),
+              centerOfRotation : new SFVec3f([0,1.5,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_OldMan_BackView"),
-              centerOfRotation : new SFVec3f([0,1.5,0]),
               description : new SFString("Scene_Back View"),
+              position : new SFVec3f([0,1.5,-2.5]),
               orientation : new SFRotation([0,1,0,3.14]),
-              position : new SFVec3f([0,1.5,-2.5])}),
+              centerOfRotation : new SFVec3f([0,1.5,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_Full_BackView"),
-              centerOfRotation : new SFVec3f([0,1.5,0]),
               description : new SFString("Scene_Back View"),
+              position : new SFVec3f([0,1.5,-20]),
               orientation : new SFRotation([0,1,15,3.14]),
-              position : new SFVec3f([0,1.5,-20])}),
+              centerOfRotation : new SFVec3f([0,1.5,0])}),
 
             new Viewpoint({
               DEF : new SFString("Scene_TopView"),
-              centerOfRotation : new SFVec3f([0,1.5,0]),
               description : new SFString("Scene_Top View"),
+              position : new SFVec3f([0,3.5,0]),
               orientation : new SFRotation([1,0,0,-1.5708]),
-              position : new SFVec3f([0,3.5,0])}),
+              centerOfRotation : new SFVec3f([0,1.5,0])}),
 
             new Group({
               DEF : new SFString("OldMan_Humanoid"),
               children : new MFNode([
                 new HAnimHumanoid({
-                  name : new SFString("Walk"),
                   DEF : new SFString("OldMan"),
+                  name : new SFString("Walk"),
                   loa : new SFInt32(3),
-                  version : new SFString("2.0"),
                   metadata : new MFNode([
                     new MetadataSet({
                       name : new SFString("warnings"),
@@ -237,19 +230,16 @@ var X3D0 =  new X3D({
                           value : new MFString(["ignore"])}))}),
                   joints : new MFNode([
                     new HAnimJoint({
-                      name : new SFString("humanoid_root"),
                       DEF : new SFString("OldMan_humanoid_root"),
-                      ulimit : new MFFloat([0,0,0]),
-                      llimit : new MFFloat([0,0,0]),
-                      /*TODO center='x 0.9155 z'*/
+                      name : new SFString("humanoid_root"),
                       children : new MFNode([
                         new HAnimSegment({
-                          name : new SFString("sacrum"),
                           DEF : new SFString("OldMan_sacrum"),
+                          name : new SFString("sacrum"),
                           children : new MFNode([
                             new HAnimSite({
-                              name : new SFString("RootBack_view"),
                               DEF : new SFString("OldMan_RootBack_view"),
+                              name : new SFString("RootBack_view"),
                               children : new MFNode([
                                 new Transform({
                                   DEF : new SFString("hanimcordsys"),
@@ -261,18 +251,17 @@ var X3D0 =  new X3D({
                                   child : new SFNode(
                                     new Shape({
                                       DEF : new SFString("AxisLinesShape"),
-                                      /*RGB lines showing XYZ axes*/
                                       geometry : new SFNode(
                                         new IndexedLineSet({
-                                          colorIndex : new MFInt32([0,1,2]),
                                           colorPerVertex : new SFBool(false),
+                                          colorIndex : new MFInt32([0,1,2]),
                                           coordIndex : new MFInt32([0,1,-1,0,2,-1,0,3,-1]),
-                                          coord : new SFNode(
-                                            new Coordinate({
-                                              point : new MFVec3f([0,0,0,1,0,0,0,1,0,0,0,1])})),
                                           color : new SFNode(
                                             new Color({
-                                              color : new MFColor([1,0,0,0,0.6,0,0,0,1])}))}))})]),
+                                              color : new MFColor([1,0,0,0,0.6,0,0,0,1])})),
+                                          coord : new SFNode(
+                                            new Coordinate({
+                                              point : new MFVec3f([0,0,0,1,0,0,0,1,0,0,0,1])}))}))})]),
                                   child : new SFNode(
                                     new Shape({
                                       DEF : new SFString("OldMan_Shape"),
@@ -296,594 +285,390 @@ var X3D0 =  new X3D({
                                           DEF : new SFString("OldMan_skin_IndexedFaceSet")}))}))})])})])}),
 
                         new HAnimJoint({
-                          name : new SFString("sacroiliac"),
                           DEF : new SFString("OldMan_sacroiliac"),
-                          ulimit : new MFFloat([0,0,0]),
-                          llimit : new MFFloat([0,0,0]),
-                          /*TODO center='x 0.952 z'*/
-                          /*High hip*/
+                          name : new SFString("sacroiliac"),
                           children : new MFNode([
                             new HAnimJoint({
-                              name : new SFString("l_hip"),
                               DEF : new SFString("OldMan_l_hip"),
-                              ulimit : new MFFloat([0,0,0]),
-                              llimit : new MFFloat([0,0,0]),
-                              /*TODO center='x 0.879 z' Low hip*/
+                              name : new SFString("l_hip"),
                               children : new MFNode([
                                 new HAnimJoint({
-                                  name : new SFString("l_knee"),
                                   DEF : new SFString("OldMan_l_knee"),
-                                  ulimit : new MFFloat([0,0,0]),
-                                  llimit : new MFFloat([0,0,0]),
-                                  /*center='x 0.461 z'*/
+                                  name : new SFString("l_knee"),
                                   children : new MFNode([
                                     new HAnimJoint({
-                                      name : new SFString("l_talocrural"),
                                       DEF : new SFString("OldMan_l_talocrural"),
-                                      ulimit : new MFFloat([0,0,0]),
-                                      llimit : new MFFloat([0,0,0]),
-                                      /*Ankle*/
+                                      name : new SFString("l_talocrural"),
                                       children : new MFNode([
                                         new HAnimJoint({
-                                          name : new SFString("l_tarsometatarsal_2"),
                                           DEF : new SFString("Joe_l_tarsometatarsal_2"),
-                                          ulimit : new MFFloat([0,0,0]),
-                                          llimit : new MFFloat([0,0,0]),
+                                          name : new SFString("l_tarsometatarsal_2"),
                                           children : new MFNode([
                                             new HAnimJoint({
-                                              name : new SFString("l_metatarsophalangeal_2"),
                                               DEF : new SFString("Joe_l_metatarsophalangeal_2"),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
+                                              name : new SFString("l_metatarsophalangeal_2"),
                                               children : new MFNode([
                                                 new HAnimJoint({
-                                                  name : new SFString("l_tarsal_distal_interphalangeal_2"),
                                                   DEF : new SFString("Joe_l_tarsal_distal_interphalangeal_2"),
-                                                  center : new SFVec3f([0.115,0.02,0.122]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0])})])})])})])})])}),
+                                                  name : new SFString("l_tarsal_distal_interphalangeal_2"),
+                                                  center : new SFVec3f([0.115,0.02,0.122])})])})])})])})])}),
 
                                 new HAnimJoint({
-                                  name : new SFString("l_hip"),
                                   DEF : new SFString("OldMan_r_hip"),
-                                  ulimit : new MFFloat([0,0,0]),
-                                  llimit : new MFFloat([0,0,0]),
-                                  /*Low hip*/
+                                  name : new SFString("l_hip"),
                                   children : new MFNode([
                                     new HAnimJoint({
-                                      name : new SFString("l_knee"),
                                       DEF : new SFString("OldMan_r_knee"),
-                                      ulimit : new MFFloat([0,0,0]),
-                                      llimit : new MFFloat([0,0,0])}),
+                                      name : new SFString("l_knee")}),
 
                                     new HAnimJoint({
-                                      name : new SFString("l_talocrural"),
                                       DEF : new SFString("OldMan_r_talocrural"),
-                                      ulimit : new MFFloat([0,0,0]),
-                                      llimit : new MFFloat([0,0,0]),
-                                      /*Ankle*/
+                                      name : new SFString("l_talocrural"),
                                       children : new MFNode([
                                         new HAnimJoint({
-                                          name : new SFString("r_tarsometatarsal_2"),
                                           DEF : new SFString("Joe_r_tarsometatarsal_2"),
+                                          name : new SFString("r_tarsometatarsal_2"),
                                           center : new SFVec3f([-0.1,0.015,-0.01]),
                                           skinCoordIndex : new MFInt32([374,375,376]),
                                           skinCoordWeight : new MFFloat([1,1,1]),
-                                          ulimit : new MFFloat([0,0,0]),
-                                          llimit : new MFFloat([0,0,0]),
                                           children : new MFNode([
                                             new HAnimJoint({
-                                              name : new SFString("r_metatarsophalangeal_2"),
                                               DEF : new SFString("Joe_r_metatarsophalangeal_2"),
+                                              name : new SFString("r_metatarsophalangeal_2"),
                                               center : new SFVec3f([-0.115,0.037,0.09]),
                                               skinCoordIndex : new MFInt32([377,378,379,380]),
                                               skinCoordWeight : new MFFloat([1,1,1,1]),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimJoint({
-                                                  name : new SFString("r_tarsal_distal_interphalangeal_2"),
                                                   DEF : new SFString("Joe_r_tarsal_distal_interphalangeal_2"),
+                                                  name : new SFString("r_tarsal_distal_interphalangeal_2"),
                                                   center : new SFVec3f([-0.1,0.01,0.14]),
                                                   skinCoordIndex : new MFInt32([381,382,383,384,385,386,387,388,389]),
-                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0])})])})])})])})])})])}),
+                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1])})])})])})])})])})])}),
 
                             new HAnimJoint({
-                              name : new SFString("vl5"),
                               DEF : new SFString("OldMan_vl5"),
-                              ulimit : new MFFloat([0,0,0]),
-                              llimit : new MFFloat([0,0,0]),
-                              /*Abdomen*/
+                              name : new SFString("vl5"),
                               children : new MFNode([
                                 new HAnimJoint({
-                                  name : new SFString("vl4"),
                                   DEF : new SFString("MeshName_vl4"),
-                                  ulimit : new MFFloat([0,0,0]),
-                                  llimit : new MFFloat([0,0,0]),
+                                  name : new SFString("vl4"),
                                   children : new MFNode([
                                     new HAnimJoint({
-                                      name : new SFString("vl3"),
                                       DEF : new SFString("OldMan_vl3"),
-                                      ulimit : new MFFloat([0,0,0]),
-                                      llimit : new MFFloat([0,0,0]),
-                                      /*center='x 1.098 z'*/
-                                      /*Low=' ist='*/
+                                      name : new SFString("vl3"),
                                       children : new MFNode([
                                         new HAnimJoint({
-                                          name : new SFString("vl2"),
                                           DEF : new SFString("MeshName_vl2"),
-                                          ulimit : new MFFloat([0,0,0]),
-                                          llimit : new MFFloat([0,0,0]),
+                                          name : new SFString("vl2"),
                                           children : new MFNode([
                                             new HAnimJoint({
-                                              name : new SFString("vl1"),
                                               DEF : new SFString("OldMan_vl1"),
-                                              ulimit : new MFFloat([0,0,0]),
-                                              llimit : new MFFloat([0,0,0]),
-                                              /*center='x 1.171 z'*/
-                                              /*High waist*/
+                                              name : new SFString("vl1"),
                                               children : new MFNode([
                                                 new HAnimJoint({
-                                                  name : new SFString("vt12"),
                                                   DEF : new SFString("MeshName_vt12"),
-                                                  ulimit : new MFFloat([0,0,0]),
-                                                  llimit : new MFFloat([0,0,0]),
+                                                  name : new SFString("vt12"),
                                                   children : new MFNode([
                                                     new HAnimJoint({
-                                                      name : new SFString("vt11"),
                                                       DEF : new SFString("OldMan_vt11"),
-                                                      ulimit : new MFFloat([0,0,0]),
-                                                      llimit : new MFFloat([0,0,0]),
-                                                      /*Ribcage='*/
+                                                      name : new SFString("vt11"),
                                                       children : new MFNode([
                                                         new HAnimJoint({
-                                                          name : new SFString("vt10"),
                                                           DEF : new SFString("MeshName_vt10"),
-                                                          ulimit : new MFFloat([0,0,0]),
-                                                          llimit : new MFFloat([0,0,0]),
+                                                          name : new SFString("vt10"),
                                                           children : new MFNode([
                                                             new HAnimJoint({
-                                                              name : new SFString("vt9"),
                                                               DEF : new SFString("MeshName_vt9"),
-                                                              ulimit : new MFFloat([0,0,0]),
-                                                              llimit : new MFFloat([0,0,0]),
+                                                              name : new SFString("vt9"),
                                                               children : new MFNode([
                                                                 new HAnimJoint({
-                                                                  name : new SFString("vt8"),
                                                                   DEF : new SFString("MeshName_vt8"),
-                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                  llimit : new MFFloat([0,0,0]),
+                                                                  name : new SFString("vt8"),
                                                                   children : new MFNode([
                                                                     new HAnimJoint({
-                                                                      name : new SFString("vt7"),
                                                                       DEF : new SFString("OldMan_vt7"),
-                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                      llimit : new MFFloat([0,0,0]),
-                                                                      /*Sternum='*/
+                                                                      name : new SFString("vt7"),
                                                                       children : new MFNode([
                                                                         new HAnimJoint({
-                                                                          name : new SFString("vt6"),
                                                                           DEF : new SFString("MeshName_vt6"),
-                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                          llimit : new MFFloat([0,0,0]),
+                                                                          name : new SFString("vt6"),
                                                                           children : new MFNode([
                                                                             new HAnimJoint({
-                                                                              name : new SFString("vt5"),
                                                                               DEF : new SFString("MeshName_vt5"),
-                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                              llimit : new MFFloat([0,0,0]),
+                                                                              name : new SFString("vt5"),
                                                                               children : new MFNode([
                                                                                 new HAnimJoint({
-                                                                                  name : new SFString("vt4"),
                                                                                   DEF : new SFString("OldMan_vt4"),
-                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                  llimit : new MFFloat([0,0,0]),
-                                                                                  /*Chest*/
+                                                                                  name : new SFString("vt4"),
                                                                                   children : new MFNode([
                                                                                     new HAnimJoint({
-                                                                                      name : new SFString("vt3"),
                                                                                       DEF : new SFString("MeshName_vt3"),
-                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                      name : new SFString("vt3"),
                                                                                       children : new MFNode([
                                                                                         new HAnimJoint({
-                                                                                          name : new SFString("vt2"),
                                                                                           DEF : new SFString("OldMan_vt2"),
-                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                          llimit : new MFFloat([0,0,0]),
-                                                                                          /*High Chest*/
+                                                                                          name : new SFString("vt2"),
                                                                                           children : new MFNode([
                                                                                             new HAnimJoint({
-                                                                                              name : new SFString("vt1"),
                                                                                               DEF : new SFString("MeshName_vt1"),
-                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                              name : new SFString("vt1"),
                                                                                               children : new MFNode([
                                                                                                 new HAnimJoint({
-                                                                                                  name : new SFString("vc7"),
                                                                                                   DEF : new SFString("OldMan_vc7"),
-                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                  llimit : new MFFloat([0,0,0]),
-                                                                                                  /*Low neck*/
+                                                                                                  name : new SFString("vc7"),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
-                                                                                                      name : new SFString("vc6"),
                                                                                                       DEF : new SFString("MeshName_vc6"),
-                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                      name : new SFString("vc6"),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
-                                                                                                          name : new SFString("vc5"),
                                                                                                           DEF : new SFString("MeshName_vc5"),
-                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                          name : new SFString("vc5"),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
-                                                                                                              name : new SFString("vc4"),
                                                                                                               DEF : new SFString("OldMan_vc4"),
-                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                              llimit : new MFFloat([0,0,0]),
-                                                                                                              /*Mid=' ck='*/
+                                                                                                              name : new SFString("vc4"),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("vc3"),
                                                                                                                   DEF : new SFString("MeshName_vc3"),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  name : new SFString("vc3"),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("vc2"),
                                                                                                                       DEF : new SFString("MeshName_vc2"),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      name : new SFString("vc2"),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("vc1"),
                                                                                                                           DEF : new SFString("OldMan_vc1"),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
-                                                                                                                          /*High=' ck='*/
+                                                                                                                          name : new SFString("vc1"),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("skullbase"),
                                                                                                                               DEF : new SFString("OldMan_skullbase"),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                              name : new SFString("skullbase"),
                                                                                                                               displacers : new SFNode(
                                                                                                                                 new HAnimDisplacer({
-                                                                                                                                  name : new SFString("skull_tip_raiser_action"),
                                                                                                                                   DEF : new SFString("Joe_skull_tip_raiser_action"),
+                                                                                                                                  name : new SFString("skull_tip_raiser_action"),
                                                                                                                                   coordIndex : new MFInt32([0,1,2,3,4,5,6,7,8,9]),
                                                                                                                                   displacements : new MFVec3f([0,0.15,0,0,0,0.15,-0.1,0,0.15,0.1,0,0.05,0,-0.02,0.05,-0.15,0,0,-0.05,0,0,0.15,0,0,0.05,0,0,0,0,-0.15])})),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_eyelid_joint"),
                                                                                                                                   DEF : new SFString("OldMan_l_eyelid_joint"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0])}),
+                                                                                                                                  name : new SFString("l_eyelid_joint")}),
 
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_eyeball_joint"),
                                                                                                                                   DEF : new SFString("OldMan_l_eyeball_joint"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0])}),
+                                                                                                                                  name : new SFString("l_eyeball_joint")}),
 
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_eyebrow_joint"),
                                                                                                                                   DEF : new SFString("OldMan_l_eyebrow_joint"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0])}),
+                                                                                                                                  name : new SFString("l_eyebrow_joint")}),
 
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_eyelid_joint"),
                                                                                                                                   DEF : new SFString("OldMan_r_eyelid_joint"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0])}),
+                                                                                                                                  name : new SFString("r_eyelid_joint")}),
 
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_eyeball_joint"),
                                                                                                                                   DEF : new SFString("OldMan_r_eyeball_joint"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0])}),
+                                                                                                                                  name : new SFString("r_eyeball_joint")}),
 
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_eyebrow_joint"),
                                                                                                                                   DEF : new SFString("OldMan_r_eyebrow_joint"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0])}),
+                                                                                                                                  name : new SFString("r_eyebrow_joint")}),
 
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("temporomandibular"),
                                                                                                                                   DEF : new SFString("OldMan_temporomandibular"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])}),
+                                                                                                                                  name : new SFString("temporomandibular")})])})])})])})])})])})])})])})])}),
 
                                                                                                 new HAnimJoint({
                                                                                                   DEF : new SFString("OldMan_l_acromioclavicular"),
-                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                  name : new SFString("l_acromioclavicular"),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimJoint({
-                                                                                                      name : new SFString("l_acromioclavicular"),
                                                                                                       DEF : new SFString("OldMan_l_sternoclavicular"),
-                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                      name : new SFString("l_sternoclavicular"),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimJoint({
-                                                                                                          name : new SFString("l_shoulder"),
                                                                                                           DEF : new SFString("OldMan_l_shoulder"),
-                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                          name : new SFString("l_shoulder"),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimJoint({
-                                                                                                              name : new SFString("l_elbow"),
                                                                                                               DEF : new SFString("OldMan_l_elbow"),
-                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                              name : new SFString("l_elbow"),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("l_radiocarpal"),
                                                                                                                   DEF : new SFString("OldMan_l_radiocarpal"),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                  name : new SFString("l_radiocarpal"),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("l_carpometacarpal_1"),
                                                                                                                       DEF : new SFString("OldMan_l_carpometacarpal_1"),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      name : new SFString("l_carpometacarpal_1"),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("l_metacarpophalangeal_1"),
                                                                                                                           DEF : new SFString("OldMan_l_metacarpophalangeal_1"),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          name : new SFString("l_metacarpophalangeal_1"),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_carpal_interphalangeal_1"),
                                                                                                                               DEF : new SFString("OldMan_l_carpal_interphalangeal_1"),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0])})])}),
+                                                                                                                              name : new SFString("l_carpal_interphalangeal_1")})])}),
 
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("l_carpometacarpal_2"),
                                                                                                                           DEF : new SFString("OldMan_l_carpometacarpal_2"),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          name : new SFString("l_carpometacarpal_2"),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_metacarpophalangeal_2"),
                                                                                                                               DEF : new SFString("OldMan_l_metacarpophalangeal_2"),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                              name : new SFString("l_metacarpophalangeal_2"),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_carpal_proximal_interphalangeal_2"),
                                                                                                                                   DEF : new SFString("OldMan_l_carpal_proximal_interphalangeal_2"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  name : new SFString("l_carpal_proximal_interphalangeal_2"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimJoint({
-                                                                                                                                      name : new SFString("l_carpal_distal_interphalangeal_2"),
                                                                                                                                       DEF : new SFString("OldMan_l_carpal_distal_interphalangeal_2"),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0])})])})])}),
+                                                                                                                                      name : new SFString("l_carpal_distal_interphalangeal_2")})])})])}),
 
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("l_carpometacarpal_3"),
                                                                                                                               DEF : new SFString("OldMan_l_carpometacarpal_3"),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                              name : new SFString("l_carpometacarpal_3"),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_metacarpophalangeal_3"),
                                                                                                                                   DEF : new SFString("OldMan_l_metacarpophalangeal_3"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  name : new SFString("l_metacarpophalangeal_3"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimJoint({
-                                                                                                                                      name : new SFString("l_carpal_proximal_interphalangeal_3"),
                                                                                                                                       DEF : new SFString("OldMan_l_carpal_proximal_interphalangeal_3"),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                                      name : new SFString("l_carpal_proximal_interphalangeal_3"),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimJoint({
-                                                                                                                                          name : new SFString("l_carpal_distal_interphalangeal_3"),
                                                                                                                                           DEF : new SFString("OldMan_l_carpal_distal_interphalangeal_3"),
-                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                          llimit : new MFFloat([0,0,0])})])})])}),
+                                                                                                                                          name : new SFString("l_carpal_distal_interphalangeal_3")})])})])}),
 
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("l_carpometacarpal_4"),
                                                                                                                                   DEF : new SFString("OldMan_l_carpometacarpal_4"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  name : new SFString("l_carpometacarpal_4"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimJoint({
-                                                                                                                                      name : new SFString("l_metacarpophalangeal_4"),
                                                                                                                                       DEF : new SFString("OldMan_l_metacarpophalangeal_4"),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                                      name : new SFString("l_metacarpophalangeal_4"),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimJoint({
-                                                                                                                                          name : new SFString("l_carpal_proximal_interphalangeal_4"),
                                                                                                                                           DEF : new SFString("OldMan_l_carpal_proximal_interphalangeal_4"),
-                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                                          name : new SFString("l_carpal_proximal_interphalangeal_4"),
                                                                                                                                           children : new MFNode([
                                                                                                                                             new HAnimJoint({
-                                                                                                                                              name : new SFString("l_carpal_distal_interphalangeal_4"),
                                                                                                                                               DEF : new SFString("OldMan_l_carpal_distal_interphalangeal_4"),
-                                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                                              llimit : new MFFloat([0,0,0])})])})])}),
+                                                                                                                                              name : new SFString("l_carpal_distal_interphalangeal_4")})])})])}),
 
                                                                                                                                     new HAnimJoint({
-                                                                                                                                      name : new SFString("l_carpometacarpal_5"),
                                                                                                                                       DEF : new SFString("OldMan_l_carpometacarpal_5"),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                                      name : new SFString("l_carpometacarpal_5"),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimJoint({
-                                                                                                                                          name : new SFString("l_metacarpophalangeal_5"),
                                                                                                                                           DEF : new SFString("OldMan_l_metacarpophalangeal_5"),
-                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                                          name : new SFString("l_metacarpophalangeal_5"),
                                                                                                                                           children : new MFNode([
                                                                                                                                             new HAnimJoint({
-                                                                                                                                              name : new SFString("l_carpal_proximal_interphalangeal_5"),
                                                                                                                                               DEF : new SFString("OldMan_l_carpal_proximal_interphalangeal_5"),
-                                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                                              name : new SFString("l_carpal_proximal_interphalangeal_5"),
                                                                                                                                               children : new MFNode([
                                                                                                                                                 new HAnimJoint({
-                                                                                                                                                  name : new SFString("l_carpal_distal_interphalangeal_5"),
                                                                                                                                                   DEF : new SFString("OldMan_l_carpal_distal_interphalangeal_5"),
-                                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                  llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])}),
+                                                                                                                                                  name : new SFString("l_carpal_distal_interphalangeal_5")})])})])})])})])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_sternoclavicular"),
                                                                                                                       DEF : new SFString("OldMan_r_sternoclavicular"),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      name : new SFString("r_sternoclavicular"),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_acromioclavicular"),
                                                                                                                           DEF : new SFString("OldMan_r_acromioclavicular"),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          name : new SFString("r_acromioclavicular"),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_shoulder"),
                                                                                                                               DEF : new SFString("OldMan_r_shoulder"),
-                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                              name : new SFString("r_shoulder"),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimJoint({
-                                                                                                                                  name : new SFString("r_elbow"),
                                                                                                                                   DEF : new SFString("OldMan_r_elbow"),
-                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  name : new SFString("r_elbow"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new HAnimJoint({
-                                                                                                                                      name : new SFString("r_radiocarpal"),
                                                                                                                                       DEF : new SFString("OldMan_r_radiocarpal"),
-                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                                      name : new SFString("r_radiocarpal"),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new HAnimJoint({
-                                                                                                                                          name : new SFString("r_carpometacarpal_1"),
                                                                                                                                           DEF : new SFString("OldMan_r_carpometacarpal_1"),
-                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                                          name : new SFString("r_carpometacarpal_1"),
                                                                                                                                           children : new MFNode([
                                                                                                                                             new HAnimJoint({
-                                                                                                                                              name : new SFString("r_metacarpophalangeal_1"),
                                                                                                                                               DEF : new SFString("OldMan_r_metacarpophalangeal_1"),
-                                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                                              name : new SFString("r_metacarpophalangeal_1"),
                                                                                                                                               children : new MFNode([
                                                                                                                                                 new HAnimJoint({
-                                                                                                                                                  name : new SFString("r_carpal_interphalangeal_1"),
                                                                                                                                                   DEF : new SFString("OldMan_r_carpal_interphalangeal_1"),
-                                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                  llimit : new MFFloat([0,0,0])})])}),
+                                                                                                                                                  name : new SFString("r_carpal_interphalangeal_1")})])}),
 
                                                                                                                                             new HAnimJoint({
-                                                                                                                                              name : new SFString("r_carpometacarpal_2"),
                                                                                                                                               DEF : new SFString("OldMan_r_carpometacarpal_2"),
-                                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                                              name : new SFString("r_carpometacarpal_2"),
                                                                                                                                               children : new MFNode([
                                                                                                                                                 new HAnimJoint({
-                                                                                                                                                  name : new SFString("r_metacarpophalangeal_2"),
                                                                                                                                                   DEF : new SFString("OldMan_r_metacarpophalangeal_2"),
-                                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                                  name : new SFString("r_metacarpophalangeal_2"),
                                                                                                                                                   children : new MFNode([
                                                                                                                                                     new HAnimJoint({
-                                                                                                                                                      name : new SFString("r_carpal_proximal_interphalangeal_2"),
                                                                                                                                                       DEF : new SFString("OldMan_r_carpal_proximal_interphalangeal_2"),
-                                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                                                      name : new SFString("r_carpal_proximal_interphalangeal_2"),
                                                                                                                                                       children : new MFNode([
                                                                                                                                                         new HAnimJoint({
-                                                                                                                                                          name : new SFString("r_carpal_distal_interphalangeal_2"),
                                                                                                                                                           DEF : new SFString("OldMan_r_carpal_distal_interphalangeal_2"),
-                                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                          llimit : new MFFloat([0,0,0])})])})])}),
+                                                                                                                                                          name : new SFString("r_carpal_distal_interphalangeal_2")})])})])}),
 
                                                                                                                                                 new HAnimJoint({
-                                                                                                                                                  name : new SFString("r_carpometacarpal_3"),
                                                                                                                                                   DEF : new SFString("OldMan_r_carpometacarpal_3"),
-                                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                                  name : new SFString("r_carpometacarpal_3"),
                                                                                                                                                   children : new MFNode([
                                                                                                                                                     new HAnimJoint({
-                                                                                                                                                      name : new SFString("r_metacarpophalangeal_3"),
                                                                                                                                                       DEF : new SFString("OldMan_r_metacarpophalangeal_3"),
-                                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                                                      name : new SFString("r_metacarpophalangeal_3"),
                                                                                                                                                       children : new MFNode([
                                                                                                                                                         new HAnimJoint({
-                                                                                                                                                          name : new SFString("r_carpal_proximal_interphalangeal_3"),
                                                                                                                                                           DEF : new SFString("OldMan_r_carpal_proximal_interphalangeal_3"),
-                                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                                                          name : new SFString("r_carpal_proximal_interphalangeal_3"),
                                                                                                                                                           children : new MFNode([
                                                                                                                                                             new HAnimJoint({
-                                                                                                                                                              name : new SFString("r_carpal_distal_interphalangeal_3"),
                                                                                                                                                               DEF : new SFString("OldMan_r_carpal_distal_interphalangeal_3"),
-                                                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                              llimit : new MFFloat([0,0,0])})])})])}),
+                                                                                                                                                              name : new SFString("r_carpal_distal_interphalangeal_3")})])})])}),
 
                                                                                                                                                     new HAnimJoint({
-                                                                                                                                                      name : new SFString("r_carpometacarpal_4"),
                                                                                                                                                       DEF : new SFString("OldMan_r_carpometacarpal_4"),
-                                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                                                      name : new SFString("r_carpometacarpal_4"),
                                                                                                                                                       children : new MFNode([
                                                                                                                                                         new HAnimJoint({
-                                                                                                                                                          name : new SFString("r_metacarpophalangeal_4"),
                                                                                                                                                           DEF : new SFString("OldMan_r_metacarpophalangeal_4"),
-                                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                                                          name : new SFString("r_metacarpophalangeal_4"),
                                                                                                                                                           children : new MFNode([
                                                                                                                                                             new HAnimJoint({
-                                                                                                                                                              name : new SFString("r_carpal_proximal_interphalangeal_4"),
                                                                                                                                                               DEF : new SFString("OldMan_r_carpal_proximal_interphalangeal_4"),
-                                                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                                                              name : new SFString("r_carpal_proximal_interphalangeal_4"),
                                                                                                                                                               children : new MFNode([
                                                                                                                                                                 new HAnimJoint({
-                                                                                                                                                                  name : new SFString("r_carpal_distal_interphalangeal_4"),
                                                                                                                                                                   DEF : new SFString("OldMan_r_carpal_distal_interphalangeal_4"),
-                                                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                                  llimit : new MFFloat([0,0,0])})])})])}),
+                                                                                                                                                                  name : new SFString("r_carpal_distal_interphalangeal_4")})])})])}),
 
                                                                                                                                                         new HAnimJoint({
-                                                                                                                                                          name : new SFString("r_carpometacarpal_5"),
                                                                                                                                                           DEF : new SFString("OldMan_r_carpometacarpal_5"),
-                                                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                                                          name : new SFString("r_carpometacarpal_5"),
                                                                                                                                                           children : new MFNode([
                                                                                                                                                             new HAnimJoint({
-                                                                                                                                                              name : new SFString("r_metacarpophalangeal_5"),
                                                                                                                                                               DEF : new SFString("OldMan_r_metacarpophalangeal_5"),
-                                                                                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                                                              name : new SFString("r_metacarpophalangeal_5"),
                                                                                                                                                               children : new MFNode([
                                                                                                                                                                 new HAnimJoint({
-                                                                                                                                                                  name : new SFString("r_carpal_proximal_interphalangeal_5"),
                                                                                                                                                                   DEF : new SFString("OldMan_r_carpal_proximal_interphalangeal_5"),
-                                                                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                                                  name : new SFString("r_carpal_proximal_interphalangeal_5"),
                                                                                                                                                                   children : new MFNode([
                                                                                                                                                                     new HAnimJoint({
-                                                                                                                                                                      name : new SFString("r_carpal_distal_interphalangeal_5"),
                                                                                                                                                                       DEF : new SFString("OldMan_r_carpal_distal_interphalangeal_5"),
-                                                                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                                                                      llimit : new MFFloat([0,0,0])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])}))});
+                                                                                                                                                                      name : new SFString("r_carpal_distal_interphalangeal_5")})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])}))});
 console.log(X3D0.toXMLNode());

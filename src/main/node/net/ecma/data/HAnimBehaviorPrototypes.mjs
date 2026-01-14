@@ -8127,6 +8127,7 @@ var X3D0 =  new X3D({
                   name : new SFString("hAnimBehaviorNodes"),
                   children : new MFNode([
                     new ProtoInstance({
+                      name : new SFString("HAnimBehavior"),
                       USE : new SFString("BehaviorTest1")})])}),
 
                 new fieldValue({

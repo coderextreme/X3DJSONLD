@@ -62,7 +62,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint20.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint20.x3d")}),
 
             new meta({
               name : new SFString("description"),

@@ -11,6 +11,7 @@ var head = require('./x3d.mjs');
 var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
+var WorldInfo = require('./x3d.mjs');
 var Viewpoint = require('./x3d.mjs');
 var SFRotation = require('./x3d.mjs');
 var SFVec3f = require('./x3d.mjs');
@@ -52,7 +53,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("30 March 2016")}),
+              content : new SFString("28 November 2019")}),
 
             new meta({
               name : new SFString("reference"),
@@ -68,7 +69,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d")}),
 
             new meta({
               name : new SFString("generator"),
@@ -80,6 +81,9 @@ var X3D0 =  new X3D({
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new WorldInfo({
+              title : new SFString("GridXZ_20x20Fixed.x3d")}),
+
             new Viewpoint({
               description : new SFString("XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)"),
               orientation : new SFRotation([1,0,0,-0.4]),

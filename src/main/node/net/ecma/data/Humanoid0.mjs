@@ -57,7 +57,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d")}),
+              content : new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -219,5 +219,5 @@ var X3D0 =  new X3D({
                   llimit : new MFFloat([0,0,0])}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_")})])})])}))});
+                  USE : new SFString("hanim_humanoid_root")})])})])}))});
 console.log(X3D0.toXMLNode());

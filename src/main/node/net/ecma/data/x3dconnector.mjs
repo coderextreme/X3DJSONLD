@@ -300,12 +300,7 @@ ecmascript:eval (0
                   children : new MFNode([
                     new Transform({
                       USE : new SFString("rotscaleC1")})])}),
-
-                new fieldValue({
-                  name : new SFString("set_startpoint")}),
-
-                new fieldValue({
-                  name : new SFString("set_endpoint")})])}),
+              /*<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>*/])}),
 
             new ROUTE({
               fromNode : new SFString("G1"),

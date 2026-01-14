@@ -24,7 +24,7 @@ var Color = require('./x3d.mjs');
 var MFColor = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
-      profile : new SFString("Interchange"),
+      profile : new SFString("Immersive"),
       version : new SFString("4.0"),
       head : new SFNode(
         new head({

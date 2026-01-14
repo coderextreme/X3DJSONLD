@@ -66,7 +66,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Titania V3.0.4, http://titania.create3000.de")}),
+              content : new SFString("Titania V3.0.4, https://titania.create3000.de")}),
 
             new meta({
               name : new SFString("identifier"),
@@ -155,7 +155,8 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("size"),
                               protoField : new SFString("size")})])})]),
-                      vrmlscript:
+                      
+ecmascript:eval (0
 
 , function initialize ()
 {
@@ -389,7 +390,8 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("translation"),
                               protoField : new SFString("translation")})])})]),
-                      vrmlscript:
+                      
+ecmascript:eval (0
 , function initialize ()
 {
 	sensor .offset = translation;
@@ -508,7 +510,8 @@ var X3D0 =  new X3D({
                             new connect({
                               nodeField : new SFString("input"),
                               protoField : new SFString("input")})])})]),
-                      vrmlscript:
+                      
+ecmascript:eval (0
 , function initialize ()
 {
 	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
@@ -537,7 +540,7 @@ var X3D0 =  new X3D({
 })})])}))}),
 
             new NavigationInfo({
-              type : [", ","PLANE_create3000.deANY"]}),
+              type : ["FLY","ANY"]}),
 
             new Background({
               skyColor : new MFColor([0.2,0.2,0.2])}),

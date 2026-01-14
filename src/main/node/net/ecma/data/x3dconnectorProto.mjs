@@ -401,15 +401,7 @@ ecmascript:eval (0
                   name : new SFString("rotscalenode"),
                   children : new MFNode([
                     new Transform({
-                      USE : new SFString("rotscaleC1")})])}),
-
-                new fieldValue({
-                  name : new SFString("set_startpoint"),
-                  value : new SFString("0 0 0")}),
-
-                new fieldValue({
-                  name : new SFString("set_endpoint"),
-                  value : new SFString("0 0 0")})])}),
+                      USE : new SFString("rotscaleC1")})])})])}),
 
             new ProtoInstance({
               name : new SFString("x3dconnector"),
@@ -437,15 +429,7 @@ ecmascript:eval (0
                   name : new SFString("rotscalenode"),
                   children : new MFNode([
                     new Transform({
-                      USE : new SFString("rotscaleC2")})])}),
-
-                new fieldValue({
-                  name : new SFString("set_startpoint"),
-                  value : new SFString("0 0 0")}),
-
-                new fieldValue({
-                  name : new SFString("set_endpoint"),
-                  value : new SFString("0 0 0")})])}),
+                      USE : new SFString("rotscaleC2")})])})])}),
 
             new ProtoInstance({
               name : new SFString("x3dconnector"),
@@ -473,15 +457,7 @@ ecmascript:eval (0
                   name : new SFString("rotscalenode"),
                   children : new MFNode([
                     new Transform({
-                      USE : new SFString("rotscaleC3")})])}),
-
-                new fieldValue({
-                  name : new SFString("set_startpoint"),
-                  value : new SFString("0 0 0")}),
-
-                new fieldValue({
-                  name : new SFString("set_endpoint"),
-                  value : new SFString("0 0 0")})])}),
+                      USE : new SFString("rotscaleC3")})])})])}),
 
             new ROUTE({
               fromNode : new SFString("G1"),

@@ -12,6 +12,8 @@ var MFNode = require('./x3d.mjs');
 var meta = require('./x3d.mjs');
 var Scene = require('./x3d.mjs');
 var NavigationInfo = require('./x3d.mjs');
+var Viewpoint = require('./x3d.mjs');
+var SFVec3f = require('./x3d.mjs');
 var Background = require('./x3d.mjs');
 var MFString = require('./x3d.mjs');
 var Group = require('./x3d.mjs');
@@ -52,6 +54,10 @@ var X3D0 =  new X3D({
           children : new MFNode([
             new NavigationInfo({}),
 
+            new Viewpoint({
+              description : new SFString("Tour Views"),
+              position : new SFVec3f([0,0,50])}),
+
             new Background({
               backUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]),
               bottomUrl : new MFString(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]),
@@ -64,7 +70,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new ExternProtoDeclare({
                   name : new SFString("FlowerProto"),
-                  url : new MFString(["../data/flowerproto.x3d#FlowerProto"]),
+                  url : new MFString(["../data/flowerprotofreewrl.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"]),
                   field : new MFNode([
                     new field({
                       type : field.TYPE_MFSTRING,

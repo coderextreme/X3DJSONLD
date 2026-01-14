@@ -44,7 +44,6 @@ var ShaderPart = require('./x3d.mjs');
 var Script = require('./x3d.mjs');
 var ROUTE = require('./x3d.mjs');
 var DISEntityManager = require('./x3d.mjs');
-var undefined = require('./x3d.mjs');
 var DISEntityTypeMapping = require('./x3d.mjs');
 var Collision = require('./x3d.mjs');
 var LayoutLayer = require('./x3d.mjs');
@@ -69,6 +68,8 @@ var X3D0 =  new X3D({
       version : new SFString("4.0"),
       head : new SFNode(
         new head({
+          /*<component name='Shape' level='4'></component>*/
+          /*Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L*/
           component : new SFNode(
             new component({
               name : new SFString("Scripting"),
@@ -105,8 +106,6 @@ var X3D0 =  new X3D({
             new component({
               name : new SFString("DIS"),
               level : new SFInt32(2)})),
-          /*<component name='Shape' level='4'></component>*/
-          /*Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L*/
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
@@ -554,28 +553,23 @@ ecmascript:eval (0
 
                     new DISEntityManager({
                       DEF : new SFString("EntityManager"),
-                      networkMode : new undefined("networkReader"),
                       children : new MFNode([
                         new DISEntityTypeMapping({
-                          readInterval : new undefined("3"),
                           category : new SFInt32(77),
                           specific : new SFInt32(1),
                           url : new MFString(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])}),
 
                         new DISEntityTypeMapping({
-                          readInterval : new undefined("3"),
                           category : new SFInt32(77),
                           specific : new SFInt32(2),
                           url : new MFString(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"])}),
 
                         new DISEntityTypeMapping({
-                          readInterval : new undefined("3"),
                           category : new SFInt32(77),
                           specific : new SFInt32(3),
                           url : new MFString(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"])}),
 
                         new DISEntityTypeMapping({
-                          readInterval : new undefined("3"),
                           category : new SFInt32(77),
                           specific : new SFInt32(4),
                           url : new MFString(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])})])}),
