@@ -7,6 +7,8 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          /*Scaled 1:1, Added Animations*/
+          /*Added Sites*/
           component_ : 
             component(
               name_ : SFString('HAnim'),
@@ -82,13 +84,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
 
             meta(
               name_ : SFString('license'),
-              content_ : SFString('../license.html')),
-          /*Scaled 1:1, Added Animations*/
-          /*Added Sites*/]),
+              content_ : SFString('../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [

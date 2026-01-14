@@ -74,14 +74,14 @@ var X3D0 =  X3D(
                     field(
                       type_ : SFString("MFString"),
                       name_ : SFString('vertex'),
-                      accessType_ : SFString("inputOutput"),
-                      value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\"')),
+                      accessType_ : SFString("inputOnly"),
+                      value_ : SFString('\"../shaders/gl_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs\"')),
 
                     field(
                       type_ : SFString("MFString"),
                       name_ : SFString('fragment'),
-                      accessType_ : SFString("inputOutput"),
-                      value_ : SFString('\"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"'))]),
+                      accessType_ : SFString("inputOnly"),
+                      value_ : SFString('\"../shaders/pc_flowers.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs\"'))]),
               ProtoBody_ : 
                 ProtoBody(
                   children_ : [
@@ -120,12 +120,15 @@ var X3D0 =  X3D(
                                 ComposedShader(
                                   DEF_ : SFString('shader'),
                                   language_ : SFString('GLSL'),
+                                  /*<field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>*/
                                   field_ : [
                                     field(
-                                      type_ : SFString("SFInt32"),
+                                      type_ : SFString("SFNode"),
                                       name_ : SFString('cube'),
-                                      accessType_ : SFString("inputOutput"),
-                                      value_ : SFString('0')),
+                                      accessType_ : SFString("inputOnly"),
+                                      children_ : [
+                                        ComposedCubeMapTexture(
+                                          USE_ : SFString('texture'))]),
 
                                     field(
                                       type_ : SFString("SFVec3f"),
@@ -136,57 +139,56 @@ var X3D0 =  X3D(
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('bias'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('0.5')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('scale'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('0.5')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('power'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('2')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('a'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('10')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('b'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('1')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('c'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('20')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('d'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('20')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('tdelta'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('0')),
 
                                     field(
                                       type_ : SFString("SFFloat"),
                                       name_ : SFString('pdelta'),
-                                      accessType_ : SFString("inputOutput"),
+                                      accessType_ : SFString("inputOnly"),
                                       value_ : SFString('0')),
-                                  /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
                                   parts_ : 
                                     ShaderPart(
                                       type_ : SFString("VERTEX",
@@ -210,6 +212,7 @@ var X3D0 =  X3D(
                       children_ : [
                         Script(
                           DEF_ : SFString('Animate'),
+                          directOutput_ : true,
                           field_ : [
                             field(
                               type_ : SFString("SFVec3f"),
@@ -220,7 +223,7 @@ var X3D0 =  X3D(
                             field(
                               type_ : SFString("SFVec3f"),
                               name_ : SFString('velocity'),
-                              accessType_ : SFString("inputOutput"),
+                              accessType_ : SFString("outputOnly"),
                               value_ : SFString('0 0 0')),
 
                             field(
@@ -231,37 +234,37 @@ var X3D0 =  X3D(
                             field(
                               type_ : SFString("SFFloat"),
                               name_ : SFString('a'),
-                              accessType_ : SFString("inputOutput"),
+                              accessType_ : SFString("outputOnly"),
                               value_ : SFString('0.5')),
 
                             field(
                               type_ : SFString("SFFloat"),
                               name_ : SFString('b'),
-                              accessType_ : SFString("inputOutput"),
+                              accessType_ : SFString("outputOnly"),
                               value_ : SFString('0.5')),
 
                             field(
                               type_ : SFString("SFFloat"),
                               name_ : SFString('c'),
-                              accessType_ : SFString("inputOutput"),
+                              accessType_ : SFString("outputOnly"),
                               value_ : SFString('3')),
 
                             field(
                               type_ : SFString("SFFloat"),
                               name_ : SFString('d'),
-                              accessType_ : SFString("inputOutput"),
+                              accessType_ : SFString("outputOnly"),
                               value_ : SFString('3')),
 
                             field(
                               type_ : SFString("SFFloat"),
                               name_ : SFString('tdelta'),
-                              accessType_ : SFString("inputOutput"),
+                              accessType_ : SFString("outputOnly"),
                               value_ : SFString('0.5')),
 
                             field(
                               type_ : SFString("SFFloat"),
                               name_ : SFString('pdelta'),
-                              accessType_ : SFString("inputOutput"),
+                              accessType_ : SFString("outputOnly"),
                               value_ : SFString('0.5')),
                           ],
 ecmascript:eval (0

@@ -66,7 +66,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview')),
+              content_ : SFString('3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview')),
 
             meta(
               name_ : SFString('generator'),
@@ -74,7 +74,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('Gnu Image Manipulation Program, http://www.gimp.org')),
+              content_ : SFString('Gnu Image Manipulation Program, https://www.gimp.org')),
 
             meta(
               name_ : SFString('generator'),

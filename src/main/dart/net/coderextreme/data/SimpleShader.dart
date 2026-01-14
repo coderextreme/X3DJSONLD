@@ -7,6 +7,7 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          /*meta content='under development' name='warning'/*/
           component_ : 
             component(
               name_ : SFString('Shaders'),
@@ -86,8 +87,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('license'),
-              content_ : SFString('../../license.html')),
-          /*meta content='under development' name='warning'/*/]),
+              content_ : SFString('../../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [

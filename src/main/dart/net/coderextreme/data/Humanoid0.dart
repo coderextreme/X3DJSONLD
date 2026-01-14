@@ -18,7 +18,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d')),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid0.x3d')),
 
             meta(
               name_ : SFString('description'),
@@ -180,5 +180,5 @@ var X3D0 =  X3D(
                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)])),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_'))])]));
+                  USE_ : SFString('hanim_humanoid_root'))])]));
 void main() { exit(0); }

@@ -3,7 +3,7 @@ import 'dart:io';
 import '../x3d.dart';
 var X3D0 =  X3D(
 
-      profile_ : SFString('Interchange'),
+      profile_ : SFString('Immersive'),
       version_ : SFString('4.0'),
       head_ : 
         head(

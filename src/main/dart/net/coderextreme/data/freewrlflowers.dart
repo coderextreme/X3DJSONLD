@@ -32,6 +32,10 @@ var X3D0 =  X3D(
           children_ : [
             NavigationInfo(),
 
+            Viewpoint(
+              description_ : SFString('Tour Views'),
+              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(50)])),
+
             Background(
               backUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png")]),
               bottomUrl_ : MFString([SFString("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png")]),
@@ -44,7 +48,7 @@ var X3D0 =  X3D(
               children_ : [
                 ExternProtoDeclare(
                   name_ : SFString('FlowerProto'),
-                  url_ : MFString([SFString("../data/flowerproto.x3d#FlowerProto")]),
+                  url_ : MFString([SFString("../data/flowerprotofreewrl.x3d#FlowerProto"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto")]),
                   field_ : [
                     field(
                       type_ : SFString("MFString"),

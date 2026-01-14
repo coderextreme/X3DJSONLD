@@ -31,7 +31,7 @@ var X3D0 =  X3D(
         Scene(
           children_ : [
             NavigationInfo(
-              type_ : MFString([SFString("EXAMINE")])),
+              type_ : MFString([SFString("ANY"), SFString("EXAMINE"), SFString("WALK"), SFString("FLY"), SFString("LOOKAT")])),
 
             Viewpoint(
               description_ : SFString('Rubiks Cube on Fire'),

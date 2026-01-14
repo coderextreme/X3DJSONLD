@@ -68,7 +68,7 @@ var X3D0 =  X3D(
                               fieldValue_ : [
                                 fieldValue(
                                   name_ : SFString('vertex'),
-                                  value_ : SFString('\"../shaders/x_ite_flowers_plain.vs\"')),
+                                  value_ : SFString('\"../shaders/gl_flowers_plain.vs\"')),
 
                                 fieldValue(
                                   name_ : SFString('fragment'),

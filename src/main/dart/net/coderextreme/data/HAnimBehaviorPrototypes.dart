@@ -8097,6 +8097,7 @@ var X3D0 =  X3D(
                   name_ : SFString('hAnimBehaviorNodes'),
                   children_ : [
                     ProtoInstance(
+                      name_ : SFString('HAnimBehavior'),
                       USE_ : SFString('BehaviorTest1'))]),
 
                 fieldValue(

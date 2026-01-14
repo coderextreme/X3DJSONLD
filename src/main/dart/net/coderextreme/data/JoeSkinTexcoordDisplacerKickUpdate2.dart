@@ -7,6 +7,7 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          /*BS studio translation from .x3dv by Joe using BS Contact*/
           component_ : 
             component(
               name_ : SFString('H-Anim'),
@@ -58,8 +59,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('license'),
-              content_ : SFString('../license.html')),
-          /*BS studio translation from .x3dv by Joe using BS Contact*/]),
+              content_ : SFString('../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [

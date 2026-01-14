@@ -312,12 +312,14 @@ ecmascript:eval (0
                   name_ : SFString('startnode'),
                   children_ : [
                     ProtoInstance(
+                      name_ : SFString('point'),
                       USE_ : SFString('G1'))]),
 
                 fieldValue(
                   name_ : SFString('endnode'),
                   children_ : [
                     ProtoInstance(
+                      name_ : SFString('point'),
                       USE_ : SFString('G2'))]),
 
                 fieldValue(
@@ -334,12 +336,14 @@ ecmascript:eval (0
                   name_ : SFString('startnode'),
                   children_ : [
                     ProtoInstance(
+                      name_ : SFString('point'),
                       USE_ : SFString('G1'))]),
 
                 fieldValue(
                   name_ : SFString('endnode'),
                   children_ : [
                     ProtoInstance(
+                      name_ : SFString('point'),
                       USE_ : SFString('G3'))]),
 
                 fieldValue(
@@ -356,12 +360,14 @@ ecmascript:eval (0
                   name_ : SFString('startnode'),
                   children_ : [
                     ProtoInstance(
+                      name_ : SFString('point'),
                       USE_ : SFString('G1'))]),
 
                 fieldValue(
                   name_ : SFString('endnode'),
                   children_ : [
                     ProtoInstance(
+                      name_ : SFString('point'),
                       USE_ : SFString('G4'))]),
 
                 fieldValue(

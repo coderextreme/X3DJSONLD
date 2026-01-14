@@ -84,7 +84,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
 
             meta(
               name_ : SFString('license'),
@@ -8849,7 +8849,7 @@ var X3D0 =  X3D(
 
                                                                 HAnimSite(
                                                                   name_ : SFString('r_tarsal_distal_phalanx_5'),
-                                                                  DEF_ : SFString('hanim_'),
+                                                                  DEF_ : SFString('hanim_r_tarsal_distal_phalanx_5'),
                                                                   translation_ : SFVec3f([SFDouble(-0.125), SFDouble(0.016), SFDouble(0.115)]),
                                                                   children_ : [
                                                                     Transform(

@@ -7,6 +7,8 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          /*<component name='Shape' level='4'></component>*/
+          /*Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L*/
           component_ : 
             component(
               name_ : SFString('Scripting'),
@@ -43,8 +45,6 @@ var X3D0 =  X3D(
             component(
               name_ : SFString('DIS'),
               level_ : 2),
-          /*<component name='Shape' level='4'></component>*/
-          /*Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L*/
           meta_ : [
             meta(
               name_ : SFString('title'),
@@ -492,28 +492,23 @@ ecmascript:eval (0
 
                     DISEntityManager(
                       DEF_ : SFString('EntityManager'),
-                      networkMode_ : "networkReader",
                       children_ : [
                         DISEntityTypeMapping(
-                          readInterval_ : "3",
                           category_ : 77,
                           specific_ : 1,
                           url_ : MFString([SFString("../data/Gramps8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d")])),
 
                         DISEntityTypeMapping(
-                          readInterval_ : "3",
                           category_ : 77,
                           specific_ : 2,
                           url_ : MFString([SFString("../data/Leif8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d")])),
 
                         DISEntityTypeMapping(
-                          readInterval_ : "3",
                           category_ : 77,
                           specific_ : 3,
                           url_ : MFString([SFString("../data/Lily8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d")])),
 
                         DISEntityTypeMapping(
-                          readInterval_ : "3",
                           category_ : 77,
                           specific_ : 4,
                           url_ : MFString([SFString("../data/Tufani8Final.x3d"), SFString("https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d")]))]),
