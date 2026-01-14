@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -107,7 +107,7 @@ ProtoDeclare21.setName("ArtDeco02")
 ProtoDeclare21.setAppinfo("UniversalMediaMaterials prototype")
 ProtoDeclare21.setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials")
 
-ProtoDeclare21.addComments(x3d.CommentsBlock('''computed conversion ambientIntensity=1.745282, normalized to 1.0'''))
+ProtoDeclare21.addComments(x3d.CommentsBlock("""computed conversion ambientIntensity=1.745282, normalized to 1.0"""))
 ProtoBody22 = x3d.ProtoBody()
 Material23 = x3d.Material()
 Material23.setAmbientIntensity(1)
@@ -494,7 +494,7 @@ ProtoDeclare93.setName("ArtDeco26")
 ProtoDeclare93.setAppinfo("UniversalMediaMaterials prototype")
 ProtoDeclare93.setDocumentation("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials")
 
-ProtoDeclare93.addComments(x3d.CommentsBlock('''computed conversion ambientIntensity=2.226234, normalized to 1.0'''))
+ProtoDeclare93.addComments(x3d.CommentsBlock("""computed conversion ambientIntensity=2.226234, normalized to 1.0"""))
 ProtoBody94 = x3d.ProtoBody()
 Material95 = x3d.Material()
 Material95.setAmbientIntensity(1)
@@ -662,4 +662,4 @@ Scene13.addChild(Anchor120)
 
 X3D0.setScene(Scene13)
 X3D0.toFileX3D("../data/ArtDecoPrototypes.new.graalpy.x3d")
-X3D0.toFileJSON("../data/ArtDecoPrototypes.new.graalpy.json")
+X3D0.toFileJSON("../data/ArtDecoPrototypes.new.graalpy.x3dj")

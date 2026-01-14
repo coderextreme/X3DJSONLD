@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -131,7 +131,7 @@ HAnimHumanoid26.setDEF("hanim_Hand_Left")
 HAnimHumanoid26.setLoa(4)
 HAnimHumanoid26.setVersion("2.0")
 
-HAnimHumanoid26.addComments(x3d.CommentsBlock('''original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"''''))
+HAnimHumanoid26.addComments(x3d.CommentsBlock("""original HAnimHumanoid info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"""))
 MetadataSet27 = x3d.MetadataSet()
 MetadataSet27.setName("HAnimHumanoid.info")
 MetadataSet27.setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
@@ -149,7 +149,7 @@ HAnimJoint29.setUlimit(x3d.doubleToFloat([0,0,0]))
 HAnimJoint29.setLlimit(x3d.doubleToFloat([0,0,0]))
 HAnimJoint29.setContainerFieldOverride("skeleton")
 
-HAnimJoint29.addComments(x3d.CommentsBlock('''Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model'''))
+HAnimJoint29.addComments(x3d.CommentsBlock("""Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model"""))
 HAnimJoint30 = x3d.HAnimJoint()
 HAnimJoint30.setName("l_radiocarpal")
 HAnimJoint30.setDEF("hanim_l_radiocarpal")
@@ -238,7 +238,7 @@ HAnimSegment31.addChild(Shape47)
 
 HAnimJoint30.addChild(HAnimSegment31)
 
-HAnimJoint30.addComments(x3d.CommentsBlock('''MC1'''))
+HAnimJoint30.addComments(x3d.CommentsBlock("""MC1"""))
 HAnimJoint52 = x3d.HAnimJoint()
 HAnimJoint52.setName("l_midcarpal_1")
 HAnimJoint52.setDEF("hanim_l_midcarpal_1")
@@ -309,7 +309,7 @@ HAnimSegment53.addChild(Shape64)
 
 HAnimJoint52.addChild(HAnimSegment53)
 
-HAnimJoint52.addComments(x3d.CommentsBlock('''thumb finger'''))
+HAnimJoint52.addComments(x3d.CommentsBlock("""thumb finger"""))
 HAnimJoint69 = x3d.HAnimJoint()
 HAnimJoint69.setName("l_carpometacarpal_1")
 HAnimJoint69.setDEF("hanim_l_carpometacarpal_1")
@@ -433,7 +433,7 @@ HAnimJoint52.addChild(HAnimJoint69)
 
 HAnimJoint30.addChild(HAnimJoint52)
 
-HAnimJoint30.addComments(x3d.CommentsBlock('''MC2'''))
+HAnimJoint30.addComments(x3d.CommentsBlock("""MC2"""))
 HAnimJoint96 = x3d.HAnimJoint()
 HAnimJoint96.setName("l_midcarpal_2")
 HAnimJoint96.setDEF("hanim_l_midcarpal_2")
@@ -473,7 +473,7 @@ HAnimSegment97.addChild(Shape100)
 
 HAnimJoint96.addChild(HAnimSegment97)
 
-HAnimJoint96.addComments(x3d.CommentsBlock('''index finger'''))
+HAnimJoint96.addComments(x3d.CommentsBlock("""index finger"""))
 HAnimJoint105 = x3d.HAnimJoint()
 HAnimJoint105.setName("l_carpometacarpal_2")
 HAnimJoint105.setDEF("hanim_l_carpometacarpal_2")
@@ -637,7 +637,7 @@ HAnimJoint96.addChild(HAnimJoint105)
 
 HAnimJoint30.addChild(HAnimJoint96)
 
-HAnimJoint30.addComments(x3d.CommentsBlock('''MC3'''))
+HAnimJoint30.addComments(x3d.CommentsBlock("""MC3"""))
 HAnimJoint141 = x3d.HAnimJoint()
 HAnimJoint141.setName("l_midcarpal_3")
 HAnimJoint141.setDEF("hanim_l_midcarpal_3")
@@ -677,7 +677,7 @@ HAnimSegment142.addChild(Shape145)
 
 HAnimJoint141.addChild(HAnimSegment142)
 
-HAnimJoint141.addComments(x3d.CommentsBlock('''Middle fingle'''))
+HAnimJoint141.addComments(x3d.CommentsBlock("""Middle fingle"""))
 HAnimJoint150 = x3d.HAnimJoint()
 HAnimJoint150.setName("l_carpometacarpal_3")
 HAnimJoint150.setDEF("hanim_l_carpometacarpal_3")
@@ -841,7 +841,7 @@ HAnimJoint141.addChild(HAnimJoint150)
 
 HAnimJoint30.addChild(HAnimJoint141)
 
-HAnimJoint30.addComments(x3d.CommentsBlock('''MC45'''))
+HAnimJoint30.addComments(x3d.CommentsBlock("""MC45"""))
 HAnimJoint186 = x3d.HAnimJoint()
 HAnimJoint186.setName("l_midcarpal_4_5")
 HAnimJoint186.setDEF("hanim_l_midcarpal_4_5")
@@ -900,7 +900,7 @@ HAnimSegment187.addChild(Shape195)
 
 HAnimJoint186.addChild(HAnimSegment187)
 
-HAnimJoint186.addComments(x3d.CommentsBlock('''ring finger'''))
+HAnimJoint186.addComments(x3d.CommentsBlock("""ring finger"""))
 HAnimJoint200 = x3d.HAnimJoint()
 HAnimJoint200.setName("l_carpometacarpal_4")
 HAnimJoint200.setDEF("hanim_l_carpometacarpal_4")
@@ -1062,7 +1062,7 @@ HAnimJoint200.addChild(HAnimJoint209)
 
 HAnimJoint186.addChild(HAnimJoint200)
 
-HAnimJoint186.addComments(x3d.CommentsBlock('''pinky finger'''))
+HAnimJoint186.addComments(x3d.CommentsBlock("""pinky finger"""))
 HAnimJoint236 = x3d.HAnimJoint()
 HAnimJoint236.setName("l_carpometacarpal_5")
 HAnimJoint236.setDEF("hanim_l_carpometacarpal_5")
@@ -1479,4 +1479,4 @@ Scene24.addChild(HAnimHumanoid26)
 
 X3D0.setScene(Scene24)
 X3D0.toFileX3D("../data/HAnimModelHandLeft.new.graalpy.x3d")
-X3D0.toFileJSON("../data/HAnimModelHandLeft.new.graalpy.json")
+X3D0.toFileJSON("../data/HAnimModelHandLeft.new.graalpy.x3dj")

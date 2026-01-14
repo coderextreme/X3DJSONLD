@@ -1,13 +1,15 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
+
+head1.addComments(x3d.CommentsBlock("""<component name='Shape' level='4'></component>"""))
 component2 = x3d.component()
 component2.setName("Scripting")
 component2.setLevel(1)
@@ -48,8 +50,6 @@ component9.setName("Core")
 component9.setLevel(1)
 
 head1.addComponent(component9)
-
-head1.addComments(x3d.CommentsBlock('''<component name='Shape' level='4'></component>'''))
 meta10 = x3d.meta()
 meta10.setName("title")
 meta10.setContent("geo.x3d")
@@ -88,7 +88,7 @@ Viewpoint17.setDescription("Tour Views")
 
 Scene15.addChild(Viewpoint17)
 
-Scene15.addComments(x3d.CommentsBlock('''Viewpoint position='0 0 4' description='sphere in road'/'''))
+Scene15.addComments(x3d.CommentsBlock("""Viewpoint position='0 0 4' description='sphere in road'/"""))
 Background18 = x3d.Background()
 Background18.setBackUrl(["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])
 Background18.setBottomUrl(["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])
@@ -251,4 +251,4 @@ Scene15.addChild(Transform19)
 
 X3D0.setScene(Scene15)
 X3D0.toFileX3D("../data/geo.new.graalpy.x3d")
-X3D0.toFileJSON("../data/geo.new.graalpy.json")
+X3D0.toFileJSON("../data/geo.new.graalpy.x3dj")

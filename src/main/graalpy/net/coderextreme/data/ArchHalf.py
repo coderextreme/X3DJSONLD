@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
 X3D0.setVersion("4.0")
@@ -68,7 +68,7 @@ Scene12.addChild(WorldInfo13)
 Shape14 = x3d.Shape()
 Shape14.setDEF("Arch")
 
-Shape14.addComments(x3d.CommentsBlock('''note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly'''))
+Shape14.addComments(x3d.CommentsBlock("""note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"""))
 IndexedFaceSet15 = x3d.IndexedFaceSet()
 IndexedFaceSet15.setDEF("ArchIndex")
 IndexedFaceSet15.setConvex(False)
@@ -94,4 +94,4 @@ Scene12.addChild(Shape14)
 
 X3D0.setScene(Scene12)
 X3D0.toFileX3D("../data/ArchHalf.new.graalpy.x3d")
-X3D0.toFileJSON("../data/ArchHalf.new.graalpy.json")
+X3D0.toFileJSON("../data/ArchHalf.new.graalpy.x3dj")

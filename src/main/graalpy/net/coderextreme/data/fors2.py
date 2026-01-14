@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -77,19 +77,19 @@ IS17.addConnect(connect18)
 Transform16.setIS(IS17)
 Shape19 = x3d.Shape()
 
-Shape19.addComments(x3d.CommentsBlock('''comment before Sphere'''))
+Shape19.addComments(x3d.CommentsBlock("""comment before Sphere"""))
 
-Shape19.addComments(x3d.CommentsBlock('''comment after Sphere'''))
+Shape19.addComments(x3d.CommentsBlock("""comment after Sphere"""))
 
-Shape19.addComments(x3d.CommentsBlock('''comment after Appearance'''))
+Shape19.addComments(x3d.CommentsBlock("""comment after Appearance"""))
 Sphere20 = x3d.Sphere()
 
 Shape19.setGeometry(Sphere20)
 Appearance21 = x3d.Appearance()
 
-Appearance21.addComments(x3d.CommentsBlock('''comment before Material'''))
+Appearance21.addComments(x3d.CommentsBlock("""comment before Material"""))
 
-Appearance21.addComments(x3d.CommentsBlock('''comment after Material'''))
+Appearance21.addComments(x3d.CommentsBlock("""comment after Material"""))
 Material22 = x3d.Material()
 Material22.setDiffuseColor(x3d.doubleToFloat([1,0,0]))
 
@@ -325,4 +325,4 @@ Scene10.addChild(ROUTE59)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/fors2.new.graalpy.x3d")
-X3D0.toFileJSON("../data/fors2.new.graalpy.json")
+X3D0.toFileJSON("../data/fors2.new.graalpy.x3dj")

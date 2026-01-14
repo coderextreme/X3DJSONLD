@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -42,9 +42,9 @@ head1.addMeta(meta7)
 X3D0.setHead(head1)
 Scene8 = x3d.Scene()
 
-Scene8.addComments(x3d.CommentsBlock('''Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/'''))
+Scene8.addComments(x3d.CommentsBlock("""Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"""))
 
-Scene8.addComments(x3d.CommentsBlock('''PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/'''))
+Scene8.addComments(x3d.CommentsBlock("""PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"""))
 GeoViewpoint9 = x3d.GeoViewpoint()
 GeoViewpoint9.setDEF("Tour")
 GeoViewpoint9.setPosition(x3d.doubleToDouble([0,0,4]))
@@ -170,4 +170,4 @@ Scene8.addChild(ROUTE26)
 
 X3D0.setScene(Scene8)
 X3D0.toFileX3D("../data/geobubbles.new.graalpy.x3d")
-X3D0.toFileJSON("../data/geobubbles.new.graalpy.json")
+X3D0.toFileJSON("../data/geobubbles.new.graalpy.x3dj")

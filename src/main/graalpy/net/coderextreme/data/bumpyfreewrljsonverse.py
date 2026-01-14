@@ -1,13 +1,17 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
 X3D0.setVersion("4.0")
 head1 = x3d.head()
+
+head1.addComments(x3d.CommentsBlock("""<component name='Shape' level='4'></component>"""))
+
+head1.addComments(x3d.CommentsBlock("""Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L"""))
 component2 = x3d.component()
 component2.setName("Scripting")
 component2.setLevel(1)
@@ -53,10 +57,6 @@ component10.setName("DIS")
 component10.setLevel(2)
 
 head1.addComponent(component10)
-
-head1.addComments(x3d.CommentsBlock('''<component name='Shape' level='4'></component>'''))
-
-head1.addComments(x3d.CommentsBlock('''Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L'''))
 meta11 = x3d.meta()
 meta11.setName("title")
 meta11.setContent("bumpyfreewrljsonverse.x3d")
@@ -160,10 +160,10 @@ head1.addMeta(meta30)
 
 X3D0.setHead(head1)
 
-X3D0.addComments(x3d.CommentsBlock('''\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"'''))
+X3D0.addComments(x3d.CommentsBlock("""\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\""""))
 Scene31 = x3d.Scene()
 
-Scene31.addComments(x3d.CommentsBlock('''basic nodes, which might be present in any scene'''))
+Scene31.addComments(x3d.CommentsBlock("""basic nodes, which might be present in any scene"""))
 NavigationInfo32 = x3d.NavigationInfo()
 NavigationInfo32.setType(["EXAMINE"])
 NavigationInfo32.setAvatarSize(x3d.doubleToFloat([0.25,1.75,0.75]))
@@ -186,22 +186,22 @@ Viewpoint35.setPosition(x3d.doubleToFloat([0,1.75,60]))
 
 Scene31.addChild(Viewpoint35)
 
-Scene31.addComments(x3d.CommentsBlock('''LayerSet with two layers, navigation happens in layer 1'''))
+Scene31.addComments(x3d.CommentsBlock("""LayerSet with two layers, navigation happens in layer 1"""))
 LayerSet36 = x3d.LayerSet()
 LayerSet36.setActiveLayer(1)
 LayerSet36.setOrder([1,2])
 
-LayerSet36.addComments(x3d.CommentsBlock('''the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"'''))
+LayerSet36.addComments(x3d.CommentsBlock("""the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""""))
 
-LayerSet36.addComments(x3d.CommentsBlock('''the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)'''))
+LayerSet36.addComments(x3d.CommentsBlock("""the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"""))
 Layer37 = x3d.Layer()
 Layer37.setPickable(True)
 Layer37.setObjectType(["ALL"])
 
-Layer37.addComments(x3d.CommentsBlock('''this group contains the red/green/blue 3D crosshair'''))
+Layer37.addComments(x3d.CommentsBlock("""this group contains the red/green/blue 3D crosshair"""))
 Group38 = x3d.Group()
 
-Group38.addComments(x3d.CommentsBlock('''Arrow X'''))
+Group38.addComments(x3d.CommentsBlock("""Arrow X"""))
 Transform39 = x3d.Transform()
 Transform39.setTranslation(x3d.doubleToFloat([25,0,0]))
 Transform39.setRotation(x3d.doubleToFloat([0,0,-1,1.57]))
@@ -247,7 +247,7 @@ Transform44.addChild(Shape45)
 
 Group38.addChild(Transform44)
 
-Group38.addComments(x3d.CommentsBlock('''Arrow Y'''))
+Group38.addComments(x3d.CommentsBlock("""Arrow Y"""))
 Transform49 = x3d.Transform()
 Transform49.setTranslation(x3d.doubleToFloat([0,25,0]))
 Shape50 = x3d.Shape()
@@ -287,7 +287,7 @@ Transform54.addChild(Shape55)
 
 Group38.addChild(Transform54)
 
-Group38.addComments(x3d.CommentsBlock('''Arrow Z'''))
+Group38.addComments(x3d.CommentsBlock("""Arrow Z"""))
 Transform59 = x3d.Transform()
 Transform59.setTranslation(x3d.doubleToFloat([0,0,25]))
 Transform59.setRotation(x3d.doubleToFloat([1,0,0,1.57]))
@@ -331,13 +331,13 @@ Group38.addChild(Transform64)
 
 Layer37.addChild(Group38)
 
-Layer37.addComments(x3d.CommentsBlock('''the model that is being reviewed by the users of this scene'''))
+Layer37.addComments(x3d.CommentsBlock("""the model that is being reviewed by the users of this scene"""))
 Transform69 = x3d.Transform()
 Transform69.setDEF("FlowerTransform")
 
-Transform69.addComments(x3d.CommentsBlock('''<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />'''))
+Transform69.addComments(x3d.CommentsBlock("""<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />"""))
 
-Transform69.addComments(x3d.CommentsBlock('''Images courtesy of Paul Debevec's Light Probe Image Gallery'''))
+Transform69.addComments(x3d.CommentsBlock("""Images courtesy of Paul Debevec's Light Probe Image Gallery"""))
 Background70 = x3d.Background()
 Background70.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"])
 Background70.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])
@@ -350,7 +350,7 @@ Transform69.addChild(Background70)
 Transform71 = x3d.Transform()
 Shape72 = x3d.Shape()
 
-Shape72.addComments(x3d.CommentsBlock('''<Sphere radius='40'></Sphere>'''))
+Shape72.addComments(x3d.CommentsBlock("""<Sphere radius='40'></Sphere>"""))
 IndexedFaceSet73 = x3d.IndexedFaceSet()
 IndexedFaceSet73.setConvex(False)
 IndexedFaceSet73.setDEF("Orbit")
@@ -485,7 +485,7 @@ ShaderPart97.setType("FRAGMENT")
 
 ComposedShader84.addParts(ShaderPart97)
 
-ComposedShader84.addComments(x3d.CommentsBlock('''TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>'''))
+ComposedShader84.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance75.addShaders(ComposedShader84)
 
@@ -609,33 +609,28 @@ ROUTE108.setToNode("OrbitCoordinates")
 
 Layer37.addChild(ROUTE108)
 
-Layer37.addComments(x3d.CommentsBlock('''DIS multiuser facilities'''))
+Layer37.addComments(x3d.CommentsBlock("""DIS multiuser facilities"""))
 DISEntityManager109 = x3d.DISEntityManager()
 DISEntityManager109.setDEF("EntityManager")
-DISEntityManager109.setNetworkMode("networkReader")
 DISEntityTypeMapping110 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping110.setReadInterval(3)
 DISEntityTypeMapping110.setCategory(77)
 DISEntityTypeMapping110.setSpecific(1)
 DISEntityTypeMapping110.setUrl(["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"])
 
 DISEntityManager109.addChild(DISEntityTypeMapping110)
 DISEntityTypeMapping111 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping111.setReadInterval(3)
 DISEntityTypeMapping111.setCategory(77)
 DISEntityTypeMapping111.setSpecific(2)
 DISEntityTypeMapping111.setUrl(["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"])
 
 DISEntityManager109.addChild(DISEntityTypeMapping111)
 DISEntityTypeMapping112 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping112.setReadInterval(3)
 DISEntityTypeMapping112.setCategory(77)
 DISEntityTypeMapping112.setSpecific(3)
 DISEntityTypeMapping112.setUrl(["../data/Lily8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d"])
 
 DISEntityManager109.addChild(DISEntityTypeMapping112)
 DISEntityTypeMapping113 = x3d.DISEntityTypeMapping()
-DISEntityTypeMapping113.setReadInterval(3)
 DISEntityTypeMapping113.setCategory(77)
 DISEntityTypeMapping113.setSpecific(4)
 DISEntityTypeMapping113.setUrl(["../data/Tufani8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d"])
@@ -671,13 +666,13 @@ LayoutLayer118 = x3d.LayoutLayer()
 LayoutLayer118.setPickable(True)
 LayoutLayer118.setObjectType(["ALL"])
 
-LayoutLayer118.addComments(x3d.CommentsBlock('''positioning the LayoutLayer'''))
+LayoutLayer118.addComments(x3d.CommentsBlock("""positioning the LayoutLayer"""))
 
-LayoutLayer118.addComments(x3d.CommentsBlock('''clipping the LayoutLayer'''))
+LayoutLayer118.addComments(x3d.CommentsBlock("""clipping the LayoutLayer"""))
 
-LayoutLayer118.addComments(x3d.CommentsBlock('''the content (children) of the LayoutLayer'''))
+LayoutLayer118.addComments(x3d.CommentsBlock("""the content (children) of the LayoutLayer"""))
 
-LayoutLayer118.addComments(x3d.CommentsBlock('''first, the slider for scaling the model'''))
+LayoutLayer118.addComments(x3d.CommentsBlock("""first, the slider for scaling the model"""))
 Transform119 = x3d.Transform()
 Transform119.setTranslation(x3d.doubleToFloat([0,0,-3]))
 Shape120 = x3d.Shape()
@@ -1244,4 +1239,4 @@ Scene31.addLayerSet(LayerSet36)
 
 X3D0.setScene(Scene31)
 X3D0.toFileX3D("../data/bumpyfreewrljsonverse.new.graalpy.x3d")
-X3D0.toFileJSON("../data/bumpyfreewrljsonverse.new.graalpy.json")
+X3D0.toFileJSON("../data/bumpyfreewrljsonverse.new.graalpy.x3dj")

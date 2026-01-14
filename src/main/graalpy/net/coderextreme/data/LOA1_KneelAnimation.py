@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -40,27 +40,27 @@ meta7.setContent("23 May 2020")
 head1.addMeta(meta7)
 meta8 = x3d.meta()
 meta8.setName("reference")
-meta8.setContent("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl")
+meta8.setContent("https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl")
 
 head1.addMeta(meta8)
 meta9 = x3d.meta()
 meta9.setName("reference")
-meta9.setContent("http://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl")
+meta9.setContent("https://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl")
 
 head1.addMeta(meta9)
 meta10 = x3d.meta()
 meta10.setName("reference")
-meta10.setContent("http://www.HAnim.org")
+meta10.setContent("https://www.HAnim.org")
 
 head1.addMeta(meta10)
 meta11 = x3d.meta()
 meta11.setName("reference")
-meta11.setContent("http://HAnim.org/Models")
+meta11.setContent("https://HAnim.org/Models")
 
 head1.addMeta(meta11)
 meta12 = x3d.meta()
 meta12.setName("reference")
-meta12.setContent("http://HAnim.org/Nodes")
+meta12.setContent("https://HAnim.org/Nodes")
 
 head1.addMeta(meta12)
 meta13 = x3d.meta()
@@ -329,7 +329,7 @@ OrientationInterpolator61.setIS(IS62)
 
 Group48.addChild(OrientationInterpolator61)
 
-Group48.addComments(x3d.CommentsBlock('''no SACROILIAC_ANIMATOR'''))
+Group48.addComments(x3d.CommentsBlock("""no SACROILIAC_ANIMATOR"""))
 OrientationInterpolator64 = x3d.OrientationInterpolator()
 OrientationInterpolator64.setDEF("L_HIP_ANIMATOR")
 OrientationInterpolator64.setKey(x3d.doubleToFloat([0,0.3125,0.625,1]))
@@ -373,7 +373,7 @@ OrientationInterpolator70.setIS(IS71)
 
 Group48.addChild(OrientationInterpolator70)
 
-Group48.addComments(x3d.CommentsBlock('''no L_MIDTARSAL_ANIMATOR'''))
+Group48.addComments(x3d.CommentsBlock("""no L_MIDTARSAL_ANIMATOR"""))
 OrientationInterpolator73 = x3d.OrientationInterpolator()
 OrientationInterpolator73.setDEF("R_HIP_ANIMATOR")
 OrientationInterpolator73.setKey(x3d.doubleToFloat([0,0.3125,1]))
@@ -417,7 +417,7 @@ OrientationInterpolator79.setIS(IS80)
 
 Group48.addChild(OrientationInterpolator79)
 
-Group48.addComments(x3d.CommentsBlock('''no R_MIDTARSAL_ANIMATOR'''))
+Group48.addComments(x3d.CommentsBlock("""no R_MIDTARSAL_ANIMATOR"""))
 OrientationInterpolator82 = x3d.OrientationInterpolator()
 OrientationInterpolator82.setDEF("VL5_ANIMATOR")
 OrientationInterpolator82.setKey(x3d.doubleToFloat([0,1]))
@@ -433,7 +433,7 @@ OrientationInterpolator82.setIS(IS83)
 
 Group48.addChild(OrientationInterpolator82)
 
-Group48.addComments(x3d.CommentsBlock('''no SKULLBASE_ANIMATOR'''))
+Group48.addComments(x3d.CommentsBlock("""no SKULLBASE_ANIMATOR"""))
 OrientationInterpolator85 = x3d.OrientationInterpolator()
 OrientationInterpolator85.setDEF("L_SHOULDER_ANIMATOR")
 OrientationInterpolator85.setKey(x3d.doubleToFloat([0,0.3125,0.625,1]))
@@ -463,7 +463,7 @@ OrientationInterpolator88.setIS(IS89)
 
 Group48.addChild(OrientationInterpolator88)
 
-Group48.addComments(x3d.CommentsBlock('''no L_WRIST_ANIMATOR'''))
+Group48.addComments(x3d.CommentsBlock("""no L_WRIST_ANIMATOR"""))
 OrientationInterpolator91 = x3d.OrientationInterpolator()
 OrientationInterpolator91.setDEF("R_SHOULDER_ANIMATOR")
 OrientationInterpolator91.setKey(x3d.doubleToFloat([0,0.3125,0.625,1]))
@@ -493,7 +493,7 @@ OrientationInterpolator94.setIS(IS95)
 
 Group48.addChild(OrientationInterpolator94)
 
-Group48.addComments(x3d.CommentsBlock('''no R_WRIST_ANIMATOR'''))
+Group48.addComments(x3d.CommentsBlock("""no R_WRIST_ANIMATOR"""))
 
 ProtoBody47.addChild(Group48)
 ROUTE97 = x3d.ROUTE()
@@ -619,4 +619,4 @@ Scene17.addChild(Anchor110)
 
 X3D0.setScene(Scene17)
 X3D0.toFileX3D("../data/LOA1_KneelAnimation.new.graalpy.x3d")
-X3D0.toFileJSON("../data/LOA1_KneelAnimation.new.graalpy.json")
+X3D0.toFileJSON("../data/LOA1_KneelAnimation.new.graalpy.x3dj")

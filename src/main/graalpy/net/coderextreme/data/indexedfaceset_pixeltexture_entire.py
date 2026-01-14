@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Interchange")
 X3D0.setVersion("4.0")
@@ -70,7 +70,7 @@ meta13.setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html")
 head1.addMeta(meta13)
 meta14 = x3d.meta()
 meta14.setName("generator")
-meta14.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta14.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta14)
 meta15 = x3d.meta()
@@ -119,6 +119,8 @@ NavigationInfo23 = x3d.NavigationInfo()
 NavigationInfo23.setType(["EXAMINE","WALK","FLY","ANY"])
 
 Scene16.addChild(NavigationInfo23)
+
+Scene16.addComments(x3d.CommentsBlock("""<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"""))
 Shape24 = x3d.Shape()
 Appearance25 = x3d.Appearance()
 Material26 = x3d.Material()
@@ -128,21 +130,25 @@ PixelTexture27 = x3d.PixelTexture()
 PixelTexture27.setImage([2,2,4,-16776961,16711935,-1,-65281])
 PixelTexture27.setRepeatS(False)
 PixelTexture27.setRepeatT(False)
+TextureProperties28 = x3d.TextureProperties()
+TextureProperties28.setMagnificationFilter("NEAREST_PIXEL")
+
+PixelTexture27.setTextureProperties(TextureProperties28)
 
 Appearance25.setTexture(PixelTexture27)
 
 Shape24.setAppearance(Appearance25)
-IndexedFaceSet28 = x3d.IndexedFaceSet()
-IndexedFaceSet28.setCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])
-Coordinate29 = x3d.Coordinate()
-Coordinate29.setPoint(x3d.doubleToFloat([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]))
+IndexedFaceSet29 = x3d.IndexedFaceSet()
+IndexedFaceSet29.setCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])
+Coordinate30 = x3d.Coordinate()
+Coordinate30.setPoint(x3d.doubleToFloat([-2,1.5,1,-2,-1.5,1,2,1.5,1,2,-1.5,1,2,1.5,-1,2,-1.5,-1,-2,1.5,-1,-2,-1.5,-1]))
 
-IndexedFaceSet28.setCoord(Coordinate29)
+IndexedFaceSet29.setCoord(Coordinate30)
 
-Shape24.setGeometry(IndexedFaceSet28)
+Shape24.setGeometry(IndexedFaceSet29)
 
 Scene16.addChild(Shape24)
 
 X3D0.setScene(Scene16)
 X3D0.toFileX3D("../data/indexedfaceset_pixeltexture_entire.new.graalpy.x3d")
-X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_entire.new.graalpy.json")
+X3D0.toFileJSON("../data/indexedfaceset_pixeltexture_entire.new.graalpy.x3dj")

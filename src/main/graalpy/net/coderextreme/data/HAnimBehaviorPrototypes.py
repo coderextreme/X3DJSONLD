@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -101,17 +101,17 @@ ProtoDeclare20.setAppinfo("The HAnimBehavior node models a single humanoid behav
 ProtoDeclare20.setDocumentation("https://www.web3d.org/files/specifications/19774/V1.0/")
 ProtoInterface21 = x3d.ProtoInterface()
 
-ProtoInterface21.addComments(x3d.CommentsBlock('''supported Level of Articulation (LOA)'''))
+ProtoInterface21.addComments(x3d.CommentsBlock("""supported Level of Articulation (LOA)"""))
 
-ProtoInterface21.addComments(x3d.CommentsBlock('''shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations'''))
+ProtoInterface21.addComments(x3d.CommentsBlock("""shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations"""))
 
-ProtoInterface21.addComments(x3d.CommentsBlock('''TODO: add other X3D 3.0 TimeSensor fields (pause etc.)'''))
+ProtoInterface21.addComments(x3d.CommentsBlock("""TODO: add other X3D 3.0 TimeSensor fields (pause etc.)"""))
 
-ProtoInterface21.addComments(x3d.CommentsBlock('''Not supported: animated translation of individual joints'''))
+ProtoInterface21.addComments(x3d.CommentsBlock("""Not supported: animated translation of individual joints"""))
 
-ProtoInterface21.addComments(x3d.CommentsBlock('''pass in key/keyValue array pairs for single PositionInterpolator'''))
+ProtoInterface21.addComments(x3d.CommentsBlock("""pass in key/keyValue array pairs for single PositionInterpolator"""))
 
-ProtoInterface21.addComments(x3d.CommentsBlock('''pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint'''))
+ProtoInterface21.addComments(x3d.CommentsBlock("""pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint"""))
 field22 = x3d.field()
 field22.setName("supportedLOA")
 field22.setAccessType("inputOutput")
@@ -223,7 +223,7 @@ field36.setName("HumanoidRoot_translation_key")
 field36.setAccessType("inputOutput")
 field36.setType("MFFloat")
 
-field36.addComments(x3d.CommentsBlock('''no default value'''))
+field36.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field36)
 field37 = x3d.field()
@@ -231,7 +231,7 @@ field37.setName("HumanoidRoot_translation_keyValue")
 field37.setAccessType("inputOutput")
 field37.setType("MFVec3f")
 
-field37.addComments(x3d.CommentsBlock('''no default value'''))
+field37.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field37)
 field38 = x3d.field()
@@ -245,7 +245,7 @@ field39.setName("HumanoidRoot_rotation_key")
 field39.setAccessType("inputOutput")
 field39.setType("MFFloat")
 
-field39.addComments(x3d.CommentsBlock('''no default value'''))
+field39.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field39)
 field40 = x3d.field()
@@ -253,7 +253,7 @@ field40.setName("HumanoidRoot_rotation_keyValue")
 field40.setAccessType("inputOutput")
 field40.setType("MFRotation")
 
-field40.addComments(x3d.CommentsBlock('''no default value'''))
+field40.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field40)
 field41 = x3d.field()
@@ -267,7 +267,7 @@ field42.setName("c1_key")
 field42.setAccessType("inputOutput")
 field42.setType("MFFloat")
 
-field42.addComments(x3d.CommentsBlock('''no default value'''))
+field42.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field42)
 field43 = x3d.field()
@@ -275,7 +275,7 @@ field43.setName("c1_keyValue")
 field43.setAccessType("inputOutput")
 field43.setType("MFRotation")
 
-field43.addComments(x3d.CommentsBlock('''no default value'''))
+field43.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field43)
 field44 = x3d.field()
@@ -289,7 +289,7 @@ field45.setName("c2_key")
 field45.setAccessType("inputOutput")
 field45.setType("MFFloat")
 
-field45.addComments(x3d.CommentsBlock('''no default value'''))
+field45.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field45)
 field46 = x3d.field()
@@ -297,7 +297,7 @@ field46.setName("c2_keyValue")
 field46.setAccessType("inputOutput")
 field46.setType("MFRotation")
 
-field46.addComments(x3d.CommentsBlock('''no default value'''))
+field46.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field46)
 field47 = x3d.field()
@@ -311,7 +311,7 @@ field48.setName("c3_key")
 field48.setAccessType("inputOutput")
 field48.setType("MFFloat")
 
-field48.addComments(x3d.CommentsBlock('''no default value'''))
+field48.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field48)
 field49 = x3d.field()
@@ -319,7 +319,7 @@ field49.setName("c3_keyValue")
 field49.setAccessType("inputOutput")
 field49.setType("MFRotation")
 
-field49.addComments(x3d.CommentsBlock('''no default value'''))
+field49.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field49)
 field50 = x3d.field()
@@ -333,7 +333,7 @@ field51.setName("c4_key")
 field51.setAccessType("inputOutput")
 field51.setType("MFFloat")
 
-field51.addComments(x3d.CommentsBlock('''no default value'''))
+field51.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field51)
 field52 = x3d.field()
@@ -341,7 +341,7 @@ field52.setName("c4_keyValue")
 field52.setAccessType("inputOutput")
 field52.setType("MFRotation")
 
-field52.addComments(x3d.CommentsBlock('''no default value'''))
+field52.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field52)
 field53 = x3d.field()
@@ -355,7 +355,7 @@ field54.setName("c5_key")
 field54.setAccessType("inputOutput")
 field54.setType("MFFloat")
 
-field54.addComments(x3d.CommentsBlock('''no default value'''))
+field54.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field54)
 field55 = x3d.field()
@@ -363,7 +363,7 @@ field55.setName("c5_keyValue")
 field55.setAccessType("inputOutput")
 field55.setType("MFRotation")
 
-field55.addComments(x3d.CommentsBlock('''no default value'''))
+field55.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field55)
 field56 = x3d.field()
@@ -377,7 +377,7 @@ field57.setName("c6_key")
 field57.setAccessType("inputOutput")
 field57.setType("MFFloat")
 
-field57.addComments(x3d.CommentsBlock('''no default value'''))
+field57.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field57)
 field58 = x3d.field()
@@ -385,7 +385,7 @@ field58.setName("c6_keyValue")
 field58.setAccessType("inputOutput")
 field58.setType("MFRotation")
 
-field58.addComments(x3d.CommentsBlock('''no default value'''))
+field58.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field58)
 field59 = x3d.field()
@@ -399,7 +399,7 @@ field60.setName("c7_key")
 field60.setAccessType("inputOutput")
 field60.setType("MFFloat")
 
-field60.addComments(x3d.CommentsBlock('''no default value'''))
+field60.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field60)
 field61 = x3d.field()
@@ -407,7 +407,7 @@ field61.setName("c7_keyValue")
 field61.setAccessType("inputOutput")
 field61.setType("MFRotation")
 
-field61.addComments(x3d.CommentsBlock('''no default value'''))
+field61.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field61)
 field62 = x3d.field()
@@ -421,7 +421,7 @@ field63.setName("jaw_key")
 field63.setAccessType("inputOutput")
 field63.setType("MFFloat")
 
-field63.addComments(x3d.CommentsBlock('''no default value'''))
+field63.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field63)
 field64 = x3d.field()
@@ -429,7 +429,7 @@ field64.setName("jaw_keyValue")
 field64.setAccessType("inputOutput")
 field64.setType("MFRotation")
 
-field64.addComments(x3d.CommentsBlock('''no default value'''))
+field64.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field64)
 field65 = x3d.field()
@@ -443,7 +443,7 @@ field66.setName("l1_key")
 field66.setAccessType("inputOutput")
 field66.setType("MFFloat")
 
-field66.addComments(x3d.CommentsBlock('''no default value'''))
+field66.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field66)
 field67 = x3d.field()
@@ -451,7 +451,7 @@ field67.setName("l1_keyValue")
 field67.setAccessType("inputOutput")
 field67.setType("MFRotation")
 
-field67.addComments(x3d.CommentsBlock('''no default value'''))
+field67.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field67)
 field68 = x3d.field()
@@ -465,7 +465,7 @@ field69.setName("l2_key")
 field69.setAccessType("inputOutput")
 field69.setType("MFFloat")
 
-field69.addComments(x3d.CommentsBlock('''no default value'''))
+field69.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field69)
 field70 = x3d.field()
@@ -473,7 +473,7 @@ field70.setName("l2_keyValue")
 field70.setAccessType("inputOutput")
 field70.setType("MFRotation")
 
-field70.addComments(x3d.CommentsBlock('''no default value'''))
+field70.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field70)
 field71 = x3d.field()
@@ -487,7 +487,7 @@ field72.setName("l3_key")
 field72.setAccessType("inputOutput")
 field72.setType("MFFloat")
 
-field72.addComments(x3d.CommentsBlock('''no default value'''))
+field72.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field72)
 field73 = x3d.field()
@@ -495,7 +495,7 @@ field73.setName("l3_keyValue")
 field73.setAccessType("inputOutput")
 field73.setType("MFRotation")
 
-field73.addComments(x3d.CommentsBlock('''no default value'''))
+field73.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field73)
 field74 = x3d.field()
@@ -509,7 +509,7 @@ field75.setName("l4_key")
 field75.setAccessType("inputOutput")
 field75.setType("MFFloat")
 
-field75.addComments(x3d.CommentsBlock('''no default value'''))
+field75.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field75)
 field76 = x3d.field()
@@ -517,7 +517,7 @@ field76.setName("l4_keyValue")
 field76.setAccessType("inputOutput")
 field76.setType("MFRotation")
 
-field76.addComments(x3d.CommentsBlock('''no default value'''))
+field76.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field76)
 field77 = x3d.field()
@@ -531,7 +531,7 @@ field78.setName("l5_key")
 field78.setAccessType("inputOutput")
 field78.setType("MFFloat")
 
-field78.addComments(x3d.CommentsBlock('''no default value'''))
+field78.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field78)
 field79 = x3d.field()
@@ -539,7 +539,7 @@ field79.setName("l5_keyValue")
 field79.setAccessType("inputOutput")
 field79.setType("MFRotation")
 
-field79.addComments(x3d.CommentsBlock('''no default value'''))
+field79.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field79)
 field80 = x3d.field()
@@ -553,7 +553,7 @@ field81.setName("l_acromioclavicular_key")
 field81.setAccessType("inputOutput")
 field81.setType("MFFloat")
 
-field81.addComments(x3d.CommentsBlock('''no default value'''))
+field81.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field81)
 field82 = x3d.field()
@@ -561,7 +561,7 @@ field82.setName("l_acromioclavicular_keyValue")
 field82.setAccessType("inputOutput")
 field82.setType("MFRotation")
 
-field82.addComments(x3d.CommentsBlock('''no default value'''))
+field82.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field82)
 field83 = x3d.field()
@@ -575,7 +575,7 @@ field84.setName("l_ankle_key")
 field84.setAccessType("inputOutput")
 field84.setType("MFFloat")
 
-field84.addComments(x3d.CommentsBlock('''no default value'''))
+field84.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field84)
 field85 = x3d.field()
@@ -583,7 +583,7 @@ field85.setName("l_ankle_keyValue")
 field85.setAccessType("inputOutput")
 field85.setType("MFRotation")
 
-field85.addComments(x3d.CommentsBlock('''no default value'''))
+field85.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field85)
 field86 = x3d.field()
@@ -597,7 +597,7 @@ field87.setName("l_calf_key")
 field87.setAccessType("inputOutput")
 field87.setType("MFFloat")
 
-field87.addComments(x3d.CommentsBlock('''no default value'''))
+field87.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field87)
 field88 = x3d.field()
@@ -605,7 +605,7 @@ field88.setName("l_calf_keyValue")
 field88.setAccessType("inputOutput")
 field88.setType("MFRotation")
 
-field88.addComments(x3d.CommentsBlock('''no default value'''))
+field88.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field88)
 field89 = x3d.field()
@@ -619,7 +619,7 @@ field90.setName("l_clavicle_key")
 field90.setAccessType("inputOutput")
 field90.setType("MFFloat")
 
-field90.addComments(x3d.CommentsBlock('''no default value'''))
+field90.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field90)
 field91 = x3d.field()
@@ -627,7 +627,7 @@ field91.setName("l_clavicle_keyValue")
 field91.setAccessType("inputOutput")
 field91.setType("MFRotation")
 
-field91.addComments(x3d.CommentsBlock('''no default value'''))
+field91.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field91)
 field92 = x3d.field()
@@ -641,7 +641,7 @@ field93.setName("l_elbow_key")
 field93.setAccessType("inputOutput")
 field93.setType("MFFloat")
 
-field93.addComments(x3d.CommentsBlock('''no default value'''))
+field93.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field93)
 field94 = x3d.field()
@@ -649,7 +649,7 @@ field94.setName("l_elbow_keyValue")
 field94.setAccessType("inputOutput")
 field94.setType("MFRotation")
 
-field94.addComments(x3d.CommentsBlock('''no default value'''))
+field94.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field94)
 field95 = x3d.field()
@@ -663,7 +663,7 @@ field96.setName("l_eyeball_key")
 field96.setAccessType("inputOutput")
 field96.setType("MFFloat")
 
-field96.addComments(x3d.CommentsBlock('''no default value'''))
+field96.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field96)
 field97 = x3d.field()
@@ -671,7 +671,7 @@ field97.setName("l_eyeball_keyValue")
 field97.setAccessType("inputOutput")
 field97.setType("MFRotation")
 
-field97.addComments(x3d.CommentsBlock('''no default value'''))
+field97.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field97)
 field98 = x3d.field()
@@ -685,7 +685,7 @@ field99.setName("l_eyeball_joint_key")
 field99.setAccessType("inputOutput")
 field99.setType("MFFloat")
 
-field99.addComments(x3d.CommentsBlock('''no default value'''))
+field99.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field99)
 field100 = x3d.field()
@@ -693,7 +693,7 @@ field100.setName("l_eyeball_joint_keyValue")
 field100.setAccessType("inputOutput")
 field100.setType("MFRotation")
 
-field100.addComments(x3d.CommentsBlock('''no default value'''))
+field100.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field100)
 field101 = x3d.field()
@@ -707,7 +707,7 @@ field102.setName("l_eyebrow_key")
 field102.setAccessType("inputOutput")
 field102.setType("MFFloat")
 
-field102.addComments(x3d.CommentsBlock('''no default value'''))
+field102.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field102)
 field103 = x3d.field()
@@ -715,7 +715,7 @@ field103.setName("l_eyebrow_keyValue")
 field103.setAccessType("inputOutput")
 field103.setType("MFRotation")
 
-field103.addComments(x3d.CommentsBlock('''no default value'''))
+field103.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field103)
 field104 = x3d.field()
@@ -729,7 +729,7 @@ field105.setName("l_eyebrow_joint_key")
 field105.setAccessType("inputOutput")
 field105.setType("MFFloat")
 
-field105.addComments(x3d.CommentsBlock('''no default value'''))
+field105.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field105)
 field106 = x3d.field()
@@ -737,7 +737,7 @@ field106.setName("l_eyebrow_joint_keyValue")
 field106.setAccessType("inputOutput")
 field106.setType("MFRotation")
 
-field106.addComments(x3d.CommentsBlock('''no default value'''))
+field106.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field106)
 field107 = x3d.field()
@@ -751,7 +751,7 @@ field108.setName("l_eyelid_key")
 field108.setAccessType("inputOutput")
 field108.setType("MFFloat")
 
-field108.addComments(x3d.CommentsBlock('''no default value'''))
+field108.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field108)
 field109 = x3d.field()
@@ -759,7 +759,7 @@ field109.setName("l_eyelid_keyValue")
 field109.setAccessType("inputOutput")
 field109.setType("MFRotation")
 
-field109.addComments(x3d.CommentsBlock('''no default value'''))
+field109.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field109)
 field110 = x3d.field()
@@ -773,7 +773,7 @@ field111.setName("l_eyelid_joint_key")
 field111.setAccessType("inputOutput")
 field111.setType("MFFloat")
 
-field111.addComments(x3d.CommentsBlock('''no default value'''))
+field111.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field111)
 field112 = x3d.field()
@@ -781,7 +781,7 @@ field112.setName("l_eyelid_joint_keyValue")
 field112.setAccessType("inputOutput")
 field112.setType("MFRotation")
 
-field112.addComments(x3d.CommentsBlock('''no default value'''))
+field112.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field112)
 field113 = x3d.field()
@@ -795,7 +795,7 @@ field114.setName("l_forearm_key")
 field114.setAccessType("inputOutput")
 field114.setType("MFFloat")
 
-field114.addComments(x3d.CommentsBlock('''no default value'''))
+field114.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field114)
 field115 = x3d.field()
@@ -803,7 +803,7 @@ field115.setName("l_forearm_keyValue")
 field115.setAccessType("inputOutput")
 field115.setType("MFRotation")
 
-field115.addComments(x3d.CommentsBlock('''no default value'''))
+field115.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field115)
 field116 = x3d.field()
@@ -817,7 +817,7 @@ field117.setName("l_forefoot_key")
 field117.setAccessType("inputOutput")
 field117.setType("MFFloat")
 
-field117.addComments(x3d.CommentsBlock('''no default value'''))
+field117.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field117)
 field118 = x3d.field()
@@ -825,7 +825,7 @@ field118.setName("l_forefoot_keyValue")
 field118.setAccessType("inputOutput")
 field118.setType("MFRotation")
 
-field118.addComments(x3d.CommentsBlock('''no default value'''))
+field118.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field118)
 field119 = x3d.field()
@@ -839,7 +839,7 @@ field120.setName("l_hand_key")
 field120.setAccessType("inputOutput")
 field120.setType("MFFloat")
 
-field120.addComments(x3d.CommentsBlock('''no default value'''))
+field120.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field120)
 field121 = x3d.field()
@@ -847,7 +847,7 @@ field121.setName("l_hand_keyValue")
 field121.setAccessType("inputOutput")
 field121.setType("MFRotation")
 
-field121.addComments(x3d.CommentsBlock('''no default value'''))
+field121.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field121)
 field122 = x3d.field()
@@ -861,7 +861,7 @@ field123.setName("l_hindfoot_key")
 field123.setAccessType("inputOutput")
 field123.setType("MFFloat")
 
-field123.addComments(x3d.CommentsBlock('''no default value'''))
+field123.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field123)
 field124 = x3d.field()
@@ -869,7 +869,7 @@ field124.setName("l_hindfoot_keyValue")
 field124.setAccessType("inputOutput")
 field124.setType("MFRotation")
 
-field124.addComments(x3d.CommentsBlock('''no default value'''))
+field124.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field124)
 field125 = x3d.field()
@@ -883,7 +883,7 @@ field126.setName("l_hip_key")
 field126.setAccessType("inputOutput")
 field126.setType("MFFloat")
 
-field126.addComments(x3d.CommentsBlock('''no default value'''))
+field126.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field126)
 field127 = x3d.field()
@@ -891,7 +891,7 @@ field127.setName("l_hip_keyValue")
 field127.setAccessType("inputOutput")
 field127.setType("MFRotation")
 
-field127.addComments(x3d.CommentsBlock('''no default value'''))
+field127.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field127)
 field128 = x3d.field()
@@ -905,7 +905,7 @@ field129.setName("l_index0_key")
 field129.setAccessType("inputOutput")
 field129.setType("MFFloat")
 
-field129.addComments(x3d.CommentsBlock('''no default value'''))
+field129.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field129)
 field130 = x3d.field()
@@ -913,7 +913,7 @@ field130.setName("l_index0_keyValue")
 field130.setAccessType("inputOutput")
 field130.setType("MFRotation")
 
-field130.addComments(x3d.CommentsBlock('''no default value'''))
+field130.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field130)
 field131 = x3d.field()
@@ -927,7 +927,7 @@ field132.setName("l_index1_key")
 field132.setAccessType("inputOutput")
 field132.setType("MFFloat")
 
-field132.addComments(x3d.CommentsBlock('''no default value'''))
+field132.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field132)
 field133 = x3d.field()
@@ -935,7 +935,7 @@ field133.setName("l_index1_keyValue")
 field133.setAccessType("inputOutput")
 field133.setType("MFRotation")
 
-field133.addComments(x3d.CommentsBlock('''no default value'''))
+field133.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field133)
 field134 = x3d.field()
@@ -949,7 +949,7 @@ field135.setName("l_index2_key")
 field135.setAccessType("inputOutput")
 field135.setType("MFFloat")
 
-field135.addComments(x3d.CommentsBlock('''no default value'''))
+field135.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field135)
 field136 = x3d.field()
@@ -957,7 +957,7 @@ field136.setName("l_index2_keyValue")
 field136.setAccessType("inputOutput")
 field136.setType("MFRotation")
 
-field136.addComments(x3d.CommentsBlock('''no default value'''))
+field136.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field136)
 field137 = x3d.field()
@@ -971,7 +971,7 @@ field138.setName("l_index3_key")
 field138.setAccessType("inputOutput")
 field138.setType("MFFloat")
 
-field138.addComments(x3d.CommentsBlock('''no default value'''))
+field138.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field138)
 field139 = x3d.field()
@@ -979,7 +979,7 @@ field139.setName("l_index3_keyValue")
 field139.setAccessType("inputOutput")
 field139.setType("MFRotation")
 
-field139.addComments(x3d.CommentsBlock('''no default value'''))
+field139.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field139)
 field140 = x3d.field()
@@ -993,7 +993,7 @@ field141.setName("l_index_distal_key")
 field141.setAccessType("inputOutput")
 field141.setType("MFFloat")
 
-field141.addComments(x3d.CommentsBlock('''no default value'''))
+field141.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field141)
 field142 = x3d.field()
@@ -1001,7 +1001,7 @@ field142.setName("l_index_distal_keyValue")
 field142.setAccessType("inputOutput")
 field142.setType("MFRotation")
 
-field142.addComments(x3d.CommentsBlock('''no default value'''))
+field142.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field142)
 field143 = x3d.field()
@@ -1015,7 +1015,7 @@ field144.setName("l_index_metacarpal_key")
 field144.setAccessType("inputOutput")
 field144.setType("MFFloat")
 
-field144.addComments(x3d.CommentsBlock('''no default value'''))
+field144.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field144)
 field145 = x3d.field()
@@ -1023,7 +1023,7 @@ field145.setName("l_index_metacarpal_keyValue")
 field145.setAccessType("inputOutput")
 field145.setType("MFRotation")
 
-field145.addComments(x3d.CommentsBlock('''no default value'''))
+field145.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field145)
 field146 = x3d.field()
@@ -1037,7 +1037,7 @@ field147.setName("l_index_middle_key")
 field147.setAccessType("inputOutput")
 field147.setType("MFFloat")
 
-field147.addComments(x3d.CommentsBlock('''no default value'''))
+field147.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field147)
 field148 = x3d.field()
@@ -1045,7 +1045,7 @@ field148.setName("l_index_middle_keyValue")
 field148.setAccessType("inputOutput")
 field148.setType("MFRotation")
 
-field148.addComments(x3d.CommentsBlock('''no default value'''))
+field148.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field148)
 field149 = x3d.field()
@@ -1059,7 +1059,7 @@ field150.setName("l_index_proximal_key")
 field150.setAccessType("inputOutput")
 field150.setType("MFFloat")
 
-field150.addComments(x3d.CommentsBlock('''no default value'''))
+field150.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field150)
 field151 = x3d.field()
@@ -1067,7 +1067,7 @@ field151.setName("l_index_proximal_keyValue")
 field151.setAccessType("inputOutput")
 field151.setType("MFRotation")
 
-field151.addComments(x3d.CommentsBlock('''no default value'''))
+field151.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field151)
 field152 = x3d.field()
@@ -1081,7 +1081,7 @@ field153.setName("l_knee_key")
 field153.setAccessType("inputOutput")
 field153.setType("MFFloat")
 
-field153.addComments(x3d.CommentsBlock('''no default value'''))
+field153.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field153)
 field154 = x3d.field()
@@ -1089,7 +1089,7 @@ field154.setName("l_knee_keyValue")
 field154.setAccessType("inputOutput")
 field154.setType("MFRotation")
 
-field154.addComments(x3d.CommentsBlock('''no default value'''))
+field154.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field154)
 field155 = x3d.field()
@@ -1103,7 +1103,7 @@ field156.setName("l_metatarsal_key")
 field156.setAccessType("inputOutput")
 field156.setType("MFFloat")
 
-field156.addComments(x3d.CommentsBlock('''no default value'''))
+field156.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field156)
 field157 = x3d.field()
@@ -1111,7 +1111,7 @@ field157.setName("l_metatarsal_keyValue")
 field157.setAccessType("inputOutput")
 field157.setType("MFRotation")
 
-field157.addComments(x3d.CommentsBlock('''no default value'''))
+field157.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field157)
 field158 = x3d.field()
@@ -1125,7 +1125,7 @@ field159.setName("l_middistal_key")
 field159.setAccessType("inputOutput")
 field159.setType("MFFloat")
 
-field159.addComments(x3d.CommentsBlock('''no default value'''))
+field159.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field159)
 field160 = x3d.field()
@@ -1133,7 +1133,7 @@ field160.setName("l_middistal_keyValue")
 field160.setAccessType("inputOutput")
 field160.setType("MFRotation")
 
-field160.addComments(x3d.CommentsBlock('''no default value'''))
+field160.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field160)
 field161 = x3d.field()
@@ -1147,7 +1147,7 @@ field162.setName("l_middle0_key")
 field162.setAccessType("inputOutput")
 field162.setType("MFFloat")
 
-field162.addComments(x3d.CommentsBlock('''no default value'''))
+field162.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field162)
 field163 = x3d.field()
@@ -1155,7 +1155,7 @@ field163.setName("l_middle0_keyValue")
 field163.setAccessType("inputOutput")
 field163.setType("MFRotation")
 
-field163.addComments(x3d.CommentsBlock('''no default value'''))
+field163.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field163)
 field164 = x3d.field()
@@ -1169,7 +1169,7 @@ field165.setName("l_middle1_key")
 field165.setAccessType("inputOutput")
 field165.setType("MFFloat")
 
-field165.addComments(x3d.CommentsBlock('''no default value'''))
+field165.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field165)
 field166 = x3d.field()
@@ -1177,7 +1177,7 @@ field166.setName("l_middle1_keyValue")
 field166.setAccessType("inputOutput")
 field166.setType("MFRotation")
 
-field166.addComments(x3d.CommentsBlock('''no default value'''))
+field166.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field166)
 field167 = x3d.field()
@@ -1191,7 +1191,7 @@ field168.setName("l_middle2_key")
 field168.setAccessType("inputOutput")
 field168.setType("MFFloat")
 
-field168.addComments(x3d.CommentsBlock('''no default value'''))
+field168.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field168)
 field169 = x3d.field()
@@ -1199,7 +1199,7 @@ field169.setName("l_middle2_keyValue")
 field169.setAccessType("inputOutput")
 field169.setType("MFRotation")
 
-field169.addComments(x3d.CommentsBlock('''no default value'''))
+field169.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field169)
 field170 = x3d.field()
@@ -1213,7 +1213,7 @@ field171.setName("l_middle3_key")
 field171.setAccessType("inputOutput")
 field171.setType("MFFloat")
 
-field171.addComments(x3d.CommentsBlock('''no default value'''))
+field171.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field171)
 field172 = x3d.field()
@@ -1221,7 +1221,7 @@ field172.setName("l_middle3_keyValue")
 field172.setAccessType("inputOutput")
 field172.setType("MFRotation")
 
-field172.addComments(x3d.CommentsBlock('''no default value'''))
+field172.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field172)
 field173 = x3d.field()
@@ -1235,7 +1235,7 @@ field174.setName("l_middle_distal_key")
 field174.setAccessType("inputOutput")
 field174.setType("MFFloat")
 
-field174.addComments(x3d.CommentsBlock('''no default value'''))
+field174.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field174)
 field175 = x3d.field()
@@ -1243,7 +1243,7 @@ field175.setName("l_middle_distal_keyValue")
 field175.setAccessType("inputOutput")
 field175.setType("MFRotation")
 
-field175.addComments(x3d.CommentsBlock('''no default value'''))
+field175.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field175)
 field176 = x3d.field()
@@ -1257,7 +1257,7 @@ field177.setName("l_middle_metacarpal_key")
 field177.setAccessType("inputOutput")
 field177.setType("MFFloat")
 
-field177.addComments(x3d.CommentsBlock('''no default value'''))
+field177.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field177)
 field178 = x3d.field()
@@ -1265,7 +1265,7 @@ field178.setName("l_middle_metacarpal_keyValue")
 field178.setAccessType("inputOutput")
 field178.setType("MFRotation")
 
-field178.addComments(x3d.CommentsBlock('''no default value'''))
+field178.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field178)
 field179 = x3d.field()
@@ -1279,7 +1279,7 @@ field180.setName("l_middle_middle_key")
 field180.setAccessType("inputOutput")
 field180.setType("MFFloat")
 
-field180.addComments(x3d.CommentsBlock('''no default value'''))
+field180.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field180)
 field181 = x3d.field()
@@ -1287,7 +1287,7 @@ field181.setName("l_middle_middle_keyValue")
 field181.setAccessType("inputOutput")
 field181.setType("MFRotation")
 
-field181.addComments(x3d.CommentsBlock('''no default value'''))
+field181.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field181)
 field182 = x3d.field()
@@ -1301,7 +1301,7 @@ field183.setName("l_middle_proximal_key")
 field183.setAccessType("inputOutput")
 field183.setType("MFFloat")
 
-field183.addComments(x3d.CommentsBlock('''no default value'''))
+field183.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field183)
 field184 = x3d.field()
@@ -1309,7 +1309,7 @@ field184.setName("l_middle_proximal_keyValue")
 field184.setAccessType("inputOutput")
 field184.setType("MFRotation")
 
-field184.addComments(x3d.CommentsBlock('''no default value'''))
+field184.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field184)
 field185 = x3d.field()
@@ -1323,7 +1323,7 @@ field186.setName("l_midproximal_key")
 field186.setAccessType("inputOutput")
 field186.setType("MFFloat")
 
-field186.addComments(x3d.CommentsBlock('''no default value'''))
+field186.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field186)
 field187 = x3d.field()
@@ -1331,7 +1331,7 @@ field187.setName("l_midproximal_keyValue")
 field187.setAccessType("inputOutput")
 field187.setType("MFRotation")
 
-field187.addComments(x3d.CommentsBlock('''no default value'''))
+field187.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field187)
 field188 = x3d.field()
@@ -1345,7 +1345,7 @@ field189.setName("l_midtarsal_key")
 field189.setAccessType("inputOutput")
 field189.setType("MFFloat")
 
-field189.addComments(x3d.CommentsBlock('''no default value'''))
+field189.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field189)
 field190 = x3d.field()
@@ -1353,7 +1353,7 @@ field190.setName("l_midtarsal_keyValue")
 field190.setAccessType("inputOutput")
 field190.setType("MFRotation")
 
-field190.addComments(x3d.CommentsBlock('''no default value'''))
+field190.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field190)
 field191 = x3d.field()
@@ -1367,7 +1367,7 @@ field192.setName("l_pinky0_key")
 field192.setAccessType("inputOutput")
 field192.setType("MFFloat")
 
-field192.addComments(x3d.CommentsBlock('''no default value'''))
+field192.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field192)
 field193 = x3d.field()
@@ -1375,7 +1375,7 @@ field193.setName("l_pinky0_keyValue")
 field193.setAccessType("inputOutput")
 field193.setType("MFRotation")
 
-field193.addComments(x3d.CommentsBlock('''no default value'''))
+field193.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field193)
 field194 = x3d.field()
@@ -1389,7 +1389,7 @@ field195.setName("l_pinky1_key")
 field195.setAccessType("inputOutput")
 field195.setType("MFFloat")
 
-field195.addComments(x3d.CommentsBlock('''no default value'''))
+field195.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field195)
 field196 = x3d.field()
@@ -1397,7 +1397,7 @@ field196.setName("l_pinky1_keyValue")
 field196.setAccessType("inputOutput")
 field196.setType("MFRotation")
 
-field196.addComments(x3d.CommentsBlock('''no default value'''))
+field196.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field196)
 field197 = x3d.field()
@@ -1411,7 +1411,7 @@ field198.setName("l_pinky2_key")
 field198.setAccessType("inputOutput")
 field198.setType("MFFloat")
 
-field198.addComments(x3d.CommentsBlock('''no default value'''))
+field198.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field198)
 field199 = x3d.field()
@@ -1419,7 +1419,7 @@ field199.setName("l_pinky2_keyValue")
 field199.setAccessType("inputOutput")
 field199.setType("MFRotation")
 
-field199.addComments(x3d.CommentsBlock('''no default value'''))
+field199.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field199)
 field200 = x3d.field()
@@ -1433,7 +1433,7 @@ field201.setName("l_pinky3_key")
 field201.setAccessType("inputOutput")
 field201.setType("MFFloat")
 
-field201.addComments(x3d.CommentsBlock('''no default value'''))
+field201.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field201)
 field202 = x3d.field()
@@ -1441,7 +1441,7 @@ field202.setName("l_pinky3_keyValue")
 field202.setAccessType("inputOutput")
 field202.setType("MFRotation")
 
-field202.addComments(x3d.CommentsBlock('''no default value'''))
+field202.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field202)
 field203 = x3d.field()
@@ -1455,7 +1455,7 @@ field204.setName("l_pinky_distal_key")
 field204.setAccessType("inputOutput")
 field204.setType("MFFloat")
 
-field204.addComments(x3d.CommentsBlock('''no default value'''))
+field204.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field204)
 field205 = x3d.field()
@@ -1463,7 +1463,7 @@ field205.setName("l_pinky_distal_keyValue")
 field205.setAccessType("inputOutput")
 field205.setType("MFRotation")
 
-field205.addComments(x3d.CommentsBlock('''no default value'''))
+field205.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field205)
 field206 = x3d.field()
@@ -1477,7 +1477,7 @@ field207.setName("l_pinky_metacarpal_key")
 field207.setAccessType("inputOutput")
 field207.setType("MFFloat")
 
-field207.addComments(x3d.CommentsBlock('''no default value'''))
+field207.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field207)
 field208 = x3d.field()
@@ -1485,7 +1485,7 @@ field208.setName("l_pinky_metacarpal_keyValue")
 field208.setAccessType("inputOutput")
 field208.setType("MFRotation")
 
-field208.addComments(x3d.CommentsBlock('''no default value'''))
+field208.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field208)
 field209 = x3d.field()
@@ -1499,7 +1499,7 @@ field210.setName("l_pinky_middle_key")
 field210.setAccessType("inputOutput")
 field210.setType("MFFloat")
 
-field210.addComments(x3d.CommentsBlock('''no default value'''))
+field210.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field210)
 field211 = x3d.field()
@@ -1507,7 +1507,7 @@ field211.setName("l_pinky_middle_keyValue")
 field211.setAccessType("inputOutput")
 field211.setType("MFRotation")
 
-field211.addComments(x3d.CommentsBlock('''no default value'''))
+field211.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field211)
 field212 = x3d.field()
@@ -1521,7 +1521,7 @@ field213.setName("l_pinky_proximal_key")
 field213.setAccessType("inputOutput")
 field213.setType("MFFloat")
 
-field213.addComments(x3d.CommentsBlock('''no default value'''))
+field213.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field213)
 field214 = x3d.field()
@@ -1529,7 +1529,7 @@ field214.setName("l_pinky_proximal_keyValue")
 field214.setAccessType("inputOutput")
 field214.setType("MFRotation")
 
-field214.addComments(x3d.CommentsBlock('''no default value'''))
+field214.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field214)
 field215 = x3d.field()
@@ -1543,7 +1543,7 @@ field216.setName("l_ring0_key")
 field216.setAccessType("inputOutput")
 field216.setType("MFFloat")
 
-field216.addComments(x3d.CommentsBlock('''no default value'''))
+field216.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field216)
 field217 = x3d.field()
@@ -1551,7 +1551,7 @@ field217.setName("l_ring0_keyValue")
 field217.setAccessType("inputOutput")
 field217.setType("MFRotation")
 
-field217.addComments(x3d.CommentsBlock('''no default value'''))
+field217.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field217)
 field218 = x3d.field()
@@ -1565,7 +1565,7 @@ field219.setName("l_ring1_key")
 field219.setAccessType("inputOutput")
 field219.setType("MFFloat")
 
-field219.addComments(x3d.CommentsBlock('''no default value'''))
+field219.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field219)
 field220 = x3d.field()
@@ -1573,7 +1573,7 @@ field220.setName("l_ring1_keyValue")
 field220.setAccessType("inputOutput")
 field220.setType("MFRotation")
 
-field220.addComments(x3d.CommentsBlock('''no default value'''))
+field220.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field220)
 field221 = x3d.field()
@@ -1587,7 +1587,7 @@ field222.setName("l_ring2_key")
 field222.setAccessType("inputOutput")
 field222.setType("MFFloat")
 
-field222.addComments(x3d.CommentsBlock('''no default value'''))
+field222.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field222)
 field223 = x3d.field()
@@ -1595,7 +1595,7 @@ field223.setName("l_ring2_keyValue")
 field223.setAccessType("inputOutput")
 field223.setType("MFRotation")
 
-field223.addComments(x3d.CommentsBlock('''no default value'''))
+field223.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field223)
 field224 = x3d.field()
@@ -1609,7 +1609,7 @@ field225.setName("l_ring3_key")
 field225.setAccessType("inputOutput")
 field225.setType("MFFloat")
 
-field225.addComments(x3d.CommentsBlock('''no default value'''))
+field225.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field225)
 field226 = x3d.field()
@@ -1617,7 +1617,7 @@ field226.setName("l_ring3_keyValue")
 field226.setAccessType("inputOutput")
 field226.setType("MFRotation")
 
-field226.addComments(x3d.CommentsBlock('''no default value'''))
+field226.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field226)
 field227 = x3d.field()
@@ -1631,7 +1631,7 @@ field228.setName("l_ring_distal_key")
 field228.setAccessType("inputOutput")
 field228.setType("MFFloat")
 
-field228.addComments(x3d.CommentsBlock('''no default value'''))
+field228.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field228)
 field229 = x3d.field()
@@ -1639,7 +1639,7 @@ field229.setName("l_ring_distal_keyValue")
 field229.setAccessType("inputOutput")
 field229.setType("MFRotation")
 
-field229.addComments(x3d.CommentsBlock('''no default value'''))
+field229.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field229)
 field230 = x3d.field()
@@ -1653,7 +1653,7 @@ field231.setName("l_ring_metacarpal_key")
 field231.setAccessType("inputOutput")
 field231.setType("MFFloat")
 
-field231.addComments(x3d.CommentsBlock('''no default value'''))
+field231.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field231)
 field232 = x3d.field()
@@ -1661,7 +1661,7 @@ field232.setName("l_ring_metacarpal_keyValue")
 field232.setAccessType("inputOutput")
 field232.setType("MFRotation")
 
-field232.addComments(x3d.CommentsBlock('''no default value'''))
+field232.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field232)
 field233 = x3d.field()
@@ -1675,7 +1675,7 @@ field234.setName("l_ring_middle_key")
 field234.setAccessType("inputOutput")
 field234.setType("MFFloat")
 
-field234.addComments(x3d.CommentsBlock('''no default value'''))
+field234.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field234)
 field235 = x3d.field()
@@ -1683,7 +1683,7 @@ field235.setName("l_ring_middle_keyValue")
 field235.setAccessType("inputOutput")
 field235.setType("MFRotation")
 
-field235.addComments(x3d.CommentsBlock('''no default value'''))
+field235.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field235)
 field236 = x3d.field()
@@ -1697,7 +1697,7 @@ field237.setName("l_ring_proximal_key")
 field237.setAccessType("inputOutput")
 field237.setType("MFFloat")
 
-field237.addComments(x3d.CommentsBlock('''no default value'''))
+field237.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field237)
 field238 = x3d.field()
@@ -1705,7 +1705,7 @@ field238.setName("l_ring_proximal_keyValue")
 field238.setAccessType("inputOutput")
 field238.setType("MFRotation")
 
-field238.addComments(x3d.CommentsBlock('''no default value'''))
+field238.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field238)
 field239 = x3d.field()
@@ -1719,7 +1719,7 @@ field240.setName("l_scapula_key")
 field240.setAccessType("inputOutput")
 field240.setType("MFFloat")
 
-field240.addComments(x3d.CommentsBlock('''no default value'''))
+field240.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field240)
 field241 = x3d.field()
@@ -1727,7 +1727,7 @@ field241.setName("l_scapula_keyValue")
 field241.setAccessType("inputOutput")
 field241.setType("MFRotation")
 
-field241.addComments(x3d.CommentsBlock('''no default value'''))
+field241.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field241)
 field242 = x3d.field()
@@ -1741,7 +1741,7 @@ field243.setName("l_shoulder_key")
 field243.setAccessType("inputOutput")
 field243.setType("MFFloat")
 
-field243.addComments(x3d.CommentsBlock('''no default value'''))
+field243.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field243)
 field244 = x3d.field()
@@ -1749,7 +1749,7 @@ field244.setName("l_shoulder_keyValue")
 field244.setAccessType("inputOutput")
 field244.setType("MFRotation")
 
-field244.addComments(x3d.CommentsBlock('''no default value'''))
+field244.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field244)
 field245 = x3d.field()
@@ -1763,7 +1763,7 @@ field246.setName("l_sternoclavicular_key")
 field246.setAccessType("inputOutput")
 field246.setType("MFFloat")
 
-field246.addComments(x3d.CommentsBlock('''no default value'''))
+field246.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field246)
 field247 = x3d.field()
@@ -1771,7 +1771,7 @@ field247.setName("l_sternoclavicular_keyValue")
 field247.setAccessType("inputOutput")
 field247.setType("MFRotation")
 
-field247.addComments(x3d.CommentsBlock('''no default value'''))
+field247.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field247)
 field248 = x3d.field()
@@ -1785,7 +1785,7 @@ field249.setName("l_subtalar_key")
 field249.setAccessType("inputOutput")
 field249.setType("MFFloat")
 
-field249.addComments(x3d.CommentsBlock('''no default value'''))
+field249.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field249)
 field250 = x3d.field()
@@ -1793,7 +1793,7 @@ field250.setName("l_subtalar_keyValue")
 field250.setAccessType("inputOutput")
 field250.setType("MFRotation")
 
-field250.addComments(x3d.CommentsBlock('''no default value'''))
+field250.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field250)
 field251 = x3d.field()
@@ -1807,7 +1807,7 @@ field252.setName("l_thigh_key")
 field252.setAccessType("inputOutput")
 field252.setType("MFFloat")
 
-field252.addComments(x3d.CommentsBlock('''no default value'''))
+field252.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field252)
 field253 = x3d.field()
@@ -1815,7 +1815,7 @@ field253.setName("l_thigh_keyValue")
 field253.setAccessType("inputOutput")
 field253.setType("MFRotation")
 
-field253.addComments(x3d.CommentsBlock('''no default value'''))
+field253.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field253)
 field254 = x3d.field()
@@ -1829,7 +1829,7 @@ field255.setName("l_thumb1_key")
 field255.setAccessType("inputOutput")
 field255.setType("MFFloat")
 
-field255.addComments(x3d.CommentsBlock('''no default value'''))
+field255.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field255)
 field256 = x3d.field()
@@ -1837,7 +1837,7 @@ field256.setName("l_thumb1_keyValue")
 field256.setAccessType("inputOutput")
 field256.setType("MFRotation")
 
-field256.addComments(x3d.CommentsBlock('''no default value'''))
+field256.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field256)
 field257 = x3d.field()
@@ -1851,7 +1851,7 @@ field258.setName("l_thumb2_key")
 field258.setAccessType("inputOutput")
 field258.setType("MFFloat")
 
-field258.addComments(x3d.CommentsBlock('''no default value'''))
+field258.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field258)
 field259 = x3d.field()
@@ -1859,7 +1859,7 @@ field259.setName("l_thumb2_keyValue")
 field259.setAccessType("inputOutput")
 field259.setType("MFRotation")
 
-field259.addComments(x3d.CommentsBlock('''no default value'''))
+field259.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field259)
 field260 = x3d.field()
@@ -1873,7 +1873,7 @@ field261.setName("l_thumb3_key")
 field261.setAccessType("inputOutput")
 field261.setType("MFFloat")
 
-field261.addComments(x3d.CommentsBlock('''no default value'''))
+field261.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field261)
 field262 = x3d.field()
@@ -1881,7 +1881,7 @@ field262.setName("l_thumb3_keyValue")
 field262.setAccessType("inputOutput")
 field262.setType("MFRotation")
 
-field262.addComments(x3d.CommentsBlock('''no default value'''))
+field262.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field262)
 field263 = x3d.field()
@@ -1895,7 +1895,7 @@ field264.setName("l_thumb_distal_key")
 field264.setAccessType("inputOutput")
 field264.setType("MFFloat")
 
-field264.addComments(x3d.CommentsBlock('''no default value'''))
+field264.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field264)
 field265 = x3d.field()
@@ -1903,7 +1903,7 @@ field265.setName("l_thumb_distal_keyValue")
 field265.setAccessType("inputOutput")
 field265.setType("MFRotation")
 
-field265.addComments(x3d.CommentsBlock('''no default value'''))
+field265.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field265)
 field266 = x3d.field()
@@ -1917,7 +1917,7 @@ field267.setName("l_thumb_metacarpal_key")
 field267.setAccessType("inputOutput")
 field267.setType("MFFloat")
 
-field267.addComments(x3d.CommentsBlock('''no default value'''))
+field267.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field267)
 field268 = x3d.field()
@@ -1925,7 +1925,7 @@ field268.setName("l_thumb_metacarpal_keyValue")
 field268.setAccessType("inputOutput")
 field268.setType("MFRotation")
 
-field268.addComments(x3d.CommentsBlock('''no default value'''))
+field268.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field268)
 field269 = x3d.field()
@@ -1939,7 +1939,7 @@ field270.setName("l_thumb_proximal_key")
 field270.setAccessType("inputOutput")
 field270.setType("MFFloat")
 
-field270.addComments(x3d.CommentsBlock('''no default value'''))
+field270.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field270)
 field271 = x3d.field()
@@ -1947,7 +1947,7 @@ field271.setName("l_thumb_proximal_keyValue")
 field271.setAccessType("inputOutput")
 field271.setType("MFRotation")
 
-field271.addComments(x3d.CommentsBlock('''no default value'''))
+field271.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field271)
 field272 = x3d.field()
@@ -1961,7 +1961,7 @@ field273.setName("l_upperarm_key")
 field273.setAccessType("inputOutput")
 field273.setType("MFFloat")
 
-field273.addComments(x3d.CommentsBlock('''no default value'''))
+field273.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field273)
 field274 = x3d.field()
@@ -1969,7 +1969,7 @@ field274.setName("l_upperarm_keyValue")
 field274.setAccessType("inputOutput")
 field274.setType("MFRotation")
 
-field274.addComments(x3d.CommentsBlock('''no default value'''))
+field274.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field274)
 field275 = x3d.field()
@@ -1983,7 +1983,7 @@ field276.setName("l_wrist_key")
 field276.setAccessType("inputOutput")
 field276.setType("MFFloat")
 
-field276.addComments(x3d.CommentsBlock('''no default value'''))
+field276.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field276)
 field277 = x3d.field()
@@ -1991,7 +1991,7 @@ field277.setName("l_wrist_keyValue")
 field277.setAccessType("inputOutput")
 field277.setType("MFRotation")
 
-field277.addComments(x3d.CommentsBlock('''no default value'''))
+field277.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field277)
 field278 = x3d.field()
@@ -2005,7 +2005,7 @@ field279.setName("pelvis_key")
 field279.setAccessType("inputOutput")
 field279.setType("MFFloat")
 
-field279.addComments(x3d.CommentsBlock('''no default value'''))
+field279.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field279)
 field280 = x3d.field()
@@ -2013,7 +2013,7 @@ field280.setName("pelvis_keyValue")
 field280.setAccessType("inputOutput")
 field280.setType("MFRotation")
 
-field280.addComments(x3d.CommentsBlock('''no default value'''))
+field280.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field280)
 field281 = x3d.field()
@@ -2027,7 +2027,7 @@ field282.setName("r_acromioclavicular_key")
 field282.setAccessType("inputOutput")
 field282.setType("MFFloat")
 
-field282.addComments(x3d.CommentsBlock('''no default value'''))
+field282.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field282)
 field283 = x3d.field()
@@ -2035,7 +2035,7 @@ field283.setName("r_acromioclavicular_keyValue")
 field283.setAccessType("inputOutput")
 field283.setType("MFRotation")
 
-field283.addComments(x3d.CommentsBlock('''no default value'''))
+field283.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field283)
 field284 = x3d.field()
@@ -2049,7 +2049,7 @@ field285.setName("r_ankle_key")
 field285.setAccessType("inputOutput")
 field285.setType("MFFloat")
 
-field285.addComments(x3d.CommentsBlock('''no default value'''))
+field285.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field285)
 field286 = x3d.field()
@@ -2057,7 +2057,7 @@ field286.setName("r_ankle_keyValue")
 field286.setAccessType("inputOutput")
 field286.setType("MFRotation")
 
-field286.addComments(x3d.CommentsBlock('''no default value'''))
+field286.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field286)
 field287 = x3d.field()
@@ -2071,7 +2071,7 @@ field288.setName("r_calf_key")
 field288.setAccessType("inputOutput")
 field288.setType("MFFloat")
 
-field288.addComments(x3d.CommentsBlock('''no default value'''))
+field288.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field288)
 field289 = x3d.field()
@@ -2079,7 +2079,7 @@ field289.setName("r_calf_keyValue")
 field289.setAccessType("inputOutput")
 field289.setType("MFRotation")
 
-field289.addComments(x3d.CommentsBlock('''no default value'''))
+field289.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field289)
 field290 = x3d.field()
@@ -2093,7 +2093,7 @@ field291.setName("r_clavicle_key")
 field291.setAccessType("inputOutput")
 field291.setType("MFFloat")
 
-field291.addComments(x3d.CommentsBlock('''no default value'''))
+field291.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field291)
 field292 = x3d.field()
@@ -2101,7 +2101,7 @@ field292.setName("r_clavicle_keyValue")
 field292.setAccessType("inputOutput")
 field292.setType("MFRotation")
 
-field292.addComments(x3d.CommentsBlock('''no default value'''))
+field292.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field292)
 field293 = x3d.field()
@@ -2115,7 +2115,7 @@ field294.setName("r_elbow_key")
 field294.setAccessType("inputOutput")
 field294.setType("MFFloat")
 
-field294.addComments(x3d.CommentsBlock('''no default value'''))
+field294.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field294)
 field295 = x3d.field()
@@ -2123,7 +2123,7 @@ field295.setName("r_elbow_keyValue")
 field295.setAccessType("inputOutput")
 field295.setType("MFRotation")
 
-field295.addComments(x3d.CommentsBlock('''no default value'''))
+field295.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field295)
 field296 = x3d.field()
@@ -2137,7 +2137,7 @@ field297.setName("r_eyeball_key")
 field297.setAccessType("inputOutput")
 field297.setType("MFFloat")
 
-field297.addComments(x3d.CommentsBlock('''no default value'''))
+field297.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field297)
 field298 = x3d.field()
@@ -2145,7 +2145,7 @@ field298.setName("r_eyeball_keyValue")
 field298.setAccessType("inputOutput")
 field298.setType("MFRotation")
 
-field298.addComments(x3d.CommentsBlock('''no default value'''))
+field298.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field298)
 field299 = x3d.field()
@@ -2159,7 +2159,7 @@ field300.setName("r_eyeball_joint_key")
 field300.setAccessType("inputOutput")
 field300.setType("MFFloat")
 
-field300.addComments(x3d.CommentsBlock('''no default value'''))
+field300.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field300)
 field301 = x3d.field()
@@ -2167,7 +2167,7 @@ field301.setName("r_eyeball_joint_keyValue")
 field301.setAccessType("inputOutput")
 field301.setType("MFRotation")
 
-field301.addComments(x3d.CommentsBlock('''no default value'''))
+field301.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field301)
 field302 = x3d.field()
@@ -2181,7 +2181,7 @@ field303.setName("r_eyebrow_key")
 field303.setAccessType("inputOutput")
 field303.setType("MFFloat")
 
-field303.addComments(x3d.CommentsBlock('''no default value'''))
+field303.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field303)
 field304 = x3d.field()
@@ -2189,7 +2189,7 @@ field304.setName("r_eyebrow_keyValue")
 field304.setAccessType("inputOutput")
 field304.setType("MFRotation")
 
-field304.addComments(x3d.CommentsBlock('''no default value'''))
+field304.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field304)
 field305 = x3d.field()
@@ -2203,7 +2203,7 @@ field306.setName("r_eyebrow_joint_key")
 field306.setAccessType("inputOutput")
 field306.setType("MFFloat")
 
-field306.addComments(x3d.CommentsBlock('''no default value'''))
+field306.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field306)
 field307 = x3d.field()
@@ -2211,7 +2211,7 @@ field307.setName("r_eyebrow_joint_keyValue")
 field307.setAccessType("inputOutput")
 field307.setType("MFRotation")
 
-field307.addComments(x3d.CommentsBlock('''no default value'''))
+field307.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field307)
 field308 = x3d.field()
@@ -2225,7 +2225,7 @@ field309.setName("r_eyelid_key")
 field309.setAccessType("inputOutput")
 field309.setType("MFFloat")
 
-field309.addComments(x3d.CommentsBlock('''no default value'''))
+field309.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field309)
 field310 = x3d.field()
@@ -2233,7 +2233,7 @@ field310.setName("r_eyelid_keyValue")
 field310.setAccessType("inputOutput")
 field310.setType("MFRotation")
 
-field310.addComments(x3d.CommentsBlock('''no default value'''))
+field310.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field310)
 field311 = x3d.field()
@@ -2247,7 +2247,7 @@ field312.setName("r_eyelid_joint_key")
 field312.setAccessType("inputOutput")
 field312.setType("MFFloat")
 
-field312.addComments(x3d.CommentsBlock('''no default value'''))
+field312.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field312)
 field313 = x3d.field()
@@ -2255,7 +2255,7 @@ field313.setName("r_eyelid_joint_keyValue")
 field313.setAccessType("inputOutput")
 field313.setType("MFRotation")
 
-field313.addComments(x3d.CommentsBlock('''no default value'''))
+field313.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field313)
 field314 = x3d.field()
@@ -2269,7 +2269,7 @@ field315.setName("r_forearm_key")
 field315.setAccessType("inputOutput")
 field315.setType("MFFloat")
 
-field315.addComments(x3d.CommentsBlock('''no default value'''))
+field315.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field315)
 field316 = x3d.field()
@@ -2277,7 +2277,7 @@ field316.setName("r_forearm_keyValue")
 field316.setAccessType("inputOutput")
 field316.setType("MFRotation")
 
-field316.addComments(x3d.CommentsBlock('''no default value'''))
+field316.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field316)
 field317 = x3d.field()
@@ -2291,7 +2291,7 @@ field318.setName("r_forefoot_key")
 field318.setAccessType("inputOutput")
 field318.setType("MFFloat")
 
-field318.addComments(x3d.CommentsBlock('''no default value'''))
+field318.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field318)
 field319 = x3d.field()
@@ -2299,7 +2299,7 @@ field319.setName("r_forefoot_keyValue")
 field319.setAccessType("inputOutput")
 field319.setType("MFRotation")
 
-field319.addComments(x3d.CommentsBlock('''no default value'''))
+field319.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field319)
 field320 = x3d.field()
@@ -2313,7 +2313,7 @@ field321.setName("r_hand_key")
 field321.setAccessType("inputOutput")
 field321.setType("MFFloat")
 
-field321.addComments(x3d.CommentsBlock('''no default value'''))
+field321.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field321)
 field322 = x3d.field()
@@ -2321,7 +2321,7 @@ field322.setName("r_hand_keyValue")
 field322.setAccessType("inputOutput")
 field322.setType("MFRotation")
 
-field322.addComments(x3d.CommentsBlock('''no default value'''))
+field322.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field322)
 field323 = x3d.field()
@@ -2335,7 +2335,7 @@ field324.setName("r_hindfoot_key")
 field324.setAccessType("inputOutput")
 field324.setType("MFFloat")
 
-field324.addComments(x3d.CommentsBlock('''no default value'''))
+field324.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field324)
 field325 = x3d.field()
@@ -2343,7 +2343,7 @@ field325.setName("r_hindfoot_keyValue")
 field325.setAccessType("inputOutput")
 field325.setType("MFRotation")
 
-field325.addComments(x3d.CommentsBlock('''no default value'''))
+field325.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field325)
 field326 = x3d.field()
@@ -2357,7 +2357,7 @@ field327.setName("r_hip_key")
 field327.setAccessType("inputOutput")
 field327.setType("MFFloat")
 
-field327.addComments(x3d.CommentsBlock('''no default value'''))
+field327.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field327)
 field328 = x3d.field()
@@ -2365,7 +2365,7 @@ field328.setName("r_hip_keyValue")
 field328.setAccessType("inputOutput")
 field328.setType("MFRotation")
 
-field328.addComments(x3d.CommentsBlock('''no default value'''))
+field328.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field328)
 field329 = x3d.field()
@@ -2379,7 +2379,7 @@ field330.setName("r_index0_key")
 field330.setAccessType("inputOutput")
 field330.setType("MFFloat")
 
-field330.addComments(x3d.CommentsBlock('''no default value'''))
+field330.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field330)
 field331 = x3d.field()
@@ -2387,7 +2387,7 @@ field331.setName("r_index0_keyValue")
 field331.setAccessType("inputOutput")
 field331.setType("MFRotation")
 
-field331.addComments(x3d.CommentsBlock('''no default value'''))
+field331.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field331)
 field332 = x3d.field()
@@ -2401,7 +2401,7 @@ field333.setName("r_index1_key")
 field333.setAccessType("inputOutput")
 field333.setType("MFFloat")
 
-field333.addComments(x3d.CommentsBlock('''no default value'''))
+field333.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field333)
 field334 = x3d.field()
@@ -2409,7 +2409,7 @@ field334.setName("r_index1_keyValue")
 field334.setAccessType("inputOutput")
 field334.setType("MFRotation")
 
-field334.addComments(x3d.CommentsBlock('''no default value'''))
+field334.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field334)
 field335 = x3d.field()
@@ -2423,7 +2423,7 @@ field336.setName("r_index2_key")
 field336.setAccessType("inputOutput")
 field336.setType("MFFloat")
 
-field336.addComments(x3d.CommentsBlock('''no default value'''))
+field336.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field336)
 field337 = x3d.field()
@@ -2431,7 +2431,7 @@ field337.setName("r_index2_keyValue")
 field337.setAccessType("inputOutput")
 field337.setType("MFRotation")
 
-field337.addComments(x3d.CommentsBlock('''no default value'''))
+field337.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field337)
 field338 = x3d.field()
@@ -2445,7 +2445,7 @@ field339.setName("r_index3_key")
 field339.setAccessType("inputOutput")
 field339.setType("MFFloat")
 
-field339.addComments(x3d.CommentsBlock('''no default value'''))
+field339.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field339)
 field340 = x3d.field()
@@ -2453,7 +2453,7 @@ field340.setName("r_index3_keyValue")
 field340.setAccessType("inputOutput")
 field340.setType("MFRotation")
 
-field340.addComments(x3d.CommentsBlock('''no default value'''))
+field340.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field340)
 field341 = x3d.field()
@@ -2467,7 +2467,7 @@ field342.setName("r_index_distal_key")
 field342.setAccessType("inputOutput")
 field342.setType("MFFloat")
 
-field342.addComments(x3d.CommentsBlock('''no default value'''))
+field342.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field342)
 field343 = x3d.field()
@@ -2475,7 +2475,7 @@ field343.setName("r_index_distal_keyValue")
 field343.setAccessType("inputOutput")
 field343.setType("MFRotation")
 
-field343.addComments(x3d.CommentsBlock('''no default value'''))
+field343.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field343)
 field344 = x3d.field()
@@ -2489,7 +2489,7 @@ field345.setName("r_index_metacarpal_key")
 field345.setAccessType("inputOutput")
 field345.setType("MFFloat")
 
-field345.addComments(x3d.CommentsBlock('''no default value'''))
+field345.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field345)
 field346 = x3d.field()
@@ -2497,7 +2497,7 @@ field346.setName("r_index_metacarpal_keyValue")
 field346.setAccessType("inputOutput")
 field346.setType("MFRotation")
 
-field346.addComments(x3d.CommentsBlock('''no default value'''))
+field346.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field346)
 field347 = x3d.field()
@@ -2511,7 +2511,7 @@ field348.setName("r_index_middle_key")
 field348.setAccessType("inputOutput")
 field348.setType("MFFloat")
 
-field348.addComments(x3d.CommentsBlock('''no default value'''))
+field348.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field348)
 field349 = x3d.field()
@@ -2519,7 +2519,7 @@ field349.setName("r_index_middle_keyValue")
 field349.setAccessType("inputOutput")
 field349.setType("MFRotation")
 
-field349.addComments(x3d.CommentsBlock('''no default value'''))
+field349.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field349)
 field350 = x3d.field()
@@ -2533,7 +2533,7 @@ field351.setName("r_index_proximal_key")
 field351.setAccessType("inputOutput")
 field351.setType("MFFloat")
 
-field351.addComments(x3d.CommentsBlock('''no default value'''))
+field351.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field351)
 field352 = x3d.field()
@@ -2541,7 +2541,7 @@ field352.setName("r_index_proximal_keyValue")
 field352.setAccessType("inputOutput")
 field352.setType("MFRotation")
 
-field352.addComments(x3d.CommentsBlock('''no default value'''))
+field352.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field352)
 field353 = x3d.field()
@@ -2555,7 +2555,7 @@ field354.setName("r_knee_key")
 field354.setAccessType("inputOutput")
 field354.setType("MFFloat")
 
-field354.addComments(x3d.CommentsBlock('''no default value'''))
+field354.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field354)
 field355 = x3d.field()
@@ -2563,7 +2563,7 @@ field355.setName("r_knee_keyValue")
 field355.setAccessType("inputOutput")
 field355.setType("MFRotation")
 
-field355.addComments(x3d.CommentsBlock('''no default value'''))
+field355.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field355)
 field356 = x3d.field()
@@ -2577,7 +2577,7 @@ field357.setName("r_metatarsal_key")
 field357.setAccessType("inputOutput")
 field357.setType("MFFloat")
 
-field357.addComments(x3d.CommentsBlock('''no default value'''))
+field357.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field357)
 field358 = x3d.field()
@@ -2585,7 +2585,7 @@ field358.setName("r_metatarsal_keyValue")
 field358.setAccessType("inputOutput")
 field358.setType("MFRotation")
 
-field358.addComments(x3d.CommentsBlock('''no default value'''))
+field358.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field358)
 field359 = x3d.field()
@@ -2599,7 +2599,7 @@ field360.setName("r_middistal_key")
 field360.setAccessType("inputOutput")
 field360.setType("MFFloat")
 
-field360.addComments(x3d.CommentsBlock('''no default value'''))
+field360.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field360)
 field361 = x3d.field()
@@ -2607,7 +2607,7 @@ field361.setName("r_middistal_keyValue")
 field361.setAccessType("inputOutput")
 field361.setType("MFRotation")
 
-field361.addComments(x3d.CommentsBlock('''no default value'''))
+field361.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field361)
 field362 = x3d.field()
@@ -2621,7 +2621,7 @@ field363.setName("r_middle0_key")
 field363.setAccessType("inputOutput")
 field363.setType("MFFloat")
 
-field363.addComments(x3d.CommentsBlock('''no default value'''))
+field363.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field363)
 field364 = x3d.field()
@@ -2629,7 +2629,7 @@ field364.setName("r_middle0_keyValue")
 field364.setAccessType("inputOutput")
 field364.setType("MFRotation")
 
-field364.addComments(x3d.CommentsBlock('''no default value'''))
+field364.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field364)
 field365 = x3d.field()
@@ -2643,7 +2643,7 @@ field366.setName("r_middle1_key")
 field366.setAccessType("inputOutput")
 field366.setType("MFFloat")
 
-field366.addComments(x3d.CommentsBlock('''no default value'''))
+field366.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field366)
 field367 = x3d.field()
@@ -2651,7 +2651,7 @@ field367.setName("r_middle1_keyValue")
 field367.setAccessType("inputOutput")
 field367.setType("MFRotation")
 
-field367.addComments(x3d.CommentsBlock('''no default value'''))
+field367.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field367)
 field368 = x3d.field()
@@ -2665,7 +2665,7 @@ field369.setName("r_middle2_key")
 field369.setAccessType("inputOutput")
 field369.setType("MFFloat")
 
-field369.addComments(x3d.CommentsBlock('''no default value'''))
+field369.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field369)
 field370 = x3d.field()
@@ -2673,7 +2673,7 @@ field370.setName("r_middle2_keyValue")
 field370.setAccessType("inputOutput")
 field370.setType("MFRotation")
 
-field370.addComments(x3d.CommentsBlock('''no default value'''))
+field370.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field370)
 field371 = x3d.field()
@@ -2687,7 +2687,7 @@ field372.setName("r_middle3_key")
 field372.setAccessType("inputOutput")
 field372.setType("MFFloat")
 
-field372.addComments(x3d.CommentsBlock('''no default value'''))
+field372.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field372)
 field373 = x3d.field()
@@ -2695,7 +2695,7 @@ field373.setName("r_middle3_keyValue")
 field373.setAccessType("inputOutput")
 field373.setType("MFRotation")
 
-field373.addComments(x3d.CommentsBlock('''no default value'''))
+field373.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field373)
 field374 = x3d.field()
@@ -2709,7 +2709,7 @@ field375.setName("r_middle_distal_key")
 field375.setAccessType("inputOutput")
 field375.setType("MFFloat")
 
-field375.addComments(x3d.CommentsBlock('''no default value'''))
+field375.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field375)
 field376 = x3d.field()
@@ -2717,7 +2717,7 @@ field376.setName("r_middle_distal_keyValue")
 field376.setAccessType("inputOutput")
 field376.setType("MFRotation")
 
-field376.addComments(x3d.CommentsBlock('''no default value'''))
+field376.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field376)
 field377 = x3d.field()
@@ -2731,7 +2731,7 @@ field378.setName("r_middle_metacarpal_key")
 field378.setAccessType("inputOutput")
 field378.setType("MFFloat")
 
-field378.addComments(x3d.CommentsBlock('''no default value'''))
+field378.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field378)
 field379 = x3d.field()
@@ -2739,7 +2739,7 @@ field379.setName("r_middle_metacarpal_keyValue")
 field379.setAccessType("inputOutput")
 field379.setType("MFRotation")
 
-field379.addComments(x3d.CommentsBlock('''no default value'''))
+field379.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field379)
 field380 = x3d.field()
@@ -2753,7 +2753,7 @@ field381.setName("r_middle_middle_key")
 field381.setAccessType("inputOutput")
 field381.setType("MFFloat")
 
-field381.addComments(x3d.CommentsBlock('''no default value'''))
+field381.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field381)
 field382 = x3d.field()
@@ -2761,7 +2761,7 @@ field382.setName("r_middle_middle_keyValue")
 field382.setAccessType("inputOutput")
 field382.setType("MFRotation")
 
-field382.addComments(x3d.CommentsBlock('''no default value'''))
+field382.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field382)
 field383 = x3d.field()
@@ -2775,7 +2775,7 @@ field384.setName("r_middle_proximal_key")
 field384.setAccessType("inputOutput")
 field384.setType("MFFloat")
 
-field384.addComments(x3d.CommentsBlock('''no default value'''))
+field384.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field384)
 field385 = x3d.field()
@@ -2783,7 +2783,7 @@ field385.setName("r_middle_proximal_keyValue")
 field385.setAccessType("inputOutput")
 field385.setType("MFRotation")
 
-field385.addComments(x3d.CommentsBlock('''no default value'''))
+field385.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field385)
 field386 = x3d.field()
@@ -2797,7 +2797,7 @@ field387.setName("r_midproximal_key")
 field387.setAccessType("inputOutput")
 field387.setType("MFFloat")
 
-field387.addComments(x3d.CommentsBlock('''no default value'''))
+field387.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field387)
 field388 = x3d.field()
@@ -2805,7 +2805,7 @@ field388.setName("r_midproximal_keyValue")
 field388.setAccessType("inputOutput")
 field388.setType("MFRotation")
 
-field388.addComments(x3d.CommentsBlock('''no default value'''))
+field388.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field388)
 field389 = x3d.field()
@@ -2819,7 +2819,7 @@ field390.setName("r_midtarsal_key")
 field390.setAccessType("inputOutput")
 field390.setType("MFFloat")
 
-field390.addComments(x3d.CommentsBlock('''no default value'''))
+field390.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field390)
 field391 = x3d.field()
@@ -2827,7 +2827,7 @@ field391.setName("r_midtarsal_keyValue")
 field391.setAccessType("inputOutput")
 field391.setType("MFRotation")
 
-field391.addComments(x3d.CommentsBlock('''no default value'''))
+field391.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field391)
 field392 = x3d.field()
@@ -2841,7 +2841,7 @@ field393.setName("r_pinky0_key")
 field393.setAccessType("inputOutput")
 field393.setType("MFFloat")
 
-field393.addComments(x3d.CommentsBlock('''no default value'''))
+field393.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field393)
 field394 = x3d.field()
@@ -2849,7 +2849,7 @@ field394.setName("r_pinky0_keyValue")
 field394.setAccessType("inputOutput")
 field394.setType("MFRotation")
 
-field394.addComments(x3d.CommentsBlock('''no default value'''))
+field394.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field394)
 field395 = x3d.field()
@@ -2863,7 +2863,7 @@ field396.setName("r_pinky1_key")
 field396.setAccessType("inputOutput")
 field396.setType("MFFloat")
 
-field396.addComments(x3d.CommentsBlock('''no default value'''))
+field396.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field396)
 field397 = x3d.field()
@@ -2871,7 +2871,7 @@ field397.setName("r_pinky1_keyValue")
 field397.setAccessType("inputOutput")
 field397.setType("MFRotation")
 
-field397.addComments(x3d.CommentsBlock('''no default value'''))
+field397.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field397)
 field398 = x3d.field()
@@ -2885,7 +2885,7 @@ field399.setName("r_pinky2_key")
 field399.setAccessType("inputOutput")
 field399.setType("MFFloat")
 
-field399.addComments(x3d.CommentsBlock('''no default value'''))
+field399.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field399)
 field400 = x3d.field()
@@ -2893,7 +2893,7 @@ field400.setName("r_pinky2_keyValue")
 field400.setAccessType("inputOutput")
 field400.setType("MFRotation")
 
-field400.addComments(x3d.CommentsBlock('''no default value'''))
+field400.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field400)
 field401 = x3d.field()
@@ -2907,7 +2907,7 @@ field402.setName("r_pinky3_key")
 field402.setAccessType("inputOutput")
 field402.setType("MFFloat")
 
-field402.addComments(x3d.CommentsBlock('''no default value'''))
+field402.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field402)
 field403 = x3d.field()
@@ -2915,7 +2915,7 @@ field403.setName("r_pinky3_keyValue")
 field403.setAccessType("inputOutput")
 field403.setType("MFRotation")
 
-field403.addComments(x3d.CommentsBlock('''no default value'''))
+field403.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field403)
 field404 = x3d.field()
@@ -2929,7 +2929,7 @@ field405.setName("r_pinky_distal_key")
 field405.setAccessType("inputOutput")
 field405.setType("MFFloat")
 
-field405.addComments(x3d.CommentsBlock('''no default value'''))
+field405.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field405)
 field406 = x3d.field()
@@ -2937,7 +2937,7 @@ field406.setName("r_pinky_distal_keyValue")
 field406.setAccessType("inputOutput")
 field406.setType("MFRotation")
 
-field406.addComments(x3d.CommentsBlock('''no default value'''))
+field406.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field406)
 field407 = x3d.field()
@@ -2951,7 +2951,7 @@ field408.setName("r_pinky_metacarpal_key")
 field408.setAccessType("inputOutput")
 field408.setType("MFFloat")
 
-field408.addComments(x3d.CommentsBlock('''no default value'''))
+field408.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field408)
 field409 = x3d.field()
@@ -2959,7 +2959,7 @@ field409.setName("r_pinky_metacarpal_keyValue")
 field409.setAccessType("inputOutput")
 field409.setType("MFRotation")
 
-field409.addComments(x3d.CommentsBlock('''no default value'''))
+field409.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field409)
 field410 = x3d.field()
@@ -2973,7 +2973,7 @@ field411.setName("r_pinky_middle_key")
 field411.setAccessType("inputOutput")
 field411.setType("MFFloat")
 
-field411.addComments(x3d.CommentsBlock('''no default value'''))
+field411.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field411)
 field412 = x3d.field()
@@ -2981,7 +2981,7 @@ field412.setName("r_pinky_middle_keyValue")
 field412.setAccessType("inputOutput")
 field412.setType("MFRotation")
 
-field412.addComments(x3d.CommentsBlock('''no default value'''))
+field412.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field412)
 field413 = x3d.field()
@@ -2995,7 +2995,7 @@ field414.setName("r_pinky_proximal_key")
 field414.setAccessType("inputOutput")
 field414.setType("MFFloat")
 
-field414.addComments(x3d.CommentsBlock('''no default value'''))
+field414.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field414)
 field415 = x3d.field()
@@ -3003,7 +3003,7 @@ field415.setName("r_pinky_proximal_keyValue")
 field415.setAccessType("inputOutput")
 field415.setType("MFRotation")
 
-field415.addComments(x3d.CommentsBlock('''no default value'''))
+field415.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field415)
 field416 = x3d.field()
@@ -3017,7 +3017,7 @@ field417.setName("r_ring0_key")
 field417.setAccessType("inputOutput")
 field417.setType("MFFloat")
 
-field417.addComments(x3d.CommentsBlock('''no default value'''))
+field417.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field417)
 field418 = x3d.field()
@@ -3025,7 +3025,7 @@ field418.setName("r_ring0_keyValue")
 field418.setAccessType("inputOutput")
 field418.setType("MFRotation")
 
-field418.addComments(x3d.CommentsBlock('''no default value'''))
+field418.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field418)
 field419 = x3d.field()
@@ -3039,7 +3039,7 @@ field420.setName("r_ring1_key")
 field420.setAccessType("inputOutput")
 field420.setType("MFFloat")
 
-field420.addComments(x3d.CommentsBlock('''no default value'''))
+field420.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field420)
 field421 = x3d.field()
@@ -3047,7 +3047,7 @@ field421.setName("r_ring1_keyValue")
 field421.setAccessType("inputOutput")
 field421.setType("MFRotation")
 
-field421.addComments(x3d.CommentsBlock('''no default value'''))
+field421.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field421)
 field422 = x3d.field()
@@ -3061,7 +3061,7 @@ field423.setName("r_ring2_key")
 field423.setAccessType("inputOutput")
 field423.setType("MFFloat")
 
-field423.addComments(x3d.CommentsBlock('''no default value'''))
+field423.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field423)
 field424 = x3d.field()
@@ -3069,7 +3069,7 @@ field424.setName("r_ring2_keyValue")
 field424.setAccessType("inputOutput")
 field424.setType("MFRotation")
 
-field424.addComments(x3d.CommentsBlock('''no default value'''))
+field424.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field424)
 field425 = x3d.field()
@@ -3083,7 +3083,7 @@ field426.setName("r_ring3_key")
 field426.setAccessType("inputOutput")
 field426.setType("MFFloat")
 
-field426.addComments(x3d.CommentsBlock('''no default value'''))
+field426.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field426)
 field427 = x3d.field()
@@ -3091,7 +3091,7 @@ field427.setName("r_ring3_keyValue")
 field427.setAccessType("inputOutput")
 field427.setType("MFRotation")
 
-field427.addComments(x3d.CommentsBlock('''no default value'''))
+field427.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field427)
 field428 = x3d.field()
@@ -3105,7 +3105,7 @@ field429.setName("r_ring_distal_key")
 field429.setAccessType("inputOutput")
 field429.setType("MFFloat")
 
-field429.addComments(x3d.CommentsBlock('''no default value'''))
+field429.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field429)
 field430 = x3d.field()
@@ -3113,7 +3113,7 @@ field430.setName("r_ring_distal_keyValue")
 field430.setAccessType("inputOutput")
 field430.setType("MFRotation")
 
-field430.addComments(x3d.CommentsBlock('''no default value'''))
+field430.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field430)
 field431 = x3d.field()
@@ -3127,7 +3127,7 @@ field432.setName("r_ring_metacarpal_key")
 field432.setAccessType("inputOutput")
 field432.setType("MFFloat")
 
-field432.addComments(x3d.CommentsBlock('''no default value'''))
+field432.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field432)
 field433 = x3d.field()
@@ -3135,7 +3135,7 @@ field433.setName("r_ring_metacarpal_keyValue")
 field433.setAccessType("inputOutput")
 field433.setType("MFRotation")
 
-field433.addComments(x3d.CommentsBlock('''no default value'''))
+field433.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field433)
 field434 = x3d.field()
@@ -3149,7 +3149,7 @@ field435.setName("r_ring_middle_key")
 field435.setAccessType("inputOutput")
 field435.setType("MFFloat")
 
-field435.addComments(x3d.CommentsBlock('''no default value'''))
+field435.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field435)
 field436 = x3d.field()
@@ -3157,7 +3157,7 @@ field436.setName("r_ring_middle_keyValue")
 field436.setAccessType("inputOutput")
 field436.setType("MFRotation")
 
-field436.addComments(x3d.CommentsBlock('''no default value'''))
+field436.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field436)
 field437 = x3d.field()
@@ -3171,7 +3171,7 @@ field438.setName("r_ring_proximal_key")
 field438.setAccessType("inputOutput")
 field438.setType("MFFloat")
 
-field438.addComments(x3d.CommentsBlock('''no default value'''))
+field438.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field438)
 field439 = x3d.field()
@@ -3179,7 +3179,7 @@ field439.setName("r_ring_proximal_keyValue")
 field439.setAccessType("inputOutput")
 field439.setType("MFRotation")
 
-field439.addComments(x3d.CommentsBlock('''no default value'''))
+field439.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field439)
 field440 = x3d.field()
@@ -3193,7 +3193,7 @@ field441.setName("r_scapula_key")
 field441.setAccessType("inputOutput")
 field441.setType("MFFloat")
 
-field441.addComments(x3d.CommentsBlock('''no default value'''))
+field441.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field441)
 field442 = x3d.field()
@@ -3201,7 +3201,7 @@ field442.setName("r_scapula_keyValue")
 field442.setAccessType("inputOutput")
 field442.setType("MFRotation")
 
-field442.addComments(x3d.CommentsBlock('''no default value'''))
+field442.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field442)
 field443 = x3d.field()
@@ -3215,7 +3215,7 @@ field444.setName("r_shoulder_key")
 field444.setAccessType("inputOutput")
 field444.setType("MFFloat")
 
-field444.addComments(x3d.CommentsBlock('''no default value'''))
+field444.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field444)
 field445 = x3d.field()
@@ -3223,7 +3223,7 @@ field445.setName("r_shoulder_keyValue")
 field445.setAccessType("inputOutput")
 field445.setType("MFRotation")
 
-field445.addComments(x3d.CommentsBlock('''no default value'''))
+field445.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field445)
 field446 = x3d.field()
@@ -3237,7 +3237,7 @@ field447.setName("r_sternoclavicular_key")
 field447.setAccessType("inputOutput")
 field447.setType("MFFloat")
 
-field447.addComments(x3d.CommentsBlock('''no default value'''))
+field447.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field447)
 field448 = x3d.field()
@@ -3245,7 +3245,7 @@ field448.setName("r_sternoclavicular_keyValue")
 field448.setAccessType("inputOutput")
 field448.setType("MFRotation")
 
-field448.addComments(x3d.CommentsBlock('''no default value'''))
+field448.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field448)
 field449 = x3d.field()
@@ -3259,7 +3259,7 @@ field450.setName("r_subtalar_key")
 field450.setAccessType("inputOutput")
 field450.setType("MFFloat")
 
-field450.addComments(x3d.CommentsBlock('''no default value'''))
+field450.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field450)
 field451 = x3d.field()
@@ -3267,7 +3267,7 @@ field451.setName("r_subtalar_keyValue")
 field451.setAccessType("inputOutput")
 field451.setType("MFRotation")
 
-field451.addComments(x3d.CommentsBlock('''no default value'''))
+field451.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field451)
 field452 = x3d.field()
@@ -3281,7 +3281,7 @@ field453.setName("r_thigh_key")
 field453.setAccessType("inputOutput")
 field453.setType("MFFloat")
 
-field453.addComments(x3d.CommentsBlock('''no default value'''))
+field453.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field453)
 field454 = x3d.field()
@@ -3289,7 +3289,7 @@ field454.setName("r_thigh_keyValue")
 field454.setAccessType("inputOutput")
 field454.setType("MFRotation")
 
-field454.addComments(x3d.CommentsBlock('''no default value'''))
+field454.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field454)
 field455 = x3d.field()
@@ -3303,7 +3303,7 @@ field456.setName("r_thumb1_key")
 field456.setAccessType("inputOutput")
 field456.setType("MFFloat")
 
-field456.addComments(x3d.CommentsBlock('''no default value'''))
+field456.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field456)
 field457 = x3d.field()
@@ -3311,7 +3311,7 @@ field457.setName("r_thumb1_keyValue")
 field457.setAccessType("inputOutput")
 field457.setType("MFRotation")
 
-field457.addComments(x3d.CommentsBlock('''no default value'''))
+field457.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field457)
 field458 = x3d.field()
@@ -3325,7 +3325,7 @@ field459.setName("r_thumb2_key")
 field459.setAccessType("inputOutput")
 field459.setType("MFFloat")
 
-field459.addComments(x3d.CommentsBlock('''no default value'''))
+field459.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field459)
 field460 = x3d.field()
@@ -3333,7 +3333,7 @@ field460.setName("r_thumb2_keyValue")
 field460.setAccessType("inputOutput")
 field460.setType("MFRotation")
 
-field460.addComments(x3d.CommentsBlock('''no default value'''))
+field460.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field460)
 field461 = x3d.field()
@@ -3347,7 +3347,7 @@ field462.setName("r_thumb3_key")
 field462.setAccessType("inputOutput")
 field462.setType("MFFloat")
 
-field462.addComments(x3d.CommentsBlock('''no default value'''))
+field462.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field462)
 field463 = x3d.field()
@@ -3355,7 +3355,7 @@ field463.setName("r_thumb3_keyValue")
 field463.setAccessType("inputOutput")
 field463.setType("MFRotation")
 
-field463.addComments(x3d.CommentsBlock('''no default value'''))
+field463.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field463)
 field464 = x3d.field()
@@ -3369,7 +3369,7 @@ field465.setName("r_thumb_distal_key")
 field465.setAccessType("inputOutput")
 field465.setType("MFFloat")
 
-field465.addComments(x3d.CommentsBlock('''no default value'''))
+field465.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field465)
 field466 = x3d.field()
@@ -3377,7 +3377,7 @@ field466.setName("r_thumb_distal_keyValue")
 field466.setAccessType("inputOutput")
 field466.setType("MFRotation")
 
-field466.addComments(x3d.CommentsBlock('''no default value'''))
+field466.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field466)
 field467 = x3d.field()
@@ -3391,7 +3391,7 @@ field468.setName("r_thumb_metacarpal_key")
 field468.setAccessType("inputOutput")
 field468.setType("MFFloat")
 
-field468.addComments(x3d.CommentsBlock('''no default value'''))
+field468.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field468)
 field469 = x3d.field()
@@ -3399,7 +3399,7 @@ field469.setName("r_thumb_metacarpal_keyValue")
 field469.setAccessType("inputOutput")
 field469.setType("MFRotation")
 
-field469.addComments(x3d.CommentsBlock('''no default value'''))
+field469.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field469)
 field470 = x3d.field()
@@ -3413,7 +3413,7 @@ field471.setName("r_thumb_proximal_key")
 field471.setAccessType("inputOutput")
 field471.setType("MFFloat")
 
-field471.addComments(x3d.CommentsBlock('''no default value'''))
+field471.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field471)
 field472 = x3d.field()
@@ -3421,7 +3421,7 @@ field472.setName("r_thumb_proximal_keyValue")
 field472.setAccessType("inputOutput")
 field472.setType("MFRotation")
 
-field472.addComments(x3d.CommentsBlock('''no default value'''))
+field472.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field472)
 field473 = x3d.field()
@@ -3435,7 +3435,7 @@ field474.setName("r_upperarm_key")
 field474.setAccessType("inputOutput")
 field474.setType("MFFloat")
 
-field474.addComments(x3d.CommentsBlock('''no default value'''))
+field474.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field474)
 field475 = x3d.field()
@@ -3443,7 +3443,7 @@ field475.setName("r_upperarm_keyValue")
 field475.setAccessType("inputOutput")
 field475.setType("MFRotation")
 
-field475.addComments(x3d.CommentsBlock('''no default value'''))
+field475.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field475)
 field476 = x3d.field()
@@ -3457,7 +3457,7 @@ field477.setName("r_wrist_key")
 field477.setAccessType("inputOutput")
 field477.setType("MFFloat")
 
-field477.addComments(x3d.CommentsBlock('''no default value'''))
+field477.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field477)
 field478 = x3d.field()
@@ -3465,7 +3465,7 @@ field478.setName("r_wrist_keyValue")
 field478.setAccessType("inputOutput")
 field478.setType("MFRotation")
 
-field478.addComments(x3d.CommentsBlock('''no default value'''))
+field478.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field478)
 field479 = x3d.field()
@@ -3479,7 +3479,7 @@ field480.setName("sacroiliac_key")
 field480.setAccessType("inputOutput")
 field480.setType("MFFloat")
 
-field480.addComments(x3d.CommentsBlock('''no default value'''))
+field480.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field480)
 field481 = x3d.field()
@@ -3487,7 +3487,7 @@ field481.setName("sacroiliac_keyValue")
 field481.setAccessType("inputOutput")
 field481.setType("MFRotation")
 
-field481.addComments(x3d.CommentsBlock('''no default value'''))
+field481.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field481)
 field482 = x3d.field()
@@ -3501,7 +3501,7 @@ field483.setName("sacrum_key")
 field483.setAccessType("inputOutput")
 field483.setType("MFFloat")
 
-field483.addComments(x3d.CommentsBlock('''no default value'''))
+field483.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field483)
 field484 = x3d.field()
@@ -3509,7 +3509,7 @@ field484.setName("sacrum_keyValue")
 field484.setAccessType("inputOutput")
 field484.setType("MFRotation")
 
-field484.addComments(x3d.CommentsBlock('''no default value'''))
+field484.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field484)
 field485 = x3d.field()
@@ -3523,7 +3523,7 @@ field486.setName("skull_key")
 field486.setAccessType("inputOutput")
 field486.setType("MFFloat")
 
-field486.addComments(x3d.CommentsBlock('''no default value'''))
+field486.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field486)
 field487 = x3d.field()
@@ -3531,7 +3531,7 @@ field487.setName("skull_keyValue")
 field487.setAccessType("inputOutput")
 field487.setType("MFRotation")
 
-field487.addComments(x3d.CommentsBlock('''no default value'''))
+field487.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field487)
 field488 = x3d.field()
@@ -3545,7 +3545,7 @@ field489.setName("skullbase_key")
 field489.setAccessType("inputOutput")
 field489.setType("MFFloat")
 
-field489.addComments(x3d.CommentsBlock('''no default value'''))
+field489.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field489)
 field490 = x3d.field()
@@ -3553,7 +3553,7 @@ field490.setName("skullbase_keyValue")
 field490.setAccessType("inputOutput")
 field490.setType("MFRotation")
 
-field490.addComments(x3d.CommentsBlock('''no default value'''))
+field490.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field490)
 field491 = x3d.field()
@@ -3567,7 +3567,7 @@ field492.setName("t10_key")
 field492.setAccessType("inputOutput")
 field492.setType("MFFloat")
 
-field492.addComments(x3d.CommentsBlock('''no default value'''))
+field492.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field492)
 field493 = x3d.field()
@@ -3575,7 +3575,7 @@ field493.setName("t10_keyValue")
 field493.setAccessType("inputOutput")
 field493.setType("MFRotation")
 
-field493.addComments(x3d.CommentsBlock('''no default value'''))
+field493.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field493)
 field494 = x3d.field()
@@ -3589,7 +3589,7 @@ field495.setName("t11_key")
 field495.setAccessType("inputOutput")
 field495.setType("MFFloat")
 
-field495.addComments(x3d.CommentsBlock('''no default value'''))
+field495.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field495)
 field496 = x3d.field()
@@ -3597,7 +3597,7 @@ field496.setName("t11_keyValue")
 field496.setAccessType("inputOutput")
 field496.setType("MFRotation")
 
-field496.addComments(x3d.CommentsBlock('''no default value'''))
+field496.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field496)
 field497 = x3d.field()
@@ -3611,7 +3611,7 @@ field498.setName("t12_key")
 field498.setAccessType("inputOutput")
 field498.setType("MFFloat")
 
-field498.addComments(x3d.CommentsBlock('''no default value'''))
+field498.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field498)
 field499 = x3d.field()
@@ -3619,7 +3619,7 @@ field499.setName("t12_keyValue")
 field499.setAccessType("inputOutput")
 field499.setType("MFRotation")
 
-field499.addComments(x3d.CommentsBlock('''no default value'''))
+field499.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field499)
 field500 = x3d.field()
@@ -3633,7 +3633,7 @@ field501.setName("t1_key")
 field501.setAccessType("inputOutput")
 field501.setType("MFFloat")
 
-field501.addComments(x3d.CommentsBlock('''no default value'''))
+field501.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field501)
 field502 = x3d.field()
@@ -3641,7 +3641,7 @@ field502.setName("t1_keyValue")
 field502.setAccessType("inputOutput")
 field502.setType("MFRotation")
 
-field502.addComments(x3d.CommentsBlock('''no default value'''))
+field502.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field502)
 field503 = x3d.field()
@@ -3655,7 +3655,7 @@ field504.setName("t2_key")
 field504.setAccessType("inputOutput")
 field504.setType("MFFloat")
 
-field504.addComments(x3d.CommentsBlock('''no default value'''))
+field504.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field504)
 field505 = x3d.field()
@@ -3663,7 +3663,7 @@ field505.setName("t2_keyValue")
 field505.setAccessType("inputOutput")
 field505.setType("MFRotation")
 
-field505.addComments(x3d.CommentsBlock('''no default value'''))
+field505.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field505)
 field506 = x3d.field()
@@ -3677,7 +3677,7 @@ field507.setName("t3_key")
 field507.setAccessType("inputOutput")
 field507.setType("MFFloat")
 
-field507.addComments(x3d.CommentsBlock('''no default value'''))
+field507.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field507)
 field508 = x3d.field()
@@ -3685,7 +3685,7 @@ field508.setName("t3_keyValue")
 field508.setAccessType("inputOutput")
 field508.setType("MFRotation")
 
-field508.addComments(x3d.CommentsBlock('''no default value'''))
+field508.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field508)
 field509 = x3d.field()
@@ -3699,7 +3699,7 @@ field510.setName("t4_key")
 field510.setAccessType("inputOutput")
 field510.setType("MFFloat")
 
-field510.addComments(x3d.CommentsBlock('''no default value'''))
+field510.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field510)
 field511 = x3d.field()
@@ -3707,7 +3707,7 @@ field511.setName("t4_keyValue")
 field511.setAccessType("inputOutput")
 field511.setType("MFRotation")
 
-field511.addComments(x3d.CommentsBlock('''no default value'''))
+field511.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field511)
 field512 = x3d.field()
@@ -3721,7 +3721,7 @@ field513.setName("t5_key")
 field513.setAccessType("inputOutput")
 field513.setType("MFFloat")
 
-field513.addComments(x3d.CommentsBlock('''no default value'''))
+field513.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field513)
 field514 = x3d.field()
@@ -3729,7 +3729,7 @@ field514.setName("t5_keyValue")
 field514.setAccessType("inputOutput")
 field514.setType("MFRotation")
 
-field514.addComments(x3d.CommentsBlock('''no default value'''))
+field514.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field514)
 field515 = x3d.field()
@@ -3743,7 +3743,7 @@ field516.setName("t6_key")
 field516.setAccessType("inputOutput")
 field516.setType("MFFloat")
 
-field516.addComments(x3d.CommentsBlock('''no default value'''))
+field516.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field516)
 field517 = x3d.field()
@@ -3751,7 +3751,7 @@ field517.setName("t6_keyValue")
 field517.setAccessType("inputOutput")
 field517.setType("MFRotation")
 
-field517.addComments(x3d.CommentsBlock('''no default value'''))
+field517.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field517)
 field518 = x3d.field()
@@ -3765,7 +3765,7 @@ field519.setName("t7_key")
 field519.setAccessType("inputOutput")
 field519.setType("MFFloat")
 
-field519.addComments(x3d.CommentsBlock('''no default value'''))
+field519.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field519)
 field520 = x3d.field()
@@ -3773,7 +3773,7 @@ field520.setName("t7_keyValue")
 field520.setAccessType("inputOutput")
 field520.setType("MFRotation")
 
-field520.addComments(x3d.CommentsBlock('''no default value'''))
+field520.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field520)
 field521 = x3d.field()
@@ -3787,7 +3787,7 @@ field522.setName("t8_key")
 field522.setAccessType("inputOutput")
 field522.setType("MFFloat")
 
-field522.addComments(x3d.CommentsBlock('''no default value'''))
+field522.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field522)
 field523 = x3d.field()
@@ -3795,7 +3795,7 @@ field523.setName("t8_keyValue")
 field523.setAccessType("inputOutput")
 field523.setType("MFRotation")
 
-field523.addComments(x3d.CommentsBlock('''no default value'''))
+field523.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field523)
 field524 = x3d.field()
@@ -3809,7 +3809,7 @@ field525.setName("t9_key")
 field525.setAccessType("inputOutput")
 field525.setType("MFFloat")
 
-field525.addComments(x3d.CommentsBlock('''no default value'''))
+field525.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field525)
 field526 = x3d.field()
@@ -3817,7 +3817,7 @@ field526.setName("t9_keyValue")
 field526.setAccessType("inputOutput")
 field526.setType("MFRotation")
 
-field526.addComments(x3d.CommentsBlock('''no default value'''))
+field526.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field526)
 field527 = x3d.field()
@@ -3831,7 +3831,7 @@ field528.setName("temporomandibular_key")
 field528.setAccessType("inputOutput")
 field528.setType("MFFloat")
 
-field528.addComments(x3d.CommentsBlock('''no default value'''))
+field528.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field528)
 field529 = x3d.field()
@@ -3839,7 +3839,7 @@ field529.setName("temporomandibular_keyValue")
 field529.setAccessType("inputOutput")
 field529.setType("MFRotation")
 
-field529.addComments(x3d.CommentsBlock('''no default value'''))
+field529.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field529)
 field530 = x3d.field()
@@ -3853,7 +3853,7 @@ field531.setName("vc1_key")
 field531.setAccessType("inputOutput")
 field531.setType("MFFloat")
 
-field531.addComments(x3d.CommentsBlock('''no default value'''))
+field531.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field531)
 field532 = x3d.field()
@@ -3861,7 +3861,7 @@ field532.setName("vc1_keyValue")
 field532.setAccessType("inputOutput")
 field532.setType("MFRotation")
 
-field532.addComments(x3d.CommentsBlock('''no default value'''))
+field532.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field532)
 field533 = x3d.field()
@@ -3875,7 +3875,7 @@ field534.setName("vc2_key")
 field534.setAccessType("inputOutput")
 field534.setType("MFFloat")
 
-field534.addComments(x3d.CommentsBlock('''no default value'''))
+field534.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field534)
 field535 = x3d.field()
@@ -3883,7 +3883,7 @@ field535.setName("vc2_keyValue")
 field535.setAccessType("inputOutput")
 field535.setType("MFRotation")
 
-field535.addComments(x3d.CommentsBlock('''no default value'''))
+field535.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field535)
 field536 = x3d.field()
@@ -3897,7 +3897,7 @@ field537.setName("vc3_key")
 field537.setAccessType("inputOutput")
 field537.setType("MFFloat")
 
-field537.addComments(x3d.CommentsBlock('''no default value'''))
+field537.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field537)
 field538 = x3d.field()
@@ -3905,7 +3905,7 @@ field538.setName("vc3_keyValue")
 field538.setAccessType("inputOutput")
 field538.setType("MFRotation")
 
-field538.addComments(x3d.CommentsBlock('''no default value'''))
+field538.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field538)
 field539 = x3d.field()
@@ -3919,7 +3919,7 @@ field540.setName("vc4_key")
 field540.setAccessType("inputOutput")
 field540.setType("MFFloat")
 
-field540.addComments(x3d.CommentsBlock('''no default value'''))
+field540.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field540)
 field541 = x3d.field()
@@ -3927,7 +3927,7 @@ field541.setName("vc4_keyValue")
 field541.setAccessType("inputOutput")
 field541.setType("MFRotation")
 
-field541.addComments(x3d.CommentsBlock('''no default value'''))
+field541.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field541)
 field542 = x3d.field()
@@ -3941,7 +3941,7 @@ field543.setName("vc5_key")
 field543.setAccessType("inputOutput")
 field543.setType("MFFloat")
 
-field543.addComments(x3d.CommentsBlock('''no default value'''))
+field543.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field543)
 field544 = x3d.field()
@@ -3949,7 +3949,7 @@ field544.setName("vc5_keyValue")
 field544.setAccessType("inputOutput")
 field544.setType("MFRotation")
 
-field544.addComments(x3d.CommentsBlock('''no default value'''))
+field544.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field544)
 field545 = x3d.field()
@@ -3963,7 +3963,7 @@ field546.setName("vc6_key")
 field546.setAccessType("inputOutput")
 field546.setType("MFFloat")
 
-field546.addComments(x3d.CommentsBlock('''no default value'''))
+field546.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field546)
 field547 = x3d.field()
@@ -3971,7 +3971,7 @@ field547.setName("vc6_keyValue")
 field547.setAccessType("inputOutput")
 field547.setType("MFRotation")
 
-field547.addComments(x3d.CommentsBlock('''no default value'''))
+field547.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field547)
 field548 = x3d.field()
@@ -3985,7 +3985,7 @@ field549.setName("vc7_key")
 field549.setAccessType("inputOutput")
 field549.setType("MFFloat")
 
-field549.addComments(x3d.CommentsBlock('''no default value'''))
+field549.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field549)
 field550 = x3d.field()
@@ -3993,7 +3993,7 @@ field550.setName("vc7_keyValue")
 field550.setAccessType("inputOutput")
 field550.setType("MFRotation")
 
-field550.addComments(x3d.CommentsBlock('''no default value'''))
+field550.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field550)
 field551 = x3d.field()
@@ -4007,7 +4007,7 @@ field552.setName("vl1_key")
 field552.setAccessType("inputOutput")
 field552.setType("MFFloat")
 
-field552.addComments(x3d.CommentsBlock('''no default value'''))
+field552.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field552)
 field553 = x3d.field()
@@ -4015,7 +4015,7 @@ field553.setName("vl1_keyValue")
 field553.setAccessType("inputOutput")
 field553.setType("MFRotation")
 
-field553.addComments(x3d.CommentsBlock('''no default value'''))
+field553.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field553)
 field554 = x3d.field()
@@ -4029,7 +4029,7 @@ field555.setName("vl2_key")
 field555.setAccessType("inputOutput")
 field555.setType("MFFloat")
 
-field555.addComments(x3d.CommentsBlock('''no default value'''))
+field555.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field555)
 field556 = x3d.field()
@@ -4037,7 +4037,7 @@ field556.setName("vl2_keyValue")
 field556.setAccessType("inputOutput")
 field556.setType("MFRotation")
 
-field556.addComments(x3d.CommentsBlock('''no default value'''))
+field556.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field556)
 field557 = x3d.field()
@@ -4051,7 +4051,7 @@ field558.setName("vl3_key")
 field558.setAccessType("inputOutput")
 field558.setType("MFFloat")
 
-field558.addComments(x3d.CommentsBlock('''no default value'''))
+field558.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field558)
 field559 = x3d.field()
@@ -4059,7 +4059,7 @@ field559.setName("vl3_keyValue")
 field559.setAccessType("inputOutput")
 field559.setType("MFRotation")
 
-field559.addComments(x3d.CommentsBlock('''no default value'''))
+field559.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field559)
 field560 = x3d.field()
@@ -4073,7 +4073,7 @@ field561.setName("vl4_key")
 field561.setAccessType("inputOutput")
 field561.setType("MFFloat")
 
-field561.addComments(x3d.CommentsBlock('''no default value'''))
+field561.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field561)
 field562 = x3d.field()
@@ -4081,7 +4081,7 @@ field562.setName("vl4_keyValue")
 field562.setAccessType("inputOutput")
 field562.setType("MFRotation")
 
-field562.addComments(x3d.CommentsBlock('''no default value'''))
+field562.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field562)
 field563 = x3d.field()
@@ -4095,7 +4095,7 @@ field564.setName("vl5_key")
 field564.setAccessType("inputOutput")
 field564.setType("MFFloat")
 
-field564.addComments(x3d.CommentsBlock('''no default value'''))
+field564.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field564)
 field565 = x3d.field()
@@ -4103,7 +4103,7 @@ field565.setName("vl5_keyValue")
 field565.setAccessType("inputOutput")
 field565.setType("MFRotation")
 
-field565.addComments(x3d.CommentsBlock('''no default value'''))
+field565.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field565)
 field566 = x3d.field()
@@ -4117,7 +4117,7 @@ field567.setName("vt10_key")
 field567.setAccessType("inputOutput")
 field567.setType("MFFloat")
 
-field567.addComments(x3d.CommentsBlock('''no default value'''))
+field567.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field567)
 field568 = x3d.field()
@@ -4125,7 +4125,7 @@ field568.setName("vt10_keyValue")
 field568.setAccessType("inputOutput")
 field568.setType("MFRotation")
 
-field568.addComments(x3d.CommentsBlock('''no default value'''))
+field568.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field568)
 field569 = x3d.field()
@@ -4139,7 +4139,7 @@ field570.setName("vt11_key")
 field570.setAccessType("inputOutput")
 field570.setType("MFFloat")
 
-field570.addComments(x3d.CommentsBlock('''no default value'''))
+field570.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field570)
 field571 = x3d.field()
@@ -4147,7 +4147,7 @@ field571.setName("vt11_keyValue")
 field571.setAccessType("inputOutput")
 field571.setType("MFRotation")
 
-field571.addComments(x3d.CommentsBlock('''no default value'''))
+field571.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field571)
 field572 = x3d.field()
@@ -4161,7 +4161,7 @@ field573.setName("vt12_key")
 field573.setAccessType("inputOutput")
 field573.setType("MFFloat")
 
-field573.addComments(x3d.CommentsBlock('''no default value'''))
+field573.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field573)
 field574 = x3d.field()
@@ -4169,7 +4169,7 @@ field574.setName("vt12_keyValue")
 field574.setAccessType("inputOutput")
 field574.setType("MFRotation")
 
-field574.addComments(x3d.CommentsBlock('''no default value'''))
+field574.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field574)
 field575 = x3d.field()
@@ -4183,7 +4183,7 @@ field576.setName("vt1_key")
 field576.setAccessType("inputOutput")
 field576.setType("MFFloat")
 
-field576.addComments(x3d.CommentsBlock('''no default value'''))
+field576.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field576)
 field577 = x3d.field()
@@ -4191,7 +4191,7 @@ field577.setName("vt1_keyValue")
 field577.setAccessType("inputOutput")
 field577.setType("MFRotation")
 
-field577.addComments(x3d.CommentsBlock('''no default value'''))
+field577.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field577)
 field578 = x3d.field()
@@ -4205,7 +4205,7 @@ field579.setName("vt2_key")
 field579.setAccessType("inputOutput")
 field579.setType("MFFloat")
 
-field579.addComments(x3d.CommentsBlock('''no default value'''))
+field579.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field579)
 field580 = x3d.field()
@@ -4213,7 +4213,7 @@ field580.setName("vt2_keyValue")
 field580.setAccessType("inputOutput")
 field580.setType("MFRotation")
 
-field580.addComments(x3d.CommentsBlock('''no default value'''))
+field580.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field580)
 field581 = x3d.field()
@@ -4227,7 +4227,7 @@ field582.setName("vt3_key")
 field582.setAccessType("inputOutput")
 field582.setType("MFFloat")
 
-field582.addComments(x3d.CommentsBlock('''no default value'''))
+field582.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field582)
 field583 = x3d.field()
@@ -4235,7 +4235,7 @@ field583.setName("vt3_keyValue")
 field583.setAccessType("inputOutput")
 field583.setType("MFRotation")
 
-field583.addComments(x3d.CommentsBlock('''no default value'''))
+field583.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field583)
 field584 = x3d.field()
@@ -4249,7 +4249,7 @@ field585.setName("vt4_key")
 field585.setAccessType("inputOutput")
 field585.setType("MFFloat")
 
-field585.addComments(x3d.CommentsBlock('''no default value'''))
+field585.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field585)
 field586 = x3d.field()
@@ -4257,7 +4257,7 @@ field586.setName("vt4_keyValue")
 field586.setAccessType("inputOutput")
 field586.setType("MFRotation")
 
-field586.addComments(x3d.CommentsBlock('''no default value'''))
+field586.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field586)
 field587 = x3d.field()
@@ -4271,7 +4271,7 @@ field588.setName("vt5_key")
 field588.setAccessType("inputOutput")
 field588.setType("MFFloat")
 
-field588.addComments(x3d.CommentsBlock('''no default value'''))
+field588.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field588)
 field589 = x3d.field()
@@ -4279,7 +4279,7 @@ field589.setName("vt5_keyValue")
 field589.setAccessType("inputOutput")
 field589.setType("MFRotation")
 
-field589.addComments(x3d.CommentsBlock('''no default value'''))
+field589.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field589)
 field590 = x3d.field()
@@ -4293,7 +4293,7 @@ field591.setName("vt6_key")
 field591.setAccessType("inputOutput")
 field591.setType("MFFloat")
 
-field591.addComments(x3d.CommentsBlock('''no default value'''))
+field591.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field591)
 field592 = x3d.field()
@@ -4301,7 +4301,7 @@ field592.setName("vt6_keyValue")
 field592.setAccessType("inputOutput")
 field592.setType("MFRotation")
 
-field592.addComments(x3d.CommentsBlock('''no default value'''))
+field592.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field592)
 field593 = x3d.field()
@@ -4315,7 +4315,7 @@ field594.setName("vt7_key")
 field594.setAccessType("inputOutput")
 field594.setType("MFFloat")
 
-field594.addComments(x3d.CommentsBlock('''no default value'''))
+field594.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field594)
 field595 = x3d.field()
@@ -4323,7 +4323,7 @@ field595.setName("vt7_keyValue")
 field595.setAccessType("inputOutput")
 field595.setType("MFRotation")
 
-field595.addComments(x3d.CommentsBlock('''no default value'''))
+field595.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field595)
 field596 = x3d.field()
@@ -4337,7 +4337,7 @@ field597.setName("vt8_key")
 field597.setAccessType("inputOutput")
 field597.setType("MFFloat")
 
-field597.addComments(x3d.CommentsBlock('''no default value'''))
+field597.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field597)
 field598 = x3d.field()
@@ -4345,7 +4345,7 @@ field598.setName("vt8_keyValue")
 field598.setAccessType("inputOutput")
 field598.setType("MFRotation")
 
-field598.addComments(x3d.CommentsBlock('''no default value'''))
+field598.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field598)
 field599 = x3d.field()
@@ -4359,7 +4359,7 @@ field600.setName("vt9_key")
 field600.setAccessType("inputOutput")
 field600.setType("MFFloat")
 
-field600.addComments(x3d.CommentsBlock('''no default value'''))
+field600.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field600)
 field601 = x3d.field()
@@ -4367,7 +4367,7 @@ field601.setName("vt9_keyValue")
 field601.setAccessType("inputOutput")
 field601.setType("MFRotation")
 
-field601.addComments(x3d.CommentsBlock('''no default value'''))
+field601.addComments(x3d.CommentsBlock("""no default value"""))
 
 ProtoInterface21.addField(field601)
 field602 = x3d.field()
@@ -4380,7 +4380,7 @@ ProtoInterface21.addField(field602)
 ProtoDeclare20.setProtoInterface(ProtoInterface21)
 ProtoBody603 = x3d.ProtoBody()
 
-ProtoBody603.addComments(x3d.CommentsBlock('''design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators'''))
+ProtoBody603.addComments(x3d.CommentsBlock("""design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators"""))
 TimeSensor604 = x3d.TimeSensor()
 TimeSensor604.setDEF("BehaviorClock")
 IS605 = x3d.IS()
@@ -4454,7 +4454,7 @@ TimeSensor604.setIS(IS605)
 
 ProtoBody603.addChild(TimeSensor604)
 
-ProtoBody603.addComments(x3d.CommentsBlock('''note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless'''))
+ProtoBody603.addComments(x3d.CommentsBlock("""note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless"""))
 Switch619 = x3d.Switch()
 Switch619.setDEF("SupportedLoaHolder1")
 Switch619.setWhichChoice(-1)
@@ -9958,17 +9958,17 @@ ProtoDeclare1756.setName("HAnimBodyBehaviorChooser")
 ProtoDeclare1756.setAppinfo("The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time.")
 ProtoInterface1757 = x3d.ProtoInterface()
 
-ProtoInterface1757.addComments(x3d.CommentsBlock('''TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs'''))
+ProtoInterface1757.addComments(x3d.CommentsBlock("""TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs"""))
 
-ProtoInterface1757.addComments(x3d.CommentsBlock('''accessType=\"inputOutput\" avoided to maintain backwards compatilibility with VRML97 scripting constraints'''))
+ProtoInterface1757.addComments(x3d.CommentsBlock("""accessType=\"inputOutput\" avoided to maintain backwards compatilibility with VRML97 scripting constraints"""))
 
-ProtoInterface1757.addComments(x3d.CommentsBlock('''shared common TimeSensor inputs for all BehaviorAnimation nodes, connected via ROUTEs'''))
+ProtoInterface1757.addComments(x3d.CommentsBlock("""shared common TimeSensor inputs for all BehaviorAnimation nodes, connected via ROUTEs"""))
 
-ProtoInterface1757.addComments(x3d.CommentsBlock('''TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName'''))
+ProtoInterface1757.addComments(x3d.CommentsBlock("""TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName"""))
 
-ProtoInterface1757.addComments(x3d.CommentsBlock('''TODO: consider addBody, removeBody, addBehavior, removeBehavior'''))
+ProtoInterface1757.addComments(x3d.CommentsBlock("""TODO: consider addBody, removeBody, addBehavior, removeBehavior"""))
 
-ProtoInterface1757.addComments(x3d.CommentsBlock('''TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName'''))
+ProtoInterface1757.addComments(x3d.CommentsBlock("""TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName"""))
 field1758 = x3d.field()
 field1758.setName("supportedLOA")
 field1758.setAccessType("inputOutput")
@@ -9983,7 +9983,7 @@ field1759.setAccessType("initializeOnly")
 field1759.setAppinfo("[HAnimHumanoid] nodes only")
 field1759.setType("MFNode")
 
-field1759.addComments(x3d.CommentsBlock('''default NULL'''))
+field1759.addComments(x3d.CommentsBlock("""default NULL"""))
 
 ProtoInterface1757.addField(field1759)
 field1760 = x3d.field()
@@ -10014,7 +10014,7 @@ field1763.setAccessType("initializeOnly")
 field1763.setAppinfo("[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time.")
 field1763.setType("MFNode")
 
-field1763.addComments(x3d.CommentsBlock('''default NULL'''))
+field1763.addComments(x3d.CommentsBlock("""default NULL"""))
 
 ProtoInterface1757.addField(field1763)
 field1764 = x3d.field()
@@ -10023,7 +10023,7 @@ field1764.setAccessType("initializeOnly")
 field1764.setAppinfo("indicate which HAnimBehavior nodes are activated, empty indicates all enabled true")
 field1764.setType("MFBool")
 
-field1764.addComments(x3d.CommentsBlock('''no default values'''))
+field1764.addComments(x3d.CommentsBlock("""no default values"""))
 
 ProtoInterface1757.addField(field1764)
 field1765 = x3d.field()
@@ -10076,7 +10076,7 @@ Switch1770.setIS(IS1771)
 
 ProtoBody1769.addChild(Switch1770)
 
-ProtoBody1769.addComments(x3d.CommentsBlock('''note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless'''))
+ProtoBody1769.addComments(x3d.CommentsBlock("""note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless"""))
 Group1774 = x3d.Group()
 Group1774.setDEF("BehaviorArrayHolder")
 IS1775 = x3d.IS()
@@ -10157,7 +10157,7 @@ field1789.setAccessType("initializeOnly")
 field1789.setAppinfo("[HAnimBehavior] nodes only")
 field1789.setType("MFNode")
 
-field1789.addComments(x3d.CommentsBlock('''TODO: might consider accessType=\"inputOutput\" if VRML97 compatibility not needed'''))
+field1789.addComments(x3d.CommentsBlock("""TODO: might consider accessType=\"inputOutput\" if VRML97 compatibility not needed"""))
 
 Script1784.addField(field1789)
 field1790 = x3d.field()
@@ -10255,14 +10255,14 @@ ProtoDeclare1756.setProtoBody(ProtoBody1769)
 
 Scene18.addChild(ProtoDeclare1756)
 
-Scene18.addComments(x3d.CommentsBlock('''TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype.'''))
+Scene18.addComments(x3d.CommentsBlock("""TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype."""))
 ProtoInstance1806 = x3d.ProtoInstance()
 ProtoInstance1806.setName("HAnimBehavior")
 ProtoInstance1806.setDEF("BehaviorTest1")
 
-ProtoInstance1806.addComments(x3d.CommentsBlock('''only one PositionInterpolator key/keyValue definition for entire humanoid - optional'''))
+ProtoInstance1806.addComments(x3d.CommentsBlock("""only one PositionInterpolator key/keyValue definition for entire humanoid - optional"""))
 
-ProtoInstance1806.addComments(x3d.CommentsBlock('''must have paired overrides of each key/keyValue array being defined'''))
+ProtoInstance1806.addComments(x3d.CommentsBlock("""must have paired overrides of each key/keyValue array being defined"""))
 fieldValue1807 = x3d.fieldValue()
 fieldValue1807.setName("HumanoidRoot_translation_key")
 fieldValue1807.setValue("0 0.25 0.5 0.75 1")
@@ -10306,6 +10306,7 @@ ProtoInstance1811.addFieldValue(fieldValue1814)
 fieldValue1815 = x3d.fieldValue()
 fieldValue1815.setName("hAnimBehaviorNodes")
 ProtoInstance1816 = x3d.ProtoInstance()
+ProtoInstance1816.setName("HAnimBehavior")
 ProtoInstance1816.setUSE("BehaviorTest1")
 
 fieldValue1815.addChild(ProtoInstance1816)
@@ -10321,4 +10322,4 @@ Scene18.addChild(ProtoInstance1811)
 
 X3D0.setScene(Scene18)
 X3D0.toFileX3D("../data/HAnimBehaviorPrototypes.new.graalpy.x3d")
-X3D0.toFileJSON("../data/HAnimBehaviorPrototypes.new.graalpy.json")
+X3D0.toFileJSON("../data/HAnimBehaviorPrototypes.new.graalpy.x3dj")

@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -56,7 +56,7 @@ ProtoDeclare11.setName("Process")
 ProtoBody12 = x3d.ProtoBody()
 Group13 = x3d.Group()
 
-Group13.addComments(x3d.CommentsBlock('''left'''))
+Group13.addComments(x3d.CommentsBlock("""left"""))
 Transform14 = x3d.Transform()
 Transform14.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape15 = x3d.Shape()
@@ -77,11 +77,11 @@ Shape15.setGeometry(Extrusion18)
 
 Transform14.addChild(Shape15)
 
-Transform14.addComments(x3d.CommentsBlock('''<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>'''))
+Transform14.addComments(x3d.CommentsBlock("""<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"""))
 
 Group13.addChild(Transform14)
 
-Group13.addComments(x3d.CommentsBlock('''right'''))
+Group13.addComments(x3d.CommentsBlock("""right"""))
 Transform19 = x3d.Transform()
 Transform19.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape20 = x3d.Shape()
@@ -134,7 +134,7 @@ Transform19.addChild(TouchSensor30)
 
 Group13.addChild(Transform19)
 
-Group13.addComments(x3d.CommentsBlock('''up'''))
+Group13.addComments(x3d.CommentsBlock("""up"""))
 Transform31 = x3d.Transform()
 Transform31.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape32 = x3d.Shape()
@@ -186,7 +186,7 @@ Transform31.addChild(TouchSensor42)
 
 Group13.addChild(Transform31)
 
-Group13.addComments(x3d.CommentsBlock('''down'''))
+Group13.addComments(x3d.CommentsBlock("""down"""))
 Transform43 = x3d.Transform()
 Transform43.setScale(x3d.doubleToFloat([0.5,0.5,0.5]))
 Shape44 = x3d.Shape()
@@ -207,11 +207,11 @@ Shape44.setGeometry(Extrusion47)
 
 Transform43.addChild(Shape44)
 
-Transform43.addComments(x3d.CommentsBlock('''<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>'''))
+Transform43.addComments(x3d.CommentsBlock("""<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"""))
 
 Group13.addChild(Transform43)
 
-Group13.addComments(x3d.CommentsBlock('''center'''))
+Group13.addComments(x3d.CommentsBlock("""center"""))
 Transform48 = x3d.Transform()
 Shape49 = x3d.Shape()
 Appearance50 = x3d.Appearance()
@@ -439,4 +439,4 @@ Scene10.addChild(Transform84)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/pp3.new.graalpy.x3d")
-X3D0.toFileJSON("../data/pp3.new.graalpy.json")
+X3D0.toFileJSON("../data/pp3.new.graalpy.x3dj")

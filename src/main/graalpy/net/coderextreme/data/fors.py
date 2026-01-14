@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -348,7 +348,7 @@ field67.setType("SFBool")
 
 Script65.addField(field67)
 
-Script65.addComments(x3d.CommentsBlock('''<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>'''))
+Script65.addComments(x3d.CommentsBlock("""<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"""))
 
 Script65.setSourceCode('''ecmascript:
 	function add_node(value) {
@@ -394,4 +394,4 @@ Scene10.addChild(ROUTE70)
 
 X3D0.setScene(Scene10)
 X3D0.toFileX3D("../data/fors.new.graalpy.x3d")
-X3D0.toFileJSON("../data/fors.new.graalpy.json")
+X3D0.toFileJSON("../data/fors.new.graalpy.x3dj")

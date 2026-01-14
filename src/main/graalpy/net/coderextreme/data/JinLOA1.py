@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -90,7 +90,7 @@ meta17.setContent("Gnu Image Manipulation Program, http://www.gimp.org")
 head1.addMeta(meta17)
 meta18 = x3d.meta()
 meta18.setName("generator")
-meta18.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta18.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta18)
 meta19 = x3d.meta()
@@ -388,7 +388,7 @@ HAnimSegment84 = x3d.HAnimSegment()
 HAnimSegment84.setName("l_tarsal_proximal_phalanx_2")
 HAnimSegment84.setDEF("hanim_l_tarsal_proximal_phalanx_2")
 
-HAnimSegment84.addComments(x3d.CommentsBlock('''TODO append _2'''))
+HAnimSegment84.addComments(x3d.CommentsBlock("""TODO append _2"""))
 Transform85 = x3d.Transform()
 Transform85.setTranslation(x3d.doubleToFloat([3.854,3.64,0.7402]))
 Shape86 = x3d.Shape()
@@ -570,7 +570,7 @@ HAnimSegment124 = x3d.HAnimSegment()
 HAnimSegment124.setName("r_tarsal_proximal_phalanx_2")
 HAnimSegment124.setDEF("hanim_r_tarsal_proximal_phalanx_2")
 
-HAnimSegment124.addComments(x3d.CommentsBlock('''TODO append _2'''))
+HAnimSegment124.addComments(x3d.CommentsBlock("""TODO append _2"""))
 Transform125 = x3d.Transform()
 Transform125.setTranslation(x3d.doubleToFloat([-3.854,3.64,0.7402]))
 Shape126 = x3d.Shape()
@@ -1162,4 +1162,4 @@ Scene20.addChild(HAnimHumanoid24)
 
 X3D0.setScene(Scene20)
 X3D0.toFileX3D("../data/JinLOA1.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JinLOA1.new.graalpy.json")
+X3D0.toFileJSON("../data/JinLOA1.new.graalpy.x3dj")

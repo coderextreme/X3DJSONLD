@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -78,16 +78,16 @@ Scene14.addChild(WorldInfo15)
 Collision16 = x3d.Collision()
 Collision16.setDEF("DoNotCollideWithVisualizationWidget")
 
-Collision16.addComments(x3d.CommentsBlock('''Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.'''))
+Collision16.addComments(x3d.CommentsBlock("""Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."""))
 
-Collision16.addComments(x3d.CommentsBlock('''This NavigationInfo allows examine mode and will be overridden by any parent scene.'''))
+Collision16.addComments(x3d.CommentsBlock("""This NavigationInfo allows examine mode and will be overridden by any parent scene."""))
 
-Collision16.addComments(x3d.CommentsBlock('''Each arrow goes from +1m to -1m to allow linear scaling to fit a scene'''))
+Collision16.addComments(x3d.CommentsBlock("""Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"""))
 
-Collision16.addComments(x3d.CommentsBlock('''Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user'''))
+Collision16.addComments(x3d.CommentsBlock("""Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"""))
 Group17 = x3d.Group()
 
-Group17.addComments(x3d.CommentsBlock('''Vertical Y arrow and label'''))
+Group17.addComments(x3d.CommentsBlock("""Vertical Y arrow and label"""))
 Group18 = x3d.Group()
 Group18.setDEF("ArrowGreen")
 Shape19 = x3d.Shape()
@@ -162,7 +162,7 @@ Collision16.setProxy(Group17)
 Transform34 = x3d.Transform()
 Transform34.setRotation(x3d.doubleToFloat([0,0,1,-1.57079]))
 
-Transform34.addComments(x3d.CommentsBlock('''Horizontal X arrow and label'''))
+Transform34.addComments(x3d.CommentsBlock("""Horizontal X arrow and label"""))
 Group35 = x3d.Group()
 Group36 = x3d.Group()
 Group36.setDEF("ArrowRed")
@@ -203,7 +203,7 @@ Transform45 = x3d.Transform()
 Transform45.setRotation(x3d.doubleToFloat([0,0,1,1.57079]))
 Transform45.setTranslation(x3d.doubleToFloat([0.072,1.1,0]))
 
-Transform45.addComments(x3d.CommentsBlock('''note label rotated back to original coordinate frame'''))
+Transform45.addComments(x3d.CommentsBlock("""note label rotated back to original coordinate frame"""))
 Billboard46 = x3d.Billboard()
 Shape47 = x3d.Shape()
 Appearance48 = x3d.Appearance()
@@ -231,7 +231,7 @@ Collision16.setProxy(Transform34)
 Transform51 = x3d.Transform()
 Transform51.setRotation(x3d.doubleToFloat([1,0,0,1.57079]))
 
-Transform51.addComments(x3d.CommentsBlock('''Perpendicular Z arrow and label, note right-hand rule'''))
+Transform51.addComments(x3d.CommentsBlock("""Perpendicular Z arrow and label, note right-hand rule"""))
 Group52 = x3d.Group()
 Group53 = x3d.Group()
 Group53.setDEF("ArrowBlue")
@@ -272,7 +272,7 @@ Transform62 = x3d.Transform()
 Transform62.setRotation(x3d.doubleToFloat([1,0,0,-1.57079]))
 Transform62.setTranslation(x3d.doubleToFloat([0,1.1,0.072]))
 
-Transform62.addComments(x3d.CommentsBlock('''note label rotated back to original coordinate frame'''))
+Transform62.addComments(x3d.CommentsBlock("""note label rotated back to original coordinate frame"""))
 Billboard63 = x3d.Billboard()
 Shape64 = x3d.Shape()
 Appearance65 = x3d.Appearance()
@@ -302,4 +302,4 @@ Scene14.addChild(Collision16)
 
 X3D0.setScene(Scene14)
 X3D0.toFileX3D("../data/CoordinateAxes.new.graalpy.x3d")
-X3D0.toFileJSON("../data/CoordinateAxes.new.graalpy.json")
+X3D0.toFileJSON("../data/CoordinateAxes.new.graalpy.x3dj")

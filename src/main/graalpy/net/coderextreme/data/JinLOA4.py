@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -85,7 +85,7 @@ meta16.setContent("Gnu Image Manipulation Program, http://www.gimp.org")
 head1.addMeta(meta16)
 meta17 = x3d.meta()
 meta17.setName("generator")
-meta17.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta17.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta17)
 meta18 = x3d.meta()
@@ -8236,7 +8236,7 @@ OrientationInterpolator1791.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group1783.addChild(OrientationInterpolator1791)
 
-Group1783.addComments(x3d.CommentsBlock('''<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>'''))
+Group1783.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>"""))
 OrientationInterpolator1792 = x3d.OrientationInterpolator()
 OrientationInterpolator1792.setDEF("Stop_l_metatarsal_RotationInterpolator")
 OrientationInterpolator1792.setKey(x3d.doubleToFloat([0,0.5,1]))
@@ -8268,7 +8268,7 @@ OrientationInterpolator1796.setKeyValue(x3d.doubleToFloat([0,0,1,0,0,0,1,0,0,0,1
 
 Group1783.addChild(OrientationInterpolator1796)
 
-Group1783.addComments(x3d.CommentsBlock('''<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>'''))
+Group1783.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/>"""))
 OrientationInterpolator1797 = x3d.OrientationInterpolator()
 OrientationInterpolator1797.setDEF("Stop_r_metatarsal_RotationInterpolator")
 OrientationInterpolator1797.setKey(x3d.doubleToFloat([0,0.5,1]))
@@ -10687,7 +10687,7 @@ ROUTE2237.setToNode("Stop_l_subtalar_RotationInterpolator")
 
 Scene19.addChild(ROUTE2237)
 
-Scene19.addComments(x3d.CommentsBlock('''<ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_midtarsal_RotationInterpolator'/>'''))
+Scene19.addComments(x3d.CommentsBlock("""<ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_midtarsal_RotationInterpolator'/>"""))
 ROUTE2238 = x3d.ROUTE()
 ROUTE2238.setFromField("fraction_changed")
 ROUTE2238.setFromNode("StopTimer")
@@ -10724,7 +10724,7 @@ ROUTE2242.setToNode("Stop_r_subtalar_RotationInterpolator")
 
 Scene19.addChild(ROUTE2242)
 
-Scene19.addComments(x3d.CommentsBlock('''<ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_midtarsal_RotationInterpolator'/>'''))
+Scene19.addComments(x3d.CommentsBlock("""<ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_midtarsal_RotationInterpolator'/>"""))
 ROUTE2243 = x3d.ROUTE()
 ROUTE2243.setFromField("fraction_changed")
 ROUTE2243.setFromNode("StopTimer")
@@ -11293,7 +11293,7 @@ ROUTE2323.setToNode("hanim_l_talocrural")
 
 Scene19.addChild(ROUTE2323)
 
-Scene19.addComments(x3d.CommentsBlock('''<ROUTE fromField='value_changed' fromNode='Stop_l_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_l_midtarsal'/>'''))
+Scene19.addComments(x3d.CommentsBlock("""<ROUTE fromField='value_changed' fromNode='Stop_l_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_l_midtarsal'/>"""))
 ROUTE2324 = x3d.ROUTE()
 ROUTE2324.setFromField("value_changed")
 ROUTE2324.setFromNode("Stop_r_hip_RotationInterpolator")
@@ -11316,7 +11316,7 @@ ROUTE2326.setToNode("hanim_r_talocrural")
 
 Scene19.addChild(ROUTE2326)
 
-Scene19.addComments(x3d.CommentsBlock('''<ROUTE fromField='value_changed' fromNode='Stop_r_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_r_midtarsal'/>'''))
+Scene19.addComments(x3d.CommentsBlock("""<ROUTE fromField='value_changed' fromNode='Stop_r_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_r_midtarsal'/>"""))
 ROUTE2327 = x3d.ROUTE()
 ROUTE2327.setFromField("value_changed")
 ROUTE2327.setFromNode("Stop_vl5_RotationInterpolator")
@@ -14435,4 +14435,4 @@ Scene19.addChild(ROUTE2771)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/JinLOA4.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JinLOA4.new.graalpy.json")
+X3D0.toFileJSON("../data/JinLOA4.new.graalpy.x3dj")

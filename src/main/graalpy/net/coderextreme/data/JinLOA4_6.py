@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -85,7 +85,7 @@ meta16.setContent("Gnu Image Manipulation Program, http://www.gimp.org")
 head1.addMeta(meta16)
 meta17 = x3d.meta()
 meta17.setName("generator")
-meta17.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
+meta17.setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")
 
 head1.addMeta(meta17)
 meta18 = x3d.meta()
@@ -8188,4 +8188,4 @@ Scene19.addChild(HAnimHumanoid23)
 
 X3D0.setScene(Scene19)
 X3D0.toFileX3D("../data/JinLOA4_6.new.graalpy.x3d")
-X3D0.toFileJSON("../data/JinLOA4_6.new.graalpy.json")
+X3D0.toFileJSON("../data/JinLOA4_6.new.graalpy.x3dj")

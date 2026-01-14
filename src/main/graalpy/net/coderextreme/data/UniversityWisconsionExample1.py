@@ -1,0 +1,1972 @@
+import x3dpsail as x3d
+
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
+X3D0 = x3d.X3D()
+X3D0.setProfile("Immersive")
+X3D0.setVersion("4.0")
+head1 = x3d.head()
+component2 = x3d.component()
+component2.setName("HAnim")
+component2.setLevel(3)
+
+head1.addComponent(component2)
+meta3 = x3d.meta()
+meta3.setName("title")
+meta3.setContent("BvhUniversityWisconsionExample1.x3d")
+
+head1.addMeta(meta3)
+meta4 = x3d.meta()
+meta4.setName("description")
+meta4.setContent("BVH file conversion: *enter description here, short-sentence summaries preferred*")
+
+head1.addMeta(meta4)
+meta5 = x3d.meta()
+meta5.setName("creator")
+meta5.setContent("*enter name of original author here*")
+
+head1.addMeta(meta5)
+meta6 = x3d.meta()
+meta6.setName("created")
+meta6.setContent("*enter date of initial version here*")
+
+head1.addMeta(meta6)
+meta7 = x3d.meta()
+meta7.setName("translated")
+meta7.setContent("2 September 2023")
+
+head1.addMeta(meta7)
+meta8 = x3d.meta()
+meta8.setName("modified")
+meta8.setContent("Mon, 15 Sep 2025 05:21:02 GMT")
+
+head1.addMeta(meta8)
+meta9 = x3d.meta()
+meta9.setName("reference")
+meta9.setContent("BvhUniversityWIsconsionExample1.bvh")
+
+head1.addMeta(meta9)
+meta10 = x3d.meta()
+meta10.setName("reference")
+meta10.setContent("https://TODO/UniversityWIsconsionExample1.bvh")
+
+head1.addMeta(meta10)
+meta11 = x3d.meta()
+meta11.setName("reference")
+meta11.setContent("https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#MOCAP")
+
+head1.addMeta(meta11)
+meta12 = x3d.meta()
+meta12.setName("generator")
+meta12.setContent("Java BVH to X3D Converter, org.web3d.x3d.hanim.bvh package")
+
+head1.addMeta(meta12)
+meta13 = x3d.meta()
+meta13.setName("generator")
+meta13.setContent("X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit")
+
+head1.addMeta(meta13)
+
+X3D0.setHead(head1)
+Scene14 = x3d.Scene()
+WorldInfo15 = x3d.WorldInfo()
+WorldInfo15.setTitle("BvhUniversityWisconsionExample1.x3d")
+
+Scene14.addChild(WorldInfo15)
+NavigationInfo16 = x3d.NavigationInfo()
+
+Scene14.addChild(NavigationInfo16)
+Group17 = x3d.Group()
+Group17.setDEF("BvhUniversityWisconsionExample1_BvhToX3dConversionImportInformation")
+MetadataSet18 = x3d.MetadataSet()
+MetadataSet18.setName("BvhToHAnimNameConversionTable")
+MetadataString19 = x3d.MetadataString()
+MetadataString19.setName("ROOT_Hips")
+MetadataString19.setReference("ROOT")
+MetadataString19.setValue(["humanoid_root","sacrum"])
+
+MetadataSet18.setMetadata(MetadataString19)
+MetadataString20 = x3d.MetadataString()
+MetadataString20.setName("Chest")
+MetadataString20.setReference("JOINT")
+MetadataString20.setValue(["vl5","l5"])
+
+MetadataSet18.setMetadata(MetadataString20)
+MetadataString21 = x3d.MetadataString()
+MetadataString21.setName("Neck")
+MetadataString21.setReference("JOINT")
+MetadataString21.setValue(["Neck","vl5_to_Neck"])
+
+MetadataSet18.setMetadata(MetadataString21)
+MetadataString22 = x3d.MetadataString()
+MetadataString22.setName("Head")
+MetadataString22.setReference("JOINT")
+MetadataString22.setValue(["skullbase","skull"])
+
+MetadataSet18.setMetadata(MetadataString22)
+MetadataString23 = x3d.MetadataString()
+MetadataString23.setName("HeadSite")
+MetadataString23.setReference("Site")
+MetadataString23.setValue(["skullbase_tip"])
+
+MetadataSet18.setMetadata(MetadataString23)
+MetadataString24 = x3d.MetadataString()
+MetadataString24.setName("LeftCollar")
+MetadataString24.setReference("JOINT")
+MetadataString24.setValue(["LeftCollar","vl5_to_LeftCollar"])
+
+MetadataSet18.setMetadata(MetadataString24)
+MetadataString25 = x3d.MetadataString()
+MetadataString25.setName("LeftUpArm")
+MetadataString25.setReference("JOINT")
+MetadataString25.setValue(["LeftUpArm","LeftCollar_to_LeftUpArm"])
+
+MetadataSet18.setMetadata(MetadataString25)
+MetadataString26 = x3d.MetadataString()
+MetadataString26.setName("LeftLowArm")
+MetadataString26.setReference("JOINT")
+MetadataString26.setValue(["LeftLowArm","LeftUpArm_to_LeftLowArm"])
+
+MetadataSet18.setMetadata(MetadataString26)
+MetadataString27 = x3d.MetadataString()
+MetadataString27.setName("LeftHand")
+MetadataString27.setReference("JOINT")
+MetadataString27.setValue(["LeftHand","LeftLowArm_to_LeftHand"])
+
+MetadataSet18.setMetadata(MetadataString27)
+MetadataString28 = x3d.MetadataString()
+MetadataString28.setName("LeftHandSite")
+MetadataString28.setReference("Site")
+MetadataString28.setValue(["LeftHand_tip"])
+
+MetadataSet18.setMetadata(MetadataString28)
+MetadataString29 = x3d.MetadataString()
+MetadataString29.setName("RightCollar")
+MetadataString29.setReference("JOINT")
+MetadataString29.setValue(["RightCollar","vl5_to_RightCollar"])
+
+MetadataSet18.setMetadata(MetadataString29)
+MetadataString30 = x3d.MetadataString()
+MetadataString30.setName("RightUpArm")
+MetadataString30.setReference("JOINT")
+MetadataString30.setValue(["RightUpArm","RightCollar_to_RightUpArm"])
+
+MetadataSet18.setMetadata(MetadataString30)
+MetadataString31 = x3d.MetadataString()
+MetadataString31.setName("RightLowArm")
+MetadataString31.setReference("JOINT")
+MetadataString31.setValue(["RightLowArm","RightUpArm_to_RightLowArm"])
+
+MetadataSet18.setMetadata(MetadataString31)
+MetadataString32 = x3d.MetadataString()
+MetadataString32.setName("RightHand")
+MetadataString32.setReference("JOINT")
+MetadataString32.setValue(["RightHand","RightLowArm_to_RightHand"])
+
+MetadataSet18.setMetadata(MetadataString32)
+MetadataString33 = x3d.MetadataString()
+MetadataString33.setName("RightHandSite")
+MetadataString33.setReference("Site")
+MetadataString33.setValue(["RightHand_tip"])
+
+MetadataSet18.setMetadata(MetadataString33)
+MetadataString34 = x3d.MetadataString()
+MetadataString34.setName("LeftUpLeg")
+MetadataString34.setReference("JOINT")
+MetadataString34.setValue(["LeftUpLeg","humanoid_root_to_LeftUpLeg"])
+
+MetadataSet18.setMetadata(MetadataString34)
+MetadataString35 = x3d.MetadataString()
+MetadataString35.setName("LeftLowLeg")
+MetadataString35.setReference("JOINT")
+MetadataString35.setValue(["LeftLowLeg","LeftUpLeg_to_LeftLowLeg"])
+
+MetadataSet18.setMetadata(MetadataString35)
+MetadataString36 = x3d.MetadataString()
+MetadataString36.setName("LeftFoot")
+MetadataString36.setReference("JOINT")
+MetadataString36.setValue(["LeftFoot","LeftLowLeg_to_LeftFoot"])
+
+MetadataSet18.setMetadata(MetadataString36)
+MetadataString37 = x3d.MetadataString()
+MetadataString37.setName("LeftFootSite")
+MetadataString37.setReference("Site")
+MetadataString37.setValue(["LeftFoot_tip"])
+
+MetadataSet18.setMetadata(MetadataString37)
+MetadataString38 = x3d.MetadataString()
+MetadataString38.setName("RightUpLeg")
+MetadataString38.setReference("JOINT")
+MetadataString38.setValue(["RightUpLeg","humanoid_root_to_RightUpLeg"])
+
+MetadataSet18.setMetadata(MetadataString38)
+MetadataString39 = x3d.MetadataString()
+MetadataString39.setName("RightLowLeg")
+MetadataString39.setReference("JOINT")
+MetadataString39.setValue(["RightLowLeg","RightUpLeg_to_RightLowLeg"])
+
+MetadataSet18.setMetadata(MetadataString39)
+MetadataString40 = x3d.MetadataString()
+MetadataString40.setName("RightFoot")
+MetadataString40.setReference("JOINT")
+MetadataString40.setValue(["RightFoot","RightLowLeg_to_RightFoot"])
+
+MetadataSet18.setMetadata(MetadataString40)
+MetadataString41 = x3d.MetadataString()
+MetadataString41.setName("RightFootSite")
+MetadataString41.setReference("Site")
+MetadataString41.setValue(["RightFoot_tip"])
+
+MetadataSet18.setMetadata(MetadataString41)
+
+Group17.setMetadata(MetadataSet18)
+
+Scene14.addChild(Group17)
+Transform42 = x3d.Transform()
+Transform42.setDEF("InitialPositionScaled")
+Transform42.setTranslation(x3d.doubleToFloat([0,1.244,0]))
+Viewpoint43 = x3d.Viewpoint()
+Viewpoint43.setDescription("BvhUniversityWisconsionExample1 model BVH to X3D conversion, from 8m")
+Viewpoint43.setPosition(x3d.doubleToFloat([0,0,8]))
+
+Transform42.addChild(Viewpoint43)
+Viewpoint44 = x3d.Viewpoint()
+Viewpoint44.setDescription("BvhUniversityWisconsionExample1 initial motion position")
+Viewpoint44.setPosition(x3d.doubleToFloat([0.803,3.501,16.836]))
+
+Transform42.addChild(Viewpoint44)
+Viewpoint45 = x3d.Viewpoint()
+Viewpoint45.setDescription("BvhUniversityWisconsionExample1 final motion position")
+Viewpoint45.setPosition(x3d.doubleToFloat([0.781,3.51,16.647]))
+
+Transform42.addChild(Viewpoint45)
+
+Scene14.addChild(Transform42)
+HAnimHumanoid46 = x3d.HAnimHumanoid()
+HAnimHumanoid46.setDEF("BvhUniversityWisconsionExample1_ROOT_Hips")
+HAnimHumanoid46.setName("ROOT_Hips")
+MetadataSet47 = x3d.MetadataSet()
+MetadataSet47.setName("HAnimHumanoid.info")
+MetadataSet47.setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+MetadataString48 = x3d.MetadataString()
+MetadataString48.setName("authorEmail")
+MetadataString48.setValue(["*TODO*"])
+
+MetadataSet47.setMetadata(MetadataString48)
+MetadataString49 = x3d.MetadataString()
+MetadataString49.setName("authorName")
+MetadataString49.setValue(["*TODO*"])
+
+MetadataSet47.setMetadata(MetadataString49)
+MetadataString50 = x3d.MetadataString()
+MetadataString50.setName("copyright")
+MetadataString50.setValue(["Copyright (c) 2023"])
+
+MetadataSet47.setMetadata(MetadataString50)
+MetadataString51 = x3d.MetadataString()
+MetadataString51.setName("humanoidVersion")
+MetadataString51.setValue(["*TODO*"])
+
+MetadataSet47.setMetadata(MetadataString51)
+MetadataString52 = x3d.MetadataString()
+MetadataString52.setName("usageDescription")
+MetadataString52.setValue(["*TODO*"])
+
+MetadataSet47.setMetadata(MetadataString52)
+
+HAnimHumanoid46.setMetadata(MetadataSet47)
+HAnimJoint53 = x3d.HAnimJoint()
+HAnimJoint53.setDEF("BvhUniversityWisconsionExample1_humanoid_root")
+HAnimJoint53.setName("humanoid_root")
+HAnimJoint53.setTranslation(x3d.doubleToFloat([0.7849403,3.508388,8.680851]))
+HAnimJoint53.setRotation(x3d.doubleToFloat([-0.0184530858032817,-0.992698784706892,-0.119199859336308,2.9151883640198]))
+HAnimJoint53.setScale(x3d.doubleToFloat([0.1,0.1,0.1]))
+HAnimJoint53.setContainerFieldOverride("skeleton")
+HAnimSegment54 = x3d.HAnimSegment()
+HAnimSegment54.setDEF("BvhUniversityWisconsionExample1_sacrum")
+HAnimSegment54.setName("sacrum")
+Switch55 = x3d.Switch()
+Switch55.setWhichChoice(0)
+Group56 = x3d.Group()
+TouchSensor57 = x3d.TouchSensor()
+TouchSensor57.setDescription("HAnimHumanoid ROOT ROOT_Hips, HAnimSegment sacrum")
+
+Group56.addChild(TouchSensor57)
+Shape58 = x3d.Shape()
+Shape58.setDEF("HAnimRootShape")
+Appearance59 = x3d.Appearance()
+Material60 = x3d.Material()
+Material60.setDEF("HAnimRootMaterial")
+Material60.setDiffuseColor(x3d.doubleToFloat([0.8,0,0]))
+Material60.setTransparency(0.3)
+
+Appearance59.setMaterial(Material60)
+
+Shape58.setAppearance(Appearance59)
+Sphere61 = x3d.Sphere()
+Sphere61.setDEF("HAnimJointSphere")
+Sphere61.setRadius(0.254)
+
+Shape58.setGeometry(Sphere61)
+
+Group56.addChild(Shape58)
+
+Switch55.addChild(Group56)
+Shape62 = x3d.Shape()
+Shape62.setDEF("HAnimJointShape")
+Appearance63 = x3d.Appearance()
+Material64 = x3d.Material()
+Material64.setDEF("HAnimJointMaterial")
+Material64.setDiffuseColor(x3d.doubleToFloat([0,0,0.8]))
+Material64.setTransparency(0.3)
+
+Appearance63.setMaterial(Material64)
+
+Shape62.setAppearance(Appearance63)
+Sphere65 = x3d.Sphere()
+Sphere65.setUSE("HAnimJointSphere")
+
+Shape62.setGeometry(Sphere65)
+
+Switch55.addChild(Shape62)
+Shape66 = x3d.Shape()
+LineSet67 = x3d.LineSet()
+LineSet67.setVertexCount([2])
+ColorRGBA68 = x3d.ColorRGBA()
+ColorRGBA68.setDEF("HAnimSegmentLineColorRGBA")
+ColorRGBA68.setColor(x3d.doubleToFloat([1,1,0,1,1,1,0,0.1]))
+
+LineSet67.setColor(ColorRGBA68)
+Coordinate69 = x3d.Coordinate()
+Coordinate69.setPoint(x3d.doubleToFloat([0,0,0,0,0,0]))
+
+LineSet67.setCoord(Coordinate69)
+
+Shape66.setGeometry(LineSet67)
+
+Switch55.addChild(Shape66)
+Shape70 = x3d.Shape()
+Shape70.setDEF("HAnimSiteShape")
+Appearance71 = x3d.Appearance()
+Material72 = x3d.Material()
+Material72.setDiffuseColor(x3d.doubleToFloat([1,0.5,0]))
+Material72.setTransparency(0.3)
+
+Appearance71.setMaterial(Material72)
+
+Shape70.setAppearance(Appearance71)
+IndexedFaceSet73 = x3d.IndexedFaceSet()
+IndexedFaceSet73.setDEF("DiamondIFS")
+IndexedFaceSet73.setSolid(False)
+IndexedFaceSet73.setCreaseAngle(0.5)
+IndexedFaceSet73.setCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1])
+Coordinate74 = x3d.Coordinate()
+Coordinate74.setPoint(x3d.doubleToFloat([0,0.254,0,-0.254,0,0,0,0,0.254,0.254,0,0,0,0,-0.254,0,-0.254,0]))
+
+IndexedFaceSet73.setCoord(Coordinate74)
+
+Shape70.setGeometry(IndexedFaceSet73)
+
+Switch55.addChild(Shape70)
+Shape75 = x3d.Shape()
+LineSet76 = x3d.LineSet()
+LineSet76.setVertexCount([2])
+ColorRGBA77 = x3d.ColorRGBA()
+ColorRGBA77.setDEF("HAnimSiteLineColorRGBA")
+ColorRGBA77.setColor(x3d.doubleToFloat([1,0.5,0,1,1,0.5,0,0.1]))
+
+LineSet76.setColor(ColorRGBA77)
+Coordinate78 = x3d.Coordinate()
+Coordinate78.setPoint(x3d.doubleToFloat([0,0,0,0,0,0]))
+
+LineSet76.setCoord(Coordinate78)
+
+Shape75.setGeometry(LineSet76)
+
+Switch55.addChild(Shape75)
+
+HAnimSegment54.addChild(Switch55)
+Shape79 = x3d.Shape()
+LineSet80 = x3d.LineSet()
+LineSet80.setVertexCount([2])
+ColorRGBA81 = x3d.ColorRGBA()
+ColorRGBA81.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet80.setColor(ColorRGBA81)
+Coordinate82 = x3d.Coordinate()
+Coordinate82.setPoint(x3d.doubleToFloat([0,0,0,0,5.21,0]))
+
+LineSet80.setCoord(Coordinate82)
+
+Shape79.setGeometry(LineSet80)
+
+HAnimSegment54.addChild(Shape79)
+Shape83 = x3d.Shape()
+LineSet84 = x3d.LineSet()
+LineSet84.setVertexCount([2])
+ColorRGBA85 = x3d.ColorRGBA()
+ColorRGBA85.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet84.setColor(ColorRGBA85)
+Coordinate86 = x3d.Coordinate()
+Coordinate86.setPoint(x3d.doubleToFloat([0,0,0,3.91,0,0]))
+
+LineSet84.setCoord(Coordinate86)
+
+Shape83.setGeometry(LineSet84)
+
+HAnimSegment54.addChild(Shape83)
+Shape87 = x3d.Shape()
+LineSet88 = x3d.LineSet()
+LineSet88.setVertexCount([2])
+ColorRGBA89 = x3d.ColorRGBA()
+ColorRGBA89.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet88.setColor(ColorRGBA89)
+Coordinate90 = x3d.Coordinate()
+Coordinate90.setPoint(x3d.doubleToFloat([0,0,0,-3.91,0,0]))
+
+LineSet88.setCoord(Coordinate90)
+
+Shape87.setGeometry(LineSet88)
+
+HAnimSegment54.addChild(Shape87)
+
+HAnimJoint53.addChild(HAnimSegment54)
+HAnimJoint91 = x3d.HAnimJoint()
+HAnimJoint91.setDEF("BvhUniversityWisconsionExample1_vl5")
+HAnimJoint91.setName("vl5")
+HAnimJoint91.setRotation(x3d.doubleToFloat([0.929559139694865,-0.360437334785587,0.0774902155269029,0.820797255601436]))
+HAnimJoint91.setCenter(x3d.doubleToFloat([0,5.21,0]))
+HAnimSegment92 = x3d.HAnimSegment()
+HAnimSegment92.setDEF("BvhUniversityWisconsionExample1_l5")
+HAnimSegment92.setName("l5")
+Transform93 = x3d.Transform()
+Transform93.setTranslation(x3d.doubleToFloat([0,5.21,0]))
+TouchSensor94 = x3d.TouchSensor()
+TouchSensor94.setDescription("HAnimJoint Chest vl5, HAnimSegment l5")
+
+Transform93.addChild(TouchSensor94)
+Shape95 = x3d.Shape()
+Shape95.setUSE("HAnimJointShape")
+
+Transform93.addChild(Shape95)
+Shape96 = x3d.Shape()
+LineSet97 = x3d.LineSet()
+LineSet97.setVertexCount([2])
+ColorRGBA98 = x3d.ColorRGBA()
+ColorRGBA98.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet97.setColor(ColorRGBA98)
+Coordinate99 = x3d.Coordinate()
+Coordinate99.setPoint(x3d.doubleToFloat([0,0,0,0,18.65,0]))
+
+LineSet97.setCoord(Coordinate99)
+
+Shape96.setGeometry(LineSet97)
+
+Transform93.addChild(Shape96)
+Shape100 = x3d.Shape()
+LineSet101 = x3d.LineSet()
+LineSet101.setVertexCount([2])
+ColorRGBA102 = x3d.ColorRGBA()
+ColorRGBA102.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet101.setColor(ColorRGBA102)
+Coordinate103 = x3d.Coordinate()
+Coordinate103.setPoint(x3d.doubleToFloat([0,0,0,1.12,16.23,1.87]))
+
+LineSet101.setCoord(Coordinate103)
+
+Shape100.setGeometry(LineSet101)
+
+Transform93.addChild(Shape100)
+Shape104 = x3d.Shape()
+LineSet105 = x3d.LineSet()
+LineSet105.setVertexCount([2])
+ColorRGBA106 = x3d.ColorRGBA()
+ColorRGBA106.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet105.setColor(ColorRGBA106)
+Coordinate107 = x3d.Coordinate()
+Coordinate107.setPoint(x3d.doubleToFloat([0,0,0,-1.12,16.23,1.87]))
+
+LineSet105.setCoord(Coordinate107)
+
+Shape104.setGeometry(LineSet105)
+
+Transform93.addChild(Shape104)
+
+HAnimSegment92.addChild(Transform93)
+
+HAnimJoint91.addChild(HAnimSegment92)
+HAnimJoint108 = x3d.HAnimJoint()
+HAnimJoint108.setDEF("BvhUniversityWisconsionExample1_Neck")
+HAnimJoint108.setName("Neck")
+HAnimJoint108.setRotation(x3d.doubleToFloat([0.983970484111271,0.0663053900569327,0.16554661472597,0.772979753553571]))
+HAnimJoint108.setCenter(x3d.doubleToFloat([0,23.86,0]))
+HAnimSegment109 = x3d.HAnimSegment()
+HAnimSegment109.setDEF("BvhUniversityWisconsionExample1_vl5_to_Neck")
+HAnimSegment109.setName("vl5_to_Neck")
+Transform110 = x3d.Transform()
+Transform110.setTranslation(x3d.doubleToFloat([0,23.86,0]))
+TouchSensor111 = x3d.TouchSensor()
+TouchSensor111.setDescription("HAnimJoint Neck Neck, HAnimSegment vl5_to_Neck")
+
+Transform110.addChild(TouchSensor111)
+Shape112 = x3d.Shape()
+Shape112.setUSE("HAnimJointShape")
+
+Transform110.addChild(Shape112)
+Shape113 = x3d.Shape()
+LineSet114 = x3d.LineSet()
+LineSet114.setVertexCount([2])
+ColorRGBA115 = x3d.ColorRGBA()
+ColorRGBA115.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet114.setColor(ColorRGBA115)
+Coordinate116 = x3d.Coordinate()
+Coordinate116.setPoint(x3d.doubleToFloat([0,0,0,0,5.45,0]))
+
+LineSet114.setCoord(Coordinate116)
+
+Shape113.setGeometry(LineSet114)
+
+Transform110.addChild(Shape113)
+
+HAnimSegment109.addChild(Transform110)
+
+HAnimJoint108.addChild(HAnimSegment109)
+HAnimJoint117 = x3d.HAnimJoint()
+HAnimJoint117.setDEF("BvhUniversityWisconsionExample1_skullbase")
+HAnimJoint117.setName("skullbase")
+HAnimJoint117.setRotation(x3d.doubleToFloat([-0.979126474330309,0.150183590569867,-0.136953409556093,0.734508385229556]))
+HAnimJoint117.setCenter(x3d.doubleToFloat([0,29.31,0]))
+HAnimSegment118 = x3d.HAnimSegment()
+HAnimSegment118.setDEF("BvhUniversityWisconsionExample1_skull")
+HAnimSegment118.setName("skull")
+Transform119 = x3d.Transform()
+Transform119.setTranslation(x3d.doubleToFloat([0,29.31,0]))
+HAnimSite120 = x3d.HAnimSite()
+HAnimSite120.setDEF("BvhUniversityWisconsionExample1_skull_tip")
+HAnimSite120.setName("skull_tip")
+HAnimSite120.setTranslation(x3d.doubleToFloat([0,3.87,0]))
+TouchSensor121 = x3d.TouchSensor()
+TouchSensor121.setDescription("HAnimSite skull_tip")
+
+HAnimSite120.addChild(TouchSensor121)
+Shape122 = x3d.Shape()
+Shape122.setUSE("HAnimSiteShape")
+
+HAnimSite120.addChild(Shape122)
+Shape123 = x3d.Shape()
+LineSet124 = x3d.LineSet()
+LineSet124.setVertexCount([2])
+ColorRGBA125 = x3d.ColorRGBA()
+ColorRGBA125.setUSE("HAnimSiteLineColorRGBA")
+
+LineSet124.setColor(ColorRGBA125)
+Coordinate126 = x3d.Coordinate()
+Coordinate126.setPoint(x3d.doubleToFloat([0,-3.87,0,0,0,0]))
+
+LineSet124.setCoord(Coordinate126)
+
+Shape123.setGeometry(LineSet124)
+
+HAnimSite120.addChild(Shape123)
+
+Transform119.addChild(HAnimSite120)
+TouchSensor127 = x3d.TouchSensor()
+TouchSensor127.setDescription("HAnimJoint Head skullbase, HAnimSegment skull")
+
+Transform119.addChild(TouchSensor127)
+Shape128 = x3d.Shape()
+Shape128.setUSE("HAnimJointShape")
+
+Transform119.addChild(Shape128)
+
+HAnimSegment118.addChild(Transform119)
+
+HAnimJoint117.addChild(HAnimSegment118)
+
+HAnimJoint108.addChild(HAnimJoint117)
+
+HAnimJoint91.addChild(HAnimJoint108)
+HAnimJoint129 = x3d.HAnimJoint()
+HAnimJoint129.setDEF("BvhUniversityWisconsionExample1_LeftCollar")
+HAnimJoint129.setName("LeftCollar")
+HAnimJoint129.setRotation(x3d.doubleToFloat([-0.0400336310146056,0.285571817840178,0.957520780580368,0.318543581718216]))
+HAnimJoint129.setCenter(x3d.doubleToFloat([1.12,21.44,1.87]))
+HAnimSegment130 = x3d.HAnimSegment()
+HAnimSegment130.setDEF("BvhUniversityWisconsionExample1_vl5_to_LeftCollar")
+HAnimSegment130.setName("vl5_to_LeftCollar")
+Transform131 = x3d.Transform()
+Transform131.setTranslation(x3d.doubleToFloat([1.12,21.44,1.87]))
+TouchSensor132 = x3d.TouchSensor()
+TouchSensor132.setDescription("HAnimJoint LeftCollar LeftCollar, HAnimSegment vl5_to_LeftCollar")
+
+Transform131.addChild(TouchSensor132)
+Shape133 = x3d.Shape()
+Shape133.setUSE("HAnimJointShape")
+
+Transform131.addChild(Shape133)
+Shape134 = x3d.Shape()
+LineSet135 = x3d.LineSet()
+LineSet135.setVertexCount([2])
+ColorRGBA136 = x3d.ColorRGBA()
+ColorRGBA136.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet135.setColor(ColorRGBA136)
+Coordinate137 = x3d.Coordinate()
+Coordinate137.setPoint(x3d.doubleToFloat([0,0,0,5.54,0,0]))
+
+LineSet135.setCoord(Coordinate137)
+
+Shape134.setGeometry(LineSet135)
+
+Transform131.addChild(Shape134)
+
+HAnimSegment130.addChild(Transform131)
+
+HAnimJoint129.addChild(HAnimSegment130)
+HAnimJoint138 = x3d.HAnimJoint()
+HAnimJoint138.setDEF("BvhUniversityWisconsionExample1_LeftUpArm")
+HAnimJoint138.setName("LeftUpArm")
+HAnimJoint138.setRotation(x3d.doubleToFloat([-0.027309899849048,-0.170484979510911,0.984981746598077,1.66813504770243]))
+HAnimJoint138.setCenter(x3d.doubleToFloat([6.66,21.44,1.87]))
+HAnimSegment139 = x3d.HAnimSegment()
+HAnimSegment139.setDEF("BvhUniversityWisconsionExample1_LeftCollar_to_LeftUpArm")
+HAnimSegment139.setName("LeftCollar_to_LeftUpArm")
+Transform140 = x3d.Transform()
+Transform140.setTranslation(x3d.doubleToFloat([6.66,21.44,1.87]))
+TouchSensor141 = x3d.TouchSensor()
+TouchSensor141.setDescription("HAnimJoint LeftUpArm LeftUpArm, HAnimSegment LeftCollar_to_LeftUpArm")
+
+Transform140.addChild(TouchSensor141)
+Shape142 = x3d.Shape()
+Shape142.setUSE("HAnimJointShape")
+
+Transform140.addChild(Shape142)
+Shape143 = x3d.Shape()
+LineSet144 = x3d.LineSet()
+LineSet144.setVertexCount([2])
+ColorRGBA145 = x3d.ColorRGBA()
+ColorRGBA145.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet144.setColor(ColorRGBA145)
+Coordinate146 = x3d.Coordinate()
+Coordinate146.setPoint(x3d.doubleToFloat([0,0,0,0,-11.96,0]))
+
+LineSet144.setCoord(Coordinate146)
+
+Shape143.setGeometry(LineSet144)
+
+Transform140.addChild(Shape143)
+
+HAnimSegment139.addChild(Transform140)
+
+HAnimJoint138.addChild(HAnimSegment139)
+HAnimJoint147 = x3d.HAnimJoint()
+HAnimJoint147.setDEF("BvhUniversityWisconsionExample1_LeftLowArm")
+HAnimJoint147.setName("LeftLowArm")
+HAnimJoint147.setRotation(x3d.doubleToFloat([-0.998249192144246,0.0587758586859541,-0.00662939055192083,1.65994762916941]))
+HAnimJoint147.setCenter(x3d.doubleToFloat([6.66,9.48,1.87]))
+HAnimSegment148 = x3d.HAnimSegment()
+HAnimSegment148.setDEF("BvhUniversityWisconsionExample1_LeftUpArm_to_LeftLowArm")
+HAnimSegment148.setName("LeftUpArm_to_LeftLowArm")
+Transform149 = x3d.Transform()
+Transform149.setTranslation(x3d.doubleToFloat([6.66,9.48,1.87]))
+TouchSensor150 = x3d.TouchSensor()
+TouchSensor150.setDescription("HAnimJoint LeftLowArm LeftLowArm, HAnimSegment LeftUpArm_to_LeftLowArm")
+
+Transform149.addChild(TouchSensor150)
+Shape151 = x3d.Shape()
+Shape151.setUSE("HAnimJointShape")
+
+Transform149.addChild(Shape151)
+Shape152 = x3d.Shape()
+LineSet153 = x3d.LineSet()
+LineSet153.setVertexCount([2])
+ColorRGBA154 = x3d.ColorRGBA()
+ColorRGBA154.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet153.setColor(ColorRGBA154)
+Coordinate155 = x3d.Coordinate()
+Coordinate155.setPoint(x3d.doubleToFloat([0,0,0,0,-9.93,0]))
+
+LineSet153.setCoord(Coordinate155)
+
+Shape152.setGeometry(LineSet153)
+
+Transform149.addChild(Shape152)
+
+HAnimSegment148.addChild(Transform149)
+
+HAnimJoint147.addChild(HAnimSegment148)
+HAnimJoint156 = x3d.HAnimJoint()
+HAnimJoint156.setDEF("BvhUniversityWisconsionExample1_LeftHand")
+HAnimJoint156.setName("LeftHand")
+HAnimJoint156.setRotation(x3d.doubleToFloat([0.404520441533964,0.00251538810905742,0.914525497293667,0.0133189030390886]))
+HAnimJoint156.setCenter(x3d.doubleToFloat([6.66,-0.45,1.87]))
+HAnimSegment157 = x3d.HAnimSegment()
+HAnimSegment157.setDEF("BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand")
+HAnimSegment157.setName("LeftLowArm_to_LeftHand")
+Transform158 = x3d.Transform()
+Transform158.setTranslation(x3d.doubleToFloat([6.66,-0.45,1.87]))
+HAnimSite159 = x3d.HAnimSite()
+HAnimSite159.setDEF("BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand_tip")
+HAnimSite159.setName("LeftLowArm_to_LeftHand_tip")
+HAnimSite159.setTranslation(x3d.doubleToFloat([0,-7,0]))
+TouchSensor160 = x3d.TouchSensor()
+TouchSensor160.setDescription("HAnimSite LeftLowArm_to_LeftHand_tip")
+
+HAnimSite159.addChild(TouchSensor160)
+Shape161 = x3d.Shape()
+Shape161.setUSE("HAnimSiteShape")
+
+HAnimSite159.addChild(Shape161)
+Shape162 = x3d.Shape()
+LineSet163 = x3d.LineSet()
+LineSet163.setVertexCount([2])
+ColorRGBA164 = x3d.ColorRGBA()
+ColorRGBA164.setUSE("HAnimSiteLineColorRGBA")
+
+LineSet163.setColor(ColorRGBA164)
+Coordinate165 = x3d.Coordinate()
+Coordinate165.setPoint(x3d.doubleToFloat([0,7,0,0,0,0]))
+
+LineSet163.setCoord(Coordinate165)
+
+Shape162.setGeometry(LineSet163)
+
+HAnimSite159.addChild(Shape162)
+
+Transform158.addChild(HAnimSite159)
+TouchSensor166 = x3d.TouchSensor()
+TouchSensor166.setDescription("HAnimJoint LeftHand LeftHand, HAnimSegment LeftLowArm_to_LeftHand")
+
+Transform158.addChild(TouchSensor166)
+Shape167 = x3d.Shape()
+Shape167.setUSE("HAnimJointShape")
+
+Transform158.addChild(Shape167)
+
+HAnimSegment157.addChild(Transform158)
+
+HAnimJoint156.addChild(HAnimSegment157)
+
+HAnimJoint147.addChild(HAnimJoint156)
+
+HAnimJoint138.addChild(HAnimJoint147)
+
+HAnimJoint129.addChild(HAnimJoint138)
+
+HAnimJoint91.addChild(HAnimJoint129)
+HAnimJoint168 = x3d.HAnimJoint()
+HAnimJoint168.setDEF("BvhUniversityWisconsionExample1_RightCollar")
+HAnimJoint168.setName("RightCollar")
+HAnimJoint168.setRotation(x3d.doubleToFloat([-0.0717927567877157,-0.898736438505571,-0.432572091304025,0.383573753513759]))
+HAnimJoint168.setCenter(x3d.doubleToFloat([-1.12,21.44,1.87]))
+HAnimSegment169 = x3d.HAnimSegment()
+HAnimSegment169.setDEF("BvhUniversityWisconsionExample1_vl5_to_RightCollar")
+HAnimSegment169.setName("vl5_to_RightCollar")
+Transform170 = x3d.Transform()
+Transform170.setTranslation(x3d.doubleToFloat([-1.12,21.44,1.87]))
+TouchSensor171 = x3d.TouchSensor()
+TouchSensor171.setDescription("HAnimJoint RightCollar RightCollar, HAnimSegment vl5_to_RightCollar")
+
+Transform170.addChild(TouchSensor171)
+Shape172 = x3d.Shape()
+Shape172.setUSE("HAnimJointShape")
+
+Transform170.addChild(Shape172)
+Shape173 = x3d.Shape()
+LineSet174 = x3d.LineSet()
+LineSet174.setVertexCount([2])
+ColorRGBA175 = x3d.ColorRGBA()
+ColorRGBA175.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet174.setColor(ColorRGBA175)
+Coordinate176 = x3d.Coordinate()
+Coordinate176.setPoint(x3d.doubleToFloat([0,0,0,-6.07,0,0]))
+
+LineSet174.setCoord(Coordinate176)
+
+Shape173.setGeometry(LineSet174)
+
+Transform170.addChild(Shape173)
+
+HAnimSegment169.addChild(Transform170)
+
+HAnimJoint168.addChild(HAnimSegment169)
+HAnimJoint177 = x3d.HAnimJoint()
+HAnimJoint177.setDEF("BvhUniversityWisconsionExample1_RightUpArm")
+HAnimJoint177.setName("RightUpArm")
+HAnimJoint177.setRotation(x3d.doubleToFloat([-0.750052184733347,-0.545300751513553,-0.374257679380781,1.93524054510947]))
+HAnimJoint177.setCenter(x3d.doubleToFloat([-7.19,21.44,1.87]))
+HAnimSegment178 = x3d.HAnimSegment()
+HAnimSegment178.setDEF("BvhUniversityWisconsionExample1_RightCollar_to_RightUpArm")
+HAnimSegment178.setName("RightCollar_to_RightUpArm")
+Transform179 = x3d.Transform()
+Transform179.setTranslation(x3d.doubleToFloat([-7.19,21.44,1.87]))
+TouchSensor180 = x3d.TouchSensor()
+TouchSensor180.setDescription("HAnimJoint RightUpArm RightUpArm, HAnimSegment RightCollar_to_RightUpArm")
+
+Transform179.addChild(TouchSensor180)
+Shape181 = x3d.Shape()
+Shape181.setUSE("HAnimJointShape")
+
+Transform179.addChild(Shape181)
+Shape182 = x3d.Shape()
+LineSet183 = x3d.LineSet()
+LineSet183.setVertexCount([2])
+ColorRGBA184 = x3d.ColorRGBA()
+ColorRGBA184.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet183.setColor(ColorRGBA184)
+Coordinate185 = x3d.Coordinate()
+Coordinate185.setPoint(x3d.doubleToFloat([0,0,0,0,-11.82,0]))
+
+LineSet183.setCoord(Coordinate185)
+
+Shape182.setGeometry(LineSet183)
+
+Transform179.addChild(Shape182)
+
+HAnimSegment178.addChild(Transform179)
+
+HAnimJoint177.addChild(HAnimSegment178)
+HAnimJoint186 = x3d.HAnimJoint()
+HAnimJoint186.setDEF("BvhUniversityWisconsionExample1_RightLowArm")
+HAnimJoint186.setName("RightLowArm")
+HAnimJoint186.setRotation(x3d.doubleToFloat([-0.942326628906139,0.260683574441484,0.209915693722034,1.36514284873355]))
+HAnimJoint186.setCenter(x3d.doubleToFloat([-7.19,9.62,1.87]))
+HAnimSegment187 = x3d.HAnimSegment()
+HAnimSegment187.setDEF("BvhUniversityWisconsionExample1_RightUpArm_to_RightLowArm")
+HAnimSegment187.setName("RightUpArm_to_RightLowArm")
+Transform188 = x3d.Transform()
+Transform188.setTranslation(x3d.doubleToFloat([-7.19,9.62,1.87]))
+TouchSensor189 = x3d.TouchSensor()
+TouchSensor189.setDescription("HAnimJoint RightLowArm RightLowArm, HAnimSegment RightUpArm_to_RightLowArm")
+
+Transform188.addChild(TouchSensor189)
+Shape190 = x3d.Shape()
+Shape190.setUSE("HAnimJointShape")
+
+Transform188.addChild(Shape190)
+Shape191 = x3d.Shape()
+LineSet192 = x3d.LineSet()
+LineSet192.setVertexCount([2])
+ColorRGBA193 = x3d.ColorRGBA()
+ColorRGBA193.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet192.setColor(ColorRGBA193)
+Coordinate194 = x3d.Coordinate()
+Coordinate194.setPoint(x3d.doubleToFloat([0,0,0,0,-10.65,0]))
+
+LineSet192.setCoord(Coordinate194)
+
+Shape191.setGeometry(LineSet192)
+
+Transform188.addChild(Shape191)
+
+HAnimSegment187.addChild(Transform188)
+
+HAnimJoint186.addChild(HAnimSegment187)
+HAnimJoint195 = x3d.HAnimJoint()
+HAnimJoint195.setDEF("BvhUniversityWisconsionExample1_RightHand")
+HAnimJoint195.setName("RightHand")
+HAnimJoint195.setRotation(x3d.doubleToFloat([0.487401172792782,0.00827736333346378,-0.87313892480885,0.0323338299925714]))
+HAnimJoint195.setCenter(x3d.doubleToFloat([-7.19,-1.03,1.87]))
+HAnimSegment196 = x3d.HAnimSegment()
+HAnimSegment196.setDEF("BvhUniversityWisconsionExample1_RightLowArm_to_RightHand")
+HAnimSegment196.setName("RightLowArm_to_RightHand")
+Transform197 = x3d.Transform()
+Transform197.setTranslation(x3d.doubleToFloat([-7.19,-1.03,1.87]))
+HAnimSite198 = x3d.HAnimSite()
+HAnimSite198.setDEF("BvhUniversityWisconsionExample1_RightLowArm_to_RightHand_tip")
+HAnimSite198.setName("RightLowArm_to_RightHand_tip")
+HAnimSite198.setTranslation(x3d.doubleToFloat([0,-7,0]))
+TouchSensor199 = x3d.TouchSensor()
+TouchSensor199.setDescription("HAnimSite RightLowArm_to_RightHand_tip")
+
+HAnimSite198.addChild(TouchSensor199)
+Shape200 = x3d.Shape()
+Shape200.setUSE("HAnimSiteShape")
+
+HAnimSite198.addChild(Shape200)
+Shape201 = x3d.Shape()
+LineSet202 = x3d.LineSet()
+LineSet202.setVertexCount([2])
+ColorRGBA203 = x3d.ColorRGBA()
+ColorRGBA203.setUSE("HAnimSiteLineColorRGBA")
+
+LineSet202.setColor(ColorRGBA203)
+Coordinate204 = x3d.Coordinate()
+Coordinate204.setPoint(x3d.doubleToFloat([0,7,0,0,0,0]))
+
+LineSet202.setCoord(Coordinate204)
+
+Shape201.setGeometry(LineSet202)
+
+HAnimSite198.addChild(Shape201)
+
+Transform197.addChild(HAnimSite198)
+TouchSensor205 = x3d.TouchSensor()
+TouchSensor205.setDescription("HAnimJoint RightHand RightHand, HAnimSegment RightLowArm_to_RightHand")
+
+Transform197.addChild(TouchSensor205)
+Shape206 = x3d.Shape()
+Shape206.setUSE("HAnimJointShape")
+
+Transform197.addChild(Shape206)
+
+HAnimSegment196.addChild(Transform197)
+
+HAnimJoint195.addChild(HAnimSegment196)
+
+HAnimJoint186.addChild(HAnimJoint195)
+
+HAnimJoint177.addChild(HAnimJoint186)
+
+HAnimJoint168.addChild(HAnimJoint177)
+
+HAnimJoint91.addChild(HAnimJoint168)
+
+HAnimJoint53.addChild(HAnimJoint91)
+HAnimJoint207 = x3d.HAnimJoint()
+HAnimJoint207.setDEF("BvhUniversityWisconsionExample1_LeftUpLeg")
+HAnimJoint207.setName("LeftUpLeg")
+HAnimJoint207.setRotation(x3d.doubleToFloat([0.798274116909833,-0.0905296906431976,0.595451769150005,0.374616063385567]))
+HAnimJoint207.setCenter(x3d.doubleToFloat([3.91,0,0]))
+HAnimSegment208 = x3d.HAnimSegment()
+HAnimSegment208.setDEF("BvhUniversityWisconsionExample1_humanoid_root_to_LeftUpLeg")
+HAnimSegment208.setName("humanoid_root_to_LeftUpLeg")
+Transform209 = x3d.Transform()
+Transform209.setTranslation(x3d.doubleToFloat([3.91,0,0]))
+TouchSensor210 = x3d.TouchSensor()
+TouchSensor210.setDescription("HAnimJoint LeftUpLeg LeftUpLeg, HAnimSegment humanoid_root_to_LeftUpLeg")
+
+Transform209.addChild(TouchSensor210)
+Shape211 = x3d.Shape()
+Shape211.setUSE("HAnimJointShape")
+
+Transform209.addChild(Shape211)
+Shape212 = x3d.Shape()
+LineSet213 = x3d.LineSet()
+LineSet213.setVertexCount([2])
+ColorRGBA214 = x3d.ColorRGBA()
+ColorRGBA214.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet213.setColor(ColorRGBA214)
+Coordinate215 = x3d.Coordinate()
+Coordinate215.setPoint(x3d.doubleToFloat([0,0,0,0,-18.34,0]))
+
+LineSet213.setCoord(Coordinate215)
+
+Shape212.setGeometry(LineSet213)
+
+Transform209.addChild(Shape212)
+
+HAnimSegment208.addChild(Transform209)
+
+HAnimJoint207.addChild(HAnimSegment208)
+HAnimJoint216 = x3d.HAnimJoint()
+HAnimJoint216.setDEF("BvhUniversityWisconsionExample1_LeftLowLeg")
+HAnimJoint216.setName("LeftLowLeg")
+HAnimJoint216.setRotation(x3d.doubleToFloat([0.969171949455709,0.159020234805176,0.188197495495361,1.02828103886506]))
+HAnimJoint216.setCenter(x3d.doubleToFloat([3.91,-18.34,0]))
+HAnimSegment217 = x3d.HAnimSegment()
+HAnimSegment217.setDEF("BvhUniversityWisconsionExample1_LeftUpLeg_to_LeftLowLeg")
+HAnimSegment217.setName("LeftUpLeg_to_LeftLowLeg")
+Transform218 = x3d.Transform()
+Transform218.setTranslation(x3d.doubleToFloat([3.91,-18.34,0]))
+TouchSensor219 = x3d.TouchSensor()
+TouchSensor219.setDescription("HAnimJoint LeftLowLeg LeftLowLeg, HAnimSegment LeftUpLeg_to_LeftLowLeg")
+
+Transform218.addChild(TouchSensor219)
+Shape220 = x3d.Shape()
+Shape220.setUSE("HAnimJointShape")
+
+Transform218.addChild(Shape220)
+Shape221 = x3d.Shape()
+LineSet222 = x3d.LineSet()
+LineSet222.setVertexCount([2])
+ColorRGBA223 = x3d.ColorRGBA()
+ColorRGBA223.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet222.setColor(ColorRGBA223)
+Coordinate224 = x3d.Coordinate()
+Coordinate224.setPoint(x3d.doubleToFloat([0,0,0,0,-17.37,0]))
+
+LineSet222.setCoord(Coordinate224)
+
+Shape221.setGeometry(LineSet222)
+
+Transform218.addChild(Shape221)
+
+HAnimSegment217.addChild(Transform218)
+
+HAnimJoint216.addChild(HAnimSegment217)
+HAnimJoint225 = x3d.HAnimJoint()
+HAnimJoint225.setDEF("BvhUniversityWisconsionExample1_LeftFoot")
+HAnimJoint225.setName("LeftFoot")
+HAnimJoint225.setRotation(x3d.doubleToFloat([1.00000000000036,0,0,0.0199134632110525]))
+HAnimJoint225.setCenter(x3d.doubleToFloat([3.91,-35.71,0]))
+HAnimSegment226 = x3d.HAnimSegment()
+HAnimSegment226.setDEF("BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot")
+HAnimSegment226.setName("LeftLowLeg_to_LeftFoot")
+Transform227 = x3d.Transform()
+Transform227.setTranslation(x3d.doubleToFloat([3.91,-35.71,0]))
+HAnimSite228 = x3d.HAnimSite()
+HAnimSite228.setDEF("BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot_tip")
+HAnimSite228.setName("LeftLowLeg_to_LeftFoot_tip")
+HAnimSite228.setTranslation(x3d.doubleToFloat([0,-3.46,0]))
+TouchSensor229 = x3d.TouchSensor()
+TouchSensor229.setDescription("HAnimSite LeftLowLeg_to_LeftFoot_tip")
+
+HAnimSite228.addChild(TouchSensor229)
+Shape230 = x3d.Shape()
+Shape230.setUSE("HAnimSiteShape")
+
+HAnimSite228.addChild(Shape230)
+Shape231 = x3d.Shape()
+LineSet232 = x3d.LineSet()
+LineSet232.setVertexCount([2])
+ColorRGBA233 = x3d.ColorRGBA()
+ColorRGBA233.setUSE("HAnimSiteLineColorRGBA")
+
+LineSet232.setColor(ColorRGBA233)
+Coordinate234 = x3d.Coordinate()
+Coordinate234.setPoint(x3d.doubleToFloat([0,3.46,0,0,0,0]))
+
+LineSet232.setCoord(Coordinate234)
+
+Shape231.setGeometry(LineSet232)
+
+HAnimSite228.addChild(Shape231)
+
+Transform227.addChild(HAnimSite228)
+TouchSensor235 = x3d.TouchSensor()
+TouchSensor235.setDescription("HAnimJoint LeftFoot LeftFoot, HAnimSegment LeftLowLeg_to_LeftFoot")
+
+Transform227.addChild(TouchSensor235)
+Shape236 = x3d.Shape()
+Shape236.setUSE("HAnimJointShape")
+
+Transform227.addChild(Shape236)
+
+HAnimSegment226.addChild(Transform227)
+
+HAnimJoint225.addChild(HAnimSegment226)
+
+HAnimJoint216.addChild(HAnimJoint225)
+
+HAnimJoint207.addChild(HAnimJoint216)
+
+HAnimJoint53.addChild(HAnimJoint207)
+HAnimJoint237 = x3d.HAnimJoint()
+HAnimJoint237.setDEF("BvhUniversityWisconsionExample1_RightUpLeg")
+HAnimJoint237.setName("RightUpLeg")
+HAnimJoint237.setRotation(x3d.doubleToFloat([-0.529026768997627,-0.0781104813974245,-0.845002621522441,0.345959390966261]))
+HAnimJoint237.setCenter(x3d.doubleToFloat([-3.91,0,0]))
+HAnimSegment238 = x3d.HAnimSegment()
+HAnimSegment238.setDEF("BvhUniversityWisconsionExample1_humanoid_root_to_RightUpLeg")
+HAnimSegment238.setName("humanoid_root_to_RightUpLeg")
+Transform239 = x3d.Transform()
+Transform239.setTranslation(x3d.doubleToFloat([-3.91,0,0]))
+TouchSensor240 = x3d.TouchSensor()
+TouchSensor240.setDescription("HAnimJoint RightUpLeg RightUpLeg, HAnimSegment humanoid_root_to_RightUpLeg")
+
+Transform239.addChild(TouchSensor240)
+Shape241 = x3d.Shape()
+Shape241.setUSE("HAnimJointShape")
+
+Transform239.addChild(Shape241)
+Shape242 = x3d.Shape()
+LineSet243 = x3d.LineSet()
+LineSet243.setVertexCount([2])
+ColorRGBA244 = x3d.ColorRGBA()
+ColorRGBA244.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet243.setColor(ColorRGBA244)
+Coordinate245 = x3d.Coordinate()
+Coordinate245.setPoint(x3d.doubleToFloat([0,0,0,0,-17.63,0]))
+
+LineSet243.setCoord(Coordinate245)
+
+Shape242.setGeometry(LineSet243)
+
+Transform239.addChild(Shape242)
+
+HAnimSegment238.addChild(Transform239)
+
+HAnimJoint237.addChild(HAnimSegment238)
+HAnimJoint246 = x3d.HAnimJoint()
+HAnimJoint246.setDEF("BvhUniversityWisconsionExample1_RightLowLeg")
+HAnimJoint246.setName("RightLowLeg")
+HAnimJoint246.setRotation(x3d.doubleToFloat([0.978057447453843,-0.194999101930461,0.073341527979632,0.971415273794883]))
+HAnimJoint246.setCenter(x3d.doubleToFloat([-3.91,-17.63,0]))
+HAnimSegment247 = x3d.HAnimSegment()
+HAnimSegment247.setDEF("BvhUniversityWisconsionExample1_RightUpLeg_to_RightLowLeg")
+HAnimSegment247.setName("RightUpLeg_to_RightLowLeg")
+Transform248 = x3d.Transform()
+Transform248.setTranslation(x3d.doubleToFloat([-3.91,-17.63,0]))
+TouchSensor249 = x3d.TouchSensor()
+TouchSensor249.setDescription("HAnimJoint RightLowLeg RightLowLeg, HAnimSegment RightUpLeg_to_RightLowLeg")
+
+Transform248.addChild(TouchSensor249)
+Shape250 = x3d.Shape()
+Shape250.setUSE("HAnimJointShape")
+
+Transform248.addChild(Shape250)
+Shape251 = x3d.Shape()
+LineSet252 = x3d.LineSet()
+LineSet252.setVertexCount([2])
+ColorRGBA253 = x3d.ColorRGBA()
+ColorRGBA253.setUSE("HAnimSegmentLineColorRGBA")
+
+LineSet252.setColor(ColorRGBA253)
+Coordinate254 = x3d.Coordinate()
+Coordinate254.setPoint(x3d.doubleToFloat([0,0,0,0,-17.14,0]))
+
+LineSet252.setCoord(Coordinate254)
+
+Shape251.setGeometry(LineSet252)
+
+Transform248.addChild(Shape251)
+
+HAnimSegment247.addChild(Transform248)
+
+HAnimJoint246.addChild(HAnimSegment247)
+HAnimJoint255 = x3d.HAnimJoint()
+HAnimJoint255.setDEF("BvhUniversityWisconsionExample1_RightFoot")
+HAnimJoint255.setName("RightFoot")
+HAnimJoint255.setRotation(x3d.doubleToFloat([-1,0,0,0.446403006744384]))
+HAnimJoint255.setCenter(x3d.doubleToFloat([-3.91,-34.77,0]))
+HAnimSegment256 = x3d.HAnimSegment()
+HAnimSegment256.setDEF("BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot")
+HAnimSegment256.setName("RightLowLeg_to_RightFoot")
+Transform257 = x3d.Transform()
+Transform257.setTranslation(x3d.doubleToFloat([-3.91,-34.77,0]))
+HAnimSite258 = x3d.HAnimSite()
+HAnimSite258.setDEF("BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot_tip")
+HAnimSite258.setName("RightLowLeg_to_RightFoot_tip")
+HAnimSite258.setTranslation(x3d.doubleToFloat([0,-3.75,0]))
+TouchSensor259 = x3d.TouchSensor()
+TouchSensor259.setDescription("HAnimSite RightLowLeg_to_RightFoot_tip")
+
+HAnimSite258.addChild(TouchSensor259)
+Shape260 = x3d.Shape()
+Shape260.setUSE("HAnimSiteShape")
+
+HAnimSite258.addChild(Shape260)
+Shape261 = x3d.Shape()
+LineSet262 = x3d.LineSet()
+LineSet262.setVertexCount([2])
+ColorRGBA263 = x3d.ColorRGBA()
+ColorRGBA263.setUSE("HAnimSiteLineColorRGBA")
+
+LineSet262.setColor(ColorRGBA263)
+Coordinate264 = x3d.Coordinate()
+Coordinate264.setPoint(x3d.doubleToFloat([0,3.75,0,0,0,0]))
+
+LineSet262.setCoord(Coordinate264)
+
+Shape261.setGeometry(LineSet262)
+
+HAnimSite258.addChild(Shape261)
+
+Transform257.addChild(HAnimSite258)
+TouchSensor265 = x3d.TouchSensor()
+TouchSensor265.setDescription("HAnimJoint RightFoot RightFoot, HAnimSegment RightLowLeg_to_RightFoot")
+
+Transform257.addChild(TouchSensor265)
+Shape266 = x3d.Shape()
+Shape266.setUSE("HAnimJointShape")
+
+Transform257.addChild(Shape266)
+
+HAnimSegment256.addChild(Transform257)
+
+HAnimJoint255.addChild(HAnimSegment256)
+
+HAnimJoint246.addChild(HAnimJoint255)
+
+HAnimJoint237.addChild(HAnimJoint246)
+
+HAnimJoint53.addChild(HAnimJoint237)
+
+HAnimHumanoid46.addSkeleton(HAnimJoint53)
+HAnimJoint267 = x3d.HAnimJoint()
+HAnimJoint267.setContainerFieldOverride("joints")
+HAnimJoint267.setUSE("BvhUniversityWisconsionExample1_humanoid_root")
+
+HAnimHumanoid46.addJoints(HAnimJoint267)
+HAnimJoint268 = x3d.HAnimJoint()
+HAnimJoint268.setContainerFieldOverride("joints")
+HAnimJoint268.setUSE("BvhUniversityWisconsionExample1_vl5")
+
+HAnimHumanoid46.addJoints(HAnimJoint268)
+HAnimJoint269 = x3d.HAnimJoint()
+HAnimJoint269.setContainerFieldOverride("joints")
+HAnimJoint269.setUSE("BvhUniversityWisconsionExample1_Neck")
+
+HAnimHumanoid46.addJoints(HAnimJoint269)
+HAnimJoint270 = x3d.HAnimJoint()
+HAnimJoint270.setContainerFieldOverride("joints")
+HAnimJoint270.setUSE("BvhUniversityWisconsionExample1_skullbase")
+
+HAnimHumanoid46.addJoints(HAnimJoint270)
+HAnimJoint271 = x3d.HAnimJoint()
+HAnimJoint271.setContainerFieldOverride("joints")
+HAnimJoint271.setUSE("BvhUniversityWisconsionExample1_LeftCollar")
+
+HAnimHumanoid46.addJoints(HAnimJoint271)
+HAnimJoint272 = x3d.HAnimJoint()
+HAnimJoint272.setContainerFieldOverride("joints")
+HAnimJoint272.setUSE("BvhUniversityWisconsionExample1_LeftUpArm")
+
+HAnimHumanoid46.addJoints(HAnimJoint272)
+HAnimJoint273 = x3d.HAnimJoint()
+HAnimJoint273.setContainerFieldOverride("joints")
+HAnimJoint273.setUSE("BvhUniversityWisconsionExample1_LeftLowArm")
+
+HAnimHumanoid46.addJoints(HAnimJoint273)
+HAnimJoint274 = x3d.HAnimJoint()
+HAnimJoint274.setContainerFieldOverride("joints")
+HAnimJoint274.setUSE("BvhUniversityWisconsionExample1_LeftHand")
+
+HAnimHumanoid46.addJoints(HAnimJoint274)
+HAnimJoint275 = x3d.HAnimJoint()
+HAnimJoint275.setContainerFieldOverride("joints")
+HAnimJoint275.setUSE("BvhUniversityWisconsionExample1_RightCollar")
+
+HAnimHumanoid46.addJoints(HAnimJoint275)
+HAnimJoint276 = x3d.HAnimJoint()
+HAnimJoint276.setContainerFieldOverride("joints")
+HAnimJoint276.setUSE("BvhUniversityWisconsionExample1_RightUpArm")
+
+HAnimHumanoid46.addJoints(HAnimJoint276)
+HAnimJoint277 = x3d.HAnimJoint()
+HAnimJoint277.setContainerFieldOverride("joints")
+HAnimJoint277.setUSE("BvhUniversityWisconsionExample1_RightLowArm")
+
+HAnimHumanoid46.addJoints(HAnimJoint277)
+HAnimJoint278 = x3d.HAnimJoint()
+HAnimJoint278.setContainerFieldOverride("joints")
+HAnimJoint278.setUSE("BvhUniversityWisconsionExample1_RightHand")
+
+HAnimHumanoid46.addJoints(HAnimJoint278)
+HAnimJoint279 = x3d.HAnimJoint()
+HAnimJoint279.setContainerFieldOverride("joints")
+HAnimJoint279.setUSE("BvhUniversityWisconsionExample1_LeftUpLeg")
+
+HAnimHumanoid46.addJoints(HAnimJoint279)
+HAnimJoint280 = x3d.HAnimJoint()
+HAnimJoint280.setContainerFieldOverride("joints")
+HAnimJoint280.setUSE("BvhUniversityWisconsionExample1_LeftLowLeg")
+
+HAnimHumanoid46.addJoints(HAnimJoint280)
+HAnimJoint281 = x3d.HAnimJoint()
+HAnimJoint281.setContainerFieldOverride("joints")
+HAnimJoint281.setUSE("BvhUniversityWisconsionExample1_LeftFoot")
+
+HAnimHumanoid46.addJoints(HAnimJoint281)
+HAnimJoint282 = x3d.HAnimJoint()
+HAnimJoint282.setContainerFieldOverride("joints")
+HAnimJoint282.setUSE("BvhUniversityWisconsionExample1_RightUpLeg")
+
+HAnimHumanoid46.addJoints(HAnimJoint282)
+HAnimJoint283 = x3d.HAnimJoint()
+HAnimJoint283.setContainerFieldOverride("joints")
+HAnimJoint283.setUSE("BvhUniversityWisconsionExample1_RightLowLeg")
+
+HAnimHumanoid46.addJoints(HAnimJoint283)
+HAnimJoint284 = x3d.HAnimJoint()
+HAnimJoint284.setContainerFieldOverride("joints")
+HAnimJoint284.setUSE("BvhUniversityWisconsionExample1_RightFoot")
+
+HAnimHumanoid46.addJoints(HAnimJoint284)
+HAnimSegment285 = x3d.HAnimSegment()
+HAnimSegment285.setContainerFieldOverride("segments")
+HAnimSegment285.setUSE("BvhUniversityWisconsionExample1_sacrum")
+
+HAnimHumanoid46.addSegments(HAnimSegment285)
+HAnimSegment286 = x3d.HAnimSegment()
+HAnimSegment286.setContainerFieldOverride("segments")
+HAnimSegment286.setUSE("BvhUniversityWisconsionExample1_l5")
+
+HAnimHumanoid46.addSegments(HAnimSegment286)
+HAnimSegment287 = x3d.HAnimSegment()
+HAnimSegment287.setContainerFieldOverride("segments")
+HAnimSegment287.setUSE("BvhUniversityWisconsionExample1_vl5_to_Neck")
+
+HAnimHumanoid46.addSegments(HAnimSegment287)
+HAnimSegment288 = x3d.HAnimSegment()
+HAnimSegment288.setContainerFieldOverride("segments")
+HAnimSegment288.setUSE("BvhUniversityWisconsionExample1_skull")
+
+HAnimHumanoid46.addSegments(HAnimSegment288)
+HAnimSegment289 = x3d.HAnimSegment()
+HAnimSegment289.setContainerFieldOverride("segments")
+HAnimSegment289.setUSE("BvhUniversityWisconsionExample1_vl5_to_LeftCollar")
+
+HAnimHumanoid46.addSegments(HAnimSegment289)
+HAnimSegment290 = x3d.HAnimSegment()
+HAnimSegment290.setContainerFieldOverride("segments")
+HAnimSegment290.setUSE("BvhUniversityWisconsionExample1_LeftCollar_to_LeftUpArm")
+
+HAnimHumanoid46.addSegments(HAnimSegment290)
+HAnimSegment291 = x3d.HAnimSegment()
+HAnimSegment291.setContainerFieldOverride("segments")
+HAnimSegment291.setUSE("BvhUniversityWisconsionExample1_LeftUpArm_to_LeftLowArm")
+
+HAnimHumanoid46.addSegments(HAnimSegment291)
+HAnimSegment292 = x3d.HAnimSegment()
+HAnimSegment292.setContainerFieldOverride("segments")
+HAnimSegment292.setUSE("BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand")
+
+HAnimHumanoid46.addSegments(HAnimSegment292)
+HAnimSegment293 = x3d.HAnimSegment()
+HAnimSegment293.setContainerFieldOverride("segments")
+HAnimSegment293.setUSE("BvhUniversityWisconsionExample1_vl5_to_RightCollar")
+
+HAnimHumanoid46.addSegments(HAnimSegment293)
+HAnimSegment294 = x3d.HAnimSegment()
+HAnimSegment294.setContainerFieldOverride("segments")
+HAnimSegment294.setUSE("BvhUniversityWisconsionExample1_RightCollar_to_RightUpArm")
+
+HAnimHumanoid46.addSegments(HAnimSegment294)
+HAnimSegment295 = x3d.HAnimSegment()
+HAnimSegment295.setContainerFieldOverride("segments")
+HAnimSegment295.setUSE("BvhUniversityWisconsionExample1_RightUpArm_to_RightLowArm")
+
+HAnimHumanoid46.addSegments(HAnimSegment295)
+HAnimSegment296 = x3d.HAnimSegment()
+HAnimSegment296.setContainerFieldOverride("segments")
+HAnimSegment296.setUSE("BvhUniversityWisconsionExample1_RightLowArm_to_RightHand")
+
+HAnimHumanoid46.addSegments(HAnimSegment296)
+HAnimSegment297 = x3d.HAnimSegment()
+HAnimSegment297.setContainerFieldOverride("segments")
+HAnimSegment297.setUSE("BvhUniversityWisconsionExample1_humanoid_root_to_LeftUpLeg")
+
+HAnimHumanoid46.addSegments(HAnimSegment297)
+HAnimSegment298 = x3d.HAnimSegment()
+HAnimSegment298.setContainerFieldOverride("segments")
+HAnimSegment298.setUSE("BvhUniversityWisconsionExample1_LeftUpLeg_to_LeftLowLeg")
+
+HAnimHumanoid46.addSegments(HAnimSegment298)
+HAnimSegment299 = x3d.HAnimSegment()
+HAnimSegment299.setContainerFieldOverride("segments")
+HAnimSegment299.setUSE("BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot")
+
+HAnimHumanoid46.addSegments(HAnimSegment299)
+HAnimSegment300 = x3d.HAnimSegment()
+HAnimSegment300.setContainerFieldOverride("segments")
+HAnimSegment300.setUSE("BvhUniversityWisconsionExample1_humanoid_root_to_RightUpLeg")
+
+HAnimHumanoid46.addSegments(HAnimSegment300)
+HAnimSegment301 = x3d.HAnimSegment()
+HAnimSegment301.setContainerFieldOverride("segments")
+HAnimSegment301.setUSE("BvhUniversityWisconsionExample1_RightUpLeg_to_RightLowLeg")
+
+HAnimHumanoid46.addSegments(HAnimSegment301)
+HAnimSegment302 = x3d.HAnimSegment()
+HAnimSegment302.setContainerFieldOverride("segments")
+HAnimSegment302.setUSE("BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot")
+
+HAnimHumanoid46.addSegments(HAnimSegment302)
+HAnimSite303 = x3d.HAnimSite()
+HAnimSite303.setDEF("BvhUniversityWisconsionExample1_humanoid_root_view")
+HAnimSite303.setName("humanoid_root_view")
+Viewpoint304 = x3d.Viewpoint()
+Viewpoint304.setDEF("BvhUniversityWisconsionExample1_humanoid_root_viewpoint")
+Viewpoint304.setDescription("BvhUniversityWisconsionExample1 front view towards HAnimHumanoid center")
+Viewpoint304.setPosition(x3d.doubleToFloat([0,0,80]))
+
+HAnimSite303.addChild(Viewpoint304)
+
+HAnimHumanoid46.addViewpoints(HAnimSite303)
+HAnimSite305 = x3d.HAnimSite()
+HAnimSite305.setContainerFieldOverride("sites")
+HAnimSite305.setUSE("BvhUniversityWisconsionExample1_skull_tip")
+
+HAnimHumanoid46.addSites(HAnimSite305)
+HAnimSite306 = x3d.HAnimSite()
+HAnimSite306.setContainerFieldOverride("sites")
+HAnimSite306.setUSE("BvhUniversityWisconsionExample1_LeftLowArm_to_LeftHand_tip")
+
+HAnimHumanoid46.addSites(HAnimSite306)
+HAnimSite307 = x3d.HAnimSite()
+HAnimSite307.setContainerFieldOverride("sites")
+HAnimSite307.setUSE("BvhUniversityWisconsionExample1_RightLowArm_to_RightHand_tip")
+
+HAnimHumanoid46.addSites(HAnimSite307)
+HAnimSite308 = x3d.HAnimSite()
+HAnimSite308.setContainerFieldOverride("sites")
+HAnimSite308.setUSE("BvhUniversityWisconsionExample1_LeftLowLeg_to_LeftFoot_tip")
+
+HAnimHumanoid46.addSites(HAnimSite308)
+HAnimSite309 = x3d.HAnimSite()
+HAnimSite309.setContainerFieldOverride("sites")
+HAnimSite309.setUSE("BvhUniversityWisconsionExample1_RightLowLeg_to_RightFoot_tip")
+
+HAnimHumanoid46.addSites(HAnimSite309)
+HAnimSite310 = x3d.HAnimSite()
+HAnimSite310.setContainerFieldOverride("sites")
+HAnimSite310.setUSE("BvhUniversityWisconsionExample1_humanoid_root_view")
+
+HAnimHumanoid46.addSites(HAnimSite310)
+
+Scene14.addChild(HAnimHumanoid46)
+Group311 = x3d.Group()
+Group311.setDEF("BvhUniversityWisconsionExample1_MotionGroup")
+TimeSensor312 = x3d.TimeSensor()
+TimeSensor312.setDEF("RealTimer")
+TimeSensor312.setCycleInterval(0.067)
+TimeSensor312.setLoop(True)
+
+Group311.addChild(TimeSensor312)
+TimeSensor313 = x3d.TimeSensor()
+TimeSensor313.setDEF("StepTimer")
+TimeSensor313.setEnabled(False)
+TimeSensor313.setCycleInterval(2)
+TimeSensor313.setLoop(True)
+
+Group311.addChild(TimeSensor313)
+ScalarInterpolator314 = x3d.ScalarInterpolator()
+ScalarInterpolator314.setDEF("FrameStepper")
+ScalarInterpolator314.setKey(x3d.doubleToFloat([0,1,1]))
+ScalarInterpolator314.setKeyValue(x3d.doubleToFloat([0,0,1]))
+
+Group311.addChild(ScalarInterpolator314)
+PositionInterpolator315 = x3d.PositionInterpolator()
+PositionInterpolator315.setDEF("Interpolator0_humanoid_root")
+PositionInterpolator315.setKey(x3d.doubleToFloat([0,1]))
+PositionInterpolator315.setKeyValue(x3d.doubleToFloat([0.803,3.501,8.836,0.781,3.51,8.647]))
+
+Group311.addChild(PositionInterpolator315)
+OrientationInterpolator316 = x3d.OrientationInterpolator()
+OrientationInterpolator316.setDEF("Interpolator1_humanoid_root")
+OrientationInterpolator316.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator316.setKeyValue(x3d.doubleToFloat([-0.0118,-0.9911,-0.1325,2.8785,-0.0199,-0.993,-0.1163,2.9232]))
+
+Group311.addChild(OrientationInterpolator316)
+OrientationInterpolator317 = x3d.OrientationInterpolator()
+OrientationInterpolator317.setDEF("Interpolator2_vl5")
+OrientationInterpolator317.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator317.setKeyValue(x3d.doubleToFloat([0.9093,-0.4082,0.0806,0.8073,0.9336,-0.3501,0.0768,0.824]))
+
+Group311.addChild(OrientationInterpolator317)
+OrientationInterpolator318 = x3d.OrientationInterpolator()
+OrientationInterpolator318.setDEF("Interpolator3_Neck")
+OrientationInterpolator318.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator318.setKeyValue(x3d.doubleToFloat([0.9834,0.0677,0.1685,0.7761,0.9841,0.066,0.1649,0.7723]))
+
+Group311.addChild(OrientationInterpolator318)
+OrientationInterpolator319 = x3d.OrientationInterpolator()
+OrientationInterpolator319.setDEF("Interpolator4_skullbase")
+OrientationInterpolator319.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator319.setKeyValue(x3d.doubleToFloat([-0.9778,0.1629,-0.1317,0.736,-0.9794,0.1474,-0.1381,0.7342]))
+
+Group311.addChild(OrientationInterpolator319)
+OrientationInterpolator320 = x3d.OrientationInterpolator()
+OrientationInterpolator320.setDEF("Interpolator5_LeftCollar")
+OrientationInterpolator320.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator320.setKeyValue(x3d.doubleToFloat([-0.0626,0.7102,0.7012,0.2502,-0.0355,0.2109,0.9769,0.3411]))
+
+Group311.addChild(OrientationInterpolator320)
+OrientationInterpolator321 = x3d.OrientationInterpolator()
+OrientationInterpolator321.setDEF("Interpolator6_LeftUpArm")
+OrientationInterpolator321.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator321.setKeyValue(x3d.doubleToFloat([-0.1561,-0.2157,0.9639,1.7536,0.0022,-0.1597,0.9872,1.6521]))
+
+Group311.addChild(OrientationInterpolator321)
+OrientationInterpolator322 = x3d.OrientationInterpolator()
+OrientationInterpolator322.setDEF("Interpolator7_LeftLowArm")
+OrientationInterpolator322.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator322.setKeyValue(x3d.doubleToFloat([-0.9933,-0.0526,-0.103,1.6066,-0.9965,0.0822,0.0138,1.6744]))
+
+Group311.addChild(OrientationInterpolator322)
+OrientationInterpolator323 = x3d.OrientationInterpolator()
+OrientationInterpolator323.setDEF("Interpolator8_LeftHand")
+OrientationInterpolator323.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator323.setKeyValue(x3d.doubleToFloat([0.0434,0.0003,0.9991,0.0121,0.4673,0.0029,0.8841,0.0138]))
+
+Group311.addChild(OrientationInterpolator323)
+OrientationInterpolator324 = x3d.OrientationInterpolator()
+OrientationInterpolator324.setDEF("Interpolator9_RightCollar")
+OrientationInterpolator324.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator324.setKeyValue(x3d.doubleToFloat([-0.0734,-0.5964,-0.7993,0.3057,-0.07,-0.9291,-0.3633,0.4091]))
+
+Group311.addChild(OrientationInterpolator324)
+OrientationInterpolator325 = x3d.OrientationInterpolator()
+OrientationInterpolator325.setDEF("Interpolator10_RightUpArm")
+OrientationInterpolator325.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator325.setKeyValue(x3d.doubleToFloat([-0.6801,-0.6074,-0.4106,2.0536,-0.765,-0.5303,-0.3654,1.9107]))
+
+Group311.addChild(OrientationInterpolator325)
+OrientationInterpolator326 = x3d.OrientationInterpolator()
+OrientationInterpolator326.setDEF("Interpolator11_RightLowArm")
+OrientationInterpolator326.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator326.setKeyValue(x3d.doubleToFloat([-0.9378,0.2739,0.2135,1.4058,-0.9433,0.2577,0.2091,1.3563]))
+
+Group311.addChild(OrientationInterpolator326)
+OrientationInterpolator327 = x3d.OrientationInterpolator()
+OrientationInterpolator327.setDEF("Interpolator12_RightHand")
+OrientationInterpolator327.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator327.setKeyValue(x3d.doubleToFloat([0.4025,0.0061,-0.9154,0.0299,0.5037,0.0087,-0.8638,0.0329]))
+
+Group311.addChild(OrientationInterpolator327)
+OrientationInterpolator328 = x3d.OrientationInterpolator()
+OrientationInterpolator328.setDEF("Interpolator13_LeftUpLeg")
+OrientationInterpolator328.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator328.setKeyValue(x3d.doubleToFloat([0.8595,-0.1039,0.5004,0.4748,0.7784,-0.0864,0.6217,0.3536]))
+
+Group311.addChild(OrientationInterpolator328)
+OrientationInterpolator329 = x3d.OrientationInterpolator()
+OrientationInterpolator329.setDEF("Interpolator14_LeftLowLeg")
+OrientationInterpolator329.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator329.setKeyValue(x3d.doubleToFloat([0.9184,0.2378,0.3162,0.9291,0.9762,0.1432,0.1627,1.0525]))
+
+Group311.addChild(OrientationInterpolator329)
+OrientationInterpolator330 = x3d.OrientationInterpolator()
+OrientationInterpolator330.setDEF("Interpolator15_LeftFoot")
+OrientationInterpolator330.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator330.setKeyValue(x3d.doubleToFloat([-1,0,0,0.0199,1,0,0,0.0286]))
+
+Group311.addChild(OrientationInterpolator330)
+OrientationInterpolator331 = x3d.OrientationInterpolator()
+OrientationInterpolator331.setDEF("Interpolator16_RightUpLeg")
+OrientationInterpolator331.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator331.setKeyValue(x3d.doubleToFloat([-0.5548,-0.0795,-0.8282,0.3423,-0.5234,-0.0778,-0.8485,0.3468]))
+
+Group311.addChild(OrientationInterpolator331)
+OrientationInterpolator332 = x3d.OrientationInterpolator()
+OrientationInterpolator332.setDEF("Interpolator17_RightLowLeg")
+OrientationInterpolator332.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator332.setKeyValue(x3d.doubleToFloat([0.9694,-0.234,0.0739,0.9755,0.9797,-0.1864,0.0732,0.9707]))
+
+Group311.addChild(OrientationInterpolator332)
+OrientationInterpolator333 = x3d.OrientationInterpolator()
+OrientationInterpolator333.setDEF("Interpolator18_RightFoot")
+OrientationInterpolator333.setKey(x3d.doubleToFloat([0,1]))
+OrientationInterpolator333.setKeyValue(x3d.doubleToFloat([-1,0,0,0.418,-1,0,0,0.4526]))
+
+Group311.addChild(OrientationInterpolator333)
+
+Scene14.addChild(Group311)
+ROUTE334 = x3d.ROUTE()
+ROUTE334.setFromNode("StepTimer")
+ROUTE334.setFromField("fraction_changed")
+ROUTE334.setToNode("FrameStepper")
+ROUTE334.setToField("set_fraction")
+
+Scene14.addChild(ROUTE334)
+ROUTE335 = x3d.ROUTE()
+ROUTE335.setFromNode("RealTimer")
+ROUTE335.setFromField("fraction_changed")
+ROUTE335.setToNode("Interpolator0_humanoid_root")
+ROUTE335.setToField("set_fraction")
+
+Scene14.addChild(ROUTE335)
+ROUTE336 = x3d.ROUTE()
+ROUTE336.setFromNode("FrameStepper")
+ROUTE336.setFromField("value_changed")
+ROUTE336.setToNode("Interpolator0_humanoid_root")
+ROUTE336.setToField("set_fraction")
+
+Scene14.addChild(ROUTE336)
+ROUTE337 = x3d.ROUTE()
+ROUTE337.setFromNode("Interpolator0_humanoid_root")
+ROUTE337.setFromField("value_changed")
+ROUTE337.setToNode("BvhUniversityWisconsionExample1_humanoid_root")
+ROUTE337.setToField("set_translation")
+
+Scene14.addChild(ROUTE337)
+ROUTE338 = x3d.ROUTE()
+ROUTE338.setFromNode("RealTimer")
+ROUTE338.setFromField("fraction_changed")
+ROUTE338.setToNode("Interpolator1_humanoid_root")
+ROUTE338.setToField("set_fraction")
+
+Scene14.addChild(ROUTE338)
+ROUTE339 = x3d.ROUTE()
+ROUTE339.setFromNode("FrameStepper")
+ROUTE339.setFromField("value_changed")
+ROUTE339.setToNode("Interpolator1_humanoid_root")
+ROUTE339.setToField("set_fraction")
+
+Scene14.addChild(ROUTE339)
+ROUTE340 = x3d.ROUTE()
+ROUTE340.setFromNode("Interpolator1_humanoid_root")
+ROUTE340.setFromField("value_changed")
+ROUTE340.setToNode("BvhUniversityWisconsionExample1_humanoid_root")
+ROUTE340.setToField("set_rotation")
+
+Scene14.addChild(ROUTE340)
+ROUTE341 = x3d.ROUTE()
+ROUTE341.setFromNode("RealTimer")
+ROUTE341.setFromField("fraction_changed")
+ROUTE341.setToNode("Interpolator2_vl5")
+ROUTE341.setToField("set_fraction")
+
+Scene14.addChild(ROUTE341)
+ROUTE342 = x3d.ROUTE()
+ROUTE342.setFromNode("FrameStepper")
+ROUTE342.setFromField("value_changed")
+ROUTE342.setToNode("Interpolator2_vl5")
+ROUTE342.setToField("set_fraction")
+
+Scene14.addChild(ROUTE342)
+ROUTE343 = x3d.ROUTE()
+ROUTE343.setFromNode("Interpolator2_vl5")
+ROUTE343.setFromField("value_changed")
+ROUTE343.setToNode("BvhUniversityWisconsionExample1_vl5")
+ROUTE343.setToField("set_rotation")
+
+Scene14.addChild(ROUTE343)
+ROUTE344 = x3d.ROUTE()
+ROUTE344.setFromNode("RealTimer")
+ROUTE344.setFromField("fraction_changed")
+ROUTE344.setToNode("Interpolator3_Neck")
+ROUTE344.setToField("set_fraction")
+
+Scene14.addChild(ROUTE344)
+ROUTE345 = x3d.ROUTE()
+ROUTE345.setFromNode("FrameStepper")
+ROUTE345.setFromField("value_changed")
+ROUTE345.setToNode("Interpolator3_Neck")
+ROUTE345.setToField("set_fraction")
+
+Scene14.addChild(ROUTE345)
+ROUTE346 = x3d.ROUTE()
+ROUTE346.setFromNode("Interpolator3_Neck")
+ROUTE346.setFromField("value_changed")
+ROUTE346.setToNode("BvhUniversityWisconsionExample1_Neck")
+ROUTE346.setToField("set_rotation")
+
+Scene14.addChild(ROUTE346)
+ROUTE347 = x3d.ROUTE()
+ROUTE347.setFromNode("RealTimer")
+ROUTE347.setFromField("fraction_changed")
+ROUTE347.setToNode("Interpolator4_skullbase")
+ROUTE347.setToField("set_fraction")
+
+Scene14.addChild(ROUTE347)
+ROUTE348 = x3d.ROUTE()
+ROUTE348.setFromNode("FrameStepper")
+ROUTE348.setFromField("value_changed")
+ROUTE348.setToNode("Interpolator4_skullbase")
+ROUTE348.setToField("set_fraction")
+
+Scene14.addChild(ROUTE348)
+ROUTE349 = x3d.ROUTE()
+ROUTE349.setFromNode("Interpolator4_skullbase")
+ROUTE349.setFromField("value_changed")
+ROUTE349.setToNode("BvhUniversityWisconsionExample1_skullbase")
+ROUTE349.setToField("set_rotation")
+
+Scene14.addChild(ROUTE349)
+ROUTE350 = x3d.ROUTE()
+ROUTE350.setFromNode("RealTimer")
+ROUTE350.setFromField("fraction_changed")
+ROUTE350.setToNode("Interpolator5_LeftCollar")
+ROUTE350.setToField("set_fraction")
+
+Scene14.addChild(ROUTE350)
+ROUTE351 = x3d.ROUTE()
+ROUTE351.setFromNode("FrameStepper")
+ROUTE351.setFromField("value_changed")
+ROUTE351.setToNode("Interpolator5_LeftCollar")
+ROUTE351.setToField("set_fraction")
+
+Scene14.addChild(ROUTE351)
+ROUTE352 = x3d.ROUTE()
+ROUTE352.setFromNode("Interpolator5_LeftCollar")
+ROUTE352.setFromField("value_changed")
+ROUTE352.setToNode("BvhUniversityWisconsionExample1_LeftCollar")
+ROUTE352.setToField("set_rotation")
+
+Scene14.addChild(ROUTE352)
+ROUTE353 = x3d.ROUTE()
+ROUTE353.setFromNode("RealTimer")
+ROUTE353.setFromField("fraction_changed")
+ROUTE353.setToNode("Interpolator6_LeftUpArm")
+ROUTE353.setToField("set_fraction")
+
+Scene14.addChild(ROUTE353)
+ROUTE354 = x3d.ROUTE()
+ROUTE354.setFromNode("FrameStepper")
+ROUTE354.setFromField("value_changed")
+ROUTE354.setToNode("Interpolator6_LeftUpArm")
+ROUTE354.setToField("set_fraction")
+
+Scene14.addChild(ROUTE354)
+ROUTE355 = x3d.ROUTE()
+ROUTE355.setFromNode("Interpolator6_LeftUpArm")
+ROUTE355.setFromField("value_changed")
+ROUTE355.setToNode("BvhUniversityWisconsionExample1_LeftUpArm")
+ROUTE355.setToField("set_rotation")
+
+Scene14.addChild(ROUTE355)
+ROUTE356 = x3d.ROUTE()
+ROUTE356.setFromNode("RealTimer")
+ROUTE356.setFromField("fraction_changed")
+ROUTE356.setToNode("Interpolator7_LeftLowArm")
+ROUTE356.setToField("set_fraction")
+
+Scene14.addChild(ROUTE356)
+ROUTE357 = x3d.ROUTE()
+ROUTE357.setFromNode("FrameStepper")
+ROUTE357.setFromField("value_changed")
+ROUTE357.setToNode("Interpolator7_LeftLowArm")
+ROUTE357.setToField("set_fraction")
+
+Scene14.addChild(ROUTE357)
+ROUTE358 = x3d.ROUTE()
+ROUTE358.setFromNode("Interpolator7_LeftLowArm")
+ROUTE358.setFromField("value_changed")
+ROUTE358.setToNode("BvhUniversityWisconsionExample1_LeftLowArm")
+ROUTE358.setToField("set_rotation")
+
+Scene14.addChild(ROUTE358)
+ROUTE359 = x3d.ROUTE()
+ROUTE359.setFromNode("RealTimer")
+ROUTE359.setFromField("fraction_changed")
+ROUTE359.setToNode("Interpolator8_LeftHand")
+ROUTE359.setToField("set_fraction")
+
+Scene14.addChild(ROUTE359)
+ROUTE360 = x3d.ROUTE()
+ROUTE360.setFromNode("FrameStepper")
+ROUTE360.setFromField("value_changed")
+ROUTE360.setToNode("Interpolator8_LeftHand")
+ROUTE360.setToField("set_fraction")
+
+Scene14.addChild(ROUTE360)
+ROUTE361 = x3d.ROUTE()
+ROUTE361.setFromNode("Interpolator8_LeftHand")
+ROUTE361.setFromField("value_changed")
+ROUTE361.setToNode("BvhUniversityWisconsionExample1_LeftHand")
+ROUTE361.setToField("set_rotation")
+
+Scene14.addChild(ROUTE361)
+ROUTE362 = x3d.ROUTE()
+ROUTE362.setFromNode("RealTimer")
+ROUTE362.setFromField("fraction_changed")
+ROUTE362.setToNode("Interpolator9_RightCollar")
+ROUTE362.setToField("set_fraction")
+
+Scene14.addChild(ROUTE362)
+ROUTE363 = x3d.ROUTE()
+ROUTE363.setFromNode("FrameStepper")
+ROUTE363.setFromField("value_changed")
+ROUTE363.setToNode("Interpolator9_RightCollar")
+ROUTE363.setToField("set_fraction")
+
+Scene14.addChild(ROUTE363)
+ROUTE364 = x3d.ROUTE()
+ROUTE364.setFromNode("Interpolator9_RightCollar")
+ROUTE364.setFromField("value_changed")
+ROUTE364.setToNode("BvhUniversityWisconsionExample1_RightCollar")
+ROUTE364.setToField("set_rotation")
+
+Scene14.addChild(ROUTE364)
+ROUTE365 = x3d.ROUTE()
+ROUTE365.setFromNode("RealTimer")
+ROUTE365.setFromField("fraction_changed")
+ROUTE365.setToNode("Interpolator10_RightUpArm")
+ROUTE365.setToField("set_fraction")
+
+Scene14.addChild(ROUTE365)
+ROUTE366 = x3d.ROUTE()
+ROUTE366.setFromNode("FrameStepper")
+ROUTE366.setFromField("value_changed")
+ROUTE366.setToNode("Interpolator10_RightUpArm")
+ROUTE366.setToField("set_fraction")
+
+Scene14.addChild(ROUTE366)
+ROUTE367 = x3d.ROUTE()
+ROUTE367.setFromNode("Interpolator10_RightUpArm")
+ROUTE367.setFromField("value_changed")
+ROUTE367.setToNode("BvhUniversityWisconsionExample1_RightUpArm")
+ROUTE367.setToField("set_rotation")
+
+Scene14.addChild(ROUTE367)
+ROUTE368 = x3d.ROUTE()
+ROUTE368.setFromNode("RealTimer")
+ROUTE368.setFromField("fraction_changed")
+ROUTE368.setToNode("Interpolator11_RightLowArm")
+ROUTE368.setToField("set_fraction")
+
+Scene14.addChild(ROUTE368)
+ROUTE369 = x3d.ROUTE()
+ROUTE369.setFromNode("FrameStepper")
+ROUTE369.setFromField("value_changed")
+ROUTE369.setToNode("Interpolator11_RightLowArm")
+ROUTE369.setToField("set_fraction")
+
+Scene14.addChild(ROUTE369)
+ROUTE370 = x3d.ROUTE()
+ROUTE370.setFromNode("Interpolator11_RightLowArm")
+ROUTE370.setFromField("value_changed")
+ROUTE370.setToNode("BvhUniversityWisconsionExample1_RightLowArm")
+ROUTE370.setToField("set_rotation")
+
+Scene14.addChild(ROUTE370)
+ROUTE371 = x3d.ROUTE()
+ROUTE371.setFromNode("RealTimer")
+ROUTE371.setFromField("fraction_changed")
+ROUTE371.setToNode("Interpolator12_RightHand")
+ROUTE371.setToField("set_fraction")
+
+Scene14.addChild(ROUTE371)
+ROUTE372 = x3d.ROUTE()
+ROUTE372.setFromNode("FrameStepper")
+ROUTE372.setFromField("value_changed")
+ROUTE372.setToNode("Interpolator12_RightHand")
+ROUTE372.setToField("set_fraction")
+
+Scene14.addChild(ROUTE372)
+ROUTE373 = x3d.ROUTE()
+ROUTE373.setFromNode("Interpolator12_RightHand")
+ROUTE373.setFromField("value_changed")
+ROUTE373.setToNode("BvhUniversityWisconsionExample1_RightHand")
+ROUTE373.setToField("set_rotation")
+
+Scene14.addChild(ROUTE373)
+ROUTE374 = x3d.ROUTE()
+ROUTE374.setFromNode("RealTimer")
+ROUTE374.setFromField("fraction_changed")
+ROUTE374.setToNode("Interpolator13_LeftUpLeg")
+ROUTE374.setToField("set_fraction")
+
+Scene14.addChild(ROUTE374)
+ROUTE375 = x3d.ROUTE()
+ROUTE375.setFromNode("FrameStepper")
+ROUTE375.setFromField("value_changed")
+ROUTE375.setToNode("Interpolator13_LeftUpLeg")
+ROUTE375.setToField("set_fraction")
+
+Scene14.addChild(ROUTE375)
+ROUTE376 = x3d.ROUTE()
+ROUTE376.setFromNode("Interpolator13_LeftUpLeg")
+ROUTE376.setFromField("value_changed")
+ROUTE376.setToNode("BvhUniversityWisconsionExample1_LeftUpLeg")
+ROUTE376.setToField("set_rotation")
+
+Scene14.addChild(ROUTE376)
+ROUTE377 = x3d.ROUTE()
+ROUTE377.setFromNode("RealTimer")
+ROUTE377.setFromField("fraction_changed")
+ROUTE377.setToNode("Interpolator14_LeftLowLeg")
+ROUTE377.setToField("set_fraction")
+
+Scene14.addChild(ROUTE377)
+ROUTE378 = x3d.ROUTE()
+ROUTE378.setFromNode("FrameStepper")
+ROUTE378.setFromField("value_changed")
+ROUTE378.setToNode("Interpolator14_LeftLowLeg")
+ROUTE378.setToField("set_fraction")
+
+Scene14.addChild(ROUTE378)
+ROUTE379 = x3d.ROUTE()
+ROUTE379.setFromNode("Interpolator14_LeftLowLeg")
+ROUTE379.setFromField("value_changed")
+ROUTE379.setToNode("BvhUniversityWisconsionExample1_LeftLowLeg")
+ROUTE379.setToField("set_rotation")
+
+Scene14.addChild(ROUTE379)
+ROUTE380 = x3d.ROUTE()
+ROUTE380.setFromNode("RealTimer")
+ROUTE380.setFromField("fraction_changed")
+ROUTE380.setToNode("Interpolator15_LeftFoot")
+ROUTE380.setToField("set_fraction")
+
+Scene14.addChild(ROUTE380)
+ROUTE381 = x3d.ROUTE()
+ROUTE381.setFromNode("FrameStepper")
+ROUTE381.setFromField("value_changed")
+ROUTE381.setToNode("Interpolator15_LeftFoot")
+ROUTE381.setToField("set_fraction")
+
+Scene14.addChild(ROUTE381)
+ROUTE382 = x3d.ROUTE()
+ROUTE382.setFromNode("Interpolator15_LeftFoot")
+ROUTE382.setFromField("value_changed")
+ROUTE382.setToNode("BvhUniversityWisconsionExample1_LeftFoot")
+ROUTE382.setToField("set_rotation")
+
+Scene14.addChild(ROUTE382)
+ROUTE383 = x3d.ROUTE()
+ROUTE383.setFromNode("RealTimer")
+ROUTE383.setFromField("fraction_changed")
+ROUTE383.setToNode("Interpolator16_RightUpLeg")
+ROUTE383.setToField("set_fraction")
+
+Scene14.addChild(ROUTE383)
+ROUTE384 = x3d.ROUTE()
+ROUTE384.setFromNode("FrameStepper")
+ROUTE384.setFromField("value_changed")
+ROUTE384.setToNode("Interpolator16_RightUpLeg")
+ROUTE384.setToField("set_fraction")
+
+Scene14.addChild(ROUTE384)
+ROUTE385 = x3d.ROUTE()
+ROUTE385.setFromNode("Interpolator16_RightUpLeg")
+ROUTE385.setFromField("value_changed")
+ROUTE385.setToNode("BvhUniversityWisconsionExample1_RightUpLeg")
+ROUTE385.setToField("set_rotation")
+
+Scene14.addChild(ROUTE385)
+ROUTE386 = x3d.ROUTE()
+ROUTE386.setFromNode("RealTimer")
+ROUTE386.setFromField("fraction_changed")
+ROUTE386.setToNode("Interpolator17_RightLowLeg")
+ROUTE386.setToField("set_fraction")
+
+Scene14.addChild(ROUTE386)
+ROUTE387 = x3d.ROUTE()
+ROUTE387.setFromNode("FrameStepper")
+ROUTE387.setFromField("value_changed")
+ROUTE387.setToNode("Interpolator17_RightLowLeg")
+ROUTE387.setToField("set_fraction")
+
+Scene14.addChild(ROUTE387)
+ROUTE388 = x3d.ROUTE()
+ROUTE388.setFromNode("Interpolator17_RightLowLeg")
+ROUTE388.setFromField("value_changed")
+ROUTE388.setToNode("BvhUniversityWisconsionExample1_RightLowLeg")
+ROUTE388.setToField("set_rotation")
+
+Scene14.addChild(ROUTE388)
+ROUTE389 = x3d.ROUTE()
+ROUTE389.setFromNode("RealTimer")
+ROUTE389.setFromField("fraction_changed")
+ROUTE389.setToNode("Interpolator18_RightFoot")
+ROUTE389.setToField("set_fraction")
+
+Scene14.addChild(ROUTE389)
+ROUTE390 = x3d.ROUTE()
+ROUTE390.setFromNode("FrameStepper")
+ROUTE390.setFromField("value_changed")
+ROUTE390.setToNode("Interpolator18_RightFoot")
+ROUTE390.setToField("set_fraction")
+
+Scene14.addChild(ROUTE390)
+ROUTE391 = x3d.ROUTE()
+ROUTE391.setFromNode("Interpolator18_RightFoot")
+ROUTE391.setFromField("value_changed")
+ROUTE391.setToNode("BvhUniversityWisconsionExample1_RightFoot")
+ROUTE391.setToField("set_rotation")
+
+Scene14.addChild(ROUTE391)
+
+X3D0.setScene(Scene14)
+X3D0.toFileX3D("../data/UniversityWisconsionExample1.new.graalpy.x3d")
+X3D0.toFileJSON("../data/UniversityWisconsionExample1.new.graalpy.x3dj")

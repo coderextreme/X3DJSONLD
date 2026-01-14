@@ -1,9 +1,9 @@
 import x3dpsail as x3d
 
-x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
-x3d.ConfigurationProperties.setDeleteIntermediateFiles(False);
-x3d.ConfigurationProperties.setStripTrailingZeroes(True);
-x3d.ConfigurationProperties.setStripDefaultAttributes(True);
+x3d.ConfigurationProperties.setXsltEngine(x3d.ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA)
+x3d.ConfigurationProperties.setDeleteIntermediateFiles(False)
+x3d.ConfigurationProperties.setStripTrailingZeroes(True)
+x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
 X3D0.setVersion("4.0")
@@ -109,19 +109,19 @@ Switch22 = x3d.Switch()
 Switch22.setDEF("SwitchGlobes")
 Switch22.setWhichChoice(0)
 
-Switch22.addComments(x3d.CommentsBlock('''Select globe of interest. Warning: may need to keep alternate globes commented out to prevent browser caching.'''))
+Switch22.addComments(x3d.CommentsBlock("""Select globe of interest. Warning: may need to keep alternate globes commented out to prevent browser caching."""))
 Inline23 = x3d.Inline()
 Inline23.setUrl(["http://x3d-earth.nps.edu/osmdemo.x3d"])
 
 Switch22.addChild(Inline23)
 
-Switch22.addComments(x3d.CommentsBlock('''<Inline load='false' url='\"http://mmog.ern.nps.edu/California/California.x3d\"'/>'''))
+Switch22.addComments(x3d.CommentsBlock("""<Inline load='false' url='\"http://mmog.ern.nps.edu/California/California.x3d\"'/>"""))
 
-Switch22.addComments(x3d.CommentsBlock('''<Inline load='false' url='\"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d\"'/>'''))
+Switch22.addComments(x3d.CommentsBlock("""<Inline load='false' url='\"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d\"'/>"""))
 
-Switch22.addComments(x3d.CommentsBlock('''<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d\"'/>'''))
+Switch22.addComments(x3d.CommentsBlock("""<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d\"'/>"""))
 
-Switch22.addComments(x3d.CommentsBlock('''<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d\"'/>'''))
+Switch22.addComments(x3d.CommentsBlock("""<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d\"'/>"""))
 
 Scene20.addChild(Switch22)
 NavigationInfo24 = x3d.NavigationInfo()
@@ -378,7 +378,7 @@ Group25.addChild(GeoViewpoint60)
 
 Scene20.addChild(Group25)
 
-Scene20.addComments(x3d.CommentsBlock('''===================='''))
+Scene20.addComments(x3d.CommentsBlock("""===================="""))
 ExternProtoDeclare61 = x3d.ExternProtoDeclare()
 ExternProtoDeclare61.setName("CrossHair")
 ExternProtoDeclare61.setAppinfo("CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point")
@@ -446,7 +446,7 @@ ProtoInstance67.addFieldValue(fieldValue71)
 
 Scene20.addChild(ProtoInstance67)
 
-Scene20.addComments(x3d.CommentsBlock('''===================='''))
+Scene20.addComments(x3d.CommentsBlock("""===================="""))
 ExternProtoDeclare72 = x3d.ExternProtoDeclare()
 ExternProtoDeclare72.setName("HeadsUpDisplay")
 ExternProtoDeclare72.setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location")
@@ -482,7 +482,7 @@ ExternProtoDeclare72.addField(field76)
 
 Scene20.addChild(ExternProtoDeclare72)
 
-Scene20.addComments(x3d.CommentsBlock('''===================='''))
+Scene20.addComments(x3d.CommentsBlock("""===================="""))
 ExternProtoDeclare77 = x3d.ExternProtoDeclare()
 ExternProtoDeclare77.setName("ViewpointSequencer")
 ExternProtoDeclare77.setAppinfo("Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene")
@@ -729,11 +729,11 @@ fieldValue92.addChild(Viewpoint128)
 
 ProtoInstance88.addFieldValue(fieldValue92)
 
-ProtoInstance88.addComments(x3d.CommentsBlock('''initially enabled is off, scene provides selectable text to activate'''))
+ProtoInstance88.addComments(x3d.CommentsBlock("""initially enabled is off, scene provides selectable text to activate"""))
 
 Scene20.addChild(ProtoInstance88)
 
-Scene20.addComments(x3d.CommentsBlock('''===================='''))
+Scene20.addComments(x3d.CommentsBlock("""===================="""))
 GeoLocation129 = x3d.GeoLocation()
 GeoLocation129.setGeoCoords(x3d.doubleToDouble([36.595599,-121.877148,624990]))
 Billboard130 = x3d.Billboard()
@@ -787,7 +787,7 @@ GeoLocation129.addChild(ROUTE139)
 
 Scene20.addChild(GeoLocation129)
 
-Scene20.addComments(x3d.CommentsBlock('''===================='''))
+Scene20.addComments(x3d.CommentsBlock("""===================="""))
 ExternProtoDeclare140 = x3d.ExternProtoDeclare()
 ExternProtoDeclare140.setName("ViewPositionOrientation")
 ExternProtoDeclare140.setAppinfo("ViewPositionOrientation provides provides console output of local position and orientation as user navigates")
@@ -847,8 +847,8 @@ ProtoInstance147.addFieldValue(fieldValue148)
 
 Scene20.addChild(ProtoInstance147)
 
-Scene20.addComments(x3d.CommentsBlock('''===================='''))
+Scene20.addComments(x3d.CommentsBlock("""===================="""))
 
 X3D0.setScene(Scene20)
 X3D0.toFileX3D("../data/CaliforniaCampuses.new.graalpy.x3d")
-X3D0.toFileJSON("../data/CaliforniaCampuses.new.graalpy.json")
+X3D0.toFileJSON("../data/CaliforniaCampuses.new.graalpy.x3dj")
