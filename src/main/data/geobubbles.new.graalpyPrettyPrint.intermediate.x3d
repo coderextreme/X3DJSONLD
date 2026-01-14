@@ -7,13 +7,10 @@
     <meta content='geobubbles.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d' name='identifier'/>
-    <meta content='geo bubbles' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
-    <!-- Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/ -->
-    <!-- PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/ -->
-    <GeoViewpoint DEF='Tour' description='Tour Views' orientation='1 0 0 0' position='0 0 4'/>
+    <GeoViewpoint DEF='Tour' description='Tour Views' position='1.11526768555608E-4 0.00145927323148609 3.99999894946814'/>
     <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'/>
     <Transform>
       <Shape>
@@ -27,7 +24,7 @@
     <GeoPositionInterpolator DEF='TourPosition' key='0 1' keyValue='0.0015708 0 4 0 0.0015708 4'/>
     <Script DEF='RandomTourTime'>
       <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
-      <field name='val' accessType='inputOutput' type='SFFloat' value='0.0'/>
+      <field name='val' accessType='inputOutput' type='SFFloat'/>
       <field name='positions' accessType='inputOutput' type='MFVec3d' value='0.0015708 0 4 0 0.0015708 4'/>
       <field name='position' accessType='inputOutput' type='MFVec3d' value='0.0015708 0 4 0 0.0015708 4'/>
 <![CDATA[
@@ -51,7 +48,7 @@ ecmascript:
 ]]>
     </Script>
     <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_cycle' toNode='RandomTourTime'/>
-    <ROUTE fromField='position' fromNode='RandomTourTime' toField='keyValue' toNode='TourPosition'/>
+    <ROUTE fromField='position_changed' fromNode='RandomTourTime' toField='set_keyValue' toNode='TourPosition'/>
     <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='TourPosition'/>
     <ROUTE fromField='geovalue_changed' fromNode='TourPosition' toField='set_position' toNode='Tour'/>
   </Scene>

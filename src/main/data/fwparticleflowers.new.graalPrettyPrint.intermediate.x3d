@@ -6,15 +6,11 @@
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
     <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
     <component name='ParticleSystems' level='3'/>
     <meta content='particleflowers.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower proto with configurable shaders' name='description'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d' name='identifier'/>
   </head>
   <Scene>
     <WorldInfo title='particleflowers.x3d'/>
@@ -37,8 +33,8 @@
             <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
             <field name='c' accessType='inputOutput' type='SFFloat' value='5.0'/>
             <field name='d' accessType='inputOutput' type='SFFloat' value='5.0'/>
-            <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-            <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <field name='tdelta' accessType='inputOutput' type='SFFloat'/>
+            <field name='pdelta' accessType='inputOutput' type='SFFloat'/>
             <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"'/>
             <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"'/>
           </ComposedShader>
@@ -58,8 +54,8 @@
         </BoundedPhysicsModel>
       </ParticleSystem>
       <Script DEF='Animate'>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
         <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
         <field name='a' accessType='inputOutput' type='SFFloat' value='0.5'/>
         <field name='b' accessType='inputOutput' type='SFFloat' value='0.5'/>
@@ -138,13 +134,13 @@ ecmascript:
 ]]>
       </Script>
       <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
-      <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
-      <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='fw'/>
-      <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='fw'/>
-      <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='fw'/>
-      <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='fw'/>
-      <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='fw'/>
-      <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='fw'/>
     </Transform>
+    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+    <ROUTE fromField='a_changed' fromNode='Animate' toField='set_a' toNode='fw'/>
+    <ROUTE fromField='b_changed' fromNode='Animate' toField='set_b' toNode='fw'/>
+    <ROUTE fromField='c_changed' fromNode='Animate' toField='set_c' toNode='fw'/>
+    <ROUTE fromField='d_changed' fromNode='Animate' toField='set_d' toNode='fw'/>
+    <ROUTE fromField='pdelta_changed' fromNode='Animate' toField='set_pdelta' toNode='fw'/>
+    <ROUTE fromField='tdelta_changed' fromNode='Animate' toField='set_tdelta' toNode='fw'/>
   </Scene>
 </X3D>

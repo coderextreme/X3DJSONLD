@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="HAnim" level="1"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><!--Scaled 1:1, Added Animations--><!--Added Sites--><component name="HAnim" level="1"></component>
 <meta name="title" content="JinScaledV2L1LOA4Sites07f.x3d"></meta>
 <meta name="creator" content="Jin Hoon Lee and Min Joo Lee"></meta>
 <meta name="translator" content="Chul Hee Jung and Myeong Won Lee"></meta>
@@ -20,7 +20,7 @@
 <meta name="generator" content="Gnu Image Manipulation Program, http://www.gimp.org"></meta>
 <meta name="generator" content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
-<!--Scaled 1:1, Added Animations--><!--Added Sites--></head>
+</head>
 <Scene><WorldInfo title="Jin LOA4 Level 1 All Joints, Segments, Sites"></WorldInfo>
 <NavigationInfo></NavigationInfo>
 <Group DEF="SceneViewpoints"><Viewpoint centerOfRotation="0 1 0" description="JinLOA4" position="0 1 3"></Viewpoint>

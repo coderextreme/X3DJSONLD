@@ -7,16 +7,14 @@
     <meta content='John Carlson' name='creator'/>
     <meta content='John Carlson' name='translator'/>
     <meta content='5 May 2015' name='created'/>
-    <meta content='23 Dec 2022' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:43 GMT' name='modified'/>
     <meta content='A process pipeline between three spheres (try typing on spheres and blue' name='description'/>
-    <meta content='https://coderextreme.net/x3d/pp3.x3d' name='identifier'/>
-    <meta content='manual' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='Process'>
+      <ProtoInterface/>
       <ProtoBody>
         <Group>
-          <!-- left -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -24,9 +22,7 @@
               </Appearance>
               <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='-2.5 0 0 -2 0 0 -1.5 0 0'/>
             </Shape>
-            <!-- <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/> -->
           </Transform>
-          <!-- right -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -45,7 +41,6 @@
             <StringSensor DEF='RightSensor' enabled='false'/>
             <TouchSensor DEF='RightTouch' description='touch to activate'/>
           </Transform>
-          <!-- up -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -64,7 +59,6 @@
             <StringSensor DEF='UpSensor' enabled='false'/>
             <TouchSensor DEF='UpTouch' description='touch to activate'/>
           </Transform>
-          <!-- down -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -72,9 +66,7 @@
               </Appearance>
               <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -2.5 0 0 -2 0 0 -1.5 0'/>
             </Shape>
-            <!-- <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/> -->
           </Transform>
-          <!-- center -->
           <Transform>
             <Shape>
               <Appearance>

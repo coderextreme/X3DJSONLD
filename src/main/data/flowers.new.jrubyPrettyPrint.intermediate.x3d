@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
-    <component name='EnvironmentalEffects' level='3'/>
-    <component name='Shaders' level='1'/>
-    <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
-    <component name='Shape' level='4'/>
-    <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
+    <component level='1' name='Scripting'/>
+    <component level='3' name='EnvironmentalEffects'/>
+    <component level='1' name='Shaders'/>
+    <component level='1' name='CubeMapTexturing'/>
+    <component level='1' name='Texturing'/>
+    <component level='1' name='Rendering'/>
+    <component level='4' name='Shape'/>
+    <component level='3' name='Grouping'/>
+    <component level='1' name='Core'/>
     <meta content='flowers.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='5 or more prismatic flowers' name='description'/>
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d' name='identifier'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -30,19 +30,19 @@
               <!-- <ComposedShader DEF='x3dom' language="GLSL"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'></ShaderPart> <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' type='FRAGMENT'></ShaderPart> </ComposedShader> -->
               <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
               <ComposedShader DEF='x_ite' language='GLSL'>
-                <field name='cube' accessType='inputOutput' type='SFNode'>
+                <field accessType='inputOutput' name='cube' type='SFNode'>
                   <ComposedCubeMapTexture USE='texture'/>
                 </field>
-                <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
-                <field name='bias' accessType='inputOnly' type='SFFloat' value='0.5'/>
-                <field name='scale' accessType='inputOnly' type='SFFloat' value='0.5'/>
-                <field name='power' accessType='inputOnly' type='SFFloat' value='2.0'/>
-                <field name='a' accessType='inputOnly' type='SFFloat' value='10.0'/>
-                <field name='b' accessType='inputOnly' type='SFFloat' value='1.0'/>
-                <field name='c' accessType='inputOnly' type='SFFloat' value='20.0'/>
-                <field name='d' accessType='inputOnly' type='SFFloat' value='20.0'/>
-                <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
-                <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
+                <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
+                <field accessType='inputOnly' name='bias' type='SFFloat' value='0.5'/>
+                <field accessType='inputOnly' name='scale' type='SFFloat' value='0.5'/>
+                <field accessType='inputOnly' name='power' type='SFFloat' value='2.0'/>
+                <field accessType='inputOnly' name='a' type='SFFloat' value='10.0'/>
+                <field accessType='inputOnly' name='b' type='SFFloat' value='1.0'/>
+                <field accessType='inputOnly' name='c' type='SFFloat' value='20.0'/>
+                <field accessType='inputOnly' name='d' type='SFFloat' value='20.0'/>
+                <field accessType='inputOnly' name='tdelta' type='SFFloat' value='0.0'/>
+                <field accessType='inputOnly' name='pdelta' type='SFFloat' value='0.0'/>
                 <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
                 <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
               </ComposedShader>
@@ -59,15 +59,15 @@
           </Shape>
         </Transform>
         <Script DEF='Animate'>
-          <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-          <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-          <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
-          <field name='a' accessType='inputOutput' type='SFFloat' value='0.5'/>
-          <field name='b' accessType='inputOutput' type='SFFloat' value='0.5'/>
-          <field name='c' accessType='inputOutput' type='SFFloat' value='3.0'/>
-          <field name='d' accessType='inputOutput' type='SFFloat' value='3.0'/>
-          <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
-          <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.5'/>
+          <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+          <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+          <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+          <field accessType='inputOutput' name='a' type='SFFloat' value='0.5'/>
+          <field accessType='inputOutput' name='b' type='SFFloat' value='0.5'/>
+          <field accessType='inputOutput' name='c' type='SFFloat' value='3.0'/>
+          <field accessType='inputOutput' name='d' type='SFFloat' value='3.0'/>
+          <field accessType='inputOutput' name='tdelta' type='SFFloat' value='0.5'/>
+          <field accessType='inputOutput' name='pdelta' type='SFFloat' value='0.5'/>
 <![CDATA[
 ecmascript:
 

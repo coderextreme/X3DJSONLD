@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Geospatial' level='1'/>
+    <component level='1' name='Geospatial'/>
     <meta content='CaliforniaCampuses.x3d' name='title'/>
     <meta content='Viewpoints and tour of California campuses' name='description'/>
     <meta content='Don Brutzman, Dale Tourtelotte, Mike Bailey, Don McGregor' name='creator'/>
@@ -21,6 +20,7 @@
     <meta content='KmlToX3dViewpoints.xslt' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='https://savage.nps.edu/Savage/license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='CaliforniaCampuses.x3d'/>
@@ -71,12 +71,12 @@
       <GeoViewpoint DEF='View35' description='CENIC' orientation='1 0 0 -1.57' position='33.879947 -118.027903 250000'/>
     </Group>
     <!-- ==================== -->
-    <ExternProtoDeclare name='CrossHair' appinfo='CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point' url='"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"'>
-      <field name='enabled' accessType='initializeOnly' appinfo='whether CrossHair prototype is enabled or not' type='SFBool'/>
-      <field name='set_enabled' accessType='inputOnly' appinfo='control whether enabled/disabled' type='SFBool'/>
-      <field name='markerColor' accessType='inputOutput' appinfo='color of CrossHair marker' type='SFColor'/>
-      <field name='scale' accessType='inputOutput' appinfo='size of CrossHair in meters' type='SFVec3f'/>
-      <field name='positionOffsetFromCamera' accessType='inputOutput' appinfo='distance in front of HUD viewpoint' type='SFVec3f'/>
+    <ExternProtoDeclare appinfo='CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point' name='CrossHair' url='"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"'>
+      <field accessType='initializeOnly' appinfo='whether CrossHair prototype is enabled or not' name='enabled' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='control whether enabled/disabled' name='set_enabled' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='color of CrossHair marker' name='markerColor' type='SFColor'/>
+      <field accessType='inputOutput' appinfo='size of CrossHair in meters' name='scale' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='distance in front of HUD viewpoint' name='positionOffsetFromCamera' type='SFVec3f'/>
     </ExternProtoDeclare>
     <ProtoInstance DEF='CrossHairInstance' name='CrossHair'>
       <fieldValue name='enabled' value='true'/>
@@ -85,24 +85,24 @@
       <fieldValue name='positionOffsetFromCamera' value='0 0 -5'/>
     </ProtoInstance>
     <!-- ==================== -->
-    <ExternProtoDeclare name='HeadsUpDisplay' appinfo='Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location' url='"../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay" "https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay" "../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay" "https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"'>
-      <field name='children' accessType='inputOutput' appinfo='X3D content positioned at HUD offset' type='MFNode'/>
-      <field name='screenOffset' accessType='inputOutput' appinfo='offset position for HUD relative to current view location, default 0 0 -5' type='SFVec3f'/>
-      <field name='position_changed' accessType='outputOnly' appinfo='HUD position update (in world coordinates) relative to original location' type='SFVec3f'/>
-      <field name='orientation_changed' accessType='outputOnly' appinfo='HUD orientation update relative to original location' type='SFRotation'/>
+    <ExternProtoDeclare appinfo='Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location' name='HeadsUpDisplay' url='"../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay" "https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay" "../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay" "https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"'>
+      <field accessType='inputOutput' appinfo='X3D content positioned at HUD offset' name='children' type='MFNode'/>
+      <field accessType='inputOutput' appinfo='offset position for HUD relative to current view location, default 0 0 -5' name='screenOffset' type='SFVec3f'/>
+      <field accessType='outputOnly' appinfo='HUD position update (in world coordinates) relative to original location' name='position_changed' type='SFVec3f'/>
+      <field accessType='outputOnly' appinfo='HUD orientation update relative to original location' name='orientation_changed' type='SFRotation'/>
     </ExternProtoDeclare>
     <!-- ==================== -->
-    <ExternProtoDeclare name='ViewpointSequencer' appinfo='Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene' url='"../../Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer" "https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer" "../../Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer" "https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer"'>
-      <field name='viewpoints' accessType='initializeOnly' appinfo='Viewpoint USE nodes that are sequentially bound' type='MFNode'/>
-      <field name='interval' accessType='inputOutput' appinfo='number of seconds between viewpoint shifts' type='SFTime'/>
-      <field name='enabled' accessType='inputOutput' appinfo='whether ViewpointSequencer is enabled or not' type='SFBool'/>
-      <field name='set_enabled' accessType='inputOnly' appinfo='whether ViewpointSequencer is enabled or not' type='SFBool'/>
-      <field name='previous' accessType='inputOnly' appinfo='bind previous Viewpoint in list' type='SFBool'/>
-      <field name='next' accessType='inputOnly' appinfo='bind next Viewpoint in list' type='SFBool'/>
-      <field name='toggleMessage' accessType='inputOutput' appinfo='Select message to toggle ViewpointSequencer' type='MFString'/>
-      <field name='toggleMessageFontSize' accessType='initializeOnly' appinfo='Color for toggleMessage text' type='SFFloat'/>
-      <field name='toggleMessageColor' accessType='inputOutput' appinfo='Color for toggleMessage text' type='SFColor'/>
-      <field name='traceEnabled' accessType='inputOutput' appinfo='enable console output' type='SFBool'/>
+    <ExternProtoDeclare appinfo='Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene' name='ViewpointSequencer' url='"../../Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer" "https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer" "../../Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer" "https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer"'>
+      <field accessType='initializeOnly' appinfo='Viewpoint USE nodes that are sequentially bound' name='viewpoints' type='MFNode'/>
+      <field accessType='inputOutput' appinfo='number of seconds between viewpoint shifts' name='interval' type='SFTime'/>
+      <field accessType='inputOutput' appinfo='whether ViewpointSequencer is enabled or not' name='enabled' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='whether ViewpointSequencer is enabled or not' name='set_enabled' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='bind previous Viewpoint in list' name='previous' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='bind next Viewpoint in list' name='next' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Select message to toggle ViewpointSequencer' name='toggleMessage' type='MFString'/>
+      <field accessType='initializeOnly' appinfo='Color for toggleMessage text' name='toggleMessageFontSize' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Color for toggleMessage text' name='toggleMessageColor' type='SFColor'/>
+      <field accessType='inputOutput' appinfo='enable console output' name='traceEnabled' type='SFBool'/>
     </ExternProtoDeclare>
     <ProtoInstance DEF='ViewpointTour' name='ViewpointSequencer'>
       <!-- initially enabled is off, scene provides selectable text to activate -->
@@ -166,13 +166,13 @@
       <ROUTE fromField='toggle' fromNode='TourToggle' toField='set_enabled' toNode='ViewpointTour'/>
     </GeoLocation>
     <!-- ==================== -->
-    <ExternProtoDeclare name='ViewPositionOrientation' appinfo='ViewPositionOrientation provides provides console output of local position and orientation as user navigates' url='"../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"'>
-      <field name='enabled' accessType='inputOutput' appinfo='Whether or not ViewPositionOrientation sends output to console' type='SFBool'/>
-      <field name='traceEnabled' accessType='initializeOnly' appinfo='Output internal trace messages for debugging this node, intended for developer use only' type='SFBool'/>
-      <field name='set_traceEnabled' accessType='inputOnly' appinfo='Ability to turn output tracing on/off at runtime' type='SFBool'/>
-      <field name='position_changed' accessType='outputOnly' appinfo='Output local position' type='SFVec3f'/>
-      <field name='orientation_changed' accessType='outputOnly' appinfo='Output local orientation' type='SFRotation'/>
-      <field name='outputViewpointString' accessType='outputOnly' appinfo='MFString value of new Viewpoint' type='MFString'/>
+    <ExternProtoDeclare appinfo='ViewPositionOrientation provides provides console output of local position and orientation as user navigates' name='ViewPositionOrientation' url='"../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"'>
+      <field accessType='inputOutput' appinfo='Whether or not ViewPositionOrientation sends output to console' name='enabled' type='SFBool'/>
+      <field accessType='initializeOnly' appinfo='Output internal trace messages for debugging this node, intended for developer use only' name='traceEnabled' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='Ability to turn output tracing on/off at runtime' name='set_traceEnabled' type='SFBool'/>
+      <field accessType='outputOnly' appinfo='Output local position' name='position_changed' type='SFVec3f'/>
+      <field accessType='outputOnly' appinfo='Output local orientation' name='orientation_changed' type='SFRotation'/>
+      <field accessType='outputOnly' appinfo='MFString value of new Viewpoint' name='outputViewpointString' type='MFString'/>
     </ExternProtoDeclare>
     <ProtoInstance DEF='ExampleViewPositionOrientation' name='ViewPositionOrientation'>
       <fieldValue name='enabled' value='false'/>

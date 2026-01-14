@@ -3,20 +3,14 @@
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <!-- <component name='Shape' level='4'></component> -->
-    <component name='Scripting' level='1'/>
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
     <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
     <meta content='mirror2.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d' name='identifier'/>
-    <meta content='a mirrored sphere' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <Viewpoint description='Switch background and images texture' position='0 5 100'/>
@@ -26,9 +20,8 @@
         <Appearance>
           <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedShader DEF='x_ite' language='GLSL'>
-            <!-- http://hypertextbook.com/facts/2005/JustinChe.shtml -->
             <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-            <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+            <field name='cube' accessType='inputOutput' type='SFInt32'/>
             <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
@@ -37,7 +30,7 @@
           </ComposedShader>
           <ComposedShader DEF='x3dom' language='GLSL'>
             <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-            <field name='cube' accessType='inputOutput' type='SFInt32' value='0'/>
+            <field name='cube' accessType='inputOutput' type='SFInt32'/>
             <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
             <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
@@ -91,19 +84,19 @@ ecmascript:
 ]]>
       </Script>
       <TimeSensor DEF='Clock' cycleInterval='45.0' loop='true'/>
-      <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='UrlSelector'/>
-      <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='frontUrl' toNode='cube'/>
-      <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='backUrl' toNode='cube'/>
-      <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='leftUrl' toNode='cube'/>
-      <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='rightUrl' toNode='cube'/>
-      <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='topUrl' toNode='cube'/>
-      <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='bottomUrl' toNode='cube'/>
-      <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='url' toNode='frontShader'/>
-      <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='url' toNode='backShader'/>
-      <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='url' toNode='leftShader'/>
-      <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='url' toNode='rightShader'/>
-      <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='url' toNode='topShader'/>
-      <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='url' toNode='bottomShader'/>
     </Transform>
+    <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='UrlSelector'/>
+    <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='set_frontUrl' toNode='cube'/>
+    <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='set_backUrl' toNode='cube'/>
+    <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='set_leftUrl' toNode='cube'/>
+    <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='set_rightUrl' toNode='cube'/>
+    <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='set_topUrl' toNode='cube'/>
+    <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='set_bottomUrl' toNode='cube'/>
+    <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='set_url' toNode='frontShader'/>
+    <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='set_url' toNode='backShader'/>
+    <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='set_url' toNode='leftShader'/>
+    <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='set_url' toNode='rightShader'/>
+    <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='set_url' toNode='topShader'/>
+    <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='set_url' toNode='bottomShader'/>
   </Scene>
 </X3D>

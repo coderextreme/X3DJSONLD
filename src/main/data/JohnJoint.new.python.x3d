@@ -4,19 +4,18 @@
   <head>
     <component name='HAnim'/>
     <meta content='JohnJoint.x3d' name='title'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
     <meta content='h6.pl' name='generator'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='John Carlson' name='creator'/>
-    <meta content='12 January 2023' name='created'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <Transform>
       <Shape DEF='AxisLinesShape'>
         <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
-          <Color/>
-          <Coordinate/>
+          <Color color='1 0 0 0 0.6 0 0 0 1'/>
+          <Coordinate point='0 0 0 0.1 0 0 0 0.1 0 0 0 0.1'/>
         </IndexedLineSet>
       </Shape>
     </Transform>
@@ -33,8 +32,8 @@
         <Transform translation='0 2.05 0'>
           <Shape DEF='HAnimSegmentLine'>
             <LineSet vertexCount='2'>
-              <ColorRGBA DEF='HAnimSegmentLineColorRGBA'/>
-              <Coordinate/>
+              <ColorRGBA DEF='HAnimSegmentLineColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
+              <Coordinate point='-0.05 0 0 0.05 0 0'/>
             </LineSet>
           </Shape>
         </Transform>

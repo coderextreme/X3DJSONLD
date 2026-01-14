@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='bubble.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='Tour around a prismatic sphere' name='description'/>
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d' name='identifier'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo type='"EXAMINE"'/>
@@ -22,11 +22,11 @@
             <Sphere radius='0.25'/>
           </Shape>
           <Script DEF='bounce'>
-            <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-            <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='scalvel' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
+            <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+            <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+            <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+            <field accessType='inputOutput' name='scalvel' type='SFVec3f' value='0 0 0'/>
+            <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 function initialize() {

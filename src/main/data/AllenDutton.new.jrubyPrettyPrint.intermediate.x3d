@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='HAnim' level='3'/>
+    <component level='3' name='HAnim'/>
     <meta content='AllenDutton.x3d' name='title'/>
     <meta content='Articulated human model developed from laser-scan data using X3D native tags, rather than prototypes.' name='description'/>
     <meta content='Allen Dutton' name='creator'/>
@@ -22,13 +21,14 @@
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/AllenDutton.x3d' name='identifier'/>
     <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <!-- Start scene graph. -->
     <WorldInfo title='AllenDutton.x3d'/>
     <HAnimHumanoid DEF='hanim_Humanoid' name='Humanoid' version='2.0'>
-      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='-0.00405 0.855 -1.13E-4'>
-        <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0 1.01 -0.0204'>
+      <HAnimJoint DEF='hanim_humanoid_root' containerField='skeleton' center='-0.00405 0.855 -1.13E-4' name='humanoid_root'>
+        <HAnimJoint DEF='hanim_sacroiliac' center='0 1.01 -0.0204' name='sacroiliac'>
           <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
             <Transform center='-0.7455 1 0.058' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
               <Shape>
@@ -42,7 +42,7 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_hip' name='l_hip' center='0.122 0.888271 -0.0693267'>
+          <HAnimJoint DEF='hanim_l_hip' center='0.122 0.888271 -0.0693267' name='l_hip'>
             <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
               <Transform DEF='l_thigh_adjust' center='-0.7 1.1 0.04' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                 <Shape>
@@ -56,7 +56,7 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_knee' name='l_knee' center='0.0738 0.517 -0.0284'>
+            <HAnimJoint DEF='hanim_l_knee' center='0.0738 0.517 -0.0284' name='l_knee'>
               <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
                 <Transform DEF='l_calf_adjust' center='-0.012 1.1 -0.01' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                   <Shape>
@@ -70,7 +70,7 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_ankle' name='l_ankle' center='0.0645 0.0719 -0.048'>
+              <HAnimJoint DEF='hanim_l_ankle' center='0.0645 0.0719 -0.048' name='l_ankle'>
                 <HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'>
                   <Transform DEF='l_foot_adjust' center='-0.32 1.1 0.021' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                     <Shape>
@@ -86,7 +86,7 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_hip' name='r_hip' center='-0.11 0.892362 -0.0732533'>
+          <HAnimJoint DEF='hanim_r_hip' center='-0.11 0.892362 -0.0732533' name='r_hip'>
             <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
               <Transform DEF='r_thigh_adjust' center='0.43 1.1 -0.05' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                 <Shape>
@@ -100,7 +100,7 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_knee' name='r_knee' center='-0.0699 0.51 -0.0166'>
+            <HAnimJoint DEF='hanim_r_knee' center='-0.0699 0.51 -0.0166' name='r_knee'>
               <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
                 <Transform DEF='r_calf_adjust' center='0.43 1.1 -0.05' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                   <Shape>
@@ -114,7 +114,7 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_ankle' name='r_ankle' center='-0.064 0.0753 -0.0412'>
+              <HAnimJoint DEF='hanim_r_ankle' center='-0.064 0.0753 -0.0412' name='r_ankle'>
                 <HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'>
                   <Transform DEF='r_foot_adjust' center='0.3319 1.1 -0.04' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                     <Shape>
@@ -131,7 +131,7 @@
             </HAnimJoint>
           </HAnimJoint>
         </HAnimJoint>
-        <HAnimJoint DEF='hanim_vl1' name='vl1' center='-0.00405 1.07 -0.0275'>
+        <HAnimJoint DEF='hanim_vl1' center='-0.00405 1.07 -0.0275' name='vl1'>
           <HAnimSegment DEF='hanim_l1' name='l1'>
             <Transform DEF='torso_adjust' center='0 1 0' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
               <Shape>
@@ -145,7 +145,7 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder' center='0.167 1.36 -0.0518'>
+          <HAnimJoint DEF='hanim_l_shoulder' center='0.167 1.36 -0.0518' name='l_shoulder'>
             <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
               <Transform DEF='l_upperarm_adjust' center='-0.435 1 0.06' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                 <Shape>
@@ -159,7 +159,7 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_elbow' name='l_elbow' center='0.196 1.07 -0.0518'>
+            <HAnimJoint DEF='hanim_l_elbow' center='0.196 1.07 -0.0518' name='l_elbow'>
               <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
                 <Transform DEF='l_forearm_adjust' center='-0.634 1.01 0.0799' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                   <Shape>
@@ -173,7 +173,7 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_wrist' name='l_wrist' center='0.213 0.811 -0.0338'>
+              <HAnimJoint DEF='hanim_l_wrist' center='0.213 0.811 -0.0338' name='l_wrist'>
                 <HAnimSegment DEF='hanim_l_hand' name='l_hand'>
                   <Transform DEF='l_hand_adjust' center='-0.8355 1.015 0.1' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                     <Shape>
@@ -189,7 +189,7 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder' center='-0.167 1.36 -0.0458'>
+          <HAnimJoint DEF='hanim_r_shoulder' center='-0.167 1.36 -0.0458' name='r_shoulder'>
             <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
               <Transform DEF='r_upperarm_adjust' center='0.27 1 -0.025' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                 <Shape>
@@ -203,7 +203,7 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_elbow' name='r_elbow' center='-0.192 1.07 -0.0498'>
+            <HAnimJoint DEF='hanim_r_elbow' center='-0.192 1.07 -0.0498' name='r_elbow'>
               <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
                 <Transform DEF='r_forearm_adjust' center='0.7641 1.01 -0.07438' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                   <Shape>
@@ -217,7 +217,7 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_wrist' name='r_wrist' center='-0.217 0.811 -0.0338'>
+              <HAnimJoint DEF='hanim_r_wrist' center='-0.217 0.811 -0.0338' name='r_wrist'>
                 <HAnimSegment DEF='hanim_r_hand' name='r_hand'>
                   <Transform DEF='r_hand_adjust' center='0.2693 1.011 -0.0248' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                     <Shape>
@@ -233,7 +233,7 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_vc4' name='vc4' center='0 1.43 -0.0458'>
+          <HAnimJoint DEF='hanim_vc4' center='0 1.43 -0.0458' name='vc4'>
             <HAnimSegment DEF='hanim_c4' name='c4'>
               <Transform DEF='neck_adjust' center='-0.36 1.03 0.04' rotation='0 1 0 1.570796' scale='0.1 0.1 0.1'>
                 <Shape>
@@ -247,7 +247,7 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_skullbase' name='skullbase' center='0 1.4 0'>
+            <HAnimJoint DEF='hanim_skullbase' center='0 1.4 0' name='skullbase'>
               <HAnimSegment DEF='hanim_skull' name='skull'>
                 <Transform DEF='skull_adjust' center='-0.07 1.33 -0.035' scale='0.001 0.001 0.001'>
                   <Shape>
@@ -299,7 +299,7 @@
       <HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
       <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
       <HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
-      <HAnimSite DEF='hanim_BoxMan_view' name='BoxMan' containerField='viewpoints'>
+      <HAnimSite DEF='hanim_BoxMan_view' name='BoxMan'>
         <Viewpoint DEF='InclinedView' description='Inclined View' orientation='-0.113 0.993 0.0347 0.671' position='1.62 1.05 2.06'/>
         <Viewpoint DEF='FrontView' description='Front View' position='0 0.854 2.57665'/>
         <Viewpoint DEF='SideView' description='Side View' orientation='0 1 0 1.5708' position='2.5929 0.854 0'/>
@@ -310,7 +310,7 @@
     <Group DEF='Interface'>
       <!-- <Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform> -->
       <Collision DEF='HUD'>
-        <Transform DEF='HudXform' containerField='proxy'>
+        <Transform DEF='HudXform'>
           <!-- Enable this line if you enabled ProximitySensor <Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'> -->
           <!-- Enable this line if you disabled ProximitySensor -->
           <Transform rotation='0 1 0 0.65' scale='0.5 0.5 0.5' translation='0.5 0.1 0'>

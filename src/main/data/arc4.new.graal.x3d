@@ -6,13 +6,12 @@
     <meta content='arc4.x3d' name='title'/>
     <meta content='Lost, Doug Sanden I think' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d' name='identifier'/>
-    <meta content='a generic proto to connect two objects' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <Viewpoint description='Only Viewpoint' position='0 0 5'/>
     <Background skyColor='0.4 0.4 0.4'/>
-    <Transform DEF='DECLpoint_G1_node'>
+    <Transform DEF='DECLpoint_G1_node' translation='0 0.6049997 0'>
       <Shape>
         <Appearance>
           <Material diffuseColor='1 0 0'/>
@@ -21,8 +20,8 @@
       </Shape>
       <PositionInterpolator DEF='DECLpoint_G1_PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
       <Script DEF='DECLpoint_G1_MB1'>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='old' accessType='inputOutput' type='SFVec3f'/>
         <field name='set_location' accessType='inputOnly' type='SFTime'/>
         <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
@@ -36,12 +35,8 @@ ecmascript:
 ]]>
       </Script>
       <TimeSensor DEF='DECLpoint_G1_CL1' cycleInterval='3.0' loop='true'/>
-      <ROUTE fromField='cycleTime' fromNode='DECLpoint_G1_CL1' toField='set_location' toNode='DECLpoint_G1_MB1'/>
-      <ROUTE fromField='fraction_changed' fromNode='DECLpoint_G1_CL1' toField='set_fraction' toNode='DECLpoint_G1_PI1'/>
-      <ROUTE fromField='keyValue' fromNode='DECLpoint_G1_MB1' toField='keyValue' toNode='DECLpoint_G1_PI1'/>
-      <ROUTE fromField='value_changed' fromNode='DECLpoint_G1_PI1' toField='set_translation' toNode='DECLpoint_G1_node'/>
     </Transform>
-    <Transform DEF='DECLpoint_G2_node'>
+    <Transform DEF='DECLpoint_G2_node' translation='0 0.6049997 0'>
       <Shape>
         <Appearance>
           <Material diffuseColor='1 0 0'/>
@@ -50,8 +45,8 @@ ecmascript:
       </Shape>
       <PositionInterpolator DEF='DECLpoint_G2_PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
       <Script DEF='DECLpoint_G2_MB1'>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field name='translation' accessType='inputOutput' type='SFVec3f'/>
+        <field name='old' accessType='inputOutput' type='SFVec3f'/>
         <field name='set_location' accessType='inputOnly' type='SFTime'/>
         <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
@@ -65,10 +60,6 @@ ecmascript:
 ]]>
       </Script>
       <TimeSensor DEF='DECLpoint_G2_CL1' cycleInterval='3.0' loop='true'/>
-      <ROUTE fromField='cycleTime' fromNode='DECLpoint_G2_CL1' toField='set_location' toNode='DECLpoint_G2_MB1'/>
-      <ROUTE fromField='fraction_changed' fromNode='DECLpoint_G2_CL1' toField='set_fraction' toNode='DECLpoint_G2_PI1'/>
-      <ROUTE fromField='keyValue' fromNode='DECLpoint_G2_MB1' toField='keyValue' toNode='DECLpoint_G2_PI1'/>
-      <ROUTE fromField='value_changed' fromNode='DECLpoint_G2_PI1' toField='set_translation' toNode='DECLpoint_G2_node'/>
     </Transform>
     <Group>
       <Transform DEF='DECLx3dconnector_connector1_trans'>
@@ -157,6 +148,14 @@ ecmascript:
 ]]>
       </Script>
     </Group>
+    <ROUTE fromField='cycleTime' fromNode='DECLpoint_G1_CL1' toField='set_location' toNode='DECLpoint_G1_MB1'/>
+    <ROUTE fromField='fraction_changed' fromNode='DECLpoint_G1_CL1' toField='set_fraction' toNode='DECLpoint_G1_PI1'/>
+    <ROUTE fromField='keyValue_changed' fromNode='DECLpoint_G1_MB1' toField='set_keyValue' toNode='DECLpoint_G1_PI1'/>
+    <ROUTE fromField='value_changed' fromNode='DECLpoint_G1_PI1' toField='set_translation' toNode='DECLpoint_G1_node'/>
+    <ROUTE fromField='cycleTime' fromNode='DECLpoint_G2_CL1' toField='set_location' toNode='DECLpoint_G2_MB1'/>
+    <ROUTE fromField='fraction_changed' fromNode='DECLpoint_G2_CL1' toField='set_fraction' toNode='DECLpoint_G2_PI1'/>
+    <ROUTE fromField='keyValue_changed' fromNode='DECLpoint_G2_MB1' toField='set_keyValue' toNode='DECLpoint_G2_PI1'/>
+    <ROUTE fromField='value_changed' fromNode='DECLpoint_G2_PI1' toField='set_translation' toNode='DECLpoint_G2_node'/>
     <ROUTE fromField='translation_changed' fromNode='DECLpoint_G1_node' toField='set_startpoint' toNode='DECLx3dconnector_connector1_S1'/>
     <ROUTE fromField='translation_changed' fromNode='DECLpoint_G2_node' toField='set_endpoint' toNode='DECLx3dconnector_connector1_S1'/>
   </Scene>

@@ -8,12 +8,10 @@
     <meta content='David Roussel' name='creator'/>
     <meta content='James Harney, Don Brutzman NPS' name='translator'/>
     <meta content='8 April 2002' name='created'/>
-    <meta content='12 January 2014' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:24 GMT' name='modified'/>
     <meta content='http://vrmlstuff.free.fr/materials' name='reference'/>
     <meta content='Universal Media Material Library' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json' name='identifier'/>
-    <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <Shape>

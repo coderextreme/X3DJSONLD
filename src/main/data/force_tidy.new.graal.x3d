@@ -3,15 +3,11 @@
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
     <meta content='John W Carlson' name='creator'/>
     <meta content='December 13 2015' name='created'/>
-    <meta content='July 14 2025' name='modified'/>
+    <meta content='Wed, 17 Sep 2025 23:48:24 GMT' name='modified'/>
     <meta content='force.x3d' name='title'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d' name='identifier'/>
-    <meta content='beginnings of a force directed graph in 3D' name='description'/>
-    <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='node'>
@@ -57,11 +53,11 @@ ecmascript:
 ]]>
           </Script>
           <TimeSensor DEF='nodeClock' cycleInterval='3.0' loop='true'/>
-          <ROUTE fromField='cycleTime' fromNode='nodeClock' toField='set_cycle' toNode='MoveBall'/>
-          <ROUTE fromField='fraction_changed' fromNode='nodeClock' toField='set_fraction' toNode='NodePosition'/>
-          <ROUTE fromField='keyValue' fromNode='MoveBall' toField='set_keyValue' toNode='NodePosition'/>
-          <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
         </Group>
+        <ROUTE fromField='cycleTime' fromNode='nodeClock' toField='set_cycle' toNode='MoveBall'/>
+        <ROUTE fromField='fraction_changed' fromNode='nodeClock' toField='set_fraction' toNode='NodePosition'/>
+        <ROUTE fromField='keyValue' fromNode='MoveBall' toField='set_keyValue' toNode='NodePosition'/>
+        <ROUTE fromField='value_changed' fromNode='NodePosition' toField='set_translation' toNode='transform'/>
       </ProtoBody>
     </ProtoDeclare>
     <ProtoDeclare name='cyl'>
@@ -91,33 +87,42 @@ ecmascript:
                 function set_endA(value) {
 		    spine = new MFVec3f(value, spine[1]);
                 }
-
+                
                 function set_endB(value) {
 		    spine = new MFVec3f(spine[0], value);
                 }
 ]]>
           </Script>
-          <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
         </Group>
+        <ROUTE fromField='spine_changed' fromNode='MoveCylinder' toField='set_spine' toNode='extrusion'/>
       </ProtoBody>
     </ProtoDeclare>
     <Transform DEF='HoldsContent' scale='0.1 0.1 0.1'>
       <PlaneSensor DEF='clickGenerator' description='click on background to add nodes, click on nodes to add links' maxPosition='50 50' minPosition='-50 -50'/>
       <ProtoInstance DEF='nodeA' name='node'>
-        <fieldValue name='position' value='0 1.388333 0'/>
+        <fieldValue name='position' value='0 0.6349999 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='nodeB' name='node'>
-        <fieldValue name='position' value='0 1.388333 0'/>
+        <fieldValue name='position' value='0 0.6349999 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='nodeC' name='node'>
-        <fieldValue name='position' value='0 1.388333 0'/>
+        <fieldValue name='position' value='0 0.6349999 0'/>
       </ProtoInstance>
       <ProtoInstance DEF='nodeD' name='node'>
-        <fieldValue name='position' value='0 1.388333 0'/>
+        <fieldValue name='position' value='0 0.6349999 0'/>
       </ProtoInstance>
-      <ProtoInstance DEF='linkA' name='cyl'/>
-      <ProtoInstance DEF='linkB' name='cyl'/>
-      <ProtoInstance DEF='linkC' name='cyl'/>
+      <ProtoInstance DEF='linkA' name='cyl'>
+        <fieldValue name='set_positionA' value='0 0.6349999 0'/>
+        <fieldValue name='set_positionB' value='0 0.6349999 0'/>
+      </ProtoInstance>
+      <ProtoInstance DEF='linkB' name='cyl'>
+        <fieldValue name='set_positionA' value='0 0.6349999 0'/>
+        <fieldValue name='set_positionB' value='0 0.6349999 0'/>
+      </ProtoInstance>
+      <ProtoInstance DEF='linkC' name='cyl'>
+        <fieldValue name='set_positionA' value='0 0.6349999 0'/>
+        <fieldValue name='set_positionB' value='0 0.6349999 0'/>
+      </ProtoInstance>
     </Transform>
     <Script DEF='clickHandler'>
       <field name='counter' accessType='inputOutput' type='SFInt32'/>
@@ -140,16 +145,16 @@ ecmascript:
 				  ]
 				}
 			});
-
+                
         }
 ]]>
     </Script>
     <ROUTE fromField='isActive' fromNode='clickGenerator' toField='add_node' toNode='clickHandler'/>
-    <ROUTE fromField='position_changed' fromNode='nodeA' toField='set_positionA' toNode='linkA'/>
-    <ROUTE fromField='position_changed' fromNode='nodeB' toField='set_positionB' toNode='linkA'/>
-    <ROUTE fromField='position_changed' fromNode='nodeA' toField='set_positionA' toNode='linkB'/>
-    <ROUTE fromField='position_changed' fromNode='nodeC' toField='set_positionB' toNode='linkB'/>
-    <ROUTE fromField='position_changed' fromNode='nodeA' toField='set_positionA' toNode='linkC'/>
-    <ROUTE fromField='position_changed' fromNode='nodeD' toField='set_positionB' toNode='linkC'/>
+    <ROUTE fromField='position_changed' fromNode='nodeA' toField='set_set_positionA' toNode='linkA'/>
+    <ROUTE fromField='position_changed' fromNode='nodeB' toField='set_set_positionB' toNode='linkA'/>
+    <ROUTE fromField='position_changed' fromNode='nodeA' toField='set_set_positionA' toNode='linkB'/>
+    <ROUTE fromField='position_changed' fromNode='nodeC' toField='set_set_positionB' toNode='linkB'/>
+    <ROUTE fromField='position_changed' fromNode='nodeA' toField='set_set_positionA' toNode='linkC'/>
+    <ROUTE fromField='position_changed' fromNode='nodeD' toField='set_set_positionB' toNode='linkC'/>
   </Scene>
 </X3D>

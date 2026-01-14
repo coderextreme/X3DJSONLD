@@ -2678,7 +2678,7 @@
 </HAnimSegment>
 <HAnimJoint name="r_tarsal_distal_interphalangeal_5" DEF="hanim_r_tarsal_distal_interphalangeal_5" center="-0.1269 0.00856 0.10188" llimit="0 0 0" ulimit="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_5" DEF="hanim_r_tarsal_distal_phalanx_5"><!--Shape USE='r_tarsal_distal_phalanx_5_Shape'/--><Transform USE="r_tarsal_distal_interphalangeal_5_JointShape"></Transform>
 <Shape USE="r_tarsal_distal_phalanx_5_Segment"></Shape>
-<HAnimSite name="r_tarsal_distal_phalanx_5" DEF="hanim_" translation="-0.125 0.016 0.115"><Transform USE="r_tarsal_distal_phalanx_5_tip_SiteShape"></Transform>
+<HAnimSite name="r_tarsal_distal_phalanx_5" DEF="hanim_r_tarsal_distal_phalanx_5" translation="-0.125 0.016 0.115"><Transform USE="r_tarsal_distal_phalanx_5_tip_SiteShape"></Transform>
 </HAnimSite>
 <Shape USE="r_tarsal_distal_interphalangeal_5-to-r_tarsal_distal_phalanx_5_tip"></Shape>
 </HAnimSegment>

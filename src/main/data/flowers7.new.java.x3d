@@ -3,24 +3,18 @@
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
     <component name='EnvironmentalEffects' level='3'/>
     <component name='Shaders' level='1'/>
     <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
     <component name='Shape' level='4'/>
     <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
     <meta content='flowers7.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d' name='identifier'/>
-    <meta content='a flower' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo/>
-    <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
     <Background DEF='background' backUrl='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"' bottomUrl='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"' frontUrl='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"' leftUrl='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"' rightUrl='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"' topUrl='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
     <Viewpoint description='Transparent rose' position='0 0 40'/>
     <Transform>
@@ -28,7 +22,6 @@
         <Appearance>
           <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedShader DEF='x3dom' language='GLSL'>
-            <!-- TODO VERIFY <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> -->
             <field name='cube' accessType='inputOutput' type='SFNode'>
               <ComposedCubeMapTexture USE='texture'/>
             </field>
@@ -40,8 +33,8 @@
             <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
             <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
             <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
-            <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-            <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <field name='tdelta' accessType='inputOutput' type='SFFloat'/>
+            <field name='pdelta' accessType='inputOutput' type='SFFloat'/>
             <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'/>
             <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
           </ComposedShader>
@@ -50,15 +43,15 @@
               <ComposedCubeMapTexture USE='texture'/>
             </field>
             <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>
-            <field name='bias' accessType='inputOnly' type='SFFloat' value='0.5'/>
-            <field name='scale' accessType='inputOnly' type='SFFloat' value='0.5'/>
-            <field name='power' accessType='inputOnly' type='SFFloat' value='2.0'/>
-            <field name='a' accessType='inputOnly' type='SFFloat' value='10.0'/>
-            <field name='b' accessType='inputOnly' type='SFFloat' value='1.0'/>
-            <field name='c' accessType='inputOnly' type='SFFloat' value='20.0'/>
-            <field name='d' accessType='inputOnly' type='SFFloat' value='20.0'/>
-            <field name='tdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
-            <field name='pdelta' accessType='inputOnly' type='SFFloat' value='0.0'/>
+            <field name='bias' accessType='inputOnly' type='SFFloat'/>
+            <field name='scale' accessType='inputOnly' type='SFFloat'/>
+            <field name='power' accessType='inputOnly' type='SFFloat'/>
+            <field name='a' accessType='inputOnly' type='SFFloat'/>
+            <field name='b' accessType='inputOnly' type='SFFloat'/>
+            <field name='c' accessType='inputOnly' type='SFFloat'/>
+            <field name='d' accessType='inputOnly' type='SFFloat'/>
+            <field name='tdelta' accessType='inputOnly' type='SFFloat'/>
+            <field name='pdelta' accessType='inputOnly' type='SFFloat'/>
             <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'/>
             <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
           </ComposedShader>
@@ -108,15 +101,14 @@ ecmascript:
         }
 ]]>
     </Script>
-    <!-- <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/> -->
     <Script DEF='Animate' directOutput='true'>
       <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
       <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
       <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
       <field name='c' accessType='inputOutput' type='SFFloat' value='20.0'/>
       <field name='d' accessType='inputOutput' type='SFFloat' value='20.0'/>
-      <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-      <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+      <field name='tdelta' accessType='inputOutput' type='SFFloat'/>
+      <field name='pdelta' accessType='inputOutput' type='SFFloat'/>
 <![CDATA[
 ecmascript:
 
@@ -161,17 +153,17 @@ function set_fraction() {
     </Script>
     <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
     <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
-    <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
-    <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>
-    <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x_ite'/>
-    <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x_ite'/>
-    <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
-    <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
-    <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x3dom'/>
-    <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x3dom'/>
-    <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='x3dom'/>
-    <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='x3dom'/>
-    <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='x3dom'/>
-    <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='x3dom'/>
+    <ROUTE fromField='a_changed' fromNode='Animate' toField='a' toNode='x_ite'/>
+    <ROUTE fromField='b_changed' fromNode='Animate' toField='b' toNode='x_ite'/>
+    <ROUTE fromField='c_changed' fromNode='Animate' toField='c' toNode='x_ite'/>
+    <ROUTE fromField='d_changed' fromNode='Animate' toField='d' toNode='x_ite'/>
+    <ROUTE fromField='pdelta_changed' fromNode='Animate' toField='pdelta' toNode='x_ite'/>
+    <ROUTE fromField='tdelta_changed' fromNode='Animate' toField='tdelta' toNode='x_ite'/>
+    <ROUTE fromField='a_changed' fromNode='Animate' toField='set_a' toNode='x3dom'/>
+    <ROUTE fromField='b_changed' fromNode='Animate' toField='set_b' toNode='x3dom'/>
+    <ROUTE fromField='c_changed' fromNode='Animate' toField='set_c' toNode='x3dom'/>
+    <ROUTE fromField='d_changed' fromNode='Animate' toField='set_d' toNode='x3dom'/>
+    <ROUTE fromField='pdelta_changed' fromNode='Animate' toField='set_pdelta' toNode='x3dom'/>
+    <ROUTE fromField='tdelta_changed' fromNode='Animate' toField='set_tdelta' toNode='x3dom'/>
   </Scene>
 </X3D>

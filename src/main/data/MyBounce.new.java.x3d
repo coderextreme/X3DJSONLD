@@ -3,11 +3,9 @@
 <!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
     <meta content='MyBounce.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='3 prismatic spheres' name='description'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d' name='identifier'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -20,10 +18,10 @@
       </Shape>
     </Transform>
     <Script DEF='Bounce2'>
-      <field name='set_translation' accessType='inputOnly' type='SFVec3f' value='0 0 0'/>
-      <field name='translation_changed' accessType='outputOnly' type='SFVec3f' value='0 0 0'/>
-      <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-      <field name='velocity' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+      <field name='set_translation' accessType='inputOnly' type='SFVec3f'/>
+      <field name='translation_changed' accessType='outputOnly' type='SFVec3f'/>
+      <field name='translation' accessType='inputOutput' type='SFVec3f'/>
+      <field name='velocity' accessType='inputOutput' type='SFVec3f'/>
       <field name='set_fraction' accessType='inputOnly' type='SFTime'/>
 <![CDATA[
 ecmascript:

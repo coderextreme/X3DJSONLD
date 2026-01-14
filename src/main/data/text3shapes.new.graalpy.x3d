@@ -8,7 +8,6 @@
     <meta content='text3shapes.x3d' name='title'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d' name='identifier'/>
     <meta content='3 text shapes' name='description'/>
-    <meta content='Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
   </head>
   <Scene>
     <Transform>
@@ -40,7 +39,7 @@
         <field name='frontUrls' accessType='initializeOnly' type='MFString' value='"rnl_front.png" "uffizi_front.png"'/>
 <![CDATA[
 ecmascript:
-			    var me = '"1" ""2" "\n3"';
+			    var me = '"1" "\"2" "\n3"';
 ]]>
       </Script>
     </Transform>

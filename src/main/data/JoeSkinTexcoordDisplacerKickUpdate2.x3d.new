@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="H-Anim" level="1"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><!--BS studio translation from .x3dv by Joe using BS Contact--><component name="H-Anim" level="1"></component>
 <meta name="title" content="JoeSkinTexcoordDisplacerKick.x3d"></meta>
 <meta name="info" content="Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim"></meta>
 <meta name="description" content="The Joe model is a Humanoid with textured skin."></meta>
@@ -13,7 +13,7 @@
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/JoeSkinTexcoordDisplacerKick.x3d"></meta>
 <meta name="generator" content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
-<!--BS studio translation from .x3dv by Joe using BS Contact--></head>
+</head>
 <Scene><WorldInfo info="&quot;X3D Humanoid V1 LOA3 skeleton&quot; &quot;skin from hanim sites, surface features, and some added points&quot; &quot;390 points&quot;" title="X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"></WorldInfo>
 <NavigationInfo DEF="Start_NavigationInfo" headlight="false" speed="2.5"></NavigationInfo>
 <Background DEF="blue_Background"></Background>

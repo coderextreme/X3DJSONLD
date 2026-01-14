@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='variationalflowers.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='A flower particle system' name='description'/>
+  </head>
+  <Scene>
+    <WorldInfo title='variationalflowers.x3d'/>
+    <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+    <Viewpoint description='Tour Views' position='0 0 12'/>
+    <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+    <Transform>
+      <ParticleSystem geometryType='GEOMETRY' maxParticles='20'>
+        <Appearance>
+          <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
+          <ComposedCubeMapTexture DEF='texture'>
+            <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
+            <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"'/>
+            <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png"'/>
+            <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png"'/>
+            <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
+            <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+          </ComposedCubeMapTexture>
+          <ComposedShader DEF='x_ite' language='GLSL'>
+            <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
+            <field accessType='initializeOnly' name='cube' type='SFNode'>
+              <ComposedCubeMapTexture USE='texture'/>
+            </field>
+            <field accessType='initializeOnly' name='bias' type='SFFloat' value='0.5'/>
+            <field accessType='initializeOnly' name='scale' type='SFFloat' value='0.5'/>
+            <field accessType='initializeOnly' name='power' type='SFFloat' value='2'/>
+            <field accessType='inputOutput' name='x3d_ParticleValues' type='MFFloat' value='2 1 4 4 0 0'/>
+            <ShaderPart url='"../shaders/x_ite_variations.vs"'/>
+            <ShaderPart type='FRAGMENT' url='"../shaders/commonnew.fs"'/>
+          </ComposedShader>
+        </Appearance>
+        <ExplosionEmitter speed='1' variation='0.75'/>
+        <Sphere/>
+      </ParticleSystem>
+      <Script DEF='Animate'>
+        <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+        <field accessType='inputOutput' name='values' type='MFFloat' value='2 2 5 5 0 0'/>
+        <field accessType='inputOutput' name='variations' type='MFFloat' value='0.2 0.1 0.3 0.3 0.01 0.01'/>
+        <field accessType='inputOutput' name='lastframe' type='SFFloat'/>
+        <field accessType='inputOutput' name='updaterate' type='SFFloat' value='0.1'/>
+      <![CDATA[ecmascript:
+"+
+"			function set_fraction(f, tm) {
+"+
+"			    if (lastframe + updaterate < tm) {
+"+
+"			  	lastframe = tm;
+"+
+"				for (let v in values) {
+"+
+"					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];
+"+
+"				}
+"+
+"			    }
+"+
+"			}]]>
+      </Script>
+      <TimeSensor DEF='TourTime' cycleInterval='45' loop='true'/>
+    </Transform>
+    <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+    <ROUTE fromField='values_changed' fromNode='Animate' toField='set_x3d_ParticleValues' toNode='x_ite'/>
+  </Scene>
+</X3D>

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
 <X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='abox.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d' name='identifier'/>
-    <meta content='a box' name='description'/>
+    <meta content='x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field name='myShape' accessType='inputOutput' type='MFNode'>
-          <Shape>
+        <field accessType='inputOutput' name='myShape' type='MFNode'>
+          <Shape DEF='_1'>
             <Sphere/>
           </Shape>
         </field>
@@ -28,8 +26,8 @@
     </ProtoDeclare>
     <ProtoDeclare name='one'>
       <ProtoInterface>
-        <field name='myShape' accessType='inputOutput' type='MFNode'>
-          <Shape>
+        <field accessType='inputOutput' name='myShape' type='MFNode'>
+          <Shape DEF='_2'>
             <Cylinder/>
           </Shape>
         </field>
@@ -46,7 +44,7 @@
     </ProtoDeclare>
     <ProtoInstance name='one'>
       <fieldValue name='myShape'>
-        <Shape>
+        <Shape DEF='_3'>
           <Box size='140 140 140'/>
         </Shape>
       </fieldValue>
