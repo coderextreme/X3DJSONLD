@@ -37,6 +37,7 @@ X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
+{ meta content='under development' name='warning'/ }
 X3D0.Components['Shaders'] := 1;
 X3D0.Meta['title'] := 'SimpleShader.x3d';
 X3D0.Meta['description'] := 'Simple shader example';
@@ -57,7 +58,6 @@ X3D0.Meta['outputStyle'] := 'nicest';
 X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d';
 X3D0.Meta['license'] := '../../license.html';
-{ meta content='under development' name='warning'/ }
 Group22 := TGroupNode.Create;
 ProtoDeclare23 := TProtoDeclareNode.Create;
 ProtoDeclare23.NameField := 'myPrototype';

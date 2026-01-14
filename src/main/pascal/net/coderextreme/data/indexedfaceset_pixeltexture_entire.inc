@@ -13,8 +13,9 @@ Shape24: TShapeNode;
 Appearance25: TAppearanceNode;
 Material26: TMaterialNode;
 PixelTexture27: TPixelTextureNode;
-IndexedFaceSet28: TIndexedFaceSetNode;
-Coordinate29: TCoordinateNode;
+TextureProperties28: TTexturePropertiesNode;
+IndexedFaceSet29: TIndexedFaceSetNode;
+Coordinate30: TCoordinateNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Interchange';
@@ -32,7 +33,7 @@ X3D0.Meta['modified'] := '13 January 2014';
 X3D0.Meta['description'] := 'Test browser ability to completely map one PixelTexture onto the surface of an IndexedFaceSet geometry. Four colored squares should map onto each face of the IndexedFaceSet. The PixelTexture consists of red quarter (lower left), green quarter (lower right), white quarter (upper left) and yellow quarter (upper right). PixelTexture should map once onto the surface of the IndexedFaceSet, with the S (horizontal) axis of the texture corresponding to the X axis of the geometry.';
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/ConformanceNist/GeometricProperties/TextureCoordinate/indexedfaceset_pixeltexture_entire.x3d';
 X3D0.Meta['generator'] := 'Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html';
-X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../../license.html';
 Group16 := TGroupNode.Create;
 Viewpoint17 := TViewpointNode.Create;
@@ -73,6 +74,7 @@ NavigationInfo23 := TNavigationInfoNode.Create;
 NavigationInfo23.SetType(['EXAMINE','WALK','FLY','ANY']);
 { .AddChildren }
 Group16.AddChildren([NavigationInfo23]);
+{ <Environment id="gamma" gammaCorrectionDefault="none"></Environment> }
 Shape24 := TShapeNode.Create;
 Appearance25 := TAppearanceNode.Create;
 Material26 := TMaterialNode.Create;
@@ -82,18 +84,22 @@ PixelTexture27 := TPixelTextureNode.Create;
 PixelTexture27.Image := (2,2,4,-16776961,16711935,-1,-65281);
 PixelTexture27.RepeatS := False;
 PixelTexture27.RepeatT := False;
+TextureProperties28 := TTexturePropertiesNode.Create;
+TextureProperties28.MagnificationFilter := 'NEAREST_PIXEL';
+{ .SetTextureProperties }
+PixelTexture27.TextureProperties := TextureProperties28;
 { .SetTexture }
 Appearance25.Texture := PixelTexture27;
 { .SetAppearance }
 Shape24.Appearance := Appearance25;
-IndexedFaceSet28 := TIndexedFaceSetNode.Create;
-IndexedFaceSet28.SetCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
-Coordinate29 := TCoordinateNode.Create;
-Coordinate29.SetPoint([Vector3(-2,1.5,1),Vector3(-2,-1.5,1),Vector3(2,1.5,1),Vector3(2,-1.5,1),Vector3(2,1.5,-1),Vector3(2,-1.5,-1),Vector3(-2,1.5,-1),Vector3(-2,-1.5,-1)]);
+IndexedFaceSet29 := TIndexedFaceSetNode.Create;
+IndexedFaceSet29.SetCoordIndex([0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]);
+Coordinate30 := TCoordinateNode.Create;
+Coordinate30.SetPoint([Vector3(-2,1.5,1),Vector3(-2,-1.5,1),Vector3(2,1.5,1),Vector3(2,-1.5,1),Vector3(2,1.5,-1),Vector3(2,-1.5,-1),Vector3(-2,1.5,-1),Vector3(-2,-1.5,-1)]);
 { .SetCoord }
-IndexedFaceSet28.Coord := Coordinate29;
+IndexedFaceSet29.Coord := Coordinate30;
 { .SetGeometry }
-Shape24.Geometry := IndexedFaceSet28;
+Shape24.Geometry := IndexedFaceSet29;
 { .AddChildren }
 Group16.AddChildren([Shape24]);
 { .AddGroup }

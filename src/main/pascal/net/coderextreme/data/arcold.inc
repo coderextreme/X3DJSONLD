@@ -455,6 +455,7 @@ ProtoInstance77.NameField := 'x3dconnector';
 fieldValue78 := TfieldValueNode.Create;
 fieldValue78.NameField := 'startnode';
 ProtoInstance79 := TProtoInstanceNode.Create;
+ProtoInstance79.NameField := 'point';
 ProtoInstance79 := ProtoInstance73;
 { .AddChildren }
 fieldValue78.AddChildren([ProtoInstance79]);
@@ -463,6 +464,7 @@ ProtoInstance77.FieldValue := fieldValue78;
 fieldValue80 := TfieldValueNode.Create;
 fieldValue80.NameField := 'endnode';
 ProtoInstance81 := TProtoInstanceNode.Create;
+ProtoInstance81.NameField := 'point';
 ProtoInstance81 := ProtoInstance74;
 { .AddChildren }
 fieldValue80.AddChildren([ProtoInstance81]);
@@ -491,6 +493,7 @@ ProtoInstance86.NameField := 'x3dconnector';
 fieldValue87 := TfieldValueNode.Create;
 fieldValue87.NameField := 'startnode';
 ProtoInstance88 := TProtoInstanceNode.Create;
+ProtoInstance88.NameField := 'point';
 ProtoInstance88 := ProtoInstance73;
 { .AddChildren }
 fieldValue87.AddChildren([ProtoInstance88]);
@@ -499,6 +502,7 @@ ProtoInstance86.FieldValue := fieldValue87;
 fieldValue89 := TfieldValueNode.Create;
 fieldValue89.NameField := 'endnode';
 ProtoInstance90 := TProtoInstanceNode.Create;
+ProtoInstance90.NameField := 'point';
 ProtoInstance90 := ProtoInstance75;
 { .AddChildren }
 fieldValue89.AddChildren([ProtoInstance90]);
@@ -527,6 +531,7 @@ ProtoInstance95.NameField := 'x3dconnector';
 fieldValue96 := TfieldValueNode.Create;
 fieldValue96.NameField := 'startnode';
 ProtoInstance97 := TProtoInstanceNode.Create;
+ProtoInstance97.NameField := 'point';
 ProtoInstance97 := ProtoInstance73;
 { .AddChildren }
 fieldValue96.AddChildren([ProtoInstance97]);
@@ -535,6 +540,7 @@ ProtoInstance95.FieldValue := fieldValue96;
 fieldValue98 := TfieldValueNode.Create;
 fieldValue98.NameField := 'endnode';
 ProtoInstance99 := TProtoInstanceNode.Create;
+ProtoInstance99.NameField := 'point';
 ProtoInstance99 := ProtoInstance76;
 { .AddChildren }
 fieldValue98.AddChildren([ProtoInstance99]);

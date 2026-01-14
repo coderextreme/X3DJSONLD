@@ -5401,7 +5401,7 @@ X3D0.Meta['generator'] := '3DS MAX, http://www.autodesk.com/products/autodesk-3d
 X3D0.Meta['generator'] := 'Suwon HAnim Converter';
 X3D0.Meta['generator'] := 'johnRescaler+joedwillyNotePad';
 X3D0.Meta['generator'] := 'Gnu Image Manipulation Program, http://www.gimp.org';
-X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 Group22 := TGroupNode.Create;
 { https://www.web3d.org/documents/specifications/19774/V2.0/index.html }

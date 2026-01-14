@@ -1,217 +1,206 @@
 function bumpyfreewrlsliders: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
-Group31: TGroupNode;
-LayerSet32: TLayerSetNode;
-Layer33: TLayerNode;
-NavigationInfo34: TNavigationInfoNode;
-DirectionalLight35: TDirectionalLightNode;
-DirectionalLight36: TDirectionalLightNode;
-Viewpoint37: TViewpointNode;
-Group38: TGroupNode;
-Transform39: TTransformNode;
-Shape40: TShapeNode;
-Cylinder41: TCylinderNode;
-Appearance42: TAppearanceNode;
-Material43: TMaterialNode;
-Transform44: TTransformNode;
-Shape45: TShapeNode;
-Cone46: TConeNode;
-Appearance47: TAppearanceNode;
-Material48: TMaterialNode;
-Transform49: TTransformNode;
-Shape50: TShapeNode;
-Cylinder51: TCylinderNode;
-Appearance52: TAppearanceNode;
-Material53: TMaterialNode;
-Transform54: TTransformNode;
-Shape55: TShapeNode;
-Cone56: TConeNode;
-Appearance57: TAppearanceNode;
-Material58: TMaterialNode;
-Transform59: TTransformNode;
-Shape60: TShapeNode;
-Cylinder61: TCylinderNode;
-Appearance62: TAppearanceNode;
-Material63: TMaterialNode;
-Transform64: TTransformNode;
-Shape65: TShapeNode;
-Cone66: TConeNode;
-Appearance67: TAppearanceNode;
-Material68: TMaterialNode;
-Transform69: TTransformNode;
-Background70: TBackgroundNode;
-Shape71: TShapeNode;
-Sphere72: TSphereNode;
-Appearance73: TAppearanceNode;
-Material74: TMaterialNode;
-ComposedCubeMapTexture75: TComposedCubeMapTextureNode;
-ImageTexture76: TImageTextureNode;
-ImageTexture77: TImageTextureNode;
-ImageTexture78: TImageTextureNode;
-ImageTexture79: TImageTextureNode;
-ImageTexture80: TImageTextureNode;
-ImageTexture81: TImageTextureNode;
-ComposedShader82: TComposedShaderNode;
-field83: TfieldNode;
-field84: TfieldNode;
-field85: TfieldNode;
-field86: TfieldNode;
-field87: TfieldNode;
-field88: TfieldNode;
-field89: TfieldNode;
-field90: TfieldNode;
-field91: TfieldNode;
-field92: TfieldNode;
-field93: TfieldNode;
-ShaderPart94: TShaderPartNode;
-ShaderPart95: TShaderPartNode;
-DISEntityManager96: TDISEntityManagerNode;
-DISEntityTypeMapping97: TDISEntityTypeMappingNode;
-DISEntityTypeMapping98: TDISEntityTypeMappingNode;
-DISEntityTypeMapping99: TDISEntityTypeMappingNode;
-DISEntityTypeMapping100: TDISEntityTypeMappingNode;
-Collision101: TCollisionNode;
-Group102: TGroupNode;
-LayoutLayer105: TLayoutLayerNode;
-Transform106: TTransformNode;
-Shape107: TShapeNode;
-Appearance108: TAppearanceNode;
-Material109: TMaterialNode;
-Box110: TBoxNode;
-Transform111: TTransformNode;
-Transform112: TTransformNode;
-Shape113: TShapeNode;
-Appearance114: TAppearanceNode;
-Material115: TMaterialNode;
-Cylinder116: TCylinderNode;
-Transform117: TTransformNode;
-PlaneSensor118: TPlaneSensorNode;
-Transform119: TTransformNode;
-TouchSensor120: TTouchSensorNode;
-Shape121: TShapeNode;
-Sphere122: TSphereNode;
-Appearance123: TAppearanceNode;
-Material124: TMaterialNode;
-Shape125: TShapeNode;
-Cylinder126: TCylinderNode;
-Appearance127: TAppearanceNode;
-Material128: TMaterialNode;
-Transform129: TTransformNode;
-Shape130: TShapeNode;
-Appearance131: TAppearanceNode;
-Material132: TMaterialNode;
-Cylinder133: TCylinderNode;
-Transform134: TTransformNode;
-Transform135: TTransformNode;
-Shape136: TShapeNode;
-Appearance137: TAppearanceNode;
-Material138: TMaterialNode;
-Cylinder139: TCylinderNode;
-Transform140: TTransformNode;
-PlaneSensor141: TPlaneSensorNode;
-Transform142: TTransformNode;
-TouchSensor143: TTouchSensorNode;
-Shape144: TShapeNode;
-Sphere145: TSphereNode;
-Appearance146: TAppearanceNode;
-Material147: TMaterialNode;
-Shape148: TShapeNode;
-Cylinder149: TCylinderNode;
-Appearance150: TAppearanceNode;
-Material151: TMaterialNode;
-Transform152: TTransformNode;
-Transform153: TTransformNode;
-Shape154: TShapeNode;
-Appearance155: TAppearanceNode;
-Material156: TMaterialNode;
-Cylinder157: TCylinderNode;
-Transform158: TTransformNode;
-PlaneSensor159: TPlaneSensorNode;
-Transform160: TTransformNode;
-TouchSensor161: TTouchSensorNode;
-Shape162: TShapeNode;
-Sphere163: TSphereNode;
-Appearance164: TAppearanceNode;
-Material165: TMaterialNode;
-Shape166: TShapeNode;
-Cylinder167: TCylinderNode;
-Appearance168: TAppearanceNode;
-Material169: TMaterialNode;
-Transform170: TTransformNode;
-Transform171: TTransformNode;
-Shape172: TShapeNode;
-Appearance173: TAppearanceNode;
-Material174: TMaterialNode;
-Cylinder175: TCylinderNode;
-Transform176: TTransformNode;
-PlaneSensor177: TPlaneSensorNode;
-Transform178: TTransformNode;
-TouchSensor179: TTouchSensorNode;
-Shape180: TShapeNode;
-Sphere181: TSphereNode;
-Appearance182: TAppearanceNode;
-Material183: TMaterialNode;
-Shape184: TShapeNode;
-Cylinder185: TCylinderNode;
-Appearance186: TAppearanceNode;
-Material187: TMaterialNode;
-Transform188: TTransformNode;
-Transform189: TTransformNode;
-Shape190: TShapeNode;
-Appearance191: TAppearanceNode;
-Material192: TMaterialNode;
-Cylinder193: TCylinderNode;
-Transform194: TTransformNode;
-PlaneSensor195: TPlaneSensorNode;
-Transform196: TTransformNode;
-TouchSensor197: TTouchSensorNode;
-Shape198: TShapeNode;
-Sphere199: TSphereNode;
-Appearance200: TAppearanceNode;
-Material201: TMaterialNode;
-Shape202: TShapeNode;
-Cylinder203: TCylinderNode;
-Appearance204: TAppearanceNode;
-Material205: TMaterialNode;
-Transform206: TTransformNode;
-Transform207: TTransformNode;
-Shape208: TShapeNode;
-Appearance209: TAppearanceNode;
-Material210: TMaterialNode;
-Cylinder211: TCylinderNode;
-Transform212: TTransformNode;
-PlaneSensor213: TPlaneSensorNode;
-Transform214: TTransformNode;
-TouchSensor215: TTouchSensorNode;
-Shape216: TShapeNode;
-Sphere217: TSphereNode;
-Appearance218: TAppearanceNode;
-Material219: TMaterialNode;
-Shape220: TShapeNode;
-Cylinder221: TCylinderNode;
-Appearance222: TAppearanceNode;
-Material223: TMaterialNode;
-Script224: TScriptNode;
-field225: TfieldNode;
-field226: TfieldNode;
-Script227: TScriptNode;
-field228: TfieldNode;
-field229: TfieldNode;
-Script230: TScriptNode;
-field231: TfieldNode;
-field232: TfieldNode;
-Script233: TScriptNode;
-field234: TfieldNode;
-field235: TfieldNode;
-Script236: TScriptNode;
-field237: TfieldNode;
-field238: TfieldNode;
-Script239: TScriptNode;
-field240: TfieldNode;
-field241: TfieldNode;
-Layout260: TLayoutNode;
-Viewport261: TViewportNode;
+Group17: TGroupNode;
+LayerSet18: TLayerSetNode;
+Layer19: TLayerNode;
+NavigationInfo20: TNavigationInfoNode;
+DirectionalLight21: TDirectionalLightNode;
+DirectionalLight22: TDirectionalLightNode;
+Viewpoint23: TViewpointNode;
+Group24: TGroupNode;
+Transform25: TTransformNode;
+Shape26: TShapeNode;
+Cylinder27: TCylinderNode;
+Appearance28: TAppearanceNode;
+Material29: TMaterialNode;
+Transform30: TTransformNode;
+Shape31: TShapeNode;
+Cone32: TConeNode;
+Appearance33: TAppearanceNode;
+Material34: TMaterialNode;
+Transform35: TTransformNode;
+Shape36: TShapeNode;
+Cylinder37: TCylinderNode;
+Appearance38: TAppearanceNode;
+Material39: TMaterialNode;
+Transform40: TTransformNode;
+Shape41: TShapeNode;
+Cone42: TConeNode;
+Appearance43: TAppearanceNode;
+Material44: TMaterialNode;
+Transform45: TTransformNode;
+Shape46: TShapeNode;
+Cylinder47: TCylinderNode;
+Appearance48: TAppearanceNode;
+Material49: TMaterialNode;
+Transform50: TTransformNode;
+Shape51: TShapeNode;
+Cone52: TConeNode;
+Appearance53: TAppearanceNode;
+Material54: TMaterialNode;
+Transform55: TTransformNode;
+Background56: TBackgroundNode;
+Transform57: TTransformNode;
+Shape58: TShapeNode;
+Sphere59: TSphereNode;
+Appearance60: TAppearanceNode;
+Material61: TMaterialNode;
+ComposedCubeMapTexture62: TComposedCubeMapTextureNode;
+ImageTexture63: TImageTextureNode;
+ImageTexture64: TImageTextureNode;
+ImageTexture65: TImageTextureNode;
+ImageTexture66: TImageTextureNode;
+ImageTexture67: TImageTextureNode;
+ImageTexture68: TImageTextureNode;
+ComposedShader69: TComposedShaderNode;
+field70: TfieldNode;
+field71: TfieldNode;
+field72: TfieldNode;
+field73: TfieldNode;
+field74: TfieldNode;
+field75: TfieldNode;
+field76: TfieldNode;
+field77: TfieldNode;
+field78: TfieldNode;
+field79: TfieldNode;
+field80: TfieldNode;
+ShaderPart81: TShaderPartNode;
+IS82: TISNode;
+connect83: TconnectNode;
+ShaderPart84: TShaderPartNode;
+IS85: TISNode;
+connect86: TconnectNode;
+DISEntityManager87: TDISEntityManagerNode;
+DISEntityTypeMapping88: TDISEntityTypeMappingNode;
+DISEntityTypeMapping89: TDISEntityTypeMappingNode;
+DISEntityTypeMapping90: TDISEntityTypeMappingNode;
+DISEntityTypeMapping91: TDISEntityTypeMappingNode;
+Collision92: TCollisionNode;
+Group93: TGroupNode;
+LayoutLayer96: TLayoutLayerNode;
+Transform97: TTransformNode;
+Shape98: TShapeNode;
+Appearance99: TAppearanceNode;
+Material100: TMaterialNode;
+Box101: TBoxNode;
+Transform102: TTransformNode;
+Transform103: TTransformNode;
+Shape104: TShapeNode;
+Text105: TTextNode;
+FontStyle106: TFontStyleNode;
+Appearance107: TAppearanceNode;
+Material108: TMaterialNode;
+ProtoDeclare109: TProtoDeclareNode;
+ProtoInterface110: TProtoInterfaceNode;
+field111: TfieldNode;
+field112: TfieldNode;
+field113: TfieldNode;
+field114: TfieldNode;
+field115: TfieldNode;
+field116: TfieldNode;
+field117: TfieldNode;
+field118: TfieldNode;
+ProtoBody119: TProtoBodyNode;
+Group120: TGroupNode;
+Transform121: TTransformNode;
+IS122: TISNode;
+connect123: TconnectNode;
+Transform124: TTransformNode;
+IS125: TISNode;
+connect126: TconnectNode;
+PlaneSensor127: TPlaneSensorNode;
+Transform128: TTransformNode;
+TouchSensor129: TTouchSensorNode;
+Transform130: TTransformNode;
+Shape131: TShapeNode;
+Text132: TTextNode;
+IS133: TISNode;
+connect134: TconnectNode;
+FontStyle135: TFontStyleNode;
+Appearance136: TAppearanceNode;
+Material137: TMaterialNode;
+Transform138: TTransformNode;
+IS139: TISNode;
+connect140: TconnectNode;
+Shape141: TShapeNode;
+Text142: TTextNode;
+FontStyle143: TFontStyleNode;
+Appearance144: TAppearanceNode;
+Material145: TMaterialNode;
+Script146: TScriptNode;
+field147: TfieldNode;
+field148: TfieldNode;
+field149: TfieldNode;
+field150: TfieldNode;
+field151: TfieldNode;
+field152: TfieldNode;
+IS153: TISNode;
+connect154: TconnectNode;
+connect155: TconnectNode;
+connect156: TconnectNode;
+ProtoInstance160: TProtoInstanceNode;
+fieldValue161: TfieldValueNode;
+fieldValue162: TfieldValueNode;
+fieldValue163: TfieldValueNode;
+fieldValue164: TfieldValueNode;
+fieldValue165: TfieldValueNode;
+fieldValue166: TfieldValueNode;
+fieldValue167: TfieldValueNode;
+fieldValue168: TfieldValueNode;
+ComposedShader169: TComposedShaderNode;
+ProtoInstance170: TProtoInstanceNode;
+fieldValue171: TfieldValueNode;
+fieldValue172: TfieldValueNode;
+fieldValue173: TfieldValueNode;
+fieldValue174: TfieldValueNode;
+fieldValue175: TfieldValueNode;
+fieldValue176: TfieldValueNode;
+fieldValue177: TfieldValueNode;
+fieldValue178: TfieldValueNode;
+ComposedShader179: TComposedShaderNode;
+ProtoInstance180: TProtoInstanceNode;
+fieldValue181: TfieldValueNode;
+fieldValue182: TfieldValueNode;
+fieldValue183: TfieldValueNode;
+fieldValue184: TfieldValueNode;
+fieldValue185: TfieldValueNode;
+fieldValue186: TfieldValueNode;
+fieldValue187: TfieldValueNode;
+fieldValue188: TfieldValueNode;
+ComposedShader189: TComposedShaderNode;
+ProtoInstance190: TProtoInstanceNode;
+fieldValue191: TfieldValueNode;
+fieldValue192: TfieldValueNode;
+fieldValue193: TfieldValueNode;
+fieldValue194: TfieldValueNode;
+fieldValue195: TfieldValueNode;
+fieldValue196: TfieldValueNode;
+fieldValue197: TfieldValueNode;
+fieldValue198: TfieldValueNode;
+ComposedShader199: TComposedShaderNode;
+ProtoInstance200: TProtoInstanceNode;
+fieldValue201: TfieldValueNode;
+fieldValue202: TfieldValueNode;
+fieldValue203: TfieldValueNode;
+fieldValue204: TfieldValueNode;
+fieldValue205: TfieldValueNode;
+fieldValue206: TfieldValueNode;
+fieldValue207: TfieldValueNode;
+fieldValue208: TfieldValueNode;
+ComposedShader209: TComposedShaderNode;
+ProtoInstance210: TProtoInstanceNode;
+fieldValue211: TfieldValueNode;
+fieldValue212: TfieldValueNode;
+fieldValue213: TfieldValueNode;
+fieldValue214: TfieldValueNode;
+fieldValue215: TfieldValueNode;
+fieldValue216: TfieldValueNode;
+fieldValue217: TfieldValueNode;
+fieldValue218: TfieldValueNode;
+ComposedShader219: TComposedShaderNode;
+Layout220: TLayoutNode;
+Viewport221: TViewportNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
@@ -223,999 +212,971 @@ X3D0.Components['Shaders'] := 1;
 X3D0.Components['CubeMapTexturing'] := 1;
 X3D0.Components['Texturing'] := 1;
 X3D0.Components['Rendering'] := 1;
+X3D0.Components['Shape'] := 4;
 X3D0.Components['Grouping'] := 3;
 X3D0.Components['Core'] := 1;
 X3D0.Components['DIS'] := 2;
-{ <component name='Shape' level='4'></component> }
-{ Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces http://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L }
-X3D0.Meta['title'] := 'bumpfreewrlsliders.x3d';
-X3D0.Meta['description'] := '*enter description here, short-sentence summaries preferred*';
+X3D0.Meta['title'] := 'bumpyfreewrlsliders.x3d';
+X3D0.Meta['description'] := 'Bumpy Orbitals with Sliders for FreeWRL';
 X3D0.Meta['creator'] := 'Doug Sanden, Christoph Valentin, John Carlson';
-X3D0.Meta['translator'] := '*if manually translating VRML-to-X3D, enter name of person translating here*';
-X3D0.Meta['created'] := '*enter date of initial version here*';
-X3D0.Meta['translated'] := '*enter date of translation here*';
-X3D0.Meta['modified'] := '*enter date of latest revision here*';
-X3D0.Meta['version'] := '*enter version here, if any*';
-X3D0.Meta['reference'] := '*enter reference citation or relative/online url here*';
-X3D0.Meta['reference'] := '*enter additional url/bibliographic reference information here*';
-X3D0.Meta['requires'] := '*enter reference resource here if required to support function, delivery, or coherence of content*';
-X3D0.Meta['rights'] := '*enter copyright information here* Example: Copyright (c) Web3D Consortium Inc. 2008, 2024';
-X3D0.Meta['drawing'] := '*enter drawing filename/url here*';
-X3D0.Meta['MovingImage'] := '*enter movie filename/url here*';
-X3D0.Meta['photo'] := '*enter photo filename/url here*';
-X3D0.Meta['subject'] := '*enter subject keywords here*';
-X3D0.Meta['accessRights'] := '*enter permission statements or url here*';
-X3D0.Meta['identifier'] := '*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*';
-X3D0.Meta['generator'] := 'PSPad, http://www.pspad.com/';
+X3D0.Meta['identifier'] := 'https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d';
 X3D0.Meta['license'] := 'license.html';
-{ "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their "discussion about the teapot" }
-Group31 := TGroupNode.Create;
+Group17 := TGroupNode.Create;
 { LayerSet with two layers, navigation happens in layer 1 }
-LayerSet32 := TLayerSetNode.Create;
-LayerSet32.ActiveLayer := 1;
-LayerSet32.SetOrder([1,2]);
+LayerSet18 := TLayerSetNode.Create;
+LayerSet18.ActiveLayer := 1;
+LayerSet18.SetOrder([1,2]);
 { the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" }
 { the second layer contains the sliders that are moved with the user's display like a HUD (heads up display) }
-Layer33 := TLayerNode.Create;
-Layer33.Pickable := True;
-Layer33.SetObjectType(['ALL']);
+Layer19 := TLayerNode.Create;
+Layer19.Pickable := True;
+Layer19.SetObjectType(['ALL']);
 { basic nodes, which might be present in any scene }
-NavigationInfo34 := TNavigationInfoNode.Create;
-NavigationInfo34.SetType(['EXAMINE']);
-NavigationInfo34.SetAvatarSize([0.25,1.75,0.75]);
+NavigationInfo20 := TNavigationInfoNode.Create;
+NavigationInfo20.SetType(['EXAMINE','FLY','LOOKAT','ANY']);
+NavigationInfo20.SetAvatarSize([0.25,1.75,0.75]);
 { .AddChildren }
-Layer33.AddChildren([NavigationInfo34]);
-DirectionalLight35 := TDirectionalLightNode.Create;
-DirectionalLight35.AmbientIntensity := 0.2;
-DirectionalLight35.Direction := Vector3(0,-1,0);
+Layer19.AddChildren([NavigationInfo20]);
+DirectionalLight21 := TDirectionalLightNode.Create;
+DirectionalLight21.AmbientIntensity := 0.2;
+DirectionalLight21.Direction := Vector3(0,-1,0);
 { .AddChildren }
-Layer33.AddChildren([DirectionalLight35]);
-DirectionalLight36 := TDirectionalLightNode.Create;
-DirectionalLight36.AmbientIntensity := 0.2;
-DirectionalLight36.Direction := Vector3(-1,-0.1,-1);
+Layer19.AddChildren([DirectionalLight21]);
+DirectionalLight22 := TDirectionalLightNode.Create;
+DirectionalLight22.AmbientIntensity := 0.2;
+DirectionalLight22.Direction := Vector3(-1,-0.1,-1);
 { .AddChildren }
-Layer33.AddChildren([DirectionalLight36]);
-Viewpoint37 := TViewpointNode.Create;
-Viewpoint37.Description := 'My Overview';
-Viewpoint37.FieldOfView := 1.570796;
-Viewpoint37.Position := Vector3(0,1.75,60);
+Layer19.AddChildren([DirectionalLight22]);
+Viewpoint23 := TViewpointNode.Create;
+Viewpoint23.Description := 'My Overview';
+Viewpoint23.FieldOfView := 1.570796;
+Viewpoint23.Position := Vector3(0,1.75,60);
 { .AddChildren }
-Layer33.AddChildren([Viewpoint37]);
+Layer19.AddChildren([Viewpoint23]);
 { this group contains the red/green/blue 3D crosshair }
-Group38 := TGroupNode.Create;
+Group24 := TGroupNode.Create;
 { Arrow X }
-Transform39 := TTransformNode.Create;
-Transform39.Translation := Vector3(25,0,0);
-Transform39.Rotation := Vector4(0,0,-1,1.57);
-Shape40 := TShapeNode.Create;
-Cylinder41 := TCylinderNode.Create;
-Cylinder41.Radius := 0.35;
-Cylinder41.Height := 50;
+Transform25 := TTransformNode.Create;
+Transform25.Translation := Vector3(25,0,0);
+Transform25.Rotation := Vector4(0,0,-1,1.57);
+Shape26 := TShapeNode.Create;
+Cylinder27 := TCylinderNode.Create;
+Cylinder27.Radius := 0.35;
+Cylinder27.Height := 50;
 { .SetGeometry }
-Shape40.Geometry := Cylinder41;
-Appearance42 := TAppearanceNode.Create;
-Material43 := TMaterialNode.Create;
-Material43.DiffuseColor := Vector3(1,0,0);
-Material43.EmissiveColor := Vector3(1,0,0);
+Shape26.Geometry := Cylinder27;
+Appearance28 := TAppearanceNode.Create;
+Material29 := TMaterialNode.Create;
+Material29.DiffuseColor := Vector3(1,0,0);
+Material29.EmissiveColor := Vector3(1,0,0);
 { .SetMaterial }
-Appearance42.Material := Material43;
+Appearance28.Material := Material29;
 { .SetAppearance }
-Shape40.Appearance := Appearance42;
+Shape26.Appearance := Appearance28;
 { .AddChild }
-Transform39.AddChildren([Shape40]);
+Transform25.AddChildren([Shape26]);
 { .AddChildren }
-Group38.AddChildren([Transform39]);
-Transform44 := TTransformNode.Create;
-Transform44.Translation := Vector3(50,0,0);
-Transform44.Rotation := Vector4(0,0,-1,1.57);
-Shape45 := TShapeNode.Create;
-Cone46 := TConeNode.Create;
-Cone46.BottomRadius := 0.8;
-Cone46.Height := 3;
+Group24.AddChildren([Transform25]);
+Transform30 := TTransformNode.Create;
+Transform30.Translation := Vector3(50,0,0);
+Transform30.Rotation := Vector4(0,0,-1,1.57);
+Shape31 := TShapeNode.Create;
+Cone32 := TConeNode.Create;
+Cone32.BottomRadius := 0.8;
+Cone32.Height := 3;
 { .SetGeometry }
-Shape45.Geometry := Cone46;
-Appearance47 := TAppearanceNode.Create;
-Material48 := TMaterialNode.Create;
-Material48 := Material43;
+Shape31.Geometry := Cone32;
+Appearance33 := TAppearanceNode.Create;
+Material34 := TMaterialNode.Create;
+Material34 := Material29;
 { .SetMaterial }
-Appearance47.Material := Material48;
+Appearance33.Material := Material34;
 { .SetAppearance }
-Shape45.Appearance := Appearance47;
+Shape31.Appearance := Appearance33;
 { .AddChild }
-Transform44.AddChildren([Shape45]);
+Transform30.AddChildren([Shape31]);
 { .AddChildren }
-Group38.AddChildren([Transform44]);
+Group24.AddChildren([Transform30]);
 { Arrow Y }
-Transform49 := TTransformNode.Create;
-Transform49.Translation := Vector3(0,25,0);
-Shape50 := TShapeNode.Create;
-Cylinder51 := TCylinderNode.Create;
-Cylinder51 := Cylinder41;
+Transform35 := TTransformNode.Create;
+Transform35.Translation := Vector3(0,25,0);
+Shape36 := TShapeNode.Create;
+Cylinder37 := TCylinderNode.Create;
+Cylinder37 := Cylinder27;
 { .SetGeometry }
-Shape50.Geometry := Cylinder51;
-Appearance52 := TAppearanceNode.Create;
-Material53 := TMaterialNode.Create;
-Material53.DiffuseColor := Vector3(0,1,0);
-Material53.EmissiveColor := Vector3(0,1,0);
+Shape36.Geometry := Cylinder37;
+Appearance38 := TAppearanceNode.Create;
+Material39 := TMaterialNode.Create;
+Material39.DiffuseColor := Vector3(0,1,0);
+Material39.EmissiveColor := Vector3(0,1,0);
 { .SetMaterial }
-Appearance52.Material := Material53;
+Appearance38.Material := Material39;
 { .SetAppearance }
-Shape50.Appearance := Appearance52;
+Shape36.Appearance := Appearance38;
 { .AddChild }
-Transform49.AddChildren([Shape50]);
+Transform35.AddChildren([Shape36]);
 { .AddChildren }
-Group38.AddChildren([Transform49]);
-Transform54 := TTransformNode.Create;
-Transform54.Translation := Vector3(0,50,0);
-Shape55 := TShapeNode.Create;
-Cone56 := TConeNode.Create;
-Cone56 := Cone46;
+Group24.AddChildren([Transform35]);
+Transform40 := TTransformNode.Create;
+Transform40.Translation := Vector3(0,50,0);
+Shape41 := TShapeNode.Create;
+Cone42 := TConeNode.Create;
+Cone42 := Cone32;
 { .SetGeometry }
-Shape55.Geometry := Cone56;
-Appearance57 := TAppearanceNode.Create;
-Material58 := TMaterialNode.Create;
-Material58 := Material53;
+Shape41.Geometry := Cone42;
+Appearance43 := TAppearanceNode.Create;
+Material44 := TMaterialNode.Create;
+Material44 := Material39;
 { .SetMaterial }
-Appearance57.Material := Material58;
+Appearance43.Material := Material44;
 { .SetAppearance }
-Shape55.Appearance := Appearance57;
+Shape41.Appearance := Appearance43;
 { .AddChild }
-Transform54.AddChildren([Shape55]);
+Transform40.AddChildren([Shape41]);
 { .AddChildren }
-Group38.AddChildren([Transform54]);
+Group24.AddChildren([Transform40]);
 { Arrow Z }
-Transform59 := TTransformNode.Create;
-Transform59.Translation := Vector3(0,0,25);
-Transform59.Rotation := Vector4(1,0,0,1.57);
-Shape60 := TShapeNode.Create;
-Cylinder61 := TCylinderNode.Create;
-Cylinder61 := Cylinder41;
+Transform45 := TTransformNode.Create;
+Transform45.Translation := Vector3(0,0,25);
+Transform45.Rotation := Vector4(1,0,0,1.57);
+Shape46 := TShapeNode.Create;
+Cylinder47 := TCylinderNode.Create;
+Cylinder47 := Cylinder27;
 { .SetGeometry }
-Shape60.Geometry := Cylinder61;
-Appearance62 := TAppearanceNode.Create;
-Material63 := TMaterialNode.Create;
-Material63.DiffuseColor := Vector3(0,0,1);
-Material63.EmissiveColor := Vector3(0,0,1);
+Shape46.Geometry := Cylinder47;
+Appearance48 := TAppearanceNode.Create;
+Material49 := TMaterialNode.Create;
+Material49.DiffuseColor := Vector3(0,0,1);
+Material49.EmissiveColor := Vector3(0,0,1);
 { .SetMaterial }
-Appearance62.Material := Material63;
+Appearance48.Material := Material49;
 { .SetAppearance }
-Shape60.Appearance := Appearance62;
+Shape46.Appearance := Appearance48;
 { .AddChild }
-Transform59.AddChildren([Shape60]);
+Transform45.AddChildren([Shape46]);
 { .AddChildren }
-Group38.AddChildren([Transform59]);
-Transform64 := TTransformNode.Create;
-Transform64.Translation := Vector3(0,0,50);
-Transform64.Rotation := Vector4(1,0,0,1.57);
-Shape65 := TShapeNode.Create;
-Cone66 := TConeNode.Create;
-Cone66 := Cone46;
+Group24.AddChildren([Transform45]);
+Transform50 := TTransformNode.Create;
+Transform50.Translation := Vector3(0,0,50);
+Transform50.Rotation := Vector4(1,0,0,1.57);
+Shape51 := TShapeNode.Create;
+Cone52 := TConeNode.Create;
+Cone52 := Cone32;
 { .SetGeometry }
-Shape65.Geometry := Cone66;
-Appearance67 := TAppearanceNode.Create;
-Material68 := TMaterialNode.Create;
-Material68 := Material63;
+Shape51.Geometry := Cone52;
+Appearance53 := TAppearanceNode.Create;
+Material54 := TMaterialNode.Create;
+Material54 := Material49;
 { .SetMaterial }
-Appearance67.Material := Material68;
+Appearance53.Material := Material54;
 { .SetAppearance }
-Shape65.Appearance := Appearance67;
+Shape51.Appearance := Appearance53;
 { .AddChild }
-Transform64.AddChildren([Shape65]);
+Transform50.AddChildren([Shape51]);
 { .AddChildren }
-Group38.AddChildren([Transform64]);
+Group24.AddChildren([Transform50]);
 { .AddChildren }
-Layer33.AddChildren([Group38]);
+Layer19.AddChildren([Group24]);
 { the model that is being reviewed by the users of this scene }
-Transform69 := TTransformNode.Create;
+Transform55 := TTransformNode.Create;
 { <Inline DEF="Flower" url='"bumpyfreewrl.x3d"' /> }
 { Images courtesy of Paul Debevec's Light Probe Image Gallery }
-Background70 := TBackgroundNode.Create;
-Background70.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-Background70.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-Background70.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-Background70.SetLeftUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-Background70.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-Background70.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
+Background56 := TBackgroundNode.Create;
+Background56.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
+Background56.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
+Background56.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
+Background56.SetLeftUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
+Background56.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
+Background56.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { .AddChildren }
-Transform69.AddChildren([Background70]);
-Shape71 := TShapeNode.Create;
-Sphere72 := TSphereNode.Create;
-Sphere72.Radius := 0.01;
+Transform55.AddChildren([Background56]);
+Transform57 := TTransformNode.Create;
+Shape58 := TShapeNode.Create;
+Sphere59 := TSphereNode.Create;
+Sphere59.Radius := 5;
 { .SetGeometry }
-Shape71.Geometry := Sphere72;
-Appearance73 := TAppearanceNode.Create;
-Material74 := TMaterialNode.Create;
-Material74.DiffuseColor := Vector3(0.7,0.7,0.7);
-Material74.SpecularColor := Vector3(0.5,0.5,0.5);
+Shape58.Geometry := Sphere59;
+{ <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet> }
+Appearance60 := TAppearanceNode.Create;
+Material61 := TMaterialNode.Create;
+Material61.DiffuseColor := Vector3(0.7,0.7,0.7);
+Material61.SpecularColor := Vector3(0.5,0.5,0.5);
 { .SetMaterial }
-Appearance73.Material := Material74;
-ComposedCubeMapTexture75 := TComposedCubeMapTextureNode.Create;
-ImageTexture76 := TImageTextureNode.Create;
-ImageTexture76.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ .SetBackTexture }
-ComposedCubeMapTexture75.BackTexture := ImageTexture76;
-ImageTexture77 := TImageTextureNode.Create;
-ImageTexture77.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ .SetBottomTexture }
-ComposedCubeMapTexture75.BottomTexture := ImageTexture77;
-ImageTexture78 := TImageTextureNode.Create;
-ImageTexture78.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ .SetFrontTexture }
-ComposedCubeMapTexture75.FrontTexture := ImageTexture78;
-ImageTexture79 := TImageTextureNode.Create;
-ImageTexture79.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ .SetLeftTexture }
-ComposedCubeMapTexture75.LeftTexture := ImageTexture79;
-ImageTexture80 := TImageTextureNode.Create;
-ImageTexture80.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ .SetRightTexture }
-ComposedCubeMapTexture75.RightTexture := ImageTexture80;
-ImageTexture81 := TImageTextureNode.Create;
-ImageTexture81.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ .SetTopTexture }
-ComposedCubeMapTexture75.TopTexture := ImageTexture81;
+Appearance60.Material := Material61;
+ComposedCubeMapTexture62 := TComposedCubeMapTextureNode.Create;
+ImageTexture63 := TImageTextureNode.Create;
+ImageTexture63.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
+{ .SetBack }
+ComposedCubeMapTexture62.Back := ImageTexture63;
+ImageTexture64 := TImageTextureNode.Create;
+ImageTexture64.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
+{ .SetBottom }
+ComposedCubeMapTexture62.Bottom := ImageTexture64;
+ImageTexture65 := TImageTextureNode.Create;
+ImageTexture65.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
+{ .SetFront }
+ComposedCubeMapTexture62.Front := ImageTexture65;
+ImageTexture66 := TImageTextureNode.Create;
+ImageTexture66.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
+{ .SetLeft }
+ComposedCubeMapTexture62.Left := ImageTexture66;
+ImageTexture67 := TImageTextureNode.Create;
+ImageTexture67.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
+{ .SetRight }
+ComposedCubeMapTexture62.Right := ImageTexture67;
+ImageTexture68 := TImageTextureNode.Create;
+ImageTexture68.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
+{ .SetTop }
+ComposedCubeMapTexture62.Top := ImageTexture68;
 { .SetTexture }
-Appearance73.Texture := ComposedCubeMapTexture75;
-ComposedShader82 := TComposedShaderNode.Create;
-ComposedShader82.Language := 'GLSL';
-field83 := TfieldNode.Create;
-field83.NameField := 'chromaticDispertion';
-field83.AccessType := 'inputOnly';
-field83.Type := 'SFVec3f';
-field83.Value := '0.98 1 1.033';
+Appearance60.Texture := ComposedCubeMapTexture62;
+ComposedShader69 := TComposedShaderNode.Create;
+ComposedShader69.Language := 'GLSL';
+field70 := TfieldNode.Create;
+field70.NameField := 'fw_textureCoordGenType';
+field70.AccessType := 'inputOutput';
+field70.Type := 'SFInt32';
+field70.Value := '0';
 { .AddField }
-ComposedShader82.Field := field83;
-field84 := TfieldNode.Create;
-field84.NameField := 'fw_textureCoordGenType';
-field84.AccessType := 'inputOnly';
-field84.Type := 'SFInt32';
-field84.Value := '0';
+ComposedShader69.Field := field70;
+field71 := TfieldNode.Create;
+field71.NameField := 'chromaticDispertion';
+field71.AccessType := 'initializeOnly';
+field71.Type := 'SFVec3f';
+field71.Value := '0.98 1 1.033';
 { .AddField }
-ComposedShader82.Field := field84;
-field85 := TfieldNode.Create;
-field85.NameField := 'bias';
-field85.Type := 'SFFloat';
-field85.AccessType := 'inputOnly';
-field85.Value := '0.5';
+ComposedShader69.Field := field71;
+field72 := TfieldNode.Create;
+field72.NameField := 'bias';
+field72.Type := 'SFFloat';
+field72.AccessType := 'inputOutput';
+field72.Value := '0.5';
 { .AddField }
-ComposedShader82.Field := field85;
-field86 := TfieldNode.Create;
-field86.NameField := 'scale';
-field86.Type := 'SFFloat';
-field86.AccessType := 'inputOnly';
-field86.Value := '0.5';
+ComposedShader69.Field := field72;
+field73 := TfieldNode.Create;
+field73.NameField := 'scale';
+field73.Type := 'SFFloat';
+field73.AccessType := 'inputOutput';
+field73.Value := '0.5';
 { .AddField }
-ComposedShader82.Field := field86;
-field87 := TfieldNode.Create;
-field87.NameField := 'power';
-field87.Type := 'SFFloat';
-field87.AccessType := 'inputOnly';
-field87.Value := '2';
+ComposedShader69.Field := field73;
+field74 := TfieldNode.Create;
+field74.NameField := 'power';
+field74.Type := 'SFFloat';
+field74.AccessType := 'inputOutput';
+field74.Value := '2';
 { .AddField }
-ComposedShader82.Field := field87;
-field88 := TfieldNode.Create;
-field88.NameField := 'a';
-field88.Type := 'SFFloat';
-field88.AccessType := 'inputOutput';
-field88.Value := '15';
+ComposedShader69.Field := field74;
+field75 := TfieldNode.Create;
+field75.NameField := 'a';
+field75.Type := 'SFFloat';
+field75.AccessType := 'inputOutput';
+field75.Value := '15';
 { .AddField }
-ComposedShader82.Field := field88;
-field89 := TfieldNode.Create;
-field89.NameField := 'b';
-field89.Type := 'SFFloat';
-field89.AccessType := 'inputOutput';
-field89.Value := '5';
+ComposedShader69.Field := field75;
+field76 := TfieldNode.Create;
+field76.NameField := 'b';
+field76.Type := 'SFFloat';
+field76.AccessType := 'inputOutput';
+field76.Value := '5';
 { .AddField }
-ComposedShader82.Field := field89;
-field90 := TfieldNode.Create;
-field90.NameField := 'c';
-field90.Type := 'SFFloat';
-field90.AccessType := 'inputOutput';
-field90.Value := '5';
+ComposedShader69.Field := field76;
+field77 := TfieldNode.Create;
+field77.NameField := 'c';
+field77.Type := 'SFFloat';
+field77.AccessType := 'inputOutput';
+field77.Value := '20';
 { .AddField }
-ComposedShader82.Field := field90;
-field91 := TfieldNode.Create;
-field91.NameField := 'd';
-field91.Type := 'SFFloat';
-field91.AccessType := 'inputOutput';
-field91.Value := '5';
+ComposedShader69.Field := field77;
+field78 := TfieldNode.Create;
+field78.NameField := 'd';
+field78.Type := 'SFFloat';
+field78.AccessType := 'inputOutput';
+field78.Value := '20';
 { .AddField }
-ComposedShader82.Field := field91;
-field92 := TfieldNode.Create;
-field92.NameField := 'tdelta';
-field92.Type := 'SFFloat';
-field92.AccessType := 'inputOutput';
-field92.Value := '0';
+ComposedShader69.Field := field78;
+field79 := TfieldNode.Create;
+field79.NameField := 'tdelta';
+field79.Type := 'SFFloat';
+field79.AccessType := 'inputOutput';
+field79.Value := '0';
 { .AddField }
-ComposedShader82.Field := field92;
-field93 := TfieldNode.Create;
-field93.NameField := 'pdelta';
-field93.Type := 'SFFloat';
-field93.AccessType := 'inputOutput';
-field93.Value := '0';
+ComposedShader69.Field := field79;
+field80 := TfieldNode.Create;
+field80.NameField := 'pdelta';
+field80.Type := 'SFFloat';
+field80.AccessType := 'inputOutput';
+field80.Value := '0';
 { .AddField }
-ComposedShader82.Field := field93;
-ShaderPart94 := TShaderPartNode.Create;
-ShaderPart94.SetUrl(['../shaders/freewrl_flowers_chromatic.vs','https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs']);
-ShaderPart94.Type := 'VERTEX';
+ComposedShader69.Field := field80;
+{ <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> }
+ShaderPart81 := TShaderPartNode.Create;
+ShaderPart81.Type := 'VERTEX';
+IS82 := TISNode.Create;
+connect83 := TconnectNode.Create;
+connect83.NodeField := 'url';
+connect83.ProtoField := 'vertex';
+{ .AddConnect }
+IS82.Connect := connect83;
+{ .SetIS }
+ShaderPart81.IS := IS82;
 { .AddParts }
-ComposedShader82.Parts := ShaderPart94;
-ShaderPart95 := TShaderPartNode.Create;
-ShaderPart95.SetUrl(['../shaders/freewrl_bubbles.fs','https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs']);
-ShaderPart95.Type := 'FRAGMENT';
+ComposedShader69.Parts := ShaderPart81;
+ShaderPart84 := TShaderPartNode.Create;
+ShaderPart84.Type := 'FRAGMENT';
+IS85 := TISNode.Create;
+connect86 := TconnectNode.Create;
+connect86.NodeField := 'url';
+connect86.ProtoField := 'fragment';
+{ .AddConnect }
+IS85.Connect := connect86;
+{ .SetIS }
+ShaderPart84.IS := IS85;
 { .AddParts }
-ComposedShader82.Parts := ShaderPart95;
+ComposedShader69.Parts := ShaderPart84;
 { .AddShaders }
-Appearance73.Shaders := ComposedShader82;
+Appearance60.Shaders := ComposedShader69;
+{ <ComposedShader DEF="freewrlShader" language="GLSL"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField="url" protoField="vertex"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField="url" protoField="fragment"/> </IS> </ShaderPart> </ComposedShader> }
 { .SetAppearance }
-Shape71.Appearance := Appearance73;
+Shape58.Appearance := Appearance60;
 { .AddChild }
-Transform69.AddChildren([Shape71]);
+Transform57.AddChildren([Shape58]);
 { .AddChildren }
-Layer33.AddChildren([Transform69]);
+Transform55.AddChildren([Transform57]);
+{ .AddChildren }
+Layer19.AddChildren([Transform55]);
+(* <Script DEF="OrbitScript"> <field accessType="inputOutput" name="coordinates" type="MFVec3f"/> <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/> <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/> *)
 { DIS multiuser facilities }
-DISEntityManager96 := TDISEntityManagerNode.Create;
-DISEntityManager96.NetworkMode := 'networkReader';
-DISEntityTypeMapping97 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping97.Category := 77;
-DISEntityTypeMapping97.Specific := 1;
-DISEntityTypeMapping97.SetUrl(['../data/Leif8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d']);
+DISEntityManager87 := TDISEntityManagerNode.Create;
+DISEntityTypeMapping88 := TDISEntityTypeMappingNode.Create;
+DISEntityTypeMapping88.Category := 77;
+DISEntityTypeMapping88.Specific := 1;
+DISEntityTypeMapping88.SetUrl(['../data/Leif8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d']);
 { .AddChildren }
-DISEntityManager96.AddChildren([DISEntityTypeMapping97]);
-DISEntityTypeMapping98 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping98.Category := 77;
-DISEntityTypeMapping98.Specific := 2;
-DISEntityTypeMapping98.SetUrl(['../data/Lily8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d']);
+DISEntityManager87.AddChildren([DISEntityTypeMapping88]);
+DISEntityTypeMapping89 := TDISEntityTypeMappingNode.Create;
+DISEntityTypeMapping89.Category := 77;
+DISEntityTypeMapping89.Specific := 2;
+DISEntityTypeMapping89.SetUrl(['../data/Lily8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Lily8Final.x3d']);
 { .AddChildren }
-DISEntityManager96.AddChildren([DISEntityTypeMapping98]);
-DISEntityTypeMapping99 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping99.Category := 77;
-DISEntityTypeMapping99.Specific := 3;
-DISEntityTypeMapping99.SetUrl(['../data/Tufani8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d']);
+DISEntityManager87.AddChildren([DISEntityTypeMapping89]);
+DISEntityTypeMapping90 := TDISEntityTypeMappingNode.Create;
+DISEntityTypeMapping90.Category := 77;
+DISEntityTypeMapping90.Specific := 3;
+DISEntityTypeMapping90.SetUrl(['../data/Tufani8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Tufani8Final.x3d']);
 { .AddChildren }
-DISEntityManager96.AddChildren([DISEntityTypeMapping99]);
-DISEntityTypeMapping100 := TDISEntityTypeMappingNode.Create;
-DISEntityTypeMapping100.Category := 77;
-DISEntityTypeMapping100.Specific := 4;
-DISEntityTypeMapping100.SetUrl(['../data/Gramps8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d']);
+DISEntityManager87.AddChildren([DISEntityTypeMapping90]);
+DISEntityTypeMapping91 := TDISEntityTypeMappingNode.Create;
+DISEntityTypeMapping91.Category := 77;
+DISEntityTypeMapping91.Specific := 4;
+DISEntityTypeMapping91.SetUrl(['../data/Gramps8Final.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d']);
 { .AddChildren }
-DISEntityManager96.AddChildren([DISEntityTypeMapping100]);
+DISEntityManager87.AddChildren([DISEntityTypeMapping91]);
 { .AddChildren }
-Layer33.AddChildren([DISEntityManager96]);
-Collision101 := TCollisionNode.Create;
-Collision101.Enabled := False;
-Group102 := TGroupNode.Create;
+Layer19.AddChildren([DISEntityManager87]);
+Collision92 := TCollisionNode.Create;
+Group93 := TGroupNode.Create;
 { .SetProxy }
-Collision101.Proxy := Group102;
+Collision92.Proxy := Group93;
 { .AddChildren }
-Layer33.AddChildren([Collision101]);
-Layer33.AddRoute(DISEntityManager96.FdAddedentities, Group102.FdAddchildren);
+Layer19.AddChildren([Collision92]);
+Layer19.AddRoute(DISEntityManager87.FdAddedentities, Group93.FdAddchildren);
 { .AddX3DRoute }
-Layer33.AddRoute(DISEntityManager96.FdRemovedentities, Group102.FdRemovechildren);
+Layer19.AddRoute(DISEntityManager87.FdRemovedentities, Group93.FdRemovechildren);
 { .AddX3DRoute }
 { .AddLayers }
-LayerSet32.Layers := Layer33;
-LayoutLayer105 := TLayoutLayerNode.Create;
-LayoutLayer105.Pickable := True;
-LayoutLayer105.SetObjectType(['ALL']);
+LayerSet18.Layers := Layer19;
+LayoutLayer96 := TLayoutLayerNode.Create;
+LayoutLayer96.Pickable := True;
+LayoutLayer96.SetObjectType(['ALL']);
 { positioning the LayoutLayer }
 { clipping the LayoutLayer }
 { the content (children) of the LayoutLayer }
 { first, the slider for scaling the model }
-Transform106 := TTransformNode.Create;
-Transform106.Translation := Vector3(0,0,-3);
-Shape107 := TShapeNode.Create;
-Appearance108 := TAppearanceNode.Create;
-Material109 := TMaterialNode.Create;
-Material109.DiffuseColor := Vector3(0,0,0);
-Material109.Transparency := 0.7;
+Transform97 := TTransformNode.Create;
+Transform97.Translation := Vector3(0,0,-3);
+Shape98 := TShapeNode.Create;
+Appearance99 := TAppearanceNode.Create;
+Material100 := TMaterialNode.Create;
+Material100.DiffuseColor := Vector3(0.1,0.1,0.1);
+Material100.Transparency := 1;
 { .SetMaterial }
-Appearance108.Material := Material109;
+Appearance99.Material := Material100;
 { .SetAppearance }
-Shape107.Appearance := Appearance108;
-Box110 := TBoxNode.Create;
-Box110.Size := Vector3(100,100,0.02);
+Shape98.Appearance := Appearance99;
+Box101 := TBoxNode.Create;
+Box101.Size := Vector3(100,100,0.02);
 { .SetGeometry }
-Shape107.Geometry := Box110;
+Shape98.Geometry := Box101;
 { .AddChild }
-Transform106.AddChildren([Shape107]);
+Transform97.AddChildren([Shape98]);
 { .AddChildren }
-LayoutLayer105.AddChildren([Transform106]);
-{ the plane sensors }
-Transform111 := TTransformNode.Create;
-Transform111.Translation := Vector3(0,0.7,0);
-Transform112 := TTransformNode.Create;
-Transform112.Rotation := Vector4(0,0,1,1.57);
-Shape113 := TShapeNode.Create;
-Appearance114 := TAppearanceNode.Create;
-Material115 := TMaterialNode.Create;
+LayoutLayer96.AddChildren([Transform97]);
+Transform102 := TTransformNode.Create;
+Transform103 := TTransformNode.Create;
+Transform103.Translation := Vector3(0,0,-20);
+Shape104 := TShapeNode.Create;
+Text105 := TTextNode.Create;
+Text105.SetText(['r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)']);
+FontStyle106 := TFontStyleNode.Create;
+FontStyle106.Size := 0.09;
+{ .SetFontStyle }
+Text105.FontStyle := FontStyle106;
+{ .SetGeometry }
+Shape104.Geometry := Text105;
+Appearance107 := TAppearanceNode.Create;
+Material108 := TMaterialNode.Create;
+Material108.DiffuseColor := Vector3(0,1,1);
 { .SetMaterial }
-Appearance114.Material := Material115;
+Appearance107.Material := Material108;
 { .SetAppearance }
-Shape113.Appearance := Appearance114;
-Cylinder116 := TCylinderNode.Create;
-Cylinder116.Radius := 0.05;
-Cylinder116.Height := 2.5;
-{ .SetGeometry }
-Shape113.Geometry := Cylinder116;
+Shape104.Appearance := Appearance107;
 { .AddChild }
-Transform112.AddChildren([Shape113]);
+Transform103.AddChildren([Shape104]);
 { .AddChildren }
-Transform111.AddChildren([Transform112]);
-Transform117 := TTransformNode.Create;
-Transform117.Translation := Vector3(0,0,0.1);
-PlaneSensor118 := TPlaneSensorNode.Create;
-PlaneSensor118.MinPosition := Vector2(-20,0);
-PlaneSensor118.MaxPosition := Vector2(20,0);
+Transform102.AddChildren([Transform103]);
 { .AddChildren }
-Transform117.AddChildren([PlaneSensor118]);
-Transform119 := TTransformNode.Create;
-Transform119.Translation := Vector3(0,0,0);
-TouchSensor120 := TTouchSensorNode.Create;
-{ .AddChildren }
-Transform119.AddChildren([TouchSensor120]);
-Shape121 := TShapeNode.Create;
-Sphere122 := TSphereNode.Create;
-Sphere122.Radius := 0.08;
-{ .SetGeometry }
-Shape121.Geometry := Sphere122;
-Appearance123 := TAppearanceNode.Create;
-Material124 := TMaterialNode.Create;
-Material124.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
-Appearance123.Material := Material124;
-{ .SetAppearance }
-Shape121.Appearance := Appearance123;
-{ .AddChild }
-Transform119.AddChildren([Shape121]);
-{ .AddChildren }
-Transform117.AddChildren([Transform119]);
-Shape125 := TShapeNode.Create;
-Cylinder126 := TCylinderNode.Create;
-Cylinder126.Radius := 0.05;
-Cylinder126.Height := 0.3;
-{ .SetGeometry }
-Shape125.Geometry := Cylinder126;
-Appearance127 := TAppearanceNode.Create;
-Material128 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance127.Material := Material128;
-{ .SetAppearance }
-Shape125.Appearance := Appearance127;
-{ .AddChild }
-Transform117.AddChildren([Shape125]);
-{ .AddChildren }
-Transform111.AddChildren([Transform117]);
-Transform129 := TTransformNode.Create;
-Transform129.Rotation := Vector4(0,0,1,1.57);
-Shape130 := TShapeNode.Create;
-Appearance131 := TAppearanceNode.Create;
-Material132 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance131.Material := Material132;
-{ .SetAppearance }
-Shape130.Appearance := Appearance131;
-Cylinder133 := TCylinderNode.Create;
-Cylinder133.Radius := 0.05;
-Cylinder133.Height := 2.5;
-{ .SetGeometry }
-Shape130.Geometry := Cylinder133;
-{ .AddChild }
-Transform129.AddChildren([Shape130]);
-{ .AddChildren }
-Transform111.AddChildren([Transform129]);
-{ .AddChildren }
-LayoutLayer105.AddChildren([Transform111]);
-Transform134 := TTransformNode.Create;
-Transform134.Translation := Vector3(0,0.4,0);
-Transform135 := TTransformNode.Create;
-Transform135.Rotation := Vector4(0,0,1,1.57);
-Shape136 := TShapeNode.Create;
-Appearance137 := TAppearanceNode.Create;
-Material138 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance137.Material := Material138;
-{ .SetAppearance }
-Shape136.Appearance := Appearance137;
-Cylinder139 := TCylinderNode.Create;
-Cylinder139.Radius := 0.05;
-Cylinder139.Height := 2.5;
-{ .SetGeometry }
-Shape136.Geometry := Cylinder139;
-{ .AddChild }
-Transform135.AddChildren([Shape136]);
-{ .AddChildren }
-Transform134.AddChildren([Transform135]);
-Transform140 := TTransformNode.Create;
-Transform140.Translation := Vector3(0,0,0.1);
-PlaneSensor141 := TPlaneSensorNode.Create;
-PlaneSensor141.MinPosition := Vector2(-20,0);
-PlaneSensor141.MaxPosition := Vector2(20,0);
-{ .AddChildren }
-Transform140.AddChildren([PlaneSensor141]);
-Transform142 := TTransformNode.Create;
-Transform142.Translation := Vector3(0,0,0);
-TouchSensor143 := TTouchSensorNode.Create;
-{ .AddChildren }
-Transform142.AddChildren([TouchSensor143]);
-Shape144 := TShapeNode.Create;
-Sphere145 := TSphereNode.Create;
-Sphere145.Radius := 0.08;
-{ .SetGeometry }
-Shape144.Geometry := Sphere145;
-Appearance146 := TAppearanceNode.Create;
-Material147 := TMaterialNode.Create;
-Material147.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
-Appearance146.Material := Material147;
-{ .SetAppearance }
-Shape144.Appearance := Appearance146;
-{ .AddChild }
-Transform142.AddChildren([Shape144]);
-{ .AddChildren }
-Transform140.AddChildren([Transform142]);
-Shape148 := TShapeNode.Create;
-Cylinder149 := TCylinderNode.Create;
-Cylinder149.Radius := 0.05;
-Cylinder149.Height := 0.3;
-{ .SetGeometry }
-Shape148.Geometry := Cylinder149;
-Appearance150 := TAppearanceNode.Create;
-Material151 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance150.Material := Material151;
-{ .SetAppearance }
-Shape148.Appearance := Appearance150;
-{ .AddChild }
-Transform140.AddChildren([Shape148]);
-{ .AddChildren }
-Transform134.AddChildren([Transform140]);
-{ .AddChildren }
-LayoutLayer105.AddChildren([Transform134]);
-Transform152 := TTransformNode.Create;
-Transform152.Translation := Vector3(0,0.1,0);
-Transform153 := TTransformNode.Create;
-Transform153.Rotation := Vector4(0,0,1,1.57);
-Shape154 := TShapeNode.Create;
-Appearance155 := TAppearanceNode.Create;
-Material156 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance155.Material := Material156;
-{ .SetAppearance }
-Shape154.Appearance := Appearance155;
-Cylinder157 := TCylinderNode.Create;
-Cylinder157.Radius := 0.05;
-Cylinder157.Height := 2.5;
-{ .SetGeometry }
-Shape154.Geometry := Cylinder157;
-{ .AddChild }
-Transform153.AddChildren([Shape154]);
-{ .AddChildren }
-Transform152.AddChildren([Transform153]);
-Transform158 := TTransformNode.Create;
-Transform158.Translation := Vector3(0,0,0.1);
-PlaneSensor159 := TPlaneSensorNode.Create;
-PlaneSensor159.MinPosition := Vector2(-20,0);
-PlaneSensor159.MaxPosition := Vector2(20,0);
-{ .AddChildren }
-Transform158.AddChildren([PlaneSensor159]);
-Transform160 := TTransformNode.Create;
-Transform160.Translation := Vector3(0,0,0);
-TouchSensor161 := TTouchSensorNode.Create;
-{ .AddChildren }
-Transform160.AddChildren([TouchSensor161]);
-Shape162 := TShapeNode.Create;
-Sphere163 := TSphereNode.Create;
-Sphere163.Radius := 0.08;
-{ .SetGeometry }
-Shape162.Geometry := Sphere163;
-Appearance164 := TAppearanceNode.Create;
-Material165 := TMaterialNode.Create;
-Material165.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
-Appearance164.Material := Material165;
-{ .SetAppearance }
-Shape162.Appearance := Appearance164;
-{ .AddChild }
-Transform160.AddChildren([Shape162]);
-{ .AddChildren }
-Transform158.AddChildren([Transform160]);
-Shape166 := TShapeNode.Create;
-Cylinder167 := TCylinderNode.Create;
-Cylinder167.Radius := 0.05;
-Cylinder167.Height := 0.3;
-{ .SetGeometry }
-Shape166.Geometry := Cylinder167;
-Appearance168 := TAppearanceNode.Create;
-Material169 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance168.Material := Material169;
-{ .SetAppearance }
-Shape166.Appearance := Appearance168;
-{ .AddChild }
-Transform158.AddChildren([Shape166]);
-{ .AddChildren }
-Transform152.AddChildren([Transform158]);
-{ .AddChildren }
-LayoutLayer105.AddChildren([Transform152]);
-Transform170 := TTransformNode.Create;
-Transform170.Translation := Vector3(0,-0.2,0);
-Transform171 := TTransformNode.Create;
-Transform171.Rotation := Vector4(0,0,1,1.57);
-Shape172 := TShapeNode.Create;
-Appearance173 := TAppearanceNode.Create;
-Material174 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance173.Material := Material174;
-{ .SetAppearance }
-Shape172.Appearance := Appearance173;
-Cylinder175 := TCylinderNode.Create;
-Cylinder175.Radius := 0.05;
-Cylinder175.Height := 2.5;
-{ .SetGeometry }
-Shape172.Geometry := Cylinder175;
-{ .AddChild }
-Transform171.AddChildren([Shape172]);
-{ .AddChildren }
-Transform170.AddChildren([Transform171]);
-Transform176 := TTransformNode.Create;
-Transform176.Translation := Vector3(0,0,0.1);
-PlaneSensor177 := TPlaneSensorNode.Create;
-PlaneSensor177.MinPosition := Vector2(-20,0);
-PlaneSensor177.MaxPosition := Vector2(20,0);
-{ .AddChildren }
-Transform176.AddChildren([PlaneSensor177]);
-Transform178 := TTransformNode.Create;
-Transform178.Translation := Vector3(0,0,0);
-TouchSensor179 := TTouchSensorNode.Create;
-{ .AddChildren }
-Transform178.AddChildren([TouchSensor179]);
-Shape180 := TShapeNode.Create;
-Sphere181 := TSphereNode.Create;
-Sphere181.Radius := 0.08;
-{ .SetGeometry }
-Shape180.Geometry := Sphere181;
-Appearance182 := TAppearanceNode.Create;
-Material183 := TMaterialNode.Create;
-Material183.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
-Appearance182.Material := Material183;
-{ .SetAppearance }
-Shape180.Appearance := Appearance182;
-{ .AddChild }
-Transform178.AddChildren([Shape180]);
-{ .AddChildren }
-Transform176.AddChildren([Transform178]);
-Shape184 := TShapeNode.Create;
-Cylinder185 := TCylinderNode.Create;
-Cylinder185.Radius := 0.05;
-Cylinder185.Height := 0.3;
-{ .SetGeometry }
-Shape184.Geometry := Cylinder185;
-Appearance186 := TAppearanceNode.Create;
-Material187 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance186.Material := Material187;
-{ .SetAppearance }
-Shape184.Appearance := Appearance186;
-{ .AddChild }
-Transform176.AddChildren([Shape184]);
-{ .AddChildren }
-Transform170.AddChildren([Transform176]);
-{ .AddChildren }
-LayoutLayer105.AddChildren([Transform170]);
-Transform188 := TTransformNode.Create;
-Transform188.Translation := Vector3(0,-0.5,0);
-Transform189 := TTransformNode.Create;
-Transform189.Rotation := Vector4(0,0,1,1.57);
-Shape190 := TShapeNode.Create;
-Appearance191 := TAppearanceNode.Create;
-Material192 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance191.Material := Material192;
-{ .SetAppearance }
-Shape190.Appearance := Appearance191;
-Cylinder193 := TCylinderNode.Create;
-Cylinder193.Radius := 0.05;
-Cylinder193.Height := 2.5;
-{ .SetGeometry }
-Shape190.Geometry := Cylinder193;
-{ .AddChild }
-Transform189.AddChildren([Shape190]);
-{ .AddChildren }
-Transform188.AddChildren([Transform189]);
-Transform194 := TTransformNode.Create;
-Transform194.Translation := Vector3(0,0,0.1);
-PlaneSensor195 := TPlaneSensorNode.Create;
-PlaneSensor195.MinPosition := Vector2(-20,0);
-PlaneSensor195.MaxPosition := Vector2(20,0);
-{ .AddChildren }
-Transform194.AddChildren([PlaneSensor195]);
-Transform196 := TTransformNode.Create;
-Transform196.Translation := Vector3(0,0,0);
-TouchSensor197 := TTouchSensorNode.Create;
-{ .AddChildren }
-Transform196.AddChildren([TouchSensor197]);
-Shape198 := TShapeNode.Create;
-Sphere199 := TSphereNode.Create;
-Sphere199.Radius := 0.08;
-{ .SetGeometry }
-Shape198.Geometry := Sphere199;
-Appearance200 := TAppearanceNode.Create;
-Material201 := TMaterialNode.Create;
-Material201.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
-Appearance200.Material := Material201;
-{ .SetAppearance }
-Shape198.Appearance := Appearance200;
-{ .AddChild }
-Transform196.AddChildren([Shape198]);
-{ .AddChildren }
-Transform194.AddChildren([Transform196]);
-Shape202 := TShapeNode.Create;
-Cylinder203 := TCylinderNode.Create;
-Cylinder203.Radius := 0.05;
-Cylinder203.Height := 0.3;
-{ .SetGeometry }
-Shape202.Geometry := Cylinder203;
-Appearance204 := TAppearanceNode.Create;
-Material205 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance204.Material := Material205;
-{ .SetAppearance }
-Shape202.Appearance := Appearance204;
-{ .AddChild }
-Transform194.AddChildren([Shape202]);
-{ .AddChildren }
-Transform188.AddChildren([Transform194]);
-{ .AddChildren }
-LayoutLayer105.AddChildren([Transform188]);
-Transform206 := TTransformNode.Create;
-Transform206.Translation := Vector3(0,-0.8,0);
-Transform207 := TTransformNode.Create;
-Transform207.Rotation := Vector4(0,0,1,1.57);
-Shape208 := TShapeNode.Create;
-Appearance209 := TAppearanceNode.Create;
-Material210 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance209.Material := Material210;
-{ .SetAppearance }
-Shape208.Appearance := Appearance209;
-Cylinder211 := TCylinderNode.Create;
-Cylinder211.Radius := 0.05;
-Cylinder211.Height := 2.5;
-{ .SetGeometry }
-Shape208.Geometry := Cylinder211;
-{ .AddChild }
-Transform207.AddChildren([Shape208]);
-{ .AddChildren }
-Transform206.AddChildren([Transform207]);
-Transform212 := TTransformNode.Create;
-Transform212.Translation := Vector3(0,0,0.1);
-PlaneSensor213 := TPlaneSensorNode.Create;
-PlaneSensor213.MinPosition := Vector2(-20,0);
-PlaneSensor213.MaxPosition := Vector2(20,0);
-{ .AddChildren }
-Transform212.AddChildren([PlaneSensor213]);
-Transform214 := TTransformNode.Create;
-Transform214.Translation := Vector3(0,0,0);
-TouchSensor215 := TTouchSensorNode.Create;
-{ .AddChildren }
-Transform214.AddChildren([TouchSensor215]);
-Shape216 := TShapeNode.Create;
-Sphere217 := TSphereNode.Create;
-Sphere217.Radius := 0.08;
-{ .SetGeometry }
-Shape216.Geometry := Sphere217;
-Appearance218 := TAppearanceNode.Create;
-Material219 := TMaterialNode.Create;
-Material219.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
-Appearance218.Material := Material219;
-{ .SetAppearance }
-Shape216.Appearance := Appearance218;
-{ .AddChild }
-Transform214.AddChildren([Shape216]);
-{ .AddChildren }
-Transform212.AddChildren([Transform214]);
-Shape220 := TShapeNode.Create;
-Cylinder221 := TCylinderNode.Create;
-Cylinder221.Radius := 0.05;
-Cylinder221.Height := 0.3;
-{ .SetGeometry }
-Shape220.Geometry := Cylinder221;
-Appearance222 := TAppearanceNode.Create;
-Material223 := TMaterialNode.Create;
-{ .SetMaterial }
-Appearance222.Material := Material223;
-{ .SetAppearance }
-Shape220.Appearance := Appearance222;
-{ .AddChild }
-Transform212.AddChildren([Shape220]);
-{ .AddChildren }
-Transform206.AddChildren([Transform212]);
-{ .AddChildren }
-LayoutLayer105.AddChildren([Transform206]);
-Script224 := TScriptNode.Create;
-Script224.DirectOutput := True;
-Script224.MustEvaluate := True;
-field225 := TfieldNode.Create;
-field225.NameField := 'newTranslation';
-field225.AccessType := 'inputOnly';
-field225.Type := 'SFVec3f';
-field225.Value := '1 1 1';
+LayoutLayer96.AddChildren([Transform102]);
+ProtoDeclare109 := TProtoDeclareNode.Create;
+ProtoDeclare109.NameField := 'SliderProto';
+ProtoInterface110 := TProtoInterfaceNode.Create;
+field111 := TfieldNode.Create;
+field111.NameField := 'sliderTranslation';
+field111.AccessType := 'inputOutput';
+field111.Type := 'SFVec3f';
+field111.Value := '0 0.7 0';
 { .AddField }
-Script224.Field := field225;
-field226 := TfieldNode.Create;
-field226.NameField := 'aValue';
-field226.AccessType := 'outputOnly';
-field226.Type := 'SFFloat';
-field226.Value := '1';
+ProtoInterface110.Field := field111;
+field112 := TfieldNode.Create;
+field112.NameField := 'transformTranslation';
+field112.AccessType := 'inputOutput';
+field112.Type := 'SFVec3f';
+field112.Value := '0 0 0.1';
 { .AddField }
-Script224.Field := field226;
+ProtoInterface110.Field := field112;
+field113 := TfieldNode.Create;
+field113.NameField := 'sensorTranslation';
+field113.AccessType := 'inputOutput';
+field113.Type := 'SFVec3f';
+field113.Value := '0 0 0';
+{ .AddField }
+ProtoInterface110.Field := field113;
+field114 := TfieldNode.Create;
+field114.NameField := 'numberTranslation';
+field114.AccessType := 'inputOutput';
+field114.Type := 'SFVec3f';
+field114.Value := '0.2 0 0';
+{ .AddField }
+ProtoInterface110.Field := field114;
+field115 := TfieldNode.Create;
+field115.NameField := 'textString';
+field115.AccessType := 'inputOutput';
+field115.Type := 'MFString';
+field115.Value := '\"a=\"';
+{ .AddField }
+ProtoInterface110.Field := field115;
+field116 := TfieldNode.Create;
+field116.NameField := 'parameterName';
+field116.AccessType := 'inputOutput';
+field116.Type := 'SFString';
+field116.Value := 'a';
+{ .AddField }
+ProtoInterface110.Field := field116;
+field117 := TfieldNode.Create;
+field117.NameField := 'parameterScale';
+field117.AccessType := 'inputOutput';
+field117.Type := 'SFFloat';
+field117.Value := '30';
+{ .AddField }
+ProtoInterface110.Field := field117;
+field118 := TfieldNode.Create;
+field118.NameField := 'shaderNode';
+field118.AccessType := 'inputOutput';
+field118.Type := 'SFNode';
+{ .AddField }
+ProtoInterface110.Field := field118;
+{ .SetProtoInterface }
+ProtoDeclare109.ProtoInterface := ProtoInterface110;
+ProtoBody119 := TProtoBodyNode.Create;
+Group120 := TGroupNode.Create;
+Transform121 := TTransformNode.Create;
+Transform121.Translation := Vector3(0,0.7,0);
+IS122 := TISNode.Create;
+connect123 := TconnectNode.Create;
+connect123.NodeField := 'translation';
+connect123.ProtoField := 'sliderTranslation';
+{ .AddConnect }
+IS122.Connect := connect123;
+{ .SetIS }
+Transform121.IS := IS122;
+Transform124 := TTransformNode.Create;
+Transform124.Translation := Vector3(0,0,0.1);
+IS125 := TISNode.Create;
+connect126 := TconnectNode.Create;
+connect126.NodeField := 'translation';
+connect126.ProtoField := 'sensorTranslation';
+{ .AddConnect }
+IS125.Connect := connect126;
+{ .SetIS }
+Transform124.IS := IS125;
+PlaneSensor127 := TPlaneSensorNode.Create;
+PlaneSensor127.MaxPosition := Vector2(2,0);
+{ .AddChildren }
+Transform124.AddChildren([PlaneSensor127]);
+Transform128 := TTransformNode.Create;
+Transform128.Translation := Vector3(0,0,0);
+TouchSensor129 := TTouchSensorNode.Create;
+{ .AddChildren }
+Transform128.AddChildren([TouchSensor129]);
+{ .AddChildren }
+Transform124.AddChildren([Transform128]);
+Transform130 := TTransformNode.Create;
+Shape131 := TShapeNode.Create;
+Text132 := TTextNode.Create;
+Text132.SetText(['a=']);
+IS133 := TISNode.Create;
+connect134 := TconnectNode.Create;
+connect134.NodeField := 'string';
+connect134.ProtoField := 'textString';
+{ .AddConnect }
+IS133.Connect := connect134;
+{ .SetIS }
+Text132.IS := IS133;
+FontStyle135 := TFontStyleNode.Create;
+FontStyle135.Size := 0.2;
+{ .SetFontStyle }
+Text132.FontStyle := FontStyle135;
+{ .SetGeometry }
+Shape131.Geometry := Text132;
+Appearance136 := TAppearanceNode.Create;
+Material137 := TMaterialNode.Create;
+Material137.DiffuseColor := Vector3(1,1,1);
+{ .SetMaterial }
+Appearance136.Material := Material137;
+{ .SetAppearance }
+Shape131.Appearance := Appearance136;
+{ .AddChild }
+Transform130.AddChildren([Shape131]);
+Transform138 := TTransformNode.Create;
+IS139 := TISNode.Create;
+connect140 := TconnectNode.Create;
+connect140.NodeField := 'translation';
+connect140.ProtoField := 'numberTranslation';
+{ .AddConnect }
+IS139.Connect := connect140;
+{ .SetIS }
+Transform138.IS := IS139;
+Shape141 := TShapeNode.Create;
+Text142 := TTextNode.Create;
+Text142.SetText(['0']);
+FontStyle143 := TFontStyleNode.Create;
+FontStyle143.Size := 0.2;
+{ .SetFontStyle }
+Text142.FontStyle := FontStyle143;
+{ .SetGeometry }
+Shape141.Geometry := Text142;
+Appearance144 := TAppearanceNode.Create;
+Material145 := TMaterialNode.Create;
+Material145.DiffuseColor := Vector3(1,1,1);
+{ .SetMaterial }
+Appearance144.Material := Material145;
+{ .SetAppearance }
+Shape141.Appearance := Appearance144;
+{ .AddChild }
+Transform138.AddChildren([Shape141]);
+{ .AddChildren }
+Transform130.AddChildren([Transform138]);
+{ .AddChildren }
+Transform124.AddChildren([Transform130]);
+{ .AddChildren }
+Transform121.AddChildren([Transform124]);
+{ .AddChildren }
+Group120.AddChildren([Transform121]);
+Script146 := TScriptNode.Create;
+Script146.DirectOutput := True;
+Script146.MustEvaluate := True;
+field147 := TfieldNode.Create;
+field147.NameField := 'protoScale';
+field147.AccessType := 'inputOutput';
+field147.Type := 'SFFloat';
+field147.Value := '30';
+{ .AddField }
+Script146.Field := field147;
+field148 := TfieldNode.Create;
+field148.NameField := 'shader';
+field148.AccessType := 'inputOutput';
+field148.Type := 'SFNode';
+{ .AddField }
+Script146.Field := field148;
+field149 := TfieldNode.Create;
+field149.NameField := 'newTranslation';
+field149.AccessType := 'inputOutput';
+field149.Type := 'SFVec3f';
+field149.Value := '1 1 1';
+{ .AddField }
+Script146.Field := field149;
+field150 := TfieldNode.Create;
+field150.NameField := 'protoValue_changed';
+field150.AccessType := 'inputOutput';
+field150.Type := 'SFFloat';
+field150.Value := '1';
+{ .AddField }
+Script146.Field := field150;
+field151 := TfieldNode.Create;
+field151.NameField := 'protoNumber_changed';
+field151.AccessType := 'inputOutput';
+field151.Type := 'MFString';
+field151.Value := '\"0.0\"';
+{ .AddField }
+Script146.Field := field151;
+field152 := TfieldNode.Create;
+field152.NameField := 'protoParameterName';
+field152.AccessType := 'inputOutput';
+field152.Type := 'SFString';
+field152.Value := 'a';
+{ .AddField }
+Script146.Field := field152;
+IS153 := TISNode.Create;
+connect154 := TconnectNode.Create;
+connect154.NodeField := 'protoScale';
+connect154.ProtoField := 'parameterScale';
+{ .AddConnect }
+IS153.Connect := connect154;
+connect155 := TconnectNode.Create;
+connect155.NodeField := 'protoParameterName';
+connect155.ProtoField := 'parameterName';
+{ .AddConnect }
+IS153.Connect := connect155;
+connect156 := TconnectNode.Create;
+connect156.NodeField := 'shader';
+connect156.ProtoField := 'shaderNode';
+{ .AddConnect }
+IS153.Connect := connect156;
+{ .SetIS }
+Script146.IS := IS153;
 
-Script224.SetSourceCode('''ecmascript: function newTranslation(Value) { aValue = Value.x * 30; }''');
+Script146.SetSourceCode('''ecmascript:\n"+
+"	const newTranslation = function(Value) {\n"+
+"	    protoValue_changed = Value[0] * protoScale;\n"+
+"	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());\n"+
+"	    Browser.println(\"In newTranslation:\");\n"+
+"	    Browser.println(shader);\n"+
+"	    Browser.println(Value[0]);\n"+
+"	    Browser.println(Value.x);\n"+
+"	    Browser.println(protoScale);\n"+
+"	    Browser.println(Value[0] * protoScale);\n"+
+"	    Browser.println(protoParameterName);\n"+
+"					// shader[protoParameterName] = Value[0] * protoScale;\n"+
+"	};''');
 { .AddChildren }
-LayoutLayer105.AddChildren([Script224]);
-Script227 := TScriptNode.Create;
-Script227.DirectOutput := True;
-Script227.MustEvaluate := True;
-field228 := TfieldNode.Create;
-field228.NameField := 'newTranslation';
-field228.AccessType := 'inputOnly';
-field228.Type := 'SFVec3f';
-field228.Value := '1 1 1';
-{ .AddField }
-Script227.Field := field228;
-field229 := TfieldNode.Create;
-field229.NameField := 'bValue';
-field229.AccessType := 'outputOnly';
-field229.Type := 'SFFloat';
-field229.Value := '1';
-{ .AddField }
-Script227.Field := field229;
-
-Script227.SetSourceCode('''ecmascript: function newTranslation(Value) { bValue = Value.x * 30; }''');
+Group120.AddChildren([Script146]);
+Group120.AddRoute(PlaneSensor127.EventTranslation_changed, Transform124.FdTranslation);
+{ .AddX3DRoute }
+Group120.AddRoute(PlaneSensor127.EventTranslation_changed, Script146.FdNewtranslation);
+{ .AddX3DRoute }
+Group120.AddRoute(Script146.EventProtonumber_changed, Text142.FdString);
+{ .AddX3DRoute }
 { .AddChildren }
-LayoutLayer105.AddChildren([Script227]);
-Script230 := TScriptNode.Create;
-Script230.DirectOutput := True;
-Script230.MustEvaluate := True;
-field231 := TfieldNode.Create;
-field231.NameField := 'newTranslation';
-field231.AccessType := 'inputOnly';
-field231.Type := 'SFVec3f';
-field231.Value := '1 1 1';
-{ .AddField }
-Script230.Field := field231;
-field232 := TfieldNode.Create;
-field232.NameField := 'cValue';
-field232.AccessType := 'outputOnly';
-field232.Type := 'SFFloat';
-field232.Value := '1';
-{ .AddField }
-Script230.Field := field232;
-
-Script230.SetSourceCode('''ecmascript: function newTranslation(Value) { cValue = Value.x * 5; }''');
+ProtoBody119.AddChildren([Group120]);
+{ .SetProtoBody }
+ProtoDeclare109.ProtoBody := ProtoBody119;
 { .AddChildren }
-LayoutLayer105.AddChildren([Script230]);
-Script233 := TScriptNode.Create;
-Script233.DirectOutput := True;
-Script233.MustEvaluate := True;
-field234 := TfieldNode.Create;
-field234.NameField := 'newTranslation';
-field234.AccessType := 'inputOnly';
-field234.Type := 'SFVec3f';
-field234.Value := '1 1 1';
-{ .AddField }
-Script233.Field := field234;
-field235 := TfieldNode.Create;
-field235.NameField := 'dValue';
-field235.AccessType := 'outputOnly';
-field235.Type := 'SFFloat';
-field235.Value := '1';
-{ .AddField }
-Script233.Field := field235;
-
-Script233.SetSourceCode('''ecmascript: function newTranslation(Value) { dValue = Value.x * 5; }''');
+LayoutLayer96.AddChildren([ProtoDeclare109]);
+ProtoInstance160 := TProtoInstanceNode.Create;
+ProtoInstance160.NameField := 'SliderProto';
+fieldValue161 := TfieldValueNode.Create;
+fieldValue161.NameField := 'sliderTranslation';
+fieldValue161.Value := '0 0.7 0';
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue161;
+fieldValue162 := TfieldValueNode.Create;
+fieldValue162.NameField := 'transformTranslation';
+fieldValue162.Value := '0 0 0.1';
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue162;
+fieldValue163 := TfieldValueNode.Create;
+fieldValue163.NameField := 'sensorTranslation';
+fieldValue163.Value := '0 0 0';
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue163;
+fieldValue164 := TfieldValueNode.Create;
+fieldValue164.NameField := 'numberTranslation';
+fieldValue164.Value := '0.3 0 0';
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue164;
+fieldValue165 := TfieldValueNode.Create;
+fieldValue165.NameField := 'textString';
+fieldValue165.Value := '\"a=\"';
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue165;
+fieldValue166 := TfieldValueNode.Create;
+fieldValue166.NameField := 'parameterName';
+fieldValue166.Value := 'a';
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue166;
+fieldValue167 := TfieldValueNode.Create;
+fieldValue167.NameField := 'parameterScale';
+fieldValue167.Value := '30';
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue167;
+fieldValue168 := TfieldValueNode.Create;
+fieldValue168.NameField := 'shaderNode';
+ComposedShader169 := TComposedShaderNode.Create;
+ComposedShader169 := ComposedShader69;
 { .AddChildren }
-LayoutLayer105.AddChildren([Script233]);
-Script236 := TScriptNode.Create;
-Script236.DirectOutput := True;
-Script236.MustEvaluate := True;
-field237 := TfieldNode.Create;
-field237.NameField := 'newTranslation';
-field237.AccessType := 'inputOnly';
-field237.Type := 'SFVec3f';
-field237.Value := '1 1 1';
-{ .AddField }
-Script236.Field := field237;
-field238 := TfieldNode.Create;
-field238.NameField := 'pdeltaValue';
-field238.AccessType := 'outputOnly';
-field238.Type := 'SFFloat';
-field238.Value := '1';
-{ .AddField }
-Script236.Field := field238;
-
-Script236.SetSourceCode('''ecmascript: function newTranslation(Value) { pdeltaValue = Value.x; }''');
+fieldValue168.AddChildren([ComposedShader169]);
+{ .AddFieldValue }
+ProtoInstance160.FieldValue := fieldValue168;
 { .AddChildren }
-LayoutLayer105.AddChildren([Script236]);
-Script239 := TScriptNode.Create;
-Script239.DirectOutput := True;
-Script239.MustEvaluate := True;
-field240 := TfieldNode.Create;
-field240.NameField := 'newTranslation';
-field240.AccessType := 'inputOnly';
-field240.Type := 'SFVec3f';
-field240.Value := '1 1 1';
-{ .AddField }
-Script239.Field := field240;
-field241 := TfieldNode.Create;
-field241.NameField := 'tdeltaValue';
-field241.AccessType := 'outputOnly';
-field241.Type := 'SFFloat';
-field241.Value := '1';
-{ .AddField }
-Script239.Field := field241;
-
-Script239.SetSourceCode('''ecmascript: function newTranslation(Value) { tdeltaValue = Value.x; }''');
+LayoutLayer96.AddChildren([ProtoInstance160]);
+ProtoInstance170 := TProtoInstanceNode.Create;
+ProtoInstance170.NameField := 'SliderProto';
+fieldValue171 := TfieldValueNode.Create;
+fieldValue171.NameField := 'sliderTranslation';
+fieldValue171.Value := '0 0.4 0';
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue171;
+fieldValue172 := TfieldValueNode.Create;
+fieldValue172.NameField := 'transformTranslation';
+fieldValue172.Value := '0 0 0.1';
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue172;
+fieldValue173 := TfieldValueNode.Create;
+fieldValue173.NameField := 'sensorTranslation';
+fieldValue173.Value := '0 0 0';
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue173;
+fieldValue174 := TfieldValueNode.Create;
+fieldValue174.NameField := 'numberTranslation';
+fieldValue174.Value := '0.3 0 0';
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue174;
+fieldValue175 := TfieldValueNode.Create;
+fieldValue175.NameField := 'textString';
+fieldValue175.Value := '\"b=\"';
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue175;
+fieldValue176 := TfieldValueNode.Create;
+fieldValue176.NameField := 'parameterName';
+fieldValue176.Value := 'b';
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue176;
+fieldValue177 := TfieldValueNode.Create;
+fieldValue177.NameField := 'parameterScale';
+fieldValue177.Value := '30';
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue177;
+fieldValue178 := TfieldValueNode.Create;
+fieldValue178.NameField := 'shaderNode';
+ComposedShader179 := TComposedShaderNode.Create;
+ComposedShader179 := ComposedShader69;
 { .AddChildren }
-LayoutLayer105.AddChildren([Script239]);
-LayoutLayer105.AddRoute(PlaneSensor118.EventTranslation_changed, Transform117.FdTranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor141.EventTranslation_changed, Transform140.FdTranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor159.EventTranslation_changed, Transform158.FdTranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor177.EventTranslation_changed, Transform176.FdTranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor195.EventTranslation_changed, Transform194.FdTranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor213.EventTranslation_changed, Transform212.FdTranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor118.EventTranslation_changed, Script224.FdNewtranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor141.EventTranslation_changed, Script227.FdNewtranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor159.EventTranslation_changed, Script230.FdNewtranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor177.EventTranslation_changed, Script233.FdNewtranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor195.EventTranslation_changed, Script236.FdNewtranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(PlaneSensor213.EventTranslation_changed, Script239.FdNewtranslation);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(Script224.FdAvalue, ComposedShader82.FdA);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(Script227.FdBvalue, ComposedShader82.FdB);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(Script230.FdCvalue, ComposedShader82.FdC);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(Script233.FdDvalue, ComposedShader82.FdD);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(Script236.FdPdeltavalue, ComposedShader82.FdPdelta);
-{ .AddX3DRoute }
-LayoutLayer105.AddRoute(Script239.FdTdeltavalue, ComposedShader82.FdTdelta);
-{ .AddX3DRoute }
-Layout260 := TLayoutNode.Create;
-Layout260.SetAlign(['RIGHT','BOTTOM']);
-Layout260.SetOffset([0,0]);
-Layout260.SetOffsetUnits(['WORLD','WORLD']);
-Layout260.SetScaleMode(['NONE','NONE']);
-Layout260.SetSize([0.4,1]);
-Layout260.SetSizeUnits(['WORLD','WORLD']);
+fieldValue178.AddChildren([ComposedShader179]);
+{ .AddFieldValue }
+ProtoInstance170.FieldValue := fieldValue178;
+{ .AddChildren }
+LayoutLayer96.AddChildren([ProtoInstance170]);
+ProtoInstance180 := TProtoInstanceNode.Create;
+ProtoInstance180.NameField := 'SliderProto';
+fieldValue181 := TfieldValueNode.Create;
+fieldValue181.NameField := 'sliderTranslation';
+fieldValue181.Value := '0 0.1 0';
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue181;
+fieldValue182 := TfieldValueNode.Create;
+fieldValue182.NameField := 'transformTranslation';
+fieldValue182.Value := '0 0 0.1';
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue182;
+fieldValue183 := TfieldValueNode.Create;
+fieldValue183.NameField := 'sensorTranslation';
+fieldValue183.Value := '0 0 0';
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue183;
+fieldValue184 := TfieldValueNode.Create;
+fieldValue184.NameField := 'numberTranslation';
+fieldValue184.Value := '0.3 0 0';
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue184;
+fieldValue185 := TfieldValueNode.Create;
+fieldValue185.NameField := 'textString';
+fieldValue185.Value := '\"c=\"';
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue185;
+fieldValue186 := TfieldValueNode.Create;
+fieldValue186.NameField := 'parameterName';
+fieldValue186.Value := 'c';
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue186;
+fieldValue187 := TfieldValueNode.Create;
+fieldValue187.NameField := 'parameterScale';
+fieldValue187.Value := '20';
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue187;
+fieldValue188 := TfieldValueNode.Create;
+fieldValue188.NameField := 'shaderNode';
+ComposedShader189 := TComposedShaderNode.Create;
+ComposedShader189 := ComposedShader69;
+{ .AddChildren }
+fieldValue188.AddChildren([ComposedShader189]);
+{ .AddFieldValue }
+ProtoInstance180.FieldValue := fieldValue188;
+{ .AddChildren }
+LayoutLayer96.AddChildren([ProtoInstance180]);
+ProtoInstance190 := TProtoInstanceNode.Create;
+ProtoInstance190.NameField := 'SliderProto';
+fieldValue191 := TfieldValueNode.Create;
+fieldValue191.NameField := 'sliderTranslation';
+fieldValue191.Value := '0 -0.2 0';
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue191;
+fieldValue192 := TfieldValueNode.Create;
+fieldValue192.NameField := 'transformTranslation';
+fieldValue192.Value := '0 0 0.1';
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue192;
+fieldValue193 := TfieldValueNode.Create;
+fieldValue193.NameField := 'sensorTranslation';
+fieldValue193.Value := '0 0 0';
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue193;
+fieldValue194 := TfieldValueNode.Create;
+fieldValue194.NameField := 'numberTranslation';
+fieldValue194.Value := '0.3 0 0';
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue194;
+fieldValue195 := TfieldValueNode.Create;
+fieldValue195.NameField := 'textString';
+fieldValue195.Value := '\"d=\"';
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue195;
+fieldValue196 := TfieldValueNode.Create;
+fieldValue196.NameField := 'parameterName';
+fieldValue196.Value := 'd';
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue196;
+fieldValue197 := TfieldValueNode.Create;
+fieldValue197.NameField := 'parameterScale';
+fieldValue197.Value := '20';
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue197;
+fieldValue198 := TfieldValueNode.Create;
+fieldValue198.NameField := 'shaderNode';
+ComposedShader199 := TComposedShaderNode.Create;
+ComposedShader199 := ComposedShader69;
+{ .AddChildren }
+fieldValue198.AddChildren([ComposedShader199]);
+{ .AddFieldValue }
+ProtoInstance190.FieldValue := fieldValue198;
+{ .AddChildren }
+LayoutLayer96.AddChildren([ProtoInstance190]);
+ProtoInstance200 := TProtoInstanceNode.Create;
+ProtoInstance200.NameField := 'SliderProto';
+fieldValue201 := TfieldValueNode.Create;
+fieldValue201.NameField := 'sliderTranslation';
+fieldValue201.Value := '0 -0.5 0';
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue201;
+fieldValue202 := TfieldValueNode.Create;
+fieldValue202.NameField := 'transformTranslation';
+fieldValue202.Value := '0 0 0.1';
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue202;
+fieldValue203 := TfieldValueNode.Create;
+fieldValue203.NameField := 'sensorTranslation';
+fieldValue203.Value := '0 0 0';
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue203;
+fieldValue204 := TfieldValueNode.Create;
+fieldValue204.NameField := 'numberTranslation';
+fieldValue204.Value := '0.8 0 0';
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue204;
+fieldValue205 := TfieldValueNode.Create;
+fieldValue205.NameField := 'textString';
+fieldValue205.Value := '\"tdelta=\"';
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue205;
+fieldValue206 := TfieldValueNode.Create;
+fieldValue206.NameField := 'parameterName';
+fieldValue206.Value := 'tdelta';
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue206;
+fieldValue207 := TfieldValueNode.Create;
+fieldValue207.NameField := 'parameterScale';
+fieldValue207.Value := '6.28';
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue207;
+fieldValue208 := TfieldValueNode.Create;
+fieldValue208.NameField := 'shaderNode';
+ComposedShader209 := TComposedShaderNode.Create;
+ComposedShader209 := ComposedShader69;
+{ .AddChildren }
+fieldValue208.AddChildren([ComposedShader209]);
+{ .AddFieldValue }
+ProtoInstance200.FieldValue := fieldValue208;
+{ .AddChildren }
+LayoutLayer96.AddChildren([ProtoInstance200]);
+ProtoInstance210 := TProtoInstanceNode.Create;
+ProtoInstance210.NameField := 'SliderProto';
+fieldValue211 := TfieldValueNode.Create;
+fieldValue211.NameField := 'sliderTranslation';
+fieldValue211.Value := '0 -0.8 0';
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue211;
+fieldValue212 := TfieldValueNode.Create;
+fieldValue212.NameField := 'transformTranslation';
+fieldValue212.Value := '0 0 0.1';
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue212;
+fieldValue213 := TfieldValueNode.Create;
+fieldValue213.NameField := 'sensorTranslation';
+fieldValue213.Value := '0 0 0';
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue213;
+fieldValue214 := TfieldValueNode.Create;
+fieldValue214.NameField := 'numberTranslation';
+fieldValue214.Value := '0.8 0 0';
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue214;
+fieldValue215 := TfieldValueNode.Create;
+fieldValue215.NameField := 'textString';
+fieldValue215.Value := '\"pdelta=\"';
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue215;
+fieldValue216 := TfieldValueNode.Create;
+fieldValue216.NameField := 'parameterName';
+fieldValue216.Value := 'pdelta';
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue216;
+fieldValue217 := TfieldValueNode.Create;
+fieldValue217.NameField := 'parameterScale';
+fieldValue217.Value := '6.28';
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue217;
+fieldValue218 := TfieldValueNode.Create;
+fieldValue218.NameField := 'shaderNode';
+ComposedShader219 := TComposedShaderNode.Create;
+ComposedShader219 := ComposedShader69;
+{ .AddChildren }
+fieldValue218.AddChildren([ComposedShader219]);
+{ .AddFieldValue }
+ProtoInstance210.FieldValue := fieldValue218;
+{ .AddChildren }
+LayoutLayer96.AddChildren([ProtoInstance210]);
+Layout220 := TLayoutNode.Create;
+Layout220.SetAlign(['LEFT','BOTTOM']);
+Layout220.SetOffset([-0.5,0]);
 { .SetLayout }
-LayoutLayer105.Layout := Layout260;
-Viewport261 := TViewportNode.Create;
-Viewport261.SetClipBoundary([0,1,0,1]);
+LayoutLayer96.Layout := Layout220;
+Viewport221 := TViewportNode.Create;
 { .SetViewport }
-LayoutLayer105.Viewport := Viewport261;
+LayoutLayer96.Viewport := Viewport221;
 { .AddLayers }
-LayerSet32.Layers := LayoutLayer105;
+LayerSet18.Layers := LayoutLayer96;
 { .AddChildren }
-Group31.AddChildren([LayerSet32]);
+Group17.AddChildren([LayerSet18]);
 { .AddGroup }
-X3D0.AddChildren([Group31]);
+X3D0.AddChildren([Group17]);
 Result := X3D0;
 end;

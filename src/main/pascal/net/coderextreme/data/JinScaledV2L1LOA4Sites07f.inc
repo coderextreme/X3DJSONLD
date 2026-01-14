@@ -2357,6 +2357,8 @@ X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
+{ Scaled 1:1, Added Animations }
+{ Added Sites }
 X3D0.Components['HAnim'] := 1;
 X3D0.Meta['title'] := 'JinScaledV2L1LOA4Sites07f.x3d';
 X3D0.Meta['creator'] := 'Jin Hoon Lee and Min Joo Lee';
@@ -2375,10 +2377,8 @@ X3D0.Meta['generator'] := '3DS MAX, http://www.autodesk.com/products/autodesk-3d
 X3D0.Meta['generator'] := 'Suwon HAnim Converter';
 X3D0.Meta['generator'] := 'joedwillyNotePad';
 X3D0.Meta['generator'] := 'Gnu Image Manipulation Program, http://www.gimp.org';
-X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
-{ Scaled 1:1, Added Animations }
-{ Added Sites }
 Group22 := TGroupNode.Create;
 WorldInfo23 := TWorldInfoNode.Create;
 WorldInfo23.Title := 'Jin LOA4 Level 1 All Joints, Segments, Sites';

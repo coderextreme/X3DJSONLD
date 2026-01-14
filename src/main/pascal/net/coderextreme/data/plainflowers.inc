@@ -69,7 +69,7 @@ ProtoInstance17 := TProtoInstanceNode.Create;
 ProtoInstance17.NameField := 'FlowerProto';
 fieldValue18 := TfieldValueNode.Create;
 fieldValue18.NameField := 'vertex';
-fieldValue18.Value := '\"../shaders/x_ite_flowers_plain.vs\"';
+fieldValue18.Value := '\"../shaders/gl_flowers_plain.vs\"';
 { .AddFieldValue }
 ProtoInstance17.FieldValue := fieldValue18;
 fieldValue19 := TfieldValueNode.Create;
