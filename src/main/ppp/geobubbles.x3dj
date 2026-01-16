@@ -1,0 +1,239 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "geobubbles.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "geo bubbles"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:15 GMT"
+        }
+      ],
+      "component": [
+        {
+          "@name": "Geospatial",
+          "@level": 1
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "GeoViewpoint": {
+            "@DEF": "Tour",
+            "@description": "Tour Views",
+            "@position": [
+              0.00150419807612118,
+              0.000066601923925745,
+              3.99999935366213
+            ]
+          }
+        },
+        {
+          "Background": {
+            "@frontUrl": [
+              "../resources/images/FR.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"
+            ],
+            "@backUrl": [
+              "../resources/images/BK.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/LF.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/RT.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"
+            ],
+            "@topUrl": [
+              "../resources/images/TP.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/BT.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "TourTime",
+            "@cycleInterval": 5,
+            "@loop": true
+          }
+        },
+        {
+          "GeoPositionInterpolator": {
+            "@DEF": "TourPosition",
+            "@key": [
+              0,
+              1
+            ],
+            "@keyValue": [
+              0.0015708,
+              0,
+              4,
+              0,
+              0.0015708,
+              4
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "RandomTourTime",
+            "field": [
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFTime",
+                "@name": "set_cycle"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "SFFloat",
+                "@name": "val"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFVec3d",
+                "@name": "positions",
+                "@value": [
+                  0.0015708,
+                  0,
+                  4,
+                  0,
+                  0.0015708,
+                  4
+                ]
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFVec3d",
+                "@name": "position",
+                "@value": [
+                  0.0015708,
+                  0,
+                  4,
+                  0,
+                  0.0015708,
+                  4
+                ]
+              }
+            ],
+            "#sourceCode": [
+              "ecmascript:",
+              "",
+              "               function set_cycle(value) {",
+              "                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo",
+              "                        var ov = val;",
+              "\t\t\t// Browser.print('old '+ov);",
+              "                        do {",
+              "                                val = Math.floor(Math.random()*2);",
+              "                                var vc = val;",
+              "                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);",
+              "                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);",
+              "\t\t\t// Browser.println(positions[ov]);",
+              "\t\t\t// Browser.println(positions[vc]);",
+              "                        position = new MFVec3d();",
+              "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);",
+              "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);",
+              "               }"
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "cycleTime",
+            "@toNode": "RandomTourTime",
+            "@toField": "set_cycle"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "RandomTourTime",
+            "@fromField": "position_changed",
+            "@toNode": "TourPosition",
+            "@toField": "set_keyValue"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourTime",
+            "@fromField": "fraction_changed",
+            "@toNode": "TourPosition",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TourPosition",
+            "@fromField": "geovalue_changed",
+            "@toNode": "Tour",
+            "@toField": "set_position"
+          }
+        }
+      ]
+    }
+  }
+}

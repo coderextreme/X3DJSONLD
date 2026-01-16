@@ -82,7 +82,7 @@ X3D0.setHead(&head1);
 
 Scene& Scene16 =  Scene();
 NavigationInfo& NavigationInfo17 =  NavigationInfo();
-NavigationInfo17.setType(new CString[]{CString(", "), CString("EXAMINE, "), CString("FLY, "), CString("WALKANY")}, 4);
+NavigationInfo17.setType(new CString[]{CString("EXAMINE"), CString("FLY"), CString("WALK"), CString("ANY")}, 4);
 Scene16.addChild(&NavigationInfo17);
 
 Group& Group18 =  Group();

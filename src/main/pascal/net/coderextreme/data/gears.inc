@@ -30,7 +30,7 @@ X3D0.Meta['translated'] := '9 August 2025';
 X3D0.Meta['reference'] := 'X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding';
 Group16 := TGroupNode.Create;
 NavigationInfo17 := TNavigationInfoNode.Create;
-NavigationInfo17.SetType([', ','EXAMINE, ','FLY, ','WALKANY']);
+NavigationInfo17.SetType(['EXAMINE','FLY','WALK','ANY']);
 { .AddChildren }
 Group16.AddChildren([NavigationInfo17]);
 Group18 := TGroupNode.Create;

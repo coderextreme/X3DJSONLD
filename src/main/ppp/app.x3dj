@@ -1,0 +1,87 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "app.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "Carlson, I"
+        },
+        {
+          "@name": "creator",
+          "@content": "Carlson, II"
+        },
+        {
+          "@name": "creator",
+          "@content": "Carlson, III"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:09 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Group": {
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Box": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              1,
+              2,
+              3
+            ],
+            "@rotation": [
+              7,
+              8,
+              9,
+              3.14
+            ],
+            "@scale": [
+              4,
+              5,
+              6
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

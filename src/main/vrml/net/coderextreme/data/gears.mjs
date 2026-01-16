@@ -21,7 +21,7 @@ scene.addMetaData("translated", "9 August 2025");
 scene.addMetaData("reference", "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding");
 await browser .loadComponents (scene);
 let NavigationInfo17 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo17.type = new X3D.MFString([new X3D.SFString(", "), new X3D.SFString("EXAMINE, "), new X3D.SFString("FLY, "), new X3D.SFString("WALKANY")]);
+NavigationInfo17.type = new X3D.MFString([new X3D.SFString("EXAMINE"), new X3D.SFString("FLY"), new X3D.SFString("WALK"), new X3D.SFString("ANY")]);
 browser.currentScene.children = new X3D.MFNode();
 
 browser.currentScene.children[0] = NavigationInfo17;

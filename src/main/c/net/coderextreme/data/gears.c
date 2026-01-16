@@ -80,7 +80,7 @@ head1.meta[13] = meta15;
 head = head1;
 
 NavigationInfo NavigationInfo17 = createNode("NavigationInfo");
-NavigationInfo17.type = new MFString(new java.lang.String[", ","EXAMINE, ","FLY, ","WALKANY"]);
+NavigationInfo17.type = new MFString(new java.lang.String["EXAMINE","FLY","WALK","ANY"]);
 children = new MFNode();
 
 children[0] = NavigationInfo17;
