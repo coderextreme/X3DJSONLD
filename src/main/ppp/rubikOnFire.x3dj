@@ -1,0 +1,469 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "rubikOnFire.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/rubikOnFire.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a white rubik cube"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:34 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "xtranslation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Sphere": {
+                        "@DEF": "_1"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "-children": [
+                      {
+                        "Shape": {
+                          "-appearance": {
+                            "Appearance": {
+                              "-material": {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    1,
+                                    1,
+                                    1
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "geometry",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "xtranslation"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "three",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "ytranslation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Sphere": {
+                        "@DEF": "_2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ytranslation"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "nine",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "ztranslation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Sphere": {
+                        "@DEF": "_3"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "three",
+                          "fieldValue": [],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "three",
+                          "fieldValue": [
+                            {
+                              "@name": "ytranslation",
+                              "@value": [
+                                0,
+                                2,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "three",
+                          "fieldValue": [
+                            {
+                              "@name": "ytranslation",
+                              "@value": [
+                                0,
+                                -2,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ztranslation"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "twentyseven",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "ttranslation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Sphere": {
+                        "@DEF": "_4"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "nine",
+                          "fieldValue": [],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "nine",
+                          "fieldValue": [
+                            {
+                              "@name": "ztranslation",
+                              "@value": [
+                                0,
+                                0,
+                                2
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "nine",
+                          "fieldValue": [
+                            {
+                              "@name": "ztranslation",
+                              "@value": [
+                                0,
+                                0,
+                                -2
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ttranslation"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "NavigationInfo": {
+            "@type": [
+              "ANY",
+              "EXAMINE",
+              "WALK",
+              "FLY",
+              "LOOKAT"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Rubiks Cube on Fire",
+            "@position": [
+              0,
+              0,
+              12
+            ]
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "twentyseven",
+            "fieldValue": [
+              {
+                "@name": "myShape",
+                "-children": [
+                  {
+                    "Box": {
+                      "@DEF": "_5",
+                      "@size": [
+                        1,
+                        1,
+                        1
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

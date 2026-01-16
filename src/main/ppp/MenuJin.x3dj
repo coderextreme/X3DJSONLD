@@ -1,0 +1,4736 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "Menu.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "X3D scene with a Switch of Inlines controlled by a menu"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:20:49 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Viewpoint": {
+            "@position": [
+              0,
+              20,
+              110
+            ]
+          }
+        },
+        {
+          "Group": {
+            "-children": [
+              {
+                "Switch": {
+                  "@DEF": "SceneSwitcher",
+                  "@whichChoice": 0,
+                  "-children": [
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice0",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 0;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 0;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinBlink",
+                              "@url": [
+                                "../resources/JinBlink.x3d",
+                                "JinBlink.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice1",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 1;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 1;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinBrowLowerer",
+                              "@url": [
+                                "../resources/JinBrowLowerer.x3d",
+                                "JinBrowLowerer.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice2",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 2;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 2;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinCheekPuffer",
+                              "@url": [
+                                "../resources/JinCheekPuffer.x3d",
+                                "JinCheekPuffer.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice3",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 3;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 3;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinCheekRaiser",
+                              "@url": [
+                                "../resources/JinCheekRaiser.x3d",
+                                "JinCheekRaiser.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice4",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 4;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 4;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinChinRaiser",
+                              "@url": [
+                                "../resources/JinChinRaiser.x3d",
+                                "JinChinRaiser.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice5",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 5;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 5;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinDimpler",
+                              "@url": [
+                                "../resources/JinDimpler.x3d",
+                                "JinDimpler.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice6",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 6;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 6;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinEyesClosed",
+                              "@url": [
+                                "../resources/JinEyesClosed.x3d",
+                                "JinEyesClosed.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice7",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 7;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 7;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinInnerBrowRaiser",
+                              "@url": [
+                                "../resources/JinInnerBrowRaiser.x3d",
+                                "JinInnerBrowRaiser.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice8",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 8;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 8;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinJawDrop",
+                              "@url": [
+                                "../resources/JinJawDrop.x3d",
+                                "JinJawDrop.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice9",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 9;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 9;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLidDroop",
+                              "@url": [
+                                "../resources/JinLidDroop.x3d",
+                                "JinLidDroop.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice10",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 10;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 10;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLidTightener",
+                              "@url": [
+                                "../resources/JinLidTightener.x3d",
+                                "JinLidTightener.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice11",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 11;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 11;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipCornerDepressor",
+                              "@url": [
+                                "../resources/JinLipCornerDepressor.x3d",
+                                "JinLipCornerDepressor.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice12",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 12;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 12;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipCornerPuller",
+                              "@url": [
+                                "../resources/JinLipCornerPuller.x3d",
+                                "JinLipCornerPuller.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice13",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 13;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 13;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipFunneler",
+                              "@url": [
+                                "../resources/JinLipFunneler.x3d",
+                                "JinLipFunneler.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice14",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 14;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 14;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipPressor",
+                              "@url": [
+                                "../resources/JinLipPressor.x3d",
+                                "JinLipPressor.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice15",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 15;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 15;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipPuckerer",
+                              "@url": [
+                                "../resources/JinLipPuckerer.x3d",
+                                "JinLipPuckerer.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice16",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 16;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 16;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipsPart",
+                              "@url": [
+                                "../resources/JinLipsPart.x3d",
+                                "JinLipsPart.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice17",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 17;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 17;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipStretcher",
+                              "@url": [
+                                "../resources/JinLipStretcher.x3d",
+                                "JinLipStretcher.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice18",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 18;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 18;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipSuck",
+                              "@url": [
+                                "../resources/JinLipSuck.x3d",
+                                "JinLipSuck.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice19",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 19;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 19;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLipTightener",
+                              "@url": [
+                                "../resources/JinLipTightener.x3d",
+                                "JinLipTightener.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice20",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 20;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 20;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinLowerLipDepressor",
+                              "@url": [
+                                "../resources/JinLowerLipDepressor.x3d",
+                                "JinLowerLipDepressor.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice21",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 21;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 21;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinMouthStretch",
+                              "@url": [
+                                "../resources/JinMouthStretch.x3d",
+                                "JinMouthStretch.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice22",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 22;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 22;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinNasolabialDeepener",
+                              "@url": [
+                                "../resources/JinNasolabialDeepener.x3d",
+                                "JinNasolabialDeepener.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice23",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 23;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 23;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinNoseWrinkler",
+                              "@url": [
+                                "../resources/JinNoseWrinkler.x3d",
+                                "JinNoseWrinkler.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice24",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 24;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 24;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinOuterBrowRaiser",
+                              "@url": [
+                                "../resources/JinOuterBrowRaiser.x3d",
+                                "JinOuterBrowRaiser.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice25",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 25;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 25;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinSlit",
+                              "@url": [
+                                "../resources/JinSlit.x3d",
+                                "JinSlit.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice26",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 26;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 26;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinSquint",
+                              "@url": [
+                                "../resources/JinSquint.x3d",
+                                "JinSquint.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice27",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 27;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 27;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinUpperLidRaiser",
+                              "@url": [
+                                "../resources/JinUpperLidRaiser.x3d",
+                                "JinUpperLidRaiser.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice28",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 28;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 28;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinUpperLipRaiser",
+                              "@url": [
+                                "../resources/JinUpperLipRaiser.x3d",
+                                "JinUpperLipRaiser.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "Group": {
+                        "-children": [
+                          {
+                            "Script": {
+                              "@DEF": "Choice29",
+                              "field": [
+                                {
+                                  "@accessType": "inputOnly",
+                                  "@type": "SFTime",
+                                  "@name": "touchTime"
+                                },
+                                {
+                                  "@accessType": "outputOnly",
+                                  "@type": "SFInt32",
+                                  "@name": "choice"
+                                }
+                              ],
+                              "#sourceCode": [
+                                "",
+                                "      ecmascript:",
+                                "      function set_touchTime(value) {",
+                                "          choice = 29;",
+                                "      }",
+                                "      function touchTime(value) {",
+                                "          choice = 29;",
+                                "      }",
+                                "      "
+                              ]
+                            }
+                          },
+                          {
+                            "Inline": {
+                              "@DEF": "JinWink",
+                              "@url": [
+                                "../resources/JinWink.x3d",
+                                "JinWink.x3d"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    63.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinBlink_Sensor",
+                        "@description": "TSJinBlink"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinBlink"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    60.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinBrowLowerer_Sensor",
+                        "@description": "TSJinBrowLowerer"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinBrowLowerer"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    57.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinCheekPuffer_Sensor",
+                        "@description": "TSJinCheekPuffer"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinCheekPuffer"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    54.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinCheekRaiser_Sensor",
+                        "@description": "TSJinCheekRaiser"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinCheekRaiser"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    51.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinChinRaiser_Sensor",
+                        "@description": "TSJinChinRaiser"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinChinRaiser"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    48.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinDimpler_Sensor",
+                        "@description": "TSJinDimpler"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinDimpler"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    45.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinEyesClosed_Sensor",
+                        "@description": "TSJinEyesClosed"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinEyesClosed"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    42.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinInnerBrowRaiser_Sensor",
+                        "@description": "TSJinInnerBrowRaiser"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinInnerBrowRaiser"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    39.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinJawDrop_Sensor",
+                        "@description": "TSJinJawDrop"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinJawDrop"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    36.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLidDroop_Sensor",
+                        "@description": "TSJinLidDroop"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLidDroop"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    33.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLidTightener_Sensor",
+                        "@description": "TSJinLidTightener"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLidTightener"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    30.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipCornerDepressor_Sensor",
+                        "@description": "TSJinLipCornerDepressor"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipCornerDepressor"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    27.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipCornerPuller_Sensor",
+                        "@description": "TSJinLipCornerPuller"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipCornerPuller"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    24.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipFunneler_Sensor",
+                        "@description": "TSJinLipFunneler"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipFunneler"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    21.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipPressor_Sensor",
+                        "@description": "TSJinLipPressor"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipPressor"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    18.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipPuckerer_Sensor",
+                        "@description": "TSJinLipPuckerer"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipPuckerer"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    15.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipsPart_Sensor",
+                        "@description": "TSJinLipsPart"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipsPart"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    12.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipStretcher_Sensor",
+                        "@description": "TSJinLipStretcher"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipStretcher"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    9.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipSuck_Sensor",
+                        "@description": "TSJinLipSuck"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipSuck"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    6.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLipTightener_Sensor",
+                        "@description": "TSJinLipTightener"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLipTightener"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    3.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinLowerLipDepressor_Sensor",
+                        "@description": "TSJinLowerLipDepressor"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinLowerLipDepressor"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    0.4,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinMouthStretch_Sensor",
+                        "@description": "TSJinMouthStretch"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinMouthStretch"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -2.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinNasolabialDeepener_Sensor",
+                        "@description": "TSJinNasolabialDeepener"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinNasolabialDeepener"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -5.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinNoseWrinkler_Sensor",
+                        "@description": "TSJinNoseWrinkler"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinNoseWrinkler"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -8.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinOuterBrowRaiser_Sensor",
+                        "@description": "TSJinOuterBrowRaiser"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinOuterBrowRaiser"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -11.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinSlit_Sensor",
+                        "@description": "TSJinSlit"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinSlit"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -14.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinSquint_Sensor",
+                        "@description": "TSJinSquint"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinSquint"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -17.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinUpperLidRaiser_Sensor",
+                        "@description": "TSJinUpperLidRaiser"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinUpperLidRaiser"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -20.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinUpperLipRaiser_Sensor",
+                        "@description": "TSJinUpperLipRaiser"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinUpperLipRaiser"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "Transform": {
+                  "@translation": [
+                    48,
+                    -23.6,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "TouchSensor": {
+                        "@DEF": "JinWink_Sensor",
+                        "@description": "TSJinWink"
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "JinWink"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@size": 2.4,
+                                "@spacing": 1.2,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  0,
+                                  0,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  1.383333,
+                                  -0.1,
+                                  -20,
+                                  -1.616667,
+                                  -0.1,
+                                  20,
+                                  -1.616667,
+                                  -0.1
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinBlink_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice0",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice0",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinBrowLowerer_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice1",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice1",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinCheekPuffer_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice2",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice2",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinCheekRaiser_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice3",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice3",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinChinRaiser_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice4",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice4",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinDimpler_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice5",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice5",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinEyesClosed_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice6",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice6",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinInnerBrowRaiser_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice7",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice7",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinJawDrop_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice8",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice8",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLidDroop_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice9",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice9",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLidTightener_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice10",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice10",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipCornerDepressor_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice11",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice11",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipCornerPuller_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice12",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice12",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipFunneler_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice13",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice13",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipPressor_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice14",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice14",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipPuckerer_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice15",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice15",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipsPart_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice16",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice16",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipStretcher_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice17",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice17",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipSuck_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice18",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice18",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLipTightener_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice19",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice19",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinLowerLipDepressor_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice20",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice20",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinMouthStretch_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice21",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice21",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinNasolabialDeepener_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice22",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice22",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinNoseWrinkler_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice23",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice23",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinOuterBrowRaiser_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice24",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice24",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinSlit_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice25",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice25",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinSquint_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice26",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice26",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinUpperLidRaiser_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice27",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice27",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinUpperLipRaiser_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice28",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice28",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "JinWink_Sensor",
+            "@fromField": "touchTime",
+            "@toNode": "Choice29",
+            "@toField": "touchTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Choice29",
+            "@fromField": "choice",
+            "@toNode": "SceneSwitcher",
+            "@toField": "set_whichChoice"
+          }
+        }
+      ]
+    }
+  }
+}

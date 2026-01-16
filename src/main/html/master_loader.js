@@ -242,7 +242,7 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
 
     loadSchema(jsonObj, sourceFileName, async function() {
 
-	    // $('#json').val(jsonString);
+	    $('#json').val(jsonString);
 
 	    let xmlString = "";
 	    let element = null;

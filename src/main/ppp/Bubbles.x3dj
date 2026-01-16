@@ -1,0 +1,894 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Interchange",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "Bubbles.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Bubble animation used by Nancy Diving example."
+        },
+        {
+          "@name": "creator",
+          "@content": "Etsuko Lippi"
+        },
+        {
+          "@name": "created",
+          "@content": "24 January 2001"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:18:45 GMT"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "WorldInfo": {
+            "@title": "Bubbles.x3d"
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "Bubbles",
+            "-children": [
+              {
+                "Group": {
+                  "@DEF": "Bubble",
+                  "-children": [
+                    {
+                      "TimeSensor": {
+                        "@DEF": "BubbleClock",
+                        "@cycleInterval": 6,
+                        "@loop": true
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath1",
+                        "@key": [
+                          0,
+                          0.5,
+                          0.8,
+                          0.9,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.75,
+                          0.75,
+                          0.75,
+                          0.86,
+                          0.86,
+                          0.86,
+                          0.99,
+                          0.998,
+                          0.9876,
+                          1.272,
+                          1.9044,
+                          0.9509
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath2",
+                        "@key": [
+                          0,
+                          0.3,
+                          0.64,
+                          0.85,
+                          1
+                        ],
+                        "@keyValue": [
+                          0.1,
+                          0.1,
+                          0.1,
+                          0.2,
+                          0.4,
+                          0.25,
+                          0.3,
+                          0.5,
+                          0.46,
+                          0.75,
+                          0.5,
+                          0.575,
+                          0.03848348,
+                          1.989,
+                          1.098373
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath3",
+                        "@key": [
+                          0,
+                          0.1,
+                          0.45,
+                          0.7,
+                          1
+                        ],
+                        "@keyValue": [
+                          0.01,
+                          0.01,
+                          0.01,
+                          0.25,
+                          0.35,
+                          0.0045,
+                          0.55,
+                          0.6,
+                          0.0055,
+                          0.66,
+                          0.665,
+                          0.00655,
+                          1.555,
+                          1.09043,
+                          0.005734
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath4",
+                        "@key": [
+                          0,
+                          0.5,
+                          0.6,
+                          0.8,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.5,
+                          0.5,
+                          0.005,
+                          0.6,
+                          0.6,
+                          0.006,
+                          0.75,
+                          0.75,
+                          0.0075,
+                          1.948594,
+                          1.3983,
+                          0.009009349
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath5",
+                        "@key": [
+                          0,
+                          0.25,
+                          0.35,
+                          0.65,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.5,
+                          0.5,
+                          0.005,
+                          0.6,
+                          0.6,
+                          0.006,
+                          0.75,
+                          0.75,
+                          0.0075,
+                          1.84444,
+                          1.22222,
+                          0.1
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath6",
+                        "@key": [
+                          0,
+                          0.15,
+                          0.22235,
+                          0.55565,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.235,
+                          0.3455,
+                          0.0055,
+                          0.356,
+                          0.676,
+                          0.00456,
+                          0.5675,
+                          0.75,
+                          0.0074565,
+                          1.098,
+                          1.0343,
+                          0.14
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath7",
+                        "@key": [
+                          0,
+                          0.2425,
+                          0.4535,
+                          0.6775,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.12345,
+                          0.2225,
+                          0.00335,
+                          0.786,
+                          0.456,
+                          0.00666,
+                          0.74555,
+                          0.7335,
+                          0.00234575,
+                          0.08787,
+                          1.022,
+                          0.12
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath8",
+                        "@key": [
+                          0,
+                          0.1125,
+                          0.5535,
+                          0.97865,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.1235,
+                          0.05,
+                          0.00125,
+                          0.5666,
+                          0.4346,
+                          0.005556,
+                          0.8975,
+                          0.34575,
+                          0.0098775,
+                          1.8787,
+                          1.686,
+                          0.86
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath9",
+                        "@key": [
+                          0,
+                          0.0025,
+                          0.035,
+                          0.65,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.522,
+                          0.5445,
+                          0.0057,
+                          0.6543,
+                          0.226,
+                          0.0055,
+                          0.45575,
+                          0.4375,
+                          0.0067,
+                          1.8787,
+                          2,
+                          0.1545
+                        ]
+                      }
+                    },
+                    {
+                      "PositionInterpolator": {
+                        "@DEF": "BubblePath10",
+                        "@key": [
+                          0,
+                          0.00025,
+                          0.035,
+                          0.6895,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          0,
+                          0.8765,
+                          0.445,
+                          0.00335,
+                          0.3336,
+                          0.4446,
+                          0.005556,
+                          0.765,
+                          0.75,
+                          0.0075,
+                          1,
+                          1,
+                          0.1
+                        ]
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "-children": [
+                          {
+                            "Transform": {
+                              "@DEF": "bubble1",
+                              "@translation": [
+                                0.7591667,
+                                0.7591667,
+                                0.7591667
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.025
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble2",
+                              "@translation": [
+                                0.2661765,
+                                0.4661765,
+                                0.3889706
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.055
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble3",
+                              "@translation": [
+                                0.583,
+                                0.6195,
+                                0.005815
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.065
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble4",
+                              "@translation": [
+                                0.525,
+                                0.525,
+                                0.00525
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.015
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble5",
+                              "@translation": [
+                                0.6875,
+                                0.6875,
+                                0.006875
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.075
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble6",
+                              "@translation": [
+                                0.5480507,
+                                0.743195,
+                                0.007190141
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.005
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble7",
+                              "@translation": [
+                                0.7730885,
+                                0.544577,
+                                0.005282906
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.035
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble8",
+                              "@translation": [
+                                0.5379643,
+                                0.4097449,
+                                0.005277721
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.05
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble9",
+                              "@translation": [
+                                0.4961057,
+                                0.3945122,
+                                0.006456097
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.045
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "Transform": {
+                              "@DEF": "bubble10",
+                              "@translation": [
+                                0.6565733,
+                                0.6732417,
+                                0.007011401
+                              ],
+                              "-children": [
+                                {
+                                  "Shape": {
+                                    "-appearance": {
+                                      "Appearance": {
+                                        "-material": {
+                                          "Material": {
+                                            "@diffuseColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "@transparency": 0.8
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "-geometry": {
+                                      "Sphere": {
+                                        "@radius": 0.035
+                                      }
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Background": {
+            "@skyColor": [
+              0,
+              0,
+              0.6
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath1",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath2",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath3",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath4",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath5",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath6",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath7",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath8",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath9",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubbleClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "BubblePath10",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath1",
+            "@fromField": "value_changed",
+            "@toNode": "bubble1",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath2",
+            "@fromField": "value_changed",
+            "@toNode": "bubble2",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath3",
+            "@fromField": "value_changed",
+            "@toNode": "bubble3",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath4",
+            "@fromField": "value_changed",
+            "@toNode": "bubble4",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath5",
+            "@fromField": "value_changed",
+            "@toNode": "bubble5",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath6",
+            "@fromField": "value_changed",
+            "@toNode": "bubble6",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath7",
+            "@fromField": "value_changed",
+            "@toNode": "bubble7",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath8",
+            "@fromField": "value_changed",
+            "@toNode": "bubble8",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath9",
+            "@fromField": "value_changed",
+            "@toNode": "bubble9",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BubblePath10",
+            "@fromField": "value_changed",
+            "@toNode": "bubble10",
+            "@toField": "set_translation"
+          }
+        }
+      ]
+    }
+  }
+}

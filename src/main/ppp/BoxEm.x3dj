@@ -1,0 +1,300 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "BoxEm.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "3 boxes"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:18:45 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "xtranslation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "_1",
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Sphere": {}
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "xtranslation"
+                        },
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "three",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "ytranslation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "_2",
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  1
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "Cylinder": {}
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [
+                            {
+                              "@name": "xtranslation",
+                              "@value": [
+                                -2,
+                                0,
+                                0
+                              ]
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "ytranslation"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "NavigationInfo": {
+            "@type": [
+              "EXAMINE"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Cubes on Fire",
+            "@position": [
+              0,
+              0,
+              12
+            ]
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@DEF": "threepi",
+            "@name": "three",
+            "fieldValue": [
+              {
+                "@name": "myShape",
+                "-children": [
+                  {
+                    "Shape": {
+                      "@DEF": "box",
+                      "-appearance": {
+                        "Appearance": {
+                          "-material": {
+                            "Material": {
+                              "@diffuseColor": [
+                                0,
+                                1,
+                                0
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "-geometry": {
+                        "Box": {
+                          "@size": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              2,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "@USE": "box"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

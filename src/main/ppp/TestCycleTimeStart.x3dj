@@ -1,0 +1,366 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Interactive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "TestCycleTimeStart.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "Andreas"
+        },
+        {
+          "@name": "creator",
+          "@content": "Joe D. Williams"
+        },
+        {
+          "@name": "description",
+          "@content": "Test design patterns for animation control."
+        },
+        {
+          "@name": "created",
+          "@content": "10 September 2023"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:20:59 GMT"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/x3d/content/examples/ConformanceNist/Sensors/TimeSensor/cycletimeIndex.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/originals/cycleTimeStart.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/TestCycleTimeStart.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "WorldInfo": {
+            "@title": "TestCycleTimeStart.x3d"
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "hello in there"
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "REDTIME1",
+            "@loop": true,
+            "@stopTime": 1757913659.298
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "GREENTIME2",
+            "@cycleInterval": 5,
+            "@startTime": 1757913659.298
+          }
+        },
+        {
+          "TimeSensor": {
+            "@DEF": "BLUETIME3",
+            "@cycleInterval": 10
+          }
+        },
+        {
+          "BooleanFilter": {
+            "@DEF": "GREENFILTER"
+          }
+        },
+        {
+          "TimeTrigger": {
+            "@DEF": "BLUETRIGGER"
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "REDBALL",
+            "@translation": [
+              1.615999,
+              0,
+              0
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "GREENBALL",
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0,
+                            1,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "BLUEBALL",
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0,
+                            0,
+                            1
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {}
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "PositionInterpolator": {
+            "@DEF": "REDINTERP1",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "PositionInterpolator": {
+            "@DEF": "GREENINTERP2",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "PositionInterpolator": {
+            "@DEF": "BLUEINTERP3",
+            "@key": [
+              0,
+              0.25,
+              0.5,
+              0.75,
+              1
+            ],
+            "@keyValue": [
+              0,
+              0,
+              0,
+              0,
+              -2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "REDTIME1",
+            "@fromField": "cycleTime",
+            "@toNode": "REDTIME1",
+            "@toField": "set_stopTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "REDTIME1",
+            "@fromField": "stopTime_changed",
+            "@toNode": "GREENTIME2",
+            "@toField": "set_startTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "GREENTIME2",
+            "@fromField": "isActive",
+            "@toNode": "GREENFILTER",
+            "@toField": "set_boolean"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "GREENFILTER",
+            "@fromField": "inputFalse",
+            "@toNode": "BLUETRIGGER",
+            "@toField": "set_boolean"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BLUETRIGGER",
+            "@fromField": "triggerTime",
+            "@toNode": "BLUETIME3",
+            "@toField": "set_startTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "REDTIME1",
+            "@fromField": "fraction_changed",
+            "@toNode": "REDINTERP1",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "REDINTERP1",
+            "@fromField": "value_changed",
+            "@toNode": "REDBALL",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "GREENTIME2",
+            "@fromField": "fraction_changed",
+            "@toNode": "GREENINTERP2",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "GREENINTERP2",
+            "@fromField": "value_changed",
+            "@toNode": "GREENBALL",
+            "@toField": "set_translation"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BLUETIME3",
+            "@fromField": "fraction_changed",
+            "@toNode": "BLUEINTERP3",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "BLUEINTERP3",
+            "@fromField": "value_changed",
+            "@toNode": "BLUEBALL",
+            "@toField": "set_translation"
+          }
+        }
+      ]
+    }
+  }
+}

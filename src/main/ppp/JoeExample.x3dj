@@ -1,0 +1,142 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "Scripting.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:20:39 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Script": {
+            "@DEF": "OpenVault",
+            "field": [
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFTime",
+                "@name": "openVault"
+              },
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFBool",
+                "@name": "combinationEntered"
+              },
+              {
+                "@accessType": "outputOnly",
+                "@type": "SFTime",
+                "@name": "vaultUnlocked"
+              },
+              {
+                "@accessType": "initializeOnly",
+                "@type": "SFBool",
+                "@name": "unlocked"
+              }
+            ],
+            "#sourceCode": [
+              "",
+              "",
+              "      ecmascript:",
+              "",
+              "      function combinationEntered (value) {",
+              "",
+              "        unlocked = value;",
+              "",
+              "      }",
+              "",
+              "      function openVault(value) {",
+              "",
+              "      if (unlocked) vaultUnlocked = value;",
+              "",
+              "      }",
+              "",
+              "      "
+            ]
+          }
+        },
+        {
+          "Shape": {
+            "-appearance": {
+              "Appearance": {
+                "-material": {
+                  "Material": {
+                    "@diffuseColor": [
+                      1,
+                      0,
+                      0
+                    ]
+                  }
+                }
+              }
+            },
+            "-geometry": {
+              "Sphere": {}
+            }
+          }
+        },
+        {
+          "Sound": {
+            "@minBack": 1000,
+            "@minFront": 1000,
+            "@maxBack": 1000,
+            "@maxFront": 1000,
+            "-source": {
+              "AudioClip": {
+                "@DEF": "Click",
+                "@description": "clicking sound",
+                "@url": [
+                  "../resources/chandubabamusic1.wav"
+                ],
+                "@stopTime": 1
+              }
+            }
+          }
+        },
+        {
+          "TouchSensor": {
+            "@DEF": "TS"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TS",
+            "@fromField": "isOver",
+            "@toNode": "OpenVault",
+            "@toField": "combinationEntered"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TS",
+            "@fromField": "touchTime",
+            "@toNode": "OpenVault",
+            "@toField": "openVault"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "OpenVault",
+            "@fromField": "vaultUnlocked",
+            "@toNode": "Click",
+            "@toField": "set_startTime"
+          }
+        }
+      ]
+    }
+  }
+}

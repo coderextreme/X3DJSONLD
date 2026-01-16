@@ -1,0 +1,272 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Full",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "bumpyx_ite.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "description",
+          "@content": "A flower"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/bumpyx_ite.x3d"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:10 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "WorldInfo": {
+            "@title": "bumpyx_ite.x3d"
+          }
+        },
+        {
+          "NavigationInfo": {
+            "@type": [
+              "ANY",
+              "EXAMINE",
+              "FLY",
+              "LOOKAT"
+            ]
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "Transparent rose",
+            "@position": [
+              0,
+              0,
+              40
+            ]
+          }
+        },
+        {
+          "Background": {
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "@DEF": "texture",
+                          "-frontTexture": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+                              ]
+                            }
+                          },
+                          "-backTexture": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+                              ]
+                            }
+                          },
+                          "-leftTexture": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+                              ]
+                            }
+                          },
+                          "-rightTexture": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+                              ]
+                            }
+                          },
+                          "-topTexture": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+                              ]
+                            }
+                          },
+                          "-bottomTexture": {
+                            "ImageTexture": {
+                              "@url": [
+                                "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "x_iteShader",
+                            "@language": "GLSL",
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite_flowers_chromatic.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"
+                                  ]
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@type": "FRAGMENT",
+                                  "@url": [
+                                    "../shaders/x_ite.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"
+                                  ]
+                                }
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@accessType": "inputOnly",
+                                "@type": "SFVec3f",
+                                "@name": "chromaticDispertion"
+                              },
+                              {
+                                "@accessType": "inputOnly",
+                                "@type": "SFNode",
+                                "@name": "cube"
+                              },
+                              {
+                                "@accessType": "inputOnly",
+                                "@type": "SFFloat",
+                                "@name": "bias"
+                              },
+                              {
+                                "@accessType": "inputOnly",
+                                "@type": "SFFloat",
+                                "@name": "scale"
+                              },
+                              {
+                                "@accessType": "inputOnly",
+                                "@type": "SFFloat",
+                                "@name": "power"
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "a",
+                                "@value": 15
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "b",
+                                "@value": 5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "c",
+                                "@value": 5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "d",
+                                "@value": 5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "tdelta"
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "pdelta"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 40
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

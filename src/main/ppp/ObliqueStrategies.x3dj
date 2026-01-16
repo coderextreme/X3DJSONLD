@@ -1,0 +1,771 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ObliqueStrategies.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Text scripting and animation example using Oblique Strategies card set by Brian Eno."
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman, John Kelly, Ben Cheng"
+        },
+        {
+          "@name": "created",
+          "@content": "3 November 2013"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:20:52 GMT"
+        },
+        {
+          "@name": "reference",
+          "@content": "oblique.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "ObliqueStrategies.txt"
+        },
+        {
+          "@name": "reference",
+          "@content": "ObliqueStrategiesScript.js"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.eno-web.co.uk/obliques.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://gothpunk.com/haiku-intro.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.rtqe.net/ObliqueStrategies/OSintro.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/Oblique_Strategies"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://gist.github.com/alotaiba/1728771"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://cloud.google.com/translate/docs/basic/translating-text"
+        },
+        {
+          "@name": "subject",
+          "@content": "Brian Eno, Oblique Strategies"
+        },
+        {
+          "@name": "Image",
+          "@content": "images/ObliqueStrategiesEntryScreen.png"
+        },
+        {
+          "@name": "Sound",
+          "@content": "http://translate.google.com/translate_tts?tl=en&q=hello%20X3D"
+        },
+        {
+          "@name": "Sound",
+          "@content": "translate_tts_HelloX3D.mp3"
+        },
+        {
+          "@name": "Sound",
+          "@content": "translate_tts_HelloX3D.wav"
+        },
+        {
+          "@name": "Sound",
+          "@content": "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4"
+        },
+        {
+          "@name": "Sound",
+          "@content": "translate_tts_HelloX3D4.mp3"
+        },
+        {
+          "@name": "TODO",
+          "@content": "multiliingual translation parameter"
+        },
+        {
+          "@name": "warning",
+          "@content": "under development, scene Sound/AudioClip triggering (or retrieved file format) not working"
+        },
+        {
+          "@name": "warning",
+          "@content": "TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "WorldInfo": {
+            "@title": "ObliqueStrategies.x3d"
+          }
+        },
+        {
+          "NavigationInfo": {
+            "@type": [
+              "NONE"
+            ]
+          }
+        },
+        {
+          "Background": {
+            "@skyColor": [
+              0.419608,
+              0.427451,
+              1
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              0,
+              1,
+              0
+            ],
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@DEF": "RandomTextClickedSensor",
+                  "@description": "Select to see a new strategy"
+                }
+              },
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "Oblique Strategies",
+                        "",
+                        "(Over One Hundred Worthwhile Dilemmas)",
+                        "",
+                        "by Brian Eno and Peter Schmidt"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@DEF": "MessageFont",
+                          "@family": [
+                            "SANS"
+                          ],
+                          "@style": "BOLD",
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    10,
+                    3,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "HeadlineClickSurface",
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@ambientIntensity": 0.245763,
+                                "@diffuseColor": [
+                                  0.34773,
+                                  0.090909,
+                                  0.005289
+                                ],
+                                "@specularColor": [
+                                  0.336735,
+                                  0.051091,
+                                  0.051091
+                                ],
+                                "@shininess": 0.07,
+                                "@transparency": 0.8
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@solid": false,
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "TextScript",
+            "@url": [
+              "ObliqueStrategiesScript.js",
+              "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"
+            ],
+            "field": [
+              {
+                "@accessType": "initializeOnly",
+                "@type": "SFInt32",
+                "@name": "index",
+                "@appinfo": "index for active strategy card, -1 means no selection"
+              },
+              {
+                "@accessType": "outputOnly",
+                "@type": "MFString",
+                "@name": "string_changed",
+                "@appinfo": "latest strategy card value"
+              },
+              {
+                "@accessType": "outputOnly",
+                "@type": "MFString",
+                "@name": "textToSpeechUrl",
+                "@appinfo": "\"url to invoke Google Translate\""
+              },
+              {
+                "@accessType": "outputOnly",
+                "@type": "SFTime",
+                "@name": "newCardTime",
+                "@appinfo": "activate Sound node"
+              },
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFBool",
+                "@name": "selectPreviousCard"
+              },
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFBool",
+                "@name": "selectNextCard"
+              },
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFBool",
+                "@name": "selectRandomCard"
+              },
+              {
+                "@accessType": "initializeOnly",
+                "@type": "SFBool",
+                "@name": "traceEnabled",
+                "@value": true,
+                "@appinfo": "controls console tracing"
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "CardTransform",
+            "@translation": [
+              0,
+              -1.5,
+              0
+            ],
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            1
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@DEF": "CardText",
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@family": [
+                            "SANS"
+                          ],
+                          "@style": "BOLD",
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "Sound": {
+                  "@DEF": "CardSoundSpatialization",
+                  "@minBack": 20,
+                  "@minFront": 20,
+                  "@maxBack": 100,
+                  "@maxFront": 100,
+                  "-source": {
+                    "AudioClip": {
+                      "@DEF": "TextToSpeechAudioClip",
+                      "@description": "sends strategy text google translate",
+                      "@url": [
+                        "http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium",
+                        "translate_tts_mp3FileFormatNotSupported.wav",
+                        "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              -3.2,
+              2.5,
+              0
+            ],
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@DEF": "PreviousTextClickedSensor",
+                  "@description": "Select to see previous strategy"
+                }
+              },
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "@DEF": "InterfaceAppearance",
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            0,
+                            0.6
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "previous"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    2,
+                    0.6,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "TransparentClickSurface",
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@transparency": 1
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@solid": false,
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              3,
+                              -1
+                            ],
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  -1,
+                                  0,
+                                  -1,
+                                  1,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              3.5,
+              2.5,
+              0
+            ],
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@DEF": "NextTextClickedSensor",
+                  "@description": "Select to see next strategy"
+                }
+              },
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "InterfaceAppearance"
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "next"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    1.2,
+                    0.6,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@USE": "TransparentClickSurface"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              -3.3,
+              -0.5,
+              0
+            ],
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "-children": [
+              {
+                "TouchSensor": {
+                  "@USE": "RandomTextClickedSensor"
+                }
+              },
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "@USE": "InterfaceAppearance"
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "random"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@USE": "MessageFont"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "Transform": {
+                  "@scale": [
+                    1.8,
+                    0.6,
+                    1
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@USE": "TransparentClickSurface"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Transform": {
+            "@translation": [
+              3.3,
+              -0.5,
+              0
+            ],
+            "@scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "-children": [
+              {
+                "Anchor": {
+                  "@DEF": "TextToSpeechAnchor",
+                  "@description": "text to speech in browser",
+                  "@url": [
+                    "http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"
+                  ],
+                  "@parameter": [
+                    "target=_blank"
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "-appearance": {
+                          "Appearance": {
+                            "@USE": "InterfaceAppearance"
+                          }
+                        },
+                        "-geometry": {
+                          "Text": {
+                            "@string": [
+                              "speech"
+                            ],
+                            "-fontStyle": {
+                              "FontStyle": {
+                                "@USE": "MessageFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "Transform": {
+                        "@scale": [
+                          1.8,
+                          0.6,
+                          1
+                        ],
+                        "-children": [
+                          {
+                            "Shape": {
+                              "@USE": "TransparentClickSurface"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TextScript",
+            "@fromField": "string_changed",
+            "@toNode": "CardText",
+            "@toField": "set_string"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TextScript",
+            "@fromField": "textToSpeechUrl",
+            "@toNode": "TextToSpeechAudioClip",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TextScript",
+            "@fromField": "newCardTime",
+            "@toNode": "TextToSpeechAudioClip",
+            "@toField": "set_startTime"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "PreviousTextClickedSensor",
+            "@fromField": "isActive",
+            "@toNode": "TextScript",
+            "@toField": "selectPreviousCard"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "NextTextClickedSensor",
+            "@fromField": "isActive",
+            "@toNode": "TextScript",
+            "@toField": "selectNextCard"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "RandomTextClickedSensor",
+            "@fromField": "isActive",
+            "@toNode": "TextScript",
+            "@toField": "selectRandomCard"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "TextScript",
+            "@fromField": "textToSpeechUrl",
+            "@toNode": "TextToSpeechAnchor",
+            "@toField": "set_url"
+          }
+        }
+      ]
+    }
+  }
+}

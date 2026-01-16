@@ -1,0 +1,153 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "asmallbox.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "a box"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:09 GMT"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "anyShape",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "_1",
+                        "-geometry": {
+                          "Sphere": {}
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "myShape"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "one",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "myShape",
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "_2",
+                        "-geometry": {
+                          "Cylinder": {}
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "anyShape",
+                          "fieldValue": [],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "myShape",
+                                "@protoField": "myShape"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoInstance": {
+            "@name": "one",
+            "fieldValue": [
+              {
+                "@name": "myShape",
+                "-children": [
+                  {
+                    "Shape": {
+                      "@DEF": "_3",
+                      "-geometry": {
+                        "Box": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

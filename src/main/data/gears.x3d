@@ -19,7 +19,7 @@
   </head>
   <Scene>
     <NavigationInfo
-        type='"EXAMINE", "FLY", "WALK", "ANY"'/>
+        type='"EXAMINE" "FLY" "WALK" "ANY"'/>
     <Group>
       <Shape
           bboxSize='77.23637 100.5022 6'

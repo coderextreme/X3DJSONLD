@@ -1,0 +1,185 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "IFS.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "An attempt at a standard LOA-4 skeleton"
+        },
+        {
+          "@name": "generator",
+          "@content": "h2.pl"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:20:11 GMT"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "9 November 2020"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ],
+      "component": [
+        {
+          "@name": "HAnim",
+          "@level": 1
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Group": {
+            "-children": [
+              {
+                "Transform": {
+                  "@translation": [
+                    0,
+                    2.1,
+                    0
+                  ],
+                  "-children": [
+                    {
+                      "Shape": {
+                        "@DEF": "HAnimSiteShape",
+                        "-appearance": {
+                          "Appearance": {
+                            "-material": {
+                              "Material": {
+                                "@diffuseColor": [
+                                  1,
+                                  1,
+                                  0
+                                ],
+                                "@transparency": 0.3
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": {
+                          "IndexedFaceSet": {
+                            "@DEF": "DiamondIFS",
+                            "@solid": false,
+                            "@creaseAngle": 0.5,
+                            "@coordIndex": [
+                              0,
+                              1,
+                              2,
+                              -1,
+                              0,
+                              2,
+                              3,
+                              -1,
+                              0,
+                              3,
+                              4,
+                              -1,
+                              0,
+                              4,
+                              1,
+                              -1,
+                              5,
+                              2,
+                              1,
+                              -1,
+                              5,
+                              3,
+                              2,
+                              -1,
+                              5,
+                              4,
+                              3,
+                              -1,
+                              5,
+                              1,
+                              4,
+                              -1
+                            ],
+                            "-color": {
+                              "ColorRGBA": {
+                                "@DEF": "HAnimSiteColorRGBA",
+                                "@color": [
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  1,
+                                  0,
+                                  0.1
+                                ]
+                              }
+                            },
+                            "-coord": {
+                              "Coordinate": {
+                                "@point": [
+                                  0,
+                                  0.01,
+                                  0,
+                                  -0.01,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  0.01,
+                                  0.01,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  -0.01,
+                                  0,
+                                  -0.01,
+                                  0
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "NavigationInfo": {
+            "@speed": 1.5
+          }
+        },
+        {
+          "Viewpoint": {
+            "@description": "default"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,804 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "HAnimPrototypes.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Example implementation of X3D Humanoid Animation (HAnim) nodes using X3D prototypes."
+        },
+        {
+          "@name": "warning",
+          "@content": "These are developmental examples that can assist X3D player implementations and support interoperability. They are not intended for author use in regular X3D scenes."
+        },
+        {
+          "@name": "warning",
+          "@content": "Developer note: names for these HAnim Prototypes need to be corrected if used internally in an X3D player implementation (e.g. Joint to HAnimJoint)."
+        },
+        {
+          "@name": "warning",
+          "@content": "Need support for skin"
+        },
+        {
+          "@name": "creator",
+          "@content": "Ozan APAYDIN, Don Brutzman"
+        },
+        {
+          "@name": "translator",
+          "@content": "Ozan APAYDIN, Don Brutzman"
+        },
+        {
+          "@name": "created",
+          "@content": "15 November 2001"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:20:09 GMT"
+        },
+        {
+          "@name": "TODO",
+          "@content": "upgrade to match support requirements for HAnim 2.2"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/files/specifications/19774/V1.0/HAnim/HAnim.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/hanim.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Specifications/HAnim2001"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.HAnim.org"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Models"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Specifications"
+        },
+        {
+          "@name": "reference",
+          "@content": "InterchangableActorsViaDynamicRoutingPrototypes.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "Humanoid1_1",
+            "@appinfo": "The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.",
+            "@documentation": "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFString",
+                  "@name": "name"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFString",
+                  "@name": "version",
+                  "@value": "1.1",
+                  "@appinfo": "legal values: 1.1 or 2.0"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFString",
+                  "@name": "humanoidVersion",
+                  "@appinfo": "Version of the humanoid being modeled. Hint: HAnim version 2.0"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFString",
+                  "@name": "info"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "translation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFRotation",
+                  "@name": "rotation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "center"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "scale",
+                  "@value": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFRotation",
+                  "@name": "scaleOrientation"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxCenter"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxSize",
+                  "@value": [
+                    -1,
+                    -1,
+                    -1
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "humanoidBody",
+                  "@appinfo": "HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton.",
+                  "@documentation": "http://HAnim.org/Specifications/HAnim1.1/#humanoid"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "skeleton",
+                  "@appinfo": "HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody",
+                  "@documentation": "http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "joints",
+                  "@appinfo": "Container field for Joint nodes"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "segments",
+                  "@appinfo": "Container field for Segment nodes"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "sites",
+                  "@appinfo": "Container field for Site nodes"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "viewpoints",
+                  "@appinfo": "Container field for Viewpoint nodes"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "skinCoord",
+                  "@appinfo": "Hint: HAnim version 2.0"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "skinNormal",
+                  "@appinfo": "Hint: HAnim version 2.0"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "@DEF": "HumanoidTransform",
+                    "-children": [
+                      {
+                        "Group": {
+                          "@DEF": "HumanoidGroup1",
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "children",
+                                "@protoField": "humanoidBody"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "Group": {
+                          "@DEF": "HumanoidGroup2",
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "children",
+                                "@protoField": "skeleton"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "Group": {
+                          "@DEF": "HumanoidGroup3",
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "children",
+                                "@protoField": "viewpoints"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "translation"
+                        },
+                        {
+                          "@nodeField": "rotation",
+                          "@protoField": "rotation"
+                        },
+                        {
+                          "@nodeField": "scale",
+                          "@protoField": "scale"
+                        },
+                        {
+                          "@nodeField": "scaleOrientation",
+                          "@protoField": "scaleOrientation"
+                        },
+                        {
+                          "@nodeField": "center",
+                          "@protoField": "center"
+                        },
+                        {
+                          "@nodeField": "bboxSize",
+                          "@protoField": "bboxSize"
+                        },
+                        {
+                          "@nodeField": "bboxCenter",
+                          "@protoField": "bboxCenter"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "Joint",
+            "@appinfo": "The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.",
+            "@documentation": "http://HAnim.org/Specifications/HAnim2001/part1/Joint.html",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFString",
+                  "@name": "name"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFFloat",
+                  "@name": "ulimit"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFFloat",
+                  "@name": "llimit"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFRotation",
+                  "@name": "limitOrientation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFInt32",
+                  "@name": "skinCoordIndex"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFFloat",
+                  "@name": "skinCoordWeight"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFFloat",
+                  "@name": "stiffness",
+                  "@value": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "translation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFRotation",
+                  "@name": "rotation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "scale",
+                  "@value": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFRotation",
+                  "@name": "scaleOrientation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "center"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxCenter"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxSize",
+                  "@value": [
+                    -1,
+                    -1,
+                    -1
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "children"
+                },
+                {
+                  "@accessType": "inputOnly",
+                  "@type": "MFNode",
+                  "@name": "addChildren"
+                },
+                {
+                  "@accessType": "inputOnly",
+                  "@type": "MFNode",
+                  "@name": "removeChildren"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "@DEF": "JointTransform",
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "translation"
+                        },
+                        {
+                          "@nodeField": "rotation",
+                          "@protoField": "rotation"
+                        },
+                        {
+                          "@nodeField": "scale",
+                          "@protoField": "scale"
+                        },
+                        {
+                          "@nodeField": "scaleOrientation",
+                          "@protoField": "scaleOrientation"
+                        },
+                        {
+                          "@nodeField": "center",
+                          "@protoField": "center"
+                        },
+                        {
+                          "@nodeField": "bboxSize",
+                          "@protoField": "bboxSize"
+                        },
+                        {
+                          "@nodeField": "bboxCenter",
+                          "@protoField": "bboxCenter"
+                        },
+                        {
+                          "@nodeField": "addChildren",
+                          "@protoField": "addChildren"
+                        },
+                        {
+                          "@nodeField": "removeChildren",
+                          "@protoField": "removeChildren"
+                        },
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "children"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "Segment",
+            "@appinfo": "The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node.",
+            "@documentation": "http://HAnim.org/Specifications/HAnim2001/part1/Segment.html",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFString",
+                  "@name": "name"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFFloat",
+                  "@name": "mass"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "centerOfMass"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFFloat",
+                  "@name": "momentsOfInertia",
+                  "@value": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxCenter"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxSize",
+                  "@value": [
+                    -1,
+                    -1,
+                    -1
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "children"
+                },
+                {
+                  "@accessType": "inputOnly",
+                  "@type": "MFNode",
+                  "@name": "addChildren"
+                },
+                {
+                  "@accessType": "inputOnly",
+                  "@type": "MFNode",
+                  "@name": "removeChildren"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFNode",
+                  "@name": "coord",
+                  "@appinfo": "contains Coordinate nodes"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "displacers",
+                  "@appinfo": "contains Displacer nodes"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Group": {
+                    "@DEF": "SegmentGroup",
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "bboxSize",
+                          "@protoField": "bboxSize"
+                        },
+                        {
+                          "@nodeField": "bboxCenter",
+                          "@protoField": "bboxCenter"
+                        },
+                        {
+                          "@nodeField": "addChildren",
+                          "@protoField": "addChildren"
+                        },
+                        {
+                          "@nodeField": "removeChildren",
+                          "@protoField": "removeChildren"
+                        },
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "children"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "Site",
+            "@appinfo": "The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).",
+            "@documentation": "http://HAnim.org/Specifications/HAnim2001/part1/Site.html",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFString",
+                  "@name": "name"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "translation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFRotation",
+                  "@name": "rotation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "scale",
+                  "@value": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFRotation",
+                  "@name": "scaleOrientation"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "center"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxCenter"
+                },
+                {
+                  "@accessType": "initializeOnly",
+                  "@type": "SFVec3f",
+                  "@name": "bboxSize",
+                  "@value": [
+                    -1,
+                    -1,
+                    -1
+                  ]
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFNode",
+                  "@name": "children"
+                },
+                {
+                  "@accessType": "inputOnly",
+                  "@type": "MFNode",
+                  "@name": "addChildren"
+                },
+                {
+                  "@accessType": "inputOnly",
+                  "@type": "MFNode",
+                  "@name": "removeChildren"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Transform": {
+                    "@DEF": "SiteTransform",
+                    "IS": {
+                      "connect": [
+                        {
+                          "@nodeField": "translation",
+                          "@protoField": "translation"
+                        },
+                        {
+                          "@nodeField": "rotation",
+                          "@protoField": "rotation"
+                        },
+                        {
+                          "@nodeField": "scale",
+                          "@protoField": "scale"
+                        },
+                        {
+                          "@nodeField": "scaleOrientation",
+                          "@protoField": "scaleOrientation"
+                        },
+                        {
+                          "@nodeField": "center",
+                          "@protoField": "center"
+                        },
+                        {
+                          "@nodeField": "bboxSize",
+                          "@protoField": "bboxSize"
+                        },
+                        {
+                          "@nodeField": "bboxCenter",
+                          "@protoField": "bboxCenter"
+                        },
+                        {
+                          "@nodeField": "addChildren",
+                          "@protoField": "addChildren"
+                        },
+                        {
+                          "@nodeField": "removeChildren",
+                          "@protoField": "removeChildren"
+                        },
+                        {
+                          "@nodeField": "children",
+                          "@protoField": "children"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "Displacer",
+            "@appinfo": "A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.",
+            "@documentation": "http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFString",
+                  "@name": "name"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFInt32",
+                  "@name": "coordIndex"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "MFVec3f",
+                  "@name": "displacements"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "WorldInfo": {
+                    "@info": [
+                      "null body node"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Shape": {
+            "-appearance": {
+              "Appearance": {
+                "-material": {
+                  "Material": {
+                    "@ambientIntensity": 0.25,
+                    "@diffuseColor": [
+                      0.795918,
+                      0.505869,
+                      0.093315
+                    ],
+                    "@specularColor": [
+                      0.923469,
+                      0.428866,
+                      0.006369
+                    ],
+                    "@shininess": 0.39
+                  }
+                }
+              }
+            },
+            "-geometry": {
+              "Text": {
+                "@string": [
+                  "Humanoid Animation",
+                  "(HAnim) prototype",
+                  "implementations"
+                ],
+                "-fontStyle": {
+                  "FontStyle": {
+                    "@justify": [
+                      "MIDDLE",
+                      "MIDDLE"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
