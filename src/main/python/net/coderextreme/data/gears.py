@@ -79,7 +79,7 @@ head1.children.append(meta15)
 X3D0.head = head1
 Scene16 = x3d.Scene()
 NavigationInfo17 = x3d.NavigationInfo()
-NavigationInfo17.type = [", ","EXAMINE, ","FLY, ","WALKANY"]
+NavigationInfo17.type = ["EXAMINE","FLY","WALK","ANY"]
 
 Scene16.children.append(NavigationInfo17)
 Group18 = x3d.Group()

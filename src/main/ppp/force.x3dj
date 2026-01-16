@@ -1,0 +1,676 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "creator",
+          "@content": "John W Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "December 13 2015"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:14 GMT"
+        },
+        {
+          "@name": "title",
+          "@content": "force.x3d"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "beginnings of a force directed graph in 3D"
+        },
+        {
+          "@name": "generator",
+          "@content": "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "node",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "position"
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Group": {
+                    "-children": [
+                      {
+                        "Transform": {
+                          "@DEF": "transform",
+                          "-children": [
+                            {
+                              "Shape": {
+                                "-appearance": {
+                                  "Appearance": {
+                                    "-material": {
+                                      "Material": {
+                                        "@diffuseColor": [
+                                          1,
+                                          0,
+                                          0
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                "-geometry": {
+                                  "Sphere": {}
+                                }
+                              }
+                            },
+                            {
+                              "Transform": {
+                                "@translation": [
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "-children": [
+                                  {
+                                    "Shape": {
+                                      "-appearance": {
+                                        "Appearance": {
+                                          "-material": {
+                                            "Material": {
+                                              "@diffuseColor": [
+                                                0,
+                                                0,
+                                                1
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "-geometry": {
+                                        "Text": {
+                                          "@string": [
+                                            "Node"
+                                          ],
+                                          "-fontStyle": {
+                                            "FontStyle": {
+                                              "@size": 5,
+                                              "@justify": [
+                                                "MIDDLE",
+                                                "MIDDLE"
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "translation",
+                                "@protoField": "position"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "PositionInterpolator": {
+                          "@DEF": "NodePosition",
+                          "@key": [
+                            0,
+                            1
+                          ],
+                          "@keyValue": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            5,
+                            0
+                          ]
+                        }
+                      },
+                      {
+                        "Script": {
+                          "@DEF": "MoveBall",
+                          "field": [
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFVec3f",
+                              "@name": "translation",
+                              "@value": [
+                                50,
+                                50,
+                                0
+                              ]
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFVec3f",
+                              "@name": "old"
+                            },
+                            {
+                              "@accessType": "inputOnly",
+                              "@type": "SFTime",
+                              "@name": "set_cycle"
+                            },
+                            {
+                              "@accessType": "outputOnly",
+                              "@type": "MFVec3f",
+                              "@name": "keyValue"
+                            }
+                          ],
+                          "#sourceCode": [
+                            "",
+                            "ecmascript:",
+                            "\t\t\tfunction set_cycle(value) {",
+                            "\t\t\t\told = translation;",
+                            "\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);",
+                            "\t\t\t\tkeyValue = new MFVec3f(old, translation);",
+                            "\t\t\t}",
+                            ""
+                          ]
+                        }
+                      },
+                      {
+                        "TimeSensor": {
+                          "@DEF": "nodeClock",
+                          "@cycleInterval": 3,
+                          "@loop": true
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "nodeClock",
+                    "@fromField": "cycleTime",
+                    "@toNode": "MoveBall",
+                    "@toField": "set_cycle"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "nodeClock",
+                    "@fromField": "fraction_changed",
+                    "@toNode": "NodePosition",
+                    "@toField": "set_fraction"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "MoveBall",
+                    "@fromField": "keyValue",
+                    "@toNode": "NodePosition",
+                    "@toField": "set_keyValue"
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "NodePosition",
+                    "@fromField": "value_changed",
+                    "@toNode": "transform",
+                    "@toField": "set_translation"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "cyl",
+            "ProtoInterface": {
+              "field": [
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "set_positionA"
+                },
+                {
+                  "@accessType": "inputOutput",
+                  "@type": "SFVec3f",
+                  "@name": "set_positionB",
+                  "@value": [
+                    50,
+                    50,
+                    50
+                  ]
+                }
+              ]
+            },
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Group": {
+                    "-children": [
+                      {
+                        "Shape": {
+                          "-appearance": {
+                            "Appearance": {
+                              "-material": {
+                                "Material": {
+                                  "@diffuseColor": [
+                                    0,
+                                    1,
+                                    0
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "-geometry": {
+                            "Extrusion": {
+                              "@DEF": "extrusion",
+                              "@creaseAngle": 0.785,
+                              "@crossSection": [
+                                1,
+                                0,
+                                0.92,
+                                -0.38,
+                                0.71,
+                                -0.71,
+                                0.38,
+                                -0.92,
+                                0,
+                                -1,
+                                -0.38,
+                                -0.92,
+                                -0.71,
+                                -0.71,
+                                -0.92,
+                                -0.38,
+                                -1,
+                                0,
+                                -0.92,
+                                0.38,
+                                -0.71,
+                                0.71,
+                                -0.38,
+                                0.92,
+                                0,
+                                1,
+                                0.38,
+                                0.92,
+                                0.71,
+                                0.71,
+                                0.92,
+                                0.38,
+                                1,
+                                0
+                              ],
+                              "@spine": [
+                                0,
+                                -50,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                50,
+                                0
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "Script": {
+                          "@DEF": "MoveCylinder",
+                          "field": [
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "MFVec3f",
+                              "@name": "spine",
+                              "@value": [
+                                0,
+                                -50,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                50,
+                                0
+                              ]
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFVec3f",
+                              "@name": "endA"
+                            },
+                            {
+                              "@accessType": "inputOutput",
+                              "@type": "SFVec3f",
+                              "@name": "endB"
+                            }
+                          ],
+                          "#sourceCode": [
+                            "",
+                            "ecmascript:",
+                            "\t\t\tfunction set_endA(value) {",
+                            "\t\t\t\tspine = new MFVec3f(value, spine[1]);",
+                            "\t\t\t}",
+                            "",
+                            "\t\t\tfunction set_endB(value) {",
+                            "\t\t\t\tspine = new MFVec3f(spine[0], value);",
+                            "\t\t\t}",
+                            ""
+                          ],
+                          "IS": {
+                            "connect": [
+                              {
+                                "@nodeField": "endA",
+                                "@protoField": "set_positionA"
+                              },
+                              {
+                                "@nodeField": "endB",
+                                "@protoField": "set_positionB"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "ROUTE": {
+                    "@fromNode": "MoveCylinder",
+                    "@fromField": "spine_changed",
+                    "@toNode": "extrusion",
+                    "@toField": "set_spine"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "Transform": {
+            "@DEF": "HoldsContent",
+            "@scale": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "-children": [
+              {
+                "PlaneSensor": {
+                  "@DEF": "clickGenerator",
+                  "@description": "click on background to add nodes, click on nodes to add links",
+                  "@minPosition": [
+                    -50,
+                    -50
+                  ],
+                  "@maxPosition": [
+                    50,
+                    50
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "nodeA",
+                  "@name": "node",
+                  "fieldValue": [
+                    {
+                      "@name": "position",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "nodeB",
+                  "@name": "node",
+                  "fieldValue": [
+                    {
+                      "@name": "position",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "nodeC",
+                  "@name": "node",
+                  "fieldValue": [
+                    {
+                      "@name": "position",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "nodeD",
+                  "@name": "node",
+                  "fieldValue": [
+                    {
+                      "@name": "position",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "linkA",
+                  "@name": "cyl",
+                  "fieldValue": [
+                    {
+                      "@name": "set_positionA",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_positionB",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "linkB",
+                  "@name": "cyl",
+                  "fieldValue": [
+                    {
+                      "@name": "set_positionA",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_positionB",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@DEF": "linkC",
+                  "@name": "cyl",
+                  "fieldValue": [
+                    {
+                      "@name": "set_positionA",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    },
+                    {
+                      "@name": "set_positionB",
+                      "@value": [
+                        0,
+                        4.698333,
+                        0
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Script": {
+            "@DEF": "clickHandler",
+            "field": [
+              {
+                "@accessType": "inputOutput",
+                "@type": "SFInt32",
+                "@name": "counter"
+              },
+              {
+                "@accessType": "inputOnly",
+                "@type": "SFBool",
+                "@name": "add_node"
+              }
+            ],
+            "#sourceCode": [
+              "",
+              "ecmascript:",
+              "\tfunction add_node(value) {",
+              "                // Browser.print('hey ', counter);",
+              "                counter = counter++;",
+              "\t\tBrowser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\"),",
+              "\t\t\t{ \"ProtoInstance\":",
+              "\t\t\t\t{ \"@name\":\"node\",",
+              "\t\t\t\t  \"@DEF\":\"node'+counter+'\",",
+              "\t\t\t\t  \"fieldValue\": [",
+              "\t\t\t\t\t{",
+              "\t\t\t\t\t\t \"@name\":\"position\",",
+              "\t\t\t\t\t\t \"@value\":[0.0,0.0,0.0]",
+              "\t\t\t\t\t}",
+              "\t\t\t\t  ]",
+              "\t\t\t\t}",
+              "\t\t\t});",
+              "                ",
+              "        }",
+              "\t"
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "clickGenerator",
+            "@fromField": "isActive",
+            "@toNode": "clickHandler",
+            "@toField": "add_node"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodeA",
+            "@fromField": "position_changed",
+            "@toNode": "linkA",
+            "@toField": "set_set_positionA"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodeB",
+            "@fromField": "position_changed",
+            "@toNode": "linkA",
+            "@toField": "set_set_positionB"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodeA",
+            "@fromField": "position_changed",
+            "@toNode": "linkB",
+            "@toField": "set_set_positionA"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodeC",
+            "@fromField": "position_changed",
+            "@toNode": "linkB",
+            "@toField": "set_set_positionB"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodeA",
+            "@fromField": "position_changed",
+            "@toNode": "linkC",
+            "@toField": "set_set_positionA"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "nodeD",
+            "@fromField": "position_changed",
+            "@toNode": "linkC",
+            "@toField": "set_set_positionB"
+          }
+        }
+      ]
+    }
+  }
+}

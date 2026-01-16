@@ -108,7 +108,7 @@
     ))
     (.setScene (doto (Scene. )
         (.addChildren (doto (NavigationInfo. )
-            (.setType (into-array [", " "EXAMINE, " "FLY, " "WALKANY"]))
+            (.setType (into-array ["EXAMINE" "FLY" "WALK" "ANY"]))
         ))
         (.addChildren (doto (Group. )
             (.addChildren (doto (Shape. )

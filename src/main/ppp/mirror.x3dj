@@ -1,0 +1,621 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "mirror.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "generator",
+          "@content": "manual"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "sphere with alternating backgrounds"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:31 GMT"
+        }
+      ],
+      "component": [
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        },
+        {
+          "@name": "Grouping",
+          "@level": 3
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "Viewpoint": {
+            "@description": "Switch background and images texture",
+            "@position": [
+              0,
+              5,
+              100
+            ]
+          }
+        },
+        {
+          "TextureBackground": {
+            "-frontTexture": {
+              "ImageTexture": {
+                "@DEF": "frontBackgroundTexture",
+                "@url": [
+                  "../resources/images/all_probes/beach_cross/beach_front.png",
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
+                ]
+              }
+            },
+            "-backTexture": {
+              "ImageTexture": {
+                "@DEF": "backBackgroundTexture",
+                "@url": [
+                  "../resources/images/all_probes/beach_cross/beach_back.png",
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
+                ]
+              }
+            },
+            "-leftTexture": {
+              "ImageTexture": {
+                "@DEF": "leftBackgroundTexture",
+                "@url": [
+                  "../resources/images/all_probes/beach_cross/beach_left.png",
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
+                ]
+              }
+            },
+            "-rightTexture": {
+              "ImageTexture": {
+                "@DEF": "rightBackgroundTexture",
+                "@url": [
+                  "../resources/images/all_probes/beach_cross/beach_right.png",
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
+                ]
+              }
+            },
+            "-topTexture": {
+              "ImageTexture": {
+                "@DEF": "topBackgroundTexture",
+                "@url": [
+                  "../resources/images/all_probes/beach_cross/beach_top.png",
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
+                ]
+              }
+            },
+            "-bottomTexture": {
+              "ImageTexture": {
+                "@DEF": "bottomBackgroundTexture",
+                "@url": [
+                  "../resources/images/all_probes/beach_cross/beach_bottom.png",
+                  "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "Transform": {
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.7,
+                            0.7,
+                            0.7
+                          ],
+                          "@specularColor": [
+                            0.5,
+                            0.5,
+                            0.5
+                          ]
+                        }
+                      },
+                      "-texture": {
+                        "ComposedCubeMapTexture": {
+                          "-frontTexture": {
+                            "ImageTexture": {
+                              "@DEF": "frontShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_front.png",
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"
+                              ]
+                            }
+                          },
+                          "-backTexture": {
+                            "ImageTexture": {
+                              "@DEF": "backShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_back.png",
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"
+                              ]
+                            }
+                          },
+                          "-leftTexture": {
+                            "ImageTexture": {
+                              "@DEF": "leftShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_left.png",
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"
+                              ]
+                            }
+                          },
+                          "-rightTexture": {
+                            "ImageTexture": {
+                              "@DEF": "rightShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_right.png",
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"
+                              ]
+                            }
+                          },
+                          "-topTexture": {
+                            "ImageTexture": {
+                              "@DEF": "topShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_top.png",
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"
+                              ]
+                            }
+                          },
+                          "-bottomTexture": {
+                            "ImageTexture": {
+                              "@DEF": "bottomShader",
+                              "@url": [
+                                "../resources/images/all_probes/beach_cross/beach_bottom.png",
+                                "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "-shaders": [
+                        {
+                          "ComposedShader": {
+                            "@DEF": "x3dom",
+                            "@language": "GLSL",
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x3dom.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"
+                                  ]
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@type": "FRAGMENT",
+                                  "@url": [
+                                    "../shaders/mix.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"
+                                  ]
+                                }
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@name": "chromaticDispertion",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFInt32",
+                                "@name": "cube"
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "bias",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "scale",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "power",
+                                "@value": 2
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "ComposedShader": {
+                            "@DEF": "x_ite",
+                            "@language": "GLSL",
+                            "-parts": [
+                              {
+                                "ShaderPart": {
+                                  "@url": [
+                                    "../shaders/x_ite.vs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
+                                  ]
+                                }
+                              },
+                              {
+                                "ShaderPart": {
+                                  "@type": "FRAGMENT",
+                                  "@url": [
+                                    "../shaders/x_itemix.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"
+                                  ]
+                                }
+                              }
+                            ],
+                            "field": [
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFVec3f",
+                                "@name": "chromaticDispertion",
+                                "@value": [
+                                  0.98,
+                                  1,
+                                  1.033
+                                ]
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFInt32",
+                                "@name": "cube"
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "bias",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "scale",
+                                "@value": 0.5
+                              },
+                              {
+                                "@accessType": "inputOutput",
+                                "@type": "SFFloat",
+                                "@name": "power",
+                                "@value": 2
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "-geometry": {
+                    "Sphere": {
+                      "@radius": 30
+                    }
+                  }
+                }
+              },
+              {
+                "Script": {
+                  "@DEF": "UrlSelector",
+                  "@directOutput": true,
+                  "field": [
+                    {
+                      "@accessType": "initializeOnly",
+                      "@type": "MFString",
+                      "@name": "frontUrls",
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_front.png",
+                        "../resources/images/all_probes/building_cross/building_front.png",
+                        "../resources/images/all_probes/campus_cross/campus_front.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_front.png",
+                        "../resources/images/all_probes/grace_cross/grace_front.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_front.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_front.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_front.png"
+                      ]
+                    },
+                    {
+                      "@accessType": "initializeOnly",
+                      "@type": "MFString",
+                      "@name": "backUrls",
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_back.png",
+                        "../resources/images/all_probes/building_cross/building_back.png",
+                        "../resources/images/all_probes/campus_cross/campus_back.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_back.png",
+                        "../resources/images/all_probes/grace_cross/grace_back.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_back.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_back.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_back.png"
+                      ]
+                    },
+                    {
+                      "@accessType": "initializeOnly",
+                      "@type": "MFString",
+                      "@name": "leftUrls",
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_left.png",
+                        "../resources/images/all_probes/building_cross/building_left.png",
+                        "../resources/images/all_probes/campus_cross/campus_left.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_left.png",
+                        "../resources/images/all_probes/grace_cross/grace_left.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_left.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_left.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_left.png"
+                      ]
+                    },
+                    {
+                      "@accessType": "initializeOnly",
+                      "@type": "MFString",
+                      "@name": "rightUrls",
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_right.png",
+                        "../resources/images/all_probes/building_cross/building_right.png",
+                        "../resources/images/all_probes/campus_cross/campus_right.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_right.png",
+                        "../resources/images/all_probes/grace_cross/grace_right.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_right.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_right.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_right.png"
+                      ]
+                    },
+                    {
+                      "@accessType": "initializeOnly",
+                      "@type": "MFString",
+                      "@name": "topUrls",
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_top.png",
+                        "../resources/images/all_probes/building_cross/building_top.png",
+                        "../resources/images/all_probes/campus_cross/campus_top.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_top.png",
+                        "../resources/images/all_probes/grace_cross/grace_top.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_top.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_top.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_top.png"
+                      ]
+                    },
+                    {
+                      "@accessType": "initializeOnly",
+                      "@type": "MFString",
+                      "@name": "bottomUrls",
+                      "@value": [
+                        "../resources/images/all_probes/beach_cross/beach_bottom.png",
+                        "../resources/images/all_probes/building_cross/building_bottom.png",
+                        "../resources/images/all_probes/campus_cross/campus_bottom.png",
+                        "../resources/images/all_probes/galileo_cross/galileo_bottom.png",
+                        "../resources/images/all_probes/grace_cross/grace_bottom.png",
+                        "../resources/images/all_probes/kitchen_cross/kitchen_bottom.png",
+                        "../resources/images/all_probes/rnl_cross/rnl_bottom.png",
+                        "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+                        "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"
+                      ]
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@type": "MFString",
+                      "@name": "front_changed"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@type": "MFString",
+                      "@name": "back_changed"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@type": "MFString",
+                      "@name": "left_changed"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@type": "MFString",
+                      "@name": "right_changed"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@type": "MFString",
+                      "@name": "top_changed"
+                    },
+                    {
+                      "@accessType": "outputOnly",
+                      "@type": "MFString",
+                      "@name": "bottom_changed"
+                    },
+                    {
+                      "@accessType": "inputOnly",
+                      "@type": "SFFloat",
+                      "@name": "set_fraction"
+                    },
+                    {
+                      "@accessType": "inputOutput",
+                      "@type": "SFInt32",
+                      "@name": "old",
+                      "@value": -1
+                    }
+                  ],
+                  "#sourceCode": [
+                    "",
+                    "ecmascript:",
+                    "        function set_fraction( f, tm ) {",
+                    "\t    var side = Math.floor(f*frontUrls.length);",
+                    "\t    if (side > frontUrls.length-1) {",
+                    "\t    \tside = 0;",
+                    "\t    }",
+                    "\t    if (side != old) {",
+                    "\t    \t    Browser.print(f+\" \"+side);",
+                    "\t    \t    old = side;",
+                    "\t\t    front_changed[0] = frontUrls[side];",
+                    "\t\t    back_changed[0] = backUrls[side];",
+                    "\t\t    left_changed[0] = leftUrls[side];",
+                    "\t\t    right_changed[0] = rightUrls[side];",
+                    "\t\t    top_changed[0] = topUrls[side];",
+                    "\t\t    bottom_changed[0] = bottomUrls[side];",
+                    "            }",
+                    "        }",
+                    ""
+                  ]
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "Clock",
+                  "@cycleInterval": 45,
+                  "@loop": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "Clock",
+            "@fromField": "fraction_changed",
+            "@toNode": "UrlSelector",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "front_changed",
+            "@toNode": "frontBackgroundTexture",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "back_changed",
+            "@toNode": "backBackgroundTexture",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "left_changed",
+            "@toNode": "leftBackgroundTexture",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "right_changed",
+            "@toNode": "rightBackgroundTexture",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "top_changed",
+            "@toNode": "topBackgroundTexture",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "bottom_changed",
+            "@toNode": "bottomBackgroundTexture",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "front_changed",
+            "@toNode": "frontShader",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "back_changed",
+            "@toNode": "backShader",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "left_changed",
+            "@toNode": "leftShader",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "right_changed",
+            "@toNode": "rightShader",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "top_changed",
+            "@toNode": "topShader",
+            "@toField": "set_url"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "UrlSelector",
+            "@fromField": "bottom_changed",
+            "@toNode": "bottomShader",
+            "@toField": "set_url"
+          }
+        }
+      ]
+    }
+  }
+}

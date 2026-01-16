@@ -1,0 +1,1104 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "ArtDecoPrototypes.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Prototype declarations defining values for X3D/VRML materials, originally converted from SGI's Open Inventor material examples."
+        },
+        {
+          "@name": "creator",
+          "@content": "David Roussel"
+        },
+        {
+          "@name": "translator",
+          "@content": "James Harney, Don Brutzman NPS"
+        },
+        {
+          "@name": "created",
+          "@content": "7 April 2002"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:18:44 GMT"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://vrmlstuff.free.fr/materials"
+        },
+        {
+          "@name": "subject",
+          "@content": "Universal Media Material Library"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco00",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25,
+                    "@diffuseColor": [
+                      0.282435,
+                      0.085159,
+                      0.134462
+                    ],
+                    "@specularColor": [
+                      0.276305,
+                      0.11431,
+                      0.139857
+                    ],
+                    "@shininess": 0.127273
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco01",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.254777,
+                    "@diffuseColor": [
+                      0.685208,
+                      0.134679,
+                      0.332385
+                    ],
+                    "@specularColor": [
+                      0.122449,
+                      0.050035,
+                      0.050035
+                    ],
+                    "@shininess": 0.071429
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco02",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 1,
+                    "@diffuseColor": [
+                      0.536861,
+                      0.0529,
+                      0.245479
+                    ],
+                    "@specularColor": [
+                      0.805292,
+                      0.765198,
+                      0.747416
+                    ],
+                    "@shininess": 0.832432
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco03",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.248649,
+                    "@diffuseColor": [
+                      1,
+                      0.452381,
+                      0.40339
+                    ],
+                    "@specularColor": [
+                      0.686486,
+                      0.396903,
+                      0.419275
+                    ],
+                    "@shininess": 0.902703
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco04",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25,
+                    "@diffuseColor": [
+                      0.748016,
+                      0.298362,
+                      0.342624
+                    ],
+                    "@specularColor": [
+                      0.345455,
+                      0.345455,
+                      0.345455
+                    ],
+                    "@shininess": 0.69697
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco05",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.24359,
+                    "@diffuseColor": [
+                      0.945455,
+                      0.318988,
+                      0.321717
+                    ],
+                    "@specularColor": [
+                      0.072727,
+                      0.021705,
+                      0.010732
+                    ],
+                    "@shininess": 0.018182
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco06",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25946,
+                    "@diffuseColor": [
+                      0.228655,
+                      0.195513,
+                      0.425484
+                    ],
+                    "@specularColor": [
+                      0.324504,
+                      0.404255,
+                      0.404255
+                    ],
+                    "@shininess": 0.542553
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco07",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.333333,
+                    "@diffuseColor": [
+                      0.200348,
+                      0.100857,
+                      0.320833
+                    ],
+                    "@specularColor": [
+                      0.311358,
+                      0.387879,
+                      0.387879
+                    ],
+                    "@shininess": 0.133333
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco08",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.242424,
+                    "@diffuseColor": [
+                      0.330519,
+                      0.3389,
+                      0.6
+                    ],
+                    "@specularColor": [
+                      0.290909,
+                      0.290909,
+                      0.290909
+                    ],
+                    "@shininess": 0.787879
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco09",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.333333,
+                    "@diffuseColor": [
+                      0.237059,
+                      0.096273,
+                      0.215625
+                    ],
+                    "@specularColor": [
+                      0.311358,
+                      0.387879,
+                      0.387879
+                    ],
+                    "@shininess": 0.133333
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco10",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.242425,
+                    "@diffuseColor": [
+                      0.304,
+                      0.09025,
+                      0.207364
+                    ],
+                    "@specularColor": [
+                      0.6665,
+                      0.579046,
+                      0.830303
+                    ],
+                    "@shininess": 0.072727
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco11",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.258928,
+                    "@diffuseColor": [
+                      0.335631,
+                      0.207672,
+                      0.238304
+                    ],
+                    "@specularColor": [
+                      0.198631,
+                      0.075403,
+                      0.138803
+                    ],
+                    "@emissiveColor": [
+                      0.010638,
+                      0.010638,
+                      0.010638
+                    ],
+                    "@shininess": 0.021277
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco12",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.240838,
+                    "@diffuseColor": [
+                      0.876873,
+                      0.14715,
+                      0.00856
+                    ],
+                    "@specularColor": [
+                      0.193878,
+                      0.029416,
+                      0.029416
+                    ],
+                    "@shininess": 0.076531
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco13",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25,
+                    "@diffuseColor": [
+                      0.794445,
+                      0.249425,
+                      0
+                    ],
+                    "@specularColor": [
+                      0.62904,
+                      0.194211,
+                      0.033663
+                    ],
+                    "@shininess": 0.551515
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco14",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25,
+                    "@diffuseColor": [
+                      0.510609,
+                      0.17264,
+                      0.059872
+                    ],
+                    "@specularColor": [
+                      0.533333,
+                      0.533333,
+                      0.533333
+                    ],
+                    "@shininess": 0.933333
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco15",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.255814,
+                    "@diffuseColor": [
+                      0.914894,
+                      0.444404,
+                      0.348914
+                    ],
+                    "@specularColor": [
+                      0.345745,
+                      0.143066,
+                      0
+                    ],
+                    "@shininess": 0.12766
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco16",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.240838,
+                    "@diffuseColor": [
+                      0.876873,
+                      0.323147,
+                      0.199564
+                    ],
+                    "@specularColor": [
+                      0.816327,
+                      0.278677,
+                      0.278677
+                    ],
+                    "@shininess": 0.80102
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco17",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.242424,
+                    "@diffuseColor": [
+                      0.515625,
+                      0.315496,
+                      0.252441
+                    ],
+                    "@specularColor": [
+                      0.533333,
+                      0.533333,
+                      0.533333
+                    ],
+                    "@shininess": 0.933333
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco18",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.264706,
+                    "@diffuseColor": [
+                      0,
+                      0.346939,
+                      0.253624
+                    ],
+                    "@specularColor": [
+                      0,
+                      0.311074,
+                      0.357143
+                    ],
+                    "@shininess": 0.316327
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco19",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.259259,
+                    "@diffuseColor": [
+                      0,
+                      0.251004,
+                      0.239248
+                    ],
+                    "@specularColor": [
+                      0.177935,
+                      0.249369,
+                      0.229278
+                    ],
+                    "@shininess": 0.060606
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco20",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.24,
+                    "@diffuseColor": [
+                      0.228298,
+                      0.385771,
+                      0.186794
+                    ],
+                    "@specularColor": [
+                      0.200464,
+                      0.300145,
+                      0.293518
+                    ],
+                    "@shininess": 0.393939
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco21",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25,
+                    "@diffuseColor": [
+                      0.315389,
+                      0.544,
+                      0.258052
+                    ],
+                    "@specularColor": [
+                      0.456,
+                      0.456,
+                      0.456
+                    ],
+                    "@shininess": 0.509389
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco22",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.246032,
+                    "@diffuseColor": [
+                      0.251104,
+                      0.312562,
+                      0.201724
+                    ],
+                    "@specularColor": [
+                      0.209184,
+                      0.113842,
+                      0.111328
+                    ],
+                    "@shininess": 0.086735
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco23",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.242424,
+                    "@diffuseColor": [
+                      0.392348,
+                      0.456,
+                      0.417708
+                    ],
+                    "@specularColor": [
+                      0.533333,
+                      0.533333,
+                      0.533333
+                    ],
+                    "@shininess": 0.933333
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco24",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.253968,
+                    "@diffuseColor": [
+                      1,
+                      0.854922,
+                      0
+                    ],
+                    "@specularColor": [
+                      0.872449,
+                      0.247119,
+                      0.254214
+                    ],
+                    "@shininess": 1
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco25",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25641,
+                    "@diffuseColor": [
+                      0.795918,
+                      0.505869,
+                      0.093315
+                    ],
+                    "@specularColor": [
+                      0.923469,
+                      0.428866,
+                      0.006369
+                    ],
+                    "@shininess": 0.397959
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco26",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 1,
+                    "@diffuseColor": [
+                      0.331633,
+                      0.296582,
+                      0.279057
+                    ],
+                    "@specularColor": [
+                      0.311224,
+                      0.25183,
+                      0.133042
+                    ],
+                    "@shininess": 0.096939
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco27",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.263158,
+                    "@diffuseColor": [
+                      0.345455,
+                      0.163262,
+                      0.122622
+                    ],
+                    "@specularColor": [
+                      0.212121,
+                      0.107475,
+                      0
+                    ],
+                    "@shininess": 0.048649
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco28",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.240506,
+                    "@diffuseColor": [
+                      0.277281,
+                      0.104336,
+                      0.0799
+                    ],
+                    "@specularColor": [
+                      0.305587,
+                      0.141916,
+                      0.270572
+                    ],
+                    "@shininess": 0.09697
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco29",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.215686,
+                    "@diffuseColor": [
+                      0.087034,
+                      0.025888,
+                      0
+                    ],
+                    "@specularColor": [
+                      0.224138,
+                      0.104091,
+                      0.104091
+                    ],
+                    "@shininess": 0.045918
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco30",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0,
+                    "@diffuseColor": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "@specularColor": [
+                      0.293243,
+                      0.297387,
+                      0.290421
+                    ],
+                    "@shininess": 0.081633
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco31",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25641,
+                    "@diffuseColor": [
+                      0.236364,
+                      0.236364,
+                      0.236364
+                    ],
+                    "@specularColor": [
+                      0.29697,
+                      0.245839,
+                      0.295962
+                    ],
+                    "@shininess": 0.054546
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco32",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.242424,
+                    "@diffuseColor": [
+                      0.38087,
+                      0.382957,
+                      0.417708
+                    ],
+                    "@specularColor": [
+                      0.533333,
+                      0.533333,
+                      0.533333
+                    ],
+                    "@shininess": 0.933333
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco33",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.230089,
+                    "@diffuseColor": [
+                      0.610811,
+                      0.610811,
+                      0.610811
+                    ],
+                    "@specularColor": [
+                      0.767568,
+                      0.756757,
+                      0.764964
+                    ],
+                    "@shininess": 0.897297
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "ArtDeco34",
+            "@appinfo": "UniversalMediaMaterials prototype",
+            "@documentation": "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Material": {
+                    "@ambientIntensity": 0.25,
+                    "@specularColor": [
+                      0.2,
+                      0.2,
+                      0.2
+                    ],
+                    "@shininess": 0
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "WorldInfo": {
+            "@title": "ArtDecoPrototypes.x3d"
+          }
+        },
+        {
+          "Anchor": {
+            "@description": "ArtDecoPrototypeExample",
+            "@url": [
+              "../data/ArtDecoExamples.json",
+              "../data/ArtDecoExamples.x3d",
+              "ArtDecoExamples.json",
+              "ArtDecoExamples.x3d"
+            ],
+            "@parameter": [
+              "target=_blank"
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            0.8,
+                            0.4,
+                            0
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "ArtDecoExamples.x3d",
+                        "is a Materials Prototype declaration file.",
+                        "",
+                        "For an example scene using these node,",
+                        "click this text and view",
+                        "ArtDecoExamples.x3d"
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@size": 0.8,
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "HelloWorldMinimal.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Hello World minimal example scene."
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "created",
+          "@content": "19 January 2020"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:20:09 GMT"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://helloworldcollection.de"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wiktionary.org/wiki/Hello_World"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://en.wikibooks.org/w/index.php?title=Computer_Programming/Hello_world#X3D_(Extensible_3D)"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"
+        },
+        {
+          "@name": "reference",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "WorldInfo": {
+            "@title": "HelloWorldMinimal.x3d"
+          }
+        },
+        {
+          "Shape": {
+            "-geometry": {
+              "Text": {
+                "@string": [
+                  "hello, world"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

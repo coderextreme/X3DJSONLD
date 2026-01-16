@@ -120,7 +120,7 @@ SoSceneManager0->setHead(*Sohead1);
 
 SoNode* SoNode16 = new SoNode();
 SoNavigationInfo* SoNavigationInfo17 = new SoNavigationInfo();
-SoNavigationInfo17->setType(new QString[]{QString(", "), QString("EXAMINE, "), QString("FLY, "), QString("WALKANY")}, 4);
+SoNavigationInfo17->setType(new QString[]{QString("EXAMINE"), QString("FLY"), QString("WALK"), QString("ANY")}, 4);
 SoNode16->addChild(*SoNavigationInfo17);
 
 SoGroup* SoGroup18 = new SoGroup();

@@ -1,0 +1,228 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "sphereflowers.x3d"
+        },
+        {
+          "@name": "creator",
+          "@content": "John Carlson"
+        },
+        {
+          "@name": "created",
+          "@content": "Jan 17 2022"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 15 Sep 2025 05:21:34 GMT"
+        },
+        {
+          "@name": "description",
+          "@content": "5 or more prismatic flowers"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V2.2.3, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"
+        }
+      ],
+      "component": [
+        {
+          "@name": "EnvironmentalEffects",
+          "@level": 3
+        },
+        {
+          "@name": "Shaders",
+          "@level": 1
+        },
+        {
+          "@name": "CubeMapTexturing",
+          "@level": 1
+        },
+        {
+          "@name": "Grouping",
+          "@level": 3
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "ExternProtoDeclare": {
+            "@name": "FlowerProto",
+            "field": [
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "vertex"
+              },
+              {
+                "@accessType": "inputOutput",
+                "@type": "MFString",
+                "@name": "fragment"
+              }
+            ],
+            "@url": [
+              "../data/flowerproto.x3d#FlowerProto",
+              "https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto"
+            ]
+          }
+        },
+        {
+          "ProtoDeclare": {
+            "@name": "flower",
+            "ProtoInterface": {},
+            "ProtoBody": {
+              "-children": [
+                {
+                  "Group": {
+                    "-children": [
+                      {
+                        "ProtoInstance": {
+                          "@name": "FlowerProto",
+                          "fieldValue": [
+                            {
+                              "@name": "vertex",
+                              "@value": [
+                                "../shaders/x_ite_flowers_chromatic.vs"
+                              ]
+                            },
+                            {
+                              "@name": "fragment",
+                              "@value": [
+                                "../shaders/x_ite.fs"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "NavigationInfo": {}
+        },
+        {
+          "Background": {
+            "@frontUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+            ],
+            "@backUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+            ],
+            "@leftUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+            ],
+            "@rightUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+            ],
+            "@topUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+            ],
+            "@bottomUrl": [
+              "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+            ]
+          }
+        },
+        {
+          "Group": {
+            "-children": [
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "ProtoInstance": {
+                  "@name": "flower"
+                }
+              },
+              {
+                "TimeSensor": {
+                  "@DEF": "SongTime",
+                  "@loop": true
+                }
+              },
+              {
+                "Sound": {
+                  "@location": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "@minBack": 20,
+                  "@minFront": 20,
+                  "@maxBack": 100,
+                  "@maxFront": 100,
+                  "-source": {
+                    "AudioClip": {
+                      "@DEF": "AudioClip",
+                      "@description": "Chandubabamusic #1",
+                      "@url": [
+                        "../resources/chandubabamusic1.wav",
+                        "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"
+                      ],
+                      "@startTime": 1757913694.388
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "SongTime",
+            "@fromField": "cycleTime",
+            "@toNode": "AudioClip",
+            "@toField": "set_startTime"
+          }
+        }
+      ]
+    }
+  }
+}

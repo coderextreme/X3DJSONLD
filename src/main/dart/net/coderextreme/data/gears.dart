@@ -67,7 +67,7 @@ var X3D0 =  X3D(
         Scene(
           children_ : [
             NavigationInfo(
-              type_ : MFString([SFString(", "), SFString("EXAMINE, "), SFString("FLY, "), SFString("WALKANY")])),
+              type_ : MFString([SFString("EXAMINE"), SFString("FLY"), SFString("WALK"), SFString("ANY")])),
 
             Group(
               children_ : [

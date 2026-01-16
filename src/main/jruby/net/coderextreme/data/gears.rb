@@ -393,7 +393,7 @@ x3D0 = X3D.new
     )
     .setScene(Scene.new()
         .addChild(NavigationInfo.new()
-            .setType([", ", "EXAMINE, ", "FLY, ", "WALKANY"].to_java Java::java.lang.String)
+            .setType(["EXAMINE", "FLY", "WALK", "ANY"].to_java Java::java.lang.String)
         )
         .addChild(Group.new()
             .addChild(Shape.new()

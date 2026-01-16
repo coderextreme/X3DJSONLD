@@ -111,7 +111,7 @@
         "NavigationInfo":
         {
       {
-        "@type":"", " "EXAMINE, " "FLY, " "WALKANY""
+        "@type":""EXAMINE" "FLY" "WALK" "ANY""
       }
     },
         "Group":
