@@ -5,15 +5,11 @@ IFS=$'\n\t'
 
 # JSON Schema generation
 
-# accepts files with .x3d extension
-
 . ./classpath
 
-# ${PYTHON} ../python/classes.py
 pushd ../java
 javac -cp ${CLASSPATH} -proc:full net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
 popd
-# sudo pacman -Syu leiningen
 
 STYLESHEETDIR=../xslt
 # OVERWRITE=
