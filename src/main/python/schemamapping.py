@@ -58,7 +58,7 @@ class ClassPrinter:
         s = ""
         s += "<td style='border: 1px solid black;'>"
         # print(self.node)
-        if self.node:
+        if self.node is not None:
             s += fieldname
             s += "<pre>"
             s += "XML "
@@ -91,6 +91,14 @@ class ClassPrinter:
                     pass
         #else:
         #    print("Unhandled schema for "+self.name+"."+fieldname+" "+str(schema))
+        if 'prefixItems' in schema:
+            s += "<tr style='border: 1px solid black;'>"
+            s += "<td style='border: 1px solid black;'>"
+            s += "</td>"
+            s += self.name+" appears multiple times, with the following attributes, see JSON above.  "
+            s += "</td>"
+            s += "</tr>\n"
+            s += self.printSchema(field, schema['prefixItems'], soup)
         if 'items' in schema:
             s += "<tr style='border: 1px solid black;'>"
             s += "<td style='border: 1px solid black;'>"
@@ -108,7 +116,7 @@ class ClassPrinter:
         s += self.name
         s += "</td>"
         s += "</tr>\n"
-        if self.node:
+        if self.node is not None:
             # note that only one of these should return a non-NUL string
             for nodeType in [ "AbstractNodeType", "AbstractObjectType", "ConcreteNode", "Statement" ]:
                 # print(nodeType)
