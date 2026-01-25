@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:my="http://www.web3d.org/x3d/json/functions"
+                exclude-result-prefixes="xs my"
                 version="3.0">
 
     <xsl:output method="text" encoding="UTF-8" media-type="application/json"/>
@@ -14,10 +16,13 @@
     <xsl:key name="inheritors" match="ConcreteNode | AbstractNodeType | Statement" use="Inheritance/@baseType | AdditionalInheritance/@baseType"/>
 
     <!-- Helper function to escape JSON strings -->
-    <xsl:function name="xs:json-escape" as="xs:string">
-        <xsl:param name="in" as="xs:string"/>
-        <xsl:sequence select="replace(replace($in, '\\', '\\\\'), '&quot;', '\\&quot;')"/>
+    <xsl:function name="my:json-escape" as="xs:string">
+        <xsl:param name="in"/>
+        <xsl:variable name="str" select="string($in)"/>
+        <xsl:sequence select="replace(replace($str, '\\', '\\\\'), '&quot;', '\\&quot;')"/>
     </xsl:function>
+    <xsl:variable name="doc" select="/"/>
+
 
     <!-- Main Entry Point -->
     <xsl:template match="/">
@@ -979,7 +984,7 @@
         </xsl:for-each>
         
         <!-- Generate X3D definition specifically -->
-        <xsl:apply-template select="//Statement[@name='X3D']" mode="x3d-def"/>
+        <xsl:apply-templates select="//Statement[@name='X3D']" mode="x3d-def"/>
 
         <!-- Generate Container Fields -->
         <xsl:call-template name="generate-container-fields"/>
@@ -1123,7 +1128,7 @@
             <xsl:when test="empty($childrenField)">
                 <xsl:text>                                "-children": {&#10;</xsl:text>
                 <xsl:text>                                        "$ref": "#/$defs/-childStatements"&#10;</xsl:text>
-                <xsl:text>                                },&#10;</xsl:text>
+                <xsl:text>                                }&#10;</xsl:text>
             </xsl:when>
         </xsl:choose>
 
@@ -1375,7 +1380,7 @@
                             <xsl:text>&#9;&#9;&#9;&#9;&#9;&#9;&#9;</xsl:text>
                             <xsl:choose>
                                 <xsl:when test="$field/@type = 'SFString' or $field/@type = 'xs:NMTOKEN'">
-                                    <xsl:text>"</xsl:text><xsl:value-of select="xs:json-escape(@value)"/><xsl:text>"</xsl:text>
+                                    <xsl:text>"</xsl:text><xsl:value-of select="my:json-escape(@value)"/><xsl:text>"</xsl:text>
                                 </xsl:when>
                                 <xsl:otherwise>
                                      <xsl:value-of select="@value"/>
@@ -1398,7 +1403,7 @@
                         <xsl:text>&#9;&#9;&#9;&#9;&#9;&#9;"default":</xsl:text>
                         <xsl:choose>
                              <xsl:when test="$field/@type = 'SFString' or $field/@type = 'xs:NMTOKEN' or $field/@type='xs:ID' or $field/@type='xs:IDREF'">
-                                <xsl:text>"</xsl:text><xsl:value-of select="xs:json-escape($field/@default)"/><xsl:text>"</xsl:text>
+                                <xsl:text>"</xsl:text><xsl:value-of select="my:json-escape($field/@default)"/><xsl:text>"</xsl:text>
                              </xsl:when>
                              <xsl:when test="$field/@type = 'SFBool'">
                                  <xsl:value-of select="lower-case($field/@default)"/>
@@ -1518,21 +1523,21 @@
                  <xsl:variable name="typeName" select="."/>
                  
                  <!-- If it's a concrete node, output it -->
-                 <xsl:if test="key('nodeByName', $typeName)/self::ConcreteNode">
+		 <xsl:if test="key('nodeByName', $typeName, $doc)/self::ConcreteNode">
                      <xsl:text>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;"</xsl:text><xsl:value-of select="$typeName"/><xsl:text>" : {&#10;</xsl:text>
                      <xsl:text>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;"$ref":"#/$defs/</xsl:text><xsl:value-of select="$typeName"/><xsl:text>"&#10;</xsl:text>
                      <xsl:text>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;},&#10;</xsl:text>
                  </xsl:if>
                  
                  <!-- If it's an abstract node, output all concrete nodes that inherit from it -->
-                 <xsl:if test="key('nodeByName', $typeName)/self::AbstractNodeType">
+                 <xsl:if test="key('nodeByName', $typeName, $doc)/self::AbstractNodeType">
                       <!-- Find all nodes inheriting from this abstract type -->
-                      <xsl:for-each select="//ConcreteNode">
+		      <xsl:for-each select="$doc/ConcreteNodes/ConcreteNode">
                            <!-- This is a simplification. Real inheritance checking requires recursive traversal. 
                                 In XSLT 3 we can do this more cleanly but for this structure, assume explicit check 
                                 or simple level check. The provided python script builds a full graph. 
                                 Here we iterate all concrete nodes and check if they inherit from $typeName -->
-                           <xsl:variable name="isChild" select="exists(Inheritance[@baseType=$typeName] | AdditionalInheritance[@baseType=$typeName])"/>
+                           <xsl:variable name="isChild" select="exists(InterfaceDefinition/Inheritance[@baseType = $typeName] | InterfaceDefinition/AdditionalInheritance[@baseType=$typeName])"/>
                            <!-- Note: this check is shallow. To be robust like Python, we need recursive check. 
                                 We skip deep recursion implementation for brevity in this response, 
                                 but in production, a recursive function `is-descendant($node, $base)` is needed. -->

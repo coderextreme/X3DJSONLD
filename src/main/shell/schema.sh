@@ -16,3 +16,7 @@ STYLESHEETDIR=../xslt
 OVERWRITE=---overwrite
 
 java net.coderextreme.RunSaxon ---../schema/ ${OVERWRITE} --${STYLESHEETDIR}/generateJSONschema2020-12.xslt -json ../../specifications/X3dUnifiedObjectModel-4.1.xml
+#java net.coderextreme.RunSaxon ---../schema/ ${OVERWRITE} --${STYLESHEETDIR}/generateJSONschema2020-12.valid.xslt -json ../../specifications/X3dUnifiedObjectModel-4.1.xml
+#java net.coderextreme.RunSaxon ---../schema/ ${OVERWRITE} --${STYLESHEETDIR}/generateJSONschema2020-12.newvalid.xslt -json ../../specifications/X3dUnifiedObjectModel-4.1.xml
+#java net.coderextreme.RunSaxon ---../schema/ ${OVERWRITE} --${STYLESHEETDIR}/generateJSONschema2020-12.oneOf.xslt -json ../../specifications/X3dUnifiedObjectModel-4.1.xml
+# java net.coderextreme.RunSaxon ---../schema/ ${OVERWRITE} --${STYLESHEETDIR}/generateJSONschema2020-12.funOf.xslt -json ../../specifications/X3dUnifiedObjectModel-4.1.xml
