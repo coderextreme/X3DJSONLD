@@ -131,24 +131,19 @@
         "Viewpoint":
         {
       {
-        "@DEF":"Front_View",
-        "@description":"Front View"
+        "@DEF":"Front_View"
       }
     },
         "Viewpoint":
         {
       {
-        "@DEF":"Top_View",
-        "@description":"Top View",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"0 10 0"
+        "@DEF":"Top_View"
       }
     },
         "TouchSensor":
         {
       {
-        "@DEF":"STARTER",
-        "@description":"touch to activate"
+        "@DEF":"STARTER"
       }
     },
         "Transform":
@@ -169,8 +164,7 @@
             }        }        "Script":
         {
       {
-        "@DEF":"MYSCRIPT",
-        "@url":""jumpcut_loadurl.js" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js""
+        "@DEF":"MYSCRIPT"
       }
             "field":
             {

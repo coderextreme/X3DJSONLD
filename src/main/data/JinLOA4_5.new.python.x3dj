@@ -151,9 +151,7 @@
         "HAnimHumanoid":
         {
       {
-        "@DEF":"hanim_JinLOA4",
-        "@loa":"4",
-        "@name":"JinLOA4"
+        "@DEF":"hanim_JinLOA4"
       }
             "MetadataSet":
             {
@@ -1958,15 +1956,12 @@
             "HAnimJoint":
             {
       {
-        "@DEF":"hanim_humanoid_root",
-        "@center":"0 1631.5555111111114 -31.44888888888889",
-        "@name":"humanoid_root"
+        "@DEF":"hanim_humanoid_root"
       }
                 "HAnimSegment":
                 {
       {
-        "@DEF":"hanim_sacrum",
-        "@name":"sacrum"
+        "@DEF":"hanim_sacrum"
       }
                     "Transform":
                     {
@@ -1986,8 +1981,7 @@
                                 "ImageTexture":
                                 {
       {
-        "@DEF":"JinLOA4TextureAtlas",
-        "@url":""images/Jin.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png""
+        "@DEF":"JinLOA4TextureAtlas"
       }
     },
                             }                            "IndexedFaceSet":
@@ -2012,15 +2006,12 @@
                             }                        }                    }                }                "HAnimJoint":
                 {
       {
-        "@DEF":"hanim_sacroiliac",
-        "@center":"0 1396.888888888889 -31.44888888888889",
-        "@name":"sacroiliac"
+        "@DEF":"hanim_sacroiliac"
       }
                     "HAnimSegment":
                     {
       {
-        "@DEF":"hanim_pelvis",
-        "@name":"pelvis"
+        "@DEF":"hanim_pelvis"
       }
                         "Transform":
                         {
@@ -2065,15 +2056,12 @@
                                 }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_l_hip",
-        "@center":"186.9777777777778 1632.8889777777777 -36.24444444444445",
-        "@name":"l_hip"
+        "@DEF":"hanim_l_hip"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_l_thigh",
-        "@name":"l_thigh"
+        "@DEF":"hanim_l_thigh"
       }
                             "Transform":
                             {
@@ -2118,15 +2106,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_l_knee",
-        "@center":"182.93333333333334 807.5555555555557 -38.39555555555556",
-        "@name":"l_knee"
+        "@DEF":"hanim_l_knee"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_l_calf",
-        "@name":"l_calf"
+        "@DEF":"hanim_l_calf"
       }
                                 "Transform":
                                 {
@@ -2171,15 +2156,12 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_l_talocrural",
-        "@center":"175.46666666666667 188.53333333333333 -20.644444444444446",
-        "@name":"l_talocrural"
+        "@DEF":"hanim_l_talocrural"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_l_talus",
-        "@name":"l_talus"
+        "@DEF":"hanim_l_talus"
       }
                                     "Transform":
                                     {
@@ -2224,15 +2206,12 @@
                                             }                                        }                                    }                                }                                "HAnimJoint":
                                 {
       {
-        "@DEF":"hanim_l_talocalcaneonavicular",
-        "@center":"154.66666666666669 72.88888888888889 9.60888888888889",
-        "@name":"l_talocalcaneonavicular"
+        "@DEF":"hanim_l_talocalcaneonavicular"
       }
                                     "HAnimSegment":
                                     {
       {
-        "@DEF":"hanim_l_navicular",
-        "@name":"l_navicular"
+        "@DEF":"hanim_l_navicular"
       }
                                         "Transform":
                                         {
@@ -2277,15 +2256,12 @@
                                                 }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_l_cuneonavicular_1",
-        "@center":"133.0666666666667 63.422222222222224 36.32888888888889",
-        "@name":"l_cuneonavicular_1"
+        "@DEF":"hanim_l_cuneonavicular_1"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_l_cuneiform_1",
-        "@name":"l_cuneiform_1"
+        "@DEF":"hanim_l_cuneiform_1"
       }
                                             "Transform":
                                             {
@@ -2330,15 +2306,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_l_tarsometatarsal_1",
-        "@center":"127.64444444444445 45.91111111111111 87.28888888888889",
-        "@name":"l_tarsometatarsal_1"
+        "@DEF":"hanim_l_tarsometatarsal_1"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_l_metatarsal_1",
-        "@name":"l_metatarsal_1"
+        "@DEF":"hanim_l_metatarsal_1"
       }
                                                 "Transform":
                                                 {
@@ -2383,15 +2356,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_l_metatarsophalangeal_1",
-        "@center":"122.71111111111112 28.493333333333336 184.9333333333333",
-        "@name":"l_metatarsophalangeal_1"
+        "@DEF":"hanim_l_metatarsophalangeal_1"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_phalanx_1",
-        "@name":"l_tarsal_proximal_phalanx_1"
+        "@DEF":"hanim_l_tarsal_proximal_phalanx_1"
       }
                                                     "Transform":
                                                     {
@@ -2436,15 +2406,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_distal_interphalangeal_1",
-        "@center":"122.71111111111112 23.973333333333333 227.7777777777778",
-        "@name":"l_tarsal_distal_interphalangeal_1"
+        "@DEF":"hanim_l_tarsal_distal_interphalangeal_1"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_distal_phalanx_1",
-        "@name":"l_tarsal_distal_phalanx_1"
+        "@DEF":"hanim_l_tarsal_distal_phalanx_1"
       }
                                                         "Transform":
                                                         {
@@ -2489,15 +2456,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_l_cuneonavicular_2",
-        "@center":"160.84444444444446 66.22222222222223 42.324444444444445",
-        "@name":"l_cuneonavicular_2"
+        "@DEF":"hanim_l_cuneonavicular_2"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_l_cuneiform_2",
-        "@name":"l_cuneiform_2"
+        "@DEF":"hanim_l_cuneiform_2"
       }
                                             "Transform":
                                             {
@@ -2542,15 +2506,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_l_tarsometatarsal_2",
-        "@center":"158.4 51.55555555555556 81.11111111111111",
-        "@name":"l_tarsometatarsal_2"
+        "@DEF":"hanim_l_tarsometatarsal_2"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_l_metatarsal_2",
-        "@name":"l_metatarsal_2"
+        "@DEF":"hanim_l_metatarsal_2"
       }
                                                 "Transform":
                                                 {
@@ -2595,15 +2556,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_l_metatarsophalangeal_2",
-        "@center":"163.02222222222224 29.58222222222222 193.24444444444444",
-        "@name":"l_metatarsophalangeal_2"
+        "@DEF":"hanim_l_metatarsophalangeal_2"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_phalanx_2",
-        "@name":"l_tarsal_proximal_phalanx_2"
+        "@DEF":"hanim_l_tarsal_proximal_phalanx_2"
       }
                                                     "Transform":
                                                     {
@@ -2648,15 +2606,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
-        "@center":"166.53333333333333 24.982222222222227 225.20000000000002",
-        "@name":"l_tarsal_proximal_interphalangeal_2"
+        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_middle_phalanx_2",
-        "@name":"l_tarsal_middle_phalanx_2"
+        "@DEF":"hanim_l_tarsal_middle_phalanx_2"
       }
                                                         "Transform":
                                                         {
@@ -2701,15 +2656,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
-        "@center":"166.53333333333333 19.40888888888889 243.82222222222222",
-        "@name":"l_tarsal_distal_interphalangeal_2"
+        "@DEF":"hanim_l_tarsal_distal_interphalangeal_2"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_l_tarsal_distal_phalanx_2",
-        "@name":"l_tarsal_distal_phalanx_2"
+        "@DEF":"hanim_l_tarsal_distal_phalanx_2"
       }
                                                             "Transform":
                                                             {
@@ -2754,15 +2706,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_l_cuneonavicular_3",
-        "@center":"183.64444444444445 65.95555555555556 39.14666666666667",
-        "@name":"l_cuneonavicular_3"
+        "@DEF":"hanim_l_cuneonavicular_3"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_l_cuneiform_3",
-        "@name":"l_cuneiform_3"
+        "@DEF":"hanim_l_cuneiform_3"
       }
                                             "Transform":
                                             {
@@ -2807,15 +2756,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_l_tarsometatarsal_3",
-        "@center":"186.84444444444443 51.55555555555556 77.82222222222222",
-        "@name":"l_tarsometatarsal_3"
+        "@DEF":"hanim_l_tarsometatarsal_3"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_l_metatarsal_3",
-        "@name":"l_metatarsal_3"
+        "@DEF":"hanim_l_metatarsal_3"
       }
                                                 "Transform":
                                                 {
@@ -2860,15 +2806,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_l_metatarsophalangeal_3",
-        "@center":"190.57777777777778 29.742222222222225 188.48888888888888",
-        "@name":"l_metatarsophalangeal_3"
+        "@DEF":"hanim_l_metatarsophalangeal_3"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_phalanx_3",
-        "@name":"l_tarsal_proximal_phalanx_3"
+        "@DEF":"hanim_l_tarsal_proximal_phalanx_3"
       }
                                                     "Transform":
                                                     {
@@ -2913,15 +2856,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
-        "@center":"195.2888888888889 23.551111111111112 218.22222222222223",
-        "@name":"l_tarsal_proximal_interphalangeal_3"
+        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_middle_phalanx_3",
-        "@name":"l_tarsal_middle_phalanx_3"
+        "@DEF":"hanim_l_tarsal_middle_phalanx_3"
       }
                                                         "Transform":
                                                         {
@@ -2966,15 +2906,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_distal_interphalangeal_3",
-        "@center":"198.35555555555555 19.40888888888889 236.44444444444446",
-        "@name":"l_tarsal_distal_interphalangeal_3"
+        "@DEF":"hanim_l_tarsal_distal_interphalangeal_3"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_l_tarsal_distal_phalanx_3",
-        "@name":"l_tarsal_distal_phalanx_3"
+        "@DEF":"hanim_l_tarsal_distal_phalanx_3"
       }
                                                             "Transform":
                                                             {
@@ -3019,15 +2956,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                }                                "HAnimJoint":
                                 {
       {
-        "@DEF":"hanim_l_calcaneocuboid",
-        "@center":"176 114.53333333333333 -51.288888888888884",
-        "@name":"l_calcaneocuboid"
+        "@DEF":"hanim_l_calcaneocuboid"
       }
                                     "HAnimSegment":
                                     {
       {
-        "@DEF":"hanim_l_calcaneus",
-        "@name":"l_calcaneus"
+        "@DEF":"hanim_l_calcaneus"
       }
                                         "Transform":
                                         {
@@ -3072,15 +3006,12 @@
                                                 }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_l_transversetarsal",
-        "@center":"218.53333333333333 69.6888888888889 4.126666666666667",
-        "@name":"l_transversetarsal"
+        "@DEF":"hanim_l_transversetarsal"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_l_cuboid",
-        "@name":"l_cuboid"
+        "@DEF":"hanim_l_cuboid"
       }
                                             "Transform":
                                             {
@@ -3125,15 +3056,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_l_tarsometatarsal_4",
-        "@center":"210.35555555555555 48.48888888888889 75.91111111111111",
-        "@name":"l_tarsometatarsal_4"
+        "@DEF":"hanim_l_tarsometatarsal_4"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_l_metatarsal_4",
-        "@name":"l_metatarsal_4"
+        "@DEF":"hanim_l_metatarsal_4"
       }
                                                 "Transform":
                                                 {
@@ -3178,15 +3106,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_l_metatarsophalangeal_4",
-        "@center":"217.02222222222224 28.351111111111113 180.08888888888887",
-        "@name":"l_metatarsophalangeal_4"
+        "@DEF":"hanim_l_metatarsophalangeal_4"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_phalanx_4",
-        "@name":"l_tarsal_proximal_phalanx_4"
+        "@DEF":"hanim_l_tarsal_proximal_phalanx_4"
       }
                                                     "Transform":
                                                     {
@@ -3231,15 +3156,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
-        "@center":"225.51111111111112 24.186666666666667 210",
-        "@name":"l_tarsal_proximal_interphalangeal_4"
+        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_middle_phalanx_4",
-        "@name":"l_tarsal_middle_phalanx_4"
+        "@DEF":"hanim_l_tarsal_middle_phalanx_4"
       }
                                                         "Transform":
                                                         {
@@ -3284,15 +3206,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_distal_interphalangeal_4",
-        "@center":"228.4888888888889 18.506666666666668 224.57777777777778",
-        "@name":"l_tarsal_distal_interphalangeal_4"
+        "@DEF":"hanim_l_tarsal_distal_interphalangeal_4"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_l_tarsal_distal_phalanx_4",
-        "@name":"l_tarsal_distal_phalanx_4"
+        "@DEF":"hanim_l_tarsal_distal_phalanx_4"
       }
                                                             "Transform":
                                                             {
@@ -3337,15 +3256,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_l_tarsometatarsal_5",
-        "@center":"238.66666666666669 41.373333333333335 68.62222222222222",
-        "@name":"l_tarsometatarsal_5"
+        "@DEF":"hanim_l_tarsometatarsal_5"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_l_metatarsal_5",
-        "@name":"l_metatarsal_5"
+        "@DEF":"hanim_l_metatarsal_5"
       }
                                                 "Transform":
                                                 {
@@ -3390,15 +3306,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_l_metatarsophalangeal_5",
-        "@center":"245.0666666666667 27.004444444444445 170.9777777777778",
-        "@name":"l_metatarsophalangeal_5"
+        "@DEF":"hanim_l_metatarsophalangeal_5"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_phalanx_5",
-        "@name":"l_tarsal_proximal_phalanx_5"
+        "@DEF":"hanim_l_tarsal_proximal_phalanx_5"
       }
                                                     "Transform":
                                                     {
@@ -3443,15 +3356,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_5",
-        "@center":"249.64444444444445 21.444444444444443 185.95555555555558",
-        "@name":"l_tarsal_proximal_interphalangeal_5"
+        "@DEF":"hanim_l_tarsal_proximal_interphalangeal_5"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_middle_phalanx_5",
-        "@name":"l_tarsal_middle_phalanx_5"
+        "@DEF":"hanim_l_tarsal_middle_phalanx_5"
       }
                                                         "Transform":
                                                         {
@@ -3496,15 +3406,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_l_tarsal_distal_interphalangeal_5",
-        "@center":"251.42222222222225 16.915555555555557 201.24444444444444",
-        "@name":"l_tarsal_distal_interphalangeal_5"
+        "@DEF":"hanim_l_tarsal_distal_interphalangeal_5"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_l_tarsal_distal_phalanx_5",
-        "@name":"l_tarsal_distal_phalanx_5"
+        "@DEF":"hanim_l_tarsal_distal_phalanx_5"
       }
                                                             "Transform":
                                                             {
@@ -3549,15 +3456,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_r_hip",
-        "@center":"-186.9777777777778 1632.8889777777777 -36.24444444444445",
-        "@name":"r_hip"
+        "@DEF":"hanim_r_hip"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_r_thigh",
-        "@name":"r_thigh"
+        "@DEF":"hanim_r_thigh"
       }
                             "Transform":
                             {
@@ -3602,15 +3506,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_r_knee",
-        "@center":"-182.93333333333334 807.5555555555557 -38.39555555555556",
-        "@name":"r_knee"
+        "@DEF":"hanim_r_knee"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_r_calf",
-        "@name":"r_calf"
+        "@DEF":"hanim_r_calf"
       }
                                 "Transform":
                                 {
@@ -3655,15 +3556,12 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_r_talocrural",
-        "@center":"-174.7111111111111 188.53333333333333 -20.644444444444446",
-        "@name":"r_talocrural"
+        "@DEF":"hanim_r_talocrural"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_r_talus",
-        "@name":"r_talus"
+        "@DEF":"hanim_r_talus"
       }
                                     "Transform":
                                     {
@@ -3708,15 +3606,12 @@
                                             }                                        }                                    }                                }                                "HAnimJoint":
                                 {
       {
-        "@DEF":"hanim_r_talocalcaneonavicular",
-        "@center":"-153.95555555555555 72.88888888888889 9.60888888888889",
-        "@name":"r_talocalcaneonavicular"
+        "@DEF":"hanim_r_talocalcaneonavicular"
       }
                                     "HAnimSegment":
                                     {
       {
-        "@DEF":"hanim_r_navicular",
-        "@name":"r_navicular"
+        "@DEF":"hanim_r_navicular"
       }
                                         "Transform":
                                         {
@@ -3761,15 +3656,12 @@
                                                 }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_r_cuneonavicular_1",
-        "@center":"-132.3111111111111 63.422222222222224 36.32888888888889",
-        "@name":"r_cuneonavicular_1"
+        "@DEF":"hanim_r_cuneonavicular_1"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_r_cuneiform_1",
-        "@name":"r_cuneiform_1"
+        "@DEF":"hanim_r_cuneiform_1"
       }
                                             "Transform":
                                             {
@@ -3814,15 +3706,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_r_tarsometatarsal_1",
-        "@center":"-126.93333333333334 45.91111111111111 87.28888888888889",
-        "@name":"r_tarsometatarsal_1"
+        "@DEF":"hanim_r_tarsometatarsal_1"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_r_metatarsal_1",
-        "@name":"r_metatarsal_1"
+        "@DEF":"hanim_r_metatarsal_1"
       }
                                                 "Transform":
                                                 {
@@ -3867,15 +3756,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_r_metatarsophalangeal_1",
-        "@center":"-122.00000000000001 28.493333333333336 184.9333333333333",
-        "@name":"r_metatarsophalangeal_1"
+        "@DEF":"hanim_r_metatarsophalangeal_1"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_phalanx_1",
-        "@name":"r_tarsal_proximal_phalanx_1"
+        "@DEF":"hanim_r_tarsal_proximal_phalanx_1"
       }
                                                     "Transform":
                                                     {
@@ -3920,15 +3806,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_distal_interphalangeal_1",
-        "@center":"-121.95555555555556 23.973333333333333 227.7777777777778",
-        "@name":"r_tarsal_distal_interphalangeal_1"
+        "@DEF":"hanim_r_tarsal_distal_interphalangeal_1"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_distal_phalanx_1",
-        "@name":"r_tarsal_distal_phalanx_1"
+        "@DEF":"hanim_r_tarsal_distal_phalanx_1"
       }
                                                         "Transform":
                                                         {
@@ -3973,15 +3856,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_r_cuneonavicular_2",
-        "@center":"-160.0888888888889 66.22222222222223 42.324444444444445",
-        "@name":"r_cuneonavicular_2"
+        "@DEF":"hanim_r_cuneonavicular_2"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_r_cuneiform_2",
-        "@name":"r_cuneiform_2"
+        "@DEF":"hanim_r_cuneiform_2"
       }
                                             "Transform":
                                             {
@@ -4026,15 +3906,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_r_tarsometatarsal_2",
-        "@center":"-157.6888888888889 51.55555555555556 81.11111111111111",
-        "@name":"r_tarsometatarsal_2"
+        "@DEF":"hanim_r_tarsometatarsal_2"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_r_metatarsal_2",
-        "@name":"r_metatarsal_2"
+        "@DEF":"hanim_r_metatarsal_2"
       }
                                                 "Transform":
                                                 {
@@ -4079,15 +3956,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_r_metatarsophalangeal_2",
-        "@center":"-162.26666666666665 29.58222222222222 193.24444444444444",
-        "@name":"r_metatarsophalangeal_2"
+        "@DEF":"hanim_r_metatarsophalangeal_2"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_phalanx_2",
-        "@name":"r_tarsal_proximal_phalanx_2"
+        "@DEF":"hanim_r_tarsal_proximal_phalanx_2"
       }
                                                     "Transform":
                                                     {
@@ -4132,15 +4006,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
-        "@center":"-165.77777777777777 24.982222222222227 225.20000000000002",
-        "@name":"r_tarsal_proximal_interphalangeal_2"
+        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_middle_phalanx_2",
-        "@name":"r_tarsal_middle_phalanx_2"
+        "@DEF":"hanim_r_tarsal_middle_phalanx_2"
       }
                                                         "Transform":
                                                         {
@@ -4185,15 +4056,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
-        "@center":"-165.77777777777777 19.40888888888889 243.82222222222222",
-        "@name":"r_tarsal_distal_interphalangeal_2"
+        "@DEF":"hanim_r_tarsal_distal_interphalangeal_2"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_r_tarsal_distal_phalanx_2",
-        "@name":"r_tarsal_distal_phalanx_2"
+        "@DEF":"hanim_r_tarsal_distal_phalanx_2"
       }
                                                             "Transform":
                                                             {
@@ -4238,15 +4106,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_r_cuneonavicular_3",
-        "@center":"-182.93333333333334 65.95555555555556 39.14666666666667",
-        "@name":"r_cuneonavicular_3"
+        "@DEF":"hanim_r_cuneonavicular_3"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_r_cuneiform_3",
-        "@name":"r_cuneiform_3"
+        "@DEF":"hanim_r_cuneiform_3"
       }
                                             "Transform":
                                             {
@@ -4291,15 +4156,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_r_tarsometatarsal_3",
-        "@center":"-186.13333333333333 51.55555555555556 77.82222222222222",
-        "@name":"r_tarsometatarsal_3"
+        "@DEF":"hanim_r_tarsometatarsal_3"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_r_metatarsal_3",
-        "@name":"r_metatarsal_3"
+        "@DEF":"hanim_r_metatarsal_3"
       }
                                                 "Transform":
                                                 {
@@ -4344,15 +4206,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_r_metatarsophalangeal_3",
-        "@center":"-189.82222222222222 29.742222222222225 188.48888888888888",
-        "@name":"r_metatarsophalangeal_3"
+        "@DEF":"hanim_r_metatarsophalangeal_3"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_phalanx_3",
-        "@name":"r_tarsal_proximal_phalanx_3"
+        "@DEF":"hanim_r_tarsal_proximal_phalanx_3"
       }
                                                     "Transform":
                                                     {
@@ -4397,15 +4256,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
-        "@center":"-194.57777777777778 23.551111111111112 218.22222222222223",
-        "@name":"r_tarsal_proximal_interphalangeal_3"
+        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_middle_phalanx_3",
-        "@name":"r_tarsal_middle_phalanx_3"
+        "@DEF":"hanim_r_tarsal_middle_phalanx_3"
       }
                                                         "Transform":
                                                         {
@@ -4450,15 +4306,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
-        "@center":"-197.6 19.40888888888889 236.44444444444446",
-        "@name":"r_tarsal_distal_interphalangeal_3"
+        "@DEF":"hanim_r_tarsal_distal_interphalangeal_3"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_r_tarsal_distal_phalanx_3",
-        "@name":"r_tarsal_distal_phalanx_3"
+        "@DEF":"hanim_r_tarsal_distal_phalanx_3"
       }
                                                             "Transform":
                                                             {
@@ -4503,15 +4356,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                }                                "HAnimJoint":
                                 {
       {
-        "@DEF":"hanim_r_calcaneocuboid",
-        "@center":"-175.24444444444444 114.53333333333333 -51.288888888888884",
-        "@name":"r_calcaneocuboid"
+        "@DEF":"hanim_r_calcaneocuboid"
       }
                                     "HAnimSegment":
                                     {
       {
-        "@DEF":"hanim_r_calcaneus",
-        "@name":"r_calcaneus"
+        "@DEF":"hanim_r_calcaneus"
       }
                                         "Transform":
                                         {
@@ -4556,15 +4406,12 @@
                                                 }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_r_transversetarsal",
-        "@center":"-217.82222222222222 69.6888888888889 4.126666666666667",
-        "@name":"r_transversetarsal"
+        "@DEF":"hanim_r_transversetarsal"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_r_cuboid",
-        "@name":"r_cuboid"
+        "@DEF":"hanim_r_cuboid"
       }
                                             "Transform":
                                             {
@@ -4609,15 +4456,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_r_tarsometatarsal_4",
-        "@center":"-209.64444444444445 48.48888888888889 75.91111111111111",
-        "@name":"r_tarsometatarsal_4"
+        "@DEF":"hanim_r_tarsometatarsal_4"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_r_metatarsal_4",
-        "@name":"r_metatarsal_4"
+        "@DEF":"hanim_r_metatarsal_4"
       }
                                                 "Transform":
                                                 {
@@ -4662,15 +4506,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_r_metatarsophalangeal_4",
-        "@center":"-216.31111111111113 28.351111111111113 180.08888888888887",
-        "@name":"r_metatarsophalangeal_4"
+        "@DEF":"hanim_r_metatarsophalangeal_4"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_phalanx_4",
-        "@name":"r_tarsal_proximal_phalanx_4"
+        "@DEF":"hanim_r_tarsal_proximal_phalanx_4"
       }
                                                     "Transform":
                                                     {
@@ -4715,15 +4556,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
-        "@center":"-224.7555555555556 24.186666666666667 210",
-        "@name":"r_tarsal_proximal_interphalangeal_4"
+        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_middle_phalanx_4",
-        "@name":"r_tarsal_middle_phalanx_4"
+        "@DEF":"hanim_r_tarsal_middle_phalanx_4"
       }
                                                         "Transform":
                                                         {
@@ -4768,15 +4606,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
-        "@center":"-227.7777777777778 18.506666666666668 224.57777777777778",
-        "@name":"r_tarsal_distal_interphalangeal_4"
+        "@DEF":"hanim_r_tarsal_distal_interphalangeal_4"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_r_tarsal_distal_phalanx_4",
-        "@name":"r_tarsal_distal_phalanx_4"
+        "@DEF":"hanim_r_tarsal_distal_phalanx_4"
       }
                                                             "Transform":
                                                             {
@@ -4821,15 +4656,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_r_tarsometatarsal_5",
-        "@center":"-237.9111111111111 41.373333333333335 68.62222222222222",
-        "@name":"r_tarsometatarsal_5"
+        "@DEF":"hanim_r_tarsometatarsal_5"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_r_metatarsal_5",
-        "@name":"r_metatarsal_5"
+        "@DEF":"hanim_r_metatarsal_5"
       }
                                                 "Transform":
                                                 {
@@ -4874,15 +4706,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_r_metatarsophalangeal_5",
-        "@center":"-244.3111111111111 27.004444444444445 170.9777777777778",
-        "@name":"r_metatarsophalangeal_5"
+        "@DEF":"hanim_r_metatarsophalangeal_5"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_phalanx_5",
-        "@name":"r_tarsal_proximal_phalanx_5"
+        "@DEF":"hanim_r_tarsal_proximal_phalanx_5"
       }
                                                     "Transform":
                                                     {
@@ -4927,15 +4756,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
-        "@center":"-248.88888888888889 21.444444444444443 185.95555555555558",
-        "@name":"r_tarsal_proximal_interphalangeal_5"
+        "@DEF":"hanim_r_tarsal_proximal_interphalangeal_5"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_middle_phalanx_5",
-        "@name":"r_tarsal_middle_phalanx_5"
+        "@DEF":"hanim_r_tarsal_middle_phalanx_5"
       }
                                                         "Transform":
                                                         {
@@ -4980,15 +4806,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_r_tarsal_distal_interphalangeal_5",
-        "@center":"-250.7111111111111 16.915555555555557 201.24444444444444",
-        "@name":"r_tarsal_distal_interphalangeal_5"
+        "@DEF":"hanim_r_tarsal_distal_interphalangeal_5"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_r_tarsal_distal_phalanx_5",
-        "@name":"r_tarsal_distal_phalanx_5"
+        "@DEF":"hanim_r_tarsal_distal_phalanx_5"
       }
                                                             "Transform":
                                                             {
@@ -5033,15 +4856,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                    }                                                }                                            }                                        }                                    }                                }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_vl5",
-        "@center":"0 1828.0000444444445 -27.186666666666667",
-        "@name":"vl5"
+        "@DEF":"hanim_vl5"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_l5",
-        "@name":"l5"
+        "@DEF":"hanim_l5"
       }
                             "Transform":
                             {
@@ -5086,15 +4906,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_vl4",
-        "@center":"0 1875.9999555555557 -27.186666666666667",
-        "@name":"vl4"
+        "@DEF":"hanim_vl4"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_l4",
-        "@name":"l4"
+        "@DEF":"hanim_l4"
       }
                                 "Transform":
                                 {
@@ -5139,15 +4956,12 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_vl3",
-        "@center":"0 1908 -27.186666666666667",
-        "@name":"vl3"
+        "@DEF":"hanim_vl3"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_l3",
-        "@name":"l3"
+        "@DEF":"hanim_l3"
       }
                                     "Transform":
                                     {
@@ -5192,15 +5006,12 @@
                                             }                                        }                                    }                                }                                "HAnimJoint":
                                 {
       {
-        "@DEF":"hanim_vl2",
-        "@center":"0 1940.4444444444443 -27.186666666666667",
-        "@name":"vl2"
+        "@DEF":"hanim_vl2"
       }
                                     "HAnimSegment":
                                     {
       {
-        "@DEF":"hanim_l2",
-        "@name":"l2"
+        "@DEF":"hanim_l2"
       }
                                         "Transform":
                                         {
@@ -5245,15 +5056,12 @@
                                                 }                                            }                                        }                                    }                                    "HAnimJoint":
                                     {
       {
-        "@DEF":"hanim_vl1",
-        "@center":"0 1974.6666666666667 -27.186666666666667",
-        "@name":"vl1"
+        "@DEF":"hanim_vl1"
       }
                                         "HAnimSegment":
                                         {
       {
-        "@DEF":"hanim_l1",
-        "@name":"l1"
+        "@DEF":"hanim_l1"
       }
                                             "Transform":
                                             {
@@ -5298,15 +5106,12 @@
                                                     }                                                }                                            }                                        }                                        "HAnimJoint":
                                         {
       {
-        "@DEF":"hanim_vt12",
-        "@center":"0 2020.8889333333336 -27.186666666666667",
-        "@name":"vt12"
+        "@DEF":"hanim_vt12"
       }
                                             "HAnimSegment":
                                             {
       {
-        "@DEF":"hanim_t12",
-        "@name":"t12"
+        "@DEF":"hanim_t12"
       }
                                                 "Transform":
                                                 {
@@ -5351,15 +5156,12 @@
                                                         }                                                    }                                                }                                            }                                            "HAnimJoint":
                                             {
       {
-        "@DEF":"hanim_vt11",
-        "@center":"0 2067.5555555555557 -27.186666666666667",
-        "@name":"vt11"
+        "@DEF":"hanim_vt11"
       }
                                                 "HAnimSegment":
                                                 {
       {
-        "@DEF":"hanim_t11",
-        "@name":"t11"
+        "@DEF":"hanim_t11"
       }
                                                     "Transform":
                                                     {
@@ -5404,15 +5206,12 @@
                                                             }                                                        }                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
-        "@DEF":"hanim_vt10",
-        "@center":"0 2101.333288888889 -27.23111111111111",
-        "@name":"vt10"
+        "@DEF":"hanim_vt10"
       }
                                                     "HAnimSegment":
                                                     {
       {
-        "@DEF":"hanim_t10",
-        "@name":"t10"
+        "@DEF":"hanim_t10"
       }
                                                         "Transform":
                                                         {
@@ -5457,15 +5256,12 @@
                                                                 }                                                            }                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
-        "@DEF":"hanim_vt9",
-        "@center":"0 2130.222222222222 -27.186666666666667",
-        "@name":"vt9"
+        "@DEF":"hanim_vt9"
       }
                                                         "HAnimSegment":
                                                         {
       {
-        "@DEF":"hanim_t9",
-        "@name":"t9"
+        "@DEF":"hanim_t9"
       }
                                                             "Transform":
                                                             {
@@ -5510,15 +5306,12 @@
                                                                     }                                                                }                                                            }                                                        }                                                        "HAnimJoint":
                                                         {
       {
-        "@DEF":"hanim_vt8",
-        "@center":"0 2159.1112000000003 -27.186666666666667",
-        "@name":"vt8"
+        "@DEF":"hanim_vt8"
       }
                                                             "HAnimSegment":
                                                             {
       {
-        "@DEF":"hanim_t8",
-        "@name":"t8"
+        "@DEF":"hanim_t8"
       }
                                                                 "Transform":
                                                                 {
@@ -5563,15 +5356,12 @@
                                                                         }                                                                    }                                                                }                                                            }                                                            "HAnimJoint":
                                                             {
       {
-        "@DEF":"hanim_vt7",
-        "@center":"0 2190.2221777777777 -27.186666666666667",
-        "@name":"vt7"
+        "@DEF":"hanim_vt7"
       }
                                                                 "HAnimSegment":
                                                                 {
       {
-        "@DEF":"hanim_t7",
-        "@name":"t7"
+        "@DEF":"hanim_t7"
       }
                                                                     "Transform":
                                                                     {
@@ -5616,15 +5406,12 @@
                                                                             }                                                                        }                                                                    }                                                                }                                                                "HAnimJoint":
                                                                 {
       {
-        "@DEF":"hanim_vt6",
-        "@center":"0 2215.5554666666667 -27.186666666666667",
-        "@name":"vt6"
+        "@DEF":"hanim_vt6"
       }
                                                                     "HAnimSegment":
                                                                     {
       {
-        "@DEF":"hanim_t6",
-        "@name":"t6"
+        "@DEF":"hanim_t6"
       }
                                                                         "Transform":
                                                                         {
@@ -5669,15 +5456,12 @@
                                                                                 }                                                                            }                                                                        }                                                                    }                                                                    "HAnimJoint":
                                                                     {
       {
-        "@DEF":"hanim_vt5",
-        "@center":"0 2246.2222666666667 -27.186666666666667",
-        "@name":"vt5"
+        "@DEF":"hanim_vt5"
       }
                                                                         "HAnimSegment":
                                                                         {
       {
-        "@DEF":"hanim_t5",
-        "@name":"t5"
+        "@DEF":"hanim_t5"
       }
                                                                             "Transform":
                                                                             {
@@ -5722,15 +5506,12 @@
                                                                                     }                                                                                }                                                                            }                                                                        }                                                                        "HAnimJoint":
                                                                         {
       {
-        "@DEF":"hanim_vt4",
-        "@center":"0 2276.4444888888893 -27.186666666666667",
-        "@name":"vt4"
+        "@DEF":"hanim_vt4"
       }
                                                                             "HAnimSegment":
                                                                             {
       {
-        "@DEF":"hanim_t4",
-        "@name":"t4"
+        "@DEF":"hanim_t4"
       }
                                                                                 "Transform":
                                                                                 {
@@ -5775,15 +5556,12 @@
                                                                                         }                                                                                    }                                                                                }                                                                            }                                                                            "HAnimJoint":
                                                                             {
       {
-        "@DEF":"hanim_vt3",
-        "@center":"0 2312.888933333333 -27.186666666666667",
-        "@name":"vt3"
+        "@DEF":"hanim_vt3"
       }
                                                                                 "HAnimSegment":
                                                                                 {
       {
-        "@DEF":"hanim_t3",
-        "@name":"t3"
+        "@DEF":"hanim_t3"
       }
                                                                                     "Transform":
                                                                                     {
@@ -5828,15 +5606,12 @@
                                                                                             }                                                                                        }                                                                                    }                                                                                }                                                                                "HAnimJoint":
                                                                                 {
       {
-        "@DEF":"hanim_vt2",
-        "@center":"0 2361.7777333333333 -27.23111111111111",
-        "@name":"vt2"
+        "@DEF":"hanim_vt2"
       }
                                                                                     "HAnimSegment":
                                                                                     {
       {
-        "@DEF":"hanim_t2",
-        "@name":"t2"
+        "@DEF":"hanim_t2"
       }
                                                                                         "Transform":
                                                                                         {
@@ -5881,15 +5656,12 @@
                                                                                                 }                                                                                            }                                                                                        }                                                                                    }                                                                                    "HAnimJoint":
                                                                                     {
       {
-        "@DEF":"hanim_vt1",
-        "@center":"0 2408.8889333333336 -27.186666666666667",
-        "@name":"vt1"
+        "@DEF":"hanim_vt1"
       }
                                                                                         "HAnimSegment":
                                                                                         {
       {
-        "@DEF":"hanim_t1",
-        "@name":"t1"
+        "@DEF":"hanim_t1"
       }
                                                                                             "Transform":
                                                                                             {
@@ -5934,15 +5706,12 @@
                                                                                                     }                                                                                                }                                                                                            }                                                                                        }                                                                                        "HAnimJoint":
                                                                                         {
       {
-        "@DEF":"hanim_vc7",
-        "@center":"0 2459.999911111111 -29.755555555555556",
-        "@name":"vc7"
+        "@DEF":"hanim_vc7"
       }
                                                                                             "HAnimSegment":
                                                                                             {
       {
-        "@DEF":"hanim_c7",
-        "@name":"c7"
+        "@DEF":"hanim_c7"
       }
                                                                                                 "Transform":
                                                                                                 {
@@ -5987,15 +5756,12 @@
                                                                                                         }                                                                                                    }                                                                                                }                                                                                            }                                                                                            "HAnimJoint":
                                                                                             {
       {
-        "@DEF":"hanim_vc6",
-        "@center":"0 2483.999955555556 -29.755555555555556",
-        "@name":"vc6"
+        "@DEF":"hanim_vc6"
       }
                                                                                                 "HAnimSegment":
                                                                                                 {
       {
-        "@DEF":"hanim_c6",
-        "@name":"c6"
+        "@DEF":"hanim_c6"
       }
                                                                                                     "Transform":
                                                                                                     {
@@ -6040,15 +5806,12 @@
                                                                                                             }                                                                                                        }                                                                                                    }                                                                                                }                                                                                                "HAnimJoint":
                                                                                                 {
       {
-        "@DEF":"hanim_vc5",
-        "@center":"0 2508.4444000000003 -29.755555555555556",
-        "@name":"vc5"
+        "@DEF":"hanim_vc5"
       }
                                                                                                     "HAnimSegment":
                                                                                                     {
       {
-        "@DEF":"hanim_c5",
-        "@name":"c5"
+        "@DEF":"hanim_c5"
       }
                                                                                                         "Transform":
                                                                                                         {
@@ -6093,15 +5856,12 @@
                                                                                                                 }                                                                                                            }                                                                                                        }                                                                                                    }                                                                                                    "HAnimJoint":
                                                                                                     {
       {
-        "@DEF":"hanim_vc4",
-        "@center":"0 2532.8889777777777 -29.755555555555556",
-        "@name":"vc4"
+        "@DEF":"hanim_vc4"
       }
                                                                                                         "HAnimSegment":
                                                                                                         {
       {
-        "@DEF":"hanim_c4",
-        "@name":"c4"
+        "@DEF":"hanim_c4"
       }
                                                                                                             "Transform":
                                                                                                             {
@@ -6146,15 +5906,12 @@
                                                                                                                     }                                                                                                                }                                                                                                            }                                                                                                        }                                                                                                        "HAnimJoint":
                                                                                                         {
       {
-        "@DEF":"hanim_vc3",
-        "@center":"0 2558.2222666666667 -29.755555555555556",
-        "@name":"vc3"
+        "@DEF":"hanim_vc3"
       }
                                                                                                             "HAnimSegment":
                                                                                                             {
       {
-        "@DEF":"hanim_c3",
-        "@name":"c3"
+        "@DEF":"hanim_c3"
       }
                                                                                                                 "Transform":
                                                                                                                 {
@@ -6199,15 +5956,12 @@
                                                                                                                         }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_vc2",
-        "@center":"0 2581.3334222222225 -29.755555555555556",
-        "@name":"vc2"
+        "@DEF":"hanim_vc2"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_c2",
-        "@name":"c2"
+        "@DEF":"hanim_c2"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -6252,15 +6006,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_vc1",
-        "@center":"0 2604.444355555556 -29.755555555555556",
-        "@name":"vc1"
+        "@DEF":"hanim_vc1"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_c1",
-        "@name":"c1"
+        "@DEF":"hanim_c1"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -6305,15 +6056,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_skullbase",
-        "@center":"0 2592.888888888889 -30.502222222222223",
-        "@name":"skullbase"
+        "@DEF":"hanim_skullbase"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_skull",
-        "@name":"skull"
+        "@DEF":"hanim_skull"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -6358,15 +6106,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_eyelid_joint",
-        "@center":"99.77777777777779 2813.333288888889 65.06666666666666",
-        "@name":"l_eyelid_joint"
+        "@DEF":"hanim_l_eyelid_joint"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_eyelid",
-        "@name":"l_eyelid"
+        "@DEF":"hanim_l_eyelid"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -6411,15 +6156,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_eyelid_joint",
-        "@center":"-99.77777777777779 2813.333288888889 65.06666666666666",
-        "@name":"r_eyelid_joint"
+        "@DEF":"hanim_r_eyelid_joint"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_eyelid",
-        "@name":"r_eyelid"
+        "@DEF":"hanim_r_eyelid"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -6464,15 +6206,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_eyeball_joint",
-        "@center":"95.06666666666666 2775.111066666667 164.04444444444445",
-        "@name":"l_eyeball_joint"
+        "@DEF":"hanim_l_eyeball_joint"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_eyeball",
-        "@name":"l_eyeball"
+        "@DEF":"hanim_l_eyeball"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -6517,15 +6256,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_eyeball_joint",
-        "@center":"-95.06666666666666 2775.111066666667 164.04444444444445",
-        "@name":"r_eyeball_joint"
+        "@DEF":"hanim_r_eyeball_joint"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_eyeball",
-        "@name":"r_eyeball"
+        "@DEF":"hanim_r_eyeball"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -6570,15 +6306,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_eyebrow_joint",
-        "@center":"42.96 2792.888888888889 211.24444444444447",
-        "@name":"l_eyebrow_joint"
+        "@DEF":"hanim_l_eyebrow_joint"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_eyebrow",
-        "@name":"l_eyebrow"
+        "@DEF":"hanim_l_eyebrow"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -6623,15 +6356,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_eyebrow_joint",
-        "@center":"-42.96 2792.888888888889 211.24444444444447",
-        "@name":"r_eyebrow_joint"
+        "@DEF":"hanim_r_eyebrow_joint"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_eyebrow",
-        "@name":"r_eyebrow"
+        "@DEF":"hanim_r_eyebrow"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -6676,15 +6406,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_temporomandibular",
-        "@center":"0 2593.3332444444445 30.37777777777778",
-        "@name":"temporomandibular"
+        "@DEF":"hanim_temporomandibular"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_jaw",
-        "@name":"jaw"
+        "@DEF":"hanim_jaw"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -6729,15 +6456,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                        }                                                                                                    }                                                                                                }                                                                                            }                                                                                        }                                                                                        "HAnimJoint":
                                                                                         {
       {
-        "@DEF":"hanim_l_acromioclavicular",
-        "@center":"76 2387.5556 -27.23111111111111",
-        "@name":"l_acromioclavicular"
+        "@DEF":"hanim_l_acromioclavicular"
       }
                                                                                             "HAnimSegment":
                                                                                             {
       {
-        "@DEF":"hanim_l_clavicle",
-        "@name":"l_clavicle"
+        "@DEF":"hanim_l_clavicle"
       }
                                                                                                 "Transform":
                                                                                                 {
@@ -6782,15 +6506,12 @@
                                                                                                         }                                                                                                    }                                                                                                }                                                                                            }                                                                                            "HAnimJoint":
                                                                                             {
       {
-        "@DEF":"hanim_l_sternoclavicular",
-        "@center":"242.84444444444446 2354.222266666667 -25.47555555555556",
-        "@name":"l_sternoclavicular"
+        "@DEF":"hanim_l_sternoclavicular"
       }
                                                                                                 "HAnimSegment":
                                                                                                 {
       {
-        "@DEF":"hanim_l_scapula",
-        "@name":"l_scapula"
+        "@DEF":"hanim_l_scapula"
       }
                                                                                                     "Transform":
                                                                                                     {
@@ -6835,15 +6556,12 @@
                                                                                                             }                                                                                                        }                                                                                                    }                                                                                                }                                                                                                "HAnimJoint":
                                                                                                 {
       {
-        "@DEF":"hanim_l_shoulder",
-        "@center":"326.0444444444445 2328.0000444444445 -6.453333333333333",
-        "@name":"l_shoulder"
+        "@DEF":"hanim_l_shoulder"
       }
                                                                                                     "HAnimSegment":
                                                                                                     {
       {
-        "@DEF":"hanim_l_upperarm",
-        "@name":"l_upperarm"
+        "@DEF":"hanim_l_upperarm"
       }
                                                                                                         "Transform":
                                                                                                         {
@@ -6888,15 +6606,12 @@
                                                                                                                 }                                                                                                            }                                                                                                        }                                                                                                    }                                                                                                    "HAnimJoint":
                                                                                                     {
       {
-        "@DEF":"hanim_l_elbow",
-        "@center":"359.6888888888889 1834.666622222222 -11.12",
-        "@name":"l_elbow"
+        "@DEF":"hanim_l_elbow"
       }
                                                                                                         "HAnimSegment":
                                                                                                         {
       {
-        "@DEF":"hanim_l_forearm",
-        "@name":"l_forearm"
+        "@DEF":"hanim_l_forearm"
       }
                                                                                                             "Transform":
                                                                                                             {
@@ -6941,15 +6656,12 @@
                                                                                                                     }                                                                                                                }                                                                                                            }                                                                                                        }                                                                                                        "HAnimJoint":
                                                                                                         {
       {
-        "@DEF":"hanim_l_radiocarpal",
-        "@center":"359.3777777777778 1430.6666222222223 -9.924444444444445",
-        "@name":"l_radiocarpal"
+        "@DEF":"hanim_l_radiocarpal"
       }
                                                                                                             "HAnimSegment":
                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal",
-        "@name":"l_carpal"
+        "@DEF":"hanim_l_carpal"
       }
                                                                                                                 "Transform":
                                                                                                                 {
@@ -6994,15 +6706,12 @@
                                                                                                                         }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_l_midcarpal_1",
-        "@center":"358.0888888888889 1394.6666222222223 38.17777777777778",
-        "@name":"l_midcarpal_1"
+        "@DEF":"hanim_l_midcarpal_1"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_trapezium",
-        "@name":"l_trapezium"
+        "@DEF":"hanim_l_trapezium"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -7047,15 +6756,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_carpometacarpal_1",
-        "@center":"356.53333333333336 1368.0000444444445 51.333333333333336",
-        "@name":"l_carpometacarpal_1"
+        "@DEF":"hanim_l_carpometacarpal_1"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpal_1",
-        "@name":"l_metacarpal_1"
+        "@DEF":"hanim_l_metacarpal_1"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -7100,15 +6806,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpophalangeal_1",
-        "@center":"357.59999999999997 1328.888888888889 70.66666666666667",
-        "@name":"l_metacarpophalangeal_1"
+        "@DEF":"hanim_l_metacarpophalangeal_1"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_proximal_phalanx_1",
-        "@name":"l_carpal_proximal_phalanx_1"
+        "@DEF":"hanim_l_carpal_proximal_phalanx_1"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -7153,15 +6856,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_interphalangeal_1",
-        "@center":"360.8 1292 98.08888888888889",
-        "@name":"l_carpal_interphalangeal_1"
+        "@DEF":"hanim_l_carpal_interphalangeal_1"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_distal_phalanx_1",
-        "@name":"l_carpal_distal_phalanx_1"
+        "@DEF":"hanim_l_carpal_distal_phalanx_1"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -7206,15 +6906,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_l_midcarpal_2",
-        "@center":"358.0888888888889 1396.4444444444446 16.626666666666665",
-        "@name":"l_midcarpal_2"
+        "@DEF":"hanim_l_midcarpal_2"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_trapezoid",
-        "@name":"l_trapezoid"
+        "@DEF":"hanim_l_trapezoid"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -7259,15 +6956,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_carpometacarpal_2",
-        "@center":"358.0888888888889 1358.222177777778 19.21777777777778",
-        "@name":"l_carpometacarpal_2"
+        "@DEF":"hanim_l_carpometacarpal_2"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpal_2",
-        "@name":"l_metacarpal_2"
+        "@DEF":"hanim_l_metacarpal_2"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -7312,15 +7006,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpophalangeal_2",
-        "@center":"362.93333333333334 1258.6666666666667 29.777777777777782",
-        "@name":"l_metacarpophalangeal_2"
+        "@DEF":"hanim_l_metacarpophalangeal_2"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_proximal_phalanx_2",
-        "@name":"l_carpal_proximal_phalanx_2"
+        "@DEF":"hanim_l_carpal_proximal_phalanx_2"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -7365,15 +7056,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
-        "@center":"358.9333333333334 1198.6666222222223 28.017777777777777",
-        "@name":"l_carpal_proximal_interphalangeal_2"
+        "@DEF":"hanim_l_carpal_proximal_interphalangeal_2"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_middle_phalanx_2",
-        "@name":"l_carpal_middle_phalanx_2"
+        "@DEF":"hanim_l_carpal_middle_phalanx_2"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -7418,15 +7106,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
-        "@center":"356.88888888888886 1148.888888888889 26.44",
-        "@name":"l_carpal_distal_interphalangeal_2"
+        "@DEF":"hanim_l_carpal_distal_interphalangeal_2"
       }
                                                                                                                                 "HAnimSegment":
                                                                                                                                 {
       {
-        "@DEF":"hanim_l_carpal_distal_phalanx_2",
-        "@name":"l_carpal_distal_phalanx_2"
+        "@DEF":"hanim_l_carpal_distal_phalanx_2"
       }
                                                                                                                                     "Transform":
                                                                                                                                     {
@@ -7471,15 +7156,12 @@
                                                                                                                                             }                                                                                                                                        }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_l_midcarpal_3",
-        "@center":"357.6888888888889 1399.5555555555554 -9.475555555555555",
-        "@name":"l_midcarpal_3"
+        "@DEF":"hanim_l_midcarpal_3"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_capitate",
-        "@name":"l_capitate"
+        "@DEF":"hanim_l_capitate"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -7524,15 +7206,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_carpometacarpal_3",
-        "@center":"357.6888888888889 1354.6666666666667 -12.351111111111111",
-        "@name":"l_carpometacarpal_3"
+        "@DEF":"hanim_l_carpometacarpal_3"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpal_3",
-        "@name":"l_metacarpal_3"
+        "@DEF":"hanim_l_metacarpal_3"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -7577,15 +7256,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpophalangeal_3",
-        "@center":"362.84444444444443 1254.222177777778 -7.7377777777777785",
-        "@name":"l_metacarpophalangeal_3"
+        "@DEF":"hanim_l_metacarpophalangeal_3"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_proximal_phalanx_3",
-        "@name":"l_carpal_proximal_phalanx_3"
+        "@DEF":"hanim_l_carpal_proximal_phalanx_3"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -7630,15 +7306,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
-        "@center":"358.9333333333334 1191.5555111111112 -6.986666666666667",
-        "@name":"l_carpal_proximal_interphalangeal_3"
+        "@DEF":"hanim_l_carpal_proximal_interphalangeal_3"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_middle_phalanx_3",
-        "@name":"l_carpal_middle_phalanx_3"
+        "@DEF":"hanim_l_carpal_middle_phalanx_3"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -7683,15 +7356,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
-        "@center":"356.88888888888886 1136.4444444444446 -7.426666666666667",
-        "@name":"l_carpal_distal_interphalangeal_3"
+        "@DEF":"hanim_l_carpal_distal_interphalangeal_3"
       }
                                                                                                                                 "HAnimSegment":
                                                                                                                                 {
       {
-        "@DEF":"hanim_l_carpal_distal_phalanx_3",
-        "@name":"l_carpal_distal_phalanx_3"
+        "@DEF":"hanim_l_carpal_distal_phalanx_3"
       }
                                                                                                                                     "Transform":
                                                                                                                                     {
@@ -7736,15 +7406,12 @@
                                                                                                                                             }                                                                                                                                        }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_l_midcarpal_4_5",
-        "@center":"357.6888888888889 1394.2222666666667 -50.84444444444444",
-        "@name":"l_midcarpal_4_5"
+        "@DEF":"hanim_l_midcarpal_4_5"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_hamate",
-        "@name":"l_hamate"
+        "@DEF":"hanim_l_hamate"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -7789,15 +7456,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_carpometacarpal_4",
-        "@center":"357.6888888888889 1355.5555555555557 -39.346666666666664",
-        "@name":"l_carpometacarpal_4"
+        "@DEF":"hanim_l_carpometacarpal_4"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpal_4",
-        "@name":"l_metacarpal_4"
+        "@DEF":"hanim_l_metacarpal_4"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -7842,15 +7506,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_metacarpophalangeal_4",
-        "@center":"362.84444444444443 1252.4444444444446 -42.35111111111111",
-        "@name":"l_metacarpophalangeal_4"
+        "@DEF":"hanim_l_metacarpophalangeal_4"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_proximal_phalanx_4",
-        "@name":"l_carpal_proximal_phalanx_4"
+        "@DEF":"hanim_l_carpal_proximal_phalanx_4"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -7895,15 +7556,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
-        "@center":"358.9333333333334 1198.222177777778 -40.782222222222224",
-        "@name":"l_carpal_proximal_interphalangeal_4"
+        "@DEF":"hanim_l_carpal_proximal_interphalangeal_4"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_middle_phalanx_4",
-        "@name":"l_carpal_middle_phalanx_4"
+        "@DEF":"hanim_l_carpal_middle_phalanx_4"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -7948,15 +7606,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
-        "@center":"356.88888888888886 1147.1110666666668 -39.06666666666667",
-        "@name":"l_carpal_distal_interphalangeal_4"
+        "@DEF":"hanim_l_carpal_distal_interphalangeal_4"
       }
                                                                                                                                 "HAnimSegment":
                                                                                                                                 {
       {
-        "@DEF":"hanim_l_carpal_distal_phalanx_4",
-        "@name":"l_carpal_distal_phalanx_4"
+        "@DEF":"hanim_l_carpal_distal_phalanx_4"
       }
                                                                                                                                     "Transform":
                                                                                                                                     {
@@ -8001,15 +7656,12 @@
                                                                                                                                             }                                                                                                                                        }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_l_carpometacarpal_5",
-        "@center":"358.8 1359.5555555555557 -64.75555555555556",
-        "@name":"l_carpometacarpal_5"
+        "@DEF":"hanim_l_carpometacarpal_5"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_metacarpal_5",
-        "@name":"l_metacarpal_5"
+        "@DEF":"hanim_l_metacarpal_5"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -8054,15 +7706,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_l_metacarpophalangeal_5",
-        "@center":"362.1333333333333 1260.444488888889 -73.2",
-        "@name":"l_metacarpophalangeal_5"
+        "@DEF":"hanim_l_metacarpophalangeal_5"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_carpal_proximal_phalanx_5",
-        "@name":"l_carpal_proximal_phalanx_5"
+        "@DEF":"hanim_l_carpal_proximal_phalanx_5"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -8107,15 +7756,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_l_carpal_proximal_interphalangeal_5",
-        "@center":"358.84444444444443 1226.6666666666667 -73.37777777777778",
-        "@name":"l_carpal_proximal_interphalangeal_5"
+        "@DEF":"hanim_l_carpal_proximal_interphalangeal_5"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_middle_phalanx_5",
-        "@name":"l_carpal_middle_phalanx_5"
+        "@DEF":"hanim_l_carpal_middle_phalanx_5"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -8160,15 +7806,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_l_carpal_distal_interphalangeal_5",
-        "@center":"357.15555555555557 1189.7777777777778 -73.02222222222223",
-        "@name":"l_carpal_distal_interphalangeal_5"
+        "@DEF":"hanim_l_carpal_distal_interphalangeal_5"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_l_carpal_distal_phalanx_5",
-        "@name":"l_carpal_distal_phalanx_5"
+        "@DEF":"hanim_l_carpal_distal_phalanx_5"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -8213,15 +7856,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                        }                                                                                                    }                                                                                                }                                                                                            }                                                                                        }                                                                                        "HAnimJoint":
                                                                                         {
       {
-        "@DEF":"hanim_r_acromioclavicular",
-        "@center":"-76 2387.5556 -27.23111111111111",
-        "@name":"r_acromioclavicular"
+        "@DEF":"hanim_r_acromioclavicular"
       }
                                                                                             "HAnimSegment":
                                                                                             {
       {
-        "@DEF":"hanim_r_clavicle",
-        "@name":"r_clavicle"
+        "@DEF":"hanim_r_clavicle"
       }
                                                                                                 "Transform":
                                                                                                 {
@@ -8266,15 +7906,12 @@
                                                                                                         }                                                                                                    }                                                                                                }                                                                                            }                                                                                            "HAnimJoint":
                                                                                             {
       {
-        "@DEF":"hanim_r_sternoclavicular",
-        "@center":"-242.84444444444446 2354.222266666667 -25.47555555555556",
-        "@name":"r_sternoclavicular"
+        "@DEF":"hanim_r_sternoclavicular"
       }
                                                                                                 "HAnimSegment":
                                                                                                 {
       {
-        "@DEF":"hanim_r_scapula",
-        "@name":"r_scapula"
+        "@DEF":"hanim_r_scapula"
       }
                                                                                                     "Transform":
                                                                                                     {
@@ -8319,15 +7956,12 @@
                                                                                                             }                                                                                                        }                                                                                                    }                                                                                                }                                                                                                "HAnimJoint":
                                                                                                 {
       {
-        "@DEF":"hanim_r_shoulder",
-        "@center":"-325.33333333333337 2328.0000444444445 -6.453333333333333",
-        "@name":"r_shoulder"
+        "@DEF":"hanim_r_shoulder"
       }
                                                                                                     "HAnimSegment":
                                                                                                     {
       {
-        "@DEF":"hanim_r_upperarm",
-        "@name":"r_upperarm"
+        "@DEF":"hanim_r_upperarm"
       }
                                                                                                         "Transform":
                                                                                                         {
@@ -8372,15 +8006,12 @@
                                                                                                                 }                                                                                                            }                                                                                                        }                                                                                                    }                                                                                                    "HAnimJoint":
                                                                                                     {
       {
-        "@DEF":"hanim_r_elbow",
-        "@center":"-358.9777777777778 1834.666622222222 -11.12",
-        "@name":"r_elbow"
+        "@DEF":"hanim_r_elbow"
       }
                                                                                                         "HAnimSegment":
                                                                                                         {
       {
-        "@DEF":"hanim_r_forearm",
-        "@name":"r_forearm"
+        "@DEF":"hanim_r_forearm"
       }
                                                                                                             "Transform":
                                                                                                             {
@@ -8425,15 +8056,12 @@
                                                                                                                     }                                                                                                                }                                                                                                            }                                                                                                        }                                                                                                        "HAnimJoint":
                                                                                                         {
       {
-        "@DEF":"hanim_r_radiocarpal",
-        "@center":"-358.6666666666667 1430.6666222222223 -9.92",
-        "@name":"r_radiocarpal"
+        "@DEF":"hanim_r_radiocarpal"
       }
                                                                                                             "HAnimSegment":
                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal",
-        "@name":"r_carpal"
+        "@DEF":"hanim_r_carpal"
       }
                                                                                                                 "Transform":
                                                                                                                 {
@@ -8478,15 +8106,12 @@
                                                                                                                         }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_r_midcarpal_1",
-        "@center":"-357.46666666666664 1394.6666222222223 38.17777777777778",
-        "@name":"r_midcarpal_1"
+        "@DEF":"hanim_r_midcarpal_1"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_trapezium",
-        "@name":"r_trapezium"
+        "@DEF":"hanim_r_trapezium"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -8531,15 +8156,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_carpometacarpal_1",
-        "@center":"-355.82222222222225 1368.0000444444445 51.333333333333336",
-        "@name":"r_carpometacarpal_1"
+        "@DEF":"hanim_r_carpometacarpal_1"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpal_1",
-        "@name":"r_metacarpal_1"
+        "@DEF":"hanim_r_metacarpal_1"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -8584,15 +8206,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpophalangeal_1",
-        "@center":"-356.84444444444443 1328.888888888889 70.66666666666667",
-        "@name":"r_metacarpophalangeal_1"
+        "@DEF":"hanim_r_metacarpophalangeal_1"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_proximal_phalanx_1",
-        "@name":"r_carpal_proximal_phalanx_1"
+        "@DEF":"hanim_r_carpal_proximal_phalanx_1"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -8637,15 +8256,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_interphalangeal_1",
-        "@center":"-360.0444444444445 1292 98.08888888888889",
-        "@name":"r_carpal_interphalangeal_1"
+        "@DEF":"hanim_r_carpal_interphalangeal_1"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_distal_phalanx_1",
-        "@name":"r_carpal_distal_phalanx_1"
+        "@DEF":"hanim_r_carpal_distal_phalanx_1"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -8690,15 +8306,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_r_midcarpal_2",
-        "@center":"-357.46666666666664 1396.4444444444446 16.626666666666665",
-        "@name":"r_midcarpal_2"
+        "@DEF":"hanim_r_midcarpal_2"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_trapezoid",
-        "@name":"r_trapezoid"
+        "@DEF":"hanim_r_trapezoid"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -8743,15 +8356,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_carpometacarpal_2",
-        "@center":"-357.3333333333333 1358.222177777778 19.21777777777778",
-        "@name":"r_carpometacarpal_2"
+        "@DEF":"hanim_r_carpometacarpal_2"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpal_2",
-        "@name":"r_metacarpal_2"
+        "@DEF":"hanim_r_metacarpal_2"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -8796,15 +8406,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpophalangeal_2",
-        "@center":"-362.17777777777775 1258.6666666666667 29.777777777777782",
-        "@name":"r_metacarpophalangeal_2"
+        "@DEF":"hanim_r_metacarpophalangeal_2"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_proximal_phalanx_2",
-        "@name":"r_carpal_proximal_phalanx_2"
+        "@DEF":"hanim_r_carpal_proximal_phalanx_2"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -8849,15 +8456,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
-        "@center":"-358.17777777777775 1198.6666222222223 28.017777777777777",
-        "@name":"r_carpal_proximal_interphalangeal_2"
+        "@DEF":"hanim_r_carpal_proximal_interphalangeal_2"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_middle_phalanx_2",
-        "@name":"r_carpal_middle_phalanx_2"
+        "@DEF":"hanim_r_carpal_middle_phalanx_2"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -8902,15 +8506,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
-        "@center":"-356.1333333333333 1148.888888888889 26.44",
-        "@name":"r_carpal_distal_interphalangeal_2"
+        "@DEF":"hanim_r_carpal_distal_interphalangeal_2"
       }
                                                                                                                                 "HAnimSegment":
                                                                                                                                 {
       {
-        "@DEF":"hanim_r_carpal_distal_phalanx_2",
-        "@name":"r_carpal_distal_phalanx_2"
+        "@DEF":"hanim_r_carpal_distal_phalanx_2"
       }
                                                                                                                                     "Transform":
                                                                                                                                     {
@@ -8955,15 +8556,12 @@
                                                                                                                                             }                                                                                                                                        }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_r_midcarpal_3",
-        "@center":"-356.9777777777778 1399.5555555555554 -9.475555555555555",
-        "@name":"r_midcarpal_3"
+        "@DEF":"hanim_r_midcarpal_3"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_capitate",
-        "@name":"r_capitate"
+        "@DEF":"hanim_r_capitate"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -9008,15 +8606,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_carpometacarpal_3",
-        "@center":"-356.9777777777778 1354.6666666666667 -12.351111111111111",
-        "@name":"r_carpometacarpal_3"
+        "@DEF":"hanim_r_carpometacarpal_3"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpal_3",
-        "@name":"r_metacarpal_3"
+        "@DEF":"hanim_r_metacarpal_3"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -9061,15 +8656,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpophalangeal_3",
-        "@center":"-362.0888888888889 1254.222177777778 -7.7377777777777785",
-        "@name":"r_metacarpophalangeal_3"
+        "@DEF":"hanim_r_metacarpophalangeal_3"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_proximal_phalanx_3",
-        "@name":"r_carpal_proximal_phalanx_3"
+        "@DEF":"hanim_r_carpal_proximal_phalanx_3"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -9114,15 +8706,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
-        "@center":"-358.17777777777775 1191.5555111111112 -6.986666666666667",
-        "@name":"r_carpal_proximal_interphalangeal_3"
+        "@DEF":"hanim_r_carpal_proximal_interphalangeal_3"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_middle_phalanx_3",
-        "@name":"r_carpal_middle_phalanx_3"
+        "@DEF":"hanim_r_carpal_middle_phalanx_3"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -9167,15 +8756,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
-        "@center":"-356.1333333333333 1136.4444444444446 -7.426666666666667",
-        "@name":"r_carpal_distal_interphalangeal_3"
+        "@DEF":"hanim_r_carpal_distal_interphalangeal_3"
       }
                                                                                                                                 "HAnimSegment":
                                                                                                                                 {
       {
-        "@DEF":"hanim_r_carpal_distal_phalanx_3",
-        "@name":"r_carpal_distal_phalanx_3"
+        "@DEF":"hanim_r_carpal_distal_phalanx_3"
       }
                                                                                                                                     "Transform":
                                                                                                                                     {
@@ -9220,15 +8806,12 @@
                                                                                                                                             }                                                                                                                                        }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_r_midcarpal_4_5",
-        "@center":"-356.9777777777778 1394.2222666666667 -50.84444444444444",
-        "@name":"r_midcarpal_4_5"
+        "@DEF":"hanim_r_midcarpal_4_5"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_hamate",
-        "@name":"r_hamate"
+        "@DEF":"hanim_r_hamate"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -9273,15 +8856,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_carpometacarpal_4",
-        "@center":"-356.9777777777778 1355.5555555555557 -39.346666666666664",
-        "@name":"r_carpometacarpal_4"
+        "@DEF":"hanim_r_carpometacarpal_4"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpal_4",
-        "@name":"r_metacarpal_4"
+        "@DEF":"hanim_r_metacarpal_4"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -9326,15 +8906,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_metacarpophalangeal_4",
-        "@center":"-362.0888888888889 1252.4444444444446 -42.35111111111111",
-        "@name":"r_metacarpophalangeal_4"
+        "@DEF":"hanim_r_metacarpophalangeal_4"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_proximal_phalanx_4",
-        "@name":"r_carpal_proximal_phalanx_4"
+        "@DEF":"hanim_r_carpal_proximal_phalanx_4"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -9379,15 +8956,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
-        "@center":"-358.17777777777775 1198.222177777778 -40.782222222222224",
-        "@name":"r_carpal_proximal_interphalangeal_4"
+        "@DEF":"hanim_r_carpal_proximal_interphalangeal_4"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_middle_phalanx_4",
-        "@name":"r_carpal_middle_phalanx_4"
+        "@DEF":"hanim_r_carpal_middle_phalanx_4"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {
@@ -9432,15 +9006,12 @@
                                                                                                                                         }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
-        "@center":"-356.1333333333333 1147.1110666666668 -39.06666666666667",
-        "@name":"r_carpal_distal_interphalangeal_4"
+        "@DEF":"hanim_r_carpal_distal_interphalangeal_4"
       }
                                                                                                                                 "HAnimSegment":
                                                                                                                                 {
       {
-        "@DEF":"hanim_r_carpal_distal_phalanx_4",
-        "@name":"r_carpal_distal_phalanx_4"
+        "@DEF":"hanim_r_carpal_distal_phalanx_4"
       }
                                                                                                                                     "Transform":
                                                                                                                                     {
@@ -9485,15 +9056,12 @@
                                                                                                                                             }                                                                                                                                        }                                                                                                                                    }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
-        "@DEF":"hanim_r_carpometacarpal_5",
-        "@center":"-358.0444444444444 1359.5555555555557 -64.75555555555556",
-        "@name":"r_carpometacarpal_5"
+        "@DEF":"hanim_r_carpometacarpal_5"
       }
                                                                                                                 "HAnimSegment":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_metacarpal_5",
-        "@name":"r_metacarpal_5"
+        "@DEF":"hanim_r_metacarpal_5"
       }
                                                                                                                     "Transform":
                                                                                                                     {
@@ -9538,15 +9106,12 @@
                                                                                                                             }                                                                                                                        }                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
-        "@DEF":"hanim_r_metacarpophalangeal_5",
-        "@center":"-361.4222222222222 1260.444488888889 -73.2",
-        "@name":"r_metacarpophalangeal_5"
+        "@DEF":"hanim_r_metacarpophalangeal_5"
       }
                                                                                                                     "HAnimSegment":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_carpal_proximal_phalanx_5",
-        "@name":"r_carpal_proximal_phalanx_5"
+        "@DEF":"hanim_r_carpal_proximal_phalanx_5"
       }
                                                                                                                         "Transform":
                                                                                                                         {
@@ -9591,15 +9156,12 @@
                                                                                                                                 }                                                                                                                            }                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
-        "@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
-        "@center":"-358.1333333333333 1226.6666666666667 -73.37777777777778",
-        "@name":"r_carpal_proximal_interphalangeal_5"
+        "@DEF":"hanim_r_carpal_proximal_interphalangeal_5"
       }
                                                                                                                         "HAnimSegment":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_middle_phalanx_5",
-        "@name":"r_carpal_middle_phalanx_5"
+        "@DEF":"hanim_r_carpal_middle_phalanx_5"
       }
                                                                                                                             "Transform":
                                                                                                                             {
@@ -9644,15 +9206,12 @@
                                                                                                                                     }                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
-        "@DEF":"hanim_r_carpal_distal_interphalangeal_5",
-        "@center":"-356.44444444444446 1189.7777777777778 -73.02222222222223",
-        "@name":"r_carpal_distal_interphalangeal_5"
+        "@DEF":"hanim_r_carpal_distal_interphalangeal_5"
       }
                                                                                                                             "HAnimSegment":
                                                                                                                             {
       {
-        "@DEF":"hanim_r_carpal_distal_phalanx_5",
-        "@name":"r_carpal_distal_phalanx_5"
+        "@DEF":"hanim_r_carpal_distal_phalanx_5"
       }
                                                                                                                                 "Transform":
                                                                                                                                 {

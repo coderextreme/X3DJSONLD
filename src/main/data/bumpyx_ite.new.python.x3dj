@@ -182,8 +182,7 @@
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"x_iteShader",
-        "@language":"GLSL"
+        "@DEF":"x_iteShader"
       }
                         "field":
                         {

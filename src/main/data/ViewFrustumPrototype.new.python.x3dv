@@ -86,7 +86,6 @@ WorldInfo {
           DEF VisibilitySwitch Switch {
             children [
               DEF PositionTransform Transform {
-                rotation 0 1 0 3.14159
                 children [
                   DEF OrientationTransform Transform {
                     children [
@@ -109,9 +108,7 @@ WorldInfo {
                         }
                         
                         geometry DEF FrustumLines IndexedLineSet {
-                          coordIndex [0 1 2 3 0 -1 4 5 6 7 4 -1 0 4 -1 1 5 -1 2 6 -1 3 7 -1]
-                          coord DEF FrustumCoordinate Coordinate {
-                            point [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0] 
+                          coord DEF FrustumCoordinate Coordinate { 
                           }
                            
                         }
@@ -163,8 +160,6 @@ WorldInfo {
           
           }
           DEF GeometryComputationScript Script {
-            directOutput TRUE
-            url ["ViewFrustumPrototypeScript.js"]
             IS IS {
               children [
                 connect {

@@ -116,8 +116,7 @@
                         "Transform":
                         {
       {
-        "@DEF":"dad_Transform5",
-        "@rotation":"0 1 0 1.569"
+        "@DEF":"dad_Transform5"
       }
                             "Group":
                             {
@@ -127,11 +126,7 @@
                                 "Transform":
                                 {
       {
-        "@DEF":"dad_Cover_FACES01_FACES",
-        "@rotation":"0 -0.716 0.698 3.141",
-        "@scale":"0.1097 0.09537 0.09537",
-        "@scaleOrientation":"0.577 -0.577 0.577 2.094",
-        "@translation":"-0.189 1.74359 -0.02274"
+        "@DEF":"dad_Cover_FACES01_FACES"
       }
                                     "Shape":
                                     {
@@ -143,17 +138,13 @@
                                             "Material":
                                             {
       {
-        "@DEF":"material0_mat",
-        "@ambientIntensity":"1",
-        "@diffuseColor":"0.1255 0.1843 0.09804",
-        "@shininess":"0.056"
+        "@DEF":"material0_mat"
       }
     },
                                             "ImageTexture":
                                             {
       {
-        "@DEF":"marine_camo",
-        "@url":""marine_camo.jpg" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Polygonal/marine_camo.jpg""
+        "@DEF":"marine_camo"
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -179,10 +170,7 @@
                                         }                                    }                                }                                "Transform":
                                 {
       {
-        "@DEF":"dad_HEAD_FACES01_FACES",
-        "@rotation":"1 0 0 1.571",
-        "@scale":"0.4132 0.4132 0.4132",
-        "@translation":"-0.02468 1.03432 -0.09053"
+        "@DEF":"dad_HEAD_FACES01_FACES"
       }
                                     "Shape":
                                     {
@@ -194,10 +182,7 @@
                                             "Material":
                                             {
       {
-        "@DEF":"material2_mat",
-        "@ambientIntensity":"1",
-        "@diffuseColor":"0.1255 0.1843 0.09804",
-        "@shininess":"0.056"
+        "@DEF":"material2_mat"
       }
     },
                                             "ImageTexture":
@@ -229,10 +214,7 @@
                                         }                                    }                                }                                "Transform":
                                 {
       {
-        "@DEF":"dad_BODY_FACES01_FACES",
-        "@rotation":"1 0 0 1.571",
-        "@scale":"0.4132 0.4132 0.4132",
-        "@translation":"-0.02585 1.03714 -0.09053"
+        "@DEF":"dad_BODY_FACES01_FACES"
       }
                                     "Shape":
                                     {
@@ -244,10 +226,7 @@
                                             "Material":
                                             {
       {
-        "@DEF":"material1_mat",
-        "@ambientIntensity":"1",
-        "@diffuseColor":"0.1255 0.1843 0.09804",
-        "@shininess":"0.056"
+        "@DEF":"material1_mat"
       }
     },
                                             "ImageTexture":
@@ -279,19 +258,13 @@
                                         }                                    }                                }                            }                        }                    }                }                "Viewpoint":
                 {
       {
-        "@DEF":"Viewpoint1",
-        "@description":"Sailor Front",
-        "@orientation":"0 1 0 1.571",
-        "@position":"2.293 1.66 0"
+        "@DEF":"Viewpoint1"
       }
     },
                 "Viewpoint":
                 {
       {
-        "@DEF":"Viewpoint2",
-        "@description":"Sailor Back",
-        "@orientation":"-0.185 -0.965 -0.185 1.605",
-        "@position":"-1.208 2 0"
+        "@DEF":"Viewpoint2"
       }
     },
             }        }    }}

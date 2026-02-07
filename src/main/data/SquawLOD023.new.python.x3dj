@@ -116,10 +116,7 @@
             "GeoOrigin":
             {
       {
-        "@DEF":"ORIGIN",
-        "@geoCoords":"4342525.5 740604 0",
-        "@geoSystem":""UTM" "Z10" "N"",
-        "@rotateYUp":"true"
+        "@DEF":"ORIGIN"
       }
     },
             "Shape":

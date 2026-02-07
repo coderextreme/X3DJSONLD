@@ -71,7 +71,6 @@ WorldInfo {
             
             children [
               DEF x_iteShader ComposedShader {
-                language "GLSL"
                 children [
                   field {
                     accessType "inputOnly"

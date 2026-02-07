@@ -107,12 +107,12 @@
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
-			<ImageTexture containerField="back" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
-			<ImageTexture containerField="bottom" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
-			<ImageTexture containerField="front" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
-			<ImageTexture containerField="left" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
-			<ImageTexture containerField="right" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
-			<ImageTexture containerField="top" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
+			<ImageTexture containerField="backTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' ></ImageTexture>
+			<ImageTexture containerField="bottomTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' ></ImageTexture>
+			<ImageTexture containerField="frontTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' ></ImageTexture>
+			<ImageTexture containerField="leftTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' ></ImageTexture>
+			<ImageTexture containerField="rightTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' ></ImageTexture>
+			<ImageTexture containerField="topTexture" url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' ></ImageTexture>
                 </ComposedCubeMapTexture>
                <ComposedShader DEF="freewrlShader" language="GLSL">
                   <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>

@@ -55,9 +55,7 @@
         "Transform":
         {
       {
-        "@DEF":"Floor",
-        "@scale":"1 0.0125 1",
-        "@translation":"0 -0.0125 0"
+        "@DEF":"Floor"
       }
             "Shape":
             {

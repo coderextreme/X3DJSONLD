@@ -16,10 +16,6 @@ WorldInfo {
       children [
         Shape {
           geometry DEF IndexedFaceSet IndexedFaceSet {
-            colorIndex [0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1]
-            coordIndex [0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1]
-            normalIndex [0 0 1 2 3 4 5]
-            normalPerVertex FALSE
             color Color {
               color [0 1 0] 
             }

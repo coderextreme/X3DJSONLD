@@ -228,9 +228,7 @@
                         "ShaderPart":
                         {
       {
-        "@DEF":"commonfs",
-        "@type":"FRAGMENT",
-        "@url":""file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs""
+        "@DEF":"commonfs"
       }
     },
                     }                }                "Sphere":

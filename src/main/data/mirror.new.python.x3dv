@@ -20,28 +20,22 @@ Viewpoint {
       position 0 5 100 
     }
     TextureBackground {
-      backTexture DEF backBackgroundTexture ImageTexture {
-        url ["../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"] 
+      backTexture DEF backBackgroundTexture ImageTexture { 
       }
       
-      bottomTexture DEF bottomBackgroundTexture ImageTexture {
-        url ["../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"] 
+      bottomTexture DEF bottomBackgroundTexture ImageTexture { 
       }
       
-      frontTexture DEF frontBackgroundTexture ImageTexture {
-        url ["../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"] 
+      frontTexture DEF frontBackgroundTexture ImageTexture { 
       }
       
-      leftTexture DEF leftBackgroundTexture ImageTexture {
-        url ["../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"] 
+      leftTexture DEF leftBackgroundTexture ImageTexture { 
       }
       
-      rightTexture DEF rightBackgroundTexture ImageTexture {
-        url ["../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"] 
+      rightTexture DEF rightBackgroundTexture ImageTexture { 
       }
       
-      topTexture DEF topBackgroundTexture ImageTexture {
-        url ["../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"] 
+      topTexture DEF topBackgroundTexture ImageTexture { 
       }
       
     }
@@ -55,35 +49,28 @@ Viewpoint {
             }
             
             texture ComposedCubeMapTexture {
-              backTexture DEF backShader ImageTexture {
-                url ["../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"] 
+              backTexture DEF backShader ImageTexture { 
               }
               
-              bottomTexture DEF bottomShader ImageTexture {
-                url ["../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"] 
+              bottomTexture DEF bottomShader ImageTexture { 
               }
               
-              frontTexture DEF frontShader ImageTexture {
-                url ["../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"] 
+              frontTexture DEF frontShader ImageTexture { 
               }
               
-              leftTexture DEF leftShader ImageTexture {
-                url ["../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"] 
+              leftTexture DEF leftShader ImageTexture { 
               }
               
-              rightTexture DEF rightShader ImageTexture {
-                url ["../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"] 
+              rightTexture DEF rightShader ImageTexture { 
               }
               
-              topTexture DEF topShader ImageTexture {
-                url ["../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"] 
+              topTexture DEF topShader ImageTexture { 
               }
               
             }
             
             children [
               DEF x3dom ComposedShader {
-                language "GLSL"
                 children [
                   field {
                     accessType "inputOutput"
@@ -130,7 +117,6 @@ Viewpoint {
               
               }
               DEF x_ite ComposedShader {
-                language "GLSL"
                 children [
                   field {
                     accessType "inputOutput"
@@ -187,40 +173,6 @@ Viewpoint {
            
         }
         DEF UrlSelector Script {
-          directOutput TRUE
-          url "ecmascript:
-"+
-"        function set_fraction( f, tm ) {
-"+
-"	    var side = Math.floor(f*frontUrls.length);
-"+
-"	    if (side > frontUrls.length-1) {
-"+
-"	    	side = 0;
-"+
-"	    }
-"+
-"	    if (side != old) {
-"+
-"	    	    Browser.print(f+" "+side);
-"+
-"	    	    old = side;
-"+
-"		    front_changed[0] = frontUrls[side];
-"+
-"		    back_changed[0] = backUrls[side];
-"+
-"		    left_changed[0] = leftUrls[side];
-"+
-"		    right_changed[0] = rightUrls[side];
-"+
-"		    top_changed[0] = topUrls[side];
-"+
-"		    bottom_changed[0] = bottomUrls[side];
-"+
-"            }
-"+
-"        }"
           children [
             field {
               accessType "initializeOnly"
@@ -303,9 +255,7 @@ Viewpoint {
           ]
         
         }
-        DEF Clock TimeSensor {
-          cycleInterval 45
-          loop TRUE 
+        DEF Clock TimeSensor { 
         }
         
         ROUTE Clock.fraction_changed TO UrlSelector.set_fraction

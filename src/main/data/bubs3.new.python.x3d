@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='bubs3.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
@@ -103,7 +103,7 @@
 "+
 "}]]>
       </Script>
-      <TimeSensor DEF='DECLBubble_bubbleA_bubbleClock' cycleInterval='10' loop='true'/>
+      <TimeSensor DEF='DECLBubble_bubbleA_bubbleClock'/>
       <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleA_bounce' toField='set_translation' toNode='DECLBubble_transformA'/>
       <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleA_bounce' toField='set_scale' toNode='DECLBubble_transformA'/>
       <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleA_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleA_bounce'/>
@@ -199,7 +199,7 @@
 "+
 "}]]>
       </Script>
-      <TimeSensor DEF='DECLBubble_bubbleB_bubbleClock' cycleInterval='10' loop='true'/>
+      <TimeSensor DEF='DECLBubble_bubbleB_bubbleClock'/>
       <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleB_bounce' toField='set_translation' toNode='DECLBubble_transformB'/>
       <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleB_bounce' toField='set_scale' toNode='DECLBubble_transformB'/>
       <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleB_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleB_bounce'/>
@@ -295,7 +295,7 @@
 "+
 "}]]>
       </Script>
-      <TimeSensor DEF='DECLBubble_bubbleC_bubbleClock' cycleInterval='10' loop='true'/>
+      <TimeSensor DEF='DECLBubble_bubbleC_bubbleClock'/>
       <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleC_bounce' toField='set_translation' toNode='DECLBubble_transformC'/>
       <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleC_bounce' toField='set_scale' toNode='DECLBubble_transformC'/>
       <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleC_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleC_bounce'/>
@@ -391,7 +391,7 @@
 "+
 "}]]>
       </Script>
-      <TimeSensor DEF='DECLBubble_bubbleD_bubbleClock' cycleInterval='10' loop='true'/>
+      <TimeSensor DEF='DECLBubble_bubbleD_bubbleClock'/>
       <ROUTE fromField='translation_changed' fromNode='DECLBubble_bubbleD_bounce' toField='set_translation' toNode='DECLBubble_transformD'/>
       <ROUTE fromField='scale_changed' fromNode='DECLBubble_bubbleD_bounce' toField='set_scale' toNode='DECLBubble_transformD'/>
       <ROUTE fromField='fraction_changed' fromNode='DECLBubble_bubbleD_bubbleClock' toField='set_fraction' toNode='DECLBubble_bubbleD_bounce'/>

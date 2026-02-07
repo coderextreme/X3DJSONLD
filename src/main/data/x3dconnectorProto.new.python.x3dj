@@ -109,8 +109,7 @@
             }            "PlaneSensor":
             {
       {
-        "@DEF":"PS1",
-        "@description":"Grab to move"
+        "@DEF":"PS1"
       }
     },
             "ROUTE":
@@ -125,8 +124,7 @@
         }        "Transform":
         {
       {
-        "@DEF":"G2",
-        "@translation":"1 -1 0.01"
+        "@DEF":"G2"
       }
             "Shape":
             {
@@ -147,9 +145,7 @@
             }            "PlaneSensor":
             {
       {
-        "@DEF":"PS2",
-        "@description":"Grab to move",
-        "@offset":"1 -1 0.01"
+        "@DEF":"PS2"
       }
     },
             "ROUTE":
@@ -164,8 +160,7 @@
         }        "Transform":
         {
       {
-        "@DEF":"G3",
-        "@translation":"1 1 0.01"
+        "@DEF":"G3"
       }
             "Shape":
             {
@@ -186,9 +181,7 @@
             }            "PlaneSensor":
             {
       {
-        "@DEF":"PS3",
-        "@description":"Grab to move",
-        "@offset":"1 1 0.01"
+        "@DEF":"PS3"
       }
     },
             "ROUTE":
@@ -203,8 +196,7 @@
         }        "Transform":
         {
       {
-        "@DEF":"G4",
-        "@translation":"-1 1 0.01"
+        "@DEF":"G4"
       }
             "Shape":
             {
@@ -225,9 +217,7 @@
             }            "PlaneSensor":
             {
       {
-        "@DEF":"PS4",
-        "@description":"Grab to move",
-        "@offset":"-1 1 0.01"
+        "@DEF":"PS4"
       }
     },
             "ROUTE":
@@ -380,89 +370,7 @@
                 "Script":
                 {
       {
-        "@DEF":"S1",
-        "@directOutput":"true",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;        function recompute(startpoint,endpoint){
-&quot;+
-&quot;	    if (typeof endpoint === 'undefined') {
-&quot;+
-&quot;		return;
-&quot;+
-&quot;	    }
-&quot;+
-&quot;            var dif = endpoint.subtract(startpoint);
-&quot;+
-&quot;            var dist = dif.length()*0.5;
-&quot;+
-&quot;            var dif2 = dif.multiply(0.5);
-&quot;+
-&quot;            var norm = dif.normalize();
-&quot;+
-&quot;            var transl = startpoint.add(dif2);
-&quot;+
-&quot;	    if (typeof Quaternion !== 'undefined') {
-&quot;+
-&quot;		    return {
-&quot;+
-&quot;			    scale : new SFVec3f(1.0,dist,1.0),
-&quot;+
-&quot;			    translation : transl,
-&quot;+
-&quot;			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
-&quot;+
-&quot;		    };
-&quot;+
-&quot;	    } else {
-&quot;+
-&quot;		    return {
-&quot;+
-&quot;			    scale : new SFVec3f(1.0,dist,1.0),
-&quot;+
-&quot;			    translation : transl,
-&quot;+
-&quot;			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
-&quot;+
-&quot;		    };
-&quot;+
-&quot;	    }
-&quot;+
-&quot;	}
-&quot;+
-&quot;	function recompute_and_route(startpoint, endpoint) {
-&quot;+
-&quot;	      var trafo = recompute(startpoint, endpoint);
-&quot;+
-&quot;	      if (trafo) {
-&quot;+
-&quot;		      transnode.translation = trafo.translation;
-&quot;+
-&quot;		      rotscalenode.rotation = trafo.rotation;
-&quot;+
-&quot;		      rotscalenode.scale = trafo.scale;
-&quot;+
-&quot;	      }
-&quot;+
-&quot;	}
-&quot;+
-&quot;        function initialize(){
-&quot;+
-&quot;            recompute_and_route(startnode.translation,endnode.translation);
-&quot;+
-&quot;        }
-&quot;+
-&quot;        function set_startpoint(val,t){
-&quot;+
-&quot;            recompute_and_route(val,endnode.translation);
-&quot;+
-&quot;        }
-&quot;+
-&quot;        function set_endpoint(val,t){
-&quot;+
-&quot;            recompute_and_route(startnode.translation,val);
-&quot;+
-&quot;        }"
+        "@DEF":"S1"
       }
                     "IS":
                     {

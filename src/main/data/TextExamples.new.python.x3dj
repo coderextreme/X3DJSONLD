@@ -106,9 +106,7 @@
                     "FontStyle":
                     {
       {
-        "@DEF":"testFontStyle",
-        "@justify":""MIDDLE" "MIDDLE"",
-        "@size":"0.8"
+        "@DEF":"testFontStyle"
       }
     },
                 }            }        }        "Transform":

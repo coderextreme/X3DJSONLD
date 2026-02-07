@@ -135,29 +135,25 @@
                                     "Material":
                                     {
       {
-        "@DEF":"MaterialLightBlue",
-        "@diffuseColor":"1 1 1"
+        "@DEF":"MaterialLightBlue"
       }
     },
                                 }                                "Text":
                                 {
       {
-        "@DEF":"RightString",
-        "@string":""r""
+        "@DEF":"RightString"
       }
     },
                             }                        }                        "StringSensor":
                         {
       {
-        "@DEF":"RightSensor",
-        "@enabled":"false"
+        "@DEF":"RightSensor"
       }
     },
                         "TouchSensor":
                         {
       {
-        "@DEF":"RightTouch",
-        "@description":"touch to activate"
+        "@DEF":"RightTouch"
       }
     },
                     }                    "Transform":
@@ -202,22 +198,19 @@
                                 }                                "Text":
                                 {
       {
-        "@DEF":"UpString",
-        "@string":""u""
+        "@DEF":"UpString"
       }
     },
                             }                        }                        "StringSensor":
                         {
       {
-        "@DEF":"UpSensor",
-        "@enabled":"false"
+        "@DEF":"UpSensor"
       }
     },
                         "TouchSensor":
                         {
       {
-        "@DEF":"UpTouch",
-        "@description":"touch to activate"
+        "@DEF":"UpTouch"
       }
     },
                     }                    "Transform":
@@ -284,38 +277,19 @@
                             }                        }                        "StringSensor":
                         {
       {
-        "@DEF":"CenterSensor",
-        "@enabled":"false"
+        "@DEF":"CenterSensor"
       }
     },
                         "TouchSensor":
                         {
       {
-        "@DEF":"CenterTouch",
-        "@description":"touch to activate"
+        "@DEF":"CenterTouch"
       }
     },
                     }                }                "Script":
                 {
       {
-        "@DEF":"RightSingleToMultiString",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;function initialize() {
-&quot;+
-&quot;	rightlines = new MFString(&quot;&quot;);
-&quot;+
-&quot;}
-&quot;+
-&quot;
-&quot;+
-&quot;function set_rightstring(rightstr) {
-&quot;+
-&quot;	rightlines = new MFString(rightstr);
-&quot;+
-&quot;}"
+        "@DEF":"RightSingleToMultiString"
       }
                     "field":
                     {
@@ -336,24 +310,7 @@
                 }                "Script":
                 {
       {
-        "@DEF":"UpSingleToMultiString",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;function initialize() {
-&quot;+
-&quot;	uplines = new MFString(&quot;&quot;);
-&quot;+
-&quot;}
-&quot;+
-&quot;
-&quot;+
-&quot;function set_upstring(upstr) {
-&quot;+
-&quot;	uplines = new MFString(upstr);
-&quot;+
-&quot;}"
+        "@DEF":"UpSingleToMultiString"
       }
                     "field":
                     {
@@ -374,24 +331,7 @@
                 }                "Script":
                 {
       {
-        "@DEF":"CenterSingleToMultiString",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;function initialize() {
-&quot;+
-&quot;	centerlines = new MFString(&quot;&quot;);
-&quot;+
-&quot;}
-&quot;+
-&quot;
-&quot;+
-&quot;function set_centerstring(centerstr) {
-&quot;+
-&quot;	centerlines = new MFString(centerstr);
-&quot;+
-&quot;}"
+        "@DEF":"CenterSingleToMultiString"
       }
                     "field":
                     {

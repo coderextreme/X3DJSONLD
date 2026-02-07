@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Geospatial'/>
     <meta content='SquawLOD023.x3d' name='title'/>
@@ -19,7 +19,7 @@
   <Scene>
     <WorldInfo title='SquawLOD023.x3d'/>
     <GeoLOD center='4344125.917539 741821.999947 1970.5' geoSystem='"UTM" "Z10" "N"' range='0'>
-      <GeoOrigin DEF='ORIGIN' geoCoords='4342525.5 740604 0' geoSystem='"UTM" "Z10" "N"' rotateYUp='true'/>
+      <GeoOrigin DEF='ORIGIN'/>
       <Shape>
         <Appearance>
           <Material ambientIntensity='0.9' diffuseColor='1 1 1' shininess='1'/>

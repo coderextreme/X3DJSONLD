@@ -180,8 +180,7 @@
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"fw",
-        "@language":"GLSL"
+        "@DEF":"fw"
       }
                         "field":
                         {
@@ -318,140 +317,7 @@
                 }            }            "Script":
             {
       {
-        "@DEF":"Animate",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;			function initialize() {
-&quot;+
-&quot;			    translation = new SFVec3f(0, 0, 0);
-&quot;+
-&quot;			    velocity = new SFVec3f(
-&quot;+
-&quot;			    	Math.random() - 0.5,
-&quot;+
-&quot;				Math.random() - 0.5,
-&quot;+
-&quot;				Math.random() - 0.5);
-&quot;+
-&quot;			}
-&quot;+
-&quot;			function set_fraction() {
-&quot;+
-&quot;			    translation = new SFVec3f(
-&quot;+
-&quot;			    	translation.x + velocity.x,
-&quot;+
-&quot;				translation.y + velocity.y,
-&quot;+
-&quot;				translation.z + velocity.z);
-&quot;+
-&quot;			    for (var j = 0; j <= 2; j++) {
-&quot;+
-&quot;				    if (Math.abs(translation.x) > 10) {
-&quot;+
-&quot;					initialize();
-&quot;+
-&quot;				    } else if (Math.abs(translation.y) > 10) {
-&quot;+
-&quot;					initialize();
-&quot;+
-&quot;				    } else if (Math.abs(translation.z) > 10) {
-&quot;+
-&quot;					initialize();
-&quot;+
-&quot;				    } else {
-&quot;+
-&quot;					velocity.x += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;					velocity.y += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;					velocity.z += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;				    }
-&quot;+
-&quot;			    }
-&quot;+
-&quot;			    animate_flowers();
-&quot;+
-&quot;			}
-&quot;+
-&quot;
-&quot;+
-&quot;			function animate_flowers(fraction, eventTime) {
-&quot;+
-&quot;				var choice = Math.floor(Math.random() * 4);
-&quot;+
-&quot;				switch (choice) {
-&quot;+
-&quot;				case 0:
-&quot;+
-&quot;					a += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;					break;
-&quot;+
-&quot;				case 1:
-&quot;+
-&quot;					b += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;					break;
-&quot;+
-&quot;				case 2:
-&quot;+
-&quot;					c += Math.random() * 2 - 1;
-&quot;+
-&quot;					break;
-&quot;+
-&quot;				case 3:
-&quot;+
-&quot;					d += Math.random() * 2 - 1;
-&quot;+
-&quot;					break;
-&quot;+
-&quot;				}
-&quot;+
-&quot;				tdelta = tdelta + 0.05;
-&quot;+
-&quot;				pdelta = pdelta + 0.05;
-&quot;+
-&quot;				if (a > 1) {
-&quot;+
-&quot;					a =  0.5;
-&quot;+
-&quot;				}
-&quot;+
-&quot;				if (b > 1) {
-&quot;+
-&quot;					b =  0.5;
-&quot;+
-&quot;				}
-&quot;+
-&quot;				if (c < 1) {
-&quot;+
-&quot;					c =  4;
-&quot;+
-&quot;				}
-&quot;+
-&quot;				if (d < 1) {
-&quot;+
-&quot;					d =  4;
-&quot;+
-&quot;				}
-&quot;+
-&quot;				if (c > 10) {
-&quot;+
-&quot;					c = 4;
-&quot;+
-&quot;				}
-&quot;+
-&quot;				if (d > 10) {
-&quot;+
-&quot;					d = 4;
-&quot;+
-&quot;				}
-&quot;+
-&quot;			}"
+        "@DEF":"Animate"
       }
                 "field":
                 {
@@ -536,9 +402,7 @@
             }            "TimeSensor":
             {
       {
-        "@DEF":"TourTime",
-        "@cycleInterval":"5",
-        "@loop":"true"
+        "@DEF":"TourTime"
       }
     },
             "ROUTE":

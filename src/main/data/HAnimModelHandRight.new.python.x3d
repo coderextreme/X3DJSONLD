@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim'/>
     <meta content='HAnimModelHandRight.x3d' name='title'/>
@@ -27,7 +27,7 @@
   </head>
   <Scene>
     <WorldInfo title='HAnimModelHandRight.x3d'/>
-    <HAnimHumanoid DEF='hanim_Hand_Right' loa='4' name='Hand_Right'>
+    <HAnimHumanoid DEF='hanim_Hand_Right'>
       <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString name='authorName' value='"Kwan-Hee YOO, Don Brutzman and Joe Williams"'/>
       </MetadataSet>
@@ -80,9 +80,9 @@
       <HAnimSegment USE='hanim_r_metacarpal_5'/>
       <HAnimSegment USE='hanim_r_trapezium'/>
       <HAnimSegment USE='hanim_r_trapezoid'/>
-      <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root'>
-        <HAnimJoint DEF='hanim_r_radiocarpal' description='connection joint of hand to leg above' name='r_radiocarpal'>
-          <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
+      <HAnimJoint DEF='hanim_humanoid_root'>
+        <HAnimJoint DEF='hanim_r_radiocarpal'>
+          <HAnimSegment DEF='hanim_r_carpal'>
             <Transform>
               <Shape DEF='HAnimJointShape'>
                 <Appearance DEF='HAnimJointAppearanceBlue'>
@@ -95,7 +95,7 @@
               <Appearance>
                 <Material emissiveColor='1 1 1'/>
               </Appearance>
-              <IndexedLineSet DEF='RCToMC12' coordIndex='0 1'>
+              <IndexedLineSet DEF='RCToMC12'>
                 <Coordinate point='0 0 0 -0.1 0.1 0'/>
               </IndexedLineSet>
             </Shape>
@@ -103,7 +103,7 @@
               <Appearance>
                 <Material emissiveColor='1 1 1'/>
               </Appearance>
-              <IndexedLineSet DEF='RCToMC3' coordIndex='0 1'>
+              <IndexedLineSet DEF='RCToMC3'>
                 <Coordinate point='0 0 0 0 0.07 0'/>
               </IndexedLineSet>
             </Shape>
@@ -111,13 +111,13 @@
               <Appearance>
                 <Material emissiveColor='1 1 1'/>
               </Appearance>
-              <IndexedLineSet DEF='RCToMC45' coordIndex='0 1'>
+              <IndexedLineSet DEF='RCToMC45'>
                 <Coordinate point='0 0 0 0.1 0.1 0'/>
               </IndexedLineSet>
             </Shape>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_r_midcarpal_1' center='-0.14 0.09 0' name='r_midcarpal_1'>
-            <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
+          <HAnimJoint DEF='hanim_r_midcarpal_1'>
+            <HAnimSegment DEF='hanim_r_trapezium'>
               <Transform translation='-0.14 0.09 0'>
                 <Shape DEF='HAnimNewJointShape'>
                   <Appearance DEF='HAnimJointAppearanceRed'>
@@ -130,13 +130,13 @@
                 <Appearance>
                   <Material emissiveColor='1 1 1'/>
                 </Appearance>
-                <IndexedLineSet DEF='MC12toCMC1' coordIndex='0 1'>
+                <IndexedLineSet DEF='MC12toCMC1'>
                   <Coordinate point='-0.1 0.1 0 -0.2 0.15 0'/>
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_carpometacarpal_1' center='-0.2 0.15 0' name='r_carpometacarpal_1'>
-              <HAnimSegment DEF='hanim_r_metacarpal_1' name='r_metacarpal_1'>
+            <HAnimJoint DEF='hanim_r_carpometacarpal_1'>
+              <HAnimSegment DEF='hanim_r_metacarpal_1'>
                 <Transform translation='-0.2 0.15 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -144,13 +144,13 @@
                   <Appearance>
                     <Material emissiveColor='1 1 1'/>
                   </Appearance>
-                  <IndexedLineSet DEF='CMC1toMCP1xxx' coordIndex='0 1'>
+                  <IndexedLineSet DEF='CMC1toMCP1xxx'>
                     <Coordinate point='-0.2 0.15 0 -0.3 0.3 0'/>
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_metacarpophalangeal_1' center='-0.3 0.3 0' name='r_metacarpophalangeal_1'>
-                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1'>
+              <HAnimJoint DEF='hanim_r_metacarpophalangeal_1'>
+                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1'>
                   <Transform translation='-0.3 0.3 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -158,13 +158,13 @@
                     <Appearance>
                       <Material emissiveColor='1 1 1'/>
                     </Appearance>
-                    <IndexedLineSet DEF='MCP11toIP1' coordIndex='0 1'>
+                    <IndexedLineSet DEF='MCP11toIP1'>
                       <Coordinate point='-0.3 0.3 0 -0.35 0.4 0'/>
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1' center='-0.35 0.4 0' name='r_carpal_interphalangeal_1'>
-                  <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_1' name='r_carpal_distal_phalanx_1'>
+                <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1'>
+                  <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_1'>
                     <Transform translation='-0.35 0.4 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -172,7 +172,7 @@
                       <Appearance>
                         <Material emissiveColor='1 1 1'/>
                       </Appearance>
-                      <IndexedLineSet DEF='fingertip_r_carpal_interphalangeal_1' coordIndex='0 1'>
+                      <IndexedLineSet DEF='fingertip_r_carpal_interphalangeal_1'>
                         <Coordinate point='-0.35 0.4 0 -0.36 0.45 0'/>
                       </IndexedLineSet>
                     </Shape>
@@ -181,8 +181,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_midcarpal_2' center='-0.07 0.07 0' name='r_midcarpal_2'>
-            <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
+          <HAnimJoint DEF='hanim_r_midcarpal_2'>
+            <HAnimSegment DEF='hanim_r_trapezoid'>
               <Transform translation='-0.07 0.07 0'>
                 <Shape USE='HAnimNewJointShape'/>
               </Transform>
@@ -190,13 +190,13 @@
                 <Appearance>
                   <Material emissiveColor='1 1 1'/>
                 </Appearance>
-                <IndexedLineSet DEF='MC12toCMC2' coordIndex='0 1'>
+                <IndexedLineSet DEF='MC12toCMC2'>
                   <Coordinate point='-0.1 0.1 0 -0.1 0.2 0'/>
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_carpometacarpal_2' center='-0.1 0.2 0' name='r_carpometacarpal_2'>
-              <HAnimSegment DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'>
+            <HAnimJoint DEF='hanim_r_carpometacarpal_2'>
+              <HAnimSegment DEF='hanim_r_metacarpal_2'>
                 <Transform translation='-0.1 0.2 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -204,13 +204,13 @@
                   <Appearance>
                     <Material emissiveColor='1 1 1'/>
                   </Appearance>
-                  <IndexedLineSet DEF='CMC2toMCP2' coordIndex='0 1'>
+                  <IndexedLineSet DEF='CMC2toMCP2'>
                     <Coordinate point='-0.1 0.2 0 -0.15 0.5 0'/>
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_metacarpophalangeal_2' center='-0.15 0.5 0' name='r_metacarpophalangeal_2'>
-                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2' name='r_carpal_proximal_phalanx_2'>
+              <HAnimJoint DEF='hanim_r_metacarpophalangeal_2'>
+                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2'>
                   <Transform translation='-0.15 0.5 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -218,13 +218,13 @@
                     <Appearance>
                       <Material emissiveColor='1 1 1'/>
                     </Appearance>
-                    <IndexedLineSet DEF='MCP2toPIP2' coordIndex='0 1'>
+                    <IndexedLineSet DEF='MCP2toPIP2'>
                       <Coordinate point='-0.15 0.5 0 -0.2 0.7 0'/>
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2' center='-0.2 0.7 0' name='r_carpal_proximal_interphalangeal_2'>
-                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2'>
+                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2'>
+                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2'>
                     <Transform translation='-0.2 0.7 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -232,13 +232,13 @@
                       <Appearance>
                         <Material emissiveColor='1 1 1'/>
                       </Appearance>
-                      <IndexedLineSet DEF='PIP2toDIP2' coordIndex='0 1'>
+                      <IndexedLineSet DEF='PIP2toDIP2'>
                         <Coordinate point='-0.2 0.7 0 -0.24 0.87 0'/>
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2' center='-0.24 0.87 0' name='r_carpal_distal_interphalangeal_2'>
-                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_2' name='r_carpal_distal_phalanx_2'>
+                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2'>
+                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_2'>
                       <Transform translation='-0.24 0.87 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -246,7 +246,7 @@
                         <Appearance>
                           <Material emissiveColor='1 1 1'/>
                         </Appearance>
-                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_2' coordIndex='0 1'>
+                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_2'>
                           <Coordinate point='-0.24 0.87 0 -0.26 0.93 0'/>
                         </IndexedLineSet>
                       </Shape>
@@ -256,8 +256,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_midcarpal_3' center='0 0.07 0' name='r_midcarpal_3'>
-            <HAnimSegment DEF='hanim_r_capitate' name='r_capitate'>
+          <HAnimJoint DEF='hanim_r_midcarpal_3'>
+            <HAnimSegment DEF='hanim_r_capitate'>
               <Transform translation='0 0.07 0'>
                 <Shape USE='HAnimNewJointShape'/>
               </Transform>
@@ -265,13 +265,13 @@
                 <Appearance>
                   <Material emissiveColor='1 1 1'/>
                 </Appearance>
-                <IndexedLineSet DEF='MC3toCMC3' coordIndex='0 1'>
+                <IndexedLineSet DEF='MC3toCMC3'>
                   <Coordinate point='0 0.07 0 0 0.2 0'/>
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_carpometacarpal_3' center='0 0.2 0' name='r_carpometacarpal_3'>
-              <HAnimSegment DEF='hanim_r_metacarpal_3' name='r_metacarpal_3'>
+            <HAnimJoint DEF='hanim_r_carpometacarpal_3'>
+              <HAnimSegment DEF='hanim_r_metacarpal_3'>
                 <Transform translation='0 0.2 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -279,13 +279,13 @@
                   <Appearance>
                     <Material emissiveColor='1 1 1'/>
                   </Appearance>
-                  <IndexedLineSet DEF='CMC3toMCP3' coordIndex='0 1'>
+                  <IndexedLineSet DEF='CMC3toMCP3'>
                     <Coordinate point='0 0.2 0 -0.03 0.5 0'/>
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_metacarpophalangeal_3' center='-0.03 0.5 0' name='r_metacarpophalangeal_3'>
-                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3'>
+              <HAnimJoint DEF='hanim_r_metacarpophalangeal_3'>
+                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3'>
                   <Transform translation='-0.03 0.5 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -293,13 +293,13 @@
                     <Appearance>
                       <Material emissiveColor='1 1 1'/>
                     </Appearance>
-                    <IndexedLineSet DEF='MCP3toPIP3' coordIndex='0 1'>
+                    <IndexedLineSet DEF='MCP3toPIP3'>
                       <Coordinate point='-0.03 0.5 0 -0.05 0.75 0'/>
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3' center='-0.05 0.75 0' name='r_carpal_proximal_interphalangeal_3'>
-                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3'>
+                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3'>
+                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3'>
                     <Transform translation='-0.05 0.75 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -307,13 +307,13 @@
                       <Appearance>
                         <Material emissiveColor='1 1 1'/>
                       </Appearance>
-                      <IndexedLineSet DEF='PIP3toDIP3' coordIndex='0 1'>
+                      <IndexedLineSet DEF='PIP3toDIP3'>
                         <Coordinate point='-0.05 0.75 0 -0.08 0.96 0'/>
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3' center='-0.08 0.96 0' name='r_carpal_distal_interphalangeal_3'>
-                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_3' name='r_carpal_distal_phalanx_3'>
+                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3'>
+                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_3'>
                       <Transform translation='-0.08 0.96 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -321,7 +321,7 @@
                         <Appearance>
                           <Material emissiveColor='1 1 1'/>
                         </Appearance>
-                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_3' coordIndex='0 1'>
+                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_3'>
                           <Coordinate point='-0.08 0.96 0 -0.09 1.05 0'/>
                         </IndexedLineSet>
                       </Shape>
@@ -331,8 +331,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_midcarpal_4_5' center='0.1 0.1 0' name='r_midcarpal_4_5'>
-            <HAnimSegment DEF='hanim_r_hamate' name='r_hamate'>
+          <HAnimJoint DEF='hanim_r_midcarpal_4_5'>
+            <HAnimSegment DEF='hanim_r_hamate'>
               <Transform translation='0.1 0.1 0'>
                 <Shape USE='HAnimNewJointShape'/>
               </Transform>
@@ -340,7 +340,7 @@
                 <Appearance>
                   <Material emissiveColor='1 1 1'/>
                 </Appearance>
-                <IndexedLineSet DEF='MC45toCMC4' coordIndex='0 1'>
+                <IndexedLineSet DEF='MC45toCMC4'>
                   <Coordinate point='0.1 0.1 0 0.1 0.2 0'/>
                 </IndexedLineSet>
               </Shape>
@@ -348,13 +348,13 @@
                 <Appearance>
                   <Material emissiveColor='1 1 1'/>
                 </Appearance>
-                <IndexedLineSet DEF='MC45toCMC5' coordIndex='0 1'>
+                <IndexedLineSet DEF='MC45toCMC5'>
                   <Coordinate point='0.1 0.1 0 0.15 0.17 0'/>
                 </IndexedLineSet>
               </Shape>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_carpometacarpal_4' center='0.1 0.2 0' name='r_carpometacarpal_4'>
-              <HAnimSegment DEF='hanim_r_metacarpal_4' name='r_metacarpal_4'>
+            <HAnimJoint DEF='hanim_r_carpometacarpal_4'>
+              <HAnimSegment DEF='hanim_r_metacarpal_4'>
                 <Transform translation='0.1 0.2 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -362,13 +362,13 @@
                   <Appearance>
                     <Material emissiveColor='1 1 1'/>
                   </Appearance>
-                  <IndexedLineSet DEF='CMC4toMCP4' coordIndex='0 1'>
+                  <IndexedLineSet DEF='CMC4toMCP4'>
                     <Coordinate point='0.1 0.2 0 0.1 0.47 0'/>
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_metacarpophalangeal_4' center='0.1 0.47 0' name='r_metacarpophalangeal_4'>
-                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4'>
+              <HAnimJoint DEF='hanim_r_metacarpophalangeal_4'>
+                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4'>
                   <Transform translation='0.1 0.47 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -376,13 +376,13 @@
                     <Appearance>
                       <Material emissiveColor='1 1 1'/>
                     </Appearance>
-                    <IndexedLineSet DEF='MCP4toPIP4' coordIndex='0 1'>
+                    <IndexedLineSet DEF='MCP4toPIP4'>
                       <Coordinate point='0.1 0.47 0 0.1 0.7 0'/>
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4' center='0.1 0.7 0' name='r_carpal_proximal_interphalangeal_4'>
-                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4'>
+                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4'>
+                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4'>
                     <Transform translation='0.1 0.7 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -390,13 +390,13 @@
                       <Appearance>
                         <Material emissiveColor='1 1 1'/>
                       </Appearance>
-                      <IndexedLineSet DEF='PIP4toDIP4' coordIndex='0 1'>
+                      <IndexedLineSet DEF='PIP4toDIP4'>
                         <Coordinate point='0.1 0.7 0 0.1 0.93 0'/>
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4' center='0.1 0.93 0' name='r_carpal_distal_interphalangeal_4'>
-                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_4' name='r_carpal_distal_phalanx_4'>
+                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4'>
+                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_4'>
                       <Transform translation='0.1 0.93 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -404,7 +404,7 @@
                         <Appearance>
                           <Material emissiveColor='1 1 1'/>
                         </Appearance>
-                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_4' coordIndex='0 1'>
+                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_4'>
                           <Coordinate point='0.1 0.93 0 0.1 1 0'/>
                         </IndexedLineSet>
                       </Shape>
@@ -413,8 +413,8 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_r_carpometacarpal_5' center='0.15 0.17 0' name='r_carpometacarpal_5'>
-              <HAnimSegment DEF='hanim_r_metacarpal_5' name='r_metacarpal_5'>
+            <HAnimJoint DEF='hanim_r_carpometacarpal_5'>
+              <HAnimSegment DEF='hanim_r_metacarpal_5'>
                 <Transform translation='0.15 0.17 0'>
                   <Shape USE='HAnimJointShape'/>
                 </Transform>
@@ -422,13 +422,13 @@
                   <Appearance>
                     <Material emissiveColor='1 1 1'/>
                   </Appearance>
-                  <IndexedLineSet DEF='CMC5toMCP5' coordIndex='0 1'>
+                  <IndexedLineSet DEF='CMC5toMCP5'>
                     <Coordinate point='0.15 0.17 0 0.2 0.4 0'/>
                   </IndexedLineSet>
                 </Shape>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_metacarpophalangeal_5' center='0.2 0.4 0' name='r_metacarpophalangeal_5'>
-                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5'>
+              <HAnimJoint DEF='hanim_r_metacarpophalangeal_5'>
+                <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5'>
                   <Transform translation='0.2 0.4 0'>
                     <Shape USE='HAnimJointShape'/>
                   </Transform>
@@ -436,13 +436,13 @@
                     <Appearance>
                       <Material emissiveColor='1 1 1'/>
                     </Appearance>
-                    <IndexedLineSet DEF='MCP5toPIP5' coordIndex='0 1'>
+                    <IndexedLineSet DEF='MCP5toPIP5'>
                       <Coordinate point='0.2 0.4 0 0.23 0.63 0'/>
                     </IndexedLineSet>
                   </Shape>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5' center='0.23 0.63 0' name='r_carpal_proximal_interphalangeal_5'>
-                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5'>
+                <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5'>
+                  <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5'>
                     <Transform translation='0.23 0.63 0'>
                       <Shape USE='HAnimJointShape'/>
                     </Transform>
@@ -450,13 +450,13 @@
                       <Appearance>
                         <Material emissiveColor='1 1 1'/>
                       </Appearance>
-                      <IndexedLineSet DEF='PIP5toDIP5' coordIndex='0 1'>
+                      <IndexedLineSet DEF='PIP5toDIP5'>
                         <Coordinate point='0.23 0.63 0 0.25 0.79 0'/>
                       </IndexedLineSet>
                     </Shape>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5' center='0.25 0.79 0' name='r_carpal_distal_interphalangeal_5'>
-                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_5' name='r_carpal_distal_phalanx_5'>
+                  <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5'>
+                    <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_5'>
                       <Transform translation='0.25 0.79 0'>
                         <Shape USE='HAnimJointShape'/>
                       </Transform>
@@ -464,7 +464,7 @@
                         <Appearance>
                           <Material emissiveColor='1 1 1'/>
                         </Appearance>
-                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_5' coordIndex='0 1'>
+                        <IndexedLineSet DEF='fingertip_r_carpal_distal_interphalangeal_5'>
                           <Coordinate point='0.25 0.79 0 0.26 0.85 0'/>
                         </IndexedLineSet>
                       </Shape>

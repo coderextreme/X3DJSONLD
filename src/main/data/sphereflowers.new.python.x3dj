@@ -214,8 +214,7 @@
             "TimeSensor":
             {
       {
-        "@DEF":"SongTime",
-        "@loop":"true"
+        "@DEF":"SongTime"
       }
     },
             "Sound":
@@ -230,9 +229,7 @@
                 "AudioClip":
                 {
       {
-        "@DEF":"AudioClip",
-        "@description":"Chandubabamusic #1",
-        "@url":""../resources/chandubabamusic1.wav" "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav""
+        "@DEF":"AudioClip"
       }
     },
             }            "ROUTE":

@@ -403,9 +403,7 @@
                         }                    }                    "PositionInterpolator":
                     {
       {
-        "@DEF":"HUMANOIDROOT_POSITION_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 0 0 0 0"
+        "@DEF":"HUMANOIDROOT_POSITION_ANIMATOR"
       }
                         "IS":
                         {
@@ -419,9 +417,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"HUMANOIDROOT_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"HUMANOIDROOT_ANIMATOR"
       }
                         "IS":
                         {
@@ -435,9 +431,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"SACROILIAC_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"SACROILIAC_ANIMATOR"
       }
                         "IS":
                         {
@@ -451,9 +445,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_HIP_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"L_HIP_ANIMATOR"
       }
                         "IS":
                         {
@@ -467,9 +459,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_KNEE_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"L_KNEE_ANIMATOR"
       }
                         "IS":
                         {
@@ -483,9 +473,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_ANKLE_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"L_ANKLE_ANIMATOR"
       }
                         "IS":
                         {
@@ -499,9 +487,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_MIDTARSAL_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"1 0 0 0 1 0 0 0"
+        "@DEF":"L_MIDTARSAL_ANIMATOR"
       }
                         "IS":
                         {
@@ -515,9 +501,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_HIP_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"R_HIP_ANIMATOR"
       }
                         "IS":
                         {
@@ -531,9 +515,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_KNEE_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"R_KNEE_ANIMATOR"
       }
                         "IS":
                         {
@@ -547,9 +529,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_ANKLE_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"R_ANKLE_ANIMATOR"
       }
                         "IS":
                         {
@@ -563,9 +543,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_MIDTARSAL_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"1 0 0 0 1 0 0 0"
+        "@DEF":"R_MIDTARSAL_ANIMATOR"
       }
                         "IS":
                         {
@@ -579,9 +557,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"VL5_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"VL5_ANIMATOR"
       }
                         "IS":
                         {
@@ -595,9 +571,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"SKULLBASE_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"SKULLBASE_ANIMATOR"
       }
                         "IS":
                         {
@@ -611,9 +585,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_SHOULDER_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"L_SHOULDER_ANIMATOR"
       }
                         "IS":
                         {
@@ -627,9 +599,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_ELBOW_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"L_ELBOW_ANIMATOR"
       }
                         "IS":
                         {
@@ -643,9 +613,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_WRIST_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"L_WRIST_ANIMATOR"
       }
                         "IS":
                         {
@@ -659,9 +627,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_SHOULDER_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"R_SHOULDER_ANIMATOR"
       }
                         "IS":
                         {
@@ -675,9 +641,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_ELBOW_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"R_ELBOW_ANIMATOR"
       }
                         "IS":
                         {
@@ -691,9 +655,7 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_WRIST_ANIMATOR",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"R_WRIST_ANIMATOR"
       }
                         "IS":
                         {

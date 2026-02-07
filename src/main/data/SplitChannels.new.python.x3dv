@@ -29,7 +29,6 @@ WorldInfo {
       retainUserOffsets TRUE 
     }
     DEF PowerR Transform {
-      translation 100 400 400
       children [
         Transform {
           rotation 1 0 0 -0.5
@@ -82,9 +81,6 @@ WorldInfo {
         
         }
         DEF volumeRight Transform {
-          rotation 1 0 0 -0.5
-          scale 10 10 10
-          translation 0 -10 0
           children [
             Shape {
               appearance Appearance {
@@ -99,8 +95,7 @@ WorldInfo {
               
               geometry Text {
                 string ["Right Channel Volume"]
-                fontStyle DEF VolumeFontStyle FontStyle {
-                  family ["Times" "SERIF"] 
+                fontStyle DEF VolumeFontStyle FontStyle { 
                 }
                  
               }
@@ -115,7 +110,6 @@ WorldInfo {
     
     }
     DEF PowerL Transform {
-      translation -100 400 400
       children [
         Transform {
           rotation 1 0 0 -0.5
@@ -168,9 +162,6 @@ WorldInfo {
         
         }
         DEF volumeLeft Transform {
-          rotation 1 0 0 -0.5
-          scale 10 10 10
-          translation 0 -10 0
           children [
             Shape {
               appearance Appearance {
@@ -253,7 +244,6 @@ WorldInfo {
     
     }
     DEF ChannelSplitter ChannelSplitter {
-      channelCountMode "EXPLICIT"
       children [
         AudioClip {
           description "Violin"
@@ -264,8 +254,6 @@ WorldInfo {
     
     }
     DEF Audio3 Transform {
-      rotation 1 0 0 -0.5
-      translation 0 100 0
       children [
         Shape {
           appearance DEF audio_emit5 Appearance {

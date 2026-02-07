@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Scripting'/>
     <meta content='bubs.x3d' name='title'/>
@@ -106,7 +106,7 @@
 "+
 "}]]>
           </Script>
-          <TimeSensor DEF='bubbleClock' cycleInterval='10' loop='true'/>
+          <TimeSensor DEF='bubbleClock'/>
           <ROUTE fromField='translation_changed' fromNode='bounce1' toField='set_translation' toNode='body_trans'/>
           <ROUTE fromField='scale_changed' fromNode='bounce1' toField='set_scale' toNode='body_trans'/>
           <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce1'/>

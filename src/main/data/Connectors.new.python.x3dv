@@ -55,94 +55,6 @@ ProtoDeclare {
              
           }
           DEF RoundedRectangle2D Script {
-            directOutput TRUE
-            url "ecmascript:
-"+
-"
-"+
-"function initialize ()
-"+
-"{
-"+
-"	var point         = new SFVec3f (cornerRadius, 0, 0);
-"+
-"	var startRotation = new SFRotation ();
-"+
-"	var endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);
-"+
-"	var corner        = new MFVec3f ();
-"+
-"	var coordIndex    = new MFInt32 ();
-"+
-"	var points        = new MFVec3f ();
-"+
-"
-"+
-"	for (var i = 0; i < cornerDimension * 4; ++ i)
-"+
-"		coordIndex [coordIndex .length] = i;
-"+
-"
-"+
-"	geometry .coordIndex = coordIndex;
-"+
-"
-"+
-"	for (var i = 0; i < cornerDimension; ++i)
-"+
-"		corner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);
-"+
-"
-"+
-"	var translation = new SFVec3f (size .x / 2 - cornerRadius, size .y / 2 - cornerRadius, 0);
-"+
-"
-"+
-"	for (var i = 0; i < cornerDimension; ++ i)
-"+
-"		points [points .length] = corner [i] .add (translation);
-"+
-"
-"+
-"	var translation = new SFVec3f (-size .x / 2 + cornerRadius, size .y / 2 - cornerRadius, 0);
-"+
-"	var rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);
-"+
-"
-"+
-"	for (var i = 0; i < cornerDimension; ++ i)
-"+
-"		points [points .length] = rotation .multVec (corner [i]) .add (translation);
-"+
-"
-"+
-"	var translation = new SFVec3f (-size .x / 2 + cornerRadius, -size .y / 2 + cornerRadius, 0);
-"+
-"	var rotation    = new SFRotation (0, 0, 1, Math .PI);
-"+
-"
-"+
-"	for (var i = 0; i < cornerDimension; ++ i)
-"+
-"		points [points .length] = rotation .multVec (corner [i]) .add (translation);
-"+
-"
-"+
-"	var translation = new SFVec3f (size .x / 2 - cornerRadius, -size .y / 2 + cornerRadius, 0);
-"+
-"	var rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);
-"+
-"
-"+
-"	for (var i = 0; i < cornerDimension; ++ i)
-"+
-"		points [points .length] = rotation .multVec (corner [i]) .add (translation);
-"+
-"
-"+
-"	geometry .coord .point = points;
-"+
-"}"
             IS IS {
               children [
                 connect {
@@ -383,7 +295,6 @@ ProtoDeclare {
                   
                   }
                   DEF Input Transform {
-                    translation -1 0 0
                     children [
                       ProtoInstance {
                         name "Widget"
@@ -395,8 +306,7 @@ ProtoDeclare {
                           fieldValue {
                             name "geometry"
                             children [
-                              DEF Connector Disk2D {
-                                outerRadius 0.2 
+                              DEF Connector Disk2D { 
                               }
                               
                             ]
@@ -411,7 +321,6 @@ ProtoDeclare {
                   
                   }
                   DEF Output Transform {
-                    translation 1 0 0
                     children [
                       ProtoInstance {
                         name "Widget"
@@ -568,7 +477,6 @@ ProtoDeclare {
             }
             
             geometry DEF Geometry_1 LineSet {
-              vertexCount [2]
               coord Coordinate {
                 point [-1 0 0 1 0 0] 
               }
@@ -577,60 +485,6 @@ ProtoDeclare {
              
           }
           DEF Route Script {
-            directOutput TRUE
-            url "ecmascript:
-"+
-"function initialize ()
-"+
-"{
-"+
-"	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
-"+
-"	Browser .addRoute (input,  'translation_changed', self, 'set_translation');
-"+
-"
-"+
-"	set_translation ();
-"+
-"}
-"+
-"
-"+
-"function set_translation ()
-"+
-"{
-"+
-"	geometry .vertexCount [0] = routeDimension;
-"+
-"
-"+
-"	var outPoint = output .translation .add (new SFVec3f ( 1, 0, 0));
-"+
-"	var inPoint  = input  .translation .add (new SFVec3f (-1, 0, 0));
-"+
-"
-"+
-"	var w = inPoint .x - outPoint .x;
-"+
-"	var h = outPoint .y - inPoint .y;
-"+
-"
-"+
-"	for (var i = 0; i < routeDimension; ++ i)
-"+
-"	{
-"+
-"		var t = i / (routeDimension - 1);
-"+
-"		var y = h / 2 * (Math .cos (t * Math .PI) - 1);
-"+
-"
-"+
-"		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));
-"+
-"	}
-"+
-"}"
             IS IS {
               children [
                 connect {

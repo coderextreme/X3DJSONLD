@@ -22,8 +22,7 @@ WorldInfo {
           children [
             DEF maskFrame Shape {
               appearance Appearance {
-                material DEF frameColor Material {
-                  diffuseColor 0 0 0 
+                material DEF frameColor Material { 
                 }
                  
               }
@@ -44,7 +43,6 @@ WorldInfo {
         
         }
         DEF snorkelHoldRing Transform {
-          translation 0.075 0.075 -0.02
           children [
             Shape {
               appearance Appearance {
@@ -72,9 +70,7 @@ WorldInfo {
                   children [
                     Shape {
                       appearance Appearance {
-                        material DEF snorkelTube Material {
-                          diffuseColor 0.678 1 0.184
-                          transparency 0.4 
+                        material DEF snorkelTube Material { 
                         }
                          
                       }
@@ -96,9 +92,7 @@ WorldInfo {
                   children [
                     Shape {
                       appearance Appearance {
-                        material DEF Mouthpiece Material {
-                          diffuseColor 0.678 1 0.8
-                          transparency 0.4 
+                        material DEF Mouthpiece Material { 
                         }
                          
                       }
@@ -145,9 +139,7 @@ WorldInfo {
           children [
             DEF maskLensR Shape {
               appearance Appearance {
-                material DEF plastic Material {
-                  diffuseColor 0.941 0.973 1
-                  transparency 0.8 
+                material DEF plastic Material { 
                 }
                  
               }
@@ -193,9 +185,7 @@ WorldInfo {
           children [
             DEF nose Shape {
               appearance Appearance {
-                material DEF plasticFit Material {
-                  diffuseColor 0.678 1 0.184
-                  transparency 0.7 
+                material DEF plasticFit Material { 
                 }
                  
               }

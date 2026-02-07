@@ -18,8 +18,7 @@ META "description" "a sphere"
 NavigationInfo {
       type ["ANY" "EXAMINE" "FLY" "LOOKAT"] 
     }
-    DEF Tour Viewpoint {
-      description "Tour Views" 
+    DEF Tour Viewpoint { 
     }
     Background {
       backUrl ["../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
@@ -109,9 +108,7 @@ NavigationInfo {
                   ShaderPart {
                     url ["../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"] 
                   }
-                  DEF common ShaderPart {
-                    type "FRAGMENT"
-                    url ["../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"] 
+                  DEF common ShaderPart { 
                   }
                   
                 ]

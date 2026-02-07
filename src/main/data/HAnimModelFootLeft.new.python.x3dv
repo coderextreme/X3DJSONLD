@@ -26,8 +26,6 @@ WorldInfo {
       title "HAnimModelFootLeft.x3d" 
     }
     DEF hanim_Foot_Left HAnimHumanoid {
-      loa 4
-      name "Foot_Left"
       metadata MetadataSet {
         name "HAnimHumanoid.info"
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
@@ -51,14 +49,10 @@ WorldInfo {
     
       children [
         DEF hanim_humanoid_root HAnimJoint {
-          name "humanoid_root"
           children [
             DEF hanim_l_talocrural HAnimJoint {
-              description "connection joint of foot to leg above"
-              name "l_talocrural"
               children [
                 DEF hanim_l_talus HAnimSegment {
-                  name "l_talus"
                   children [
                     Transform {
                       children [
@@ -88,7 +82,6 @@ WorldInfo {
                       }
                       
                       geometry DEF TCtoTCN IndexedLineSet {
-                        coordIndex [0 1]
                         coord Coordinate {
                           point [0 0 0 0 -0.3 0] 
                         }
@@ -105,7 +98,6 @@ WorldInfo {
                       }
                       
                       geometry DEF TCtoCC IndexedLineSet {
-                        coordIndex [0 1]
                         coord Coordinate {
                           point [0 0 0 0.2 0.3 0] 
                         }
@@ -118,11 +110,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_talocalcaneonavicular HAnimJoint {
-                  center 0 -0.3 0
-                  name "l_talocalcaneonavicular"
                   children [
                     DEF hanim_l_navicular HAnimSegment {
-                      name "l_navicular"
                       children [
                         Transform {
                           translation 0 -0.3 0
@@ -140,7 +129,6 @@ WorldInfo {
                           }
                           
                           geometry DEF TCNtoCN1 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [0 -0.3 0 -0.1 -0.45 0] 
                             }
@@ -157,7 +145,6 @@ WorldInfo {
                           }
                           
                           geometry DEF TCNtoCN2 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [0 -0.3 0 0 -0.45 0] 
                             }
@@ -174,7 +161,6 @@ WorldInfo {
                           }
                           
                           geometry DEF TCNtoCN3 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [0 -0.3 0 0.1 -0.4 0] 
                             }
@@ -187,11 +173,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_cuneonavicular_1 HAnimJoint {
-                      center -0.1 -0.45 0
-                      name "l_cuneonavicular_1"
                       children [
                         DEF hanim_l_cuneiform_1 HAnimSegment {
-                          name "l_cuneiform_1"
                           children [
                             Transform {
                               translation -0.1 -0.45 0
@@ -209,7 +192,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CN1toTMT1 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [-0.1 -0.45 0 -0.1 -0.6 0] 
                                 }
@@ -222,11 +204,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_tarsometatarsal_1 HAnimJoint {
-                          center -0.1 -0.6 0
-                          name "l_tarsometatarsal_1"
                           children [
                             DEF hanim_l_metatarsal_1 HAnimSegment {
-                              name "l_metatarsal_1"
                               children [
                                 Transform {
                                   translation -0.1 -0.6 0
@@ -244,7 +223,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF TMT1toMTP1 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [-0.1 -0.6 0 -0.1 -0.9 0] 
                                     }
@@ -257,11 +235,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_metatarsophalangeal_1 HAnimJoint {
-                              center -0.1 -0.9 0
-                              name "l_metatarsophalangeal_1"
                               children [
                                 DEF hanim_l_tarsal_proximal_phalanx_1 HAnimSegment {
-                                  name "l_tarsal_proximal_phalanx_1"
                                   children [
                                     Transform {
                                       translation -0.1 -0.9 0
@@ -279,7 +254,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF MTP1toIP1 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [-0.1 -0.9 0 -0.1 -1.05 0] 
                                         }
@@ -292,11 +266,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_tarsal_interphalangeal_1 HAnimJoint {
-                                  center -0.1 -1.05 0
-                                  name "l_tarsal_interphalangeal_1"
                                   children [
                                     DEF hanim_l_tarsal_distal_phalanx_1 HAnimSegment {
-                                      name "l_tarsal_distal_phalanx_1"
                                       children [
                                         Transform {
                                           translation -0.1 -1.05 0
@@ -314,7 +285,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF tiptoe_l_tarsal_distal_interphalangeal_1 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [-0.1 -1.05 0 -0.1 -1.1 0] 
                                             }
@@ -343,11 +313,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_cuneonavicular_2 HAnimJoint {
-                      center 0 -0.45 0
-                      name "l_cuneonavicular_2"
                       children [
                         DEF hanim_l_cuneiform_2 HAnimSegment {
-                          name "l_cuneiform_2"
                           children [
                             Transform {
                               translation 0 -0.45 0
@@ -365,7 +332,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CN2toTMT2 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [0 -0.45 0 0.05 -0.6 0] 
                                 }
@@ -378,11 +344,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_tarsometatarsal_2 HAnimJoint {
-                          center 0.05 -0.6 0
-                          name "l_tarsometatarsal_2"
                           children [
                             DEF hanim_l_metatarsal_2 HAnimSegment {
-                              name "l_metatarsal_2"
                               children [
                                 Transform {
                                   translation 0.05 -0.6 0
@@ -400,7 +363,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF TMT2toMTP2 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [0.05 -0.6 0 0.05 -0.9 0] 
                                     }
@@ -413,11 +375,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_metatarsophalangeal_2 HAnimJoint {
-                              center 0.05 -0.9 0
-                              name "l_metatarsophalangeal_2"
                               children [
                                 DEF hanim_l_tarsal_proximal_phalanx_2 HAnimSegment {
-                                  name "l_tarsal_proximal_phalanx_2"
                                   children [
                                     Transform {
                                       translation 0.05 -0.9 0
@@ -435,7 +394,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF MTP2toPIP2 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [0.05 -0.9 0 0.05 -1.05 0] 
                                         }
@@ -448,11 +406,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_tarsal_proximal_interphalangeal_2 HAnimJoint {
-                                  center 0.05 -1.05 0
-                                  name "l_tarsal_proximal_interphalangeal_2"
                                   children [
                                     DEF hanim_l_tarsal_middle_phalanx_2 HAnimSegment {
-                                      name "l_tarsal_middle_phalanx_2"
                                       children [
                                         Transform {
                                           translation 0.05 -1.05 0
@@ -470,7 +425,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF PIP2toDIP2 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [0.05 -1.05 0 0.05 -1.12 0] 
                                             }
@@ -483,11 +437,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsal_distal_interphalangeal_2 HAnimJoint {
-                                      center 0.05 -1.12 0
-                                      name "l_tarsal_distal_interphalangeal_2"
                                       children [
                                         DEF hanim_l_tarsal_distal_phalanx_2 HAnimSegment {
-                                          name "l_tarsal_distal_phalanx_2"
                                           children [
                                             Transform {
                                               translation 0.05 -1.12 0
@@ -505,7 +456,6 @@ WorldInfo {
                                               }
                                               
                                               geometry DEF tiptoe_l_tarsal_distal_phalanx_2 IndexedLineSet {
-                                                coordIndex [0 1]
                                                 coord Coordinate {
                                                   point [0.05 -1.12 0 0.05 -1.16 0] 
                                                 }
@@ -538,11 +488,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_cuneonavicular_3 HAnimJoint {
-                      center 0.1 -0.4 0
-                      name "l_cuneonavicular_3"
                       children [
                         DEF hanim_l_cuneiform_3 HAnimSegment {
-                          name "l_cuneiform_3"
                           children [
                             Transform {
                               translation 0.1 -0.4 0
@@ -560,7 +507,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CN3toTMT3 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [0.1 -0.4 0 0.15 -0.6 0] 
                                 }
@@ -573,11 +519,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_tarsometatarsal_3 HAnimJoint {
-                          center 0.15 -0.6 0
-                          name "l_tarsometatarsal_3"
                           children [
                             DEF hanim_l_metatarsal_3 HAnimSegment {
-                              name "l_metatarsal_3"
                               children [
                                 Transform {
                                   translation 0.15 -0.6 0
@@ -595,7 +538,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF TMT3toMTP3 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [0.15 -0.6 0 0.15 -0.9 0] 
                                     }
@@ -608,11 +550,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_metatarsophalangeal_3 HAnimJoint {
-                              center 0.15 -0.9 0
-                              name "l_metatarsophalangeal_3"
                               children [
                                 DEF hanim_l_tarsal_proximal_phalanx_3 HAnimSegment {
-                                  name "l_tarsal_proximal_phalanx_3"
                                   children [
                                     Transform {
                                       translation 0.15 -0.9 0
@@ -630,7 +569,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF MTP3toPIP3 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [0.15 -0.9 0 0.15 -1.05 0] 
                                         }
@@ -643,11 +581,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_tarsal_proximal_interphalangeal_3 HAnimJoint {
-                                  center 0.15 -1.05 0
-                                  name "l_tarsal_proximal_interphalangeal_3"
                                   children [
                                     DEF hanim_l_tarsal_middle_phalanx_3 HAnimSegment {
-                                      name "l_tarsal_middle_phalanx_3"
                                       children [
                                         Transform {
                                           translation 0.15 -1.05 0
@@ -665,7 +600,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF PIP3toDIP3 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [0.15 -1.05 0 0.15 -1.13 0] 
                                             }
@@ -678,11 +612,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsal_distal_interphalangeal_3 HAnimJoint {
-                                      center 0.15 -1.13 0
-                                      name "l_tarsal_distal_interphalangeal_3"
                                       children [
                                         DEF hanim_l_tarsal_distal_phalanx_3 HAnimSegment {
-                                          name "l_tarsal_distal_phalanx_3"
                                           children [
                                             Transform {
                                               translation 0.15 -1.13 0
@@ -700,7 +631,6 @@ WorldInfo {
                                               }
                                               
                                               geometry DEF tiptoe_l_tarsal_distal_interphalangeal_3 IndexedLineSet {
-                                                coordIndex [0 1]
                                                 coord Coordinate {
                                                   point [0.15 -1.13 0 0.15 -1.16 0] 
                                                 }
@@ -737,11 +667,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_calcaneocuboid HAnimJoint {
-                  center 0.2 0.3 0
-                  name "l_calcaneocuboid"
                   children [
                     DEF hanim_l_calcaneus HAnimSegment {
-                      name "l_calcaneus"
                       children [
                         Transform {
                           translation 0.2 0.3 0
@@ -759,7 +686,6 @@ WorldInfo {
                           }
                           
                           geometry DEF CCtoTT IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [0.2 0.3 0 0.21 -0.3 0] 
                             }
@@ -772,11 +698,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_transversetarsal HAnimJoint {
-                      center 0.21 -0.3 0
-                      name "l_transversetarsal"
                       children [
                         DEF hanim_l_cuboid HAnimSegment {
-                          name "l_cuboid"
                           children [
                             Transform {
                               translation 0.21 -0.3 0
@@ -794,7 +717,6 @@ WorldInfo {
                               }
                               
                               geometry DEF TTtoTMT4 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [0.21 -0.3 0 0.25 -0.58 0] 
                                 }
@@ -811,7 +733,6 @@ WorldInfo {
                               }
                               
                               geometry DEF TTtoTMT5 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [0.21 -0.3 0 0.33 -0.52 0] 
                                 }
@@ -824,11 +745,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_tarsometatarsal_4 HAnimJoint {
-                          center 0.25 -0.58 0
-                          name "l_tarsometatarsal_4"
                           children [
                             DEF hanim_l_metatarsal_4 HAnimSegment {
-                              name "l_metatarsal_4"
                               children [
                                 Transform {
                                   translation 0.25 -0.58 0
@@ -846,7 +764,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF TMT4toMTP4 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [0.25 -0.58 0 0.25 -0.87 0] 
                                     }
@@ -859,11 +776,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_metatarsophalangeal_4 HAnimJoint {
-                              center 0.25 -0.87 0
-                              name "l_metatarsophalangeal_4"
                               children [
                                 DEF hanim_l_tarsal_proximal_phalanx_4 HAnimSegment {
-                                  name "l_tarsal_proximal_phalanx_4"
                                   children [
                                     Transform {
                                       translation 0.25 -0.87 0
@@ -881,7 +795,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF MTP4toPIP4 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [0.25 -0.87 0 0.25 -1 0] 
                                         }
@@ -894,11 +807,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_tarsal_proximal_interphalangeal_4 HAnimJoint {
-                                  center 0.25 -1 0
-                                  name "l_tarsal_proximal_interphalangeal_4"
                                   children [
                                     DEF hanim_l_tarsal_middle_phalanx_4 HAnimSegment {
-                                      name "l_tarsal_middle_phalanx_4"
                                       children [
                                         Transform {
                                           translation 0.25 -1 0
@@ -916,7 +826,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF PIP4toDIP4 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [0.25 -1 0 0.25 -1.1 0] 
                                             }
@@ -929,11 +838,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsal_distal_interphalangeal_4 HAnimJoint {
-                                      center 0.25 -1.1 0
-                                      name "l_tarsal_distal_interphalangeal_4"
                                       children [
                                         DEF hanim_l_tarsal_distal_phalanx_4 HAnimSegment {
-                                          name "l_tarsal_distal_phalanx_4"
                                           children [
                                             Transform {
                                               translation 0.25 -1.1 0
@@ -951,7 +857,6 @@ WorldInfo {
                                               }
                                               
                                               geometry DEF tiptoe_l_tarsal_distal_interphalangeal_4 IndexedLineSet {
-                                                coordIndex [0 1]
                                                 coord Coordinate {
                                                   point [0.25 -1.1 0 0.25 -1.15 0] 
                                                 }
@@ -980,11 +885,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_tarsometatarsal_5 HAnimJoint {
-                          center 0.33 -0.52 0
-                          name "l_tarsometatarsal_5"
                           children [
                             DEF hanim_l_metatarsal_5 HAnimSegment {
-                              name "l_metatarsal_5"
                               children [
                                 Transform {
                                   translation 0.33 -0.52 0
@@ -1002,7 +904,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF TMT5toMTP5 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [0.33 -0.52 0 0.34 -0.8 0] 
                                     }
@@ -1015,11 +916,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_metatarsophalangeal_5 HAnimJoint {
-                              center 0.34 -0.8 0
-                              name "l_metatarsophalangeal_5"
                               children [
                                 DEF hanim_l_tarsal_proximal_phalanx_5 HAnimSegment {
-                                  name "l_tarsal_proximal_phalanx_5"
                                   children [
                                     Transform {
                                       translation 0.34 -0.8 0
@@ -1037,7 +935,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF MTP5toPIP5 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [0.34 -0.8 0 0.34 -0.95 0] 
                                         }
@@ -1050,11 +947,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_tarsal_proximal_interphalangeal_5 HAnimJoint {
-                                  center 0.34 -0.95 0
-                                  name "l_tarsal_proximal_interphalangeal_5"
                                   children [
                                     DEF hanim_l_tarsal_middle_phalanx_5 HAnimSegment {
-                                      name "l_tarsal_middle_phalanx_5"
                                       children [
                                         Transform {
                                           translation 0.34 -0.95 0
@@ -1072,7 +966,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF PIP5toDIP5 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [0.34 -0.95 0 0.34 -1.05 0] 
                                             }
@@ -1085,11 +978,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsal_distal_interphalangeal_5 HAnimJoint {
-                                      center 0.34 -1.05 0
-                                      name "l_tarsal_distal_interphalangeal_5"
                                       children [
                                         DEF hanim_l_tarsal_distal_phalanx_5 HAnimSegment {
-                                          name "l_tarsal_distal_phalanx_5"
                                           children [
                                             Transform {
                                               translation 0.34 -1.05 0
@@ -1107,7 +997,6 @@ WorldInfo {
                                               }
                                               
                                               geometry DEF tiptoe_l_tarsal_distal_interphalangeal_5 IndexedLineSet {
-                                                coordIndex [0 1]
                                                 coord Coordinate {
                                                   point [0.34 -1.05 0 0.34 -1.08 0] 
                                                 }

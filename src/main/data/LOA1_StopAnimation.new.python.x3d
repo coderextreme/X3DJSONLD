@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='LOA1_StopAnimation.x3d' name='title'/>
     <meta content='Humanoid animation prototype reusable by any Humanoid.' name='description'/>
@@ -62,97 +62,97 @@
               <connect nodeField='isActive' protoField='isActive'/>
             </IS>
           </TimeSensor>
-          <PositionInterpolator DEF='HUMANOIDROOT_POSITION_ANIMATOR' key='0 1' keyValue='0 0 0 0 0 0'>
+          <PositionInterpolator DEF='HUMANOIDROOT_POSITION_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='HumanoidRoot_translation_changed'/>
             </IS>
           </PositionInterpolator>
-          <OrientationInterpolator DEF='HUMANOIDROOT_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='HUMANOIDROOT_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='HumanoidRoot_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='SACROILIAC_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='SACROILIAC_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='lower_body_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='L_HIP_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='L_HIP_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='l_hip_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='L_KNEE_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='L_KNEE_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='l_knee_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='L_ANKLE_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='L_ANKLE_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='l_ankle_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='L_MIDTARSAL_ANIMATOR' key='0 1' keyValue='1 0 0 0 1 0 0 0'>
+          <OrientationInterpolator DEF='L_MIDTARSAL_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='l_midtarsal_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='R_HIP_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='R_HIP_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='r_hip_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='R_KNEE_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='R_KNEE_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='r_knee_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='R_ANKLE_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='R_ANKLE_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='r_ankle_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='R_MIDTARSAL_ANIMATOR' key='0 1' keyValue='1 0 0 0 1 0 0 0'>
+          <OrientationInterpolator DEF='R_MIDTARSAL_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='r_midtarsal_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='VL5_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='VL5_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='vl5_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='SKULLBASE_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='SKULLBASE_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='skullbase_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='L_SHOULDER_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='L_SHOULDER_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='l_shoulder_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='L_ELBOW_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='L_ELBOW_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='l_elbow_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='L_WRIST_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='L_WRIST_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='l_wrist_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='R_SHOULDER_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='R_SHOULDER_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='r_shoulder_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='R_ELBOW_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='R_ELBOW_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='r_elbow_rotation_changed'/>
             </IS>
           </OrientationInterpolator>
-          <OrientationInterpolator DEF='R_WRIST_ANIMATOR' key='0 1' keyValue='0 0 1 0 0 0 1 0'>
+          <OrientationInterpolator DEF='R_WRIST_ANIMATOR'>
             <IS>
               <connect nodeField='value_changed' protoField='r_wrist_rotation_changed'/>
             </IS>

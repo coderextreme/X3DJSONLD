@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='HelloWorldCommented.x3d' name='title'/>
     <meta content='Numerous comments added to simple X3D scene example for testing JSON encoding alternatives.' name='description'/>
@@ -18,12 +18,12 @@
   <Scene>
     <WorldInfo title='Hello world!'/>
     <Group>
-      <Viewpoint DEF='ViewUpClose' centerOfRotation='0 -1 0' description='Hello world!' position='0 -1 7'/>
+      <Viewpoint DEF='ViewUpClose'/>
       <Transform rotation='0 1 0 3'>
         <Shape>
           <Appearance>
-            <Material DEF='MaterialLightBlue' diffuseColor='0.1 0.5 1'/>
-            <ImageTexture DEF='ImageCloudlessEarth' url='"earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"'/>
+            <Material DEF='MaterialLightBlue'/>
+            <ImageTexture DEF='ImageCloudlessEarth'/>
           </Appearance>
           <Sphere/>
         </Shape>
@@ -33,7 +33,7 @@
           <Appearance>
             <Material USE='MaterialLightBlue'/>
           </Appearance>
-          <Text DEF='TextMessage' string='"Hello" "world!"'>
+          <Text DEF='TextMessage'>
             <FontStyle justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>

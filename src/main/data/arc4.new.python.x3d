@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='arc4.x3d' name='title'/>
     <meta content='Lost, Doug Sanden I think' name='creator'/>
@@ -18,7 +18,7 @@
         </Appearance>
         <Sphere radius='0.1'/>
       </Shape>
-      <PositionInterpolator DEF='DECLpoint_G1_PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
+      <PositionInterpolator DEF='DECLpoint_G1_PI1'/>
       <Script DEF='DECLpoint_G1_MB1'>
         <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
         <field accessType='inputOutput' name='old' type='SFVec3f' value='0 0 0'/>
@@ -38,7 +38,7 @@
 "+
 "		}]]>
       </Script>
-      <TimeSensor DEF='DECLpoint_G1_CL1' cycleInterval='3' loop='true'/>
+      <TimeSensor DEF='DECLpoint_G1_CL1'/>
       <ROUTE fromField='cycleTime' fromNode='DECLpoint_G1_CL1' toField='set_location' toNode='DECLpoint_G1_MB1'/>
       <ROUTE fromField='fraction_changed' fromNode='DECLpoint_G1_CL1' toField='set_fraction' toNode='DECLpoint_G1_PI1'/>
       <ROUTE fromField='keyValue' fromNode='DECLpoint_G1_MB1' toField='keyValue' toNode='DECLpoint_G1_PI1'/>
@@ -51,7 +51,7 @@
         </Appearance>
         <Sphere radius='0.1'/>
       </Shape>
-      <PositionInterpolator DEF='DECLpoint_G2_PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
+      <PositionInterpolator DEF='DECLpoint_G2_PI1'/>
       <Script DEF='DECLpoint_G2_MB1'>
         <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
         <field accessType='inputOutput' name='old' type='SFVec3f' value='0 0 0'/>
@@ -71,7 +71,7 @@
 "+
 "		}]]>
       </Script>
-      <TimeSensor DEF='DECLpoint_G2_CL1' cycleInterval='3' loop='true'/>
+      <TimeSensor DEF='DECLpoint_G2_CL1'/>
       <ROUTE fromField='cycleTime' fromNode='DECLpoint_G2_CL1' toField='set_location' toNode='DECLpoint_G2_MB1'/>
       <ROUTE fromField='fraction_changed' fromNode='DECLpoint_G2_CL1' toField='set_fraction' toNode='DECLpoint_G2_PI1'/>
       <ROUTE fromField='keyValue' fromNode='DECLpoint_G2_MB1' toField='keyValue' toNode='DECLpoint_G2_PI1'/>

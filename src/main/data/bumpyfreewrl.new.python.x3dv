@@ -70,7 +70,6 @@ WorldInfo {
             
             children [
               DEF freewrlShader ComposedShader {
-                language "GLSL"
                 children [
                   field {
                     accessType "inputOnly"

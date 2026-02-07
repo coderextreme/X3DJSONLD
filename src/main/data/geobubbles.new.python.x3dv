@@ -8,10 +8,7 @@ META "creator" "John Carlson"
 META "generator" "manual"
 META "identifier" "https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"
 META "description" "geo bubbles"
-DEF Tour GeoViewpoint {
-      description "Tour Views"
-      orientation 1 0 0 0
-      position 0 0 4 
+DEF Tour GeoViewpoint { 
     }
     Background {
       backUrl ["../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
@@ -40,48 +37,11 @@ DEF Tour GeoViewpoint {
       ]
     
     }
-    DEF TourTime TimeSensor {
-      cycleInterval 5
-      loop TRUE 
+    DEF TourTime TimeSensor { 
     }
-    DEF TourPosition GeoPositionInterpolator {
-      key [0 1]
-      keyValue [0.0015708 0 4 0 0.0015708 4] 
+    DEF TourPosition GeoPositionInterpolator { 
     }
     DEF RandomTourTime Script {
-      url "ecmascript:
-"+
-"
-"+
-"               function set_cycle(value) {
-"+
-"                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
-"+
-"                        var ov = val;
-"+
-"			// Browser.print('old '+ov);
-"+
-"                        do {
-"+
-"                                val = Math.floor(Math.random()*2);
-"+
-"                                var vc = val;
-"+
-"                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
-"+
-"                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
-"+
-"			// Browser.println(positions[ov]);
-"+
-"			// Browser.println(positions[vc]);
-"+
-"                        position = new MFVec3d();
-"+
-"                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
-"+
-"                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
-"+
-"               }"
       children [
         field {
           accessType "inputOnly"

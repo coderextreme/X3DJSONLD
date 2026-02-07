@@ -123,8 +123,7 @@
         "Transform":
         {
       {
-        "@DEF":"PowerR",
-        "@translation":"100 400 400"
+        "@DEF":"PowerR"
       }
             "Transform":
             {
@@ -189,10 +188,7 @@
                 }            }            "Transform":
             {
       {
-        "@DEF":"volumeRight",
-        "@rotation":"1 0 0 -0.5",
-        "@scale":"10 10 10",
-        "@translation":"0 -10 0"
+        "@DEF":"volumeRight"
       }
                 "Shape":
                 {
@@ -215,15 +211,13 @@
                         "FontStyle":
                         {
       {
-        "@DEF":"VolumeFontStyle",
-        "@family":""Times" "SERIF""
+        "@DEF":"VolumeFontStyle"
       }
     },
                     }                }            }        }        "Transform":
         {
       {
-        "@DEF":"PowerL",
-        "@translation":"-100 400 400"
+        "@DEF":"PowerL"
       }
             "Transform":
             {
@@ -288,10 +282,7 @@
                 }            }            "Transform":
             {
       {
-        "@DEF":"volumeLeft",
-        "@rotation":"1 0 0 -0.5",
-        "@scale":"10 10 10",
-        "@translation":"0 -10 0"
+        "@DEF":"volumeLeft"
       }
                 "Shape":
                 {
@@ -374,8 +365,7 @@
                     }                }            }        }        "ChannelSplitter":
         {
       {
-        "@DEF":"ChannelSplitter",
-        "@channelCountMode":"EXPLICIT"
+        "@DEF":"ChannelSplitter"
       }
             "AudioClip":
             {
@@ -387,9 +377,7 @@
         }        "Transform":
         {
       {
-        "@DEF":"Audio3",
-        "@rotation":"1 0 0 -0.5",
-        "@translation":"0 100 0"
+        "@DEF":"Audio3"
       }
             "Shape":
             {

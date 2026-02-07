@@ -72,7 +72,6 @@ WorldInfo {
             
             children [
               DEF x_ite ComposedShader {
-                language "GLSL"
                 children [
                   field {
                     accessType "initializeOnly"
@@ -143,23 +142,6 @@ WorldInfo {
            
         }
         DEF Animate Script {
-          url "ecmascript:
-"+
-"			function set_fraction(f, tm) {
-"+
-"			    if (lastframe + updaterate < tm) {
-"+
-"			  	lastframe = tm;
-"+
-"				for (let v in values) {
-"+
-"					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];
-"+
-"				}
-"+
-"			    }
-"+
-"			}"
           children [
             field {
               accessType "inputOnly"
@@ -193,9 +175,7 @@ WorldInfo {
           ]
         
         }
-        DEF TourTime TimeSensor {
-          cycleInterval 45
-          loop TRUE 
+        DEF TourTime TimeSensor { 
         }
         
         ROUTE TourTime.fraction_changed TO Animate.set_fraction

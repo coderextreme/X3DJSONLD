@@ -7522,8 +7522,6 @@ WorldInfo {
              
           }
           DEF BehaviorSelectionScript Script {
-            directOutput TRUE
-            url ["HAnimBehaviorPrototypesScript.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"]
             IS IS {
               children [
                 connect {
@@ -7672,8 +7670,7 @@ WorldInfo {
         fieldValue {
           name "HumanoidArray"
           children [
-            DEF hanim_DiamondManLOA-1 HAnimHumanoid {
-              name "DiamondManLOA-1" 
+            DEF hanim_DiamondManLOA-1 HAnimHumanoid { 
             }
             
           ]

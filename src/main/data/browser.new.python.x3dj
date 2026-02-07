@@ -48,39 +48,13 @@
         "Script":
         {
       {
-        "@DEF":"Browser",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;                function initialize() {
-&quot;+
-&quot;		    Browser.print('DUDES\n'+'&quot;DUDETTES');
-&quot;+
-&quot;                }"
+        "@DEF":"Browser"
       }
     },
         "Script":
         {
       {
-        "@DEF":"Clouds",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;
-&quot;+
-&quot;function cumulustranslation() // These values designate the boundary location of the cloud
-&quot;+
-&quot;{
-&quot;+
-&quot;var xxx = ' '+' '+
-&quot;+
-&quot;'	Transform		\n'+
-&quot;+
-&quot;'    ' + '               	\n';
-&quot;+
-&quot;
-&quot;+
-&quot;}"
+        "@DEF":"Clouds"
       }
     },
     }}

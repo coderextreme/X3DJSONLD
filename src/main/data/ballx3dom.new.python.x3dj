@@ -241,9 +241,7 @@
                         "ShaderPart":
                         {
       {
-        "@DEF":"common",
-        "@type":"FRAGMENT",
-        "@url":""../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs""
+        "@DEF":"common"
       }
     },
                     }                }                "Sphere":

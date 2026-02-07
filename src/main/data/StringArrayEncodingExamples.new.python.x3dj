@@ -118,8 +118,7 @@
         "Viewpoint":
         {
       {
-        "@DEF":"EntryView",
-        "@description":"Hello MFString syntax"
+        "@DEF":"EntryView"
       }
     },
         "Background":

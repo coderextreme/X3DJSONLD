@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
@@ -33,7 +33,7 @@
             <ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png" "../resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
             <ImageTexture url='"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png" "../resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
           </ComposedCubeMapTexture>
-          <ComposedShader DEF='x_ite' language='GLSL'>
+          <ComposedShader DEF='x_ite'>
             <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
             <field accessType='initializeOnly' name='cube' type='SFNode'>
               <ComposedCubeMapTexture USE='texture'/>
@@ -201,7 +201,7 @@
 "+
 "			}]]>
       </Script>
-      <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'/>
+      <TimeSensor DEF='TourTime'/>
       <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
       <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='x_ite'/>
       <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='x_ite'/>

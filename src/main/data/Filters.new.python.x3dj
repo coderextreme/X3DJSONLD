@@ -121,8 +121,7 @@
         "Transform":
         {
       {
-        "@DEF":"TransformAudio1",
-        "@translation":"-200 50 0"
+        "@DEF":"TransformAudio1"
       }
             "Shape":
             {
@@ -148,8 +147,7 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio2",
-        "@translation":"0 50 0"
+        "@DEF":"TransformAudio2"
       }
             "Shape":
             {
@@ -175,8 +173,7 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio3",
-        "@translation":"200 50 0"
+        "@DEF":"TransformAudio3"
       }
             "Shape":
             {
@@ -202,43 +199,37 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"AnimData",
-        "@translation":"0 50 0"
+        "@DEF":"AnimData"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxH",
-        "@translation":"0 100 0"
+        "@DEF":"AnimDataBoxH"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxM",
-        "@translation":"15 100 0"
+        "@DEF":"AnimDataBoxM"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxL",
-        "@translation":"30 100 0"
+        "@DEF":"AnimDataBoxL"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxMM",
-        "@translation":"-15 100 0"
+        "@DEF":"AnimDataBoxMM"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxLM",
-        "@translation":"-30 100 0"
+        "@DEF":"AnimDataBoxLM"
       }
     },
         "Transform":
