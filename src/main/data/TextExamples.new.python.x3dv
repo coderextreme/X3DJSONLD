@@ -25,9 +25,7 @@ Transform {
           
           geometry Text {
             string ["Compare special character escaping"]
-            fontStyle DEF testFontStyle FontStyle {
-              justify ["MIDDLE" "MIDDLE"]
-              size 0.8 
+            fontStyle DEF testFontStyle FontStyle { 
             }
              
           }

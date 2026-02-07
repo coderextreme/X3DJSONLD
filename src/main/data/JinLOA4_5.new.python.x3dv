@@ -31,8 +31,6 @@ WorldInfo {
       position 0 1 3 
     }
     DEF hanim_JinLOA4 HAnimHumanoid {
-      loa 4
-      name "JinLOA4"
       metadata MetadataSet {
         name "HAnimHumanoid.info"
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
@@ -76,11 +74,8 @@ WorldInfo {
     
       children [
         DEF hanim_humanoid_root HAnimJoint {
-          center 0 1631.5555111111114 -31.44888888888889
-          name "humanoid_root"
           children [
             DEF hanim_sacrum HAnimSegment {
-              name "sacrum"
               children [
                 Transform {
                   translation 0 1631.5555111111114 -31.44888888888889
@@ -91,8 +86,7 @@ WorldInfo {
                           diffuseColor 0.588 0.588 0.588 
                         }
                         
-                        texture DEF JinLOA4TextureAtlas ImageTexture {
-                          url ["images/Jin.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png"] 
+                        texture DEF JinLOA4TextureAtlas ImageTexture { 
                         }
                          
                       }
@@ -121,11 +115,8 @@ WorldInfo {
              
             }
             DEF hanim_sacroiliac HAnimJoint {
-              center 0 1396.888888888889 -31.44888888888889
-              name "sacroiliac"
               children [
                 DEF hanim_pelvis HAnimSegment {
-                  name "pelvis"
                   children [
                     Transform {
                       translation 0 1396.888888888889 -31.44888888888889
@@ -163,11 +154,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_hip HAnimJoint {
-                  center 186.9777777777778 1632.8889777777777 -36.24444444444445
-                  name "l_hip"
                   children [
                     DEF hanim_l_thigh HAnimSegment {
-                      name "l_thigh"
                       children [
                         Transform {
                           translation 186.9777777777778 1632.8889777777777 -36.24444444444445
@@ -205,11 +193,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_knee HAnimJoint {
-                      center 182.93333333333334 807.5555555555557 -38.39555555555556
-                      name "l_knee"
                       children [
                         DEF hanim_l_calf HAnimSegment {
-                          name "l_calf"
                           children [
                             Transform {
                               translation 182.93333333333334 807.5555555555557 -38.39555555555556
@@ -247,11 +232,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_talocrural HAnimJoint {
-                          center 175.46666666666667 188.53333333333333 -20.644444444444446
-                          name "l_talocrural"
                           children [
                             DEF hanim_l_talus HAnimSegment {
-                              name "l_talus"
                               children [
                                 Transform {
                                   translation 175.46666666666667 188.53333333333333 -20.644444444444446
@@ -289,11 +271,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_talocalcaneonavicular HAnimJoint {
-                              center 154.66666666666669 72.88888888888889 9.60888888888889
-                              name "l_talocalcaneonavicular"
                               children [
                                 DEF hanim_l_navicular HAnimSegment {
-                                  name "l_navicular"
                                   children [
                                     Transform {
                                       translation 154.66666666666669 72.88888888888889 9.60888888888889
@@ -331,11 +310,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_cuneonavicular_1 HAnimJoint {
-                                  center 133.0666666666667 63.422222222222224 36.32888888888889
-                                  name "l_cuneonavicular_1"
                                   children [
                                     DEF hanim_l_cuneiform_1 HAnimSegment {
-                                      name "l_cuneiform_1"
                                       children [
                                         Transform {
                                           translation 133.0666666666667 63.422222222222224 36.32888888888889
@@ -373,11 +349,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsometatarsal_1 HAnimJoint {
-                                      center 127.64444444444445 45.91111111111111 87.28888888888889
-                                      name "l_tarsometatarsal_1"
                                       children [
                                         DEF hanim_l_metatarsal_1 HAnimSegment {
-                                          name "l_metatarsal_1"
                                           children [
                                             Transform {
                                               translation 127.64444444444445 45.91111111111111 87.28888888888889
@@ -415,11 +388,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_l_metatarsophalangeal_1 HAnimJoint {
-                                          center 122.71111111111112 28.493333333333336 184.9333333333333
-                                          name "l_metatarsophalangeal_1"
                                           children [
                                             DEF hanim_l_tarsal_proximal_phalanx_1 HAnimSegment {
-                                              name "l_tarsal_proximal_phalanx_1"
                                               children [
                                                 Transform {
                                                   translation 122.71111111111112 28.493333333333336 184.9333333333333
@@ -457,11 +427,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_l_tarsal_distal_interphalangeal_1 HAnimJoint {
-                                              center 122.71111111111112 23.973333333333333 227.7777777777778
-                                              name "l_tarsal_distal_interphalangeal_1"
                                               children [
                                                 DEF hanim_l_tarsal_distal_phalanx_1 HAnimSegment {
-                                                  name "l_tarsal_distal_phalanx_1"
                                                   children [
                                                     Transform {
                                                       translation 122.71111111111112 23.973333333333333 227.7777777777778
@@ -515,11 +482,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_cuneonavicular_2 HAnimJoint {
-                                  center 160.84444444444446 66.22222222222223 42.324444444444445
-                                  name "l_cuneonavicular_2"
                                   children [
                                     DEF hanim_l_cuneiform_2 HAnimSegment {
-                                      name "l_cuneiform_2"
                                       children [
                                         Transform {
                                           translation 160.84444444444446 66.22222222222223 42.324444444444445
@@ -557,11 +521,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsometatarsal_2 HAnimJoint {
-                                      center 158.4 51.55555555555556 81.11111111111111
-                                      name "l_tarsometatarsal_2"
                                       children [
                                         DEF hanim_l_metatarsal_2 HAnimSegment {
-                                          name "l_metatarsal_2"
                                           children [
                                             Transform {
                                               translation 158.4 51.55555555555556 81.11111111111111
@@ -599,11 +560,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_l_metatarsophalangeal_2 HAnimJoint {
-                                          center 163.02222222222224 29.58222222222222 193.24444444444444
-                                          name "l_metatarsophalangeal_2"
                                           children [
                                             DEF hanim_l_tarsal_proximal_phalanx_2 HAnimSegment {
-                                              name "l_tarsal_proximal_phalanx_2"
                                               children [
                                                 Transform {
                                                   translation 163.02222222222224 29.58222222222222 193.24444444444444
@@ -641,11 +599,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_l_tarsal_proximal_interphalangeal_2 HAnimJoint {
-                                              center 166.53333333333333 24.982222222222227 225.20000000000002
-                                              name "l_tarsal_proximal_interphalangeal_2"
                                               children [
                                                 DEF hanim_l_tarsal_middle_phalanx_2 HAnimSegment {
-                                                  name "l_tarsal_middle_phalanx_2"
                                                   children [
                                                     Transform {
                                                       translation 166.53333333333333 24.982222222222227 225.20000000000002
@@ -683,11 +638,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_l_tarsal_distal_interphalangeal_2 HAnimJoint {
-                                                  center 166.53333333333333 19.40888888888889 243.82222222222222
-                                                  name "l_tarsal_distal_interphalangeal_2"
                                                   children [
                                                     DEF hanim_l_tarsal_distal_phalanx_2 HAnimSegment {
-                                                      name "l_tarsal_distal_phalanx_2"
                                                       children [
                                                         Transform {
                                                           translation 166.53333333333333 19.40888888888889 243.82222222222222
@@ -745,11 +697,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_cuneonavicular_3 HAnimJoint {
-                                  center 183.64444444444445 65.95555555555556 39.14666666666667
-                                  name "l_cuneonavicular_3"
                                   children [
                                     DEF hanim_l_cuneiform_3 HAnimSegment {
-                                      name "l_cuneiform_3"
                                       children [
                                         Transform {
                                           translation 183.64444444444445 65.95555555555556 39.14666666666667
@@ -787,11 +736,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsometatarsal_3 HAnimJoint {
-                                      center 186.84444444444443 51.55555555555556 77.82222222222222
-                                      name "l_tarsometatarsal_3"
                                       children [
                                         DEF hanim_l_metatarsal_3 HAnimSegment {
-                                          name "l_metatarsal_3"
                                           children [
                                             Transform {
                                               translation 186.84444444444443 51.55555555555556 77.82222222222222
@@ -829,11 +775,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_l_metatarsophalangeal_3 HAnimJoint {
-                                          center 190.57777777777778 29.742222222222225 188.48888888888888
-                                          name "l_metatarsophalangeal_3"
                                           children [
                                             DEF hanim_l_tarsal_proximal_phalanx_3 HAnimSegment {
-                                              name "l_tarsal_proximal_phalanx_3"
                                               children [
                                                 Transform {
                                                   translation 190.57777777777778 29.742222222222225 188.48888888888888
@@ -871,11 +814,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_l_tarsal_proximal_interphalangeal_3 HAnimJoint {
-                                              center 195.2888888888889 23.551111111111112 218.22222222222223
-                                              name "l_tarsal_proximal_interphalangeal_3"
                                               children [
                                                 DEF hanim_l_tarsal_middle_phalanx_3 HAnimSegment {
-                                                  name "l_tarsal_middle_phalanx_3"
                                                   children [
                                                     Transform {
                                                       translation 195.2888888888889 23.551111111111112 218.22222222222223
@@ -913,11 +853,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_l_tarsal_distal_interphalangeal_3 HAnimJoint {
-                                                  center 198.35555555555555 19.40888888888889 236.44444444444446
-                                                  name "l_tarsal_distal_interphalangeal_3"
                                                   children [
                                                     DEF hanim_l_tarsal_distal_phalanx_3 HAnimSegment {
-                                                      name "l_tarsal_distal_phalanx_3"
                                                       children [
                                                         Transform {
                                                           translation 198.35555555555555 19.40888888888889 236.44444444444446
@@ -979,11 +916,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_calcaneocuboid HAnimJoint {
-                              center 176 114.53333333333333 -51.288888888888884
-                              name "l_calcaneocuboid"
                               children [
                                 DEF hanim_l_calcaneus HAnimSegment {
-                                  name "l_calcaneus"
                                   children [
                                     Transform {
                                       translation 176 114.53333333333333 -51.288888888888884
@@ -1021,11 +955,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_transversetarsal HAnimJoint {
-                                  center 218.53333333333333 69.6888888888889 4.126666666666667
-                                  name "l_transversetarsal"
                                   children [
                                     DEF hanim_l_cuboid HAnimSegment {
-                                      name "l_cuboid"
                                       children [
                                         Transform {
                                           translation 218.53333333333333 69.6888888888889 4.126666666666667
@@ -1063,11 +994,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsometatarsal_4 HAnimJoint {
-                                      center 210.35555555555555 48.48888888888889 75.91111111111111
-                                      name "l_tarsometatarsal_4"
                                       children [
                                         DEF hanim_l_metatarsal_4 HAnimSegment {
-                                          name "l_metatarsal_4"
                                           children [
                                             Transform {
                                               translation 210.35555555555555 48.48888888888889 75.91111111111111
@@ -1105,11 +1033,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_l_metatarsophalangeal_4 HAnimJoint {
-                                          center 217.02222222222224 28.351111111111113 180.08888888888887
-                                          name "l_metatarsophalangeal_4"
                                           children [
                                             DEF hanim_l_tarsal_proximal_phalanx_4 HAnimSegment {
-                                              name "l_tarsal_proximal_phalanx_4"
                                               children [
                                                 Transform {
                                                   translation 217.02222222222224 28.351111111111113 180.08888888888887
@@ -1147,11 +1072,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_l_tarsal_proximal_interphalangeal_4 HAnimJoint {
-                                              center 225.51111111111112 24.186666666666667 210
-                                              name "l_tarsal_proximal_interphalangeal_4"
                                               children [
                                                 DEF hanim_l_tarsal_middle_phalanx_4 HAnimSegment {
-                                                  name "l_tarsal_middle_phalanx_4"
                                                   children [
                                                     Transform {
                                                       translation 225.51111111111112 24.186666666666667 210
@@ -1189,11 +1111,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_l_tarsal_distal_interphalangeal_4 HAnimJoint {
-                                                  center 228.4888888888889 18.506666666666668 224.57777777777778
-                                                  name "l_tarsal_distal_interphalangeal_4"
                                                   children [
                                                     DEF hanim_l_tarsal_distal_phalanx_4 HAnimSegment {
-                                                      name "l_tarsal_distal_phalanx_4"
                                                       children [
                                                         Transform {
                                                           translation 228.4888888888889 18.506666666666668 224.57777777777778
@@ -1247,11 +1166,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_l_tarsometatarsal_5 HAnimJoint {
-                                      center 238.66666666666669 41.373333333333335 68.62222222222222
-                                      name "l_tarsometatarsal_5"
                                       children [
                                         DEF hanim_l_metatarsal_5 HAnimSegment {
-                                          name "l_metatarsal_5"
                                           children [
                                             Transform {
                                               translation 238.66666666666669 41.373333333333335 68.62222222222222
@@ -1289,11 +1205,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_l_metatarsophalangeal_5 HAnimJoint {
-                                          center 245.0666666666667 27.004444444444445 170.9777777777778
-                                          name "l_metatarsophalangeal_5"
                                           children [
                                             DEF hanim_l_tarsal_proximal_phalanx_5 HAnimSegment {
-                                              name "l_tarsal_proximal_phalanx_5"
                                               children [
                                                 Transform {
                                                   translation 245.0666666666667 27.004444444444445 170.9777777777778
@@ -1331,11 +1244,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_l_tarsal_proximal_interphalangeal_5 HAnimJoint {
-                                              center 249.64444444444445 21.444444444444443 185.95555555555558
-                                              name "l_tarsal_proximal_interphalangeal_5"
                                               children [
                                                 DEF hanim_l_tarsal_middle_phalanx_5 HAnimSegment {
-                                                  name "l_tarsal_middle_phalanx_5"
                                                   children [
                                                     Transform {
                                                       translation 249.64444444444445 21.444444444444443 185.95555555555558
@@ -1373,11 +1283,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_l_tarsal_distal_interphalangeal_5 HAnimJoint {
-                                                  center 251.42222222222225 16.915555555555557 201.24444444444444
-                                                  name "l_tarsal_distal_interphalangeal_5"
                                                   children [
                                                     DEF hanim_l_tarsal_distal_phalanx_5 HAnimSegment {
-                                                      name "l_tarsal_distal_phalanx_5"
                                                       children [
                                                         Transform {
                                                           translation 251.42222222222225 16.915555555555557 201.24444444444444
@@ -1451,11 +1358,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_r_hip HAnimJoint {
-                  center -186.9777777777778 1632.8889777777777 -36.24444444444445
-                  name "r_hip"
                   children [
                     DEF hanim_r_thigh HAnimSegment {
-                      name "r_thigh"
                       children [
                         Transform {
                           translation -186.9777777777778 1632.8889777777777 -36.24444444444445
@@ -1493,11 +1397,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_r_knee HAnimJoint {
-                      center -182.93333333333334 807.5555555555557 -38.39555555555556
-                      name "r_knee"
                       children [
                         DEF hanim_r_calf HAnimSegment {
-                          name "r_calf"
                           children [
                             Transform {
                               translation -182.93333333333334 807.5555555555557 -38.39555555555556
@@ -1535,11 +1436,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_r_talocrural HAnimJoint {
-                          center -174.7111111111111 188.53333333333333 -20.644444444444446
-                          name "r_talocrural"
                           children [
                             DEF hanim_r_talus HAnimSegment {
-                              name "r_talus"
                               children [
                                 Transform {
                                   translation -174.7111111111111 188.53333333333333 -20.644444444444446
@@ -1577,11 +1475,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_r_talocalcaneonavicular HAnimJoint {
-                              center -153.95555555555555 72.88888888888889 9.60888888888889
-                              name "r_talocalcaneonavicular"
                               children [
                                 DEF hanim_r_navicular HAnimSegment {
-                                  name "r_navicular"
                                   children [
                                     Transform {
                                       translation -153.95555555555555 72.88888888888889 9.60888888888889
@@ -1619,11 +1514,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_r_cuneonavicular_1 HAnimJoint {
-                                  center -132.3111111111111 63.422222222222224 36.32888888888889
-                                  name "r_cuneonavicular_1"
                                   children [
                                     DEF hanim_r_cuneiform_1 HAnimSegment {
-                                      name "r_cuneiform_1"
                                       children [
                                         Transform {
                                           translation -132.3111111111111 63.422222222222224 36.32888888888889
@@ -1661,11 +1553,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_r_tarsometatarsal_1 HAnimJoint {
-                                      center -126.93333333333334 45.91111111111111 87.28888888888889
-                                      name "r_tarsometatarsal_1"
                                       children [
                                         DEF hanim_r_metatarsal_1 HAnimSegment {
-                                          name "r_metatarsal_1"
                                           children [
                                             Transform {
                                               translation -126.93333333333334 45.91111111111111 87.28888888888889
@@ -1703,11 +1592,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_r_metatarsophalangeal_1 HAnimJoint {
-                                          center -122.00000000000001 28.493333333333336 184.9333333333333
-                                          name "r_metatarsophalangeal_1"
                                           children [
                                             DEF hanim_r_tarsal_proximal_phalanx_1 HAnimSegment {
-                                              name "r_tarsal_proximal_phalanx_1"
                                               children [
                                                 Transform {
                                                   translation -122.00000000000001 28.493333333333336 184.9333333333333
@@ -1745,11 +1631,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_r_tarsal_distal_interphalangeal_1 HAnimJoint {
-                                              center -121.95555555555556 23.973333333333333 227.7777777777778
-                                              name "r_tarsal_distal_interphalangeal_1"
                                               children [
                                                 DEF hanim_r_tarsal_distal_phalanx_1 HAnimSegment {
-                                                  name "r_tarsal_distal_phalanx_1"
                                                   children [
                                                     Transform {
                                                       translation -121.95555555555556 23.973333333333333 227.7777777777778
@@ -1803,11 +1686,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_r_cuneonavicular_2 HAnimJoint {
-                                  center -160.0888888888889 66.22222222222223 42.324444444444445
-                                  name "r_cuneonavicular_2"
                                   children [
                                     DEF hanim_r_cuneiform_2 HAnimSegment {
-                                      name "r_cuneiform_2"
                                       children [
                                         Transform {
                                           translation -160.0888888888889 66.22222222222223 42.324444444444445
@@ -1845,11 +1725,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_r_tarsometatarsal_2 HAnimJoint {
-                                      center -157.6888888888889 51.55555555555556 81.11111111111111
-                                      name "r_tarsometatarsal_2"
                                       children [
                                         DEF hanim_r_metatarsal_2 HAnimSegment {
-                                          name "r_metatarsal_2"
                                           children [
                                             Transform {
                                               translation -157.6888888888889 51.55555555555556 81.11111111111111
@@ -1887,11 +1764,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_r_metatarsophalangeal_2 HAnimJoint {
-                                          center -162.26666666666665 29.58222222222222 193.24444444444444
-                                          name "r_metatarsophalangeal_2"
                                           children [
                                             DEF hanim_r_tarsal_proximal_phalanx_2 HAnimSegment {
-                                              name "r_tarsal_proximal_phalanx_2"
                                               children [
                                                 Transform {
                                                   translation -162.26666666666665 29.58222222222222 193.24444444444444
@@ -1929,11 +1803,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_r_tarsal_proximal_interphalangeal_2 HAnimJoint {
-                                              center -165.77777777777777 24.982222222222227 225.20000000000002
-                                              name "r_tarsal_proximal_interphalangeal_2"
                                               children [
                                                 DEF hanim_r_tarsal_middle_phalanx_2 HAnimSegment {
-                                                  name "r_tarsal_middle_phalanx_2"
                                                   children [
                                                     Transform {
                                                       translation -165.77777777777777 24.982222222222227 225.20000000000002
@@ -1971,11 +1842,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_r_tarsal_distal_interphalangeal_2 HAnimJoint {
-                                                  center -165.77777777777777 19.40888888888889 243.82222222222222
-                                                  name "r_tarsal_distal_interphalangeal_2"
                                                   children [
                                                     DEF hanim_r_tarsal_distal_phalanx_2 HAnimSegment {
-                                                      name "r_tarsal_distal_phalanx_2"
                                                       children [
                                                         Transform {
                                                           translation -165.77777777777777 19.40888888888889 243.82222222222222
@@ -2033,11 +1901,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_r_cuneonavicular_3 HAnimJoint {
-                                  center -182.93333333333334 65.95555555555556 39.14666666666667
-                                  name "r_cuneonavicular_3"
                                   children [
                                     DEF hanim_r_cuneiform_3 HAnimSegment {
-                                      name "r_cuneiform_3"
                                       children [
                                         Transform {
                                           translation -182.93333333333334 65.95555555555556 39.14666666666667
@@ -2075,11 +1940,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_r_tarsometatarsal_3 HAnimJoint {
-                                      center -186.13333333333333 51.55555555555556 77.82222222222222
-                                      name "r_tarsometatarsal_3"
                                       children [
                                         DEF hanim_r_metatarsal_3 HAnimSegment {
-                                          name "r_metatarsal_3"
                                           children [
                                             Transform {
                                               translation -186.13333333333333 51.55555555555556 77.82222222222222
@@ -2117,11 +1979,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_r_metatarsophalangeal_3 HAnimJoint {
-                                          center -189.82222222222222 29.742222222222225 188.48888888888888
-                                          name "r_metatarsophalangeal_3"
                                           children [
                                             DEF hanim_r_tarsal_proximal_phalanx_3 HAnimSegment {
-                                              name "r_tarsal_proximal_phalanx_3"
                                               children [
                                                 Transform {
                                                   translation -189.82222222222222 29.742222222222225 188.48888888888888
@@ -2159,11 +2018,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_r_tarsal_proximal_interphalangeal_3 HAnimJoint {
-                                              center -194.57777777777778 23.551111111111112 218.22222222222223
-                                              name "r_tarsal_proximal_interphalangeal_3"
                                               children [
                                                 DEF hanim_r_tarsal_middle_phalanx_3 HAnimSegment {
-                                                  name "r_tarsal_middle_phalanx_3"
                                                   children [
                                                     Transform {
                                                       translation -194.57777777777778 23.551111111111112 218.22222222222223
@@ -2201,11 +2057,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_r_tarsal_distal_interphalangeal_3 HAnimJoint {
-                                                  center -197.6 19.40888888888889 236.44444444444446
-                                                  name "r_tarsal_distal_interphalangeal_3"
                                                   children [
                                                     DEF hanim_r_tarsal_distal_phalanx_3 HAnimSegment {
-                                                      name "r_tarsal_distal_phalanx_3"
                                                       children [
                                                         Transform {
                                                           translation -197.6 19.40888888888889 236.44444444444446
@@ -2267,11 +2120,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_r_calcaneocuboid HAnimJoint {
-                              center -175.24444444444444 114.53333333333333 -51.288888888888884
-                              name "r_calcaneocuboid"
                               children [
                                 DEF hanim_r_calcaneus HAnimSegment {
-                                  name "r_calcaneus"
                                   children [
                                     Transform {
                                       translation -175.24444444444444 114.53333333333333 -51.288888888888884
@@ -2309,11 +2159,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_r_transversetarsal HAnimJoint {
-                                  center -217.82222222222222 69.6888888888889 4.126666666666667
-                                  name "r_transversetarsal"
                                   children [
                                     DEF hanim_r_cuboid HAnimSegment {
-                                      name "r_cuboid"
                                       children [
                                         Transform {
                                           translation -217.82222222222222 69.6888888888889 4.126666666666667
@@ -2351,11 +2198,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_r_tarsometatarsal_4 HAnimJoint {
-                                      center -209.64444444444445 48.48888888888889 75.91111111111111
-                                      name "r_tarsometatarsal_4"
                                       children [
                                         DEF hanim_r_metatarsal_4 HAnimSegment {
-                                          name "r_metatarsal_4"
                                           children [
                                             Transform {
                                               translation -209.64444444444445 48.48888888888889 75.91111111111111
@@ -2393,11 +2237,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_r_metatarsophalangeal_4 HAnimJoint {
-                                          center -216.31111111111113 28.351111111111113 180.08888888888887
-                                          name "r_metatarsophalangeal_4"
                                           children [
                                             DEF hanim_r_tarsal_proximal_phalanx_4 HAnimSegment {
-                                              name "r_tarsal_proximal_phalanx_4"
                                               children [
                                                 Transform {
                                                   translation -216.31111111111113 28.351111111111113 180.08888888888887
@@ -2435,11 +2276,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_r_tarsal_proximal_interphalangeal_4 HAnimJoint {
-                                              center -224.7555555555556 24.186666666666667 210
-                                              name "r_tarsal_proximal_interphalangeal_4"
                                               children [
                                                 DEF hanim_r_tarsal_middle_phalanx_4 HAnimSegment {
-                                                  name "r_tarsal_middle_phalanx_4"
                                                   children [
                                                     Transform {
                                                       translation -224.7555555555556 24.186666666666667 210
@@ -2477,11 +2315,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_r_tarsal_distal_interphalangeal_4 HAnimJoint {
-                                                  center -227.7777777777778 18.506666666666668 224.57777777777778
-                                                  name "r_tarsal_distal_interphalangeal_4"
                                                   children [
                                                     DEF hanim_r_tarsal_distal_phalanx_4 HAnimSegment {
-                                                      name "r_tarsal_distal_phalanx_4"
                                                       children [
                                                         Transform {
                                                           translation -227.7777777777778 18.506666666666668 224.57777777777778
@@ -2535,11 +2370,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_r_tarsometatarsal_5 HAnimJoint {
-                                      center -237.9111111111111 41.373333333333335 68.62222222222222
-                                      name "r_tarsometatarsal_5"
                                       children [
                                         DEF hanim_r_metatarsal_5 HAnimSegment {
-                                          name "r_metatarsal_5"
                                           children [
                                             Transform {
                                               translation -237.9111111111111 41.373333333333335 68.62222222222222
@@ -2577,11 +2409,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_r_metatarsophalangeal_5 HAnimJoint {
-                                          center -244.3111111111111 27.004444444444445 170.9777777777778
-                                          name "r_metatarsophalangeal_5"
                                           children [
                                             DEF hanim_r_tarsal_proximal_phalanx_5 HAnimSegment {
-                                              name "r_tarsal_proximal_phalanx_5"
                                               children [
                                                 Transform {
                                                   translation -244.3111111111111 27.004444444444445 170.9777777777778
@@ -2619,11 +2448,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_r_tarsal_proximal_interphalangeal_5 HAnimJoint {
-                                              center -248.88888888888889 21.444444444444443 185.95555555555558
-                                              name "r_tarsal_proximal_interphalangeal_5"
                                               children [
                                                 DEF hanim_r_tarsal_middle_phalanx_5 HAnimSegment {
-                                                  name "r_tarsal_middle_phalanx_5"
                                                   children [
                                                     Transform {
                                                       translation -248.88888888888889 21.444444444444443 185.95555555555558
@@ -2661,11 +2487,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_r_tarsal_distal_interphalangeal_5 HAnimJoint {
-                                                  center -250.7111111111111 16.915555555555557 201.24444444444444
-                                                  name "r_tarsal_distal_interphalangeal_5"
                                                   children [
                                                     DEF hanim_r_tarsal_distal_phalanx_5 HAnimSegment {
-                                                      name "r_tarsal_distal_phalanx_5"
                                                       children [
                                                         Transform {
                                                           translation -250.7111111111111 16.915555555555557 201.24444444444444
@@ -2739,11 +2562,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_vl5 HAnimJoint {
-                  center 0 1828.0000444444445 -27.186666666666667
-                  name "vl5"
                   children [
                     DEF hanim_l5 HAnimSegment {
-                      name "l5"
                       children [
                         Transform {
                           translation 0 1828.0000444444445 -27.186666666666667
@@ -2781,11 +2601,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_vl4 HAnimJoint {
-                      center 0 1875.9999555555557 -27.186666666666667
-                      name "vl4"
                       children [
                         DEF hanim_l4 HAnimSegment {
-                          name "l4"
                           children [
                             Transform {
                               translation 0 1875.9999555555557 -27.186666666666667
@@ -2823,11 +2640,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_vl3 HAnimJoint {
-                          center 0 1908 -27.186666666666667
-                          name "vl3"
                           children [
                             DEF hanim_l3 HAnimSegment {
-                              name "l3"
                               children [
                                 Transform {
                                   translation 0 1908 -27.186666666666667
@@ -2865,11 +2679,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_vl2 HAnimJoint {
-                              center 0 1940.4444444444443 -27.186666666666667
-                              name "vl2"
                               children [
                                 DEF hanim_l2 HAnimSegment {
-                                  name "l2"
                                   children [
                                     Transform {
                                       translation 0 1940.4444444444443 -27.186666666666667
@@ -2907,11 +2718,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_vl1 HAnimJoint {
-                                  center 0 1974.6666666666667 -27.186666666666667
-                                  name "vl1"
                                   children [
                                     DEF hanim_l1 HAnimSegment {
-                                      name "l1"
                                       children [
                                         Transform {
                                           translation 0 1974.6666666666667 -27.186666666666667
@@ -2949,11 +2757,8 @@ WorldInfo {
                                      
                                     }
                                     DEF hanim_vt12 HAnimJoint {
-                                      center 0 2020.8889333333336 -27.186666666666667
-                                      name "vt12"
                                       children [
                                         DEF hanim_t12 HAnimSegment {
-                                          name "t12"
                                           children [
                                             Transform {
                                               translation 0 2020.8889333333336 -27.186666666666667
@@ -2991,11 +2796,8 @@ WorldInfo {
                                          
                                         }
                                         DEF hanim_vt11 HAnimJoint {
-                                          center 0 2067.5555555555557 -27.186666666666667
-                                          name "vt11"
                                           children [
                                             DEF hanim_t11 HAnimSegment {
-                                              name "t11"
                                               children [
                                                 Transform {
                                                   translation 0 2067.5555555555557 -27.186666666666667
@@ -3033,11 +2835,8 @@ WorldInfo {
                                              
                                             }
                                             DEF hanim_vt10 HAnimJoint {
-                                              center 0 2101.333288888889 -27.23111111111111
-                                              name "vt10"
                                               children [
                                                 DEF hanim_t10 HAnimSegment {
-                                                  name "t10"
                                                   children [
                                                     Transform {
                                                       translation 0 2101.333288888889 -27.23111111111111
@@ -3075,11 +2874,8 @@ WorldInfo {
                                                  
                                                 }
                                                 DEF hanim_vt9 HAnimJoint {
-                                                  center 0 2130.222222222222 -27.186666666666667
-                                                  name "vt9"
                                                   children [
                                                     DEF hanim_t9 HAnimSegment {
-                                                      name "t9"
                                                       children [
                                                         Transform {
                                                           translation 0 2130.222222222222 -27.186666666666667
@@ -3117,11 +2913,8 @@ WorldInfo {
                                                      
                                                     }
                                                     DEF hanim_vt8 HAnimJoint {
-                                                      center 0 2159.1112000000003 -27.186666666666667
-                                                      name "vt8"
                                                       children [
                                                         DEF hanim_t8 HAnimSegment {
-                                                          name "t8"
                                                           children [
                                                             Transform {
                                                               translation 0 2159.1112000000003 -27.186666666666667
@@ -3159,11 +2952,8 @@ WorldInfo {
                                                          
                                                         }
                                                         DEF hanim_vt7 HAnimJoint {
-                                                          center 0 2190.2221777777777 -27.186666666666667
-                                                          name "vt7"
                                                           children [
                                                             DEF hanim_t7 HAnimSegment {
-                                                              name "t7"
                                                               children [
                                                                 Transform {
                                                                   translation 0 2190.2221777777777 -27.186666666666667
@@ -3201,11 +2991,8 @@ WorldInfo {
                                                              
                                                             }
                                                             DEF hanim_vt6 HAnimJoint {
-                                                              center 0 2215.5554666666667 -27.186666666666667
-                                                              name "vt6"
                                                               children [
                                                                 DEF hanim_t6 HAnimSegment {
-                                                                  name "t6"
                                                                   children [
                                                                     Transform {
                                                                       translation 0 2215.5554666666667 -27.186666666666667
@@ -3243,11 +3030,8 @@ WorldInfo {
                                                                  
                                                                 }
                                                                 DEF hanim_vt5 HAnimJoint {
-                                                                  center 0 2246.2222666666667 -27.186666666666667
-                                                                  name "vt5"
                                                                   children [
                                                                     DEF hanim_t5 HAnimSegment {
-                                                                      name "t5"
                                                                       children [
                                                                         Transform {
                                                                           translation 0 2246.2222666666667 -27.186666666666667
@@ -3285,11 +3069,8 @@ WorldInfo {
                                                                      
                                                                     }
                                                                     DEF hanim_vt4 HAnimJoint {
-                                                                      center 0 2276.4444888888893 -27.186666666666667
-                                                                      name "vt4"
                                                                       children [
                                                                         DEF hanim_t4 HAnimSegment {
-                                                                          name "t4"
                                                                           children [
                                                                             Transform {
                                                                               translation 0 2276.4444888888893 -27.186666666666667
@@ -3327,11 +3108,8 @@ WorldInfo {
                                                                          
                                                                         }
                                                                         DEF hanim_vt3 HAnimJoint {
-                                                                          center 0 2312.888933333333 -27.186666666666667
-                                                                          name "vt3"
                                                                           children [
                                                                             DEF hanim_t3 HAnimSegment {
-                                                                              name "t3"
                                                                               children [
                                                                                 Transform {
                                                                                   translation 0 2312.888933333333 -27.186666666666667
@@ -3369,11 +3147,8 @@ WorldInfo {
                                                                              
                                                                             }
                                                                             DEF hanim_vt2 HAnimJoint {
-                                                                              center 0 2361.7777333333333 -27.23111111111111
-                                                                              name "vt2"
                                                                               children [
                                                                                 DEF hanim_t2 HAnimSegment {
-                                                                                  name "t2"
                                                                                   children [
                                                                                     Transform {
                                                                                       translation 0 2361.7777333333333 -27.23111111111111
@@ -3411,11 +3186,8 @@ WorldInfo {
                                                                                  
                                                                                 }
                                                                                 DEF hanim_vt1 HAnimJoint {
-                                                                                  center 0 2408.8889333333336 -27.186666666666667
-                                                                                  name "vt1"
                                                                                   children [
                                                                                     DEF hanim_t1 HAnimSegment {
-                                                                                      name "t1"
                                                                                       children [
                                                                                         Transform {
                                                                                           translation 0 2408.8889333333336 -27.186666666666667
@@ -3453,11 +3225,8 @@ WorldInfo {
                                                                                      
                                                                                     }
                                                                                     DEF hanim_vc7 HAnimJoint {
-                                                                                      center 0 2459.999911111111 -29.755555555555556
-                                                                                      name "vc7"
                                                                                       children [
                                                                                         DEF hanim_c7 HAnimSegment {
-                                                                                          name "c7"
                                                                                           children [
                                                                                             Transform {
                                                                                               translation 0 2459.999911111111 -29.755555555555556
@@ -3495,11 +3264,8 @@ WorldInfo {
                                                                                          
                                                                                         }
                                                                                         DEF hanim_vc6 HAnimJoint {
-                                                                                          center 0 2483.999955555556 -29.755555555555556
-                                                                                          name "vc6"
                                                                                           children [
                                                                                             DEF hanim_c6 HAnimSegment {
-                                                                                              name "c6"
                                                                                               children [
                                                                                                 Transform {
                                                                                                   translation 0 2483.999955555556 -29.755555555555556
@@ -3537,11 +3303,8 @@ WorldInfo {
                                                                                              
                                                                                             }
                                                                                             DEF hanim_vc5 HAnimJoint {
-                                                                                              center 0 2508.4444000000003 -29.755555555555556
-                                                                                              name "vc5"
                                                                                               children [
                                                                                                 DEF hanim_c5 HAnimSegment {
-                                                                                                  name "c5"
                                                                                                   children [
                                                                                                     Transform {
                                                                                                       translation 0 2508.4444000000003 -29.755555555555556
@@ -3579,11 +3342,8 @@ WorldInfo {
                                                                                                  
                                                                                                 }
                                                                                                 DEF hanim_vc4 HAnimJoint {
-                                                                                                  center 0 2532.8889777777777 -29.755555555555556
-                                                                                                  name "vc4"
                                                                                                   children [
                                                                                                     DEF hanim_c4 HAnimSegment {
-                                                                                                      name "c4"
                                                                                                       children [
                                                                                                         Transform {
                                                                                                           translation 0 2532.8889777777777 -29.755555555555556
@@ -3621,11 +3381,8 @@ WorldInfo {
                                                                                                      
                                                                                                     }
                                                                                                     DEF hanim_vc3 HAnimJoint {
-                                                                                                      center 0 2558.2222666666667 -29.755555555555556
-                                                                                                      name "vc3"
                                                                                                       children [
                                                                                                         DEF hanim_c3 HAnimSegment {
-                                                                                                          name "c3"
                                                                                                           children [
                                                                                                             Transform {
                                                                                                               translation 0 2558.2222666666667 -29.755555555555556
@@ -3663,11 +3420,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_vc2 HAnimJoint {
-                                                                                                          center 0 2581.3334222222225 -29.755555555555556
-                                                                                                          name "vc2"
                                                                                                           children [
                                                                                                             DEF hanim_c2 HAnimSegment {
-                                                                                                              name "c2"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation 0 2581.3334222222225 -29.755555555555556
@@ -3705,11 +3459,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_vc1 HAnimJoint {
-                                                                                                              center 0 2604.444355555556 -29.755555555555556
-                                                                                                              name "vc1"
                                                                                                               children [
                                                                                                                 DEF hanim_c1 HAnimSegment {
-                                                                                                                  name "c1"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation 0 2604.444355555556 -29.755555555555556
@@ -3747,11 +3498,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_skullbase HAnimJoint {
-                                                                                                                  center 0 2592.888888888889 -30.502222222222223
-                                                                                                                  name "skullbase"
                                                                                                                   children [
                                                                                                                     DEF hanim_skull HAnimSegment {
-                                                                                                                      name "skull"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation 0 2592.888888888889 -30.502222222222223
@@ -3789,11 +3537,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_eyelid_joint HAnimJoint {
-                                                                                                                      center 99.77777777777779 2813.333288888889 65.06666666666666
-                                                                                                                      name "l_eyelid_joint"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_eyelid HAnimSegment {
-                                                                                                                          name "l_eyelid"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 99.77777777777779 2813.333288888889 65.06666666666666
@@ -3835,11 +3580,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_eyelid_joint HAnimJoint {
-                                                                                                                      center -99.77777777777779 2813.333288888889 65.06666666666666
-                                                                                                                      name "r_eyelid_joint"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_eyelid HAnimSegment {
-                                                                                                                          name "r_eyelid"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -99.77777777777779 2813.333288888889 65.06666666666666
@@ -3881,11 +3623,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_eyeball_joint HAnimJoint {
-                                                                                                                      center 95.06666666666666 2775.111066666667 164.04444444444445
-                                                                                                                      name "l_eyeball_joint"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_eyeball HAnimSegment {
-                                                                                                                          name "l_eyeball"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 95.06666666666666 2775.111066666667 164.04444444444445
@@ -3927,11 +3666,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_eyeball_joint HAnimJoint {
-                                                                                                                      center -95.06666666666666 2775.111066666667 164.04444444444445
-                                                                                                                      name "r_eyeball_joint"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_eyeball HAnimSegment {
-                                                                                                                          name "r_eyeball"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -95.06666666666666 2775.111066666667 164.04444444444445
@@ -3973,11 +3709,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_eyebrow_joint HAnimJoint {
-                                                                                                                      center 42.96 2792.888888888889 211.24444444444447
-                                                                                                                      name "l_eyebrow_joint"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_eyebrow HAnimSegment {
-                                                                                                                          name "l_eyebrow"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 42.96 2792.888888888889 211.24444444444447
@@ -4019,11 +3752,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_eyebrow_joint HAnimJoint {
-                                                                                                                      center -42.96 2792.888888888889 211.24444444444447
-                                                                                                                      name "r_eyebrow_joint"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_eyebrow HAnimSegment {
-                                                                                                                          name "r_eyebrow"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -42.96 2792.888888888889 211.24444444444447
@@ -4065,11 +3795,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_temporomandibular HAnimJoint {
-                                                                                                                      center 0 2593.3332444444445 30.37777777777778
-                                                                                                                      name "temporomandibular"
                                                                                                                       children [
                                                                                                                         DEF hanim_jaw HAnimSegment {
-                                                                                                                          name "jaw"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 0 2593.3332444444445 30.37777777777778
@@ -4143,11 +3870,8 @@ WorldInfo {
                                                                                      
                                                                                     }
                                                                                     DEF hanim_l_acromioclavicular HAnimJoint {
-                                                                                      center 76 2387.5556 -27.23111111111111
-                                                                                      name "l_acromioclavicular"
                                                                                       children [
                                                                                         DEF hanim_l_clavicle HAnimSegment {
-                                                                                          name "l_clavicle"
                                                                                           children [
                                                                                             Transform {
                                                                                               translation 76 2387.5556 -27.23111111111111
@@ -4185,11 +3909,8 @@ WorldInfo {
                                                                                          
                                                                                         }
                                                                                         DEF hanim_l_sternoclavicular HAnimJoint {
-                                                                                          center 242.84444444444446 2354.222266666667 -25.47555555555556
-                                                                                          name "l_sternoclavicular"
                                                                                           children [
                                                                                             DEF hanim_l_scapula HAnimSegment {
-                                                                                              name "l_scapula"
                                                                                               children [
                                                                                                 Transform {
                                                                                                   translation 242.84444444444446 2354.222266666667 -25.47555555555556
@@ -4227,11 +3948,8 @@ WorldInfo {
                                                                                              
                                                                                             }
                                                                                             DEF hanim_l_shoulder HAnimJoint {
-                                                                                              center 326.0444444444445 2328.0000444444445 -6.453333333333333
-                                                                                              name "l_shoulder"
                                                                                               children [
                                                                                                 DEF hanim_l_upperarm HAnimSegment {
-                                                                                                  name "l_upperarm"
                                                                                                   children [
                                                                                                     Transform {
                                                                                                       translation 326.0444444444445 2328.0000444444445 -6.453333333333333
@@ -4269,11 +3987,8 @@ WorldInfo {
                                                                                                  
                                                                                                 }
                                                                                                 DEF hanim_l_elbow HAnimJoint {
-                                                                                                  center 359.6888888888889 1834.666622222222 -11.12
-                                                                                                  name "l_elbow"
                                                                                                   children [
                                                                                                     DEF hanim_l_forearm HAnimSegment {
-                                                                                                      name "l_forearm"
                                                                                                       children [
                                                                                                         Transform {
                                                                                                           translation 359.6888888888889 1834.666622222222 -11.12
@@ -4311,11 +4026,8 @@ WorldInfo {
                                                                                                      
                                                                                                     }
                                                                                                     DEF hanim_l_radiocarpal HAnimJoint {
-                                                                                                      center 359.3777777777778 1430.6666222222223 -9.924444444444445
-                                                                                                      name "l_radiocarpal"
                                                                                                       children [
                                                                                                         DEF hanim_l_carpal HAnimSegment {
-                                                                                                          name "l_carpal"
                                                                                                           children [
                                                                                                             Transform {
                                                                                                               translation 359.3777777777778 1430.6666222222223 -9.924444444444445
@@ -4353,11 +4065,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_l_midcarpal_1 HAnimJoint {
-                                                                                                          center 358.0888888888889 1394.6666222222223 38.17777777777778
-                                                                                                          name "l_midcarpal_1"
                                                                                                           children [
                                                                                                             DEF hanim_l_trapezium HAnimSegment {
-                                                                                                              name "l_trapezium"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation 358.0888888888889 1394.6666222222223 38.17777777777778
@@ -4395,11 +4104,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_l_carpometacarpal_1 HAnimJoint {
-                                                                                                              center 356.53333333333336 1368.0000444444445 51.333333333333336
-                                                                                                              name "l_carpometacarpal_1"
                                                                                                               children [
                                                                                                                 DEF hanim_l_metacarpal_1 HAnimSegment {
-                                                                                                                  name "l_metacarpal_1"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation 356.53333333333336 1368.0000444444445 51.333333333333336
@@ -4437,11 +4143,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_l_metacarpophalangeal_1 HAnimJoint {
-                                                                                                                  center 357.59999999999997 1328.888888888889 70.66666666666667
-                                                                                                                  name "l_metacarpophalangeal_1"
                                                                                                                   children [
                                                                                                                     DEF hanim_l_carpal_proximal_phalanx_1 HAnimSegment {
-                                                                                                                      name "l_carpal_proximal_phalanx_1"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation 357.59999999999997 1328.888888888889 70.66666666666667
@@ -4479,11 +4182,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_carpal_interphalangeal_1 HAnimJoint {
-                                                                                                                      center 360.8 1292 98.08888888888889
-                                                                                                                      name "l_carpal_interphalangeal_1"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_carpal_distal_phalanx_1 HAnimSegment {
-                                                                                                                          name "l_carpal_distal_phalanx_1"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 360.8 1292 98.08888888888889
@@ -4537,11 +4237,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_l_midcarpal_2 HAnimJoint {
-                                                                                                          center 358.0888888888889 1396.4444444444446 16.626666666666665
-                                                                                                          name "l_midcarpal_2"
                                                                                                           children [
                                                                                                             DEF hanim_l_trapezoid HAnimSegment {
-                                                                                                              name "l_trapezoid"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation 358.0888888888889 1396.4444444444446 16.626666666666665
@@ -4579,11 +4276,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_l_carpometacarpal_2 HAnimJoint {
-                                                                                                              center 358.0888888888889 1358.222177777778 19.21777777777778
-                                                                                                              name "l_carpometacarpal_2"
                                                                                                               children [
                                                                                                                 DEF hanim_l_metacarpal_2 HAnimSegment {
-                                                                                                                  name "l_metacarpal_2"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation 358.0888888888889 1358.222177777778 19.21777777777778
@@ -4621,11 +4315,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_l_metacarpophalangeal_2 HAnimJoint {
-                                                                                                                  center 362.93333333333334 1258.6666666666667 29.777777777777782
-                                                                                                                  name "l_metacarpophalangeal_2"
                                                                                                                   children [
                                                                                                                     DEF hanim_l_carpal_proximal_phalanx_2 HAnimSegment {
-                                                                                                                      name "l_carpal_proximal_phalanx_2"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation 362.93333333333334 1258.6666666666667 29.777777777777782
@@ -4663,11 +4354,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_carpal_proximal_interphalangeal_2 HAnimJoint {
-                                                                                                                      center 358.9333333333334 1198.6666222222223 28.017777777777777
-                                                                                                                      name "l_carpal_proximal_interphalangeal_2"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_carpal_middle_phalanx_2 HAnimSegment {
-                                                                                                                          name "l_carpal_middle_phalanx_2"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 358.9333333333334 1198.6666222222223 28.017777777777777
@@ -4705,11 +4393,8 @@ WorldInfo {
                                                                                                                          
                                                                                                                         }
                                                                                                                         DEF hanim_l_carpal_distal_interphalangeal_2 HAnimJoint {
-                                                                                                                          center 356.88888888888886 1148.888888888889 26.44
-                                                                                                                          name "l_carpal_distal_interphalangeal_2"
                                                                                                                           children [
                                                                                                                             DEF hanim_l_carpal_distal_phalanx_2 HAnimSegment {
-                                                                                                                              name "l_carpal_distal_phalanx_2"
                                                                                                                               children [
                                                                                                                                 Transform {
                                                                                                                                   translation 356.88888888888886 1148.888888888889 26.44
@@ -4767,11 +4452,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_l_midcarpal_3 HAnimJoint {
-                                                                                                          center 357.6888888888889 1399.5555555555554 -9.475555555555555
-                                                                                                          name "l_midcarpal_3"
                                                                                                           children [
                                                                                                             DEF hanim_l_capitate HAnimSegment {
-                                                                                                              name "l_capitate"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation 357.6888888888889 1399.5555555555554 -9.475555555555555
@@ -4809,11 +4491,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_l_carpometacarpal_3 HAnimJoint {
-                                                                                                              center 357.6888888888889 1354.6666666666667 -12.351111111111111
-                                                                                                              name "l_carpometacarpal_3"
                                                                                                               children [
                                                                                                                 DEF hanim_l_metacarpal_3 HAnimSegment {
-                                                                                                                  name "l_metacarpal_3"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation 357.6888888888889 1354.6666666666667 -12.351111111111111
@@ -4851,11 +4530,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_l_metacarpophalangeal_3 HAnimJoint {
-                                                                                                                  center 362.84444444444443 1254.222177777778 -7.7377777777777785
-                                                                                                                  name "l_metacarpophalangeal_3"
                                                                                                                   children [
                                                                                                                     DEF hanim_l_carpal_proximal_phalanx_3 HAnimSegment {
-                                                                                                                      name "l_carpal_proximal_phalanx_3"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation 362.84444444444443 1254.222177777778 -7.7377777777777785
@@ -4893,11 +4569,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_carpal_proximal_interphalangeal_3 HAnimJoint {
-                                                                                                                      center 358.9333333333334 1191.5555111111112 -6.986666666666667
-                                                                                                                      name "l_carpal_proximal_interphalangeal_3"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_carpal_middle_phalanx_3 HAnimSegment {
-                                                                                                                          name "l_carpal_middle_phalanx_3"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 358.9333333333334 1191.5555111111112 -6.986666666666667
@@ -4935,11 +4608,8 @@ WorldInfo {
                                                                                                                          
                                                                                                                         }
                                                                                                                         DEF hanim_l_carpal_distal_interphalangeal_3 HAnimJoint {
-                                                                                                                          center 356.88888888888886 1136.4444444444446 -7.426666666666667
-                                                                                                                          name "l_carpal_distal_interphalangeal_3"
                                                                                                                           children [
                                                                                                                             DEF hanim_l_carpal_distal_phalanx_3 HAnimSegment {
-                                                                                                                              name "l_carpal_distal_phalanx_3"
                                                                                                                               children [
                                                                                                                                 Transform {
                                                                                                                                   translation 356.88888888888886 1136.4444444444446 -7.426666666666667
@@ -4997,11 +4667,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_l_midcarpal_4_5 HAnimJoint {
-                                                                                                          center 357.6888888888889 1394.2222666666667 -50.84444444444444
-                                                                                                          name "l_midcarpal_4_5"
                                                                                                           children [
                                                                                                             DEF hanim_l_hamate HAnimSegment {
-                                                                                                              name "l_hamate"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation 357.6888888888889 1394.2222666666667 -50.84444444444444
@@ -5039,11 +4706,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_l_carpometacarpal_4 HAnimJoint {
-                                                                                                              center 357.6888888888889 1355.5555555555557 -39.346666666666664
-                                                                                                              name "l_carpometacarpal_4"
                                                                                                               children [
                                                                                                                 DEF hanim_l_metacarpal_4 HAnimSegment {
-                                                                                                                  name "l_metacarpal_4"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation 357.6888888888889 1355.5555555555557 -39.346666666666664
@@ -5081,11 +4745,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_l_metacarpophalangeal_4 HAnimJoint {
-                                                                                                                  center 362.84444444444443 1252.4444444444446 -42.35111111111111
-                                                                                                                  name "l_metacarpophalangeal_4"
                                                                                                                   children [
                                                                                                                     DEF hanim_l_carpal_proximal_phalanx_4 HAnimSegment {
-                                                                                                                      name "l_carpal_proximal_phalanx_4"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation 362.84444444444443 1252.4444444444446 -42.35111111111111
@@ -5123,11 +4784,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_carpal_proximal_interphalangeal_4 HAnimJoint {
-                                                                                                                      center 358.9333333333334 1198.222177777778 -40.782222222222224
-                                                                                                                      name "l_carpal_proximal_interphalangeal_4"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_carpal_middle_phalanx_4 HAnimSegment {
-                                                                                                                          name "l_carpal_middle_phalanx_4"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 358.9333333333334 1198.222177777778 -40.782222222222224
@@ -5165,11 +4823,8 @@ WorldInfo {
                                                                                                                          
                                                                                                                         }
                                                                                                                         DEF hanim_l_carpal_distal_interphalangeal_4 HAnimJoint {
-                                                                                                                          center 356.88888888888886 1147.1110666666668 -39.06666666666667
-                                                                                                                          name "l_carpal_distal_interphalangeal_4"
                                                                                                                           children [
                                                                                                                             DEF hanim_l_carpal_distal_phalanx_4 HAnimSegment {
-                                                                                                                              name "l_carpal_distal_phalanx_4"
                                                                                                                               children [
                                                                                                                                 Transform {
                                                                                                                                   translation 356.88888888888886 1147.1110666666668 -39.06666666666667
@@ -5227,11 +4882,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_l_carpometacarpal_5 HAnimJoint {
-                                                                                                          center 358.8 1359.5555555555557 -64.75555555555556
-                                                                                                          name "l_carpometacarpal_5"
                                                                                                           children [
                                                                                                             DEF hanim_l_metacarpal_5 HAnimSegment {
-                                                                                                              name "l_metacarpal_5"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation 358.8 1359.5555555555557 -64.75555555555556
@@ -5269,11 +4921,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_l_metacarpophalangeal_5 HAnimJoint {
-                                                                                                              center 362.1333333333333 1260.444488888889 -73.2
-                                                                                                              name "l_metacarpophalangeal_5"
                                                                                                               children [
                                                                                                                 DEF hanim_l_carpal_proximal_phalanx_5 HAnimSegment {
-                                                                                                                  name "l_carpal_proximal_phalanx_5"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation 362.1333333333333 1260.444488888889 -73.2
@@ -5311,11 +4960,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_l_carpal_proximal_interphalangeal_5 HAnimJoint {
-                                                                                                                  center 358.84444444444443 1226.6666666666667 -73.37777777777778
-                                                                                                                  name "l_carpal_proximal_interphalangeal_5"
                                                                                                                   children [
                                                                                                                     DEF hanim_l_carpal_middle_phalanx_5 HAnimSegment {
-                                                                                                                      name "l_carpal_middle_phalanx_5"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation 358.84444444444443 1226.6666666666667 -73.37777777777778
@@ -5353,11 +4999,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_l_carpal_distal_interphalangeal_5 HAnimJoint {
-                                                                                                                      center 357.15555555555557 1189.7777777777778 -73.02222222222223
-                                                                                                                      name "l_carpal_distal_interphalangeal_5"
                                                                                                                       children [
                                                                                                                         DEF hanim_l_carpal_distal_phalanx_5 HAnimSegment {
-                                                                                                                          name "l_carpal_distal_phalanx_5"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation 357.15555555555557 1189.7777777777778 -73.02222222222223
@@ -5431,11 +5074,8 @@ WorldInfo {
                                                                                      
                                                                                     }
                                                                                     DEF hanim_r_acromioclavicular HAnimJoint {
-                                                                                      center -76 2387.5556 -27.23111111111111
-                                                                                      name "r_acromioclavicular"
                                                                                       children [
                                                                                         DEF hanim_r_clavicle HAnimSegment {
-                                                                                          name "r_clavicle"
                                                                                           children [
                                                                                             Transform {
                                                                                               translation -76 2387.5556 -27.23111111111111
@@ -5473,11 +5113,8 @@ WorldInfo {
                                                                                          
                                                                                         }
                                                                                         DEF hanim_r_sternoclavicular HAnimJoint {
-                                                                                          center -242.84444444444446 2354.222266666667 -25.47555555555556
-                                                                                          name "r_sternoclavicular"
                                                                                           children [
                                                                                             DEF hanim_r_scapula HAnimSegment {
-                                                                                              name "r_scapula"
                                                                                               children [
                                                                                                 Transform {
                                                                                                   translation -242.84444444444446 2354.222266666667 -25.47555555555556
@@ -5515,11 +5152,8 @@ WorldInfo {
                                                                                              
                                                                                             }
                                                                                             DEF hanim_r_shoulder HAnimJoint {
-                                                                                              center -325.33333333333337 2328.0000444444445 -6.453333333333333
-                                                                                              name "r_shoulder"
                                                                                               children [
                                                                                                 DEF hanim_r_upperarm HAnimSegment {
-                                                                                                  name "r_upperarm"
                                                                                                   children [
                                                                                                     Transform {
                                                                                                       translation -325.33333333333337 2328.0000444444445 -6.453333333333333
@@ -5557,11 +5191,8 @@ WorldInfo {
                                                                                                  
                                                                                                 }
                                                                                                 DEF hanim_r_elbow HAnimJoint {
-                                                                                                  center -358.9777777777778 1834.666622222222 -11.12
-                                                                                                  name "r_elbow"
                                                                                                   children [
                                                                                                     DEF hanim_r_forearm HAnimSegment {
-                                                                                                      name "r_forearm"
                                                                                                       children [
                                                                                                         Transform {
                                                                                                           translation -358.9777777777778 1834.666622222222 -11.12
@@ -5599,11 +5230,8 @@ WorldInfo {
                                                                                                      
                                                                                                     }
                                                                                                     DEF hanim_r_radiocarpal HAnimJoint {
-                                                                                                      center -358.6666666666667 1430.6666222222223 -9.92
-                                                                                                      name "r_radiocarpal"
                                                                                                       children [
                                                                                                         DEF hanim_r_carpal HAnimSegment {
-                                                                                                          name "r_carpal"
                                                                                                           children [
                                                                                                             Transform {
                                                                                                               translation -358.6666666666667 1430.6666222222223 -9.92
@@ -5641,11 +5269,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_r_midcarpal_1 HAnimJoint {
-                                                                                                          center -357.46666666666664 1394.6666222222223 38.17777777777778
-                                                                                                          name "r_midcarpal_1"
                                                                                                           children [
                                                                                                             DEF hanim_r_trapezium HAnimSegment {
-                                                                                                              name "r_trapezium"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation -357.46666666666664 1394.6666222222223 38.17777777777778
@@ -5683,11 +5308,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_r_carpometacarpal_1 HAnimJoint {
-                                                                                                              center -355.82222222222225 1368.0000444444445 51.333333333333336
-                                                                                                              name "r_carpometacarpal_1"
                                                                                                               children [
                                                                                                                 DEF hanim_r_metacarpal_1 HAnimSegment {
-                                                                                                                  name "r_metacarpal_1"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation -355.82222222222225 1368.0000444444445 51.333333333333336
@@ -5725,11 +5347,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_r_metacarpophalangeal_1 HAnimJoint {
-                                                                                                                  center -356.84444444444443 1328.888888888889 70.66666666666667
-                                                                                                                  name "r_metacarpophalangeal_1"
                                                                                                                   children [
                                                                                                                     DEF hanim_r_carpal_proximal_phalanx_1 HAnimSegment {
-                                                                                                                      name "r_carpal_proximal_phalanx_1"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation -356.84444444444443 1328.888888888889 70.66666666666667
@@ -5767,11 +5386,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_carpal_interphalangeal_1 HAnimJoint {
-                                                                                                                      center -360.0444444444445 1292 98.08888888888889
-                                                                                                                      name "r_carpal_interphalangeal_1"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_carpal_distal_phalanx_1 HAnimSegment {
-                                                                                                                          name "r_carpal_distal_phalanx_1"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -360.0444444444445 1292 98.08888888888889
@@ -5825,11 +5441,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_r_midcarpal_2 HAnimJoint {
-                                                                                                          center -357.46666666666664 1396.4444444444446 16.626666666666665
-                                                                                                          name "r_midcarpal_2"
                                                                                                           children [
                                                                                                             DEF hanim_r_trapezoid HAnimSegment {
-                                                                                                              name "r_trapezoid"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation -357.46666666666664 1396.4444444444446 16.626666666666665
@@ -5867,11 +5480,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_r_carpometacarpal_2 HAnimJoint {
-                                                                                                              center -357.3333333333333 1358.222177777778 19.21777777777778
-                                                                                                              name "r_carpometacarpal_2"
                                                                                                               children [
                                                                                                                 DEF hanim_r_metacarpal_2 HAnimSegment {
-                                                                                                                  name "r_metacarpal_2"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation -357.3333333333333 1358.222177777778 19.21777777777778
@@ -5909,11 +5519,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_r_metacarpophalangeal_2 HAnimJoint {
-                                                                                                                  center -362.17777777777775 1258.6666666666667 29.777777777777782
-                                                                                                                  name "r_metacarpophalangeal_2"
                                                                                                                   children [
                                                                                                                     DEF hanim_r_carpal_proximal_phalanx_2 HAnimSegment {
-                                                                                                                      name "r_carpal_proximal_phalanx_2"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation -362.17777777777775 1258.6666666666667 29.777777777777782
@@ -5951,11 +5558,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_carpal_proximal_interphalangeal_2 HAnimJoint {
-                                                                                                                      center -358.17777777777775 1198.6666222222223 28.017777777777777
-                                                                                                                      name "r_carpal_proximal_interphalangeal_2"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_carpal_middle_phalanx_2 HAnimSegment {
-                                                                                                                          name "r_carpal_middle_phalanx_2"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -358.17777777777775 1198.6666222222223 28.017777777777777
@@ -5993,11 +5597,8 @@ WorldInfo {
                                                                                                                          
                                                                                                                         }
                                                                                                                         DEF hanim_r_carpal_distal_interphalangeal_2 HAnimJoint {
-                                                                                                                          center -356.1333333333333 1148.888888888889 26.44
-                                                                                                                          name "r_carpal_distal_interphalangeal_2"
                                                                                                                           children [
                                                                                                                             DEF hanim_r_carpal_distal_phalanx_2 HAnimSegment {
-                                                                                                                              name "r_carpal_distal_phalanx_2"
                                                                                                                               children [
                                                                                                                                 Transform {
                                                                                                                                   translation -356.1333333333333 1148.888888888889 26.44
@@ -6055,11 +5656,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_r_midcarpal_3 HAnimJoint {
-                                                                                                          center -356.9777777777778 1399.5555555555554 -9.475555555555555
-                                                                                                          name "r_midcarpal_3"
                                                                                                           children [
                                                                                                             DEF hanim_r_capitate HAnimSegment {
-                                                                                                              name "r_capitate"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation -356.9777777777778 1399.5555555555554 -9.475555555555555
@@ -6097,11 +5695,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_r_carpometacarpal_3 HAnimJoint {
-                                                                                                              center -356.9777777777778 1354.6666666666667 -12.351111111111111
-                                                                                                              name "r_carpometacarpal_3"
                                                                                                               children [
                                                                                                                 DEF hanim_r_metacarpal_3 HAnimSegment {
-                                                                                                                  name "r_metacarpal_3"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation -356.9777777777778 1354.6666666666667 -12.351111111111111
@@ -6139,11 +5734,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_r_metacarpophalangeal_3 HAnimJoint {
-                                                                                                                  center -362.0888888888889 1254.222177777778 -7.7377777777777785
-                                                                                                                  name "r_metacarpophalangeal_3"
                                                                                                                   children [
                                                                                                                     DEF hanim_r_carpal_proximal_phalanx_3 HAnimSegment {
-                                                                                                                      name "r_carpal_proximal_phalanx_3"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation -362.0888888888889 1254.222177777778 -7.7377777777777785
@@ -6181,11 +5773,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_carpal_proximal_interphalangeal_3 HAnimJoint {
-                                                                                                                      center -358.17777777777775 1191.5555111111112 -6.986666666666667
-                                                                                                                      name "r_carpal_proximal_interphalangeal_3"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_carpal_middle_phalanx_3 HAnimSegment {
-                                                                                                                          name "r_carpal_middle_phalanx_3"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -358.17777777777775 1191.5555111111112 -6.986666666666667
@@ -6223,11 +5812,8 @@ WorldInfo {
                                                                                                                          
                                                                                                                         }
                                                                                                                         DEF hanim_r_carpal_distal_interphalangeal_3 HAnimJoint {
-                                                                                                                          center -356.1333333333333 1136.4444444444446 -7.426666666666667
-                                                                                                                          name "r_carpal_distal_interphalangeal_3"
                                                                                                                           children [
                                                                                                                             DEF hanim_r_carpal_distal_phalanx_3 HAnimSegment {
-                                                                                                                              name "r_carpal_distal_phalanx_3"
                                                                                                                               children [
                                                                                                                                 Transform {
                                                                                                                                   translation -356.1333333333333 1136.4444444444446 -7.426666666666667
@@ -6285,11 +5871,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_r_midcarpal_4_5 HAnimJoint {
-                                                                                                          center -356.9777777777778 1394.2222666666667 -50.84444444444444
-                                                                                                          name "r_midcarpal_4_5"
                                                                                                           children [
                                                                                                             DEF hanim_r_hamate HAnimSegment {
-                                                                                                              name "r_hamate"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation -356.9777777777778 1394.2222666666667 -50.84444444444444
@@ -6327,11 +5910,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_r_carpometacarpal_4 HAnimJoint {
-                                                                                                              center -356.9777777777778 1355.5555555555557 -39.346666666666664
-                                                                                                              name "r_carpometacarpal_4"
                                                                                                               children [
                                                                                                                 DEF hanim_r_metacarpal_4 HAnimSegment {
-                                                                                                                  name "r_metacarpal_4"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation -356.9777777777778 1355.5555555555557 -39.346666666666664
@@ -6369,11 +5949,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_r_metacarpophalangeal_4 HAnimJoint {
-                                                                                                                  center -362.0888888888889 1252.4444444444446 -42.35111111111111
-                                                                                                                  name "r_metacarpophalangeal_4"
                                                                                                                   children [
                                                                                                                     DEF hanim_r_carpal_proximal_phalanx_4 HAnimSegment {
-                                                                                                                      name "r_carpal_proximal_phalanx_4"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation -362.0888888888889 1252.4444444444446 -42.35111111111111
@@ -6411,11 +5988,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_carpal_proximal_interphalangeal_4 HAnimJoint {
-                                                                                                                      center -358.17777777777775 1198.222177777778 -40.782222222222224
-                                                                                                                      name "r_carpal_proximal_interphalangeal_4"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_carpal_middle_phalanx_4 HAnimSegment {
-                                                                                                                          name "r_carpal_middle_phalanx_4"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -358.17777777777775 1198.222177777778 -40.782222222222224
@@ -6453,11 +6027,8 @@ WorldInfo {
                                                                                                                          
                                                                                                                         }
                                                                                                                         DEF hanim_r_carpal_distal_interphalangeal_4 HAnimJoint {
-                                                                                                                          center -356.1333333333333 1147.1110666666668 -39.06666666666667
-                                                                                                                          name "r_carpal_distal_interphalangeal_4"
                                                                                                                           children [
                                                                                                                             DEF hanim_r_carpal_distal_phalanx_4 HAnimSegment {
-                                                                                                                              name "r_carpal_distal_phalanx_4"
                                                                                                                               children [
                                                                                                                                 Transform {
                                                                                                                                   translation -356.1333333333333 1147.1110666666668 -39.06666666666667
@@ -6515,11 +6086,8 @@ WorldInfo {
                                                                                                          
                                                                                                         }
                                                                                                         DEF hanim_r_carpometacarpal_5 HAnimJoint {
-                                                                                                          center -358.0444444444444 1359.5555555555557 -64.75555555555556
-                                                                                                          name "r_carpometacarpal_5"
                                                                                                           children [
                                                                                                             DEF hanim_r_metacarpal_5 HAnimSegment {
-                                                                                                              name "r_metacarpal_5"
                                                                                                               children [
                                                                                                                 Transform {
                                                                                                                   translation -358.0444444444444 1359.5555555555557 -64.75555555555556
@@ -6557,11 +6125,8 @@ WorldInfo {
                                                                                                              
                                                                                                             }
                                                                                                             DEF hanim_r_metacarpophalangeal_5 HAnimJoint {
-                                                                                                              center -361.4222222222222 1260.444488888889 -73.2
-                                                                                                              name "r_metacarpophalangeal_5"
                                                                                                               children [
                                                                                                                 DEF hanim_r_carpal_proximal_phalanx_5 HAnimSegment {
-                                                                                                                  name "r_carpal_proximal_phalanx_5"
                                                                                                                   children [
                                                                                                                     Transform {
                                                                                                                       translation -361.4222222222222 1260.444488888889 -73.2
@@ -6599,11 +6164,8 @@ WorldInfo {
                                                                                                                  
                                                                                                                 }
                                                                                                                 DEF hanim_r_carpal_proximal_interphalangeal_5 HAnimJoint {
-                                                                                                                  center -358.1333333333333 1226.6666666666667 -73.37777777777778
-                                                                                                                  name "r_carpal_proximal_interphalangeal_5"
                                                                                                                   children [
                                                                                                                     DEF hanim_r_carpal_middle_phalanx_5 HAnimSegment {
-                                                                                                                      name "r_carpal_middle_phalanx_5"
                                                                                                                       children [
                                                                                                                         Transform {
                                                                                                                           translation -358.1333333333333 1226.6666666666667 -73.37777777777778
@@ -6641,11 +6203,8 @@ WorldInfo {
                                                                                                                      
                                                                                                                     }
                                                                                                                     DEF hanim_r_carpal_distal_interphalangeal_5 HAnimJoint {
-                                                                                                                      center -356.44444444444446 1189.7777777777778 -73.02222222222223
-                                                                                                                      name "r_carpal_distal_interphalangeal_5"
                                                                                                                       children [
                                                                                                                         DEF hanim_r_carpal_distal_phalanx_5 HAnimSegment {
-                                                                                                                          name "r_carpal_distal_phalanx_5"
                                                                                                                           children [
                                                                                                                             Transform {
                                                                                                                               translation -356.44444444444446 1189.7777777777778 -73.02222222222223

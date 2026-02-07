@@ -40,83 +40,6 @@ NavigationInfo {
            
         }
         DEF DECLBubble_bubbleA_bounce Script {
-          url "ecmascript:
-"+
-"function initialize() {
-"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
-"+
-"
-"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
-"+
-"}
-"+
-"
-"+
-"function set_fraction(value) {
-"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
-"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
-"+
-"    // if you get to far away or too big, explode
-"+
-"    if ( Math.abs(translation.x) > 256) {
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.y) > 256) {
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.z) > 256) {
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.x) > 20) {
-"+
-"	scale.x = scale.x/20;
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.y) > 20) {
-"+
-"	scale.y = scale.y/20;
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.z) > 20) {
-"+
-"	scale.z = scale.z/20;
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"}"
           children [
             field {
               accessType "inputOutput"
@@ -151,9 +74,7 @@ NavigationInfo {
           ]
         
         }
-        DEF DECLBubble_bubbleA_bubbleClock TimeSensor {
-          cycleInterval 10
-          loop TRUE 
+        DEF DECLBubble_bubbleA_bubbleClock TimeSensor { 
         }
         
         ROUTE DECLBubble_bubbleA_bounce.translation_changed TO DECLBubble_transformA.set_translation
@@ -182,83 +103,6 @@ NavigationInfo {
            
         }
         DEF DECLBubble_bubbleB_bounce Script {
-          url "ecmascript:
-"+
-"function initialize() {
-"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
-"+
-"
-"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
-"+
-"}
-"+
-"
-"+
-"function set_fraction(value) {
-"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
-"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
-"+
-"    // if you get to far away or too big, explode
-"+
-"    if ( Math.abs(translation.x) > 256) {
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.y) > 256) {
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.z) > 256) {
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.x) > 20) {
-"+
-"	scale.x = scale.x/20;
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.y) > 20) {
-"+
-"	scale.y = scale.y/20;
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.z) > 20) {
-"+
-"	scale.z = scale.z/20;
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"}"
           children [
             field {
               accessType "inputOutput"
@@ -293,9 +137,7 @@ NavigationInfo {
           ]
         
         }
-        DEF DECLBubble_bubbleB_bubbleClock TimeSensor {
-          cycleInterval 10
-          loop TRUE 
+        DEF DECLBubble_bubbleB_bubbleClock TimeSensor { 
         }
         
         ROUTE DECLBubble_bubbleB_bounce.translation_changed TO DECLBubble_transformB.set_translation
@@ -324,83 +166,6 @@ NavigationInfo {
            
         }
         DEF DECLBubble_bubbleC_bounce Script {
-          url "ecmascript:
-"+
-"function initialize() {
-"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
-"+
-"
-"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
-"+
-"}
-"+
-"
-"+
-"function set_fraction(value) {
-"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
-"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
-"+
-"    // if you get to far away or too big, explode
-"+
-"    if ( Math.abs(translation.x) > 256) {
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.y) > 256) {
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.z) > 256) {
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.x) > 20) {
-"+
-"	scale.x = scale.x/20;
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.y) > 20) {
-"+
-"	scale.y = scale.y/20;
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.z) > 20) {
-"+
-"	scale.z = scale.z/20;
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"}"
           children [
             field {
               accessType "inputOutput"
@@ -435,9 +200,7 @@ NavigationInfo {
           ]
         
         }
-        DEF DECLBubble_bubbleC_bubbleClock TimeSensor {
-          cycleInterval 10
-          loop TRUE 
+        DEF DECLBubble_bubbleC_bubbleClock TimeSensor { 
         }
         
         ROUTE DECLBubble_bubbleC_bounce.translation_changed TO DECLBubble_transformC.set_translation
@@ -466,83 +229,6 @@ NavigationInfo {
            
         }
         DEF DECLBubble_bubbleD_bounce Script {
-          url "ecmascript:
-"+
-"function initialize() {
-"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
-"+
-"
-"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
-"+
-"}
-"+
-"
-"+
-"function set_fraction(value) {
-"+
-"    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
-"+
-"    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
-"+
-"    // if you get to far away or too big, explode
-"+
-"    if ( Math.abs(translation.x) > 256) {
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.y) > 256) {
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if ( Math.abs(translation.z) > 256) {
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.x) > 20) {
-"+
-"	scale.x = scale.x/20;
-"+
-"	translation.x = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.y) > 20) {
-"+
-"	scale.y = scale.y/20;
-"+
-"	translation.y = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"    if (Math.abs(scale.z) > 20) {
-"+
-"	scale.z = scale.z/20;
-"+
-"	translation.z = 0;
-"+
-"	initialize();
-"+
-"    }
-"+
-"}"
           children [
             field {
               accessType "inputOutput"
@@ -577,9 +263,7 @@ NavigationInfo {
           ]
         
         }
-        DEF DECLBubble_bubbleD_bubbleClock TimeSensor {
-          cycleInterval 10
-          loop TRUE 
+        DEF DECLBubble_bubbleD_bubbleClock TimeSensor { 
         }
         
         ROUTE DECLBubble_bubbleD_bounce.translation_changed TO DECLBubble_transformD.set_translation

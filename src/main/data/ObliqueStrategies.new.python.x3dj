@@ -254,8 +254,7 @@
             "TouchSensor":
             {
       {
-        "@DEF":"RandomTextClickedSensor",
-        "@description":"Select to see a new strategy"
+        "@DEF":"RandomTextClickedSensor"
       }
     },
             "Shape":
@@ -276,9 +275,7 @@
                     "FontStyle":
                     {
       {
-        "@DEF":"MessageFont",
-        "@family":""SANS"",
-        "@justify":""MIDDLE" "MIDDLE""
+        "@DEF":"MessageFont"
       }
     },
                 }            }            "Transform":
@@ -318,8 +315,7 @@
                     }                }            }        }        "Script":
         {
       {
-        "@DEF":"TextScript",
-        "@url":""ObliqueStrategiesScript.js" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js""
+        "@DEF":"TextScript"
       }
             "field":
             {
@@ -394,9 +390,7 @@
         }        "Transform":
         {
       {
-        "@DEF":"CardTransform",
-        "@scale":"0.4 0.4 0.4",
-        "@translation":"0 -1.5 0"
+        "@DEF":"CardTransform"
       }
             "Shape":
             {
@@ -432,18 +426,12 @@
             "Sound":
             {
       {
-        "@DEF":"CardSoundSpatialization",
-        "@maxBack":"100",
-        "@maxFront":"100",
-        "@minBack":"20",
-        "@minFront":"20"
+        "@DEF":"CardSoundSpatialization"
       }
                 "AudioClip":
                 {
       {
-        "@DEF":"TextToSpeechAudioClip",
-        "@description":"sends strategy text google translate",
-        "@url":""http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium" "translate_tts_mp3FileFormatNotSupported.wav" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav""
+        "@DEF":"TextToSpeechAudioClip"
       }
     },
             }            "ROUTE":
@@ -473,8 +461,7 @@
             "TouchSensor":
             {
       {
-        "@DEF":"PreviousTextClickedSensor",
-        "@description":"Select to see previous strategy"
+        "@DEF":"PreviousTextClickedSensor"
       }
     },
             "ROUTE":
@@ -549,8 +536,7 @@
             "TouchSensor":
             {
       {
-        "@DEF":"NextTextClickedSensor",
-        "@description":"Select to see next strategy"
+        "@DEF":"NextTextClickedSensor"
       }
     },
             "ROUTE":
@@ -652,10 +638,7 @@
             "Anchor":
             {
       {
-        "@DEF":"TextToSpeechAnchor",
-        "@description":"text to speech in browser",
-        "@parameter":""target=_blank"",
-        "@url":""http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change""
+        "@DEF":"TextToSpeechAnchor"
       }
                 "ROUTE":
                 {

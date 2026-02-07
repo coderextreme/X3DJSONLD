@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Scripting'/>
     <meta content='flowers2.x3d' name='title'/>
@@ -26,8 +26,8 @@
         </ProtoInterface>
         <ProtoBody>
           <Group>
-            <TimeSensor DEF='Clock' cycleInterval='16' loop='true'/>
-            <OrientationInterpolator DEF='OrbitPath' key='0 0.5 1' keyValue='1 0 0 0 1 0 0 3.14 1 0 0 6.28'/>
+            <TimeSensor DEF='Clock'/>
+            <OrientationInterpolator DEF='OrbitPath'/>
             <Transform DEF='OrbitTransform'>
               <IS>
                 <connect nodeField='translation' protoField='translation'/>
@@ -42,8 +42,8 @@
                     </IS>
                   </Material>
                 </Appearance>
-                <IndexedFaceSet DEF='Orbit' ccw='false' convex='false' coordIndex='0 1 2 -1'>
-                  <Coordinate DEF='OrbitCoordinates' point='0 0 1 0 1 0 1 0 0'/>
+                <IndexedFaceSet DEF='Orbit'>
+                  <Coordinate DEF='OrbitCoordinates'/>
                 </IndexedFaceSet>
               </Shape>
             </Transform>

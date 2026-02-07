@@ -123,10 +123,7 @@
                             "FontStyle":
                             {
       {
-        "@DEF":"LABEL_FONT",
-        "@family":""SANS"",
-        "@justify":""MIDDLE"",
-        "@size":"0.2"
+        "@DEF":"LABEL_FONT"
       }
     },
                         }                    }                }            }        }        "Transform":

@@ -267,9 +267,7 @@
                                 }                            }                        }                        "IndexedFaceSet":
                         {
       {
-        "@DEF":"ArchIndex",
-        "@convex":"false",
-        "@solid":"false"
+        "@DEF":"ArchIndex"
       }
                             "Coordinate":
                             {
@@ -280,8 +278,7 @@
                         }                    }                }                "Script":
                 {
       {
-        "@DEF":"ArchPrototypeScript",
-        "@url":""../node/ArchPrototypeScript.js" "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js""
+        "@DEF":"ArchPrototypeScript"
       }
                     "IS":
                     {
@@ -596,8 +593,7 @@
         }        "Inline":
         {
       {
-        "@DEF":"CoordinateAxes",
-        "@url":""../data/CoordinateAxes.x3d""
+        "@DEF":"CoordinateAxes"
       }
     },
     }}

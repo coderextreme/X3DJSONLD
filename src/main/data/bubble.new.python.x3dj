@@ -91,96 +91,7 @@
                     }                    "Script":
                     {
       {
-        "@DEF":"bounce",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;function initialize() {
-&quot;+
-&quot;    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
-&quot;+
-&quot;
-&quot;+
-&quot;    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
-&quot;+
-&quot;}
-&quot;+
-&quot;
-&quot;+
-&quot;function set_fraction(value) {
-&quot;+
-&quot;	translation = new SFVec3f(
-&quot;+
-&quot;		translation.x + velocity.x,
-&quot;+
-&quot;		translation.y + velocity.y,
-&quot;+
-&quot;		translation.z + velocity.z);
-&quot;+
-&quot;	scale = new SFVec3f(
-&quot;+
-&quot;		scale.x + scalvel.x,
-&quot;+
-&quot;		scale.y + scalvel.y,
-&quot;+
-&quot;		scale.z + scalvel.z);
-&quot;+
-&quot;        // if you get to far away or too big, explode
-&quot;+
-&quot;        if ( Math.abs(translation.x) > 256) {
-&quot;+
-&quot;		translation.x = 0;
-&quot;+
-&quot;		initialize();
-&quot;+
-&quot;	}
-&quot;+
-&quot;        if ( Math.abs(translation.y) > 256) {
-&quot;+
-&quot;		translation.y = 0;
-&quot;+
-&quot;		initialize();
-&quot;+
-&quot;	}
-&quot;+
-&quot;        if ( Math.abs(translation.z) > 256) {
-&quot;+
-&quot;		translation.z = 0;
-&quot;+
-&quot;		initialize();
-&quot;+
-&quot;	}
-&quot;+
-&quot;	if (Math.abs(scale.x) > 20) {
-&quot;+
-&quot;		scale.x = scale.x/2;
-&quot;+
-&quot;		translation.x = 0;
-&quot;+
-&quot;		initialize();
-&quot;+
-&quot;	}
-&quot;+
-&quot;	if (Math.abs(scale.y) > 20) {
-&quot;+
-&quot;		scale.y = scale.y/2;
-&quot;+
-&quot;		translation.y = 0;
-&quot;+
-&quot;		initialize();
-&quot;+
-&quot;	}
-&quot;+
-&quot;	if (Math.abs(scale.z) > 20) {
-&quot;+
-&quot;		scale.z = scale.z/2;
-&quot;+
-&quot;		translation.z = 0;
-&quot;+
-&quot;		initialize();
-&quot;+
-&quot;	}
-&quot;+
-&quot;}"
+        "@DEF":"bounce"
       }
                         "field":
                         {
@@ -229,9 +140,7 @@
                     }                    "TimeSensor":
                     {
       {
-        "@DEF":"bubbleClock",
-        "@cycleInterval":"10",
-        "@loop":"true"
+        "@DEF":"bubbleClock"
       }
     },
                     "ROUTE":

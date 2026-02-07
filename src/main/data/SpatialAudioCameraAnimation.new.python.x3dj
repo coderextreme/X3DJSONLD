@@ -117,34 +117,25 @@
         "Viewpoint":
         {
       {
-        "@DEF":"Camera001",
-        "@description":"Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the &quot;ears of the user&quot;. So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view",
-        "@orientation":"1 0 0 -0.523599",
-        "@position":"0 2000 3500"
+        "@DEF":"Camera001"
       }
     },
         "TimeSensor":
         {
       {
-        "@DEF":"TIMER",
-        "@cycleInterval":"33.333332",
-        "@loop":"true"
+        "@DEF":"TIMER"
       }
     },
         "PositionInterpolator":
         {
       {
-        "@DEF":"Camera001-POS-INTERP",
-        "@key":"0 0.25 0.5 0.75 1",
-        "@keyValue":"0 2000 3500 0 2000 0 0 2000 -3500 0 2000 0 0 2000 3500"
+        "@DEF":"Camera001-POS-INTERP"
       }
     },
         "OrientationInterpolator":
         {
       {
-        "@DEF":"Camera001-ROT-INTERP",
-        "@key":"0 0.25 0.5 0.75 1",
-        "@keyValue":"1 0 0 -0.523599 0.99999 0.003554 0.002727 -1.309007 0 -0.965926 -0.258819 -3.141593 0.002282 -0.793351 -0.60876 -3.135645 1 -1e-06 0 -0.523599"
+        "@DEF":"Camera001-ROT-INTERP"
       }
     },
         "ROUTE":
@@ -186,8 +177,7 @@
         "Transform":
         {
       {
-        "@DEF":"Floor",
-        "@translation":"1.241 0 0.358"
+        "@DEF":"Floor"
       }
             "Shape":
             {
@@ -211,8 +201,7 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio1",
-        "@translation":"-933.123474 0 -926.253235"
+        "@DEF":"TransformAudio1"
       }
             "Shape":
             {
@@ -238,10 +227,7 @@
                 "Transform":
                 {
       {
-        "@DEF":"violin",
-        "@rotation":"1 0 0 -0.5",
-        "@scale":"100 100 100",
-        "@translation":"0 100 0"
+        "@DEF":"violin"
       }
                     "Shape":
                     {
@@ -264,15 +250,13 @@
                             "FontStyle":
                             {
       {
-        "@DEF":"ModelFontStyle",
-        "@family":""Times" "SERIF""
+        "@DEF":"ModelFontStyle"
       }
     },
                         }                    }                }            }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio2",
-        "@translation":"933.475586 0 924.423218"
+        "@DEF":"TransformAudio2"
       }
             "Shape":
             {
@@ -298,10 +282,7 @@
                 "Transform":
                 {
       {
-        "@DEF":"saxophone",
-        "@rotation":"1 0 0 -0.5",
-        "@scale":"100 100 100",
-        "@translation":"0 100 0"
+        "@DEF":"saxophone"
       }
                     "Shape":
                     {

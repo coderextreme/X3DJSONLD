@@ -33,8 +33,7 @@ NavigationInfo {
                 material Material { 
                 }
                 
-                texture DEF RgbOpacityCheckerboard PixelTexture {
-                  image 2 2 4 -16776961 -65536 -65536 -16776961 
+                texture DEF RgbOpacityCheckerboard PixelTexture { 
                 }
                  
               }

@@ -20,32 +20,7 @@
         "Script":
         {
       {
-        "@DEF":"OpenVault",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;      function combinationEntered (value) {
-&quot;+
-&quot;
-&quot;+
-&quot;        unlocked = value;
-&quot;+
-&quot;
-&quot;+
-&quot;      }
-&quot;+
-&quot;
-&quot;+
-&quot;      function openVault(value) {
-&quot;+
-&quot;
-&quot;+
-&quot;      if (unlocked) vaultUnlocked = value;
-&quot;+
-&quot;
-&quot;+
-&quot;      }"
+        "@DEF":"OpenVault"
       }
             "field":
             {
@@ -103,10 +78,7 @@
             "AudioClip":
             {
       {
-        "@DEF":"Click",
-        "@description":"clicking sound",
-        "@stopTime":"1",
-        "@url":""../resources/chandubabamusic1.wav""
+        "@DEF":"Click"
       }
     },
         }        "TouchSensor":

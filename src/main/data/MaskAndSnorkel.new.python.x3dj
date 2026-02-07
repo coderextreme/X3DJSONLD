@@ -95,8 +95,7 @@
                         "Material":
                         {
       {
-        "@DEF":"frameColor",
-        "@diffuseColor":"0 0 0"
+        "@DEF":"frameColor"
       }
     },
                     }                    "IndexedFaceSet":
@@ -115,8 +114,7 @@
                     }                }            }            "Transform":
             {
       {
-        "@DEF":"snorkelHoldRing",
-        "@translation":"0.075 0.075 -0.02"
+        "@DEF":"snorkelHoldRing"
       }
                 "Shape":
                 {
@@ -158,9 +156,7 @@
                                 "Material":
                                 {
       {
-        "@DEF":"snorkelTube",
-        "@diffuseColor":"0.678 1 0.184",
-        "@transparency":"0.4"
+        "@DEF":"snorkelTube"
       }
     },
                             }                            "Extrusion":
@@ -184,9 +180,7 @@
                                 "Material":
                                 {
       {
-        "@DEF":"Mouthpiece",
-        "@diffuseColor":"0.678 1 0.8",
-        "@transparency":"0.4"
+        "@DEF":"Mouthpiece"
       }
     },
                             }                            "Extrusion":
@@ -232,9 +226,7 @@
                         "Material":
                         {
       {
-        "@DEF":"plastic",
-        "@diffuseColor":"0.941 0.973 1",
-        "@transparency":"0.8"
+        "@DEF":"plastic"
       }
     },
                     }                    "IndexedFaceSet":
@@ -290,9 +282,7 @@
                         "Material":
                         {
       {
-        "@DEF":"plasticFit",
-        "@diffuseColor":"0.678 1 0.184",
-        "@transparency":"0.7"
+        "@DEF":"plasticFit"
       }
     },
                     }                    "IndexedFaceSet":

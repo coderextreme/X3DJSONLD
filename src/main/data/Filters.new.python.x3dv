@@ -29,7 +29,6 @@ WorldInfo {
       retainUserOffsets TRUE 
     }
     DEF TransformAudio1 Transform {
-      translation -200 50 0
       children [
         Shape {
           appearance DEF audio_emit Appearance {
@@ -51,7 +50,6 @@ WorldInfo {
     
     }
     DEF TransformAudio2 Transform {
-      translation 0 50 0
       children [
         Shape {
           appearance DEF audio_emit2 Appearance {
@@ -73,7 +71,6 @@ WorldInfo {
     
     }
     DEF TransformAudio3 Transform {
-      translation 200 50 0
       children [
         Shape {
           appearance DEF audio_emit3 Appearance {
@@ -94,23 +91,17 @@ WorldInfo {
       ]
     
     }
-    DEF AnimData Transform {
-      translation 0 50 0 
+    DEF AnimData Transform { 
     }
-    DEF AnimDataBoxH Transform {
-      translation 0 100 0 
+    DEF AnimDataBoxH Transform { 
     }
-    DEF AnimDataBoxM Transform {
-      translation 15 100 0 
+    DEF AnimDataBoxM Transform { 
     }
-    DEF AnimDataBoxL Transform {
-      translation 30 100 0 
+    DEF AnimDataBoxL Transform { 
     }
-    DEF AnimDataBoxMM Transform {
-      translation -15 100 0 
+    DEF AnimDataBoxMM Transform { 
     }
-    DEF AnimDataBoxLM Transform {
-      translation -30 100 0 
+    DEF AnimDataBoxLM Transform { 
     }
     Transform {
       children [

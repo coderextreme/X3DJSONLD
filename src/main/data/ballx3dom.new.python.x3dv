@@ -112,9 +112,7 @@ WorldInfo {
                   ShaderPart {
                     url ["../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"] 
                   }
-                  DEF common ShaderPart {
-                    type "FRAGMENT"
-                    url ["../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"] 
+                  DEF common ShaderPart { 
                   }
                   
                 ]

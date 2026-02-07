@@ -107,43 +107,37 @@
             "ImageTexture":
             {
       {
-        "@DEF":"backBackgroundTexture",
-        "@url":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png""
+        "@DEF":"backBackgroundTexture"
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"bottomBackgroundTexture",
-        "@url":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png""
+        "@DEF":"bottomBackgroundTexture"
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"frontBackgroundTexture",
-        "@url":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png""
+        "@DEF":"frontBackgroundTexture"
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"leftBackgroundTexture",
-        "@url":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png""
+        "@DEF":"leftBackgroundTexture"
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"rightBackgroundTexture",
-        "@url":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png""
+        "@DEF":"rightBackgroundTexture"
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"topBackgroundTexture",
-        "@url":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
+        "@DEF":"topBackgroundTexture"
       }
     },
         }        "Transform":
@@ -164,50 +158,43 @@
                         "ImageTexture":
                         {
       {
-        "@DEF":"backShader",
-        "@url":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png""
+        "@DEF":"backShader"
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"bottomShader",
-        "@url":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png""
+        "@DEF":"bottomShader"
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"frontShader",
-        "@url":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png""
+        "@DEF":"frontShader"
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"leftShader",
-        "@url":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png""
+        "@DEF":"leftShader"
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"rightShader",
-        "@url":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png""
+        "@DEF":"rightShader"
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"topShader",
-        "@url":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
+        "@DEF":"topShader"
       }
     },
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"x3dom",
-        "@language":"GLSL"
+        "@DEF":"x3dom"
       }
                         "field":
                         {
@@ -269,8 +256,7 @@
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"x_ite",
-        "@language":"GLSL"
+        "@DEF":"x_ite"
       }
                         "field":
                         {
@@ -338,41 +324,7 @@
             }            "Script":
             {
       {
-        "@DEF":"UrlSelector",
-        "@directOutput":"true",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;        function set_fraction( f, tm ) {
-&quot;+
-&quot;	    var side = Math.floor(f*frontUrls.length);
-&quot;+
-&quot;	    if (side > frontUrls.length-1) {
-&quot;+
-&quot;	    	side = 0;
-&quot;+
-&quot;	    }
-&quot;+
-&quot;	    if (side != old) {
-&quot;+
-&quot;	    	    Browser.print(f+&quot; &quot;+side);
-&quot;+
-&quot;	    	    old = side;
-&quot;+
-&quot;		    front_changed[0] = frontUrls[side];
-&quot;+
-&quot;		    back_changed[0] = backUrls[side];
-&quot;+
-&quot;		    left_changed[0] = leftUrls[side];
-&quot;+
-&quot;		    right_changed[0] = rightUrls[side];
-&quot;+
-&quot;		    top_changed[0] = topUrls[side];
-&quot;+
-&quot;		    bottom_changed[0] = bottomUrls[side];
-&quot;+
-&quot;            }
-&quot;+
-&quot;        }"
+        "@DEF":"UrlSelector"
       }
                 "field":
                 {
@@ -496,9 +448,7 @@
             }            "TimeSensor":
             {
       {
-        "@DEF":"Clock",
-        "@cycleInterval":"45",
-        "@loop":"true"
+        "@DEF":"Clock"
       }
     },
             "ROUTE":

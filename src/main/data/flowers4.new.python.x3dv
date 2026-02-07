@@ -64,7 +64,6 @@ NavigationInfo {
             
             children [
               DEF shader ComposedShader {
-                language "GLSL"
                 children [
                   field {
                     accessType "inputOutput"
@@ -116,7 +115,6 @@ NavigationInfo {
           }
           
           geometry DEF Orbit IndexedFaceSet {
-            convex FALSE
             coord DEF OrbitCoordinates Coordinate { 
             }
              
@@ -128,145 +126,6 @@ NavigationInfo {
     
     }
     DEF OrbitScript Script {
-      url "ecmascript:
-"+
-"function initialize() {
-"+
-"     var resolution = 100;
-"+
-"     updateCoordinates(resolution);
-"+
-"     var localci = new MFInt32();
-"+
-"     var arrIndex = 0;
-"+
-"     for (var i = 0; i < resolution-1; i++) {
-"+
-"     	for (var j = 0; j < resolution-1; j++) {
-"+
-"	     localci[arrIndex++] = i*resolution+j;
-"+
-"	     localci[arrIndex++] = i*resolution+j+1;
-"+
-"	     localci[arrIndex++] = (i+1)*resolution+j+1;
-"+
-"	     localci[arrIndex++] = (i+1)*resolution+j;
-"+
-"	     localci[arrIndex++] = -1;
-"+
-"	}
-"+
-"    }
-"+
-"    coordIndexes = localci;
-"+
-"}
-"+
-"
-"+
-"function updateCoordinates(resolution) {
-"+
-"     var theta = 0.0;
-"+
-"     var phi = 0.0;
-"+
-"     var delta = (2 * 3.141592653) / (resolution-1);
-"+
-"     var localc = new MFVec3f();
-"+
-"     var arrIndex = 0;
-"+
-"     for (var i = 0; i < resolution; i++) {
-"+
-"     	for (var j = 0; j < resolution; j++) {
-"+
-"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-"+
-"		localc[arrIndex++] = new SFVec3f(
-"+
-"			rho * Math.cos(phi) * Math.cos(theta),
-"+
-"			rho * Math.cos(phi) * Math.sin(theta),
-"+
-"			rho * Math.sin(phi)
-"+
-"		);
-"+
-"		theta += delta;
-"+
-"	}
-"+
-"	phi += delta;
-"+
-"     }
-"+
-"     coordinates = localc;
-"+
-"}
-"+
-"
-"+
-"function set_fraction(fraction, eventTime) {
-"+
-"	var choice = Math.floor(Math.random() * 4);
-"+
-"	switch (choice) {
-"+
-"	case 0:
-"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;
-"+
-"		break;
-"+
-"	case 1:
-"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;
-"+
-"		break;
-"+
-"	case 2:
-"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;
-"+
-"		break;
-"+
-"	case 3:
-"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;
-"+
-"		break;
-"+
-"	}
-"+
-"	if (e < 1) {
-"+
-"		e = 10;
-"+
-"	}
-"+
-"	if (f < 1) {
-"+
-"		f = 10;
-"+
-"	}
-"+
-"	if (g < 1) {
-"+
-"		g = 4;
-"+
-"	}
-"+
-"	if (h < 1) {
-"+
-"		h = 4;
-"+
-"	}
-"+
-"	var resolution = 100;
-"+
-"	updateCoordinates(resolution);
-"+
-"}"
       children [
         field {
           accessType "inputOnly"
@@ -311,9 +170,7 @@ NavigationInfo {
       ]
     
     }
-    DEF Clock TimeSensor {
-      cycleInterval 16
-      loop TRUE 
+    DEF Clock TimeSensor { 
     }
     
     ROUTE OrbitScript.coordIndexes TO Orbit.set_coordIndex

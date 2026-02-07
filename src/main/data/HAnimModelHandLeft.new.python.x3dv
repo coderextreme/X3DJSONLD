@@ -28,8 +28,6 @@ WorldInfo {
       title "HAnimModelHandLeft.x3d" 
     }
     DEF hanim_Hand_Left HAnimHumanoid {
-      loa 4
-      name "Hand_Left"
       metadata MetadataSet {
         name "HAnimHumanoid.info"
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
@@ -53,14 +51,10 @@ WorldInfo {
     
       children [
         DEF hanim_humanoid_root HAnimJoint {
-          name "humanoid_root"
           children [
             DEF hanim_l_radiocarpal HAnimJoint {
-              description "connection joint of hand to leg above"
-              name "l_radiocarpal"
               children [
                 DEF hanim_l_carpal HAnimSegment {
-                  name "l_carpal"
                   children [
                     Transform {
                       children [
@@ -90,7 +84,6 @@ WorldInfo {
                       }
                       
                       geometry DEF RCToMC12 IndexedLineSet {
-                        coordIndex [0 1]
                         coord Coordinate {
                           point [0 0 0 0.1 0.1 0] 
                         }
@@ -107,7 +100,6 @@ WorldInfo {
                       }
                       
                       geometry DEF RCToMC3 IndexedLineSet {
-                        coordIndex [0 1]
                         coord Coordinate {
                           point [0 0 0 0 0.07 0] 
                         }
@@ -124,7 +116,6 @@ WorldInfo {
                       }
                       
                       geometry DEF RCToMC45 IndexedLineSet {
-                        coordIndex [0 1]
                         coord Coordinate {
                           point [0 0 0 -0.1 0.1 0] 
                         }
@@ -137,11 +128,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_midcarpal_1 HAnimJoint {
-                  center 0.14 0.09 0
-                  name "l_midcarpal_1"
                   children [
                     DEF hanim_l_trapezium HAnimSegment {
-                      name "l_trapezium"
                       children [
                         Transform {
                           translation 0.14 0.09 0
@@ -172,7 +160,6 @@ WorldInfo {
                           }
                           
                           geometry DEF MC12toCMC1 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [0.1 0.1 0 0.2 0.15 0] 
                             }
@@ -189,7 +176,6 @@ WorldInfo {
                           }
                           
                           geometry DEF MC1toCMC1 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [0.1 0.1 0 0.1 0.2 0] 
                             }
@@ -202,11 +188,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_carpometacarpal_1 HAnimJoint {
-                      center 0.2 0.15 0
-                      name "l_carpometacarpal_1"
                       children [
                         DEF hanim_l_metacarpal_1 HAnimSegment {
-                          name "l_metacarpal_1"
                           children [
                             Transform {
                               translation 0.2 0.15 0
@@ -224,7 +207,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CMC1toMCP1 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [0.2 0.15 0 0.3 0.3 0] 
                                 }
@@ -237,11 +219,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_metacarpophalangeal_1 HAnimJoint {
-                          center 0.3 0.3 0
-                          name "l_metacarpophalangeal_1"
                           children [
                             DEF hanim_l_carpal_proximal_phalanx_1 HAnimSegment {
-                              name "l_carpal_proximal_phalanx_1"
                               children [
                                 Transform {
                                   translation 0.3 0.3 0
@@ -259,7 +238,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF MCP11toIP1 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [0.3 0.3 0 0.35 0.4 0] 
                                     }
@@ -272,11 +250,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_carpal_interphalangeal_1 HAnimJoint {
-                              center 0.35 0.4 0
-                              name "l_carpal_interphalangeal_1"
                               children [
                                 DEF hanim_l_carpal_distal_phalanx_1 HAnimSegment {
-                                  name "l_carpal_distal_phalanx_1"
                                   children [
                                     Transform {
                                       translation 0.35 0.4 0
@@ -294,7 +269,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF fingertip_l_carpal_interphalangeal_1 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [0.35 0.4 0 0.36 0.45 0] 
                                         }
@@ -323,11 +297,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_midcarpal_2 HAnimJoint {
-                  center 0.07 0.07 0
-                  name "l_midcarpal_2"
                   children [
                     DEF hanim_l_trapezoid HAnimSegment {
-                      name "l_trapezoid"
                       children [
                         Transform {
                           translation 0.07 0.07 0
@@ -345,7 +316,6 @@ WorldInfo {
                           }
                           
                           geometry DEF MC2toCMC2 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [-0.1 0.1 0 -0.1 0.2 0] 
                             }
@@ -358,11 +328,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_carpometacarpal_2 HAnimJoint {
-                      center 0.1 0.2 0
-                      name "l_carpometacarpal_2"
                       children [
                         DEF hanim_l_metacarpal_2 HAnimSegment {
-                          name "l_metacarpal_2"
                           children [
                             Transform {
                               translation 0.1 0.2 0
@@ -380,7 +347,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CMC2toMCP2 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [0.1 0.2 0 0.15 0.5 0] 
                                 }
@@ -393,11 +359,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_metacarpophalangeal_2 HAnimJoint {
-                          center 0.15 0.5 0
-                          name "l_metacarpophalangeal_2"
                           children [
                             DEF hanim_l_carpal_proximal_phalanx_2 HAnimSegment {
-                              name "l_carpal_proximal_phalanx_2"
                               children [
                                 Transform {
                                   translation 0.15 0.5 0
@@ -415,7 +378,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF MCP2toPIP2 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [0.15 0.5 0 0.2 0.7 0] 
                                     }
@@ -428,11 +390,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_carpal_proximal_interphalangeal_2 HAnimJoint {
-                              center 0.2 0.7 0
-                              name "l_carpal_proximal_interphalangeal_2"
                               children [
                                 DEF hanim_l_carpal_middle_phalanx_2 HAnimSegment {
-                                  name "l_carpal_middle_phalanx_2"
                                   children [
                                     Transform {
                                       translation 0.2 0.7 0
@@ -450,7 +409,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF PIP2toDIP2 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [0.2 0.7 0 0.24 0.87 0] 
                                         }
@@ -463,11 +421,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_carpal_distal_interphalangeal_2 HAnimJoint {
-                                  center 0.24 0.87 0
-                                  name "l_carpal_distal_interphalangeal_2"
                                   children [
                                     DEF hanim_l_carpal_distal_phalanx_2 HAnimSegment {
-                                      name "l_carpal_distal_phalanx_2"
                                       children [
                                         Transform {
                                           translation 0.24 0.87 0
@@ -485,7 +440,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF fingertip_l_carpal_distal_interphalangeal_2 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [0.24 0.87 0 0.26 0.93 0] 
                                             }
@@ -518,11 +472,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_midcarpal_3 HAnimJoint {
-                  center 0 0.07 0
-                  name "l_midcarpal_3"
                   children [
                     DEF hanim_l_capitate HAnimSegment {
-                      name "l_capitate"
                       children [
                         Transform {
                           translation 0 0.07 0
@@ -540,7 +491,6 @@ WorldInfo {
                           }
                           
                           geometry DEF MC3toCMC3 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [0 0.07 0 0 0.2 0] 
                             }
@@ -553,11 +503,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_carpometacarpal_3 HAnimJoint {
-                      center 0 0.2 0
-                      name "l_carpometacarpal_3"
                       children [
                         DEF hanim_l_metacarpal_3 HAnimSegment {
-                          name "l_metacarpal_3"
                           children [
                             Transform {
                               translation 0 0.2 0
@@ -575,7 +522,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CMC3toMCP3 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [0 0.2 0 0.03 0.5 0] 
                                 }
@@ -588,11 +534,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_metacarpophalangeal_3 HAnimJoint {
-                          center 0.03 0.5 0
-                          name "l_metacarpophalangeal_3"
                           children [
                             DEF hanim_l_carpal_proximal_phalanx_3 HAnimSegment {
-                              name "l_carpal_proximal_phalanx_3"
                               children [
                                 Transform {
                                   translation 0.03 0.5 0
@@ -610,7 +553,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF MCP3toPIP3 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [0.03 0.5 0 0.05 0.75 0] 
                                     }
@@ -623,11 +565,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_carpal_proximal_interphalangeal_3 HAnimJoint {
-                              center 0.05 0.75 0
-                              name "l_carpal_proximal_interphalangeal_3"
                               children [
                                 DEF hanim_l_carpal_middle_phalanx_3 HAnimSegment {
-                                  name "l_carpal_middle_phalanx_3"
                                   children [
                                     Transform {
                                       translation 0.05 0.75 0
@@ -645,7 +584,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF PIP3toDIP3 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [0.05 0.75 0 0.08 0.96 0] 
                                         }
@@ -658,11 +596,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_carpal_distal_interphalangeal_3 HAnimJoint {
-                                  center 0.08 0.96 0
-                                  name "l_carpal_distal_interphalangeal_3"
                                   children [
                                     DEF hanim_l_carpal_distal_phalanx_3 HAnimSegment {
-                                      name "l_carpal_distal_phalanx_3"
                                       children [
                                         Transform {
                                           translation 0.08 0.96 0
@@ -680,7 +615,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF fingertip_l_carpal_distal_interphalangeal_3 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [0.08 0.96 0 0.09 1.05 0] 
                                             }
@@ -713,11 +647,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_midcarpal_4_5 HAnimJoint {
-                  center -0.1 0.1 0
-                  name "l_midcarpal_4_5"
                   children [
                     DEF hanim_l_hamate HAnimSegment {
-                      name "l_hamate"
                       children [
                         Transform {
                           translation -0.1 0.1 0
@@ -735,7 +666,6 @@ WorldInfo {
                           }
                           
                           geometry DEF MC45toCMC4 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [-0.1 0.1 0 -0.1 0.2 0] 
                             }
@@ -752,7 +682,6 @@ WorldInfo {
                           }
                           
                           geometry DEF MC45toCMC5 IndexedLineSet {
-                            coordIndex [0 1]
                             coord Coordinate {
                               point [-0.1 0.1 0 -0.15 0.17 0] 
                             }
@@ -765,11 +694,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_carpometacarpal_4 HAnimJoint {
-                      center -0.1 0.2 0
-                      name "l_carpometacarpal_4"
                       children [
                         DEF hanim_l_metacarpal_4 HAnimSegment {
-                          name "l_metacarpal_4"
                           children [
                             Transform {
                               translation -0.1 0.2 0
@@ -787,7 +713,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CMC4toMCP4 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [-0.1 0.2 0 -0.1 0.47 0] 
                                 }
@@ -800,11 +725,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_metacarpophalangeal_4 HAnimJoint {
-                          center -0.1 0.47 0
-                          name "l_metacarpophalangeal_4"
                           children [
                             DEF hanim_l_carpal_proximal_phalanx_4 HAnimSegment {
-                              name "l_carpal_proximal_phalanx_4"
                               children [
                                 Transform {
                                   translation -0.1 0.47 0
@@ -822,7 +744,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF MCP4toPIP4 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [-0.1 0.47 0 -0.1 0.7 0] 
                                     }
@@ -835,11 +756,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_carpal_proximal_interphalangeal_4 HAnimJoint {
-                              center -0.1 0.7 0
-                              name "l_carpal_proximal_interphalangeal_4"
                               children [
                                 DEF hanim_l_carpal_middle_phalanx_4 HAnimSegment {
-                                  name "l_carpal_middle_phalanx_4"
                                   children [
                                     Transform {
                                       translation -0.1 0.7 0
@@ -857,7 +775,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF PIP4toDIP4 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [-0.1 0.7 0 -0.1 0.93 0] 
                                         }
@@ -870,11 +787,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_carpal_distal_interphalangeal_4 HAnimJoint {
-                                  center -0.1 0.93 0
-                                  name "l_carpal_distal_interphalangeal_4"
                                   children [
                                     DEF hanim_l_carpal_distal_phalanx_4 HAnimSegment {
-                                      name "l_carpal_distal_phalanx_4"
                                       children [
                                         Transform {
                                           translation -0.1 0.93 0
@@ -892,7 +806,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF fingertip_l_carpal_distal_interphalangeal_4 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [-0.1 0.93 0 -0.1 1 0] 
                                             }
@@ -921,11 +834,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_carpometacarpal_5 HAnimJoint {
-                      center -0.15 0.17 0
-                      name "l_carpometacarpal_5"
                       children [
                         DEF hanim_l_metacarpal_5 HAnimSegment {
-                          name "l_metacarpal_5"
                           children [
                             Transform {
                               translation -0.15 0.17 0
@@ -943,7 +853,6 @@ WorldInfo {
                               }
                               
                               geometry DEF CMC5toMCP5 IndexedLineSet {
-                                coordIndex [0 1]
                                 coord Coordinate {
                                   point [-0.15 0.17 0 -0.2 0.4 0] 
                                 }
@@ -956,11 +865,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_metacarpophalangeal_5 HAnimJoint {
-                          center -0.2 0.4 0
-                          name "l_metacarpophalangeal_5"
                           children [
                             DEF hanim_l_carpal_proximal_phalanx_5 HAnimSegment {
-                              name "l_carpal_proximal_phalanx_5"
                               children [
                                 Transform {
                                   translation -0.2 0.4 0
@@ -978,7 +884,6 @@ WorldInfo {
                                   }
                                   
                                   geometry DEF MCP5toPIP5 IndexedLineSet {
-                                    coordIndex [0 1]
                                     coord Coordinate {
                                       point [-0.2 0.4 0 -0.23 0.63 0] 
                                     }
@@ -991,11 +896,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_carpal_proximal_interphalangeal_5 HAnimJoint {
-                              center -0.23 0.63 0
-                              name "l_carpal_proximal_interphalangeal_5"
                               children [
                                 DEF hanim_l_carpal_middle_phalanx_5 HAnimSegment {
-                                  name "l_carpal_middle_phalanx_5"
                                   children [
                                     Transform {
                                       translation -0.23 0.63 0
@@ -1013,7 +915,6 @@ WorldInfo {
                                       }
                                       
                                       geometry DEF PIP5toDIP5 IndexedLineSet {
-                                        coordIndex [0 1]
                                         coord Coordinate {
                                           point [-0.23 0.63 0 -0.25 0.79 0] 
                                         }
@@ -1026,11 +927,8 @@ WorldInfo {
                                  
                                 }
                                 DEF hanim_l_carpal_distal_interphalangeal_5 HAnimJoint {
-                                  center -0.25 0.79 0
-                                  name "l_carpal_distal_interphalangeal_5"
                                   children [
                                     DEF hanim_l_carpal_distal_phalanx_5 HAnimSegment {
-                                      name "l_carpal_distal_phalanx_5"
                                       children [
                                         Transform {
                                           translation -0.25 0.79 0
@@ -1048,7 +946,6 @@ WorldInfo {
                                           }
                                           
                                           geometry DEF fingertip_l_carpal_distal_interphalangeal_5 IndexedLineSet {
-                                            coordIndex [0 1]
                                             coord Coordinate {
                                               point [-0.25 0.79 0 -0.26 0.85 0] 
                                             }

@@ -122,15 +122,13 @@
                         "Coordinate":
                         {
       {
-        "@DEF":"EndPoints",
-        "@point":"0 0 0 -10 0 10 -9 0 10 -8 0 10 -7 0 10 -6 0 10 -5 0 10 -4 0 10 -3 0 10 -2 0 10 -1 0 10 0 0 10 1 0 10 2 0 10 3 0 10 4 0 10 5 0 10 6 0 10 7 0 10 8 0 10 9 0 10 10 0 10 -10 0 -10 -9 0 -10 -8 0 -10 -7 0 -10 -6 0 -10 -5 0 -10 -4 0 -10 -3 0 -10 -2 0 -10 -1 0 -10 0 0 -10 1 0 -10 2 0 -10 3 0 -10 4 0 -10 5 0 -10 6 0 -10 7 0 -10 8 0 -10 9 0 -10 10 0 -10"
+        "@DEF":"EndPoints"
       }
     },
                     }                }                "Transform":
                 {
       {
-        "@DEF":"LinesAlignedAlongX",
-        "@rotation":"0 1 0 1.57079"
+        "@DEF":"LinesAlignedAlongX"
       }
                     "Shape":
                     {
@@ -158,15 +156,12 @@
                             }                            "Text":
                             {
       {
-        "@DEF":"CenterTextNode",
-        "@string":""origin""
+        "@DEF":"CenterTextNode"
       }
                                 "FontStyle":
                                 {
       {
-        "@DEF":"FS4",
-        "@justify":""MIDDLE" "MIDDLE"",
-        "@size":"0.4"
+        "@DEF":"FS4"
       }
     },
                             }                        }                    }                }                "Transform":

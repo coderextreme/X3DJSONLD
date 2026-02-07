@@ -136,28 +136,13 @@
                                 }                            }                        }                    }                    "PositionInterpolator":
                     {
       {
-        "@DEF":"NodePosition",
-        "@key":"0 1",
-        "@keyValue":"0 0 0 0 5 0"
+        "@DEF":"NodePosition"
       }
     },
                     "Script":
                     {
       {
-        "@DEF":"MoveBall",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;					function set_cycle(value) {
-&quot;+
-&quot;                                                old = translation;
-&quot;+
-&quot;						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-&quot;+
-&quot;			    			keyValue = new MFVec3f(old, translation);
-&quot;+
-&quot;						// Browser.println(translation);
-&quot;+
-&quot;					}"
+        "@DEF":"MoveBall"
       }
                         "field":
                         {
@@ -196,9 +181,7 @@
                     }                    "TimeSensor":
                     {
       {
-        "@DEF":"nodeClock",
-        "@cycleInterval":"3",
-        "@loop":"true"
+        "@DEF":"nodeClock"
       }
     },
                     "ROUTE":
@@ -277,33 +260,13 @@
                         }                        "Extrusion":
                         {
       {
-        "@DEF":"extrusion",
-        "@creaseAngle":"0.785",
-        "@crossSection":"1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0",
-        "@spine":"0 -50 0 0 0 0 0 50 0"
+        "@DEF":"extrusion"
       }
     },
                     }                    "Script":
                     {
       {
-        "@DEF":"MoveCylinder",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;                function set_endA(value) {
-&quot;+
-&quot;		    spine = new MFVec3f(value, spine[1]);
-&quot;+
-&quot;                }
-&quot;+
-&quot;
-&quot;+
-&quot;                function set_endB(value) {
-&quot;+
-&quot;		    spine = new MFVec3f(spine[0], value);
-&quot;+
-&quot;                }"
+        "@DEF":"MoveCylinder"
       }
                         "IS":
                         {
@@ -358,16 +321,12 @@
                 }            }        }        "Transform":
         {
       {
-        "@DEF":"HoldsContent",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"HoldsContent"
       }
             "PlaneSensor":
             {
       {
-        "@DEF":"clickGenerator",
-        "@description":"click on background to add nodes, click on nodes to add links",
-        "@maxPosition":"50 50",
-        "@minPosition":"-50 -50"
+        "@DEF":"clickGenerator"
       }
     },
             "ProtoInstance":
@@ -446,42 +405,7 @@
         }        "Script":
         {
       {
-        "@DEF":"clickHandler",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;	function add_node(value) {
-&quot;+
-&quot;                // Browser.print('hey ', counter);
-&quot;+
-&quot;                counter = counter++;
-&quot;+
-&quot;		Browser.appendTo(Browser.getDocument().querySelector(&quot;field [name=ModifiableNode]&quot;),
-&quot;+
-&quot;			{ &quot;ProtoInstance&quot;:
-&quot;+
-&quot;				{ &quot;@name&quot;:&quot;node&quot;,
-&quot;+
-&quot;				  &quot;@DEF&quot;:&quot;node'+counter+'&quot;,
-&quot;+
-&quot;				  &quot;fieldValue&quot;: [
-&quot;+
-&quot;					{
-&quot;+
-&quot;						 &quot;@name&quot;:&quot;position&quot;,
-&quot;+
-&quot;						 &quot;@value&quot;:[0.0,0.0,0.0]
-&quot;+
-&quot;					}
-&quot;+
-&quot;				  ]
-&quot;+
-&quot;				}
-&quot;+
-&quot;			});
-&quot;+
-&quot;
-&quot;+
-&quot;        }"
+        "@DEF":"clickHandler"
       }
             "field":
             {

@@ -22,10 +22,7 @@ WorldInfo {
       center 4344125.917539 741821.999947 1970.5
       geoSystem ["UTM" "Z10" "N"]
       range 0
-      geoOrigin DEF ORIGIN GeoOrigin {
-        geoCoords 4342525.5 740604 0
-        geoSystem ["UTM" "Z10" "N"]
-        rotateYUp TRUE 
+      geoOrigin DEF ORIGIN GeoOrigin { 
       }
       
       children [

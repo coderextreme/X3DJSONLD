@@ -54,10 +54,7 @@
         "GeoViewpoint":
         {
       {
-        "@DEF":"Tour",
-        "@description":"Tour Views",
-        "@orientation":"1 0 0 0",
-        "@position":"0 0 4"
+        "@DEF":"Tour"
       }
     },
         "Background":
@@ -90,56 +87,19 @@
             }        }        "TimeSensor":
         {
       {
-        "@DEF":"TourTime",
-        "@cycleInterval":"5",
-        "@loop":"true"
+        "@DEF":"TourTime"
       }
     },
         "GeoPositionInterpolator":
         {
       {
-        "@DEF":"TourPosition",
-        "@key":"0 1",
-        "@keyValue":"0.0015708 0 4 0 0.0015708 4"
+        "@DEF":"TourPosition"
       }
     },
         "Script":
         {
       {
-        "@DEF":"RandomTourTime",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;               function set_cycle(value) {
-&quot;+
-&quot;                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
-&quot;+
-&quot;                        var ov = val;
-&quot;+
-&quot;			// Browser.print('old '+ov);
-&quot;+
-&quot;                        do {
-&quot;+
-&quot;                                val = Math.floor(Math.random()*2);
-&quot;+
-&quot;                                var vc = val;
-&quot;+
-&quot;                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
-&quot;+
-&quot;                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
-&quot;+
-&quot;			// Browser.println(positions[ov]);
-&quot;+
-&quot;			// Browser.println(positions[vc]);
-&quot;+
-&quot;                        position = new MFVec3d();
-&quot;+
-&quot;                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
-&quot;+
-&quot;                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
-&quot;+
-&quot;               }"
+        "@DEF":"RandomTourTime"
       }
             "field":
             {

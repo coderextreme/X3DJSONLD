@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='x3dconnector.x3d' name='title'/>
     <meta content='Lost, Doug Sanden I think' name='creator'/>
@@ -18,17 +18,17 @@
         </Appearance>
         <Sphere radius='0.1'/>
       </Shape>
-      <PlaneSensor DEF='PS1' description='Grab to move'/>
+      <PlaneSensor DEF='PS1'/>
       <ROUTE fromField='translation_changed' fromNode='PS1' toField='set_translation' toNode='G1'/>
     </Transform>
-    <Transform DEF='G2' translation='1 -1 0.01'>
+    <Transform DEF='G2'>
       <Shape>
         <Appearance>
           <Material diffuseColor='0.2 0.7 0.2'/>
         </Appearance>
         <Sphere radius='0.1'/>
       </Shape>
-      <PlaneSensor DEF='PS2' description='Grab to move' offset='1 -1 0.01'/>
+      <PlaneSensor DEF='PS2'/>
       <ROUTE fromField='translation_changed' fromNode='PS2' toField='set_translation' toNode='G2'/>
     </Transform>
     <Transform DEF='transC1'>

@@ -173,8 +173,7 @@
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"shader",
-        "@language":"GLSL"
+        "@DEF":"shader"
       }
                         "field":
                         {
@@ -236,8 +235,7 @@
                     }                }                "IndexedFaceSet":
                 {
       {
-        "@DEF":"Orbit",
-        "@convex":"false"
+        "@DEF":"Orbit"
       }
                     "Coordinate":
                     {
@@ -248,146 +246,7 @@
                 }            }        }        "Script":
         {
       {
-        "@DEF":"OrbitScript",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;function initialize() {
-&quot;+
-&quot;     var resolution = 100;
-&quot;+
-&quot;     updateCoordinates(resolution);
-&quot;+
-&quot;     var localci = new MFInt32();
-&quot;+
-&quot;     var arrIndex = 0;
-&quot;+
-&quot;     for (var i = 0; i < resolution-1; i++) {
-&quot;+
-&quot;     	for (var j = 0; j < resolution-1; j++) {
-&quot;+
-&quot;	     localci[arrIndex++] = i*resolution+j;
-&quot;+
-&quot;	     localci[arrIndex++] = i*resolution+j+1;
-&quot;+
-&quot;	     localci[arrIndex++] = (i+1)*resolution+j+1;
-&quot;+
-&quot;	     localci[arrIndex++] = (i+1)*resolution+j;
-&quot;+
-&quot;	     localci[arrIndex++] = -1;
-&quot;+
-&quot;	}
-&quot;+
-&quot;    }
-&quot;+
-&quot;    coordIndexes = localci;
-&quot;+
-&quot;}
-&quot;+
-&quot;
-&quot;+
-&quot;function updateCoordinates(resolution) {
-&quot;+
-&quot;     var theta = 0.0;
-&quot;+
-&quot;     var phi = 0.0;
-&quot;+
-&quot;     var delta = (2 * 3.141592653) / (resolution-1);
-&quot;+
-&quot;     var localc = new MFVec3f();
-&quot;+
-&quot;     var arrIndex = 0;
-&quot;+
-&quot;     for (var i = 0; i < resolution; i++) {
-&quot;+
-&quot;     	for (var j = 0; j < resolution; j++) {
-&quot;+
-&quot;		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-&quot;+
-&quot;		localc[arrIndex++] = new SFVec3f(
-&quot;+
-&quot;			rho * Math.cos(phi) * Math.cos(theta),
-&quot;+
-&quot;			rho * Math.cos(phi) * Math.sin(theta),
-&quot;+
-&quot;			rho * Math.sin(phi)
-&quot;+
-&quot;		);
-&quot;+
-&quot;		theta += delta;
-&quot;+
-&quot;	}
-&quot;+
-&quot;	phi += delta;
-&quot;+
-&quot;     }
-&quot;+
-&quot;     coordinates = localc;
-&quot;+
-&quot;}
-&quot;+
-&quot;
-&quot;+
-&quot;function set_fraction(fraction, eventTime) {
-&quot;+
-&quot;	var choice = Math.floor(Math.random() * 4);
-&quot;+
-&quot;	switch (choice) {
-&quot;+
-&quot;	case 0:
-&quot;+
-&quot;		e += Math.floor(Math.random() * 2) * 2 - 1;
-&quot;+
-&quot;		break;
-&quot;+
-&quot;	case 1:
-&quot;+
-&quot;		f += Math.floor(Math.random() * 2) * 2 - 1;
-&quot;+
-&quot;		break;
-&quot;+
-&quot;	case 2:
-&quot;+
-&quot;		g += Math.floor(Math.random() * 2) * 2 - 1;
-&quot;+
-&quot;		break;
-&quot;+
-&quot;	case 3:
-&quot;+
-&quot;		h += Math.floor(Math.random() * 2) * 2 - 1;
-&quot;+
-&quot;		break;
-&quot;+
-&quot;	}
-&quot;+
-&quot;	if (e < 1) {
-&quot;+
-&quot;		e = 10;
-&quot;+
-&quot;	}
-&quot;+
-&quot;	if (f < 1) {
-&quot;+
-&quot;		f = 10;
-&quot;+
-&quot;	}
-&quot;+
-&quot;	if (g < 1) {
-&quot;+
-&quot;		g = 4;
-&quot;+
-&quot;	}
-&quot;+
-&quot;	if (h < 1) {
-&quot;+
-&quot;		h = 4;
-&quot;+
-&quot;	}
-&quot;+
-&quot;	var resolution = 100;
-&quot;+
-&quot;	updateCoordinates(resolution);
-&quot;+
-&quot;}"
+        "@DEF":"OrbitScript"
       }
             "field":
             {
@@ -452,9 +311,7 @@
         }        "TimeSensor":
         {
       {
-        "@DEF":"Clock",
-        "@cycleInterval":"16",
-        "@loop":"true"
+        "@DEF":"Clock"
       }
     },
         "ROUTE":

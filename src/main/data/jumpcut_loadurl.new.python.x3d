@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='jumpcut_loadurl.x3d' name='title'/>
     <meta content='http://www.nist.gov/vrml.html' name='reference'/>
@@ -21,9 +21,9 @@
     <WorldInfo title='jumpcut_loadurl.x3d'/>
     <Background groundAngle='1.57' groundColor='0 0.5 0 0 0.5 0' skyColor='0 0 1'/>
     <NavigationInfo type='"EXAMINE" "WALK" "FLY" "ANY"'/>
-    <Viewpoint DEF='Front_View' description='Front View'/>
-    <Viewpoint DEF='Top_View' description='Top View' orientation='1 0 0 -1.57' position='0 10 0'/>
-    <TouchSensor DEF='STARTER' description='touch to activate'/>
+    <Viewpoint DEF='Front_View'/>
+    <Viewpoint DEF='Top_View'/>
+    <TouchSensor DEF='STARTER'/>
     <Transform DEF='ROOT'>
       <Shape>
         <Appearance>
@@ -32,7 +32,7 @@
         <Box/>
       </Shape>
     </Transform>
-    <Script DEF='MYSCRIPT' url='"jumpcut_loadurl.js" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"'>
+    <Script DEF='MYSCRIPT'>
       <field accessType='initializeOnly' name='myParameter' type='MFString' value='"Top_View"'/>
       <field accessType='initializeOnly' name='myUrl' type='MFString' value='"jumpcut_loadurl.x3d#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View" "jumpcut_loadurl.wrl#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"'/>
       <field accessType='inputOnly' name='trigger_event' type='SFBool'/>

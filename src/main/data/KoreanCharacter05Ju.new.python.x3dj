@@ -158,9 +158,7 @@
         "HAnimHumanoid":
         {
       {
-        "@DEF":"hanim_Ju",
-        "@name":"Ju",
-        "@scale":"0.0225 0.0225 0.0225"
+        "@DEF":"hanim_Ju"
       }
             "MetadataSet":
             {
@@ -429,15 +427,12 @@
             "HAnimJoint":
             {
       {
-        "@DEF":"hanim_humanoid_root",
-        "@center":"0 36 -0.008798",
-        "@name":"humanoid_root"
+        "@DEF":"hanim_humanoid_root"
       }
                 "HAnimSegment":
                 {
       {
-        "@DEF":"hanim_sacrum",
-        "@name":"sacrum"
+        "@DEF":"hanim_sacrum"
       }
                     "Transform":
                     {
@@ -457,8 +452,7 @@
                                 "ImageTexture":
                                 {
       {
-        "@DEF":"JuTextureAtlas",
-        "@url":""images/Ju.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Ju.png""
+        "@DEF":"JuTextureAtlas"
       }
     },
                             }                            "IndexedFaceSet":
@@ -483,15 +477,12 @@
                             }                        }                    }                }                "HAnimJoint":
                 {
       {
-        "@DEF":"hanim_l_hip",
-        "@center":"3.22 33.619999 -0.2832",
-        "@name":"l_hip"
+        "@DEF":"hanim_l_hip"
       }
                     "HAnimSegment":
                     {
       {
-        "@DEF":"hanim_l_thigh",
-        "@name":"l_thigh"
+        "@DEF":"hanim_l_thigh"
       }
                         "Transform":
                         {
@@ -536,15 +527,12 @@
                                 }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_l_knee",
-        "@center":"3.454 18.67 -0.02158",
-        "@name":"l_knee"
+        "@DEF":"hanim_l_knee"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_l_calf",
-        "@name":"l_calf"
+        "@DEF":"hanim_l_calf"
       }
                             "Transform":
                             {
@@ -589,15 +577,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_l_talocrural",
-        "@center":"3.467 3.522 0.118",
-        "@name":"l_talocrural"
+        "@DEF":"hanim_l_talocrural"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_l_talus",
-        "@name":"l_talus"
+        "@DEF":"hanim_l_talus"
       }
                                 "Transform":
                                 {
@@ -642,15 +627,12 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_l_metatarsophalangeal_2",
-        "@center":"3.467 3.251 1.465",
-        "@name":"l_metatarsophalangeal_2"
+        "@DEF":"hanim_l_metatarsophalangeal_2"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_l_tarsal_proximal_phalanx_2",
-        "@name":"l_tarsal_proximal_phalanx_2"
+        "@DEF":"hanim_l_tarsal_proximal_phalanx_2"
       }
                                     "Transform":
                                     {
@@ -695,15 +677,12 @@
                                             }                                        }                                    }                                }                            }                        }                    }                }                "HAnimJoint":
                 {
       {
-        "@DEF":"hanim_r_hip",
-        "@center":"-3.22 33.619999 -0.2832",
-        "@name":"r_hip"
+        "@DEF":"hanim_r_hip"
       }
                     "HAnimSegment":
                     {
       {
-        "@DEF":"hanim_r_thigh",
-        "@name":"r_thigh"
+        "@DEF":"hanim_r_thigh"
       }
                         "Transform":
                         {
@@ -748,15 +727,12 @@
                                 }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_r_knee",
-        "@center":"-3.454 18.67 -0.02158",
-        "@name":"r_knee"
+        "@DEF":"hanim_r_knee"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_r_calf",
-        "@name":"r_calf"
+        "@DEF":"hanim_r_calf"
       }
                             "Transform":
                             {
@@ -801,15 +777,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_r_talocrural",
-        "@center":"-3.679 3.522 0.118",
-        "@name":"r_talocrural"
+        "@DEF":"hanim_r_talocrural"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_r_talus",
-        "@name":"r_talus"
+        "@DEF":"hanim_r_talus"
       }
                                 "Transform":
                                 {
@@ -854,15 +827,12 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_r_metatarsophalangeal_2",
-        "@center":"-3.679 3.251 1.465",
-        "@name":"r_metatarsophalangeal_2"
+        "@DEF":"hanim_r_metatarsophalangeal_2"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_r_tarsal_proximal_phalanx_2",
-        "@name":"r_tarsal_proximal_phalanx_2"
+        "@DEF":"hanim_r_tarsal_proximal_phalanx_2"
       }
                                     "Transform":
                                     {
@@ -907,15 +877,12 @@
                                             }                                        }                                    }                                }                            }                        }                    }                }                "HAnimJoint":
                 {
       {
-        "@DEF":"hanim_sacroiliac",
-        "@center":"3.4e-05 31.26 -0.008798",
-        "@name":"sacroiliac"
+        "@DEF":"hanim_sacroiliac"
       }
                     "HAnimSegment":
                     {
       {
-        "@DEF":"hanim_pelvis",
-        "@name":"pelvis"
+        "@DEF":"hanim_pelvis"
       }
                         "Transform":
                         {
@@ -960,15 +927,12 @@
                                 }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_l_shoulder",
-        "@center":"4.778 51.029999 -2.069",
-        "@name":"l_shoulder"
+        "@DEF":"hanim_l_shoulder"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_l_upperarm",
-        "@name":"l_upperarm"
+        "@DEF":"hanim_l_upperarm"
       }
                             "Transform":
                             {
@@ -1013,15 +977,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_l_elbow",
-        "@center":"5.297 40.119999 -2.055",
-        "@name":"l_elbow"
+        "@DEF":"hanim_l_elbow"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_l_forearm",
-        "@name":"l_forearm"
+        "@DEF":"hanim_l_forearm"
       }
                                 "Transform":
                                 {
@@ -1066,15 +1027,12 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_l_radiocarpal",
-        "@center":"5.07 31.99 -1.559",
-        "@name":"l_radiocarpal"
+        "@DEF":"hanim_l_radiocarpal"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_l_carpal",
-        "@name":"l_carpal"
+        "@DEF":"hanim_l_carpal"
       }
                                     "Transform":
                                     {
@@ -1119,15 +1077,12 @@
                                             }                                        }                                    }                                }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_r_shoulder",
-        "@center":"-4.778 51.029999 -2.069",
-        "@name":"r_shoulder"
+        "@DEF":"hanim_r_shoulder"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_r_upperarm",
-        "@name":"r_upperarm"
+        "@DEF":"hanim_r_upperarm"
       }
                             "Transform":
                             {
@@ -1172,15 +1127,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_r_elbow",
-        "@center":"-5.297 40.119999 -2.055",
-        "@name":"r_elbow"
+        "@DEF":"hanim_r_elbow"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_r_forearm",
-        "@name":"r_forearm"
+        "@DEF":"hanim_r_forearm"
       }
                                 "Transform":
                                 {
@@ -1225,15 +1177,12 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_r_radiocarpal",
-        "@center":"-5.07 31.99 -1.559",
-        "@name":"r_radiocarpal"
+        "@DEF":"hanim_r_radiocarpal"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_r_carpal",
-        "@name":"r_carpal"
+        "@DEF":"hanim_r_carpal"
       }
                                     "Transform":
                                     {
@@ -1278,15 +1227,12 @@
                                             }                                        }                                    }                                }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_vl5",
-        "@center":"2.5e-05 39.84 0.1163",
-        "@name":"vl5"
+        "@DEF":"hanim_vl5"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_l5",
-        "@name":"l5"
+        "@DEF":"hanim_l5"
       }
                             "Transform":
                             {
@@ -1331,15 +1277,12 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_skullbase",
-        "@center":"2.5e-05 56.07 -1.554",
-        "@name":"skullbase"
+        "@DEF":"hanim_skullbase"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_skull",
-        "@name":"skull"
+        "@DEF":"hanim_skull"
       }
                                 "Transform":
                                 {

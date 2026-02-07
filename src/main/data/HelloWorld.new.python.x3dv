@@ -31,22 +31,17 @@ WorldInfo {
     }
     Group {
       children [
-        DEF ViewUpClose Viewpoint {
-          centerOfRotation 0 -1 0
-          description "Hello world!"
-          position 0 -1 7 
+        DEF ViewUpClose Viewpoint { 
         }
         Transform {
           rotation 0 1 0 3
           children [
             Shape {
               appearance Appearance {
-                material DEF MaterialLightBlue Material {
-                  diffuseColor 0.1 0.5 1 
+                material DEF MaterialLightBlue Material { 
                 }
                 
-                texture DEF ImageCloudlessEarth ImageTexture {
-                  url ["earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"] 
+                texture DEF ImageCloudlessEarth ImageTexture { 
                 }
                  
               }
@@ -68,7 +63,6 @@ WorldInfo {
               }
               
               geometry DEF TextMessage Text {
-                string ["Hello" "world!"]
                 fontStyle FontStyle {
                   justify ["MIDDLE" "MIDDLE"] 
                 }

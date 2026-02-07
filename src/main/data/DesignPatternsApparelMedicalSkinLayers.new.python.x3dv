@@ -32,7 +32,6 @@ WorldInfo {
       
       children [
         DEF a_SimpleSkeleton HAnimHumanoid {
-          name "SimpleSkeleton"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -45,7 +44,6 @@ WorldInfo {
                     DEF SegmentVisualization Shape { 
                     }
                     DEF a_feature01_tip HAnimSite {
-                      name "feature01_tip"
                       children [
                         DEF SiteVisualization Shape { 
                         }
@@ -66,7 +64,6 @@ WorldInfo {
          
         }
         DEF b_SimpleSkeletonMesh HAnimHumanoid {
-          name "SimpleSkeletonMesh"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -92,7 +89,6 @@ WorldInfo {
          
         }
         DEF c_SkinIndexedGeometry HAnimHumanoid {
-          name "SkinIndexedGeometry"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -115,7 +111,6 @@ WorldInfo {
          
         }
         DEF d_SkinShapeIndexedGeometry HAnimHumanoid {
-          name "SkinShapeIndexedGeometry"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -139,7 +134,6 @@ WorldInfo {
          
         }
         DEF e_SkinSwitchShapeIndexedGeometry HAnimHumanoid {
-          name "SkinSwitchShapeIndexedGeometry"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -168,7 +162,6 @@ WorldInfo {
          
         }
         DEF f_SynthesizedSkinShapeIndexedTwoPartGeometry HAnimHumanoid {
-          name "SynthesizedSkinShapeIndexedTwoPartGeometry"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -197,7 +190,6 @@ WorldInfo {
          
         }
         DEF g_ApparelSkinIndexedGeometryMultipleShapes HAnimHumanoid {
-          name "ApparelSkinIndexedGeometryMultipleShapes"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -220,7 +212,6 @@ WorldInfo {
          
         }
         DEF h_AnatomySkinIndexedGeometryMultipleShapes HAnimHumanoid {
-          name "AnatomySkinIndexedGeometryMultipleShapes"
           children [
             HAnimJoint {
               name "humanoid_root"
@@ -246,9 +237,7 @@ WorldInfo {
       ]
     
     }
-    DEF ViewHelpText Viewpoint {
-      description "Select text to see website"
-      position 0 0 12 
+    DEF ViewHelpText Viewpoint { 
     }
     Anchor {
       description "DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches"

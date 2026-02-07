@@ -31,22 +31,9 @@ Viewpoint {
               }
                
             }
-            DEF DECLpoint_INSTANCE_PI1 PositionInterpolator {
-              key [0 1]
-              keyValue [0 0 0 0 5 0] 
+            DEF DECLpoint_INSTANCE_PI1 PositionInterpolator { 
             }
             DEF DECLpoint_INSTANCE_MB1 Script {
-              url "ecmascript:
-"+
-"               function set_location(value) {
-"+
-"                    old = translation;
-"+
-"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-"+
-"                    keyValue = new MFVec3f([old, translation]);
-"+
-"               }"
               children [
                 field {
                   accessType "inputOutput"
@@ -75,9 +62,7 @@ Viewpoint {
               ]
             
             }
-            DEF DECLpoint_INSTANCE_CL1 TimeSensor {
-              cycleInterval 3
-              loop TRUE 
+            DEF DECLpoint_INSTANCE_CL1 TimeSensor { 
             }
             
             ROUTE DECLpoint_INSTANCE_CL1.cycleTime TO DECLpoint_INSTANCE_MB1.set_location
@@ -114,22 +99,9 @@ Viewpoint {
               }
                
             }
-            DEF DECLpoint_INSTANCE1000_PI1 PositionInterpolator {
-              key [0 1]
-              keyValue [0 0 0 0 5 0] 
+            DEF DECLpoint_INSTANCE1000_PI1 PositionInterpolator { 
             }
             DEF DECLpoint_INSTANCE1000_MB1 Script {
-              url "ecmascript:
-"+
-"               function set_location(value) {
-"+
-"                    old = translation;
-"+
-"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-"+
-"                    keyValue = new MFVec3f([old, translation]);
-"+
-"               }"
               children [
                 field {
                   accessType "inputOutput"
@@ -158,9 +130,7 @@ Viewpoint {
               ]
             
             }
-            DEF DECLpoint_INSTANCE1000_CL1 TimeSensor {
-              cycleInterval 3
-              loop TRUE 
+            DEF DECLpoint_INSTANCE1000_CL1 TimeSensor { 
             }
             
             ROUTE DECLpoint_INSTANCE1000_CL1.cycleTime TO DECLpoint_INSTANCE1000_MB1.set_location
@@ -207,83 +177,6 @@ Viewpoint {
     
     }
     DEF DECLx3dconnector_connector1_S1 Script {
-      url "ecmascript:
-"+
-"        function recompute(startpoint,endpoint){
-"+
-"	    if (typeof endpoint === 'undefined') {
-"+
-"		return;
-"+
-"	    }
-"+
-"            var dif = endpoint.subtract(startpoint);
-"+
-"            var dist = dif.length()*0.5;
-"+
-"            var dif2 = dif.multiply(0.5);
-"+
-"            var norm = dif.normalize();
-"+
-"            var transl = startpoint.add(dif2);
-"+
-"	    if (typeof Quaternion !== 'undefined') {
-"+
-"		    return {
-"+
-"			    scale : new SFVec3f(1.0,dist,1.0),
-"+
-"			    translation : transl,
-"+
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
-"+
-"		    };
-"+
-"	    } else {
-"+
-"		    return {
-"+
-"			    scale : new SFVec3f(1.0,dist,1.0),
-"+
-"			    translation : transl,
-"+
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
-"+
-"		    };
-"+
-"	    }
-"+
-"	}
-"+
-"	function recompute_and_route(startpoint, endpoint) {
-"+
-"	      var trafo = recompute(startpoint, endpoint);
-"+
-"	      transC1.translation = trafo.translation;
-"+
-"	      rotscaleC1.rotation = trafo.rotation;
-"+
-"	      rotscaleC1.scale = trafo.scale;
-"+
-"	}
-"+
-"        function initialize(){
-"+
-"            recompute_and_route(startnode.translation,endnode.translation);
-"+
-"        }
-"+
-"        function set_startpoint(val,t){
-"+
-"            recompute_and_route(val,endnode.translation);
-"+
-"        }
-"+
-"        function set_endpoint(val,t){
-"+
-"            recompute_and_route(startnode.translation,val);
-"+
-"        }"
       children [
         field {
           accessType "initializeOnly"

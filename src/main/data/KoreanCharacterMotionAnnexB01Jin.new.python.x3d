@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='HAnim'/>
     <meta content='KoreanCharacterAnnexB01Jin.x3d' name='title'/>
@@ -25,14 +25,14 @@
   <Scene>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='AnnexB01Jin' position='0 1 3'/>
-    <HAnimHumanoid DEF='hanim_AnnexB01Jin' info='"humanoidVersion=2.0"' name='AnnexB01Jin' scale='0.0225 0.0225 0.0225'>
-      <HAnimJoint DEF='hanim_HumanoidRoot' center='0 30.53 -0.7076' name='humanoid_root'>
-        <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
+    <HAnimHumanoid DEF='hanim_AnnexB01Jin'>
+      <HAnimJoint DEF='hanim_HumanoidRoot'>
+        <HAnimSegment DEF='hanim_sacrum'>
           <Transform translation='0 30.53 -0.7076'>
             <Shape>
               <Appearance>
                 <Material diffuseColor='0.588 0.588 0.588'/>
-                <ImageTexture DEF='Annex01JinTextureAtlas' url='"Jin.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/Jin.png"'/>
+                <ImageTexture DEF='Annex01JinTextureAtlas'/>
               </Appearance>
               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 14 2 1 -1 1 13 14 -1 15 3 2 -1 2 14 15 -1 16 4 3 -1 3 15 16 -1 17 5 4 -1 4 16 17 -1 18 6 5 -1 5 17 18 -1 19 7 6 -1 6 18 19 -1 20 8 7 -1 7 19 20 -1 21 9 8 -1 8 20 21 -1 22 10 9 -1 9 21 22 -1 23 11 10 -1 10 22 23 -1 24 12 11 -1 11 23 24 -1 13 1 12 -1 12 24 13 -1 26 14 13 -1 13 25 26 -1 27 15 14 -1 14 26 27 -1 28 16 15 -1 15 27 28 -1 29 17 16 -1 16 28 29 -1 30 18 17 -1 17 29 30 -1 31 19 18 -1 18 30 31 -1 32 20 19 -1 19 31 32 -1 33 21 20 -1 20 32 33 -1 34 22 21 -1 21 33 34 -1 35 23 22 -1 22 34 35 -1 36 24 23 -1 23 35 36 -1 25 13 24 -1 24 36 25 -1 38 26 25 -1 25 37 38 -1 39 27 26 -1 26 38 39 -1 40 28 27 -1 27 39 40 -1 41 29 28 -1 28 40 41 -1 42 30 29 -1 29 41 42 -1 43 31 30 -1 30 42 43 -1 44 32 31 -1 31 43 44 -1 45 33 32 -1 32 44 45 -1 46 34 33 -1 33 45 46 -1 47 35 34 -1 34 46 47 -1 48 36 35 -1 35 47 48 -1 37 25 36 -1 36 48 37 -1 50 38 37 -1 37 49 50 -1 51 39 38 -1 38 50 51 -1 52 40 39 -1 39 51 52 -1 53 41 40 -1 40 52 53 -1 54 42 41 -1 41 53 54 -1 55 43 42 -1 42 54 55 -1 56 44 43 -1 43 55 56 -1 57 45 44 -1 44 56 57 -1 58 46 45 -1 45 57 58 -1 59 47 46 -1 46 58 59 -1 60 48 47 -1 47 59 60 -1 49 37 48 -1 48 60 49 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1' creaseAngle='3.14159' texCoordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 14 2 1 -1 1 13 14 -1 15 3 2 -1 2 14 15 -1 16 4 3 -1 3 15 16 -1 17 5 4 -1 4 16 17 -1 18 6 5 -1 5 17 18 -1 19 7 6 -1 6 18 19 -1 20 8 7 -1 7 19 20 -1 21 9 8 -1 8 20 21 -1 22 10 9 -1 9 21 22 -1 23 11 10 -1 10 22 23 -1 24 12 11 -1 11 23 24 -1 13 1 12 -1 12 24 13 -1 26 14 13 -1 13 25 26 -1 27 15 14 -1 14 26 27 -1 28 16 15 -1 15 27 28 -1 29 17 16 -1 16 28 29 -1 30 18 17 -1 17 29 30 -1 31 19 18 -1 18 30 31 -1 32 20 19 -1 19 31 32 -1 33 21 20 -1 20 32 33 -1 34 22 21 -1 21 33 34 -1 35 23 22 -1 22 34 35 -1 36 24 23 -1 23 35 36 -1 25 13 24 -1 24 36 25 -1 38 26 25 -1 25 37 38 -1 39 27 26 -1 26 38 39 -1 40 28 27 -1 27 39 40 -1 41 29 28 -1 28 40 41 -1 42 30 29 -1 29 41 42 -1 43 31 30 -1 30 42 43 -1 44 32 31 -1 31 43 44 -1 45 33 32 -1 32 44 45 -1 46 34 33 -1 33 45 46 -1 47 35 34 -1 34 46 47 -1 48 36 35 -1 35 47 48 -1 37 25 36 -1 36 48 37 -1 50 38 37 -1 37 49 50 -1 51 39 38 -1 38 50 51 -1 52 40 39 -1 39 51 52 -1 53 41 40 -1 40 52 53 -1 54 42 41 -1 41 53 54 -1 55 43 42 -1 42 54 55 -1 56 44 43 -1 43 55 56 -1 57 45 44 -1 44 56 57 -1 58 46 45 -1 45 57 58 -1 59 47 46 -1 46 58 59 -1 60 48 47 -1 47 59 60 -1 49 37 48 -1 48 60 49 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>
                 <Coordinate point='0 10.79 0.1424 0 10.06 -2.825 -2.283 10.06 -2.428 -3.954 10.06 -1.948 -4.566 10.06 0.1424 -3.954 10.06 2.233 -2.283 10.06 2.712 0 10.06 3.11 2.283 10.06 2.712 3.954 10.06 2.233 4.566 10.06 0.1424 3.954 10.06 -1.948 2.283 10.06 -2.428 0 8.045 -4.614 -2.953 8.045 -3.977 -5.114 8.045 -2.236 -5.905 8.045 0.1424 -5.114 8.045 2.521 -2.953 8.045 3.645 0 8.045 4.282 2.953 8.045 3.645 5.114 8.045 2.521 5.905 8.045 0.1424 5.114 8.045 -2.236 2.953 8.045 -3.977 0 5.297 -5.018 -3.409 5.297 -4.282 -5.905 5.297 -2.272 -6.819 5.297 0.1424 -5.905 5.297 2.889 -3.409 5.297 4.282 0 5.297 5.018 3.409 5.297 4.282 5.905 5.297 2.889 6.819 5.297 0.1424 5.905 5.297 -2.272 3.409 5.297 -4.282 0 2.548 -4.282 -2.953 2.548 -3.645 -5.114 2.548 -1.904 -5.905 2.548 0.1424 -5.114 2.548 2.521 -2.953 2.548 3.645 0 2.548 4.282 2.953 2.548 3.645 5.114 2.548 2.521 5.905 2.548 0.1424 5.114 2.548 -1.904 2.953 2.548 -3.645 0 0.5362 -2.272 -1.705 0.5362 -1.904 -2.953 0.5362 -1.231 -3.409 0.5362 0.1424 -2.953 0.5362 1.516 -1.705 0.5362 2.521 0 0.5362 2.889 1.705 0.5362 2.521 2.953 0.5362 1.516 3.409 0.5362 0.1424 2.953 0.5362 -1.231 1.705 0.5362 -1.904 0 -0.2003 0.1424'/>
@@ -41,8 +41,8 @@
             </Shape>
           </Transform>
         </HAnimSegment>
-        <HAnimJoint DEF='hanim_sacroiliac' center='0 35.8 -0.7076' name='sacroiliac'>
-          <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
+        <HAnimJoint DEF='hanim_sacroiliac'>
+          <HAnimSegment DEF='hanim_pelvis'>
             <Transform translation='0 35.8 -0.7076'>
               <Shape>
                 <Appearance>
@@ -56,8 +56,8 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_hip' center='4.207 32.02 -0.8155' name='l_hip'>
-            <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
+          <HAnimJoint DEF='hanim_l_hip'>
+            <HAnimSegment DEF='hanim_l_thigh'>
               <Transform translation='4.207 32.02 -0.8155'>
                 <Shape>
                   <Appearance>
@@ -71,8 +71,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_knee' center='4.116 17.26 -0.8639' name='l_knee'>
-              <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
+            <HAnimJoint DEF='hanim_l_knee'>
+              <HAnimSegment DEF='hanim_l_calf'>
                 <Transform translation='4.116 17.26 -0.8639'>
                   <Shape>
                     <Appearance>
@@ -86,8 +86,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_talocrural' center='3.854 3.939 -0.7038' name='l_talocrural'>
-                <HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'>
+              <HAnimJoint DEF='hanim_l_talocrural'>
+                <HAnimSegment DEF='hanim_l_hindfoot'>
                   <Transform translation='3.854 3.939 -0.7038'>
                     <Shape>
                       <Appearance>
@@ -101,8 +101,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_metatarsophalangeal' center='3.854 3.64 0.7402' name='l_metatarsophalangeal'>
-                  <HAnimSegment DEF='hanim_l_middistal' name='l_middistal'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal'>
+                  <HAnimSegment DEF='hanim_l_middistal'>
                     <Transform translation='3.854 3.64 0.7402'>
                       <Shape>
                         <Appearance>
@@ -120,8 +120,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_hip' center='-4.207 32.02 -0.8155' name='r_hip'>
-            <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
+          <HAnimJoint DEF='hanim_r_hip'>
+            <HAnimSegment DEF='hanim_r_thigh'>
               <Transform translation='-4.207 32.02 -0.8155'>
                 <Shape>
                   <Appearance>
@@ -135,8 +135,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_knee' center='-4.116 17.26 -0.8639' name='r_knee'>
-              <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
+            <HAnimJoint DEF='hanim_r_knee'>
+              <HAnimSegment DEF='hanim_r_calf'>
                 <Transform translation='-4.116 17.26 -0.8639'>
                   <Shape>
                     <Appearance>
@@ -150,8 +150,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_talocrural' center='-3.854 3.939 -0.7038' name='r_talocrural'>
-                <HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'>
+              <HAnimJoint DEF='hanim_r_talocrural'>
+                <HAnimSegment DEF='hanim_r_hindfoot'>
                   <Transform translation='-3.854 3.939 -0.7038'>
                     <Shape>
                       <Appearance>
@@ -165,8 +165,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_metatarsophalangeal' center='-3.854 3.64 0.7402' name='r_metatarsophalangeal'>
-                  <HAnimSegment DEF='hanim_r_middistal' name='r_middistal'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal'>
+                  <HAnimSegment DEF='hanim_r_middistal'>
                     <Transform translation='-3.854 3.64 0.7402'>
                       <Shape>
                         <Appearance>
@@ -184,8 +184,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_vl5' center='0 40.23 -0.8527' name='vl5'>
-            <HAnimSegment DEF='hanim_l5' name='l5'>
+          <HAnimJoint DEF='hanim_vl5'>
+            <HAnimSegment DEF='hanim_l5'>
               <Transform translation='0 40.23 -0.8527'>
                 <Shape>
                   <Appearance>
@@ -199,8 +199,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_skullbase' center='0 57.43 -0.6863' name='skullbase'>
-              <HAnimSegment DEF='hanim_skull' name='skull'>
+            <HAnimJoint DEF='hanim_skullbase'>
+              <HAnimSegment DEF='hanim_skull'>
                 <Transform translation='0 57.43 -0.6863'>
                   <Shape>
                     <Appearance>
@@ -215,8 +215,8 @@
                 </Transform>
               </HAnimSegment>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_l_shoulder' center='5.975 52 -0.1452' name='l_shoulder'>
-              <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
+            <HAnimJoint DEF='hanim_l_shoulder'>
+              <HAnimSegment DEF='hanim_l_upperarm'>
                 <Transform translation='5.975 52 -0.1452'>
                   <Shape>
                     <Appearance>
@@ -230,8 +230,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_elbow' center='8.093 40.38 -0.2502' name='l_elbow'>
-                <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
+              <HAnimJoint DEF='hanim_l_elbow'>
+                <HAnimSegment DEF='hanim_l_forearm'>
                   <Transform translation='8.093 40.38 -0.2502'>
                     <Shape>
                       <Appearance>
@@ -245,8 +245,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_radiocarpal' center='7.808 31.46 -0.05849' name='l_radiocarpal'>
-                  <HAnimSegment DEF='hanim_l_hand' name='l_hand'>
+                <HAnimJoint DEF='hanim_l_radiocarpal'>
+                  <HAnimSegment DEF='hanim_l_hand'>
                     <Transform translation='7.808 31.46 -0.05849'>
                       <Shape>
                         <Appearance>
@@ -263,8 +263,8 @@
                 </HAnimJoint>
               </HAnimJoint>
             </HAnimJoint>
-            <HAnimJoint DEF='hanim_r_shoulder' center='-5.975 52 -0.1452' name='r_shoulder'>
-              <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
+            <HAnimJoint DEF='hanim_r_shoulder'>
+              <HAnimSegment DEF='hanim_r_upperarm'>
                 <Transform translation='-5.975 52 -0.1452'>
                   <Shape>
                     <Appearance>
@@ -278,8 +278,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_elbow' center='-8.093 40.38 -0.2502' name='r_elbow'>
-                <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
+              <HAnimJoint DEF='hanim_r_elbow'>
+                <HAnimSegment DEF='hanim_r_forearm'>
                   <Transform translation='-8.093 40.38 -0.2502'>
                     <Shape>
                       <Appearance>
@@ -293,8 +293,8 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_radiocarpal' center='-7.808 31.46 -0.05849' name='r_radiocarpal'>
-                  <HAnimSegment DEF='hanim_r_hand' name='r_hand'>
+                <HAnimJoint DEF='hanim_r_radiocarpal'>
+                  <HAnimSegment DEF='hanim_r_hand'>
                     <Transform translation='-7.808 31.46 -0.05849'>
                       <Shape>
                         <Appearance>
@@ -316,26 +316,26 @@
       </HAnimJoint>
     </HAnimHumanoid>
     <Group DEF='KeyframeAnimation'>
-      <TimeSensor DEF='KeyframeTimer' cycleInterval='8.033494' loop='true'/>
-      <PositionInterpolator DEF='Keyframe_HumanoidRootTranslation' key='0 1' keyValue='0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_HumanoidRootOrientation' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_sacroiliac' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_shoulder' key='0 0.5 1' keyValue='0 0 0 0 -1 0 0 3 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_elbow' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_radiocarpal' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_shoulder' key='0 0.5 1' keyValue='0 0 0 0 -1 0 0 3 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_elbow' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_radiocarpal' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_vl5' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_skullbase' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_hip' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_knee' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_talocrural' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_l_metatarsophalangeal' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_hip' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_knee' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_talocrural' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
-      <OrientationInterpolator DEF='Keyframe_r_metatarsophalangeal' key='0 1' keyValue='0 0 0 0 0 0 0 0'/>
+      <TimeSensor DEF='KeyframeTimer'/>
+      <PositionInterpolator DEF='Keyframe_HumanoidRootTranslation'/>
+      <OrientationInterpolator DEF='Keyframe_HumanoidRootOrientation'/>
+      <OrientationInterpolator DEF='Keyframe_sacroiliac'/>
+      <OrientationInterpolator DEF='Keyframe_l_shoulder'/>
+      <OrientationInterpolator DEF='Keyframe_l_elbow'/>
+      <OrientationInterpolator DEF='Keyframe_l_radiocarpal'/>
+      <OrientationInterpolator DEF='Keyframe_r_shoulder'/>
+      <OrientationInterpolator DEF='Keyframe_r_elbow'/>
+      <OrientationInterpolator DEF='Keyframe_r_radiocarpal'/>
+      <OrientationInterpolator DEF='Keyframe_vl5'/>
+      <OrientationInterpolator DEF='Keyframe_skullbase'/>
+      <OrientationInterpolator DEF='Keyframe_l_hip'/>
+      <OrientationInterpolator DEF='Keyframe_l_knee'/>
+      <OrientationInterpolator DEF='Keyframe_l_talocrural'/>
+      <OrientationInterpolator DEF='Keyframe_l_metatarsophalangeal'/>
+      <OrientationInterpolator DEF='Keyframe_r_hip'/>
+      <OrientationInterpolator DEF='Keyframe_r_knee'/>
+      <OrientationInterpolator DEF='Keyframe_r_talocrural'/>
+      <OrientationInterpolator DEF='Keyframe_r_metatarsophalangeal'/>
       <ROUTE fromField='fraction_changed' fromNode='KeyframeTimer' toField='set_fraction' toNode='Keyframe_HumanoidRootTranslation'/>
       <ROUTE fromField='fraction_changed' fromNode='KeyframeTimer' toField='set_fraction' toNode='Keyframe_HumanoidRootOrientation'/>
       <ROUTE fromField='fraction_changed' fromNode='KeyframeTimer' toField='set_fraction' toNode='Keyframe_sacroiliac'/>

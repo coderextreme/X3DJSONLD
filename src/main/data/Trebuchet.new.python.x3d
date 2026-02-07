@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='Trebuchet.x3d' name='title'/>
     <meta content='Working model of a 14th century Trebuchet Catapult.' name='description'/>
@@ -22,7 +22,7 @@
     <WorldInfo title='Trebuchet.x3d'/>
     <Background backUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"' bottomUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"' frontUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"' groundAngle='1.309 1.570796' groundColor='0.1 0.1 0 0.4 0.25 0.2 0.6 0.6 0.6' leftUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"' rightUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"' skyAngle='1.309 1.57079' skyColor='0 0.2 0.7 0 0.5 1 1 1 1' topUrl='"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"'/>
     <Sound maxBack='1000' maxFront='1000'>
-      <AudioClip DEF='HolyGrail' description='HolyGrail' loop='true' url='"holygral.mp3" "http://www.nps.navy.mil/code32/vrml/holygral.mp3"'/>
+      <AudioClip DEF='HolyGrail'/>
     </Sound>
     <Shape>
       <Appearance>
@@ -41,7 +41,7 @@
       </Shape>
     </Transform>
     <Transform rotation='0 1 0 1.57' scale='0.5 0.5 0.5' translation='11 5.5 6'>
-      <Switch DEF='Weight' whichChoice='0'>
+      <Switch DEF='Weight'>
         <Group>
           <Shape>
             <Appearance USE='TextAppearance'/>
@@ -67,7 +67,7 @@
           </Shape>
         </Group>
       </Switch>
-      <TouchSensor DEF='weightselector' description='weight selector'/>
+      <TouchSensor DEF='weightselector'/>
       <Transform translation='8 0 0'>
         <Shape>
           <Appearance>
@@ -78,7 +78,7 @@
       </Transform>
     </Transform>
     <Transform rotation='0 1 0 1.57' translation='10 0.5 4.5'>
-      <Transform DEF='launch' translation='0 2 5'>
+      <Transform DEF='launch'>
         <Billboard>
           <Shape>
             <Appearance>
@@ -99,20 +99,20 @@
           <Switch DEF='PigdogMonk'>
             <Group>
               <Sound maxBack='1000' maxFront='1000'>
-                <AudioClip DEF='PigDogSound' description='PigDogSound' url='"pigdog.wav" "http://www.nps.navy.mil/code32/vrml/pigdog.wav"'/>
+                <AudioClip DEF='PigDogSound'/>
               </Sound>
             </Group>
             <Group>
               <Sound maxBack='1000' maxFront='1000'>
-                <AudioClip DEF='MonkSound' description='MonkSound' url='"monks.wav" "http://www.nps.navy.mil/code32/vrml/monks.wav"'/>
+                <AudioClip DEF='MonkSound'/>
               </Sound>
             </Group>
           </Switch>
         </Billboard>
-        <TouchSensor DEF='Launch' description='launch!'/>
+        <TouchSensor DEF='Launch'/>
       </Transform>
       <Transform>
-        <Switch DEF='projectilename' whichChoice='0'>
+        <Switch DEF='projectilename'>
           <Group>
             <Shape>
               <Appearance USE='TextAppearance'/>
@@ -121,7 +121,7 @@
               </Text>
             </Shape>
             <Sound maxBack='1000' maxFront='1000' priority='1'>
-              <AudioClip DEF='HolyHandGrenadeSound' description='HolyHandGrenadeSound' url='"grenade.wav" "http://www.nps.navy.mil/code32/vrml/grenade.wav"'/>
+              <AudioClip DEF='HolyHandGrenadeSound'/>
             </Sound>
           </Group>
           <Group>
@@ -132,7 +132,7 @@
               </Text>
             </Shape>
             <Sound maxBack='1000' maxFront='1000'>
-              <AudioClip DEF='CowSound' description='CowSound' url='"lavache.wav" "http://www.nps.navy.mil/code32/vrml/lavache.wav"'/>
+              <AudioClip DEF='CowSound'/>
             </Sound>
           </Group>
           <Group>
@@ -143,14 +143,14 @@
               </Text>
             </Shape>
             <Sound maxBack='1000' maxFront='1000' priority='1'>
-              <AudioClip DEF='HamsterSound' description='HamsterSound' url='"hamster.wav" "http://www.nps.navy.mil/code32/vrml/hamster.wav"'/>
+              <AudioClip DEF='HamsterSound'/>
             </Sound>
           </Group>
         </Switch>
       </Transform>
     </Transform>
     <Transform rotation='0 1 0 -1.67'>
-      <Transform DEF='aft' translation='5 5 15'>
+      <Transform DEF='aft'>
         <Transform translation='-2.5 -4.5 -2'>
           <Transform USE='launch'/>
         </Transform>
@@ -159,20 +159,20 @@
     <Transform translation='0 3 0'>
       <Shape DEF='plank'>
         <Appearance DEF='wood'>
-          <ImageTexture DEF='woodTexture' url='"wood.gif" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"'/>
+          <ImageTexture DEF='woodTexture'/>
         </Appearance>
         <Box size='25 1 1'/>
       </Shape>
-      <Transform DEF='angledsupport' rotation='0 0 1 1' translation='-5 10 0'>
+      <Transform DEF='angledsupport'>
         <Shape USE='plank'/>
       </Transform>
-      <Transform DEF='angledsupport2' rotation='0 0 1 -1' translation='5 10 0'>
+      <Transform DEF='angledsupport2'>
         <Shape USE='plank'/>
       </Transform>
-      <Transform DEF='verticalsupport' rotation='0 0 1 1.57' scale='0.9 1 1' translation='0 11 0'>
+      <Transform DEF='verticalsupport'>
         <Shape USE='plank'/>
       </Transform>
-      <Transform DEF='horizontalsupport' scale='0.4 1 1' translation='0 10 0'>
+      <Transform DEF='horizontalsupport'>
         <Shape USE='plank'/>
       </Transform>
       <Transform rotation='0 0 1 1.57' scale='0.6 1 1' translation='0 5 10'>
@@ -180,7 +180,7 @@
           <Shape USE='plank'/>
         </Transform>
       </Transform>
-      <Transform DEF='panel' translation='0 18.2 -0.3'>
+      <Transform DEF='panel'>
         <Shape>
           <Appearance USE='wood'/>
           <Box size='5 5 0.5'/>
@@ -194,7 +194,7 @@
           </Shape>
         </Transform>
       </Transform>
-      <Transform DEF='flinger' center='7 0 0' rotation='0 0 1 0.82' scale='0.9 1 1' translation='-7 18 2.5'>
+      <Transform DEF='flinger'>
         <Transform>
           <Shape>
             <Appearance USE='wood'/>
@@ -272,7 +272,7 @@
               </Shape>
             </Transform>
           </Transform>
-          <Transform DEF='sling' rotation='0 0 1 -0.82' translation='-4 -15.3 0'>
+          <Transform DEF='sling'>
             <Transform>
               <Transform rotation='0 1 0 -1.57' scale='1 1.3 1' translation='0.5 0 -1'>
                 <Transform rotation='0 0 1 1.57'>
@@ -312,10 +312,10 @@
                     </Shape>
                   </Transform>
                 </Transform>
-                <TouchSensor DEF='LauncheeChoice' description='launcher choice'/>
+                <TouchSensor DEF='LauncheeChoice'/>
               </Transform>
-              <Transform DEF='projectiletransform' scale='0.01 0.01 0.01'>
-                <Switch DEF='projectile' whichChoice='0'>
+              <Transform DEF='projectiletransform'>
+                <Switch DEF='projectile'>
                   <Group>
                     <Transform translation='0 0.7 0'>
                       <Shape>
@@ -381,7 +381,7 @@
         </Transform>
       </Transform>
       <Transform rotation='0 0 1 1.57' scale='0.2 0.2 0.2' translation='-11.5 -1 2'>
-        <Transform DEF='screw' rotation='1 0 0 1.57'>
+        <Transform DEF='screw'>
           <Shape USE='Torus'/>
           <Transform rotation='1 0 0 -1.57' translation='0 0 7'>
             <Shape>
@@ -395,7 +395,7 @@
         <Transform translation='0 0 7'>
           <Transform USE='screw'/>
         </Transform>
-        <Transform DEF='Pin' rotation='1 0 0 -1.57' translation='0 0 -3'>
+        <Transform DEF='Pin'>
           <Transform USE='screw'/>
         </Transform>
       </Transform>
@@ -492,14 +492,14 @@
             </Transform>
           </Transform>
         </Transform>
-        <Transform DEF='ProjectileTransform' translation='14.25 1.25 0'>
+        <Transform DEF='ProjectileTransform'>
           <Switch USE='projectile'/>
           <Transform rotation='0 1 0 1.57' translation='0 1 0'>
             <Viewpoint description='Projectile Cam' position='0 0 15'/>
           </Transform>
         </Transform>
         <Transform translation='20 2 0'>
-          <Transform DEF='Front' rotation='0 1 0 1.57'>
+          <Transform DEF='Front'>
             <Viewpoint description='Fore'/>
           </Transform>
         </Transform>
@@ -707,12 +707,12 @@
         </Script>
       </Transform>
     </Transform>
-    <TimeSensor DEF='clock' cycleInterval='10'/>
-    <PositionInterpolator DEF='verticalweightpath' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0'/>
-    <OrientationInterpolator DEF='flingerangles' key='0 0.1 0.2 0.2 0.3 0.9' keyValue='0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82'/>
-    <PositionInterpolator DEF='pinpath' key='0 0.01 0.95 1' keyValue='0 0 -3 0 0 -10 0 0 -10 0 0 -3'/>
-    <OrientationInterpolator DEF='RnSAngels' key='0 0.7 1' keyValue='0 0 1 0 0 0 1 -3.14 0 0 1 0'/>
-    <PositionInterpolator DEF='invisiable' key='0 0.2 0.98 0.99' keyValue='1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1'/>
+    <TimeSensor DEF='clock'/>
+    <PositionInterpolator DEF='verticalweightpath'/>
+    <OrientationInterpolator DEF='flingerangles'/>
+    <PositionInterpolator DEF='pinpath'/>
+    <OrientationInterpolator DEF='RnSAngels'/>
+    <PositionInterpolator DEF='invisiable'/>
     <ROUTE fromField='fraction_changed' fromNode='clock' toField='set_fraction' toNode='invisiable'/>
     <ROUTE fromField='value_changed' fromNode='invisiable' toField='set_scale' toNode='projectiletransform'/>
     <ROUTE fromField='CounterWeight' fromNode='WeightScript' toField='set_MassCounterWeight' toNode='Mover'/>

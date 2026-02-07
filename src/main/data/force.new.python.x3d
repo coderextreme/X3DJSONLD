@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Scripting'/>
     <meta content='John W Carlson' name='creator'/>
@@ -39,7 +39,7 @@
               </Shape>
             </Transform>
           </Transform>
-          <PositionInterpolator DEF='NodePosition' key='0 1' keyValue='0 0 0 0 5 0'/>
+          <PositionInterpolator DEF='NodePosition'/>
           <Script DEF='MoveBall'>
             <field accessType='inputOutput' name='translation' type='SFVec3f' value='50 50 0'/>
             <field accessType='inputOutput' name='old' type='SFVec3f' value='0 0 0'/>
@@ -57,7 +57,7 @@
 "+
 "			}]]>
           </Script>
-          <TimeSensor DEF='nodeClock' cycleInterval='3' loop='true'/>
+          <TimeSensor DEF='nodeClock'/>
           <ROUTE fromField='cycleTime' fromNode='nodeClock' toField='set_cycle' toNode='MoveBall'/>
           <ROUTE fromField='fraction_changed' fromNode='nodeClock' toField='set_fraction' toNode='NodePosition'/>
           <ROUTE fromField='keyValue' fromNode='MoveBall' toField='keyValue' toNode='NodePosition'/>
@@ -76,7 +76,7 @@
             <Appearance>
               <Material diffuseColor='0 1 0'/>
             </Appearance>
-            <Extrusion DEF='extrusion' creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -50 0 0 0 0 0 50 0'/>
+            <Extrusion DEF='extrusion'/>
           </Shape>
           <Script DEF='MoveCylinder'>
             <IS>
@@ -106,8 +106,8 @@
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <Transform DEF='HoldsContent' scale='0.1 0.1 0.1'>
-      <PlaneSensor DEF='clickGenerator' description='click on background to add nodes, click on nodes to add links' maxPosition='50 50' minPosition='-50 -50'/>
+    <Transform DEF='HoldsContent'>
+      <PlaneSensor DEF='clickGenerator'/>
       <ProtoInstance DEF='nodeA' name='node'>
         <fieldValue name='position' value='0 0 0'/>
       </ProtoInstance>

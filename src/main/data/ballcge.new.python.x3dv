@@ -112,9 +112,7 @@ WorldInfo {
                   ShaderPart {
                     url ["file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"] 
                   }
-                  DEF commonfs ShaderPart {
-                    type "FRAGMENT"
-                    url ["file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"] 
+                  DEF commonfs ShaderPart { 
                   }
                   
                 ]

@@ -17,8 +17,7 @@ META "specificationUrl" "https://www.web3d.org/documents/specifications/19776-2/
 META "identifier" "https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"
 META "generator" "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
 META "license" "../license.html"
-DEF EntryView Viewpoint {
-      description "Hello MFString syntax" 
+DEF EntryView Viewpoint { 
     }
     Background {
       skyColor [0.6 1 0.8] 

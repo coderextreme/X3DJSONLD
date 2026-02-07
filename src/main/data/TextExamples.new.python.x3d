@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='TextExamples.x3d' name='title'/>
     <meta content='Show different escape-character text examples for embedded quotation marks.' name='description'/>
@@ -20,7 +20,7 @@
           <Material diffuseColor='0.1 0.7 0.7'/>
         </Appearance>
         <Text string='"Compare special character escaping"'>
-          <FontStyle DEF='testFontStyle' justify='"MIDDLE" "MIDDLE"' size='0.8'/>
+          <FontStyle DEF='testFontStyle'/>
         </Text>
       </Shape>
     </Transform>

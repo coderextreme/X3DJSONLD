@@ -27,16 +27,11 @@ WorldInfo {
     NavigationInfo {
       type ["EXAMINE" "WALK" "FLY" "ANY"] 
     }
-    DEF Front_View Viewpoint {
-      description "Front View" 
+    DEF Front_View Viewpoint { 
     }
-    DEF Top_View Viewpoint {
-      description "Top View"
-      orientation 1 0 0 -1.57
-      position 0 10 0 
+    DEF Top_View Viewpoint { 
     }
-    DEF STARTER TouchSensor {
-      description "touch to activate" 
+    DEF STARTER TouchSensor { 
     }
     DEF ROOT Transform {
       children [
@@ -56,7 +51,6 @@ WorldInfo {
     
     }
     DEF MYSCRIPT Script {
-      url ["jumpcut_loadurl.js" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]
       children [
         field {
           accessType "initializeOnly"

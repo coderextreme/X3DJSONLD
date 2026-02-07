@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Full' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
+  <head>
+    <meta content='HAnimPoseExample.x3d' name='title'/>
+    <meta content='Native XML definition of an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed.' name='description'/>
+    <meta content='11 December 2025' name='created'/>
+    <meta content='14 December 2025' name='modified'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='under development for X3D 4.1' name='warning'/>
+    <meta content='HAnim Architecture volume 1 version 2.1 draft, clause 6 Object interfaces, section 6.4 Pose' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/ObjectInterfaces.html#Pose' name='specificationUrl'/>
+    <meta content='HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.2 Modelling of human-like HAnim figures' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#ModellingHumanLikeHAnimFigures' name='specificationUrl'/>
+    <meta content='HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.3 Poses' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses' name='specificationUrl'/>
+    <meta content='X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit' name='generator'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExample.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo DEF='ModelInfo'/>
+    <Background skyColor='0.8 0.8 1'/>
+    <NavigationInfo/>
+    <Group DEF='HandleInlineLoading'>
+      <Inline DEF='HumanoidInline'/>
+      <IMPORT AS='HumanoidImported' importedDEF='JoeSkeletonSkinSite' inlineDEF='HumanoidInline'/>
+      <LoadSensor DEF='HumanoidInlineLoadSensor'>
+        <Inline USE='HumanoidInline'/>
+      </LoadSensor>
+    </Group>
+    <Viewpoint description='HAnimPose for HumanoidInline IMPORT model' position='0 1 4'/>
+    <HAnimPose DEF='T_Pose'>
+      <MetadataString name='metadataTest' value='"hello HAnimPose metadata"'/>
+      <HAnimJoint DEF='PoseJoint_l_shoulder_1'/>
+      <HAnimJoint DEF='PoseJoint_r_shoulder_1'/>
+    </HAnimPose>
+    <HAnimPose DEF='A_Pose'>
+      <HAnimJoint DEF='PoseJoint_l_shoulder'/>
+      <HAnimJoint DEF='PoseJoint_r_shoulder'/>
+    </HAnimPose>
+    <HAnimPose DEF='TouchDown_Pose'>
+      <HAnimJoint name='humanoid_root' rotation='0 1 0 -0.698132'/>
+      <HAnimJoint name='l_hip' rotation='-1 1 1 1'/>
+      <HAnimJoint name='l_knee' rotation='1 0 0 1'/>
+      <HAnimJoint name='l_talocrural' rotation='-0.2 0 0.1 0.225'/>
+      <HAnimJoint name='r_hip' rotation='-1 -1 -1 1'/>
+      <HAnimJoint name='r_knee' rotation='1 0 0 1'/>
+      <HAnimJoint name='r_talocrural' rotation='-0.2 0 0.1 0.25'/>
+      <HAnimJoint name='vl5' rotation='0 0 0.01 0.2'/>
+      <HAnimJoint name='vt10' rotation='0 0 0.01 0.1'/>
+      <HAnimJoint name='vc4' rotation='0 0 -0.01 0.15'/>
+      <HAnimJoint name='l_shoulder' rotation='-1 0.5 1 2'/>
+      <HAnimJoint name='l_elbow' rotation='-1 0 0 1'/>
+      <HAnimJoint name='l_radiocarpal'/>
+      <HAnimJoint name='r_shoulder' rotation='-1 -0.5 -1 2.6'/>
+      <HAnimJoint name='r_elbow' rotation='-1 0 0 1'/>
+      <HAnimJoint name='r_radiocarpal'/>
+    </HAnimPose>
+    <HAnimPose DEF='I_Pose'/>
+    <HAnimPose DEF='H_Pose'/>
+    <HAnimPose DEF='FaceLeft_Pose'>
+      <HAnimJoint DEF='FaceLeft_humanoid_root'/>
+    </HAnimPose>
+    <HAnimPose DEF='FaceRight_Pose'>
+      <HAnimJoint DEF='FaceRight_humanoid_root'/>
+    </HAnimPose>
+    <Group DEF='InterfaceButtonsGroup'>
+      <Transform DEF='DisplayHeader'>
+        <Shape>
+          <Appearance DEF='PoseTextAppearance'>
+            <Material diffuseColor='0.1 0.5 0.3'/>
+          </Appearance>
+          <Text string='"HAnimPosePrototype example implementation"'>
+            <FontStyle DEF='HeaderFont'/>
+          </Text>
+        </Shape>
+      </Transform>
+      <Transform DEF='T_PoseInterface'>
+        <Shape>
+          <Appearance USE='PoseTextAppearance'/>
+          <Text string='""T" Pose"'>
+            <FontStyle DEF='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance DEF='TransparentAppearance'>
+            <Material transparency='0.8'/>
+          </Appearance>
+          <Box size='0.45 0.2 0.001'/>
+        </Shape>
+        <TouchSensor DEF='T_PoseTouchSensor'/>
+        <ROUTE fromField='isActive' fromNode='T_PoseTouchSensor' toField='commencePose' toNode='T_Pose'/>
+      </Transform>
+      <Transform DEF='A_PoseInterface'>
+        <Shape>
+          <Appearance USE='PoseTextAppearance'/>
+          <Text string='""A" Pose"'>
+            <FontStyle USE='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance USE='TransparentAppearance'/>
+          <Box size='0.45 0.2 0.001'/>
+        </Shape>
+        <TouchSensor DEF='A_PoseTouchSensor'/>
+        <ROUTE fromField='isActive' fromNode='A_PoseTouchSensor' toField='commencePose' toNode='A_Pose'/>
+      </Transform>
+      <Transform DEF='TouchDown_PoseInterface'>
+        <Shape>
+          <Appearance USE='PoseTextAppearance'/>
+          <Text string='"TouchDown Pose"'>
+            <FontStyle USE='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance USE='TransparentAppearance'/>
+          <Box size='0.85 0.2 0.001'/>
+        </Shape>
+        <TouchSensor DEF='TouchDown_PoseTouchSensor'/>
+        <ROUTE fromField='isActive' fromNode='TouchDown_PoseTouchSensor' toField='commencePose' toNode='TouchDown_Pose'/>
+      </Transform>
+      <Transform DEF='I_PoseInterface'>
+        <Shape>
+          <Appearance USE='PoseTextAppearance'/>
+          <Text string='""I" Pose"'>
+            <FontStyle USE='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance USE='TransparentAppearance'/>
+          <Box size='0.45 0.2 0.001'/>
+        </Shape>
+        <TouchSensor DEF='I_PoseTouchSensor'/>
+        <ROUTE fromField='isActive' fromNode='I_PoseTouchSensor' toField='commencePose' toNode='I_Pose'/>
+      </Transform>
+      <Transform DEF='FaceLeftPoseInterface'>
+        <Shape>
+          <Appearance USE='PoseTextAppearance'/>
+          <Text string='"Face Left Pose"'>
+            <FontStyle USE='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance USE='TransparentAppearance'/>
+          <Box size='0.9 0.2 0.001'/>
+        </Shape>
+        <TouchSensor DEF='FaceLeftTouchSensor'/>
+        <ROUTE fromField='isActive' fromNode='FaceLeftTouchSensor' toField='commencePose' toNode='FaceLeft_Pose'/>
+      </Transform>
+      <Transform DEF='FaceRightPoseInterface'>
+        <Shape>
+          <Appearance USE='PoseTextAppearance'/>
+          <Text string='"Face Right Pose"'>
+            <FontStyle USE='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance USE='TransparentAppearance'/>
+          <Box size='0.9 0.2 0.001'/>
+        </Shape>
+        <TouchSensor DEF='FaceRightTouchSensor'/>
+        <ROUTE fromField='isActive' fromNode='FaceRightTouchSensor' toField='commencePose' toNode='FaceRight_Pose'/>
+      </Transform>
+      <Transform DEF='AnimatePosesInterface'>
+        <Shape>
+          <Appearance DEF='AnimationTextAppearance'>
+            <Material diffuseColor='0.1 0.2 0.3'/>
+          </Appearance>
+          <Text string='"Direct animation" "to, from "I" Pose"'>
+            <FontStyle USE='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance USE='TransparentAppearance'/>
+          <Box size='0.9 0.25 0.001'/>
+        </Shape>
+        <TouchSensor DEF='AnimatePosesTouchSensor'/>
+        <TimeSensor DEF='AnimatePosesClock'/>
+        <ScalarInterpolator DEF='AnimatePosesLoopInterpolator'/>
+        <ROUTE fromField='touchTime' fromNode='AnimatePosesTouchSensor' toField='startTime' toNode='AnimatePosesClock'/>
+        <ROUTE fromField='fraction_changed' fromNode='AnimatePosesClock' toField='set_fraction' toNode='AnimatePosesLoopInterpolator'/>
+        <ROUTE fromField='value_changed' fromNode='AnimatePosesLoopInterpolator' toField='set_fraction' toNode='I_Pose'/>
+      </Transform>
+      <Transform DEF='ResetDefaultPoseInterface'>
+        <Shape>
+          <Appearance USE='AnimationTextAppearance'/>
+          <Text string='"Reset All Joints" "to Default "I" Pose"'>
+            <FontStyle USE='SharedFont'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance USE='TransparentAppearance'/>
+          <Box size='0.9 0.25 0.001'/>
+        </Shape>
+        <TouchSensor DEF='ResetPoseTouchSensor'/>
+        <ROUTE fromField='isActive' fromNode='ResetPoseTouchSensor' toField='resetAllJoints' toNode='FaceLeft_Pose'/>
+      </Transform>
+    </Group>
+    <Group DEF='HandleInlineLoadsensorRouting'>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='A_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='H_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='I_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='T_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='FaceLeft_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='FaceRight_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='TouchDown_Pose'/>
+    </Group>
+    <HAnimHumanoid info='"humanoidVersion=2.0"' name='HumanoidStub'>
+      <HAnimPose USE='A_Pose'/>
+      <HAnimPose USE='T_Pose'/>
+      <HAnimPose USE='I_Pose'/>
+      <HAnimPose USE='H_Pose'/>
+      <HAnimPose USE='FaceLeft_Pose'/>
+      <HAnimPose USE='FaceRight_Pose'/>
+      <HAnimPose USE='TouchDown_Pose'/>
+    </HAnimHumanoid>
+  </Scene>
+</X3D>

@@ -33,15 +33,13 @@ WorldInfo {
                   color [0.4 0.4 0.4 0.8 0.2 0 0.4 0.1 0.05] 
                 }
                 
-                coord DEF EndPoints Coordinate {
-                  point [0 0 0 -10 0 10 -9 0 10 -8 0 10 -7 0 10 -6 0 10 -5 0 10 -4 0 10 -3 0 10 -2 0 10 -1 0 10 0 0 10 1 0 10 2 0 10 3 0 10 4 0 10 5 0 10 6 0 10 7 0 10 8 0 10 9 0 10 10 0 10 -10 0 -10 -9 0 -10 -8 0 -10 -7 0 -10 -6 0 -10 -5 0 -10 -4 0 -10 -3 0 -10 -2 0 -10 -1 0 -10 0 0 -10 1 0 -10 2 0 -10 3 0 -10 4 0 -10 5 0 -10 6 0 -10 7 0 -10 8 0 -10 9 0 -10 10 0 -10] 
+                coord DEF EndPoints Coordinate { 
                 }
                  
               }
                
             }
             DEF LinesAlignedAlongX Transform {
-              rotation 0 1 0 1.57079
               children [
                 USE LinesAlignedAlongZ 
               ]
@@ -60,10 +58,7 @@ WorldInfo {
                       }
                       
                       geometry DEF CenterTextNode Text {
-                        string ["origin"]
-                        fontStyle DEF FS4 FontStyle {
-                          justify ["MIDDLE" "MIDDLE"]
-                          size 0.4 
+                        fontStyle DEF FS4 FontStyle { 
                         }
                          
                       }

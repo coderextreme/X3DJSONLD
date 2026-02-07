@@ -63,14 +63,12 @@ ProtoDeclare {
                     children [
                       Shape {
                         appearance Appearance {
-                          material DEF MaterialLightBlue Material {
-                            diffuseColor 1 1 1 
+                          material DEF MaterialLightBlue Material { 
                           }
                            
                         }
                         
-                        geometry DEF RightString Text {
-                          string ["r"] 
+                        geometry DEF RightString Text { 
                         }
                          
                       }
@@ -78,11 +76,9 @@ ProtoDeclare {
                     ]
                   
                   }
-                  DEF RightSensor StringSensor {
-                    enabled FALSE 
+                  DEF RightSensor StringSensor { 
                   }
-                  DEF RightTouch TouchSensor {
-                    description "touch to activate" 
+                  DEF RightTouch TouchSensor { 
                   }
                   
                 ]
@@ -115,8 +111,7 @@ ProtoDeclare {
                           material USE MaterialLightBlue  
                         }
                         
-                        geometry DEF UpString Text {
-                          string ["u"] 
+                        geometry DEF UpString Text { 
                         }
                          
                       }
@@ -124,11 +119,9 @@ ProtoDeclare {
                     ]
                   
                   }
-                  DEF UpSensor StringSensor {
-                    enabled FALSE 
+                  DEF UpSensor StringSensor { 
                   }
-                  DEF UpTouch TouchSensor {
-                    description "touch to activate" 
+                  DEF UpTouch TouchSensor { 
                   }
                   
                 ]
@@ -188,11 +181,9 @@ ProtoDeclare {
                     ]
                   
                   }
-                  DEF CenterSensor StringSensor {
-                    enabled FALSE 
+                  DEF CenterSensor StringSensor { 
                   }
-                  DEF CenterTouch TouchSensor {
-                    description "touch to activate" 
+                  DEF CenterTouch TouchSensor { 
                   }
                   
                 ]
@@ -203,23 +194,6 @@ ProtoDeclare {
           
           }
           DEF RightSingleToMultiString Script {
-            url "ecmascript:
-"+
-"
-"+
-"function initialize() {
-"+
-"	rightlines = new MFString("");
-"+
-"}
-"+
-"
-"+
-"function set_rightstring(rightstr) {
-"+
-"	rightlines = new MFString(rightstr);
-"+
-"}"
             children [
               field {
                 accessType "inputOnly"
@@ -236,23 +210,6 @@ ProtoDeclare {
           
           }
           DEF UpSingleToMultiString Script {
-            url "ecmascript:
-"+
-"
-"+
-"function initialize() {
-"+
-"	uplines = new MFString("");
-"+
-"}
-"+
-"
-"+
-"function set_upstring(upstr) {
-"+
-"	uplines = new MFString(upstr);
-"+
-"}"
             children [
               field {
                 accessType "inputOnly"
@@ -269,23 +226,6 @@ ProtoDeclare {
           
           }
           DEF CenterSingleToMultiString Script {
-            url "ecmascript:
-"+
-"
-"+
-"function initialize() {
-"+
-"	centerlines = new MFString("");
-"+
-"}
-"+
-"
-"+
-"function set_centerstring(centerstr) {
-"+
-"	centerlines = new MFString(centerstr);
-"+
-"}"
             children [
               field {
                 accessType "inputOnly"

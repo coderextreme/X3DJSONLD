@@ -109,28 +109,13 @@
                     }                    "PositionInterpolator":
                     {
       {
-        "@DEF":"PI1",
-        "@key":"0 1",
-        "@keyValue":"0 0 0 0 5 0"
+        "@DEF":"PI1"
       }
     },
                     "Script":
                     {
       {
-        "@DEF":"MB1",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;		function set_location(value) {
-&quot;+
-&quot;                    old = translation;
-&quot;+
-&quot;		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
-&quot;+
-&quot;                    keyValue = new MFVec3f([old, translation]);
-&quot;+
-&quot;		    // Browser.println(keyValue);
-&quot;+
-&quot;		}"
+        "@DEF":"MB1"
       }
                         "field":
                         {
@@ -170,9 +155,7 @@
                     }                    "TimeSensor":
                     {
       {
-        "@DEF":"CL1",
-        "@cycleInterval":"3",
-        "@loop":"true"
+        "@DEF":"CL1"
       }
     },
                     "ROUTE":
@@ -284,98 +267,7 @@
                             }                        }                    }                    "Script":
                     {
       {
-        "@DEF":"S1",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;        function recompute(startpoint,endpoint){
-&quot;+
-&quot;	    if (typeof endpoint === 'undefined') {
-&quot;+
-&quot;		return;
-&quot;+
-&quot;	    }
-&quot;+
-&quot;            var dif = endpoint.subtract(startpoint);
-&quot;+
-&quot;            var dist = dif.length()*0.5;
-&quot;+
-&quot;            var dif2 = dif.multiply(0.5);
-&quot;+
-&quot;            var norm = dif.normalize();
-&quot;+
-&quot;            var transl = startpoint.add(dif2);
-&quot;+
-&quot;	    if (typeof Quaternion !== 'undefined') {
-&quot;+
-&quot;		    return {
-&quot;+
-&quot;			    scale : new SFVec3f(1.0,dist,1.0),
-&quot;+
-&quot;			    translation : transl,
-&quot;+
-&quot;			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
-&quot;+
-&quot;		    };
-&quot;+
-&quot;	    } else if (typeof SFRotation !== 'undefined') {
-&quot;+
-&quot;		    return {
-&quot;+
-&quot;			    scale : new SFVec3f(1.0,dist,1.0),
-&quot;+
-&quot;			    translation : transl,
-&quot;+
-&quot;			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
-&quot;+
-&quot;		    };
-&quot;+
-&quot;	    } else {
-&quot;+
-&quot;		    return {
-&quot;+
-&quot;			    scale : new SFVec3f(1.0,dist,1.0),
-&quot;+
-&quot;			    translation : transl
-&quot;+
-&quot;		    };
-&quot;+
-&quot;	    }
-&quot;+
-&quot;	}
-&quot;+
-&quot;	function recompute_and_route(startpoint, endpoint) {
-&quot;+
-&quot;	      var trafo = recompute(startpoint, endpoint);
-&quot;+
-&quot;	      if (trafo) {
-&quot;+
-&quot;		      position.translation = trafo.translation;
-&quot;+
-&quot;		      rotscale.rotation = trafo.rotation;
-&quot;+
-&quot;		      rotscale.scale = trafo.scale;
-&quot;+
-&quot;	      }
-&quot;+
-&quot;	}
-&quot;+
-&quot;        function initialize(){
-&quot;+
-&quot;            recompute_and_route(startnode.translation,endnode.translation);
-&quot;+
-&quot;        }
-&quot;+
-&quot;        function set_startpoint(val,t){
-&quot;+
-&quot;            recompute_and_route(val,endnode.translation);
-&quot;+
-&quot;        }
-&quot;+
-&quot;        function set_endpoint(val,t){
-&quot;+
-&quot;            recompute_and_route(startnode.translation,val);
-&quot;+
-&quot;        }"
+        "@DEF":"S1"
       }
                         "IS":
                         {

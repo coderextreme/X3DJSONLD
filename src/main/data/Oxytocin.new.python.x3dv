@@ -60,9 +60,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoC_mat Material {
-                        diffuseColor 0 0 0
-                        shininess 0.8
-                        specularColor 0.29 0.3 0.29
                         IS IS {
                           children [
                             connect {
@@ -155,10 +152,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoH_mat Material {
-                        ambientIntensity 0.0933
-                        diffuseColor 0.38 0.38 0.42
-                        shininess 0.5
-                        specularColor 0.53 0.53 0.53
                         IS IS {
                           children [
                             connect {
@@ -251,9 +244,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoN_mat Material {
-                        diffuseColor 0 0 0.72
-                        emissiveColor 0 0 0.13
-                        specularColor 0.5 0.5 0.5
                         IS IS {
                           children [
                             connect {
@@ -346,9 +336,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoO_mat Material {
-                        ambientIntensity 0.487
-                        diffuseColor 0.54 0.05 0.25
-                        specularColor 0.81 0.77 0.75
                         IS IS {
                           children [
                             connect {
@@ -441,8 +428,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoF_mat Material {
-                        diffuseColor 1 0.48 0.79
-                        emissiveColor 0.09 0.04 0.07
                         IS IS {
                           children [
                             connect {
@@ -535,7 +520,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoSi_mat Material {
-                        diffuseColor 0.8 0.8 0.8
                         IS IS {
                           children [
                             connect {
@@ -628,11 +612,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoP_mat Material {
-                        ambientIntensity 0.11
-                        diffuseColor 0.9 0.41 0
-                        emissiveColor 0.1 0.04 0
-                        shininess 0.8
-                        specularColor 0.1 0.1 0.1
                         IS IS {
                           children [
                             connect {
@@ -725,11 +704,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoS_mat Material {
-                        ambientIntensity 0.0467
-                        diffuseColor 0.25 0.39 0.25
-                        emissiveColor 0.05 0.08 0.05
-                        shininess 0.6
-                        specularColor 0.11 0.12 0.08
                         IS IS {
                           children [
                             connect {
@@ -822,10 +796,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoCl_mat Material {
-                        diffuseColor 0.28 0.7 0
-                        emissiveColor 0.06 0.15 0
-                        shininess 0.8
-                        specularColor 0.5 0.5 0.5
                         IS IS {
                           children [
                             connect {
@@ -918,11 +888,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoBr_mat Material {
-                        ambientIntensity 0.0833
-                        diffuseColor 0.5 0.3 0.19
-                        emissiveColor 0.12 0.13 0.08
-                        shininess 0.17
-                        specularColor 0.08 0.08 0.05
                         IS IS {
                           children [
                             connect {
@@ -1015,10 +980,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF atoI_mat Material {
-                        diffuseColor 0.56 0.37 0.74
-                        emissiveColor 0.15 0.1 0.2
-                        shininess 0.09
-                        specularColor 0.12 0.12 0.12
                         IS IS {
                           children [
                             connect {
@@ -1111,10 +1072,6 @@ ProtoDeclare {
                   Shape {
                     appearance Appearance {
                       material DEF ato__mat Material {
-                        diffuseColor 1 1 1
-                        emissiveColor 0.15 0.1 0.2
-                        shininess 0.09
-                        specularColor 0.12 0.12 0.12
                         IS IS {
                           children [
                             connect {
@@ -1442,7 +1399,6 @@ ProtoDeclare {
       position 0 2 20 
     }
     DEF infogroupa Transform {
-      translation -8 2 -4
       children [
         Transform {
           translation 0 6 0

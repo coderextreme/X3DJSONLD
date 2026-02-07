@@ -27,22 +27,13 @@ WorldInfo {
       rightUrl ["images/generic/RT1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"]
       topUrl ["images/generic/UP1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"] 
     }
-    DEF Camera001 Viewpoint {
-      description "Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view"
-      orientation 1 0 0 -0.523599
-      position 0 2000 3500 
+    DEF Camera001 Viewpoint { 
     }
-    DEF TIMER TimeSensor {
-      cycleInterval 33.333332
-      loop TRUE 
+    DEF TIMER TimeSensor { 
     }
-    DEF Camera001-POS-INTERP PositionInterpolator {
-      key [0 0.25 0.5 0.75 1]
-      keyValue [0 2000 3500 0 2000 0 0 2000 -3500 0 2000 0 0 2000 3500] 
+    DEF Camera001-POS-INTERP PositionInterpolator { 
     }
-    DEF Camera001-ROT-INTERP OrientationInterpolator {
-      key [0 0.25 0.5 0.75 1]
-      keyValue [1 0 0 -0.523599 0.99999 0.003554 0.002727 -1.309007 0 -0.965926 -0.258819 -3.141593 0.002282 -0.793351 -0.60876 -3.135645 1 -1e-06 0 -0.523599] 
+    DEF Camera001-ROT-INTERP OrientationInterpolator { 
     }
     
     ROUTE TIMER.fraction_changed TO Camera001-POS-INTERP.set_fraction
@@ -53,7 +44,6 @@ WorldInfo {
     
     ROUTE Camera001-ROT-INTERP.value_changed TO Camera001.set_orientation
     DEF Floor Transform {
-      translation 1.241 0 0.358
       children [
         Shape {
           appearance DEF WireColor Appearance {
@@ -73,7 +63,6 @@ WorldInfo {
     
     }
     DEF TransformAudio1 Transform {
-      translation -933.123474 0 -926.253235
       children [
         Shape {
           appearance DEF WireColor_1 Appearance {
@@ -91,9 +80,6 @@ WorldInfo {
         Billboard {
           children [
             DEF violin Transform {
-              rotation 1 0 0 -0.5
-              scale 100 100 100
-              translation 0 100 0
               children [
                 Shape {
                   appearance Appearance {
@@ -108,8 +94,7 @@ WorldInfo {
                   
                   geometry Text {
                     string ["Violin"]
-                    fontStyle DEF ModelFontStyle FontStyle {
-                      family ["Times" "SERIF"] 
+                    fontStyle DEF ModelFontStyle FontStyle { 
                     }
                      
                   }
@@ -128,7 +113,6 @@ WorldInfo {
     
     }
     DEF TransformAudio2 Transform {
-      translation 933.475586 0 924.423218
       children [
         Shape {
           appearance DEF WireColor_2 Appearance {
@@ -146,9 +130,6 @@ WorldInfo {
         Billboard {
           children [
             DEF saxophone Transform {
-              rotation 1 0 0 -0.5
-              scale 100 100 100
-              translation 0 100 0
               children [
                 Shape {
                   appearance Appearance {
