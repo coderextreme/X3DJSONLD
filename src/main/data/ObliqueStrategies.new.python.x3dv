@@ -46,8 +46,7 @@ WorldInfo {
       scale 0.4 0.4 0.4
       translation 0 1 0
       children [
-        DEF RandomTextClickedSensor TouchSensor {
-          description "Select to see a new strategy" 
+        DEF RandomTextClickedSensor TouchSensor { 
         }
         Shape {
           appearance Appearance {
@@ -59,9 +58,7 @@ WorldInfo {
           
           geometry Text {
             string ["Oblique Strategies" "" "(Over One Hundred Worthwhile Dilemmas)" "" "by Brian Eno and Peter Schmidt"]
-            fontStyle DEF MessageFont FontStyle {
-              family ["SANS"]
-              justify ["MIDDLE" "MIDDLE"] 
+            fontStyle DEF MessageFont FontStyle { 
             }
              
           }
@@ -101,7 +98,6 @@ WorldInfo {
     
     }
     DEF TextScript Script {
-      url ["ObliqueStrategiesScript.js" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]
       children [
         field {
           accessType "initializeOnly"
@@ -154,8 +150,6 @@ WorldInfo {
     
     }
     DEF CardTransform Transform {
-      scale 0.4 0.4 0.4
-      translation 0 -1.5 0
       children [
         Shape {
           appearance Appearance {
@@ -177,13 +171,7 @@ WorldInfo {
         
         ROUTE TextScript.string_changed TO CardText.string
         DEF CardSoundSpatialization Sound {
-          maxBack 100
-          maxFront 100
-          minBack 20
-          minFront 20
-          source DEF TextToSpeechAudioClip AudioClip {
-            description "sends strategy text google translate"
-            url ["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium" "translate_tts_mp3FileFormatNotSupported.wav" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"] 
+          source DEF TextToSpeechAudioClip AudioClip { 
           }
           
         }
@@ -199,8 +187,7 @@ WorldInfo {
       scale 0.4 0.4 0.4
       translation -3.2 2.5 0
       children [
-        DEF PreviousTextClickedSensor TouchSensor {
-          description "Select to see previous strategy" 
+        DEF PreviousTextClickedSensor TouchSensor { 
         }
         
         ROUTE PreviousTextClickedSensor.isActive TO TextScript.selectPreviousCard
@@ -251,8 +238,7 @@ WorldInfo {
       scale 0.4 0.4 0.4
       translation 3.5 2.5 0
       children [
-        DEF NextTextClickedSensor TouchSensor {
-          description "Select to see next strategy" 
+        DEF NextTextClickedSensor TouchSensor { 
         }
         
         ROUTE NextTextClickedSensor.isActive TO TextScript.selectNextCard
@@ -305,9 +291,6 @@ WorldInfo {
       translation 3.3 -0.5 0
       children [
         DEF TextToSpeechAnchor Anchor {
-          description "text to speech in browser"
-          parameter ["target=_blank"]
-          url ["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]
           children [
             
             ROUTE TextScript.textToSpeechUrl TO TextToSpeechAnchor.url

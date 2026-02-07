@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
@@ -18,7 +18,7 @@
   </head>
   <Scene>
     <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
-    <Viewpoint DEF='Tour' description='Tour Views'/>
+    <Viewpoint DEF='Tour'/>
     <Background backUrl='"../resources/images/bBK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"' bottomUrl='"../resources/images/bBT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"' frontUrl='"../resources/images/bFR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"' leftUrl='"../resources/images/bLF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"' rightUrl='"../resources/images/bRT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"' topUrl='"../resources/images/bTP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"'/>
     <Transform>
       <Shape>
@@ -41,7 +41,7 @@
             <field accessType='inputOutput' name='scale' type='SFFloat' value='0.5'/>
             <field accessType='inputOutput' name='power' type='SFFloat' value='2'/>
             <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
-            <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
+            <ShaderPart DEF='common'/>
           </ComposedShader>
           <ComposedShader language='GLSL'>
             <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>

@@ -32,9 +32,6 @@ WorldInfo {
       position 0 1 3 
     }
     DEF hanim_JinLOA1 HAnimHumanoid {
-      loa 1
-      name "JinLOA1"
-      scale 0.0225 0.0225 0.0225
       metadata MetadataSet {
         name "HAnimHumanoid.info"
         reference "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"
@@ -82,11 +79,8 @@ WorldInfo {
     
       children [
         DEF hanim_humanoid_root HAnimJoint {
-          center 0 30.530001 -0.7076
-          name "humanoid_root"
           children [
             DEF hanim_sacrum HAnimSegment {
-              name "sacrum"
               children [
                 Transform {
                   translation 0 30.530001 -0.7076
@@ -97,8 +91,7 @@ WorldInfo {
                           diffuseColor 0.588 0.588 0.588 
                         }
                         
-                        texture DEF JinLOA1TextureAtlas ImageTexture {
-                          url ["images/Jin.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png"] 
+                        texture DEF JinLOA1TextureAtlas ImageTexture { 
                         }
                          
                       }
@@ -127,11 +120,8 @@ WorldInfo {
              
             }
             DEF hanim_sacroiliac HAnimJoint {
-              center 0 35.799999 -0.7076
-              name "sacroiliac"
               children [
                 DEF hanim_pelvis HAnimSegment {
-                  name "pelvis"
                   children [
                     Transform {
                       translation 0 35.799999 -0.7076
@@ -169,11 +159,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_l_hip HAnimJoint {
-                  center 4.207 32.02 -0.8155
-                  name "l_hip"
                   children [
                     DEF hanim_l_thigh HAnimSegment {
-                      name "l_thigh"
                       children [
                         Transform {
                           translation 4.207 32.02 -0.8155
@@ -211,11 +198,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_knee HAnimJoint {
-                      center 4.116 17.26 -0.8639
-                      name "l_knee"
                       children [
                         DEF hanim_l_calf HAnimSegment {
-                          name "l_calf"
                           children [
                             Transform {
                               translation 4.116 17.26 -0.8639
@@ -253,11 +237,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_talocrural HAnimJoint {
-                          center 3.854 3.939 -0.7038
-                          name "l_talocrural"
                           children [
                             DEF hanim_l_talus HAnimSegment {
-                              name "l_talus"
                               children [
                                 Transform {
                                   translation 3.854 3.939 -0.7038
@@ -295,11 +276,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_metatarsophalangeal_2 HAnimJoint {
-                              center 3.854 3.64 0.7402
-                              name "l_metatarsophalangeal_2"
                               children [
                                 DEF hanim_l_tarsal_proximal_phalanx_2 HAnimSegment {
-                                  name "l_tarsal_proximal_phalanx_2"
                                   children [
                                     Transform {
                                       translation 3.854 3.64 0.7402
@@ -353,11 +331,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_r_hip HAnimJoint {
-                  center -4.207 32.02 -0.8155
-                  name "r_hip"
                   children [
                     DEF hanim_r_thigh HAnimSegment {
-                      name "r_thigh"
                       children [
                         Transform {
                           translation -4.207 32.02 -0.8155
@@ -395,11 +370,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_r_knee HAnimJoint {
-                      center -4.116 17.26 -0.8639
-                      name "r_knee"
                       children [
                         DEF hanim_r_calf HAnimSegment {
-                          name "r_calf"
                           children [
                             Transform {
                               translation -4.116 17.26 -0.8639
@@ -437,11 +409,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_r_talocrural HAnimJoint {
-                          center -3.854 3.939 -0.7038
-                          name "r_talocrural"
                           children [
                             DEF hanim_r_talus HAnimSegment {
-                              name "r_talus"
                               children [
                                 Transform {
                                   translation -3.854 3.939 -0.7038
@@ -479,11 +448,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_r_metatarsophalangeal_2 HAnimJoint {
-                              center -3.854 3.64 0.7402
-                              name "r_metatarsophalangeal_2"
                               children [
                                 DEF hanim_r_tarsal_proximal_phalanx_2 HAnimSegment {
-                                  name "r_tarsal_proximal_phalanx_2"
                                   children [
                                     Transform {
                                       translation -3.854 3.64 0.7402
@@ -541,11 +507,8 @@ WorldInfo {
              
             }
             DEF hanim_vl5 HAnimJoint {
-              center 0 40.07 -0.8527
-              name "vl5"
               children [
                 DEF hanim_l5 HAnimSegment {
-                  name "l5"
                   children [
                     Transform {
                       translation 0 40.07 -0.8527
@@ -583,11 +546,8 @@ WorldInfo {
                  
                 }
                 DEF hanim_skullbase HAnimJoint {
-                  center 0 57.43 -0.6863
-                  name "skullbase"
                   children [
                     DEF hanim_skull HAnimSegment {
-                      name "skull"
                       children [
                         Transform {
                           translation 0 57.43 -0.6863
@@ -625,11 +585,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_l_shoulder HAnimJoint {
-                      center 5.975 52 -0.1452
-                      name "l_shoulder"
                       children [
                         DEF hanim_l_upperarm HAnimSegment {
-                          name "l_upperarm"
                           children [
                             Transform {
                               translation 5.975 52 -0.1452
@@ -667,11 +624,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_l_elbow HAnimJoint {
-                          center 8.093 40.380001 -0.2502
-                          name "l_elbow"
                           children [
                             DEF hanim_l_forearm HAnimSegment {
-                              name "l_forearm"
                               children [
                                 Transform {
                                   translation 8.093 40.380001 -0.2502
@@ -709,11 +663,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_l_radiocarpal HAnimJoint {
-                              center 7.808 31.459999 -0.05849
-                              name "l_radiocarpal"
                               children [
                                 DEF hanim_l_carpal HAnimSegment {
-                                  name "l_carpal"
                                   children [
                                     Transform {
                                       translation 7.808 31.459999 -0.05849
@@ -763,11 +714,8 @@ WorldInfo {
                      
                     }
                     DEF hanim_r_shoulder HAnimJoint {
-                      center -5.975 52 -0.1452
-                      name "r_shoulder"
                       children [
                         DEF hanim_r_upperarm HAnimSegment {
-                          name "r_upperarm"
                           children [
                             Transform {
                               translation -5.975 52 -0.1452
@@ -805,11 +753,8 @@ WorldInfo {
                          
                         }
                         DEF hanim_r_elbow HAnimJoint {
-                          center -8.093 40.380001 -0.2502
-                          name "r_elbow"
                           children [
                             DEF hanim_r_forearm HAnimSegment {
-                              name "r_forearm"
                               children [
                                 Transform {
                                   translation -8.093 40.380001 -0.2502
@@ -847,11 +792,8 @@ WorldInfo {
                              
                             }
                             DEF hanim_r_radiocarpal HAnimJoint {
-                              center -7.808 31.459999 -0.05849
-                              name "r_radiocarpal"
                               children [
                                 DEF hanim_r_carpal HAnimSegment {
-                                  name "r_carpal"
                                   children [
                                     Transform {
                                       translation -7.808 31.459999 -0.05849

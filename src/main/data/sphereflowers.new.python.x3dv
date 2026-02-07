@@ -96,8 +96,7 @@ NavigationInfo {
         ProtoInstance {
           name "flower" 
         }
-        DEF SongTime TimeSensor {
-          loop TRUE 
+        DEF SongTime TimeSensor { 
         }
         Sound {
           location 0 1 0
@@ -105,9 +104,7 @@ NavigationInfo {
           maxFront 100
           minBack 20
           minFront 20
-          source DEF AudioClip AudioClip {
-            description "Chandubabamusic #1"
-            url ["../resources/chandubabamusic1.wav" "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"] 
+          source DEF AudioClip AudioClip { 
           }
           
         }

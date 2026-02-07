@@ -83,22 +83,9 @@ ProtoDeclare {
                 ]
               
               }
-              DEF NodePosition PositionInterpolator {
-                key [0 1]
-                keyValue [0 0 0 0 5 0] 
+              DEF NodePosition PositionInterpolator { 
               }
               DEF MoveBall Script {
-                url "ecmascript:
-"+
-"		function set_cycle(value) {
-"+
-"			old = translation;
-"+
-"			translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
-"+
-"			keyValue = new MFVec3f(old, translation);
-"+
-"		}"
                 children [
                   field {
                     accessType "inputOutput"
@@ -125,9 +112,7 @@ ProtoDeclare {
                 ]
               
               }
-              DEF nodeClock TimeSensor {
-                cycleInterval 3
-                loop TRUE 
+              DEF nodeClock TimeSensor { 
               }
               
               ROUTE nodeClock.cycleTime TO MoveBall.set_cycle
@@ -178,31 +163,11 @@ ProtoDeclare {
                    
                 }
                 
-                geometry DEF extrusion Extrusion {
-                  creaseAngle 0.785
-                  crossSection [1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0]
-                  spine [0 -50 0 0 0 0 0 50 0] 
+                geometry DEF extrusion Extrusion { 
                 }
                  
               }
               DEF MoveCylinder Script {
-                url "ecmascript:
-"+
-"
-"+
-"                function set_endA(value) {
-"+
-"		    spine = new MFVec3f(value, spine[1]);
-"+
-"                }
-"+
-"
-"+
-"                function set_endB(value) {
-"+
-"		    spine = new MFVec3f(spine[0], value);
-"+
-"                }"
                 IS IS {
                   children [
                     connect {
@@ -252,12 +217,8 @@ ProtoDeclare {
       
     }
     DEF HoldsContent Transform {
-      scale 0.1 0.1 0.1
       children [
-        DEF clickGenerator PlaneSensor {
-          description "click on background to add nodes, click on nodes to add links"
-          maxPosition 50 50
-          minPosition -50 -50 
+        DEF clickGenerator PlaneSensor { 
         }
         ProtoInstance {
           name "node"
@@ -317,41 +278,6 @@ ProtoDeclare {
     
     }
     DEF clickHandler Script {
-      url "ecmascript:
-"+
-"	function add_node(value) {
-"+
-"                // Browser.print('hey ', counter);
-"+
-"                counter = counter++;
-"+
-"		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
-"+
-"			{ "ProtoInstance":
-"+
-"				{ "@name":"node",
-"+
-"				  "@DEF":"node'+counter+'",
-"+
-"				  "fieldValue": [
-"+
-"					{
-"+
-"						 "@name":"position",
-"+
-"						 "@value":[0.0,0.0,0.0]
-"+
-"					}
-"+
-"				  ]
-"+
-"				}
-"+
-"			});
-"+
-"
-"+
-"        }"
       children [
         field {
           accessType "inputOutput"

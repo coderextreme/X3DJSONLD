@@ -193,29 +193,24 @@
         "PointLight":
         {
       {
-        "@DEF":"LightenThingsUp",
-        "@location":"0 3 6"
+        "@DEF":"LightenThingsUp"
       }
     },
         "Viewpoint":
         {
       {
-        "@DEF":"OpeningView",
-        "@description":"Cat by Maru conversion from SketchFab to glTF to X3D",
-        "@position":"0 0.6 5"
+        "@DEF":"OpeningView"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"Sketchfab_model",
-        "@rotation":"-1 0 0 1.5707963"
+        "@DEF":"Sketchfab_model"
       }
             "Transform":
             {
       {
-        "@DEF":"CastleEncoded_Pose_scene_46_fbx",
-        "@rotation":"1 0 0 1.5707963"
+        "@DEF":"CastleEncoded_Pose_scene_46_fbx"
       }
                 "Transform":
                 {
@@ -240,15 +235,12 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"head_lambert2_0_Primitive0",
-        "@bboxCenter":"0 1.1182153 0.010965019",
-        "@bboxSize":"1.2585641 0.9631852 0.9510488"
+        "@DEF":"head_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
       {
-        "@DEF":"lambert2",
-        "@alphaMode":"OPAQUE"
+        "@DEF":"lambert2"
       }
                                         "PhysicalMaterial":
                                         {
@@ -267,9 +259,7 @@
                                         }                                        "TextureTransform":
                                         {
       {
-        "@DEF":"FlipVertical",
-        "@scale":"1 -1",
-        "@translation":"0 -1"
+        "@DEF":"FlipVertical"
       }
     },
                                     }                                    "IndexedTriangleSet":
@@ -328,9 +318,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"polySurface4_lambert2_0_Primitive0",
-        "@bboxCenter":"0 0.022523463 0.054077893",
-        "@bboxSize":"0.9722276 1.1641115 0.6969903"
+        "@DEF":"polySurface4_lambert2_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -374,8 +362,7 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"polySurface5",
-        "@translation":"0 0.0943406 -0.010145962"
+        "@DEF":"polySurface5"
       }
                             "Transform":
                             {
@@ -390,9 +377,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"polySurface5_lambert2_0_Primitive0",
-        "@bboxCenter":"-0.17056528 -0.037723754 0.3266586",
-        "@bboxSize":"0.34113055 0.29685637 0.15182886"
+        "@DEF":"polySurface5_lambert2_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -436,9 +421,7 @@
                                             }                                        }                                    }                                }                            }                        }                    }                    "Transform":
                     {
       {
-        "@DEF":"token1",
-        "@rotation":"0.6039326 0.4331038 0.66909486 0.19925927",
-        "@translation":"0.006833289 0.046988785 -0.05926623"
+        "@DEF":"token1"
       }
                         "Transform":
                         {
@@ -453,9 +436,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"token1_lambert2_0_Primitive0",
-        "@bboxCenter":"-0.025646769 0.30564907 0.32469505",
-        "@bboxSize":"0.11151911 0.12638825 0.07073733"
+        "@DEF":"token1_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -514,9 +495,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"token2_lambert2_0_Primitive0",
-        "@bboxCenter":"0.025646769 0.30564907 0.32469505",
-        "@bboxSize":"0.11151911 0.12638825 0.07073733"
+        "@DEF":"token2_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -575,9 +554,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"eyes_lambert2_0_Primitive0",
-        "@bboxCenter":"0 0.9886312 0.35902876",
-        "@bboxSize":"0.6239903 0.16978037 0.117905974"
+        "@DEF":"eyes_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -636,9 +613,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"bag_lambert2_0_Primitive0",
-        "@bboxCenter":"0 -0.41379064 0.3247386",
-        "@bboxSize":"0.56199455 0.39347386 0.1767717"
+        "@DEF":"bag_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -697,9 +672,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"glasses_lambert2_0_Primitive0",
-        "@bboxCenter":"0 0.48621643 0.25212124",
-        "@bboxSize":"0.6840171 0.3387859 0.19120623"
+        "@DEF":"glasses_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -758,9 +731,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"tube_lambert2_0_Primitive0",
-        "@bboxCenter":"-0.21928704 -0.38584232 0.24780884",
-        "@bboxSize":"0.52778745 0.48546982 0.5195282"
+        "@DEF":"tube_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -819,9 +790,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"ring_lambert2_0_Primitive0",
-        "@bboxCenter":"0 -0.160575 0.41670147",
-        "@bboxSize":"0.18658239 0.12935656 0.017154276"
+        "@DEF":"ring_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -865,9 +834,7 @@
                                         }                                    }                                }                            }                        }                    }                    "Transform":
                     {
       {
-        "@DEF":"tail",
-        "@rotation":"0.26184407 -0.17727791 0.9486887 1.9223686",
-        "@translation":"-0.3034334 -0.72215825 -0.051197503"
+        "@DEF":"tail"
       }
                         "Transform":
                         {
@@ -882,9 +849,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"tail_lambert2_0_Primitive0",
-        "@bboxCenter":"-0.015489876 0.0031029582 -0.7017957",
-        "@bboxSize":"0.5946194 0.94446385 0.82327056"
+        "@DEF":"tail_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -943,9 +908,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"scarf_lambert2_0_Primitive0",
-        "@bboxCenter":"0 0.5819483 0.021083072",
-        "@bboxSize":"0.7067938 0.23573467 0.52555907"
+        "@DEF":"scarf_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -1014,9 +977,7 @@
                                         "Shape":
                                         {
       {
-        "@DEF":"polySurface6_lambert2_0_Primitive0",
-        "@bboxCenter":"0.049242556 0.036761224 0.008216158",
-        "@bboxSize":"1.5648896 1.4889677 0.9276724"
+        "@DEF":"polySurface6_lambert2_0_Primitive0"
       }
                                             "Appearance":
                                             {
@@ -1060,8 +1021,7 @@
                                                 }                                            }                                        }                                    }                                }                            }                            "Transform":
                             {
       {
-        "@DEF":"polySurface7",
-        "@translation":"-0.0006133765 0.017866751 0.008241703"
+        "@DEF":"polySurface7"
       }
                                 "Transform":
                                 {
@@ -1076,9 +1036,7 @@
                                         "Shape":
                                         {
       {
-        "@DEF":"polySurface7_lambert2_0_Primitive0",
-        "@bboxCenter":"0.31516987 0.14819466 0.39807782",
-        "@bboxSize":"0.15265946 0.2006579 0.13072902"
+        "@DEF":"polySurface7_lambert2_0_Primitive0"
       }
                                             "Appearance":
                                             {
@@ -1122,9 +1080,7 @@
                                                 }                                            }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"polySurface2",
-        "@scale":"0.5653541 0.5653541 0.5653541",
-        "@translation":"-0.13662225 -0.22767556 0.19908942"
+        "@DEF":"polySurface2"
       }
                             "Transform":
                             {
@@ -1139,9 +1095,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"polySurface2_lambert2_0_Primitive0",
-        "@bboxCenter":"-0.31643677 -0.3667103 0.41138643",
-        "@bboxSize":"0.18148865 0.20494741 0.12133187"
+        "@DEF":"polySurface2_lambert2_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1185,9 +1139,7 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"polySurface3",
-        "@scale":"0.5653541 0.5653541 0.5653541",
-        "@translation":"-0.11810917 -0.04175537 0.18899019"
+        "@DEF":"polySurface3"
       }
                             "Transform":
                             {
@@ -1202,9 +1154,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"polySurface3_lambert2_0_Primitive0",
-        "@bboxCenter":"-0.31643677 -0.3667103 0.41138643",
-        "@bboxSize":"0.18148865 0.20494741 0.12133187"
+        "@DEF":"polySurface3_lambert2_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1263,9 +1213,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"armband_lambert2_0_Primitive0",
-        "@bboxCenter":"-0.57332623 0.16790341 -0.0765675",
-        "@bboxSize":"0.2556053 0.23705533 0.29410872"
+        "@DEF":"armband_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -1324,9 +1272,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"ring_band_lambert2_0_Primitive0",
-        "@bboxCenter":"0 -0.013752174 0.37756467",
-        "@bboxSize":"0.14236796 0.18614823 0.08663437"
+        "@DEF":"ring_band_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -1385,9 +1331,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"boots_lambert2_0_Primitive0",
-        "@bboxCenter":"0 -0.7049269 0.13233985",
-        "@bboxSize":"0.9519459 0.3220762 0.58306074"
+        "@DEF":"boots_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -1446,9 +1390,7 @@
                                 "Shape":
                                 {
       {
-        "@DEF":"ear_hair_lambert2_0_Primitive0",
-        "@bboxCenter":"-5.9604645e-08 1.4840882 0.043489516",
-        "@bboxSize":"0.9572753 0.20112431 0.053607583"
+        "@DEF":"ear_hair_lambert2_0_Primitive0"
       }
                                     "Appearance":
                                     {
@@ -1492,9 +1434,7 @@
                                         }                                    }                                }                            }                        }                    }                    "Transform":
                     {
       {
-        "@DEF":"locator1",
-        "@rotation":"0.20889941 -0.9758205 -0.0643087 0.8551302",
-        "@translation":"0.33690828 -0.22996704 -0.3073421"
+        "@DEF":"locator1"
       }
                         "Transform":
                         {
@@ -1514,15 +1454,12 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube31_lambert3_0_Primitive0",
-        "@bboxCenter":"0.9973309 -0.02509451 0.015933074",
-        "@bboxSize":"0.102261126 0.101638794 0.024524996"
+        "@DEF":"pCube31_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
       {
-        "@DEF":"lambert3",
-        "@alphaMode":"OPAQUE"
+        "@DEF":"lambert3"
       }
                                             "PhysicalMaterial":
                                             {
@@ -1599,9 +1536,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube32_lambert3_0_Primitive0",
-        "@bboxCenter":"0.7362683 -0.078639984 0.015933072",
-        "@bboxSize":"0.29831976 0.14399433 0.022697318"
+        "@DEF":"pCube32_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1660,9 +1595,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube33_lambert3_0_Primitive0",
-        "@bboxCenter":"0.5727056 0.0844543 0.015933074",
-        "@bboxSize":"0.076934576 0.056143284 0.07371192"
+        "@DEF":"pCube33_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1721,9 +1654,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube30_lambert3_0_Primitive0",
-        "@bboxCenter":"0.6897973 -0.0928247 0.015933074",
-        "@bboxSize":"0.18800133 0.014431477 0.051370338"
+        "@DEF":"pCube30_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1782,9 +1713,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube27_lambert3_0_Primitive0",
-        "@bboxCenter":"0.87296635 0.0015757084 0.01593307",
-        "@bboxSize":"0.1632489 0.03379011 0.03194437"
+        "@DEF":"pCube27_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1843,9 +1772,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube23_lambert3_0_Primitive0",
-        "@bboxCenter":"0.8010615 -0.011079788 0.015932966",
-        "@bboxSize":"0.04878068 0.19888878 0.114288755"
+        "@DEF":"pCube23_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1904,9 +1831,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube22_lambert3_0_Primitive0",
-        "@bboxCenter":"0.49471503 -0.092090845 0.015933074",
-        "@bboxSize":"0.20386073 0.1181941 0.07052313"
+        "@DEF":"pCube22_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -1965,9 +1890,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCylinder6_lambert3_0_Primitive0",
-        "@bboxCenter":"0.6993264 0.0069522858 0.015582077",
-        "@bboxSize":"0.12997174 0.1236105 0.13846485"
+        "@DEF":"pCylinder6_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2026,9 +1949,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube25_lambert3_0_Primitive0",
-        "@bboxCenter":"-0.89526427 0.0070507526 0.015933078",
-        "@bboxSize":"0.12240535 0.19484472 0.13279471"
+        "@DEF":"pCube25_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2087,9 +2008,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube24_lambert3_0_Primitive0",
-        "@bboxCenter":"0.6869166 0.08705926 0.015933074",
-        "@bboxSize":"0.07072395 0.061353207 0.07371192"
+        "@DEF":"pCube24_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2148,9 +2067,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube19_lambert3_0_Primitive0",
-        "@bboxCenter":"0.023091763 0.41808283 -0.025400221",
-        "@bboxSize":"1.6250722 0.6683104 0.11354709"
+        "@DEF":"pCube19_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2209,9 +2126,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube17_lambert3_0_Primitive0",
-        "@bboxCenter":"1.0682355 0.0014224052 0.015933074",
-        "@bboxSize":"0.056156635 0.28877068 0.096287325"
+        "@DEF":"pCube17_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2270,9 +2185,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube21_lambert3_0_Primitive0",
-        "@bboxCenter":"0.82840765 0.100940704 -0.022948697",
-        "@bboxSize":"0.043559074 0.039165497 0.055618495"
+        "@DEF":"pCube21_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2331,9 +2244,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube20_lambert3_0_Primitive0",
-        "@bboxCenter":"0.83956915 0.081840515 -0.02819699",
-        "@bboxSize":"0.07356751 0.049250603 0.012958407"
+        "@DEF":"pCube20_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2392,9 +2303,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube16_lambert3_0_Primitive0",
-        "@bboxCenter":"0.9219762 0.046004295 0.015933072",
-        "@bboxSize":"0.2716151 0.05977249 0.056507755"
+        "@DEF":"pCube16_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2453,9 +2362,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube15_lambert3_0_Primitive0",
-        "@bboxCenter":"-0.042258203 0.008764744 0.01593297",
-        "@bboxSize":"1.6612861 0.14676476 0.10885523"
+        "@DEF":"pCube15_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2499,16 +2406,12 @@
                                             }                                        }                                    }                                }                            }                        }                    }                    "Transform":
                     {
       {
-        "@DEF":"wea_on",
-        "@rotation":"-0.35694927 -0.43905374 0.8245108 0.25801635",
-        "@scale":"1 0.99999994 1",
-        "@translation":"-0.59417856 -0.13411887 0.36961198"
+        "@DEF":"wea_on"
       }
                         "Transform":
                         {
       {
-        "@DEF":"pCylinder2",
-        "@translation":"-0.0023021805 0.16498992 3.2722332"
+        "@DEF":"pCylinder2"
       }
                             "Transform":
                             {
@@ -2523,9 +2426,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCylinder2_lambert3_0_Primitive0",
-        "@bboxCenter":"-1.6205013e-07 0.06162104 -3.2708902",
-        "@bboxSize":"0.094214156 1.9496686 0.08906555"
+        "@DEF":"pCylinder2_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2569,8 +2470,7 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"pCylinder4",
-        "@translation":"-0.0023021805 0.16498992 3.2722332"
+        "@DEF":"pCylinder4"
       }
                             "Transform":
                             {
@@ -2585,9 +2485,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCylinder4_lambert3_0_Primitive0",
-        "@bboxCenter":"-3.7252903e-09 1.2746029 -3.2746959",
-        "@bboxSize":"0.18721932 0.17805636 0.113521576"
+        "@DEF":"pCylinder4_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2631,10 +2529,7 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"pCube34",
-        "@rotation":"0.5502614 -0.09790803 -0.8292324 0.9526592",
-        "@scale":"1.5071636 0.45479387 1",
-        "@translation":"-1.2304044 -0.4804507 2.5599842"
+        "@DEF":"pCube34"
       }
                             "Transform":
                             {
@@ -2649,9 +2544,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCube34_lambert3_0_Primitive0",
-        "@bboxCenter":"0.01870934 -0.11965692 -3.1587381",
-        "@bboxSize":"0.33185512 2.6496687 0.5687375"
+        "@DEF":"pCube34_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2695,8 +2588,7 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"pCylinder7",
-        "@translation":"0.06677446 0.15938765 3.2722332"
+        "@DEF":"pCylinder7"
       }
                             "Transform":
                             {
@@ -2711,9 +2603,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCylinder7_lambert3_0_Primitive0",
-        "@bboxCenter":"-0.16949934 1.2284845 -3.2650056",
-        "@bboxSize":"0.15001969 0.14416742 0.08708501"
+        "@DEF":"pCylinder7_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2757,8 +2647,7 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"polySurface58",
-        "@translation":"-0.0023021805 0.16498992 3.2722332"
+        "@DEF":"polySurface58"
       }
                             "Transform":
                             {
@@ -2773,9 +2662,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"polySurface58_lambert3_0_Primitive0",
-        "@bboxCenter":"0 1.5904846 -3.2749639",
-        "@bboxSize":"0.20110838 0.53936756 0.050325155"
+        "@DEF":"polySurface58_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2819,8 +2706,7 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"pCylinder3",
-        "@translation":"-0.0023021805 0.16498992 3.2722332"
+        "@DEF":"pCylinder3"
       }
                             "Transform":
                             {
@@ -2835,9 +2721,7 @@
                                     "Shape":
                                     {
       {
-        "@DEF":"pCylinder3_lambert3_0_Primitive0",
-        "@bboxCenter":"-3.7252903e-09 1.1111603 -3.2746959",
-        "@bboxSize":"0.15717262 0.1494801 0.1460619"
+        "@DEF":"pCylinder3_lambert3_0_Primitive0"
       }
                                         "Appearance":
                                         {
@@ -2881,18 +2765,12 @@
                                             }                                        }                                    }                                }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"locator2",
-        "@rotation":"0.19899915 0.95505226 -0.21971512 0.8010925",
-        "@scale":"1 0.99999994 1",
-        "@translation":"-0.3577003 0.9291848 -0.14117523"
+        "@DEF":"locator2"
       }
                             "Transform":
                             {
       {
-        "@DEF":"pCube14",
-        "@rotation":"-0.35694927 -0.43905374 0.8245108 0.25801635",
-        "@scale":"1 0.99999994 1",
-        "@translation":"-0.19041543 -0.37330797 2.7639315"
+        "@DEF":"pCube14"
       }
                                 "Transform":
                                 {
@@ -2907,9 +2785,7 @@
                                         "Shape":
                                         {
       {
-        "@DEF":"pCube14_lambert3_0_Primitive0",
-        "@bboxCenter":"0.026809216 0.5222777 -2.7031724",
-        "@bboxSize":"0.7575691 0.4702232 0.6194267"
+        "@DEF":"pCube14_lambert3_0_Primitive0"
       }
                                             "Appearance":
                                             {
@@ -2953,10 +2829,7 @@
                                                 }                                            }                                        }                                    }                                }                            }                            "Transform":
                             {
       {
-        "@DEF":"polySurface8",
-        "@rotation":"-0.35694927 -0.43905374 0.8245108 0.25801635",
-        "@scale":"1 0.99999994 1",
-        "@translation":"-0.19041543 -0.37330797 2.7639315"
+        "@DEF":"polySurface8"
       }
                                 "Transform":
                                 {
@@ -2971,9 +2844,7 @@
                                         "Shape":
                                         {
       {
-        "@DEF":"polySurface8_lambert3_0_Primitive0",
-        "@bboxCenter":"0.18289793 0.8397287 -2.6692457",
-        "@bboxSize":"0.2773044 0.332547 0.64719224"
+        "@DEF":"polySurface8_lambert3_0_Primitive0"
       }
                                             "Appearance":
                                             {

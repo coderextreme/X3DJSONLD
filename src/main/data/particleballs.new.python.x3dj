@@ -240,9 +240,7 @@
                         "ShaderPart":
                         {
       {
-        "@DEF":"commonfs",
-        "@type":"FRAGMENT",
-        "@url":""https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs""
+        "@DEF":"commonfs"
       }
     },
                     }                }                "ExplosionEmitter":

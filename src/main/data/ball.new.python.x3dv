@@ -112,9 +112,7 @@ WorldInfo {
                   ShaderPart {
                     url ["https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"] 
                   }
-                  DEF commonfs ShaderPart {
-                    type "FRAGMENT"
-                    url ["https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"] 
+                  DEF commonfs ShaderPart { 
                   }
                   
                 ]

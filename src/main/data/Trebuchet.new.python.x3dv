@@ -35,10 +35,7 @@ WorldInfo {
     Sound {
       maxBack 1000
       maxFront 1000
-      source DEF HolyGrail AudioClip {
-        description "HolyGrail"
-        loop TRUE
-        url ["holygral.mp3" "http://www.nps.navy.mil/code32/vrml/holygral.mp3"] 
+      source DEF HolyGrail AudioClip { 
       }
       
     }
@@ -87,7 +84,6 @@ WorldInfo {
       translation 11 5.5 6
       children [
         DEF Weight Switch {
-          whichChoice 0
           children [
             Group {
               children [
@@ -145,8 +141,7 @@ WorldInfo {
           ]
         
         }
-        DEF weightselector TouchSensor {
-          description "weight selector" 
+        DEF weightselector TouchSensor { 
         }
         Transform {
           translation 8 0 0
@@ -177,7 +172,6 @@ WorldInfo {
       translation 10 0.5 4.5
       children [
         DEF launch Transform {
-          translation 0 2 5
           children [
             Billboard {
               children [
@@ -224,9 +218,7 @@ WorldInfo {
                         Sound {
                           maxBack 1000
                           maxFront 1000
-                          source DEF PigDogSound AudioClip {
-                            description "PigDogSound"
-                            url ["pigdog.wav" "http://www.nps.navy.mil/code32/vrml/pigdog.wav"] 
+                          source DEF PigDogSound AudioClip { 
                           }
                           
                         }
@@ -239,9 +231,7 @@ WorldInfo {
                         Sound {
                           maxBack 1000
                           maxFront 1000
-                          source DEF MonkSound AudioClip {
-                            description "MonkSound"
-                            url ["monks.wav" "http://www.nps.navy.mil/code32/vrml/monks.wav"] 
+                          source DEF MonkSound AudioClip { 
                           }
                           
                         }
@@ -257,8 +247,7 @@ WorldInfo {
               ]
             
             }
-            DEF Launch TouchSensor {
-              description "launch!" 
+            DEF Launch TouchSensor { 
             }
             
           ]
@@ -267,7 +256,6 @@ WorldInfo {
         Transform {
           children [
             DEF projectilename Switch {
-              whichChoice 0
               children [
                 Group {
                   children [
@@ -286,9 +274,7 @@ WorldInfo {
                       maxBack 1000
                       maxFront 1000
                       priority 1
-                      source DEF HolyHandGrenadeSound AudioClip {
-                        description "HolyHandGrenadeSound"
-                        url ["grenade.wav" "http://www.nps.navy.mil/code32/vrml/grenade.wav"] 
+                      source DEF HolyHandGrenadeSound AudioClip { 
                       }
                       
                     }
@@ -312,9 +298,7 @@ WorldInfo {
                     Sound {
                       maxBack 1000
                       maxFront 1000
-                      source DEF CowSound AudioClip {
-                        description "CowSound"
-                        url ["lavache.wav" "http://www.nps.navy.mil/code32/vrml/lavache.wav"] 
+                      source DEF CowSound AudioClip { 
                       }
                       
                     }
@@ -339,9 +323,7 @@ WorldInfo {
                       maxBack 1000
                       maxFront 1000
                       priority 1
-                      source DEF HamsterSound AudioClip {
-                        description "HamsterSound"
-                        url ["hamster.wav" "http://www.nps.navy.mil/code32/vrml/hamster.wav"] 
+                      source DEF HamsterSound AudioClip { 
                       }
                       
                     }
@@ -365,7 +347,6 @@ WorldInfo {
       rotation 0 1 0 -1.67
       children [
         DEF aft Transform {
-          translation 5 5 15
           children [
             Transform {
               translation -2.5 -4.5 -2
@@ -387,8 +368,7 @@ WorldInfo {
       children [
         DEF plank Shape {
           appearance DEF wood Appearance {
-            texture DEF woodTexture ImageTexture {
-              url ["wood.gif" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"] 
+            texture DEF woodTexture ImageTexture { 
             }
              
           }
@@ -399,33 +379,24 @@ WorldInfo {
            
         }
         DEF angledsupport Transform {
-          rotation 0 0 1 1
-          translation -5 10 0
           children [
             USE plank 
           ]
         
         }
         DEF angledsupport2 Transform {
-          rotation 0 0 1 -1
-          translation 5 10 0
           children [
             USE plank 
           ]
         
         }
         DEF verticalsupport Transform {
-          rotation 0 0 1 1.57
-          scale 0.9 1 1
-          translation 0 11 0
           children [
             USE plank 
           ]
         
         }
         DEF horizontalsupport Transform {
-          scale 0.4 1 1
-          translation 0 10 0
           children [
             USE plank 
           ]
@@ -448,7 +419,6 @@ WorldInfo {
         
         }
         DEF panel Transform {
-          translation 0 18.2 -0.3
           children [
             Shape {
               appearance USE wood 
@@ -488,10 +458,6 @@ WorldInfo {
         
         }
         DEF flinger Transform {
-          center 7 0 0
-          rotation 0 0 1 0.82
-          scale 0.9 1 1
-          translation -7 18 2.5
           children [
             Transform {
               children [
@@ -704,8 +670,6 @@ WorldInfo {
                 
                 }
                 DEF sling Transform {
-                  rotation 0 0 1 -0.82
-                  translation -4 -15.3 0
                   children [
                     Transform {
                       children [
@@ -813,18 +777,15 @@ WorldInfo {
                               ]
                             
                             }
-                            DEF LauncheeChoice TouchSensor {
-                              description "launcher choice" 
+                            DEF LauncheeChoice TouchSensor { 
                             }
                             
                           ]
                         
                         }
                         DEF projectiletransform Transform {
-                          scale 0.01 0.01 0.01
                           children [
                             DEF projectile Switch {
-                              whichChoice 0
                               children [
                                 Group {
                                   children [
@@ -1018,7 +979,6 @@ WorldInfo {
           translation -11.5 -1 2
           children [
             DEF screw Transform {
-              rotation 1 0 0 1.57
               children [
                 USE Torus Transform {
                   rotation 1 0 0 -1.57
@@ -1054,8 +1014,6 @@ WorldInfo {
             
             }
             DEF Pin Transform {
-              rotation 1 0 0 -1.57
-              translation 0 0 -3
               children [
                 USE screw 
               ]
@@ -1275,7 +1233,6 @@ WorldInfo {
             
             }
             DEF ProjectileTransform Transform {
-              translation 14.25 1.25 0
               children [
                 USE projectile Transform {
                   rotation 0 1 0 1.57
@@ -1297,7 +1254,6 @@ WorldInfo {
               translation 20 2 0
               children [
                 DEF Front Transform {
-                  rotation 0 1 0 1.57
                   children [
                     Viewpoint {
                       description "Fore" 
@@ -1328,51 +1284,6 @@ WorldInfo {
             
             }
             DEF WeightScript Script {
-              url "ecmascript:
-"+
-"
-"+
-"
-"+
-"function initialize ()
-"+
-"{
-"+
-"	whichchoice =0;
-"+
-"	CounterWeight=100;
-"+
-"}
-"+
-"
-"+
-"function set_boolean ( boolean_input, eventTime)
-"+
-"{
-"+
-"
-"+
-"	if ( boolean_input== false ) { return; } // ignore the unclick
-"+
-"        whichchoice = whichchoice +1;
-"+
-"	if (whichchoice == 0)CounterWeight=50.00;
-"+
-"	if (whichchoice == 1)CounterWeight=500.00;
-"+
-"	if (whichchoice == 2)CounterWeight=1000.00;
-"+
-"	if (whichchoice == 3)CounterWeight=10000.00;
-"+
-"        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
-"+
-"
-"+
-"
-"+
-"        Browser.println ('CounterWeight ='+CounterWeight);
-"+
-"}"
               children [
                 field {
                   accessType "inputOnly"
@@ -1394,31 +1305,6 @@ WorldInfo {
             
             }
             DEF LauncheeScript Script {
-              url "ecmascript:
-"+
-"
-"+
-"function set_boolean (boolean_input, eventTime)
-"+
-"{
-"+
-"	if ( boolean_input== false ) { return; } // ignore unclick
-"+
-"        whichchoice = whichchoice +1;
-"+
-"        if (whichchoice == 0)ProjectileWeight=10.00;
-"+
-"        if (whichchoice == 1)ProjectileWeight=1000.00;
-"+
-"	if (whichchoice == 2)ProjectileWeight=5;
-"+
-"
-"+
-"	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
-"+
-"	Browser.println ('Projectile Weight'+ProjectileWeight);
-"+
-"}"
               children [
                 field {
                   accessType "inputOnly"
@@ -1440,29 +1326,6 @@ WorldInfo {
             
             }
             DEF PigdogMonkScript Script {
-              url "ecmascript:
-"+
-"
-"+
-"function set_boolean (boolean_input, eventTime)
-"+
-"{
-"+
-"	if ( boolean_input== false ) { return; } // ignore unclick
-"+
-"
-"+
-"        whichchoice = whichchoice +1;
-"+
-"
-"+
-"        if ( whichchoice ==2 )  whichchoice = 0;
-"+
-"
-"+
-"
-"+
-"}"
               children [
                 field {
                   accessType "inputOnly"
@@ -1479,87 +1342,6 @@ WorldInfo {
             
             }
             DEF Mover Script {
-              url "ecmascript:
-"+
-"
-"+
-"function initialize ()
-"+
-"{
-"+
-"	MassCounterWeight=100;
-"+
-"	MassProjectileWeight=10;
-"+
-"	Browser.println ('MassCounterWeight =' + MassCounterWeight);
-"+
-"	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);
-"+
-"}
-"+
-"
-"+
-"function set_MassProjectileWeight (value, timestamp)
-"+
-"{
-"+
-"	MassProjectileWeight = value;
-"+
-"	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);
-"+
-"}
-"+
-"function set_MassCounterWeight (value2, timestamp)
-"+
-"{
-"+
-"	MassCounterWeight = value2;
-"+
-"	Browser.println ('new MassCounterWeight =' + MassCounterWeight);
-"+
-"}
-"+
-"
-"+
-"
-"+
-"function set_fraction ( fraction, eventTime )
-"+
-"{
-"+
-"	var TrebuchetHeight=45;
-"+
-"	var Height =25;
-"+
-"      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
-"+
-"	// start at TrebuchetHeight and keep along z axis (z=zero)
-"+
-"	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
-"+
-"        var z = 0;
-"+
-"        transparent = new SFVec3f (1,1,1);
-"+
-"     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
-"+
-"		{
-"+
-"		x=x-10;
-"+
-"		y=y+1;
-"+
-"		transparent = new SFVec3f(.01, .01, .01);
-"+
-"			}
-"+
-"
-"+
-"	value_changed = new SFVec3f (x, y, z);
-"+
-"	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
-"+
-"}"
               children [
                 field {
                   accessType "inputOnly"
@@ -1610,28 +1392,17 @@ WorldInfo {
       ]
     
     }
-    DEF clock TimeSensor {
-      cycleInterval 10 
+    DEF clock TimeSensor { 
     }
-    DEF verticalweightpath PositionInterpolator {
-      key [0 0.1 0.2 0.2 0.3 0.9]
-      keyValue [1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0] 
+    DEF verticalweightpath PositionInterpolator { 
     }
-    DEF flingerangles OrientationInterpolator {
-      key [0 0.1 0.2 0.2 0.3 0.9]
-      keyValue [0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82] 
+    DEF flingerangles OrientationInterpolator { 
     }
-    DEF pinpath PositionInterpolator {
-      key [0 0.01 0.95 1]
-      keyValue [0 0 -3 0 0 -10 0 0 -10 0 0 -3] 
+    DEF pinpath PositionInterpolator { 
     }
-    DEF RnSAngels OrientationInterpolator {
-      key [0 0.7 1]
-      keyValue [0 0 1 0 0 0 1 -3.14 0 0 1 0] 
+    DEF RnSAngels OrientationInterpolator { 
     }
-    DEF invisiable PositionInterpolator {
-      key [0 0.2 0.98 0.99]
-      keyValue [1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1] 
+    DEF invisiable PositionInterpolator { 
     }
     
     ROUTE clock.fraction_changed TO invisiable.set_fraction

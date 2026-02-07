@@ -206,8 +206,6 @@ WorldInfo {
                  
               }
               DEF HUMANOIDROOT_POSITION_ANIMATOR PositionInterpolator {
-                key [0 1]
-                keyValue [0 0 0 0 0 0]
                 IS IS {
                   children [
                     connect {
@@ -221,8 +219,6 @@ WorldInfo {
                  
               }
               DEF HUMANOIDROOT_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -236,8 +232,6 @@ WorldInfo {
                  
               }
               DEF SACROILIAC_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -251,8 +245,6 @@ WorldInfo {
                  
               }
               DEF L_HIP_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -266,8 +258,6 @@ WorldInfo {
                  
               }
               DEF L_KNEE_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -281,8 +271,6 @@ WorldInfo {
                  
               }
               DEF L_ANKLE_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -296,8 +284,6 @@ WorldInfo {
                  
               }
               DEF L_MIDTARSAL_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [1 0 0 0 1 0 0 0]
                 IS IS {
                   children [
                     connect {
@@ -311,8 +297,6 @@ WorldInfo {
                  
               }
               DEF R_HIP_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -326,8 +310,6 @@ WorldInfo {
                  
               }
               DEF R_KNEE_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -341,8 +323,6 @@ WorldInfo {
                  
               }
               DEF R_ANKLE_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -356,8 +336,6 @@ WorldInfo {
                  
               }
               DEF R_MIDTARSAL_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [1 0 0 0 1 0 0 0]
                 IS IS {
                   children [
                     connect {
@@ -371,8 +349,6 @@ WorldInfo {
                  
               }
               DEF VL5_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -386,8 +362,6 @@ WorldInfo {
                  
               }
               DEF SKULLBASE_ANIMATOR OrientationInterpolator {
-                key [0 0.5 1]
-                keyValue [0 0 1 0 -1 0 0 0.5 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -401,8 +375,6 @@ WorldInfo {
                  
               }
               DEF L_SHOULDER_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -416,8 +388,6 @@ WorldInfo {
                  
               }
               DEF L_ELBOW_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -431,8 +401,6 @@ WorldInfo {
                  
               }
               DEF L_WRIST_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -446,8 +414,6 @@ WorldInfo {
                  
               }
               DEF R_SHOULDER_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -461,8 +427,6 @@ WorldInfo {
                  
               }
               DEF R_ELBOW_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {
@@ -476,8 +440,6 @@ WorldInfo {
                  
               }
               DEF R_WRIST_ANIMATOR OrientationInterpolator {
-                key [0 1]
-                keyValue [0 0 1 0 0 0 1 0]
                 IS IS {
                   children [
                     connect {

@@ -96,16 +96,12 @@
                     }                    "IndexedFaceSet":
                     {
       {
-        "@DEF":"DiamondIFS",
-        "@coordIndex":"0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1",
-        "@creaseAngle":"0.5",
-        "@solid":"false"
+        "@DEF":"DiamondIFS"
       }
                         "ColorRGBA":
                         {
       {
-        "@DEF":"HAnimSiteColorRGBA",
-        "@color":"1 1 0 1 1 1 0 0.1"
+        "@DEF":"HAnimSiteColorRGBA"
       }
     },
                         "Coordinate":

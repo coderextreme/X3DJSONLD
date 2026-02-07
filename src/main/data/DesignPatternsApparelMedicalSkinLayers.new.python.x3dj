@@ -143,8 +143,7 @@
             "HAnimHumanoid":
             {
       {
-        "@DEF":"a_SimpleSkeleton",
-        "@name":"SimpleSkeleton"
+        "@DEF":"a_SimpleSkeleton"
       }
                 "HAnimJoint":
                 {
@@ -171,8 +170,7 @@
                         "HAnimSite":
                         {
       {
-        "@DEF":"a_feature01_tip",
-        "@name":"feature01_tip"
+        "@DEF":"a_feature01_tip"
       }
                             "Shape":
                             {
@@ -183,8 +181,7 @@
                         }                    }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"b_SimpleSkeletonMesh",
-        "@name":"SimpleSkeletonMesh"
+        "@DEF":"b_SimpleSkeletonMesh"
       }
                 "HAnimJoint":
                 {
@@ -207,8 +204,7 @@
                         }                    }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"c_SkinIndexedGeometry",
-        "@name":"SkinIndexedGeometry"
+        "@DEF":"c_SkinIndexedGeometry"
       }
                 "HAnimJoint":
                 {
@@ -230,8 +226,7 @@
             }            "HAnimHumanoid":
             {
       {
-        "@DEF":"d_SkinShapeIndexedGeometry",
-        "@name":"SkinShapeIndexedGeometry"
+        "@DEF":"d_SkinShapeIndexedGeometry"
       }
                 "HAnimJoint":
                 {
@@ -255,8 +250,7 @@
                 }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"e_SkinSwitchShapeIndexedGeometry",
-        "@name":"SkinSwitchShapeIndexedGeometry"
+        "@DEF":"e_SkinSwitchShapeIndexedGeometry"
       }
                 "HAnimJoint":
                 {
@@ -285,8 +279,7 @@
                     }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"f_SynthesizedSkinShapeIndexedTwoPartGeometry",
-        "@name":"SynthesizedSkinShapeIndexedTwoPartGeometry"
+        "@DEF":"f_SynthesizedSkinShapeIndexedTwoPartGeometry"
       }
                 "HAnimJoint":
                 {
@@ -315,8 +308,7 @@
                     }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"g_ApparelSkinIndexedGeometryMultipleShapes",
-        "@name":"ApparelSkinIndexedGeometryMultipleShapes"
+        "@DEF":"g_ApparelSkinIndexedGeometryMultipleShapes"
       }
                 "HAnimJoint":
                 {
@@ -335,8 +327,7 @@
             }            "HAnimHumanoid":
             {
       {
-        "@DEF":"h_AnatomySkinIndexedGeometryMultipleShapes",
-        "@name":"AnatomySkinIndexedGeometryMultipleShapes"
+        "@DEF":"h_AnatomySkinIndexedGeometryMultipleShapes"
       }
                 "HAnimJoint":
                 {
@@ -355,9 +346,7 @@
             }        }        "Viewpoint":
         {
       {
-        "@DEF":"ViewHelpText",
-        "@description":"Select text to see website",
-        "@position":"0 0 12"
+        "@DEF":"ViewHelpText"
       }
     },
         "Anchor":

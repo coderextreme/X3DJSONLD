@@ -142,8 +142,6 @@ ProtoDeclare {
                 }
                 
                 geometry DEF ArchIndex IndexedFaceSet {
-                  convex FALSE
-                  solid FALSE
                   coord DEF ArchChord Coordinate { 
                   }
                    
@@ -155,7 +153,6 @@ ProtoDeclare {
           
           }
           DEF ArchPrototypeScript Script {
-            url ["../node/ArchPrototypeScript.js" "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]
             IS IS {
               children [
                 connect {
@@ -357,7 +354,6 @@ ProtoDeclare {
       ]
     
     }
-    DEF CoordinateAxes Inline {
-      url ["../data/CoordinateAxes.x3d"] 
+    DEF CoordinateAxes Inline { 
     }
     

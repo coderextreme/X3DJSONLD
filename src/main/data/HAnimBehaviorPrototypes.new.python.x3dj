@@ -12090,9 +12090,7 @@
                     }                }                "Script":
                 {
       {
-        "@DEF":"BehaviorSelectionScript",
-        "@directOutput":"true",
-        "@url":""HAnimBehaviorPrototypesScript.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js""
+        "@DEF":"BehaviorSelectionScript"
       }
                     "IS":
                     {
@@ -12303,8 +12301,7 @@
                 "HAnimHumanoid":
                 {
       {
-        "@DEF":"hanim_DiamondManLOA-1",
-        "@name":"DiamondManLOA-1"
+        "@DEF":"hanim_DiamondManLOA-1"
       }
     },
             }            "fieldValue":

@@ -71,7 +71,6 @@ NavigationInfo {
                   
                   children [
                     DEF x3dom ComposedShader {
-                      language "GLSL"
                       children [
                         field {
                           accessType "inputOutput"
@@ -118,7 +117,6 @@ NavigationInfo {
                     
                     }
                     DEF x_ite ComposedShader {
-                      language "GLSL"
                       children [
                         field {
                           accessType "inputOutput"
@@ -182,55 +180,6 @@ NavigationInfo {
           
           }
           DEF Bounce Script {
-            url "ecmascript:
-"+
-"			function initialize() {
-"+
-"			    translation = new SFVec3f(0, 0, 0);
-"+
-"			    velocity = new SFVec3f(
-"+
-"			    	Math.random() - 0.5,
-"+
-"				Math.random() - 0.5,
-"+
-"				Math.random() - 0.5);
-"+
-"			}
-"+
-"			function set_fraction() {
-"+
-"			    translation = new SFVec3f(
-"+
-"			    	translation.x + velocity.x,
-"+
-"				translation.y + velocity.y,
-"+
-"				translation.z + velocity.z);
-"+
-"			    if (Math.abs(translation.x) > 10) {
-"+
-"				initialize();
-"+
-"			    } else if (Math.abs(translation.y) > 10) {
-"+
-"				initialize();
-"+
-"			    } else if (Math.abs(translation.z) > 10) {
-"+
-"				initialize();
-"+
-"			    } else {
-"+
-"				velocity.x += Math.random() * 0.2 - 0.1;
-"+
-"				velocity.y += Math.random() * 0.2 - 0.1;
-"+
-"				velocity.z += Math.random() * 0.2 - 0.1;
-"+
-"			    }
-"+
-"			}"
             children [
               field {
                 accessType "inputOutput"
@@ -253,9 +202,7 @@ NavigationInfo {
             ]
           
           }
-          DEF TourTime TimeSensor {
-            cycleInterval 0.15
-            loop TRUE 
+          DEF TourTime TimeSensor { 
           }
           
           ROUTE TourTime.cycleTime TO Bounce.set_fraction

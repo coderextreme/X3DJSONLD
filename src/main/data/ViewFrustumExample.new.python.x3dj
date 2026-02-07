@@ -300,8 +300,7 @@
         }        "Inline":
         {
       {
-        "@DEF":"GridXZ",
-        "@url":""GridXZ_20x20Fixed.x3d""
+        "@DEF":"GridXZ"
       }
     },
         "Transform":
@@ -312,8 +311,7 @@
             "Inline":
             {
       {
-        "@DEF":"CoordinateAxes",
-        "@url":""CoordinateAxes.x3d""
+        "@DEF":"CoordinateAxes"
       }
     },
         }    }}

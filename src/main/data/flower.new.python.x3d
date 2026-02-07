@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='flower.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
@@ -18,8 +18,8 @@
         <Appearance>
           <Material diffuseColor='0.9 0.3 0.3' shininess='0.145' specularColor='0.8 0.8 0.8' transparency='0.1'/>
         </Appearance>
-        <IndexedFaceSet DEF='Orbit' ccw='false' convex='false' coordIndex='0 1 2 -1'>
-          <Coordinate DEF='OrbitCoordinates' point='0 0 1 0 1 0 1 0 0'/>
+        <IndexedFaceSet DEF='Orbit'>
+          <Coordinate DEF='OrbitCoordinates'/>
         </IndexedFaceSet>
       </Shape>
     </Transform>
@@ -179,7 +179,7 @@
 "+
 "}]]>
     </Script>
-    <TimeSensor DEF='Clock' cycleInterval='16' loop='true'/>
+    <TimeSensor DEF='Clock'/>
     <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
     <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='point' toNode='OrbitCoordinates'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>

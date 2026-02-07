@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
@@ -42,7 +42,7 @@
             <field accessType='inputOutput' name='scale' type='SFFloat' value='0.5'/>
             <field accessType='inputOutput' name='power' type='SFFloat' value='2'/>
             <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
-            <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
+            <ShaderPart DEF='common'/>
           </ComposedShader>
         </Appearance>
         <Sphere/>

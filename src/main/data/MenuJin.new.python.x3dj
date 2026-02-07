@@ -35,28 +35,14 @@
             "Switch":
             {
       {
-        "@DEF":"SceneSwitcher",
-        "@whichChoice":"0"
+        "@DEF":"SceneSwitcher"
       }
                 "Group":
                 {
                     "Script":
                     {
       {
-        "@DEF":"Choice0",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 0;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 0;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice0"
       }
                         "field":
                         {
@@ -77,8 +63,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinBlink",
-        "@url":""../resources/JinBlink.x3d" "JinBlink.x3d""
+        "@DEF":"JinBlink"
       }
     },
                 }                "Group":
@@ -86,20 +71,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice1",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 1;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 1;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice1"
       }
                         "field":
                         {
@@ -120,8 +92,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinBrowLowerer",
-        "@url":""../resources/JinBrowLowerer.x3d" "JinBrowLowerer.x3d""
+        "@DEF":"JinBrowLowerer"
       }
     },
                 }                "Group":
@@ -129,20 +100,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice2",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 2;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 2;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice2"
       }
                         "field":
                         {
@@ -163,8 +121,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinCheekPuffer",
-        "@url":""../resources/JinCheekPuffer.x3d" "JinCheekPuffer.x3d""
+        "@DEF":"JinCheekPuffer"
       }
     },
                 }                "Group":
@@ -172,20 +129,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice3",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 3;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 3;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice3"
       }
                         "field":
                         {
@@ -206,8 +150,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinCheekRaiser",
-        "@url":""../resources/JinCheekRaiser.x3d" "JinCheekRaiser.x3d""
+        "@DEF":"JinCheekRaiser"
       }
     },
                 }                "Group":
@@ -215,20 +158,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice4",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 4;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 4;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice4"
       }
                         "field":
                         {
@@ -249,8 +179,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinChinRaiser",
-        "@url":""../resources/JinChinRaiser.x3d" "JinChinRaiser.x3d""
+        "@DEF":"JinChinRaiser"
       }
     },
                 }                "Group":
@@ -258,20 +187,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice5",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 5;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 5;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice5"
       }
                         "field":
                         {
@@ -292,8 +208,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinDimpler",
-        "@url":""../resources/JinDimpler.x3d" "JinDimpler.x3d""
+        "@DEF":"JinDimpler"
       }
     },
                 }                "Group":
@@ -301,20 +216,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice6",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 6;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 6;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice6"
       }
                         "field":
                         {
@@ -335,8 +237,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinEyesClosed",
-        "@url":""../resources/JinEyesClosed.x3d" "JinEyesClosed.x3d""
+        "@DEF":"JinEyesClosed"
       }
     },
                 }                "Group":
@@ -344,20 +245,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice7",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 7;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 7;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice7"
       }
                         "field":
                         {
@@ -378,8 +266,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinInnerBrowRaiser",
-        "@url":""../resources/JinInnerBrowRaiser.x3d" "JinInnerBrowRaiser.x3d""
+        "@DEF":"JinInnerBrowRaiser"
       }
     },
                 }                "Group":
@@ -387,20 +274,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice8",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 8;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 8;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice8"
       }
                         "field":
                         {
@@ -421,8 +295,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinJawDrop",
-        "@url":""../resources/JinJawDrop.x3d" "JinJawDrop.x3d""
+        "@DEF":"JinJawDrop"
       }
     },
                 }                "Group":
@@ -430,20 +303,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice9",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 9;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 9;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice9"
       }
                         "field":
                         {
@@ -464,8 +324,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLidDroop",
-        "@url":""../resources/JinLidDroop.x3d" "JinLidDroop.x3d""
+        "@DEF":"JinLidDroop"
       }
     },
                 }                "Group":
@@ -473,20 +332,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice10",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 10;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 10;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice10"
       }
                         "field":
                         {
@@ -507,8 +353,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLidTightener",
-        "@url":""../resources/JinLidTightener.x3d" "JinLidTightener.x3d""
+        "@DEF":"JinLidTightener"
       }
     },
                 }                "Group":
@@ -516,20 +361,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice11",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 11;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 11;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice11"
       }
                         "field":
                         {
@@ -550,8 +382,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipCornerDepressor",
-        "@url":""../resources/JinLipCornerDepressor.x3d" "JinLipCornerDepressor.x3d""
+        "@DEF":"JinLipCornerDepressor"
       }
     },
                 }                "Group":
@@ -559,20 +390,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice12",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 12;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 12;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice12"
       }
                         "field":
                         {
@@ -593,8 +411,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipCornerPuller",
-        "@url":""../resources/JinLipCornerPuller.x3d" "JinLipCornerPuller.x3d""
+        "@DEF":"JinLipCornerPuller"
       }
     },
                 }                "Group":
@@ -602,20 +419,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice13",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 13;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 13;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice13"
       }
                         "field":
                         {
@@ -636,8 +440,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipFunneler",
-        "@url":""../resources/JinLipFunneler.x3d" "JinLipFunneler.x3d""
+        "@DEF":"JinLipFunneler"
       }
     },
                 }                "Group":
@@ -645,20 +448,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice14",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 14;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 14;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice14"
       }
                         "field":
                         {
@@ -679,8 +469,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipPressor",
-        "@url":""../resources/JinLipPressor.x3d" "JinLipPressor.x3d""
+        "@DEF":"JinLipPressor"
       }
     },
                 }                "Group":
@@ -688,20 +477,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice15",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 15;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 15;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice15"
       }
                         "field":
                         {
@@ -722,8 +498,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipPuckerer",
-        "@url":""../resources/JinLipPuckerer.x3d" "JinLipPuckerer.x3d""
+        "@DEF":"JinLipPuckerer"
       }
     },
                 }                "Group":
@@ -731,20 +506,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice16",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 16;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 16;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice16"
       }
                         "field":
                         {
@@ -765,8 +527,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipsPart",
-        "@url":""../resources/JinLipsPart.x3d" "JinLipsPart.x3d""
+        "@DEF":"JinLipsPart"
       }
     },
                 }                "Group":
@@ -774,20 +535,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice17",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 17;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 17;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice17"
       }
                         "field":
                         {
@@ -808,8 +556,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipStretcher",
-        "@url":""../resources/JinLipStretcher.x3d" "JinLipStretcher.x3d""
+        "@DEF":"JinLipStretcher"
       }
     },
                 }                "Group":
@@ -817,20 +564,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice18",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 18;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 18;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice18"
       }
                         "field":
                         {
@@ -851,8 +585,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipSuck",
-        "@url":""../resources/JinLipSuck.x3d" "JinLipSuck.x3d""
+        "@DEF":"JinLipSuck"
       }
     },
                 }                "Group":
@@ -860,20 +593,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice19",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 19;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 19;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice19"
       }
                         "field":
                         {
@@ -894,8 +614,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLipTightener",
-        "@url":""../resources/JinLipTightener.x3d" "JinLipTightener.x3d""
+        "@DEF":"JinLipTightener"
       }
     },
                 }                "Group":
@@ -903,20 +622,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice20",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 20;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 20;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice20"
       }
                         "field":
                         {
@@ -937,8 +643,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinLowerLipDepressor",
-        "@url":""../resources/JinLowerLipDepressor.x3d" "JinLowerLipDepressor.x3d""
+        "@DEF":"JinLowerLipDepressor"
       }
     },
                 }                "Group":
@@ -946,20 +651,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice21",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 21;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 21;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice21"
       }
                         "field":
                         {
@@ -980,8 +672,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinMouthStretch",
-        "@url":""../resources/JinMouthStretch.x3d" "JinMouthStretch.x3d""
+        "@DEF":"JinMouthStretch"
       }
     },
                 }                "Group":
@@ -989,20 +680,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice22",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 22;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 22;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice22"
       }
                         "field":
                         {
@@ -1023,8 +701,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinNasolabialDeepener",
-        "@url":""../resources/JinNasolabialDeepener.x3d" "JinNasolabialDeepener.x3d""
+        "@DEF":"JinNasolabialDeepener"
       }
     },
                 }                "Group":
@@ -1032,20 +709,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice23",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 23;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 23;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice23"
       }
                         "field":
                         {
@@ -1066,8 +730,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinNoseWrinkler",
-        "@url":""../resources/JinNoseWrinkler.x3d" "JinNoseWrinkler.x3d""
+        "@DEF":"JinNoseWrinkler"
       }
     },
                 }                "Group":
@@ -1075,20 +738,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice24",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 24;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 24;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice24"
       }
                         "field":
                         {
@@ -1109,8 +759,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinOuterBrowRaiser",
-        "@url":""../resources/JinOuterBrowRaiser.x3d" "JinOuterBrowRaiser.x3d""
+        "@DEF":"JinOuterBrowRaiser"
       }
     },
                 }                "Group":
@@ -1118,20 +767,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice25",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 25;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 25;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice25"
       }
                         "field":
                         {
@@ -1152,8 +788,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinSlit",
-        "@url":""../resources/JinSlit.x3d" "JinSlit.x3d""
+        "@DEF":"JinSlit"
       }
     },
                 }                "Group":
@@ -1161,20 +796,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice26",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 26;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 26;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice26"
       }
                         "field":
                         {
@@ -1195,8 +817,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinSquint",
-        "@url":""../resources/JinSquint.x3d" "JinSquint.x3d""
+        "@DEF":"JinSquint"
       }
     },
                 }                "Group":
@@ -1204,20 +825,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice27",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 27;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 27;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice27"
       }
                         "field":
                         {
@@ -1238,8 +846,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinUpperLidRaiser",
-        "@url":""../resources/JinUpperLidRaiser.x3d" "JinUpperLidRaiser.x3d""
+        "@DEF":"JinUpperLidRaiser"
       }
     },
                 }                "Group":
@@ -1247,20 +854,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice28",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 28;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 28;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice28"
       }
                         "field":
                         {
@@ -1281,8 +875,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinUpperLipRaiser",
-        "@url":""../resources/JinUpperLipRaiser.x3d" "JinUpperLipRaiser.x3d""
+        "@DEF":"JinUpperLipRaiser"
       }
     },
                 }                "Group":
@@ -1290,20 +883,7 @@
                     "Script":
                     {
       {
-        "@DEF":"Choice29",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;      function set_touchTime(value) {
-&quot;+
-&quot;          choice = 29;
-&quot;+
-&quot;      }
-&quot;+
-&quot;      function touchTime(value) {
-&quot;+
-&quot;          choice = 29;
-&quot;+
-&quot;      }"
+        "@DEF":"Choice29"
       }
                         "field":
                         {
@@ -1324,8 +904,7 @@
                     }                    "Inline":
                     {
       {
-        "@DEF":"JinWink",
-        "@url":""../resources/JinWink.x3d" "JinWink.x3d""
+        "@DEF":"JinWink"
       }
     },
                 }            }            "Transform":
@@ -1336,8 +915,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinBlink_Sensor",
-        "@description":"TSJinBlink"
+        "@DEF":"JinBlink_Sensor"
       }
     },
                 "Shape":
@@ -1410,8 +988,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinBrowLowerer_Sensor",
-        "@description":"TSJinBrowLowerer"
+        "@DEF":"JinBrowLowerer_Sensor"
       }
     },
                 "Shape":
@@ -1484,8 +1061,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinCheekPuffer_Sensor",
-        "@description":"TSJinCheekPuffer"
+        "@DEF":"JinCheekPuffer_Sensor"
       }
     },
                 "Shape":
@@ -1558,8 +1134,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinCheekRaiser_Sensor",
-        "@description":"TSJinCheekRaiser"
+        "@DEF":"JinCheekRaiser_Sensor"
       }
     },
                 "Shape":
@@ -1632,8 +1207,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinChinRaiser_Sensor",
-        "@description":"TSJinChinRaiser"
+        "@DEF":"JinChinRaiser_Sensor"
       }
     },
                 "Shape":
@@ -1706,8 +1280,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinDimpler_Sensor",
-        "@description":"TSJinDimpler"
+        "@DEF":"JinDimpler_Sensor"
       }
     },
                 "Shape":
@@ -1780,8 +1353,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinEyesClosed_Sensor",
-        "@description":"TSJinEyesClosed"
+        "@DEF":"JinEyesClosed_Sensor"
       }
     },
                 "Shape":
@@ -1854,8 +1426,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinInnerBrowRaiser_Sensor",
-        "@description":"TSJinInnerBrowRaiser"
+        "@DEF":"JinInnerBrowRaiser_Sensor"
       }
     },
                 "Shape":
@@ -1928,8 +1499,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinJawDrop_Sensor",
-        "@description":"TSJinJawDrop"
+        "@DEF":"JinJawDrop_Sensor"
       }
     },
                 "Shape":
@@ -2002,8 +1572,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLidDroop_Sensor",
-        "@description":"TSJinLidDroop"
+        "@DEF":"JinLidDroop_Sensor"
       }
     },
                 "Shape":
@@ -2076,8 +1645,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLidTightener_Sensor",
-        "@description":"TSJinLidTightener"
+        "@DEF":"JinLidTightener_Sensor"
       }
     },
                 "Shape":
@@ -2150,8 +1718,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipCornerDepressor_Sensor",
-        "@description":"TSJinLipCornerDepressor"
+        "@DEF":"JinLipCornerDepressor_Sensor"
       }
     },
                 "Shape":
@@ -2224,8 +1791,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipCornerPuller_Sensor",
-        "@description":"TSJinLipCornerPuller"
+        "@DEF":"JinLipCornerPuller_Sensor"
       }
     },
                 "Shape":
@@ -2298,8 +1864,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipFunneler_Sensor",
-        "@description":"TSJinLipFunneler"
+        "@DEF":"JinLipFunneler_Sensor"
       }
     },
                 "Shape":
@@ -2372,8 +1937,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipPressor_Sensor",
-        "@description":"TSJinLipPressor"
+        "@DEF":"JinLipPressor_Sensor"
       }
     },
                 "Shape":
@@ -2446,8 +2010,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipPuckerer_Sensor",
-        "@description":"TSJinLipPuckerer"
+        "@DEF":"JinLipPuckerer_Sensor"
       }
     },
                 "Shape":
@@ -2520,8 +2083,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipsPart_Sensor",
-        "@description":"TSJinLipsPart"
+        "@DEF":"JinLipsPart_Sensor"
       }
     },
                 "Shape":
@@ -2594,8 +2156,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipStretcher_Sensor",
-        "@description":"TSJinLipStretcher"
+        "@DEF":"JinLipStretcher_Sensor"
       }
     },
                 "Shape":
@@ -2668,8 +2229,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipSuck_Sensor",
-        "@description":"TSJinLipSuck"
+        "@DEF":"JinLipSuck_Sensor"
       }
     },
                 "Shape":
@@ -2742,8 +2302,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLipTightener_Sensor",
-        "@description":"TSJinLipTightener"
+        "@DEF":"JinLipTightener_Sensor"
       }
     },
                 "Shape":
@@ -2816,8 +2375,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinLowerLipDepressor_Sensor",
-        "@description":"TSJinLowerLipDepressor"
+        "@DEF":"JinLowerLipDepressor_Sensor"
       }
     },
                 "Shape":
@@ -2890,8 +2448,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinMouthStretch_Sensor",
-        "@description":"TSJinMouthStretch"
+        "@DEF":"JinMouthStretch_Sensor"
       }
     },
                 "Shape":
@@ -2964,8 +2521,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinNasolabialDeepener_Sensor",
-        "@description":"TSJinNasolabialDeepener"
+        "@DEF":"JinNasolabialDeepener_Sensor"
       }
     },
                 "Shape":
@@ -3038,8 +2594,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinNoseWrinkler_Sensor",
-        "@description":"TSJinNoseWrinkler"
+        "@DEF":"JinNoseWrinkler_Sensor"
       }
     },
                 "Shape":
@@ -3112,8 +2667,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinOuterBrowRaiser_Sensor",
-        "@description":"TSJinOuterBrowRaiser"
+        "@DEF":"JinOuterBrowRaiser_Sensor"
       }
     },
                 "Shape":
@@ -3186,8 +2740,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinSlit_Sensor",
-        "@description":"TSJinSlit"
+        "@DEF":"JinSlit_Sensor"
       }
     },
                 "Shape":
@@ -3260,8 +2813,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinSquint_Sensor",
-        "@description":"TSJinSquint"
+        "@DEF":"JinSquint_Sensor"
       }
     },
                 "Shape":
@@ -3334,8 +2886,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinUpperLidRaiser_Sensor",
-        "@description":"TSJinUpperLidRaiser"
+        "@DEF":"JinUpperLidRaiser_Sensor"
       }
     },
                 "Shape":
@@ -3408,8 +2959,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinUpperLipRaiser_Sensor",
-        "@description":"TSJinUpperLipRaiser"
+        "@DEF":"JinUpperLipRaiser_Sensor"
       }
     },
                 "Shape":
@@ -3482,8 +3032,7 @@
                 "TouchSensor":
                 {
       {
-        "@DEF":"JinWink_Sensor",
-        "@description":"TSJinWink"
+        "@DEF":"JinWink_Sensor"
       }
     },
                 "Shape":

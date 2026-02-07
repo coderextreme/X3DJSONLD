@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
@@ -42,9 +42,9 @@
       <ProtoInstance name='flower'/>
       <ProtoInstance name='flower'/>
       <ProtoInstance name='flower'/>
-      <TimeSensor DEF='SongTime' loop='true'/>
+      <TimeSensor DEF='SongTime'/>
       <Sound location='0 1 0' maxBack='100' maxFront='100' minBack='20' minFront='20'>
-        <AudioClip DEF='AudioClip' description='Chandubabamusic #1' url='"../resources/chandubabamusic1.wav" "https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"'/>
+        <AudioClip DEF='AudioClip'/>
       </Sound>
       <ROUTE fromField='cycleTime' fromNode='SongTime' toField='startTime' toNode='AudioClip'/>
     </Group>

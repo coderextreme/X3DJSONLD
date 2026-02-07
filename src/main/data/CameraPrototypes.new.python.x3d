@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='CameraPrototypes.x3d' name='title'/>
     <meta content='Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement.' name='description'/>
@@ -56,33 +56,33 @@
             <connect nodeField='isBound' protoField='isBound'/>
           </IS>
         </Viewpoint>
-        <NavigationInfo DEF='CameraNavInfo' type='"EXAMINE" "FLY" "ANY"'>
+        <NavigationInfo DEF='CameraNavInfo'>
           <IS>
             <connect nodeField='set_bind' protoField='set_bind'/>
             <connect nodeField='headlight' protoField='headlight'/>
             <connect nodeField='visibilityLimit' protoField='farClipPlane'/>
           </IS>
         </NavigationInfo>
-        <DirectionalLight DEF='CameraDirectionalLight' global='true'>
+        <DirectionalLight DEF='CameraDirectionalLight'>
           <IS>
             <connect nodeField='on' protoField='headlight'/>
             <connect nodeField='color' protoField='headlightColor'/>
             <connect nodeField='intensity' protoField='headlightIntensity'/>
           </IS>
         </DirectionalLight>
-        <PositionInterpolator DEF='CameraPositionInterpolator' key='0 1' keyValue='0 0 0 0 0 0'>
+        <PositionInterpolator DEF='CameraPositionInterpolator'>
           <IS>
             <connect nodeField='set_fraction' protoField='set_fraction'/>
           </IS>
         </PositionInterpolator>
-        <OrientationInterpolator DEF='CameraOrientationInterpolator' key='0 1' keyValue='0 1 0 0 0 1 0 0'>
+        <OrientationInterpolator DEF='CameraOrientationInterpolator'>
           <IS>
             <connect nodeField='set_fraction' protoField='set_fraction'/>
           </IS>
         </OrientationInterpolator>
         <ROUTE fromField='value_changed' fromNode='CameraPositionInterpolator' toField='position' toNode='CameraViewpoint'/>
         <ROUTE fromField='value_changed' fromNode='CameraOrientationInterpolator' toField='orientation' toNode='CameraViewpoint'/>
-        <Script DEF='CameraScript' directOutput='true' mustEvaluate='true'>
+        <Script DEF='CameraScript'>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='position' protoField='position'/>
@@ -846,7 +846,7 @@
         <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
-        <Script DEF='CameraShotScript' directOutput='true' mustEvaluate='true'>
+        <Script DEF='CameraShotScript'>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='enabled' protoField='enabled'/>
@@ -1080,7 +1080,7 @@
         <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
-        <Script DEF='CameraMovementScript' directOutput='true' mustEvaluate='true'>
+        <Script DEF='CameraMovementScript'>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='enabled' protoField='enabled'/>
@@ -1304,7 +1304,7 @@
         <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
-        <Script DEF='OfflineRenderScript' mustEvaluate='true'>
+        <Script DEF='OfflineRenderScript'>
           <IS>
             <connect nodeField='description' protoField='description'/>
             <connect nodeField='enabled' protoField='enabled'/>

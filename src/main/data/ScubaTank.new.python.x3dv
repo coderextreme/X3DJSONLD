@@ -19,11 +19,7 @@ WorldInfo {
           children [
             Shape {
               appearance Appearance {
-                material DEF tank Material {
-                  ambientIntensity 0.3
-                  diffuseColor 0.3 0.3 0.5
-                  shininess 0.1
-                  specularColor 0.7 0.7 0.8 
+                material DEF tank Material { 
                 }
                  
               }
@@ -60,9 +56,7 @@ WorldInfo {
           children [
             DEF tankBottom Shape {
               appearance Appearance {
-                material DEF black Material {
-                  ambientIntensity 0.3
-                  diffuseColor 0 0 0 
+                material DEF black Material { 
                 }
                  
               }
@@ -86,11 +80,7 @@ WorldInfo {
                   children [
                     DEF pressure Shape {
                       appearance Appearance {
-                        material DEF pressureColor Material {
-                          ambientIntensity 0.4
-                          diffuseColor 0.91 0.91 0.91
-                          shininess 0.16
-                          specularColor 0.91 0.9 0.91 
+                        material DEF pressureColor Material { 
                         }
                          
                       }

@@ -74,44 +74,19 @@
                 }                "Extrusion":
                 {
       {
-        "@DEF":"myextrusion",
-        "@creaseAngle":"0.785",
-        "@crossSection":"1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0",
-        "@spine":"-50 -50 0 50 50 0"
+        "@DEF":"myextrusion"
       }
     },
             }            "TimeSensor":
             {
       {
-        "@DEF":"TourTime",
-        "@loop":"true"
+        "@DEF":"TourTime"
       }
     },
             "Script":
             {
       {
-        "@DEF":"MoveCylinder",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;
-&quot;+
-&quot;                function set_cycle(value) {
-&quot;+
-&quot;                        Browser.print(value);
-&quot;+
-&quot;                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
-&quot;+
-&quot;                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
-&quot;+
-&quot;                        var tmpspine = new MFVec3f();
-&quot;+
-&quot;			tmpspine[0] = endA;
-&quot;+
-&quot;			tmpspine[1] = endB;
-&quot;+
-&quot;                        spine = tmpspine;
-&quot;+
-&quot;                }"
+        "@DEF":"MoveCylinder"
       }
                 "field":
                 {

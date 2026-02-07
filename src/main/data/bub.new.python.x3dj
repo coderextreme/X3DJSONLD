@@ -186,8 +186,7 @@
                             }                            "ComposedShader":
                             {
       {
-        "@DEF":"x3dom",
-        "@language":"GLSL"
+        "@DEF":"x3dom"
       }
                                 "field":
                                 {
@@ -249,8 +248,7 @@
                             }                            "ComposedShader":
                             {
       {
-        "@DEF":"x_ite",
-        "@language":"GLSL"
+        "@DEF":"x_ite"
       }
                                 "field":
                                 {
@@ -320,56 +318,7 @@
                     }                }                "Script":
                 {
       {
-        "@DEF":"Bounce",
-        "@sourceCode":"ecmascript:
-&quot;+
-&quot;			function initialize() {
-&quot;+
-&quot;			    translation = new SFVec3f(0, 0, 0);
-&quot;+
-&quot;			    velocity = new SFVec3f(
-&quot;+
-&quot;			    	Math.random() - 0.5,
-&quot;+
-&quot;				Math.random() - 0.5,
-&quot;+
-&quot;				Math.random() - 0.5);
-&quot;+
-&quot;			}
-&quot;+
-&quot;			function set_fraction() {
-&quot;+
-&quot;			    translation = new SFVec3f(
-&quot;+
-&quot;			    	translation.x + velocity.x,
-&quot;+
-&quot;				translation.y + velocity.y,
-&quot;+
-&quot;				translation.z + velocity.z);
-&quot;+
-&quot;			    if (Math.abs(translation.x) > 10) {
-&quot;+
-&quot;				initialize();
-&quot;+
-&quot;			    } else if (Math.abs(translation.y) > 10) {
-&quot;+
-&quot;				initialize();
-&quot;+
-&quot;			    } else if (Math.abs(translation.z) > 10) {
-&quot;+
-&quot;				initialize();
-&quot;+
-&quot;			    } else {
-&quot;+
-&quot;				velocity.x += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;				velocity.y += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;				velocity.z += Math.random() * 0.2 - 0.1;
-&quot;+
-&quot;			    }
-&quot;+
-&quot;			}"
+        "@DEF":"Bounce"
       }
                     "field":
                     {
@@ -400,9 +349,7 @@
                 }                "TimeSensor":
                 {
       {
-        "@DEF":"TourTime",
-        "@cycleInterval":"0.15",
-        "@loop":"true"
+        "@DEF":"TourTime"
       }
     },
                 "ROUTE":

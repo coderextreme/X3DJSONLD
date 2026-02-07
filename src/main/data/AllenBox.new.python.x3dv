@@ -15,8 +15,6 @@ WorldInfo {
       type ["EXAMINE"] 
     }
     DEF Floor Transform {
-      scale 1 0.0125 1
-      translation 0 -0.0125 0
       children [
         Shape {
           appearance Appearance {

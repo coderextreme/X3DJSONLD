@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component name='Geospatial'/>
     <meta content='geobubbles.x3d' name='title'/>
@@ -10,7 +10,7 @@
     <meta content='geo bubbles' name='description'/>
   </head>
   <Scene>
-    <GeoViewpoint DEF='Tour' description='Tour Views' orientation='1 0 0 0' position='0 0 4'/>
+    <GeoViewpoint DEF='Tour'/>
     <Background backUrl='"../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"' bottomUrl='"../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"' frontUrl='"../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"' leftUrl='"../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"' rightUrl='"../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"' topUrl='"../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"'/>
     <Transform>
       <Shape>
@@ -20,8 +20,8 @@
         <Sphere/>
       </Shape>
     </Transform>
-    <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'/>
-    <GeoPositionInterpolator DEF='TourPosition' key='0 1' keyValue='0.0015708 0 4 0 0.0015708 4'/>
+    <TimeSensor DEF='TourTime'/>
+    <GeoPositionInterpolator DEF='TourPosition'/>
     <Script DEF='RandomTourTime'>
       <field accessType='inputOnly' name='set_cycle' type='SFTime'/>
       <field accessType='inputOutput' name='val' type='SFFloat'/>

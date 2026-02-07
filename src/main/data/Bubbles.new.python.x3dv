@@ -17,49 +17,27 @@ WorldInfo {
       children [
         DEF Bubble Group {
           children [
-            DEF BubbleClock TimeSensor {
-              cycleInterval 6
-              loop TRUE 
+            DEF BubbleClock TimeSensor { 
             }
-            DEF BubblePath1 PositionInterpolator {
-              key [0 0.5 0.8 0.9 1]
-              keyValue [0 0 0 0.75 0.75 0.75 0.86 0.86 0.86 0.99 0.998 0.9876 1.272 1.9044 0.9509] 
+            DEF BubblePath1 PositionInterpolator { 
             }
-            DEF BubblePath2 PositionInterpolator {
-              key [0 0.3 0.64 0.85 1]
-              keyValue [0.1 0.1 0.1 0.2 0.4 0.25 0.3 0.5 0.46 0.75 0.5 0.575 0.038483478 1.989 1.098373] 
+            DEF BubblePath2 PositionInterpolator { 
             }
-            DEF BubblePath3 PositionInterpolator {
-              key [0 0.1 0.45 0.7 1]
-              keyValue [0.01 0.01 0.01 0.25 0.35 0.0045 0.55 0.6 0.0055 0.66 0.665 0.00655 1.555 1.09043 0.005734] 
+            DEF BubblePath3 PositionInterpolator { 
             }
-            DEF BubblePath4 PositionInterpolator {
-              key [0 0.5 0.6 0.8 1]
-              keyValue [0 0 0 0.5 0.5 0.005 0.6 0.6 0.006 0.75 0.75 0.0075 1.948594 1.3983 0.009009349] 
+            DEF BubblePath4 PositionInterpolator { 
             }
-            DEF BubblePath5 PositionInterpolator {
-              key [0 0.25 0.35 0.65 1]
-              keyValue [0 0 0 0.5 0.5 0.005 0.6 0.6 0.006 0.75 0.75 0.0075 1.84444 1.22222 0.1] 
+            DEF BubblePath5 PositionInterpolator { 
             }
-            DEF BubblePath6 PositionInterpolator {
-              key [0 0.15 0.22235 0.55565 1]
-              keyValue [0 0 0 0.235 0.3455 0.0055 0.356 0.676 0.00456 0.5675 0.75 0.0074565 1.098 1.0343 0.14] 
+            DEF BubblePath6 PositionInterpolator { 
             }
-            DEF BubblePath7 PositionInterpolator {
-              key [0 0.2425 0.4535 0.6775 1]
-              keyValue [0 0 0 0.12345 0.2225 0.00335 0.786 0.456 0.00666 0.74555 0.7335 0.00234575 0.08787 1.022 0.12] 
+            DEF BubblePath7 PositionInterpolator { 
             }
-            DEF BubblePath8 PositionInterpolator {
-              key [0 0.1125 0.5535 0.97865 1]
-              keyValue [0 0 0 0.1235 0.05 0.00125 0.5666 0.4346 0.005556 0.8975 0.34575 0.0098775 1.8787 1.686 0.86] 
+            DEF BubblePath8 PositionInterpolator { 
             }
-            DEF BubblePath9 PositionInterpolator {
-              key [0 0.0025 0.035 0.65 1]
-              keyValue [0 0 0 0.522 0.5445 0.0057 0.6543 0.226 0.0055 0.45575 0.4375 0.0067 1.8787 2 0.1545] 
+            DEF BubblePath9 PositionInterpolator { 
             }
-            DEF BubblePath10 PositionInterpolator {
-              key [0 0.00025 0.035 0.6895 1]
-              keyValue [0 0 0 0.8765 0.445 0.00335 0.3336 0.4446 0.005556 0.765 0.75 0.0075 1 1 0.1] 
+            DEF BubblePath10 PositionInterpolator { 
             }
             Transform {
               children [

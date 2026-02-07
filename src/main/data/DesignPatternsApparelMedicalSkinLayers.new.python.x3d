@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='DesignPatternsApparelMedicalSkinLayers.x3d' name='title'/>
     <meta content='Design patterns for skin and apparel using HAnim2 standard in X3D4' name='description'/>
@@ -23,18 +23,18 @@
     <Background skyColor='0 0.6 0.6'/>
     <Group DEF='MultipleHumanoids'>
       <MetadataString name='HAnimArchitecture' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile' value='"E.4 Multiple humanoids per file"'/>
-      <HAnimHumanoid DEF='a_SimpleSkeleton' name='SimpleSkeleton'>
+      <HAnimHumanoid DEF='a_SimpleSkeleton'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'>
             <Shape DEF='JointVisualization'/>
             <Shape DEF='SegmentVisualization'/>
-            <HAnimSite DEF='a_feature01_tip' name='feature01_tip'>
+            <HAnimSite DEF='a_feature01_tip'>
               <Shape DEF='SiteVisualization'/>
             </HAnimSite>
           </HAnimSegment>
         </HAnimJoint>
       </HAnimHumanoid>
-      <HAnimHumanoid DEF='b_SimpleSkeletonMesh' name='SimpleSkeletonMesh'>
+      <HAnimHumanoid DEF='b_SimpleSkeletonMesh'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'>
             <Shape>
@@ -43,13 +43,13 @@
           </HAnimSegment>
         </HAnimJoint>
       </HAnimHumanoid>
-      <HAnimHumanoid DEF='c_SkinIndexedGeometry' name='SkinIndexedGeometry'>
+      <HAnimHumanoid DEF='c_SkinIndexedGeometry'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'/>
         </HAnimJoint>
         <IndexedFaceSet DEF='SkinMeshIFS'/>
       </HAnimHumanoid>
-      <HAnimHumanoid DEF='d_SkinShapeIndexedGeometry' name='SkinShapeIndexedGeometry'>
+      <HAnimHumanoid DEF='d_SkinShapeIndexedGeometry'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'/>
         </HAnimJoint>
@@ -57,7 +57,7 @@
           <IndexedFaceSet USE='SkinMeshIFS'/>
         </Shape>
       </HAnimHumanoid>
-      <HAnimHumanoid DEF='e_SkinSwitchShapeIndexedGeometry' name='SkinSwitchShapeIndexedGeometry'>
+      <HAnimHumanoid DEF='e_SkinSwitchShapeIndexedGeometry'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'/>
         </HAnimJoint>
@@ -67,7 +67,7 @@
           </IndexedFaceSet>
         </Shape>
       </HAnimHumanoid>
-      <HAnimHumanoid DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry' name='SynthesizedSkinShapeIndexedTwoPartGeometry'>
+      <HAnimHumanoid DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'/>
         </HAnimJoint>
@@ -77,20 +77,20 @@
           </IndexedFaceSet>
         </Shape>
       </HAnimHumanoid>
-      <HAnimHumanoid DEF='g_ApparelSkinIndexedGeometryMultipleShapes' name='ApparelSkinIndexedGeometryMultipleShapes'>
+      <HAnimHumanoid DEF='g_ApparelSkinIndexedGeometryMultipleShapes'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'/>
         </HAnimJoint>
         <Shape/>
       </HAnimHumanoid>
-      <HAnimHumanoid DEF='h_AnatomySkinIndexedGeometryMultipleShapes' name='AnatomySkinIndexedGeometryMultipleShapes'>
+      <HAnimHumanoid DEF='h_AnatomySkinIndexedGeometryMultipleShapes'>
         <HAnimJoint name='humanoid_root'>
           <HAnimSegment name='sacrum'/>
         </HAnimJoint>
         <Shape/>
       </HAnimHumanoid>
     </Group>
-    <Viewpoint DEF='ViewHelpText' description='Select text to see website' position='0 0 12'/>
+    <Viewpoint DEF='ViewHelpText'/>
     <Anchor description='DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches' parameter='"target=blank"' url='"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"'>
       <Shape>
         <Appearance>

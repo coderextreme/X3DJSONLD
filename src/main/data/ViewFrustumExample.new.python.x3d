@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='ViewFrustumExample.x3d' name='title'/>
     <meta content='Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype.' name='description'/>
@@ -48,9 +48,9 @@
       <fieldValue name='transparency' value='0.75'/>
       <fieldValue name='trace' value='true'/>
     </ProtoInstance>
-    <Inline DEF='GridXZ' url='"GridXZ_20x20Fixed.x3d"'/>
+    <Inline DEF='GridXZ'/>
     <Transform scale='5 5 5'>
-      <Inline DEF='CoordinateAxes' url='"CoordinateAxes.x3d"'/>
+      <Inline DEF='CoordinateAxes'/>
     </Transform>
   </Scene>
 </X3D>

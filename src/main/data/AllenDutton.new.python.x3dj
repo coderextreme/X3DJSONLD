@@ -152,8 +152,7 @@
         "HAnimHumanoid":
         {
       {
-        "@DEF":"hanim_Humanoid",
-        "@name":"Humanoid"
+        "@DEF":"hanim_Humanoid"
       }
             "HAnimJoint":
             {
@@ -356,22 +355,17 @@
             "HAnimJoint":
             {
       {
-        "@DEF":"hanim_humanoid_root",
-        "@center":"-0.00405 0.855 -0.000113",
-        "@name":"humanoid_root"
+        "@DEF":"hanim_humanoid_root"
       }
                 "HAnimJoint":
                 {
       {
-        "@DEF":"hanim_sacroiliac",
-        "@center":"0 1.01 -0.0204",
-        "@name":"sacroiliac"
+        "@DEF":"hanim_sacroiliac"
       }
                     "HAnimSegment":
                     {
       {
-        "@DEF":"hanim_pelvis",
-        "@name":"pelvis"
+        "@DEF":"hanim_pelvis"
       }
                         "Transform":
                         {
@@ -387,18 +381,13 @@
                                     "Material":
                                     {
       {
-        "@DEF":"Pants_Color",
-        "@ambientIntensity":"0.25",
-        "@diffuseColor":"0.054 0.233 0.39"
+        "@DEF":"Pants_Color"
       }
     },
                                     "ImageTexture":
                                     {
       {
-        "@DEF":"camo",
-        "@repeatS":"false",
-        "@repeatT":"false",
-        "@url":""../resources/images/greenCamo.jpg" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/greenCamo.jpg""
+        "@DEF":"camo"
       }
     },
                                 }                                "IndexedFaceSet":
@@ -416,23 +405,17 @@
                                 }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_l_hip",
-        "@center":"0.122 0.888271 -0.0693267",
-        "@name":"l_hip"
+        "@DEF":"hanim_l_hip"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_l_thigh",
-        "@name":"l_thigh"
+        "@DEF":"hanim_l_thigh"
       }
                             "Transform":
                             {
       {
-        "@DEF":"l_thigh_adjust",
-        "@center":"-0.7 1.1 0.04",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"l_thigh_adjust"
       }
                                 "Shape":
                                 {
@@ -465,23 +448,17 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_l_knee",
-        "@center":"0.0738 0.517 -0.0284",
-        "@name":"l_knee"
+        "@DEF":"hanim_l_knee"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_l_calf",
-        "@name":"l_calf"
+        "@DEF":"hanim_l_calf"
       }
                                 "Transform":
                                 {
       {
-        "@DEF":"l_calf_adjust",
-        "@center":"-0.012 1.1 -0.01",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"l_calf_adjust"
       }
                                     "Shape":
                                     {
@@ -514,23 +491,17 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_l_ankle",
-        "@center":"0.0645 0.0719 -0.048",
-        "@name":"l_ankle"
+        "@DEF":"hanim_l_ankle"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_l_hindfoot",
-        "@name":"l_hindfoot"
+        "@DEF":"hanim_l_hindfoot"
       }
                                     "Transform":
                                     {
       {
-        "@DEF":"l_foot_adjust",
-        "@center":"-0.32 1.1 0.021",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"l_foot_adjust"
       }
                                         "Shape":
                                         {
@@ -539,8 +510,7 @@
                                                 "Material":
                                                 {
       {
-        "@DEF":"Shoe_Color",
-        "@ambientIntensity":"0.25"
+        "@DEF":"Shoe_Color"
       }
     },
                                             }                                            "IndexedFaceSet":
@@ -558,23 +528,17 @@
                                             }                                        }                                    }                                }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_r_hip",
-        "@center":"-0.11 0.892362 -0.0732533",
-        "@name":"r_hip"
+        "@DEF":"hanim_r_hip"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_r_thigh",
-        "@name":"r_thigh"
+        "@DEF":"hanim_r_thigh"
       }
                             "Transform":
                             {
       {
-        "@DEF":"r_thigh_adjust",
-        "@center":"0.43 1.1 -0.05",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"r_thigh_adjust"
       }
                                 "Shape":
                                 {
@@ -607,23 +571,17 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_r_knee",
-        "@center":"-0.0699 0.51 -0.0166",
-        "@name":"r_knee"
+        "@DEF":"hanim_r_knee"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_r_calf",
-        "@name":"r_calf"
+        "@DEF":"hanim_r_calf"
       }
                                 "Transform":
                                 {
       {
-        "@DEF":"r_calf_adjust",
-        "@center":"0.43 1.1 -0.05",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"r_calf_adjust"
       }
                                     "Shape":
                                     {
@@ -656,23 +614,17 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_r_ankle",
-        "@center":"-0.064 0.0753 -0.0412",
-        "@name":"r_ankle"
+        "@DEF":"hanim_r_ankle"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_r_hindfoot",
-        "@name":"r_hindfoot"
+        "@DEF":"hanim_r_hindfoot"
       }
                                     "Transform":
                                     {
       {
-        "@DEF":"r_foot_adjust",
-        "@center":"0.3319 1.1 -0.04",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"r_foot_adjust"
       }
                                         "Shape":
                                         {
@@ -699,23 +651,17 @@
                                             }                                        }                                    }                                }                            }                        }                    }                }                "HAnimJoint":
                 {
       {
-        "@DEF":"hanim_vl1",
-        "@center":"-0.00405 1.07 -0.0275",
-        "@name":"vl1"
+        "@DEF":"hanim_vl1"
       }
                     "HAnimSegment":
                     {
       {
-        "@DEF":"hanim_l1",
-        "@name":"l1"
+        "@DEF":"hanim_l1"
       }
                         "Transform":
                         {
       {
-        "@DEF":"torso_adjust",
-        "@center":"0 1 0",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"torso_adjust"
       }
                             "Shape":
                             {
@@ -724,9 +670,7 @@
                                     "Material":
                                     {
       {
-        "@DEF":"Shirt_Color",
-        "@ambientIntensity":"0.25",
-        "@diffuseColor":"0.6 0.0745 0.1137"
+        "@DEF":"Shirt_Color"
       }
     },
                                     "ImageTexture":
@@ -750,23 +694,17 @@
                                 }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_l_shoulder",
-        "@center":"0.167 1.36 -0.0518",
-        "@name":"l_shoulder"
+        "@DEF":"hanim_l_shoulder"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_l_upperarm",
-        "@name":"l_upperarm"
+        "@DEF":"hanim_l_upperarm"
       }
                             "Transform":
                             {
       {
-        "@DEF":"l_upperarm_adjust",
-        "@center":"-0.435 1 0.06",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"l_upperarm_adjust"
       }
                                 "Shape":
                                 {
@@ -775,9 +713,7 @@
                                         "Material":
                                         {
       {
-        "@DEF":"Skin_Color",
-        "@ambientIntensity":"0.25",
-        "@diffuseColor":"0.749 0.601 0.462"
+        "@DEF":"Skin_Color"
       }
     },
                                         "ImageTexture":
@@ -801,23 +737,17 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_l_elbow",
-        "@center":"0.196 1.07 -0.0518",
-        "@name":"l_elbow"
+        "@DEF":"hanim_l_elbow"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_l_forearm",
-        "@name":"l_forearm"
+        "@DEF":"hanim_l_forearm"
       }
                                 "Transform":
                                 {
       {
-        "@DEF":"l_forearm_adjust",
-        "@center":"-0.634 1.01 0.0799",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"l_forearm_adjust"
       }
                                     "Shape":
                                     {
@@ -850,23 +780,17 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_l_wrist",
-        "@center":"0.213 0.811 -0.0338",
-        "@name":"l_wrist"
+        "@DEF":"hanim_l_wrist"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_l_hand",
-        "@name":"l_hand"
+        "@DEF":"hanim_l_hand"
       }
                                     "Transform":
                                     {
       {
-        "@DEF":"l_hand_adjust",
-        "@center":"-0.8355 1.015 0.1",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"l_hand_adjust"
       }
                                         "Shape":
                                         {
@@ -893,23 +817,17 @@
                                             }                                        }                                    }                                }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_r_shoulder",
-        "@center":"-0.167 1.36 -0.0458",
-        "@name":"r_shoulder"
+        "@DEF":"hanim_r_shoulder"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_r_upperarm",
-        "@name":"r_upperarm"
+        "@DEF":"hanim_r_upperarm"
       }
                             "Transform":
                             {
       {
-        "@DEF":"r_upperarm_adjust",
-        "@center":"0.27 1 -0.025",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"r_upperarm_adjust"
       }
                                 "Shape":
                                 {
@@ -942,23 +860,17 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_r_elbow",
-        "@center":"-0.192 1.07 -0.0498",
-        "@name":"r_elbow"
+        "@DEF":"hanim_r_elbow"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_r_forearm",
-        "@name":"r_forearm"
+        "@DEF":"hanim_r_forearm"
       }
                                 "Transform":
                                 {
       {
-        "@DEF":"r_forearm_adjust",
-        "@center":"0.7641 1.01 -0.07438",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"r_forearm_adjust"
       }
                                     "Shape":
                                     {
@@ -991,23 +903,17 @@
                                         }                                    }                                }                            }                            "HAnimJoint":
                             {
       {
-        "@DEF":"hanim_r_wrist",
-        "@center":"-0.217 0.811 -0.0338",
-        "@name":"r_wrist"
+        "@DEF":"hanim_r_wrist"
       }
                                 "HAnimSegment":
                                 {
       {
-        "@DEF":"hanim_r_hand",
-        "@name":"r_hand"
+        "@DEF":"hanim_r_hand"
       }
                                     "Transform":
                                     {
       {
-        "@DEF":"r_hand_adjust",
-        "@center":"0.2693 1.011 -0.0248",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"r_hand_adjust"
       }
                                         "Shape":
                                         {
@@ -1034,23 +940,17 @@
                                             }                                        }                                    }                                }                            }                        }                    }                    "HAnimJoint":
                     {
       {
-        "@DEF":"hanim_vc4",
-        "@center":"0 1.43 -0.0458",
-        "@name":"vc4"
+        "@DEF":"hanim_vc4"
       }
                         "HAnimSegment":
                         {
       {
-        "@DEF":"hanim_c4",
-        "@name":"c4"
+        "@DEF":"hanim_c4"
       }
                             "Transform":
                             {
       {
-        "@DEF":"neck_adjust",
-        "@center":"-0.36 1.03 0.04",
-        "@rotation":"0 1 0 1.570796",
-        "@scale":"0.1 0.1 0.1"
+        "@DEF":"neck_adjust"
       }
                                 "Shape":
                                 {
@@ -1071,9 +971,7 @@
                                     }                                    "IndexedFaceSet":
                                     {
       {
-        "@DEF":"neck",
-        "@coordIndex":"0 1 2 -1 3 4 5 -1 6 7 8 -1 9 10 11 -1 12 13 14 -1 15 16 17 -1 18 19 20 -1 21 22 23 -1 24 25 26 -1 27 28 29 -1 30 31 32 -1 33 34 35 -1 36 37 38 -1 39 40 41 -1 42 43 44 -1 45 46 47 -1 48 49 50 -1 51 52 53 -1 54 55 56 -1 57 58 59 -1 60 61 62 -1 63 64 65 -1 66 67 68 -1 69 70 71 -1 72 73 74 -1 75 76 77 -1 78 79 80 -1 81 82 83 -1 84 85 86 -1 87 88 89 -1 90 91 92 -1 93 94 95 -1 96 97 98 -1 99 100 101 -1 102 103 104 -1 105 106 107 -1 108 109 110 -1 111 112 113 -1 114 115 116 -1 117 118 119 -1 120 121 122 -1 123 124 125 -1 126 127 128 -1 129 130 131 -1 132 133 134 -1 135 136 137 -1 138 139 140 -1 141 142 143 -1 144 145 146 -1 147 148 149 -1 150 151 152 -1 153 154 155 -1 156 157 158 -1 159 160 161 -1 162 163 164 -1 165 166 167 -1 168 169 170 -1 171 172 173 -1 174 175 176 -1 177 178 179 -1 180 181 182 -1 183 184 185 -1 186 187 188 -1 189 190 191 -1 192 193 194 -1 195 196 197 -1 198 199 200 -1 201 202 203 -1 204 205 206 -1 207 208 209 -1 210 211 212 -1 213 214 215 -1 216 217 218 -1 219 220 221 -1 222 223 224 -1 225 226 227 -1 228 229 230 -1 231 232 233 -1 234 235 236 -1 237 238 239 -1 240 241 242 -1 243 244 245 -1 246 247 248 -1 249 250 251 -1 252 253 254 -1 255 256 257 -1 258 259 260 -1 261 262 263 -1 264 265 266 -1 267 268 269 -1 270 271 272 -1 273 274 275 -1 276 277 278 -1 279 280 281 -1 282 283 284 -1 285 286 287 -1 288 289 290 -1 291 292 293 -1 294 295 296 -1 297 298 299 -1 300 301 302 -1 303 304 305 -1 306 307 308 -1 309 310 311 -1 312 313 314 -1 315 316 317 -1 318 319 320 -1 321 322 323 -1 324 325 326 -1 327 328 329 -1 330 331 332 -1 333 334 335 -1 336 337 338 -1 339 340 341 -1 342 343 344 -1 345 346 347 -1 348 349 350 -1 351 352 353 -1 354 355 356 -1 357 358 359 -1 360 361 362 -1 363 364 365 -1 366 367 368 -1 369 370 371 -1 372 373 374 -1 375 376 377 -1 378 379 380 -1 381 382 383 -1 384 385 386 -1 387 388 389 -1 390 391 392 -1 393 394 395 -1 396 397 398 -1 399 400 401 -1 402 403 404 -1 405 406 407 -1 408 409 410 -1 411 412 413 -1 414 415 416 -1 417 418 419 -1 420 421 422 -1 423 424 425 -1 426 427 428 -1 429 430 431 -1 432 433 434 -1 435 436 437 -1 438 439 440 -1 441 442 443 -1 444 445 446 -1 447 448 449 -1 450 451 452 -1 453 454 455 -1 456 457 458 -1 459 460 461 -1 462 463 464 -1 465 466 467 -1 468 469 470 -1 471 472 473 -1 474 475 476 -1 477 478 479 -1 480 481 482 -1 483 484 485 -1 486 487 488 -1 489 490 491 -1 492 493 494 -1 495 496 497 -1 498 499 500 -1 501 502 503 -1 504 505 506 -1 507 508 509 -1 510 511 512 -1 513 514 515 -1 516 517 518 -1 519 520 521 -1 522 523 524 -1 525 526 527 -1 528 529 530 -1 531 532 533 -1 534 535 536 -1 537 538 539 -1 540 541 542 -1 543 544 545 -1 546 547 548 -1 549 550 551 -1 552 553 554 -1 555 556 557 -1 558 559 560 -1 561 562 563 -1 564 565 566 -1 567 568 569 -1 570 571 572 -1 573 574 575 -1 576 577 578 -1 579 580 581 -1 582 583 584 -1",
-        "@creaseAngle":"1.91"
+        "@DEF":"neck"
       }
                                         "Coordinate":
                                         {
@@ -1084,22 +982,17 @@
                                     }                                }                            }                        }                        "HAnimJoint":
                         {
       {
-        "@DEF":"hanim_skullbase",
-        "@center":"0 1.4 0",
-        "@name":"skullbase"
+        "@DEF":"hanim_skullbase"
       }
                             "HAnimSegment":
                             {
       {
-        "@DEF":"hanim_skull",
-        "@name":"skull"
+        "@DEF":"hanim_skull"
       }
                                 "Transform":
                                 {
       {
-        "@DEF":"skull_adjust",
-        "@center":"-0.07 1.33 -0.035",
-        "@scale":"0.001 0.001 0.001"
+        "@DEF":"skull_adjust"
       }
                                     "Shape":
                                     {
@@ -1133,42 +1026,30 @@
                                         }                                    }                                }                            }                        }                    }                }            }            "HAnimSite":
             {
       {
-        "@DEF":"hanim_BoxMan_view",
-        "@name":"BoxMan_view"
+        "@DEF":"hanim_BoxMan_view"
       }
                 "Viewpoint":
                 {
       {
-        "@DEF":"InclinedView",
-        "@description":"Inclined View",
-        "@orientation":"-0.113 0.993 0.0347 0.671",
-        "@position":"1.62 1.05 2.06"
+        "@DEF":"InclinedView"
       }
     },
                 "Viewpoint":
                 {
       {
-        "@DEF":"FrontView",
-        "@description":"Front View",
-        "@position":"0 0.854 2.57665"
+        "@DEF":"FrontView"
       }
     },
                 "Viewpoint":
                 {
       {
-        "@DEF":"SideView",
-        "@description":"Side View",
-        "@orientation":"0 1 0 1.5708",
-        "@position":"2.5929 0.854 0"
+        "@DEF":"SideView"
       }
     },
                 "Viewpoint":
                 {
       {
-        "@DEF":"TopView",
-        "@description":"Top View",
-        "@orientation":"1 0 0 -1.5708",
-        "@position":"0 3.4495 0"
+        "@DEF":"TopView"
       }
     },
             }        }        "NavigationInfo":
@@ -1209,8 +1090,7 @@
                             "TouchSensor":
                             {
       {
-        "@DEF":"Stand_Touch",
-        "@description":"click for behavior"
+        "@DEF":"Stand_Touch"
       }
     },
                             "Shape":
@@ -1223,10 +1103,7 @@
                                     "Material":
                                     {
       {
-        "@DEF":"text_color",
-        "@ambientIntensity":"0",
-        "@diffuseColor":"0 0 0",
-        "@emissiveColor":"0.819 0.521 0.169"
+        "@DEF":"text_color"
       }
     },
                                 }                                "IndexedFaceSet":
@@ -1256,10 +1133,7 @@
                                         "Material":
                                         {
       {
-        "@DEF":"Clear",
-        "@ambientIntensity":"0",
-        "@diffuseColor":"0 0 0",
-        "@transparency":"1"
+        "@DEF":"Clear"
       }
     },
                                     }                                    "IndexedFaceSet":
@@ -1281,8 +1155,7 @@
                             "TouchSensor":
                             {
       {
-        "@DEF":"Walk_Touch",
-        "@description":"click for behavior"
+        "@DEF":"Walk_Touch"
       }
     },
                             "Shape":
@@ -1347,8 +1220,7 @@
                             "TouchSensor":
                             {
       {
-        "@DEF":"Run_Touch",
-        "@description":"click for behavior"
+        "@DEF":"Run_Touch"
       }
     },
                             "Shape":
@@ -1413,8 +1285,7 @@
                             "TouchSensor":
                             {
       {
-        "@DEF":"Jump_Touch",
-        "@description":"click for behavior"
+        "@DEF":"Jump_Touch"
       }
     },
                             "Shape":
@@ -1474,9 +1345,7 @@
                                     }                                }                            }                        }                    }                }            }            "Transform":
             {
       {
-        "@DEF":"Floor",
-        "@scale":"1 0.0125 1",
-        "@translation":"0 -0.0125 0"
+        "@DEF":"Floor"
       }
                 "Shape":
                 {
@@ -1501,152 +1370,115 @@
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_ankle_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"r_ankle_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_knee_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"r_knee_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_hip_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"r_hip_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_ankle_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"l_ankle_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_knee_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"l_knee_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_hip_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"l_hip_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"lower_body_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"lower_body_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_wrist_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"r_wrist_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_elbow_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"r_elbow_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_shoulder_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"r_shoulder_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_wrist_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"l_wrist_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_elbow_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"l_elbow_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_shoulder_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"l_shoulder_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"head_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"head_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"neck_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"neck_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"upper_body_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"upper_body_RotationInterpolator_Stand"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"whole_body_RotationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"whole_body_RotationInterpolator_Stand"
       }
     },
                 "PositionInterpolator":
                 {
       {
-        "@DEF":"whole_body_TranslationInterpolator_Stand",
-        "@key":"0 1",
-        "@keyValue":"0 0 0 0 0 0"
+        "@DEF":"whole_body_TranslationInterpolator_Stand"
       }
     },
                 "TimeSensor":
                 {
       {
-        "@DEF":"Stand_Time",
-        "@cycleInterval":"0.009999999776482582"
+        "@DEF":"Stand_Time"
       }
     },
             }            "Group":
@@ -1657,154 +1489,115 @@
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_ankle_RotationInterpolator_BasicWalk",
-        "@key":"0 0.125 0.2083 0.375 0.4583 0.5 0.6667 0.75 0.7917 0.9167 1",
-        "@keyValue":"0 0 1 0 -1 0 0 0.3533 -1 0 0 0.1072 1 0 0 0.2612 1 0 0 0.1268 -1 0 0 0.01793 -1 0 0 0.05824 -1 0 0 0.2398 -1 0 0 0.35 -1 0 0 0.3322 0 0 1 0"
+        "@DEF":"r_ankle_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_knee_RotationInterpolator_BasicWalk",
-        "@key":"0 0.125 0.2083 0.2917 0.375 0.5 0.6667 0.7917 0.9167 1",
-        "@keyValue":"1 0 0 0.8573 1 0 0 0.8926 1 0 0 0.5351 1 0 0 0.1756 1 0 0 0.1194 1 0 0 0.3153 1 0 0 0.09354 1 0 0 0.08558 1 0 0 0.2475 1 0 0 0.8573"
+        "@DEF":"r_knee_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_hip_RotationInterpolator_BasicWalk",
-        "@key":"0 0.125 0.2083 0.2917 0.375 0.5 0.6667 0.7917 0.9167 1",
-        "@keyValue":"-0.5831 0.03511 0.8116 0.1481 -0.995 0.02296 0.09674 0.4683 -1 0.00192 0.007964 0.4732 -0.998 -0.0158 -0.06102 0.5079 -0.9911 -0.03541 -0.1286 0.5419 -0.9131 -0.06243 -0.403 0.3361 -0.4306 -0.07962 -0.899 0.07038 1 0 0 0.2571 0.9891 -0.02805 0.1444 0.3879 -0.5831 0.03511 0.8116 0.1481"
+        "@DEF":"r_hip_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_ankle_RotationInterpolator_BasicWalk",
-        "@key":"0 0.125 0.2083 0.375 0.6667 0.9167 1",
-        "@keyValue":"-1 0 0 0.06714 -1 0 0 0.2152 -1 0 0 0.3184 -1 0 0 0.4717 -1 0 0 0.2912 1 0 0 0.1222 -1 0 0 0.06714"
+        "@DEF":"l_ankle_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_knee_RotationInterpolator_BasicWalk",
-        "@key":"0 0.2083 0.375 0.5 0.6667 0.7917 0.9167 1",
-        "@keyValue":"1 0 0 0.3226 1 0 0 0.1556 1 0 0 0.08678 1 0 0 0.8751 1 0 0 1.131 1 0 0 0.09961 1 0 0 0.3942 1 0 0 0.3226"
+        "@DEF":"l_knee_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_hip_RotationInterpolator_BasicWalk",
-        "@key":"0 0.25 0.375 0.5 0.6667 0.7917 0.9167 1",
-        "@keyValue":"-0.873 0.06094 0.484 0.2865 0.9963 -0.01057 0.08481 0.2488 0.9965 0.01591 -0.08222 0.3836 -0.7018 -0.03223 -0.7117 0.1289 -1 0 0 0.5518 -0.9964 0.02231 0.0817 0.5351 -0.9809 0.04912 0.1881 0.5204 -0.873 0.06094 0.484 0.2865"
+        "@DEF":"l_hip_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"lower_body_RotationInterpolator_BasicWalk",
-        "@key":"0 0.5 1",
-        "@keyValue":"0 0 -1 0.1056 0 0 1 0.09018 0 0 -1 0.1056"
+        "@DEF":"lower_body_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_wrist_RotationInterpolator_BasicWalk",
-        "@key":"0 0.375 0.9167 1",
-        "@keyValue":"-0.8129 0.4759 -0.3357 0.1346 0.1533 -0.9878 0.02582 0.3902 -0.5701 0.7604 -0.311 0.366 -0.8129 0.4759 -0.3357 0.1346"
+        "@DEF":"r_wrist_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_elbow_RotationInterpolator_BasicWalk",
-        "@key":"0 0.375 0.9167 1",
-        "@keyValue":"-1 0 0 0.411508 -1 0 0 0.0925011 -1 0 0 0.572568 -1 0 0 0.411508"
+        "@DEF":"r_elbow_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_shoulder_RotationInterpolator_BasicWalk",
-        "@key":"0 0.375 0.9167 1",
-        "@keyValue":"-1 0 0 0.09346 1 0 0 0.3197 -1 0 0 0.1564 -1 0 0 0.09346"
+        "@DEF":"r_shoulder_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_wrist_RotationInterpolator_BasicWalk",
-        "@key":"0 0.375 0.9167 1",
-        "@keyValue":"0 -1 0 0.461076 -0.330195 -0.927451 0.175516 0.538852 0.0327774 -0.999314 -0.0172185 0.492033 0 -1 0 0.461076"
+        "@DEF":"l_wrist_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_elbow_RotationInterpolator_BasicWalk",
-        "@key":"0 0.375 0.9167 1",
-        "@keyValue":"-1 0 0 0.0659878 -1 0 0 0.488383 -1 0 0 0.0177536 -1 0 0 0.0659878"
+        "@DEF":"l_elbow_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_shoulder_RotationInterpolator_BasicWalk",
-        "@key":"0 0.375 0.9167 1",
-        "@keyValue":"1 0 0 0.1189 -1 0 0 0.1861 1 0 0 0.3357 1 0 0 0.1189"
+        "@DEF":"l_shoulder_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"head_RotationInterpolator_BasicWalk",
-        "@key":"0 0.375 0.4167 0.5 0.5833 0.6667 0.75 0.8333 0.9167 1",
-        "@keyValue":"0 -1 0 0.08642 0 1 0 0.1825 0 1 0 0.1505 0 1 0 0.1053 0 1 0 0.04391 0 -1 0 0.03119 0 -1 0 0.07936 0 -1 0 0.1616 0 -1 0 0.155 0 -1 0 0.08642"
+        "@DEF":"head_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"neck_RotationInterpolator_BasicWalk",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"neck_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"upper_body_RotationInterpolator_BasicWalk",
-        "@key":"0 0.2083 0.375 0.75 0.8333 1",
-        "@keyValue":"0 1 0 0.0826 -0.01972 -0.5974 0.8017 0.08231 0.009296 -0.9648 0.2627 0.1734 -0.01238 0.9549 -0.2968 0.08732 -0.008125 0.9691 -0.2463 0.158 0 1 0 0.0826"
+        "@DEF":"upper_body_RotationInterpolator_BasicWalk"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"whole_body_RotationInterpolator_BasicWalk",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"whole_body_RotationInterpolator_BasicWalk"
       }
     },
                 "PositionInterpolator":
                 {
       {
-        "@DEF":"whole_body_TranslationInterpolator_BasicWalk",
-        "@key":"0 0.04167 0.125 0.1667 0.2083 0.25 0.2917 0.375 0.4583 0.5 0.5417 0.5833 0.625 0.7083 0.75 0.7917 0.875 0.9167 1",
-        "@keyValue":"0 -0.00928 0 0 -0.003858 0 0 -0.008847 0 0 -0.01486 0 0 -0.02641 0 0 -0.03934 0 0 -0.0502 0 0 -0.07469 0 0 -0.02732 0 0 -0.01608 0 0 -0.01129 0 0 -0.005819 0 0 -0.002004 0 0 -0.002579 0 0 -0.0143 0 0 -0.03799 0 0 -0.05648 0 0 -0.045 0 0 -0.00928 0"
+        "@DEF":"whole_body_TranslationInterpolator_BasicWalk"
       }
     },
                 "TimeSensor":
                 {
       {
-        "@DEF":"Walk_Time",
-        "@cycleInterval":"2",
-        "@loop":"true",
-        "@startTime":"-1"
+        "@DEF":"Walk_Time"
       }
     },
             }            "Group":
@@ -1815,153 +1608,115 @@
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_ankle_RotationInterpolator_Run",
-        "@key":"0 0.4909 0.7091 0.8 0.8182 1",
-        "@keyValue":"1 0 0 0.2323 -1 0 0 0.07843 -1 0 0 0.09676 -1 0 0 0.3274 -1 0 0 0.3278 1 0 0 0.2323"
+        "@DEF":"r_ankle_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_knee_RotationInterpolator_Run",
-        "@key":"0 0.03636 0.2182 0.4909 0.7455 1",
-        "@keyValue":"1 0 0 0.7004 1 0 0 1.011 1 0 0 1.892 1 0 0 1.188 1 0 0 0.3964 1 0 0 0.7004"
+        "@DEF":"r_knee_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_hip_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.4909 0.7455 1",
-        "@keyValue":"0.9999 0.00293 -0.00989 0.402 -1 0.004977 -0.00497 0.5943 -1 0.003265 -0.001752 1.178 -0.9999 0.00815 -0.01093 0.3031 0.9999 0.00293 -0.00989 0.402"
+        "@DEF":"r_hip_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_ankle_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.3091 0.4909 1",
-        "@keyValue":"1 0 0 0.03543 -1 0 0 0.1037 -1 0 0 0.4328 1 0 0 0.1929 1 0 0 0.03543"
+        "@DEF":"l_ankle_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_knee_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.4909 0.7455 1",
-        "@keyValue":"1 0 0 1.108 1 0 0 0.4265 1 0 0 0.7052 1 0 0 2.179 1 0 0 1.108"
+        "@DEF":"l_knee_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_hip_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.4909 0.7455 1",
-        "@keyValue":"-0.9986 0.03354 0.04001 1.212 -0.9889 0.1328 0.06696 0.4025 0.9894 0.1453 0.009351 0.4114 -0.9963 0.07032 0.05003 0.7035 -0.9986 0.03354 0.04001 1.212"
+        "@DEF":"l_hip_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"lower_body_RotationInterpolator_Run",
-        "@key":"0 1",
-        "@keyValue":"0.9969 -0.05444 0.05596 0.07687 0.9969 -0.05444 0.05596 0.07687"
+        "@DEF":"lower_body_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_wrist_RotationInterpolator_Run",
-        "@key":"0 1",
-        "@keyValue":"-0.917742 -0.237244 -0.318536 0.214273 -0.917742 -0.237244 -0.318536 0.214273"
+        "@DEF":"r_wrist_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_elbow_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.4909 0.7455 1",
-        "@keyValue":"0.9353 -0.2978 -0.191 4.222 -0.9362 0.2924 -0.1952 1.05 0.9941 -0.09719 -0.04725 4.512 -0.9594 0.2653 0.09579 1.525 0.9353 -0.2978 -0.191 4.222"
+        "@DEF":"r_elbow_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_shoulder_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.4909 0.7455 1",
-        "@keyValue":"-1 0 0 0.6979 0.9094 0.2062 -0.3613 0.4157 0.9637 0.1537 -0.2185 1.353 0.4864 0.08841 -0.8693 0.1716 -1 0 0 0.6979"
+        "@DEF":"r_shoulder_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_wrist_RotationInterpolator_Run",
-        "@key":"0 1",
-        "@keyValue":"-0.0240995 -0.999682 0.00741506 0.120409 -0.0240995 -0.999682 0.00741506 0.120409"
+        "@DEF":"l_wrist_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_elbow_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.4909 0.7455 1",
-        "@keyValue":"0.9985 0.03887 0.03802 4.689 -0.965 -0.1889 -0.1821 1.415 0.9758 0.1563 0.1529 4.666 -0.9956 -0.0936 0.009826 1.126 0.9985 0.03887 0.03802 4.689"
+        "@DEF":"l_elbow_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_shoulder_RotationInterpolator_Run",
-        "@key":"0 0.2182 0.4909 0.7455 1",
-        "@keyValue":"0.9907 -0.07264 0.115 1.135 0.9291 -0.1222 0.349 0.1695 -0.9892 0.1364 -0.05394 0.5112 0.9942 -0.0002052 0.1073 0.4975 0.9907 -0.07264 0.115 1.135"
+        "@DEF":"l_shoulder_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"head_RotationInterpolator_Run",
-        "@key":"0 0.4909 1",
-        "@keyValue":"0.6517 -0.7559 0.06211 0.2508 0.6467 0.7527 -0.1238 0.2344 0.6517 -0.7559 0.06211 0.2508"
+        "@DEF":"head_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"neck_RotationInterpolator_Run",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"neck_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"upper_body_RotationInterpolator_Run",
-        "@key":"0 0.2545 0.4909 0.7636 1",
-        "@keyValue":"0.7651 0.6382 0.08586 0.2712 0.9999 0.002845 -0.01547 0.3756 0.7459 -0.6505 -0.1432 0.2416 0.9984 0.05536 -0.01154 0.3488 0.7651 0.6382 0.08586 0.2712"
+        "@DEF":"upper_body_RotationInterpolator_Run"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"whole_body_RotationInterpolator_Run",
-        "@key":"0 1",
-        "@keyValue":"0 0 1 0 0 0 1 0"
+        "@DEF":"whole_body_RotationInterpolator_Run"
       }
     },
                 "PositionInterpolator":
                 {
       {
-        "@DEF":"whole_body_TranslationInterpolator_Run",
-        "@key":"0 0.2182 0.2909 0.3091 0.7091 0.8 0.8182 1",
-        "@keyValue":"0 -0.0351 0 0 -0.0351 0 0 -0.04087 0 0 -0.04886 0 0 -0.04051 0 0 -0.03666 0 0 -0.03666 0 0 -0.0351 0"
+        "@DEF":"whole_body_TranslationInterpolator_Run"
       }
     },
                 "TimeSensor":
                 {
       {
-        "@DEF":"Run_Time",
-        "@loop":"true",
-        "@startTime":"-1"
+        "@DEF":"Run_Time"
       }
     },
             }            "Group":
@@ -1972,153 +1727,115 @@
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_ankle_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.36 0.4 0.44 0.48 0.64 0.76 0.84 0.88 0.92 0.96 1",
-        "@keyValue":"0 0 1 0 -1 0 0 0.6735 -1 0 0 0.6735 -1 0 0 0.3527 -1 0 0 0.3038 -1 0 0 0.07964 1 0 0 0.3001 1 0 0 0.6509 1 0 0 0.3001 -1 0 0 0.2087 -1 0 0 0.3756 -1 0 0 0.3279 -1 0 0 0.1193 0 0 1 0"
+        "@DEF":"r_ankle_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_knee_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.48 0.64 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 1 0 0 2.005 1 0 0 2.005 0 0 1 0 1 0 0 0.9507 1 0 0 0.5845 1 0 0 0.9054 0 0 1 0"
+        "@DEF":"r_knee_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_hip_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.36 0.4 0.44 0.48 0.64 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 1 0 0 4.433 1 0 0 4.433 1 0 0 4.647 -1 0 0 0.8943 -1 0 0 0.3698 0 0 1 0 -1 0 0 0.4963 -1 0 0 0.3829 -1 0 0 0.5169 0 0 1 0"
+        "@DEF":"r_hip_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_ankle_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.36 0.4 0.44 0.48 0.64 0.76 0.84 0.88 0.92 0.96 1",
-        "@keyValue":"0 0 1 0 -1 0 0 0.625 -1 0 0 0.625 -1 0 0 0.3364 -1 0 0 0.2742 -1 0 0 0.05078 1 0 0 0.2833 1 0 0 0.6667 1 0 0 0.2833 -1 0 0 0.2108 -1 0 0 0.375 -1 0 0 0.3146 -1 0 0 0.1174 0 0 1 0"
+        "@DEF":"l_ankle_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_knee_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.48 0.64 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 1 0 0 2.047 1 0 0 2.047 0 0 1 0 1 0 0 1.566 1 0 0 0.5913 1 0 0 0.9235 0 0 1 0"
+        "@DEF":"l_knee_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_hip_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.36 0.4 0.44 0.48 0.64 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 1 0 0 4.349 1 0 0 4.349 1 0 0 4.615 -1 0 0 0.9136 -1 0 0 0.3614 0 0 1 0 -1 0 0 0.7869 -1 0 0 0.3918 -1 0 0 0.5433 0 0 1 0"
+        "@DEF":"l_hip_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"lower_body_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.48 0.76 1",
-        "@keyValue":"0 0 1 0 1 0 0 0.1892 1 0 0 0.1892 0 0 1 0 0 0 1 0 0 0 1 0"
+        "@DEF":"lower_body_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_wrist_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.64 0.76 1",
-        "@keyValue":"0 0 1 0 -0.0585279 0.983903 -0.168849 1.85956 -0.0585279 0.983903 -0.168849 1.85956 -0.00222418 0.99801 -0.0630095 1.46072 0 1 0 0.497349 0 0 1 0"
+        "@DEF":"r_wrist_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_elbow_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.64 0.76 1",
-        "@keyValue":"0 0 1 0 -1 0 0 0.04151 -1 0 0 0.04151 -1 0 0 0.5855 -1 0 0 0.5852 0 0 1 0"
+        "@DEF":"r_elbow_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"r_shoulder_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.64 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 0.9992 0.02042 0.03558 4.688 0.9992 0.02042 0.03558 4.688 0.9989 -0.04623 0.005159 4.079 -0.8687 -0.2525 -0.4261 1.501 -0.941 -0.2893 -0.1754 0.4788 0 0 1 0"
+        "@DEF":"r_shoulder_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_wrist_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.64 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 0.0672928 0.989475 -0.128107 4.15574 0.0672928 0.989475 -0.128107 4.15574 0.00364942 0.999901 0.0135896 4.5822 0 -1 0 0.655922 -0.00050618 -0.999999 0.0012782 1.28397 0 0 1 0"
+        "@DEF":"l_wrist_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_elbow_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.64 0.76 1",
-        "@keyValue":"0 0 1 0 -1 0 0 0.1229 -1 0 0 0.1229 -1 0 0 0.5976 -1 0 0 0.3917 0 0 1 0"
+        "@DEF":"l_elbow_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"l_shoulder_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.64 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 -0.9987 0.02554 0.04498 1.57 -0.9987 0.02554 0.04498 1.57 1 0.0004113 0.003055 4.114 -0.8413 0.3238 0.4329 1.453 -0.877 0.4198 0.2337 0.6009 0 0 1 0"
+        "@DEF":"l_shoulder_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"head_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.48 0.76 1",
-        "@keyValue":"0 0 1 0 -1 0 0 0.5989 -1 0 0 0.5989 -1 0 0 0.3216 1 0 0 0.06503 0 0 1 0"
+        "@DEF":"head_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"neck_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.48 0.76 1",
-        "@keyValue":"0 0 1 0 -1 0 0 0.1942 -1 0 0 0.1942 0 0 1 0 1 0 0 0.2284 0 0 1 0"
+        "@DEF":"neck_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"upper_body_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.48 0.76 0.88 1",
-        "@keyValue":"0 0 1 0 1 0 0 1.038 1 0 0 1.038 -1 0 0 0.1057 1 0 0 0.2171 1 0 0 0.3465 0 0 1 0"
+        "@DEF":"upper_body_RotationInterpolator_Jump"
       }
     },
                 "OrientationInterpolator":
                 {
       {
-        "@DEF":"whole_body_RotationInterpolator_Jump",
-        "@key":"0 0.28 0.32 0.48 0.64 0.76 1",
-        "@keyValue":"0 0 1 0 1 0 0 0.3273 1 0 0 0.3273 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0"
+        "@DEF":"whole_body_RotationInterpolator_Jump"
       }
     },
                 "PositionInterpolator":
                 {
       {
-        "@DEF":"whole_body_TranslationInterpolator_Jump",
-        "@key":"0 0.04 0.08 0.12 0.16 0.2 0.24 0.28 0.32 0.36 0.4 0.44 0.48 0.64 0.76 0.8 0.84 0.88 0.92 0.96 1",
-        "@keyValue":"0 0 0 0 -0.01264 -0.01289 0 -0.04712 -0.03738 -0.0003345 -0.1049 -0.05353 -0.0005712 -0.1892 -0.06561 -0.0008233 -0.286 -0.06276 -0.0009591 -0.3795 -0.05148 -0.00106 -0.4484 -0.03656 -0.00106 -0.4484 -0.03656 -0.001122 -0.3269 -0.1499 -0.0008616 -0.13 -0.06358 -0.0005128 -0.03123 -0.05488 0.0004779 0.053 0.02732 0.0001728 0.4148 0.006873 0 0.03045 0.02148 0 -0.01299 -0.01057 0 -0.06932 -0.01064 0.0001365 -0.1037 -0.005059 0.0001279 -0.07198 -0.007596 0.000141 -0.01626 -0.004935 0 0 0"
+        "@DEF":"whole_body_TranslationInterpolator_Jump"
       }
     },
                 "TimeSensor":
                 {
       {
-        "@DEF":"Jump_Time",
-        "@cycleInterval":"2",
-        "@startTime":"-1"
+        "@DEF":"Jump_Time"
       }
     },
             }        }        "ROUTE":

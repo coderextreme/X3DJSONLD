@@ -48,8 +48,7 @@
         "Switch":
         {
       {
-        "@DEF":"SceneSwitcher",
-        "@whichChoice":"0"
+        "@DEF":"SceneSwitcher"
       }
             "Inline":
             {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Interchange' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content='ScubaTank.x3d' name='title'/>
     <meta content='Scuba gear used by Nancy Diving example.' name='description'/>
@@ -17,7 +17,7 @@
       <Transform>
         <Shape>
           <Appearance>
-            <Material DEF='tank' ambientIntensity='0.3' diffuseColor='0.3 0.3 0.5' shininess='0.1' specularColor='0.7 0.7 0.8'/>
+            <Material DEF='tank'/>
           </Appearance>
           <Cylinder height='0.7' radius='0.1'/>
         </Shape>
@@ -33,7 +33,7 @@
       <Transform translation='0 -0.35 0'>
         <Shape DEF='tankBottom'>
           <Appearance>
-            <Material DEF='black' ambientIntensity='0.3' diffuseColor='0 0 0'/>
+            <Material DEF='black'/>
           </Appearance>
           <Cylinder height='0.06' radius='0.115'/>
         </Shape>
@@ -43,7 +43,7 @@
           <Transform translation='0 0.45 0'>
             <Shape DEF='pressure'>
               <Appearance>
-                <Material DEF='pressureColor' ambientIntensity='0.4' diffuseColor='0.91 0.91 0.91' shininess='0.16' specularColor='0.91 0.9 0.91'/>
+                <Material DEF='pressureColor'/>
               </Appearance>
               <Cylinder height='0.1' radius='0.015'/>
             </Shape>

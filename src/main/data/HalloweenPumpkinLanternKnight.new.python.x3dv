@@ -32,19 +32,13 @@ WorldInfo {
     Background {
       skyColor [0.3 0.3 0.3] 
     }
-    DEF LightenThingsUp PointLight {
-      location 0 3 6 
+    DEF LightenThingsUp PointLight { 
     }
-    DEF OpeningView Viewpoint {
-      description "Cat by Maru conversion from SketchFab to glTF to X3D"
-      position 0 0.6 5 
+    DEF OpeningView Viewpoint { 
     }
     DEF Sketchfab_model Transform {
-      rotation -1 0 0 1.570796251297
-      scale 0.0119273466989398 0.0119273466989398 0.0119273466989398
       children [
         DEF CastleEncoded_b3c4971a48364ab6a0302ca11b199ec6_46_fbx Transform {
-          rotation 1 0 0 1.570796251297
           children [
             DEF Object_2 Transform {
               children [
@@ -55,61 +49,30 @@ WorldInfo {
                         DEF _rootJoint Transform {
                           children [
                             DEF Bip001_01 Transform {
-                              rotation 0.377964943647385 0.654653549194336 0.654653549194336 3.86432766914368
-                              scale 1.00000011920929 1.00000011920929 1
-                              translation 0 -2.1191577911377 -1.19465437364852e-06
                               children [
                                 DEF CastleEncoded_Bip001_32_Pelvis_02 Transform {
-                                  rotation -0.577350497245789 -0.577350497245789 -0.577349722385406 2.094393491745
                                   children [
                                     DEF CastleEncoded_Bip001_32_Spine_03 Transform {
-                                      rotation 0.999998986721039 -0.00040075060678646 0.00148665287997574 0.523595213890076
-                                      translation 8.57379722595215 -0.00766150839626789 -0.00441147014498711
                                       children [
                                         DEF CastleEncoded_Bip001_32_Spine1_04 Transform {
-                                          rotation -1.00000286102295 0.000796276901382953 1.451900932814e-09 0.174532413482666
-                                          scale 1 1 0.999999940395355
-                                          translation 11.1105175018311 -0.00871262047439814 0.00153624569065869
                                           children [
                                             DEF CastleEncoded_Bip001_32_Spine2_05 Transform {
-                                              translation 11.1105175018311 -0.00884702242910862 -2.45707667545503e-08
                                               children [
                                                 DEF CastleEncoded_Bip001_32_Neck_06 Transform {
-                                                  translation 21.0539379119873 -0.0123701430857182 -3.43768249422283e-08
                                                   children [
                                                     DEF CastleEncoded_Bip001_32_L_32_Clavicle_07 Transform {
-                                                      rotation 0.707107841968536 -0.000281540647847578 0.707105875015259 3.14102959632874
-                                                      scale 1 0.999999940395355 0.999999940395355
-                                                      translation -9.94274139404297 0.85816216468811 7.47846412658691
                                                       children [
                                                         DEF CastleEncoded_Bip001_32_L_32_UpperArm_00 Transform {
-                                                          rotation 0.0161123927682638 0.854237139225006 -0.519633769989014 1.09424579143524
-                                                          scale 1 0.999999940395355 1.00000011920929
-                                                          translation 11.1100082397461 -4.44089209850063e-16 0
                                                           children [
                                                             DEF CastleEncoded_Bip001_32_L_32_Forearm_08 Transform {
-                                                              rotation -3.85509311190462e-17 -3.6242544653374e-17 -1 1.14254641532898
-                                                              scale 1.00000011920929 1.00000011920929 1
-                                                              translation 29.5646514892578 1.43051147460938e-06 -7.62939453125e-06
                                                               children [
                                                                 DEF CastleEncoded_Bip001_32_L_32_Hand_09 Transform {
-                                                                  rotation 0.98409765958786 -0.0935989245772362 -0.150967642664909 2.88511061668396
-                                                                  scale 0.999999940395355 0.999999940395355 1.00000011920929
-                                                                  translation 29.5646533966064 1.9073486328125e-06 -1.4210854715202e-14
                                                                   children [
                                                                     DEF CastleEncoded_Bip001_32_L_32_Finger0_010 Transform {
-                                                                      rotation 0.816558718681335 0.576718688011169 -0.0250503625720739 2.51627492904663
-                                                                      scale 1 1 1.00000011920929
-                                                                      translation 4.16508102416992 0.571438789367676 -3.57378387451172
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_L_32_Finger01_011 Transform {
-                                                                          rotation 0.225795492529869 0.95402979850769 0.197087585926056 1.97823131084442
-                                                                          translation 4.2432746887207 4.76837158203125e-07 0
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger02_012 Transform {
-                                                                              rotation -1.03207014490181e-06 1.06187519577361e-06 -1.00009512901306 0.0284633096307516
-                                                                              scale 1.00000011920929 1 1
-                                                                              translation 2.8563232421875 -7.105427357601e-15 -1.9073486328125e-06 
+                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger02_012 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -120,19 +83,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_L_32_Finger1_013 Transform {
-                                                                      rotation -0.0137003203853965 0.00926168076694012 0.99986320734024 1.39627420902252
-                                                                      scale 1.00000011920929 1 0.999999940395355
-                                                                      translation 10.8153400421143 0.59587287902832 -3.23064804077148
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_L_32_Finger11_014 Transform {
-                                                                          rotation -0.0119242267683148 0.0078024547547102 0.999898612499237 1.40920186042786
-                                                                          scale 0.999999940395355 0.999999940395355 1
-                                                                          translation 3.81202220916748 3.5527136788005e-15 -3.814697265625e-06
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger12_015 Transform {
-                                                                              rotation -0.0117655638605356 0.00805559847503901 0.999898254871368 1.22174501419067
-                                                                              scale 1 0.999999940395355 0.999999940395355
-                                                                              translation 3.28545188903809 9.5367431640625e-07 0 
+                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger12_015 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -143,19 +97,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_L_32_Finger2_016 Transform {
-                                                                      rotation -0.000474498141556978 0.000398134638089687 0.999999821186066 1.39626359939575
-                                                                      scale 1 1 0.999999940395355
-                                                                      translation 11.0376224517822 0.601614952087402 -0.604583740234375
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_L_32_Finger21_017 Transform {
-                                                                          rotation -0.000863406399730593 -0.00131352397147566 0.999998986721039 1.409224152565
-                                                                          scale 1.00000011920929 0.999999940395355 0.999999940395355
-                                                                          translation 4.15331220626831 1.9073486328125e-06 -7.105427357601e-15
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger22_018 Transform {
-                                                                              rotation -0.000946542422752827 -0.00144008034840226 0.999998450279236 1.39628553390503
-                                                                              scale 0.999999940395355 0.999999940395355 1
-                                                                              translation 3.39535140991211 9.5367431640625e-07 -3.814697265625e-06 
+                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger22_018 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -166,19 +111,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_L_32_Finger3_019 Transform {
-                                                                      rotation -0.00051887973677367 0.00039812020258978 0.999999701976776 1.30899703502655
-                                                                      scale 0.999999940395355 1 0.999999940395355
-                                                                      translation 10.3683967590332 0.599936485290527 2.44004821777344
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_L_32_Finger31_020 Transform {
-                                                                          rotation -0.00686199683696032 0.003127196803689 0.999971449375153 1.32197523117065
-                                                                          scale 1.00000023841858 1 1.00000011920929
-                                                                          translation 3.37289667129517 5.7220458984375e-06 3.814697265625e-06
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger32_021 Transform {
-                                                                              rotation -7.6765005019297e-08 7.99374859639101e-08 1.00000011920929 1.30899679660797
-                                                                              scale 1.00000023841858 0.999999940395355 1
-                                                                              translation 3.33269882202148 0 7.105427357601e-15 
+                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger32_021 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -189,19 +125,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_L_32_Finger4_022 Transform {
-                                                                      rotation -0.000689639593474567 0.000398113246774301 0.999999821186066 1.04719758033752
-                                                                      scale 1 1.00000011920929 0.999999940395355
-                                                                      translation 9.64421463012695 0.59055233001709 4.77380752563477
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_L_32_Finger41_023 Transform {
-                                                                          rotation -0.00722490018233657 0.00151446845848113 0.999972879886627 1.06017506122589
-                                                                          scale 0.999999821186066 0.999999940395355 0.99999988079071
-                                                                          translation 3.06202125549316 -7.105427357601e-15 -3.814697265625e-06
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger42_024 Transform {
-                                                                              rotation -0.000182577088708058 -0.000423459976445884 0.99999988079071 1.04719853401184
-                                                                              scale 1.00000011920929 1.00000011920929 1
-                                                                              translation 2.30083179473877 0 -7.105427357601e-15 
+                                                                            DEF CastleEncoded_Bip001_32_L_32_Finger42_024 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -228,38 +155,18 @@ WorldInfo {
                                                     
                                                     }
                                                     DEF CastleEncoded_Bip001_32_R_32_Clavicle_025 Transform {
-                                                      rotation 0.707107841968536 -0.000281540618743747 -0.707105875015259 3.14215564727783
-                                                      scale 1 0.999999940395355 0.999999940395355
-                                                      translation -9.94274139404297 0.858203589916229 -7.47845983505249
                                                       children [
                                                         DEF CastleEncoded_Bip001_32_R_32_UpperArm_026 Transform {
-                                                          rotation -0.285578578710556 -0.797429442405701 0.531555473804474 1.30558824539185
-                                                          translation 11.1100101470947 -5.96046447753906e-08 0
                                                           children [
                                                             DEF CastleEncoded_Bip001_32_R_32_Forearm_027 Transform {
-                                                              rotation 4.04560835797109e-17 -6.9094621559681e-17 -1 1.59223091602325
-                                                              scale 0.99999988079071 0.99999988079071 1
-                                                              translation 29.5646514892578 -3.5527136788005e-15 -7.105427357601e-15
                                                               children [
                                                                 DEF CastleEncoded_Bip001_32_R_32_Hand_028 Transform {
-                                                                  rotation 0.851773262023926 -0.241057813167572 0.465160369873047 1.10178887844086
-                                                                  scale 1.00000011920929 1 1.00000011920929
-                                                                  translation 29.5646514892578 -5.32907051820075e-15 3.814697265625e-06
                                                                   children [
                                                                     DEF CastleEncoded_Bip001_32_R_32_Finger0_029 Transform {
-                                                                      rotation 0.816558599472046 0.576718628406525 0.0250504426658154 3.76691031455994
-                                                                      scale 1 0.999999940395355 1.00000011920929
-                                                                      translation 4.16507911682129 0.571437835693359 3.57377243041992
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_R_32_Finger01_030 Transform {
-                                                                          rotation -0.22579550743103 -0.95402979850769 0.197087571024895 1.97823131084442
-                                                                          scale 1 1.00000011920929 1
-                                                                          translation 4.2432746887207 -1.9073486328125e-06 -4.76837158203125e-07
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger02_031 Transform {
-                                                                              rotation -1.49025769502487e-08 -1.04697267033771e-06 -1.00009500980377 0.0284633096307516
-                                                                              scale 1.00000011920929 1 1
-                                                                              translation 2.8563232421875 0 1.9073486328125e-06 
+                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger02_031 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -270,19 +177,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_R_32_Finger1_032 Transform {
-                                                                      rotation 0.0137003483250737 -0.00926164072006941 0.99986320734024 1.39627420902252
-                                                                      scale 1.00000023841858 0.999999940395355 0.99999988079071
-                                                                      translation 10.8153419494629 0.595874786376953 3.23064422607422
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_R_32_Finger11_033 Transform {
-                                                                          rotation 0.0119241643697023 -0.00780247198417783 0.999898374080658 1.40920209884644
-                                                                          scale 1.00000011920929 1.00000011920929 1
-                                                                          translation 3.81201934814453 0 -1.9073486328125e-06
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger12_034 Transform {
-                                                                              rotation 0.0117656541988254 -0.00805561617016792 0.999898254871368 1.22174477577209
-                                                                              scale 1.00000011920929 1.00000011920929 1.00000011920929
-                                                                              translation 3.2854528427124 -3.814697265625e-06 3.814697265625e-06 
+                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger12_034 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -293,19 +191,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_R_32_Finger2_035 Transform {
-                                                                      rotation 0.000474517524708062 -0.000398148637032136 0.999999821186066 1.39626359939575
-                                                                      scale 1 0.999999940395355 0.99999988079071
-                                                                      translation 11.0376224517822 0.601615905761719 0.604581832885742
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_R_32_Finger21_036 Transform {
-                                                                          rotation 0.000863342429511249 0.00131354504264891 0.999998807907104 1.40922451019287
-                                                                          scale 1.00000011920929 1 1
-                                                                          translation 4.1533088684082 -9.5367431640625e-07 -3.5527136788005e-15
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger22_037 Transform {
-                                                                              rotation 0.000946564658079296 0.00144005357287824 0.999998450279236 1.39628553390503
-                                                                              scale 0.999999940395355 1 1.00000011920929
-                                                                              translation 3.39535331726074 -1.9073486328125e-06 1.9073486328125e-06 
+                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger22_037 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -316,19 +205,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_R_32_Finger3_038 Transform {
-                                                                      rotation 0.000518869666848332 -0.000398097035940737 0.999999701976776 1.30899703502655
-                                                                      scale 1 0.999999821186066 0.99999988079071
-                                                                      translation 10.3684015274048 0.599935531616211 -2.4400520324707
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_R_32_Finger31_039 Transform {
-                                                                          rotation 0.00686192698776722 -0.00312720495276153 0.999971449375153 1.32197523117065
-                                                                          scale 1.00000023841858 0.999999940395355 1.00000011920929
-                                                                          translation 3.37289428710938 0 -1.9073486328125e-06
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger32_040 Transform {
-                                                                              rotation 5.28270227562189e-08 -1.29159403172707e-07 1 1.30899679660797
-                                                                              scale 1 0.999999940395355 1
-                                                                              translation 3.33270454406738 -3.814697265625e-06 3.814697265625e-06 
+                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger32_040 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -339,18 +219,10 @@ WorldInfo {
                                                                     
                                                                     }
                                                                     DEF CastleEncoded_Bip001_32_R_32_Finger4_041 Transform {
-                                                                      rotation 0.000689575157593936 -0.000398150557884946 0.999999761581421 1.04719758033752
-                                                                      scale 0.999999940395355 0.99999988079071 0.99999988079071
-                                                                      translation 9.64421272277832 0.590553283691406 -4.7738094329834
                                                                       children [
                                                                         DEF CastleEncoded_Bip001_32_R_32_Finger41_042 Transform {
-                                                                          rotation 0.00722497794777155 -0.00151445844676346 0.999972760677338 1.06017529964447
-                                                                          translation 3.0620231628418 1.9073486328125e-06 1.9073486328125e-06
                                                                           children [
-                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger42_043 Transform {
-                                                                              rotation 0.000182545714778826 0.000423469900852069 1 1.04719829559326
-                                                                              scale 1 0.999999940395355 1
-                                                                              translation 2.30082893371582 -9.5367431640625e-07 -1.9073486328125e-06 
+                                                                            DEF CastleEncoded_Bip001_32_R_32_Finger42_043 Transform { 
                                                                             }
                                                                             
                                                                           ]
@@ -377,13 +249,8 @@ WorldInfo {
                                                     
                                                     }
                                                     DEF CastleEncoded_Bip001_32_Head_044 Transform {
-                                                      rotation 1.0000057220459 -0.000397420721128583 -0.00913477968424559 0.0872659385204315
-                                                      scale 0.999999940395355 1 1
-                                                      translation 5.59160614013672 0 5.21822585142218e-11
                                                       children [
-                                                        DEF CastleEncoded_Bip001_32_XtraHead_045 Transform {
-                                                          scale 1 1 0.999999940395355
-                                                          translation -0.0003509521484375 -0.0295235682278872 -2.5844229867289e-07 
+                                                        DEF CastleEncoded_Bip001_32_XtraHead_045 Transform { 
                                                         }
                                                         
                                                       ]
@@ -402,23 +269,12 @@ WorldInfo {
                                         
                                         }
                                         DEF CastleEncoded_Bip001_32_L_32_Thigh_046 Transform {
-                                          rotation 0.270165801048279 0.961283266544342 -0.0542669966816902 3.19909381866455
-                                          scale 1 1.00000011920929 0.999999940395355
-                                          translation -8.57085609436035 3.6969850063324 6.37625885009766
                                           children [
                                             DEF CastleEncoded_Bip001_32_L_32_Calf_047 Transform {
-                                              rotation -1.85226766081794e-17 -5.87720717410511e-19 -1.00000011920929 0.863856852054596
-                                              scale 0.999999940395355 1 1
-                                              translation 37.2773590087891 -8.34465026855469e-07 -4.76837158203125e-07
                                               children [
                                                 DEF CastleEncoded_Bip001_32_L_32_Foot_048 Transform {
-                                                  rotation -0.220487907528877 -0.288862586021423 0.931634485721588 0.339504659175873
-                                                  scale 1 0.999999821186066 0.999999940395355
-                                                  translation 40.2867660522461 0 -1.43051147460938e-06
                                                   children [
-                                                    DEF CastleEncoded_Bip001_32_L_32_Toe0_049 Transform {
-                                                      rotation -8.86123075360956e-07 9.6162057161564e-07 0.99999988079071 1.57079672813416
-                                                      translation 8.57379913330078 10.0812692642212 -9.5367431640625e-07 
+                                                    DEF CastleEncoded_Bip001_32_L_32_Toe0_049 Transform { 
                                                     }
                                                     
                                                   ]
@@ -433,23 +289,12 @@ WorldInfo {
                                         
                                         }
                                         DEF CastleEncoded_Bip001_32_R_32_Thigh_050 Transform {
-                                          rotation 0.163352191448212 0.958063364028931 -0.235437244176865 2.90482115745544
-                                          scale 1 0.999999940395355 1
-                                          translation -8.57671928405762 -3.66563677787781 -6.37625885009766
                                           children [
                                             DEF CastleEncoded_Bip001_32_R_32_Calf_051 Transform {
-                                              rotation 4.73670287050812e-17 -5.83779937982441e-17 -1.00000011920929 0.851008057594299
-                                              scale 0.999999940395355 1 0.999999940395355
-                                              translation 37.2773590087891 -9.5367431640625e-07 -1.77635683940025e-15
                                               children [
                                                 DEF CastleEncoded_Bip001_32_R_32_Foot_052 Transform {
-                                                  rotation -0.0455507785081863 0.30220165848732 0.952155470848084 0.496768176555634
-                                                  scale 0.999999940395355 0.999999940395355 0.999999940395355
-                                                  translation 40.2867584228516 -3.814697265625e-06 0
                                                   children [
-                                                    DEF CastleEncoded_Bip001_32_R_32_Toe0_053 Transform {
-                                                      rotation 2.94069394612961e-07 -3.95390831187115e-09 0.999999940395355 1.57079601287842
-                                                      translation 8.57378387451172 10.0812683105469 -3.5527136788005e-15 
+                                                    DEF CastleEncoded_Bip001_32_R_32_Toe0_053 Transform { 
                                                     }
                                                     
                                                   ]
@@ -471,10 +316,7 @@ WorldInfo {
                                   ]
                                 
                                 }
-                                DEF CastleEncoded_Bip001_32_Prop1_054 Transform {
-                                  rotation -0.0175913814455271 0.624025106430054 0.78120630979538 2.62181282043457
-                                  scale 0.999999940395355 1 0.999999940395355
-                                  translation 38.9666481018066 32.7087059020996 16.8519668579102 
+                                DEF CastleEncoded_Bip001_32_Prop1_054 Transform { 
                                 }
                                 
                               ]
@@ -489,10 +331,7 @@ WorldInfo {
                             DEF default001_A_0 Group {
                               children [
                                 DEF default001_A_0_Primitive0 Shape {
-                                  bboxCenter 0 -12.2867488861084 2.60020017623901
-                                  bboxSize 201.417999267578 137.141693115234 34.2421989440918
                                   appearance DEF material Appearance {
-                                    alphaMode "OPAQUE"
                                     material PhysicalMaterial {
                                       baseTextureMapping "TEXCOORD_0"
                                       metallicRoughnessTextureMapping "TEXCOORD_0"
@@ -504,9 +343,7 @@ WorldInfo {
                                       
                                     }
                                     
-                                    textureTransform DEF FlipVertical TextureTransform {
-                                      scale 1 -1
-                                      translation 0 -1 
+                                    textureTransform DEF FlipVertical TextureTransform { 
                                     }
                                      
                                   }
@@ -553,16 +390,12 @@ WorldInfo {
                             DEF default001_B-2_0 Group {
                               children [
                                 DEF default001_B-2_0_Primitive0 Shape {
-                                  bboxCenter 0 29.7299995422363 -0.0590000152587891
-                                  bboxSize 32.1307983398438 53.9150009155273 28.5771999359131
                                   appearance DEF material_1 Appearance {
-                                    alphaMode "OPAQUE"
                                     material PhysicalMaterial {
                                       baseTextureMapping "TEXCOORD_0"
                                       metallicRoughnessTextureMapping "TEXCOORD_0"
                                       normalTextureMapping "TEXCOORD_0"
                                       occlusionTexture DEF material_1_metallicRoughness ImageTexture {
-                                        url ["textures/material_1_metallicRoughness.png" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/GltfSampleModels/textures/material_1_metallicRoughness.png"]
                                         textureProperties USE AveragePixel 
                                       }
                                       
@@ -613,10 +446,7 @@ WorldInfo {
                             DEF default001_A-2_0 Group {
                               children [
                                 DEF default001_A-2_0_Primitive0 Shape {
-                                  bboxCenter 0 6.32354736328125 1.646399974823
-                                  bboxSize 175.534194946289 92.1696929931641 13.5257997512817
                                   appearance DEF material_2 Appearance {
-                                    alphaMode "OPAQUE"
                                     material PhysicalMaterial {
                                       baseTextureMapping "TEXCOORD_0"
                                       metallicRoughnessTextureMapping "TEXCOORD_0"
@@ -669,10 +499,7 @@ WorldInfo {
                             DEF default001_B_0 Group {
                               children [
                                 DEF default001_B_0_Primitive0 Shape {
-                                  bboxCenter 0 80.5711517333984 -0.713399887084961
-                                  bboxSize 43.9281997680664 48.1196975708008 44.2981986999512
                                   appearance DEF material_3 Appearance {
-                                    alphaMode "OPAQUE"
                                     material PhysicalMaterial {
                                       baseTextureMapping "TEXCOORD_0"
                                       emissiveColor 1 1 1
@@ -727,10 +554,7 @@ WorldInfo {
                             DEF CastleEncoded_default_09_32_-_32_Default_0 Group {
                               children [
                                 DEF CastleEncoded_default_09_32_-_32_Default_0_Primitive0 Shape {
-                                  bboxCenter -87.1054534912109 42.3138008117676 42.8755493164063
-                                  bboxSize 38.9211044311523 253.330413818359 14.0175018310547
                                   appearance DEF CastleEncoded_09_-_Default Appearance {
-                                    alphaMode "OPAQUE"
                                     material PhysicalMaterial {
                                       baseTextureMapping "TEXCOORD_0"
                                       emissiveColor 1 1 1
@@ -784,18 +608,13 @@ WorldInfo {
                           ]
                         
                         }
-                        DEF Object_6 Transform {
-                          rotation -1 2.06795153138257e-25 -2.06795153138257e-25 1.570796251297
-                          translation 1.32348898008484e-23 3.5527136788005e-15 -3.46944695195361e-18 
+                        DEF Object_6 Transform { 
                         }
-                        DEF Object_11 Transform {
-                          rotation -1 3.01700119888519e-39 3.01700119888519e-39 1.570796251297 
+                        DEF Object_11 Transform { 
                         }
-                        DEF default001 Transform {
-                          rotation -1 0 0 1.570796251297 
+                        DEF default001 Transform { 
                         }
-                        DEF default Transform {
-                          rotation -1 0 0 1.570796251297 
+                        DEF default Transform { 
                         }
                         
                       ]

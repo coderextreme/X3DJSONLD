@@ -11,7 +11,6 @@ Viewpoint {
       position 0 0 12 
     }
     DEF SceneSwitcher Switch {
-      whichChoice 0
       children [
         Inline {
           url ["../data/force-tidy.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d"] 

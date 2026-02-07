@@ -183,10 +183,7 @@
             "Viewpoint":
             {
       {
-        "@DEF":"ViewUpClose",
-        "@centerOfRotation":"0 -1 0",
-        "@description":"Hello world!",
-        "@position":"0 -1 7"
+        "@DEF":"ViewUpClose"
       }
     },
             "Transform":
@@ -201,15 +198,13 @@
                         "Material":
                         {
       {
-        "@DEF":"MaterialLightBlue",
-        "@diffuseColor":"0.1 0.5 1"
+        "@DEF":"MaterialLightBlue"
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"ImageCloudlessEarth",
-        "@url":""earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif""
+        "@DEF":"ImageCloudlessEarth"
       }
     },
                     }                    "Sphere":
@@ -233,8 +228,7 @@
                     }                    "Text":
                     {
       {
-        "@DEF":"TextMessage",
-        "@string":""Hello" "world!""
+        "@DEF":"TextMessage"
       }
                         "FontStyle":
                         {

@@ -231,38 +231,21 @@ WorldInfo {
         NavigationInfo {
           headlight FALSE 
         }
-        DEF Front Viewpoint {
-          description "Front view"
-          position 0 0 12 
+        DEF Front Viewpoint { 
         }
-        DEF PersRight Viewpoint {
-          description "Low Right"
-          orientation 0.74291 0.30772 0.59447 1.2171
-          position 6.9282 -6.9282 6.9282 
+        DEF PersRight Viewpoint { 
         }
-        DEF PersLeft Viewpoint {
-          description "Low Left"
-          orientation 0.74291 -0.30772 -0.59447 1.2171
-          position -6.9282 -6.9282 6.9282 
+        DEF PersLeft Viewpoint { 
         }
-        DEF Back Viewpoint {
-          description "Back view"
-          orientation 0 1 0 3.1416
-          position 0 0 -12 
+        DEF Back Viewpoint { 
         }
         DEF Close_travel Transform {
           children [
-            DEF Close_Mover PositionInterpolator {
-              key [0 0.25 0.5 0.75 1]
-              keyValue [0 2.5 0 0 0 0 0 -2.5 0 0 0 0 0 2.5 0] 
+            DEF Close_Mover PositionInterpolator { 
             }
-            DEF Close_Time TimeSensor {
-              cycleInterval 12
-              loop TRUE 
+            DEF Close_Time TimeSensor { 
             }
-            DEF Close Viewpoint {
-              description "Close Front"
-              position 0 0 6 
+            DEF Close Viewpoint { 
             }
             
           ]
@@ -293,9 +276,7 @@ WorldInfo {
           ]
         
         }
-        DEF View00 Viewpoint {
-          description "ArtDeco00"
-          position -3.75 3.75 3 
+        DEF View00 Viewpoint { 
         }
         Transform {
           translation -3.75 3.75 0
@@ -312,8 +293,7 @@ WorldInfo {
                      
                   }
                   
-                  geometry DEF Ball Sphere {
-                    radius 0.5 
+                  geometry DEF Ball Sphere { 
                   }
                    
                 }
@@ -331,18 +311,14 @@ WorldInfo {
                   children [
                     Shape {
                       appearance Appearance {
-                        material DEF TextMat Material {
-                          diffuseColor 1 1 1 
+                        material DEF TextMat Material { 
                         }
                          
                       }
                       
                       geometry Text {
                         string ["ArtDeco00"]
-                        fontStyle DEF Style FontStyle {
-                          family ["SANS"]
-                          justify ["MIDDLE" "MIDDLE"]
-                          size 0.3 
+                        fontStyle DEF Style FontStyle { 
                         }
                          
                       }
@@ -360,9 +336,7 @@ WorldInfo {
           ]
         
         }
-        DEF View01 Viewpoint {
-          description "ArtDeco01"
-          position -2.25 3.75 3 
+        DEF View01 Viewpoint { 
         }
         Transform {
           translation -2.25 3.75 0
@@ -416,9 +390,7 @@ WorldInfo {
           ]
         
         }
-        DEF View02 Viewpoint {
-          description "ArtDeco02"
-          position -0.75 3.75 3 
+        DEF View02 Viewpoint { 
         }
         Transform {
           translation -0.75 3.75 0
@@ -472,9 +444,7 @@ WorldInfo {
           ]
         
         }
-        DEF View03 Viewpoint {
-          description "ArtDeco03"
-          position 0.75 3.75 3 
+        DEF View03 Viewpoint { 
         }
         Transform {
           translation 0.75 3.75 0
@@ -528,9 +498,7 @@ WorldInfo {
           ]
         
         }
-        DEF View04 Viewpoint {
-          description "ArtDeco04"
-          position 2.25 3.75 3 
+        DEF View04 Viewpoint { 
         }
         Transform {
           translation 2.25 3.75 0
@@ -584,9 +552,7 @@ WorldInfo {
           ]
         
         }
-        DEF View05 Viewpoint {
-          description "ArtDeco05"
-          position 3.75 3.75 3 
+        DEF View05 Viewpoint { 
         }
         Transform {
           translation 3.75 3.75 0
@@ -640,9 +606,7 @@ WorldInfo {
           ]
         
         }
-        DEF View06 Viewpoint {
-          description "ArtDeco06"
-          position -3.75 2.25 3 
+        DEF View06 Viewpoint { 
         }
         Transform {
           translation -3.75 2.25 0
@@ -696,9 +660,7 @@ WorldInfo {
           ]
         
         }
-        DEF View07 Viewpoint {
-          description "ArtDeco07"
-          position -2.25 2.25 3 
+        DEF View07 Viewpoint { 
         }
         Transform {
           translation -2.25 2.25 0
@@ -752,9 +714,7 @@ WorldInfo {
           ]
         
         }
-        DEF View08 Viewpoint {
-          description "ArtDeco08"
-          position -0.75 2.25 3 
+        DEF View08 Viewpoint { 
         }
         Transform {
           translation -0.75 2.25 0
@@ -808,9 +768,7 @@ WorldInfo {
           ]
         
         }
-        DEF View09 Viewpoint {
-          description "ArtDeco09"
-          position 0.75 2.25 3 
+        DEF View09 Viewpoint { 
         }
         Transform {
           translation 0.75 2.25 0
@@ -864,9 +822,7 @@ WorldInfo {
           ]
         
         }
-        DEF View10 Viewpoint {
-          description "ArtDeco10"
-          position 2.25 2.25 3 
+        DEF View10 Viewpoint { 
         }
         Transform {
           translation 2.25 2.25 0
@@ -920,9 +876,7 @@ WorldInfo {
           ]
         
         }
-        DEF View11 Viewpoint {
-          description "ArtDeco11"
-          position 3.75 2.25 3 
+        DEF View11 Viewpoint { 
         }
         Transform {
           translation 3.75 2.25 0
@@ -976,9 +930,7 @@ WorldInfo {
           ]
         
         }
-        DEF View12 Viewpoint {
-          description "ArtDeco12"
-          position -3.75 0.75 3 
+        DEF View12 Viewpoint { 
         }
         Transform {
           translation -3.75 0.75 0
@@ -1032,9 +984,7 @@ WorldInfo {
           ]
         
         }
-        DEF View13 Viewpoint {
-          description "ArtDeco13"
-          position -2.25 0.75 3 
+        DEF View13 Viewpoint { 
         }
         Transform {
           translation -2.25 0.75 0
@@ -1088,9 +1038,7 @@ WorldInfo {
           ]
         
         }
-        DEF View14 Viewpoint {
-          description "ArtDeco14"
-          position -0.75 0.75 3 
+        DEF View14 Viewpoint { 
         }
         Transform {
           translation -0.75 0.75 0
@@ -1144,9 +1092,7 @@ WorldInfo {
           ]
         
         }
-        DEF View15 Viewpoint {
-          description "ArtDeco15"
-          position 0.75 0.75 3 
+        DEF View15 Viewpoint { 
         }
         Transform {
           translation 0.75 0.75 0
@@ -1200,9 +1146,7 @@ WorldInfo {
           ]
         
         }
-        DEF View16 Viewpoint {
-          description "ArtDeco16"
-          position 2.25 0.75 3 
+        DEF View16 Viewpoint { 
         }
         Transform {
           translation 2.25 0.75 0
@@ -1256,9 +1200,7 @@ WorldInfo {
           ]
         
         }
-        DEF View17 Viewpoint {
-          description "ArtDeco17"
-          position 3.75 0.75 3 
+        DEF View17 Viewpoint { 
         }
         Transform {
           translation 3.75 0.75 0
@@ -1312,9 +1254,7 @@ WorldInfo {
           ]
         
         }
-        DEF View18 Viewpoint {
-          description "ArtDeco18"
-          position -3.75 -0.75 3 
+        DEF View18 Viewpoint { 
         }
         Transform {
           translation -3.75 -0.75 0
@@ -1368,9 +1308,7 @@ WorldInfo {
           ]
         
         }
-        DEF View19 Viewpoint {
-          description "ArtDeco19"
-          position -2.25 -0.75 3 
+        DEF View19 Viewpoint { 
         }
         Transform {
           translation -2.25 -0.75 0
@@ -1424,9 +1362,7 @@ WorldInfo {
           ]
         
         }
-        DEF View20 Viewpoint {
-          description "ArtDeco20"
-          position -0.75 -0.75 3 
+        DEF View20 Viewpoint { 
         }
         Transform {
           translation -0.75 -0.75 0
@@ -1480,9 +1416,7 @@ WorldInfo {
           ]
         
         }
-        DEF View21 Viewpoint {
-          description "ArtDeco21"
-          position 0.75 -0.75 3 
+        DEF View21 Viewpoint { 
         }
         Transform {
           translation 0.75 -0.75 0
@@ -1536,9 +1470,7 @@ WorldInfo {
           ]
         
         }
-        DEF View22 Viewpoint {
-          description "ArtDeco22"
-          position 2.25 -0.75 3 
+        DEF View22 Viewpoint { 
         }
         Transform {
           translation 2.25 -0.75 0
@@ -1592,9 +1524,7 @@ WorldInfo {
           ]
         
         }
-        DEF View23 Viewpoint {
-          description "ArtDeco23"
-          position 3.75 -0.75 3 
+        DEF View23 Viewpoint { 
         }
         Transform {
           translation 3.75 -0.75 0
@@ -1648,9 +1578,7 @@ WorldInfo {
           ]
         
         }
-        DEF View24 Viewpoint {
-          description "ArtDeco24"
-          position -3.75 -2.25 3 
+        DEF View24 Viewpoint { 
         }
         Transform {
           translation -3.75 -2.25 0
@@ -1704,9 +1632,7 @@ WorldInfo {
           ]
         
         }
-        DEF View25 Viewpoint {
-          description "ArtDeco25"
-          position -2.25 -2.25 3 
+        DEF View25 Viewpoint { 
         }
         Transform {
           translation -2.25 -2.25 0
@@ -1760,9 +1686,7 @@ WorldInfo {
           ]
         
         }
-        DEF View26 Viewpoint {
-          description "ArtDeco26"
-          position -0.75 -2.25 3 
+        DEF View26 Viewpoint { 
         }
         Transform {
           translation -0.75 -2.25 0
@@ -1816,9 +1740,7 @@ WorldInfo {
           ]
         
         }
-        DEF View27 Viewpoint {
-          description "ArtDeco27"
-          position 0.75 -2.25 3 
+        DEF View27 Viewpoint { 
         }
         Transform {
           translation 0.75 -2.25 0
@@ -1872,9 +1794,7 @@ WorldInfo {
           ]
         
         }
-        DEF View28 Viewpoint {
-          description "ArtDeco28"
-          position 2.25 -2.25 3 
+        DEF View28 Viewpoint { 
         }
         Transform {
           translation 2.25 -2.25 0
@@ -1928,9 +1848,7 @@ WorldInfo {
           ]
         
         }
-        DEF View29 Viewpoint {
-          description "ArtDeco29"
-          position 3.75 -2.25 3 
+        DEF View29 Viewpoint { 
         }
         Transform {
           translation 3.75 -2.25 0
@@ -1984,9 +1902,7 @@ WorldInfo {
           ]
         
         }
-        DEF View30 Viewpoint {
-          description "ArtDeco30"
-          position -3.75 -3.75 3 
+        DEF View30 Viewpoint { 
         }
         Transform {
           translation -3.75 -3.75 0
@@ -2040,9 +1956,7 @@ WorldInfo {
           ]
         
         }
-        DEF View31 Viewpoint {
-          description "ArtDeco31"
-          position -2.25 -3.75 3 
+        DEF View31 Viewpoint { 
         }
         Transform {
           translation -2.25 -3.75 0
@@ -2096,9 +2010,7 @@ WorldInfo {
           ]
         
         }
-        DEF View32 Viewpoint {
-          description "ArtDeco32"
-          position -0.75 -3.75 3 
+        DEF View32 Viewpoint { 
         }
         Transform {
           translation -0.75 -3.75 0
@@ -2152,9 +2064,7 @@ WorldInfo {
           ]
         
         }
-        DEF View33 Viewpoint {
-          description "ArtDeco33"
-          position 0.75 -3.75 3 
+        DEF View33 Viewpoint { 
         }
         Transform {
           translation 0.75 -3.75 0
@@ -2208,9 +2118,7 @@ WorldInfo {
           ]
         
         }
-        DEF View34 Viewpoint {
-          description "ArtDeco34"
-          position 2.25 -3.75 3 
+        DEF View34 Viewpoint { 
         }
         Transform {
           translation 2.25 -3.75 0

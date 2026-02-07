@@ -419,36 +419,25 @@
             "Viewpoint":
             {
       {
-        "@DEF":"Front",
-        "@description":"Front view",
-        "@position":"0 0 12"
+        "@DEF":"Front"
       }
     },
             "Viewpoint":
             {
       {
-        "@DEF":"PersRight",
-        "@description":"Low Right",
-        "@orientation":"0.74291 0.30772 0.59447 1.2171",
-        "@position":"6.9282 -6.9282 6.9282"
+        "@DEF":"PersRight"
       }
     },
             "Viewpoint":
             {
       {
-        "@DEF":"PersLeft",
-        "@description":"Low Left",
-        "@orientation":"0.74291 -0.30772 -0.59447 1.2171",
-        "@position":"-6.9282 -6.9282 6.9282"
+        "@DEF":"PersLeft"
       }
     },
             "Viewpoint":
             {
       {
-        "@DEF":"Back",
-        "@description":"Back view",
-        "@orientation":"0 1 0 3.1416",
-        "@position":"0 0 -12"
+        "@DEF":"Back"
       }
     },
             "Transform":
@@ -459,25 +448,19 @@
                 "PositionInterpolator":
                 {
       {
-        "@DEF":"Close_Mover",
-        "@key":"0 0.25 0.5 0.75 1",
-        "@keyValue":"0 2.5 0 0 0 0 0 -2.5 0 0 0 0 0 2.5 0"
+        "@DEF":"Close_Mover"
       }
     },
                 "TimeSensor":
                 {
       {
-        "@DEF":"Close_Time",
-        "@cycleInterval":"12",
-        "@loop":"true"
+        "@DEF":"Close_Time"
       }
     },
                 "Viewpoint":
                 {
       {
-        "@DEF":"Close",
-        "@description":"Close Front",
-        "@position":"0 0 6"
+        "@DEF":"Close"
       }
     },
             }            "DirectionalLight":
@@ -513,9 +496,7 @@
                 }            }            "Viewpoint":
             {
       {
-        "@DEF":"View00",
-        "@description":"ArtDeco00",
-        "@position":"-3.75 3.75 3"
+        "@DEF":"View00"
       }
     },
             "Transform":
@@ -542,8 +523,7 @@
                         }                        "Sphere":
                         {
       {
-        "@DEF":"Ball",
-        "@radius":"0.5"
+        "@DEF":"Ball"
       }
     },
                     }                }                "Transform":
@@ -565,8 +545,7 @@
                                 "Material":
                                 {
       {
-        "@DEF":"TextMat",
-        "@diffuseColor":"1 1 1"
+        "@DEF":"TextMat"
       }
     },
                             }                            "Text":
@@ -577,18 +556,13 @@
                                 "FontStyle":
                                 {
       {
-        "@DEF":"Style",
-        "@family":""SANS"",
-        "@justify":""MIDDLE" "MIDDLE"",
-        "@size":"0.3"
+        "@DEF":"Style"
       }
     },
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View01",
-        "@description":"ArtDeco01",
-        "@position":"-2.25 3.75 3"
+        "@DEF":"View01"
       }
     },
             "Transform":
@@ -654,9 +628,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View02",
-        "@description":"ArtDeco02",
-        "@position":"-0.75 3.75 3"
+        "@DEF":"View02"
       }
     },
             "Transform":
@@ -722,9 +694,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View03",
-        "@description":"ArtDeco03",
-        "@position":"0.75 3.75 3"
+        "@DEF":"View03"
       }
     },
             "Transform":
@@ -790,9 +760,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View04",
-        "@description":"ArtDeco04",
-        "@position":"2.25 3.75 3"
+        "@DEF":"View04"
       }
     },
             "Transform":
@@ -858,9 +826,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View05",
-        "@description":"ArtDeco05",
-        "@position":"3.75 3.75 3"
+        "@DEF":"View05"
       }
     },
             "Transform":
@@ -926,9 +892,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View06",
-        "@description":"ArtDeco06",
-        "@position":"-3.75 2.25 3"
+        "@DEF":"View06"
       }
     },
             "Transform":
@@ -994,9 +958,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View07",
-        "@description":"ArtDeco07",
-        "@position":"-2.25 2.25 3"
+        "@DEF":"View07"
       }
     },
             "Transform":
@@ -1062,9 +1024,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View08",
-        "@description":"ArtDeco08",
-        "@position":"-0.75 2.25 3"
+        "@DEF":"View08"
       }
     },
             "Transform":
@@ -1130,9 +1090,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View09",
-        "@description":"ArtDeco09",
-        "@position":"0.75 2.25 3"
+        "@DEF":"View09"
       }
     },
             "Transform":
@@ -1198,9 +1156,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View10",
-        "@description":"ArtDeco10",
-        "@position":"2.25 2.25 3"
+        "@DEF":"View10"
       }
     },
             "Transform":
@@ -1266,9 +1222,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View11",
-        "@description":"ArtDeco11",
-        "@position":"3.75 2.25 3"
+        "@DEF":"View11"
       }
     },
             "Transform":
@@ -1334,9 +1288,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View12",
-        "@description":"ArtDeco12",
-        "@position":"-3.75 0.75 3"
+        "@DEF":"View12"
       }
     },
             "Transform":
@@ -1402,9 +1354,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View13",
-        "@description":"ArtDeco13",
-        "@position":"-2.25 0.75 3"
+        "@DEF":"View13"
       }
     },
             "Transform":
@@ -1470,9 +1420,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View14",
-        "@description":"ArtDeco14",
-        "@position":"-0.75 0.75 3"
+        "@DEF":"View14"
       }
     },
             "Transform":
@@ -1538,9 +1486,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View15",
-        "@description":"ArtDeco15",
-        "@position":"0.75 0.75 3"
+        "@DEF":"View15"
       }
     },
             "Transform":
@@ -1606,9 +1552,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View16",
-        "@description":"ArtDeco16",
-        "@position":"2.25 0.75 3"
+        "@DEF":"View16"
       }
     },
             "Transform":
@@ -1674,9 +1618,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View17",
-        "@description":"ArtDeco17",
-        "@position":"3.75 0.75 3"
+        "@DEF":"View17"
       }
     },
             "Transform":
@@ -1742,9 +1684,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View18",
-        "@description":"ArtDeco18",
-        "@position":"-3.75 -0.75 3"
+        "@DEF":"View18"
       }
     },
             "Transform":
@@ -1810,9 +1750,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View19",
-        "@description":"ArtDeco19",
-        "@position":"-2.25 -0.75 3"
+        "@DEF":"View19"
       }
     },
             "Transform":
@@ -1878,9 +1816,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View20",
-        "@description":"ArtDeco20",
-        "@position":"-0.75 -0.75 3"
+        "@DEF":"View20"
       }
     },
             "Transform":
@@ -1946,9 +1882,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View21",
-        "@description":"ArtDeco21",
-        "@position":"0.75 -0.75 3"
+        "@DEF":"View21"
       }
     },
             "Transform":
@@ -2014,9 +1948,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View22",
-        "@description":"ArtDeco22",
-        "@position":"2.25 -0.75 3"
+        "@DEF":"View22"
       }
     },
             "Transform":
@@ -2082,9 +2014,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View23",
-        "@description":"ArtDeco23",
-        "@position":"3.75 -0.75 3"
+        "@DEF":"View23"
       }
     },
             "Transform":
@@ -2150,9 +2080,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View24",
-        "@description":"ArtDeco24",
-        "@position":"-3.75 -2.25 3"
+        "@DEF":"View24"
       }
     },
             "Transform":
@@ -2218,9 +2146,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View25",
-        "@description":"ArtDeco25",
-        "@position":"-2.25 -2.25 3"
+        "@DEF":"View25"
       }
     },
             "Transform":
@@ -2286,9 +2212,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View26",
-        "@description":"ArtDeco26",
-        "@position":"-0.75 -2.25 3"
+        "@DEF":"View26"
       }
     },
             "Transform":
@@ -2354,9 +2278,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View27",
-        "@description":"ArtDeco27",
-        "@position":"0.75 -2.25 3"
+        "@DEF":"View27"
       }
     },
             "Transform":
@@ -2422,9 +2344,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View28",
-        "@description":"ArtDeco28",
-        "@position":"2.25 -2.25 3"
+        "@DEF":"View28"
       }
     },
             "Transform":
@@ -2490,9 +2410,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View29",
-        "@description":"ArtDeco29",
-        "@position":"3.75 -2.25 3"
+        "@DEF":"View29"
       }
     },
             "Transform":
@@ -2558,9 +2476,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View30",
-        "@description":"ArtDeco30",
-        "@position":"-3.75 -3.75 3"
+        "@DEF":"View30"
       }
     },
             "Transform":
@@ -2626,9 +2542,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View31",
-        "@description":"ArtDeco31",
-        "@position":"-2.25 -3.75 3"
+        "@DEF":"View31"
       }
     },
             "Transform":
@@ -2694,9 +2608,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View32",
-        "@description":"ArtDeco32",
-        "@position":"-0.75 -3.75 3"
+        "@DEF":"View32"
       }
     },
             "Transform":
@@ -2762,9 +2674,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View33",
-        "@description":"ArtDeco33",
-        "@position":"0.75 -3.75 3"
+        "@DEF":"View33"
       }
     },
             "Transform":
@@ -2830,9 +2740,7 @@
                             }                        }                    }                }            }            "Viewpoint":
             {
       {
-        "@DEF":"View34",
-        "@description":"ArtDeco34",
-        "@position":"2.25 -3.75 3"
+        "@DEF":"View34"
       }
     },
             "Transform":

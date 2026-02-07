@@ -70,10 +70,7 @@ NavigationInfo {
                   
                   geometry Text {
                     string ["Y"]
-                    fontStyle DEF LABEL_FONT FontStyle {
-                      family ["SANS"]
-                      justify ["MIDDLE"]
-                      size 0.2 
+                    fontStyle DEF LABEL_FONT FontStyle { 
                     }
                      
                   }

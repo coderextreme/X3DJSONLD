@@ -179,8 +179,7 @@
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"freewrlShader",
-        "@language":"GLSL"
+        "@DEF":"freewrlShader"
       }
                         "field":
                         {
