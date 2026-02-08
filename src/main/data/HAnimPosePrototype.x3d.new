@@ -119,8 +119,8 @@
 </fieldValue>
 <fieldValue name="loa" value="1"></fieldValue>
 <fieldValue name="description" value="arms stretched outward and level similar to letter T"></fieldValue>
-<fieldValue name="children"><HAnimJoint name="l_shoulder" DEF="PoseJoint_l_shoulder_1" description="left shoulder" rotation="0 0 1 1.57" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_shoulder" DEF="PoseJoint_r_shoulder_1" description="right shoulder" rotation="0 0 -1 1.57" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<fieldValue name="children"><HAnimJoint name="l_shoulder" DEF="PoseJoint_l_shoulder_1" description="left shoulder" rotation="0 0 1 1.57"></HAnimJoint>
+<HAnimJoint name="r_shoulder" DEF="PoseJoint_r_shoulder_1" description="right shoulder" rotation="0 0 -1 1.57"></HAnimJoint>
 <!--test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/--></fieldValue>
 <fieldValue name="transitionDuration" value="1.3"></fieldValue>
 </ProtoInstance>
@@ -130,8 +130,8 @@
 </fieldValue>
 <fieldValue name="loa" value="1"></fieldValue>
 <fieldValue name="description" value="arms stretched outward and downward similar to letter A"></fieldValue>
-<fieldValue name="children"><HAnimJoint name="l_shoulder" DEF="PoseJoint_l_shoulder" description="left shoulder" rotation="0 0 1 0.5" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_shoulder" DEF="PoseJoint_r_shoulder" description="right shoulder" rotation="0 0 -1 0.5" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<fieldValue name="children"><HAnimJoint name="l_shoulder" DEF="PoseJoint_l_shoulder" description="left shoulder" rotation="0 0 1 0.5"></HAnimJoint>
+<HAnimJoint name="r_shoulder" DEF="PoseJoint_r_shoulder" description="right shoulder" rotation="0 0 -1 0.5"></HAnimJoint>
 </fieldValue>
 <fieldValue name="transitionDuration" value="1.2"></fieldValue>
 <fieldValue name="traceEnabled" value="true"></fieldValue>
@@ -142,22 +142,22 @@
 </fieldValue>
 <fieldValue name="loa" value="1"></fieldValue>
 <fieldValue name="description" value="arms and legs stretched outward providing a TouchDown gesture"></fieldValue>
-<fieldValue name="children"><HAnimJoint name="humanoid_root" rotation="0 1 0 -0.698132" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="l_hip" rotation="-1 1 1 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="l_knee" rotation="1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="l_talocrural" rotation="-0.2 0 0.1 0.225" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_hip" rotation="-1 -1 -1 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_knee" rotation="1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_talocrural" rotation="-0.2 0 0.1 0.25" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="vl5" rotation="0 0 0.01 0.2" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="vt10" rotation="0 0 0.01 0.1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="vc4" rotation="0 0 -0.01 0.15" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="l_shoulder" rotation="-1 0.5 1 2" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="l_elbow" rotation="-1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="l_radiocarpal" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_shoulder" rotation="-1 -0.5 -1 2.6" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_elbow" rotation="-1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
-<HAnimJoint name="r_radiocarpal" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<fieldValue name="children"><HAnimJoint name="humanoid_root" rotation="0 1 0 -0.698132"></HAnimJoint>
+<HAnimJoint name="l_hip" rotation="-1 1 1 1"></HAnimJoint>
+<HAnimJoint name="l_knee" rotation="1 0 0 1"></HAnimJoint>
+<HAnimJoint name="l_talocrural" rotation="-0.2 0 0.1 0.225"></HAnimJoint>
+<HAnimJoint name="r_hip" rotation="-1 -1 -1 1"></HAnimJoint>
+<HAnimJoint name="r_knee" rotation="1 0 0 1"></HAnimJoint>
+<HAnimJoint name="r_talocrural" rotation="-0.2 0 0.1 0.25"></HAnimJoint>
+<HAnimJoint name="vl5" rotation="0 0 0.01 0.2"></HAnimJoint>
+<HAnimJoint name="vt10" rotation="0 0 0.01 0.1"></HAnimJoint>
+<HAnimJoint name="vc4" rotation="0 0 -0.01 0.15"></HAnimJoint>
+<HAnimJoint name="l_shoulder" rotation="-1 0.5 1 2"></HAnimJoint>
+<HAnimJoint name="l_elbow" rotation="-1 0 0 1"></HAnimJoint>
+<HAnimJoint name="l_radiocarpal"></HAnimJoint>
+<HAnimJoint name="r_shoulder" rotation="-1 -0.5 -1 2.6"></HAnimJoint>
+<HAnimJoint name="r_elbow" rotation="-1 0 0 1"></HAnimJoint>
+<HAnimJoint name="r_radiocarpal"></HAnimJoint>
 </fieldValue>
 <fieldValue name="transitionDuration" value="1.2"></fieldValue>
 <fieldValue name="traceEnabled" value="true"></fieldValue>
@@ -184,7 +184,7 @@
 </fieldValue>
 <fieldValue name="loa" value="0"></fieldValue>
 <fieldValue name="description" value="Only modify humanoid_root Joint node to face left"></fieldValue>
-<fieldValue name="children"><HAnimJoint name="humanoid_root" DEF="FaceLeft_humanoid_root" description="Only rotate the model" rotation="0 1 0 1.570796" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<fieldValue name="children"><HAnimJoint name="humanoid_root" DEF="FaceLeft_humanoid_root" description="Only rotate the model" rotation="0 1 0 1.570796"></HAnimJoint>
 </fieldValue>
 <fieldValue name="transitionDuration" value="1.1"></fieldValue>
 <fieldValue name="traceEnabled" value="true"></fieldValue>
@@ -195,7 +195,7 @@
 </fieldValue>
 <fieldValue name="loa" value="0"></fieldValue>
 <fieldValue name="description" value="Only modify humanoid_root Joint node to face right"></fieldValue>
-<fieldValue name="children"><HAnimJoint name="humanoid_root" DEF="FaceRight_humanoid_root" description="Only rotate the model" rotation="0 1 0 -1.570796" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<fieldValue name="children"><HAnimJoint name="humanoid_root" DEF="FaceRight_humanoid_root" description="Only rotate the model" rotation="0 1 0 -1.570796"></HAnimJoint>
 </fieldValue>
 <fieldValue name="transitionDuration" value="1.1"></fieldValue>
 <fieldValue name="traceEnabled" value="true"></fieldValue>

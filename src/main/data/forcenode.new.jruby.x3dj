@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 January 2026"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -435,7 +435,13 @@
               "@DEF":"clickHandler",
               "-children":[
                 {
-                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
+                },
+                {
+                  "#comment":"<Transform USE=\"HoldsContent\"/>"
+                },
+                {
+                  "#comment":"</field>"
                 }
               ],
               "field": [

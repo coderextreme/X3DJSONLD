@@ -57,9 +57,7 @@ and added Sites' name='description'/>
             </Shape>
             
 <HAnimSite name='sacrum' DEF='sacrum_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
         </HAnimSegment>
@@ -78,17 +76,15 @@ None
               </Shape>
 
 <HAnimSite name='pelvis' DEF='pelvis_Sites'>
-<!-- 
-(r_iliocristale  -0.1525 1.0628 0.0035)
-(r_trochanterion  -0.1689 0.8419 0.0352) 
-(l_iliocristale  0.1612 1.0537 0.0008) 
-(l_trochanterion  0.1677 0.8336 0.0303) 
-(r_asis  -0.0887 1.0021 0.1112) 
-(l_asis  0.0774 1.0190 -0.1151) 
-(r_psis  -0.0716 1.0190 -0.1138)
-(l_psis  0.0774 1.0190 -0.1151)
-(crotch  0.0034 0.8266 0.0257) 
- -->
+<!-- (r_iliocristale  -0.1525 1.0628 0.0035) -->
+<!-- (r_trochanterion  -0.1689 0.8419 0.0352) -->
+<!-- (l_iliocristale  0.1612 1.0537 0.0008) -->
+<!-- (l_trochanterion  0.1677 0.8336 0.0303) -->
+<!-- (r_asis  -0.0887 1.0021 0.1112) -->
+<!-- (l_asis  0.0774 1.0190 -0.1151) -->
+<!-- (r_psis  -0.0716 1.0190 -0.1138) -->
+<!-- (l_psis  0.0774 1.0190 -0.1151) -->
+<!-- (crotch  0.0034 0.8266 0.0257) -->
 </HAnimSite>
 
           </HAnimSegment>
@@ -107,12 +103,10 @@ None
                 </Shape>
 
 <HAnimSite name='l_thigh' DEF='l_thigh_Sites'>
-<!--  
-(l_knee_crease  0.0993 0.4881  -0.0309) 
-(l_femoral_medial_epicondyles  0.0398 0.4946 0.0303)
-(l_femoral_lateral_epicondyles  0.1598 0.4967 0.0297)
-(l_suprapatella  x y z) 
--->
+<!-- (l_knee_crease  0.0993 0.4881  -0.0309) -->
+<!-- (l_femoral_medial_epicondyles  0.0398 0.4946 0.0303) -->
+<!-- (l_femoral_lateral_epicondyles  0.1598 0.4967 0.0297) -->
+<!-- (l_suprapatella  x y z) -->
 </HAnimSite>
 
             </HAnimSegment>
@@ -131,11 +125,9 @@ None
                   </Shape>
 
 <HAnimSite name='l_calf' DEF='l_calf_Sites'>
-<!-- 
-(l_tibiale  x y z)
-(l_medial_malleolus  0.0890 0.0716 -0.0881)
-(l_lateral_malleolus  0.1308 0.0597 -0.1032)
--->
+<!-- (l_tibiale  x y z) -->
+<!-- (l_medial_malleolus  0.0890 0.0716 -0.0881) -->
+<!-- (l_lateral_malleolus  0.1308 0.0597 -0.1032) -->
 </HAnimSite>
 
               </HAnimSegment>
@@ -154,10 +146,8 @@ None
                     </Shape>
 
 <HAnimSite name="l_talus" DEF='l_talus_Sites'>
-<!-- 
-(l_sphyrion  0.0890 0.0575 -0.0943)
-(l_calcaneous_posterior  0.0974 0.0259 -0.1171)
--->
+<!-- (l_sphyrion  0.0890 0.0575 -0.0943) -->
+<!-- (l_calcaneous_posterior  0.0974 0.0259 -0.1171) -->
 </HAnimSite>
 
                 </HAnimSegment>
@@ -176,9 +166,7 @@ None
                       </Shape>
 
 <HAnimSite name="l_navicular" DEF='l_navicular_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                   </HAnimSegment>
@@ -197,9 +185,7 @@ None
                         </Shape>
 
 <HAnimSite name="l_cuneiform_1" DEF='l_cuneiform_1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -218,9 +204,7 @@ None
                           </Shape>
 
 <HAnimSite name="l_metatarsal_1" DEF='l_metatarsal_1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -239,9 +223,7 @@ None
                             </Shape>
 
 <HAnimSite name="l_tarsal_proximal_phalanx_1" DEF='l_tarsal_proximal_phalanx_1_Sites'>
-<!-- 
-(l_metatarsal_phalanx_1  0.0816 0.0232 0.0106)
--->
+<!-- (l_metatarsal_phalanx_1  0.0816 0.0232 0.0106) -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -260,9 +242,7 @@ None
                               </Shape>
 
 <HAnimSite name="l_tarsal_distal_phalanx_1" DEF='l_tarsal_distal_phalanx_1_Sites'>
-<!-- 
-(l_tarsal_distal_phalanx_1_tip  0.090 0.012 0.188)  
--->
+<!-- (l_tarsal_distal_phalanx_1_tip  0.090 0.012 0.188) -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -285,9 +265,7 @@ None
                         </Shape>
 
 <HAnimSite name="l_cuneiform_2" DEF='l_cuneiform_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -306,9 +284,7 @@ None
                           </Shape>
 
 <HAnimSite name="l_metatarsal_2" DEF='l_metatarsal_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -327,9 +303,7 @@ None
                             </Shape>
 
 <HAnimSite name="l_tarsal_proximal_phalanx_2" DEF='l_tarsal_proximal_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -348,9 +322,7 @@ None
                               </Shape>
 
 <HAnimSite name="l_tarsal_middle_phalanx_2" DEF='l_tarsal_middle_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -369,9 +341,7 @@ None
                                 </Shape>
 
 <HAnimSite name="l_tarsal_distal_phalanx_2" DEF='l_tarsal_distal_phalanx_2_Sites'>
-<!-- 
-(l_tarsal_distal_phalanx_2_tip  0.110 0.011 0.19) 
--->
+<!-- (l_tarsal_distal_phalanx_2_tip  0.110 0.011 0.19) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -395,9 +365,7 @@ None
                         </Shape>
 
 <HAnimSite name="l_cuneiform_3" DEF='l_cuneiform_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -416,9 +384,7 @@ None
                           </Shape>
 
 <HAnimSite name="l_metatarsal_3" DEF='l_metatarsal_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
 
@@ -438,9 +404,7 @@ None
                             </Shape>
 
 <HAnimSite name="l_tarsal_proximal_phalanx_3" DEF='l_tarsal_proximal_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -459,9 +423,7 @@ None
                               </Shape>
 
 <HAnimSite name="l_tarsal_middle_phalanx_3" DEF='l_tarsal_middle_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -480,9 +442,7 @@ None
                                 </Shape>
 
 <HAnimSite name="l_tarsal_distal_phalanx_3" DEF='l_tarsal_distal_phalanx_3_Sites'>
-<!-- 
- (l_tarsal_distal_phalanx_3_tip  0.128 0.011 0.185)   
--->
+<!-- (l_tarsal_distal_phalanx_3_tip  0.128 0.011 0.185) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -507,9 +467,7 @@ None
                       </Shape>
 
 <HAnimSite name="l_calcaneus" DEF='l_calcaneus_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
                   </HAnimSegment>
                   <HAnimJoint DEF='hanim_l_transversetarsal' name='l_transversetarsal' center='0.1106325 0.03528 0.002089125'>
@@ -526,9 +484,7 @@ None
                           </IndexedFaceSet>
                         </Shape>
 <HAnimSite name="l_cuboid" DEF='l_cuboid_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -547,9 +503,7 @@ None
                           </Shape>
 
 <HAnimSite name="l_metatarsal_4" DEF='l_metatarsal_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -568,9 +522,7 @@ None
                             </Shape>
 
 <HAnimSite name="l_tarsal_proximal_phalanx_4" DEF='l_tarsal_proximal_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -589,9 +541,7 @@ None
                               </Shape>
 
 <HAnimSite name="l_tarsal_middle_phalanx_4" DEF='l_tarsal_middle_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -610,9 +560,7 @@ None
                                 </Shape>
 
 <HAnimSite name="l_tarsal_distal_phalanx_4" DEF='l_tarsal_distal_phalanx_4_Sites'>
-<!-- 
-(l_tarsal_distal_phalanx_4_tip  0.142 0.011 0.178)
--->
+<!-- (l_tarsal_distal_phalanx_4_tip  0.142 0.011 0.178) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -635,9 +583,7 @@ None
                           </Shape>
 
 <HAnimSite name="l_metatarsal_5" DEF='l_metatarsal_5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -656,9 +602,7 @@ None
                             </Shape>
 
 <HAnimSite name="l_tarsal_proximal_phalanx_5" DEF='l_tarsal_proximal_phalanx_5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -677,9 +621,7 @@ None
                               </Shape>
 
 <HAnimSite name="l_tarsal_middle_phalanx_5" DEF='l_tarsal_middle_phalanx_5_Sites'>
-<!-- 
-(l_metatarsal_phalanx_5  0.1825 0.0070 0.0928) 
--->
+<!-- (l_metatarsal_phalanx_5  0.1825 0.0070 0.0928) -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -698,9 +640,7 @@ None
                                 </Shape>
 
 <HAnimSite name="l_tarsal_distal_phalanx_5" DEF='l_tarsal_distal_phalanx_5_Sites'>
-<!-- 
- (l_tarsal_distal_phalanx_5_tip  0.154 0.010 0.168) 
--->
+<!-- (l_tarsal_distal_phalanx_5_tip  0.154 0.010 0.168) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -728,12 +668,10 @@ None
                 </Shape>
 
 <HAnimSite name="r_thigh" DEF='r_thigh_Sites'>
-<!-- 
-(r_knee_crease  -0.0825 0.4932 -0.0326)
-(r_femoral_lateral_epicn  -0.1421 0.4992 0.0310)
-(r_femoral_medial_epicn  -0.0221 0.5014 0.0289)
-(r_suprapatella  x y z) 
--->
+<!-- (r_knee_crease  -0.0825 0.4932 -0.0326) -->
+<!-- (r_femoral_lateral_epicn  -0.1421 0.4992 0.0310) -->
+<!-- (r_femoral_medial_epicn  -0.0221 0.5014 0.0289) -->
+<!-- (r_suprapatella  x y z) -->
 </HAnimSite>
 
             </HAnimSegment>
@@ -752,11 +690,9 @@ None
                   </Shape>
 
 <HAnimSite name="r_calf" DEF='r_calf_Sites'>
-<!-- 
-(r_tibiale  x y z) 
-(r_medial_malleolus  -0.0591 0.0760 -0.0928) 
-(r_lateral_malleolus  -0.1006 0.0658 -0.1075)
--->
+<!-- (r_tibiale  x y z) -->
+<!-- (r_medial_malleolus  -0.0591 0.0760 -0.0928) -->
+<!-- (r_lateral_malleolus  -0.1006 0.0658 -0.1075) -->
 </HAnimSite>
 
               </HAnimSegment>
@@ -775,10 +711,8 @@ None
                     </Shape>
 
 <HAnimSite name="r_talus" DEF='r_talus_Sites'>
-<!-- 
-(r_sphyrion  -0.0603 0.0610 -0.1002) 
-(r_calcaneous_posterior  -0.0692 0.0297 -0.1221) 
--->
+<!-- (r_sphyrion  -0.0603 0.0610 -0.1002) -->
+<!-- (r_calcaneous_posterior  -0.0692 0.0297 -0.1221) -->
 </HAnimSite>
 
                 </HAnimSegment>
@@ -797,9 +731,7 @@ None
                       </Shape>
 
 <HAnimSite name="r_navicular" DEF='r_navicular_Sites'>
-<!-- 
-None
--->
+<!-- None -->
 </HAnimSite>
 
                   </HAnimSegment>
@@ -818,9 +750,7 @@ None
                         </Shape>
 
 <HAnimSite name="r_cuneiform_1" DEF='r_cuneiform_1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -839,9 +769,7 @@ None
                           </Shape>
 
 <HAnimSite name="r_metatarsal_1" DEF='r_metatarsal_1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -860,9 +788,7 @@ None
                             </Shape>
 
 <HAnimSite name="r_tarsal_proximal_phalanx_1" DEF='r_tarsal_proximal_phalanx_1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -881,10 +807,8 @@ None
                               </Shape>
 
 <HAnimSite name="r_tarsal_distal_phalanx_1" DEF='r_tarsal_distal_phalanx_1_Sites'>
-<!-- 
-(r_metatarsal_phalanx_1  x y z) 
-(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) 
--->
+<!-- (r_metatarsal_phalanx_1  x y z) -->
+<!-- (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -907,9 +831,7 @@ None
                         </Shape>
 
 <HAnimSite name="r_cuneiform_2" DEF='r_cuneiform_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -928,9 +850,7 @@ None
                           </Shape>
 
 <HAnimSite name="r_metatarsal_2" DEF='r_metatarsal_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -949,9 +869,7 @@ None
                             </Shape>
 
 <HAnimSite name="r_tarsal_proximal_phalanx_2" DEF='r_tarsal_proximal_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -970,9 +888,7 @@ None
                               </Shape>
 
 <HAnimSite name="r_tarsal_middle_phalanx_2" DEF='r_tarsal_middle_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -991,9 +907,7 @@ None
                                 </Shape>
 
 <HAnimSite name="r_tarsal_distal_phalanx_2" DEF='r_tarsal_distal_phalanx_2_Sites'>
-<!-- 
-(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19) 
--->
+<!-- (r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -1017,9 +931,7 @@ None
                         </Shape>
 
 <HAnimSite name="r_cuneiform_3" DEF='r_cuneiform_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -1038,9 +950,7 @@ None
                           </Shape>
 
 <HAnimSite name="r_metatarsal_3" DEF='r_metatarsal_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -1059,9 +969,7 @@ None
                             </Shape>
 
 <HAnimSite name="r_tarsal_proximal_phalanx_3" DEF='r_tarsal_proximal_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -1080,9 +988,7 @@ None
                               </Shape>
 
 <HAnimSite name="r_tarsal_middle_phalanx_3" DEF='r_tarsal_middle_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -1101,9 +1007,7 @@ None
                                 </Shape>
 
 <HAnimSite name="r_tarsal_distal_phalanx_3" DEF='r_tarsal_distal_phalanx_3_Sites'>
-<!-- 
- (r_tarsal_distal_phalanx_3_tip  -0.128 0.011 0.185)
--->
+<!-- (r_tarsal_distal_phalanx_3_tip  -0.128 0.011 0.185) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -1128,9 +1032,7 @@ None
                       </Shape>
 
 <HAnimSite name="r_calcaneus" DEF='r_calcaneus_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                   </HAnimSegment>
@@ -1149,9 +1051,7 @@ None
                         </Shape>
 
 <HAnimSite name="r_cuboid" DEF='r_cuboid_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -1170,9 +1070,7 @@ None
                           </Shape>
 
 <HAnimSite name="r_metatarsal_4" DEF='r_metatarsal_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -1191,9 +1089,7 @@ None
                             </Shape>
 
 <HAnimSite name="r_tarsal_proximal_phalanx_4" DEF='r_tarsal_proximal_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -1212,9 +1108,7 @@ None
                               </Shape>
 
 <HAnimSite name="r_tarsal_middle_phalanx_4" DEF='r_tarsal_middle_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -1233,9 +1127,7 @@ None
                                 </Shape>
 
 <HAnimSite name="r_tarsal_distal_phalanx_4" DEF='r_tarsal_distal_phalanx_4_Sites'>
-<!-- 
- (r_tarsal_distal_phalanx_4_tip  -0.142 0.011 0.178)  
--->
+<!-- (r_tarsal_distal_phalanx_4_tip  -0.142 0.011 0.178) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -1258,9 +1150,7 @@ None
                           </Shape>
 
 <HAnimSite name="r_metatarsal_" DEF='r_metatarsal__Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -1279,9 +1169,7 @@ None
                             </Shape>
 
 <HAnimSite name="r_tarsal_proximal_phalanx_5" DEF='r_tarsal_proximal_phalanx_5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -1300,9 +1188,7 @@ None
                               </Shape>
 
 <HAnimSite name="r_tarsal_middle_phalanx_5" DEF='r_tarsal_middle_phalanx_5_Sites'>
-<!-- 
-(r_metatarsal_phalanx_5  x y z)
--->
+<!-- (r_metatarsal_phalanx_5  x y z) -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -1321,9 +1207,7 @@ None
                                 </Shape>
 
 <HAnimSite name="r_tarsal_distal_phalanx_5" DEF='r_tarsal_distal_phalanx_5_Sites'>
-<!-- 
-(r_tarsal_distal_phalanx_5_tip  -0.154 0.010 0.168)
--->
+<!-- (r_tarsal_distal_phalanx_5_tip  -0.154 0.010 0.168) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -1351,11 +1235,9 @@ None
                 </Shape>
 
 <HAnimSite name="l5" DEF='l5_Sites'>
-<!-- 
-(spine_2_lower_back  x y z)
-(waist_preferred_anterior  x y z)
-(waist_preferred_posterior  0.2900 1.0915 -0.1091) 
--->
+<!-- (spine_2_lower_back  x y z) -->
+<!-- (waist_preferred_anterior  x y z) -->
+<!-- (waist_preferred_posterior  0.2900 1.0915 -0.1091) -->
 </HAnimSite>
 
             </HAnimSegment>
@@ -1374,9 +1256,7 @@ None
                   </Shape>
 
 <HAnimSite name="l4" DEF='l4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
               </HAnimSegment>
@@ -1395,9 +1275,7 @@ None
                     </Shape>
 
 <HAnimSite name="l3" DEF='l3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                 </HAnimSegment>
@@ -1416,11 +1294,9 @@ None
                       </Shape>
 
 <HAnimSite name="l2" DEF='l2_Sites'>
-<!-- 
-(l_rib_10  0.0871 1.1925 0.0992) 
-(r_rib_10  -0.0711 1.1941 0.1016)
-(rib_10_midspine  0.0049 1.1908 -0.1113)
--->
+<!-- (l_rib_10  0.0871 1.1925 0.0992) -->
+<!-- (r_rib_10  -0.0711 1.1941 0.1016) -->
+<!-- (rib_10_midspine  0.0049 1.1908 -0.1113) -->
 </HAnimSite>
 
                   </HAnimSegment>
@@ -1439,9 +1315,7 @@ None
                         </Shape>
 
 <HAnimSite name="l1" DEF='l1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                     </HAnimSegment>
@@ -1460,9 +1334,7 @@ None
                           </Shape>
 
 <HAnimSite name="t12" DEF='t12_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                       </HAnimSegment>
@@ -1481,9 +1353,7 @@ None
                             </Shape>
 
 <HAnimSite name="t11" DEF='t11_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                         </HAnimSegment>
@@ -1502,10 +1372,8 @@ None
                               </Shape>
 
 <HAnimSite name="t10" DEF='t10_Sites'>
-<!-- 
-(substernale  0.0085 1.2995 0.1147) 
-(mesosternale x y z) 
--->
+<!-- (substernale  0.0085 1.2995 0.1147) -->
+<!-- (mesosternale x y z) -->
 </HAnimSite>
 
                           </HAnimSegment>
@@ -1524,13 +1392,11 @@ None
                                 </Shape>
 
 <HAnimSite name="t9" DEF='t9_Sites'>
-<!-- 
-(l_thelion  0.0918 1.3382 0.1192) 
-(r_thelion  -0.0736 1.3385 0.1217) 
-(rear_center_midsagittal_plane  x y z)
-(l_chest_midsagittal_plane  x y z)
-(r_chest_midsagittal_plane  x y z)  
--->
+<!-- (l_thelion  0.0918 1.3382 0.1192) -->
+<!-- (r_thelion  -0.0736 1.3385 0.1217) -->
+<!-- (rear_center_midsagittal_plane  x y z) -->
+<!-- (l_chest_midsagittal_plane  x y z) -->
+<!-- (r_chest_midsagittal_plane  x y z) -->
 </HAnimSite>
 
                             </HAnimSegment>
@@ -1549,9 +1415,7 @@ None
                                   </Shape>
 
 <HAnimSite name="t8" DEF='t8_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                               </HAnimSegment>
@@ -1570,9 +1434,7 @@ None
                                     </Shape>
 
 <HAnimSite name="t7" DEF='t7_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                 </HAnimSegment>
@@ -1591,9 +1453,7 @@ None
                                       </Shape>
 
 <HAnimSite name="t6" DEF='t6_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                   </HAnimSegment>
@@ -1612,9 +1472,7 @@ None
                                         </Shape>
 
 <HAnimSite name="t5" DEF='t5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                     </HAnimSegment>
@@ -1633,9 +1491,7 @@ None
                                           </Shape>
 
 <HAnimSite name="t4" DEF='t4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                       </HAnimSegment>
@@ -1654,9 +1510,7 @@ None
                                             </Shape>
 
 <HAnimSite name="t3" DEF='t3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                         </HAnimSegment>
@@ -1675,9 +1529,7 @@ None
                                               </Shape>
 
 <HAnimSite name="t2" DEF='t2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                           </HAnimSegment>
@@ -1696,10 +1548,8 @@ None
                                                 </Shape>
 
 <HAnimSite name="t1" DEF='t1_Sites'>
-<!-- 
-(suprasternale  0.0084 1.4714 0.0551) 
-(cervicale  0.0064 1.520 -0.0815) 
--->
+<!-- (suprasternale  0.0084 1.4714 0.0551) -->
+<!-- (cervicale  0.0064 1.520 -0.0815) -->
 </HAnimSite>
 
                                             </HAnimSegment>
@@ -1718,10 +1568,8 @@ None
                                                   </Shape>
 
 <HAnimSite name="c7" DEF='c7_Sites'>
-<!-- 
-(l_neck_base  0.0646 1.5141 -0.0380)
-(r_neck_base  -0.0419 1.5149 -0.0220) 
--->
+<!-- (l_neck_base  0.0646 1.5141 -0.0380) -->
+<!-- (r_neck_base  -0.0419 1.5149 -0.0220) -->
 </HAnimSite>
 
                                               </HAnimSegment>
@@ -1740,9 +1588,7 @@ None
                                                     </Shape>
 
 <HAnimSite name="c6" DEF='c6_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                 </HAnimSegment>
@@ -1761,9 +1607,7 @@ None
                                                       </Shape>
 
 <HAnimSite name="c5" DEF='c5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                   </HAnimSegment>
@@ -1782,9 +1626,7 @@ None
                                                         </Shape>
 
 <HAnimSite name="c4" DEF='c4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                     </HAnimSegment>
@@ -1803,9 +1645,7 @@ None
                                                           </Shape>
 
 <HAnimSite name="c3" DEF='c3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                       </HAnimSegment>
@@ -1824,9 +1664,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="c2" DEF='c2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -1845,9 +1683,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="c1" DEF='c1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -1866,19 +1702,17 @@ None
                                                                 </Shape>
 
 <HAnimSite name="skull" DEF='skull_Sites'>
-<!-- 
-(skull_vertex  0.0050 1.7504 0.0055) 
-(sellion 0.0058  1.6316 0.0852) 
-(r_infraorbitale  -0.0237 1.6171 0.0752)
-(l_infraorbitale  0.0341 1.6171 0.0752) 
-(r_tragion  -0.0646 1.6347 0.0302)
-(l_tragion  0.0739 1.6348 0.0282)
-(nuchale  0.0039 1.5972 -0.0796)
-(opisthocranion  x y z)
-(glabella  x y z)
-(l_ectocanthus  x y z)
-(r_ectocanthus  x y z)  
--->
+<!-- (skull_vertex  0.0050 1.7504 0.0055) -->
+<!-- (sellion 0.0058  1.6316 0.0852) -->
+<!-- (r_infraorbitale  -0.0237 1.6171 0.0752) -->
+<!-- (l_infraorbitale  0.0341 1.6171 0.0752) -->
+<!-- (r_tragion  -0.0646 1.6347 0.0302) -->
+<!-- (l_tragion  0.0739 1.6348 0.0282) -->
+<!-- (nuchale  0.0039 1.5972 -0.0796) -->
+<!-- (opisthocranion  x y z) -->
+<!-- (glabella  x y z) -->
+<!-- (l_ectocanthus  x y z) -->
+<!-- (r_ectocanthus  x y z) -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -1897,9 +1731,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_eyelid" DEF='l_eyelid_Sites'>
-<!-- 
-(l_eyelid_tip  x y z)  
--->
+<!-- (l_eyelid_tip  x y z) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -1919,9 +1751,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_eyelid" DEF='r_eyelid_Sites'>
-<!-- 
-(r_eyelid_tip  x y z) 
--->
+<!-- (r_eyelid_tip  x y z) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -1941,9 +1771,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_eyeball" DEF='l_eyeball_Sites'>
-<!-- 
-(l_eyeball_tip  x y z) 
--->
+<!-- (l_eyeball_tip  x y z) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -1963,9 +1791,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_eyeball" DEF='r_eyeball_Sites'>
-<!-- 
-(r_eyeball_tip  x y z)
--->
+<!-- (r_eyeball_tip  x y z) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -1985,9 +1811,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_eyebrow" DEF='l_eyebrow_Sites'>
-<!-- 
-(l_eyebrow_tip  x y z) 
--->
+<!-- (l_eyebrow_tip  x y z) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2007,9 +1831,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_eyebrow" DEF='r_eyebrow_Sites'>
-<!-- 
-(r_eyebrow_tip  x y z)
--->
+<!-- (r_eyebrow_tip  x y z) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2029,12 +1851,10 @@ None
                                                                   </Shape>
 
 <HAnimSite name="jaw" DEF='jaw_Sites'>
-<!-- 
-(r_gonion  -0.0520 1.5529 0.0347)
-(l_gonion  0.0631 1.5530 0.0330)
-(supramenton  0.0061 1.5410 0.0805) 
-(menton  x y z)  
--->
+<!-- (r_gonion  -0.0520 1.5529 0.0347) -->
+<!-- (l_gonion  0.0631 1.5530 0.0330) -->
+<!-- (supramenton  0.0061 1.5410 0.0805) -->
+<!-- (menton  x y z) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2062,9 +1882,7 @@ None
                                                   </Shape>
 
 <HAnimSite name="l_clavicle" DEF='l_clavicle_Sites'>
-<!-- 
-(l_clavicale  0.0271 1.4943 0.0394)  
--->
+<!-- (l_clavicale  0.0271 1.4943 0.0394) -->
 </HAnimSite>
 
                                               </HAnimSegment>
@@ -2082,12 +1900,10 @@ None
                                                       </IndexedFaceSet>
                                                     </Shape>
 <HAnimSite name="l_scapula" DEF='l_scapula_Sites'>
-<!-- 
-(l_acromion  0.2032 1.4760 -0.0490) 
-(l_axilla_proximal  0.1777 1.4065 -0.0075) 
-(l_axilla_distal  0.1706 1.4072 -0.0875)  
-(l_axilla_posterior_folds  x y z)
--->
+<!-- (l_acromion  0.2032 1.4760 -0.0490) -->
+<!-- (l_axilla_proximal  0.1777 1.4065 -0.0075) -->
+<!-- (l_axilla_distal  0.1706 1.4072 -0.0875) -->
+<!-- (l_axilla_posterior_folds  x y z) -->
 </HAnimSite>
 
                                                 </HAnimSegment>
@@ -2106,12 +1922,10 @@ None
                                                       </Shape>
 
 <HAnimSite name="l_upperarm" DEF='l_upperarm_Sites'>
-<!-- 
-(l_humeral_lateral_epicondyles  0.2280 1.1482 -0.1100) 
-(l_humeral_medial_epicondyles  0.1735 1.1272 -0.1113) 
-(l_radiale  0.2182 1.1212 -0.1167) 
-(l_bideltoid  x y z) 
--->
+<!-- (l_humeral_lateral_epicondyles  0.2280 1.1482 -0.1100) -->
+<!-- (l_humeral_medial_epicondyles  0.1735 1.1272 -0.1113) -->
+<!-- (l_radiale  0.2182 1.1212 -0.1167) -->
+<!-- (l_bideltoid  x y z) -->
 </HAnimSite>
 
                                                   </HAnimSegment>
@@ -2130,10 +1944,8 @@ None
                                                         </Shape>
 
 <HAnimSite name="l_forearm" DEF='l_forearm_Sites'>
-<!-- 
-(l_radial_styloid  0.1901 0.8645 -0.0415) 
-(l_olecranon  -0.1962 1.1375 -0.1123)
--->
+<!-- (l_radial_styloid  0.1901 0.8645 -0.0415) -->
+<!-- (l_olecranon  -0.1962 1.1375 -0.1123) -->
 </HAnimSite>
 
                                                     </HAnimSegment>
@@ -2152,9 +1964,7 @@ None
                                                           </Shape>
 
 <HAnimSite name="l_carpal" DEF='l_carpal_Sites'>
-<!-- 
-(l_ulnar_styloid  -0.2142 0.8529 -0.0648)  
--->
+<!-- (l_ulnar_styloid  -0.2142 0.8529 -0.0648) -->
 </HAnimSite>
 
                                                       </HAnimSegment>
@@ -2173,9 +1983,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="l_trapezium" DEF='l_trapezium_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -2194,9 +2002,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="l_metacarpal_1" DEF='l_metacarpal_1_Sites'>
-<!-- 
-(l_metacarpal_phalanx_2  0.2009 0.8139 -0.0237)  
--->
+<!-- (l_metacarpal_phalanx_2  0.2009 0.8139 -0.0237) -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -2215,9 +2021,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="l_carpal_proximal_phalanx_1" DEF='l_carpal_proximal_phalanx_1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -2236,9 +2040,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_carpal_distal_phalanx_1" DEF='l_carpal_distal_phalanx_1_Sites'>
-<!-- 
-(l_carpal_distal_phalanx_1_tip  0.1982 0.8061 0.0759)
--->
+<!-- (l_carpal_distal_phalanx_1_tip  0.1982 0.8061 0.0759) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2261,9 +2063,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="l_trapezoid" DEF='l_trapezoid_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -2282,9 +2082,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="l_metacarpal_2" DEF='l_metacarpal_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -2303,9 +2101,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="l_carpal_proximal_phalanx_2" DEF='l_carpal_proximal_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -2324,9 +2120,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_carpal_middle_phalanx_2" DEF='l_carpal_middle_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2345,9 +2139,7 @@ None
                                                                     </Shape>
 
 <HAnimSite name="l_carpal_distal_phalanx_2" DEF='l_carpal_distal_phalanx_2_Sites'>
-<!-- 
-(l_carpal_distal_phalanx_2_tip  0.2089 0.6858 -0.0245)  
--->
+<!-- (l_carpal_distal_phalanx_2_tip  0.2089 0.6858 -0.0245) -->
 </HAnimSite>
 
                                                                 </HAnimSegment>
@@ -2371,9 +2163,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="l_capitate" DEF='l_capitate_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -2392,9 +2182,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="l_metacarpal_3" DEF='l_metacarpal_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -2413,9 +2201,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="l_carpal_proximal_phalanx_3" DEF='l_carpal_proximal_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -2434,9 +2220,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_carpal_middle_phalanx_3" DEF='l_carpal_middle_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2455,10 +2239,8 @@ None
                                                                     </Shape>
 
 <HAnimSite name="l_carpal_distal_phalanx_3" DEF='l_carpal_distal_phalanx_3_Sites'>
-<!-- 
-(l_dactylion  0.2056 0.6743 -0.0482)
-(l_carpal_distal_phalanx_3_tip  0.2080 0.6731 -0.0491)  
--->
+<!-- (l_dactylion  0.2056 0.6743 -0.0482) -->
+<!-- (l_carpal_distal_phalanx_3_tip  0.2080 0.6731 -0.0491) -->
 </HAnimSite>
 
                                                                 </HAnimSegment>
@@ -2482,9 +2264,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="l_hamate" DEF='l_hamate_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -2503,9 +2283,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="l_metacarpal_4" DEF='l_metacarpal_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -2524,9 +2302,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="l_carpal_proximal_phalanx_4" DEF='l_carpal_proximal_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -2545,9 +2321,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_carpal_middle_phalanx_4" DEF='l_carpal_middle_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2566,9 +2340,7 @@ None
                                                                     </Shape>
 
 <HAnimSite name="l_carpal_distal_phalanx_4" DEF='l_carpal_distal_phalanx_4_Sites'>
-<!-- 
-(l_carpal_distal_phalanx_4_tip  0.2035 0.6750 -0.0756) 
--->
+<!-- (l_carpal_distal_phalanx_4_tip  0.2035 0.6750 -0.0756) -->
 </HAnimSite>
 
                                                                 </HAnimSegment>
@@ -2592,9 +2364,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="l_metacarpal_5" DEF='l_metacarpal_5_Sites'>
-<!-- 
-(l_metacarpal_phalanx_5  0.1929 0.7860 -0.1122)
--->
+<!-- (l_metacarpal_phalanx_5  0.1929 0.7860 -0.1122) -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -2613,9 +2383,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="l_carpal_proximal_phalanx_5" DEF='l_carpal_proximal_phalanx_5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -2634,9 +2402,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="l_carpal_middle_phalanx_5" DEF='l_carpal_middle_phalanx_5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -2655,9 +2421,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="l_carpal_distal_phalanx_5" DEF='l_carpal_distal_phalanx_5_Sites'>
-<!-- 
-(l_carpal_distal_phalanx_5_tip  0.2014 0.7009 -0.1012)
--->
+<!-- (l_carpal_distal_phalanx_5_tip  0.2014 0.7009 -0.1012) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2685,9 +2449,7 @@ None
                                                   </Shape>
 
 <HAnimSite name="r_clavicle" DEF='r_clavicle_Sites'>
-<!-- 
-(r_clavicale  -0.0115 1.4943 0.0400) 
--->
+<!-- (r_clavicale  -0.0115 1.4943 0.0400) -->
 </HAnimSite>
 
                                               </HAnimSegment>
@@ -2706,12 +2468,10 @@ None
                                                     </Shape>
 
 <HAnimSite name="r_scapula" DEF='r_scapula_Sites'>
-<!-- 
-(r_acromion  -0.1905 1.4791 -0.0431) 
-(r_axilla_proximal  -0.1626 1.4072 -0.0031) 
-(r_axilla_distal  -0.1603 1.4098 -0.0826) 
-(r_axilla_posterior_folds  x y z) 
--->
+<!-- (r_acromion  -0.1905 1.4791 -0.0431) -->
+<!-- (r_axilla_proximal  -0.1626 1.4072 -0.0031) -->
+<!-- (r_axilla_distal  -0.1603 1.4098 -0.0826) -->
+<!-- (r_axilla_posterior_folds  x y z) -->
 </HAnimSite>
 
                                                 </HAnimSegment>
@@ -2730,12 +2490,10 @@ None
                                                       </Shape>
 
 <HAnimSite name="r_upperarm" DEF='r_upperarm_Sites'>
-<!-- 
-(r_humeral_lateral_epicondyles  -0.2224 1.1517 -0.1033)
-(r_humeral_medial_epicondyles  -0.1680 1.1298 -0.1062)
-(r_radiale  -0.2130 1.1305 -0.1091)
-(r_bideltoid  x y z) 
--->
+<!-- (r_humeral_lateral_epicondyles  -0.2224 1.1517 -0.1033) -->
+<!-- (r_humeral_medial_epicondyles  -0.1680 1.1298 -0.1062) -->
+<!-- (r_radiale  -0.2130 1.1305 -0.1091) -->
+<!-- (r_bideltoid  x y z) -->
 </HAnimSite>
 
                                                   </HAnimSegment>
@@ -2754,10 +2512,8 @@ None
                                                         </Shape>
 
 <HAnimSite name="r_forearm" DEF='r_forearm_Sites'>
-<!-- 
-(r_radial_styloid  -0.1884 0.8676 -0.0360) 
-(r_olecranon  -0.1907 1.1405 -0.1065)
--->
+<!-- (r_radial_styloid  -0.1884 0.8676 -0.0360) -->
+<!-- (r_olecranon  -0.1907 1.1405 -0.1065) -->
 </HAnimSite>
 
                                                     </HAnimSegment>
@@ -2776,9 +2532,7 @@ None
                                                           </Shape>
 
 <HAnimSite name="r_carpal" DEF='r_carpal_Sites'>
-<!-- 
-(r_ulnar_styloid  -0.2117 0.8562 -0.0584) 
--->
+<!-- (r_ulnar_styloid  -0.2117 0.8562 -0.0584) -->
 </HAnimSite>
 
                                                       </HAnimSegment>
@@ -2797,9 +2551,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="r_trapezium" DEF='r_trapezium_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -2818,9 +2570,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="r_metacarpal_1" DEF='r_metacarpal_1_Sites'>
-<!-- 
-(r_metacarpal_phalanx_2  -0.1977 0.8169 -0.0177)
--->
+<!-- (r_metacarpal_phalanx_2  -0.1977 0.8169 -0.0177) -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -2839,9 +2589,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="r_carpal_proximal_phalanx_1" DEF='r_carpal_proximal_phalanx_1_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -2860,9 +2608,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_carpal_distal_phalanx_1" DEF='r_carpal_distal_phalanx_1_Sites'>
-<!-- 
-(r_carpal_distal_phalanx_1_tip  -0.1869 0.8090 0.0820)
--->
+<!-- (r_carpal_distal_phalanx_1_tip  -0.1869 0.8090 0.0820) -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2885,9 +2631,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="r_trapezoid" DEF='r_trapezoid_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -2906,9 +2650,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="r_metacarpal_2" DEF='r_metacarpal_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -2927,9 +2669,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="r_carpal_proximal_phalanx_2" DEF='r_carpal_proximal_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -2948,9 +2688,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_carpal_middle_phalanx_2" DEF='r_carpal_middle_phalanx_2_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -2969,9 +2707,7 @@ None
                                                                     </Shape>
 
 <HAnimSite name="r_carpal_distal_phalanx_2" DEF='r_carpal_distal_phalanx_2_Sites'>
-<!-- 
-(r_carpal_distal_phalanx_2_tip  -0.1980 0.6883 -0.0180) 
--->
+<!-- (r_carpal_distal_phalanx_2_tip  -0.1980 0.6883 -0.0180) -->
 </HAnimSite>
 
                                                                 </HAnimSegment>
@@ -2995,9 +2731,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="r_capitate" DEF='r_capitate_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -3016,9 +2750,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="r_metacarpal_3" DEF='r_metacarpal_3_Sites'>
-<!-- 
-(r_metacarpal_phalanx_3  x y z) 
--->
+<!-- (r_metacarpal_phalanx_3  x y z) -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -3037,9 +2769,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="r_carpal_proximal_phalanx_3" DEF='r_carpal_proximal_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -3058,9 +2788,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_carpal_middle_phalanx_3" DEF='r_carpal_middle_phalanx_3_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -3079,10 +2807,8 @@ None
                                                                     </Shape>
 
 <HAnimSite name="r_carpal_distal_phalanx_3" DEF='r_carpal_distal_phalanx_3_Sites'>
-<!-- 
-(r_carpal_distal_phalanx_3_tip  -0.1969 0.6758 -0.0427) 
-(r_dactylion  -0.1941 0.6772 -0.0423 
--->
+<!-- (r_carpal_distal_phalanx_3_tip  -0.1969 0.6758 -0.0427) -->
+<!-- (r_dactylion  -0.1941 0.6772 -0.0423 -->
 </HAnimSite>
 
                                                                 </HAnimSegment>
@@ -3106,9 +2832,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="r_hamate" DEF='r_hamate_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -3127,9 +2851,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="r_metacarpal_4" DEF='r_metacarpal_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -3148,9 +2870,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="r_carpal_proximal_phalanx_4" DEF='r_carpal_proximal_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -3169,9 +2889,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_carpal_middle_phalanx_4" DEF='r_carpal_middle_phalanx_4_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                               </HAnimSegment>
@@ -3190,9 +2908,7 @@ None
                                                                     </Shape>
 
 <HAnimSite name="hanim_r_carpal_distal_phalanx_4" DEF='hanim_r_carpal_distal_phalanx_4_Sites'>
-<!-- 
-(r_carpal_distal_phalanx_4_tip  -0.1934 0.6778 -0.0693)  
--->
+<!-- (r_carpal_distal_phalanx_4_tip  -0.1934 0.6778 -0.0693) -->
 </HAnimSite>
 
                                                                 </HAnimSegment>
@@ -3216,9 +2932,7 @@ None
                                                             </Shape>
 
 <HAnimSite name="r_metacarpal_5" DEF='r_metacarpal_5_Sites'>
-<!-- 
-(r_metacarpal_phalanx_5  -0.1929 0.7890 -0.1064)  
--->
+<!-- (r_metacarpal_phalanx_5  -0.1929 0.7890 -0.1064) -->
 </HAnimSite>
 
                                                         </HAnimSegment>
@@ -3237,9 +2951,7 @@ None
                                                               </Shape>
 
 <HAnimSite name="r_carpal_proximal_phalanx_5" DEF='r_carpal_proximal_phalanx_5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                           </HAnimSegment>
@@ -3258,9 +2970,7 @@ None
                                                                 </Shape>
 
 <HAnimSite name="r_carpal_middle_phalanx_5" DEF='r_carpal_middle_phalanx_5_Sites'>
-<!-- 
-None 
--->
+<!-- None -->
 </HAnimSite>
 
                                                             </HAnimSegment>
@@ -3279,9 +2989,7 @@ None
                                                                   </Shape>
 
 <HAnimSite name="r_carpal_distal_phalanx_5" DEF='r_carpal_distal_phalanx_5_Sites'>
-<!-- 
-(r_carpal_distal_phalanx_5_tip  -0.1938 0.7035 -0.0949)
--->
+<!-- (r_carpal_distal_phalanx_5_tip  -0.1938 0.7035 -0.0949) -->
 </HAnimSite>
 
                                                               </HAnimSegment>

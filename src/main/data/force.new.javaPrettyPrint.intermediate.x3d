@@ -118,7 +118,10 @@ ecmascript:
       <ProtoInstance DEF='linkC' name='cyl'/>
     </Transform>
     <Script DEF='clickHandler'>
-      <!-- <field accessType="outputOnly" name="node_changed" type="SFNode"/> <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field> -->
+      <!-- <field accessType="outputOnly" name="node_changed" type="SFNode"/> -->
+      <!-- <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> -->
+      <!-- <Transform USE="HoldsContent"/> -->
+      <!-- </field> -->
       <field accessType='inputOutput' name='counter' type='SFInt32' value='0'/>
       <field accessType='inputOnly' name='add_node' type='SFBool' value='false'/>
 <![CDATA[

@@ -10,8 +10,6 @@
   </head>
   <Scene>
     <WorldInfo title='OrientationInterpolator.x3d'/>
-    <!--
-      <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
-    -->
+    <!-- <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/> -->
   </Scene>
 </X3D>

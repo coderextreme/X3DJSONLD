@@ -19,7 +19,7 @@
 <Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
 <field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
 <field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<!--<field accessType="inputOutput" name="e" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="f" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="g" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="h" type="SFFloat" value="5"></field> <field accessType="inputOutput" name="t" type="SFFloat" value="0"></field> <field accessType="inputOutput" name="p" type="SFFloat" value="0"></field> <field accessType="inputOutput" name="resolution" type="SFInt32" value="150"></field>--><![CDATA[ecmascript:
+<!--<field accessType="inputOutput" name="e" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="f" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="g" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="h" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="t" type="SFFloat" value="0"></field>--><!--<field accessType="inputOutput" name="p" type="SFFloat" value="0"></field>--><!--<field accessType="inputOutput" name="resolution" type="SFInt32" value="150"></field>--><![CDATA[ecmascript:
 
 var e = 5;
 var f = 5;

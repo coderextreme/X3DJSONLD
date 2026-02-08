@@ -8,7 +8,7 @@
 	      <component name='CubeMapTexturing' level='1'></component>
 	      <component name='Texturing' level='1'></component>
 	      <component name='Rendering' level='1'></component>
-	      <!--<component name='Shape' level='4'></component>-->
+	      <!-- <component name='Shape' level='4'></component> -->
 	      <component name='Grouping' level='3'></component>
 	      <component name='Core' level='1'></component>
         <meta name="title" content="bumpyx_ite.x3d"></meta>
@@ -59,10 +59,9 @@
                   <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
                   <ShaderPart url='"../shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"'></ShaderPart>
                   <ShaderPart url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' type='FRAGMENT'></ShaderPart>
-                  <!-- TO CONVERT TO A SPHERE
-                  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart>
-                  <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart>
-                  -->
+                  <!-- TO CONVERT TO A SPHERE -->
+<!-- <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart> -->
+<!-- <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart> -->
                </ComposedShader>
 	  </Appearance>
 	</Shape>

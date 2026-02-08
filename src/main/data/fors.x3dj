@@ -42,7 +42,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 January 2026"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -415,7 +415,16 @@
               ],
               "-children":[
                 {
-                  "#comment":"<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                  "#comment":"<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>"
+                },
+                {
+                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
+                },
+                {
+                  "#comment":"<Transform USE=\"HoldsContent\"/>"
+                },
+                {
+                  "#comment":"</field>"
                 }
               ],
               "#sourceCode":[

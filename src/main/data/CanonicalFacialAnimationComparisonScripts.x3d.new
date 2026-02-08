@@ -42,8 +42,8 @@
 <ScalarInterpolator DEF="AnimationAdapter_JinUpperLidRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0"></ScalarInterpolator>
 <ScalarInterpolator DEF="AnimationAdapter_JinUpperLipRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0"></ScalarInterpolator>
 <ScalarInterpolator DEF="AnimationAdapter_JinWink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0"></ScalarInterpolator>
-<Group><HAnimHumanoid name="humanoid" DEF="hanim0_humanoid" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim0_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim0_sacrum"></HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim0_skullbase" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="sacrum" DEF="hanim_sacrum"></HAnimSegment>
+<Group><HAnimHumanoid name="humanoid" DEF="hanim0_humanoid" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim0_humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim0_sacrum"></HAnimSegment>
+<HAnimJoint name="skullbase" DEF="hanim0_skullbase"><HAnimSegment name="sacrum" DEF="hanim_sacrum"></HAnimSegment>
 <HAnimSegment name="lower_teeth" DEF="hanim_Lower_teeth"><Transform DEF="Lower_teeth_JinBlink" translation="0 8.43 11.43"><Shape><Appearance containerField="appearance" DEF="BaseAppearance_JinBlink"><Material containerField="material" DEF="BaseMaterial_JinBlink" ambientIntensity="1" diffuseColor="0.588 0.588 0.588" shininess="0.145"></Material>
 <ImageTexture containerField="texture" DEF="JinImageAtlas_JinBlink" url="&quot;JinImageAtlas.jpg&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/FacialAnimation/JinImageAtlas.jpg&quot;"></ImageTexture>
 </Appearance>

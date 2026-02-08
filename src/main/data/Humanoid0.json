@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 December 2025"
+            "@content":"07 February 2026"
           },
           {
             "@name":"generator",
@@ -308,9 +308,7 @@
                 { "HAnimJoint":
                   {
                     "@name":"humanoid_root",
-                    "@DEF":"hanim_humanoid_root",
-                    "@ulimit":[0,0,0],
-                    "@llimit":[0,0,0]
+                    "@DEF":"hanim_humanoid_root"
                   }
                 }
               ],

@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 December 2025"
+            "@content":"07 February 2026"
           },
           {
             "@name":"generator",
@@ -450,7 +450,13 @@
               ],
               "-children":[
                 {
-                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
+                  "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"
+                },
+                {
+                  "#comment":"<Transform USE=\"HoldsContent\"/>"
+                },
+                {
+                  "#comment":"</field>"
                 }
               ],
               "#sourceCode":[
