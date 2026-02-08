@@ -256,6 +256,14 @@ JavaSerializer.prototype = {
 			method = "Child"
 			addpre = "add";
 		}
+		if (addpre+method === "setChildren") {
+			method = "Child"
+			addpre = "add";
+		}
+		if (addpre+method === "addPoses") {
+			method = "Child"
+			addpre = "add";
+		}
 		if (addpre+method === "setJoints") {
 			method = "Joints"
 			addpre = "add";

@@ -240,6 +240,14 @@ PythonSerializer.prototype = {
 			method = "shaders"
 			addpre = "";
 		}
+		if (addpre+method === "setPoses") {
+			method = "Child"
+			addpre = "add";
+		}
+		if (addpre+method === "addPoses") {
+			method = "Child"
+			addpre = "add";
+		}
 		return prepre+addpre+method;
 	},
 	stringValue : function(attrsa, attr, attrType, element, attrs) {
@@ -491,7 +499,8 @@ PythonSerializer.prototype = {
 					method === ".normalTexture" ||
 					method === ".shininessTexture" ||
 					method === ".specularTexture" ||
-					method === ".texture" ||
+					(method === ".texture" && element.nodeName === "Appearance") ||
+					// method === ".texture" ||
 					method === ".fontStyle" ||
 					method === ".fillProperties" ||
 					method === ".lineProperties" ||
