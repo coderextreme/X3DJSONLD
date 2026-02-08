@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><!--<component name='Shape' level='4'></component>--><!--Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L--><component name="Scripting" level="1"></component>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><!--<component name='Shape' level='4'></component>--><!--Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L--><component name="Scripting" level="1"></component>
 <component name="EnvironmentalEffects" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
@@ -30,11 +30,11 @@
 <meta name="generator" content="PSPad, http://www.pspad.com/"></meta>
 <meta name="license" content="license.html"></meta>
 </head>
-<!--"The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their "discussion about the teapot"--><Scene><!--basic nodes, which might be present in any scene--><NavigationInfo type="&quot;EXAMINE&quot;" avatarSize="0.25 1.75 0.75"></NavigationInfo>
+<!--"The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,--><!--It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)--><!--open for their "discussion about the teapot"--><Scene><!--basic nodes, which might be present in any scene--><NavigationInfo type="&quot;EXAMINE&quot;" avatarSize="0.25 1.75 0.75"></NavigationInfo>
 <DirectionalLight ambientIntensity="0.2" direction="0 -1 0"></DirectionalLight>
 <DirectionalLight ambientIntensity="0.2" direction="-1 -0.1 -1"></DirectionalLight>
 <Viewpoint description="My Overview" fieldOfView="1.570796" position="0 1.75 60"></Viewpoint>
-<!--LayerSet with two layers, navigation happens in layer 1--><LayerSet activeLayer="1" order="1 2"><!--the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"--><!--the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)--><Layer pickable="true" objectType="&quot;ALL&quot;"><!--this group contains the red/green/blue 3D crosshair--><Group><!--Arrow X--><Transform translation="25 0 0" rotation="0 0 -1 1.57"><Shape><Cylinder DEF="Shaft" radius="0.35" height="50"></Cylinder>
+<!--LayerSet with two layers, navigation happens in layer 1--><LayerSet activeLayer="1" order="1 2"><!--the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"--><!--the second layer contains the sliders that are moved with the user's display--><!--like a HUD (heads up display)--><Layer pickable="true" objectType="&quot;ALL&quot;"><!--this group contains the red/green/blue 3D crosshair--><Group><!--Arrow X--><Transform translation="25 0 0" rotation="0 0 -1 1.57"><Shape><Cylinder DEF="Shaft" radius="0.35" height="50"></Cylinder>
 <Appearance containerField="appearance"><Material containerField="material" DEF="RED" diffuseColor="1 0 0" emissiveColor="1 0 0"></Material>
 </Appearance>
 </Shape>
@@ -89,7 +89,7 @@
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <ShaderPart url="&quot;../shaders/freewrl_flowers_chromatic.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs&quot;" type="VERTEX"></ShaderPart>
 <ShaderPart url="&quot;../shaders/freewrl.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs&quot;" type="FRAGMENT"></ShaderPart>
-<!--TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart> <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>--></ComposedShader>
+<!--TO CONVERT TO A SPHERE--><!--<ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart>--><!--<ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>--></ComposedShader>
 </Appearance>
 </Shape>
 </Transform>

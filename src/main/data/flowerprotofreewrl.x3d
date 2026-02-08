@@ -49,11 +49,9 @@
 
                             <ComposedShader DEF="shader" language="GLSL">
                   <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
-		  <!--
-                  <field name='cube' type='SFNode' accessType="inputOutput">
-		    <ComposedCubeMapTexture USE="texture"/>
-		  </field>
-		  -->
+		  <!-- <field name='cube' type='SFNode' accessType="inputOutput"> -->
+<!-- <ComposedCubeMapTexture USE="texture"/> -->
+<!-- </field> -->
                   <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>

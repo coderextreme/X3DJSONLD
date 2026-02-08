@@ -71,7 +71,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 January 2026"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -136,7 +136,13 @@
                                 "@language":"GLSL",
                                 "-children":[
                                   {
-                                    "#comment":"TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>"
+                                    "#comment":"TO CONVERT TO A SPHERE"
+                                  },
+                                  {
+                                    "#comment":"<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart>"
+                                  },
+                                  {
+                                    "#comment":"<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>"
                                   }
                                 ],
                                 "field": [

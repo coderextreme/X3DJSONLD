@@ -114,7 +114,10 @@ ecmascript:
       </ProtoBody>
     </ProtoDeclare>
     <ProtoInstance DEF='connector1' name='x3dconnector'>
-      <!-- <fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue> -->
+      <!-- <fieldValue name='set_startpoint'> -->
+      <!-- </fieldValue> -->
+      <!-- <fieldValue name='set_endpoint'> -->
+      <!-- </fieldValue> -->
       <fieldValue name='startnode'>
         <Transform USE='G1'/>
       </fieldValue>

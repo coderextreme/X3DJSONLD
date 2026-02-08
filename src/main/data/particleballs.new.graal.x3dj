@@ -62,7 +62,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 January 2026"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -119,10 +119,64 @@
                         {
                           "-children":[
                             {
-                              "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"
+                              "#comment":"<ComposedShader language='GLSL'>"
                             },
                             {
-                              "#comment":"<ComposedShader DEF=\"shader\" language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> </ComposedShader>"
+                              "#comment":"<field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>"
+                            },
+                            {
+                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                            },
+                            {
+                              "#comment":"<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"
+                            },
+                            {
+                              "#comment":"</field>"
+                            },
+                            {
+                              "#comment":"<field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"</ComposedShader>"
+                            },
+                            {
+                              "#comment":"<ComposedShader DEF=\"shader\" language=\"GLSL\">"
+                            },
+                            {
+                              "#comment":"<field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>"
+                            },
+                            {
+                              "#comment":"<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>"
+                            },
+                            {
+                              "#comment":"<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/>"
+                            },
+                            {
+                              "#comment":"<ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/>"
+                            },
+                            {
+                              "#comment":"</ComposedShader>"
                             }
                           ],
                           "-material":

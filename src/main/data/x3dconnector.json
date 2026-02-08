@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 December 2025"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -377,7 +377,16 @@
               ],
               "-children":[
                 {
-                  "#comment":"<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>"
+                  "#comment":"<fieldValue name='set_startpoint'>"
+                },
+                {
+                  "#comment":"</fieldValue>"
+                },
+                {
+                  "#comment":"<fieldValue name='set_endpoint'>"
+                },
+                {
+                  "#comment":"</fieldValue>"
                 }
               ]
             }

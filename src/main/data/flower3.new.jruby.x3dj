@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 January 2026"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -109,7 +109,25 @@
               "@DEF":"OrbitScript",
               "-children":[
                 {
-                  "#comment":"<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"
+                  "#comment":"<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"
+                },
+                {
+                  "#comment":"<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"
+                },
+                {
+                  "#comment":"<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"
+                },
+                {
+                  "#comment":"<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"
+                },
+                {
+                  "#comment":"<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"
+                },
+                {
+                  "#comment":"<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"
+                },
+                {
+                  "#comment":"<field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"
                 }
               ],
               "field": [

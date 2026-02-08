@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 December 2025"
+            "@content":"07 February 2026"
           },
           {
             "@name":"generator",
@@ -96,7 +96,10 @@
                   "#comment":"the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""
                 },
                 {
-                  "#comment":"the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"
+                  "#comment":"the second layer contains the sliders that are moved with the user's display"
+                },
+                {
+                  "#comment":"like a HUD (heads up display)"
                 }
               ],
               "-layers":[
@@ -369,7 +372,13 @@
                                         },
                                       "-children":[
                                         {
-                                          "#comment":"<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"
+                                          "#comment":"<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">"
+                                        },
+                                        {
+                                          "#comment":"<Coordinate DEF=\"OrbitCoordinates\"/>"
+                                        },
+                                        {
+                                          "#comment":"</IndexedFaceSet>"
                                         }
                                       ],
                                       "-appearance":
@@ -386,37 +395,37 @@
                                               { "ComposedCubeMapTexture":
                                                 {
                                                   "@DEF":"texture",
-                                                  "-back":
+                                                  "-backTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
                                                       }
                                                     },
-                                                  "-bottom":
+                                                  "-bottomTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
                                                       }
                                                     },
-                                                  "-front":
+                                                  "-frontTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
                                                       }
                                                     },
-                                                  "-left":
+                                                  "-leftTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
                                                       }
                                                     },
-                                                  "-right":
+                                                  "-rightTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
                                                       }
                                                     },
-                                                  "-top":
+                                                  "-topTexture":
                                                     { "ImageTexture":
                                                       {
                                                         "@url":["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
@@ -499,7 +508,13 @@
                                                   ],
                                                   "-children":[
                                                     {
-                                                      "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"
+                                                      "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                                                    },
+                                                    {
+                                                      "#comment":"<ComposedCubeMapTexture USE=\"texture\"/>"
+                                                    },
+                                                    {
+                                                      "#comment":"</field>"
                                                     }
                                                   ],
                                                   "-parts":[
@@ -535,7 +550,73 @@
                                             ],
                                             "-children":[
                                               {
-                                                "#comment":"<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>"
+                                                "#comment":"<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\">"
+                                              },
+                                              {
+                                                "#comment":"<field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"
+                                              },
+                                              {
+                                                "#comment":"<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"
+                                              },
+                                              {
+                                                "#comment":"<ShaderPart type='VERTEX'>"
+                                              },
+                                              {
+                                                "#comment":"<IS>"
+                                              },
+                                              {
+                                                "#comment":"<connect nodeField=\"url\" protoField=\"vertex\"/>"
+                                              },
+                                              {
+                                                "#comment":"</IS>"
+                                              },
+                                              {
+                                                "#comment":"</ShaderPart>"
+                                              },
+                                              {
+                                                "#comment":"<ShaderPart type='FRAGMENT'>"
+                                              },
+                                              {
+                                                "#comment":"<IS>"
+                                              },
+                                              {
+                                                "#comment":"<connect nodeField=\"url\" protoField=\"fragment\"/>"
+                                              },
+                                              {
+                                                "#comment":"</IS>"
+                                              },
+                                              {
+                                                "#comment":"</ShaderPart>"
+                                              },
+                                              {
+                                                "#comment":"</ComposedShader>"
                                               }
                                             ]
                                           }
@@ -549,7 +630,40 @@
                         }
                       },
                       {
-                        "#comment":"<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
+                        "#comment":"<Script DEF=\"OrbitScript\">"
+                      },
+                      {
+                        "#comment":"<field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/>"
+                      },
+                      {
+                        "#comment":"<field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/>"
+                      },
+                      {
+                        "#comment":"<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>"
+                      },
+                      {
+                        "#comment":"<field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>"
+                      },
+                      {
+                        "#comment":"<field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>"
+                      },
+                      {
+                        "#comment":"<field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>"
+                      },
+                      {
+                        "#comment":"<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"
+                      },
+                      {
+                        "#comment":"<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"
+                      },
+                      {
+                        "#comment":"<![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script>"
+                      },
+                      {
+                        "#comment":"<ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"
+                      },
+                      {
+                        "#comment":"<ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"
                       },
                       {
                         "#comment":"DIS multiuser facilities"

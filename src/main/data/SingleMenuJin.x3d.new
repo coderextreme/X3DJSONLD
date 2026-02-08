@@ -66,8 +66,8 @@
 <TimeSensor DEF="JinCheekPuffer_Clock" cycleInterval="0.99" enabled="false" loop="true"></TimeSensor>
 <TimeSensor DEF="JinBrowLowerer_Clock" cycleInterval="0.99" enabled="false" loop="true"></TimeSensor>
 <TimeSensor DEF="JinBlink_Clock" cycleInterval="0.99" enabled="false" loop="true"></TimeSensor>
-<HAnimHumanoid name="humanoid" DEF="hanim0_humanoid" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim0_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim0_sacrum"></HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim0_skullbase" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><WorldInfo title="JinFacsAu45BlinkMorpher.x3d"></WorldInfo>
+<HAnimHumanoid name="humanoid" DEF="hanim0_humanoid" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim0_humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim0_sacrum"></HAnimSegment>
+<HAnimJoint name="skullbase" DEF="hanim0_skullbase"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><WorldInfo title="JinFacsAu45BlinkMorpher.x3d"></WorldInfo>
 <Background skyColor="0.8 0.9 1"></Background>
 <NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 </HAnimSegment>

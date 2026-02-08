@@ -69,7 +69,12 @@
             </IndexedFaceSet>
           </Shape>
           <Group DEF='sacrum_Sites'>
-            <!-- None (example site and site marker code) <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> <Shape USE='HAnimSiteShape'/> </HAnimSite> -->
+            <!-- None -->
+            <!-- (example site and site marker code) -->
+            <!-- <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> -->
+            <!-- <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> -->
+            <!-- <Shape USE='HAnimSiteShape'/> -->
+            <!-- </HAnimSite> -->
           </Group>
         </HAnimSegment>
         <HAnimJoint DEF='hanim_sacroiliac' center='0 0.707 -0.016' name='sacroiliac'>
@@ -85,7 +90,16 @@
               </IndexedFaceSet>
             </Shape>
             <Group DEF='pelvis_Sites'>
-              <!-- (r_iliocristale_pt '-0.1525 1.0628 0.0035) (r_trochanterion_pt -0.1689 0.8419 0.0352) (l_iliocristale_pt 0.1612 1.0537 0.0008) (l_trochanterion_pt 0.1677 0.8336 0.0303) (r_asis_pt -0.0887 1.0021 0.1112) (l_asis_pt 0.0774 1.0190 -0.1151) (r_psis_pt -0.0716 1.0190 -0.1138) (l_psis_pt 0.0774 1.0190 -0.1151) (crotch_pt 0.0034 0.8266 0.0257) (buttocks_standing_wall_contact_point x y z) -->
+              <!-- (r_iliocristale_pt '-0.1525 1.0628 0.0035) -->
+              <!-- (r_trochanterion_pt -0.1689 0.8419 0.0352) -->
+              <!-- (l_iliocristale_pt 0.1612 1.0537 0.0008) -->
+              <!-- (l_trochanterion_pt 0.1677 0.8336 0.0303) -->
+              <!-- (r_asis_pt -0.0887 1.0021 0.1112) -->
+              <!-- (l_asis_pt 0.0774 1.0190 -0.1151) -->
+              <!-- (r_psis_pt -0.0716 1.0190 -0.1138) -->
+              <!-- (l_psis_pt 0.0774 1.0190 -0.1151) -->
+              <!-- (crotch_pt 0.0034 0.8266 0.0257) -->
+              <!-- (buttocks_standing_wall_contact_point x y z) -->
               <HAnimSite DEF='hanim_r_iliocristale_pt' name='r_iliocristale' translation='-0.13 0.92 0.0035'>
                 <TouchSensor description='HAnimSite r_iliocristale_pt 36'/>
                 <Shape USE='HAnimSiteShape'/>
@@ -141,7 +155,10 @@
                 </IndexedFaceSet>
               </Shape>
               <Group DEF='l_thigh_Sites'>
-                <!-- (l_knee_crease_pt 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella_pt x y z) -->
+                <!-- (l_knee_crease_pt 0.0993 0.4881 -0.0309) -->
+                <!-- (l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303) -->
+                <!-- (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) -->
+                <!-- (l_suprapatella_pt x y z) -->
                 <HAnimSite DEF='hanim_l_knee_crease_pt' name='l_knee_crease' translation='0.09 0.41 -0.056'>
                   <TouchSensor description='HAnimSite l_knee_crease_pt 90'/>
                   <Shape USE='HAnimSiteShape'/>
@@ -173,7 +190,9 @@
                   </IndexedFaceSet>
                 </Shape>
                 <Group DEF='l_calf_Sites'>
-                  <!-- (l_tibiale_pt x y z) (l_medial_malleolus_pt 0.0890 0.0716 -0.0881) (l_lateral_malleolus_pt 0.1308 0.0597 -0.1032) -->
+                  <!-- (l_tibiale_pt x y z) -->
+                  <!-- (l_medial_malleolus_pt 0.0890 0.0716 -0.0881) -->
+                  <!-- (l_lateral_malleolus_pt 0.1308 0.0597 -0.1032) -->
                   <HAnimSite DEF='hanim_l_tibiale_pt' name='l_tibiale' translation='0.09 0.31 0.038'>
                     <TouchSensor description='HAnimSite l_tibiale_pt 47'/>
                     <Shape USE='HAnimSiteShape'/>
@@ -201,7 +220,8 @@
                     </IndexedFaceSet>
                   </Shape>
                   <Group DEF='l_talus_Sites'>
-                    <!-- (l_sphyrion_pt 0.0890 0.0575 -0.0943) (l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171) -->
+                    <!-- (l_sphyrion_pt 0.0890 0.0575 -0.0943) -->
+                    <!-- (l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171) -->
                     <HAnimSite DEF='hanim_l_sphyrion_pt' name='l_sphyrion' translation='0.054 0.065 -0.02'>
                       <TouchSensor description='HAnimSite l_sphyrion_pt 50'/>
                       <Shape USE='HAnimSiteShape'/>
@@ -681,7 +701,10 @@
                 </IndexedFaceSet>
               </Shape>
               <Group DEF='r_thigh_Sites'>
-                <!-- (r_knee_crease_pt -0.0825 0.4932 -0.0326) (r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289) (r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310) (r_suprapatella_pt x y z) -->
+                <!-- (r_knee_crease_pt -0.0825 0.4932 -0.0326) -->
+                <!-- (r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289) -->
+                <!-- (r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310) -->
+                <!-- (r_suprapatella_pt x y z) -->
                 <HAnimSite DEF='hanim_r_knee_crease_pt' name='r_knee_crease' translation='-0.09 0.41 -0.056'>
                   <TouchSensor description='HAnimSite r_knee_crease_pt 91'/>
                   <Shape USE='HAnimSiteShape'/>
@@ -713,7 +736,9 @@
                   </IndexedFaceSet>
                 </Shape>
                 <Group DEF='r_calf_Sites'>
-                  <!-- (r_tibiale_pt x y z) (r_medial_malleolus_pt -0.0591 0.0760 -0.0928) (r_lateral_malleolus_pt -0.1006 0.0658 -0.1075) -->
+                  <!-- (r_tibiale_pt x y z) -->
+                  <!-- (r_medial_malleolus_pt -0.0591 0.0760 -0.0928) -->
+                  <!-- (r_lateral_malleolus_pt -0.1006 0.0658 -0.1075) -->
                   <HAnimSite DEF='hanim_r_tibiale_pt' name='r_tibiale' translation='-0.09 0.31 0.038'>
                     <TouchSensor description='HAnimSite r_tibiale_pt 51'/>
                     <Shape USE='HAnimSiteShape'/>
@@ -741,7 +766,8 @@
                     </IndexedFaceSet>
                   </Shape>
                   <Group DEF='r_talus_Sites'>
-                    <!-- (r_sphyrion_pt -0.0603 0.0610 -0.1002) (r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221) -->
+                    <!-- (r_sphyrion_pt -0.0603 0.0610 -0.1002) -->
+                    <!-- (r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221) -->
                     <HAnimSite DEF='hanim_r_sphyrion_pt' name='r_sphyrion' translation='-0.054 0.065 -0.02'>
                       <TouchSensor description='HAnimSite r_sphyrion_pt 54'/>
                       <Shape USE='HAnimSiteShape'/>
@@ -1221,7 +1247,11 @@
                 </IndexedFaceSet>
               </Shape>
               <Group DEF='l5_Sites'>
-                <!-- (spine_1_middle_back x y z) (spine_2_lower_back_pt x y z) (waist_preferred_anterior_pt x y z) (waist_preferred_posterior_pt 0.2900 1.0915 -0.1091) (navel 0.0069 1.0966 0.1017) -->
+                <!-- (spine_1_middle_back x y z) -->
+                <!-- (spine_2_lower_back_pt x y z) -->
+                <!-- (waist_preferred_anterior_pt x y z) -->
+                <!-- (waist_preferred_posterior_pt 0.2900 1.0915 -0.1091) -->
+                <!-- (navel 0.0069 1.0966 0.1017) -->
                 <HAnimSite DEF='hanim_spine_1_middle_back_pt' name='spine_1_middle_back' translation='0 1 -0.1'>
                   <TouchSensor description='HAnimSite spine_1_middle_back_pt 24'/>
                   <Shape USE='HAnimSiteShape'/>
@@ -1289,7 +1319,8 @@
                       </IndexedFaceSet>
                     </Shape>
                     <Group DEF='l2_Sites'>
-                      <!-- (l_rib_10_pt 0.0871 1.1925 0.0992) (r_rib_10_pt -0.0711 1.1941 0.1016) -->
+                      <!-- (l_rib_10_pt 0.0871 1.1925 0.0992) -->
+                      <!-- (r_rib_10_pt -0.0711 1.1941 0.1016) -->
                       <HAnimSite DEF='hanim_l_rib_10_pt' name='l_rib_10' translation='0.09 1 0.04'>
                         <TouchSensor description='HAnimSite l_rib_10_pt 28'/>
                         <Shape USE='HAnimSiteShape'/>
@@ -1361,7 +1392,8 @@
                               </IndexedFaceSet>
                             </Shape>
                             <Group DEF='t10_Sites'>
-                              <!-- (substernale_pt 0.0085 1.2995 0.1147) (mesosternale_pt x y z) -->
+                              <!-- (substernale_pt 0.0085 1.2995 0.1147) -->
+                              <!-- (mesosternale_pt x y z) -->
                               <HAnimSite DEF='hanim_substernale_pt' name='substernale' translation='0 1.08 0.076'>
                                 <TouchSensor description='HAnimSite substernale_pt 13'/>
                                 <Shape USE='HAnimSiteShape'/>
@@ -1385,7 +1417,11 @@
                                 </IndexedFaceSet>
                               </Shape>
                               <Group DEF='t9_Sites'>
-                                <!-- (l_thelion_pt 0.0918 1.3382 0.1192) (r_thelion_pt -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane_pt x y z) (l_chest_midsagittal_plane_pt x y z) (r_chest_midsagittal_plane_pt x y z) -->
+                                <!-- (l_thelion_pt 0.0918 1.3382 0.1192) -->
+                                <!-- (r_thelion_pt -0.0736 1.3385 0.1217) -->
+                                <!-- (rear_center_midsagittal_plane_pt x y z) -->
+                                <!-- (l_chest_midsagittal_plane_pt x y z) -->
+                                <!-- (r_chest_midsagittal_plane_pt x y z) -->
                                 <HAnimSite DEF='hanim_l_thelion_pt' name='l_thelion' translation='0.07 1.12 0.09'>
                                   <TouchSensor description='HAnimSite l_thelion_pt 29'/>
                                   <Shape USE='HAnimSiteShape'/>
@@ -1533,7 +1569,8 @@
                                                 </IndexedFaceSet>
                                               </Shape>
                                               <Group DEF='t1_Sites'>
-                                                <!-- (suprasternale_pt 0.0084 1.4714 0.0551) (cervicale_pt 0.0064 1.520 -0.0815) -->
+                                                <!-- (suprasternale_pt 0.0084 1.4714 0.0551) -->
+                                                <!-- (cervicale_pt 0.0064 1.520 -0.0815) -->
                                                 <HAnimSite DEF='hanim_suprasternale_pt' name='suprasternale' translation='0 1.22 0.08'>
                                                   <TouchSensor description='HAnimSite suprasternale_pt 12'/>
                                                   <Shape USE='HAnimSiteShape'/>
@@ -1557,7 +1594,8 @@
                                                   </IndexedFaceSet>
                                                 </Shape>
                                                 <Group DEF='c7_Sites'>
-                                                  <!-- (l_neck_base_pt 0.0646 1.5141 -0.0380) (r_neck_base_pt -0.0419 1.5149 -0.0220) -->
+                                                  <!-- (l_neck_base_pt 0.0646 1.5141 -0.0380) -->
+                                                  <!-- (r_neck_base_pt -0.0419 1.5149 -0.0220) -->
                                                   <HAnimSite DEF='hanim_l_neck_base_pt' name='l_neck_base' translation='0.06 1.26 0'>
                                                     <TouchSensor description='HAnimSite l_neck_base_pt 82'/>
                                                     <Shape USE='HAnimSiteShape'/>
@@ -1681,7 +1719,17 @@
                                                                 </IndexedFaceSet>
                                                               </Shape>
                                                               <Group DEF='skull_Sites'>
-                                                                <!-- (skull_vertex_pt 0.0050 1.7504 0.0055) (glabella_pt x y z) (sellion_pt 0.0058 1.6316 0.0852) (l_infraorbitale_pt 0.0341 1.6171 0.0752) (r_infraorbitale_pt -0.0237 1.6171 0.0752) (l_tragion_pt 0.0739 1.6348 0.0282) (r_tragion_pt -0.0646 1.6347 0.0302) (nuchale_pt 0.0039 1.5972 -0.0796) (opisthocranion_pt x y z) (l_ectocanthus_pt x y z) (r_ectocanthus_pt x y z) -->
+                                                                <!-- (skull_vertex_pt 0.0050 1.7504 0.0055) -->
+                                                                <!-- (glabella_pt x y z) -->
+                                                                <!-- (sellion_pt 0.0058 1.6316 0.0852) -->
+                                                                <!-- (l_infraorbitale_pt 0.0341 1.6171 0.0752) -->
+                                                                <!-- (r_infraorbitale_pt -0.0237 1.6171 0.0752) -->
+                                                                <!-- (l_tragion_pt 0.0739 1.6348 0.0282) -->
+                                                                <!-- (r_tragion_pt -0.0646 1.6347 0.0302) -->
+                                                                <!-- (nuchale_pt 0.0039 1.5972 -0.0796) -->
+                                                                <!-- (opisthocranion_pt x y z) -->
+                                                                <!-- (l_ectocanthus_pt x y z) -->
+                                                                <!-- (r_ectocanthus_pt x y z) -->
                                                                 <HAnimSite DEF='hanim_skull_vertex_pt' name='skull_vertex' translation='0 1.612 -0.03'>
                                                                   <TouchSensor description='HAnimSite skull_vertex_pt 0'/>
                                                                   <Shape USE='HAnimSiteShape'/>
@@ -1741,7 +1789,11 @@
                                                                   </IndexedFaceSet>
                                                                 </Shape>
                                                                 <Group DEF='l_eyelid_Sites'>
-                                                                  <!-- (l_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite> -->
+                                                                  <!-- (l_eyelid_tip_pt x y z) -->
+                                                                  <!-- <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> -->
+                                                                  <!-- <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> -->
+                                                                  <!-- <Shape USE='HAnimSiteShape'/> -->
+                                                                  <!-- </HAnimSite> -->
                                                                 </Group>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
@@ -1758,7 +1810,11 @@
                                                                   </IndexedFaceSet>
                                                                 </Shape>
                                                                 <Group DEF='r_eyelid_Sites'>
-                                                                  <!-- (r_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite> -->
+                                                                  <!-- (r_eyelid_tip_pt x y z) -->
+                                                                  <!-- <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> -->
+                                                                  <!-- <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> -->
+                                                                  <!-- <Shape USE='HAnimSiteShape'/> -->
+                                                                  <!-- </HAnimSite> -->
                                                                 </Group>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
@@ -1775,7 +1831,11 @@
                                                                   </IndexedFaceSet>
                                                                 </Shape>
                                                                 <Group DEF='l_eyeball_Sites'>
-                                                                  <!-- (l_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite> -->
+                                                                  <!-- (l_eyeball_tip_pt x y z) -->
+                                                                  <!-- <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> -->
+                                                                  <!-- <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> -->
+                                                                  <!-- <Shape USE='HAnimSiteShape'/> -->
+                                                                  <!-- </HAnimSite> -->
                                                                 </Group>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
@@ -1792,7 +1852,11 @@
                                                                   </IndexedFaceSet>
                                                                 </Shape>
                                                                 <Group DEF='r_eyeball_Sites'>
-                                                                  <!-- (r_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite> -->
+                                                                  <!-- (r_eyeball_tip_pt x y z) -->
+                                                                  <!-- <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> -->
+                                                                  <!-- <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> -->
+                                                                  <!-- <Shape USE='HAnimSiteShape'/> -->
+                                                                  <!-- </HAnimSite> -->
                                                                 </Group>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
@@ -1809,7 +1873,11 @@
                                                                   </IndexedFaceSet>
                                                                 </Shape>
                                                                 <Group DEF='l_eyebrow_Sites'>
-                                                                  <!-- (l_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite> -->
+                                                                  <!-- (l_eyebrow_tip_pt x y z) -->
+                                                                  <!-- <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> -->
+                                                                  <!-- <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> -->
+                                                                  <!-- <Shape USE='HAnimSiteShape'/> -->
+                                                                  <!-- </HAnimSite> -->
                                                                 </Group>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
@@ -1826,7 +1894,11 @@
                                                                   </IndexedFaceSet>
                                                                 </Shape>
                                                                 <Group DEF='r_eyebrow_Sites'>
-                                                                  <!-- (r_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite> -->
+                                                                  <!-- (r_eyebrow_tip_pt x y z) -->
+                                                                  <!-- <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> -->
+                                                                  <!-- <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> -->
+                                                                  <!-- <Shape USE='HAnimSiteShape'/> -->
+                                                                  <!-- </HAnimSite> -->
                                                                 </Group>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
@@ -1843,7 +1915,10 @@
                                                                   </IndexedFaceSet>
                                                                 </Shape>
                                                                 <Group DEF='jaw_Sites'>
-                                                                  <!-- (r_gonion_pt -0.0520 1.5529 0.0347) (l_gonion_pt 0.0631 1.5530 0.0330) (supramenton_pt 0.0061 1.5410 0.0805) (menton_pt x y z) -->
+                                                                  <!-- (r_gonion_pt -0.0520 1.5529 0.0347) -->
+                                                                  <!-- (l_gonion_pt 0.0631 1.5530 0.0330) -->
+                                                                  <!-- (supramenton_pt 0.0061 1.5410 0.0805) -->
+                                                                  <!-- (menton_pt x y z) -->
                                                                   <HAnimSite DEF='hanim_l_gonion_pt' name='l_gonion' translation='0.068 1.346 0.033'>
                                                                     <TouchSensor description='HAnimSite l_gonion_pt 5'/>
                                                                     <Shape USE='HAnimSiteShape'/>
@@ -1904,7 +1979,10 @@
                                                     </IndexedFaceSet>
                                                   </Shape>
                                                   <Group DEF='l_scapula_Sites'>
-                                                    <!-- (l_acromion_pt 0.2032 1.4760 -0.0490) (l_axilla_proximal_pt 0.1777 1.4065 -0.0075) (l_axilla_distal_pt 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds_pt x y z) -->
+                                                    <!-- (l_acromion_pt 0.2032 1.4760 -0.0490) -->
+                                                    <!-- (l_axilla_proximal_pt 0.1777 1.4065 -0.0075) -->
+                                                    <!-- (l_axilla_distal_pt 0.1706 1.4072 -0.0875) -->
+                                                    <!-- (l_axilla_posterior_folds_pt x y z) -->
                                                     <HAnimSite DEF='hanim_l_acromion_pt' name='l_acromion' translation='0.15 1.222 -0.02'>
                                                       <TouchSensor description='HAnimSite l_acromion_pt 15'/>
                                                       <Shape USE='HAnimSiteShape'/>
@@ -1936,7 +2014,10 @@
                                                       </IndexedFaceSet>
                                                     </Shape>
                                                     <Group DEF='l_upperarm_Sites'>
-                                                      <!-- (l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113) (l_radiale_pt 0.2182 1.1212 -0.1167) (l_bideltoid_pt x y z) -->
+                                                      <!-- (l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100) -->
+                                                      <!-- (l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113) -->
+                                                      <!-- (l_radiale_pt 0.2182 1.1212 -0.1167) -->
+                                                      <!-- (l_bideltoid_pt x y z) -->
                                                       <HAnimSite DEF='hanim_l_humeral_lateral_epicondyles_pt' name='l_humeral_lateral_epicondyles' translation='0.2 0.95 -0.03'>
                                                         <TouchSensor description='HAnimSite l_humeral_lateral_epicondyles_pt 63'/>
                                                         <Shape USE='HAnimSiteShape'/>
@@ -1968,7 +2049,8 @@
                                                         </IndexedFaceSet>
                                                       </Shape>
                                                       <Group DEF='l_forearm_Sites'>
-                                                        <!-- (l_radial_styloid_pt 0.1901 0.8645 -0.0415) (l_olecranon_pt -0.1962 1.1375 -0.1123) -->
+                                                        <!-- (l_radial_styloid_pt 0.1901 0.8645 -0.0415) -->
+                                                        <!-- (l_olecranon_pt -0.1962 1.1375 -0.1123) -->
                                                         <HAnimSite DEF='hanim_l_radial_styloid_pt' name='l_radial_styloid' translation='0.18 0.725 0.025'>
                                                           <TouchSensor description='HAnimSite l_radial_styloid_pt 71'/>
                                                           <Shape USE='HAnimSiteShape'/>
@@ -2245,7 +2327,8 @@
                                                                     </IndexedFaceSet>
                                                                   </Shape>
                                                                   <Group DEF='l_carpal_distal_phalanx_3_Sites'>
-                                                                    <!-- (l_dactylion_pt 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491) -->
+                                                                    <!-- (l_dactylion_pt 0.2056 0.6743 -0.0482) -->
+                                                                    <!-- (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491) -->
                                                                     <HAnimSite DEF='hanim_l_dactylion_pt' name='l_dactylion' translation='0.17 0.555 -0.006'>
                                                                       <TouchSensor description='HAnimSite l_dactylion_pt 57'/>
                                                                       <Shape USE='HAnimSiteShape'/>
@@ -2444,7 +2527,8 @@
                                                   </IndexedFaceSet>
                                                 </Shape>
                                                 <Group DEF='r_clavicle_Sites'>
-                                                  <!-- 0.15 1.222 -0.02 (r_clavicale_pt -0.0115 1.4943 0.0400) -->
+                                                  <!-- 0.15 1.222 -0.02 -->
+                                                  <!-- (r_clavicale_pt -0.0115 1.4943 0.0400) -->
                                                   <HAnimSite DEF='hanim_r_clavicale_pt' name='r_clavicale' translation='-0.03 1.2 0.04'>
                                                     <TouchSensor description='HAnimSite r_clavicale_pt 19'/>
                                                     <Shape USE='HAnimSiteShape'/>
@@ -2464,7 +2548,10 @@
                                                     </IndexedFaceSet>
                                                   </Shape>
                                                   <Group DEF='r_scapula_Sites'>
-                                                    <!-- (r_acromion_pt -0.1905 1.4791 -0.0431) (r_axilla_proximal_pt -0.1626 1.4072 -0.0031) (r_axilla_distal_pt -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds_pt x y z) -->
+                                                    <!-- (r_acromion_pt -0.1905 1.4791 -0.0431) -->
+                                                    <!-- (r_axilla_proximal_pt -0.1626 1.4072 -0.0031) -->
+                                                    <!-- (r_axilla_distal_pt -0.1603 1.4098 -0.0826) -->
+                                                    <!-- (r_axilla_posterior_folds_pt x y z) -->
                                                     <HAnimSite DEF='hanim_r_acromion_pt' name='r_acromion' translation='-0.15 1.222 -0.02'>
                                                       <TouchSensor description='HAnimSite r_acromion_pt 20'/>
                                                       <Shape USE='HAnimSiteShape'/>
@@ -2496,7 +2583,10 @@
                                                       </IndexedFaceSet>
                                                     </Shape>
                                                     <Group DEF='r_upperarm_Sites'>
-                                                      <!-- (r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062) (r_radiale_pt -0.2130 1.1305 -0.1091) (r_bideltoid_pt x y z) -->
+                                                      <!-- (r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033) -->
+                                                      <!-- (r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062) -->
+                                                      <!-- (r_radiale_pt -0.2130 1.1305 -0.1091) -->
+                                                      <!-- (r_bideltoid_pt x y z) -->
                                                       <HAnimSite DEF='hanim_r_humeral_lateral_epicondyles_pt' name='r_humeral_lateral_epicondyles' translation='-0.2 0.95 -0.03'>
                                                         <TouchSensor description='HAnimSite r_humeral_lateral_epicondyles_pt 66'/>
                                                         <Shape USE='HAnimSiteShape'/>
@@ -2528,7 +2618,8 @@
                                                         </IndexedFaceSet>
                                                       </Shape>
                                                       <Group DEF='r_forearm_Sites'>
-                                                        <!-- (r_radial_styloid_pt -0.1884 0.8676 -0.0360) (r_olecranon_pt -0.1907 1.1405 -0.1065) -->
+                                                        <!-- (r_radial_styloid_pt -0.1884 0.8676 -0.0360) -->
+                                                        <!-- (r_olecranon_pt -0.1907 1.1405 -0.1065) -->
                                                         <HAnimSite DEF='hanim_r_radial_styloid_pt' name='r_radial_styloid' translation='-0.18 0.725 0.025'>
                                                           <TouchSensor description='HAnimSite r_radial_styloid_pt 74'/>
                                                           <Shape USE='HAnimSiteShape'/>
@@ -2805,7 +2896,8 @@
                                                                     </IndexedFaceSet>
                                                                   </Shape>
                                                                   <Group DEF='r_carpal_distal_phalanx_3_Sites'>
-                                                                    <!-- (r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion_pt -0.1941 0.6772 -0.0423 ) -->
+                                                                    <!-- (r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) -->
+                                                                    <!-- (r_dactylion_pt -0.1941 0.6772 -0.0423 ) -->
                                                                     <HAnimSite DEF='hanim_r_carpal_distal_phalanx_3_tip' name='r_carpal_distal_phalanx_3' translation='-0.17 0.555 -0.006'>
                                                                       <TouchSensor description='HAnimSite r_carpal_distal_phalanx_3_tip 108'/>
                                                                       <Shape USE='HAnimSiteShape'/>

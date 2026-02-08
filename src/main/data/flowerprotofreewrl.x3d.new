@@ -40,7 +40,7 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="20"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<!--<field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>--><ShaderPart type="VERTEX"><IS><connect nodeField="url" protoField="vertex"></connect>
+<!--<field name='cube' type='SFNode' accessType="inputOutput">--><!--<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>--><!--</field>--><ShaderPart type="VERTEX"><IS><connect nodeField="url" protoField="vertex"></connect>
 </IS>
 </ShaderPart>
 <ShaderPart type="FRAGMENT"><IS><connect nodeField="url" protoField="fragment"></connect>
