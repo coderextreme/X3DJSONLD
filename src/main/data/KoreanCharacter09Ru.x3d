@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component level='1' name='HAnim'/>
     <meta content='KoreanCharacter09Ru.x3d' name='title'/>
@@ -8,16 +8,18 @@
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='23 December 2021' name='modified'/>
+    <meta content='5 November 2025' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.' name='description'/>
+    <meta content='check connectivity of geometry between upper left arm and shoulder' name='TODO'/>
+    <meta content='../Poses/images/HAnimPoseExampleKoreanCharacter09Ru.png' name='Image'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
-    <meta content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
+    <meta content='../KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
     <meta content='KoreanCharactersIllustrated.pdf' name='reference'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter09Ru.x3d' name='identifier'/>
-    <meta content='3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
+    <meta content='3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
     <meta content='Suwon University HAnim Editor' name='generator'/>
-    <meta content='Gnu Image Manipulation Program, https://www.gimp.org' name='generator'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='Gnu Image Manipulation Program, http://www.gimp.org' name='generator'/>
+    <meta content='X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
@@ -27,8 +29,8 @@
     <HAnimHumanoid DEF='hanim_Ru' name='Ru' scale='0.0225 0.0225 0.0225' version='2.0'>
       <!-- original HAnimHumanoid info='"authorName=Chul Hee Jung and Myeong Won Lee" "authorEmail=myeongwonlee@gmail.com" "creationDate=31 March 2011" "humanoidVersion=2.0" "gender=male" "height=1.5"' -->
       <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
-        <MetadataString name='authorName' value='Chul Hee Jung and Myeong Won Lee'/>
-        <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/>
+        <MetadataString name='authorName' value='"Chul Hee Jung and Myeong Won Lee"'/>
+        <MetadataString name='authorEmail' value='"myeongwonlee@gmail.com"'/>
         <MetadataString name='creationDate' value='31 March 2011'/>
         <MetadataString name='gender' value='male'/>
         <MetadataFloat name='height' value='1.5'/>
@@ -360,5 +362,6 @@
       <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
       <HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
     </HAnimHumanoid>
+    <EXPORT AS='KoreanCharacter09Ru' localDEF='hanim_Ru'/>
   </Scene>
 </X3D>

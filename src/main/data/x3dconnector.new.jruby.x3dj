@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 January 2026"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -340,7 +340,16 @@
               "@DEF":"connector1",
               "-children":[
                 {
-                  "#comment":"<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>"
+                  "#comment":"<fieldValue name='set_startpoint'>"
+                },
+                {
+                  "#comment":"</fieldValue>"
+                },
+                {
+                  "#comment":"<fieldValue name='set_endpoint'>"
+                },
+                {
+                  "#comment":"</fieldValue>"
                 }
               ],
               "fieldValue": [

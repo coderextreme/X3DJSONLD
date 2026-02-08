@@ -29,7 +29,9 @@
         <Appearance>
           <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedShader DEF='x_iteShader' language='GLSL'>
-            <!-- TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart> -->
+            <!-- TO CONVERT TO A SPHERE -->
+            <!-- <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart> -->
+            <!-- <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart> -->
             <field accessType='inputOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
             <field accessType='inputOnly' name='cube' type='SFNode'>
               <ComposedCubeMapTexture USE='texture'/>

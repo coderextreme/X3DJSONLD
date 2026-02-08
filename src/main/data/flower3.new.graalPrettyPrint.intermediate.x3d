@@ -25,7 +25,13 @@
       </Shape>
     </Transform>
     <Script DEF='OrbitScript'>
-      <!-- <field accessType="inputOutput" name="e" type="SFFloat" value="5"/> <field accessType="inputOutput" name="f" type="SFFloat" value="5"/> <field accessType="inputOutput" name="g" type="SFFloat" value="5"/> <field accessType="inputOutput" name="h" type="SFFloat" value="5"/> <field accessType="inputOutput" name="t" type="SFFloat" value="0"/> <field accessType="inputOutput" name="p" type="SFFloat" value="0"/> <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"/> -->
+      <!-- <field accessType="inputOutput" name="e" type="SFFloat" value="5"/> -->
+      <!-- <field accessType="inputOutput" name="f" type="SFFloat" value="5"/> -->
+      <!-- <field accessType="inputOutput" name="g" type="SFFloat" value="5"/> -->
+      <!-- <field accessType="inputOutput" name="h" type="SFFloat" value="5"/> -->
+      <!-- <field accessType="inputOutput" name="t" type="SFFloat" value="0"/> -->
+      <!-- <field accessType="inputOutput" name="p" type="SFFloat" value="0"/> -->
+      <!-- <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"/> -->
       <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
       <field accessType='outputOnly' name='coordinates' type='MFVec3f'/>
       <field accessType='outputOnly' name='coordIndexes' type='MFInt32'/>

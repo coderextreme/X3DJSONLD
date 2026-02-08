@@ -51,9 +51,7 @@
 			<ShaderPart url='"../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"' type='FRAGMENT'></ShaderPart>
                     </ComposedShader>
                 </Appearance>
-		<!--
-                <Sphere>
-		-->
+		<!-- <Sphere> -->
                 <IndexedFaceSet convex="false" DEF="Orbit">
                     <Coordinate DEF="OrbitCoordinates"/>
                 </IndexedFaceSet>

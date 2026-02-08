@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 December 2025"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -107,7 +107,10 @@
                     "@geometryType":"GEOMETRY",
                     "-children":[
                       {
-                        "#comment":"* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values"
+                        "#comment":"* values - array of MFFloats to pass to ComposedShader"
+                      },
+                      {
+                        "#comment":"* variations in values - array of MFFloats to pass to ComposedShader that varies values"
                       }
                     ],
                     "-IllegalChildNodeFieldNameNotFound":[

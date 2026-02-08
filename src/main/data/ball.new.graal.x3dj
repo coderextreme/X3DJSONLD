@@ -62,7 +62,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 January 2026"
+            "@content":"08 February 2026"
           },
           {
             "@name":"generator",
@@ -112,10 +112,190 @@
                         {
                           "-children":[
                             {
-                              "#comment":"<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> <ShaderProgram url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'/> </ShaderProgram> <ShaderProgram url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/> </ProgramShader>"
+                              "#comment":"<ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'>"
                             },
                             {
-                              "#comment":"<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/castle.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'></ShaderPart> <ShaderPart DEF='commonfs' url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"'></ShaderPart> <ShaderPart USE='commonfs'></ShaderPart> </ComposedShader> <ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"'></ShaderPart> <ShaderPart USE='commonfs'></ShaderPart> </ComposedShader> <ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field> <field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field> <field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"'></ShaderPart> <ShaderPart USE='commonfs'></ShaderPart> </ComposedShader> <ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"'></ShaderPart> <ShaderPart USE=\"commonfs\"></ShaderPart> </ComposedShader>"
+                              "#comment":"<ShaderProgram url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"' containerField='programs'>"
+                            },
+                            {
+                              "#comment":"<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'/>"
+                            },
+                            {
+                              "#comment":"<field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'/>"
+                            },
+                            {
+                              "#comment":"<field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'/>"
+                            },
+                            {
+                              "#comment":"<field name='power' accessType='initializeOnly' type='SFFloat' value='2'/>"
+                            },
+                            {
+                              "#comment":"</ShaderProgram>"
+                            },
+                            {
+                              "#comment":"<ShaderProgram url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' containerField='programs' type='FRAGMENT'/>"
+                            },
+                            {
+                              "#comment":"</ProgramShader>"
+                            },
+                            {
+                              "#comment":"<ComposedShader language='GLSL'>"
+                            },
+                            {
+                              "#comment":"<field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>"
+                            },
+                            {
+                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                            },
+                            {
+                              "#comment":"<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"
+                            },
+                            {
+                              "#comment":"</field>"
+                            },
+                            {
+                              "#comment":"<field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"../shaders/castle.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"<ShaderPart DEF='commonfs' url='\"../shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' type='FRAGMENT'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"</ComposedShader>"
+                            },
+                            {
+                              "#comment":"<ComposedShader language='GLSL'>"
+                            },
+                            {
+                              "#comment":"<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>"
+                            },
+                            {
+                              "#comment":"<field name='fw_Texture_unit0' type='SFNode' accessType=\"initializeOnly\">"
+                            },
+                            {
+                              "#comment":"<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"
+                            },
+                            {
+                              "#comment":"</field>"
+                            },
+                            {
+                              "#comment":"<field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/contact.vs\"'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"<ShaderPart USE='commonfs'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"</ComposedShader>"
+                            },
+                            {
+                              "#comment":"<ComposedShader language='GLSL'>"
+                            },
+                            {
+                              "#comment":"<field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>"
+                            },
+                            {
+                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                            },
+                            {
+                              "#comment":"<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"
+                            },
+                            {
+                              "#comment":"</field>"
+                            },
+                            {
+                              "#comment":"<field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/octaga.vs\"'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"<ShaderPart USE='commonfs'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"</ComposedShader>"
+                            },
+                            {
+                              "#comment":"<ComposedShader language='GLSL'>"
+                            },
+                            {
+                              "#comment":"<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1 1.033'></field>"
+                            },
+                            {
+                              "#comment":"<field name='cube' accessType='initializeOnly' type='SFInt32' value='0'></field>"
+                            },
+                            {
+                              "#comment":"<field name='bias' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='scale' accessType='initializeOnly' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='power' accessType='initializeOnly' type='SFFloat' value='2'></field>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"<ShaderPart USE='commonfs'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"</ComposedShader>"
+                            },
+                            {
+                              "#comment":"<ComposedShader language='GLSL'>"
+                            },
+                            {
+                              "#comment":"<field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>"
+                            },
+                            {
+                              "#comment":"<field name='cube' type='SFNode' accessType=\"inputOutput\">"
+                            },
+                            {
+                              "#comment":"<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"
+                            },
+                            {
+                              "#comment":"</field>"
+                            },
+                            {
+                              "#comment":"<field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>"
+                            },
+                            {
+                              "#comment":"<field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"
+                            },
+                            {
+                              "#comment":"<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"'></ShaderPart>"
+                            },
+                            {
+                              "#comment":"<ShaderPart USE=\"commonfs\"></ShaderPart>"
+                            },
+                            {
+                              "#comment":"</ComposedShader>"
                             }
                           ],
                           "-material":

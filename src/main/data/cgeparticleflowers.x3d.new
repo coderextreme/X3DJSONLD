@@ -40,7 +40,7 @@
 <field name="d" type="SFFloat" accessType="inputOutput" value="5"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
-<!--<field name='cube' type='SFNode' accessType="initializeOnly"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>--><ShaderPart url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs&quot;" type="VERTEX"></ShaderPart>
+<!--<field name='cube' type='SFNode' accessType="initializeOnly">--><!--<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>--><!--</field>--><ShaderPart url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs&quot;" type="VERTEX"></ShaderPart>
 <ShaderPart type="FRAGMENT" url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs&quot;"></ShaderPart>
 </ComposedShader>
 </Appearance>

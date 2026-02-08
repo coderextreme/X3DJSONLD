@@ -112,12 +112,10 @@
         </Transform>
         <Script DEF="clickHandler">
             <field accessType="inputOutput" name="counter" value="0" type="SFInt32"/>
-            <!--
-            <field accessType="outputOnly" name="node_changed" type="SFNode"/>
-            <field name="ModifiableNode" type="SFNode" accessType="inputOutput">
-                <Transform USE="HoldsContent"/>
-            </field>
-                        -->
+            <!-- <field accessType="outputOnly" name="node_changed" type="SFNode"/> -->
+<!-- <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> -->
+<!-- <Transform USE="HoldsContent"/> -->
+<!-- </field> -->
             <field accessType="inputOnly" name="add_node" value="false" type="SFBool"/>
 
 	<![CDATA[

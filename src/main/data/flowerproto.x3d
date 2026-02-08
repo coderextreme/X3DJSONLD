@@ -38,9 +38,7 @@
                             </ComposedCubeMapTexture>
 
                             <ComposedShader DEF="shader" language="GLSL">
-		  <!--
-                  <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>
-		  -->
+		  <!-- <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field> -->
                   <field name='cube' type='SFNode' accessType="inputOnly">
 		    <ComposedCubeMapTexture USE="texture"/>
 		  </field>

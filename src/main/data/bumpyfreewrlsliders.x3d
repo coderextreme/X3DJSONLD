@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Full' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Full' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
 <head>
     	      <component level='1' name='Scripting'/>
 	      <component name='EnvironmentalEffects' level='3'></component>
@@ -84,9 +84,7 @@
       </Group>
       <!-- the model that is being reviewed by the users of this scene -->
       <Transform DEF="FlowerTransform">
-	      <!--
-        <Inline DEF="Flower" url='"bumpyfreewrl.x3d"' />
-	-->
+	      <!-- <Inline DEF="Flower" url='"bumpyfreewrl.x3d"' /> -->
 <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
     <Background
 		backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
@@ -99,11 +97,9 @@
 	<Transform>
 	<Shape>
 		<Sphere radius="5"/>
-		<!--
-                <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
-                    <Coordinate DEF="OrbitCoordinates"/>
-                </IndexedFaceSet>
-		-->
+		<!-- <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0"> -->
+<!-- <Coordinate DEF="OrbitCoordinates"/> -->
+<!-- </IndexedFaceSet> -->
 	  <Appearance>
           <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" ></Material>
                 <ComposedCubeMapTexture DEF="texture">
@@ -116,11 +112,9 @@
                 </ComposedCubeMapTexture>
                <ComposedShader DEF="freewrlShader" language="GLSL">
                   <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
-		  <!--
-                  <field name='cube' type='SFNode' accessType="inputOutput">
-		    <ComposedCubeMapTexture USE="texture"/>
-		  </field>
-		  -->
+		  <!-- <field name='cube' type='SFNode' accessType="inputOutput"> -->
+<!-- <ComposedCubeMapTexture USE="texture"/> -->
+<!-- </field> -->
                   <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
                   <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
                   <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
@@ -142,84 +136,45 @@
 					</IS>
                                 </ShaderPart>
                </ComposedShader>
-		<!--
-               <ComposedShader DEF="freewrlShader" language="GLSL">
-                  <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
-                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                                <ShaderPart type='VERTEX'>
-					<IS>
-					<connect nodeField="url" protoField="vertex"/>
-					</IS>
-                                </ShaderPart>
-                                <ShaderPart type='FRAGMENT'>
-					<IS>
-					<connect nodeField="url" protoField="fragment"/>
-					</IS>
-                                </ShaderPart>
-                    </ComposedShader>
-	       -->
+		<!-- <ComposedShader DEF="freewrlShader" language="GLSL"> -->
+<!-- <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> -->
+<!-- <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> -->
+<!-- <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> -->
+<!-- <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> -->
+<!-- <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> -->
+<!-- <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> -->
+<!-- <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> -->
+<!-- <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> -->
+<!-- <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> -->
+<!-- <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> -->
+<!-- <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> -->
+<!-- <ShaderPart type='VERTEX'> -->
+<!-- <IS> -->
+<!-- <connect nodeField="url" protoField="vertex"/> -->
+<!-- </IS> -->
+<!-- </ShaderPart> -->
+<!-- <ShaderPart type='FRAGMENT'> -->
+<!-- <IS> -->
+<!-- <connect nodeField="url" protoField="fragment"/> -->
+<!-- </IS> -->
+<!-- </ShaderPart> -->
+<!-- </ComposedShader> -->
 	  </Appearance>
 	</Shape>
       </Transform>
       </Transform>
-      <!--
-        <Script DEF="OrbitScript">
-            <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
-            <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
-	    <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-	    <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>
-	    <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>
-	    <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>
-	    <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-	    <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-<![CDATA[ecmascript:
-function initialize() {
-     var resolution = 300;
-     var theta = 0.0;
-     var phi = 0.0;
-     var delta = (2 * 3.141592653) / (resolution-1);
-     var crds = new MFVec3f();
-     for ( i = 0; i < resolution; i++) {
-     	for ( j = 0; j < resolution; j++) {
-		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);
-		crds.push(new SFVec3f(
-			rho * Math.cos(phi) * Math.cos(theta),
-			rho * Math.cos(phi) * Math.sin(theta),
-			rho * Math.sin(phi)
-		));
-		theta += delta;
-	}
-	phi += delta;
-     }
-     coordinates = crds;
-
-
-     var cis = new MFInt32();
-     for ( i = 0; i < resolution-1; i++) {
-     	for ( j = 0; j < resolution-1; j++) {
-	     cis.push(i*resolution+j);
-	     cis.push(i*resolution+j+1);
-	     cis.push((i+1)*resolution+j+1);
-	     cis.push((i+1)*resolution+j);
-	     cis.push(-1);
-	}
-    }
-    coordIndexes = cis;
-}
-
-      ]]></Script>
-      <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/>
-      <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/>
-      -->
+      <!-- <Script DEF="OrbitScript"> -->
+<!-- <field accessType="inputOutput" name="coordinates" type="MFVec3f"/> -->
+<!-- <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/> -->
+<!-- <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> -->
+<!-- <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> -->
+<!-- <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> -->
+<!-- <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> -->
+<!-- <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> -->
+<!-- <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> -->
+<!-- <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> -->
+<!-- <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/> -->
+<!-- <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/> -->
       <!-- DIS multiuser facilities -->
       <DISEntityManager DEF='EntityManager'>
                <DISEntityTypeMapping category='77' containerField='children' specific='1' url='"../data/Leif8Final.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"'/>
@@ -233,8 +188,8 @@ function initialize() {
       <ROUTE fromField='addedEntities' fromNode='EntityManager' toField='addChildren' toNode='AvatarHolder'/>
       <ROUTE fromField='removedEntities' fromNode='EntityManager' toField='removeChildren' toNode='AvatarHolder'/>
     </Layer>
-    <!-- the second layer contains the sliders that are moved with the user's display
-         like a HUD (heads up display) -->
+    <!-- the second layer contains the sliders that are moved with the user's display -->
+<!-- like a HUD (heads up display) -->
     <LayoutLayer pickable='true'>
       <!-- positioning the LayoutLayer -->
       <Layout containerField='layout' align='"LEFT" "BOTTOM"' offset='-0.50 0' offsetUnits='"WORLD" "WORLD"' scaleMode='"NONE" "NONE"' size='1.0 1.0' sizeUnits='"WORLD" "WORLD"'/>

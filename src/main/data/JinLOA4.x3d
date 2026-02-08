@@ -2671,23 +2671,13 @@
       <OrientationInterpolator DEF='Stop_l_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_l_talocrural_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_l_subtalar_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
-      <!--
-	      <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='
-		      0 0 1 0
-		      0 0 1 0
-		      0 0 1 0'/>
-      -->
+      <!-- <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/> -->
       <OrientationInterpolator DEF='Stop_l_metatarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_r_hip_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_r_knee_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_r_talocrural_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_r_subtalar_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
-      <!--
-	      <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='
-		      0 0 1 0
-		      0 0 1 0
-		      0 0 1 0'/>
-      -->
+      <!-- <OrientationInterpolator DEF='Stop_r_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue=' 0 0 1 0 0 0 1 0 0 0 1 0'/> -->
       <OrientationInterpolator DEF='Stop_r_metatarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_vl5_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
       <OrientationInterpolator DEF='Stop_vl4_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>
@@ -3203,17 +3193,13 @@
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_knee_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_talocrural_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_subtalar_RotationInterpolator'/>
-      <!--
-    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_midtarsal_RotationInterpolator'/>
-      -->
+      <!-- <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_midtarsal_RotationInterpolator'/> -->
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_l_metatarsal_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_hip_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_knee_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_talocrural_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_subtalar_RotationInterpolator'/>
-      <!--
-    <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_midtarsal_RotationInterpolator'/>
-      -->
+      <!-- <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_midtarsal_RotationInterpolator'/> -->
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_r_metatarsal_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vl5_RotationInterpolator'/>
     <ROUTE fromField='fraction_changed' fromNode='StopTimer' toField='set_fraction' toNode='Stop_vl4_RotationInterpolator'/>
@@ -3295,15 +3281,11 @@
     <ROUTE fromField='value_changed' fromNode='Stop_l_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_l_hip'/>
     <ROUTE fromField='value_changed' fromNode='Stop_l_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_l_knee'/>
     <ROUTE fromField='value_changed' fromNode='Stop_l_talocrural_RotationInterpolator' toField='set_rotation' toNode='hanim_l_talocrural'/>
-      <!--
-    <ROUTE fromField='value_changed' fromNode='Stop_l_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_l_midtarsal'/>
-      -->
+      <!-- <ROUTE fromField='value_changed' fromNode='Stop_l_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_l_midtarsal'/> -->
     <ROUTE fromField='value_changed' fromNode='Stop_r_hip_RotationInterpolator' toField='set_rotation' toNode='hanim_r_hip'/>
     <ROUTE fromField='value_changed' fromNode='Stop_r_knee_RotationInterpolator' toField='set_rotation' toNode='hanim_r_knee'/>
     <ROUTE fromField='value_changed' fromNode='Stop_r_talocrural_RotationInterpolator' toField='set_rotation' toNode='hanim_r_talocrural'/>
-      <!--
-    <ROUTE fromField='value_changed' fromNode='Stop_r_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_r_midtarsal'/>
-      -->
+      <!-- <ROUTE fromField='value_changed' fromNode='Stop_r_midtarsal_RotationInterpolator' toField='set_rotation' toNode='hanim_r_midtarsal'/> -->
     <ROUTE fromField='value_changed' fromNode='Stop_vl5_RotationInterpolator' toField='set_rotation' toNode='hanim_vl5'/>
     <ROUTE fromField='value_changed' fromNode='Stop_skullbase_RotationInterpolator' toField='set_rotation' toNode='hanim_skullbase'/>
     <ROUTE fromField='value_changed' fromNode='Stop_l_shoulder_RotationInterpolator' toField='set_rotation' toNode='hanim_l_shoulder'/>
