@@ -284,7 +284,7 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 		}
 	}
 	if (typeof containerField !== 'undefined') { // && key.toLowerCase() !== containerField.toLowerCase()) {
-		if (containerField !== 'children' && containerField !== 'geometry' && containerField !== 'coord') {
+		if (containerField !== 'poses' && containerField !== 'children' && containerField !== 'geometry' && containerField !== 'coord') {
 			X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
 		}
 	}
@@ -510,6 +510,9 @@ ConvertToX3DOM : function(xmlDoc, object, parentkey, element, path, containerFie
 					}
 				} else if (key.indexOf("HAnim") === 0 && key !== "HAnimHumanoid" && typeof object[key]['@USE'] != 'undefined') {
 					object[key]['@containerField'] = key.substring(5).toLowerCase()+"s";
+					if (object[key]['@containerField'] === 'poses') {
+						object[key]['@containerField'] = "children"; // override poses
+					}
 					X3DJSONLD.ConvertObject(xmlDoc, key, object, element, path, object[key]['@containerField']);
 				} else {
 					X3DJSONLD.ConvertObject(xmlDoc, key, object, element, path);
