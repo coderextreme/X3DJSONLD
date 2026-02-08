@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="HAnimPoseExternProtoDeclare.x3d"></meta>
+<meta name="description" content="Define ExternProtoDeclare for an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed."></meta>
+<meta name="created" content="1 November 2025"></meta>
+<meta name="modified" content="14 December 2025"></meta>
+<meta name="creator" content="Don Brutzman"></meta>
+<meta name="creator" content="Joe Williams"></meta>
+<meta name="contributor" content="Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE"></meta>
+<meta name="specificationSection" content="HAnim Architecture volume 1 version 2.1 draft, clause 6 Object interfaces, section 6.4 Pose"></meta>
+<meta name="specificationUrl" content="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/ObjectInterfaces.html#Pose"></meta>
+<meta name="specificationSection" content="HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.2 Modelling of human-like HAnim figures"></meta>
+<meta name="specificationUrl" content="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#ModellingHumanLikeHAnimFigures"></meta>
+<meta name="specificationSection" content="HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.3 Poses"></meta>
+<meta name="specificationUrl" content="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses"></meta>
+<meta name="reference" content="Direct scene manipulations with Javascript, https://doc.instantreality.org/tutorial/direct-scene-manipulations-with-javascript"></meta>
+<meta name="generator" content="X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"></meta>
+<meta name="generator" content="Sunrize X3D Editor V1.11.1, https://create3000.github.io/sunrize"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclare.x3d"></meta>
+<meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"></meta>
+</head>
+<Scene><WorldInfo DEF="ModelInfo" info="&quot;Design to illustrate a potential HAnimPose node&quot;" title="HAnimPoseExternProtoDeclare"></WorldInfo>
+<Background skyColor="0.6 0.6 0.8"></Background>
+<NavigationInfo></NavigationInfo>
+<ExternProtoDeclare name="HAnimPose" appinfo="Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values." url="&quot;Filename.x3d#HAnimPose&quot; &quot;https://some.address.org/Filename.x3d#HAnimPose&quot;"><field name="parentHAnimHumanoid" accessType="inputOutput" appinfo="HAnimHumanoid for this Pose to act upon" type="SFNode"></field>
+<field name="name" accessType="inputOutput" appinfo="name of this pose" type="SFString"></field>
+<field name="children" accessType="inputOutput" appinfo="joint values to apply to HAnimHumanoid" type="MFNode"><!--initializating Joint nodes (if any) go here--></field>
+<field name="description" accessType="inputOutput" appinfo="explanation of purpose" type="SFString"></field>
+<field name="enabled" accessType="inputOutput" appinfo="default value true" type="SFBool"></field>
+<field name="loa" accessType="initializeOnly" appinfo="default is no loa" type="SFInt32"></field>
+<field name="transitionDuration" accessType="inputOutput" appinfo="how many seconds to achieve the pose" type="SFTime"></field>
+<field name="metadata" accessType="inputOutput" appinfo="single Metadata* node" type="SFNode"></field>
+<field name="isActive" accessType="outputOnly" appinfo="event indicating when pose transition is active" type="SFBool"></field>
+<field name="commencePose" accessType="inputOnly" appinfo="this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1" type="SFBool"></field>
+<field name="resetAllJoints" accessType="inputOnly" appinfo="reset the skeleton to I pose with all joints zeroed" type="SFBool"></field>
+<field name="set_fraction" accessType="inputOnly" appinfo="allows transition to proceed incrementally from fraction [0..10" type="SFFloat"></field>
+<field name="set_startTime" accessType="inputOnly" appinfo="starts the animation clock" type="SFTime"></field>
+<field name="isLoaded" accessType="inputOnly" appinfo="possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE" type="SFBool"></field>
+<field name="traceEnabled" accessType="inputOutput" appinfo="debug trace to Browser output console this is a local prototype field" type="SFBool"></field>
+</ExternProtoDeclare>
+<Viewpoint description="HAnimPoseExternProtoDeclare description" position="0 1 4"></Viewpoint>
+<Transform DEF="DisplayHeader1" translation="0 1.5 0"><Anchor description="go to HAnimPoseExternProtoDeclareIndex page" parameter="&quot;target=_blank&quot;" url="&quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclareIndex.html&quot;"><Shape><Text string="&quot;Utility scene&quot; &quot;HAnimPoseExternProtoDeclare.x3d&quot;"><FontStyle containerField="fontStyle" DEF="HeaderFont" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.15" style="BOLD"></FontStyle>
+</Text>
+<Appearance containerField="appearance" DEF="PoseTextAppearance"><Material containerField="material" diffuseColor="0.1 0.3 0.5"></Material>
+</Appearance>
+</Shape>
+<Shape><Box size="3.5 0.5 0.001"></Box>
+<Appearance containerField="appearance" DEF="TransparentAppearance"><Material containerField="material" transparency="1"></Material>
+</Appearance>
+</Shape>
+</Anchor>
+</Transform>
+<Transform DEF="DisplayHeader2" translation="0 0.5 0"><Anchor description="go to HAnimPosePrototypeIndex page" parameter="&quot;target=_blank&quot;" url="&quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeIndex.html&quot;"><Shape><Text string="&quot;This model supports&quot; &quot;HAnimPosePrototype.x3d&quot;"><FontStyle containerField="fontStyle" USE="HeaderFont"></FontStyle>
+</Text>
+<Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
+</Shape>
+</Anchor>
+<Shape><Box size="2.6 0.5 0.001"></Box>
+<Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
+</Shape>
+</Transform>
+</Scene>
+</X3D>
