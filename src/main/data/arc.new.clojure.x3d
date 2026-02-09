@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='arc.x3d' name='title'/>
     <meta content='Lost, Doug Sanden I think' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d' name='identifier'/>
-    <meta content='a generic proto to connect two objects' name='description'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
-    <Viewpoint description='Only Viewpoint' position='0 0 5'/>
-    <Background skyColor='0.4 0.4 0.4'/>
     <ProtoDeclare name='point'>
       <ProtoInterface>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform DEF='node'>
@@ -29,10 +26,10 @@
           </Shape>
           <PositionInterpolator DEF='PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
           <Script DEF='MB1'>
-            <field name='translation' accessType='inputOutput' type='SFVec3f' value='50 50 0'/>
-            <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-            <field name='set_location' accessType='inputOnly' type='SFTime'/>
-            <field name='keyValue' accessType='inputOutput' type='MFVec3f' value='0 0 0 0 5 0'/>
+            <field accessType='inputOutput' name='translation' type='SFVec3f' value='50 50 0'/>
+            <field accessType='inputOutput' name='old' type='SFVec3f'/>
+            <field accessType='inputOnly' name='set_location' type='SFTime'/>
+            <field accessType='inputOutput' name='keyValue' type='MFVec3f' value='0 0 0 0 5 0'/>
 <![CDATA[
 ecmascript:
 		function set_location(value) {
@@ -44,19 +41,19 @@ ecmascript:
 ]]>
           </Script>
           <TimeSensor DEF='CL1' cycleInterval='3.0' loop='true'/>
-          <ROUTE fromField='cycleTime' fromNode='CL1' toField='set_location' toNode='MB1'/>
-          <ROUTE fromField='fraction_changed' fromNode='CL1' toField='set_fraction' toNode='PI1'/>
-          <ROUTE fromField='keyValue' fromNode='MB1' toField='keyValue' toNode='PI1'/>
-          <ROUTE fromField='value_changed' fromNode='PI1' toField='set_translation' toNode='node'/>
         </Transform>
+        <ROUTE fromField='cycleTime' fromNode='CL1' toField='set_location' toNode='MB1'/>
+        <ROUTE fromField='fraction_changed' fromNode='CL1' toField='set_fraction' toNode='PI1'/>
+        <ROUTE fromField='keyValue_changed' fromNode='MB1' toField='set_keyValue' toNode='PI1'/>
+        <ROUTE fromField='value_changed' fromNode='PI1' toField='set_translation' toNode='node'/>
       </ProtoBody>
     </ProtoDeclare>
     <ProtoDeclare name='x3dconnector'>
       <ProtoInterface>
-        <field name='startnode' accessType='initializeOnly' type='SFNode'/>
-        <field name='endnode' accessType='initializeOnly' type='SFNode'/>
-        <field name='set_startpoint' accessType='inputOnly' type='SFVec3f'/>
-        <field name='set_endpoint' accessType='inputOnly' type='SFVec3f'/>
+        <field accessType='initializeOnly' name='startnode' type='SFNode'/>
+        <field accessType='initializeOnly' name='endnode' type='SFNode'/>
+        <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
+        <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
@@ -71,16 +68,16 @@ ecmascript:
             </Transform>
           </Transform>
           <Script DEF='S1'>
-            <field name='startnode' accessType='initializeOnly' type='SFNode'/>
-            <field name='endnode' accessType='initializeOnly' type='SFNode'/>
-            <field name='position' accessType='inputOutput' type='SFNode'>
+            <field accessType='initializeOnly' name='startnode' type='SFNode'/>
+            <field accessType='initializeOnly' name='endnode' type='SFNode'/>
+            <field accessType='inputOutput' name='position' type='SFNode'>
               <Transform USE='trans'/>
             </field>
-            <field name='rotscale' accessType='inputOutput' type='SFNode'>
+            <field accessType='inputOutput' name='rotscale' type='SFNode'>
               <Transform USE='rotscale'/>
             </field>
-            <field name='set_startpoint' accessType='inputOnly' type='SFVec3f'/>
-            <field name='set_endpoint' accessType='inputOnly' type='SFVec3f'/>
+            <field accessType='inputOnly' name='set_startpoint' type='SFVec3f'/>
+            <field accessType='inputOnly' name='set_endpoint' type='SFVec3f'/>
             <IS>
               <connect nodeField='startnode' protoField='startnode'/>
               <connect nodeField='endnode' protoField='endnode'/>
@@ -139,45 +136,49 @@ ecmascript:
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoInstance DEF='G1' name='point'/>
-    <ProtoInstance DEF='G2' name='point'/>
-    <ProtoInstance DEF='G3' name='point'/>
-    <ProtoInstance DEF='G4' name='point'/>
+    <Viewpoint description='Only Viewpoint' position='0 0 5'/>
+    <Background skyColor='0.4 0.4 0.4'/>
+    <ProtoInstance DEF='G1' name='point'>
+      <fieldValue name='translation' value='0 4.376667 0'/>
+    </ProtoInstance>
+    <ProtoInstance DEF='G2' name='point'>
+      <fieldValue name='translation' value='0 4.376667 0'/>
+    </ProtoInstance>
+    <ProtoInstance DEF='G3' name='point'>
+      <fieldValue name='translation' value='0 4.376667 0'/>
+    </ProtoInstance>
+    <ProtoInstance DEF='G4' name='point'>
+      <fieldValue name='translation' value='0 4.376667 0'/>
+    </ProtoInstance>
     <ProtoInstance DEF='connector1' name='x3dconnector'>
       <fieldValue name='startnode'>
-        <ProtoInstance USE='G1'/>
+        <ProtoInstance USE='G1' name='point'/>
       </fieldValue>
       <fieldValue name='endnode'>
-        <ProtoInstance USE='G2'/>
+        <ProtoInstance USE='G2' name='point'/>
       </fieldValue>
-      <fieldValue name='set_startpoint'/>
-      <fieldValue name='set_endpoint'/>
     </ProtoInstance>
     <ProtoInstance DEF='connector2' name='x3dconnector'>
       <fieldValue name='startnode'>
-        <ProtoInstance USE='G1'/>
+        <ProtoInstance USE='G1' name='point'/>
       </fieldValue>
       <fieldValue name='endnode'>
-        <ProtoInstance USE='G3'/>
+        <ProtoInstance USE='G3' name='point'/>
       </fieldValue>
-      <fieldValue name='set_startpoint'/>
-      <fieldValue name='set_endpoint'/>
     </ProtoInstance>
     <ProtoInstance DEF='connector3' name='x3dconnector'>
       <fieldValue name='startnode'>
-        <ProtoInstance USE='G1'/>
+        <ProtoInstance USE='G1' name='point'/>
       </fieldValue>
       <fieldValue name='endnode'>
-        <ProtoInstance USE='G4'/>
+        <ProtoInstance USE='G4' name='point'/>
       </fieldValue>
-      <fieldValue name='set_startpoint'/>
-      <fieldValue name='set_endpoint'/>
     </ProtoInstance>
-    <ROUTE fromField='translation' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
-    <ROUTE fromField='translation' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
-    <ROUTE fromField='translation' fromNode='G1' toField='set_startpoint' toNode='connector2'/>
-    <ROUTE fromField='translation' fromNode='G3' toField='set_endpoint' toNode='connector2'/>
-    <ROUTE fromField='translation' fromNode='G1' toField='set_startpoint' toNode='connector3'/>
-    <ROUTE fromField='translation' fromNode='G4' toField='set_endpoint' toNode='connector3'/>
+    <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
+    <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>
+    <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector2'/>
+    <ROUTE fromField='translation_changed' fromNode='G3' toField='set_endpoint' toNode='connector2'/>
+    <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector3'/>
+    <ROUTE fromField='translation_changed' fromNode='G4' toField='set_endpoint' toNode='connector3'/>
   </Scene>
 </X3D>
