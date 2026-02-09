@@ -12,7 +12,6 @@ IFS=$'\n\t'
 pushd ../java
 javac -proc:full net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
 popd
-# sudo pacman -Syu leiningen
 
 STYLESHEETDIR=../lib/stylesheets
 # OVERWRITE=

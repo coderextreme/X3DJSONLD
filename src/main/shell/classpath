@@ -14,6 +14,7 @@ if uname | grep -q "Linux"; then
   export JRUBY=${DOWNLOADS}/jruby-dist-10.0.1.0-bin/jruby-10.0.1.0/bin/jruby
   # GRAAL DOES NOT TAKE C:  You need colon separators on Linux, commas on Windows
   export GRAAL_CLASSPATH=".:${GRAALX3DJSONLD}/saxon-he-12.8.jar:${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar:${GRAALX3DJSONLD}/src/main/graaljs:../java:${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar:${PYTHONSAI}/xmlresolver-5.1.1.jar:${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
+  export CLOJURE="lein"
 else
   echo "Running on Windows"
   export HOMESFOLDER=C:/Users
@@ -25,10 +26,11 @@ else
   export PYTHONSAI=${HOMESFOLDER}/$USERNAME/pythonSAI
   export GRAALPY=${DOWNLOADS}/graalpy-community-jvm-24.2.1-windows-amd64/graalpy-community-24.2.1-windows-amd64/bin/graalpy
 # export JRUBY=/c/jruby-11.0.0.1/bin/jruby
-# export JRUBY=/c/jruby-10.0.2.0/bin/jruby
+  export JRUBY=/c/jruby-10.0.2.0/bin/jruby
   export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.8.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${PYTHONSAI}/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
   # export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;${PYTHONSAI}/xmlresolver-5.1.1.jar;${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
   export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.8.jar;.;../../..;../java"
+  export CLOJURE=clj
 fi
 
 source ${X3DJSONLD}/src/main/python/venv/Scripts/activate

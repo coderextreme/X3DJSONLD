@@ -46,7 +46,7 @@ function doSuppressCheck(err, file, version, json) {
 	let suppress = true;
 	if ('params' in err && 'type' in err.params && err.params.type === 'array' && err.instancePath.indexOf('NavigationInfo') >= 0 && err.instancePath.indexOf('@type') >= 0) {
 		if (suppress) {
-			console.log("Suppressing NavigationInfo.type as array.  Use $ npx x3dvalidate --fullreport "+file+" file ... to reveal possibly confusing errors");
+			console.log("Suppressing NavigationInfo.type as array.  Use $ npx x3dvalidate --fullreport "+file+" ... to reveal possibly confusing errors");
 			error += "Suppressed.  See console log\n";
 		} else {
 			error += doOneErr(err, file, version, json);
@@ -61,7 +61,7 @@ function doSuppressCheck(err, file, version, json) {
 		}
 	} else if ('params' in err && 'passingSchemas' in err.params && err.params.passingSchemas === null) {
 		if (suppress) {
-			console.log("Suppressing null passingSchemas.  Use $ npx x3dvalidate --fullreport "+file+" file ... to reveal possibly confusing errors");
+			console.log("Suppressing null passingSchemas.  Use $ npx x3dvalidate --fullreport "+file+" ... to reveal possibly confusing errors");
 			error += "Suppressed.  See console log\n";
 		} else {
 			error += doOneErr(err, file, version, json);
