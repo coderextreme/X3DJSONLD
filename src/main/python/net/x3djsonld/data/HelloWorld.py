@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -29,7 +33,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    #  Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON 
+    Comment(' Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON '),
     meta(content='HelloWorld.x3d',name='title'),
     meta(content='Simple X3D model example: Hello World!',name='description'),
     meta(content='30 October 2000',name='created'),
@@ -54,8 +58,8 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='HelloWorld.xhtml',name='reference'),
     meta(content='HelloWorld.json',name='reference')]),
   Scene=Scene(
-    #  Example scene to illustrate X3D nodes and fields (XML elements and attributes) 
     children=[
+    Comment(' Example scene to illustrate X3D nodes and fields (XML elements and attributes) '),
     WorldInfo(info=["Example scene to illustrate a simple X3D model"],title='Hello World!'),
     Group(
       children=[
@@ -74,7 +78,9 @@ newModel=X3D(profile='Immersive',version='4.0',
             fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"])),
           appearance=Appearance(
             material=Material(USE='MaterialLightBlue')))])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

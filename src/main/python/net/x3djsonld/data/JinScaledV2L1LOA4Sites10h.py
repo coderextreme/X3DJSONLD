@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -36,9 +40,9 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='31 March 2011',name='created'),
     meta(content='1 November 2014',name='translated'),
     meta(content='27 January 2023',name='modified'),
-    #  Scaled 1:1, Added Animations 
+    Comment(' Scaled 1:1, Added Animations '),
     meta(content='25 March 2024',name='modified'),
-    #  Added Sites 
+    Comment(' Added Sites '),
     meta(content='John Carlson and Joe Williams',name='modifiers'),
     meta(content=' Articulated 3D game character designed with a general graphics tool,  then converted into an loa4 X3D HAnim model,  then rescaled 1:1 m to be drawn directly in default HAnim coordinate space, and added v2 Sites',name='description'),
     meta(content='KoreanCharacter00ReadMe.txt',name='reference'),
@@ -52,115 +56,72 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
-    #  
-https://www.web3d.org/documents/specifications/19774/V2.0/index.html
-
-Jin loa4 v2 1:1 
-https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4
-with v2 Site surface feature point landmarks
-https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html
-
-The first part of this x3d xml user code listing 
-includes definitions for the collection of 
-Shapes and Sites that will be used to compose the character. 
-This allows the skeleton structure user code to be simplified. 
-
-    example:
-     <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' 
-       containerField='skeleton' 
-       center='0 0.826 -0.016'>
-       <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
-         <Shape USE='sacrum_Shape'/>
-         <Group USE='sacrum_Sites'/>
-        </HAnimSegment>
-       ... entire sheleton hierarchy ,,,
-     </HAnimJoint
-
-Please Run the example. It starts with Kick2. 
-Select any other Action from the menu.  
-    
-Animations for Pitch1, Yaw1, and Roll1 show basic 
-operation by animation of each Joint of the skeleton 
-that contains one or more Site surface feature landmarks. 
-A colored sphere marker identifies a V2 Site object. 
-  
-The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected 
-from existing x3d HAnim archived example animations. 
-All these need some work to show full loa4 articulation 
-and the advantages of this standard skeleton hierarchy.  
-   
-Contents as follows:
- SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0
- Markers - set of markers used to show landmarks of the model:
-  Joint Shape 
-  Joint connections
-  Site Shape 
- AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. 
- JointsAndConnections - DEF user code for Joint center location markers and connection hierarchy
- SurfacesAndSites - DEF user code for the various Shape nodes and Site location markers
-
-   hanim_JinLOA4S - This Humanoid USE assets in JointsAndConnections and SurfacesAndSites
-
-    example:
-     <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' 
-       containerField='skeleton' 
-       center='0 0.826 -0.016'>
-       <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
-         <Shape USE='sacrum_Shape'/>
-         <Group USE='sacrum_Sites'/>
-        </HAnimSegment>
-       ... entire skeleton hierarchy ,,,
-     </HAnimJoint
-
- DefaultAnimation_loa4  Default pose All Joints = 0 0 1 0
- TestAnimation_loa4     Modify this set to experiment 
- PitchAnimation_loa4    Example x-axis rotations
- YawAnimation_loa4      Example y-axis rotations
- RollAnimation_loa4     Example z-axis rotations
- WalkAnimation_loa4     Example Walk animation
- RunAnimation_loa4      Example Run animnation 
- JumpAnimation_loa4     Example Jump animation 
- KickAnimation_loa4     Example Kick animation 
- TimerControls          Selection of timer for animation
- 
-    #  Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 
- 
-0.02 - 0.08       root translation 
-0.08 - 0.1        root rotation
-0.2  - 0.3        sacro 
-0.25 - 0.75       eyeball
-0.6 - 0.65        hip
-0.65 0.70         knee 
-0.70 - 0.74       talocrural 
-                   talocalcaneonavicular  (1 2 3)
-                   calcaneocuboid         (4 5)
-                    transversetarsal      (4 5)
-                      cuneonavicular      (1 2 3)
-                       tarsometatarsal    (1 2 3 4 5)
-                        metatarsophalangeal       (1 2 3 4 5)
-                         tarsal_interphalangeal   (1) 
-                         tarsal_proximal_interphalangeal   (2 3 4 5) 
-                          tarsal_distal_interphalangeal    (2 3 4 5)
-
-
-
-0.3 - 0.5         vl5 
-0.6   0.6375      vl2 
-0.6375 - 0.6875   vt10 
-0.6875 - 0.725    vt9
-0.725 - 0.7875    vt5
-0.7875 - 0.825    vt1
-0.825 - 0.8625    vc7
-0.8625 - 0.9      vc2
-0.9 - 0.9985      skullbase
-0.9 - 0.915       sterno
-0.915 - 0.93      acrom 
-0.93 - 0.945      shoulder
-0.945 - 0.96      elbow 
-0.96 - 0.98       radio
-0.98 0.985        angeal_1
- 
     children=[
+    Comment(' https://www.web3d.org/documents/specifications/19774/V2.0/index.html '),
+    Comment(' Jin loa4 v2 1:1 '),
+    Comment(' https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 '),
+    Comment(' with v2 Site surface feature point landmarks '),
+    Comment(' https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html '),
+    Comment(' The first part of this x3d xml user code listing '),
+    Comment(' includes definitions for the collection of '),
+    Comment(' Shapes and Sites that will be used to compose the character. '),
+    Comment(' This allows the skeleton structure user code to be simplified. '),
+    Comment(' example: '),
+    Comment(' <HAnimJoint DEF=\'hanim_humanoid_root\' name=\'humanoid_root\' containerField=\'skeleton\' center=\'0 0.826 -0.016\'> '),
+    Comment(' <HAnimSegment DEF=\'hanim_sacrum\' name=\'sacrum\'> '),
+    Comment(' <Shape USE=\'sacrum_Shape\'/> '),
+    Comment(' <Group USE=\'sacrum_Sites\'/> '),
+    Comment(' </HAnimSegment> '),
+    Comment(' ... entire sheleton hierarchy ,,, '),
+    Comment(' </HAnimJoint Please Run the example. It starts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 Markers - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointsAndConnections - DEF user code for Joint center location markers and connection hierarchy SurfacesAndSites - DEF user code for the various Shape nodes and Site location markers hanim_JinLOA4S - This Humanoid USE assets in JointsAndConnections and SurfacesAndSites example: <HAnimJoint DEF=\'hanim_humanoid_root\' name=\'humanoid_root\' containerField=\'skeleton\' center=\'0 0.826 -0.016\'> '),
+    Comment(' <HAnimSegment DEF=\'hanim_sacrum\' name=\'sacrum\'> '),
+    Comment(' <Shape USE=\'sacrum_Shape\'/> '),
+    Comment(' <Group USE=\'sacrum_Sites\'/> '),
+    Comment(' </HAnimSegment> '),
+    Comment(' ... entire skeleton hierarchy ,,, '),
+    Comment(' </HAnimJoint '),
+    Comment(' DefaultAnimation_loa4  Default pose All Joints = 0 0 1 0 '),
+    Comment(' TestAnimation_loa4     Modify this set to experiment '),
+    Comment(' PitchAnimation_loa4    Example x-axis rotations '),
+    Comment(' YawAnimation_loa4      Example y-axis rotations '),
+    Comment(' RollAnimation_loa4     Example z-axis rotations '),
+    Comment(' WalkAnimation_loa4     Example Walk animation '),
+    Comment(' RunAnimation_loa4      Example Run animnation '),
+    Comment(' JumpAnimation_loa4     Example Jump animation '),
+    Comment(' KickAnimation_loa4     Example Kick animation '),
+    Comment(' TimerControls          Selection of timer for animation '),
+    Comment(' Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing '),
+    Comment(' 0.02 - 0.08       root translation '),
+    Comment(' 0.08 - 0.1        root rotation '),
+    Comment(' 0.2  - 0.3        sacro '),
+    Comment(' 0.25 - 0.75       eyeball '),
+    Comment(' 0.6 - 0.65        hip '),
+    Comment(' 0.65 0.70         knee '),
+    Comment(' 0.70 - 0.74       talocrural '),
+    Comment(' talocalcaneonavicular  (1 2 3) '),
+    Comment(' calcaneocuboid         (4 5) '),
+    Comment(' transversetarsal      (4 5) '),
+    Comment(' cuneonavicular      (1 2 3) '),
+    Comment(' tarsometatarsal    (1 2 3 4 5) '),
+    Comment(' metatarsophalangeal       (1 2 3 4 5) '),
+    Comment(' tarsal_interphalangeal   (1) '),
+    Comment(' tarsal_proximal_interphalangeal   (2 3 4 5) '),
+    Comment(' tarsal_distal_interphalangeal    (2 3 4 5) '),
+    Comment(' 0.3 - 0.5         vl5 '),
+    Comment(' 0.6   0.6375      vl2 '),
+    Comment(' 0.6375 - 0.6875   vt10 '),
+    Comment(' 0.6875 - 0.725    vt9 '),
+    Comment(' 0.725 - 0.7875    vt5 '),
+    Comment(' 0.7875 - 0.825    vt1 '),
+    Comment(' 0.825 - 0.8625    vc7 '),
+    Comment(' 0.8625 - 0.9      vc2 '),
+    Comment(' 0.9 - 0.9985      skullbase '),
+    Comment(' 0.9 - 0.915       sterno '),
+    Comment(' 0.915 - 0.93      acrom '),
+    Comment(' 0.93 - 0.945      shoulder '),
+    Comment(' 0.945 - 0.96      elbow '),
+    Comment(' 0.96 - 0.98       radio '),
+    Comment(' 0.98 0.985        angeal_1 '),
     WorldInfo(title='10h Jin v2 LOA4 Level 1, All Joints, Segments, Sites'),
     NavigationInfo(headlight=False),
     Background(DEF='Background1',skyColor=[(0.4,0.4,0.4)],groundColor=[(0.588,0.588,0.588)]),
@@ -205,14 +166,14 @@ Contents as follows:
           geometry=Box(size=(0.016,0.016,0.016)),
           appearance=Appearance(
             material=Material(diffuseColor=(1,0,1),emissiveColor=(1,0,1))))])]),
-    #  Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'>
-        <Shape DEF='AxisLines_Shape'> 
-          <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
-            <Color color='1 0 0 0 1 0 0 0 1'/>
-            <Coordinate point='0 0 0 1 0 0 0 1 0 0 0 1'/>
-          </IndexedLineSet>
-        </Shape>
-      </Transform 
+    Comment(' Transform DEF=\'CoordinateSystemFloor\' scale=\'0.1 0.1 0.1\'> '),
+    Comment(' <Shape DEF=\'AxisLines_Shape\'> '),
+    Comment(' <IndexedLineSet colorIndex=\'0 1 2\' colorPerVertex=\'false\' coordIndex=\'0 1 -1 0 2 -1 0 3 -1\'> '),
+    Comment(' <Color color=\'1 0 0 0 1 0 0 0 1\'/> '),
+    Comment(' <Coordinate point=\'0 0 0 1 0 0 0 1 0 0 0 1\'/> '),
+    Comment(' </IndexedLineSet> '),
+    Comment(' </Shape> '),
+    Comment(' </Transform '),
     Group(DEF='AnimationSelectMenu',
       children=[
       ProximitySensor(DEF='HudProx',size=(50,50,50)),
@@ -345,8 +306,8 @@ Contents as follows:
             Shape(USE='TextBacking')])]),
         ROUTE(fromField='position_changed',fromNode='HudProx',toField='set_translation',toNode='HudXform'),
         ROUTE(fromField='orientation_changed',fromNode='HudProx',toField='set_rotation',toNode='HudXform'),
-        #     </Group>   
-        #  Joint center and Joint hierarchy connections  
+        Comment(' </Group> '),
+        Comment(' Joint center and Joint hierarchy connections '),
         Transform(DEF='AllShapesSitesConnections',scale=(0.1,0.1,0.1),translation=(-0.2,-0.1,-0.62),
           children=[
           Group(DEF='JointLandmarksAndJointConnections',
@@ -1083,7 +1044,7 @@ Contents as follows:
               geometry=LineSet(vertexCount=[2],
                 color=Color(USE='SkeletonColor'),
                 coord=Coordinate(point=[(0,1.3126,-0.0154),(0,1.3128,0.01538)]))),
-            #  Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape 
+            Comment(' Shape DEF=\'tongue_Segment\'><LineSet vertexCount=\'2\'><Color USE=\'SkeletonColor\'/><Coordinate point=\'0 1.3126 -0.0154, 0 0 0\'/></LineSet></Shape '),
             Transform(DEF='l_eyelid_jointJointShape',translation=(0.0505,1.42425,0.03294),
               children=[
               TouchSensor(description='HAnimJoint l_eyelid_join'),
@@ -1268,7 +1229,7 @@ Contents as follows:
               children=[
               TouchSensor(description='HAnimJoint l_carpal_distal_interphalangeal_2'),
               Shape(USE='HAnimJointLandmark')]),
-            #  Shape DEF='l_carpal_distal_interphalangeal_2-to-l_dactylion_pt'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='0.18067 0.5816 0.01338, 0.17 0.558 0.017'/></LineSet></Shape 
+            Comment(' Shape DEF=\'l_carpal_distal_interphalangeal_2-to-l_dactylion_pt\'><LineSet vertexCount=\'2\'><Color USE=\'SkeletonColor\'/><Coordinate point=\'0.18067 0.5816 0.01338, 0.17 0.558 0.017\'/></LineSet></Shape '),
             Shape(DEF='l_carpal_distal_phalanx_2_Segment',
               geometry=LineSet(vertexCount=[2],
                 color=Color(USE='SkeletonColor'),
@@ -1513,7 +1474,7 @@ Contents as follows:
               children=[
               TouchSensor(description='HAnimJoint r_carpal_distal_interphalangeal_2'),
               Shape(USE='HAnimJointLandmark')]),
-            #  Shape DEF='r_carpal_distal_interphalangeal_2-to-r_dactylion'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='-0.1803 0.5816 0.01338, -0.17 0.558 0.017'/></LineSet></Shape 
+            Comment(' Shape DEF=\'r_carpal_distal_interphalangeal_2-to-r_dactylion\'><LineSet vertexCount=\'2\'><Color USE=\'SkeletonColor\'/><Coordinate point=\'-0.1803 0.5816 0.01338, -0.17 0.558 0.017\'/></LineSet></Shape '),
             Shape(DEF='r_carpal_distal_phalanx_2_Segment',
               geometry=LineSet(vertexCount=[2],
                 color=Color(USE='SkeletonColor'),
@@ -1635,8 +1596,8 @@ Contents as follows:
                 color=Color(USE='SkeletonColor'),
                 coord=Coordinate(point=[(-0.18045,0.602325,-0.03697),(-0.172,0.58,-0.039)])))]),
           Group(DEF='SurfaceAndSiteDefinitions',
-            #  Transform DEF='ShapesAndSites' scale='0.1 0.1 0.1' translation='-0.2 -0.1 -0.62' 
             children=[
+            Comment(' Transform DEF=\'ShapesAndSites\' scale=\'0.1 0.1 0.1\' translation=\'-0.2 -0.1 -0.62\' '),
             Shape(DEF='sacrum_Shape',
               appearance=Appearance(
                 material=Material(DEF='SurfaceDefault',diffuseColor=(0.588,0.588,0.588),transparency=0.9),
@@ -1645,21 +1606,18 @@ Contents as follows:
                 coord=Coordinate(point=[(0,0.8496675,-0.01530675),(0,0.84650177,-0.028102502),(-0.00984375,0.84650177,-0.026388),(-0.017050501,0.84650177,-0.02432025),(-0.0196875,0.84650177,-0.01530675),(-0.017050501,0.84650177,-0.0062932507),(-0.00984375,0.84650177,-0.0042255),(0,0.84650177,-0.0025109998),(0.00984375,0.84650177,-0.0042255),(0.017050501,0.84650177,-0.0062932507),(0.0196875,0.84650177,-0.01530675),(0.017050501,0.84650177,-0.02432025),(0.00984375,0.84650177,-0.026388),(0,0.8378258,-0.0358155),(-0.012730501,0.8378258,-0.03306825),(-0.02205,0.8378258,-0.025562251),(-0.02547,0.8378258,-0.01530675),(-0.02205,0.8378258,-0.0050534997),(-0.012730501,0.8378258,-2.0475045E-4),(0,0.8378258,0.0025424995),(0.012730501,0.8378258,-2.0475045E-4),(0.02205,0.8378258,-0.0050534997),(0.02547,0.8378258,-0.01530675),(0.02205,0.8378258,-0.025562251),(0.012730501,0.8378258,-0.03306825),(0,0.825975,-0.037557002),(-0.014701501,0.825975,-0.0343845),(-0.02547,0.825975,-0.02571525),(-0.029407501,0.825975,-0.01530675),(-0.02547,0.825975,-0.0034649998),(-0.014701501,0.825975,0.0025424995),(0,0.825975,0.0057150004),(0.014701501,0.825975,0.0025424995),(0.02547,0.825975,-0.0034649998),(0.029407501,0.825975,-0.01530675),(0.02547,0.825975,-0.02571525),(0.014701501,0.825975,-0.0343845),(0,0.8141243,-0.0343845),(-0.012730501,0.8141243,-0.03163725),(-0.02205,0.8141243,-0.024129001),(-0.02547,0.8141243,-0.01530675),(-0.02205,0.8141243,-0.0050534997),(-0.012730501,0.8141243,-2.0475045E-4),(0,0.8141243,0.0025424995),(0.012730501,0.8141243,-2.0475045E-4),(0.02205,0.8141243,-0.0050534997),(0.02547,0.8141243,-0.01530675),(0.02205,0.8141243,-0.024129001),(0.012730501,0.8141243,-0.03163725),(0,0.80544823,-0.02571525),(-0.0073507503,0.80544823,-0.024129001),(-0.012730501,0.80544823,-0.021226501),(-0.014701501,0.80544823,-0.01530675),(-0.012730501,0.80544823,-0.009387),(-0.0073507503,0.80544823,-0.0050534997),(0,0.80544823,-0.0034649998),(0.0073507503,0.80544823,-0.0050534997),(0.012730501,0.80544823,-0.009387),(0.014701501,0.80544823,-0.01530675),(0.012730501,0.80544823,-0.021226501),(0.0073507503,0.80544823,-0.024129001),(0,0.8022825,-0.01530675)]),
                 texCoord=TextureCoordinate(point=[(0.6211,0.5754),(0.7851,0.572),(0.7614,0.572),(0.6907,0.5698),(0.62,0.5698),(0.6158,0.5702),(0.5451,0.5702),(0.4167,0.5698),(0.5451,0.5702),(0.6158,0.5702),(0.62,0.5698),(0.6907,0.5698),(0.7614,0.572),(0.8036,0.5346),(0.7761,0.5346),(0.6989,0.4838),(0.6219,0.4428),(0.6154,0.4438),(0.5492,0.4639),(0.4166,0.5346),(0.5492,0.4639),(0.6154,0.4438),(0.6219,0.4428),(0.6989,0.4838),(0.7761,0.5346),(0.7912,0.4044),(0.7635,0.4044),(0.7042,0.3925),(0.6194,0.3907),(0.6148,0.3907),(0.545,0.3974),(0.4163,0.4938),(0.545,0.3974),(0.6148,0.3907),(0.6194,0.3907),(0.7042,0.3925),(0.7635,0.4044),(0.795,0.3772),(0.7662,0.3772),(0.6945,0.3645),(0.6236,0.3695),(0.616,0.3695),(0.5438,0.378),(0.416,0.453),(0.5438,0.378),(0.616,0.3695),(0.6236,0.3695),(0.6945,0.3645),(0.7662,0.3772),(0.7887,0.3451),(0.7635,0.3451),(0.698,0.3508),(0.6262,0.3508),(0.6297,0.3503),(0.5389,0.3503),(0.4181,0.3884),(0.5389,0.3503),(0.6297,0.3503),(0.6262,0.3508),(0.698,0.3508),(0.7635,0.3451),(0.6237,0.3398)]))),
             Group(DEF='sacrum_Sites',
-              #  
-*no surface features this Segment)
-(example site and site landmark code 
-<HAnimSite DEF='hanim_sitename_pt' name='sitename' 
-  translation='sitename_ptTranslation'>
-  <TouchSensor description='HAnimSite sitename nnfromtable'/>
-  <Shape USE='HAnimSiteLandmark'/>
-</HAnimSite>
-<Shape DEF='JointName-to-SiteName'>
-  <LineSet vertexCount='2'><Color DEF='SiteColor' color='0 1 0, 1 0 0'/>
-    <Coordinate point='parentJointCenter, sitename_ptTranslation'/>
-  </LineSet>
-</Shape>
-
-              ),
+              children=[
+              Comment(' *no surface features this Segment) '),
+              Comment(' (example site and site landmark code '),
+              Comment(' <HAnimSite DEF=\'hanim_sitename_pt\' name=\'sitename\' translation=\'sitename_ptTranslation\'> '),
+              Comment(' <TouchSensor description=\'HAnimSite sitename nnfromtable\'/> '),
+              Comment(' <Shape USE=\'HAnimSiteLandmark\'/> '),
+              Comment(' </HAnimSite> '),
+              Comment(' <Shape DEF=\'JointName-to-SiteName\'> '),
+              Comment(' <LineSet vertexCount=\'2\'><Color DEF=\'SiteColor\' color=\'0 1 0, 1 0 0\'/> '),
+              Comment(' <Coordinate point=\'parentJointCenter, sitename_ptTranslation\'/> '),
+              Comment(' </LineSet> '),
+              Comment(' </Shape> '),],),
             Shape(DEF='pelvis_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1856,10 +1814,8 @@ Contents as follows:
                 coord=Coordinate(point=[(0.098487005,0.05500125,0.0201375),(0.062829,0.013634999,0.014517),(0.059820753,0.03698325,0.014085),(0.06609825,0.0054899994,0.01768725),(0.09779175,0.003824999,0.020232001),(0.08723475,0.063540004,0.01936125),(0.063063,0.05187375,0.016503751),(0.07562926,0.06057,0.02101725),(0.087003,0.0034874994,0.0193365),(0.07519276,0.0036225005,0.021168001),(0.087165006,0.070897505,0.011817),(0.065754004,0.066015005,0.001917),(0.077121004,0.068490006,0.0086535),(0.097956,0.06763501,0.0089595),(0.064188,0.0036900009,0.0018135),(0.09832501,0.002902499,0.00154125),(0.08172225,0.002925,0.0029565),(0.061002,0.01296,0.0012329998),(0.058113,0.03660075,0.0011475),(0.06462675,0.014735251,0.022644),(0.061724253,0.031797,0.022223251),(0.0646335,0.042007502,0.024597),(0.076032005,0.0480015,0.028962001),(0.086053506,0.049934253,0.027101252),(0.095328,0.04461075,0.0276345),(0.094680004,0.008639999,0.027724503),(0.08633926,0.0084375,0.02715075),(0.07481025,0.0085275,0.029029502),(0.0672165,0.009720001,0.025728751),(0.08808526,0.0667575,-0.0017707502),(0.07940251,0.064687505,-0.00476775),(0.07080525,0.062887505,-0.011164501),(0.06409575,0.03715875,-0.011531251),(0.066798,0.01494,-0.01134675),(0.068703756,0.0092475,-0.010599751),(0.082923755,0.008639999,-0.009783001),(0.0945855,0.008707499,-0.0116955),(0.094239004,0.065092504,-0.0049725007),(0.107212506,0.051358502,0.015259501),(0.10678501,0.0570015,0.0071280003),(0.10392751,0.061785,-0.0017865001),(0.1042425,0.011317501,-0.007803001),(0.1071,0.0070424993,0.001953),(0.1066725,0.007897499,0.016749),(0.104895,0.00648,0.02374875),(0.10543501,0.04275225,0.0236565)]),
                 texCoord=TextureCoordinate(point=[(0.2314,0.0879),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2271,0.0958),(0.2224,0.1067),(0.2032,0.149),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.227,0.1089),(0.2165,0.148),(0.2217,0.1285),(0.2407,0.0951),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.21,0.1541),(0.2053,0.1595),(0.2032,0.149),(0.2132,0.1285),(0.2224,0.1067),(0.2314,0.0879),(0.2271,0.0958),(0.2197,0.1123),(0.2163,0.1174),(0.2104,0.1443),(0.227,0.1089),(0.2217,0.1285),(0.2165,0.148),(0.2129,0.1643),(0.2171,0.1588),(0.2178,0.1526),(0.2213,0.1179),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2271,0.0958),(0.2271,0.0958),(0.2314,0.0879)]))),
             Group(DEF='l_navicular_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_cuneiform_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1868,10 +1824,8 @@ None
                 coord=Coordinate(point=[(0.06738,0.007155,0.02796),(0.0614,0.014805002,0.0285525),(0.060390003,0.0377505,0.0273105),(0.0741555,0.052677,0.0291915),(0.074088,0.0040500015,0.02895075),(0.0568935,0.036128253,0.042624),(0.060585752,0.0072000013,0.0433215),(0.05570775,0.015185252,0.0417465),(0.07285275,0.044581503,0.045099),(0.072911255,0.0039150007,0.045414),(0.062847,0.013655252,0.01451475),(0.05983875,0.036999002,0.014085),(0.0661185,0.0054900018,0.017685),(0.063081004,0.051887255,0.0165015),(0.07564725,0.060592502,0.021015),(0.07521075,0.0036225005,0.021168001),(0.07998075,0.0503325,0.028161),(0.08078175,0.053957254,0.02443275),(0.080397,0.0065925024,0.02455425),(0.0797265,0.0068625016,0.02949525),(0.07875,0.006750002,0.0431865),(0.078689255,0.042828754,0.042894002),(0.061911,0.010012502,0.051466502),(0.057933003,0.01576575,0.0500715),(0.058986,0.032328002,0.050904002),(0.072972,0.03885525,0.053244002),(0.07630425,0.037944004,0.0516465),(0.0763605,0.009157502,0.051894),(0.072567,0.0074925018,0.0535365)]),
                 texCoord=TextureCoordinate(point=[(0.2027,0.1355),(0.2132,0.1171),(0.1958,0.1447),(0.1899,0.1499),(0.2047,0.1286),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2032,0.149),(0.2132,0.1285),(0.2163,0.1174),(0.2047,0.1286),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1171),(0.2059,0.1148),(0.1953,0.1244),(0.1858,0.1369),(0.1864,0.1452),(0.1825,0.1473),(0.1953,0.1244),(0.1953,0.1244),(0.2059,0.1148),(0.2059,0.1148)]))),
             Group(DEF='l_cuneiform_1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metatarsal_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1880,10 +1834,8 @@ None
                 coord=Coordinate(point=[(0.051975,0.0019080002,0.075330004),(0.0506295,0.0285075,0.082012504),(0.04752675,0.01116,0.0808425),(0.053617503,0.01532025,0.048228752),(0.055372503,0.03542625,0.0511965),(0.05285025,0.0037192504,0.093127504),(0.05261625,0.0250965,0.09387),(0.050609253,0.01116,0.09549),(0.05811975,0.0072247502,0.0498645),(0.04859775,0.012955501,0.0679275),(0.05177925,0.031326752,0.0700875),(0.05265225,0.0022815005,0.066456005),(0.07317226,0.03153375,0.08082),(0.072256505,0.04095225,0.054279003),(0.0732645,0.0019080002,0.0785475),(0.0714735,0.0038182493,0.051799502),(0.074918255,0.02698425,0.0935325),(0.0749565,0.0037125007,0.092700005),(0.07239825,0.03625425,0.068175),(0.05688,0.036126003,0.0426105),(0.06057225,0.0072022504,0.0433125),(0.055694252,0.015183,0.04174875),(0.07283925,0.044577003,0.04509225),(0.072897755,0.0039082495,0.045405),(0.078426,0.03208275,0.066483006),(0.0783855,0.036792,0.05255775),(0.07829776,0.03806325,0.04930875),(0.0785025,0.008253001,0.0495585),(0.077611506,0.008226,0.05178825),(0.0793215,0.006338251,0.078232504),(0.080478,0.0076162494,0.088245),(0.080475755,0.023895,0.08883),(0.079168506,0.0273735,0.07911),(0.056637,0.0062347497,0.09819),(0.05477175,0.011859749,0.100125),(0.05644125,0.022396501,0.09879751),(0.07497675,0.023823,0.098505005),(0.079596005,0.0214875,0.0946125),(0.079598255,0.00918225,0.09411751),(0.0750105,0.00623025,0.097807504),(0.064210504,0.01652625,0.036648),(0.067097254,0.011729251,0.0378405),(0.07562026,0.009486,0.03848625),(0.07753275,0.0111195,0.04030425),(0.077359505,0.035739,0.040104),(0.0757215,0.038295,0.037775252),(0.065103754,0.03280275,0.037471503)]),
                 texCoord=TextureCoordinate(point=[(0.177,0.1457),(0.1567,0.1378),(0.1506,0.1431),(0.1539,0.1386),(0.1751,0.1447),(0.1523,0.1336),(0.1493,0.1348),(0.1463,0.1377),(0.1689,0.1382),(0.1638,0.1444),(0.1645,0.1416),(0.1607,0.138),(0.1731,0.1071),(0.1859,0.1202),(0.175,0.1048),(0.1985,0.1126),(0.1682,0.1025),(0.1699,0.1017),(0.1795,0.1136),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.2059,0.1148),(0.1985,0.1126),(0.175,0.1048),(0.1699,0.1017),(0.1682,0.1025),(0.1731,0.1071),(0.1523,0.1336),(0.1463,0.1377),(0.1493,0.1348),(0.1682,0.1025),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1864,0.1452),(0.1858,0.1369),(0.2059,0.1148),(0.2059,0.1148),(0.1953,0.1244),(0.1953,0.1244),(0.1825,0.1473)]))),
             Group(DEF='l_metatarsal_1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_proximal_phalanx_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1913,13 +1865,12 @@ None
               HAnimSite(DEF='hanim_l_tarsal_distal_phalanx_1_tip',name='l_tarsal_distal_phalanx_1_tip',translation=(0.062,0.012,0.134),
                 children=[
                 TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_1_tip 111'),
-                Shape(USE='HAnimSiteLandmark')])]
-              #  Shape DEF='l_tarsal_interphalangeal_1-to-l_tarsal_distal_phalanx_1_tip'>
-  <LineSet vertexCount='2'><Color USE='SiteColor'/>
-    <Coordinate point='0.062 0.012 0.115, 0.062 0.012 0.134'/>
-  </LineSet>
-</Shape 
-              ),
+                Shape(USE='HAnimSiteLandmark')]),
+              Comment(' Shape DEF=\'l_tarsal_interphalangeal_1-to-l_tarsal_distal_phalanx_1_tip\'> '),
+              Comment(' <LineSet vertexCount=\'2\'><Color USE=\'SiteColor\'/> '),
+              Comment(' <Coordinate point=\'0.062 0.012 0.115, 0.062 0.012 0.134\'/> '),
+              Comment(' </LineSet> '),
+              Comment(' </Shape '),],),
             Shape(DEF='l_cuneiform_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1928,10 +1879,8 @@ None
                 coord=Coordinate(point=[(0.086868,0.0038924997,0.028325252),(0.0873225,0.057577502,0.027517501),(0.08682525,0.003555,0.03870225),(0.08793,0.05031225,0.039017253),(0.0741555,0.052668,0.029191501),(0.074088,0.0040500015,0.02895075),(0.07285275,0.044572502,0.04509675),(0.072911255,0.0039150007,0.04541175),(0.08725275,0.063540004,0.019359002),(0.07564725,0.06057,0.021015001),(0.087021,0.0035100006,0.019336501),(0.07521075,0.0036225005,0.021168001),(0.07031925,0.048035253,0.02321325),(0.06930225,0.04499775,0.02706075),(0.068121,0.038907003,0.04185),(0.06819075,0.009585001,0.042129003),(0.0690795,0.009675002,0.028350001),(0.06990525,0.00945,0.02333475),(0.09461025,0.046273503,0.036591753),(0.094011754,0.0520065,0.0261135),(0.093969,0.05488425,0.021570751),(0.093813755,0.008932499,0.02154825),(0.093624756,0.00918,0.028210502),(0.09354825,0.008955,0.0363015),(0.07569675,0.040221002,0.05211675),(0.08986276,0.045708753,0.04577175),(0.092007,0.04308075,0.045029253),(0.09111375,0.011718,0.044781752),(0.08786925,0.007942501,0.045929253),(0.075438,0.0082575,0.052926753),(0.0734625,0.0118080005,0.051576752),(0.07340625,0.03619575,0.051351752),(0.08637075,0.060390003,0.013124251),(0.076752,0.057937503,0.014622751),(0.07263675,0.0471105,0.016220251),(0.072247505,0.0109125,0.016332751),(0.07547625,0.0065475004,0.015023251),(0.086193,0.0064575016,0.01330875),(0.0906255,0.0107774995,0.0147555005),(0.09076725,0.053509504,0.014775751)]),
                 texCoord=TextureCoordinate(point=[(0.2179,0.1044),(0.2186,0.1086),(0.2128,0.1035),(0.2098,0.0996),(0.2047,0.1286),(0.2132,0.1171),(0.1953,0.1244),(0.2059,0.1148),(0.2224,0.1067),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.2132,0.1285),(0.2047,0.1286),(0.1953,0.1244),(0.1953,0.1244),(0.2132,0.1171),(0.2163,0.1174),(0.2098,0.0996),(0.2179,0.1044),(0.2224,0.1067),(0.2224,0.1067),(0.2186,0.1086),(0.2128,0.1035),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2224,0.1067),(0.2132,0.1285),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1285),(0.2224,0.1067),(0.2224,0.1067),(0.2224,0.1067)]))),
             Group(DEF='l_cuneiform_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metatarsal_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1940,10 +1889,8 @@ None
                 coord=Coordinate(point=[(0.08865,0.03174975,0.079515),(0.08774325,0.043557752,0.053208005),(0.07317225,0.03152025,0.08082),(0.0722565,0.04093875,0.054279003),(0.0732645,0.0018899998,0.07854751),(0.088906504,0.0272745,0.09189001),(0.07491825,0.02697075,0.0935325),(0.0749565,0.0036989998,0.092700005),(0.08795475,0.037667252,0.066262506),(0.07239825,0.036240753,0.068175),(0.0879165,0.05031,0.039010502),(0.07283925,0.044563502,0.045092255),(0.0876015,0.0018899998,0.077265),(0.08665875,0.0033300002,0.051590253),(0.0714735,0.0038047498,0.051799502),(0.08885475,0.0037259988,0.09108),(0.0714735,0.0038047498,0.051799502),(0.08681175,0.003555,0.038695503),(0.07289775,0.0038969992,0.045405004),(0.06680925,0.03717,0.053104505),(0.06684975,0.032463,0.0670275),(0.06760575,0.0277515,0.0796725),(0.06896025,0.0241785,0.08966251),(0.06896475,0.0072629997,0.0890325),(0.067743,0.00593775,0.0786375),(0.0660015,0.007818749,0.052290004),(0.06604875,0.0078277495,0.052069504),(0.0669825,0.00785925,0.049572002),(0.06679125,0.03865725,0.049315505),(0.093744,0.029007,0.07832251),(0.093051,0.03496725,0.06495751),(0.09286875,0.04087125,0.051867004),(0.09299025,0.0457245,0.041652),(0.09207,0.0062009995,0.041384254),(0.091935,0.006020999,0.051536255),(0.09285525,0.0046102493,0.07699501),(0.09393975,0.0060907495,0.08817751),(0.09390375,0.0251955,0.08885251),(0.0886365,0.0066284994,0.0954225),(0.075843,0.0065969992,0.097132504),(0.07188075,0.0089505,0.096727505),(0.07187625,0.02182275,0.097177505),(0.0757485,0.023634,0.097695),(0.08871975,0.023922,0.0960075),(0.09149175,0.0227655,0.09486),(0.091521,0.0079695,0.09434251),(0.085221,0.046793252,0.030728253),(0.07204275,0.04165875,0.036839254),(0.067304246,0.0370845,0.040027503),(0.0674775,0.009798749,0.040259253),(0.07143525,0.0071505,0.037485003),(0.084051,0.0068332497,0.030935252),(0.08703225,0.008340749,0.032478753),(0.087867,0.04418325,0.032719504)]),
                 texCoord=TextureCoordinate(point=[(0.175,0.1048),(0.1833,0.0898),(0.1856,0.0872),(0.1731,0.1071),(0.1985,0.1126),(0.2017,0.0948),(0.1859,0.1202),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1937,0.091),(0.1795,0.1136),(0.2068,0.0986),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1731,0.1071),(0.2017,0.0948),(0.1859,0.1202),(0.1795,0.1136),(0.1731,0.1071),(0.1682,0.1025),(0.1682,0.1025),(0.1731,0.1071),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.1953,0.1244),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.1856,0.0872),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
             Group(DEF='l_metatarsal_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_proximal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1952,10 +1899,8 @@ None
                 coord=Coordinate(point=[(0.074895754,0.0222525,0.10377),(0.07523775,0.008284501,0.104080506),(0.074940756,0.015561,0.1050975),(0.076279506,0.014091751,0.10509075),(0.077076,0.0108585,0.11510775),(0.078093,0.0026707507,0.114732005),(0.077109754,0.004995,0.10394551),(0.088632,0.0027944997,0.113346),(0.08773425,0.00484425,0.10267425),(0.08994375,0.012060001,0.11371051),(0.088706255,0.022911752,0.113402255),(0.087792754,0.0243855,0.102539256),(0.08928675,0.013288501,0.10352475),(0.07794,0.02320425,0.114714004),(0.077463,0.02425275,0.10367776),(0.090117,0.022295251,0.101772),(0.0901485,0.007938,0.10190701),(0.090261005,0.015016501,0.103137754),(0.089154005,0.0044505005,0.097357504),(0.089358754,0.024396751,0.096925505),(0.074799,0.0045,0.099380255),(0.07482825,0.024538502,0.09934425),(0.08886825,0.0037350003,0.09109125),(0.088917755,0.02728125,0.09189451),(0.074931756,0.026977502,0.093546),(0.07497,0.0037079998,0.092704505),(0.07696575,0.0065857503,0.08687475),(0.085556254,0.0066037504,0.08588476),(0.085594505,0.024745502,0.086501256),(0.076936506,0.0245565,0.0875295),(0.09432226,0.02058075,0.09753075),(0.093809254,0.022234501,0.09370126),(0.093627006,0.023231251,0.0919665),(0.093627006,0.00638325,0.091388255),(0.093606755,0.0067140004,0.094286256),(0.09436275,0.0092475,0.097584754),(0.0944235,0.01497375,0.09858601),(0.070065,0.022225501,0.09686475),(0.07005825,0.02054475,0.10012051),(0.070074,0.015468751,0.1011285),(0.07036425,0.0096075,0.100307256),(0.069995254,0.0069075003,0.096954755),(0.07015275,0.0065475004,0.09393076),(0.07011675,0.02320875,0.09453376)]),
                 texCoord=TextureCoordinate(point=[(0.2327,0.0796),(0.2439,0.0803),(0.2062,0.05),(0.2147,0.0491),(0.2302,0.0796),(0.2205,0.0532),(0.2301,0.0734),(0.2486,0.0743),(0.2013,0.0552),(0.2187,0.0481),(0.221,0.0541),(0.2293,0.0736),(0.1746,0.075),(0.1709,0.0678),(0.1706,0.0686),(0.1745,0.076),(0.1824,0.0523),(0.1886,0.0572),(0.183,0.0511),(0.1834,0.0508),(0.1882,0.0556),(0.1885,0.0566),(0.1716,0.0676),(0.1748,0.0736),(0.2444,0.0847),(0.2027,0.042),(0.2022,0.0485),(0.2464,0.0799),(0.2486,0.0741),(0.2011,0.0554),(0.2293,0.0837),(0.2177,0.0418),(0.1769,0.0796),(0.1648,0.0986),(0.1632,0.098),(0.1766,0.0777),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.2022,0.0485),(0.2027,0.042),(0.1811,0.0824),(0.1801,0.0847),(0.1769,0.0796),(0.2464,0.0799),(0.2486,0.0741),(0.1632,0.098),(0.2187,0.0481),(0.221,0.0541),(0.2302,0.0796),(0.2293,0.0837),(0.1699,0.1017),(0.1682,0.1025)]))),
             Group(DEF='l_tarsal_proximal_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_middle_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1964,10 +1909,8 @@ None
                 coord=Coordinate(point=[(0.077145755,0.0020925,0.124110006),(0.07650675,0.010449001,0.12440025),(0.091120504,0.0020925,0.122562006),(0.09210826,0.010449001,0.122539505),(0.090963006,0.017046,0.12259125),(0.0777195,0.017561251,0.124182),(0.077076,0.01085625,0.11511),(0.07809075,0.0026684997,0.114734255),(0.08862975,0.0027944997,0.11334825),(0.08994375,0.0120577505,0.11371275),(0.088706255,0.022911752,0.113404505),(0.07793775,0.023202,0.114716254),(0.0781695,0.01090575,0.109899),(0.078975,0.00437175,0.109548),(0.08658225,0.004464,0.108504005),(0.0876735,0.01208475,0.1088955),(0.08661825,0.0212715,0.10856475),(0.078903005,0.02148075,0.10951875),(0.0806265,0.0054404996,0.12710701),(0.080264255,0.0102780005,0.12734775),(0.080905505,0.014067001,0.127179),(0.088521756,0.01377,0.12625201),(0.089122504,0.010341001,0.126279),(0.088542,0.0054404996,0.12627225)]),
                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1293,0.0261),(0.0949,0.0775),(0.1651,0.0639),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
             Group(DEF='l_tarsal_middle_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_distal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -1993,10 +1936,8 @@ None
                 coord=Coordinate(point=[(0.100037254,0.047187,0.03966075),(0.098388,0.0032399986,0.0394875),(0.08685225,0.0038699985,0.0283275),(0.08730675,0.057577502,0.027519751),(0.098489255,0.054999,0.020137502),(0.0868095,0.003555,0.03870225),(0.08791425,0.05030325,0.039019503),(0.097794004,0.003824999,0.020232001),(0.087237,0.063540004,0.01936125),(0.08700525,0.0034874994,0.019336501),(0.10545976,0.042345002,0.03648825),(0.10419975,0.04751775,0.022628251),(0.10367326,0.0062999995,0.02270475),(0.103932,0.0059175007,0.036339752),(0.0822105,0.05565375,0.0262575),(0.08276175,0.04905225,0.0367065),(0.08171775,0.0060524987,0.0364185),(0.081821255,0.0062999995,0.0283905),(0.08195625,0.0060300003,0.021795752),(0.08214525,0.058905,0.021816),(0.087810755,0.04387275,0.046998),(0.099369004,0.04125825,0.047695503),(0.10329525,0.03753675,0.045558),(0.10189351,0.0081899995,0.045423),(0.097965,0.006727501,0.0476505),(0.0872685,0.006974999,0.046795502),(0.083889,0.0084375,0.045288),(0.08484975,0.043231502,0.045558)]),
                 texCoord=TextureCoordinate(point=[(0.2226,0.0828),(0.2197,0.0903),(0.2186,0.1086),(0.2179,0.1044),(0.2314,0.0879),(0.2128,0.1035),(0.2098,0.0996),(0.2271,0.0958),(0.2224,0.1067),(0.2197,0.1123),(0.2224,0.1067),(0.2314,0.0879),(0.2226,0.0828),(0.2314,0.0879),(0.2314,0.0879),(0.2197,0.0903),(0.2179,0.1044),(0.2098,0.0996),(0.2098,0.0996),(0.2186,0.1086),(0.2197,0.1123),(0.2224,0.1067),(0.2098,0.0996),(0.2226,0.0828),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
             Group(DEF='l_cuneiform_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metatarsal_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2005,10 +1946,8 @@ None
                 coord=Coordinate(point=[(0.102496505,0.026298,0.08865),(0.08885025,0.0037259988,0.09108),(0.088902004,0.0272745,0.09189),(0.08795025,0.037667252,0.066262506),(0.08680725,0.003555,0.038695503),(0.087912,0.05031,0.039012752),(0.09990001,0.0018899998,0.075330004),(0.101304,0.0309285,0.077332504),(0.0994995,0.0028800005,0.049655255),(0.087597005,0.0018899998,0.077265),(0.0886455,0.03174975,0.079515),(0.098388,0.0032399986,0.039480753),(0.10036575,0.0418545,0.051192004),(0.10058401,0.0363915,0.064260006),(0.10258876,0.003710249,0.08770501),(0.08773875,0.043557752,0.053210255),(0.100037254,0.04718925,0.039654),(0.08665425,0.0033300002,0.051590253),(0.08434125,0.0057734996,0.0890775),(0.08322075,0.0042164996,0.07731),(0.08229826,0.0056294994,0.051801752),(0.0824355,0.0058207493,0.041051254),(0.083396256,0.046926,0.04133025),(0.0832635,0.04165875,0.052413754),(0.0834525,0.035757,0.0654975),(0.0841455,0.02980575,0.07884),(0.0843255,0.025848,0.0897525),(0.10509975,0.033651,0.061398003),(0.104859,0.0391365,0.048278254),(0.104733005,0.0426375,0.040691253),(0.103293,0.005867999,0.04055175),(0.10420425,0.005602499,0.047979),(0.10455076,0.004623749,0.07339501),(0.10679626,0.0060659996,0.0832275),(0.10660725,0.02430225,0.0839925),(0.1057545,0.028183501,0.074497506),(0.10368001,0.00646425,0.091755),(0.090733506,0.0064754994,0.0950175),(0.08822025,0.0073845,0.09504001),(0.08820675,0.02356875,0.095580004),(0.09055351,0.024048,0.095602505),(0.10347301,0.02314575,0.09254251),(0.1061775,0.0220815,0.0915525),(0.10633051,0.0077129994,0.090945005),(0.098741256,0.045121502,0.034092),(0.088076256,0.04786875,0.033252753),(0.085257,0.045699753,0.03487725),(0.08435925,0.0073215,0.0346185),(0.087133504,0.0058792494,0.033122253),(0.097704,0.0056002503,0.033999752),(0.100928254,0.0073259994,0.034701753),(0.102276005,0.041706,0.034830004)]),
                 texCoord=TextureCoordinate(point=[(0.195,0.0629),(0.1801,0.0847),(0.1811,0.0824),(0.1937,0.091),(0.2128,0.1035),(0.2098,0.0996),(0.2197,0.0903),(0.2138,0.0778),(0.1989,0.0701),(0.1984,0.068),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.1937,0.091),(0.2068,0.0986),(0.2138,0.0778),(0.2061,0.0729),(0.2061,0.0729),(0.1989,0.0701),(0.1984,0.068),(0.1952,0.0651),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.2017,0.0948),(0.2017,0.0948),(0.2226,0.0828),(0.2138,0.0778),(0.1937,0.091),(0.1811,0.0824),(0.1856,0.0872),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.2017,0.0948),(0.1937,0.091),(0.1937,0.091),(0.1856,0.0872),(0.1856,0.0872),(0.1811,0.0824),(0.2061,0.0729),(0.2061,0.0729),(0.2138,0.0778),(0.2138,0.0778),(0.2226,0.0828),(0.2226,0.0828),(0.2138,0.0778),(0.2138,0.0778),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.1811,0.0824),(0.1801,0.0847),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828)]))),
             Group(DEF='l_metatarsal_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_proximal_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2017,10 +1956,8 @@ None
                 coord=Coordinate(point=[(0.0928935,0.012060001,0.11196676),(0.094043255,0.0028327508,0.11128501),(0.103113,0.0029745002,0.10928701),(0.10459576,0.012060001,0.10909126),(0.103632756,0.021462752,0.10913851),(0.09392851,0.021753,0.111411005),(0.10167076,0.023676751,0.099153005),(0.092684254,0.0044662505,0.101616755),(0.092693254,0.02398275,0.101407506),(0.10129726,0.0043200003,0.099193506),(0.09011701,0.022295251,0.10177876),(0.09014851,0.007938,0.10191601),(0.090261005,0.015016501,0.10314451),(0.0915435,0.013569751,0.10320976),(0.103191756,0.012820501,0.10048051),(0.08886825,0.0037350003,0.09109801),(0.088917755,0.02728125,0.09190351),(0.10260676,0.0037192504,0.08772526),(0.102514505,0.026304752,0.08866576),(0.089154005,0.0044505005,0.097366504),(0.089358754,0.024396751,0.096932255),(0.10393651,0.0225,0.09857926),(0.10410301,0.0148365,0.100059755),(0.103176005,0.0044797505,0.09374401),(0.102933004,0.023910752,0.09320401),(0.103833005,0.0052965,0.09861976),(0.09037351,0.0067522503,0.085338004),(0.09859276,0.00674325,0.08329276),(0.098527506,0.023863502,0.084021755),(0.09040726,0.024448501,0.08592751),(0.10710226,0.009085501,0.08902576),(0.107385755,0.00946575,0.092025004),(0.10771426,0.009873001,0.09445726),(0.107847005,0.014627251,0.095175005),(0.10776376,0.018447751,0.09443701),(0.10726426,0.019152,0.09175726),(0.10705501,0.020344501,0.08949601),(0.08527276,0.022407752,0.095400006),(0.085830756,0.020736001,0.09926326),(0.08593876,0.015012001,0.10033876),(0.08586451,0.00929925,0.09934201),(0.08508825,0.00663975,0.09587701),(0.08499376,0.0061965007,0.09200476),(0.08501176,0.024005251,0.09261451)]),
                 texCoord=TextureCoordinate(point=[(0.1706,0.0686),(0.1709,0.0678),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1716,0.0676),(0.1882,0.0556),(0.1745,0.076),(0.1748,0.0736),(0.1886,0.0572),(0.2327,0.0796),(0.2439,0.0803),(0.2076,0.0485),(0.2162,0.0476),(0.2201,0.0466),(0.2302,0.0796),(0.2219,0.0517),(0.2301,0.0734),(0.2486,0.0743),(0.2027,0.0537),(0.2224,0.0526),(0.2293,0.0736),(0.1746,0.075),(0.1885,0.0566),(0.1801,0.0847),(0.1811,0.0824),(0.1952,0.0651),(0.195,0.0629),(0.2293,0.0837),(0.1769,0.0796),(0.2191,0.0403),(0.1766,0.0777),(0.2037,0.047),(0.2486,0.0741),(0.2026,0.0539),(0.2444,0.0847),(0.1915,0.0602),(0.2041,0.0405),(0.1915,0.0578),(0.2464,0.0799),(0.1801,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1811,0.0824),(0.1952,0.0651),(0.1915,0.0602),(0.2464,0.0799),(0.2486,0.0741),(0.2037,0.047),(0.2041,0.0405),(0.195,0.0629),(0.1766,0.0777),(0.2201,0.0466),(0.2224,0.0526),(0.2302,0.0796),(0.2293,0.0837),(0.1801,0.0847),(0.1811,0.0824)]))),
             Group(DEF='l_tarsal_proximal_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_middle_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2029,10 +1966,8 @@ None
                 coord=Coordinate(point=[(0.092927255,0.010451251,0.12121875),(0.09370351,0.0020925007,0.12068325),(0.10689525,0.0020925007,0.1179315),(0.10788976,0.010451251,0.11788875),(0.106875,0.01704825,0.11801025),(0.0939645,0.017561251,0.120496504),(0.09288,0.012060001,0.11194875),(0.094029754,0.00283275,0.111267),(0.1030995,0.0029745002,0.109269),(0.10458451,0.012060001,0.109071),(0.103619255,0.021462752,0.1091205),(0.09391501,0.021753,0.111390755),(0.093822755,0.0120870005,0.107775),(0.094689004,0.0049702507,0.107163),(0.10023525,0.0050557503,0.106002),(0.101398505,0.012129751,0.10587825),(0.10064025,0.0194175,0.105876),(0.094608,0.01959975,0.10727325),(0.097371005,0.005463001,0.12333825),(0.096948005,0.01035675,0.123804),(0.09744526,0.01408725,0.12320325),(0.104737505,0.013797001,0.121914),(0.10526851,0.010395001,0.12188925),(0.10466775,0.005463001,0.121842004)]),
                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1651,0.0639),(0.1293,0.0261),(0.0949,0.0775),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
             Group(DEF='l_tarsal_middle_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_distal_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2058,10 +1993,8 @@ None
                 coord=Coordinate(point=[(0.11156625,0.0018899972,-0.045627754),(0.096849,0.0018899972,-0.056227505),(0.096716255,0.011317501,-0.0605475),(0.1140075,0.011317501,-0.048892505),(0.0699705,0.0018899972,-0.046424255),(0.061762504,0.0019124956,-0.018123752),(0.06021,0.011317501,-0.018623251),(0.06724125,0.011317501,-0.049747504),(0.117135,0.0019124956,-0.018123752),(0.118957505,0.011317501,-0.018623251),(0.096714005,0.03168,-0.06327),(0.11551501,0.03249,-0.051457502),(0.057195004,0.0356805,-0.018369002),(0.065542504,0.031409997,-0.052312505),(0.120960005,0.0332325,-0.018369002),(0.095733,0.0475335,-0.058725003),(0.113805,0.04728375,-0.046788752),(0.0657225,0.046962,-0.047810253),(0.084294006,0.0018899972,-0.056385003),(0.084055506,0.011317501,-0.0606825),(0.08389126,0.031409997,-0.06340501),(0.08304075,0.047443498,-0.058860004),(0.09588151,0.0019124956,-0.018123752),(0.079555504,0.0019124956,-0.018123752),(0.118305005,0.0034649957,-6.975004E-4),(0.121005006,0.0114750005,-0.0011475),(0.120532505,0.0324675,-0.001417502),(0.064215004,0.0036899955,0.0017999983),(0.09834301,0.002902499,0.0015299992),(0.0817425,0.0029249974,0.0029474983),(0.06102,0.01296,0.0012149978),(0.058140002,0.03660075,0.0011475),(0.065767504,0.0660105,0.0019124983),(0.108976506,0.064323,0.0025199999),(0.094727255,0.062127,-0.0529875),(0.112095006,0.06504975,-0.04129425),(0.0659025,0.06504975,-0.042275254),(0.11529001,0.0582795,-0.025368752),(0.114885,0.05811075,-0.013686751),(0.082235254,0.062181,-0.0531),(0.0588825,0.05973975,-0.019140752),(0.093582004,0.07452675,-0.045807753),(0.108031504,0.07749,-0.036108002),(0.11065725,0.07066125,-0.022761002),(0.110301755,0.07044525,-0.0125325015),(0.10591876,0.07647975,-4.2750122E-4),(0.06991875,0.07791525,-9.4500126E-4),(0.0645975,0.07174125,-0.017030252),(0.070647754,0.077184,-0.036929253),(0.08417025,0.07447275,-0.045882),(0.117630005,0.013027498,0.0062774983),(0.11589751,0.008347496,0.0061874995),(0.09845325,0.007942499,0.0083025),(0.082030505,0.007964997,0.009719999),(0.067005,0.0085275,0.0084825),(0.06473251,0.014602499,0.008347499),(0.0619875,0.0352575,0.00837),(0.06872401,0.05896125,0.008955),(0.10664775,0.05759775,0.009652498),(0.117180005,0.031094998,0.0059849983)]),
                 texCoord=TextureCoordinate(point=[(0.2845,0.0964),(0.2768,0.1211),(0.2792,0.1228),(0.2886,0.0939),(0.2493,0.1586),(0.2252,0.161),(0.2241,0.1634),(0.2489,0.1638),(0.2727,0.0786),(0.2746,0.076),(0.2809,0.1238),(0.2914,0.0926),(0.2206,0.1691),(0.249,0.1672),(0.2762,0.0729),(0.2769,0.1234),(0.2869,0.0933),(0.2461,0.1652),(0.2661,0.1399),(0.2685,0.1417),(0.27,0.1429),(0.2661,0.1424),(0.24,0.098),(0.2266,0.1229),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.273,0.1232),(0.2824,0.0941),(0.2433,0.1632),(0.2759,0.0832),(0.2685,0.0797),(0.2623,0.1418),(0.2231,0.166),(0.273,0.1232),(0.2824,0.0941),(0.2759,0.0832),(0.2685,0.0797),(0.2533,0.0835),(0.2165,0.148),(0.2231,0.166),(0.2433,0.1632),(0.2623,0.1418),(0.2665,0.0671),(0.2628,0.0703),(0.2363,0.0929),(0.2213,0.1179),(0.2178,0.1526),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.2664,0.0668)]))),
             Group(DEF='l_calcaneus_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_cuboid_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2070,10 +2003,8 @@ None
                 coord=Coordinate(point=[(0.11946825,0.0050174985,0.016718626),(0.12303675,0.0116099985,0.012596626),(0.12009375,0.0317025,0.015528375),(0.1058625,0.0039824983,0.020075625),(0.11016675,0.04695975,0.018743625),(0.1245825,0.004027498,0.032689128),(0.128214,0.01134,0.030889126),(0.124785,0.029556,0.03282413),(0.11182725,0.002925,0.036221627),(0.1125585,0.039987,0.036581628),(0.10896525,0.0643275,0.0025278751),(0.097965,0.0676575,0.008958375),(0.09849375,0.055008,0.020136375),(0.10004175,0.047196,0.039664127),(0.0977985,0.003824999,0.020230876),(0.0983925,0.0032624998,0.039484125),(0.11829375,0.0034649984,-7.00875E-4),(0.120996,0.0114750005,-0.001137375),(0.12052575,0.03246525,-0.001416375),(0.09833175,0.002902499,0.0015423751),(0.08826525,0.05742675,0.012522375),(0.08871075,0.05142375,0.017830126),(0.09002925,0.044343002,0.035546627),(0.08856675,0.007942499,0.035411626),(0.088191,0.008392498,0.020489626),(0.088677,0.007717499,0.0068276254),(0.102168,0.061807502,-0.007918875),(0.094995,0.063990004,-0.0030678753),(0.08802,0.05665275,-5.20875E-4),(0.0884025,0.011159999,-0.0057318755),(0.09528075,0.007717499,-0.009644625),(0.1117035,0.008145,-0.010839375),(0.11329425,0.012879,-0.011129625),(0.1128285,0.032472,-0.011482876),(0.12312,0.004904999,0.042476624),(0.11276775,0.004027498,0.045356628),(0.10032075,0.004319998,0.048889127),(0.09361575,0.0105525,0.04607663),(0.0948375,0.04098825,0.04618913),(0.1005075,0.039015,0.049271625),(0.111303,0.032859,0.046211626),(0.12214575,0.023769,0.042859126),(0.12498525,0.008797498,0.041126627)]),
                 texCoord=TextureCoordinate(point=[(0.2528,0.0622),(0.2585,0.0581),(0.2383,0.0796),(0.2566,0.0607),(0.243,0.0749),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2533,0.0835),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2271,0.0958),(0.2197,0.0903),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2197,0.0903),(0.2271,0.0958),(0.2363,0.0929),(0.2533,0.0835),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2469,0.052),(0.2292,0.0691),(0.2197,0.0903),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828),(0.2342,0.0682),(0.2484,0.051),(0.2512,0.047)]))),
             Group(DEF='l_cuboid_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metatarsal_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2082,10 +2013,8 @@ None
                 coord=Coordinate(point=[(0.1161675,0.0291195,0.07461),(0.11416725,0.03528225,0.04788675),(0.11574,0.02486025,0.0852075),(0.11554425,0.03212325,0.061290003),(0.10130625,0.030933,0.077332504),(0.10036575,0.04186125,0.05118975),(0.10249875,0.0263025,0.08865),(0.10058625,0.03639825,0.06426),(0.112554,0.03998475,0.03656475),(0.10003725,0.047205,0.0396495),(0.1140705,0.0018899998,0.070155),(0.1131795,0.0023984998,0.046269),(0.11646675,0.0046372497,0.084240004),(0.11182275,0.0029137495,0.03620925),(0.09990225,0.0018899998,0.075330004),(0.102591,0.0037169987,0.087705),(0.0994995,0.0028912497,0.04965075),(0.098388,0.0032512492,0.0394785),(0.0947385,0.03834225,0.0499905),(0.09498825,0.03285,0.063135006),(0.09561375,0.027378,0.07623),(0.09632925,0.0238095,0.085005),(0.0965565,0.007373249,0.084285006),(0.0944955,0.006086249,0.07551),(0.0941715,0.0070605,0.0502065),(0.0933435,0.00728775,0.04391775),(0.09469575,0.041085,0.04404375),(0.12055725,0.02797425,0.05809725),(0.119178,0.030912751,0.04482),(0.1180485,0.033849,0.0373095),(0.117468,0.0062099993,0.03702375),(0.118489504,0.00586575,0.044163),(0.119349,0.0054179993,0.067095004),(0.12147525,0.007483499,0.0784125),(0.12065175,0.02213775,0.079155),(0.121180505,0.02526975,0.0708525),(0.116694,0.0076972493,0.0885375),(0.103896,0.00685125,0.0921375),(0.09998325,0.0090247495,0.091845006),(0.0998055,0.02135925,0.092385),(0.10356525,0.02268225,0.092745006),(0.11586825,0.0213795,0.089347504),(0.118899,0.01984725,0.086467505),(0.11950875,0.009229499,0.0859275),(0.097341746,0.0066307494,0.0314145),(0.10946475,0.0063269986,0.0284535),(0.11268225,0.00835425,0.02848725),(0.1131885,0.032472,0.028737),(0.10901925,0.03727575,0.02882925),(0.0982575,0.043454252,0.031311),(0.0953145,0.0396945,0.03438675),(0.09409275,0.009229499,0.03426975)]),
                 texCoord=TextureCoordinate(point=[(0.2117,0.0481),(0.2254,0.0615),(0.2142,0.0508),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.1989,0.0701),(0.1984,0.068),(0.2138,0.0778),(0.1952,0.0651),(0.195,0.0629),(0.2061,0.0729),(0.2292,0.0691),(0.2342,0.0682),(0.2226,0.0828),(0.2129,0.0844),(0.2197,0.0903),(0.2254,0.0615),(0.2061,0.0729),(0.2138,0.0778),(0.2061,0.0729),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.2061,0.0729),(0.2226,0.0828),(0.2226,0.0828),(0.2186,0.0548),(0.2254,0.0615),(0.2342,0.0682),(0.2342,0.0682),(0.2254,0.0615),(0.2117,0.0481),(0.2083,0.0443),(0.2083,0.0443),(0.2117,0.0481),(0.2083,0.0443),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2083,0.0443),(0.2083,0.0443),(0.2083,0.0443),(0.2226,0.0828),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2226,0.0828),(0.2226,0.0828),(0.2226,0.0828)]))),
             Group(DEF='l_metatarsal_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_proximal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2094,10 +2023,8 @@ None
                 coord=Coordinate(point=[(0.117243,0.013070251,0.095406756),(0.10868625,0.0029699993,0.10730025),(0.107399255,0.012060001,0.10753425),(0.11799675,0.00240075,0.10500976),(0.119043,0.012060001,0.104661),(0.11821725,0.02149425,0.105135754),(0.1082475,0.022482,0.10744426),(0.10611,0.023166,0.098246254),(0.115816504,0.0047632502,0.09456976),(0.11596275,0.022394251,0.09459001),(0.10613025,0.0048780004,0.09790201),(0.10392525,0.0225,0.09857251),(0.10409175,0.0148365,0.100053005),(0.105396755,0.012894751,0.09988426),(0.103164755,0.00447975,0.09373725),(0.102921754,0.023910752,0.09319726),(0.103821754,0.0052965,0.098613),(0.11647125,0.0046395003,0.084251255),(0.1025955,0.0037192497,0.0877185),(0.11574225,0.0248625,0.08521201),(0.102503255,0.026304752,0.088659),(0.116802,0.022428,0.08837775),(0.116802,0.0057960004,0.08840475),(0.117774,0.021591,0.093564),(0.11780325,0.00503775,0.09368326),(0.118107006,0.012453751,0.09465525),(0.10378575,0.0067860004,0.08169975),(0.112392,0.0073575,0.079560004),(0.111840755,0.0226575,0.080280006),(0.10371825,0.023544,0.082404),(0.12137625,0.00787275,0.084177),(0.12126375,0.0082755005,0.08568451),(0.12261825,0.0077625,0.08923276),(0.1228005,0.012519,0.08986501),(0.12248775,0.019557001,0.08898976),(0.121178254,0.020214,0.084894754),(0.120775506,0.020331,0.08479801),(0.09838125,0.00695925,0.09254701),(0.09808875,0.0065790005,0.08952975),(0.098032504,0.022185002,0.09018),(0.09810225,0.021514501,0.09145801),(0.09885825,0.02042775,0.095593505),(0.09896175,0.014764501,0.096691504),(0.09874575,0.0074677505,0.095589004)]),
                 texCoord=TextureCoordinate(point=[(0.2033,0.0375),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1873,0.048),(0.1915,0.0602),(0.1915,0.0578),(0.1897,0.0535),(0.1888,0.0569),(0.2031,0.037),(0.2012,0.0381),(0.2444,0.0847),(0.2208,0.06),(0.2111,0.0557),(0.2254,0.054),(0.2483,0.0809),(0.2464,0.0799),(0.2587,0.0865),(0.225,0.0604),(0.2239,0.0673),(0.2238,0.0671),(0.267,0.0845),(0.2486,0.0741),(0.2486,0.074),(0.2049,0.059),(0.1896,0.055),(0.2102,0.0461),(0.1952,0.0651),(0.2083,0.0443),(0.195,0.0629),(0.2109,0.0476),(0.2048,0.0404),(0.2576,0.0911),(0.2063,0.0414),(0.2083,0.0537),(0.2612,0.0869),(0.2671,0.0842),(0.2047,0.0593),(0.1952,0.0651),(0.2102,0.0461),(0.2083,0.0443),(0.195,0.0629),(0.2102,0.0461),(0.2063,0.0414),(0.2612,0.0869),(0.2671,0.0842),(0.2083,0.0537),(0.2109,0.0476),(0.2083,0.0443),(0.2444,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1915,0.0578),(0.225,0.0604),(0.2239,0.0673),(0.2464,0.0799)]))),
             Group(DEF='l_tarsal_proximal_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_middle_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2106,10 +2033,8 @@ None
                 coord=Coordinate(point=[(0.109172255,0.002007,0.115029),(0.108081006,0.010451251,0.11555775),(0.12057075,0.002007,0.112497754),(0.121788,0.010451251,0.11259675),(0.120948754,0.01614375,0.112122),(0.109107,0.016731001,0.115152754),(0.108697504,0.00297,0.107298),(0.10740825,0.012060001,0.10752975),(0.11800575,0.00240075,0.10500525),(0.119052,0.012060001,0.10465875),(0.11822625,0.02149425,0.10513125),(0.108256504,0.022482002,0.10743975),(0.10857825,0.012159,0.102483004),(0.10957275,0.00519525,0.1023345),(0.11492325,0.0048667504,0.10100475),(0.1156995,0.012105,0.100707754),(0.11507175,0.019399501,0.10112175),(0.1092195,0.01998,0.102429),(0.1127655,0.0053955005,0.117645755),(0.11214675,0.0104175005,0.118089005),(0.1125945,0.013248,0.117839254),(0.118845,0.0129375,0.116775006),(0.1192185,0.01049625,0.11662875),(0.11844675,0.0053955005,0.116406)]),
                 texCoord=TextureCoordinate(point=[(0.1822,0.0458),(0.1809,0.0434),(0.1953,0.0282),(0.1948,0.024),(0.1933,0.0293),(0.1816,0.0411),(0.1287,0.0243),(0.0943,0.0785),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1322,0.09),(0.157,0.0552),(0.1873,0.048),(0.186,0.0472),(0.1866,0.0487),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.157,0.0552),(0.1822,0.0458),(0.1809,0.0434),(0.1816,0.0411),(0.0943,0.0785),(0.1948,0.024),(0.1953,0.0282)]))),
             Group(DEF='l_tarsal_middle_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_distal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2135,10 +2060,8 @@ None
                 coord=Coordinate(point=[(0.1282635,0.0019034995,0.060480006),(0.134163,0.0111555,0.0672075),(0.1310175,0.02536425,0.06975),(0.12795301,0.0033592496,0.043177504),(0.13185225,0.0111555,0.043735504),(0.12800026,0.028089,0.044631),(0.12895425,0.003951,0.0798975),(0.1326105,0.0111555,0.078975),(0.130509,0.0223695,0.0799425),(0.12977776,0.0267255,0.05832),(0.13300875,0.0111555,0.055467002),(0.114081755,0.0019034995,0.0701775),(0.116181,0.029121751,0.0746325),(0.1141785,0.0352845,0.04789125),(0.11648025,0.0046395003,0.084240004),(0.11575125,0.0248625,0.08520751),(0.113190755,0.00240075,0.046271253),(0.1155555,0.032123253,0.061290003),(0.12458925,0.0040207496,0.032674503),(0.12822075,0.01134675,0.030892503),(0.12479175,0.02955825,0.032807253),(0.111834005,0.0029159999,0.0362115),(0.11256525,0.039987,0.036567003),(0.108747,0.0063179997,0.07029001),(0.10790325,0.006804,0.046894502),(0.10707525,0.00711225,0.040896002),(0.107583754,0.03394125,0.041157003),(0.1084545,0.03146625,0.0471105),(0.109820254,0.028230751,0.060862504),(0.110466,0.025299,0.07384501),(0.10990125,0.022286251,0.081360005),(0.11077425,0.0083385,0.080685005),(0.109190255,0.0056047495,0.029313002),(0.1200105,0.0065272497,0.026716502),(0.12258675,0.01184175,0.025238251),(0.119511,0.02826675,0.027020251),(0.109190255,0.0369135,0.02950875),(0.10629225,0.032908503,0.03295125),(0.105833255,0.008603999,0.032715),(0.1294515,0.01053225,0.083160006),(0.1270125,0.00623025,0.083745),(0.11665575,0.00673875,0.0879525),(0.1125315,0.00911025,0.08547751),(0.111861,0.01848375,0.086017504),(0.11554425,0.01997325,0.088672504),(0.12786525,0.01809225,0.08385751)]),
                 texCoord=TextureCoordinate(point=[(0.2299,0.0317),(0.2316,0.0247),(0.2265,0.0269),(0.241,0.0419),(0.244,0.0359),(0.2401,0.0413),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2333,0.0341),(0.2378,0.0303),(0.2142,0.0508),(0.2117,0.0481),(0.2254,0.0615),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2142,0.0508),(0.2202,0.0585),(0.2292,0.0691),(0.2342,0.0682),(0.2254,0.0615),(0.2186,0.0548),(0.2117,0.0481),(0.2083,0.0443),(0.2102,0.0461),(0.2292,0.0691),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2342,0.0682),(0.2342,0.0682),(0.2292,0.0691),(0.226,0.0221),(0.2245,0.0286),(0.2102,0.0461),(0.2102,0.0461),(0.2083,0.0443),(0.2083,0.0443),(0.2232,0.0245)]))),
             Group(DEF='l_metatarsal_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_proximal_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2147,10 +2070,8 @@ None
                 coord=Coordinate(point=[(0.13023226,0.01971675,0.08492625),(0.12904425,0.0027854997,0.0904005),(0.12908475,0.004560749,0.084375),(0.1316655,0.0111555,0.08475075),(0.119961,0.0051187496,0.09297675),(0.11681775,0.022428,0.08836425),(0.11681775,0.005796,0.0883935),(0.11778975,0.021591,0.09355275),(0.117819004,0.005037749,0.093672),(0.11812051,0.01245375,0.094644),(0.128961,0.003950999,0.079893),(0.13261725,0.0111555,0.078966),(0.13051575,0.0223695,0.07994025),(0.116487004,0.0046395,0.084240004),(0.115758,0.0248625,0.08520075),(0.119875506,0.0218115,0.09299475),(0.12974626,0.020173501,0.090387),(0.13109176,0.01167975,0.09101475),(0.119151,0.012645,0.09455625),(0.12982276,0.0024795,0.09323325),(0.131688,0.01068975,0.09340875),(0.130518,0.01865025,0.0932085),(0.120186,0.0200115,0.09551475),(0.1195425,0.011421,0.096588),(0.120753005,0.0042232494,0.095445),(0.12572551,0.0070357495,0.07542225),(0.12811725,0.01173825,0.07483275),(0.126549,0.020061001,0.07553475),(0.117213756,0.021676501,0.0787635),(0.11772,0.00749025,0.07807725),(0.1128465,0.00808875,0.08762175),(0.112938754,0.00744975,0.0851355),(0.1123785,0.021055501,0.085788004),(0.11282175,0.02005425,0.08721),(0.1135125,0.0194265,0.091368005),(0.113870256,0.01260225,0.0921915),(0.113643005,0.00756225,0.09153675)]),
                 texCoord=TextureCoordinate(point=[(0.2192,0.0256),(0.2205,0.0195),(0.2048,0.0404),(0.2199,0.022),(0.2063,0.0414),(0.2047,0.0523),(0.1956,0.0462),(0.1979,0.0386),(0.2109,0.0476),(0.277,0.1031),(0.2673,0.0987),(0.263,0.1),(0.2744,0.109),(0.1892,0.0439),(0.1911,0.0375),(0.2576,0.0911),(0.2083,0.0537),(0.263,0.0893),(0.2612,0.0869),(0.2047,0.0593),(0.2048,0.0593),(0.2671,0.0842),(0.2673,0.0839),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2102,0.0461),(0.2083,0.0443),(0.2039,0.0358),(0.2152,0.0224),(0.2154,0.0203),(0.2126,0.0258),(0.2034,0.0366),(0.2033,0.0375),(0.2114,0.0219),(0.2132,0.0168),(0.2123,0.0196),(0.1999,0.0356),(0.201,0.0349),(0.2011,0.0354),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2083,0.0443),(0.2102,0.0461),(0.2576,0.0911),(0.2102,0.0461),(0.2083,0.0443),(0.2048,0.0404),(0.2083,0.0537),(0.2047,0.0593),(0.2612,0.0869)]))),
             Group(DEF='l_tarsal_proximal_phalanx_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_tarsal_middle_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2292,10 +2213,8 @@ None
                 coord=Coordinate(point=[(-0.098127,0.05500125,0.0201375),(-0.062469,0.013634999,0.014517),(-0.05946075,0.03698325,0.014085),(-0.06573825,0.0054899994,0.01768725),(-0.09743176,0.003824999,0.020232001),(-0.08687475,0.063540004,0.01936125),(-0.062703,0.05187375,0.016503751),(-0.07526925,0.06057,0.02101725),(-0.086643,0.0034874994,0.0193365),(-0.07483275,0.0036225005,0.021168001),(-0.086805,0.070897505,0.011817),(-0.065394,0.066015005,0.001917),(-0.076761,0.068490006,0.0086535),(-0.097596005,0.06763501,0.0089595),(-0.063828,0.0036900009,0.0018135),(-0.097965,0.002902499,0.00154125),(-0.081362255,0.002925,0.0029565),(-0.060642,0.01296,0.0012329998),(-0.057753,0.03660075,0.0011475),(-0.064266756,0.014735251,0.022644),(-0.061364252,0.031797,0.022223251),(-0.0642735,0.042007502,0.024597),(-0.075672,0.0480015,0.028962001),(-0.0856935,0.049934253,0.027101252),(-0.094968006,0.04461075,0.0276345),(-0.09432001,0.008639999,0.027724503),(-0.08597925,0.0084375,0.02715075),(-0.074450254,0.0085275,0.029029502),(-0.0668565,0.009720001,0.025728751),(-0.08772525,0.0667575,-0.0017707502),(-0.0790425,0.064687505,-0.00476775),(-0.070445254,0.062887505,-0.011164501),(-0.06373575,0.03715875,-0.011531251),(-0.066438004,0.01494,-0.01134675),(-0.06834375,0.0092475,-0.010599751),(-0.08256375,0.008639999,-0.009783001),(-0.0942255,0.008707499,-0.0116955),(-0.09387901,0.065092504,-0.0049725007),(-0.1068525,0.051358502,0.015259501),(-0.106425,0.0570015,0.0071280003),(-0.1035675,0.061785,-0.0017865001),(-0.10388251,0.011317501,-0.007803001),(-0.106740005,0.0070424993,0.001953),(-0.106312506,0.007897499,0.016749),(-0.104535006,0.00648,0.02374875),(-0.105075,0.04275225,0.0236565)]),
                 texCoord=TextureCoordinate(point=[(0.2314,0.0879),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2271,0.0958),(0.2224,0.1067),(0.2032,0.149),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.227,0.1089),(0.2165,0.148),(0.2217,0.1285),(0.2407,0.0951),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.21,0.1541),(0.2053,0.1595),(0.2032,0.149),(0.2132,0.1285),(0.2224,0.1067),(0.2314,0.0879),(0.2271,0.0958),(0.2197,0.1123),(0.2163,0.1174),(0.2104,0.1443),(0.227,0.1089),(0.2217,0.1285),(0.2165,0.148),(0.2129,0.1643),(0.2171,0.1588),(0.2178,0.1526),(0.2213,0.1179),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2271,0.0958),(0.2271,0.0958),(0.2314,0.0879)]))),
             Group(DEF='r_navicular_Sites',
-              #  
-None
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_cuneiform_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2304,10 +2223,8 @@ None
                 coord=Coordinate(point=[(-0.06699825,0.007155002,0.027960751),(-0.061035752,0.014805002,0.0285525),(-0.0600075,0.0377505,0.0273105),(-0.073773004,0.052677,0.0291915),(-0.0737055,0.0040500015,0.02895075),(-0.056511004,0.036128253,0.042624),(-0.060203254,0.0072000013,0.0433215),(-0.05532525,0.015185252,0.0417465),(-0.072470255,0.044581503,0.045099),(-0.07252875,0.0039150007,0.045414),(-0.0624645,0.013655252,0.01451475),(-0.05945625,0.036999002,0.014085),(-0.065736,0.0054900018,0.017685),(-0.062698506,0.051887255,0.0165015),(-0.07526475,0.060592502,0.021015),(-0.07482825,0.0036225005,0.021168001),(-0.079598255,0.0503325,0.028161),(-0.08039925,0.053957254,0.02443275),(-0.080014504,0.0065925024,0.02455425),(-0.079344004,0.0068625016,0.02949525),(-0.0783675,0.006750002,0.0431865),(-0.07830676,0.042828754,0.042894002),(-0.061528504,0.010012502,0.051466502),(-0.0575505,0.01576575,0.0500715),(-0.058603503,0.032328002,0.050904002),(-0.0725895,0.03885525,0.053244002),(-0.07592175,0.037944004,0.0516465),(-0.075978,0.009157502,0.051894),(-0.0721845,0.0074925018,0.0535365)]),
                 texCoord=TextureCoordinate(point=[(0.2027,0.1355),(0.2132,0.1171),(0.1958,0.1447),(0.1899,0.1499),(0.2047,0.1286),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2032,0.149),(0.2132,0.1285),(0.2163,0.1174),(0.2047,0.1286),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1171),(0.2059,0.1148),(0.1953,0.1244),(0.1858,0.1369),(0.1864,0.1452),(0.1825,0.1473),(0.1953,0.1244),(0.1953,0.1244),(0.2059,0.1148),(0.2059,0.1148)]))),
             Group(DEF='r_cuneiform_1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metatarsal_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2316,10 +2233,8 @@ None
                 coord=Coordinate(point=[(-0.051615,0.0019080002,0.075330004),(-0.0502695,0.0285075,0.082012504),(-0.04716675,0.01116,0.0808425),(-0.053257503,0.01532025,0.048228752),(-0.0550125,0.03542625,0.0511965),(-0.05249025,0.0037192504,0.093127504),(-0.05225625,0.0250965,0.09387),(-0.050249252,0.01116,0.09549),(-0.05775975,0.0072247502,0.0498645),(-0.04823775,0.012955501,0.0679275),(-0.05141925,0.031326752,0.0700875),(-0.05229225,0.0022815005,0.066456005),(-0.07281225,0.03153375,0.08082),(-0.0718965,0.04095225,0.054279003),(-0.072904505,0.0019080002,0.0785475),(-0.071113504,0.0038182493,0.051799502),(-0.07455825,0.02698425,0.0935325),(-0.0745965,0.0037125007,0.092700005),(-0.07203825,0.03625425,0.068175),(-0.05652,0.036126003,0.0426105),(-0.06021225,0.0072022504,0.0433125),(-0.05533425,0.015183,0.04174875),(-0.07247925,0.044577003,0.04509225),(-0.07253775,0.0039082495,0.045405),(-0.078066,0.03208275,0.066483006),(-0.078025505,0.036792,0.05255775),(-0.07793775,0.03806325,0.04930875),(-0.0781425,0.008253001,0.0495585),(-0.0772515,0.008226,0.05178825),(-0.0789615,0.006338251,0.078232504),(-0.080118,0.0076162494,0.088245004),(-0.08011575,0.023895001,0.08883),(-0.0788085,0.0273735,0.079110004),(-0.056277003,0.0062347497,0.09819),(-0.05441175,0.011859749,0.10012501),(-0.05608125,0.022396501,0.09879751),(-0.07461675,0.023823,0.098505005),(-0.079236,0.0214875,0.0946125),(-0.07923825,0.00918225,0.09411751),(-0.0746505,0.00623025,0.097807504),(-0.0638505,0.01652625,0.036648),(-0.06673725,0.011729251,0.0378405),(-0.07526025,0.009486,0.03848625),(-0.07717275,0.0111195,0.04030425),(-0.0769995,0.035739,0.040104),(-0.075361505,0.038295,0.037775252),(-0.06474375,0.03280275,0.037471503)]),
                 texCoord=TextureCoordinate(point=[(0.177,0.1457),(0.1567,0.1378),(0.1506,0.1431),(0.1539,0.1386),(0.1751,0.1447),(0.1523,0.1336),(0.1493,0.1348),(0.1463,0.1377),(0.1689,0.1382),(0.1638,0.1444),(0.1645,0.1416),(0.1607,0.138),(0.1731,0.1071),(0.1859,0.1202),(0.175,0.1048),(0.1985,0.1126),(0.1682,0.1025),(0.1699,0.1017),(0.1795,0.1136),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.2059,0.1148),(0.1985,0.1126),(0.175,0.1048),(0.1699,0.1017),(0.1682,0.1025),(0.1731,0.1071),(0.1523,0.1336),(0.1463,0.1377),(0.1493,0.1348),(0.1682,0.1025),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1864,0.1452),(0.1858,0.1369),(0.2059,0.1148),(0.2059,0.1148),(0.1953,0.1244),(0.1953,0.1244),(0.1825,0.1473)]))),
             Group(DEF='r_metatarsal_1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_proximal_phalanx_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2362,10 +2277,8 @@ None
                 coord=Coordinate(point=[(-0.086485505,0.0038924997,0.028325252),(-0.086940005,0.057577502,0.027517501),(-0.08644275,0.003555,0.03870225),(-0.0875475,0.05031225,0.039017253),(-0.073773004,0.052668,0.029191501),(-0.0737055,0.0040500015,0.02895075),(-0.072470255,0.044572502,0.04509675),(-0.07252875,0.0039150007,0.04541175),(-0.08687025,0.063540004,0.019359002),(-0.07526475,0.06057,0.021015001),(-0.0866385,0.0035100006,0.019336501),(-0.07482825,0.0036225005,0.021168001),(-0.06993675,0.048035253,0.02321325),(-0.068919756,0.04499775,0.02706075),(-0.0677385,0.038907003,0.04185),(-0.067808256,0.009585001,0.042129003),(-0.068697006,0.009675002,0.028350001),(-0.06952275,0.00945,0.02333475),(-0.09422775,0.046273503,0.036591753),(-0.093629256,0.0520065,0.0261135),(-0.093586504,0.05488425,0.021570751),(-0.09343126,0.008932499,0.02154825),(-0.09324225,0.00918,0.028210502),(-0.093165755,0.008955,0.0363015),(-0.07531425,0.040221002,0.05211675),(-0.08948025,0.045708753,0.04577175),(-0.091624506,0.04308075,0.045029253),(-0.090731256,0.011718,0.044781752),(-0.08748675,0.007942501,0.045929253),(-0.0750555,0.0082575,0.052926753),(-0.07308,0.0118080005,0.051576752),(-0.07302375,0.03619575,0.051351752),(-0.08598825,0.060390003,0.013124251),(-0.0763695,0.057937503,0.014622751),(-0.072254255,0.0471105,0.016220251),(-0.071865,0.0109125,0.016332751),(-0.07509375,0.0065475004,0.015023251),(-0.085810505,0.0064575016,0.01330875),(-0.090243004,0.0107774995,0.0147555005),(-0.09038475,0.053509504,0.014775751)]),
                 texCoord=TextureCoordinate(point=[(0.2179,0.1044),(0.2186,0.1086),(0.2128,0.1035),(0.2098,0.0996),(0.2047,0.1286),(0.2132,0.1171),(0.1953,0.1244),(0.2059,0.1148),(0.2224,0.1067),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.2132,0.1285),(0.2047,0.1286),(0.1953,0.1244),(0.1953,0.1244),(0.2132,0.1171),(0.2163,0.1174),(0.2098,0.0996),(0.2179,0.1044),(0.2224,0.1067),(0.2224,0.1067),(0.2186,0.1086),(0.2128,0.1035),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2224,0.1067),(0.2132,0.1285),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1285),(0.2224,0.1067),(0.2224,0.1067),(0.2224,0.1067)]))),
             Group(DEF='r_cuneiform_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metatarsal_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2374,10 +2287,8 @@ None
                 coord=Coordinate(point=[(-0.088290006,0.03174975,0.079515),(-0.087383255,0.043557752,0.053208005),(-0.07281225,0.03152025,0.08082),(-0.07189651,0.04093875,0.054279003),(-0.072904505,0.0018899998,0.07854751),(-0.08854651,0.0272745,0.09189001),(-0.07455826,0.02697075,0.0935325),(-0.0745965,0.0036989998,0.092700005),(-0.087594755,0.037667252,0.066262506),(-0.072038256,0.036240753,0.068175),(-0.0875565,0.05031,0.039010502),(-0.072479255,0.044563502,0.045092255),(-0.08724151,0.0018899998,0.077265),(-0.08629876,0.0033300002,0.051590253),(-0.071113504,0.0038047498,0.051799502),(-0.088494755,0.0037259988,0.09108),(-0.071113504,0.0038047498,0.051799502),(-0.086451754,0.003555,0.038695503),(-0.07253776,0.0038969992,0.045405004),(-0.066449255,0.03717,0.053104505),(-0.066489756,0.032463,0.0670275),(-0.06724575,0.0277515,0.0796725),(-0.06860025,0.0241785,0.08966251),(-0.06860475,0.0072629997,0.0890325),(-0.067383006,0.00593775,0.0786375),(-0.06564151,0.007818749,0.052290004),(-0.06568875,0.0078277495,0.052069504),(-0.0666225,0.00785925,0.049572002),(-0.066431254,0.03865725,0.049315505),(-0.093384005,0.029007,0.07832251),(-0.092691004,0.03496725,0.06495751),(-0.092508756,0.04087125,0.051867004),(-0.09263025,0.0457245,0.041652),(-0.09171001,0.0062009995,0.041384254),(-0.091575004,0.006020999,0.051536255),(-0.092495255,0.0046102493,0.07699501),(-0.093579754,0.0060907495,0.08817751),(-0.09354375,0.0251955,0.08885251),(-0.088276505,0.0066284994,0.0954225),(-0.075483,0.0065969992,0.097132504),(-0.07152075,0.0089505,0.096727505),(-0.07151625,0.02182275,0.097177505),(-0.075388506,0.023634,0.097695),(-0.08835976,0.023922,0.0960075),(-0.091131754,0.0227655,0.09486),(-0.091161005,0.0079695,0.09434251),(-0.084861,0.046793252,0.030728253),(-0.07168276,0.04165875,0.036839254),(-0.06694426,0.0370845,0.040027503),(-0.067117505,0.009798749,0.040259253),(-0.07107525,0.0071505,0.037485003),(-0.08369101,0.0068332497,0.030935252),(-0.086672254,0.008340749,0.032478753),(-0.087507,0.04418325,0.032719504)]),
                 texCoord=TextureCoordinate(point=[(0.175,0.1048),(0.1833,0.0898),(0.1856,0.0872),(0.1731,0.1071),(0.1985,0.1126),(0.2017,0.0948),(0.1859,0.1202),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1937,0.091),(0.1795,0.1136),(0.2068,0.0986),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1731,0.1071),(0.2017,0.0948),(0.1859,0.1202),(0.1795,0.1136),(0.1731,0.1071),(0.1682,0.1025),(0.1682,0.1025),(0.1731,0.1071),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.1953,0.1244),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.1856,0.0872),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
             Group(DEF='r_metatarsal_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_proximal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2386,10 +2297,8 @@ None
                 coord=Coordinate(point=[(-0.07451326,0.0222525,0.10377),(-0.07485525,0.008284501,0.104080506),(-0.07455825,0.015561,0.1050975),(-0.075897,0.014091751,0.10509075),(-0.076693505,0.0108585,0.11510775),(-0.0777105,0.0026707507,0.114732005),(-0.076727256,0.004995,0.10394551),(-0.088249505,0.0027944997,0.113346),(-0.087351754,0.00484425,0.10267425),(-0.089561254,0.012060001,0.11371051),(-0.08832376,0.022911752,0.113402255),(-0.087410256,0.0243855,0.102539256),(-0.088904254,0.013288501,0.10352475),(-0.077557504,0.02320425,0.114714004),(-0.0770805,0.02425275,0.10367776),(-0.0897345,0.022295251,0.101772),(-0.089766,0.007938,0.10190701),(-0.08987851,0.015016501,0.103137754),(-0.08877151,0.0044505005,0.097357504),(-0.08897626,0.024396751,0.096925505),(-0.0744165,0.0045,0.099380255),(-0.074445754,0.024538502,0.09934425),(-0.088485755,0.0037350003,0.09109125),(-0.08853526,0.02728125,0.09189451),(-0.07454925,0.026977502,0.093546),(-0.0745875,0.0037079998,0.092704505),(-0.07658325,0.0065857503,0.08687475),(-0.085173756,0.0066037504,0.08588476),(-0.08521201,0.024745502,0.086501256),(-0.076554,0.0245565,0.0875295),(-0.09393975,0.02058075,0.09753075),(-0.09342676,0.022234501,0.09370126),(-0.09324451,0.023231251,0.0919665),(-0.09324451,0.00638325,0.091388255),(-0.09322426,0.0067140004,0.094286256),(-0.09398025,0.0092475,0.097584754),(-0.094041005,0.01497375,0.09858601),(-0.0696825,0.022225501,0.09686475),(-0.06967575,0.02054475,0.10012051),(-0.0696915,0.015468751,0.1011285),(-0.069981754,0.0096075,0.100307256),(-0.06961276,0.0069075003,0.096954755),(-0.069770254,0.0065475004,0.09393076),(-0.06973425,0.02320875,0.09453376)]),
                 texCoord=TextureCoordinate(point=[(0.2327,0.0796),(0.2439,0.0803),(0.2062,0.05),(0.2147,0.0491),(0.2302,0.0796),(0.2205,0.0532),(0.2301,0.0734),(0.2486,0.0743),(0.2013,0.0552),(0.2187,0.0481),(0.221,0.0541),(0.2293,0.0736),(0.1746,0.075),(0.1709,0.0678),(0.1706,0.0686),(0.1745,0.076),(0.1824,0.0523),(0.1886,0.0572),(0.183,0.0511),(0.1834,0.0508),(0.1882,0.0556),(0.1885,0.0566),(0.1716,0.0676),(0.1748,0.0736),(0.2444,0.0847),(0.2027,0.042),(0.2022,0.0485),(0.2464,0.0799),(0.2486,0.0741),(0.2011,0.0554),(0.2293,0.0837),(0.2177,0.0418),(0.1769,0.0796),(0.1648,0.0986),(0.1632,0.098),(0.1766,0.0777),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.2022,0.0485),(0.2027,0.042),(0.1811,0.0824),(0.1801,0.0847),(0.1769,0.0796),(0.2464,0.0799),(0.2486,0.0741),(0.1632,0.098),(0.2187,0.0481),(0.221,0.0541),(0.2302,0.0796),(0.2293,0.0837),(0.1699,0.1017),(0.1682,0.1025)]))),
             Group(DEF='r_tarsal_proximal_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_middle_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2398,10 +2307,8 @@ None
                 coord=Coordinate(point=[(-0.07676325,0.0020925,0.124110006),(-0.07612425,0.010449001,0.12440025),(-0.090738006,0.0020925,0.122562006),(-0.09172575,0.010449001,0.122539505),(-0.0905805,0.017046,0.12259125),(-0.077337004,0.017561251,0.124182),(-0.076693505,0.01085625,0.11511),(-0.07770825,0.0026684997,0.114734255),(-0.088247254,0.0027944997,0.11334825),(-0.089561254,0.0120577505,0.11371275),(-0.08832376,0.022911752,0.113404505),(-0.077555254,0.023202,0.114716254),(-0.077787004,0.01090575,0.109899),(-0.0785925,0.00437175,0.109548),(-0.08619975,0.004464,0.108504005),(-0.087291,0.01208475,0.1088955),(-0.086235754,0.0212715,0.10856475),(-0.07852051,0.02148075,0.10951875),(-0.080244005,0.0054404996,0.12710701),(-0.07988175,0.0102780005,0.12734775),(-0.08052301,0.014067001,0.127179),(-0.08813925,0.01377,0.12625201),(-0.088740006,0.010341001,0.126279),(-0.0881595,0.0054404996,0.12627225)]),
                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1293,0.0261),(0.0949,0.0775),(0.1651,0.0639),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
             Group(DEF='r_tarsal_middle_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_distal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2427,10 +2334,8 @@ None
                 coord=Coordinate(point=[(-0.09967726,0.047187,0.03966075),(-0.098028004,0.0032399986,0.0394875),(-0.086492255,0.0038699985,0.0283275),(-0.086946756,0.057577502,0.027519751),(-0.09812926,0.054999,0.020137502),(-0.08644951,0.003555,0.03870225),(-0.08755425,0.05030325,0.039019503),(-0.09743401,0.003824999,0.020232001),(-0.08687701,0.063540004,0.01936125),(-0.08664526,0.0034874994,0.019336501),(-0.10509976,0.042345002,0.03648825),(-0.103839755,0.04751775,0.022628251),(-0.10331326,0.0062999995,0.02270475),(-0.10357201,0.0059175007,0.036339752),(-0.08185051,0.05565375,0.0262575),(-0.08240176,0.04905225,0.0367065),(-0.081357755,0.0060524987,0.0364185),(-0.08146126,0.0062999995,0.0283905),(-0.081596255,0.0060300003,0.021795752),(-0.081785254,0.058905,0.021816),(-0.08745076,0.04387275,0.046998),(-0.09900901,0.04125825,0.047695503),(-0.102935255,0.03753675,0.045558),(-0.10153351,0.0081899995,0.045423),(-0.097605005,0.006727501,0.0476505),(-0.086908504,0.006974999,0.046795502),(-0.08352901,0.0084375,0.045288),(-0.084489755,0.043231502,0.045558)]),
                 texCoord=TextureCoordinate(point=[(0.2226,0.0828),(0.2197,0.0903),(0.2186,0.1086),(0.2179,0.1044),(0.2314,0.0879),(0.2128,0.1035),(0.2098,0.0996),(0.2271,0.0958),(0.2224,0.1067),(0.2197,0.1123),(0.2224,0.1067),(0.2314,0.0879),(0.2226,0.0828),(0.2314,0.0879),(0.2314,0.0879),(0.2197,0.0903),(0.2179,0.1044),(0.2098,0.0996),(0.2098,0.0996),(0.2186,0.1086),(0.2197,0.1123),(0.2224,0.1067),(0.2098,0.0996),(0.2226,0.0828),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
             Group(DEF='r_cuneiform_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metatarsal_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2439,10 +2344,8 @@ None
                 coord=Coordinate(point=[(-0.10213651,0.026298,0.08865),(-0.088490255,0.0037259988,0.09108),(-0.08854201,0.0272745,0.09189),(-0.087590255,0.037667252,0.066262506),(-0.08644726,0.003555,0.038695503),(-0.08755201,0.05031,0.039012752),(-0.09954001,0.0018899998,0.075330004),(-0.10094401,0.0309285,0.077332504),(-0.09913951,0.0028800005,0.049655255),(-0.08723701,0.0018899998,0.077265),(-0.088285506,0.03174975,0.079515),(-0.09802801,0.0032399986,0.039480753),(-0.10000576,0.0418545,0.051192004),(-0.10022401,0.0363915,0.064260006),(-0.10222876,0.003710249,0.08770501),(-0.087378755,0.043557752,0.053210255),(-0.09967726,0.04718925,0.039654),(-0.086294256,0.0033300002,0.051590253),(-0.08398126,0.0057734996,0.0890775),(-0.08286076,0.0042164996,0.07731),(-0.08193826,0.0056294994,0.051801752),(-0.08207551,0.0058207493,0.041051254),(-0.08303626,0.046926,0.04133025),(-0.082903504,0.04165875,0.052413754),(-0.08309251,0.035757,0.0654975),(-0.08378551,0.02980575,0.07884),(-0.08396551,0.025848,0.0897525),(-0.104739755,0.033651,0.061398003),(-0.10449901,0.0391365,0.048278254),(-0.10437301,0.0426375,0.040691253),(-0.10293301,0.005867999,0.04055175),(-0.103844255,0.005602499,0.047979),(-0.10419076,0.004623749,0.07339501),(-0.10643626,0.0060659996,0.0832275),(-0.10624726,0.02430225,0.0839925),(-0.105394505,0.028183501,0.074497506),(-0.10332001,0.00646425,0.091755),(-0.09037351,0.0064754994,0.0950175),(-0.08786026,0.0073845,0.09504001),(-0.087846756,0.02356875,0.095580004),(-0.09019351,0.024048,0.095602505),(-0.10311301,0.02314575,0.09254251),(-0.10581751,0.0220815,0.0915525),(-0.10597051,0.0077129994,0.090945005),(-0.09838126,0.045121502,0.034092),(-0.08771626,0.04786875,0.033252753),(-0.08489701,0.045699753,0.03487725),(-0.08399926,0.0073215,0.0346185),(-0.08677351,0.0058792494,0.033122253),(-0.09734401,0.0056002503,0.033999752),(-0.10056826,0.0073259994,0.034701753),(-0.10191601,0.041706,0.034830004)]),
                 texCoord=TextureCoordinate(point=[(0.195,0.0629),(0.1801,0.0847),(0.1811,0.0824),(0.1937,0.091),(0.2128,0.1035),(0.2098,0.0996),(0.2197,0.0903),(0.2138,0.0778),(0.1989,0.0701),(0.1984,0.068),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.1937,0.091),(0.2068,0.0986),(0.2138,0.0778),(0.2061,0.0729),(0.2061,0.0729),(0.1989,0.0701),(0.1984,0.068),(0.1952,0.0651),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.2017,0.0948),(0.2017,0.0948),(0.2226,0.0828),(0.2138,0.0778),(0.1937,0.091),(0.1811,0.0824),(0.1856,0.0872),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.2017,0.0948),(0.1937,0.091),(0.1937,0.091),(0.1856,0.0872),(0.1856,0.0872),(0.1811,0.0824),(0.2061,0.0729),(0.2061,0.0729),(0.2138,0.0778),(0.2138,0.0778),(0.2226,0.0828),(0.2226,0.0828),(0.2138,0.0778),(0.2138,0.0778),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.1811,0.0824),(0.1801,0.0847),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828)]))),
             Group(DEF='r_metatarsal_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_proximal_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2451,10 +2354,8 @@ None
                 coord=Coordinate(point=[(-0.092511,0.012060001,0.11196676),(-0.09366075,0.0028327508,0.11128501),(-0.102730505,0.0029745002,0.10928701),(-0.10421325,0.012060001,0.10909126),(-0.10325025,0.021462752,0.10913851),(-0.093546,0.021753,0.111411005),(-0.10128825,0.023676751,0.099153005),(-0.09230175,0.0044662505,0.101616755),(-0.09231075,0.02398275,0.101407506),(-0.100914754,0.0043200003,0.099193506),(-0.0897345,0.022295251,0.10177876),(-0.089766,0.007938,0.10191601),(-0.0898785,0.015016501,0.10314451),(-0.091161005,0.013569751,0.10320976),(-0.10280925,0.012820501,0.10048051),(-0.088485755,0.0037350003,0.09109801),(-0.08853525,0.02728125,0.09190351),(-0.10222425,0.0037192504,0.08772526),(-0.102132,0.026304752,0.08866576),(-0.0887715,0.0044505005,0.097366504),(-0.08897625,0.024396751,0.096932255),(-0.103554,0.0225,0.09857926),(-0.1037205,0.0148365,0.100059755),(-0.1027935,0.0044797505,0.09374401),(-0.1025505,0.023910752,0.09320401),(-0.1034505,0.0052965,0.09861976),(-0.089991,0.0067522503,0.085338004),(-0.09821025,0.00674325,0.08329276),(-0.098145,0.023863502,0.084021755),(-0.090024754,0.024448501,0.08592751),(-0.106719755,0.009085501,0.08902576),(-0.10700325,0.00946575,0.092025004),(-0.10733175,0.009873001,0.09445726),(-0.1074645,0.014627251,0.095175005),(-0.107381254,0.018447751,0.09443701),(-0.10688175,0.019152,0.09175726),(-0.1066725,0.020344501,0.08949601),(-0.084890254,0.022407752,0.095400006),(-0.08544825,0.020736001,0.09926326),(-0.085556254,0.015012001,0.10033876),(-0.085482,0.00929925,0.09934201),(-0.084705755,0.00663975,0.09587701),(-0.08461125,0.0061965007,0.09200476),(-0.08462925,0.024005251,0.09261451)]),
                 texCoord=TextureCoordinate(point=[(0.1706,0.0686),(0.1709,0.0678),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1716,0.0676),(0.1882,0.0556),(0.1745,0.076),(0.1748,0.0736),(0.1886,0.0572),(0.2327,0.0796),(0.2439,0.0803),(0.2076,0.0485),(0.2162,0.0476),(0.2201,0.0466),(0.2302,0.0796),(0.2219,0.0517),(0.2301,0.0734),(0.2486,0.0743),(0.2027,0.0537),(0.2224,0.0526),(0.2293,0.0736),(0.1746,0.075),(0.1885,0.0566),(0.1801,0.0847),(0.1811,0.0824),(0.1952,0.0651),(0.195,0.0629),(0.2293,0.0837),(0.1769,0.0796),(0.2191,0.0403),(0.1766,0.0777),(0.2037,0.047),(0.2486,0.0741),(0.2026,0.0539),(0.2444,0.0847),(0.1915,0.0602),(0.2041,0.0405),(0.1915,0.0578),(0.2464,0.0799),(0.1801,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1811,0.0824),(0.1952,0.0651),(0.1915,0.0602),(0.2464,0.0799),(0.2486,0.0741),(0.2037,0.047),(0.2041,0.0405),(0.195,0.0629),(0.1766,0.0777),(0.2201,0.0466),(0.2224,0.0526),(0.2302,0.0796),(0.2293,0.0837),(0.1801,0.0847),(0.1811,0.0824)]))),
             Group(DEF='r_tarsal_proximal_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_middle_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2463,10 +2364,8 @@ None
                 coord=Coordinate(point=[(-0.09256725,0.010451251,0.12121875),(-0.0933435,0.0020925007,0.12068325),(-0.10653525,0.0020925007,0.1179315),(-0.10752975,0.010451251,0.11788875),(-0.106515,0.01704825,0.11801025),(-0.0936045,0.017561251,0.120496504),(-0.09252,0.012060001,0.11194875),(-0.09366975,0.00283275,0.111267),(-0.1027395,0.0029745002,0.109269),(-0.1042245,0.012060001,0.109071),(-0.10325925,0.021462752,0.1091205),(-0.093554996,0.021753,0.111390755),(-0.09346275,0.0120870005,0.107775),(-0.094329,0.0049702507,0.107163),(-0.09987525,0.0050557503,0.106002),(-0.1010385,0.012129751,0.10587825),(-0.10028025,0.0194175,0.105876),(-0.094248,0.01959975,0.10727325),(-0.097011,0.005463001,0.12333825),(-0.096588,0.01035675,0.123804),(-0.09708525,0.01408725,0.12320325),(-0.1043775,0.013797001,0.121914),(-0.104908496,0.010395001,0.12188925),(-0.10430775,0.005463001,0.121842004)]),
                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1651,0.0639),(0.1293,0.0261),(0.0949,0.0775),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
             Group(DEF='r_tarsal_middle_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_distal_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2492,10 +2391,8 @@ None
                 coord=Coordinate(point=[(-0.111183755,0.0018899972,-0.045627754),(-0.096466504,0.0018899972,-0.056227505),(-0.09633376,0.011317501,-0.0605475),(-0.113625005,0.011317501,-0.048892505),(-0.069588006,0.0018899972,-0.046424255),(-0.061380003,0.0019124956,-0.018126002),(-0.059827503,0.011317501,-0.018623251),(-0.06685875,0.011317501,-0.049747504),(-0.116752505,0.0019124956,-0.018123752),(-0.11857501,0.011317501,-0.018623251),(-0.09633151,0.03168,-0.06327),(-0.1151325,0.03249,-0.051457502),(-0.056812506,0.0356805,-0.018369002),(-0.06516001,0.031409997,-0.052312505),(-0.12057751,0.0332325,-0.018369002),(-0.095350504,0.0475335,-0.058725003),(-0.113422506,0.04728375,-0.046788752),(-0.065340005,0.046962,-0.047810253),(-0.08391151,0.0018899972,-0.056385003),(-0.08367301,0.011317501,-0.0606825),(-0.08350875,0.031409997,-0.06340501),(-0.08265825,0.047443498,-0.058860004),(-0.09549901,0.0019124956,-0.018123752),(-0.079173006,0.0019124956,-0.018123752),(-0.11792251,0.0034649957,-6.975004E-4),(-0.12062251,0.0114750005,-0.0011475),(-0.12015001,0.0324675,-0.001417502),(-0.06383251,0.0036899955,0.0017999983),(-0.09796051,0.002902499,0.0015299992),(-0.081360005,0.0029249974,0.0029474983),(-0.060637504,0.01296,0.0012149978),(-0.057757504,0.03660075,0.0011475),(-0.06538501,0.0660105,0.0019124983),(-0.10859401,0.064323,0.0025199999),(-0.09434476,0.062127,-0.0529875),(-0.11171251,0.06504975,-0.04129425),(-0.06552,0.06504975,-0.042275254),(-0.11490751,0.0582795,-0.025368752),(-0.114502504,0.05811075,-0.013686751),(-0.08185276,0.062181,-0.0531),(-0.058500003,0.05973975,-0.019140752),(-0.09319951,0.07452675,-0.045807753),(-0.107649006,0.07749,-0.036108002),(-0.110274754,0.07066125,-0.022761002),(-0.10991926,0.07044525,-0.0125325015),(-0.10553626,0.07647975,-4.2750122E-4),(-0.069536254,0.07791525,-9.4500126E-4),(-0.064215004,0.07174125,-0.017030252),(-0.070265256,0.077184,-0.036929253),(-0.083787754,0.07447275,-0.045882),(-0.11724751,0.013027498,0.0062774983),(-0.11551501,0.008347496,0.0061874995),(-0.098070756,0.007942499,0.0083025),(-0.08164801,0.007964997,0.009719999),(-0.0666225,0.0085275,0.0084825),(-0.06435001,0.014602499,0.008347499),(-0.061605003,0.0352575,0.00837),(-0.0683415,0.05896125,0.008955),(-0.106265254,0.05759775,0.009652498),(-0.11679751,0.031094998,0.0059849983)]),
                 texCoord=TextureCoordinate(point=[(0.2845,0.0964),(0.2768,0.1211),(0.2792,0.1228),(0.2886,0.0939),(0.2493,0.1586),(0.2252,0.161),(0.2241,0.1634),(0.2489,0.1638),(0.2727,0.0786),(0.2746,0.076),(0.2809,0.1238),(0.2914,0.0926),(0.2206,0.1691),(0.249,0.1672),(0.2762,0.0729),(0.2769,0.1234),(0.2869,0.0933),(0.2461,0.1652),(0.2661,0.1399),(0.2685,0.1417),(0.27,0.1429),(0.2661,0.1424),(0.24,0.098),(0.2266,0.1229),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.273,0.1232),(0.2824,0.0941),(0.2433,0.1632),(0.2759,0.0832),(0.2685,0.0797),(0.2623,0.1418),(0.2231,0.166),(0.273,0.1232),(0.2824,0.0941),(0.2759,0.0832),(0.2685,0.0797),(0.2533,0.0835),(0.2165,0.148),(0.2231,0.166),(0.2433,0.1632),(0.2623,0.1418),(0.2665,0.0671),(0.2628,0.0703),(0.2363,0.0929),(0.2213,0.1179),(0.2178,0.1526),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.2664,0.0668)]))),
             Group(DEF='r_calcaneus_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_cuboid_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2504,10 +2401,8 @@ None
                 coord=Coordinate(point=[(-0.11910825,0.0050174985,0.016718626),(-0.12267675,0.0116099985,0.012596626),(-0.11973376,0.0317025,0.015528375),(-0.1055025,0.0039824983,0.020075625),(-0.10980675,0.04695975,0.018743625),(-0.1242225,0.004027498,0.032689128),(-0.127854,0.01134,0.030889126),(-0.12442501,0.029556,0.03282413),(-0.11146726,0.002925,0.036221627),(-0.1121985,0.039987,0.036581628),(-0.10860526,0.0643275,0.0025278751),(-0.097605005,0.0676575,0.008958375),(-0.09813376,0.055008,0.020136375),(-0.09968176,0.047196,0.039664127),(-0.09743851,0.003824999,0.020230876),(-0.098032504,0.0032624998,0.039484125),(-0.11793376,0.0034649984,-7.00875E-4),(-0.12063601,0.0114750005,-0.001137375),(-0.12016576,0.03246525,-0.001416375),(-0.09797175,0.002902499,0.0015423751),(-0.08790526,0.05742675,0.012522375),(-0.08835075,0.05142375,0.017830126),(-0.08966925,0.044343002,0.035546627),(-0.08820675,0.007942499,0.035411626),(-0.087831005,0.008392498,0.020489626),(-0.08831701,0.007717499,0.0068276254),(-0.101808004,0.061807502,-0.007918875),(-0.094635,0.063990004,-0.0030678753),(-0.08766001,0.05665275,-5.20875E-4),(-0.088042505,0.011159999,-0.0057318755),(-0.094920754,0.007717499,-0.009644625),(-0.1113435,0.008145,-0.010839375),(-0.112934254,0.012879,-0.011129625),(-0.1124685,0.032472,-0.011482876),(-0.122760005,0.004904999,0.042476624),(-0.11240775,0.004027498,0.045356628),(-0.09996075,0.004319998,0.048889127),(-0.09325576,0.0105525,0.04607663),(-0.094477504,0.04098825,0.04618913),(-0.10014751,0.039015,0.049271625),(-0.110943004,0.032859,0.046211626),(-0.12178575,0.023769,0.042859126),(-0.12462526,0.008797498,0.041126627)]),
                 texCoord=TextureCoordinate(point=[(0.2528,0.0622),(0.2585,0.0581),(0.2383,0.0796),(0.2566,0.0607),(0.243,0.0749),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2533,0.0835),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2271,0.0958),(0.2197,0.0903),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2197,0.0903),(0.2271,0.0958),(0.2363,0.0929),(0.2533,0.0835),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2469,0.052),(0.2292,0.0691),(0.2197,0.0903),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828),(0.2342,0.0682),(0.2484,0.051),(0.2512,0.047)]))),
             Group(DEF='r_cuboid_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metatarsal_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2516,10 +2411,8 @@ None
                 coord=Coordinate(point=[(-0.1158075,0.0291195,0.07461),(-0.11380725,0.03528225,0.04788675),(-0.115380004,0.02486025,0.0852075),(-0.115184255,0.03212325,0.061290003),(-0.100946255,0.030933,0.077332504),(-0.10000575,0.04186125,0.05118975),(-0.10213876,0.0263025,0.08865),(-0.10022625,0.03639825,0.06426),(-0.112194,0.03998475,0.03656475),(-0.09967726,0.047205,0.03965175),(-0.11371051,0.0018899998,0.070155),(-0.11281951,0.0023984998,0.046269),(-0.116106756,0.0046372497,0.084240004),(-0.11146276,0.0029137495,0.03620925),(-0.09954225,0.0018899998,0.075330004),(-0.102231,0.0037169987,0.087705),(-0.099139504,0.0028912497,0.04965075),(-0.098028004,0.0032512492,0.0394785),(-0.0943785,0.03834225,0.0499905),(-0.09462825,0.03285,0.063135006),(-0.09525375,0.027378,0.07623),(-0.09596925,0.0238095,0.085005),(-0.0961965,0.007373249,0.084285006),(-0.0941355,0.006086249,0.07551),(-0.093811505,0.0070605,0.0502065),(-0.09298351,0.00728775,0.04391775),(-0.09433576,0.041085,0.04404375),(-0.12019726,0.02797425,0.05809725),(-0.11881801,0.030912751,0.04482),(-0.11768851,0.033849,0.0373095),(-0.117108,0.0062099993,0.03702375),(-0.11812951,0.00586575,0.044163),(-0.118989006,0.0054179993,0.067095004),(-0.12111525,0.007483499,0.0784125),(-0.120291755,0.02213775,0.079155),(-0.12082051,0.02526975,0.0708525),(-0.116334006,0.0076972493,0.0885375),(-0.103536,0.00685125,0.0921375),(-0.099623255,0.0090247495,0.091845006),(-0.09944551,0.02135925,0.092385),(-0.103205256,0.02268225,0.092745006),(-0.11550826,0.0213795,0.089347504),(-0.118539006,0.01984725,0.086467505),(-0.11914875,0.009229499,0.0859275),(-0.09698176,0.0066307494,0.0314145),(-0.10910475,0.0063269986,0.0284535),(-0.112322256,0.00835425,0.02848725),(-0.11282851,0.032472,0.028737),(-0.10865925,0.03727575,0.02882925),(-0.09789751,0.043454252,0.031311),(-0.094954506,0.0396945,0.03438675),(-0.09373275,0.009229499,0.03426975)]),
                 texCoord=TextureCoordinate(point=[(0.2117,0.0481),(0.2254,0.0615),(0.2142,0.0508),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.1989,0.0701),(0.1984,0.068),(0.2138,0.0778),(0.1952,0.0651),(0.195,0.0629),(0.2061,0.0729),(0.2292,0.0691),(0.2342,0.0682),(0.2226,0.0828),(0.2129,0.0844),(0.2197,0.0903),(0.2254,0.0615),(0.2061,0.0729),(0.2138,0.0778),(0.2061,0.0729),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.2061,0.0729),(0.2226,0.0828),(0.2226,0.0828),(0.2186,0.0548),(0.2254,0.0615),(0.2342,0.0682),(0.2342,0.0682),(0.2254,0.0615),(0.2117,0.0481),(0.2083,0.0443),(0.2083,0.0443),(0.2117,0.0481),(0.2083,0.0443),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2083,0.0443),(0.2083,0.0443),(0.2083,0.0443),(0.2226,0.0828),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2226,0.0828),(0.2226,0.0828),(0.2226,0.0828)]))),
             Group(DEF='r_metatarsal_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_proximal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2528,10 +2421,8 @@ None
                 coord=Coordinate(point=[(-0.11688301,0.013070251,0.095406756),(-0.10832626,0.0029699993,0.10730025),(-0.10703926,0.012060001,0.10753425),(-0.117636755,0.00240075,0.10500976),(-0.11868301,0.012060001,0.104661),(-0.117857255,0.02149425,0.105135754),(-0.10788751,0.022482,0.10744426),(-0.10575001,0.023166,0.098246254),(-0.11545651,0.0047632502,0.09456976),(-0.115602754,0.022394251,0.09459001),(-0.10577026,0.0048780004,0.09790201),(-0.10356525,0.0225,0.09857251),(-0.10373176,0.0148365,0.100053005),(-0.10503676,0.012894751,0.09988426),(-0.10280476,0.00447975,0.09373725),(-0.10256176,0.023910752,0.09319726),(-0.10346176,0.0052965,0.098613),(-0.116111256,0.0046395003,0.084251255),(-0.1022355,0.0037192497,0.0877185),(-0.115382254,0.0248625,0.08521201),(-0.10214326,0.026304752,0.088659),(-0.11644201,0.022428,0.08837775),(-0.11644201,0.0057960004,0.08840475),(-0.117414005,0.021591,0.093564),(-0.117443256,0.00503775,0.09368326),(-0.11774701,0.012453751,0.09465525),(-0.103425756,0.0067860004,0.08169975),(-0.112032,0.0073575,0.079560004),(-0.11148076,0.0226575,0.080280006),(-0.103358254,0.023544,0.082404),(-0.12101626,0.00787275,0.084177),(-0.12090376,0.0082755005,0.08568451),(-0.12225825,0.0077625,0.08923276),(-0.12244051,0.012519,0.08986501),(-0.12212776,0.019557001,0.08898976),(-0.12081826,0.020214,0.084894754),(-0.12041551,0.020331,0.08479801),(-0.098021254,0.00695925,0.09254701),(-0.09772876,0.0065790005,0.08952975),(-0.09767251,0.022185002,0.09018),(-0.09774226,0.021514501,0.09145801),(-0.098498255,0.02042775,0.095593505),(-0.09860176,0.014764501,0.096691504),(-0.09838576,0.0074677505,0.095589004)]),
                 texCoord=TextureCoordinate(point=[(0.2033,0.0375),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1873,0.048),(0.1915,0.0602),(0.1915,0.0578),(0.1897,0.0535),(0.1888,0.0569),(0.2031,0.037),(0.2012,0.0381),(0.2444,0.0847),(0.2208,0.06),(0.2111,0.0557),(0.2254,0.054),(0.2483,0.0809),(0.2464,0.0799),(0.2587,0.0865),(0.225,0.0604),(0.2239,0.0673),(0.2238,0.0671),(0.267,0.0845),(0.2486,0.0741),(0.2486,0.074),(0.2049,0.059),(0.1896,0.055),(0.2102,0.0461),(0.1952,0.0651),(0.2083,0.0443),(0.195,0.0629),(0.2109,0.0476),(0.2048,0.0404),(0.2576,0.0911),(0.2063,0.0414),(0.2083,0.0537),(0.2612,0.0869),(0.2671,0.0842),(0.2047,0.0593),(0.1952,0.0651),(0.2102,0.0461),(0.2083,0.0443),(0.195,0.0629),(0.2102,0.0461),(0.2063,0.0414),(0.2612,0.0869),(0.2671,0.0842),(0.2083,0.0537),(0.2109,0.0476),(0.2083,0.0443),(0.2444,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1915,0.0578),(0.225,0.0604),(0.2239,0.0673),(0.2464,0.0799)]))),
             Group(DEF='r_tarsal_proximal_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_middle_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2540,10 +2431,8 @@ None
                 coord=Coordinate(point=[(-0.10878976,0.002007,0.115029),(-0.10769851,0.010451251,0.11555775),(-0.12018826,0.002007,0.112497754),(-0.12140551,0.010451251,0.11259675),(-0.12056626,0.01614375,0.112122),(-0.108724505,0.016731001,0.115152754),(-0.108315006,0.00297,0.107298),(-0.10702576,0.012060001,0.10752975),(-0.117623255,0.00240075,0.10500525),(-0.11866951,0.012060001,0.10465875),(-0.117843755,0.02149425,0.10513125),(-0.107874006,0.022482002,0.10743975),(-0.10819576,0.012159,0.102483004),(-0.109190255,0.00519525,0.1023345),(-0.114540756,0.0048667504,0.10100475),(-0.11531701,0.012105,0.100707754),(-0.11468926,0.019399501,0.10112175),(-0.10883701,0.01998,0.102429),(-0.11238301,0.0053955005,0.117645755),(-0.11176426,0.0104175005,0.118089005),(-0.11221201,0.013248,0.117839254),(-0.11846251,0.0129375,0.116775006),(-0.11883601,0.01049625,0.11662875),(-0.11806426,0.0053955005,0.116406)]),
                 texCoord=TextureCoordinate(point=[(0.1822,0.0458),(0.1809,0.0434),(0.1953,0.0282),(0.1948,0.024),(0.1933,0.0293),(0.1816,0.0411),(0.1287,0.0243),(0.0943,0.0785),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1322,0.09),(0.157,0.0552),(0.1873,0.048),(0.186,0.0472),(0.1866,0.0487),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.157,0.0552),(0.1822,0.0458),(0.1809,0.0434),(0.1816,0.0411),(0.0943,0.0785),(0.1948,0.024),(0.1953,0.0282)]))),
             Group(DEF='r_tarsal_middle_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_distal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2569,10 +2458,8 @@ None
                 coord=Coordinate(point=[(-0.127881,0.0019034995,0.060480006),(-0.13378051,0.0111555,0.0672075),(-0.13063501,0.02536425,0.06975),(-0.12757051,0.0033592496,0.043177504),(-0.13146976,0.0111555,0.043735504),(-0.12761776,0.028089,0.044631),(-0.12857176,0.003951,0.0798975),(-0.132228,0.0111555,0.078975),(-0.1301265,0.0223695,0.0799425),(-0.12939526,0.0267255,0.05832),(-0.13262627,0.0111555,0.055467002),(-0.11369926,0.0019034995,0.0701775),(-0.11579851,0.029121751,0.0746325),(-0.11379601,0.0352845,0.04789125),(-0.116097756,0.0046395003,0.084240004),(-0.11536876,0.0248625,0.08520751),(-0.11280826,0.00240075,0.046271253),(-0.115173005,0.032123253,0.061290003),(-0.12420676,0.0040207496,0.032674503),(-0.12783825,0.01134675,0.030892503),(-0.12440926,0.02955825,0.032807253),(-0.11145151,0.0029159999,0.0362115),(-0.11218276,0.039987,0.036567003),(-0.10836451,0.0063179997,0.07029001),(-0.10752076,0.006804,0.046894502),(-0.10669276,0.00711225,0.040896002),(-0.107201256,0.03394125,0.041157003),(-0.108072005,0.03146625,0.0471105),(-0.109437756,0.028230751,0.060862504),(-0.110083506,0.025299,0.07384501),(-0.10951876,0.022286251,0.081360005),(-0.11039176,0.0083385,0.080685005),(-0.10880776,0.0056047495,0.029313002),(-0.119628005,0.0065272497,0.026716502),(-0.12220426,0.01184175,0.025238251),(-0.11912851,0.02826675,0.027020251),(-0.10880776,0.0369135,0.02950875),(-0.10590976,0.032908503,0.03295125),(-0.10545076,0.008603999,0.032715),(-0.12906902,0.01053225,0.083160006),(-0.12663001,0.00623025,0.083745),(-0.11627326,0.00673875,0.0879525),(-0.11214901,0.00911025,0.08547751),(-0.11147851,0.01848375,0.086017504),(-0.11516176,0.01997325,0.088672504),(-0.12748276,0.01809225,0.08385751)]),
                 texCoord=TextureCoordinate(point=[(0.2299,0.0317),(0.2316,0.0247),(0.2265,0.0269),(0.241,0.0419),(0.244,0.0359),(0.2401,0.0413),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2333,0.0341),(0.2378,0.0303),(0.2142,0.0508),(0.2117,0.0481),(0.2254,0.0615),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2142,0.0508),(0.2202,0.0585),(0.2292,0.0691),(0.2342,0.0682),(0.2254,0.0615),(0.2186,0.0548),(0.2117,0.0481),(0.2083,0.0443),(0.2102,0.0461),(0.2292,0.0691),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2342,0.0682),(0.2342,0.0682),(0.2292,0.0691),(0.226,0.0221),(0.2245,0.0286),(0.2102,0.0461),(0.2102,0.0461),(0.2083,0.0443),(0.2083,0.0443),(0.2232,0.0245)]))),
             Group(DEF='r_metatarsal_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_proximal_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2581,10 +2468,8 @@ None
                 coord=Coordinate(point=[(-0.12984976,0.01971675,0.08492625),(-0.12866177,0.0027854997,0.0904005),(-0.12870225,0.004560749,0.084375),(-0.13128302,0.0111555,0.08475075),(-0.11957851,0.0051187496,0.09297675),(-0.11643526,0.022428,0.08836425),(-0.11643526,0.005796,0.0883935),(-0.11740726,0.021591,0.09355275),(-0.11743651,0.005037749,0.093672),(-0.11773801,0.01245375,0.094644),(-0.12857851,0.003950999,0.079893),(-0.13223477,0.0111555,0.078966),(-0.13013326,0.0223695,0.07994025),(-0.116104506,0.0046395,0.084240004),(-0.11537551,0.0248625,0.08520075),(-0.11949301,0.0218115,0.09299475),(-0.12936376,0.020173501,0.090387),(-0.13070926,0.01167975,0.09101475),(-0.11876851,0.012645,0.09455625),(-0.12944026,0.0024795,0.09323325),(-0.13130552,0.01068975,0.09340875),(-0.1301355,0.01865025,0.0932085),(-0.11980351,0.0200115,0.09551475),(-0.11916001,0.011421,0.096588),(-0.12037051,0.0042232494,0.095445),(-0.12534301,0.0070357495,0.07542225),(-0.12773477,0.01173825,0.07483275),(-0.12616651,0.020061001,0.07553475),(-0.11683126,0.021676501,0.0787635),(-0.11733751,0.00749025,0.07807725),(-0.11246401,0.00808875,0.08762175),(-0.11255626,0.00744975,0.0851355),(-0.11199601,0.021055501,0.085788004),(-0.11243926,0.02005425,0.08721),(-0.11313001,0.0194265,0.091368005),(-0.11348776,0.01260225,0.0921915),(-0.11326051,0.00756225,0.09153675)]),
                 texCoord=TextureCoordinate(point=[(0.2192,0.0256),(0.2205,0.0195),(0.2048,0.0404),(0.2199,0.022),(0.2063,0.0414),(0.2047,0.0523),(0.1956,0.0462),(0.1979,0.0386),(0.2109,0.0476),(0.277,0.1031),(0.2673,0.0987),(0.263,0.1),(0.2744,0.109),(0.1892,0.0439),(0.1911,0.0375),(0.2576,0.0911),(0.2083,0.0537),(0.263,0.0893),(0.2612,0.0869),(0.2047,0.0593),(0.2048,0.0593),(0.2671,0.0842),(0.2673,0.0839),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2102,0.0461),(0.2083,0.0443),(0.2039,0.0358),(0.2152,0.0224),(0.2154,0.0203),(0.2126,0.0258),(0.2034,0.0366),(0.2033,0.0375),(0.2114,0.0219),(0.2132,0.0168),(0.2123,0.0196),(0.1999,0.0356),(0.201,0.0349),(0.2011,0.0354),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2083,0.0443),(0.2102,0.0461),(0.2576,0.0911),(0.2102,0.0461),(0.2083,0.0443),(0.2048,0.0404),(0.2083,0.0537),(0.2047,0.0593),(0.2612,0.0869)]))),
             Group(DEF='r_tarsal_proximal_phalanx_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_tarsal_middle_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2676,10 +2561,8 @@ None
                 coord=Coordinate(point=[(0.090585,0.96652126,0.061949253),(0.12501001,0.966924,0.022574252),(0.0324675,0.9647618,-0.09190576),(0.0341775,0.96617705,0.07441425),(0.086175,0.9648698,-0.06807826),(0.11583,0.96605325,-0.0327195),(0.094005,0.950463,0.06973425),(0.1296,0.95127076,0.02570175),(0.0342,0.946944,-0.10191825),(0.088875,0.94716454,-0.076223254),(0.11945251,0.9495293,-0.035806503),(0.036787502,0.94977677,0.08348175),(0,0.946944,-0.10191825),(-0.036787502,0.94977677,0.08348175),(-0.094005,0.950463,0.06973425),(-0.090585,0.96652126,0.061949253),(-0.0341775,0.96617705,0.07441425),(-0.1296,0.95127076,0.02570175),(-0.12501001,0.966924,0.022574252),(-0.088875,0.94716454,-0.076223254),(-0.0342,0.946944,-0.10191825),(-0.0324675,0.9647618,-0.09190576),(-0.086175,0.9648698,-0.06807826),(-0.11945251,0.9495293,-0.035806503),(-0.11583,0.96605325,-0.0327195),(0,0.94977677,0.08348175),(0,0.96617705,0.07441425),(0,0.9647618,-0.09190576),(0.033592504,0.9735975,0.06894676),(0.08763751,0.9735975,0.05699925),(0.119182505,0.9735975,0.020909252),(0.11065501,0.9735975,-0.0303435),(0.08280001,0.9735975,-0.063578255),(0.031320002,0.9735975,-0.08643825),(0,0.9735975,-0.08643825),(-0.031320002,0.9735975,-0.08643825),(-0.08280001,0.9735975,-0.063578255),(-0.11065501,0.9735975,-0.0303435),(-0.119182505,0.9735975,0.020909252),(-0.08763751,0.9735975,0.05699925),(-0.033592504,0.9735975,0.06894676),(0,0.9735975,0.06894676),(0.08678251,0.9393525,0.061589252),(0.0344925,0.9393525,0.07414425),(0,0.9393525,0.07414425),(-0.0344925,0.9393525,0.07414425),(-0.08678251,0.9393525,0.061589252),(-0.1181475,0.9393525,0.022776749),(-0.10905751,0.9393525,-0.032334752),(-0.0814275,0.9393525,-0.06884325),(-0.031455003,0.9393525,-0.09233326),(0,0.9393525,-0.09233326),(0.031455003,0.9393525,-0.09233326),(0.0814275,0.9393525,-0.06884325),(0.10905751,0.9393525,-0.032334752),(0.1181475,0.9393525,0.022776749)]),
                 texCoord=TextureCoordinate(point=[(0.1026,0.2616),(0.1481,0.2604),(0.3503,0.2575),(0.3578,0.2568),(0.0179,0.2574),(0.2289,0.2559),(0.1884,0.2584),(0.0186,0.2582),(0.3542,0.2515),(0.1011,0.241),(0.1445,0.2419),(0.3553,0.2398),(0.3561,0.2404),(0.2369,0.2375),(0.1927,0.24),(0.019,0.2349),(0.3557,0.2401),(0.019,0.2349),(0.019,0.2349),(0.1011,0.241),(0.1026,0.2616),(0.0179,0.2574),(0.1445,0.2419),(0.1481,0.2604),(0.2369,0.2375),(0.3561,0.2404),(0.3503,0.2575),(0.2289,0.2559),(0.1927,0.24),(0.1884,0.2584),(0.019,0.2349),(0.0186,0.2582),(0.3578,0.2568),(0.3553,0.2398),(0.3557,0.2401),(0.3542,0.2515),(0.0179,0.2574),(0.1026,0.2616),(0.1481,0.2604),(0.1884,0.2584),(0.2289,0.2559),(0.3503,0.2575),(0.3542,0.2515),(0.3578,0.2568),(0.2289,0.2559),(0.1884,0.2584),(0.1481,0.2604),(0.1026,0.2616),(0.0179,0.2574),(0.0186,0.2582),(0.1011,0.241),(0.019,0.2349),(0.019,0.2349),(0.019,0.2349),(0.1011,0.241),(0.1445,0.2419),(0.1927,0.24),(0.2369,0.2375),(0.3561,0.2404),(0.3557,0.2401),(0.3553,0.2398),(0.2369,0.2375),(0.1927,0.24),(0.1445,0.2419)]))),
             Group(DEF='l4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2688,10 +2571,8 @@ None
                 coord=Coordinate(point=[(0.087165006,0.98242205,0.05418675),(0.030757502,0.98242205,-0.08189326),(0.083475,0.98242205,-0.059910756),(0.1122075,0.98242205,-0.029634751),(0.031590004,0.98242205,0.06536925),(0.12044251,0.98242205,0.019424252),(0.090585,0.96636605,0.061949253),(0.12501001,0.9667688,0.022574252),(0.0324675,0.9646065,-0.09190576),(0.0341775,0.9660218,0.07441425),(0.086175,0.9647145,-0.06807826),(0.11583,0.96589804,-0.0327195),(0,0.9660218,0.07441425),(-0.030757502,0.98242205,-0.08189326),(-0.0324675,0.9646065,-0.09190576),(0,0.9646065,-0.09190576),(0,0.98242205,-0.08189326),(-0.090585,0.96636605,0.061949253),(-0.087165006,0.98242205,0.05418675),(-0.031590004,0.98242205,0.06536925),(-0.0341775,0.9660218,0.07441425),(-0.12501001,0.9667688,0.022574252),(-0.12044251,0.98242205,0.019424252),(-0.083475,0.98242205,-0.059910756),(-0.086175,0.9647145,-0.06807826),(-0.1122075,0.98242205,-0.029634751),(-0.11583,0.96589804,-0.0327195),(0,0.98242205,0.06536925),(0.030735003,0.99094504,0.060171753),(0.083835006,0.99094504,0.049484253),(0.114255,0.99094504,0.01769175),(0.106695004,0.99094504,-0.027328502),(0.079875,0.99094504,-0.055613253),(0.0294975,0.99094504,-0.07662825),(0,0.99094504,-0.07662825),(-0.0294975,0.99094504,-0.07662825),(-0.079875,0.99094504,-0.055613253),(-0.106695004,0.99094504,-0.027328502),(-0.114255,0.99094504,0.01769175),(-0.083835006,0.99094504,0.049484253),(-0.030735003,0.99094504,0.060171753),(0,0.99094504,0.060171753),(0.087075,0.9582503,0.057179254),(0.033255003,0.9582503,0.06908175),(0,0.9582503,0.06908175),(-0.033255003,0.9582503,0.06908175),(-0.087075,0.9582503,0.057179254),(-0.11880001,0.9582503,0.02088675),(-0.11025,0.9582503,-0.030516751),(-0.0823725,0.9582503,-0.06373575),(-0.03114,0.9582503,-0.086505756),(0,0.9582503,-0.086505756),(0.03114,0.9582503,-0.086505756),(0.0823725,0.9582503,-0.06373575),(0.11025,0.9582503,-0.030516751),(0.11880001,0.9582503,0.02088675)]),
                 texCoord=TextureCoordinate(point=[(0.1041,0.2822),(0.0168,0.2798),(0.1518,0.2789),(0.3444,0.2746),(0.3604,0.2737),(0.221,0.2742),(0.1842,0.2768),(0.3527,0.263),(0.0181,0.2816),(0.1026,0.2616),(0.1481,0.2604),(0.3578,0.2568),(0.3503,0.2575),(0.0179,0.2574),(0.2289,0.2559),(0.1884,0.2584),(0.0186,0.2582),(0.3542,0.2515),(0.3604,0.2737),(0.3578,0.2568),(0.3542,0.2515),(0.3527,0.263),(0.1026,0.2616),(0.1041,0.2822),(0.0168,0.2798),(0.0179,0.2574),(0.1481,0.2604),(0.1518,0.2789),(0.3503,0.2575),(0.3444,0.2746),(0.221,0.2742),(0.2289,0.2559),(0.1842,0.2768),(0.1884,0.2584),(0.0181,0.2816),(0.0186,0.2582),(0.0168,0.2798),(0.1041,0.2822),(0.1518,0.2789),(0.1842,0.2768),(0.221,0.2742),(0.3444,0.2746),(0.3527,0.263),(0.3604,0.2737),(0.221,0.2742),(0.1842,0.2768),(0.1518,0.2789),(0.1041,0.2822),(0.0168,0.2798),(0.0181,0.2816),(0.1026,0.2616),(0.0179,0.2574),(0.0186,0.2582),(0.0179,0.2574),(0.1026,0.2616),(0.1481,0.2604),(0.1884,0.2584),(0.2289,0.2559),(0.3503,0.2575),(0.3542,0.2515),(0.3578,0.2568),(0.2289,0.2559),(0.1884,0.2584),(0.1481,0.2604)]))),
             Group(DEF='l3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2725,10 +2606,8 @@ None
                 coord=Coordinate(point=[(0.083295,1.023435,0.044466753),(0.028935002,1.023435,0.05463675),(0.11484001,1.023435,0.015351751),(0.030667502,1.023435,-0.070665754),(0.080730006,1.023435,-0.051698253),(0.1081125,1.023435,-0.025589252),(0,1.023435,0.05463675),(0.083475,0.99996305,0.045816753),(0.108405,0.99996305,-0.026397001),(0,0.99996305,0.055806752),(0,0.99996305,-0.07215075),(0.11538,0.99996305,0.01595925),(0.0290925,0.99996305,-0.07215075),(0.0808425,0.99996305,-0.051923253),(0.028822502,0.99996305,0.055806752),(-0.028822502,0.99996305,0.055806752),(-0.083475,0.99996305,0.045816753),(-0.083295,1.023435,0.044466753),(-0.028935002,1.023435,0.05463675),(-0.11538,0.99996305,0.01595925),(-0.11484001,1.023435,0.015351751),(-0.0808425,0.99996305,-0.051923253),(-0.0290925,0.99996305,-0.07215075),(-0.030667502,1.023435,-0.070665754),(-0.080730006,1.023435,-0.051698253),(-0.108405,0.99996305,-0.026397001),(-0.1081125,1.023435,-0.025589252),(0,1.023435,-0.070665754),(0.028485002,1.0334251,0.049686752),(0.0809775,1.0334251,0.03985425),(0.10950751,1.0334251,0.013506751),(0.1035,1.0334251,-0.023143502),(0.078052506,1.0334251,-0.047423255),(0.0297675,1.0334251,-0.06569325),(0,1.0334251,-0.06571575),(-0.0297675,1.0334251,-0.06569325),(-0.078052506,1.0334251,-0.047423255),(-0.1035,1.0334251,-0.023143502),(-0.10950751,1.0334251,0.013506751),(-0.0809775,1.0334251,0.03985425),(-0.028485002,1.0334251,0.049686752),(0,1.0334251,0.049686752),(0.081135005,0.9914355,0.04118175),(0.028372502,0.9914355,0.05085675),(0,0.9914355,0.05085675),(-0.028372502,0.9914355,0.05085675),(-0.081135005,0.9914355,0.04118175),(-0.1100475,0.9914355,0.014159252),(-0.10377,0.9914355,-0.023910752),(-0.0781425,0.9914355,-0.04764825),(-0.028147502,0.9914355,-0.06720075),(0,0.9914355,-0.06720075),(0.028147502,0.9914355,-0.06720075),(0.0781425,0.9914355,-0.04764825),(0.10377,0.9914355,-0.023910752),(0.1100475,0.9914355,0.014159252)]),
                 texCoord=TextureCoordinate(point=[(0.0943,0.3233),(0.0192,0.3251),(0.1489,0.3212),(0.3615,0.3195),(0.3631,0.318),(0.2175,0.3185),(0.1844,0.32),(0.3623,0.3188),(0.0192,0.3251),(0.0982,0.302),(0.1849,0.2961),(0.0177,0.3051),(0.3627,0.2922),(0.1487,0.2975),(0.3633,0.2922),(0.3621,0.2922),(0.2175,0.2944),(0.0177,0.3051),(0.0177,0.3051),(0.0982,0.302),(0.0943,0.3233),(0.0192,0.3251),(0.1487,0.2975),(0.1489,0.3212),(0.2175,0.2944),(0.3621,0.2922),(0.3615,0.3195),(0.2175,0.3185),(0.1849,0.2961),(0.1844,0.32),(0.0177,0.3051),(0.0192,0.3251),(0.3631,0.318),(0.3633,0.2922),(0.3627,0.2922),(0.3623,0.3188),(0.0192,0.3251),(0.0943,0.3233),(0.1489,0.3212),(0.1844,0.32),(0.2175,0.3185),(0.3615,0.3195),(0.3623,0.3188),(0.3631,0.318),(0.2175,0.3185),(0.1844,0.32),(0.1489,0.3212),(0.0943,0.3233),(0.0192,0.3251),(0.0192,0.3251),(0.0982,0.302),(0.0177,0.3051),(0.0177,0.3051),(0.0177,0.3051),(0.0982,0.302),(0.1487,0.2975),(0.1849,0.2961),(0.2175,0.2944),(0.3621,0.2922),(0.3627,0.2922),(0.3633,0.2922),(0.2175,0.2944),(0.1849,0.2961),(0.1487,0.2975)]))),
             Group(DEF='l1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t12_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2737,10 +2616,8 @@ None
                 coord=Coordinate(point=[(0.083137505,1.0467901,0.043139253),(0.1143225,1.0467901,0.014721751),(0.029070003,1.0467901,0.05346675),(0.032265,1.0467901,-0.06918076),(0.08064,1.0467901,-0.051495753),(0.10784251,1.0467901,-0.0247815),(0.083295,1.0233091,0.044466753),(0.028935002,1.0233091,0.05463675),(0.11484001,1.0233091,0.015351751),(0.030667502,1.0233091,-0.070665754),(0.080730006,1.0233091,-0.051698253),(0.1081125,1.0233091,-0.025589252),(0,1.0233091,0.05463675),(-0.08064,1.0467901,-0.051495753),(-0.10784251,1.0467901,-0.0247815),(-0.1081125,1.0233091,-0.025589252),(-0.080730006,1.0233091,-0.051698253),(0,1.0467901,-0.06920325),(-0.032265,1.0467901,-0.06918076),(-0.030667502,1.0233091,-0.070665754),(0,1.0233091,-0.070665754),(-0.083295,1.0233091,0.044466753),(-0.083137505,1.0467901,0.043139253),(-0.029070003,1.0467901,0.05346675),(-0.028935002,1.0233091,0.05463675),(-0.11484001,1.0233091,0.015351751),(-0.1143225,1.0467901,0.014721751),(0,1.0467901,0.05346675),(0.028710002,1.0557451,0.04975425),(0.08140501,1.0557451,0.039674252),(0.11034,1.0557451,0.01332675),(0.1043775,1.0557451,-0.02297925),(0.078615,1.0557451,-0.048278254),(0.0316125,1.0557451,-0.06546825),(0,1.0557451,-0.06546825),(-0.0316125,1.0557451,-0.06546825),(-0.078615,1.0557451,-0.048278254),(-0.1043775,1.0557451,-0.02297925),(-0.11034,1.0557451,0.01332675),(-0.08140501,1.0557451,0.039674252),(-0.028710002,1.0557451,0.04975425),(0,1.0557451,0.04975425),(0.081562504,1.0125315,0.04102425),(0.028597502,1.0125315,0.050924253),(0,1.0125315,0.050924253),(-0.028597502,1.0125315,0.050924253),(-0.081562504,1.0125315,0.04102425),(-0.11085751,1.0125315,0.0139792515),(-0.1046475,1.0125315,-0.023757752),(-0.078727506,1.0125315,-0.048503254),(-0.0299925,1.0125315,-0.06695326),(0,1.0125315,-0.06695326),(0.0299925,1.0125315,-0.06695326),(0.078727506,1.0125315,-0.048503254),(0.1046475,1.0125315,-0.023757752),(0.11085751,1.0125315,0.0139792515)]),
                 texCoord=TextureCoordinate(point=[(0.0903,0.3446),(0.1491,0.3449),(0.0206,0.3452),(0.3608,0.3469),(0.3629,0.3439),(0.2175,0.3427),(0.1838,0.3438),(0.3619,0.3454),(0.0206,0.3452),(0.0943,0.3233),(0.0192,0.3251),(0.1489,0.3212),(0.3631,0.318),(0.3615,0.3195),(0.2175,0.3185),(0.1844,0.32),(0.3623,0.3188),(0.0192,0.3251),(0.2175,0.3427),(0.1838,0.3438),(0.1844,0.32),(0.2175,0.3185),(0.3619,0.3454),(0.3629,0.3439),(0.3631,0.318),(0.3623,0.3188),(0.0943,0.3233),(0.0903,0.3446),(0.0206,0.3452),(0.0192,0.3251),(0.1489,0.3212),(0.1491,0.3449),(0.3615,0.3195),(0.3608,0.3469),(0.0206,0.3452),(0.0192,0.3251),(0.0206,0.3452),(0.0903,0.3446),(0.1491,0.3449),(0.1838,0.3438),(0.2175,0.3427),(0.3608,0.3469),(0.3619,0.3454),(0.3629,0.3439),(0.2175,0.3427),(0.1838,0.3438),(0.1491,0.3449),(0.0903,0.3446),(0.0206,0.3452),(0.0206,0.3452),(0.0943,0.3233),(0.0192,0.3251),(0.0192,0.3251),(0.0192,0.3251),(0.0943,0.3233),(0.1489,0.3212),(0.1844,0.32),(0.2175,0.3185),(0.3615,0.3195),(0.3623,0.3188),(0.3631,0.318),(0.2175,0.3185),(0.1844,0.32),(0.1489,0.3212)]))),
             Group(DEF='t12_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t11_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2749,10 +2626,8 @@ None
                 coord=Coordinate(point=[(0.083137505,1.0469205,0.043139253),(0.1143225,1.0469205,0.014721751),(0.029070003,1.0469205,0.05346675),(0.032265,1.0469205,-0.06918076),(0.08064,1.0469205,-0.051495753),(0.10784251,1.0469205,-0.0247815),(0.029070003,1.0469205,0.05346675),(0,1.0469205,0.05346675),(0.08685,1.0641601,0.052296754),(0.12062251,1.0641601,0.014946751),(0.035730004,1.0641601,-0.06996825),(0.030600002,1.0641601,0.05805675),(0.08442,1.0641601,-0.053723253),(0.111825,1.0641601,-0.027346501),(0,1.0641601,0.05805675),(-0.08064,1.0469205,-0.051495753),(-0.032265,1.0469205,-0.06918076),(-0.035730004,1.0641601,-0.06996825),(-0.08442,1.0641601,-0.053723253),(-0.10784251,1.0469205,-0.0247815),(-0.111825,1.0641601,-0.027346501),(-0.1143225,1.0469205,0.014721751),(-0.12062251,1.0641601,0.014946751),(-0.029070003,1.0469205,0.05346675),(-0.030600002,1.0641601,0.05805675),(-0.083137505,1.0469205,0.043139253),(-0.029070003,1.0469205,0.05346675),(-0.08685,1.0641601,0.052296754),(0,1.0469205,-0.06920325),(0,1.0641601,-0.07014825),(0.0809775,1.0359653,0.038841754),(0.02862,1.0359653,0.04885425),(0,1.0359653,0.04885425),(-0.02862,1.0359653,0.04885425),(-0.0809775,1.0359653,0.038841754),(-0.109372504,1.0359653,0.012989251),(-0.10354501,1.0359653,-0.02254725),(-0.07812,1.0359653,-0.04749075),(-0.031455003,1.0359653,-0.06456825),(0,1.0359653,-0.06459075),(0.031455003,1.0359653,-0.06456825),(0.07812,1.0359653,-0.04749075),(0.10354501,1.0359653,-0.02254725),(0.109372504,1.0359653,0.012989251),(0.0819675,1.0714276,-0.04967325),(0.0349875,1.0714276,-0.06537825),(0,1.0714276,-0.065558255),(-0.0349875,1.0714276,-0.06537825),(-0.0819675,1.0714276,-0.04967325),(-0.107595004,1.0714276,-0.025011001),(-0.11565,1.0714276,0.01359675),(-0.0846,1.0714276,0.04788675),(-0.030375002,1.0714276,0.05344425),(0,1.0714276,0.05344425),(0.030375002,1.0714276,0.05344425),(0.0846,1.0714276,0.04788675),(0.11565,1.0714276,0.01359675),(0.107595004,1.0714276,-0.025011001)]),
                 texCoord=TextureCoordinate(point=[(0.0206,0.3452),(0.0903,0.3446),(0.0903,0.3446),(0.1491,0.3449),(0.3629,0.3439),(0.3608,0.3469),(0.2175,0.3427),(0.1838,0.3438),(0.0206,0.3452),(0.3619,0.3454),(0.0206,0.3452),(0.089,0.3604),(0.1508,0.3559),(0.3623,0.3532),(0.3588,0.3561),(0.0232,0.3561),(0.2188,0.3538),(0.1874,0.3541),(0.0232,0.3546),(0.3608,0.3537),(0.2175,0.3427),(0.3608,0.3469),(0.3588,0.3561),(0.2188,0.3538),(0.1838,0.3438),(0.1874,0.3541),(0.1491,0.3449),(0.1508,0.3559),(0.0206,0.3452),(0.0206,0.3452),(0.0232,0.3561),(0.0232,0.3546),(0.0903,0.3446),(0.0206,0.3452),(0.0903,0.3446),(0.089,0.3604),(0.3623,0.3532),(0.3629,0.3439),(0.3619,0.3454),(0.3608,0.3537),(0.0903,0.3446),(0.0206,0.3452),(0.0206,0.3452),(0.0206,0.3452),(0.0903,0.3446),(0.1491,0.3449),(0.1838,0.3438),(0.2175,0.3427),(0.3608,0.3469),(0.3619,0.3454),(0.3629,0.3439),(0.2175,0.3427),(0.1838,0.3438),(0.1491,0.3449),(0.2188,0.3538),(0.3588,0.3561),(0.3608,0.3537),(0.3623,0.3532),(0.2188,0.3538),(0.1874,0.3541),(0.1508,0.3559),(0.089,0.3604),(0.0232,0.3561),(0.0232,0.3546),(0.0232,0.3561),(0.089,0.3604),(0.1508,0.3559),(0.1874,0.3541)]))),
             Group(DEF='t11_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t10_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2835,10 +2710,8 @@ None
                 coord=Coordinate(point=[(0.033210002,1.0930524,0.06572925),(0.090742506,1.0930524,-0.057480752),(0.1185975,1.0930524,-0.031644),(0.09526501,1.108656,0.07394175),(0.034605,1.108656,0.069779254),(0.137565,1.1093513,0.015621751),(0.044707503,1.1093513,-0.07208325),(0.09423001,1.1093513,-0.059595753),(0.122445,1.1093513,-0.034026753),(0.0925875,1.0930524,0.06683175),(0.1314,1.0930524,0.01537425),(0.0415125,1.0930524,-0.071318254),(0,1.108656,0.069779254),(-0.034605,1.108656,0.069779254),(-0.033210002,1.0930524,0.06572925),(-0.0925875,1.0930524,0.06683175),(-0.09526501,1.108656,0.07394175),(-0.044707503,1.1093513,-0.07208325),(-0.0415125,1.0930524,-0.071318254),(0,1.0930524,-0.07181325),(0,1.1093513,-0.07275825),(-0.1314,1.0930524,0.01537425),(-0.137565,1.1093513,0.015621751),(-0.09423001,1.1093513,-0.059595753),(-0.090742506,1.0930524,-0.057480752),(-0.122445,1.1093513,-0.034026753),(-0.1185975,1.0930524,-0.031644),(0,1.0930524,0.06572925),(0.040950004,1.0863159,-0.067313254),(0.088717505,1.0863159,-0.053903252),(0.1150425,1.0863159,-0.029484002),(0.127035,1.0863159,0.01451925),(0.0906075,1.0863159,0.06280425),(0.033255003,1.0863159,0.061724253),(0,1.0863159,0.061724253),(-0.033255003,1.0863159,0.061724253),(-0.0906075,1.0863159,0.06280425),(-0.127035,1.0863159,0.01451925),(-0.1150425,1.0863159,-0.029484002),(-0.088717505,1.0863159,-0.053903252),(-0.040950004,1.0863159,-0.067313254),(0,1.0863159,-0.06780825),(0,1.1163601,0.065774255),(0.03474,1.1163601,0.065751754),(0.093329996,1.1163601,0.069779254),(0.1331325,1.1163601,0.014879251),(0.118935,1.1163601,-0.0318015),(0.092295006,1.1163601,-0.055950753),(0.044167504,1.1163601,-0.06807826),(0,1.1163601,-0.06875325),(-0.044167504,1.1163601,-0.06807826),(-0.092295006,1.1163601,-0.055950753),(-0.118935,1.1163601,-0.0318015),(-0.1331325,1.1163601,0.014879251),(-0.093329996,1.1163601,0.069779254),(-0.03474,1.1163601,0.065751754)]),
                 texCoord=TextureCoordinate(point=[(0.0908,0.3999),(0.0325,0.3879),(0.0306,0.3835),(0.1568,0.3845),(0.3535,0.3812),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.3561,0.3769),(0.0802,0.3883),(0.1575,0.3746),(0.3637,0.3704),(0.356,0.3713),(0.3581,0.3683),(0.0256,0.3731),(0.0261,0.363),(0.2218,0.3729),(0.1941,0.3712),(0.0325,0.3879),(0.0256,0.3731),(0.0802,0.3883),(0.0908,0.3999),(0.3589,0.3783),(0.3637,0.3704),(0.3581,0.3683),(0.3561,0.3769),(0.1575,0.3746),(0.1568,0.3845),(0.356,0.3713),(0.3535,0.3812),(0.2214,0.3832),(0.2218,0.3729),(0.1952,0.3809),(0.1941,0.3712),(0.0306,0.3835),(0.0261,0.363),(0.3637,0.3704),(0.2218,0.3729),(0.1941,0.3712),(0.1575,0.3746),(0.0802,0.3883),(0.0256,0.3731),(0.0261,0.363),(0.0256,0.3731),(0.0802,0.3883),(0.1575,0.3746),(0.1941,0.3712),(0.2218,0.3729),(0.356,0.3713),(0.3581,0.3683),(0.0306,0.3835),(0.0325,0.3879),(0.0908,0.3999),(0.1568,0.3845),(0.1952,0.3809),(0.2214,0.3832),(0.3535,0.3812),(0.3561,0.3769),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.1568,0.3845),(0.0908,0.3999),(0.0325,0.3879)]))),
             Group(DEF='t8_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t7_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2847,10 +2720,8 @@ None
                 coord=Coordinate(point=[(0.1414125,1.1218928,0.01591425),(0.046395004,1.1218928,-0.072668254),(0.0922725,1.1218928,0.07013925),(0.096525006,1.1218928,-0.06112575),(0.12537001,1.1218928,-0.03517425),(0.035662502,1.1218928,0.072231755),(0.09526501,1.1088135,0.07394175),(0.034605,1.1088135,0.069779254),(0.137565,1.1095088,0.015621751),(0.044707503,1.1095088,-0.07208325),(0.09423001,1.1095088,-0.059595753),(0.122445,1.1095088,-0.034026753),(-0.137565,1.1095088,0.015621751),(-0.1414125,1.1218928,0.01591425),(-0.0922725,1.1218928,0.07013925),(-0.09526501,1.1088135,0.07394175),(-0.046395004,1.1218928,-0.072668254),(-0.044707503,1.1095088,-0.07208325),(0,1.1095088,-0.07275825),(0,1.1218928,-0.07372575),(-0.034605,1.1088135,0.069779254),(-0.035662502,1.1218928,0.072231755),(0,1.1218928,0.07232175),(0,1.1088135,0.069779254),(-0.096525006,1.1218928,-0.06112575),(-0.09423001,1.1095088,-0.059595753),(-0.12537001,1.1218928,-0.03517425),(-0.122445,1.1095088,-0.034026753),(0.045787502,1.1296327,-0.06789825),(0,1.1296327,-0.06895576),(-0.045787502,1.1296327,-0.06789825),(-0.094252504,1.1296327,-0.05676075),(-0.121207505,1.1296327,-0.03249675),(-0.13603501,1.1296327,0.01474425),(-0.09009001,1.1296327,0.06543675),(-0.0355725,1.1296327,0.06743925),(0,1.1296327,0.067551754),(0.0355725,1.1296327,0.06743925),(0.09009001,1.1296327,0.06543675),(0.13603501,1.1296327,0.01474425),(0.121207505,1.1296327,-0.03249675),(0.094252504,1.1296327,-0.05676075),(0.03429,1.1004975,0.06323175),(0,1.1004975,0.06323175),(-0.03429,1.1004975,0.06323175),(-0.091665,1.1004975,0.067101754),(-0.130455,1.1004975,0.014316752),(-0.11661751,1.1004975,-0.03055725),(-0.090652496,1.1004975,-0.05379075),(-0.043447502,1.1004975,-0.065535754),(0,1.1004975,-0.06618825),(0.043447502,1.1004975,-0.065535754),(0.090652496,1.1004975,-0.05379075),(0.11661751,1.1004975,-0.03055725),(0.130455,1.1004975,0.014316752),(0.091665,1.1004975,0.067101754)]),
                 texCoord=TextureCoordinate(point=[(0.0437,0.4075),(0.2185,0.3912),(0.3484,0.3944),(0.1518,0.3905),(0.1902,0.3894),(0.3503,0.3879),(0.3505,0.3886),(0.0427,0.408),(0.0961,0.4138),(0.0908,0.3999),(0.0325,0.3879),(0.1568,0.3845),(0.3535,0.3812),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.3561,0.3769),(0.0306,0.3835),(0.1568,0.3845),(0.1518,0.3905),(0.0961,0.4138),(0.0908,0.3999),(0.3503,0.3879),(0.3589,0.3783),(0.3561,0.3769),(0.3505,0.3886),(0.0325,0.3879),(0.0437,0.4075),(0.0427,0.408),(0.0306,0.3835),(0.3535,0.3812),(0.3484,0.3944),(0.2185,0.3912),(0.2214,0.3832),(0.1902,0.3894),(0.1952,0.3809),(0.3484,0.3944),(0.3505,0.3886),(0.3503,0.3879),(0.2185,0.3912),(0.1902,0.3894),(0.1518,0.3905),(0.0961,0.4138),(0.0437,0.4075),(0.0427,0.408),(0.0437,0.4075),(0.0961,0.4138),(0.1518,0.3905),(0.1902,0.3894),(0.2185,0.3912),(0.0325,0.3879),(0.0306,0.3835),(0.0325,0.3879),(0.0908,0.3999),(0.1568,0.3845),(0.1952,0.3809),(0.2214,0.3832),(0.3535,0.3812),(0.3561,0.3769),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.1568,0.3845),(0.0908,0.3999)]))),
             Group(DEF='t7_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t6_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2859,10 +2730,8 @@ None
                 coord=Coordinate(point=[(0.043582503,1.137141,-0.07325325),(0.13932,1.1371433,0.017151749),(0.129105,1.1371433,-0.03089475),(0.036337502,1.1371433,0.07013925),(0.0961425,1.1371433,-0.06256575),(0.0887625,1.1371433,0.06566175),(0.1414125,1.1217172,0.01591425),(0.046395004,1.1217172,-0.072668254),(0,1.1217172,0.07232175),(0.0922725,1.1217172,0.07013925),(0.096525006,1.1217172,-0.06112575),(0.12537001,1.1217172,-0.03517425),(0.035662502,1.1217172,0.072231755),(-0.035662502,1.1217172,0.072231755),(-0.0922725,1.1217172,0.07013925),(-0.0887625,1.1371433,0.06566175),(-0.036337502,1.1371433,0.07013925),(-0.12537001,1.1217172,-0.03517425),(-0.129105,1.1371433,-0.03089475),(-0.13932,1.1371433,0.017151749),(-0.1414125,1.1217172,0.01591425),(-0.043582503,1.137141,-0.07325325),(-0.046395004,1.1217172,-0.072668254),(0,1.1217172,-0.07372575),(0,1.137141,-0.07530075),(0,1.1371433,0.07074676),(-0.096525006,1.1217172,-0.06112575),(-0.0961425,1.1371433,-0.06256575),(0.0360675,1.1448675,0.06473926),(0.0864,1.1448675,0.060441755),(0.1334025,1.1448675,0.01532925),(0.12415501,1.1448675,-0.0281475),(0.0935325,1.1448675,-0.05757075),(0.0429075,1.1448675,-0.06787575),(0,1.1448675,-0.06987825),(-0.0429075,1.1448675,-0.06787575),(-0.0935325,1.1448675,-0.05757075),(-0.12415501,1.1448675,-0.0281475),(-0.1334025,1.1448675,0.01532925),(-0.0864,1.1448675,0.060441755),(-0.0360675,1.1448675,0.06473926),(0,1.1448675,0.065346755),(0,1.1164207,-0.06832575),(0.045720004,1.1164207,-0.06726825),(0.09396001,1.1164207,-0.056175753),(0.120645,1.1164207,-0.03214125),(0.1353375,1.1164207,0.01458675),(0.089797504,1.1164207,0.06480675),(0.0355725,1.1164207,0.06680925),(0,1.1164207,0.06692175),(-0.0355725,1.1164207,0.06680925),(-0.089797504,1.1164207,0.06480675),(-0.1353375,1.1164207,0.01458675),(-0.120645,1.1164207,-0.03214125),(-0.09396001,1.1164207,-0.056175753),(-0.045720004,1.1164207,-0.06726825)]),
                 texCoord=TextureCoordinate(point=[(0.3061,0.4256),(0.3364,0.4029),(0.1528,0.4078),(0.1843,0.4071),(0.055,0.4216),(0.3325,0.4068),(0.0482,0.4185),(0.221,0.4256),(0.1008,0.4259),(0.1518,0.3905),(0.3506,0.3865),(0.3484,0.3944),(0.0427,0.408),(0.0961,0.4138),(0.3437,0.3934),(0.2185,0.3912),(0.1902,0.3894),(0.0437,0.4075),(0.0437,0.4075),(0.0961,0.4138),(0.1008,0.4259),(0.055,0.4216),(0.1902,0.3894),(0.1843,0.4071),(0.1528,0.4078),(0.1518,0.3905),(0.3364,0.4029),(0.3506,0.3865),(0.3437,0.3934),(0.3325,0.4068),(0.0482,0.4185),(0.0427,0.408),(0.2185,0.3912),(0.221,0.4256),(0.3484,0.3944),(0.3061,0.4256),(0.055,0.4216),(0.1008,0.4259),(0.1528,0.4078),(0.1843,0.4071),(0.221,0.4256),(0.3061,0.4256),(0.3325,0.4068),(0.3364,0.4029),(0.221,0.4256),(0.1843,0.4071),(0.1528,0.4078),(0.1008,0.4259),(0.055,0.4216),(0.0482,0.4185),(0.3437,0.3934),(0.3506,0.3865),(0.2185,0.3912),(0.1902,0.3894),(0.1518,0.3905),(0.0961,0.4138),(0.0437,0.4075),(0.0427,0.408),(0.0437,0.4075),(0.0961,0.4138),(0.1518,0.3905),(0.1902,0.3894),(0.2185,0.3912),(0.3484,0.3944)]))),
             Group(DEF='t6_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2871,10 +2740,8 @@ None
                 coord=Coordinate(point=[(0.0407475,1.1525738,-0.07383826),(0.1328175,1.1525761,-0.0266175),(0.08523001,1.1525761,0.061184254),(0.037035003,1.1525761,0.06806926),(0.09576,1.1525761,-0.064005755),(0.137205,1.1525761,0.018389251),(0.043582503,1.13715,-0.07325325),(0.13932,1.1371523,0.017151749),(0.129105,1.1371523,-0.03089475),(0.036337502,1.1371523,0.07013925),(0,1.1371523,0.07074676),(0.0961425,1.1371523,-0.06256575),(0.0887625,1.1371523,0.06566175),(0,1.1525738,-0.07685325),(-0.0407475,1.1525738,-0.07383826),(-0.043582503,1.13715,-0.07325325),(0,1.13715,-0.07530075),(0,1.1525761,0.06919426),(-0.036337502,1.1371523,0.07013925),(-0.037035003,1.1525761,0.06806926),(-0.08523001,1.1525761,0.061184254),(-0.0887625,1.1371523,0.06566175),(-0.13932,1.1371523,0.017151749),(-0.137205,1.1525761,0.018389251),(-0.1328175,1.1525761,-0.0266175),(-0.129105,1.1371523,-0.03089475),(-0.0961425,1.1371523,-0.06256575),(-0.09576,1.1525761,-0.064005755),(0.036472503,1.1608201,0.061724253),(0.08257501,1.1608201,0.055131752),(0.130545,1.1608201,0.015621751),(0.12669751,1.1608201,-0.0237465),(0.092655,1.1608201,-0.058088254),(0.03996,1.1608201,-0.06751575),(0,1.1608201,-0.070463255),(-0.03996,1.1608201,-0.06751575),(-0.092655,1.1608201,-0.058088254),(-0.12669751,1.1608201,-0.0237465),(-0.130545,1.1608201,0.015621751),(-0.08257501,1.1608201,0.055131752),(-0.036472503,1.1608201,0.061724253),(0,1.1608201,0.06282675),(0.0859725,1.1296216,0.059496753),(0.0360225,1.1296216,0.063794255),(0,1.1296216,0.06440175),(-0.0360225,1.1296216,0.063794255),(-0.0859725,1.1296216,0.059496753),(-0.132345,1.1296216,0.015014252),(-0.12327751,1.1296216,-0.0276615),(-0.09306001,1.1296216,-0.056693252),(-0.042795,1.1296194,-0.06693075),(0,1.1296194,-0.068910755),(0.042795,1.1296194,-0.06693075),(0.09306001,1.1296216,-0.056693252),(0.12327751,1.1296216,-0.0276615),(0.132345,1.1296216,0.015014252)]),
                 texCoord=TextureCoordinate(point=[(0.2236,0.46),(0.2638,0.4568),(0.3214,0.4203),(0.1538,0.4251),(0.1784,0.4249),(0.3223,0.4192),(0.1055,0.438),(0.0663,0.4356),(0.0537,0.4289),(0.3061,0.4256),(0.3364,0.4029),(0.1528,0.4078),(0.1843,0.4071),(0.055,0.4216),(0.3325,0.4068),(0.0482,0.4185),(0.221,0.4256),(0.1008,0.4259),(0.3214,0.4203),(0.3223,0.4192),(0.3364,0.4029),(0.3325,0.4068),(0.0537,0.4289),(0.0482,0.4185),(0.055,0.4216),(0.0663,0.4356),(0.1055,0.438),(0.1008,0.4259),(0.1528,0.4078),(0.1538,0.4251),(0.1784,0.4249),(0.1843,0.4071),(0.221,0.4256),(0.2236,0.46),(0.3061,0.4256),(0.2638,0.4568),(0.0663,0.4356),(0.1055,0.438),(0.1538,0.4251),(0.1784,0.4249),(0.2236,0.46),(0.2638,0.4568),(0.3214,0.4203),(0.3223,0.4192),(0.2236,0.46),(0.1784,0.4249),(0.1538,0.4251),(0.1055,0.438),(0.0663,0.4356),(0.0537,0.4289),(0.1008,0.4259),(0.055,0.4216),(0.0482,0.4185),(0.055,0.4216),(0.1008,0.4259),(0.1528,0.4078),(0.1843,0.4071),(0.221,0.4256),(0.3061,0.4256),(0.3325,0.4068),(0.3364,0.4029),(0.221,0.4256),(0.1843,0.4071),(0.1528,0.4078)]))),
             Group(DEF='t5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2883,10 +2750,8 @@ None
                 coord=Coordinate(point=[(0.0378225,1.170945,0.06561676),(0.12993751,1.1715525,-0.034110002),(0.13106251,1.1702116,0.020459251),(0.080662504,1.1727495,0.055379253),(0.0407475,1.1715525,-0.07012576),(0.09639,1.1715525,-0.061193254),(0.10388251,1.1715525,-0.060383253),(0.0407475,1.1527381,-0.07383826),(0.1328175,1.1527404,-0.0266175),(0.08523001,1.1527404,0.061184254),(0.037035003,1.1527404,0.06806926),(0.09576,1.1527404,-0.064005755),(0.137205,1.1527404,0.018389251),(-0.137205,1.1527404,0.018389251),(-0.13106251,1.1702116,0.020459251),(-0.080662504,1.1727495,0.055379253),(-0.08523001,1.1527404,0.061184254),(-0.0378225,1.170945,0.06561676),(-0.037035003,1.1527404,0.06806926),(-0.0407475,1.1527381,-0.07383826),(0,1.1527381,-0.07685325),(0,1.1715525,-0.07314075),(-0.0407475,1.1715525,-0.07012576),(-0.09576,1.1527404,-0.064005755),(-0.09639,1.1715525,-0.061193254),(0,1.170945,0.06759675),(0,1.1527404,0.06919426),(-0.10388251,1.1715525,-0.060383253),(-0.12993751,1.1715525,-0.034110002),(-0.1328175,1.1527404,-0.0266175),(0.0778725,1.1833875,0.049124252),(0.124267496,1.1833875,0.016994251),(0.12327751,1.1833875,-0.03128625),(0.10080001,1.1833875,-0.05397075),(0.09549,1.1833875,-0.054533254),(0.03996,1.1833875,-0.06346575),(0,1.1833875,-0.06641325),(-0.03996,1.1833875,-0.06346575),(-0.09549,1.1833875,-0.054533254),(-0.10080001,1.1833875,-0.05397075),(-0.12327751,1.1833875,-0.03128625),(-0.124267496,1.1833875,0.016994251),(-0.0778725,1.1833875,0.049124252),(-0.036855,1.1833875,0.058934253),(0,1.1833875,0.06086925),(0.036855,1.1833875,0.058934253),(0.0824175,1.1452006,0.054794252),(0.036450002,1.1452006,0.061364252),(0,1.1452006,0.06246675),(-0.036450002,1.1452006,0.061364252),(-0.0824175,1.1452006,0.054794252),(-0.130185,1.1452006,0.015464251),(-0.12636001,1.1452006,-0.02358675),(-0.092497505,1.1452006,-0.057750754),(-0.039915003,1.1452006,-0.06715575),(0,1.1452006,-0.07012576),(0.039915003,1.1452006,-0.06715575),(0.092497505,1.1452006,-0.057750754),(0.12636001,1.1452006,-0.02358675),(0.130185,1.1452006,0.015464251)]),
                 texCoord=TextureCoordinate(point=[(0.0639,0.4488),(0.0777,0.4495),(0.1846,0.4438),(0.1504,0.4433),(0.1107,0.4532),(0.2633,0.457),(0.3222,0.4193),(0.3214,0.4203),(0.2198,0.4731),(0.2144,0.4674),(0.3223,0.4192),(0.2638,0.4568),(0.1784,0.4249),(0.1784,0.4249),(0.1055,0.438),(0.0663,0.4356),(0.2236,0.46),(0.3214,0.4203),(0.1538,0.4251),(0.0537,0.4289),(0.1538,0.4251),(0.1504,0.4433),(0.1107,0.4532),(0.1055,0.438),(0.0777,0.4495),(0.0663,0.4356),(0.3223,0.4192),(0.3214,0.4203),(0.3214,0.4203),(0.3222,0.4193),(0.2236,0.46),(0.2638,0.4568),(0.2633,0.457),(0.2198,0.4731),(0.0639,0.4488),(0.0537,0.4289),(0.2144,0.4674),(0.1846,0.4438),(0.1784,0.4249),(0.1784,0.4249),(0.1107,0.4532),(0.1504,0.4433),(0.1846,0.4438),(0.2144,0.4674),(0.2198,0.4731),(0.2633,0.457),(0.3214,0.4203),(0.3222,0.4193),(0.2198,0.4731),(0.2144,0.4674),(0.1846,0.4438),(0.1504,0.4433),(0.1107,0.4532),(0.0777,0.4495),(0.0639,0.4488),(0.0777,0.4495),(0.1055,0.438),(0.0663,0.4356),(0.0537,0.4289),(0.0663,0.4356),(0.1055,0.438),(0.1538,0.4251),(0.1784,0.4249),(0.2236,0.46),(0.2638,0.4568),(0.3214,0.4203),(0.3223,0.4192),(0.2236,0.46),(0.1784,0.4249),(0.1538,0.4251)]))),
             Group(DEF='t4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2895,10 +2760,8 @@ None
                 coord=Coordinate(point=[(0.0385425,1.1876289,0.06336675),(0.121005,1.198845,0.023856752),(0.09729,1.198845,-0.05712075),(0.1156725,1.198845,-0.055140752),(0.12575251,1.198845,-0.04497075),(0.0747,1.198845,0.047796752),(0.0407475,1.198845,-0.06474825),(0.035842504,1.1948401,0.078441754),(0.0378225,1.170945,0.06561676),(0.12993751,1.1715525,-0.034110002),(0.13106251,1.1702116,0.020459251),(0.080662504,1.1727495,0.055379253),(0.0407475,1.1715525,-0.07012576),(0.09639,1.1715525,-0.061193254),(0.10388251,1.1715525,-0.060383253),(0,1.170945,0.06759675),(0,1.1796166,0.07895925),(0,1.1715525,-0.07314075),(0,1.198845,-0.067763254),(0.11290501,1.20843,-0.04938075),(0.09657,1.20843,-0.051135752),(0.040117502,1.20843,-0.05876325),(0.034222502,1.20843,0.07205175),(0.0714375,1.20843,0.04271175),(0.1152225,1.20843,0.02007675),(0.11956501,1.20843,-0.042675752),(0.12755251,1.161,0.01791675),(0.0797625,1.161,0.051014252),(0.03771,1.161,0.061071754),(0,1.161,0.06302925),(0.0408825,1.161,-0.06526575),(0.0975375,1.161,-0.056153253),(0.103185005,1.161,-0.05554575),(0.1265175,1.161,-0.032019753),(-0.0385425,1.1876289,0.06336675),(-0.035842504,1.1948401,0.078441754),(-0.0378225,1.170945,0.06561676),(-0.13106251,1.1702116,0.020459251),(-0.121005,1.198845,0.023856752),(-0.0747,1.198845,0.047796752),(-0.080662504,1.1727495,0.055379253),(-0.0407475,1.198845,-0.06474825),(-0.0407475,1.1715525,-0.07012576),(-0.1156725,1.198845,-0.055140752),(-0.10388251,1.1715525,-0.060383253),(-0.09639,1.1715525,-0.061193254),(-0.09729,1.198845,-0.05712075),(-0.12575251,1.198845,-0.04497075),(-0.12993751,1.1715525,-0.034110002),(0,1.1967751,0.07218675),(-0.09657,1.20843,-0.051135752),(-0.11290501,1.20843,-0.04938075),(-0.040117502,1.20843,-0.05876325),(0,1.20843,-0.061733253),(-0.0714375,1.20843,0.04271175),(-0.034222502,1.20843,0.07205175),(-0.1152225,1.20843,0.02007675),(-0.11956501,1.20843,-0.042675752),(-0.0797625,1.161,0.051014252),(-0.12755251,1.161,0.01791675),(-0.03771,1.161,0.061071754),(-0.0408825,1.161,-0.06526575),(0,1.161,-0.06828076),(-0.0975375,1.161,-0.056153253),(-0.103185005,1.161,-0.05554575),(-0.1265175,1.161,-0.032019753)]),
                 texCoord=TextureCoordinate(point=[(0.0763,0.4945),(0.0877,0.4617),(0.0525,0.4715),(0.0399,0.5407),(0.1491,0.4682),(0.2169,0.492),(0.2035,0.4795),(0.1915,0.4696),(0.1178,0.4708),(0.2635,0.4569),(0.3223,0.4193),(0.3214,0.4203),(0.0639,0.4488),(0.0777,0.4495),(0.1846,0.4438),(0.1504,0.4433),(0.1107,0.4532),(0.3222,0.4193),(0.2633,0.457),(0.3214,0.4203),(0.2198,0.4731),(0.2144,0.4674),(0.2035,0.4795),(0.2169,0.492),(0.2635,0.4569),(0.3214,0.4203),(0.0763,0.4945),(0.1178,0.4708),(0.1491,0.4682),(0.1915,0.4696),(0.1504,0.4433),(0.1107,0.4532),(0.0777,0.4495),(0.0639,0.4488),(0.3214,0.4203),(0.3222,0.4193),(0.2198,0.4731),(0.2144,0.4674),(0.1846,0.4438),(0.0639,0.4488),(0.0877,0.4617),(0.0763,0.4945),(0.0525,0.4715),(0.0777,0.4495),(0.1504,0.4433),(0.1491,0.4682),(0.1178,0.4708),(0.1107,0.4532),(0.3214,0.4203),(0.3214,0.4203),(0.3223,0.4193),(0.3222,0.4193),(0.2035,0.4795),(0.2144,0.4674),(0.2198,0.4731),(0.2169,0.492),(0.1915,0.4696),(0.1846,0.4438),(0.2633,0.457),(0.2635,0.4569),(0.0399,0.5407),(0.2169,0.492),(0.2035,0.4795),(0.2635,0.4569),(0.3214,0.4203),(0.1178,0.4708),(0.0763,0.4945),(0.1491,0.4682),(0.1915,0.4696),(0.1107,0.4532),(0.1504,0.4433),(0.0777,0.4495),(0.0639,0.4488),(0.3222,0.4193),(0.3214,0.4203),(0.2198,0.4731),(0.2144,0.4674),(0.1846,0.4438)]))),
             Group(DEF='t3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2907,10 +2770,8 @@ None
                 coord=Coordinate(point=[(0.070447505,1.2065018,0.06856426),(0.030892503,1.2076515,0.063344255),(0.03105,1.2076515,0.07389676),(0,1.2159721,-0.06441075),(0,1.1954902,0.06858675),(0.0459675,1.2196575,0.055716753),(0.114435,1.2175156,0.026061753),(0.0505125,1.2231675,0.06678676),(0.0407475,1.2159721,-0.06139575),(0.12312001,1.2160598,-0.051855754),(0.097852506,1.216035,-0.054578252),(0.085612506,1.2217726,0.047481753),(0.026595002,1.2196575,0.048426755),(0.121005,1.1988562,0.023834253),(0.09729,1.1988562,-0.057143252),(0.1156725,1.1988562,-0.055163253),(0.12575251,1.1988562,-0.04499325),(0.0747,1.1988562,0.047774255),(0.0407475,1.1988562,-0.06477075),(0.035842504,1.1948401,0.07841925),(0,1.1967931,0.07216425),(0,1.1988562,-0.067785755),(0.10989,1.2254175,0.014699251),(0.11184751,1.2242476,-0.04528575),(0.0973125,1.2242476,-0.050708253),(0.0402975,1.22418,-0.056805752),(0.096705,1.1854777,-0.052373253),(0.11346751,1.1854777,-0.050573252),(0.12080251,1.1854777,-0.04317075),(0.1163925,1.1854777,0.02081925),(0.07209,1.1854777,0.043701753),(0.0345375,1.1854777,0.052724253),(0.040252503,1.1854777,-0.06000075),(-0.030892503,1.2076515,0.063344255),(-0.0459675,1.2196575,0.055716753),(-0.026595002,1.2196575,0.048426755),(-0.035842504,1.1948401,0.07841925),(-0.070447505,1.2065018,0.06856426),(-0.0505125,1.2231675,0.06678676),(-0.03105,1.2076515,0.07389676),(-0.085612506,1.2217726,0.047481753),(-0.0747,1.1988562,0.047774255),(-0.114435,1.2175156,0.026061753),(-0.097852506,1.216035,-0.054578252),(-0.12312001,1.2160598,-0.051855754),(-0.1156725,1.1988562,-0.055163253),(-0.09729,1.1988562,-0.057143252),(-0.12575251,1.1988562,-0.04499325),(-0.0407475,1.1988562,-0.06477075),(-0.0407475,1.2159721,-0.06139575),(-0.121005,1.1988562,0.023834253),(0,1.2196575,0.04462425),(-0.11184751,1.2242476,-0.04528575),(-0.10989,1.2254175,0.014699251),(-0.0973125,1.2242476,-0.050708253),(-0.0402975,1.22418,-0.056805752),(0,1.22418,-0.05946075),(-0.11346751,1.1854777,-0.050573252),(-0.096705,1.1854777,-0.052373253),(-0.12080251,1.1854777,-0.04317075),(-0.1163925,1.1854777,0.02081925),(-0.07209,1.1854777,0.043701753),(-0.0345375,1.1854777,0.052724253),(0,1.1854777,0.06728175),(-0.040252503,1.1854777,-0.06000075),(0,1.1854777,-0.06297076)]),
                 texCoord=TextureCoordinate(point=[(0.4473,0.6921),(0.4449,0.6914),(0.4513,0.6918),(0.1025,0.5076),(0.0865,0.5614),(0.0652,0.5465),(0.0786,0.5849),(0.0516,0.5759),(0.1474,0.4856),(0.1963,0.4863),(0.0346,0.5664),(0.3214,0.4203),(0.3223,0.4192),(0.2638,0.4568),(0.2146,0.5039),(0.1227,0.5144),(0.4468,0.6898),(0.4495,0.6881),(0.1491,0.4682),(0.2169,0.492),(0.2035,0.4795),(0.1915,0.4696),(0.1178,0.4708),(0.2635,0.4569),(0.3223,0.4193),(0.3214,0.4203),(0.0763,0.4945),(0.0399,0.5407),(0.1474,0.4856),(0.1963,0.4863),(0.2146,0.5039),(0.2638,0.4568),(0.3214,0.4203),(0.2169,0.492),(0.2035,0.4795),(0.1915,0.4696),(0.1491,0.4682),(0.1178,0.4708),(0.0763,0.4945),(0.0399,0.5407),(0.3214,0.4203),(0.3223,0.4193),(0.4473,0.6921),(0.4449,0.6914),(0.4468,0.6898),(0.0763,0.4945),(0.1025,0.5076),(0.0865,0.5614),(0.0652,0.5465),(0.1227,0.5144),(0.0786,0.5849),(0.0516,0.5759),(0.1178,0.4708),(0.1474,0.4856),(0.0346,0.5664),(0.0399,0.5407),(0.2146,0.5039),(0.1963,0.4863),(0.2035,0.4795),(0.2169,0.492),(0.1915,0.4696),(0.2635,0.4569),(0.2638,0.4568),(0.1491,0.4682),(0.3214,0.4203),(0.3214,0.4203),(0.3223,0.4192),(0.3223,0.4193),(0.4495,0.6881),(0.4513,0.6918),(0.1963,0.4863),(0.1474,0.4856),(0.2146,0.5039),(0.2638,0.4568),(0.3214,0.4203),(0.2035,0.4795),(0.2169,0.492),(0.1915,0.4696),(0.1491,0.4682),(0.1178,0.4708),(0.0763,0.4945),(0.0399,0.5407),(0.3223,0.4193),(0.3214,0.4203)]))),
             Group(DEF='t2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='t1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2969,10 +2830,8 @@ None
                 coord=Coordinate(point=[(0.01208025,1.2700822,-0.04035375),(0.025627503,1.2700822,-0.03419775),(0.035145003,1.2700822,-0.013423501),(0.0274275,1.2700822,0.0010305007),(0,1.2700822,0.011823752),(-0.013612501,1.2700822,0.009708749),(-0.025627503,1.2700822,-0.03419775),(-0.035145003,1.2700822,-0.013423501),(0,1.2700822,-0.041951254),(0.013612501,1.2700822,0.009708749),(-0.01208025,1.2700822,-0.04035375),(-0.0274275,1.2700822,0.0010305007),(0.01208025,1.2576106,-0.04035375),(0.025627503,1.2576106,-0.03419775),(0.035145003,1.2576106,-0.013423501),(0.0274275,1.2576106,0.0010305007),(0,1.2576106,0.011823752),(-0.013612501,1.2576106,0.009708749),(-0.025627503,1.2576106,-0.03419775),(-0.035145003,1.2576106,-0.013423501),(0,1.2576106,-0.041951254),(0.013612501,1.2576106,0.009708749),(-0.01208025,1.2576106,-0.04035375),(-0.0274275,1.2576106,0.0010305007),(0.011130751,1.2745351,-0.03609675),(0,1.2745351,-0.037563752),(-0.011130751,1.2745351,-0.03609675),(-0.022680001,1.2745351,-0.030849751),(-0.030622499,1.2745351,-0.013511251),(-0.0245475,1.2745351,-0.0021600004),(-0.0122895,1.2745351,0.00555075),(0,1.2745351,0.0074587516),(0.0122895,1.2745351,0.00555075),(0.0245475,1.2745351,-0.0021600004),(0.030622499,1.2745351,-0.013511251),(0.022680001,1.2745351,-0.030849751),(0,1.2522262,-0.037563752),(0.011130751,1.2522262,-0.03609675),(0.022680001,1.2522262,-0.030849751),(0.030622499,1.2522262,-0.013513501),(0.0245475,1.2522262,-0.0021600004),(0.0122895,1.2522262,0.00555075),(0,1.2522262,0.0074587516),(-0.0122895,1.2522262,0.00555075),(-0.0245475,1.2522262,-0.0021600004),(-0.030622499,1.2522262,-0.013511251),(-0.022680001,1.2522262,-0.030849751),(-0.011130751,1.2522262,-0.03609675)]),
                 texCoord=TextureCoordinate(point=[(0.3995,0.6565),(0.4094,0.6578),(0.4164,0.6576),(0.4107,0.6559),(0.3906,0.6507),(0.3807,0.6555),(0.3719,0.6578),(0.3649,0.6576),(0.3906,0.6568),(0.4006,0.6555),(0.3818,0.6565),(0.3706,0.6559),(0.3995,0.6534),(0.4094,0.6549),(0.4164,0.6547),(0.4107,0.6527),(0.3906,0.6475),(0.3807,0.6518),(0.3719,0.6549),(0.3649,0.6547),(0.3906,0.6538),(0.4006,0.6518),(0.3818,0.6534),(0.3706,0.6527),(0.3995,0.6565),(0.3906,0.6568),(0.3818,0.6565),(0.3719,0.6578),(0.3649,0.6576),(0.3706,0.6559),(0.3807,0.6555),(0.3906,0.6507),(0.4006,0.6555),(0.4107,0.6559),(0.4164,0.6576),(0.4094,0.6578),(0.3906,0.6538),(0.3995,0.6534),(0.4094,0.6549),(0.4164,0.6547),(0.4107,0.6527),(0.4006,0.6518),(0.3906,0.6475),(0.3807,0.6518),(0.3706,0.6527),(0.3649,0.6547),(0.3719,0.6549),(0.3818,0.6534)]))),
             Group(DEF='c6_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='c5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2981,10 +2840,8 @@ None
                 coord=Coordinate(point=[(0.01208025,1.282176,-0.04035375),(0.025627503,1.282176,-0.03419775),(0.035145003,1.282176,-0.013423501),(0.0274275,1.282176,0.0010305007),(0,1.282176,0.011823752),(-0.013612501,1.282176,0.009708749),(-0.025627503,1.282176,-0.03419775),(-0.035145003,1.282176,-0.013423501),(0,1.282176,-0.041951254),(0.013612501,1.282176,0.009708749),(-0.01208025,1.282176,-0.04035375),(-0.0274275,1.282176,0.0010305007),(0.01208025,1.269927,-0.04035375),(0.025627503,1.269927,-0.03419775),(0.035145003,1.269927,-0.013423501),(0.0274275,1.269927,0.0010305007),(0,1.269927,0.011823752),(-0.013612501,1.269927,0.009708749),(-0.025627503,1.269927,-0.03419775),(-0.035145003,1.269927,-0.013423501),(0,1.269927,-0.041951254),(0.013612501,1.269927,0.009708749),(-0.01208025,1.269927,-0.04035375),(-0.0274275,1.269927,0.0010305007),(0.011130751,1.2866266,-0.03609675),(0,1.2866266,-0.037563752),(-0.011130751,1.2866266,-0.03609675),(-0.022680001,1.2866266,-0.030849751),(-0.030622499,1.2866266,-0.013511251),(-0.0245475,1.2866266,-0.0021600004),(-0.0122895,1.2866266,0.00555075),(0,1.2866266,0.0074587516),(0.0122895,1.2866266,0.00555075),(0.0245475,1.2866266,-0.0021600004),(0.030622499,1.2866266,-0.013511251),(0.022680001,1.2866266,-0.030849751),(0,1.2647655,-0.037563752),(0.011130751,1.2647655,-0.03609675),(0.022680001,1.2647655,-0.030849751),(0.030622499,1.2647655,-0.013511251),(0.0245475,1.2647655,-0.0021600004),(0.0122895,1.2647655,0.00555075),(0,1.2647655,0.0074587516),(-0.0122895,1.2647655,0.00555075),(-0.0245475,1.2647655,-0.0021600004),(-0.030622499,1.2647655,-0.013511251),(-0.022680001,1.2647655,-0.030849751),(-0.011130751,1.2647655,-0.03609675)]),
                 texCoord=TextureCoordinate(point=[(0.3995,0.6596),(0.4094,0.6606),(0.4164,0.6605),(0.4107,0.6591),(0.3906,0.6538),(0.3807,0.6592),(0.3719,0.6606),(0.3649,0.6605),(0.3906,0.6599),(0.4006,0.6592),(0.3818,0.6596),(0.3706,0.6591),(0.3995,0.6565),(0.4094,0.6578),(0.4164,0.6576),(0.4107,0.6559),(0.3906,0.6507),(0.3807,0.6555),(0.3719,0.6578),(0.3649,0.6576),(0.3906,0.6568),(0.4006,0.6555),(0.3818,0.6565),(0.3706,0.6559),(0.3995,0.6596),(0.3906,0.6599),(0.3818,0.6596),(0.3719,0.6606),(0.3649,0.6605),(0.3706,0.6591),(0.3807,0.6592),(0.3906,0.6538),(0.4006,0.6592),(0.4107,0.6591),(0.4164,0.6605),(0.4094,0.6606),(0.3906,0.6568),(0.3995,0.6565),(0.4094,0.6578),(0.4164,0.6576),(0.4107,0.6559),(0.4006,0.6555),(0.3906,0.6507),(0.3807,0.6555),(0.3706,0.6559),(0.3649,0.6576),(0.3719,0.6578),(0.3818,0.6565)]))),
             Group(DEF='c5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='c4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -2993,10 +2850,8 @@ None
                 coord=Coordinate(point=[(0.01208025,1.295271,-0.04035375),(0.025627503,1.295271,-0.03419775),(0.035145003,1.295271,-0.013423501),(0.0274275,1.295271,0.0010305007),(0,1.295271,0.011823752),(-0.013612501,1.295271,0.009708749),(-0.025627503,1.295271,-0.03419775),(-0.035145003,1.295271,-0.013423501),(0,1.295271,-0.041951254),(0.013612501,1.295271,0.009708749),(-0.01208025,1.295271,-0.04035375),(-0.0274275,1.295271,0.0010305007),(0.01208025,1.2823133,-0.04035375),(0.025627503,1.2823133,-0.03419775),(0.035145003,1.2823133,-0.013423501),(0.0274275,1.2823133,0.0010305007),(0,1.2823133,0.011823752),(-0.013612501,1.2823133,0.009708749),(-0.025627503,1.2823133,-0.03419775),(-0.035145003,1.2823133,-0.013423501),(0,1.2823133,-0.041951254),(0.013612501,1.2823133,0.009708749),(-0.01208025,1.2823133,-0.04035375),(-0.0274275,1.2823133,0.0010305007),(0.011130751,1.2997216,-0.03609675),(0,1.2997216,-0.037563752),(-0.011130751,1.2997216,-0.03609675),(-0.022680001,1.2997216,-0.030849751),(-0.030622499,1.2997216,-0.013511251),(-0.0245475,1.2997216,-0.0021600004),(-0.0122895,1.2997216,0.00555075),(0,1.2997216,0.0074587516),(0.0122895,1.2997216,0.00555075),(0.0245475,1.2997216,-0.0021600004),(0.030622499,1.2997216,-0.013511251),(0.022680001,1.2997216,-0.030849751),(0,1.2769021,-0.037563752),(0.011130751,1.2769021,-0.03609675),(0.022680001,1.2769021,-0.030849751),(0.030622499,1.2769021,-0.013511251),(0.0245475,1.2769021,-0.0021600004),(0.0122895,1.2769021,0.00555075),(0,1.2769021,0.0074587516),(-0.0122895,1.2769021,0.00555075),(-0.0245475,1.2769021,-0.0021600004),(-0.030622499,1.2769021,-0.013511251),(-0.022680001,1.2769021,-0.030849751),(-0.011130751,1.2769021,-0.03609675)]),
                 texCoord=TextureCoordinate(point=[(0.3995,0.6628),(0.4094,0.6635),(0.4164,0.6634),(0.4107,0.6624),(0.3906,0.657),(0.3807,0.6628),(0.3719,0.6635),(0.3649,0.6634),(0.3906,0.6629),(0.4006,0.6628),(0.3818,0.6628),(0.3706,0.6624),(0.3995,0.6596),(0.4094,0.6606),(0.4164,0.6605),(0.4107,0.6591),(0.3906,0.6538),(0.3807,0.6592),(0.3719,0.6606),(0.3649,0.6605),(0.3906,0.6599),(0.4006,0.6592),(0.3818,0.6596),(0.3706,0.6591),(0.3995,0.6628),(0.3906,0.6629),(0.3818,0.6628),(0.3719,0.6635),(0.3649,0.6634),(0.3706,0.6624),(0.3807,0.6628),(0.3906,0.657),(0.4006,0.6628),(0.4107,0.6624),(0.4164,0.6634),(0.4094,0.6635),(0.3906,0.6599),(0.3995,0.6596),(0.4094,0.6606),(0.4164,0.6605),(0.4107,0.6591),(0.4006,0.6592),(0.3906,0.6538),(0.3807,0.6592),(0.3706,0.6591),(0.3649,0.6605),(0.3719,0.6606),(0.3818,0.6596)]))),
             Group(DEF='c4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='c3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3005,10 +2860,8 @@ None
                 coord=Coordinate(point=[(0.01208025,1.3066921,-0.04035375),(0.025627503,1.3066921,-0.03419775),(0.035145003,1.3066921,-0.013423501),(0.0274275,1.3066921,0.0010305007),(0,1.3066921,0.011823752),(-0.013612501,1.3066921,0.009708749),(-0.025627503,1.3066921,-0.03419775),(-0.035145003,1.3066921,-0.013423501),(0,1.3066921,-0.041951254),(0.013612501,1.3066921,0.009708749),(-0.01208025,1.3066921,-0.04035375),(-0.0274275,1.3066921,0.0010305007),(0.01208025,1.2951338,-0.04035375),(0.025627503,1.2951338,-0.03419775),(0.035145003,1.2951338,-0.013423501),(0.0274275,1.2951338,0.0010305007),(0,1.2951338,0.011823752),(-0.013612501,1.2951338,0.009708749),(-0.025627503,1.2951338,-0.03419775),(-0.035145003,1.2951338,-0.013423501),(0,1.2951338,-0.041951254),(0.013612501,1.2951338,0.009708749),(-0.01208025,1.2951338,-0.04035375),(-0.0274275,1.2951338,0.0010305007),(0.011130751,1.3111606,-0.03609675),(0,1.3111606,-0.037563752),(-0.011130751,1.3111606,-0.03609675),(-0.022680001,1.3111606,-0.030849751),(-0.030622499,1.3111606,-0.013511251),(-0.0245475,1.3111606,-0.0021600004),(-0.0122895,1.3111606,0.00555075),(0,1.3111606,0.0074587516),(0.0122895,1.3111606,0.00555075),(0.0245475,1.3111606,-0.0021600004),(0.030622499,1.3111606,-0.013511251),(0.022680001,1.3111606,-0.030849751),(0,1.2897046,-0.037563752),(0.011130751,1.2897046,-0.03609675),(0.022680001,1.2897046,-0.030849751),(0.030622499,1.2897046,-0.013511251),(0.0245475,1.2897046,-0.0021600004),(0.0122895,1.2897046,0.00555075),(0,1.2897046,0.0074587516),(-0.0122895,1.2897046,0.00555075),(-0.0245475,1.2897046,-0.0021600004),(-0.030622499,1.2897046,-0.013511251),(-0.022680001,1.2897046,-0.030849751),(-0.011130751,1.2897046,-0.03609675)]),
                 texCoord=TextureCoordinate(point=[(0.3995,0.6659),(0.4094,0.6664),(0.4164,0.6663),(0.4107,0.6656),(0.3906,0.6601),(0.3807,0.6665),(0.3719,0.6664),(0.3649,0.6663),(0.3906,0.666),(0.4006,0.6665),(0.3818,0.6659),(0.3706,0.6656),(0.3995,0.6628),(0.4094,0.6635),(0.4164,0.6634),(0.4107,0.6624),(0.3906,0.657),(0.3807,0.6628),(0.3719,0.6635),(0.3649,0.6634),(0.3906,0.6629),(0.4006,0.6628),(0.3818,0.6628),(0.3706,0.6624),(0.3995,0.6659),(0.3906,0.666),(0.3818,0.6659),(0.3719,0.6664),(0.3649,0.6663),(0.3706,0.6656),(0.3807,0.6665),(0.3906,0.6601),(0.4006,0.6665),(0.4107,0.6656),(0.4164,0.6663),(0.4094,0.6664),(0.3906,0.6629),(0.3995,0.6628),(0.4094,0.6635),(0.4164,0.6634),(0.4107,0.6624),(0.4006,0.6628),(0.3906,0.657),(0.3807,0.6628),(0.3706,0.6624),(0.3649,0.6634),(0.3719,0.6635),(0.3818,0.6628)]))),
             Group(DEF='c3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='c2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3034,10 +2887,8 @@ None
                 coord=Coordinate(point=[(0.01208025,1.331379,-0.04035375),(0.025627503,1.331379,-0.03419775),(0.035145003,1.331379,-0.0134212505),(0.0274275,1.331379,0.0010305007),(0,1.331379,0.011823752),(-0.013612501,1.331379,0.009708749),(-0.025627503,1.331379,-0.03419775),(-0.035145003,1.331379,-0.013423501),(0,1.331379,-0.041951254),(0.013612501,1.331379,0.009708749),(-0.01208025,1.331379,-0.04035375),(-0.0274275,1.331379,0.0010305007),(0.01208025,1.3185495,-0.04035375),(0.025627503,1.3185495,-0.03419775),(0.035145003,1.3185495,-0.013423501),(0.0274275,1.3185495,0.0010305007),(0,1.3185495,0.011823752),(-0.013612501,1.3185495,0.009708749),(-0.025627503,1.3185495,-0.03419775),(-0.035145003,1.3185495,-0.013423501),(0,1.3185495,-0.041951254),(0.013612501,1.3185495,0.009708749),(-0.01208025,1.3185495,-0.04035375),(-0.0274275,1.3185495,0.0010305007),(0.011130751,1.3358318,-0.03609675),(0,1.3358318,-0.037563752),(-0.011130751,1.3358318,-0.03609675),(-0.022680001,1.3358318,-0.030849751),(-0.030622499,1.3358318,-0.013511251),(-0.0245475,1.3358318,-0.0021600004),(-0.0122895,1.3358318,0.00555075),(0,1.3358318,0.0074587516),(0.0122895,1.3358318,0.00555075),(0.0245475,1.3358318,-0.0021600004),(0.030622499,1.3358318,-0.013511251),(0.022680001,1.3358318,-0.030849751),(0,1.3138245,-0.037563752),(0.011130751,1.3138245,-0.03609675),(0.022680001,1.3138245,-0.030849751),(0.030622499,1.3138245,-0.013511251),(0.0245475,1.3138245,-0.0021600004),(0.0122895,1.3138245,0.00555075),(0,1.3138245,0.0074587516),(-0.0122895,1.3138245,0.00555075),(-0.0245475,1.3138245,-0.0021600004),(-0.030622499,1.3138245,-0.013511251),(-0.022680001,1.3138245,-0.030849751),(-0.011130751,1.3138245,-0.03609675)]),
                 texCoord=TextureCoordinate(point=[(0.3995,0.669),(0.4094,0.6692),(0.4164,0.6692),(0.4107,0.6689),(0.3906,0.6632),(0.3807,0.6702),(0.3719,0.6692),(0.3649,0.6692),(0.3906,0.669),(0.4006,0.6702),(0.3818,0.669),(0.3706,0.6689),(0.3995,0.6659),(0.4094,0.6664),(0.4164,0.6663),(0.4107,0.6656),(0.3906,0.6601),(0.3807,0.6665),(0.3719,0.6664),(0.3649,0.6663),(0.3906,0.666),(0.4006,0.6665),(0.3818,0.6659),(0.3706,0.6656),(0.3995,0.669),(0.3906,0.669),(0.3818,0.669),(0.3719,0.6692),(0.3649,0.6692),(0.3706,0.6689),(0.3807,0.6702),(0.3906,0.6632),(0.4006,0.6702),(0.4107,0.6689),(0.4164,0.6692),(0.4094,0.6692),(0.3906,0.666),(0.3995,0.6659),(0.4094,0.6664),(0.4164,0.6663),(0.4107,0.6656),(0.4006,0.6665),(0.3906,0.6601),(0.3807,0.6665),(0.3706,0.6656),(0.3649,0.6663),(0.3719,0.6664),(0.3818,0.6659)]))),
             Group(DEF='c1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='skull_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3427,10 +3278,8 @@ None
                 coord=Coordinate(point=[(0.19715177,0.6884955,0.017084252),(0.16690727,0.6884955,0.017084252),(0.17230727,0.6948585,0.033036754),(0.19136927,0.6948383,0.034593754),(0.16983001,0.69243526,0.027677251),(0.19037926,0.7063628,0.024972752),(0.19406252,0.7059195,0.014298751),(0.16910776,0.70591724,0.014323501),(0.17471926,0.70634925,0.024201002),(0.17034976,0.68456703,0.018283501),(0.16966125,0.6850215,0.024734251),(0.17344576,0.689436,0.032796003),(0.18940501,0.69117075,0.03430575),(0.19404002,0.684279,0.017797502),(0.19088101,0.71277976,0.013095001),(0.18594001,0.7130925,0.021753002),(0.17669927,0.7130858,0.021181501),(0.17110576,0.71273476,0.0131737515),(0.19276427,0.705258,0.012624751),(0.19572526,0.688554,0.0152865015),(0.193356,0.68534327,0.01582425),(0.17097527,0.68562,0.016308),(0.16831125,0.6886395,0.015264001),(0.17042626,0.705384,0.012622501),(0.17211376,0.71114624,0.011655001),(0.19001476,0.71118677,0.011580751)]),
                 texCoord=TextureCoordinate(point=[(0.8327,0.0273),(0.8381,0.0441),(0.8625,0.0344),(0.8476,0.0256),(0.8625,0.0359),(0.8466,0.0257),(0.9122,0.2724),(0.904,0.2568),(0.8948,0.2599),(0.8401,0.0478),(0.8395,0.0482),(0.8319,0.0206),(0.9141,0.2788),(0.844,0.0192),(0.8432,0.0193),(0.8491,0.0466),(0.8611,0.0409),(0.8611,0.0397),(0.8814,0.2691),(0.8989,0.2764),(0.9014,0.2535),(0.9142,0.2789),(0.9026,0.2823),(0.9033,0.2821),(0.8928,0.2563),(0.8819,0.264),(0.8327,0.0273),(0.8381,0.0441),(0.8395,0.0482),(0.8401,0.0478),(0.904,0.2568),(0.9122,0.2724),(0.9141,0.2788),(0.9142,0.2789)]))),
             Group(DEF='l_trapezium_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metacarpal_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3456,10 +3305,8 @@ None
                 coord=Coordinate(point=[(0.195615,0.669213,0.031689003),(0.18601875,0.662184,0.027389253),(0.19744425,0.6648435,0.027294751),(0.16755974,0.6742665,0.034380004),(0.17370449,0.678717,0.040486503),(0.18907875,0.6812595,0.042725254),(0.19660725,0.67219204,0.029547002),(0.1722645,0.6645195,0.024102),(0.198918,0.6701063,0.025341751),(0.1762335,0.65888774,0.053905502),(0.18801224,0.663687,0.052389003),(0.1854315,0.65385675,0.056967754),(0.178551,0.65117025,0.055858504),(0.17542575,0.6468525,0.040709253),(0.16953525,0.65403,0.049907252),(0.1727415,0.6506775,0.051819753),(0.1767645,0.6451425,0.044392504),(0.19318275,0.654795,0.042043503),(0.19013175,0.6473925,0.04822425),(0.1840635,0.64764,0.040054504),(0.18336375,0.644535,0.046896752),(0.1908675,0.67512155,0.022905001),(0.19100025,0.676467,0.024473252),(0.18467775,0.6835208,0.0354285),(0.176166,0.681705,0.03420225),(0.17278649,0.678204,0.028642502),(0.175626,0.6742215,0.022423502),(0.17446725,0.66390526,0.018724501),(0.18484199,0.66138977,0.020907002),(0.19433025,0.6638355,0.021001501),(0.19541025,0.66710025,0.019818),(0.19028474,0.670851,0.017736752),(0.17713575,0.6698655,0.016641002)]),
                 texCoord=TextureCoordinate(point=[(0.8786,0.0507),(0.857,0.0621),(0.8601,0.0649),(0.867,0.0598),(0.8887,0.0786),(0.8747,0.0865),(0.8533,0.0697),(0.876,0.0783),(0.893,0.0688),(0.8992,0.0702),(0.8819,0.0483),(0.8561,0.0728),(0.8736,0.0851),(0.8532,0.0697),(0.8503,0.0646),(0.8986,0.0785),(0.897,0.0809),(0.8914,0.0813),(0.8802,0.0861),(0.8841,0.0856),(0.8821,0.0883),(0.8487,0.0595),(0.8509,0.0581),(0.8683,0.0489),(0.868,0.0507),(0.8608,0.0544),(0.8505,0.0603),(0.8455,0.0706),(0.8468,0.073),(0.8455,0.0707),(0.8437,0.0676),(0.8416,0.0639),(0.8422,0.0648),(0.8729,0.2464),(0.8482,0.2317),(0.8612,0.2211),(0.8847,0.2342),(0.8433,0.2381),(0.8632,0.2548),(0.8814,0.2316),(0.8625,0.2222),(0.8799,0.2506),(0.8891,0.243),(0.8922,0.232),(0.8964,0.2371)]))),
             Group(DEF='l_carpal_proximal_phalanx_1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_distal_phalanx_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3485,10 +3332,8 @@ None
                 coord=Coordinate(point=[(0.166977,0.6858473,0.0032265),(0.19887976,0.6858473,0.0032265),(0.19663201,0.70836526,0.00230625),(0.16765426,0.70836526,0.00251325),(0.16957352,0.68211,0.003339),(0.19546652,0.68211,0.003339),(0.19281827,0.71530426,0.0018315002),(0.170982,0.71531105,0.0019709999),(0.16942726,0.706842,7.1774976E-4),(0.16802101,0.687564,0.0015682501),(0.19680077,0.687564,0.0015817503),(0.19487476,0.706842,5.2200013E-4),(0.19715177,0.68846405,0.01708425),(0.16690727,0.68846405,0.01708425),(0.19406252,0.70588803,0.014298751),(0.16910776,0.70588577,0.0143235),(0.17034976,0.6845355,0.018283501),(0.19404002,0.68424755,0.017797502),(0.19088101,0.7127483,0.013095001),(0.17110576,0.7127033,0.013176001),(0.195084,0.68997604,0.01834425),(0.19240876,0.70506227,0.01593225),(0.18965477,0.71100456,0.0148905),(0.17252776,0.7109663,0.014958001),(0.17079976,0.70506227,0.015954752),(0.16889401,0.68997604,0.01834425),(0.17187302,0.68657404,0.0193815),(0.19239075,0.6863243,0.018963)]),
                 texCoord=TextureCoordinate(point=[(0.813,0.0266),(0.8136,0.0488),(0.8136,0.0488),(0.8133,0.0266),(0.8111,0.0474),(0.8105,0.0283),(0.8108,0.0283),(0.8111,0.0474),(0.8141,0.0525),(0.8141,0.0525),(0.8123,0.0198),(0.8125,0.0198),(0.9273,0.2479),(0.9315,0.2698),(0.9337,0.2676),(0.9301,0.2489),(0.9262,0.2444),(0.9337,0.2762),(0.9335,0.2763),(0.8381,0.0441),(0.904,0.2568),(0.8327,0.0273),(0.9122,0.2724),(0.8401,0.0478),(0.9014,0.2535),(0.8395,0.0482),(0.9142,0.2789),(0.8319,0.0206),(0.9141,0.2788),(0.8381,0.0441),(0.8327,0.0273),(0.8319,0.0206),(0.9141,0.2788),(0.9122,0.2724),(0.904,0.2568),(0.9014,0.2535),(0.8395,0.0482)]))),
             Group(DEF='l_trapezoid_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metacarpal_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3497,10 +3342,8 @@ None
                 coord=Coordinate(point=[(0.19339876,0.638955,0.021003751),(0.18276526,0.63909,0.024131251),(0.17321175,0.638955,0.02103975),(0.1950795,0.6577425,0.0217215),(0.170613,0.65776503,0.021951001),(0.19483426,0.6379425,0.00549675),(0.1692585,0.6584625,0.004752),(0.19741051,0.6584625,0.004752),(0.18328726,0.65544754,0.02580975),(0.20073377,0.6688958,0.020949751),(0.17247601,0.6379425,0.00549675),(0.166977,0.68586975,0.0032264998),(0.19887976,0.68586975,0.0032264998),(0.19715177,0.68848425,0.01708425),(0.16690727,0.68848425,0.01708425),(0.17227127,0.6644925,0.02410425),(0.18602552,0.662175,0.0273915),(0.19745101,0.66483,0.027297001),(0.19892476,0.6700883,0.025344001),(0.17181677,0.6584175,0.0020565),(0.17471701,0.63841504,0.0038025002),(0.19268551,0.63841504,0.0038025002),(0.19483201,0.65826,0.0020677499),(0.19619551,0.68573475,6.682496E-4),(0.16898176,0.68573475,6.682496E-4),(0.18279676,0.6350625,0.022761002),(0.19018576,0.634995,0.020340001),(0.19159876,0.63441,0.006093),(0.19167301,0.6365025,0.004437),(0.17574526,0.6365025,0.004437),(0.1742085,0.63441,0.00610425),(0.17480476,0.634995,0.020421),(0.1848285,0.6664275,0.0300015),(0.17479351,0.66832876,0.02739375),(0.17073001,0.68893427,0.021192752),(0.19451927,0.68893874,0.021183752),(0.19371825,0.6720975,0.028064251),(0.19345501,0.6682433,0.02956275),(0.16989751,0.690525,0.0143145),(0.16927876,0.6887498,0.005364),(0.1955385,0.6887498,0.005364),(0.19436401,0.690525,0.0143145)]),
                 texCoord=TextureCoordinate(point=[(0.8514,0.0953),(0.8526,0.0788),(0.846,0.0768),(0.8466,0.0958),(0.8195,0.0808),(0.8225,0.0994),(0.8225,0.0994),(0.8195,0.0808),(0.8903,0.2261),(0.8467,0.0958),(0.8381,0.0441),(0.8136,0.0488),(0.8561,0.0728),(0.8532,0.0697),(0.8381,0.0441),(0.8136,0.0488),(0.8436,0.0662),(0.8533,0.0697),(0.8503,0.0646),(0.8461,0.0998),(0.8248,0.1027),(0.8248,0.1027),(0.8462,0.0997),(0.8498,0.0994),(0.8184,0.0977),(0.8157,0.0811),(0.8157,0.0809),(0.8184,0.0977),(0.8165,0.0457),(0.8341,0.0424),(0.8341,0.0424),(0.8165,0.0457),(0.844,0.0417),(0.8554,0.0622),(0.8575,0.0659),(0.8594,0.0677),(0.8574,0.0658),(0.844,0.0417),(0.8099,0.0493),(0.8099,0.0493),(0.82,0.101),(0.82,0.101),(0.8821,0.2087),(0.8838,0.2252),(0.9098,0.1997),(0.916,0.2175),(0.8866,0.2074),(0.904,0.2568),(0.9273,0.2479),(0.8814,0.2316),(0.8847,0.2342),(0.9197,0.2166),(0.9083,0.2577),(0.925,0.2515),(0.8813,0.2388),(0.8986,0.2602),(0.931,0.2468)]))),
             Group(DEF='l_metacarpal_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_proximal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3509,10 +3352,8 @@ None
                 coord=Coordinate(point=[(0.18112727,0.60633004,0.022119751),(0.17212276,0.60702753,0.007938),(0.19115777,0.60939,0.007960501),(0.18112727,0.60651004,0.005535001),(0.18241201,0.633825,0.023591252),(0.19239302,0.63367426,0.020673001),(0.19349551,0.63295877,0.0078300005),(0.17321852,0.63295877,0.007841251),(0.17321852,0.63367426,0.020673001),(0.18241201,0.6297705,0.005940001),(0.17212276,0.606915,0.019422002),(0.19115777,0.609255,0.019446751),(0.17380126,0.6032475,0.0086625),(0.18755777,0.60138,0.007983001),(0.17380126,0.603135,0.018634502),(0.18755777,0.6012675,0.019305),(0.18110251,0.6006825,0.007956001),(0.18110251,0.60057,0.019503001),(0.19338977,0.639072,0.021003751),(0.18275851,0.639198,0.024131251),(0.17320277,0.639072,0.02103975),(0.19482751,0.6380505,0.0054967506),(0.19293302,0.6328845,0.0055282507),(0.17321852,0.6328845,0.0055282507),(0.18241201,0.62973905,0.005661001),(0.17246926,0.6380505,0.0054967506),(0.19006877,0.6449715,0.018945001),(0.18243676,0.6452955,0.022254752),(0.17512201,0.6449805,0.018999),(0.174816,0.64455754,0.00602775),(0.19139627,0.64455974,0.0060547506),(0.18243451,0.6307133,0.005006251),(0.19218826,0.63380474,0.0048420005),(0.19397926,0.63842404,0.0048420005),(0.19079551,0.64438653,0.0044437507),(0.17552252,0.64438426,0.0044190004),(0.17343451,0.63839704,0.0048442506),(0.17408927,0.6337418,0.0048442506)]),
                 texCoord=TextureCoordinate(point=[(0.8511,0.1006),(0.8514,0.0953),(0.8466,0.0958),(0.8466,0.1011),(0.8225,0.0994),(0.8283,0.1035),(0.9023,0.1969),(0.8225,0.0994),(0.8467,0.0958),(0.8857,0.2021),(0.8231,0.1042),(0.8931,0.1724),(0.8782,0.1769),(0.8338,0.1268),(0.8493,0.125),(0.8543,0.1273),(0.8302,0.1302),(0.8258,0.1072),(0.8236,0.1075),(0.8231,0.1042),(0.8504,0.1328),(0.8508,0.1334),(0.8781,0.1731),(0.8909,0.1692),(0.8352,0.1346),(0.8353,0.1353),(0.8228,0.0929),(0.844,0.0896),(0.8482,0.0889),(0.8441,0.0896),(0.8228,0.0929),(0.8203,0.0995),(0.8207,0.1038),(0.8212,0.1068),(0.8207,0.1037),(0.8203,0.0995),(0.8206,0.0933),(0.8205,0.0933),(0.8815,0.2034),(0.8821,0.2087),(0.9098,0.1997),(0.8866,0.2074),(0.8737,0.1777),(0.8969,0.1707),(0.9052,0.1925),(0.9074,0.1918),(0.9084,0.195),(0.876,0.171),(0.891,0.1665)]))),
             Group(DEF='l_carpal_proximal_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_middle_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3521,10 +3362,8 @@ None
                 coord=Coordinate(point=[(0.17981552,0.5814675,0.0060615004),(0.17215426,0.581715,0.0187065),(0.18831602,0.584235,0.018918),(0.19035676,0.6023385,0.01937475),(0.19035676,0.60245776,0.007888501),(0.17213401,0.607077,0.00793575),(0.19116676,0.609426,0.0079605),(0.17213401,0.60695773,0.019422),(0.19116676,0.609309,0.019444501),(0.17627852,0.61142623,0.00798075),(0.17627852,0.611307,0.01946475),(0.18567227,0.61107075,0.0194625),(0.18567227,0.61119,0.007978501),(0.18113627,0.6065505,0.0055327504),(0.18113627,0.60636604,0.022119751),(0.17982227,0.5812875,0.021402001),(0.18550576,0.5763825,0.018405002),(0.18002251,0.57555,0.0185895),(0.17214976,0.5818275,0.0084645),(0.17369325,0.57798,0.017784001),(0.173691,0.57807,0.00932175),(0.18831152,0.584352,0.0082755005),(0.18550126,0.576495,0.0086917505),(0.18001801,0.57564,0.008667001)]),
                 texCoord=TextureCoordinate(point=[(0.8782,0.1769),(0.8543,0.1273),(0.8574,0.1518),(0.8703,0.1535),(0.8493,0.125),(0.8504,0.1318),(0.8846,0.1491),(0.8931,0.1724),(0.8349,0.1336),(0.8379,0.1515),(0.8533,0.1496),(0.8338,0.1268),(0.8302,0.1302),(0.8351,0.1545),(0.849,0.1233),(0.8336,0.1251),(0.849,0.123),(0.8335,0.1249),(0.8539,0.1573),(0.8543,0.1579),(0.8703,0.1496),(0.8822,0.146),(0.8398,0.159),(0.8399,0.1597),(0.8737,0.1777),(0.8664,0.1541),(0.8969,0.1707),(0.8878,0.1476),(0.8796,0.181),(0.8945,0.1764),(0.8684,0.1475),(0.8822,0.1433)]))),
             Group(DEF='l_carpal_middle_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_distal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3558,10 +3397,8 @@ None
                 coord=Coordinate(point=[(0.19895177,0.68589,-0.012235501),(0.16650002,0.685935,-0.012237751),(0.19661626,0.7085138,0.00230625),(0.19730927,0.70894355,-0.012406501),(0.16780052,0.7089413,-0.01237725),(0.16696352,0.6860025,0.0032242502),(0.16764076,0.708516,0.00251325),(0.19886626,0.6860025,0.0032242502),(0.16885127,0.68238,-0.012422251),(0.16914827,0.682155,0.0034470002),(0.19554977,0.682155,0.0034470002),(0.19560602,0.682335,-0.0124200005),(0.17095727,0.71546626,0.00198675),(0.17106527,0.7156508,-0.01096875),(0.19389826,0.715653,-0.010989001),(0.19344376,0.715464,0.0018449998),(0.16791302,0.6874043,0.00576225),(0.16933276,0.70686454,0.0049185003),(0.19497602,0.7068623,0.00472275),(0.19692002,0.6874043,0.0057735),(0.19692676,0.6875753,-0.014348251),(0.19551602,0.7073843,-0.0148950005),(0.16954426,0.707382,-0.01486575),(0.16759576,0.68762255,-0.01435275)]),
                 texCoord=TextureCoordinate(point=[(0.9315,0.2698),(0.8136,0.0488),(0.7924,0.0507),(0.7911,0.0281),(0.8136,0.0488),(0.813,0.0266),(0.791,0.0281),(0.7924,0.0508),(0.7924,0.0543),(0.8143,0.0526),(0.8143,0.0526),(0.7924,0.0543),(0.9335,0.2763),(0.7903,0.0215),(0.7903,0.0215),(0.8123,0.0198),(0.7875,0.03),(0.7875,0.03),(0.7887,0.0494),(0.7887,0.0495),(0.9277,0.2691),(0.8167,0.0279),(0.8173,0.0471),(0.8173,0.0471),(0.9273,0.2479),(0.9479,0.2423),(0.9531,0.2644),(0.9318,0.2697),(0.9473,0.2389),(0.926,0.2443),(0.955,0.2707),(0.9551,0.2707),(0.9337,0.2763),(0.9563,0.262),(0.9518,0.243),(0.928,0.269),(0.924,0.2502),(0.9241,0.2502)]))),
             Group(DEF='l_capitate_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metacarpal_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3587,10 +3424,8 @@ None
                 coord=Coordinate(point=[(0.17212725,0.6032025,-0.0089145005),(0.19116,0.605835,-0.008982),(0.1811295,0.60255,-0.0117247505),(0.19293524,0.632781,0.00312975),(0.19293524,0.63291377,-0.0098775),(0.17322075,0.63291377,-0.0098775),(0.17322075,0.632781,0.00312975),(0.18241425,0.629595,-0.012150001),(0.1738035,0.5989725,-0.00803925),(0.18755999,0.59688,-0.00864675),(0.1738035,0.5991075,0.0010980002),(0.18755999,0.597015,0.0018450001),(0.181107,0.5960925,-0.0086445),(0.181107,0.5962275,0.00207),(0.17212725,0.60336,0.0017370003),(0.1811295,0.60277504,0.0048690005),(0.18241425,0.62957925,0.0053662504),(0.19116,0.6059925,0.0016695001),(0.19293524,0.6327585,0.0055282507),(0.17322075,0.6327585,0.0055282507),(0.18241425,0.629613,0.00565875),(0.19482975,0.6379245,0.0054945005),(0.18241425,0.6296468,-0.0124425),(0.19293524,0.63273823,-0.012372751),(0.17322075,0.63273823,-0.012372751),(0.17237474,0.6382395,-0.01263375),(0.19482525,0.6382395,-0.01263375),(0.1724715,0.6379245,0.0054945005),(0.19118474,0.64429873,-0.012044251),(0.19118924,0.6443325,0.004446),(0.1746945,0.6443325,0.004446),(0.17461124,0.64429873,-0.012044251),(0.19244024,0.63381153,0.0062302505),(0.1824345,0.630639,0.00632925),(0.17378774,0.63378,0.0062302505),(0.17309475,0.6383678,0.0062100003),(0.175158,0.64441574,0.006192),(0.1907955,0.64441574,0.006192),(0.19433475,0.63837224,0.0062100003),(0.182439,0.63078976,-0.01309275),(0.19203974,0.63358873,-0.0133245),(0.19378799,0.63826203,-0.01347525),(0.190512,0.64422,-0.01348875),(0.1754325,0.64422,-0.01348875),(0.17351775,0.63827103,-0.01347525),(0.17424674,0.6335258,-0.0133245)]),
                 texCoord=TextureCoordinate(point=[(0.8168,0.105),(0.8225,0.0994),(0.7939,0.1016),(0.7996,0.1065),(0.9311,0.1887),(0.7939,0.1016),(0.8225,0.0994),(0.9145,0.1932),(0.794,0.107),(0.9232,0.1611),(0.908,0.1649),(0.8025,0.1324),(0.818,0.1313),(0.7986,0.1359),(0.7957,0.11),(0.7939,0.1101),(0.794,0.107),(0.8228,0.1342),(0.8186,0.1401),(0.819,0.1409),(0.9081,0.1606),(0.921,0.1574),(0.8033,0.1412),(0.8033,0.142),(0.8231,0.1042),(0.8212,0.1078),(0.8231,0.1042),(0.8236,0.1075),(0.7948,0.0956),(0.8206,0.0932),(0.8206,0.0932),(0.7948,0.0956),(0.8249,0.0987),(0.8253,0.1032),(0.8258,0.1063),(0.8253,0.1032),(0.8249,0.0987),(0.823,0.0929),(0.823,0.0929),(0.7917,0.1017),(0.7916,0.1064),(0.7918,0.1091),(0.7916,0.1063),(0.7917,0.1017),(0.7927,0.0957),(0.7927,0.0957),(0.9376,0.1925),(0.9098,0.1997),(0.927,0.1595),(0.9344,0.1846),(0.9361,0.1842),(0.9366,0.1872),(0.9035,0.1654),(0.9061,0.1582),(0.9213,0.1544),(0.9096,0.1911),(0.9084,0.195),(0.9074,0.1918)]))),
             Group(DEF='l_carpal_proximal_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_middle_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3599,10 +3434,8 @@ None
                 coord=Coordinate(point=[(0.18004051,0.575235,-0.01091025),(0.17236575,0.57586503,0.0017190003),(0.18851851,0.578655,0.0018450001),(0.19035676,0.59820527,0.0018742502),(0.19035676,0.5980635,-0.00877725),(0.17213401,0.603243,-0.00891225),(0.19116676,0.60587776,-0.008982),(0.17213401,0.60338473,0.0017392504),(0.19116676,0.60602176,0.0016695001),(0.17627852,0.6081188,-0.0090405),(0.17627852,0.6082628,0.0016110002),(0.18567227,0.60799724,0.0016177503),(0.18567227,0.60785323,-0.00903375),(0.18113627,0.60257924,-0.0117247505),(0.18113627,0.60280204,0.00487125),(0.18003376,0.5754375,0.0044370005),(0.18574426,0.569835,0.0016402503),(0.18024077,0.5695425,0.0018000003),(0.17237025,0.57573,-0.008529751),(0.17392276,0.57165754,9.4500027E-4),(0.17392726,0.571545,-0.0075195003),(0.18852301,0.57852,-0.008802),(0.18574876,0.5697,-0.0080775),(0.18026777,0.5687775,-0.00807525)]),
                 texCoord=TextureCoordinate(point=[(0.908,0.1649),(0.8228,0.1342),(0.8238,0.1612),(0.9018,0.1387),(0.818,0.1313),(0.8186,0.139),(0.9163,0.135),(0.9232,0.1611),(0.8031,0.1401),(0.8044,0.1596),(0.8199,0.1584),(0.8025,0.1324),(0.7986,0.1359),(0.8014,0.1628),(0.8179,0.1294),(0.8023,0.1305),(0.8179,0.1291),(0.8023,0.1302),(0.8199,0.1671),(0.8202,0.1672),(0.902,0.1343),(0.914,0.1313),(0.8058,0.1681),(0.8058,0.1689),(0.9035,0.1654),(0.8978,0.139),(0.927,0.1595),(0.9196,0.1336),(0.9092,0.1696),(0.9243,0.1658),(0.9003,0.1324),(0.9142,0.1283)]))),
             Group(DEF='l_carpal_middle_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_distal_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3628,10 +3461,8 @@ None
                 coord=Coordinate(point=[(0.198119,0.687042,-0.02762325),(0.170811,0.689004,-0.0378135),(0.167447,0.68705,-0.027627753),(0.18288451,0.68998057,-0.040864505),(0.19411652,0.68892753,-0.037788752),(0.17140727,0.70506907,-0.027328502),(0.18300152,0.705456,-0.03395025),(0.19495127,0.7050758,-0.027317252),(0.19730927,0.7088671,-0.012406502),(0.19895177,0.6858113,-0.012235502),(0.16650002,0.6858653,-0.012237752),(0.16780052,0.7088648,-0.012377251),(0.19544627,0.6822001,-0.012318752),(0.19480726,0.68294257,-0.027729003),(0.19135801,0.6845333,-0.03642075),(0.18270901,0.68544227,-0.038772),(0.17352676,0.68458056,-0.036346503),(0.17064677,0.68294257,-0.027713252),(0.16916852,0.6822451,-0.012321001),(0.17186402,0.7155518,-0.010971001),(0.17436151,0.7118955,-0.026010003),(0.18283276,0.7122308,-0.030795753),(0.19188452,0.7118775,-0.025888503),(0.19353376,0.7155653,-0.010993502),(0.19522126,0.7069298,-0.010633501),(0.19659376,0.6876608,-0.010638002),(0.16794452,0.687708,-0.010640251),(0.16983676,0.70692754,-0.0106065)]),
                 texCoord=TextureCoordinate(point=[(0.7624,0.0345),(0.7525,0.0502),(0.7571,0.0508),(0.7729,0.0334),(0.7734,0.0512),(0.7924,0.0508),(0.791,0.0281),(0.9531,0.2644),(0.9665,0.2386),(0.9827,0.2362),(0.9706,0.2558),(0.9479,0.2423),(0.7736,0.0553),(0.7595,0.0549),(0.7559,0.0544),(0.7596,0.0549),(0.7736,0.0553),(0.7721,0.0268),(0.7644,0.0276),(0.7723,0.0268),(0.7938,0.0298),(0.795,0.0487),(0.9457,0.2448),(0.9501,0.2632),(0.7926,0.0543),(0.7926,0.0544),(0.7903,0.0215),(0.7903,0.0215),(0.9803,0.2531),(0.9874,0.236),(0.9479,0.2423),(0.9532,0.2644),(0.9832,0.2324),(0.9795,0.2325),(0.9656,0.2346),(0.9721,0.2624),(0.9795,0.2602),(0.9719,0.2625),(0.9502,0.2632),(0.9457,0.2447),(0.9471,0.2389),(0.9471,0.2388),(0.9551,0.2707),(0.955,0.2707)]))),
             Group(DEF='l_hamate_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_metacarpal_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3640,10 +3471,8 @@ None
                 coord=Coordinate(point=[(0.19615726,0.6612975,-0.02849175),(0.16982551,0.6612975,-0.02849175),(0.19425151,0.6400575,-0.028514251),(0.17241302,0.6400125,-0.028512001),(0.19811927,0.6870938,-0.027623251),(0.16744727,0.687105,-0.027630001),(0.19760627,0.6595425,-0.012082499),(0.16938001,0.6595425,-0.012082499),(0.17236577,0.6383475,-0.0126315),(0.19481401,0.6383475,-0.0126315),(0.19895177,0.68586075,-0.0122355),(0.16650002,0.68591475,-0.01223775),(0.19287677,0.63432,-0.01361925),(0.19226252,0.6353775,-0.0273915),(0.17446727,0.6353325,-0.02738475),(0.17442676,0.63432,-0.01361925),(0.19209151,0.6405525,-0.030501),(0.19397026,0.6616575,-0.03125025),(0.19581077,0.68763155,-0.02994075),(0.16992901,0.68764275,-0.02994525),(0.17199901,0.6617475,-0.031245751),(0.17455952,0.6405525,-0.03049875),(0.17596127,0.6371775,-0.03020625),(0.19074826,0.6372,-0.030213),(0.19526626,0.659295,-0.0090225),(0.19281827,0.63929254,-0.01055925),(0.19127926,0.636345,-0.011259),(0.17598152,0.636345,-0.011259),(0.17448077,0.63929254,-0.01055925),(0.17167276,0.659385,-0.0090247495),(0.16844401,0.68578875,-0.00947925),(0.19647902,0.68574375,-0.009477),(0.19529101,0.689274,-0.02598975),(0.19575451,0.6885788,-0.01413675),(0.16912127,0.68862826,-0.01413675),(0.17019227,0.68928075,-0.02599425)]),
                 texCoord=TextureCoordinate(point=[(0.7939,0.1016),(0.7938,0.0824),(0.7694,0.0827),(0.766,0.1014),(0.7924,0.0508),(0.7734,0.0512),(0.7938,0.0824),(0.7939,0.1016),(0.766,0.1015),(0.965,0.2069),(0.7734,0.0512),(0.7924,0.0507),(0.7909,0.1057),(0.7677,0.1056),(0.7677,0.1057),(0.7909,0.1057),(0.9517,0.2441),(0.7765,0.0488),(0.7765,0.0488),(0.789,0.0484),(0.7643,0.0825),(0.7643,0.0824),(0.7614,0.1009),(0.7614,0.1009),(0.7991,0.0823),(0.7971,0.0505),(0.7971,0.0505),(0.7991,0.0824),(0.7688,0.0511),(0.7688,0.0511),(0.7994,0.1003),(0.7994,0.1003),(0.7625,0.1038),(0.7625,0.1038),(0.7972,0.1034),(0.7972,0.1034),(0.9479,0.2423),(0.9665,0.2385),(0.941,0.2114),(0.9376,0.1925),(0.9651,0.1878),(0.9665,0.2386),(0.9479,0.2423),(0.9639,0.2415),(0.9639,0.2415),(0.9517,0.244),(0.9701,0.2063),(0.9698,0.1875),(0.9358,0.2124),(0.9433,0.2434),(0.9433,0.2434),(0.9358,0.2123),(0.9711,0.2379),(0.9711,0.2379)]))),
             Group(DEF='l_metacarpal_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_proximal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3652,10 +3481,8 @@ None
                 coord=Coordinate(point=[(0.1721295,0.60705,-0.0258795),(0.19116224,0.609435,-0.025958251),(0.18113175,0.60642004,-0.02859075),(0.1929375,0.6331613,-0.014764501),(0.19293974,0.63415354,-0.0260055),(0.173223,0.63415354,-0.0260055),(0.173223,0.6331613,-0.014764501),(0.1824165,0.63180006,-0.02882925),(0.17380574,0.6032025,-0.0251595),(0.18756449,0.6012675,-0.0257535),(0.17380574,0.6034275,-0.0161595),(0.18756449,0.60156006,-0.01541925),(0.18110925,0.60054755,-0.025749),(0.18110925,0.60084003,-0.0151965),(0.1721295,0.60729754,-0.0155902505),(0.18113175,0.6068025,-0.012564001),(0.1824165,0.6298245,-0.0128092505),(0.19116224,0.60968256,-0.015669),(0.191187,0.6457995,-0.02811375),(0.1911915,0.64443606,-0.013034251),(0.17469674,0.64443606,-0.013034251),(0.17461349,0.6457995,-0.02811375),(0.194265,0.64009804,-0.028516501),(0.1948275,0.6383993,-0.0126315),(0.194337,0.63868505,-0.011583),(0.19244249,0.6341423,-0.01149525),(0.18243675,0.63094276,-0.0117855),(0.17379,0.63410854,-0.011493),(0.173097,0.6386805,-0.01158075),(0.17516024,0.64445406,-0.011286001),(0.19079775,0.64445406,-0.011286001),(0.17237699,0.6383993,-0.0126315),(0.17242424,0.64006203,-0.028512001),(0.17352,0.6407708,-0.029679751),(0.174249,0.6354585,-0.029855251),(0.1824435,0.63284177,-0.02927925),(0.192042,0.6355238,-0.029862002),(0.19379024,0.6407618,-0.029679751),(0.1905165,0.64594126,-0.02914875),(0.175437,0.64594126,-0.02914875),(0.1929375,0.63289577,-0.012372751),(0.1824165,0.6298065,-0.0124425),(0.173223,0.63289577,-0.012372751),(0.182349,0.63183606,-0.029081251),(0.19267425,0.634338,-0.028856251),(0.173223,0.634338,-0.028856251)]),
                 texCoord=TextureCoordinate(point=[(0.7878,0.1071),(0.7939,0.1016),(0.766,0.1014),(0.7709,0.1068),(0.9594,0.1833),(0.766,0.1015),(0.7939,0.1016),(0.9426,0.186),(0.7648,0.1066),(0.9545,0.1568),(0.9398,0.1599),(0.771,0.1315),(0.7861,0.131),(0.767,0.1345),(0.7667,0.1094),(0.7644,0.1092),(0.7648,0.1066),(0.7904,0.1338),(0.786,0.139),(0.7863,0.1397),(0.9402,0.1559),(0.9531,0.1532),(0.7709,0.1396),(0.7709,0.1403),(0.794,0.107),(0.7917,0.1102),(0.794,0.107),(0.7939,0.1101),(0.7675,0.0958),(0.7934,0.0956),(0.7934,0.0956),(0.7675,0.0958),(0.7967,0.1011),(0.7964,0.1056),(0.7964,0.1088),(0.7964,0.1057),(0.7967,0.1011),(0.7958,0.0955),(0.7958,0.0955),(0.7633,0.1008),(0.7625,0.1056),(0.7622,0.1084),(0.7625,0.1055),(0.7633,0.1008),(0.765,0.0957),(0.765,0.0957),(0.9651,0.1878),(0.9376,0.1925),(0.9583,0.1554),(0.963,0.1801),(0.9654,0.1799),(0.9654,0.1826),(0.9354,0.1602),(0.9385,0.1536),(0.9536,0.1504),(0.9383,0.1837),(0.9366,0.1872),(0.9361,0.1842)]))),
             Group(DEF='l_carpal_proximal_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_middle_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3664,10 +3491,8 @@ None
                 coord=Coordinate(point=[(0.17985827,0.5802075,-0.027360002),(0.17218351,0.5808375,-0.0154035),(0.18834527,0.5834025,-0.0152955),(0.19035676,0.6025095,-0.0154800005),(0.19035676,0.6022912,-0.025564501),(0.17213401,0.606978,-0.0258795),(0.19116676,0.6093742,-0.025956001),(0.17213401,0.60722774,-0.01559025),(0.19116676,0.609624,-0.015669),(0.17627852,0.611433,-0.025884),(0.17627852,0.61165124,-0.0157995),(0.18567227,0.6114105,-0.0157905),(0.18567227,0.6111922,-0.025875),(0.18113627,0.6063435,-0.02859075),(0.18113627,0.6067327,-0.012561751),(0.17984927,0.5804775,-0.01282725),(0.18553951,0.57537,-0.01544625),(0.18003601,0.5751,-0.0152955),(0.17219026,0.5806575,-0.02510775),(0.173727,0.57699,-0.01611675),(0.1737315,0.576855,-0.02413125),(0.18835202,0.5832,-0.02537775),(0.18554626,0.5752125,-0.02464875),(0.18006301,0.5743575,-0.024642)]),
                 texCoord=TextureCoordinate(point=[(0.9398,0.1599),(0.7904,0.1338),(0.7888,0.1598),(0.9363,0.1341),(0.7861,0.131),(0.7859,0.138),(0.9502,0.1313),(0.9545,0.1568),(0.7712,0.1385),(0.7707,0.1575),(0.7854,0.1571),(0.771,0.1315),(0.767,0.1345),(0.7676,0.1604),(0.786,0.1292),(0.7713,0.1297),(0.786,0.129),(0.7713,0.1294),(0.7847,0.165),(0.7849,0.1652),(0.9369,0.1301),(0.9483,0.1278),(0.7712,0.1654),(0.7712,0.1661),(0.9354,0.1602),(0.9325,0.1343),(0.9583,0.1554),(0.9533,0.1301),(0.9406,0.1642),(0.9551,0.1612),(0.9355,0.1283),(0.9488,0.1251)]))),
             Group(DEF='l_carpal_middle_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_distal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3710,10 +3535,8 @@ None
                 coord=Coordinate(point=[(0.1728855,0.62123626,-0.0415125),(0.190647,0.62321854,-0.04187025),(0.18057375,0.62088305,-0.0441315),(0.17473724,0.61820555,-0.040914),(0.18721125,0.61671156,-0.0415755),(0.17474625,0.618057,-0.0332325),(0.187227,0.6165203,-0.0326475),(0.180603,0.616176,-0.0416115),(0.180603,0.61605227,-0.0331785),(0.17289451,0.6210383,-0.032436),(0.18111375,0.62049603,-0.029583),(0.19065826,0.62309927,-0.0323685),(0.19207351,0.6346643,-0.0312795),(0.191889,0.6373418,-0.0420705),(0.17333776,0.6373418,-0.0420705),(0.17327926,0.6346643,-0.0312795),(0.18226801,0.6316875,-0.029313),(0.182061,0.63799876,-0.04486725),(0.190638,0.64592105,-0.02863125),(0.1891215,0.6483488,-0.0403965),(0.18162225,0.6487673,-0.04287825),(0.17452125,0.6483398,-0.04026825),(0.1744425,0.64589405,-0.028503),(0.19288126,0.64246505,-0.04229325),(0.182061,0.643023,-0.0452115),(0.1726785,0.64246505,-0.04229325),(0.17241076,0.6398663,-0.028512001),(0.1731285,0.6403658,-0.0273825),(0.17376976,0.6349703,-0.02787075),(0.1825155,0.6325763,-0.028676251),(0.19145025,0.6350333,-0.02783925),(0.19319625,0.6404198,-0.027522),(0.1900755,0.6457703,-0.02775825),(0.17515576,0.6457455,-0.027639),(0.19424926,0.6399,-0.028516501),(0.1823355,0.6316403,-0.02908125),(0.1926585,0.6341423,-0.0288585),(0.1732095,0.6341423,-0.0288585)]),
                 texCoord=TextureCoordinate(point=[(0.7578,0.1276),(0.7543,0.1247),(0.753,0.131),(0.7531,0.1316),(0.9854,0.1598),(0.9725,0.1615),(0.9734,0.1584),(0.9844,0.1569),(0.7413,0.123),(0.7403,0.1293),(0.7378,0.1249),(0.7401,0.1299),(0.7405,0.104),(0.7443,0.1047),(0.9859,0.1809),(0.7455,0.0995),(0.766,0.1015),(0.9713,0.1822),(0.7589,0.1059),(0.7648,0.1066),(0.766,0.1014),(0.7622,0.1091),(0.7648,0.1066),(0.7644,0.1092),(0.7455,0.0995),(0.7415,0.0989),(0.7664,0.0954),(0.7667,0.0954),(0.7485,0.0932),(0.7449,0.0928),(0.7484,0.0932),(0.7683,0.1016),(0.7686,0.0957),(0.7683,0.0956),(0.7679,0.1015),(0.7671,0.1055),(0.7666,0.1084),(0.7674,0.1056),(0.9687,0.1615),(0.9723,0.1564),(0.9888,0.1589),(0.9852,0.1547),(0.9898,0.1809),(0.9856,0.1862),(0.9651,0.1878),(0.9675,0.1796),(0.9654,0.1826),(0.9654,0.1799),(0.9897,0.1861)]))),
             Group(DEF='l_carpal_proximal_phalanx_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_middle_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3722,10 +3545,8 @@ None
                 coord=Coordinate(point=[(0.17999777,0.60232055,-0.043692753),(0.17251876,0.6031395,-0.032409),(0.18808201,0.6048765,-0.03229875),(0.19001701,0.61760026,-0.032555252),(0.18999901,0.617796,-0.04163175),(0.17289002,0.6213128,-0.041503504),(0.19065377,0.623295,-0.04186575),(0.17289901,0.6211148,-0.032427),(0.19066277,0.6231758,-0.032361753),(0.17668127,0.6246968,-0.041807253),(0.17669027,0.6245775,-0.0323055),(0.18506926,0.62424004,-0.03231225),(0.18506026,0.62435704,-0.041814003),(0.18058051,0.6209595,-0.044122502),(0.18111826,0.6205703,-0.029571751),(0.17999777,0.6027593,-0.029904751),(0.18599176,0.598572,-0.032463003),(0.18277651,0.59814006,-0.0323145),(0.17251876,0.60284704,-0.041501254),(0.17371577,0.600102,-0.033108752),(0.17418377,0.59990406,-0.040461753),(0.18811126,0.6045728,-0.04175775),(0.18601651,0.59832,-0.04097025),(0.18284176,0.5979825,-0.0409635)]),
                 texCoord=TextureCoordinate(point=[(0.9725,0.1615),(0.7578,0.1276),(0.7541,0.1444),(0.9727,0.1441),(0.7543,0.1247),(0.7533,0.1302),(0.9851,0.1424),(0.9854,0.1598),(0.7404,0.1285),(0.7384,0.1404),(0.7513,0.1418),(0.7413,0.123),(0.7378,0.1249),(0.7355,0.1424),(0.7545,0.1231),(0.7416,0.1216),(0.7546,0.1229),(0.7417,0.1214),(0.7496,0.1479),(0.7498,0.1481),(0.9738,0.1409),(0.9839,0.1396),(0.738,0.1467),(0.7381,0.1469),(0.9687,0.1616),(0.9694,0.1441),(0.9888,0.1589),(0.988,0.1416),(0.9725,0.165),(0.9854,0.1633),(0.9728,0.1395),(0.9846,0.1375)]))),
             Group(DEF='l_carpal_middle_phalanx_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='l_carpal_distal_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3892,10 +3713,8 @@ None
                 coord=Coordinate(point=[(-0.19683677,0.6884955,0.017084252),(-0.16659226,0.6884955,0.017084252),(-0.17199226,0.6948585,0.033036754),(-0.19105427,0.6948383,0.034593754),(-0.16951501,0.69243526,0.027677251),(-0.19006427,0.7063628,0.024972752),(-0.19374752,0.7059195,0.014298751),(-0.16879275,0.70591724,0.014323501),(-0.17440426,0.70634925,0.024201002),(-0.17003477,0.68456703,0.018283501),(-0.16934626,0.6850215,0.024734251),(-0.17313077,0.689436,0.032796003),(-0.18909001,0.69117075,0.03430575),(-0.193725,0.684279,0.017797502),(-0.19056602,0.71277976,0.013095001),(-0.18562502,0.7130925,0.021753002),(-0.17638426,0.7130858,0.021181501),(-0.17079076,0.71273476,0.0131737515),(-0.19244926,0.705258,0.012624751),(-0.19541027,0.688554,0.0152865015),(-0.19304101,0.68534327,0.01582425),(-0.17066026,0.68562,0.016308),(-0.16799626,0.6886395,0.015264001),(-0.17011127,0.705384,0.012622501),(-0.17179877,0.71114624,0.011655001),(-0.18969977,0.71118677,0.011580751)]),
                 texCoord=TextureCoordinate(point=[(0.8327,0.0273),(0.8381,0.0441),(0.8625,0.0344),(0.8476,0.0256),(0.8625,0.0359),(0.8466,0.0257),(0.9122,0.2724),(0.904,0.2568),(0.8948,0.2599),(0.8401,0.0478),(0.8395,0.0482),(0.8319,0.0206),(0.9141,0.2788),(0.844,0.0192),(0.8432,0.0193),(0.8491,0.0466),(0.8611,0.0409),(0.8611,0.0397),(0.8814,0.2691),(0.8989,0.2764),(0.9014,0.2535),(0.9142,0.2789),(0.9026,0.2823),(0.9033,0.2821),(0.8928,0.2563),(0.8819,0.264),(0.8327,0.0273),(0.8381,0.0441),(0.8395,0.0482),(0.8401,0.0478),(0.904,0.2568),(0.9122,0.2724),(0.9141,0.2788),(0.9142,0.2789)]))),
             Group(DEF='r_trapezium_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metacarpal_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3921,10 +3740,8 @@ None
                 coord=Coordinate(point=[(-0.19523251,0.669213,0.031689003),(-0.18563627,0.662184,0.027389253),(-0.19706176,0.6648435,0.027294751),(-0.16717726,0.6742665,0.034380004),(-0.173322,0.678717,0.040486503),(-0.18869627,0.6812595,0.042725254),(-0.19622476,0.67219204,0.029547002),(-0.17188202,0.6645195,0.024102),(-0.19853552,0.6701063,0.025341751),(-0.17585102,0.65888774,0.053905502),(-0.18762976,0.663687,0.052389003),(-0.18504901,0.65385675,0.056967754),(-0.17816852,0.65117025,0.055858504),(-0.17504327,0.6468525,0.040709253),(-0.16915277,0.65403,0.049907252),(-0.17235902,0.6506775,0.051819753),(-0.17638202,0.6451425,0.044392504),(-0.19280027,0.654795,0.042043503),(-0.18974927,0.6473925,0.04822425),(-0.18368101,0.64764,0.040054504),(-0.18298127,0.644535,0.046896752),(-0.19048502,0.67512155,0.022905001),(-0.19061777,0.676467,0.024473252),(-0.18429527,0.6835208,0.0354285),(-0.17578351,0.681705,0.03420225),(-0.172404,0.678204,0.028642502),(-0.17524351,0.6742215,0.022423502),(-0.17408477,0.66390526,0.018724501),(-0.18445951,0.66138977,0.020907002),(-0.19394776,0.6638355,0.021001501),(-0.19502777,0.66710025,0.019818),(-0.18990226,0.670851,0.017736752),(-0.17675327,0.6698655,0.016641002)]),
                 texCoord=TextureCoordinate(point=[(0.8786,0.0507),(0.857,0.0621),(0.8601,0.0649),(0.867,0.0598),(0.8887,0.0786),(0.8747,0.0865),(0.8533,0.0697),(0.876,0.0783),(0.893,0.0688),(0.8992,0.0702),(0.8819,0.0483),(0.8561,0.0728),(0.8736,0.0851),(0.8532,0.0697),(0.8503,0.0646),(0.8986,0.0785),(0.897,0.0809),(0.8914,0.0813),(0.8802,0.0861),(0.8841,0.0856),(0.8821,0.0883),(0.8487,0.0595),(0.8509,0.0581),(0.8683,0.0489),(0.868,0.0507),(0.8608,0.0544),(0.8505,0.0603),(0.8455,0.0706),(0.8468,0.073),(0.8455,0.0707),(0.8437,0.0676),(0.8416,0.0639),(0.8422,0.0648),(0.8729,0.2464),(0.8482,0.2317),(0.8612,0.2211),(0.8847,0.2342),(0.8433,0.2381),(0.8632,0.2548),(0.8814,0.2316),(0.8625,0.2222),(0.8799,0.2506),(0.8891,0.243),(0.8922,0.232),(0.8922,0.232)]))),
             Group(DEF='r_carpal_proximal_phalanx_1_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_distal_phalanx_1_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3950,10 +3767,8 @@ None
                 coord=Coordinate(point=[(-0.16666201,0.6858473,0.0032265),(-0.19856477,0.6858473,0.0032265),(-0.19631702,0.70836526,0.00230625),(-0.16733927,0.70836526,0.00251325),(-0.1692585,0.68211,0.003339),(-0.19515151,0.68211,0.003339),(-0.19250326,0.71530426,0.0018315002),(-0.17066701,0.71531105,0.0019709999),(-0.16911227,0.706842,7.1774976E-4),(-0.16770601,0.687564,0.0015682501),(-0.19648576,0.687564,0.0015817503),(-0.19455977,0.706842,5.2200013E-4),(-0.19683677,0.68846405,0.01708425),(-0.16659226,0.68846405,0.01708425),(-0.19374752,0.70588803,0.014298751),(-0.16879275,0.70588577,0.0143235),(-0.17003477,0.6845355,0.018283501),(-0.193725,0.68424755,0.017797502),(-0.19056602,0.7127483,0.013095001),(-0.17079076,0.7127033,0.013176001),(-0.19476901,0.68997604,0.01834425),(-0.19209376,0.70506227,0.01593225),(-0.18933976,0.71100456,0.0148905),(-0.17221276,0.7109663,0.014958001),(-0.17048477,0.70506227,0.015954752),(-0.16857901,0.68997604,0.01834425),(-0.17155801,0.68657404,0.0193815),(-0.19207576,0.6863243,0.018963)]),
                 texCoord=TextureCoordinate(point=[(0.813,0.0266),(0.8136,0.0488),(0.8136,0.0488),(0.8133,0.0266),(0.8111,0.0474),(0.8105,0.0283),(0.8108,0.0283),(0.8111,0.0474),(0.8141,0.0525),(0.8141,0.0525),(0.8123,0.0198),(0.8125,0.0198),(0.9273,0.2479),(0.9315,0.2698),(0.9337,0.2676),(0.9301,0.2489),(0.9262,0.2444),(0.9337,0.2762),(0.9335,0.2763),(0.8381,0.0441),(0.904,0.2568),(0.8327,0.0273),(0.9122,0.2724),(0.8401,0.0478),(0.9014,0.2535),(0.8395,0.0482),(0.9142,0.2789),(0.8319,0.0206),(0.9141,0.2788),(0.8381,0.0441),(0.8327,0.0273),(0.8319,0.0206),(0.9141,0.2788),(0.9122,0.2724),(0.904,0.2568),(0.9014,0.2535),(0.8395,0.0482)]))),
             Group(DEF='r_trapezoid_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metacarpal_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3962,10 +3777,8 @@ None
                 coord=Coordinate(point=[(-0.19301626,0.638955,0.021003751),(-0.18238276,0.63909,0.024131251),(-0.17282926,0.638955,0.02103975),(-0.19469701,0.6577425,0.0217215),(-0.17023051,0.65776503,0.021951001),(-0.19445175,0.6379425,0.00549675),(-0.168876,0.6584625,0.004752),(-0.19702801,0.6584625,0.004752),(-0.18290475,0.65544754,0.02580975),(-0.20035125,0.6688958,0.020949751),(-0.17209351,0.6379425,0.00549675),(-0.1665945,0.68586975,0.0032264998),(-0.19849725,0.68586975,0.0032264998),(-0.19676925,0.68848425,0.01708425),(-0.16652475,0.68848425,0.01708425),(-0.17188875,0.6644925,0.02410425),(-0.185643,0.662175,0.0273915),(-0.19706851,0.66483,0.027297001),(-0.19854225,0.6700883,0.025344001),(-0.17143425,0.6584175,0.0020565),(-0.17433451,0.63841504,0.0038025002),(-0.192303,0.63841504,0.0038025002),(-0.1944495,0.65826,0.0020677499),(-0.195813,0.68573475,6.682496E-4),(-0.16859926,0.68573475,6.682496E-4),(-0.18241426,0.6350625,0.022761002),(-0.18980326,0.634995,0.020340001),(-0.19121626,0.63441,0.006093),(-0.19129051,0.6365025,0.004437),(-0.17536275,0.6365025,0.004437),(-0.17382601,0.63441,0.00610425),(-0.17442225,0.634995,0.020421),(-0.184446,0.6664275,0.0300015),(-0.174411,0.66832876,0.02739375),(-0.17034751,0.68893427,0.021192752),(-0.19413675,0.68893874,0.021183752),(-0.19333576,0.6720975,0.028064251),(-0.19307251,0.6682433,0.02956275),(-0.16951501,0.690525,0.0143145),(-0.16889626,0.6887498,0.005364),(-0.19515601,0.6887498,0.005364),(-0.19398151,0.690525,0.0143145)]),
                 texCoord=TextureCoordinate(point=[(0.8514,0.0953),(0.8526,0.0788),(0.846,0.0768),(0.8466,0.0958),(0.8195,0.0808),(0.8225,0.0994),(0.8225,0.0994),(0.8195,0.0808),(0.8903,0.2261),(0.8467,0.0958),(0.8381,0.0441),(0.8136,0.0488),(0.8561,0.0728),(0.8532,0.0697),(0.8381,0.0441),(0.8136,0.0488),(0.8436,0.0662),(0.8533,0.0697),(0.8503,0.0646),(0.8461,0.0998),(0.8248,0.1027),(0.8248,0.1027),(0.8462,0.0997),(0.8498,0.0994),(0.8184,0.0977),(0.8157,0.0811),(0.8157,0.0809),(0.8184,0.0977),(0.8165,0.0457),(0.8341,0.0424),(0.8341,0.0424),(0.8165,0.0457),(0.844,0.0417),(0.8554,0.0622),(0.8575,0.0659),(0.8594,0.0677),(0.8574,0.0658),(0.844,0.0417),(0.8099,0.0493),(0.8099,0.0493),(0.82,0.101),(0.82,0.101),(0.8821,0.2087),(0.8838,0.2252),(0.9098,0.1997),(0.916,0.2175),(0.8866,0.2074),(0.904,0.2568),(0.9273,0.2479),(0.8814,0.2316),(0.8847,0.2342),(0.9197,0.2166),(0.9083,0.2577),(0.925,0.2515),(0.8813,0.2388),(0.8986,0.2602),(0.931,0.2468)]))),
             Group(DEF='r_metacarpal_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_proximal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3974,10 +3787,8 @@ None
                 coord=Coordinate(point=[(-0.18074477,0.60633004,0.022119751),(-0.17174026,0.60702753,0.007938),(-0.19077526,0.60939,0.007960501),(-0.18074477,0.60651004,0.005535001),(-0.18202952,0.633825,0.023591252),(-0.1920105,0.63367426,0.020673001),(-0.19311301,0.63295877,0.0078300005),(-0.172836,0.63295877,0.007841251),(-0.172836,0.63367426,0.020673001),(-0.18202952,0.6297705,0.005940001),(-0.17174026,0.606915,0.019422002),(-0.19077526,0.609255,0.019446751),(-0.17341876,0.6032475,0.0086625),(-0.18717526,0.60138,0.007983001),(-0.17341876,0.603135,0.018634502),(-0.18717526,0.6012675,0.019305),(-0.18072002,0.6006825,0.007956001),(-0.18072002,0.60057,0.019503001),(-0.19300726,0.639072,0.021003751),(-0.18237601,0.639198,0.024131251),(-0.17282026,0.639072,0.02103975),(-0.19444501,0.6380505,0.0054967506),(-0.19255051,0.6328845,0.0055282507),(-0.172836,0.6328845,0.0055282507),(-0.18202952,0.62973905,0.005661001),(-0.17208676,0.6380505,0.0054967506),(-0.18968627,0.6449715,0.018945001),(-0.18205427,0.6452955,0.022254752),(-0.17473951,0.6449805,0.018999001),(-0.17443351,0.64455754,0.0060277507),(-0.19101377,0.64455974,0.0060547506),(-0.18205202,0.6307133,0.005006251),(-0.19180577,0.63380474,0.0048420005),(-0.19359677,0.63842404,0.0048420005),(-0.19041301,0.64438653,0.0044437507),(-0.17514001,0.64438426,0.0044190004),(-0.17305201,0.63839704,0.0048442506),(-0.17370676,0.6337418,0.0048442506)]),
                 texCoord=TextureCoordinate(point=[(0.8511,0.1006),(0.8514,0.0953),(0.8466,0.0958),(0.8466,0.1011),(0.8225,0.0994),(0.8283,0.1035),(0.9023,0.1969),(0.8225,0.0994),(0.8467,0.0958),(0.8857,0.2021),(0.8231,0.1042),(0.8931,0.1724),(0.8782,0.1769),(0.8338,0.1268),(0.8493,0.125),(0.8543,0.1273),(0.8302,0.1302),(0.8258,0.1072),(0.8236,0.1075),(0.8231,0.1042),(0.8504,0.1328),(0.8508,0.1334),(0.8781,0.1731),(0.8909,0.1692),(0.8352,0.1346),(0.8353,0.1353),(0.8228,0.0929),(0.844,0.0896),(0.8482,0.0889),(0.8441,0.0896),(0.8228,0.0929),(0.8203,0.0995),(0.8207,0.1038),(0.8212,0.1068),(0.8207,0.1037),(0.8203,0.0995),(0.8206,0.0933),(0.8205,0.0933),(0.8815,0.2034),(0.8821,0.2087),(0.9098,0.1997),(0.8866,0.2074),(0.8737,0.1777),(0.8969,0.1707),(0.9052,0.1925),(0.9074,0.1918),(0.9084,0.195),(0.876,0.171),(0.891,0.1665)]))),
             Group(DEF='r_carpal_proximal_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_middle_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -3986,10 +3797,8 @@ None
                 coord=Coordinate(point=[(-0.179433,0.5814675,0.0060592503),(-0.17177176,0.581715,0.0187065),(-0.1879335,0.584235,0.018918),(-0.18997426,0.6023385,0.01937475),(-0.18997426,0.60245776,0.007888501),(-0.17175151,0.607077,0.00793575),(-0.19078426,0.609426,0.0079605),(-0.17175151,0.60695773,0.019422),(-0.19078426,0.609309,0.019444501),(-0.175896,0.61142623,0.00798075),(-0.175896,0.611307,0.01946475),(-0.18528976,0.61107075,0.0194625),(-0.18528976,0.61119,0.007978501),(-0.18075375,0.6065505,0.0055327504),(-0.18075375,0.60636604,0.022119751),(-0.17943975,0.5812875,0.021402001),(-0.18512326,0.5763825,0.018405002),(-0.17964001,0.57555,0.0185895),(-0.17176726,0.5818275,0.0084645),(-0.17331076,0.57798,0.017784001),(-0.1733085,0.57807,0.00932175),(-0.187929,0.584352,0.0082755005),(-0.18511876,0.576495,0.0086917505),(-0.17963551,0.57564,0.008667001)]),
                 texCoord=TextureCoordinate(point=[(0.8782,0.1769),(0.8543,0.1273),(0.8574,0.1518),(0.8703,0.1535),(0.8493,0.125),(0.8504,0.1318),(0.8846,0.1491),(0.8931,0.1724),(0.8349,0.1336),(0.8379,0.1515),(0.8533,0.1496),(0.8338,0.1268),(0.8302,0.1302),(0.8351,0.1545),(0.849,0.1233),(0.8336,0.1251),(0.849,0.123),(0.8335,0.1249),(0.8539,0.1573),(0.8543,0.1579),(0.8703,0.1496),(0.8822,0.146),(0.8398,0.159),(0.8399,0.1597),(0.8737,0.1777),(0.8664,0.1541),(0.8969,0.1707),(0.8878,0.1476),(0.8796,0.181),(0.8945,0.1764),(0.8684,0.1475),(0.8822,0.1433)]))),
             Group(DEF='r_carpal_middle_phalanx_2_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_distal_phalanx_2_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4023,10 +3832,8 @@ None
                 coord=Coordinate(point=[(-0.19859175,0.68589,-0.012235501),(-0.16613999,0.685935,-0.012237751),(-0.19625625,0.7085138,0.00230625),(-0.19694924,0.70894355,-0.012406501),(-0.1674405,0.7089413,-0.01237725),(-0.16660349,0.6860025,0.0032242502),(-0.16728075,0.708516,0.00251325),(-0.19850625,0.6860025,0.0032242502),(-0.16849124,0.68238,-0.012422251),(-0.16878825,0.682155,0.0034470002),(-0.19518974,0.682155,0.0034470002),(-0.195246,0.682335,-0.0124200005),(-0.17059724,0.71546626,0.00198675),(-0.17070524,0.7156508,-0.01096875),(-0.19353825,0.715653,-0.010989001),(-0.19308375,0.715464,0.0018449998),(-0.167553,0.6874043,0.00576225),(-0.16897275,0.7068623,0.0049185003),(-0.194616,0.7068623,0.00472275),(-0.19656,0.6874043,0.0057735),(-0.19656675,0.6875753,-0.014348251),(-0.195156,0.7073843,-0.0148950005),(-0.16918425,0.707382,-0.01486575),(-0.16723575,0.68762255,-0.01435275)]),
                 texCoord=TextureCoordinate(point=[(0.9315,0.2698),(0.8136,0.0488),(0.7924,0.0507),(0.7911,0.0281),(0.8136,0.0488),(0.813,0.0266),(0.791,0.0281),(0.7924,0.0508),(0.7924,0.0543),(0.8143,0.0526),(0.8143,0.0526),(0.7924,0.0543),(0.9335,0.2763),(0.7903,0.0215),(0.7903,0.0215),(0.8123,0.0198),(0.7875,0.03),(0.7875,0.03),(0.7887,0.0494),(0.7887,0.0495),(0.9277,0.2691),(0.8167,0.0279),(0.8173,0.0471),(0.8173,0.0471),(0.9273,0.2479),(0.9479,0.2423),(0.9531,0.2644),(0.9318,0.2697),(0.9473,0.2389),(0.926,0.2443),(0.955,0.2707),(0.9551,0.2707),(0.9337,0.2763),(0.9563,0.262),(0.9518,0.243),(0.928,0.269),(0.924,0.2502),(0.9241,0.2502)]))),
             Group(DEF='r_capitate_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metacarpal_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4052,10 +3859,8 @@ None
                 coord=Coordinate(point=[(-0.17174476,0.6032025,-0.0089145005),(-0.19077751,0.605835,-0.008982),(-0.18074702,0.60255,-0.0117247505),(-0.19255276,0.632781,0.00312975),(-0.19255276,0.63291377,-0.0098775),(-0.17283827,0.63291377,-0.0098775),(-0.17283827,0.632781,0.00312975),(-0.18203177,0.629595,-0.012150001),(-0.17342101,0.5989725,-0.00803925),(-0.18717751,0.59688,-0.00864675),(-0.17342101,0.5991075,0.0010980002),(-0.18717751,0.597015,0.0018450001),(-0.18072452,0.5960925,-0.0086445),(-0.18072452,0.5962275,0.00207),(-0.17174476,0.60336,0.0017370003),(-0.18074702,0.60277504,0.0048690005),(-0.18203177,0.62957925,0.0053662504),(-0.19077751,0.6059925,0.0016695001),(-0.19255276,0.6327585,0.0055282507),(-0.17283827,0.6327585,0.0055282507),(-0.18203177,0.629613,0.00565875),(-0.19444726,0.6379245,0.0054945005),(-0.18203177,0.6296468,-0.0124425),(-0.19255276,0.63273823,-0.012372751),(-0.17283827,0.63273823,-0.012372751),(-0.17199226,0.6382395,-0.01263375),(-0.19444276,0.6382395,-0.01263375),(-0.17208901,0.6379245,0.0054945005),(-0.19080226,0.64429873,-0.012044251),(-0.19080676,0.6443325,0.004446),(-0.17431201,0.6443325,0.004446),(-0.17422876,0.64429873,-0.012044251),(-0.19205776,0.63381153,0.0062302505),(-0.18205202,0.630639,0.00632925),(-0.17340526,0.63378,0.0062302505),(-0.17271227,0.6383678,0.0062100003),(-0.17477551,0.64441574,0.006192),(-0.19041301,0.64441574,0.006192),(-0.19395226,0.63837224,0.0062100003),(-0.18205652,0.63078976,-0.01309275),(-0.19165726,0.63358873,-0.0133245),(-0.19340551,0.63826203,-0.01347525),(-0.19012952,0.64422,-0.01348875),(-0.17505002,0.64422,-0.01348875),(-0.17313527,0.63827103,-0.01347525),(-0.17386426,0.6335258,-0.0133245)]),
                 texCoord=TextureCoordinate(point=[(0.8168,0.105),(0.8225,0.0994),(0.7939,0.1016),(0.7996,0.1065),(0.9311,0.1887),(0.7939,0.1016),(0.8225,0.0994),(0.9145,0.1932),(0.794,0.107),(0.9232,0.1611),(0.908,0.1649),(0.8025,0.1324),(0.818,0.1313),(0.7986,0.1359),(0.7957,0.11),(0.7939,0.1101),(0.794,0.107),(0.8228,0.1342),(0.8186,0.1401),(0.819,0.1409),(0.9081,0.1606),(0.921,0.1574),(0.8033,0.1412),(0.8033,0.142),(0.8231,0.1042),(0.8212,0.1078),(0.8231,0.1042),(0.8236,0.1075),(0.7948,0.0956),(0.8206,0.0932),(0.8206,0.0932),(0.7948,0.0956),(0.8249,0.0987),(0.8253,0.1032),(0.8258,0.1063),(0.8253,0.1032),(0.8249,0.0987),(0.823,0.0929),(0.823,0.0929),(0.7917,0.1017),(0.7916,0.1064),(0.7918,0.1091),(0.7916,0.1063),(0.7917,0.1017),(0.7927,0.0957),(0.7927,0.0957),(0.9376,0.1925),(0.9098,0.1997),(0.927,0.1595),(0.9344,0.1846),(0.9361,0.1842),(0.9366,0.1872),(0.9035,0.1654),(0.9061,0.1582),(0.9213,0.1544),(0.9096,0.1911),(0.9084,0.195),(0.9074,0.1918)]))),
             Group(DEF='r_carpal_proximal_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_middle_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4064,10 +3869,8 @@ None
                 coord=Coordinate(point=[(-0.17965801,0.575235,-0.01091025),(-0.17198326,0.57586503,0.0017190003),(-0.18813601,0.578655,0.0018450001),(-0.18997426,0.59820527,0.0018742502),(-0.18997426,0.5980635,-0.00877725),(-0.17175151,0.603243,-0.00891225),(-0.19078426,0.60587776,-0.008982),(-0.17175151,0.60338473,0.0017392504),(-0.19078426,0.60602176,0.0016695001),(-0.175896,0.6081188,-0.0090405),(-0.175896,0.6082628,0.0016110002),(-0.18528976,0.60799724,0.0016177503),(-0.18528976,0.60785323,-0.00903375),(-0.18075375,0.60257924,-0.0117247505),(-0.18075375,0.60280204,0.00487125),(-0.17965126,0.5754375,0.0044370005),(-0.18536176,0.569835,0.0016402503),(-0.17985825,0.5695425,0.0018000003),(-0.17198776,0.57573,-0.008529751),(-0.17354026,0.57165754,9.4500027E-4),(-0.17354476,0.571545,-0.0075195003),(-0.18814051,0.57852,-0.008802),(-0.18536626,0.5697,-0.0080775),(-0.17988525,0.5687775,-0.00807525)]),
                 texCoord=TextureCoordinate(point=[(0.908,0.1649),(0.8228,0.1342),(0.8238,0.1612),(0.9018,0.1387),(0.818,0.1313),(0.8186,0.139),(0.9163,0.135),(0.9232,0.1611),(0.8031,0.1401),(0.8044,0.1596),(0.8199,0.1584),(0.8025,0.1324),(0.7986,0.1359),(0.8014,0.1628),(0.8179,0.1294),(0.8023,0.1305),(0.8179,0.1291),(0.8023,0.1302),(0.8199,0.1671),(0.8202,0.1672),(0.902,0.1343),(0.914,0.1313),(0.8058,0.1681),(0.8058,0.1689),(0.9035,0.1654),(0.8978,0.139),(0.927,0.1595),(0.9196,0.1336),(0.9092,0.1696),(0.9243,0.1658),(0.9003,0.1324),(0.9142,0.1283)]))),
             Group(DEF='r_carpal_middle_phalanx_3_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_distal_phalanx_3_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4093,10 +3896,8 @@ None
                 coord=Coordinate(point=[(-0.19775926,0.68704206,-0.027623253),(-0.170451,0.68900406,-0.037813503),(-0.16708724,0.6870555,-0.027627753),(-0.1825245,0.68998057,-0.040864505),(-0.1937565,0.68892753,-0.037788752),(-0.17104724,0.70506907,-0.027328502),(-0.18264149,0.705456,-0.03395025),(-0.19459125,0.7050758,-0.027317252),(-0.19694924,0.7088671,-0.012406502),(-0.19859175,0.6858113,-0.012235502),(-0.16613999,0.6858653,-0.012237752),(-0.1674405,0.7088648,-0.012377251),(-0.19508624,0.6822001,-0.012318752),(-0.19444725,0.68294257,-0.027729003),(-0.190998,0.6845333,-0.03642075),(-0.182349,0.68544227,-0.038772),(-0.17316675,0.68458056,-0.036346503),(-0.17028674,0.68294257,-0.027713252),(-0.1688085,0.6822451,-0.012321001),(-0.17150399,0.7155518,-0.010971001),(-0.1740015,0.7118955,-0.026010003),(-0.18247275,0.7122308,-0.030795753),(-0.1915245,0.7118775,-0.025888503),(-0.19317375,0.7155653,-0.010993502),(-0.19486125,0.7069298,-0.010633501),(-0.19623375,0.6876608,-0.010638002),(-0.1675845,0.687708,-0.010640251),(-0.16947675,0.70692754,-0.010606502)]),
                 texCoord=TextureCoordinate(point=[(0.7624,0.0345),(0.7525,0.0502),(0.7571,0.0508),(0.7729,0.0334),(0.7734,0.0512),(0.7924,0.0508),(0.791,0.0281),(0.9531,0.2644),(0.9665,0.2386),(0.9827,0.2362),(0.9706,0.2558),(0.9479,0.2423),(0.7736,0.0553),(0.7595,0.0549),(0.7559,0.0544),(0.7596,0.0549),(0.7736,0.0553),(0.7721,0.0268),(0.7644,0.0276),(0.7723,0.0268),(0.7938,0.0298),(0.795,0.0487),(0.9457,0.2448),(0.9501,0.2632),(0.7926,0.0543),(0.7926,0.0544),(0.7903,0.0215),(0.7903,0.0215),(0.9803,0.2531),(0.9874,0.236),(0.9479,0.2423),(0.9532,0.2644),(0.9832,0.2324),(0.9795,0.2325),(0.9656,0.2346),(0.9721,0.2624),(0.9795,0.2602),(0.9719,0.2625),(0.9502,0.2632),(0.9457,0.2447),(0.9471,0.2389),(0.9471,0.2388),(0.9551,0.2707),(0.955,0.2707)]))),
             Group(DEF='r_hamate_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_metacarpal_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4105,10 +3906,8 @@ None
                 coord=Coordinate(point=[(-0.19579725,0.6612975,-0.02849175),(-0.1694655,0.6612975,-0.02849175),(-0.1938915,0.6400575,-0.028514251),(-0.172053,0.6400125,-0.028512001),(-0.19775926,0.6870938,-0.027623251),(-0.16708724,0.687105,-0.027630001),(-0.19724625,0.6595425,-0.012082499),(-0.16902,0.6595425,-0.012082499),(-0.17200574,0.6383475,-0.0126315),(-0.194454,0.6383475,-0.0126315),(-0.19859175,0.68586075,-0.0122355),(-0.16613999,0.68591475,-0.01223775),(-0.19251674,0.63432,-0.01361925),(-0.1919025,0.6353775,-0.0273915),(-0.17410725,0.6353325,-0.02738475),(-0.17406675,0.63432,-0.01361925),(-0.1917315,0.6405525,-0.030501),(-0.19361025,0.6616575,-0.03125025),(-0.19545075,0.68763155,-0.02994075),(-0.169569,0.68764275,-0.02994525),(-0.171639,0.6617475,-0.031245751),(-0.17419949,0.6405525,-0.03049875),(-0.17560124,0.6371775,-0.03020625),(-0.19038825,0.6372,-0.030213),(-0.19490625,0.659295,-0.0090225),(-0.19245824,0.63929254,-0.01055925),(-0.19091925,0.636345,-0.011259),(-0.1756215,0.636345,-0.011259),(-0.17412075,0.63929254,-0.01055925),(-0.17131275,0.659385,-0.0090247495),(-0.168084,0.68578875,-0.00947925),(-0.196119,0.68574375,-0.009477),(-0.194931,0.689274,-0.02598975),(-0.1953945,0.6885788,-0.01413675),(-0.16876125,0.68862826,-0.01413675),(-0.16983224,0.68928075,-0.02599425)]),
                 texCoord=TextureCoordinate(point=[(0.7939,0.1016),(0.7938,0.0824),(0.7694,0.0827),(0.766,0.1014),(0.7924,0.0508),(0.7734,0.0512),(0.7938,0.0824),(0.7939,0.1016),(0.766,0.1015),(0.965,0.2069),(0.7734,0.0512),(0.7924,0.0507),(0.7909,0.1057),(0.7677,0.1056),(0.7677,0.1057),(0.7909,0.1057),(0.9517,0.2441),(0.7765,0.0488),(0.7765,0.0488),(0.789,0.0484),(0.7643,0.0825),(0.7643,0.0824),(0.7614,0.1009),(0.7614,0.1009),(0.7991,0.0823),(0.7971,0.0505),(0.7971,0.0505),(0.7991,0.0824),(0.7688,0.0511),(0.7688,0.0511),(0.7994,0.1003),(0.7994,0.1003),(0.7625,0.1038),(0.7625,0.1038),(0.7972,0.1034),(0.7972,0.1034),(0.9479,0.2423),(0.9665,0.2385),(0.941,0.2114),(0.9376,0.1925),(0.9651,0.1878),(0.9665,0.2386),(0.9479,0.2423),(0.9639,0.2415),(0.9639,0.2415),(0.9517,0.244),(0.9701,0.2063),(0.9698,0.1875),(0.9358,0.2124),(0.9433,0.2434),(0.9433,0.2434),(0.9358,0.2123),(0.9711,0.2379),(0.9711,0.2379)]))),
             Group(DEF='r_metacarpal_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_proximal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4117,10 +3916,8 @@ None
                 coord=Coordinate(point=[(-0.17174701,0.60705,-0.0258795),(-0.19077976,0.609435,-0.025958251),(-0.18074927,0.60642004,-0.02859075),(-0.19255501,0.6331613,-0.014764501),(-0.19255726,0.63415354,-0.0260055),(-0.17284052,0.63415354,-0.0260055),(-0.17284052,0.6331613,-0.014764501),(-0.18203402,0.63180006,-0.02882925),(-0.17342326,0.6032025,-0.0251595),(-0.18718201,0.6012675,-0.0257535),(-0.17342326,0.6034275,-0.0161595),(-0.18718201,0.60156006,-0.01541925),(-0.18072677,0.60054755,-0.025749),(-0.18072677,0.60084003,-0.0151965),(-0.17174701,0.60729754,-0.0155902505),(-0.18074927,0.6068025,-0.012564001),(-0.18203402,0.6298245,-0.0128092505),(-0.19077976,0.60968256,-0.015669),(-0.19080451,0.6457995,-0.02811375),(-0.19080901,0.64443606,-0.013034251),(-0.17431426,0.64443606,-0.013034251),(-0.17423101,0.6457995,-0.02811375),(-0.19388251,0.64009804,-0.028516501),(-0.19444501,0.6383993,-0.0126315),(-0.19395451,0.63868505,-0.011583),(-0.19206001,0.6341423,-0.01149525),(-0.18205427,0.63094276,-0.0117855),(-0.17340751,0.63410854,-0.011493),(-0.17271452,0.6386805,-0.01158075),(-0.17477776,0.64445406,-0.011286001),(-0.19041526,0.64445406,-0.011286001),(-0.1719945,0.6383993,-0.0126315),(-0.17204176,0.64006203,-0.028512001),(-0.17313752,0.6407708,-0.029679751),(-0.17386651,0.6354585,-0.029855251),(-0.18206102,0.63284177,-0.02927925),(-0.19165951,0.6355238,-0.029862002),(-0.19340776,0.6407618,-0.029679751),(-0.19013402,0.64594126,-0.02914875),(-0.17505452,0.64594126,-0.02914875),(-0.19255501,0.63289577,-0.012372751),(-0.18203402,0.6298065,-0.0124425),(-0.17284052,0.63289577,-0.012372751),(-0.18196651,0.63183606,-0.029081251),(-0.19229177,0.634338,-0.028856251),(-0.17284052,0.634338,-0.028856251)]),
                 texCoord=TextureCoordinate(point=[(0.7878,0.1071),(0.7939,0.1016),(0.766,0.1014),(0.7709,0.1068),(0.9594,0.1833),(0.766,0.1015),(0.7939,0.1016),(0.9426,0.186),(0.7648,0.1066),(0.9545,0.1568),(0.9398,0.1599),(0.771,0.1315),(0.7861,0.131),(0.767,0.1345),(0.7667,0.1094),(0.7644,0.1092),(0.7648,0.1066),(0.7904,0.1338),(0.786,0.139),(0.7863,0.1397),(0.9402,0.1559),(0.9531,0.1532),(0.7709,0.1396),(0.7709,0.1403),(0.794,0.107),(0.7917,0.1102),(0.794,0.107),(0.7939,0.1101),(0.7675,0.0958),(0.7934,0.0956),(0.7934,0.0956),(0.7675,0.0958),(0.7967,0.1011),(0.7964,0.1056),(0.7964,0.1088),(0.7964,0.1057),(0.7967,0.1011),(0.7958,0.0955),(0.7958,0.0955),(0.7633,0.1008),(0.7625,0.1056),(0.7622,0.1084),(0.7625,0.1055),(0.7633,0.1008),(0.765,0.0957),(0.765,0.0957),(0.9651,0.1878),(0.9376,0.1925),(0.9583,0.1554),(0.963,0.1801),(0.9654,0.1799),(0.9654,0.1826),(0.9354,0.1602),(0.9385,0.1536),(0.9536,0.1504),(0.9383,0.1837),(0.9366,0.1872),(0.9361,0.1842)]))),
             Group(DEF='r_carpal_proximal_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_middle_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4129,10 +3926,8 @@ None
                 coord=Coordinate(point=[(-0.17947575,0.5802075,-0.027360002),(-0.171801,0.5808375,-0.0154035),(-0.18796276,0.5834025,-0.0152955),(-0.18997426,0.6025095,-0.0154800005),(-0.18997426,0.6022912,-0.025564501),(-0.17175151,0.606978,-0.0258795),(-0.19078426,0.6093742,-0.025956001),(-0.17175151,0.60722774,-0.01559025),(-0.19078426,0.609624,-0.015669),(-0.175896,0.611433,-0.025884),(-0.175896,0.61165124,-0.0157995),(-0.18528976,0.6114105,-0.0157905),(-0.18528976,0.6111922,-0.025875),(-0.18075375,0.6063435,-0.02859075),(-0.18075375,0.6067327,-0.012561751),(-0.17946675,0.5804775,-0.01282725),(-0.185157,0.57537,-0.01544625),(-0.17965351,0.5751,-0.0152955),(-0.17180775,0.5806575,-0.02510775),(-0.17334451,0.57699,-0.01611675),(-0.17334901,0.576855,-0.02413125),(-0.1879695,0.5832,-0.02537775),(-0.18516375,0.5752125,-0.02464875),(-0.17968051,0.5743575,-0.024642)]),
                 texCoord=TextureCoordinate(point=[(0.9398,0.1599),(0.7904,0.1338),(0.7888,0.1598),(0.9363,0.1341),(0.7861,0.131),(0.7859,0.138),(0.9502,0.1313),(0.9545,0.1568),(0.7712,0.1385),(0.7707,0.1575),(0.7854,0.1571),(0.771,0.1315),(0.767,0.1345),(0.7676,0.1604),(0.786,0.1292),(0.7713,0.1297),(0.786,0.129),(0.7713,0.1294),(0.7847,0.165),(0.7849,0.1652),(0.9369,0.1301),(0.9483,0.1278),(0.7712,0.1654),(0.7712,0.1661),(0.9354,0.1602),(0.9325,0.1343),(0.9583,0.1554),(0.9533,0.1301),(0.9406,0.1642),(0.9551,0.1612),(0.9355,0.1283),(0.9488,0.1251)]))),
             Group(DEF='r_carpal_middle_phalanx_4_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_distal_phalanx_4_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4175,10 +3970,8 @@ None
                 coord=Coordinate(point=[(-0.17252551,0.62123626,-0.0415125),(-0.19028701,0.62321854,-0.04187025),(-0.18021375,0.62088305,-0.0441315),(-0.17437726,0.61820555,-0.040914),(-0.18685126,0.61671156,-0.0415755),(-0.17438626,0.618057,-0.0332325),(-0.18686701,0.6165203,-0.0326475),(-0.180243,0.616176,-0.0416115),(-0.180243,0.61605227,-0.0331785),(-0.17253451,0.6210383,-0.032436),(-0.18075375,0.62049603,-0.029583),(-0.19029826,0.62309927,-0.0323685),(-0.19171351,0.6346643,-0.0312795),(-0.191529,0.6373418,-0.0420705),(-0.17297776,0.6373418,-0.0420705),(-0.17291926,0.6346643,-0.0312795),(-0.18190801,0.6316875,-0.029313),(-0.181701,0.63799876,-0.04486725),(-0.19027801,0.64592105,-0.02863125),(-0.1887615,0.6483488,-0.0403965),(-0.18126225,0.6487673,-0.04287825),(-0.17416126,0.6483398,-0.04026825),(-0.1740825,0.64589405,-0.028503),(-0.19252126,0.64246505,-0.04229325),(-0.181701,0.643023,-0.0452115),(-0.1723185,0.64246505,-0.04229325),(-0.17205076,0.6398663,-0.028512001),(-0.1727685,0.6403658,-0.0273825),(-0.17340976,0.6349703,-0.02787075),(-0.1821555,0.6325763,-0.028676251),(-0.19109026,0.6350333,-0.02783925),(-0.19283625,0.6404198,-0.027522),(-0.1897155,0.6457703,-0.02775825),(-0.17479576,0.6457455,-0.027639),(-0.19388926,0.6399,-0.028516501),(-0.18197551,0.6316403,-0.02908125),(-0.1922985,0.6341423,-0.0288585),(-0.1728495,0.6341423,-0.0288585)]),
                 texCoord=TextureCoordinate(point=[(0.7578,0.1276),(0.7543,0.1247),(0.753,0.131),(0.7531,0.1316),(0.9854,0.1598),(0.9725,0.1615),(0.9734,0.1584),(0.9844,0.1569),(0.7413,0.123),(0.7403,0.1293),(0.7378,0.1249),(0.7401,0.1299),(0.7405,0.104),(0.7443,0.1047),(0.9859,0.1809),(0.7455,0.0995),(0.766,0.1015),(0.9713,0.1822),(0.7589,0.1059),(0.7648,0.1066),(0.766,0.1014),(0.7622,0.1091),(0.7648,0.1066),(0.7644,0.1092),(0.7455,0.0995),(0.7415,0.0989),(0.7664,0.0954),(0.7667,0.0954),(0.7485,0.0932),(0.7449,0.0928),(0.7484,0.0932),(0.7683,0.1016),(0.7686,0.0957),(0.7683,0.0956),(0.7679,0.1015),(0.7671,0.1055),(0.7666,0.1084),(0.7674,0.1056),(0.9687,0.1615),(0.9723,0.1564),(0.9888,0.1589),(0.9852,0.1547),(0.9898,0.1809),(0.9856,0.1862),(0.9651,0.1878),(0.9675,0.1796),(0.9654,0.1826),(0.9654,0.1799),(0.9897,0.1861)]))),
             Group(DEF='r_carpal_proximal_phalanx_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_middle_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4187,10 +3980,8 @@ None
                 coord=Coordinate(point=[(-0.17963775,0.60232055,-0.043692753),(-0.17215875,0.6031395,-0.032409),(-0.187722,0.6048765,-0.03229875),(-0.189657,0.61760026,-0.032555252),(-0.189639,0.617796,-0.04163175),(-0.17253,0.6213128,-0.041503504),(-0.19029374,0.623295,-0.04186575),(-0.172539,0.6211148,-0.032427),(-0.19030274,0.6231758,-0.032361753),(-0.17632125,0.6246968,-0.041807253),(-0.17633025,0.6245775,-0.0323055),(-0.18470925,0.62424004,-0.03231225),(-0.18470025,0.62435704,-0.041814003),(-0.1802205,0.6209595,-0.044122502),(-0.18075825,0.6205703,-0.029571751),(-0.17963775,0.6027593,-0.029904751),(-0.18563175,0.598572,-0.032463003),(-0.1824165,0.59814006,-0.0323145),(-0.17215875,0.60284704,-0.041501254),(-0.17335574,0.600102,-0.033108752),(-0.17382374,0.59990406,-0.040461753),(-0.18775125,0.6045728,-0.04175775),(-0.1856565,0.59832,-0.04097025),(-0.18248175,0.5979825,-0.0409635)]),
                 texCoord=TextureCoordinate(point=[(0.9725,0.1615),(0.7578,0.1276),(0.7541,0.1444),(0.9727,0.1441),(0.7543,0.1247),(0.7533,0.1302),(0.9851,0.1424),(0.9854,0.1598),(0.7404,0.1285),(0.7384,0.1404),(0.7513,0.1418),(0.7413,0.123),(0.7378,0.1249),(0.7355,0.1424),(0.7545,0.1231),(0.7416,0.1216),(0.7546,0.1229),(0.7417,0.1214),(0.7496,0.1479),(0.7498,0.1481),(0.9738,0.1409),(0.9839,0.1396),(0.738,0.1467),(0.7381,0.1469),(0.9687,0.1616),(0.9694,0.1441),(0.9888,0.1589),(0.988,0.1416),(0.9725,0.165),(0.9854,0.1633),(0.9728,0.1395),(0.9846,0.1375)]))),
             Group(DEF='r_carpal_middle_phalanx_5_Sites',
-              #  
-None 
-
-              ),
+              children=[
+              Comment(' None '),],),
             Shape(DEF='r_carpal_distal_phalanx_5_Shape',
               appearance=Appearance(
                 material=Material(USE='SurfaceDefault'),
@@ -4209,8 +4000,19 @@ None
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.18045,0.602325,-0.03697),(-0.172,0.58,-0.039)])))])])])])]),
     HAnimHumanoid(DEF='hanim_JinLOA4S',name='JinLOA4S',loa=4,version='2.0',
+      children=[
+      Comment(' MetadataSet name=\'HAnimHumanoid.info\' containerField=\'metadata\' reference=\'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid\'> '),
+      Comment(' <MetadataString name=\'authorName\' value=\'"Jin Hoon Lee and Min Joo Lee"","" Chul Hee Jung and Myeong Won Lee"\'/> '),
+      Comment(' <MetadataString name=\'authorEmail\' value=\'myeongwonlee@gmail.com\'/> '),
+      Comment(' <MetadataString name=\'creationDate\' value=\'31 March 2011\'/> '),
+      Comment(' <MetadataString name=\'John Carlson and Joe Williams\' value=\'Modifiers\'/> '),
+      Comment(' <MetadataString name=\'modificationDate\' value=\'25 March 2024\'/> '),
+      Comment(' <MetadataString name=\'gender\' value=\'female\'/> '),
+      Comment(' <MetadataFloat name=\'height\' value=\'1.5\'/> '),
+      Comment(' <MetadataString name=\'humanoidVersion\' value=\'2.0\'/> '),
+      Comment(' </MetadataSet '),],
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.77,0),ulimit=[0,0,0],llimit=[0,0,0],
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.77,0),
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
           children=[
@@ -4219,7 +4021,7 @@ None
           Shape(USE='sacrum-to-sacroiliac_Segment'),
           Shape(USE='sacrum-to-vl5_Segment'),
           Group(USE='sacrum_Sites')]),
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.826,0.02),ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.826,0.02),
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -4228,7 +4030,7 @@ None
             Shape(USE='pelvis-to-l_hip_Segment'),
             Shape(USE='pelvis-to-r_hip_Segment'),
             Group(USE='pelvis_Sites')]),
-          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),ulimit=[0,0,0],llimit=[0,0,0],
+          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
               children=[
@@ -4236,7 +4038,7 @@ None
               Transform(USE='l_hipJointShape'),
               Shape(USE='l_thigh_Segment'),
               Group(USE='l_thigh_Sites')]),
-            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.0926,0.4088,-0.01944),ulimit=[0,0,0],llimit=[0,0,0],
+            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.0926,0.4088,-0.01944),
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
                 children=[
@@ -4244,7 +4046,7 @@ None
                 Transform(USE='l_kneeJointShape'),
                 Shape(USE='l_calf_Segment'),
                 Group(USE='l_calf_Sites')]),
-              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.0888,0.09545,-0.01045),ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.0888,0.09545,-0.01045),
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
                   children=[
@@ -4253,7 +4055,7 @@ None
                   Shape(USE='l_talus-to-l_talocalcaneonavicular_Segment'),
                   Shape(USE='l_talus-to-l_calcaneuscuboid_Segment'),
                   Group(USE='l_talus_Sites')]),
-                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.0783,0.0369,0.0049),ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.0783,0.0369,0.0049),
                   children=[
                   HAnimSegment(DEF='hanim_l_navicular',name='l_navicular',
                     children=[
@@ -4263,7 +4065,7 @@ None
                     Shape(USE='l_navicular-to-l_cuneonavicular_2_Segment'),
                     Shape(USE='l_navicular-to-l_cuneonavicular_3_Segment'),
                     Group(USE='l_navicular_Sites')]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.0674,0.0321,0.0184),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.0674,0.0321,0.0184),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_1',name='l_cuneiform_1',
                       children=[
@@ -4271,7 +4073,7 @@ None
                       Transform(USE='l_cuneonavicular_1JointShape'),
                       Shape(USE='l_cuneiform_1_Segment'),
                       Group(USE='l_cuneiform_1_Sites')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.0646,0.02324,0.0442),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.0646,0.02324,0.0442),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_1',name='l_metatarsal_1',
                         children=[
@@ -4279,7 +4081,7 @@ None
                         Transform(USE='l_tarsometatarsal_1JointShape'),
                         Shape(USE='l_metatarsal_1_Segment'),
                         Group(USE='l_metatarsal_1_Sites')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621,0.01442,0.0936),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621,0.01442,0.0936),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_1',name='l_tarsal_proximal_phalanx_1',
                           children=[
@@ -4287,7 +4089,7 @@ None
                           Transform(USE='l_metatarsophalangeal_1JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_1_Segment'),
                           Group(USE='l_tarsal_proximal_phalanx_1_Sites')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_1',name='l_tarsal_distal_phalanx_1',
                             children=[
@@ -4295,7 +4097,7 @@ None
                             Transform(USE='l_tarsal_interphalangeal_1JointShape'),
                             Shape(USE='l_tarsal_distal_phalanx_1_Segment'),
                             Group(USE='l_tarsal_distal_phalanx_1_Sites')])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814,0.0335,0.02143),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814,0.0335,0.02143),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_2',name='l_cuneiform_2',
                       children=[
@@ -4303,7 +4105,7 @@ None
                       Transform(USE='l_cuneonavicular_2JointShape'),
                       Shape(USE='l_cuneiform_2_Segment'),
                       Group(USE='l_cuneiform_2_Sites')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.0802,0.0261,0.0411),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.0802,0.0261,0.0411),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_2',name='l_metatarsal_2',
                         children=[
@@ -4311,7 +4113,7 @@ None
                         Transform(USE='l_tarsometatarsal_2JointShape'),
                         Shape(USE='l_metatarsal_2_Segment'),
                         Group(USE='l_metatarsal_2_Sites')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0825,0.01497,0.09783),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0825,0.01497,0.09783),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
                           children=[
@@ -4319,7 +4121,7 @@ None
                           Transform(USE='l_metatarsophalangeal_2JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_2_Segment'),
                           Group(USE='l_tarsal_proximal_phalanx_2_Sites')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843,0.01265,0.114),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843,0.01265,0.114),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_2',name='l_tarsal_middle_phalanx_2',
                             children=[
@@ -4327,7 +4129,7 @@ None
                             Transform(USE='l_tarsal_proximal_interphalangeal_2JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_2_Segment'),
                             Group(USE='l_tarsal_middle_phalanx_2_Sites')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843,0.00982,0.123435),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843,0.00982,0.123435),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_2',name='l_tarsal_distal_phalanx_2',
                               children=[
@@ -4335,7 +4137,7 @@ None
                               Transform(USE='l_tarsal_distal_interphalangeal_2JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_2_Segment'),
                               Group(USE='l_tarsal_distal_phalanx_2_Sites')])])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.09297,0.0334,0.01982),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.09297,0.0334,0.01982),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_3',name='l_cuneiform_3',
                       children=[
@@ -4343,7 +4145,7 @@ None
                       Transform(USE='l_cuneonavicular_3JointShape'),
                       Shape(USE='l_cuneiform_3_Segment'),
                       Group(USE='l_cuneiform_3_Sites')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.0394),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.0394),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_3',name='l_metatarsal_3',
                         children=[
@@ -4351,7 +4153,7 @@ None
                         Transform(USE='l_tarsometatarsal_3JointShape'),
                         Shape(USE='l_metatarsal_3_Segment'),
                         Group(USE='l_metatarsal_3_Sites')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.0965,0.01505,0.0954),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.0965,0.01505,0.0954),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_3',name='l_tarsal_proximal_phalanx_3',
                           children=[
@@ -4359,7 +4161,7 @@ None
                           Transform(USE='l_metatarsophalangeal_3JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_3_Segment'),
                           Group(USE='l_tarsal_proximal_phalanx_3_Sites')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.09886,0.01192,0.11047),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.09886,0.01192,0.11047),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_3',name='l_tarsal_middle_phalanx_3',
                             children=[
@@ -4367,7 +4169,7 @@ None
                             Transform(USE='l_tarsal_proximal_interphalangeal_3JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_3_Segment'),
                             Group(USE='l_tarsal_middle_phalanx_3_Sites')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004,0.00983,0.1197),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004,0.00983,0.1197),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_3',name='l_tarsal_distal_phalanx_3',
                               children=[
@@ -4375,7 +4177,7 @@ None
                               Transform(USE='l_tarsal_distal_interphalangeal_3JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_3_Segment'),
                               Group(USE='l_tarsal_distal_phalanx_3_Sites')])])])])])])]),
-                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.05798,-0.0259),ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.05798,-0.0259),
                   children=[
                   HAnimSegment(DEF='hanim_l_calcaneus',name='l_calcaneus',
                     children=[
@@ -4383,7 +4185,7 @@ None
                     Transform(USE='l_calcaneocuboidJointShape'),
                     Shape(USE='l_calcaneus_Segment'),
                     Group(USE='l_calcaneus_Sites')]),
-                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.11063,0.03528,0.0021),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.11063,0.03528,0.0021),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuboid',name='l_cuboid',
                       children=[
@@ -4392,7 +4194,7 @@ None
                       Shape(USE='l_cuboid-to-l_tarsometatarsal_4_Segment'),
                       Shape(USE='l_cuboid-to-l_tarsometatarsal_5_Segment'),
                       Group(USE='l_cuboid_Sites')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.10649,0.02454,0.03843),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.10649,0.02454,0.03843),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_4',name='l_metatarsal_4',
                         children=[
@@ -4400,7 +4202,7 @@ None
                         Transform(USE='l_tarsometatarsal_4JointShape'),
                         Shape(USE='l_metatarsal_4_Segment'),
                         Group(USE='l_metatarsal_4_Sites')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867,0.01435,0.09117),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867,0.01435,0.09117),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_4',name='l_tarsal_proximal_phalanx_4',
                           children=[
@@ -4408,7 +4210,7 @@ None
                           Transform(USE='l_metatarsophalangeal_4JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_4_Segment'),
                           Group(USE='l_tarsal_proximal_phalanx_4_Sites')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.11416,0.01224,0.10631),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.11416,0.01224,0.10631),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_4',name='l_tarsal_middle_phalanx_4',
                             children=[
@@ -4416,7 +4218,7 @@ None
                             Transform(USE='l_tarsal_proximal_interphalangeal_4JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_4_Segment'),
                             Group(USE='l_tarsal_middle_phalanx_4_Sites')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.11567,0.00936,0.11369),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.11567,0.00936,0.11369),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_4',name='l_tarsal_distal_phalanx_4',
                               children=[
@@ -4424,7 +4226,7 @@ None
                               Transform(USE='l_tarsal_distal_interphalangeal_4JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_4_Segment'),
                               Group(USE='l_tarsal_distal_phalanx_4_Sites')])])])])]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.1208,0.02094,0.03474),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.1208,0.02094,0.03474),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_5',name='l_metatarsal_5',
                         children=[
@@ -4432,7 +4234,7 @@ None
                         Transform(USE='l_metatarsal_5JointShape'),
                         Shape(USE='l_metatarsal_5_Segment'),
                         Group(USE='l_metatarsal_5_Sites')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065,0.01367,0.08656),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065,0.01367,0.08656),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_5',name='l_tarsal_proximal_phalanx_5',
                           children=[
@@ -4440,7 +4242,7 @@ None
                           Transform(USE='l_metatarsophalangeal_5JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_5_Segment'),
                           Group(USE='l_tarsal_proximal_phalanx_5_Sites')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.12638,0.01086,0.09414),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.12638,0.01086,0.09414),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_5',name='l_tarsal_middle_phalanx_5',
                             children=[
@@ -4448,7 +4250,7 @@ None
                             Transform(USE='l_tarsal_proximal_interphalangeal_5JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_5_Segment'),
                             Group(USE='l_tarsal_middle_phalanx_5_Sites')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.12728,0.00856,0.10188),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.12728,0.00856,0.10188),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_5',name='l_tarsal_distal_phalanx_5',
                               children=[
@@ -4456,7 +4258,7 @@ None
                               Transform(USE='l_tarsal_distal_interphalangeal_5JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_5_Segment'),
                               Group(USE='l_tarsal_distal_phalanx_5_Sites')])])])])])])])])])]),
-          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.09466,0.82665,-0.01835),ulimit=[0,0,0],llimit=[0,0,0],
+          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.09466,0.82665,-0.01835),
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
               children=[
@@ -4464,7 +4266,7 @@ None
               Transform(USE='r_hipJointShape'),
               Shape(USE='r_thigh_Segment'),
               Group(USE='r_thigh_Sites')]),
-            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0926,0.408825,-0.01944),ulimit=[0,0,0],llimit=[0,0,0],
+            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0926,0.408825,-0.01944),
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
                 children=[
@@ -4472,7 +4274,7 @@ None
                 Transform(USE='r_kneeJointShape'),
                 Shape(USE='r_calf_Segment'),
                 Group(USE='r_calf_Sites')]),
-              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.08845,0.09544,-0.01045),ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.08845,0.09544,-0.01045),
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
                   children=[
@@ -4481,7 +4283,7 @@ None
                   Shape(USE='r_talus-to-r_talocalcaneonavicular_Segment'),
                   Shape(USE='r_talus-to-r_calcaneocuboid_Segment'),
                   Group(USE='r_talus_Sites')]),
-                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.0369,0.00486),ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.0369,0.00486),
                   children=[
                   HAnimSegment(DEF='hanim_r_navicular',name='r_navicular',
                     children=[
@@ -4491,7 +4293,7 @@ None
                     Shape(USE='r_navicular-to-r_cuneonavicular_2_Segment'),
                     Shape(USE='r_navicular-to-r_cuneonavicular_3_Segment'),
                     Group(USE='r_navicular_Sites')]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.06698,0.032107,0.01839),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.06698,0.032107,0.01839),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_1',name='r_cuneiform_1',
                       children=[
@@ -4499,7 +4301,7 @@ None
                       Transform(USE='r_cuneonavicular_1JointShape'),
                       Shape(USE='r_cuneiform_1_Segment'),
                       Group(USE='r_cuneiform_1_Sites')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.064,0.02324,0.04419),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.064,0.02324,0.04419),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_1',name='r_metatarsal_1',
                         children=[
@@ -4507,7 +4309,7 @@ None
                         Transform(USE='r_tarsometatarsal_1JointShape'),
                         Shape(USE='r_metatarsal_1_Segment'),
                         Group(USE='r_metatarsal_1_Sites')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.06176,0.014425,0.09362),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.06176,0.014425,0.09362),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_1',name='r_tarsal_proximal_phalanx_1',
                           children=[
@@ -4515,7 +4317,7 @@ None
                           Transform(USE='r_metatarsophalangeal_1JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_1_Segment'),
                           Group(USE='r_tarsal_proximal_phalanx_1_Sites')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121,0.1153),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121,0.1153),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_1',name='r_tarsal_distal_phalanx_1',
                             children=[
@@ -4523,7 +4325,7 @@ None
                             Transform(USE='r_tarsal_interphalangeal_1JointShape'),
                             Shape(USE='r_tarsal_distal_phalanx_1_Segment'),
                             Group(USE='r_tarsal_distal_phalanx_1_Sites')])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081,0.0335,0.02142),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081,0.0335,0.02142),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_2',name='r_cuneiform_2',
                       children=[
@@ -4531,7 +4333,7 @@ None
                       Transform(USE='r_cuneonavicular_2JointShape'),
                       Shape(USE='r_cuneiform_2_Segment'),
                       Group(USE='r_cuneiform_2_Sites')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.07983,0.0261,0.04106),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.07983,0.0261,0.04106),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_2',name='r_metatarsal_2',
                         children=[
@@ -4539,7 +4341,7 @@ None
                         Transform(USE='r_tarsometatarsal_2JointShape'),
                         Shape(USE='r_metatarsal_2_Segment'),
                         Group(USE='r_metatarsal_2_Sites')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821,0.01497,0.09783),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821,0.01497,0.09783),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_2',name='r_tarsal_proximal_phalanx_2',
                           children=[
@@ -4547,7 +4349,7 @@ None
                           Transform(USE='r_metatarsophalangeal_2JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_2_Segment'),
                           Group(USE='r_tarsal_proximal_phalanx_2_Sites')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.0839,0.012647,0.114),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.0839,0.012647,0.114),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_2',name='r_tarsal_middle_phalanx_2',
                             children=[
@@ -4555,7 +4357,7 @@ None
                             Transform(USE='r_tarsal_proximal_interphalangeal_2JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_2_Segment'),
                             Group(USE='r_tarsal_middle_phalanx_2_Sites')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.0839,0.009825,0.123435),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.0839,0.009825,0.123435),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_2',name='r_tarsal_distal_phalanx_2',
                               children=[
@@ -4563,7 +4365,7 @@ None
                               Transform(USE='r_tarsal_distal_interphalangeal_2JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_2_Segment'),
                               Group(USE='r_tarsal_distal_phalanx_2_Sites')])])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261,0.03339,0.01982),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261,0.03339,0.01982),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_3',name='r_cuneiform_3',
                       children=[
@@ -4571,7 +4373,7 @@ None
                       Transform(USE='r_cuneonavicular_3JointShape'),
                       Shape(USE='r_cuneiform_3_Segment'),
                       Group(USE='r_cuneiform_3_Sites')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423,0.0261,0.0394),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423,0.0261,0.0394),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_3',name='r_metatarsal_3',
                         children=[
@@ -4579,7 +4381,7 @@ None
                         Transform(USE='r_tarsometatarsal_3JointShape'),
                         Shape(USE='r_metatarsal_3_Segment'),
                         Group(USE='r_metatarsal_3_Sites')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0961,0.01505,0.09542),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0961,0.01505,0.09542),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_3',name='r_tarsal_proximal_phalanx_3',
                           children=[
@@ -4587,7 +4389,7 @@ None
                           Transform(USE='r_metatarsophalangeal_3JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_3_Segment'),
                           Group(USE='r_tarsal_proximal_phalanx_3_Sites')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.0985,0.01192,0.11047),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.0985,0.01192,0.11047),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_3',name='r_tarsal_middle_phalanx_3',
                             children=[
@@ -4595,7 +4397,7 @@ None
                             Transform(USE='r_tarsal_proximal_interphalangeal_3JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_3_Segment'),
                             Group(USE='r_tarsal_middle_phalanx_3_Sites')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035,0.00982,0.1197),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035,0.00982,0.1197),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_3',name='r_tarsal_distal_phalanx_3',
                               children=[
@@ -4603,7 +4405,7 @@ None
                               Transform(USE='r_tarsal_distal_interphalangeal_3JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_3_Segment'),
                               Group(USE='r_tarsal_distal_phalanx_3_Sites')])])])])])])]),
-                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717,0.05798,-0.025965),ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717,0.05798,-0.025965),
                   children=[
                   HAnimSegment(DEF='hanim_r_calcaneus',name='r_calcaneus',
                     children=[
@@ -4611,7 +4413,7 @@ None
                     Transform(USE='r_calcaneocuboidJointShape'),
                     Shape(USE='r_calcaneus_Segment'),
                     Group(USE='r_calcaneus_Sites')]),
-                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.11027,0.03528,0.0021),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.11027,0.03528,0.0021),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuboid',name='r_cuboid',
                       children=[
@@ -4619,7 +4421,7 @@ None
                       Transform(USE='r_transversetarsalJointShape'),
                       Shape(USE='r_cuboid_Segment'),
                       Group(USE='r_cuboid_Sites')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613,0.02454,0.03843),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613,0.02454,0.03843),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_4',name='r_metatarsal_4',
                         children=[
@@ -4627,7 +4429,7 @@ None
                         Transform(USE='r_tarsometatarsal_4JointShape'),
                         Shape(USE='r_metatarsal_4_Segment'),
                         Group(USE='r_metatarsal_4_Sites')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.1095,0.01435,0.09117),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.1095,0.01435,0.09117),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_4',name='r_tarsal_proximal_phalanx_4',
                           children=[
@@ -4635,7 +4437,7 @@ None
                           Transform(USE='r_metatarsophalangeal_4JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_4_Segment'),
                           Group(USE='r_tarsal_proximal_phalanx_4_Sites')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378,0.01224,0.1063),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378,0.01224,0.1063),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_4',name='r_tarsal_middle_phalanx_4',
                             children=[
@@ -4643,7 +4445,7 @@ None
                             Transform(USE='r_tarsal_proximal_interphalangeal_4JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_4_Segment'),
                             Group(USE='r_tarsal_middle_phalanx_4_Sites')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153,0.00937,0.11369),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153,0.00937,0.11369),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_4',name='r_tarsal_distal_phalanx_4',
                               children=[
@@ -4651,7 +4453,7 @@ None
                               Transform(USE='r_tarsal_distal_interphalangeal_4JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_4_Segment'),
                               Group(USE='r_tarsal_distal_phalanx_4_Sites')])])])])]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044,0.020945,0.03474),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044,0.020945,0.03474),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_5',name='r_metatarsal_5',
                         children=[
@@ -4659,7 +4461,7 @@ None
                         Transform(USE='r_tarsometatarsal_5JointShape'),
                         Shape(USE='r_metatarsal_5_Segment'),
                         Group(USE='r_metatarsal_5_Sites')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368,0.01367,0.08656),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368,0.01367,0.08656),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_5',name='r_tarsal_proximal_phalanx_5',
                           children=[
@@ -4667,7 +4469,7 @@ None
                           Transform(USE='r_metatarsophalangeal_5JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_5_Segment'),
                           Group(USE='r_tarsal_proximal_phalanx_5_Sites')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01086,0.09414),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01086,0.09414),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_5',name='r_tarsal_middle_phalanx_5',
                             children=[
@@ -4675,7 +4477,7 @@ None
                             Transform(USE='r_tarsal_proximal_interphalangeal_5JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_5_Segment'),
                             Group(USE='r_tarsal_middle_phalanx_5_Sites')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269,0.00856,0.10188),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269,0.00856,0.10188),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_5',name='r_tarsal_distal_phalanx_5',
                               children=[
@@ -4683,7 +4485,7 @@ None
                               Transform(USE='r_tarsal_distal_interphalangeal_5JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_5_Segment'),
                               Group(USE='r_tarsal_distal_phalanx_5_Sites')])])])])])])])])])])]),
-        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.9254,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.9254,-0.01376),
           children=[
           HAnimSegment(DEF='hanim_l5',name='l5',
             children=[
@@ -4691,7 +4493,7 @@ None
             Transform(USE='vl5JointShape'),
             Shape(USE='l5_Segment'),
             Group(USE='l5_Sites')]),
-          HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.9497,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+          HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.9497,-0.01376),
             children=[
             HAnimSegment(DEF='hanim_l4',name='l4',
               children=[
@@ -4699,7 +4501,7 @@ None
               Transform(USE='vl4JointShape'),
               Shape(USE='l4_Segment'),
               Group(USE='l4_Sites')]),
-            HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.9659,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+            HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.9659,-0.01376),
               children=[
               HAnimSegment(DEF='hanim_l3',name='l3',
                 children=[
@@ -4707,7 +4509,7 @@ None
                 Transform(USE='vl3JointShape'),
                 Shape(USE='l3_Segment'),
                 Group(USE='l3_Sites')]),
-              HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235,-0.01376),
                 children=[
                 HAnimSegment(DEF='hanim_l2',name='l2',
                   children=[
@@ -4715,7 +4517,7 @@ None
                   Transform(USE='vl2JointShape'),
                   Shape(USE='l2_Segment'),
                   Group(USE='l2_Sites')]),
-                HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967,-0.01376),
                   children=[
                   HAnimSegment(DEF='hanim_l1',name='l1',
                     children=[
@@ -4723,7 +4525,7 @@ None
                     Transform(USE='vl1JointShape'),
                     Shape(USE='l1_Segment'),
                     Group(USE='l1_Sites')]),
-                  HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0231,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0231,-0.01376),
                     children=[
                     HAnimSegment(DEF='hanim_t12',name='t12',
                       children=[
@@ -4731,7 +4533,7 @@ None
                       Transform(USE='vt12JointShape'),
                       Shape(USE='t12_Segment'),
                       Group(USE='t12_Sites')]),
-                    HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.01376),
                       children=[
                       HAnimSegment(DEF='hanim_t11',name='t11',
                         children=[
@@ -4739,7 +4541,7 @@ None
                         Transform(USE='vt11JointShape'),
                         Shape(USE='t11_Segment'),
                         Group(USE='t11_Sites')]),
-                      HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.01378),ulimit=[0,0,0],llimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.01378),
                         children=[
                         HAnimSegment(DEF='hanim_t10',name='t10',
                           children=[
@@ -4747,7 +4549,7 @@ None
                           Transform(USE='vt10JointShape'),
                           Shape(USE='t10_Segment'),
                           Group(USE='t10_Sites')]),
-                        HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.0784,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.0784,-0.01376),
                           children=[
                           HAnimSegment(DEF='hanim_t9',name='t9',
                             children=[
@@ -4755,7 +4557,7 @@ None
                             Transform(USE='vt9JointShape'),
                             Shape(USE='t9_Segment'),
                             Group(USE='t9_Sites')]),
-                          HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.0930,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.0930,-0.01376),
                             children=[
                             HAnimSegment(DEF='hanim_t8',name='t8',
                               children=[
@@ -4763,7 +4565,7 @@ None
                               Transform(USE='vt8JointShape'),
                               Shape(USE='t8_Segment'),
                               Group(USE='t8_Sites')]),
-                            HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                            HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.01376),
                               children=[
                               HAnimSegment(DEF='hanim_t7',name='t7',
                                 children=[
@@ -4771,7 +4573,7 @@ None
                                 Transform(USE='vt7JointShape'),
                                 Shape(USE='t7_Segment'),
                                 Group(USE='t7_Sites')]),
-                              HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                              HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216,-0.01376),
                                 children=[
                                 HAnimSegment(DEF='hanim_t6',name='t6',
                                   children=[
@@ -4779,7 +4581,7 @@ None
                                   Transform(USE='vt6JointShape'),
                                   Shape(USE='t6_Segment'),
                                   Group(USE='t6_Sites')]),
-                                HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.137,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                                HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.137,-0.01376),
                                   children=[
                                   HAnimSegment(DEF='hanim_t5',name='t5',
                                     children=[
@@ -4787,7 +4589,7 @@ None
                                     Transform(USE='vt5JointShape'),
                                     Shape(USE='t5_Segment'),
                                     Group(USE='t5_Sites')]),
-                                  HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                                  HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524,-0.01376),
                                     children=[
                                     HAnimSegment(DEF='hanim_t4',name='t4',
                                       children=[
@@ -4795,7 +4597,7 @@ None
                                       Transform(USE='vt4JointShape'),
                                       Shape(USE='t4_Segment'),
                                       Group(USE='t4_Sites')]),
-                                    HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709,-0.01376),ulimit=[0,0,0],llimit=[0,0,0],
+                                    HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709,-0.01376),
                                       children=[
                                       HAnimSegment(DEF='hanim_t3',name='t3',
                                         children=[
@@ -4803,7 +4605,7 @@ None
                                         Transform(USE='vt3JointShape'),
                                         Shape(USE='t3_Segment'),
                                         Group(USE='t3_Sites')]),
-                                      HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.1956,-0.01378),ulimit=[0,0,0],llimit=[0,0,0],
+                                      HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.1956,-0.01378),
                                         children=[
                                         HAnimSegment(DEF='hanim_t2',name='t2',
                                           children=[
@@ -4811,7 +4613,7 @@ None
                                           Transform(USE='vt2JointShape'),
                                           Shape(USE='t2_Segment'),
                                           Group(USE='t2_Sites')]),
-                                        HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),ulimit=[0,0,0],llimit=[0,0,0],
+                                        HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),
                                           children=[
                                           HAnimSegment(DEF='hanim_t1',name='t1',
                                             children=[
@@ -4819,7 +4621,7 @@ None
                                             Transform(USE='vt1JointShape'),
                                             Shape(USE='t1_Segment'),
                                             Group(USE='t1_Sites')]),
-                                          HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.2453,-0.01506),ulimit=[0,0,0],llimit=[0,0,0],
+                                          HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.2453,-0.01506),
                                             children=[
                                             HAnimSegment(DEF='hanim_c7',name='c7',
                                               children=[
@@ -4829,7 +4631,7 @@ None
                                               Shape(USE='c7-to-l_sternoclavicular_Segment'),
                                               Shape(USE='c7-to-r_sternoclavicular_Segment'),
                                               Group(USE='c7_Sites')]),
-                                            HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575,-0.01506),ulimit=[0,0,0],llimit=[0,0,0],
+                                            HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575,-0.01506),
                                               children=[
                                               HAnimSegment(DEF='hanim_c6',name='c6',
                                                 children=[
@@ -4837,7 +4639,7 @@ None
                                                 Transform(USE='vc6JointShape'),
                                                 Shape(USE='c6_Segment'),
                                                 Group(USE='c6_Sites')]),
-                                              HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.01506),ulimit=[0,0,0],llimit=[0,0,0],
+                                              HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.01506),
                                                 children=[
                                                 HAnimSegment(DEF='hanim_c5',name='c5',
                                                   children=[
@@ -4845,7 +4647,7 @@ None
                                                   Transform(USE='vc5JointShape'),
                                                   Shape(USE='c5_Segment'),
                                                   Group(USE='c5_Sites')]),
-                                                HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.28227,-0.01506),ulimit=[0,0,0],llimit=[0,0,0],
+                                                HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.28227,-0.01506),
                                                   children=[
                                                   HAnimSegment(DEF='hanim_c4',name='c4',
                                                     children=[
@@ -4853,7 +4655,7 @@ None
                                                     Transform(USE='vc4JointShape'),
                                                     Shape(USE='c4_Segment'),
                                                     Group(USE='c4_Sites')]),
-                                                  HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951,-0.01506),ulimit=[0,0,0],llimit=[0,0,0],
+                                                  HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951,-0.01506),
                                                     children=[
                                                     HAnimSegment(DEF='hanim_c3',name='c3',
                                                       children=[
@@ -4861,7 +4663,7 @@ None
                                                       Transform(USE='vc3JointShape'),
                                                       Shape(USE='c3_Segment'),
                                                       Group(USE='c3_Sites')]),
-                                                    HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.0150),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.0150),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_c2',name='c2',
                                                         children=[
@@ -4869,7 +4671,7 @@ None
                                                         Transform(USE='vc2JointShape'),
                                                         Shape(USE='c2_Segment'),
                                                         Group(USE='c2_Sites')]),
-                                                      HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.0151),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.0151),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_c1',name='c1',
                                                           children=[
@@ -4877,7 +4679,7 @@ None
                                                           Transform(USE='vc1JointShape'),
                                                           Shape(USE='c1_Segment'),
                                                           Group(USE='c1_Sites')]),
-                                                        HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126,-0.0154),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126,-0.0154),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_skull',name='skull',
                                                             children=[
@@ -4890,9 +4692,9 @@ None
                                                             Shape(USE='skull-to-l_eyebrow_joint_Segment'),
                                                             Shape(USE='skull-to-r_eyebrow_joint_Segment'),
                                                             Shape(USE='skull-to-temporomandibular_Segment'),
-                                                            #  Shape DEF='skull-to-tongue_joint'/ 
+                                                            Comment(' Shape DEF=\'skull-to-tongue_joint\'/ '),
                                                             Group(USE='skull_Sites')]),
-                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505,1.42425,0.03294),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505,1.42425,0.03294),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyelid',name='l_eyelid',
                                                               children=[
@@ -4900,7 +4702,7 @@ None
                                                               Transform(USE='l_eyelid_jointJointShape'),
                                                               Shape(USE='l_eyelid_Segment'),
                                                               Group(USE='l_eyelid_Sites')])]),
-                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505,1.42425,0.03294),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505,1.42425,0.03294),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyelid',name='r_eyelid',
                                                               children=[
@@ -4908,7 +4710,7 @@ None
                                                               Transform(USE='r_eyelid_jointJointShape'),
                                                               Shape(USE='r_eyelid_Segment'),
                                                               Group(USE='r_eyelid_Sites')])]),
-                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127,1.4049,0.08305),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127,1.4049,0.08305),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyeball',name='l_eyeball',
                                                               children=[
@@ -4916,7 +4718,7 @@ None
                                                               Transform(USE='l_eyeball_jointJointShape'),
                                                               Shape(USE='l_eyeball_Segment'),
                                                               Group(USE='l_eyeball_Sites')])]),
-                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.04813,1.4049,0.08305),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.04813,1.4049,0.08305),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyeball',name='r_eyeball',
                                                               children=[
@@ -4924,7 +4726,7 @@ None
                                                               Transform(USE='r_eyeball_jointJointShape'),
                                                               Shape(USE='r_eyeball_Segment'),
                                                               Group(USE='r_eyeball_Sites')])]),
-                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.02175,1.4139,0.1069),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.02175,1.4139,0.1069),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyebrow',name='l_eyebrow',
                                                               children=[
@@ -4932,7 +4734,7 @@ None
                                                               Transform(USE='l_eyebrow_jointJointShape'),
                                                               Shape(USE='l_eyebrow_Segment'),
                                                               Group(USE='l_eyebrow_Sites')])]),
-                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.02175,1.4139,0.10694),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.02175,1.4139,0.10694),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyebrow',name='r_eyebrow',
                                                               children=[
@@ -4940,7 +4742,7 @@ None
                                                               Transform(USE='r_eyebrow_jointJointShape'),
                                                               Shape(USE='r_eyebrow_Segment'),
                                                               Group(USE='r_eyebrow_Sites')])]),
-                                                          HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.3128,0.01538),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.3128,0.01538),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_jaw',name='jaw',
                                                               children=[
@@ -4949,7 +4751,7 @@ None
                                                               Shape(USE='jaw-to-supramenton_Segment'),
                                                               Shape(USE='jaw-to-menton_Segment'),
                                                               Group(USE='jaw_Sites')])])])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.03847,1.2087,-0.01378),ulimit=[0,0,0],llimit=[0,0,0],
+                                          HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.03847,1.2087,-0.01378),
                                             children=[
                                             HAnimSegment(DEF='hanim_l_clavicle',name='l_clavicle',
                                               children=[
@@ -4957,7 +4759,7 @@ None
                                               Transform(USE='l_sternoclavicularJointShape'),
                                               Shape(USE='l_clavicle_Segment'),
                                               Group(USE='l_clavicle_Sites')]),
-                                            HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294,1.191825,-0.0129),ulimit=[0,0,0],llimit=[0,0,0],
+                                            HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294,1.191825,-0.0129),
                                               children=[
                                               HAnimSegment(DEF='hanim_l_scapula',name='l_scapula',
                                                 children=[
@@ -4965,7 +4767,7 @@ None
                                                 Transform(USE='l_acromioclavicularJointShape'),
                                                 Shape(USE='l_scapula_Segment'),
                                                 Group(USE='l_scapula_Sites')]),
-                                              HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.17855,-0.00327),ulimit=[0,0,0],llimit=[0,0,0],
+                                              HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.17855,-0.00327),
                                                 children=[
                                                 HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
                                                   children=[
@@ -4973,7 +4775,7 @@ None
                                                   Transform(USE='l_shoulderJointShape'),
                                                   Shape(USE='l_upperarm_Segment'),
                                                   Group(USE='l_upperarm_Sites')]),
-                                                HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209,0.9288,-0.00563),ulimit=[0,0,0],llimit=[0,0,0],
+                                                HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209,0.9288,-0.00563),
                                                   children=[
                                                   HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
                                                     children=[
@@ -4981,7 +4783,7 @@ None
                                                     Transform(USE='l_elbowJointShape'),
                                                     Shape(USE='l_forearm_Segment'),
                                                     Group(USE='l_forearm_Sites')]),
-                                                  HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1819,0.72427,-0.005),ulimit=[0,0,0],llimit=[0,0,0],
+                                                  HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1819,0.72427,-0.005),
                                                     children=[
                                                     HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
                                                       children=[
@@ -4992,7 +4794,7 @@ None
                                                       Shape(USE='l_carpal-to-l_midcarpal_3_Segment'),
                                                       Shape(USE='l_carpal-to-l_midcarpal_4_Segment'),
                                                       Group(USE='l_carpal_Sites')]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1813,0.706,0.0193),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1813,0.706,0.0193),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_trapezium',name='l_trapezium',
                                                         children=[
@@ -5001,7 +4803,7 @@ None
                                                         Shape(USE='l_trapezium-to-l_carpometacarpal_1_Segment'),
                                                         Shape(USE='l_trapezium-to-l_midcarpal_4_5_Segment'),
                                                         Group(USE='l_trapezium_Sites')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.1805,0.69255,0.026),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.1805,0.69255,0.026),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_1',name='l_metacarpal_1',
                                                           children=[
@@ -5009,7 +4811,7 @@ None
                                                           Transform(USE='l_carpometacarpal_1JointShape'),
                                                           Shape(USE='l_metacarpal_1_Segment'),
                                                           Group(USE='l_metacarpal_1_Sites')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181,0.6727,0.03577),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181,0.6727,0.03577),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_1',name='l_carpal_proximal_phalanx_1',
                                                             children=[
@@ -5017,7 +4819,7 @@ None
                                                             Transform(USE='l_metacarpophalangeal_1JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_1_Segment'),
                                                             Group(USE='l_carpal_proximal_phalanx_1_Sites')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.1826,0.654,0.04966),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.1826,0.654,0.04966),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_1',name='l_carpal_distal_phalanx_1',
                                                               children=[
@@ -5025,7 +4827,7 @@ None
                                                               Transform(USE='l_carpal_interphalangeal_1JointShape'),
                                                               Shape(USE='l_carpal_distal_phalanx_1_Segment'),
                                                               Group(USE='l_carpal_distal_phalanx_1_Sites')])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.18128,0.70695,0.00842),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.18128,0.70695,0.00842),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_trapezoid',name='l_trapezoid',
                                                         children=[
@@ -5033,7 +4835,7 @@ None
                                                         Transform(USE='l_midcarpal_2JointShape'),
                                                         Shape(USE='l_trapezoid_Segment'),
                                                         Group(USE='l_trapezoid_Sites')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.18128,0.6876,0.0098),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.18128,0.6876,0.0098),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_2',name='l_metacarpal_2',
                                                           children=[
@@ -5041,7 +4843,7 @@ None
                                                           Transform(USE='l_carpometacarpal_2JointShape'),
                                                           Shape(USE='l_metacarpal_2_Segment'),
                                                           Group(USE='l_metacarpal_2_Sites')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.1837,0.6372,0.01507),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.1837,0.6372,0.01507),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_2',name='l_carpal_proximal_phalanx_2',
                                                             children=[
@@ -5049,7 +4851,7 @@ None
                                                             Transform(USE='l_metacarpophalangeal_2JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_2_Segment'),
                                                             Group(USE='l_carpal_proximal_phalanx_2_Sites')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.6068,0.01418),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.6068,0.01418),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_2',name='l_carpal_middle_phalanx_2',
                                                               children=[
@@ -5057,16 +4859,16 @@ None
                                                               Transform(USE='l_carpal_proximal_interphalangeal_2JointShape'),
                                                               Shape(USE='l_carpal_middle_phalanx_2_Segment'),
                                                               Group(USE='l_carpal_middle_phalanx_2_Sites')]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.18067,0.5816,0.01338),ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.18067,0.5816,0.01338),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_2',name='l_carpal_distal_phalanx_2',
                                                                 children=[
                                                                 Shape(USE='l_carpal_distal_phalanx_2_Shape'),
                                                                 Transform(USE='l_carpal_distal_interphalangeal_2JointShape'),
-                                                                #  Shape USE='l_carpal_distal_phalanx_2-to-l_dactylion_pt'/ 
+                                                                Comment(' Shape USE=\'l_carpal_distal_phalanx_2-to-l_dactylion_pt\'/ '),
                                                                 Shape(USE='l_carpal_distal_phalanx_2_Segment'),
                                                                 Group(USE='l_carpal_distal_phalanx_2_Sites')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108,0.708525,-0.0048),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108,0.708525,-0.0048),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_capitate',name='l_capitate',
                                                         children=[
@@ -5074,7 +4876,7 @@ None
                                                         Transform(USE='l_midcarpal_3JointShape'),
                                                         Shape(USE='l_capitate_Segment'),
                                                         Group(USE='l_capitate_Sites')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108,0.6858,-0.00625),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108,0.6858,-0.00625),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_3',name='l_metacarpal_3',
                                                           children=[
@@ -5082,7 +4884,7 @@ None
                                                           Transform(USE='l_carpometacarpal_3JointShape'),
                                                           Shape(USE='l_metacarpal_3_Segment'),
                                                           Group(USE='l_metacarpal_3_Sites')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.6349,-0.0039),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.6349,-0.0039),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_3',name='l_carpal_proximal_phalanx_3',
                                                             children=[
@@ -5090,7 +4892,7 @@ None
                                                             Transform(USE='l_metacarpophalangeal_3JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_3_Segment'),
                                                             Group(USE='l_carpal_proximal_phalanx_3_Sites')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.6032,-0.0035),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.6032,-0.0035),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_3',name='l_carpal_middle_phalanx_3',
                                                               children=[
@@ -5098,7 +4900,7 @@ None
                                                               Transform(USE='l_carpal_proximal_interphalangeal_3JointShape'),
                                                               Shape(USE='l_carpal_middle_phalanx_3_Segment'),
                                                               Group(USE='l_carpal_middle_phalanx_3_Sites')]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.1807,0.5753,-0.0037),ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.1807,0.5753,-0.0037),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_3',name='l_carpal_distal_phalanx_3',
                                                                 children=[
@@ -5106,7 +4908,7 @@ None
                                                                 Transform(USE='l_carpal_distal_interphalangeal_3JointShape'),
                                                                 Shape(USE='l_carpal_distal_phalanx_3_Segment'),
                                                                 Group(USE='l_carpal_distal_phalanx_3_Sites')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108,0.70582,-0.02574),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108,0.70582,-0.02574),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_hamate',name='l_hamate',
                                                         children=[
@@ -5115,7 +4917,7 @@ None
                                                         Shape(USE='l_hamate-to-l_carpometacarpal_4_Segment'),
                                                         Shape(USE='l_hamate-to-l_carpometacarpal_5_Segment'),
                                                         Group(USE='l_hamate_Sites')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.1811,0.68625,-0.0199),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.1811,0.68625,-0.0199),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_4',name='l_metacarpal_4',
                                                           children=[
@@ -5123,7 +4925,7 @@ None
                                                           Transform(USE='l_carpometacarpal_4JointShape'),
                                                           Shape(USE='l_metacarpal_4_Segment'),
                                                           Group(USE='l_metacarpal_4_Sites')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_4',name='l_carpal_proximal_phalanx_4',
                                                             children=[
@@ -5131,7 +4933,7 @@ None
                                                             Transform(USE='l_metacarpophalangeal_4JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_4_Segment'),
                                                             Group(USE='l_carpal_proximal_phalanx_4_Sites')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.1817,0.6066,-0.02064),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.1817,0.6066,-0.02064),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_4',name='l_carpal_middle_phalanx_4',
                                                               children=[
@@ -5139,7 +4941,7 @@ None
                                                               Transform(USE='l_carpal_proximal_interphalangeal_4JointShape'),
                                                               Shape(USE='l_carpal_middle_phalanx_4_Segment'),
                                                               Group(USE='l_carpal_middle_phalanx_4_Sites')]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.18067,0.580725,-0.01977),ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.18067,0.580725,-0.01977),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_4',name='l_carpal_distal_phalanx_4',
                                                                 children=[
@@ -5147,7 +4949,7 @@ None
                                                                 Transform(USE='l_carpal_distal_interphalangeal_4JointShape'),
                                                                 Shape(USE='l_carpal_distal_phalanx_4_Segment'),
                                                                 Group(USE='l_carpal_distal_phalanx_4_Sites')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.18164,0.68827,-0.03278),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.18164,0.68827,-0.03278),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_5',name='l_metacarpal_5',
                                                         children=[
@@ -5155,7 +4957,7 @@ None
                                                         Transform(USE='l_carpometacarpal_5JointShape'),
                                                         Shape(USE='l_metacarpal_5_Segment'),
                                                         Group(USE='l_metacarpal_5_Sites')]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.1833,0.6381,-0.037),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.1833,0.6381,-0.037),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_5',name='l_carpal_proximal_phalanx_5',
                                                           children=[
@@ -5163,7 +4965,7 @@ None
                                                           Transform(USE='l_metacarpophalangeal_5JointShape'),
                                                           Shape(USE='l_carpal_proximal_phalanx_5_Segment'),
                                                           Group(USE='l_carpal_proximal_phalanx_5_Sites')]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166,0.621,-0.03715),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166,0.621,-0.03715),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_5',name='l_carpal_middle_phalanx_5',
                                                             children=[
@@ -5171,7 +4973,7 @@ None
                                                             Transform(USE='l_carpal_proximal_interphalangeal_5JointShape'),
                                                             Shape(USE='l_carpal_middle_phalanx_5_Segment'),
                                                             Group(USE='l_carpal_middle_phalanx_5_Sites')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.1808,0.6023,-0.0369),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.1808,0.6023,-0.0369),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_5',name='l_carpal_distal_phalanx_5',
                                                               children=[
@@ -5179,7 +4981,7 @@ None
                                                               Transform(USE='l_carpal_distal_interphalangeal_5JointShape'),
                                                               Shape(USE='l_carpal_distal_phalanx_5_Segment'),
                                                               Group(USE='l_carpal_distal_phalanx_5_Sites')])])])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.03847,1.2087,-0.0138),ulimit=[0,0,0],llimit=[0,0,0],
+                                          HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.03847,1.2087,-0.0138),
                                             children=[
                                             HAnimSegment(DEF='hanim_r_clavicle',name='r_clavicle',
                                               children=[
@@ -5187,7 +4989,7 @@ None
                                               Transform(USE='r_sternoclavicularJointShape'),
                                               Shape(USE='r_clavicle_Segment'),
                                               Group(USE='r_clavicle_Sites')]),
-                                            HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.1229,1.19182,-0.0129),ulimit=[0,0,0],llimit=[0,0,0],
+                                            HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.1229,1.19182,-0.0129),
                                               children=[
                                               HAnimSegment(DEF='hanim_r_scapula',name='r_scapula',
                                                 children=[
@@ -5195,7 +4997,7 @@ None
                                                 Transform(USE='r_acromioclavicularJointShape'),
                                                 Shape(USE='r_scapula_Segment'),
                                                 Group(USE='r_scapula_Sites')]),
-                                              HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1647,1.17855,-0.00327),ulimit=[0,0,0],llimit=[0,0,0],
+                                              HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1647,1.17855,-0.00327),
                                                 children=[
                                                 HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
                                                   children=[
@@ -5203,7 +5005,7 @@ None
                                                   Transform(USE='r_shoulderJointShape'),
                                                   Shape(USE='r_upperarm_Segment'),
                                                   Group(USE='r_upperarm_Sites')]),
-                                                HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817,0.9288,-0.00564),ulimit=[0,0,0],llimit=[0,0,0],
+                                                HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817,0.9288,-0.00564),
                                                   children=[
                                                   HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
                                                     children=[
@@ -5211,7 +5013,7 @@ None
                                                     Transform(USE='r_elbowJointShape'),
                                                     Shape(USE='r_forearm_Segment'),
                                                     Group(USE='r_forearm_Sites')]),
-                                                  HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1816,0.7242,-0.005),ulimit=[0,0,0],llimit=[0,0,0],
+                                                  HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1816,0.7242,-0.005),
                                                     children=[
                                                     HAnimSegment(DEF='hanim_r_carpal',name='r_carpal',
                                                       children=[
@@ -5222,7 +5024,7 @@ None
                                                       Shape(USE='r_carpal-to-r_midcarpal_3_Segment'),
                                                       Shape(USE='r_carpal-to-r_midcarpal_4_Segment'),
                                                       Group(USE='r_carpal_Sites')]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18097,0.70605,0.0193),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18097,0.70605,0.0193),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_trapezium',name='r_trapezium',
                                                         children=[
@@ -5231,7 +5033,7 @@ None
                                                         Shape(USE='r_trapezium-to-r_carpometacarpal_1_Segment'),
                                                         Shape(USE='r_trapezium-to-r_midcarpal_4_5_Segment'),
                                                         Group(USE='r_trapezium_Sites')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.18,0.69255,0.02598),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.18,0.69255,0.02598),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_1',name='r_metacarpal_1',
                                                           children=[
@@ -5239,7 +5041,7 @@ None
                                                           Transform(USE='r_carpometacarpal_1JointShape'),
                                                           Shape(USE='r_metacarpal_1_Segment'),
                                                           Group(USE='r_metacarpal_1_Sites')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065,0.67275,0.03577),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065,0.67275,0.03577),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_1',name='r_carpal_proximal_phalanx_1',
                                                             children=[
@@ -5247,7 +5049,7 @@ None
                                                             Transform(USE='r_metacarpophalangeal_1JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_1_Segment'),
                                                             Group(USE='r_carpal_proximal_phalanx_1_Sites')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227,0.654,0.0496),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227,0.654,0.0496),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_1',name='r_carpal_distal_phalanx_1',
                                                               children=[
@@ -5255,7 +5057,7 @@ None
                                                               Transform(USE='r_carpal_interphalangeal_1JointShape'),
                                                               Shape(USE='r_carpal_distal_phalanx_1_Segment'),
                                                               Group(USE='r_carpal_distal_phalanx_1_Sites')])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18097,0.70695,0.0084),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18097,0.70695,0.0084),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_trapezoid',name='r_trapezoid',
                                                         children=[
@@ -5263,7 +5065,7 @@ None
                                                         Transform(USE='r_midcarpal_2JointShape'),
                                                         Shape(USE='r_trapezoid_Segment'),
                                                         Group(USE='r_trapezoid_Sites')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.1809,0.6876,0.0097),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.1809,0.6876,0.0097),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_2',name='r_metacarpal_2',
                                                           children=[
@@ -5271,7 +5073,7 @@ None
                                                           Transform(USE='r_carpometacarpal_2JointShape'),
                                                           Shape(USE='r_metacarpal_2_Segment'),
                                                           Group(USE='r_metacarpal_2_Sites')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335,0.6372,0.01507),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335,0.6372,0.01507),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_2',name='r_carpal_proximal_phalanx_2',
                                                             children=[
@@ -5279,7 +5081,7 @@ None
                                                             Transform(USE='r_metacarpophalangeal_2JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_2_Segment'),
                                                             Group(USE='r_carpal_proximal_phalanx_2_Sites')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813,0.6068,0.01418),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813,0.6068,0.01418),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_2',name='r_carpal_middle_phalanx_2',
                                                               children=[
@@ -5287,16 +5089,16 @@ None
                                                               Transform(USE='r_carpal_proximal_interphalangeal_2JointShape'),
                                                               Shape(USE='r_carpal_middle_phalanx_2_Segment'),
                                                               Group(USE='r_carpal_middle_phalanx_2_Sites')]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1803,0.5816,0.01338),ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1803,0.5816,0.01338),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_2',name='r_carpal_distal_phalanx_2',
                                                                 children=[
                                                                 Shape(USE='r_carpal_distal_phalanx_2_Shape'),
                                                                 Transform(USE='r_carpal_distal_interphalangeal_2JointShape'),
-                                                                #  Shape USE='r_carpal_distal_interphalangeal_2-to-r_dactylion'/ 
+                                                                Comment(' Shape USE=\'r_carpal_distal_interphalangeal_2-to-r_dactylion\'/ '),
                                                                 Shape(USE='r_carpal_distal_phalanx_2_Segment'),
                                                                 Group(USE='r_carpal_distal_phalanx_2_Sites')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.004797),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.004797),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_capitate',name='r_capitate',
                                                         children=[
@@ -5304,7 +5106,7 @@ None
                                                         Transform(USE='r_midcarpal_3JointShape'),
                                                         Shape(USE='r_capitate_Segment'),
                                                         Group(USE='r_capitate_Sites')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.00625),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.00625),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_3',name='r_metacarpal_3',
                                                           children=[
@@ -5312,7 +5114,7 @@ None
                                                           Transform(USE='r_carpometacarpal_3JointShape'),
                                                           Shape(USE='r_metacarpal_3_Segment'),
                                                           Group(USE='r_metacarpal_3_Sites')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.1833,0.63495,-0.0039),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.1833,0.63495,-0.0039),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_3',name='r_carpal_proximal_phalanx_3',
                                                             children=[
@@ -5320,7 +5122,7 @@ None
                                                             Transform(USE='r_carpal_proximal_phalanx_3JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_3_Segment'),
                                                             Group(USE='r_carpal_proximal_phalanx_3_Sites')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813,0.6032,-0.0035),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813,0.6032,-0.0035),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_3',name='r_carpal_middle_phalanx_3',
                                                               children=[
@@ -5328,7 +5130,7 @@ None
                                                               Transform(USE='r_carpal_proximal_interphalangeal_3JointShape'),
                                                               Shape(USE='r_carpal_middle_phalanx_3_Segment'),
                                                               Group(USE='r_carpal_middle_phalanx_3_Sites')]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.18029,0.5753,-0.00375),ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.18029,0.5753,-0.00375),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_3',name='r_carpal_distal_phalanx_3',
                                                                 children=[
@@ -5336,7 +5138,7 @@ None
                                                                 Transform(USE='r_carpal_distal_interphalangeal_3JointShape'),
                                                                 Shape(USE='r_carpal_distal_phalanx_3_Segment'),
                                                                 Group(USE='r_carpal_distal_phalanx_3_Sites')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70583,-0.02574),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70583,-0.02574),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_hamate',name='r_hamate',
                                                         children=[
@@ -5345,7 +5147,7 @@ None
                                                         Shape(USE='r_hamate-to-r_carpometacarpal_4_Segment'),
                                                         Shape(USE='r_hamate-to-r_carpometacarpal_5_Segment'),
                                                         Group(USE='r_hamate_Sites')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625,-0.01992),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625,-0.01992),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_4',name='r_metacarpal_4',
                                                           children=[
@@ -5353,7 +5155,7 @@ None
                                                           Transform(USE='r_carpometacarpal_4JointShape'),
                                                           Shape(USE='r_metacarpal_4_Segment'),
                                                           Group(USE='r_metacarpal_4_Sites')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.1833,0.63405,-0.02144),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.1833,0.63405,-0.02144),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_4',name='r_carpal_proximal_phalanx_4',
                                                             children=[
@@ -5361,7 +5163,7 @@ None
                                                             Transform(USE='r_metacarpophalangeal_4JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_4_Segment'),
                                                             Group(USE='r_carpal_proximal_phalanx_4_Sites')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813,0.6066,-0.02064),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813,0.6066,-0.02064),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_4',name='r_carpal_middle_phalanx_4',
                                                               children=[
@@ -5369,7 +5171,7 @@ None
                                                               Transform(USE='r_carpal_proximal_interphalangeal_4JointShape'),
                                                               Shape(USE='r_carpal_middle_phalanx_4_Segment'),
                                                               Group(USE='r_carpal_middle_phalanx_4_Sites')]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.18029,0.5807,-0.01978),ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.18029,0.5807,-0.01978),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_4',name='r_carpal_distal_phalanx_4',
                                                                 children=[
@@ -5377,7 +5179,7 @@ None
                                                                 Transform(USE='r_carpal_distal_interphalangeal_4JointShape'),
                                                                 Shape(USE='r_carpal_distal_phalanx_4_Segment'),
                                                                 Group(USE='r_carpal_distal_phalanx_4_Sites')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827,-0.03278),ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827,-0.03278),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_5',name='r_metacarpal_5',
                                                         children=[
@@ -5385,7 +5187,7 @@ None
                                                         Transform(USE='r_carpometacarpal_5JointShape'),
                                                         Shape(USE='r_metacarpal_5_Segment'),
                                                         Group(USE='r_metacarpal_5_Sites')]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0371),ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0371),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_5',name='r_carpal_proximal_phalanx_5',
                                                           children=[
@@ -5393,7 +5195,7 @@ None
                                                           Transform(USE='r_metacarpophalangeal_5JointShape'),
                                                           Shape(USE='r_carpal_proximal_phalanx_5_Segment'),
                                                           Group(USE='r_carpal_proximal_phalanx_5_Sites')]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.1813,0.621,-0.03715),ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.1813,0.621,-0.03715),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_5',name='r_carpal_middle_phalanx_5',
                                                             children=[
@@ -5401,28 +5203,18 @@ None
                                                             Transform(USE='r_carpal_proximal_interphalangeal_5JointShape'),
                                                             Shape(USE='r_carpal_middle_phalanx_5_Segment'),
                                                             Group(USE='r_carpal_middle_phalanx_5_Sites')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045,0.602325,-0.03697),ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045,0.602325,-0.03697),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_5',name='r_carpal_distal_phalanx_5',
                                                               children=[
                                                               Shape(USE='r_carpal_distal_phalanx_5_Shape'),
                                                               Transform(USE='r_carpal_distal_interphalangeal_5JointShape'),
                                                               Shape(USE='r_carpal_distal_phalanx_5_tip_Segment'),
-                                                              Group(USE='r_carpal_distal_phalanx_5_Sites')])])])])])])])])])])])])])])])])])])])])])])])])])])])]),],
-      #  MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
-        <MetadataString name='authorName' value='"Jin Hoon Lee and Min Joo Lee"","" Chul Hee Jung and Myeong Won Lee"'/>
-        <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/>
-        <MetadataString name='creationDate' value='31 March 2011'/>
-        <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/>
-        <MetadataString name='modificationDate' value='25 March 2024'/>
-        <MetadataString name='gender' value='female'/>
-        <MetadataFloat name='height' value='1.5'/>
-        <MetadataString name='humanoidVersion' value='2.0'/>
-      </MetadataSet ),
+                                                              Group(USE='r_carpal_distal_phalanx_5_Sites')])])])])])])])])])])])])])])])])])])])])])])])])])])])])],),
     Group(DEF='DefaultAnimation_loa4',
       children=[
       TimeSensor(DEF='DefaultTimer',cycleInterval=6,loop=True),
-      #  indention-to-match Joint hierarchy 
+      Comment(' indention-to-match Joint hierarchy '),
       PositionInterpolator(DEF='Default_humanoid_root_TranslationInterpolator',key=[0,0.5,1],keyValue=[(0,0,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Default_humanoid_root_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Default_sacroiliac_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
@@ -5570,7 +5362,7 @@ None
       OrientationInterpolator(DEF='Default_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Default_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Default_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_sacroiliac_RotationInterpolator'),
@@ -5718,7 +5510,7 @@ None
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Default_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Default_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Default_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -5869,7 +5661,7 @@ None
     Group(DEF='TestAnimation_loa4',
       children=[
       TimeSensor(DEF='TestTimer',cycleInterval=5.5,loop=True),
-      #  indention to match Joint hierarchy 
+      Comment(' indention to match Joint hierarchy '),
       PositionInterpolator(DEF='Test_humanoid_root_TranslationInterpolator',key=[0,0.5,1],keyValue=[(0,0,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Test_humanoid_root_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Test_sacroiliac_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
@@ -6017,7 +5809,7 @@ None
       OrientationInterpolator(DEF='Test_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Test_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Test_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_sacroiliac_RotationInterpolator'),
@@ -6165,7 +5957,7 @@ None
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Test_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Test_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Test_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -6314,29 +6106,25 @@ None
       ROUTE(fromField='value_changed',fromNode='Test_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Test_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
     Group(DEF='Pitch1Animation_loa4',
-      #  
-Pitch1 example shows Y-axis control of Joint nodes 
-that through the skeleton hierarchy control 
-Segment geometry and Site position. 
-So, the following interpolator:
-  <OrientationInterpolator DEF='skullbase_RotationInterpolator' 
-    key='0 0.5 1' 
-    keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>
-will start at 0 move to +1 radian of x-axis 
-rotation of the Joint, then return to 0. 
-0 0 1 0 is default value, meaning set to 
-0 radians, zero degrees. 
-x y z scale, all in radians 0 to <+-inf.  
-Thus, 1 radian in a times scale 1 = +1 radian 
-= about 60 degrees 
-360 degrees divided by 2 times pi 
-greater than +-6.28 radians range
-Right hand rule for axes so a 
-positive pitch value applied to the 
-skullbase Joint would rotate the 
-the gaze of model down, toward the floor. 
- 
       children=[
+      Comment(' Pitch1 example shows Y-axis control of Joint nodes '),
+      Comment(' that through the skeleton hierarchy control '),
+      Comment(' Segment geometry and Site position. '),
+      Comment(' So, the following interpolator: '),
+      Comment(' <OrientationInterpolator DEF=\'skullbase_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0, 1 0 0 1, 0 0 1 0\'/> '),
+      Comment(' will start at 0 move to +1 radian of x-axis '),
+      Comment(' rotation of the Joint, then return to 0. '),
+      Comment(' 0 0 1 0 is default value, meaning set to '),
+      Comment(' 0 radians, zero degrees. '),
+      Comment(' x y z scale, all in radians 0 to <+-inf. '),
+      Comment(' Thus, 1 radian in a times scale 1 = +1 radian '),
+      Comment(' = about 60 degrees '),
+      Comment(' 360 degrees divided by 2 times pi '),
+      Comment(' greater than +-6.28 radians range '),
+      Comment(' Right hand rule for axes so a '),
+      Comment(' positive pitch value applied to the '),
+      Comment(' skullbase Joint would rotate the '),
+      Comment(' the gaze of model down, toward the floor. '),
       TimeSensor(DEF='Pitch1Timer',cycleInterval=10,loop=True),
       PositionInterpolator(DEF='Pitch1_humanoid_root_TranslationInterpolator',key=[0,0.02,0.04,0.06,0.08,0.1,1],keyValue=[(0,0,0),(0,0,0),(0.15,0,0),(0,0,0),(-0.15,0,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Pitch1_humanoid_root_RotationInterpolator',key=[0,0.08,0.12,0.15,0.18,0.2,1],keyValue=[(0,0,1,0),(0,0,1,0),(1,0,0,0.5),(0,0,1,0),(1,0,0,-0.5),(0,0,1,0),(0,0,1,0)]),
@@ -6485,7 +6273,7 @@ the gaze of model down, toward the floor.
       OrientationInterpolator(DEF='Pitch1_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch1_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_sacroiliac_RotationInterpolator'),
@@ -6633,7 +6421,7 @@ the gaze of model down, toward the floor.
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Pitch1_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch1_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch1_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -6931,7 +6719,7 @@ the gaze of model down, toward the floor.
       OrientationInterpolator(DEF='Pitch2_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_sacroiliac_RotationInterpolator'),
@@ -7079,7 +6867,7 @@ the gaze of model down, toward the floor.
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Pitch2_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch2_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch2_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -7228,30 +7016,26 @@ the gaze of model down, toward the floor.
       ROUTE(fromField='value_changed',fromNode='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
     Group(DEF='Yaw1Animation_loa4',
-      #  
-Yaw1 example shows Y-axis control of Joint nodes 
-that through the skeleton hierarchy control 
-Segment geometry and Site position. 
-So, the following interpolator:
-  <OrientationInterpolator DEF='skullbase_RotationInterpolator' 
-    key='0 0.5 1' 
-    keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>
-will start at 0 move to +1 radian of y-axis 
-rotation of the Joint, then return to 0. 
-0 0 1 0 is default value, meaning set to 
-0 radians, zero degrees. 
-x y z scale, all in radians 0 to <+-inf.  
-Thus, 1 radian in y times scale 1 = +1 radian 
-= about 60 degrees 
-360 degrees divided by 2 times pi 
-Right hand rule for axes so a 
-positive yaw value applied to the 
-skullbase Joint would move the 
-the gaze of model toward the 
-model's +X direction, the model left 
-over the left shoulder.
- 
       children=[
+      Comment(' Yaw1 example shows Y-axis control of Joint nodes '),
+      Comment(' that through the skeleton hierarchy control '),
+      Comment(' Segment geometry and Site position. '),
+      Comment(' So, the following interpolator: '),
+      Comment(' <OrientationInterpolator DEF=\'skullbase_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0, 0 1 0 1, 0 0 1 0\'/> '),
+      Comment(' will start at 0 move to +1 radian of y-axis '),
+      Comment(' rotation of the Joint, then return to 0. '),
+      Comment(' 0 0 1 0 is default value, meaning set to '),
+      Comment(' 0 radians, zero degrees. '),
+      Comment(' x y z scale, all in radians 0 to <+-inf. '),
+      Comment(' Thus, 1 radian in y times scale 1 = +1 radian '),
+      Comment(' = about 60 degrees '),
+      Comment(' 360 degrees divided by 2 times pi '),
+      Comment(' Right hand rule for axes so a '),
+      Comment(' positive yaw value applied to the '),
+      Comment(' skullbase Joint would move the '),
+      Comment(' the gaze of model toward the '),
+      Comment(' model\'s +X direction, the model left '),
+      Comment(' over the left shoulder. '),
       TimeSensor(DEF='Yaw1Timer',cycleInterval=10,loop=True),
       PositionInterpolator(DEF='Yaw1_humanoid_root_TranslationInterpolator',key=[0,0.02,0.04,0.06,0.08,0.1,1],keyValue=[(0,0,0),(0,0,0),(0,0.15,0),(0,0,0),(0,-0.15,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Yaw1_humanoid_root_RotationInterpolator',key=[0,0.08,0.12,0.15,0.18,0.2,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,1,0,0.5),(0,0,1,0),(0,1,0,-0.5),(0,0,1,0),(0,0,1,0)]),
@@ -7400,7 +7184,7 @@ over the left shoulder.
       OrientationInterpolator(DEF='Yaw1_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw1_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.98,0.985,1],keyValue=[(0,0,1,0),(0,1,0,0.35),(0,1,0,-0.35),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_sacroiliac_RotationInterpolator'),
@@ -7548,7 +7332,7 @@ over the left shoulder.
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Yaw1_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw1_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw1_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -7846,7 +7630,7 @@ over the left shoulder.
       OrientationInterpolator(DEF='Yaw2_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_sacroiliac_RotationInterpolator'),
@@ -7994,7 +7778,7 @@ over the left shoulder.
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Yaw2_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw2_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw2_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -8143,30 +7927,26 @@ over the left shoulder.
       ROUTE(fromField='value_changed',fromNode='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
     Group(DEF='Roll1Animation_loa4',
-      #  
-Roll1 example shows Y-axis control of Joint nodes 
-that through the skeleton hierarchy control 
-Segment geometry and Site position. 
-So, the following interpolator:
-  <OrientationInterpolator DEF='skullbase_RotationInterpolator' 
-    key='0 0.5 1' 
-    keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>
-will start at 0 move to +1 radian of z-axis 
-rotation of the Joint, then return to 0. 
-0 0 1 0 is default value, meaning set to 
-0 radians, zero degrees. 
-x y z scale, all in radians 0 to <+-inf.  
-Thus, 1 radian in a times scale 1 = +1 radian 
-= about 60 degrees 
-360 degrees divided by 2 times pi 
-Right hand rule for axes so a 
-positive roll value applied to the 
-skullbase Joint would rotate the 
-the gaze of model ccw toward the 
-model's +X direction, the model left 
-toward the left shoulder.
- 
       children=[
+      Comment(' Roll1 example shows Y-axis control of Joint nodes '),
+      Comment(' that through the skeleton hierarchy control '),
+      Comment(' Segment geometry and Site position. '),
+      Comment(' So, the following interpolator: '),
+      Comment(' <OrientationInterpolator DEF=\'skullbase_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0, 0 0 1 1, 0 0 1 0\'/> '),
+      Comment(' will start at 0 move to +1 radian of z-axis '),
+      Comment(' rotation of the Joint, then return to 0. '),
+      Comment(' 0 0 1 0 is default value, meaning set to '),
+      Comment(' 0 radians, zero degrees. '),
+      Comment(' x y z scale, all in radians 0 to <+-inf. '),
+      Comment(' Thus, 1 radian in a times scale 1 = +1 radian '),
+      Comment(' = about 60 degrees '),
+      Comment(' 360 degrees divided by 2 times pi '),
+      Comment(' Right hand rule for axes so a '),
+      Comment(' positive roll value applied to the '),
+      Comment(' skullbase Joint would rotate the '),
+      Comment(' the gaze of model ccw toward the '),
+      Comment(' model\'s +X direction, the model left '),
+      Comment(' toward the left shoulder. '),
       TimeSensor(DEF='Roll1Timer',cycleInterval=10,loop=True),
       PositionInterpolator(DEF='Roll1_humanoid_root_TranslationInterpolator',key=[0,0.02,0.04,0.06,0.08,0.1,1],keyValue=[(0,0,0),(0,0,0),(0,0,0.15),(0,0,0),(0,0,-0.15),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Roll1_humanoid_root_RotationInterpolator',key=[0,0.08,0.12,0.15,0.18,0.2,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0.5),(0,0,1,0),(0,0,1,-0.5),(0,0,1,0),(0,0,1,0)]),
@@ -8315,7 +8095,7 @@ toward the left shoulder.
       OrientationInterpolator(DEF='Roll1_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Roll1_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_sacroiliac_RotationInterpolator'),
@@ -8463,7 +8243,7 @@ toward the left shoulder.
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Roll1_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Roll1_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Roll1_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -9058,7 +8838,7 @@ toward the left shoulder.
     Group(DEF='WalkAnimation_loa4',
       children=[
       TimeSensor(DEF='WalkTimer',cycleInterval=2.5,loop=True),
-      #  indention to match Joint hierarchy 
+      Comment(' indention to match Joint hierarchy '),
       PositionInterpolator(DEF='Walk_humanoid_root_TranslationInterpolator',key=[0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1],keyValue=[(0,-0.00928,0),(0,-0.003858,0),(0,-0.008847,0),(0,-0.01486,0),(0,-0.02641,0),(0,-0.03934,0),(0,-0.0502,0),(0,-0.07469,0),(0,-0.02732,0),(0,-0.01608,0),(0,-0.01129,0),(0,-0.005819,0),(0,-0.002004,0),(0,-0.002579,0),(0,-0.0143,0),(0,-0.03799,0),(0,-0.05648,0),(0,-0.045,0),(0,-0.00928,0)]),
       OrientationInterpolator(DEF='Walk_humanoid_root_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Walk_sacroiliac_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,-1,0.1056),(0,0,1,0.09018),(0,0,-1,0.1056)]),
@@ -9206,7 +8986,7 @@ toward the left shoulder.
       OrientationInterpolator(DEF='Walk_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Walk_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_sacroiliac_RotationInterpolator'),
@@ -9354,7 +9134,7 @@ toward the left shoulder.
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Walk_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Walk_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Walk_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -9505,7 +9285,7 @@ toward the left shoulder.
     Group(DEF='RunAnimation_loa4',
       children=[
       TimeSensor(DEF='RunTimer',loop=True),
-      #  indention to match Joint hierarchy 
+      Comment(' indention to match Joint hierarchy '),
       PositionInterpolator(DEF='Run_humanoid_root_TranslationInterpolator',key=[0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1],keyValue=[(0,-0.01,0),(0,-0.037,0),(0,-0.049,0),(0,-0.037,0),(0,-0.01,0),(0,-0.037,0),(0,-0.049,0),(0,-0.037,0),(0,-0.01,0)]),
       OrientationInterpolator(DEF='Run_humanoid_root_RotationInterpolator',key=[0,0.25,0.5,0.75,1],keyValue=[(1,0,0,0.06),(1,0,0,0.167),(1,0,0,0.06),(1,0,0,0.168),(1,0,0,0.06)]),
       OrientationInterpolator(DEF='Run_sacroiliac_RotationInterpolator',key=[0,0.2182,0.4909,0.7455,1],keyValue=[(0,-1,0,0.125),(0,0,1,0),(0,1,0,0.125),(0,0,1,0),(0,-1,0,0.125)]),
@@ -9653,7 +9433,7 @@ toward the left shoulder.
       OrientationInterpolator(DEF='Run_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Run_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Run_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_sacroiliac_RotationInterpolator'),
@@ -9801,7 +9581,7 @@ toward the left shoulder.
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Run_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Run_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Run_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -11281,25 +11061,25 @@ toward the left shoulder.
       ROUTE(fromField='value_changed',fromNode='Kick2_r_metacarpophalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_metacarpophalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Kick2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Kick2_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
-    #  Ball for Kick2 not included Group> 
-      <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'>
-        <Shape DEF='ball_Shape'>
-          <Appearance DEF='ball_Appearance'>
-            <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/>
-          </Appearance>
-          <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>
-            <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/>
-          </IndexedFaceSet>
-        </Shape>
-        <Viewpoint DEF='ballView_1' description='Ball View'/>
-      </Transform>
-      <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/>
-      <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/>
-      <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/>
-      <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/>
-      <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/>
-      <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/>
-    </Group 
+    Comment(' Ball for Kick2 not included Group> '),
+    Comment(' <Transform DEF=\'SBall\' rotation=\'0.7 0 0.7 0.1\' scale=\'0.23 0.23 0.23\' translation=\'-0.916 0.37 -0.92\'> '),
+    Comment(' <Shape DEF=\'ball_Shape\'> '),
+    Comment(' <Appearance DEF=\'ball_Appearance\'> '),
+    Comment(' <Material DEF=\'ball_Material\' diffuseColor=\'0.3 0.3 1\' emissiveColor=\'0.3 0.3 0.33\'/> '),
+    Comment(' </Appearance> '),
+    Comment(' <IndexedFaceSet DEF=\'ball_IndexedFaceSet\' coordIndex=\'0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1\'> '),
+    Comment(' <Coordinate DEF=\'Ball_Coordinates\' point=\'0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0\'/> '),
+    Comment(' </IndexedFaceSet> '),
+    Comment(' </Shape> '),
+    Comment(' <Viewpoint DEF=\'ballView_1\' description=\'Ball View\'/> '),
+    Comment(' </Transform> '),
+    Comment(' <PositionInterpolator DEF=\'ball_TranslationInterpolator\' key=\'0 0.4 0.409 1\' keyValue=\'-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10\'/> '),
+    Comment(' <OrientationInterpolator DEF=\'ball_RotationInterpolator\' key=\'0 0.4 0.41 0.71 1\' keyValue=\'1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3\'/> '),
+    Comment(' <ROUTE fromField=\'fraction_changed\' fromNode=\'Kick2Timer\' toField=\'set_fraction\' toNode=\'ball_TranslationInterpolator\'/> '),
+    Comment(' <ROUTE fromField=\'value_changed\' fromNode=\'ball_TranslationInterpolator\' toField=\'set_translation\' toNode=\'SBall\'/> '),
+    Comment(' <ROUTE fromField=\'fraction_changed\' fromNode=\'Kick2Timer\' toField=\'set_fraction\' toNode=\'ball_RotationInterpolator\'/> '),
+    Comment(' <ROUTE fromField=\'value_changed\' fromNode=\'ball_RotationInterpolator\' toField=\'set_rotation\' toNode=\'SBall\'/> '),
+    Comment(' </Group '),
     Group(DEF='TimerControls',
       children=[
       ROUTE(fromField='touchTime',fromNode='Default_Touch',toField='set_stopTime',toNode='TestTimer'),
@@ -11484,7 +11264,9 @@ toward the left shoulder.
       ROUTE(fromField='touchTime',fromNode='StopTimer_Touch',toField='set_stopTime',toNode='JumpTimer'),
       ROUTE(fromField='touchTime',fromNode='StopTimer_Touch',toField='set_stopTime',toNode='Kick1Timer'),
       ROUTE(fromField='touchTime',fromNode='StopTimer_Touch',toField='set_stopTime',toNode='Kick2Timer')])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

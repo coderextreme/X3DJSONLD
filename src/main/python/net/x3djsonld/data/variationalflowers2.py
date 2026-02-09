@@ -22,11 +22,15 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
 
-newModel=X3D(profile='Full',version='4.0',
+newModel=X3D(profile='Full',version='4.1',
   head=head(
     children=[
     component(name='EnvironmentalEffects',level=3),
@@ -50,11 +54,10 @@ newModel=X3D(profile='Full',version='4.0',
     Transform(
       children=[
       ParticleSystem(maxParticles=20,geometryType='GEOMETRY',
-        # 
-			    * values - array of MFFloats to pass to ComposedShader
-			    * variations in values - array of MFFloats to pass to ComposedShader that varies values
-			    
-        children=[
+        # * values - array of MFFloats to pass to ComposedShader
+
+        # * variations in values - array of MFFloats to pass to ComposedShader that varies values
+
         VariationPhysicsModel(values=2,2,5,5,0,0,variations=0.2,0.1,0.3,0.3,0.01,0.01)],
         emitter=ExplosionEmitter(speed=1,variation=0.75),
         geometry=Sphere(),
@@ -103,7 +106,9 @@ ecmascript:
       TimeSensor(DEF='TourTime',cycleInterval=45,loop=True),
       ROUTE(fromNode='TourTime',fromField='fraction_changed',toNode='Animate',toField='set_fraction'),
       ROUTE(fromNode='Animate',fromField='values',toNode='x_ite',toField='x3d_ParticleValues')])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

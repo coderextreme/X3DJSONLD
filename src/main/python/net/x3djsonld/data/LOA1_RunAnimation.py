@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -185,8 +189,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='R_SHOULDER_ANIMATOR'),
         ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='R_ELBOW_ANIMATOR'),
         ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='R_WRIST_ANIMATOR')])),
-    #  ====================================== 
-    #  Point to example use in case someone inspects this file 
+    Comment(' ====================================== '),
+    Comment(' Point to example use in case someone inspects this file '),
     Anchor(description='InterchangableActorsViaDynamicRouting',parameter=["target=_blank"],url=["InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"],
       children=[
       Shape(
@@ -194,7 +198,9 @@ newModel=X3D(profile='Immersive',version='4.0',
           fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],size=0.8)),
         appearance=Appearance(
           material=Material(diffuseColor=(1,1,0.2))))])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

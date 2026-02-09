@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -40,7 +44,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Background(skyAngle=[1.57],skyColor=[(0.15,0.25,0.8),(0.9,0.9,0.9)]),
     Viewpoint(description='Initial Camera',position=(-70,15,-25),orientation=(0.147,0.989,0.005,-1.82),fieldOfView=0.349),
     DirectionalLight(direction=(-0.5,-1,-0.5),intensity=2),
-    #  Static objects 
+    Comment(' Static objects '),
     Transform(translation=(0,-1000,-1),
       children=[
       Shape(
@@ -65,8 +69,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         appearance=Appearance(
           material=PhysicalMaterial(baseColor=(0.7,0.6,0.5),roughness=0.1)),
         geometry=Sphere(),)]),
-    #  === DYNAMICALLY GENERATED SPHERES === 
-    #  Example: Matte Sphere with animated color and roughness (Using initialize()) 
+    Comment(' === DYNAMICALLY GENERATED SPHERES === '),
+    Comment(' Example: Matte Sphere with animated color and roughness (Using initialize()) '),
     Transform(DEF='T_0',translation=(-10.871,0.2,-10.453),
       children=[
       Shape(
@@ -112,7 +116,7 @@ ecmascript:
     ROUTE(fromNode='CI_0',fromField='value_changed',toNode='Animator_0',toField='set_color'),
     ROUTE(fromNode='C_0',fromField='fraction_changed',toNode='SI_0',toField='set_fraction'),
     ROUTE(fromNode='SI_0',fromField='value_changed',toNode='Animator_0',toField='set_roughness'),
-    #  Example: Metal Sphere with animated roughness (Using initialize()) 
+    Comment(' Example: Metal Sphere with animated roughness (Using initialize()) '),
     Transform(DEF='T_1',translation=(-10.411,0.2,-9.160),
       children=[
       Shape(
@@ -147,7 +151,7 @@ ecmascript:
     ROUTE(fromNode='PI_1',fromField='value_changed',toNode='T_1',toField='set_translation'),
     ROUTE(fromNode='C_1',fromField='fraction_changed',toNode='SI_1',toField='set_fraction'),
     ROUTE(fromNode='SI_1',fromField='value_changed',toNode='Animator_1',toField='set_roughness'),
-    #  The extension-based spheres were already correct and need no changes 
+    Comment(' The extension-based spheres were already correct and need no changes '),
     Transform(DEF='T_2',translation=(-10.155,0.2,-8.324),
       children=[
       Shape(
@@ -176,7 +180,9 @@ ecmascript:
     ROUTE(fromNode='PI_3',fromField='value_changed',toNode='T_3',toField='set_translation'),
     ROUTE(fromNode='C_3',fromField='fraction_changed',toNode='SI_3',toField='set_fraction'),
     ROUTE(fromNode='SI_3',fromField='value_changed',toNode='IRI_3',toField='set_iridescenceThicknessMaximum')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

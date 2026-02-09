@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -96,7 +100,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='HumanoidRoot_rotation_changed')])),
-          #  no SACROILIAC_ANIMATOR 
+          Comment(' no SACROILIAC_ANIMATOR '),
           OrientationInterpolator(DEF='L_HIP_ANIMATOR',key=[0.0,0.25,0.375,0.6667,0.7917,0.9167,1.0],keyValue=[(-0.873,0.06094,0.484,0.2865),(0.9963,-0.01057,0.08481,0.2488),(0.9965,0.01591,-0.08222,0.3836),(-1.0,0.0,0.0,0.5518),(-0.9964,0.02231,0.0817,0.5351),(-0.9809,0.04912,0.1881,0.5204),(-0.873,0.06094,0.484,0.2865)],
             IS=IS(
               connect=[
@@ -109,7 +113,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='l_ankle_rotation_changed')])),
-          #  no L_MIDTARSAL_ANIMATOR 
+          Comment(' no L_MIDTARSAL_ANIMATOR '),
           OrientationInterpolator(DEF='R_HIP_ANIMATOR',key=[0.0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1.0],keyValue=[(-0.5831,0.03511,0.8116,0.1481),(-0.995,0.02296,0.09674,0.4683),(-1.0,0.00192,0.007964,0.4732),(-0.998,-0.0158,-0.06102,0.5079),(-0.9131,-0.06243,-0.403,0.3361),(1.0,0.0,0.0,0.2571),(0.9891,-0.02805,0.1444,0.3879),(-0.5831,0.03511,0.8116,0.1481)],
             IS=IS(
               connect=[
@@ -122,7 +126,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='r_ankle_rotation_changed')])),
-          #  no L_MIDTARSAL_ANIMATOR 
+          Comment(' no L_MIDTARSAL_ANIMATOR '),
           OrientationInterpolator(DEF='VL5_ANIMATOR',key=[0.0,0.2083,0.375,0.75,0.8333,1.0],keyValue=[(0.0,1.0,0.0,0.0826),(-0.01972,-0.5974,0.8017,0.08231),(0.009296,-0.9648,0.2627,0.1734),(-0.01238,0.9549,-0.2968,0.08732),(-0.008125,0.9691,-0.2463,0.158),(0.0,1.0,0.0,0.0826)],
             IS=IS(
               connect=[
@@ -179,7 +183,9 @@ newModel=X3D(profile='Immersive',version='4.0',
           fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],size=0.8)),
         appearance=Appearance(
           material=Material(diffuseColor=(1,1,0.2))))])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

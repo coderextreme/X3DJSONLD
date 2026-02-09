@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -169,9 +173,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         Shape(USE='plank')]),
       Transform(DEF='verticalsupport',rotation=(0,0,1,1.57),scale=(.9,1,1),translation=(0,11,0),
         children=[
-        Shape(USE='plank')]
-        #  Main Verticle Support 
-        ),
+        Shape(USE='plank'),
+        Comment(' Main Verticle Support '),],),
       Transform(DEF='horizontalsupport',scale=(.4,1,1),translation=(0,10,0),
         children=[
         Shape(USE='plank')]),
@@ -215,10 +218,9 @@ newModel=X3D(profile='Immersive',version='4.0',
             Shape(
               appearance=Appearance(DEF='rope',
                 texture=ImageTexture(USE='woodTexture')),
-              geometry=Sphere(radius=1.5))]
-            #  knott 
-            )]),
-        #  The Unicorn 
+              geometry=Sphere(radius=1.5)),
+            Comment(' knott '),],)]),
+        Comment(' The Unicorn '),
         Transform(rotation=(0,0,1,1.2),scale=(.2,.2,.2),translation=(-18.3,0.3,0),
           children=[
           Shape(
@@ -226,16 +228,15 @@ newModel=X3D(profile='Immersive',version='4.0',
             appearance=Appearance(
               material=Material(specularColor=(1,1,1)))),
           Transform(translation=(0,-2.5,0),
-            #  The Unicorn 
             children=[
+            Comment(' The Unicorn '),
             Shape(USE='Torus'),
             Transform(translation=(-2,-0,0),
               children=[
               Shape(
                 geometry=Sphere(radius=1.5),
-                appearance=Appearance(USE='rope'))]
-              #  Knott 
-              )]),
+                appearance=Appearance(USE='rope')),
+              Comment(' Knott '),],)]),
           Transform(rotation=(0,0,1,1.2),translation=(15,55,-11),
             children=[
             Transform(scale=(5,5,5),
@@ -246,8 +247,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         Transform(rotation=(1,0,0,-1.7),translation=(-17,-4.5,0),
           children=[
           Transform(scale=(.2,.2,.2),
-            #  Knot 
             children=[
+            Comment(' Knot '),
             Shape(USE='Torus'),
             Transform(translation=(-1,0,1.7),
               children=[
@@ -332,9 +333,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         Shape(
           geometry=Cylinder(height=8,radius=.4),
           appearance=Appearance(
-            material=Material(diffuseColor=(0,0,0),specularColor=(1,1,1))))]
-        #  Top Pivot 
-        ),
+            material=Material(diffuseColor=(0,0,0),specularColor=(1,1,1)))),
+        Comment(' Top Pivot '),],),
       Transform(DEF='verticalweight',
         children=[
         Transform(translation=(4,18,1.8),
@@ -348,8 +348,8 @@ newModel=X3D(profile='Immersive',version='4.0',
             geometry=Box(size=(1,10,.5)),
             appearance=Appearance(USE='wood'))]),
         Transform(translation=(4,14,2.5),
-          #  CounterWeight 
           children=[
+          Comment(' CounterWeight '),
           Shape(
             geometry=Cylinder(height=4,radius=1.5),
             appearance=Appearance(
@@ -374,7 +374,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         Transform(translation=(0,0,7),
           children=[
           Transform(USE='screw')]),
-        #  Release Pin 
+        Comment(' Release Pin '),
         Transform(DEF='Pin',rotation=(1,0,0,-1.57),translation=(0,0,-3),
           children=[
           Transform(USE='screw')])]),
@@ -636,7 +636,9 @@ function set_fraction ( fraction, eventTime )
     ROUTE(fromField='value_changed',fromNode='verticalweightpath',toField='set_translation',toNode='verticalweight'),
     ROUTE(fromField='fraction_changed',fromNode='clock',toField='set_fraction',toNode='pinpath'),
     ROUTE(fromField='value_changed',fromNode='pinpath',toField='set_translation',toNode='Pin')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

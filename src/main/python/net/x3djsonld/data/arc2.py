@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -29,14 +33,14 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    meta(content='arc2.x3d',name='title'),
-    meta(content='Lost, Doug Sanden I think',name='creator'),
-    meta(content='manual',name='generator'),
-    meta(content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d',name='identifier'),
-    meta(content='a generic proto to connect two objects',name='description')]),
+    meta(name='title',content='arc2.x3d'),
+    meta(name='creator',content='Lost, Doug Sanden I think'),
+    meta(name='generator',content='manual'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d'),
+    meta(name='description',content='a generic proto to connect two objects')]),
   Scene=Scene(
     children=[
-    Viewpoint(description='Only Viewpoint',position=(0,0,5)),
+    Viewpoint(position=(0,0,5),description='Only Viewpoint'),
     Background(skyColor=[(0.4,0.4,0.4)]),
     Transform(DEF='G1',
       children=[
@@ -49,10 +53,10 @@ newModel=X3D(profile='Immersive',version='4.0',
         PositionInterpolator(DEF='DECLpoint_INSTANCE_PI1',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
         Script(DEF='DECLpoint_INSTANCE_MB1',
           field=[
-          field(accessType='inputOutput',name='translation',type='SFVec3f',value=(0,0,0)),
-          field(accessType='inputOutput',name='old',type='SFVec3f',value=(0,0,0)),
-          field(accessType='inputOnly',name='set_location',type='SFTime'),
-          field(accessType='inputOutput',name='keyValue',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
+          field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
+          field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
+          field(name='set_location',accessType='inputOnly',type='SFTime'),
+          field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
 
         sourceCode="""
 ecmascript:
@@ -63,11 +67,11 @@ ecmascript:
                }
 """),
         TimeSensor(DEF='DECLpoint_INSTANCE_CL1',cycleInterval=3,loop=True),
-        ROUTE(fromField='cycleTime',fromNode='DECLpoint_INSTANCE_CL1',toField='set_location',toNode='DECLpoint_INSTANCE_MB1'),
-        ROUTE(fromField='fraction_changed',fromNode='DECLpoint_INSTANCE_CL1',toField='set_fraction',toNode='DECLpoint_INSTANCE_PI1'),
-        ROUTE(fromField='keyValue',fromNode='DECLpoint_INSTANCE_MB1',toField='keyValue',toNode='DECLpoint_INSTANCE_PI1'),
-        ROUTE(fromField='value_changed',fromNode='DECLpoint_INSTANCE_PI1',toField='set_translation',toNode='DECLpoint_INSTANCE_node'),
-        ROUTE(fromField='translation_changed',fromNode='DECLpoint_INSTANCE_MB1',toField='set_translation',toNode='DECLpoint_INSTANCE_node')])]),
+        ROUTE(fromNode='DECLpoint_INSTANCE_CL1',fromField='cycleTime',toNode='DECLpoint_INSTANCE_MB1',toField='set_location'),
+        ROUTE(fromNode='DECLpoint_INSTANCE_CL1',fromField='fraction_changed',toNode='DECLpoint_INSTANCE_PI1',toField='set_fraction'),
+        ROUTE(fromNode='DECLpoint_INSTANCE_MB1',fromField='keyValue',toNode='DECLpoint_INSTANCE_PI1',toField='keyValue'),
+        ROUTE(fromNode='DECLpoint_INSTANCE_PI1',fromField='value_changed',toNode='DECLpoint_INSTANCE_node',toField='set_translation'),
+        ROUTE(fromNode='DECLpoint_INSTANCE_MB1',fromField='translation_changed',toNode='DECLpoint_INSTANCE_node',toField='set_translation')])]),
     Transform(DEF='G2',
       children=[
       Transform(DEF='DECLpoint_INSTANCE1000_node',
@@ -79,10 +83,10 @@ ecmascript:
         PositionInterpolator(DEF='DECLpoint_INSTANCE1000_PI1',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
         Script(DEF='DECLpoint_INSTANCE1000_MB1',
           field=[
-          field(accessType='inputOutput',name='translation',type='SFVec3f',value=(0,0,0)),
-          field(accessType='inputOutput',name='old',type='SFVec3f',value=(0,0,0)),
-          field(accessType='inputOnly',name='set_location',type='SFTime'),
-          field(accessType='inputOutput',name='keyValue',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
+          field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
+          field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
+          field(name='set_location',accessType='inputOnly',type='SFTime'),
+          field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
 
         sourceCode="""
 ecmascript:
@@ -93,11 +97,11 @@ ecmascript:
                }
 """),
         TimeSensor(DEF='DECLpoint_INSTANCE1000_CL1',cycleInterval=3,loop=True),
-        ROUTE(fromField='cycleTime',fromNode='DECLpoint_INSTANCE1000_CL1',toField='set_location',toNode='DECLpoint_INSTANCE1000_MB1'),
-        ROUTE(fromField='fraction_changed',fromNode='DECLpoint_INSTANCE1000_CL1',toField='set_fraction',toNode='DECLpoint_INSTANCE1000_PI1'),
-        ROUTE(fromField='keyValue',fromNode='DECLpoint_INSTANCE1000_MB1',toField='keyValue',toNode='DECLpoint_INSTANCE1000_PI1'),
-        ROUTE(fromField='value_changed',fromNode='DECLpoint_INSTANCE1000_PI1',toField='set_translation',toNode='DECLpoint_INSTANCE1000_node'),
-        ROUTE(fromField='translation_changed',fromNode='DECLpoint_INSTANCE1000_MB1',toField='set_translation',toNode='DECLpoint_INSTANCE1000_node')])]),
+        ROUTE(fromNode='DECLpoint_INSTANCE1000_CL1',fromField='cycleTime',toNode='DECLpoint_INSTANCE1000_MB1',toField='set_location'),
+        ROUTE(fromNode='DECLpoint_INSTANCE1000_CL1',fromField='fraction_changed',toNode='DECLpoint_INSTANCE1000_PI1',toField='set_fraction'),
+        ROUTE(fromNode='DECLpoint_INSTANCE1000_MB1',fromField='keyValue',toNode='DECLpoint_INSTANCE1000_PI1',toField='keyValue'),
+        ROUTE(fromNode='DECLpoint_INSTANCE1000_PI1',fromField='value_changed',toNode='DECLpoint_INSTANCE1000_node',toField='set_translation'),
+        ROUTE(fromNode='DECLpoint_INSTANCE1000_MB1',fromField='translation_changed',toNode='DECLpoint_INSTANCE1000_node',toField='set_translation')])]),
     Transform(DEF='transC1',
       children=[
       Transform(DEF='rotscaleC1',
@@ -108,20 +112,20 @@ ecmascript:
           geometry=Cylinder(radius=0.05))])]),
     Script(DEF='DECLx3dconnector_connector1_S1',
       field=[
-      field(accessType='initializeOnly',name='startnode',type='SFNode',
+      field(name='startnode',accessType='initializeOnly',type='SFNode',
         children=[
         Transform(USE='G1')]),
-      field(accessType='initializeOnly',name='endnode',type='SFNode',
+      field(name='endnode',accessType='initializeOnly',type='SFNode',
         children=[
         Transform(USE='G2')]),
-      field(accessType='initializeOnly',name='transC1',type='SFNode',
+      field(name='transC1',accessType='initializeOnly',type='SFNode',
         children=[
         Transform(USE='transC1')]),
-      field(accessType='initializeOnly',name='rotscaleC1',type='SFNode',
+      field(name='rotscaleC1',accessType='initializeOnly',type='SFNode',
         children=[
         Transform(USE='rotscaleC1')]),
-      field(accessType='inputOnly',name='set_startpoint',type='SFVec3f'),
-      field(accessType='inputOnly',name='set_endpoint',type='SFVec3f')],
+      field(name='set_startpoint',accessType='inputOnly',type='SFVec3f'),
+      field(name='set_endpoint',accessType='inputOnly',type='SFVec3f')],
 
     sourceCode="""
 ecmascript:
@@ -164,9 +168,10 @@ ecmascript:
             recompute_and_route(startnode.translation,val);
         }
 """),
-    ROUTE(fromField='translation_changed',fromNode='G1',toField='set_startpoint',toNode='DECLx3dconnector_connector1_S1'),
-    ROUTE(fromField='translation_changed',fromNode='G2',toField='set_endpoint',toNode='DECLx3dconnector_connector1_S1')])
+    ROUTE(fromNode='G1',fromField='translation_changed',toNode='DECLx3dconnector_connector1_S1',toField='set_startpoint'),
+    ROUTE(fromNode='G2',fromField='translation_changed',toNode='DECLx3dconnector_connector1_S1',toField='set_endpoint')])
 )
+
 ### X3D model conversion complete ###
 
 ####################################################################################################

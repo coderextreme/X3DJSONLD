@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -81,9 +85,10 @@ newModel=X3D(profile='Immersive',version='4.0',
           appearance=Appearance(
             material=Material(ambientIntensity=0.245763,diffuseColor=(0.34773,0.090909,0.005289),shininess=0.07,specularColor=(0.336735,0.051091,0.051091),transparency=0.8)))])]),
     Script(DEF='TextScript',url=["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"],
-      #  initialize() method includes unit test to printAllStrategies() to console 
-      #  TODO insert field definitions here (index string_changed previous next random) and then animate! 
-      field=[
+      # initialize() method includes unit test to printAllStrategies() to console
+
+      # TODO insert field definitions here (index string_changed previous next random) and then animate!
+
       field(accessType='initializeOnly',appinfo='index for active strategy card, -1 means no selection',name='index',type='SFInt32',value=0),
       field(accessType='outputOnly',appinfo='latest strategy card value',name='string_changed',type='MFString'),
       field(accessType='outputOnly',appinfo='"url to invoke Google Translate"',name='textToSpeechUrl',type='MFString'),
@@ -106,10 +111,14 @@ ecmascript:
           material=Material(diffuseColor=(1,1,1)))),
       ROUTE(fromField='string_changed',fromNode='TextScript',toField='string',toNode='CardText'),
       Sound(DEF='CardSoundSpatialization',maxBack=100,maxFront=100,minBack=20,minFront=20,
-        #  Make sure the sound source AudioClip is audible at the user location 
-        #  Not all X3D players seem to use the .mp3 
-        #  &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players 
-        #  %20 is space character used in uri/url encoding 
+        # Make sure the sound source AudioClip is audible at the user location
+
+        # Not all X3D players seem to use the .mp3
+
+        # &#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players
+
+        # %20 is space character used in uri/url encoding
+
         source=AudioClip(DEF='TextToSpeechAudioClip',description='sends strategy text google translate',url=["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"])),
       ROUTE(fromField='textToSpeechUrl',fromNode='TextScript',toField='url',toNode='TextToSpeechAudioClip'),
       ROUTE(fromField='newCardTime',fromNode='TextScript',toField='startTime',toNode='TextToSpeechAudioClip')]),
@@ -125,7 +134,8 @@ ecmascript:
       Transform(scale=(2,0.6,1),
         children=[
         Shape(DEF='TransparentClickSurface',
-          #  support Selectable Text with a scalable IFS 
+          # support Selectable Text with a scalable IFS
+
           geometry=IndexedFaceSet(coordIndex=[0,1,2,3,-1],solid=False,
             coord=Coordinate(point=[(1,1,0),(1,-1,0),(-1,-1,0),(-1,1,0)])),
           appearance=Appearance(
@@ -164,7 +174,9 @@ ecmascript:
         Transform(scale=(1.8,0.6,1),
           children=[
           Shape(USE='TransparentClickSurface')])])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

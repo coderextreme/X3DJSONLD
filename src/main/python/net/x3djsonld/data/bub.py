@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -35,7 +39,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    Comment(' <component name=\'Shape\' level=\'4\'></component> '),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='bub.x3d'),
@@ -63,29 +67,42 @@ newModel=X3D(profile='Immersive',version='4.0',
                 leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
                 rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
                 topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
-              # 
-					<ComposedShader DEF='gl' language="GLSL">
-					  <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
-					  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
-					  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+              # <ComposedShader DEF='gl' language="GLSL">
 
-					  <ShaderPart url='"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"'></ShaderPart>
-					  <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-					</ComposedShader>
-					<ComposedShader DEF='freewrl' language="GLSL">
-					  <field name='fw_textureCoodGenType' type='SFInt32' accessType="inputOutput" value='0'/>
-					  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
-					  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+              # <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
 
-					  <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"'></ShaderPart>
-					  <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-					</ComposedShader>
-					
-              shaders=[
+              # <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+
+              # <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+
+              # <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+
+              # <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+
+              # <ShaderPart url='"../shaders/gl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs"'></ShaderPart>
+
+              # <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+
+              # </ComposedShader>
+
+              # <ComposedShader DEF='freewrl' language="GLSL">
+
+              # <field name='fw_textureCoodGenType' type='SFInt32' accessType="inputOutput" value='0'/>
+
+              # <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+
+              # <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+
+              # <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+
+              # <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+
+              # <ShaderPart url='"../shaders/freewrl.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"'></ShaderPart>
+
+              # <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+
+              # </ComposedShader>
+
               ComposedShader(DEF='x3dom',language='GLSL',
                 field=[
                 field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
@@ -96,18 +113,24 @@ newModel=X3D(profile='Immersive',version='4.0',
                 parts=[
                 ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
                 ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT')]),
-              # 
-					<ComposedShader DEF='instant' language="GLSL">
-					  <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
-					  <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
-					  <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
-					  <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+              # <ComposedShader DEF='instant' language="GLSL">
 
-			      <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"'></ShaderPart>
-			      <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-                            </ComposedShader>
-                            
+              # <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
+
+              # <field name='chromaticDispertion' type='SFVec3f' accessType="inputOutput" value='0.98 1.0 1.033'/>
+
+              # <field name='bias' type='SFFloat' accessType="inputOutput" value='0.5'/>
+
+              # <field name='scale' type='SFFloat' accessType="inputOutput" value='0.5'/>
+
+              # <field name='power' type='SFFloat' accessType="inputOutput" value='2.0'/>
+
+              # <ShaderPart url='"../shaders/instant.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs"'></ShaderPart>
+
+              # <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+
+              # </ComposedShader>
+
               ComposedShader(DEF='x_ite',language='GLSL',
                 field=[
                 field(name='cube',type='SFNode',accessType='inputOutput',
@@ -160,7 +183,9 @@ ecmascript:
     ProtoInstance(name='Bubble'),
     ProtoInstance(name='Bubble'),
     ProtoInstance(name='Bubble')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

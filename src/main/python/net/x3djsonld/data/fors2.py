@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -54,12 +58,17 @@ newModel=X3D(profile='Immersive',version='4.0',
             children=[
             Shape(
               # comment before Sphere
+
               # comment after Sphere
+
               # comment after Appearance
+
               geometry=Sphere(),
               appearance=Appearance(
                 # comment before Material
+
                 # comment after Material
+
                 material=Material(diffuseColor=(1,0,0))))]),
           PositionInterpolator(DEF='NodePosition',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
           Script(DEF='MoveBall',
@@ -127,7 +136,9 @@ ecmascript:
       ProtoInstance(name='cyl',DEF='linkA')]),
     ROUTE(fromNode='nodeA',fromField='position',toNode='linkA',toField='positionA'),
     ROUTE(fromNode='nodeB',fromField='position',toNode='linkA',toField='positionB')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

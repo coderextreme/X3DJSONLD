@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -29,14 +33,14 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    meta(content='arcold.x3d',name='title'),
-    meta(content='John Carlson',name='creator'),
-    meta(content='manual',name='generator'),
-    meta(content='https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d',name='identifier'),
-    meta(content='an attempt to implement an arc in a graph',name='description')]),
+    meta(name='title',content='arcold.x3d'),
+    meta(name='creator',content='John Carlson'),
+    meta(name='generator',content='manual'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d'),
+    meta(name='description',content='an attempt to implement an arc in a graph')]),
   Scene=Scene(
     children=[
-    Viewpoint(description='a moving graph',position=(0,0,5)),
+    Viewpoint(position=(0,0,5),description='a moving graph'),
     Background(skyColor=[(0.4,0.4,0.4)]),
     Transform(DEF='trans1',
       children=[
@@ -80,10 +84,10 @@ newModel=X3D(profile='Immersive',version='4.0',
           PositionInterpolator(DEF='PI1',key=[0,1],keyValue=[(0,0,0),(0,5,0)]),
           Script(DEF='MB1',
             field=[
-            field(accessType='inputOutput',name='translation',type='SFVec3f',value=(50,50,0)),
-            field(accessType='inputOutput',name='old',type='SFVec3f',value=(0,0,0)),
-            field(accessType='inputOnly',name='set_location',type='SFTime'),
-            field(accessType='outputOnly',name='keyValue',type='MFVec3f')],
+            field(name='translation',accessType='inputOutput',type='SFVec3f',value=(50,50,0)),
+            field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
+            field(name='set_location',accessType='inputOnly',type='SFTime'),
+            field(name='keyValue',accessType='outputOnly',type='MFVec3f')],
 
           sourceCode="""
 ecmascript:
@@ -95,10 +99,10 @@ ecmascript:
 		}
 """),
           TimeSensor(DEF='CL1',cycleInterval=3,loop=True),
-          ROUTE(fromField='cycleTime',fromNode='CL1',toField='set_location',toNode='MB1'),
-          ROUTE(fromField='fraction_changed',fromNode='CL1',toField='set_fraction',toNode='PI1'),
-          ROUTE(fromField='keyValue',fromNode='MB1',toField='keyValue',toNode='PI1'),
-          ROUTE(fromField='value_changed',fromNode='PI1',toField='set_translation',toNode='node')])])),
+          ROUTE(fromNode='CL1',fromField='cycleTime',toNode='MB1',toField='set_location'),
+          ROUTE(fromNode='CL1',fromField='fraction_changed',toNode='PI1',toField='set_fraction'),
+          ROUTE(fromNode='MB1',fromField='keyValue',toNode='PI1',toField='keyValue'),
+          ROUTE(fromNode='PI1',fromField='value_changed',toNode='node',toField='set_translation')])])),
     Comment(' from doug sanden '),
     ProtoDeclare(name='x3dconnector',
       ProtoInterface=ProtoInterface(
@@ -177,7 +181,7 @@ ecmascript:
     ProtoInstance(DEF='G2',name='point'),
     ProtoInstance(DEF='G3',name='point'),
     ProtoInstance(DEF='G4',name='point'),
-    ProtoInstance(DEF='connector1',name='x3dconnector',
+    ProtoInstance(name='x3dconnector',DEF='connector1',
       fieldValue=[
       fieldValue(name='startnode',
         children=[
@@ -191,7 +195,7 @@ ecmascript:
       fieldValue(name='rotscalenode',
         children=[
         Transform(USE='rotscale1')])]),
-    ProtoInstance(DEF='connector2',name='x3dconnector',
+    ProtoInstance(name='x3dconnector',DEF='connector2',
       fieldValue=[
       fieldValue(name='startnode',
         children=[
@@ -205,7 +209,7 @@ ecmascript:
       fieldValue(name='rotscalenode',
         children=[
         Transform(USE='rotscale2')])]),
-    ProtoInstance(DEF='connector3',name='x3dconnector',
+    ProtoInstance(name='x3dconnector',DEF='connector3',
       fieldValue=[
       fieldValue(name='startnode',
         children=[
@@ -219,13 +223,14 @@ ecmascript:
       fieldValue(name='rotscalenode',
         children=[
         Transform(USE='rotscale3')])]),
-    ROUTE(fromField='translation_changed',fromNode='G1',toField='set_startpoint',toNode='connector1'),
-    ROUTE(fromField='translation_changed',fromNode='G2',toField='set_endpoint',toNode='connector1'),
-    ROUTE(fromField='translation_changed',fromNode='G1',toField='set_startpoint',toNode='connector2'),
-    ROUTE(fromField='translation_changed',fromNode='G3',toField='set_endpoint',toNode='connector2'),
-    ROUTE(fromField='translation_changed',fromNode='G1',toField='set_startpoint',toNode='connector3'),
-    ROUTE(fromField='translation_changed',fromNode='G4',toField='set_endpoint',toNode='connector3')])
+    ROUTE(fromNode='G1',fromField='translation_changed',toNode='connector1',toField='set_startpoint'),
+    ROUTE(fromNode='G2',fromField='translation_changed',toNode='connector1',toField='set_endpoint'),
+    ROUTE(fromNode='G1',fromField='translation_changed',toNode='connector2',toField='set_startpoint'),
+    ROUTE(fromNode='G3',fromField='translation_changed',toNode='connector2',toField='set_endpoint'),
+    ROUTE(fromNode='G1',fromField='translation_changed',toNode='connector3',toField='set_startpoint'),
+    ROUTE(fromNode='G4',fromField='translation_changed',toNode='connector3',toField='set_endpoint')])
 )
+
 ### X3D model conversion complete ###
 
 ####################################################################################################

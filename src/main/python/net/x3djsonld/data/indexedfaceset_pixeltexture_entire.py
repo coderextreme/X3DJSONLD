@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -52,9 +56,7 @@ newModel=X3D(profile='Interchange',version='4.0',
     Viewpoint(description='Right View',orientation=(0,1,0,1.57),position=(10,0,0)),
     Viewpoint(description='Left View',orientation=(0,1,0,-1.57),position=(-10,0,0)),
     NavigationInfo(type=["EXAMINE","WALK","FLY","ANY"]),
-    # 
-    <Environment id="gamma" gammaCorrectionDefault="none"></Environment>
-    
+    Comment(' <Environment id="gamma" gammaCorrectionDefault="none"></Environment> '),
     Shape(
       appearance=Appearance(
         material=Material(),
@@ -62,7 +64,9 @@ newModel=X3D(profile='Interchange',version='4.0',
           textureProperties=TextureProperties(magnificationFilter='NEAREST_PIXEL'))),
       geometry=IndexedFaceSet(coordIndex=[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1],
         coord=Coordinate(point=[(-2,1.5,1),(-2,-1.5,1),(2,1.5,1),(2,-1.5,1),(2,1.5,-1),(2,-1.5,-1),(-2,1.5,-1),(-2,-1.5,-1)])))])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

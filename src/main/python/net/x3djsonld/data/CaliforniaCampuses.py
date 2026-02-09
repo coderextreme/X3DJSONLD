@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -51,14 +55,13 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     WorldInfo(title='CaliforniaCampuses.x3d'),
     Switch(DEF='SwitchGlobes',whichChoice=0,
-      #  Select globe of interest. Warning: may need to keep alternate globes commented out to prevent browser caching. 
       children=[
-      Inline(url=["http://x3d-earth.nps.edu/osmdemo.x3d"])]
-      #  <Inline load='false' url='"http://mmog.ern.nps.edu/California/California.x3d"'/> 
-      #  <Inline load='false' url='"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d"'/> 
-      #  <Inline load='false' url='"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d"'/> 
-      #  <Inline load='false' url='"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d"'/> 
-      ),
+      Comment(' Select globe of interest. Warning: may need to keep alternate globes commented out to prevent browser caching. '),
+      Inline(url=["http://x3d-earth.nps.edu/osmdemo.x3d"]),
+      Comment(' <Inline load=\'false\' url=\'"http://mmog.ern.nps.edu/California/California.x3d"\'/> '),
+      Comment(' <Inline load=\'false\' url=\'"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d"\'/> '),
+      Comment(' <Inline load=\'false\' url=\'"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d"\'/> '),
+      Comment(' <Inline load=\'false\' url=\'"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d"\'/> '),],),
     NavigationInfo(transitionType=["ANIMATE"]),
     Group(DEF='PlacemarkGroup',
       children=[
@@ -97,7 +100,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       GeoViewpoint(DEF='View33',description='California State University, San Marcos',orientation=(1,0,0,-1.57),position=(33.12837619265174,-117.1600194071002,250000)),
       GeoViewpoint(DEF='View34',description='San Diego State University',orientation=(1,0,0,-1.57),position=(32.77593126586385,-117.0722876242553,250000)),
       GeoViewpoint(DEF='View35',description='CENIC',orientation=(1,0,0,-1.57),position=(33.879947,-118.027903,250000))]),
-    #  ==================== 
+    Comment(' ==================== '),
     ExternProtoDeclare(appinfo='CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point',name='CrossHair',url=["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"],
       field=[
       field(accessType='initializeOnly',appinfo='whether CrossHair prototype is enabled or not',name='enabled',type='SFBool'),
@@ -111,14 +114,14 @@ newModel=X3D(profile='Immersive',version='4.0',
       fieldValue(name='markerColor',value=(0.1,0.8,0.1)),
       fieldValue(name='scale',value=(0.5,0.5,0.5)),
       fieldValue(name='positionOffsetFromCamera',value=(0,0,-5))]),
-    #  ==================== 
+    Comment(' ==================== '),
     ExternProtoDeclare(appinfo='Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location',name='HeadsUpDisplay',url=["../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"],
       field=[
       field(accessType='inputOutput',appinfo='X3D content positioned at HUD offset',name='children',type='MFNode'),
       field(accessType='inputOutput',appinfo='offset position for HUD relative to current view location, default 0 0 -5',name='screenOffset',type='SFVec3f'),
       field(accessType='outputOnly',appinfo='HUD position update (in world coordinates) relative to original location',name='position_changed',type='SFVec3f'),
       field(accessType='outputOnly',appinfo='HUD orientation update relative to original location',name='orientation_changed',type='SFRotation')]),
-    #  ==================== 
+    Comment(' ==================== '),
     ExternProtoDeclare(appinfo='Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene',name='ViewpointSequencer',url=["../../Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","../../Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer"],
       field=[
       field(accessType='initializeOnly',appinfo='Viewpoint USE nodes that are sequentially bound',name='viewpoints',type='MFNode'),
@@ -134,7 +137,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     ProtoInstance(DEF='ViewpointTour',name='ViewpointSequencer',
       fieldValue=[
       fieldValue(name='interval',value=30),
-      #  initially enabled is off, scene provides selectable text to activate 
+      Comment(' initially enabled is off, scene provides selectable text to activate '),
       fieldValue(name='enabled',value=True),
       fieldValue(name='toggleMessage',value=["ViewpointSequencer tour"]),
       fieldValue(name='viewpoints',
@@ -175,7 +178,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         GeoViewpoint(USE='View34'),
         GeoViewpoint(USE='View35'),
         Viewpoint(DEF='View4',description='View four (-X axis)',orientation=(0,1,0,-1.57),position=(-10,0,0))])]),
-    #  ==================== 
+    Comment(' ==================== '),
     GeoLocation(geoCoords=(36.595599,-121.877148,624990),
       children=[
       Billboard(axisOfRotation=(0,0,0),
@@ -189,7 +192,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       BooleanToggle(DEF='TourToggle'),
       ROUTE(fromField='isActive',fromNode='TourTouch',toField='set_boolean',toNode='TourToggle'),
       ROUTE(fromField='toggle',fromNode='TourToggle',toField='set_enabled',toNode='ViewpointTour')]),
-    #  ==================== 
+    Comment(' ==================== '),
     ExternProtoDeclare(appinfo='ViewPositionOrientation provides provides console output of local position and orientation as user navigates',name='ViewPositionOrientation',url=["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"],
       field=[
       field(accessType='inputOutput',appinfo='Whether or not ViewPositionOrientation sends output to console',name='enabled',type='SFBool'),
@@ -200,10 +203,11 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(accessType='outputOnly',appinfo='MFString value of new Viewpoint',name='outputViewpointString',type='MFString')]),
     ProtoInstance(DEF='ExampleViewPositionOrientation',name='ViewPositionOrientation',
       fieldValue=[
-      fieldValue(name='enabled',value=False)])]
-    #  ==================== 
-    )
-) # X3D model complete
+      fieldValue(name='enabled',value=False)]),
+    Comment(' ==================== '),],])
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

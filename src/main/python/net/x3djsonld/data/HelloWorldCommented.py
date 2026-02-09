@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -42,60 +46,66 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='https://www.web3d.org/x3d/content/examples/license.html',name='license'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator')]),
   Scene=Scene(
-    #  Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes) 
-    #  WorldInfo begin 
     children=[
+    Comment(' Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes) '),
+    Comment(' WorldInfo begin '),
     WorldInfo(title='Hello world!'),
-    #  WorldInfo complete, Group begin 
+    Comment(' WorldInfo complete, Group begin '),
     Group(
-      #  Viewpoint begin 
       children=[
+      Comment(' Viewpoint begin '),
       Viewpoint(DEF='ViewUpClose',centerOfRotation=(0,-1,0),description='Hello world!',position=(0,-1,7)),
-      #  Viewpoint complete, Transform begin 
+      Comment(' Viewpoint complete, Transform begin '),
       Transform(rotation=(0,1,0,3),
-        #  Shape begin 
         children=[
+        Comment(' Shape begin '),
         Shape(
-          #  Sphere begin 
+          # Sphere begin
+
           geometry=Sphere(),
-          #  Sphere complete, Appearance begin 
+          # Sphere complete, Appearance begin
+
           appearance=Appearance(
-            #  Material begin 
+            # Material begin
+
             material=Material(DEF='MaterialLightBlue',diffuseColor=(0.1,0.5,1)),
-            #  Material complete, ImageTexture begin 
+            # Material complete, ImageTexture begin
+
             texture=ImageTexture(DEF='ImageCloudlessEarth',url=["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]),
-            #  ImageTexture complete 
-            ),
-          #  Appearance complete 
-          )]
-        #  Shape complete 
-        ),
-      #  Transform complete, Transform begin 
+            # ImageTexture complete
+),
+          # Appearance complete
+),
+        Comment(' Shape complete '),],),
+      Comment(' Transform complete, Transform begin '),
       Transform(translation=(0,-2,0),
-        #  Shape begin 
         children=[
+        Comment(' Shape begin '),
         Shape(
-          #  Text begin 
+          # Text begin
+
           geometry=Text(DEF='TextMessage',string=["Hello","world!"],
-            #  FontStyle begin 
+            # FontStyle begin
+
             fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"]),
-            #  FontStyle complete 
-            ),
-          #  Text complete, Appearance begin 
+            # FontStyle complete
+),
+          # Text complete, Appearance begin
+
           appearance=Appearance(
-            #  Material begin 
+            # Material begin
+
             material=Material(USE='MaterialLightBlue'),
-            #  Material complete 
-            ),
-          #  Appearance complete 
-          )]
-        #  Shape complete 
-        )]
-      #  Transform complete 
-      )]
-    #  Group complete 
-    )
-) # X3D model complete
+            # Material complete
+),
+          # Appearance complete
+),
+        Comment(' Shape complete '),],),
+      Comment(' Transform complete '),],),
+    Comment(' Group complete '),],])
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

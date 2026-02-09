@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -35,7 +39,7 @@ newModel=X3D(profile='Full',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    Comment(' <component name=\'Shape\' level=\'4\'></component> '),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='bumpyx_ite.x3d'),
@@ -48,7 +52,7 @@ newModel=X3D(profile='Full',version='4.0',
     WorldInfo(title='bumpyx_ite.x3d'),
     NavigationInfo(type=["ANY","EXAMINE","FLY","LOOKAT"]),
     Viewpoint(position=(0,0,40),description='Transparent rose'),
-    #  Images courtesy of Paul Debevec's Light Probe Image Gallery 
+    Comment(' Images courtesy of Paul Debevec\'s Light Probe Image Gallery '),
     Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
     Transform(
       children=[
@@ -78,16 +82,19 @@ newModel=X3D(profile='Full',version='4.0',
             field(name='c',type='SFFloat',accessType='inputOutput',value=5),
             field(name='d',type='SFFloat',accessType='inputOutput',value=5),
             field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
-            field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
+            field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0),
             parts=[
             ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
-            ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT')]
-            #  TO CONVERT TO A SPHERE
-                  <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart>
-                  <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart>
-                  
-            )]))])])
-) # X3D model complete
+            ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT'),
+            # TO CONVERT TO A SPHERE
+
+            # <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart>
+
+            # <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart>
+)]))])])
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

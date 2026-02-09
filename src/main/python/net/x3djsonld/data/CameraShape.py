@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -55,8 +59,8 @@ newModel=X3D(profile='Interactive',version='4.0',
         Shape(
           appearance=Appearance(DEF='CameraAppearance',
             material=Material(DEF='lambert1_0',ambientIntensity=0.25,diffuseColor=(0.372322,0.371574,0.373173),shininess=0.02,specularColor=(0.890909,0.887832,0.890909),
-              #  Universal Media Library: Metals 30 
-              ))),
+              # Universal Media Library: Metals 30
+))),
         Shape(
           geometry=IndexedFaceSet(DEF='pCylinder1_0Geo',convex=False,coordIndex=[0,1,13,12,-1,1,2,14,13,-1,2,3,15,14,-1,3,4,16,15,-1,4,5,17,16,-1,5,6,18,17,-1,6,7,19,18,-1,7,8,20,19,-1,8,9,21,20,-1,9,10,22,21,-1,10,11,23,22,-1,11,0,12,23,-1,1,0,24,-1,2,1,24,-1,3,2,24,-1,4,3,24,-1,5,4,24,-1,6,5,24,-1,7,6,24,-1,8,7,24,-1,9,8,24,-1,10,9,24,-1,11,10,24,-1,0,11,24,-1,12,13,25,-1,13,14,25,-1,14,15,25,-1,15,16,25,-1,16,17,25,-1,17,18,25,-1,18,19,25,-1,19,20,25,-1,20,21,25,-1,21,22,25,-1,22,23,25,-1,23,12,25,-1],creaseAngle=0.7854,
             coord=Coordinate(DEF='pCylinder1GeoPoints',point=[(-0.36,-2.39,-0.26),(-0.36,-1.77,-0.89),(-0.36,0.0,-1.7),(-0.36,0.85,-1.47),(-0.36,1.47,-0.85),(-0.36,1.7,0.0),(-0.36,1.47,0.85),(-0.36,-0.07,2.05),(-0.36,-0.92,2.28),(-0.36,-1.77,2.05),(-0.36,-2.39,1.43),(-0.36,-2.62,0.58),(0.36,-2.39,-0.26),(0.36,-1.77,-0.89),(0.36,0.0,-1.7),(0.36,0.85,-1.47),(0.36,1.47,-0.85),(0.36,1.7,0.0),(0.36,1.47,0.85),(0.36,-0.07,2.05),(0.36,-0.92,2.28),(0.36,-1.77,2.05),(0.36,-2.39,1.43),(0.36,-2.62,0.58),(-0.36,-0.46,0.31),(0.36,-0.46,0.31)])),
@@ -95,7 +99,9 @@ newModel=X3D(profile='Interactive',version='4.0',
           Shape(
             appearance=Appearance(USE='CameraAppearance'),
             geometry=IndexedFaceSet(USE='pSphere1_0Geo'))])])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

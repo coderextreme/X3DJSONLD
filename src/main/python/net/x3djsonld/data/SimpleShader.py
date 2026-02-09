@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -46,7 +50,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Titania V3.0.3, http://titania.create3000.de',name='generator'),
     meta(content='World of Titania',name='info'),
     meta(content='nicest',name='outputStyle'),
-    # meta content='under development' name='warning'/
+    Comment('meta content=\'under development\' name=\'warning\'/'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d',name='identifier'),
     meta(content='../../license.html',name='license')]),
@@ -86,8 +90,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         MetadataSet(DEF='Selection',name='Selection',reference='http://titania.create3000.de',
           value=[
           MetadataSet(DEF='nodes',name='nodes',reference='http://titania.create3000.de',
-            #  NULL 
-            )]),
+            # NULL
+)]),
         MetadataSet(DEF='NavigationInfo',name='NavigationInfo',reference='http://titania.create3000.de',
           value=[
           MetadataString(DEF='type',name='type',reference='http://titania.create3000.de',value=["EXAMINE"])]),
@@ -97,7 +101,9 @@ newModel=X3D(profile='Immersive',version='4.0',
           MetadataDouble(DEF='orientation',name='orientation',reference='http://titania.create3000.de',value=[-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191]),
           MetadataDouble(DEF='centerOfRotation',name='centerOfRotation',reference='http://titania.create3000.de',value=[-0.808320198626341,-0.358072370409949,0.22817191560906])])])),
     ProtoInstance(name='myPrototype')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

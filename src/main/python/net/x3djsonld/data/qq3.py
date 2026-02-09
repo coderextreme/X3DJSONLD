@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -43,26 +47,26 @@ newModel=X3D(profile='Immersive',version='4.0',
       ProtoBody=ProtoBody(
         children=[
         Group(
-          #  left 
           children=[
+          Comment(' left '),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(DEF='ShapeLeftDown',
               appearance=Appearance(
                 material=Material(diffuseColor=(0.7,1,0))),
               geometry=Extrusion(spine=[(-2.5,0,0),(-2.0,0,0),(-1.5,0,0)],creaseAngle=0.785,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)]))]),
-          #  right 
+          Comment(' right '),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(DEF='ShapeUpRight',
               appearance=Appearance(
                 material=Material(diffuseColor=(0,0.7,1))),
               geometry=Extrusion(spine=[(1.5,0,0),(2.0,0,0),(2.5,0,0)],creaseAngle=0.785,crossSection=[(1.00,0.00),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0.00,-1.00),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1.00,-0.00),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0.00,1.00),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1.00,0.00)]))]),
-          #  up 
+          Comment(' up '),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(USE='ShapeUpRight')]),
-          #  down 
+          Comment(' down '),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(USE='ShapeLeftDown')])])])),
@@ -76,7 +80,9 @@ newModel=X3D(profile='Immersive',version='4.0',
     Transform(translation=(0,2.5,0),
       children=[
       ProtoInstance(name='Process')])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

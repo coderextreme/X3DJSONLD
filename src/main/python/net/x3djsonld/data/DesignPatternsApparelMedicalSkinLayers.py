@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -50,11 +54,10 @@ newModel=X3D(profile='Immersive',version='4.0',
     Background(skyColor=[(0,0.6,0.6)]),
     Group(DEF='MultipleHumanoids',
       metadata=MetadataString(name='HAnimArchitecture',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile',value=["E.4 Multiple humanoids per file"]),
-      #  ============================== 
-      children=[
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='a_SimpleSkeleton',name='SimpleSkeleton',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum',
             children=[
@@ -63,91 +66,96 @@ newModel=X3D(profile='Immersive',version='4.0',
             HAnimSite(DEF='a_feature01_tip',name='feature01_tip',
               children=[
               Shape(DEF='SiteVisualization')])])])],),
-      #  ============================== 
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='b_SimpleSkeletonMesh',name='SimpleSkeletonMesh',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
           HAnimSegment(name='sacrum',
             children=[
             Shape(
               geometry=IndexedFaceSet(DEF='SegmentBoneMesh'))])])],),
-      #  ============================== 
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='c_SkinIndexedGeometry',name='SkinIndexedGeometry',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
-          HAnimSegment(name='sacrum')]),],
-        geometry=IndexedFaceSet(DEF='SkinMeshIFS')),
-      #  ============================== 
+          HAnimSegment(name='sacrum')])],
+        geometry=IndexedFaceSet(DEF='SkinMeshIFS')],),
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='d_SkinShapeIndexedGeometry',name='SkinShapeIndexedGeometry',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
-          HAnimSegment(name='sacrum')]),],
+          HAnimSegment(name='sacrum')])],
         skin=[
         Shape(
           geometry=IndexedFaceSet(USE='SkinMeshIFS'))],),
-      #  ============================== 
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='e_SkinSwitchShapeIndexedGeometry',name='SkinSwitchShapeIndexedGeometry',version='2.0',
+        children=[
+        Comment(' TODO show X3D4.0 addition of <Switch DEF=\'AlternativeSkins\' containerField=\'skin\'> '),],
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
-          HAnimSegment(name='sacrum')]),],
-        #  TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> 
+          HAnimSegment(name='sacrum')])],
         skin=[
         Shape(
           geometry=IndexedFaceSet(DEF='IndexedSkinMeshIFS',
             coord=Coordinate(DEF='SkinMeshCoordinate')))],),
-      #  similarly for LOD 
-      #  ============================== 
+      Comment(' similarly for LOD '),
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='f_SynthesizedSkinShapeIndexedTwoPartGeometry',name='SynthesizedSkinShapeIndexedTwoPartGeometry',version='2.0',
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
-          HAnimSegment(name='sacrum')]),],
+          HAnimSegment(name='sacrum')])],
         skin=[
         Shape(
           geometry=IndexedFaceSet(DEF='TwoPartIndexedSkinMesh',
             coord=Coordinate(DEF='TwoPartSkinMesh')))],),
-      #  ============================== 
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='g_ApparelSkinIndexedGeometryMultipleShapes',name='ApparelSkinIndexedGeometryMultipleShapes',version='2.0',
+        children=[
+        Comment(' allow multiple Shape nodes with containerField=\'apparel\', one for each layer of clothing '),
+        Comment(' TODO proposed for X3D4.1 <Shape containerField=\'apparel\'/> '),],
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
-          HAnimSegment(name='sacrum')]),],
+          HAnimSegment(name='sacrum')])],
         skin=[
-        Shape(),],
-        #  allow multiple Shape nodes with containerField='apparel', one for each layer of clothing 
-        #  TODO proposed for X3D4.1 <Shape containerField='apparel'/> 
-        ),
-      #  ============================== 
+        Shape(),],),
+      Comment(' ============================== '),
       HAnimHumanoid(DEF='h_AnatomySkinIndexedGeometryMultipleShapes',name='AnatomySkinIndexedGeometryMultipleShapes',version='2.0',
+        children=[
+        Comment(' allow multiple Shape nodes with containerField=\'skin\', one for each layer of skin '),],
         skeleton=[
-        HAnimJoint(name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(name='humanoid_root',
           children=[
-          HAnimSegment(name='sacrum')]),],
-        #  allow multiple Shape nodes with containerField='skin', one for each layer of skin 
+          HAnimSegment(name='sacrum')])],
         skin=[
-        Shape(),],)]
-      #  ============================== 
-      ),
+        Shape(),],),
+      Comment(' ============================== '),],),
     Viewpoint(DEF='ViewHelpText',description='Select text to see website',position=(0,0,12)),
-    #  Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip 
+    Comment(' Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip '),
     Anchor(description='DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches',parameter=["target=blank"],url=["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"],
       children=[
       Shape(
-        #  TODO adjust Text string and Box size, then set Material transparency='1' 
+        # TODO adjust Text string and Box size, then set Material transparency='1'
+
         geometry=Text(string=["DesignPatternsApparelMedicalSkinLayers.x3d","","explores potential apparel approaches"],
           fontStyle=FontStyle(family=["SANS"],justify=["MIDDLE","MIDDLE"],size=0.6,style_='BOLD')),
         appearance=Appearance(
           material=Material(diffuseColor=(0.9,0.9,0.9)))),
       Shape(
-        #  Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible. 
+        # Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
+
         geometry=Box(size=(11,2,.001)),
         appearance=Appearance(
           material=Material(transparency=1)))])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

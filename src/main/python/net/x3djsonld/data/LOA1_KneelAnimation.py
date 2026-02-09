@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -98,7 +102,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='HumanoidRoot_rotation_changed')])),
-          #  no SACROILIAC_ANIMATOR 
+          Comment(' no SACROILIAC_ANIMATOR '),
           OrientationInterpolator(DEF='L_HIP_ANIMATOR',key=[0,.3125,.625,1],keyValue=[(1,0,0,0),(-1,0,0,.619393),(-1,0,0,1.069302),(-1,0,0,1.937315)],
             IS=IS(
               connect=[
@@ -111,7 +115,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='l_ankle_rotation_changed')])),
-          #  no L_MIDTARSAL_ANIMATOR 
+          Comment(' no L_MIDTARSAL_ANIMATOR '),
           OrientationInterpolator(DEF='R_HIP_ANIMATOR',key=[0,.3125,1],keyValue=[(1,0,0,0),(1,0,0,.523598),(-1,0,0,.157079)],
             IS=IS(
               connect=[
@@ -124,12 +128,12 @@ newModel=X3D(profile='Immersive',version='4.0',
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='r_ankle_rotation_changed')])),
-          #  no R_MIDTARSAL_ANIMATOR 
+          Comment(' no R_MIDTARSAL_ANIMATOR '),
           OrientationInterpolator(DEF='VL5_ANIMATOR',key=[0,1],keyValue=[(1,0,0,0),(1,0,0,.174533)],
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='vl5_rotation_changed')])),
-          #  no SKULLBASE_ANIMATOR 
+          Comment(' no SKULLBASE_ANIMATOR '),
           OrientationInterpolator(DEF='L_SHOULDER_ANIMATOR',key=[0,.3125,.625,1],keyValue=[(1,0,0,0),(-1,0,0,.279252),(-1,0,0,.506145),(-1,0,0,.191986)],
             IS=IS(
               connect=[
@@ -138,7 +142,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             IS=IS(
               connect=[
               connect(nodeField='value_changed',protoField='l_elbow_rotation_changed')])),
-          #  no L_WRIST_ANIMATOR 
+          Comment(' no L_WRIST_ANIMATOR '),
           OrientationInterpolator(DEF='R_SHOULDER_ANIMATOR',key=[0,.3125,.625,1],keyValue=[(1,0,0,0),(-1,0,0,.104719),(-1,0,0,.157079),(1,0,0,.314159)],
             IS=IS(
               connect=[
@@ -146,9 +150,8 @@ newModel=X3D(profile='Immersive',version='4.0',
           OrientationInterpolator(DEF='R_ELBOW_ANIMATOR',key=[0,.3125,.625,1],keyValue=[(1,0,0,0),(-1,0,0,.837757),(-1,0,0,1.239183),(-1,0,0,1.500983)],
             IS=IS(
               connect=[
-              connect(nodeField='value_changed',protoField='r_elbow_rotation_changed')]))]
-          #  no R_WRIST_ANIMATOR 
-          ),
+              connect(nodeField='value_changed',protoField='r_elbow_rotation_changed')])),
+          Comment(' no R_WRIST_ANIMATOR '),],),
         ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='HUMANOIDROOT_POSITION_ANIMATOR'),
         ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='HUMANOIDROOT_ANIMATOR'),
         ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='L_HIP_ANIMATOR'),
@@ -169,7 +172,9 @@ newModel=X3D(profile='Immersive',version='4.0',
           fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],size=0.8)),
         appearance=Appearance(
           material=Material(diffuseColor=(1,1,0.2))))])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

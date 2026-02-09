@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -35,7 +39,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    Comment('<component name=\'Shape\' level=\'4\'></component>'),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='mirror.x3d'),
@@ -78,13 +82,12 @@ newModel=X3D(profile='Immersive',version='4.0',
             ShaderPart(url=["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"],type='FRAGMENT')]),
           ComposedShader(DEF='x_ite',language='GLSL',
             # http://hypertextbook.com/facts/2005/JustinChe.shtml
-            field=[
+
             field(name='chromaticDispertion',accessType='inputOutput',type='SFVec3f',value=(0.98,1,1.033)),
             field(name='cube',accessType='inputOutput',type='SFInt32',value=0),
             field(name='bias',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='scale',accessType='inputOutput',type='SFFloat',value=0.5),
             field(name='power',accessType='inputOutput',type='SFFloat',value=2)],
-            parts=[
             ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
             ShaderPart(url=["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"],type='FRAGMENT')])]),
         geometry=Sphere(radius=30)),
@@ -138,7 +141,9 @@ ecmascript:
       ROUTE(fromNode='UrlSelector',fromField='right_changed',toNode='rightShader',toField='url'),
       ROUTE(fromNode='UrlSelector',fromField='top_changed',toNode='topShader',toField='url'),
       ROUTE(fromNode='UrlSelector',fromField='bottom_changed',toNode='bottomShader',toField='url')])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -71,11 +75,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                       connect(nodeField='diffuseColor',protoField='diffuseColor'),
                       connect(nodeField='specularColor',protoField='specularColor'),
                       connect(nodeField='transparency',protoField='transparency')]))),
-                # 
-				  <IndexedFaceSet DEF="Orbit">
-				    <Coordinate DEF="OrbitCoordinates"/>
-				  </IndexedFaceSet>
-				  
+                # <IndexedFaceSet DEF="Orbit">
+
+                # <Coordinate DEF="OrbitCoordinates"/>
+
+                # </IndexedFaceSet>
+
                 geometry=IndexedFaceSet(ccw=False,convex=False,coordIndex=[0,1,2,-1],DEF='Orbit',
                   coord=Coordinate(DEF='OrbitCoordinates',point=[(0,0,1),(0,1,0),(1,0,0)])))]),
             Script(DEF='OrbitScript',
@@ -173,7 +178,9 @@ ecmascript:
         fieldValue(name='diffuseColor',value=(0,0.5,1)),
         fieldValue(name='specularColor',value=(0,0.5,1)),
         fieldValue(name='transparency',value=0.5)])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

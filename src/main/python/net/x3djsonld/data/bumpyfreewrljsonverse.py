@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -35,7 +39,7 @@ newModel=X3D(profile='Full',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    Comment(' <component name=\'Shape\' level=\'4\'></component> '),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     component(name='DIS',level=2),
@@ -59,28 +63,30 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*',name='identifier'),
     meta(content='PSPad, http://www.pspad.com/',name='generator'),
     meta(content='license.html',name='license'),
-    #  Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L 
-    ]),
-  #  "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,
-     It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
-     open for their "discussion about the teapot" 
+    Comment(' Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L '),]),
+  # "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,
+
+  # It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+
+  # open for their "discussion about the teapot"
+
   Scene=Scene(
-    #  basic nodes, which might be present in any scene 
     children=[
+    Comment(' basic nodes, which might be present in any scene '),
     NavigationInfo(type=["EXAMINE"],avatarSize=[0.25,1.75,0.75]),
     DirectionalLight(ambientIntensity=.2,direction=(0,-1,-0)),
     DirectionalLight(ambientIntensity=.2,direction=(-1,-.1,-1)),
     Viewpoint(description='My Overview',fieldOfView=1.570796,position=(0,1.75,60)),
-    #  LayerSet with two layers, navigation happens in layer 1 
+    Comment(' LayerSet with two layers, navigation happens in layer 1 '),
     LayerSet(activeLayer=1,order=[1,2],
-      #  the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" 
-      layers=[
+      # the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"
+
       Layer(pickable=True,objectType=["ALL"],
-        #  this group contains the red/green/blue 3D crosshair 
-        children=[
+        # this group contains the red/green/blue 3D crosshair
+
         Group(
-          #  Arrow X 
           children=[
+          Comment(' Arrow X '),
           Transform(translation=(25,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
@@ -93,7 +99,7 @@ newModel=X3D(profile='Full',version='4.0',
               geometry=Cone(DEF='Tip',bottomRadius=.8,height=3.0),
               appearance=Appearance(
                 material=Material(USE='RED')))]),
-          #  Arrow Y 
+          Comment(' Arrow Y '),
           Transform(translation=(0,25,0),
             children=[
             Shape(
@@ -106,7 +112,7 @@ newModel=X3D(profile='Full',version='4.0',
               geometry=Cone(USE='Tip'),
               appearance=Appearance(
                 material=Material(USE='GREEN')))]),
-          #  Arrow Z 
+          Comment(' Arrow Z '),
           Transform(translation=(0,0,25),rotation=(1,0,0,1.57),
             children=[
             Shape(
@@ -119,20 +125,18 @@ newModel=X3D(profile='Full',version='4.0',
               geometry=Cone(USE='Tip'),
               appearance=Appearance(
                 material=Material(USE='BLUE')))])]),
-        #  the model that is being reviewed by the users of this scene 
+        # the model that is being reviewed by the users of this scene
+
         Transform(DEF='FlowerTransform',
-          # 
-        <Inline DEF="Flower" url='"bumpyfreewrl.x3d"' />
-	
-          #  Images courtesy of Paul Debevec's Light Probe Image Gallery 
           children=[
+          Comment(' <Inline DEF="Flower" url=\'"bumpyfreewrl.x3d"\' /> '),
+          Comment(' Images courtesy of Paul Debevec\'s Light Probe Image Gallery '),
           Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
           Transform(
             children=[
             Shape(
-              # 
-	  <Sphere radius='40'></Sphere>
-		
+              # <Sphere radius='40'></Sphere>
+
               geometry=IndexedFaceSet(convex=False,DEF='Orbit',
                 coord=Coordinate(DEF='OrbitCoordinates')),
               appearance=Appearance(
@@ -157,15 +161,16 @@ newModel=X3D(profile='Full',version='4.0',
                   field(name='c',type='SFFloat',accessType='inputOutput',value=5),
                   field(name='d',type='SFFloat',accessType='inputOutput',value=5),
                   field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
-                  field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
+                  field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0),
                   parts=[
                   ShaderPart(url=["../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"]),
-                  ShaderPart(url=["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"],type='FRAGMENT')]
-                  #  TO CONVERT TO A SPHERE
-                  <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart>
-                  <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-                  
-                  )]))])]),
+                  ShaderPart(url=["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"],type='FRAGMENT'),
+                  # TO CONVERT TO A SPHERE
+
+                  # <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart>
+
+                  # <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+)]))])]),
         Script(DEF='OrbitScript',
           field=[
           field(accessType='inputOutput',name='coordinates',type='MFVec3f'),
@@ -220,7 +225,8 @@ function initialize() {
 """),
         ROUTE(fromField='coordIndexes',fromNode='OrbitScript',toField='set_coordIndex',toNode='Orbit'),
         ROUTE(fromField='coordinates',fromNode='OrbitScript',toField='set_point',toNode='OrbitCoordinates'),
-        #  DIS multiuser facilities 
+        # DIS multiuser facilities
+
         DISEntityManager(DEF='EntityManager',
           children=[
           DISEntityTypeMapping(category=77,specific=1,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]),
@@ -232,16 +238,21 @@ function initialize() {
           Group(DEF='AvatarHolder')]),
         ROUTE(fromField='addedEntities',fromNode='EntityManager',toField='addChildren',toNode='AvatarHolder'),
         ROUTE(fromField='removedEntities',fromNode='EntityManager',toField='removeChildren',toNode='AvatarHolder')]),
-      #  the second layer contains the sliders that are moved with the user's display
-         like a HUD (heads up display) 
+      # the second layer contains the sliders that are moved with the user's display
+
+      # like a HUD (heads up display)
+
       LayoutLayer(pickable=True,objectType=["ALL"],
-        #  positioning the LayoutLayer 
+        # positioning the LayoutLayer
+
         layout=Layout(align=["LEFT","BOTTOM"],offset=[-0.2,0.19],offsetUnits=["WORLD","WORLD"],scaleMode=["NONE","NONE"],size=[0.4,0.6],sizeUnits=["WORLD","WORLD"]),
-        #  clipping the LayoutLayer 
+        # clipping the LayoutLayer
+
         viewport=Viewport(clipBoundary=[0,1,0,1]),
-        #  the content (children) of the LayoutLayer 
-        #  first, the slider for scaling the model 
-        children=[
+        # the content (children) of the LayoutLayer
+
+        # first, the slider for scaling the model
+
         Transform(translation=(0,0,-3),
           children=[
           Shape(
@@ -409,7 +420,9 @@ const newTranslation = function(Value) {
           fieldValue(name='shaderNode',
             children=[
             ComposedShader(USE='freewrlShader')])])])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

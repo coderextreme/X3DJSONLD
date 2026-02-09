@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -440,8 +444,8 @@ newModel=X3D(profile='Immersive',version='4.0',
     PointLight(ambientIntensity=1,location=(0,0,5),radius=30),
     NavigationInfo(type=["EXAMINE","FLY","ANY"]),
     Viewpoint(description='Inspect Oxytocin',position=(0,2,20)),
-    #  Copyright by the U.S. Sec. Commerce on behalf of U.S.A. All rights reserved. 
-    #  type="3D" <date day="23" month="11" year="1995"/> 
+    Comment(' Copyright by the U.S. Sec. Commerce on behalf of U.S.A. All rights reserved. '),
+    Comment(' type="3D" <date day="23" month="11" year="1995"/> '),
     Transform(DEF='infogroupa',translation=(-8,2,-4),
       children=[
       Transform(translation=(0,6,0),
@@ -1054,7 +1058,9 @@ newModel=X3D(profile='Immersive',version='4.0',
       ProtoInstance(DEF='b71_2',name='line',
         fieldValue=[
         fieldValue(name='bond_set',value=[(11.4139,-7.347,0),(10.0092,-7.9824,0)])])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

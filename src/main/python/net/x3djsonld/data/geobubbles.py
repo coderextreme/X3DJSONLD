@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -36,9 +40,9 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d'),
     meta(name='description',content='geo bubbles')]),
   Scene=Scene(
-    # Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/
-    # PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
     children=[
+    Comment('Viewpoint DEF=\'Tour\' position=\'0 0 4\' orientation=\'1 0 0 0\' description=\'Tour Views\'/'),
+    Comment('PositionInterpolator DEF=\'TourPosition\' key=\'0 1\' keyValue=\'-0.5 -0.5 4 -0.5 0.5 4\'/'),
     GeoViewpoint(DEF='Tour',position=(0,0,4),orientation=(1,0,0,0),description='Tour Views'),
     Background(backUrl=["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"],bottomUrl=["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"],frontUrl=["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"],leftUrl=["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"],rightUrl=["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"],topUrl=["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]),
     Transform(
@@ -79,7 +83,9 @@ ecmascript:
     ROUTE(fromNode='RandomTourTime',fromField='position',toNode='TourPosition',toField='keyValue'),
     ROUTE(fromNode='TourTime',fromField='fraction_changed',toNode='TourPosition',toField='set_fraction'),
     ROUTE(fromNode='TourPosition',fromField='geovalue_changed',toNode='Tour',toField='set_position')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -46,7 +50,7 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     NavigationInfo(),
-    #  Images courtesy of Paul Debevec's Light Probe Image Gallery 
+    Comment(' Images courtesy of Paul Debevec\'s Light Probe Image Gallery '),
     Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"],bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"],frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"],leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"],rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"],topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]),
     ProtoDeclare(name='flower',
       ProtoBody=ProtoBody(
@@ -63,27 +67,42 @@ newModel=X3D(profile='Immersive',version='4.0',
                 leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]),
                 rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]),
                 topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"])),
-              #  
-			      <ComposedShader DEF='x3dom' language="GLSL">
-                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
-		       <field name='cube' type='SFNode' accessType="inputOutput">
-			  <ComposedCubeMapTexture USE="texture"/>
-			  </field>
+              # <ComposedShader DEF='x3dom' language="GLSL">
 
-                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
-                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-                  <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-                  <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
-                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
-                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'></ShaderPart>
-		  <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' type='FRAGMENT'></ShaderPart>
-			      </ComposedShader>
-		  
+              # <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+
+              # <field name='cube' type='SFNode' accessType="inputOutput">
+
+              # <ComposedCubeMapTexture USE="texture"/>
+
+              # </field>
+
+              # <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+
+              # <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+
+              # <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+
+              # <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+
+              # <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+
+              # <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+
+              # <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+
+              # <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+
+              # <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+
+              # <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+
+              # <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'></ShaderPart>
+
+              # <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' type='FRAGMENT'></ShaderPart>
+
+              # </ComposedShader>
+
               shaders=[
               ComposedShader(DEF='x_ite',language='GLSL',
                 field=[
@@ -193,20 +212,19 @@ ecmascript:
         ROUTE(fromNode='Animate',fromField='c',toNode='x_ite',toField='c'),
         ROUTE(fromNode='Animate',fromField='d',toNode='x_ite',toField='d'),
         ROUTE(fromNode='Animate',fromField='pdelta',toNode='x_ite',toField='pdelta'),
-        ROUTE(fromNode='Animate',fromField='tdelta',toNode='x_ite',toField='tdelta')]
-        # 
-            <ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/>
-            <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/>
-            <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/>
-            <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/>
-            <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/>
-            <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>
-		    
-        )),
+        ROUTE(fromNode='Animate',fromField='tdelta',toNode='x_ite',toField='tdelta'),
+        Comment(' <ROUTE fromNode=\'Animate\' fromField=\'a\' toNode=\'x3dom\' toField=\'a\'/> '),
+        Comment(' <ROUTE fromNode=\'Animate\' fromField=\'b\' toNode=\'x3dom\' toField=\'b\'/> '),
+        Comment(' <ROUTE fromNode=\'Animate\' fromField=\'c\' toNode=\'x3dom\' toField=\'c\'/> '),
+        Comment(' <ROUTE fromNode=\'Animate\' fromField=\'d\' toNode=\'x3dom\' toField=\'d\'/> '),
+        Comment(' <ROUTE fromNode=\'Animate\' fromField=\'pdelta\' toNode=\'x3dom\' toField=\'pdelta\'/> '),
+        Comment(' <ROUTE fromNode=\'Animate\' fromField=\'tdelta\' toNode=\'x3dom\' toField=\'tdelta\'/> '),],)),
     ProtoInstance(name='flower'),
     ProtoInstance(name='flower'),
     ProtoInstance(name='flower')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

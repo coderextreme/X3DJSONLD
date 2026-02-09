@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -2255,7 +2259,9 @@ newModel=X3D(profile='Interchange',version='4.0',
         material=Material(ambientIntensity=0.0,diffuseColor=(.784313738,0,0),shininess=1.0)),
       geometry=IndexedFaceSet(coordIndex=[1,0,2,-1,1,2,3,-1,5,4,6,-1,5,6,7,-1,9,8,10,-1,9,10,11,-1,13,12,14,-1,13,14,15,-1],solid=False,texCoordIndex=[1,0,2,-1,1,2,3,-1,5,4,6,-1,5,6,7,-1,9,8,10,-1,9,10,11,-1,13,12,14,-1,13,14,15,-1],
         coord=Coordinate(point=[(.88447243,0,-.156810224),(.07690154,0,.007801231),(.88447243,.075000003,-.156810224),(.07690154,.075000003,.007801231),(.07690154,0,.007801231),(.211020976,0,.665780663),(.07690154,.075000003,.007801231),(.211020976,.075000003,.665780663),(.211020976,0,.665780663),(1.018591881,0,.501169205),(.211020976,.075000003,.665780663),(1.018591881,.075000003,.501169205),(1.018591881,0,.501169205),(.88447243,0,-.156810224),(1.018591881,.075000003,.501169205),(.88447243,.075000003,-.156810224)])))])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

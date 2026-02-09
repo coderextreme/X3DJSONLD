@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -72,25 +76,27 @@ newModel=X3D(profile='Interchange',version='4.0',
         appearance=Appearance(
           material=Material(emissiveColor=(1,0,0)),
           lineProperties=LineProperties(linewidthScaleFactor=2,
-            # linetype='1'  solid
-            ))),
+            # linetype='1' solid
+))),
       Shape(
         geometry=LineSet(vertexCount=[2],
           coord=Coordinate(point=[(0,0,0),(0,1,0)])),
         appearance=Appearance(
           material=Material(emissiveColor=(0,1,0)),
           lineProperties=LineProperties(linewidthScaleFactor=2,
-            # linetype='1'  solid
-            ))),
+            # linetype='1' solid
+))),
       Shape(
         geometry=LineSet(vertexCount=[2],
           coord=Coordinate(point=[(0,0,0),(0,0,1)])),
         appearance=Appearance(
           material=Material(emissiveColor=(0,0,1)),
           lineProperties=LineProperties(linewidthScaleFactor=2,
-            # linetype='1'  solid
-            )))])])
-) # X3D model complete
+            # linetype='1' solid
+)))])])
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

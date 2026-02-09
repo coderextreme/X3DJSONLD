@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -46,7 +50,7 @@ newModel=X3D(profile='Immersive',version='4.0',
   Scene=Scene(
     children=[
     NavigationInfo(),
-    #  Images courtesy of Paul Debevec's Light Probe Image Gallery 
+    Comment(' Images courtesy of Paul Debevec\'s Light Probe Image Gallery '),
     Background(DEF='background',backUrl=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"],bottomUrl=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"],frontUrl=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"],leftUrl=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"],rightUrl=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"],topUrl=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
     Viewpoint(position=(0,0,40),description='Transparent rose'),
     Transform(
@@ -63,10 +67,10 @@ newModel=X3D(profile='Immersive',version='4.0',
             topTexture=ImageTexture(DEF='topShader',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"])),
           shaders=[
           ComposedShader(DEF='x3dom',language='GLSL',
-            #  TODO VERIFY
-                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
-		  
-            field=[
+            # TODO VERIFY
+
+            # <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+
             field(name='cube',type='SFNode',accessType='inputOutput',
               children=[
               ComposedCubeMapTexture(USE='texture')]),
@@ -80,7 +84,6 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='d',type='SFFloat',accessType='inputOutput',value=20),
             field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
             field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
-            parts=[
             ShaderPart(url=["https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]),
             ShaderPart(url=["https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT')]),
           ComposedShader(DEF='x_ite',language='GLSL',
@@ -137,22 +140,20 @@ ecmascript:
             }
         }
 """),
-    # 
-            <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/>
-            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
-            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>
-            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>
-            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
-	    
+    Comment(' <TimeSensor DEF="Clock" cycleInterval="45" loop=\'true\'/> '),
+    Comment(' <ROUTE fromNode=\'Clock\' fromField=\'fraction_changed\' toNode=\'UrlSelector\' toField=\'set_fraction\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'front\' toNode=\'background\' toField=\'frontUrl\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'back\' toNode=\'background\' toField=\'backUrl\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'left\' toNode=\'background\' toField=\'leftUrl\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'right\' toNode=\'background\' toField=\'rightUrl\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'top\' toNode=\'background\' toField=\'topUrl\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'bottom\' toNode=\'background\' toField=\'bottomUrl\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'front\' toNode=\'frontShader\' toField=\'url\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'back\' toNode=\'backShader\' toField=\'url\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'left\' toNode=\'leftShader\' toField=\'url\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'right\' toNode=\'rightShader\' toField=\'url\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'top\' toNode=\'topShader\' toField=\'url\'/> '),
+    Comment(' <ROUTE fromNode=\'UrlSelector\' fromField=\'bottom\' toNode=\'bottomShader\' toField=\'url\'/> '),
     Script(DEF='Animate',directOutput=True,
       field=[
       field(name='set_fraction',type='SFFloat',accessType='inputOnly'),
@@ -218,7 +219,9 @@ function set_fraction() {
     ROUTE(fromNode='Animate',fromField='d',toNode='x3dom',toField='d'),
     ROUTE(fromNode='Animate',fromField='pdelta',toNode='x3dom',toField='pdelta'),
     ROUTE(fromNode='Animate',fromField='tdelta',toNode='x3dom',toField='tdelta')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

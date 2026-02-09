@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -146,17 +150,16 @@ ecmascript:
         Transform(USE='transC1')]),
       fieldValue(name='rotscalenode',
         children=[
-        Transform(USE='rotscaleC1')])]
-      # 
-        <fieldValue name='set_startpoint'>
-        </fieldValue>
-        <fieldValue name='set_endpoint'>
-        </fieldValue>
-	
-      ),
+        Transform(USE='rotscaleC1')]),
+      Comment(' <fieldValue name=\'set_startpoint\'> '),
+      Comment(' </fieldValue> '),
+      Comment(' <fieldValue name=\'set_endpoint\'> '),
+      Comment(' </fieldValue> '),],),
     ROUTE(fromNode='G1',fromField='translation_changed',toNode='connector1',toField='set_startpoint'),
     ROUTE(fromNode='G2',fromField='translation_changed',toNode='connector1',toField='set_endpoint')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

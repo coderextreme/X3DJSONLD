@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -46,7 +50,9 @@ newModel=X3D(profile='Immersive',version='4.0',
         geometry=Extrusion(creaseAngle=3.14159,crossSection=[(0,0.8),(0.2,1),(0.7,0.95),(1,0.5),(0.8,0),(0.5,-0.3),(0,-0.7),(-0.5,-0.3),(-0.8,0),(-1,0.5),(-0.7,0.95),(-0.2,1),(0,0.8)],scale=[(0.01,0.01),(0.8,0.8),(1,1),(0.8,0.8),(0.01,0.01)],solid=False,spine=[(0,0,0),(0,0.1,0),(0,0.5,0),(0,0.9,0),(0,1,0)]),
         appearance=Appearance(
           material=Material(diffuseColor=(0.8,0.3,0.3))))])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

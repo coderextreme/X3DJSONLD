@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -32,10 +36,10 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Menu.x3d',name='title'),
     meta(content='X3D scene with a Switch of Inlines controlled by a menu',name='description')]),
   Scene=Scene(
-    #  Viewpoint and any other scene setup 
     children=[
+    Comment(' Viewpoint and any other scene setup '),
     Viewpoint(position=(0,20,110)),
-    #  Menu prototype declaration 
+    Comment(' Menu prototype declaration '),
     ProtoDeclare(name='Menu',
       ProtoInterface=ProtoInterface(
         field=[
@@ -92,7 +96,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             Inline(DEF='OPTION28',url=["../resources/JinSquint.x3d","JinSquint.x3d"]),
             Inline(DEF='OPTION29',url=["../resources/JinBlink.x3d","JinBlink.x3d"]),
             Inline(DEF='OPTION30',url=["../resources/JinWink.x3d","JinWink.x3d"])]),
-          #  Script to handle selection logic 
+          Comment(' Script to handle selection logic '),
           Script(DEF='MenuScript',
             field=[
             field(name='menuItems',type='MFString',accessType='initializeOnly'),
@@ -126,13 +130,15 @@ ecmascript:
           }
         }
 """),
-          #  ROUTEs to connect everything 
+          Comment(' ROUTEs to connect everything '),
           ROUTE(fromNode='MenuTouchSensor',fromField='hitPoint_changed',toNode='MenuScript',toField='touchPoint'),
           ROUTE(fromNode='MenuScript',fromField='selection',toNode='SceneSwitcher',toField='whichChoice')])])),
     ProtoInstance(DEF='MainMenu',name='Menu',
       fieldValue=[
       fieldValue(name='menuItems',value=["JinInnerBrowRaiser.x3d","JinOuterBrowRaiser.x3d","JinBrowLowerer.x3d","JinUpperLidRaiser.x3d","JinCheekRaiser.x3d","JinLidTightener.x3d","JinNoseWrinkler.x3d","JinUpperLipRaiser.x3d","JinNasolabialDeepener.x3d","JinLipCornerPuller.x3d","JinCheekPuffer.x3d","JinDimpler.x3d","JinLipCornerDepressor.x3d","JinLowerLipDepressor.x3d","JinChinRaiser.x3d","JinLipPuckerer.x3d","JinLipStretcher.x3d","JinLipFunneler.x3d","JinLipTightener.x3d","JinLipPressor.x3d","JinLipsPart.x3d","JinJawDrop.x3d","JinMouthStretch.x3d","JinLipSuck.x3d","JinLidDroop.x3d","JinSlit.x3d","JinEyesClosed.x3d","JinSquint.x3d","JinBlink.x3d","JinWink.x3d" ])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

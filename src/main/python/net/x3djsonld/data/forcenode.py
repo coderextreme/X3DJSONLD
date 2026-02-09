@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -141,13 +145,13 @@ ecmascript:
       field=[
       field(accessType='inputOutput',name='counter',value=0,type='SFInt32'),
       field(accessType='outputOnly',name='node_changed',type='SFNode'),
-      field(accessType='inputOnly',name='add_node',value=False,type='SFBool')]
-      # 
-            <field name="ModifiableNode" type="SFNode" accessType="inputOutput">
-                <Transform USE="HoldsContent"/>
-            </field>
-	    
-      ,
+      field(accessType='inputOnly',name='add_node',value=False,type='SFBool'),
+      # <field name="ModifiableNode" type="SFNode" accessType="inputOutput">
+
+      # <Transform USE="HoldsContent"/>
+
+      # </field>
+,
 
     sourceCode="""
 ecmascript:
@@ -176,7 +180,9 @@ ecmascript:
     ROUTE(fromNode='nodeC',fromField='position',toNode='linkB',toField='set_positionB'),
     ROUTE(fromNode='nodeA',fromField='position',toNode='linkC',toField='set_positionA'),
     ROUTE(fromNode='nodeD',fromField='position',toNode='linkC',toField='set_positionB')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

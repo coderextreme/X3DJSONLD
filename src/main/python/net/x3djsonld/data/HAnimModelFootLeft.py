@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -53,14 +57,16 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     WorldInfo(title='HAnimModelFootLeft.x3d'),
     HAnimHumanoid(DEF='hanim_Foot_Left',loa=4,name='Foot_Left',version='2.0',
+      children=[
+      Comment(' original HAnimHumanoid info=\'"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"\' '),],
       metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
         value=[
         MetadataString(name='authorName',value=['Kwan-Hee YOO, Don Brutzman and Joe Williams'])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
-        #  Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model 
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',
         children=[
-        HAnimJoint(DEF='hanim_l_talocrural',description='connection joint of foot to leg above',name='l_talocrural',ulimit=[0,0,0],llimit=[0,0,0],
+        Comment(' Might consider putting a HAnimSegment here, but that doesn\'t help with re-use of this foot model '),
+        HAnimJoint(DEF='hanim_l_talocrural',description='connection joint of foot to leg above',name='l_talocrural',
           children=[
           HAnimSegment(DEF='hanim_l_talus',name='l_talus',
             children=[
@@ -80,8 +86,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='TCtoCC',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(0.2,0.3,0)])))]),
-          #  TCN 
-          HAnimJoint(DEF='hanim_l_talocalcaneonavicular',center=(0.0,-0.3,0),name='l_talocalcaneonavicular',ulimit=[0,0,0],llimit=[0,0,0],
+          Comment(' TCN '),
+          HAnimJoint(DEF='hanim_l_talocalcaneonavicular',center=(0.0,-0.3,0),name='l_talocalcaneonavicular',
             children=[
             HAnimSegment(DEF='hanim_l_navicular',name='l_navicular',
               children=[
@@ -103,8 +109,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='TCNtoCN3',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,-0.3,0),(0.1,-0.4,0)])))]),
-            #  CN1 
-            HAnimJoint(DEF='hanim_l_cuneonavicular_1',center=(-0.1,-0.45,0),name='l_cuneonavicular_1',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' CN1 '),
+            HAnimJoint(DEF='hanim_l_cuneonavicular_1',center=(-0.1,-0.45,0),name='l_cuneonavicular_1',
               children=[
               HAnimSegment(DEF='hanim_l_cuneiform_1',name='l_cuneiform_1',
                 children=[
@@ -116,7 +122,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CN1toTMT1',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.1,-0.45,0),(-0.1,-0.6,0)])))]),
-              HAnimJoint(DEF='hanim_l_tarsometatarsal_1',center=(-0.1,-0.6,0),name='l_tarsometatarsal_1',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_tarsometatarsal_1',center=(-0.1,-0.6,0),name='l_tarsometatarsal_1',
                 children=[
                 HAnimSegment(DEF='hanim_l_metatarsal_1',name='l_metatarsal_1',
                   children=[
@@ -128,7 +134,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='TMT1toMTP1',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.1,-0.6,0),(-0.1,-0.9,0)])))]),
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',center=(-0.1,-0.9,0),name='l_metatarsophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',center=(-0.1,-0.9,0),name='l_metatarsophalangeal_1',
                   children=[
                   HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_1',name='l_tarsal_proximal_phalanx_1',
                     children=[
@@ -140,7 +146,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='MTP1toIP1',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.1,-0.9,0),(-0.1,-1.05,0)])))]),
-                  HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',center=(-0.1,-1.05,0),name='l_tarsal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',center=(-0.1,-1.05,0),name='l_tarsal_interphalangeal_1',
                     children=[
                     HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_1',name='l_tarsal_distal_phalanx_1',
                       children=[
@@ -152,8 +158,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='tiptoe_l_tarsal_distal_interphalangeal_1',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.1,-1.05,0),(-0.1,-1.1,0)])))])])])])]),
-            #  CN2 
-            HAnimJoint(DEF='hanim_l_cuneonavicular_2',center=(0.0,-0.45,0),name='l_cuneonavicular_2',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' CN2 '),
+            HAnimJoint(DEF='hanim_l_cuneonavicular_2',center=(0.0,-0.45,0),name='l_cuneonavicular_2',
               children=[
               HAnimSegment(DEF='hanim_l_cuneiform_2',name='l_cuneiform_2',
                 children=[
@@ -165,7 +171,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CN2toTMT2',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.0,-0.45,0),(0.05,-0.6,0)])))]),
-              HAnimJoint(DEF='hanim_l_tarsometatarsal_2',center=(0.05,-0.6,0),name='l_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_tarsometatarsal_2',center=(0.05,-0.6,0),name='l_tarsometatarsal_2',
                 children=[
                 HAnimSegment(DEF='hanim_l_metatarsal_2',name='l_metatarsal_2',
                   children=[
@@ -177,7 +183,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='TMT2toMTP2',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.05,-0.6,0),(0.05,-0.9,0)])))]),
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(0.05,-0.9,0),name='l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(0.05,-0.9,0),name='l_metatarsophalangeal_2',
                   children=[
                   HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
                     children=[
@@ -189,7 +195,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='MTP2toPIP2',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.05,-0.9,0),(0.05,-1.05,0)])))]),
-                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',center=(0.05,-1.05,0),name='l_tarsal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',center=(0.05,-1.05,0),name='l_tarsal_proximal_interphalangeal_2',
                     children=[
                     HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_2',name='l_tarsal_middle_phalanx_2',
                       children=[
@@ -201,7 +207,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='PIP2toDIP2',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.05,-1.05,0),(0.05,-1.12,0)])))]),
-                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(0.05,-1.12,0),name='l_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(0.05,-1.12,0),name='l_tarsal_distal_interphalangeal_2',
                       children=[
                       HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_2',name='l_tarsal_distal_phalanx_2',
                         children=[
@@ -213,8 +219,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                             material=Material(emissiveColor=(1,1,1))),
                           geometry=IndexedLineSet(DEF='tiptoe_l_tarsal_distal_phalanx_2',coordIndex=[0,1],
                             coord=Coordinate(point=[(0.05,-1.12,0),(0.05,-1.16,0)])))])])])])])]),
-            #  CN3 
-            HAnimJoint(DEF='hanim_l_cuneonavicular_3',center=(0.1,-0.4,0),name='l_cuneonavicular_3',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' CN3 '),
+            HAnimJoint(DEF='hanim_l_cuneonavicular_3',center=(0.1,-0.4,0),name='l_cuneonavicular_3',
               children=[
               HAnimSegment(DEF='hanim_l_cuneiform_3',name='l_cuneiform_3',
                 children=[
@@ -226,7 +232,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CN3toTMT3',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.1,-0.4,0),(0.15,-0.6,0)])))]),
-              HAnimJoint(DEF='hanim_l_tarsometatarsal_3',center=(0.15,-0.6,0),name='l_tarsometatarsal_3',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_tarsometatarsal_3',center=(0.15,-0.6,0),name='l_tarsometatarsal_3',
                 children=[
                 HAnimSegment(DEF='hanim_l_metatarsal_3',name='l_metatarsal_3',
                   children=[
@@ -238,7 +244,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='TMT3toMTP3',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.15,-0.6,0),(0.15,-0.9,0)])))]),
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',center=(0.15,-0.9,0),name='l_metatarsophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',center=(0.15,-0.9,0),name='l_metatarsophalangeal_3',
                   children=[
                   HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_3',name='l_tarsal_proximal_phalanx_3',
                     children=[
@@ -250,7 +256,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='MTP3toPIP3',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.15,-0.9,0),(0.15,-1.05,0)])))]),
-                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',center=(0.15,-1.05,0),name='l_tarsal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',center=(0.15,-1.05,0),name='l_tarsal_proximal_interphalangeal_3',
                     children=[
                     HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_3',name='l_tarsal_middle_phalanx_3',
                       children=[
@@ -262,7 +268,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='PIP3toDIP3',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.15,-1.05,0),(0.15,-1.13,0)])))]),
-                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',center=(0.15,-1.13,0),name='l_tarsal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',center=(0.15,-1.13,0),name='l_tarsal_distal_interphalangeal_3',
                       children=[
                       HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_3',name='l_tarsal_distal_phalanx_3',
                         children=[
@@ -274,8 +280,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                             material=Material(emissiveColor=(1,1,1))),
                           geometry=IndexedLineSet(DEF='tiptoe_l_tarsal_distal_interphalangeal_3',coordIndex=[0,1],
                             coord=Coordinate(point=[(0.15,-1.13,0),(0.15,-1.16,0)])))])])])])])])]),
-          #  CC 
-          HAnimJoint(DEF='hanim_l_calcaneocuboid',center=(0.2,0.3,0),name='l_calcaneocuboid',ulimit=[0,0,0],llimit=[0,0,0],
+          Comment(' CC '),
+          HAnimJoint(DEF='hanim_l_calcaneocuboid',center=(0.2,0.3,0),name='l_calcaneocuboid',
             children=[
             HAnimSegment(DEF='hanim_l_calcaneus',name='l_calcaneus',
               children=[
@@ -287,8 +293,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='CCtoTT',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.2,0.3,0),(0.21,-0.3,0)])))]),
-            #  TT 
-            HAnimJoint(DEF='hanim_l_transversetarsal',center=(0.21,-0.3,0),name='l_transversetarsal',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' TT '),
+            HAnimJoint(DEF='hanim_l_transversetarsal',center=(0.21,-0.3,0),name='l_transversetarsal',
               children=[
               HAnimSegment(DEF='hanim_l_cuboid',name='l_cuboid',
                 children=[
@@ -305,8 +311,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='TTtoTMT5',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.21,-0.3,0),(0.33,-0.52,0)])))]),
-              #  TMT4 
-              HAnimJoint(DEF='hanim_l_tarsometatarsal_4',center=(0.25,-0.58,0),name='l_tarsometatarsal_4',ulimit=[0,0,0],llimit=[0,0,0],
+              Comment(' TMT4 '),
+              HAnimJoint(DEF='hanim_l_tarsometatarsal_4',center=(0.25,-0.58,0),name='l_tarsometatarsal_4',
                 children=[
                 HAnimSegment(DEF='hanim_l_metatarsal_4',name='l_metatarsal_4',
                   children=[
@@ -318,7 +324,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='TMT4toMTP4',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.25,-0.58,0),(0.25,-0.87,0)])))]),
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',center=(0.25,-0.87,0),name='l_metatarsophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',center=(0.25,-0.87,0),name='l_metatarsophalangeal_4',
                   children=[
                   HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_4',name='l_tarsal_proximal_phalanx_4',
                     children=[
@@ -330,7 +336,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='MTP4toPIP4',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.25,-0.87,0),(0.25,-1.0,0)])))]),
-                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',center=(0.25,-1.0,0),name='l_tarsal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',center=(0.25,-1.0,0),name='l_tarsal_proximal_interphalangeal_4',
                     children=[
                     HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_4',name='l_tarsal_middle_phalanx_4',
                       children=[
@@ -342,7 +348,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='PIP4toDIP4',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.25,-1.0,0),(0.25,-1.1,0)])))]),
-                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',center=(0.25,-1.1,0),name='l_tarsal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',center=(0.25,-1.1,0),name='l_tarsal_distal_interphalangeal_4',
                       children=[
                       HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_4',name='l_tarsal_distal_phalanx_4',
                         children=[
@@ -354,8 +360,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                             material=Material(emissiveColor=(1,1,1))),
                           geometry=IndexedLineSet(DEF='tiptoe_l_tarsal_distal_interphalangeal_4',coordIndex=[0,1],
                             coord=Coordinate(point=[(0.25,-1.1,0),(0.25,-1.15,0)])))])])])])]),
-              #  TMT5 
-              HAnimJoint(DEF='hanim_l_tarsometatarsal_5',center=(0.33,-0.52,0),name='l_tarsometatarsal_5',ulimit=[0,0,0],llimit=[0,0,0],
+              Comment(' TMT5 '),
+              HAnimJoint(DEF='hanim_l_tarsometatarsal_5',center=(0.33,-0.52,0),name='l_tarsometatarsal_5',
                 children=[
                 HAnimSegment(DEF='hanim_l_metatarsal_5',name='l_metatarsal_5',
                   children=[
@@ -367,7 +373,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='TMT5toMTP5',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.33,-0.52,0),(0.34,-0.8,0)])))]),
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',center=(0.34,-0.8,0),name='l_metatarsophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',center=(0.34,-0.8,0),name='l_metatarsophalangeal_5',
                   children=[
                   HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_5',name='l_tarsal_proximal_phalanx_5',
                     children=[
@@ -379,7 +385,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='MTP5toPIP5',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.34,-0.8,0),(0.34,-0.95,0)])))]),
-                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',center=(0.34,-0.95,0),name='l_tarsal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',center=(0.34,-0.95,0),name='l_tarsal_proximal_interphalangeal_5',
                     children=[
                     HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_5',name='l_tarsal_middle_phalanx_5',
                       children=[
@@ -391,7 +397,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='PIP5toDIP5',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.34,-0.95,0),(0.34,-1.05,0)])))]),
-                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',center=(0.34,-1.05,0),name='l_tarsal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',center=(0.34,-1.05,0),name='l_tarsal_distal_interphalangeal_5',
                       children=[
                       HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_5',name='l_tarsal_distal_phalanx_5',
                         children=[
@@ -402,36 +408,35 @@ newModel=X3D(profile='Immersive',version='4.0',
                           appearance=Appearance(
                             material=Material(emissiveColor=(1,1,1))),
                           geometry=IndexedLineSet(DEF='tiptoe_l_tarsal_distal_interphalangeal_5',coordIndex=[0,1],
-                            coord=Coordinate(point=[(0.34,-1.05,0),(0.34,-1.08,0)])))])])])])])])])])]),],
-      #  original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' 
+                            coord=Coordinate(point=[(0.34,-1.05,0),(0.34,-1.08,0)])))])])])])])])])])])],
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_calcaneocuboid',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_cuneonavicular_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_cuneonavicular_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_cuneonavicular_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_talocalcaneonavicular',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsometatarsal_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsometatarsal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsometatarsal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_tarsometatarsal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_transversetarsal',ulimit=[0,0,0],llimit=[0,0,0])],
+      HAnimJoint(USE='hanim_humanoid_root'),
+      HAnimJoint(USE='hanim_l_calcaneocuboid'),
+      HAnimJoint(USE='hanim_l_cuneonavicular_1'),
+      HAnimJoint(USE='hanim_l_cuneonavicular_2'),
+      HAnimJoint(USE='hanim_l_cuneonavicular_3'),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_1'),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_2'),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_3'),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_4'),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_5'),
+      HAnimJoint(USE='hanim_l_talocalcaneonavicular'),
+      HAnimJoint(USE='hanim_l_talocrural'),
+      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_2'),
+      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_3'),
+      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_4'),
+      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_5'),
+      HAnimJoint(USE='hanim_l_tarsal_interphalangeal_1'),
+      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_2'),
+      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_3'),
+      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_4'),
+      HAnimJoint(USE='hanim_l_tarsal_proximal_interphalangeal_5'),
+      HAnimJoint(USE='hanim_l_tarsometatarsal_1'),
+      HAnimJoint(USE='hanim_l_tarsometatarsal_2'),
+      HAnimJoint(USE='hanim_l_tarsometatarsal_3'),
+      HAnimJoint(USE='hanim_l_tarsometatarsal_4'),
+      HAnimJoint(USE='hanim_l_tarsometatarsal_5'),
+      HAnimJoint(USE='hanim_l_transversetarsal')],
       segments=[
       HAnimSegment(USE='hanim_l_calcaneus'),
       HAnimSegment(USE='hanim_l_cuboid'),
@@ -459,7 +464,9 @@ newModel=X3D(profile='Immersive',version='4.0',
       HAnimSegment(USE='hanim_l_tarsal_proximal_phalanx_3'),
       HAnimSegment(USE='hanim_l_tarsal_proximal_phalanx_4'),
       HAnimSegment(USE='hanim_l_tarsal_proximal_phalanx_5')],)])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

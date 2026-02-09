@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -29,8 +33,8 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    #  Scaled 1:1, Added Animations 
-    #  Added Sites 
+    Comment(' Scaled 1:1, Added Animations '),
+    Comment(' Added Sites '),
     component(name='HAnim',level=1),
     meta(content='JinScaledV2L1LOA4Sites10h.x3d',name='title'),
     meta(content='Jin Hoon Lee and Min Joo Lee',name='creator'),
@@ -52,11 +56,11 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
-    #  https://www.web3d.org/documents/specifications/19774/V2.0/index.html 
-    #  0 0 0 at floor between feet, default I pose (relaxed attention) model gaze +Z, +x to model left, +y up, right-hand rule. 
-    #  Jin loa4 v2 1:1 Only Landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes that will be used to show the Joint center landmarks with connecting lines to show the skeleton Joint hierarchy, and the surface feature Site landmarks with lines showing the Joints which control their basic motions. The skeleton structure user code is then. example: not up to date since dropping segment geometry <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='JointMarker'/> <HAnimSite DEF='hanim_l_psis_pt' name='l_psis' translation='0.05 0.84 -0.11'> <Transform USE='l_psis_pt_SiteShape'/> </HAnimSite> </HAnimSegment> ... entire skeleton hierarchy ... </HAnimJoint> Please Run the example. It generalllystarts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 HAnimLandmarks - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape Site Connections AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointLandmarksAndJointConnections - DEF user code for Joint center location markers and skeleton connection hierarchy. SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry and Site location markers and Site connections. DefaultAnimation_loa4 Default I pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation Demo Johncan tbd TimerControls Selection of timer for animation 
-    #  Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 0.02 - 0.08 root translation 0.08 - 0.1 root rotation 0.2 - 0.3 sacro 0.25 - 0.75 eyeball 0.6 - 0.65 hip 0.65 0.70 knee 0.70 - 0.74 talocrural talocalcaneonavicular (1 2 3) calcaneocuboid (4 5) transversetarsal (4 5) cuneonavicular (1 2 3) tarsometatarsal (1 2 3 4 5) metatarsophalangeal (1 2 3 4 5) tarsal_interphalangeal (1) tarsal_proximal_interphalangeal (2 3 4 5) tarsal_distal_interphalangeal (2 3 4 5) 0.3 - 0.5 vl5 0.6 0.6375 vl2 0.6375 - 0.6875 vt10 0.6875 - 0.725 vt9 0.725 - 0.7875 vt5 0.7875 - 0.825 vt1 0.825 - 0.8625 vc7 0.8625 - 0.9 vc2 0.9 - 0.9985 skullbase 0.9 - 0.915 sterno 0.915 - 0.93 acrom 0.93 - 0.945 shoulder 0.945 - 0.96 elbow 0.96 - 0.98 radio 0.98 0.985 angeal_1 
     children=[
+    Comment(' https://www.web3d.org/documents/specifications/19774/V2.0/index.html '),
+    Comment(' 0 0 0 at floor between feet, default I pose (relaxed attention) model gaze +Z, +x to model left, +y up, right-hand rule. '),
+    Comment(' Jin loa4 v2 1:1 Only Landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes that will be used to show the Joint center landmarks with connecting lines to show the skeleton Joint hierarchy, and the surface feature Site landmarks with lines showing the Joints which control their basic motions. The skeleton structure user code is then. example: not up to date since dropping segment geometry <HAnimJoint DEF=\'hanim_humanoid_root\' name=\'humanoid_root\' containerField=\'skeleton\' center=\'0 0.826 -0.016\'> <HAnimSegment DEF=\'hanim_sacrum\' name=\'sacrum\'> <Shape USE=\'JointMarker\'/> <HAnimSite DEF=\'hanim_l_psis_pt\' name=\'l_psis\' translation=\'0.05 0.84 -0.11\'> <Transform USE=\'l_psis_pt_SiteShape\'/> </HAnimSite> </HAnimSegment> ... entire skeleton hierarchy ... </HAnimJoint> Please Run the example. It generalllystarts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 HAnimLandmarks - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape Site Connections AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointLandmarksAndJointConnections - DEF user code for Joint center location markers and skeleton connection hierarchy. SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry and Site location markers and Site connections. DefaultAnimation_loa4 Default I pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation Demo Johncan tbd TimerControls Selection of timer for animation '),
+    Comment(' Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 0.02 - 0.08 root translation 0.08 - 0.1 root rotation 0.2 - 0.3 sacro 0.25 - 0.75 eyeball 0.6 - 0.65 hip 0.65 0.70 knee 0.70 - 0.74 talocrural talocalcaneonavicular (1 2 3) calcaneocuboid (4 5) transversetarsal (4 5) cuneonavicular (1 2 3) tarsometatarsal (1 2 3 4 5) metatarsophalangeal (1 2 3 4 5) tarsal_interphalangeal (1) tarsal_proximal_interphalangeal (2 3 4 5) tarsal_distal_interphalangeal (2 3 4 5) 0.3 - 0.5 vl5 0.6 0.6375 vl2 0.6375 - 0.6875 vt10 0.6875 - 0.725 vt9 0.725 - 0.7875 vt5 0.7875 - 0.825 vt1 0.825 - 0.8625 vc7 0.8625 - 0.9 vc2 0.9 - 0.9985 skullbase 0.9 - 0.915 sterno 0.915 - 0.93 acrom 0.93 - 0.945 shoulder 0.945 - 0.96 elbow 0.96 - 0.98 radio 0.98 0.985 angeal_1 '),
     WorldInfo(title='11c Jin v2 LOA4 Level 1, Only Joints, Segments, Sites'),
     NavigationInfo(headlight=False),
     Background(DEF='Background1',groundColor=[(0.5,0.5,0.5)],skyColor=[(0.4,0.4,0.4)]),
@@ -101,7 +105,7 @@ newModel=X3D(profile='Immersive',version='4.0',
           appearance=Appearance(
             material=Material(diffuseColor=(1,0,1),emissiveColor=(1,0,1))),
           geometry=Box(size=(0.016,0.016,0.016)))])]),
-    #  Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'> <Shape DEF='AxisLines_Shape'> <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1, 0 2 -1, 0 3 -1'> <Color color='1 0 0, 0 1 0, 0 0 1'/> <Coordinate point='0 0 0, 1 0 0, 0 1 0, 0 0 1'/> </IndexedLineSet> </Shape> </Transform 
+    Comment(' Transform DEF=\'CoordinateSystemFloor\' scale=\'0.1 0.1 0.1\'> <Shape DEF=\'AxisLines_Shape\'> <IndexedLineSet colorIndex=\'0 1 2\' colorPerVertex=\'false\' coordIndex=\'0 1 -1, 0 2 -1, 0 3 -1\'> <Color color=\'1 0 0, 0 1 0, 0 0 1\'/> <Coordinate point=\'0 0 0, 1 0 0, 0 1 0, 0 0 1\'/> </IndexedLineSet> </Shape> </Transform '),
     Group(DEF='AnimationSelectMenu',
       children=[
       ProximitySensor(DEF='HudProx',size=(50,50,50)),
@@ -234,13 +238,13 @@ newModel=X3D(profile='Immersive',version='4.0',
             Shape(USE='TextBacking')])]),
         ROUTE(fromField='position_changed',fromNode='HudProx',toField='set_translation',toNode='HudXform'),
         ROUTE(fromField='orientation_changed',fromNode='HudProx',toField='set_rotation',toNode='HudXform'),
-        #  </Group> HUD includes DEFs of shpaes for Jin, Jin appears near Menu. 
-        #  Joint center and Joint hierarchy connections 
+        Comment(' </Group> HUD includes DEFs of shpaes for Jin, Jin appears near Menu. '),
+        Comment(' Joint center and Joint hierarchy connections '),
         Transform(DEF='AllShapesSitesConnections',scale=(0.1,0.1,0.1),translation=(-0.2,-0.1,-0.62),
           children=[
           Group(DEF='JointLandmarksAndJointConnections',
-            #  Following are defined here and used in the skeleton to show Joint center location and connections between Joint centers. 
             children=[
+            Comment(' Following are defined here and used in the skeleton to show Joint center location and connections between Joint centers. '),
             Transform(DEF='humanoid_root_JointShape',translation=(0,0.77,0),
               children=[
               TouchSensor(description='HAnimJoint humanoid_root'),
@@ -973,7 +977,7 @@ newModel=X3D(profile='Immersive',version='4.0',
               geometry=LineSet(vertexCount=[2],
                 color=Color(USE='SkeletonColor'),
                 coord=Coordinate(point=[(0,1.3126,-0.0154),(0,1.3128,0.01538)]))),
-            #  Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape 
+            Comment(' Shape DEF=\'tongue_Segment\'><LineSet vertexCount=\'2\'><Color USE=\'SkeletonColor\'/><Coordinate point=\'0 1.3126 -0.0154, 0 0 0\'/></LineSet></Shape '),
             Transform(DEF='l_eyelid_joint_JointShape',translation=(0.0505,1.42425,0.03294),
               children=[
               TouchSensor(description='HAnimJoint l_eyelid_join'),
@@ -1525,8 +1529,8 @@ newModel=X3D(profile='Immersive',version='4.0',
           Group(DEF='SiteDefinitions',
             children=[
             Group(DEF='sacrum_Sites',
-              #  none 
-              ),
+              children=[
+              Comment(' none '),],),
             Group(DEF='pelvis_Sites',
               children=[
               Transform(DEF='l_iliocristale_pt_SiteShape',
@@ -1688,14 +1692,14 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.0888,0.09545,-0.01045),(0.09,0.03,-0.06)])))]),
             Group(DEF='l_navicular_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_cuneiform_1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metatarsal_1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_proximal_phalanx_1_Sites',
               children=[
               Transform(DEF='l_metatarsal_phalanx_1_pt_SiteShape',
@@ -1717,17 +1721,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.062,0.012,0.115),(0.062,0.012,0.134)])))]),
             Group(DEF='l_cuneiform_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metatarsal_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_proximal_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_middle_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_distal_phalanx_2_Sites',
               children=[
               Transform(DEF='l_tarsal_distal_phalanx_2_tip_SiteShape',
@@ -1739,17 +1743,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.0843,0.00982,0.123435),(0.08,0.016,0.14)])))]),
             Group(DEF='l_cuneiform_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metatarsal_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_proximal_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_middle_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_distal_phalanx_3_Sites',
               children=[
               Transform(DEF='l_tarsal_distal_phalanx_3_tip_SiteShape',
@@ -1761,20 +1765,20 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.1004,0.00983,0.1197),(0.1,0.016,0.14)])))]),
             Group(DEF='l_calcaneus_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_cuboid_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metatarsal_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_proximal_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_middle_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_distal_phalanx_4_Sites',
               children=[
               Transform(DEF='l_tarsal_distal_phalanx_4_tip_SiteShape',
@@ -1786,11 +1790,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.11567,0.00936,0.11369),(0.115,0.016,0.13)])))]),
             Group(DEF='l_metatarsal_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_proximal_phalanx_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_tarsal_middle_phalanx_5_Sites',
               children=[
               Transform(DEF='l_metatarsal_phalanx_5_pt_SiteShape',
@@ -1890,14 +1894,14 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.08845,0.09544,-0.01045),(-0.09,0.03,-0.06)])))]),
             Group(DEF='r_navicular_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_cuneiform_1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metatarsal_1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_proximal_phalanx_1_Sites',
               children=[
               Transform(DEF='r_metatarsal_phalanx_1_pt_SiteShape',
@@ -1919,17 +1923,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.06174,0.0121,0.1153),(-0.06,0.012,0.14)])))]),
             Group(DEF='r_cuneiform_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metatarsal_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_proximal_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_middle_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_distal_phalanx_2_Sites',
               children=[
               Transform(DEF='r_tarsal_distal_phalanx_2_tip_SiteShape',
@@ -1941,17 +1945,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.0839,0.009825,0.123435),(-0.08,0.016,0.14)])))]),
             Group(DEF='r_cuneiform_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metatarsal_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_proximal_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_middle_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_distal_phalanx_3_Sites',
               children=[
               Transform(DEF='r_tarsal_distal_phalanx_3_tip_SiteShape',
@@ -1963,20 +1967,20 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.100035,0.00982,0.1197),(-0.1,0.016,0.14)])))]),
             Group(DEF='r_calcaneus_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_cuboid_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metatarsal_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_proximal_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_middle_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_distal_phalanx_4_Sites',
               children=[
               Transform(DEF='r_tarsal_distal_phalanx_4_tip_SiteShape',
@@ -1988,11 +1992,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.1153,0.00937,0.11369),(-0.115,0.016,0.13)])))]),
             Group(DEF='r_metatarsal_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_proximal_phalanx_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_tarsal_middle_phalanx_5_Sites',
               children=[
               Transform(DEF='r_metatarsal_phalanx_5_pt_SiteShape',
@@ -2056,11 +2060,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0,0.9254,-0.01376),(0,0.9,-0.1)])))]),
             Group(DEF='l4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l2_Sites',
               children=[
               Transform(DEF='l_rib_10_pt_SiteShape',
@@ -2080,14 +2084,14 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0,0.98235,-0.01376),(-0.09,1,0.04)])))]),
             Group(DEF='l1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t12_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t11_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t10_Sites',
               children=[
               Transform(DEF='substernale_pt_SiteShape',
@@ -2149,26 +2153,26 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0,1.0784,-0.01376),(-0.13,1.12,0)])))]),
             Group(DEF='t8_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t7_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t6_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='t1_Sites',
               children=[
               Transform(DEF='suprasternale_pt_SiteShape',
@@ -2206,17 +2210,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0,1.2453,-0.01506),(-0.06,1.26,0)])))]),
             Group(DEF='c6_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='c5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='c4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='c3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='c2_Sites',
               children=[
               Transform(DEF='adams_apple_pt_SiteShape',
@@ -2228,8 +2232,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0,1.307,-0.015),(0,1.29,0.04)])))]),
             Group(DEF='c1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='skull_Sites',
               children=[
               Transform(DEF='skull_vertex_pt_SiteShape',
@@ -2521,8 +2525,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.1819,0.72427,-0.005),(0.2,0.725,0)])))]),
             Group(DEF='l_trapezium_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metacarpal_1_Sites',
               children=[
               Transform(DEF='l_metacarpal_phalanx_2_pt_SiteShape',
@@ -2534,8 +2538,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.1805,0.69255,0.026),(0.2,0.665,0.012)])))]),
             Group(DEF='l_carpal_proximal_phalanx_1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_distal_phalanx_1_Sites',
               children=[
               Transform(DEF='l_carpal_distal_phalanx_1_tip_SiteShape',
@@ -2547,17 +2551,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.1826,0.654,0.04966),(0.18,0.64,0.06)])))]),
             Group(DEF='l_trapezoid_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metacarpal_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_proximal_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_middle_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_distal_phalanx_2_Sites',
               children=[
               Transform(DEF='l_dactylion_pt_SiteShape',
@@ -2577,8 +2581,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.18067,0.5816,0.01338),(0.172,0.558,0.017)])))]),
             Group(DEF='l_capitate_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metacarpal_3_Sites',
               children=[
               Transform(DEF='l_metacarpal_phalanx_3_pt_SiteShape',
@@ -2590,11 +2594,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.18108,0.6858,-0.00625),(0.2,0.665,-0.039)])))]),
             Group(DEF='l_carpal_proximal_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_middle_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_distal_phalanx_3_Sites',
               children=[
               Transform(DEF='l_carpal_distal_phalanx_3_tip_SiteShape',
@@ -2606,17 +2610,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.1807,0.5753,-0.0037),(0.172,0.555,-0.006)])))]),
             Group(DEF='l_hamate_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_metacarpal_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_proximal_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_middle_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_distal_phalanx_4_Sites',
               children=[
               Transform(DEF='l_carpal_distal_phalanx_4_tip_SiteShape',
@@ -2638,11 +2642,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(0.18164,0.68827,-0.03278),(0.2,0.665,-0.036)])))]),
             Group(DEF='l_carpal_proximal_phalanx_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_middle_phalanx_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='l_carpal_distal_phalanx_5_Sites',
               children=[
               Transform(DEF='l_carpal_distal_phalanx_5_tip_SiteShape',
@@ -2760,8 +2764,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.1816,0.7242,-0.005),(-0.2,0.725,0)])))]),
             Group(DEF='r_trapezium_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metacarpal_1_Sites',
               children=[
               Transform(DEF='r_metacarpal_phalanx_2_pt_SiteShape',
@@ -2773,8 +2777,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.18,0.69255,0.02598),(-0.2,0.665,0.012)])))]),
             Group(DEF='r_carpal_proximal_phalanx_1_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_distal_phalanx_1_Sites',
               children=[
               Transform(DEF='r_carpal_distal_phalanx_1_tip_SiteShape',
@@ -2786,17 +2790,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.18227,0.654,0.0496),(-0.18,0.64,0.06)])))]),
             Group(DEF='r_trapezoid_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metacarpal_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_proximal_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_middle_phalanx_2_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_distal_phalanx_2_Sites',
               children=[
               Transform(DEF='r_dactylion_pt_SiteShape',
@@ -2816,8 +2820,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.1803,0.5816,0.01338),(-0.172,0.558,0.017)])))]),
             Group(DEF='r_capitate_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metacarpal_3_Sites',
               children=[
               Transform(DEF='r_metacarpal_phalanx_3_pt_SiteShape',
@@ -2829,11 +2833,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.18072,0.6858,-0.00625),(-0.2,0.665,0.016)])))]),
             Group(DEF='r_carpal_proximal_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_middle_phalanx_3_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_distal_phalanx_3_Sites',
               children=[
               Transform(DEF='r_carpal_distal_phalanx_3_tip_SiteShape',
@@ -2845,17 +2849,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.18029,0.5753,-0.00375),(-0.17,0.555,-0.006)])))]),
             Group(DEF='r_hamate_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_metacarpal_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_proximal_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_middle_phalanx_4_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_distal_phalanx_4_Sites',
               children=[
               Transform(DEF='r_carpal_distal_phalanx_4_tip_SiteShape',
@@ -2877,11 +2881,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.18126,0.68827,-0.03278),(-0.2,0.665,-0.036)])))]),
             Group(DEF='r_carpal_proximal_phalanx_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_middle_phalanx_5_Sites',
-              #  None 
-              ),
+              children=[
+              Comment(' None '),],),
             Group(DEF='r_carpal_distal_phalanx_5_Sites',
               children=[
               Transform(DEF='r_carpal_distal_phalanx_5_tip_SiteShape',
@@ -2893,21 +2897,23 @@ newModel=X3D(profile='Immersive',version='4.0',
                   color=Color(USE='SiteColor'),
                   coord=Coordinate(point=[(-0.18045,0.602325,-0.03697),(-0.172,0.58,-0.039)])))])])])])]),
     HAnimHumanoid(DEF='hanim_JinLOA4S',name='JinLOA4S',loa=4,version='2.0',
+      children=[
+      Comment(' MetadataSet name=\'HAnimHumanoid.info\' containerField=\'metadata\' reference=\'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid\'> <MetadataString name=\'authorName\' value=\'"Jin Hoon Lee and Min Joo Lee"","" Chul Hee Jung and Myeong Won Lee"\'/> <MetadataString name=\'authorEmail\' value=\'myeongwonlee@gmail.com\'/> <MetadataString name=\'creationDate\' value=\'31 March 2011\'/> <MetadataString name=\'John Carlson and Joe Williams\' value=\'Modifiers\'/> <MetadataString name=\'modificationDate\' value=\'25 March 2024\'/> <MetadataString name=\'gender\' value=\'female\'/> <MetadataFloat name=\'height\' value=\'1.5\'/> <MetadataString name=\'humanoidVersion\' value=\'2.0\'/> </MetadataSet '),],
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.77,0),llimit=[0,0,0],ulimit=[0,0,0],
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.77,0),
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
-          #  Shape USE='sacrum_Shape'/ 
           children=[
+          Comment(' Shape USE=\'sacrum_Shape\'/ '),
           Transform(USE='humanoid_root_JointShape'),
           Shape(USE='sacrum-to-sacroiliac_Segment'),
           Shape(USE='sacrum-to-vl5_Segment'),
           Group(USE='sacrum_Sites')]),
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.826,0.02),llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.826,0.02),
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
-            #  Shape USE='pelvis_Shape'/ 
             children=[
+            Comment(' Shape USE=\'pelvis_Shape\'/ '),
             Transform(USE='sacroiliac_JointShape'),
             Shape(USE='pelvis-to-l_hip_Segment'),
             Shape(USE='pelvis-to-r_hip_Segment'),
@@ -2951,11 +2957,11 @@ newModel=X3D(profile='Immersive',version='4.0',
               children=[
               Transform(USE='hanim_buttocks_standing_wall_contact_point_pt_SiteShape')]),
             Shape(USE='sacroiliac-to-buttocks_standing_wall_contact_point_pt')]),
-          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),llimit=[0,0,0],ulimit=[0,0,0],
+          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
-              #  Shape USE='l_thigh_Shape'/ 
               children=[
+              Comment(' Shape USE=\'l_thigh_Shape\'/ '),
               Transform(USE='l_hip_JointShape'),
               Shape(USE='l_thigh_Segment'),
               HAnimSite(DEF='hanim_l_knee_crease_pt',name='l_knee_crease',translation=(0.09,0.41,-0.056),
@@ -2974,11 +2980,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                 children=[
                 Transform(USE='l_suprapatella_pt_SiteShape')]),
               Shape(USE='l_hip-to-l_suprapatella')]),
-            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.0926,0.4088,-0.01944),llimit=[0,0,0],ulimit=[0,0,0],
+            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.0926,0.4088,-0.01944),
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
-                #  Shape USE='l_calf_Shape'/ 
                 children=[
+                Comment(' Shape USE=\'l_calf_Shape\'/ '),
                 Transform(USE='l_knee_JointShape'),
                 Shape(USE='l_calf_Segment'),
                 HAnimSite(DEF='hanim_l_tibiale_pt',name='l_tibiale',translation=(0.09,0.31,0.038),
@@ -2994,11 +3000,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   children=[
                   Transform(USE='l_lateral_malleolus_pt_SiteShape')]),
                 Shape(USE='l_knee-to-l_lateral_malleolus')]),
-              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.0888,0.09545,-0.01045),llimit=[0,0,0],ulimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.0888,0.09545,-0.01045),
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
-                  #  Shape USE='l_talus_Shape'/ 
                   children=[
+                  Comment(' Shape USE=\'l_talus_Shape\'/ '),
                   Transform(USE='l_talocrural_JointShape'),
                   Shape(USE='l_talus-to-l_talocalcaneonavicular_Segment'),
                   Shape(USE='l_talus-to-l_calcaneuscuboid_Segment'),
@@ -3010,217 +3016,217 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     Transform(USE='l_calcaneus_posterior_pt_SiteShape')]),
                   Shape(USE='l_talocrural-to-l_calcaneus_posterior')]),
-                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.0783,0.0369,0.0049),llimit=[0,0,0],ulimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.0783,0.0369,0.0049),
                   children=[
                   HAnimSegment(DEF='hanim_l_navicular',name='l_navicular',
-                    #  Shape USE='l_navicular_Shape'/ 
                     children=[
+                    Comment(' Shape USE=\'l_navicular_Shape\'/ '),
                     Transform(USE='l_talocalcaneonavicular_JointShape'),
                     Shape(USE='l_navicular-to-l_cuneonavicular_1_Segment'),
                     Shape(USE='l_navicular-to-l_cuneonavicular_2_Segment'),
                     Shape(USE='l_navicular-to-l_cuneonavicular_3_Segment')]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.0674,0.0321,0.0184),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.0674,0.0321,0.0184),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_1',name='l_cuneiform_1',
-                      #  Shape USE='l_cuneiform_1_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'l_cuneiform_1_Shape\'/ '),
                       Transform(USE='l_cuneonavicular_1_JointShape'),
                       Shape(USE='l_cuneiform_1_Segment')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.0646,0.02324,0.0442),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.0646,0.02324,0.0442),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_1',name='l_metatarsal_1',
-                        #  Shape USE='l_metatarsal_1_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'l_metatarsal_1_Shape\'/ '),
                         Transform(USE='l_tarsometatarsal_1_JointShape'),
                         Shape(USE='l_metatarsal_1_Segment')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621,0.01442,0.0936),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621,0.01442,0.0936),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_1',name='l_tarsal_proximal_phalanx_1',
-                          #  Shape USE='l_tarsal_proximal_phalanx_1_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'l_tarsal_proximal_phalanx_1_Shape\'/ '),
                           Transform(USE='l_metatarsophalangeal_1_JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_1_Segment'),
                           HAnimSite(DEF='hanim_l_metatarsal_phalanx_1_pt',name='l_metatarsal_phalanx_1',translation=(0.062,0.012,0.1),
                             children=[
                             Transform(USE='l_metatarsal_phalanx_1_pt_SiteShape')]),
                           Shape(USE='l_metatarsophalangeal_1-to-l_metatarsal_phalanx_1')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_1',name='l_tarsal_distal_phalanx_1',
-                            #  Shape USE='l_tarsal_distal_phalanx_1_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'l_tarsal_distal_phalanx_1_Shape\'/ '),
                             Transform(USE='l_tarsal_interphalangeal_1_JointShape'),
                             Shape(USE='l_tarsal_distal_phalanx_1_Segment'),
                             HAnimSite(DEF='hanim_l_tarsal_distal_phalanx_1_tip',name='l_tarsal_distal_phalanx_1',translation=(0.062,0.012,0.134),
                               children=[
                               Transform(USE='l_tarsal_distal_phalanx_1_tip_SiteShape')]),
                             Shape(USE='l_tarsal_interphalangeal_1-to-l_tarsal_distal_phalanx_1_tip')])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814,0.0335,0.02143),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814,0.0335,0.02143),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_2',name='l_cuneiform_2',
-                      #  Shape USE='l_cuneiform_2_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'l_cuneiform_2_Shape\'/ '),
                       Transform(USE='l_cuneonavicular_2_JointShape'),
                       Shape(USE='l_cuneiform_2_Segment')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.0802,0.0261,0.0411),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.0802,0.0261,0.0411),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_2',name='l_metatarsal_2',
-                        #  Shape USE='l_metatarsal_2_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'l_metatarsal_2_Shape\'/ '),
                         Transform(USE='l_tarsometatarsal_2_JointShape'),
                         Shape(USE='l_metatarsal_2_Segment')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0825,0.01497,0.09783),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.0825,0.01497,0.09783),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
-                          #  Shape USE='l_tarsal_proximal_phalanx_2_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'l_tarsal_proximal_phalanx_2_Shape\'/ '),
                           Transform(USE='l_metatarsophalangeal_2_JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_2_Segment')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843,0.01265,0.114),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843,0.01265,0.114),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_2',name='l_tarsal_middle_phalanx_2',
-                            #  Shape USE='l_tarsal_middle_phalanx_2_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'l_tarsal_middle_phalanx_2_Shape\'/ '),
                             Transform(USE='l_tarsal_proximal_interphalangeal_2_JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_2_Segment')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843,0.00982,0.123435),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843,0.00982,0.123435),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_2',name='l_tarsal_distal_phalanx_2',
-                              #  Shape USE='l_tarsal_distal_phalanx_2_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'l_tarsal_distal_phalanx_2_Shape\'/ '),
                               Transform(USE='l_tarsal_distal_interphalangeal_2_JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_2_Segment'),
                               HAnimSite(DEF='hanim_l_tarsal_distal_phalanx_2_tip',name='l_tarsal_distal_phalanx_2',translation=(0.08,0.016,0.14),
                                 children=[
                                 Transform(USE='l_tarsal_distal_phalanx_2_tip_SiteShape'),
                                 Shape(USE='l_tarsal_distal_interphalangeal_2-to-l_tarsal_distal_phalanx_2_tip')])])])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.09297,0.0334,0.01982),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.09297,0.0334,0.01982),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_3',name='l_cuneiform_3',
-                      #  Shape USE='l_cuneiform_3_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'l_cuneiform_3_Shape\'/ '),
                       Transform(USE='l_cuneonavicular_3_JointShape'),
                       Shape(USE='l_cuneiform_3_Segment')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.0394),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.0394),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_3',name='l_metatarsal_3',
-                        #  Shape USE='l_metatarsal_3_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'l_metatarsal_3_Shape\'/ '),
                         Transform(USE='l_tarsometatarsal_3_JointShape'),
                         Shape(USE='l_metatarsal_3_Segment')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.0965,0.01505,0.0954),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.0965,0.01505,0.0954),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_3',name='l_tarsal_proximal_phalanx_3',
-                          #  Shape USE='l_tarsal_proximal_phalanx_3_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'l_tarsal_proximal_phalanx_3_Shape\'/ '),
                           Transform(USE='l_metatarsophalangeal_3_JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_3_Segment')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.09886,0.01192,0.11047),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.09886,0.01192,0.11047),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_3',name='l_tarsal_middle_phalanx_3',
-                            #  Shape USE='l_tarsal_middle_phalanx_3_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'l_tarsal_middle_phalanx_3_Shape\'/ '),
                             Transform(USE='l_tarsal_proximal_interphalangeal_3_JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_3_Segment')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004,0.00983,0.1197),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004,0.00983,0.1197),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_3',name='l_tarsal_distal_phalanx_3',
-                              #  Shape USE='l_tarsal_distal_phalanx_3_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'l_tarsal_distal_phalanx_3_Shape\'/ '),
                               Transform(USE='l_tarsal_distal_interphalangeal_3_JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_3_Segment'),
                               HAnimSite(DEF='hanim_l_tarsal_distal_phalanx_3_tip',name='l_tarsal_distal_phalanx_3',translation=(0.1,0.016,0.14),
                                 children=[
                                 Transform(USE='l_tarsal_distal_phalanx_3_tip_SiteShape')]),
                               Shape(USE='l_tarsal_distal_interphalangeal_3-to-l_tarsal_distal_phalanx_3')])])])])])])]),
-                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.05798,-0.0259),llimit=[0,0,0],ulimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.05798,-0.0259),
                   children=[
                   HAnimSegment(DEF='hanim_l_calcaneus',name='l_calcaneus',
-                    #  Shape USE='l_calcaneus_Shape'/ 
                     children=[
+                    Comment(' Shape USE=\'l_calcaneus_Shape\'/ '),
                     Transform(USE='l_calcaneocuboid_JointShape'),
                     Shape(USE='l_calcaneus_Segment')]),
-                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.11063,0.03528,0.0021),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.11063,0.03528,0.0021),
                     children=[
                     HAnimSegment(DEF='hanim_l_cuboid',name='l_cuboid',
-                      #  Shape USE='l_cuboid_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'l_cuboid_Shape\'/ '),
                       Transform(USE='l_transversetarsal_JointShape'),
                       Shape(USE='l_cuboid-to-l_tarsometatarsal_4_Segment'),
                       Shape(USE='l_cuboid-to-l_tarsometatarsal_5_Segment')]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.10649,0.02454,0.03843),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.10649,0.02454,0.03843),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_4',name='l_metatarsal_4',
-                        #  Shape USE='l_metatarsal_4_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'l_metatarsal_4_Shape\'/ '),
                         Transform(USE='l_tarsometatarsal_4_JointShape'),
                         Shape(USE='l_metatarsal_4_Segment')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867,0.01435,0.09117),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867,0.01435,0.09117),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_4',name='l_tarsal_proximal_phalanx_4',
-                          #  Shape USE='l_tarsal_proximal_phalanx_4_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'l_tarsal_proximal_phalanx_4_Shape\'/ '),
                           Transform(USE='l_metatarsophalangeal_4_JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_4_Segment')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.11416,0.01224,0.10631),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.11416,0.01224,0.10631),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_4',name='l_tarsal_middle_phalanx_4',
-                            #  Shape USE='l_tarsal_middle_phalanx_4_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'l_tarsal_middle_phalanx_4_Shape\'/ '),
                             Transform(USE='l_tarsal_proximal_interphalangeal_4_JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_4_Segment')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.11567,0.00936,0.11369),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.11567,0.00936,0.11369),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_4',name='l_tarsal_distal_phalanx_4',
-                              #  Shape USE='l_tarsal_distal_phalanx_4_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'l_tarsal_distal_phalanx_4_Shape\'/ '),
                               Transform(USE='l_tarsal_distal_interphalangeal_4_JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_4_Segment'),
                               HAnimSite(DEF='hanim_l_tarsal_distal_phalanx_4_tip',name='l_tarsal_distal_phalanx_4',translation=(0.115,0.016,0.13),
                                 children=[
                                 Transform(USE='l_tarsal_distal_phalanx_4_tip_SiteShape')]),
                               Shape(USE='l_tarsal_distal_interphalangeal_4-to-l_tarsal_distal_phalanx_4_tip')])])])])]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.1208,0.02094,0.03474),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.1208,0.02094,0.03474),
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_5',name='l_metatarsal_5',
-                        #  Shape USE='l_metatarsal_5_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'l_metatarsal_5_Shape\'/ '),
                         Transform(USE='l_metatarsal_5_JointShape'),
                         Shape(USE='l_metatarsal_5_Segment')]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065,0.01367,0.08656),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065,0.01367,0.08656),
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_5',name='l_tarsal_proximal_phalanx_5',
-                          #  Shape USE='l_tarsal_proximal_phalanx_5_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'l_tarsal_proximal_phalanx_5_Shape\'/ '),
                           Transform(USE='l_metatarsophalangeal_5_JointShape'),
                           Shape(USE='l_tarsal_proximal_phalanx_5_Segment')]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.12638,0.01086,0.09414),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.12638,0.01086,0.09414),
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_5',name='l_tarsal_middle_phalanx_5',
-                            #  Shape USE='l_tarsal_middle_phalanx_5_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'l_tarsal_middle_phalanx_5_Shape\'/ '),
                             Transform(USE='l_tarsal_proximal_interphalangeal_5_JointShape'),
                             Shape(USE='l_tarsal_middle_phalanx_5_Segment'),
                             HAnimSite(DEF='hanim_l_metatarsal_phalanx_5_pt',name='l_metatarsal_phalanx_5',translation=(0.12,0.02,0.04),
                               children=[
                               Transform(USE='l_metatarsal_phalanx_5_pt_SiteShape')]),
                             Shape(USE='l_tarsal_proximal_interphalangeal_5-to-l_metatarsal_phalanx_5')]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.12728,0.00856,0.10188),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.12728,0.00856,0.10188),
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_5',name='l_tarsal_distal_phalanx_5',
-                              #  Shape USE='l_tarsal_distal_phalanx_5_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'l_tarsal_distal_phalanx_5_Shape\'/ '),
                               Transform(USE='l_tarsal_distal_interphalangeal_5_JointShape'),
                               Shape(USE='l_tarsal_distal_phalanx_5_Segment'),
                               HAnimSite(DEF='hanim_l_tarsal_distal_phalanx_5_tip',name='l_tarsal_distal_phalanx_5',translation=(0.125,0.016,0.115),
                                 children=[
                                 Transform(USE='l_tarsal_distal_phalanx_5_tip_SiteShape')]),
                               Shape(USE='l_tarsal_distal_interphalangeal_5-to-l_tarsal_distal_phalanx_5_tip')])])])])])])])])])]),
-          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.09466,0.82665,-0.01835),llimit=[0,0,0],ulimit=[0,0,0],
+          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.09466,0.82665,-0.01835),
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
-              #  Shape USE='r_thigh_Shape'/ 
               children=[
+              Comment(' Shape USE=\'r_thigh_Shape\'/ '),
               Transform(USE='r_hip_JointShape'),
               Shape(USE='r_thigh_Segment'),
               HAnimSite(DEF='hanim_r_knee_crease_pt',name='r_knee_crease',translation=(-0.09,0.41,-0.056),
@@ -3239,11 +3245,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                 children=[
                 Transform(USE='r_suprapatella_pt_SiteShape')]),
               Shape(USE='r_hip-to-r_suprapatella')]),
-            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0926,0.408825,-0.01944),llimit=[0,0,0],ulimit=[0,0,0],
+            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0926,0.408825,-0.01944),
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
-                #  Shape USE='r_calf_Shape'/ 
                 children=[
+                Comment(' Shape USE=\'r_calf_Shape\'/ '),
                 Transform(USE='r_knee_JointShape'),
                 Shape(USE='r_calf_Segment'),
                 HAnimSite(DEF='hanim_r_tibiale_pt',name='r_tibiale',translation=(-0.09,0.31,0.038),
@@ -3258,11 +3264,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                   children=[
                   Transform(USE='r_lateral_malleolus_pt_SiteShape')]),
                 Shape(USE='r_knee-to-r_lateral_malleolu')]),
-              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.08845,0.09544,-0.01045),llimit=[0,0,0],ulimit=[0,0,0],
+              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.08845,0.09544,-0.01045),
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
-                  #  Shape USE='r_talus_Shape'/ 
                   children=[
+                  Comment(' Shape USE=\'r_talus_Shape\'/ '),
                   Transform(USE='r_talocrural_JointShape'),
                   Shape(USE='r_talus-to-r_talocalcaneonavicular_Segment'),
                   Shape(USE='r_talus-to-r_calcaneocuboid_Segment'),
@@ -3274,216 +3280,216 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     Transform(USE='r_calcaneus_posterior_pt_SiteShape')]),
                   Shape(USE='r_talocrural-to-r_calcaneus_posterior')]),
-                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.0369,0.00486),llimit=[0,0,0],ulimit=[0,0,0],
+                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.0369,0.00486),
                   children=[
                   HAnimSegment(DEF='hanim_r_navicular',name='r_navicular',
-                    #  Shape USE='r_navicular_Shape'/ 
                     children=[
+                    Comment(' Shape USE=\'r_navicular_Shape\'/ '),
                     Transform(USE='r_talocalcaneonavicular_JointShape'),
                     Shape(USE='r_navicular-to-r_cuneonavicular_1_Segment'),
                     Shape(USE='r_navicular-to-r_cuneonavicular_2_Segment'),
                     Shape(USE='r_navicular-to-r_cuneonavicular_3_Segment')]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.06698,0.032107,0.01839),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.06698,0.032107,0.01839),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_1',name='r_cuneiform_1',
-                      #  Shape USE='r_cuneiform_1_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'r_cuneiform_1_Shape\'/ '),
                       Transform(USE='r_cuneonavicular_1_JointShape'),
                       Shape(USE='r_cuneiform_1_Segment')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.064,0.02324,0.04419),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.064,0.02324,0.04419),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_1',name='r_metatarsal_1',
-                        #  Shape USE='r_metatarsal_1_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'r_metatarsal_1_Shape\'/ '),
                         Transform(USE='r_tarsometatarsal_1_JointShape'),
                         Shape(USE='r_metatarsal_1_Segment')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.06176,0.014425,0.09362),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.06176,0.014425,0.09362),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_1',name='r_tarsal_proximal_phalanx_1',
-                          #  Shape USE='r_tarsal_proximal_phalanx_1_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'r_tarsal_proximal_phalanx_1_Shape\'/ '),
                           Transform(USE='r_metatarsophalangeal_1_JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_1_Segment'),
                           HAnimSite(DEF='hanim_r_metatarsal_phalanx_1_pt',name='r_metatarsal_phalanx_1',translation=(-0.062,0.012,0.1),
                             children=[
                             Transform(USE='r_metatarsal_phalanx_1_pt_SiteShape')]),
                           Shape(USE='r_metatarsophalangeal_1-to-r_metatarsal_phalanx_1')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121,0.1153),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121,0.1153),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_1',name='r_tarsal_distal_phalanx_1',
-                            #  Shape USE='r_tarsal_distal_phalanx_1_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'r_tarsal_distal_phalanx_1_Shape\'/ '),
                             Transform(USE='r_tarsal_interphalangeal_1_JointShape'),
                             Shape(USE='r_tarsal_distal_phalanx_1_Segment'),
                             HAnimSite(DEF='hanim_r_tarsal_distal_phalanx_1_tip',name='r_tarsal_distal_phalanx_1',translation=(-0.06,0.012,0.14),
                               children=[
                               Transform(USE='r_tarsal_distal_phalanx_1_tip_SiteShape')]),
                             Shape(USE='r_tarsal_interphalangeal_1-to-r_tarsal_distal_phalanx_1_tip')])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081,0.0335,0.02142),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081,0.0335,0.02142),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_2',name='r_cuneiform_2',
-                      #  Shape USE='r_cuneiform_2_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'r_cuneiform_2_Shape\'/ '),
                       Transform(USE='r_cuneonavicular_2_JointShape'),
                       Shape(USE='r_cuneiform_2_Segment')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.07983,0.0261,0.04106),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.07983,0.0261,0.04106),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_2',name='r_metatarsal_2',
-                        #  Shape USE='r_metatarsal_2_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'r_metatarsal_2_Shape\'/ '),
                         Transform(USE='r_tarsometatarsal_2_JointShape'),
                         Shape(USE='r_metatarsal_2_Segment')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821,0.01497,0.09783),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821,0.01497,0.09783),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_2',name='r_tarsal_proximal_phalanx_2',
-                          #  Shape USE='r_tarsal_proximal_phalanx_2_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'r_tarsal_proximal_phalanx_2_Shape\'/ '),
                           Transform(USE='r_metatarsophalangeal_2_JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_2_Segment')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.0839,0.012647,0.114),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.0839,0.012647,0.114),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_2',name='r_tarsal_middle_phalanx_2',
-                            #  Shape USE='r_tarsal_middle_phalanx_2_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'r_tarsal_middle_phalanx_2_Shape\'/ '),
                             Transform(USE='r_tarsal_proximal_interphalangeal_2_JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_2_Segment')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.0839,0.009825,0.123435),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.0839,0.009825,0.123435),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_2',name='r_tarsal_distal_phalanx_2',
-                              #  Shape USE='r_tarsal_distal_phalanx_2_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'r_tarsal_distal_phalanx_2_Shape\'/ '),
                               Transform(USE='r_tarsal_distal_interphalangeal_2_JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_2_Segment'),
                               HAnimSite(DEF='hanim_r_tarsal_distal_phalanx_2_tip',name='r_tarsal_distal_phalanx_2',translation=(-0.08,0.016,0.14),
                                 children=[
                                 Transform(USE='r_tarsal_distal_phalanx_2_tip_SiteShape')]),
                               Shape(USE='r_tarsal_distal_interphalangeal_2-to-r_tarsal_distal_phalanx_2_tip')])])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261,0.03339,0.01982),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261,0.03339,0.01982),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_3',name='r_cuneiform_3',
-                      #  Shape USE='r_cuneiform_3_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'r_cuneiform_3_Shape\'/ '),
                       Transform(USE='r_cuneonavicular_3_JointShape'),
                       Shape(USE='r_cuneiform_3_Segment')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423,0.0261,0.0394),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423,0.0261,0.0394),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_3',name='r_metatarsal_3',
-                        #  Shape USE='r_metatarsal_3_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'r_metatarsal_3_Shape\'/ '),
                         Transform(USE='r_tarsometatarsal_3_JointShape'),
                         Shape(USE='r_metatarsal_3_Segment')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0961,0.01505,0.09542),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0961,0.01505,0.09542),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_3',name='r_tarsal_proximal_phalanx_3',
-                          #  Shape USE='r_tarsal_proximal_phalanx_3_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'r_tarsal_proximal_phalanx_3_Shape\'/ '),
                           Transform(USE='r_metatarsophalangeal_3_JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_3_Segment')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.0985,0.01192,0.11047),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.0985,0.01192,0.11047),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_3',name='r_tarsal_middle_phalanx_3',
-                            #  Shape USE='r_tarsal_middle_phalanx_3_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'r_tarsal_middle_phalanx_3_Shape\'/ '),
                             Transform(USE='r_tarsal_proximal_interphalangeal_3_JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_3_Segment')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035,0.00982,0.1197),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035,0.00982,0.1197),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_3',name='r_tarsal_distal_phalanx_3',
-                              #  Shape USE='r_tarsal_distal_phalanx_3_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'r_tarsal_distal_phalanx_3_Shape\'/ '),
                               Transform(USE='r_tarsal_distal_interphalangeal_3_JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_3_Segment'),
                               HAnimSite(DEF='hanim_r_tarsal_distal_phalanx_3_tip',name='r_tarsal_distal_phalanx_3',translation=(-0.1,0.016,0.14),
                                 children=[
                                 Transform(USE='r_tarsal_distal_phalanx_3_tip_SiteShape')]),
                               Shape(USE='r_tarsal_distal_interphalangeal_3-to-r_tarsal_distal_phalanx_3_tip')])])])])])])]),
-                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717,0.05798,-0.025965),llimit=[0,0,0],ulimit=[0,0,0],
+                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717,0.05798,-0.025965),
                   children=[
                   HAnimSegment(DEF='hanim_r_calcaneus',name='r_calcaneus',
-                    #  Shape USE='r_calcaneus_Shape'/ 
                     children=[
+                    Comment(' Shape USE=\'r_calcaneus_Shape\'/ '),
                     Transform(USE='r_calcaneocuboid_JointShape'),
                     Shape(USE='r_calcaneus_Segment')]),
-                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.11027,0.03528,0.0021),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.11027,0.03528,0.0021),
                     children=[
                     HAnimSegment(DEF='hanim_r_cuboid',name='r_cuboid',
-                      #  Shape USE='r_cuboid_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'r_cuboid_Shape\'/ '),
                       Transform(USE='r_transversetarsal_JointShape'),
                       Shape(USE='r_cuboid_Segment')]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613,0.02454,0.03843),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613,0.02454,0.03843),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_4',name='r_metatarsal_4',
-                        #  Shape USE='r_metatarsal_4_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'r_metatarsal_4_Shape\'/ '),
                         Transform(USE='r_tarsometatarsal_4_JointShape'),
                         Shape(USE='r_metatarsal_4_Segment')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.1095,0.01435,0.09117),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.1095,0.01435,0.09117),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_4',name='r_tarsal_proximal_phalanx_4',
-                          #  Shape USE='r_tarsal_proximal_phalanx_4_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'r_tarsal_proximal_phalanx_4_Shape\'/ '),
                           Transform(USE='r_metatarsophalangeal_4_JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_4_Segment')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378,0.01224,0.1063),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378,0.01224,0.1063),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_4',name='r_tarsal_middle_phalanx_4',
-                            #  Shape USE='r_tarsal_middle_phalanx_4_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'r_tarsal_middle_phalanx_4_Shape\'/ '),
                             Transform(USE='r_tarsal_proximal_interphalangeal_4_JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_4_Segment')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153,0.00937,0.11369),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153,0.00937,0.11369),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_4',name='r_tarsal_distal_phalanx_4',
-                              #  Shape USE='r_tarsal_distal_phalanx_4_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'r_tarsal_distal_phalanx_4_Shape\'/ '),
                               Transform(USE='r_tarsal_distal_interphalangeal_4_JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_4_Segment'),
                               HAnimSite(DEF='hanim_r_tarsal_distal_phalanx_4_tip',name='r_tarsal_distal_phalanx_4',translation=(-0.115,0.016,0.13),
                                 children=[
                                 Transform(USE='r_tarsal_distal_phalanx_4_tip_SiteShape')]),
                               Shape(USE='r_tarsal_distal_interphalangeal_4-to-r_tarsal_distal_phalanx_4_tip')])])])])]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044,0.020945,0.03474),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044,0.020945,0.03474),
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_5',name='r_metatarsal_5',
-                        #  Shape USE='r_metatarsal_5_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'r_metatarsal_5_Shape\'/ '),
                         Transform(USE='r_tarsometatarsal_5_JointShape'),
                         Shape(USE='r_metatarsal_5_Segment')]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368,0.01367,0.08656),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368,0.01367,0.08656),
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_5',name='r_tarsal_proximal_phalanx_5',
-                          #  Shape USE='r_tarsal_proximal_phalanx_5_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'r_tarsal_proximal_phalanx_5_Shape\'/ '),
                           Transform(USE='r_metatarsophalangeal_5_JointShape'),
                           Shape(USE='r_tarsal_proximal_phalanx_5_Segment')]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01086,0.09414),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01086,0.09414),
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_5',name='r_tarsal_middle_phalanx_5',
-                            #  Shape USE='r_tarsal_middle_phalanx_5_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'r_tarsal_middle_phalanx_5_Shape\'/ '),
                             Transform(USE='r_tarsal_proximal_interphalangeal_5_JointShape'),
                             Shape(USE='r_tarsal_middle_phalanx_5_Segment'),
                             HAnimSite(DEF='hanim_r_metatarsal_phalanx_5_pt',name='r_metatarsal_phalanx_5',translation=(-0.12,0.02,0.04),
                               children=[
                               Transform(USE='r_metatarsal_phalanx_5_pt_SiteShape')]),
                             Shape(USE='r_tarsal_proximal_interphalangeal_5-to-r_metatarsal_phalanx_5')]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269,0.00856,0.10188),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269,0.00856,0.10188),
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_5',name='r_tarsal_distal_phalanx_5',
-                              #  Shape USE='r_tarsal_distal_phalanx_5_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'r_tarsal_distal_phalanx_5_Shape\'/ '),
                               Transform(USE='r_tarsal_distal_interphalangeal_5_JointShape'),
                               Shape(USE='r_tarsal_distal_phalanx_5_Segment'),
                               HAnimSite(DEF='hanim_r_tarsal_distal_phalanx_5',name='r_tarsal_distal_phalanx_5',translation=(-0.125,0.016,0.115),
                                 children=[
                                 Transform(USE='r_tarsal_distal_phalanx_5_tip_SiteShape')]),
                               Shape(USE='r_tarsal_distal_interphalangeal_5-to-r_tarsal_distal_phalanx_5_tip')])])])])])])])])])])]),
-        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.9254,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+        HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.9254,-0.01376),
           children=[
           HAnimSegment(DEF='hanim_l5',name='l5',
-            #  Shape USE='l5_Shape'/ 
             children=[
+            Comment(' Shape USE=\'l5_Shape\'/ '),
             Transform(USE='vl5_JointShape'),
             Shape(USE='l5_Segment'),
             HAnimSite(DEF='hanim_spine_1_middle_back_pt',name='spine_1_middle_back',translation=(0,1,-0.1),
@@ -3506,25 +3512,25 @@ newModel=X3D(profile='Immersive',version='4.0',
               children=[
               Transform(USE='navel_pt_SiteShape')]),
             Shape(USE='vl5-to-navel')]),
-          HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.9497,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+          HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.9497,-0.01376),
             children=[
             HAnimSegment(DEF='hanim_l4',name='l4',
-              #  Shape USE='l4_Shape'/ 
               children=[
+              Comment(' Shape USE=\'l4_Shape\'/ '),
               Transform(USE='vl4_JointShape'),
               Shape(USE='l4_Segment')]),
-            HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.9659,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+            HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.9659,-0.01376),
               children=[
               HAnimSegment(DEF='hanim_l3',name='l3',
-                #  Shape USE='l3_Shape'/ 
                 children=[
+                Comment(' Shape USE=\'l3_Shape\'/ '),
                 Transform(USE='vl3_JointShape'),
                 Shape(USE='l3_Segment')]),
-              HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+              HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235,-0.01376),
                 children=[
                 HAnimSegment(DEF='hanim_l2',name='l2',
-                  #  Shape USE='l2_Shape'/ 
                   children=[
+                  Comment(' Shape USE=\'l2_Shape\'/ '),
                   Transform(USE='vl2_JointShape'),
                   Shape(USE='l2_Segment'),
                   HAnimSite(DEF='hanim_l_rib_10_pt',name='l_rib_10_pt',translation=(0.09,1,0.04),
@@ -3535,32 +3541,32 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     Transform(USE='r_rib_10_pt_SiteShape')]),
                   Shape(USE='vl2-to-r_rib_10')]),
-                HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967,-0.01376),
                   children=[
                   HAnimSegment(DEF='hanim_l1',name='l1',
-                    #  Shape USE='l1_Shape'/ 
                     children=[
+                    Comment(' Shape USE=\'l1_Shape\'/ '),
                     Transform(USE='vl1_JointShape'),
                     Shape(USE='l1_Segment')]),
-                  HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0231,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0231,-0.01376),
                     children=[
                     HAnimSegment(DEF='hanim_t12',name='t12',
-                      #  Shape USE='t12_Shape'/ 
                       children=[
+                      Comment(' Shape USE=\'t12_Shape\'/ '),
                       Transform(USE='vt12_JointShape'),
                       Shape(USE='t12_Segment')]),
-                    HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                    HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.01376),
                       children=[
                       HAnimSegment(DEF='hanim_t11',name='t11',
-                        #  Shape USE='t11_Shape'/ 
                         children=[
+                        Comment(' Shape USE=\'t11_Shape\'/ '),
                         Transform(USE='vt11_JointShape'),
                         Shape(USE='t11_Segment')]),
-                      HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.01378),llimit=[0,0,0],ulimit=[0,0,0],
+                      HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.01378),
                         children=[
                         HAnimSegment(DEF='hanim_t10',name='t10',
-                          #  Shape USE='t10_Shape'/ 
                           children=[
+                          Comment(' Shape USE=\'t10_Shape\'/ '),
                           Transform(USE='vt10_JointShape'),
                           Shape(USE='t10_Segment'),
                           HAnimSite(DEF='hanim_substernale_pt',name='substernale',translation=(0,1.08,0.076),
@@ -3571,11 +3577,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                             children=[
                             Transform(USE='mesosternale_pt_SiteShape')]),
                           Shape(USE='vt10-to-mesosternale')]),
-                        HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.0784,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                        HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.0784,-0.01376),
                           children=[
                           HAnimSegment(DEF='hanim_t9',name='t9',
-                            #  Shape USE='t9_Shape'/ 
                             children=[
+                            Comment(' Shape USE=\'t9_Shape\'/ '),
                             Transform(USE='vt9_JointShape'),
                             Shape(USE='t9_Segment'),
                             HAnimSite(DEF='hanim_l_thelion_pt',name='l_thelion',translation=(0.07,1.12,0.09),
@@ -3598,60 +3604,60 @@ newModel=X3D(profile='Immersive',version='4.0',
                               children=[
                               Transform(USE='r_chest_midsagittal_plane_pt_SiteShape')]),
                             Shape(USE='vt9-to-r_chest_midsagittal_plane_pt')]),
-                          HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.093,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                          HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.093,-0.01376),
                             children=[
                             HAnimSegment(DEF='hanim_t8',name='t8',
-                              #  Shape USE='t8_Shape'/ 
                               children=[
+                              Comment(' Shape USE=\'t8_Shape\'/ '),
                               Transform(USE='vt8_JointShape'),
                               Shape(USE='t8_Segment')]),
-                            HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                            HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.01376),
                               children=[
                               HAnimSegment(DEF='hanim_t7',name='t7',
-                                #  Shape USE='t7_Shape'/ 
                                 children=[
+                                Comment(' Shape USE=\'t7_Shape\'/ '),
                                 Transform(USE='vt7_JointShape'),
                                 Shape(USE='t7_Segment')]),
-                              HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                              HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216,-0.01376),
                                 children=[
                                 HAnimSegment(DEF='hanim_t6',name='t6',
-                                  #  Shape USE='t6_Shape'/ 
                                   children=[
+                                  Comment(' Shape USE=\'t6_Shape\'/ '),
                                   Transform(USE='vt6_JointShape'),
                                   Shape(USE='t6_Segment')]),
-                                HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.137,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                                HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.137,-0.01376),
                                   children=[
                                   HAnimSegment(DEF='hanim_t5',name='t5',
-                                    #  Shape USE='t5_Shape'/ 
                                     children=[
+                                    Comment(' Shape USE=\'t5_Shape\'/ '),
                                     Transform(USE='vt5_JointShape'),
                                     Shape(USE='t5_Segment')]),
-                                  HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                                  HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524,-0.01376),
                                     children=[
                                     HAnimSegment(DEF='hanim_t4',name='t4',
-                                      #  Shape USE='t4_Shape'/ 
                                       children=[
+                                      Comment(' Shape USE=\'t4_Shape\'/ '),
                                       Transform(USE='vt4_JointShape'),
                                       Shape(USE='t4_Segment')]),
-                                    HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709,-0.01376),llimit=[0,0,0],ulimit=[0,0,0],
+                                    HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709,-0.01376),
                                       children=[
                                       HAnimSegment(DEF='hanim_t3',name='t3',
-                                        #  Shape USE='t3_Shape'/ 
                                         children=[
+                                        Comment(' Shape USE=\'t3_Shape\'/ '),
                                         Transform(USE='vt3_JointShape'),
                                         Shape(USE='t3_Segment')]),
-                                      HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.1956,-0.01378),llimit=[0,0,0],ulimit=[0,0,0],
+                                      HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.1956,-0.01378),
                                         children=[
                                         HAnimSegment(DEF='hanim_t2',name='t2',
-                                          #  Shape USE='t2_Shape'/ 
                                           children=[
+                                          Comment(' Shape USE=\'t2_Shape\'/ '),
                                           Transform(USE='vt2_JointShape'),
                                           Shape(USE='t2_Segment')]),
-                                        HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),llimit=[0,0,0],ulimit=[0,0,0],
+                                        HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),
                                           children=[
                                           HAnimSegment(DEF='hanim_t1',name='t1',
-                                            #  Shape USE='t1_Shape'/ 
                                             children=[
+                                            Comment(' Shape USE=\'t1_Shape\'/ '),
                                             Transform(USE='vt1_JointShape'),
                                             Shape(USE='t1_Segment'),
                                             HAnimSite(DEF='hanim_suprasternale_pt',name='suprasternale',translation=(0,1.22,0.08),
@@ -3662,11 +3668,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                                               children=[
                                               Transform(USE='cervicale_pt_SiteShape')]),
                                             Shape(USE='vt1-to-cervicale')]),
-                                          HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.2453,-0.01506),llimit=[0,0,0],ulimit=[0,0,0],
+                                          HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.2453,-0.01506),
                                             children=[
                                             HAnimSegment(DEF='hanim_c7',name='c7',
-                                              #  Shape USE='c7_Shape'/ 
                                               children=[
+                                              Comment(' Shape USE=\'c7_Shape\'/ '),
                                               Transform(USE='vc7_JointShape'),
                                               Shape(USE='c7-to-vc6_Segment'),
                                               Shape(USE='c7-to-l_sternoclavicular_Segment'),
@@ -3679,57 +3685,57 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                 children=[
                                                 Transform(USE='r_neck_base_pt_SiteShape')]),
                                               Shape(USE='vc7-to-r_neck_base')]),
-                                            HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575,-0.01506),llimit=[0,0,0],ulimit=[0,0,0],
+                                            HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575,-0.01506),
                                               children=[
                                               HAnimSegment(DEF='hanim_c6',name='c6',
-                                                #  Shape USE='c6_Shape'/ 
                                                 children=[
+                                                Comment(' Shape USE=\'c6_Shape\'/ '),
                                                 Transform(USE='vc6_JointShape'),
                                                 Shape(USE='c6_Segment')]),
-                                              HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.01506),llimit=[0,0,0],ulimit=[0,0,0],
+                                              HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.01506),
                                                 children=[
                                                 HAnimSegment(DEF='hanim_c5',name='c5',
-                                                  #  Shape USE='c5_Shape'/ 
                                                   children=[
+                                                  Comment(' Shape USE=\'c5_Shape\'/ '),
                                                   Transform(USE='vc5_JointShape'),
                                                   Shape(USE='c5_Segment')]),
-                                                HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.28227,-0.01506),llimit=[0,0,0],ulimit=[0,0,0],
+                                                HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.28227,-0.01506),
                                                   children=[
                                                   HAnimSegment(DEF='hanim_c4',name='c4',
-                                                    #  Shape USE='c4_Shape'/ 
                                                     children=[
+                                                    Comment(' Shape USE=\'c4_Shape\'/ '),
                                                     Transform(USE='vc4_JointShape'),
                                                     Shape(USE='c4_Segment')]),
-                                                  HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951,-0.01506),llimit=[0,0,0],ulimit=[0,0,0],
+                                                  HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951,-0.01506),
                                                     children=[
                                                     HAnimSegment(DEF='hanim_c3',name='c3',
-                                                      #  Shape USE='c3_Shape'/ 
                                                       children=[
+                                                      Comment(' Shape USE=\'c3_Shape\'/ '),
                                                       Transform(USE='vc3_JointShape'),
                                                       Shape(USE='c3_Segment')]),
-                                                    HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.015),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.015),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_c2',name='c2',
-                                                        #  Shape USE='c2_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'c2_Shape\'/ '),
                                                         Transform(USE='vc2_JointShape'),
                                                         Shape(USE='c2_Segment'),
                                                         HAnimSite(DEF='hanim_adams_apple_pt',name='adams_apple',translation=(0,1.29,0.04),
                                                           children=[
                                                           Transform(USE='adams_apple_pt_SiteShape')]),
                                                         Shape(USE='vc2-to-adams_apple')]),
-                                                      HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.0151),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.0151),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_c1',name='c1',
-                                                          #  Shape USE='c1_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'c1_Shape\'/ '),
                                                           Transform(USE='vc1_JointShape'),
                                                           Shape(USE='c1_Segment')]),
-                                                        HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126,-0.0154),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126,-0.0154),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_skull',name='skull',
-                                                            #  Shape USE='skull_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'skull_Shape\'/ '),
                                                             Transform(USE='skullbase_JointShape'),
                                                             Shape(USE='skull-to-l_eyelid_joint_Segment'),
                                                             Shape(USE='skull-to-r_eyelid_joint_Segment'),
@@ -3738,7 +3744,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             Shape(USE='skull-to-l_eyebrow_joint_Segment'),
                                                             Shape(USE='skull-to-r_eyebrow_joint_Segment'),
                                                             Shape(USE='skull-to-temporomandibular_Segment'),
-                                                            #  Shape DEF='skull-to-tongue_joint'/ 
+                                                            Comment(' Shape DEF=\'skull-to-tongue_joint\'/ '),
                                                             HAnimSite(DEF='hanim_skull_vertex_pt',name='skull_vertex',translation=(0,1.612,-0.03),
                                                               children=[
                                                               Transform(USE='skull_vertex_pt_SiteShape')]),
@@ -3783,77 +3789,77 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               children=[
                                                               Transform(USE='r_ectocanthus_pt_SiteShape')]),
                                                             Shape(USE='skullbase-to-r_ectocanthus')]),
-                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505,1.42425,0.03294),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505,1.42425,0.03294),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyelid',name='l_eyelid',
-                                                              #  Shape USE='l_eyelid_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_eyelid_Shape\'/ '),
                                                               Transform(USE='l_eyelid_joint_JointShape'),
                                                               Shape(USE='l_eyelid_Segment'),
                                                               HAnimSite(DEF='hanim_l_eyelid_tip',name='l_eyelid_tip',translation=(0,2.64,0),
                                                                 children=[
                                                                 Transform(USE='l_eyelid_tip_SiteShape')]),
                                                               Shape(USE='l_eyelid_joint-to-l_eyelid_tip')])]),
-                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505,1.42425,0.03294),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505,1.42425,0.03294),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyelid',name='r_eyelid',
-                                                              #  Shape USE='r_eyelid_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_eyelid_Shape\'/ '),
                                                               Transform(USE='r_eyelid_joint_JointShape'),
                                                               Shape(USE='r_eyelid_Segment'),
                                                               HAnimSite(DEF='hanim_r_eyelid_tip',name='r_eyelid_tip',translation=(0,2.68,0),
                                                                 children=[
                                                                 Transform(USE='r_eyelid_tip_SiteShape')]),
                                                               Shape(USE='r_eyelid_joint-to-r_eyelid_tip')])]),
-                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127,1.4049,0.08305),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127,1.4049,0.08305),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyeball',name='l_eyeball',
-                                                              #  Shape USE='l_eyeball_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_eyeball_Shape\'/ '),
                                                               Transform(USE='l_eyeball_joint_JointShape'),
                                                               Shape(USE='l_eyeball_Segment'),
                                                               HAnimSite(DEF='hanim_l_eyeball_tip',name='l_eyeball_tip',translation=(0,2.72,0),
                                                                 children=[
                                                                 Transform(USE='l_eyeball_tip_SiteShape')]),
                                                               Shape(USE='l_eyeball_joint-to-l_eyeball_tip')])]),
-                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.04813,1.4049,0.08305),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.04813,1.4049,0.08305),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyeball',name='r_eyeball',
-                                                              #  Shape USE='r_eyeball_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_eyeball_Shape\'/ '),
                                                               Transform(USE='r_eyeball_joint_JointShape'),
                                                               Shape(USE='r_eyeball_Segment'),
                                                               HAnimSite(DEF='hanim_r_eyeball_tip',name='r_eyeball_tip',translation=(0,2.76,0),
                                                                 children=[
                                                                 Transform(USE='r_eyeball_tip_SiteShape')]),
                                                               Shape(USE='r_eyeball_joint-to-r_eyeball_tip')])]),
-                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.02175,1.4139,0.1069),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.02175,1.4139,0.1069),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyebrow',name='l_eyebrow',
-                                                              #  Shape USE='l_eyebrow_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_eyebrow_Shape\'/ '),
                                                               Transform(USE='l_eyebrow_joint_JointShape'),
                                                               Shape(USE='l_eyebrow_Segment'),
                                                               HAnimSite(DEF='hanim_l_eyebrow_tip',name='l_eyebrow_tip',translation=(0,2.8,0),
                                                                 children=[
                                                                 Transform(USE='l_eyebrow_tip_SiteShape')]),
                                                               Shape(USE='l_eyebrow_joint-to-l_eyebrow_tip')])]),
-                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.02175,1.4139,0.10694),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.02175,1.4139,0.10694),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyebrow',name='r_eyebrow',
-                                                              #  Shape USE='r_eyebrow_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_eyebrow_Shape\'/ '),
                                                               Transform(USE='r_eyebrow_joint_JointShape'),
                                                               Shape(USE='r_eyebrow_Segment'),
                                                               HAnimSite(DEF='hanim_r_eyebrow_tip',name='r_eyebrow_tip',translation=(0,2.84,0),
                                                                 children=[
                                                                 Transform(USE='r_eyebrow_tip_SiteShape')]),
                                                               Shape(USE='r_eyebrow_joint-to-r_eyebrow_tip')])]),
-                                                          HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.3128,0.01538),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.3128,0.01538),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_jaw',name='jaw',
-                                                              #  Shape USE='jaw_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'jaw_Shape\'/ '),
                                                               Transform(USE='temporomandibular_JointShape'),
                                                               Shape(USE='jaw-to-supramenton_Segment'),
                                                               Shape(USE='jaw-to-menton_Segment'),
@@ -3873,22 +3879,22 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 Transform(USE='menton_pt_SiteShape')]),
                                                               Shape(USE='temporomandibular-to-menton')])])])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.03847,1.2087,-0.01378),llimit=[0,0,0],ulimit=[0,0,0],
+                                          HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.03847,1.2087,-0.01378),
                                             children=[
                                             HAnimSegment(DEF='hanim_l_clavicle',name='l_clavicle',
-                                              #  Shape USE='l_clavicle_Shape'/ 
                                               children=[
+                                              Comment(' Shape USE=\'l_clavicle_Shape\'/ '),
                                               Transform(USE='l_sternoclavicular_JointShape'),
                                               Shape(USE='l_clavicle_Segment'),
                                               HAnimSite(DEF='hanim_l_clavicale_pt',name='l_clavicale_pt',translation=(0.03,1.2,0.04),
                                                 children=[
                                                 Transform(USE='l_clavicale_pt_SiteShape')]),
                                               Shape(USE='l_sternoclavicular-to-l_clavicale')]),
-                                            HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294,1.191825,-0.0129),llimit=[0,0,0],ulimit=[0,0,0],
+                                            HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294,1.191825,-0.0129),
                                               children=[
                                               HAnimSegment(DEF='hanim_l_scapula',name='l_scapula',
-                                                #  Shape USE='l_scapula_Shape'/ 
                                                 children=[
+                                                Comment(' Shape USE=\'l_scapula_Shape\'/ '),
                                                 Transform(USE='l_acromioclavicular_JointShape'),
                                                 Shape(USE='l_scapula_Segment'),
                                                 HAnimSite(DEF='hanim_l_acromion_pt',name='l_acromion',translation=(0.15,1.222,-0.02),
@@ -3907,11 +3913,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   children=[
                                                   Transform(USE='l_axilla_posterior_folds_pt_SiteShape')]),
                                                 Shape(USE='l_acromioclavicular-to-l_axilla_posterior_folds')]),
-                                              HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.17855,-0.00327),llimit=[0,0,0],ulimit=[0,0,0],
+                                              HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.17855,-0.00327),
                                                 children=[
                                                 HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
-                                                  #  Shape USE='l_upperarm_Shape'/ 
                                                   children=[
+                                                  Comment(' Shape USE=\'l_upperarm_Shape\'/ '),
                                                   Transform(USE='l_shoulder_JointShape'),
                                                   Shape(USE='l_upperarm_Segment'),
                                                   HAnimSite(DEF='hanim_l_humeral_lateral_epicondyles_pt',name='l_humeral_lateral_epicondyles_pt',translation=(0.2,0.95,-0.03),
@@ -3930,11 +3936,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     children=[
                                                     Transform(USE='l_bideltoid_pt_SiteShape')]),
                                                   Shape(USE='l_shoulder-to-l_bideltoid')]),
-                                                HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209,0.9288,-0.00563),llimit=[0,0,0],ulimit=[0,0,0],
+                                                HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209,0.9288,-0.00563),
                                                   children=[
                                                   HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
-                                                    #  Shape USE='l_forearm_Shape'/ 
                                                     children=[
+                                                    Comment(' Shape USE=\'l_forearm_Shape\'/ '),
                                                     Transform(USE='l_elbow_JointShape'),
                                                     Shape(USE='l_forearm_Segment'),
                                                     HAnimSite(DEF='hanim_l_radial_styloid_pt',name='l_radial_styloid',translation=(0.18,0.725,0.025),
@@ -3945,11 +3951,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       children=[
                                                       Transform(USE='l_olecranon_pt_SiteShape')]),
                                                     Shape(USE='l_elbow-to-l_olecranon')]),
-                                                  HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1819,0.72427,-0.005),llimit=[0,0,0],ulimit=[0,0,0],
+                                                  HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1819,0.72427,-0.005),
                                                     children=[
                                                     HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
-                                                      #  Shape USE='l_carpal_Shape'/ 
                                                       children=[
+                                                      Comment(' Shape USE=\'l_carpal_Shape\'/ '),
                                                       Transform(USE='l_radiocarpal_JointShape'),
                                                       Shape(USE='l_carpal-to-l_midcarpal_1_Segment'),
                                                       Shape(USE='l_carpal-to-l_midcarpal_2_Segment'),
@@ -3959,76 +3965,76 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         children=[
                                                         Transform(USE='l_ulnar_styloid_pt_SiteShape')]),
                                                       Shape(USE='l_radiocarpal-to-l_ulnar_styloid')]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1813,0.706,0.0193),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1813,0.706,0.0193),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_trapezium',name='l_trapezium',
-                                                        #  Shape USE='l_trapezium_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'l_trapezium_Shape\'/ '),
                                                         Transform(USE='l_midcarpal_1_JointShape'),
                                                         Shape(USE='l_trapezium-to-l_carpometacarpal_1_Segment'),
                                                         Shape(USE='l_trapezium-to-l_midcarpal_4_5_Segment')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.1805,0.69255,0.026),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.1805,0.69255,0.026),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_1',name='l_metacarpal_1',
-                                                          #  Shape USE='l_metacarpal_1_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'l_metacarpal_1_Shape\'/ '),
                                                           Transform(USE='l_carpometacarpal_1_JointShape'),
                                                           Shape(USE='l_metacarpal_1_Segment'),
                                                           HAnimSite(DEF='hanim_l_metacarpal_phalanx_2_pt',name='l_metacarpal_phalanx_2',translation=(0.2,0.665,0.012),
                                                             children=[
                                                             Transform(USE='l_metacarpal_phalanx_2_pt_SiteShape')]),
                                                           Shape(USE='l_carpometacarpal_1-to-l_metacarpal_phalanx_2')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181,0.6727,0.03577),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181,0.6727,0.03577),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_1',name='l_carpal_proximal_phalanx_1',
-                                                            #  Shape USE='l_carpal_proximal_phalanx_1_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'l_carpal_proximal_phalanx_1_Shape\'/ '),
                                                             Transform(USE='l_metacarpophalangeal_1_JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_1_Segment')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.1826,0.654,0.04966),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.1826,0.654,0.04966),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_1',name='l_carpal_distal_phalanx_1',
-                                                              #  Shape USE='l_carpal_distal_phalanx_1_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_carpal_distal_phalanx_1_Shape\'/ '),
                                                               Transform(USE='l_carpal_interphalangeal_1_JointShape'),
                                                               Shape(USE='l_carpal_distal_phalanx_1_Segment'),
                                                               HAnimSite(DEF='hanim_l_carpal_distal_phalanx_1_tip',name='l_carpal_distal_phalanx_1',translation=(0.18,0.64,0.06),
                                                                 children=[
                                                                 Transform(USE='l_carpal_distal_phalanx_1_tip_SiteShape')]),
                                                               Shape(USE='l_carpal_interphalangeal_1-to-l_carpal_distal_phalanx_1')])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.18128,0.70695,0.00842),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.18128,0.70695,0.00842),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_trapezoid',name='l_trapezoid',
-                                                        #  Shape USE='l_trapezoid_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'l_trapezoid_Shape\'/ '),
                                                         Transform(USE='l_midcarpal_2_JointShape'),
                                                         Shape(USE='l_trapezoid_Segment')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.18128,0.6876,0.0098),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.18128,0.6876,0.0098),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_2',name='l_metacarpal_2',
-                                                          #  Shape USE='l_metacarpal_2_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'l_metacarpal_2_Shape\'/ '),
                                                           Transform(USE='l_carpometacarpal_2_JointShape'),
                                                           Shape(USE='l_metacarpal_2_Segment')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.1837,0.6372,0.01507),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.1837,0.6372,0.01507),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_2',name='l_carpal_proximal_phalanx_2',
-                                                            #  Shape USE='l_carpal_proximal_phalanx_2_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'l_carpal_proximal_phalanx_2_Shape\'/ '),
                                                             Transform(USE='l_metacarpophalangeal_2_JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_2_Segment')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.6068,0.01418),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.6068,0.01418),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_2',name='l_carpal_middle_phalanx_2',
-                                                              #  Shape USE='l_carpal_middle_phalanx_2_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_carpal_middle_phalanx_2_Shape\'/ '),
                                                               Transform(USE='l_carpal_proximal_interphalangeal_2_JointShape'),
                                                               Shape(USE='l_carpal_middle_phalanx_2_Segment')]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.18067,0.5816,0.01338),llimit=[0,0,0],ulimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.18067,0.5816,0.01338),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_2',name='l_carpal_distal_phalanx_2',
-                                                                #  Shape USE='l_carpal_distal_phalanx_2_Shape'/ 
                                                                 children=[
+                                                                Comment(' Shape USE=\'l_carpal_distal_phalanx_2_Shape\'/ '),
                                                                 Transform(USE='l_carpal_distal_interphalangeal_2_JointShape'),
                                                                 Shape(USE='l_carpal_distal_phalanx_2_Segment'),
                                                                 HAnimSite(DEF='hanim_l_dactylion_pt',name='l_dactylion',translation=(0.17,0.558,0.017),
@@ -4039,141 +4045,141 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   children=[
                                                                   Transform(USE='l_carpal_distal_phalanx_2_tip_SiteShape')]),
                                                                 Shape(USE='l_carpal_distal_interphalangeal_2-to-l_carpal_distal_phalanx_2_tip')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108,0.708525,-0.0048),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108,0.708525,-0.0048),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_capitate',name='l_capitate',
-                                                        #  Shape USE='l_capitate_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'l_capitate_Shape\'/ '),
                                                         Transform(USE='l_midcarpal_3_JointShape'),
                                                         Shape(USE='l_capitate_Segment')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108,0.6858,-0.00625),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108,0.6858,-0.00625),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_3',name='l_metacarpal_3',
-                                                          #  Shape USE='l_metacarpal_3_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'l_metacarpal_3_Shape\'/ '),
                                                           Transform(USE='l_carpometacarpal_3_JointShape'),
                                                           Shape(USE='l_metacarpal_3_Segment'),
                                                           HAnimSite(DEF='hanim_l_metacarpal_phalanx_3_pt',name='l_metacarpal_phalanx_3',translation=(0.2,0.665,-0.039),
                                                             children=[
                                                             Transform(USE='l_metacarpal_phalanx_3_pt_SiteShape')]),
                                                           Shape(USE='l_carpometacarpal_3-to-l_metacarpal_phalanx_3')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.6349,-0.0039),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.6349,-0.0039),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_3',name='l_carpal_proximal_phalanx_3',
-                                                            #  Shape USE='l_carpal_proximal_phalanx_3_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'l_carpal_proximal_phalanx_3_Shape\'/ '),
                                                             Transform(USE='l_metacarpophalangeal_3_JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_3_Segment')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.6032,-0.0035),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.6032,-0.0035),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_3',name='l_carpal_middle_phalanx_3',
-                                                              #  Shape USE='l_carpal_middle_phalanx_3_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_carpal_middle_phalanx_3_Shape\'/ '),
                                                               Transform(USE='l_carpal_proximal_interphalangeal_3_JointShape'),
                                                               Shape(USE='l_carpal_middle_phalanx_3_Segment')]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.1807,0.5753,-0.0037),llimit=[0,0,0],ulimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.1807,0.5753,-0.0037),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_3',name='l_carpal_distal_phalanx_3',
-                                                                #  Shape USE='l_carpal_distal_phalanx_3_Shape'/ 
                                                                 children=[
+                                                                Comment(' Shape USE=\'l_carpal_distal_phalanx_3_Shape\'/ '),
                                                                 Transform(USE='l_carpal_distal_interphalangeal_3_JointShape'),
                                                                 Shape(USE='l_carpal_distal_phalanx_3_Segment'),
                                                                 HAnimSite(DEF='hanim_l_carpal_distal_phalanx_3_tip',name='l_carpal_distal_phalanx_3',translation=(0.172,0.555,-0.006),
                                                                   children=[
                                                                   Transform(USE='l_carpal_distal_phalanx_3_tip_SiteShape')]),
                                                                 Shape(USE='l_carpal_distal_interphalangeal_3-to-l_carpal_distal_phalanx_3_tip')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108,0.70582,-0.02574),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108,0.70582,-0.02574),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_hamate',name='l_hamate',
-                                                        #  Shape USE='l_hamate_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'l_hamate_Shape\'/ '),
                                                         Transform(USE='l_midcarpal_4_5_JointShape'),
                                                         Shape(USE='l_hamate-to-l_carpometacarpal_4_Segment'),
                                                         Shape(USE='l_hamate-to-l_carpometacarpal_5_Segment')]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.1811,0.68625,-0.0199),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.1811,0.68625,-0.0199),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_4',name='l_metacarpal_4',
-                                                          #  Shape USE='l_metacarpal_4_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'l_metacarpal_4_Shape\'/ '),
                                                           Transform(USE='l_carpometacarpal_4_JointShape'),
                                                           Shape(USE='l_metacarpal_4_Segment')]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_4',name='l_carpal_proximal_phalanx_4',
-                                                            #  Shape USE='l_carpal_proximal_phalanx_4_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'l_carpal_proximal_phalanx_4_Shape\'/ '),
                                                             Transform(USE='l_metacarpophalangeal_4_JointShape'),
                                                             Shape(USE='l_carpal_proximal_phalanx_4_Segment')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.1817,0.6066,-0.02064),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.1817,0.6066,-0.02064),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_4',name='l_carpal_middle_phalanx_4',
-                                                              #  Shape USE='l_carpal_middle_phalanx_4_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_carpal_middle_phalanx_4_Shape\'/ '),
                                                               Transform(USE='l_carpal_proximal_interphalangeal_4_JointShape'),
                                                               Shape(USE='l_carpal_middle_phalanx_4_Segment')]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.18067,0.580725,-0.01977),llimit=[0,0,0],ulimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.18067,0.580725,-0.01977),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_4',name='l_carpal_distal_phalanx_4',
-                                                                #  Shape USE='l_carpal_distal_phalanx_4_Shape'/ 
                                                                 children=[
+                                                                Comment(' Shape USE=\'l_carpal_distal_phalanx_4_Shape\'/ '),
                                                                 Transform(USE='l_carpal_distal_interphalangeal_4_JointShape'),
                                                                 Shape(USE='l_carpal_distal_phalanx_4_Segment'),
                                                                 HAnimSite(DEF='hanim_l_carpal_distal_phalanx_4_tip',name='l_carpal_distal_phalanx_4',translation=(0.172,0.559,-0.024),
                                                                   children=[
                                                                   Transform(USE='l_carpal_distal_phalanx_4_tip_SiteShape')]),
                                                                 Shape(USE='l_carpal_distal_interphalangeal_4-to-l_carpal_distal_phalanx_4_tip')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.18164,0.68827,-0.03278),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.18164,0.68827,-0.03278),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_5',name='l_metacarpal_5',
-                                                        #  Shape USE='l_metacarpal_5_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'l_metacarpal_5_Shape\'/ '),
                                                         Transform(USE='l_carpometacarpal_5_JointShape'),
                                                         Shape(USE='l_metacarpal_5_Segment'),
                                                         HAnimSite(DEF='hanim_l_metacarpal_phalanx_5_pt',name='l_metacarpal_phalanx_5',translation=(0.2,0.665,-0.036),
                                                           children=[
                                                           Transform(USE='l_metacarpal_phalanx_5_pt_SiteShape')]),
                                                         Shape(USE='l_carpometacarpal_5-to-l_metacarpal_phalanx_5')]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.1833,0.6381,-0.037),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.1833,0.6381,-0.037),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_5',name='l_carpal_proximal_phalanx_5',
-                                                          #  Shape USE='l_carpal_proximal_phalanx_5_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'l_carpal_proximal_phalanx_5_Shape\'/ '),
                                                           Transform(USE='l_metacarpophalangeal_5_JointShape'),
                                                           Shape(USE='l_carpal_proximal_phalanx_5_Segment')]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166,0.621,-0.03715),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166,0.621,-0.03715),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_5',name='l_carpal_middle_phalanx_5',
-                                                            #  Shape USE='l_carpal_middle_phalanx_5_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'l_carpal_middle_phalanx_5_Shape\'/ '),
                                                             Transform(USE='l_carpal_proximal_interphalangeal_5_JointShape'),
                                                             Shape(USE='l_carpal_middle_phalanx_5_Segment')]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.1808,0.6023,-0.0369),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.1808,0.6023,-0.0369),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_5',name='l_carpal_distal_phalanx_5',
-                                                              #  Shape USE='l_carpal_distal_phalanx_5_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'l_carpal_distal_phalanx_5_Shape\'/ '),
                                                               Transform(USE='l_carpal_distal_interphalangeal_5_JointShape'),
                                                               Shape(USE='l_carpal_distal_phalanx_5_Segment'),
                                                               HAnimSite(DEF='hanim_l_carpal_distal_phalanx_5_tip',name='l_carpal_distal_phalanx_5',translation=(0.172,0.58,-0.039),
                                                                 children=[
                                                                 Transform(USE='l_carpal_distal_phalanx_5_tip_SiteShape')]),
                                                               Shape(USE='l_carpal_distal_interphalangeal_5-to-l_carpal_distal_phalanx_5_tip')])])])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.03847,1.2087,-0.0138),llimit=[0,0,0],ulimit=[0,0,0],
+                                          HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.03847,1.2087,-0.0138),
                                             children=[
                                             HAnimSegment(DEF='hanim_r_clavicle',name='r_clavicle',
-                                              #  Shape USE='r_clavicle_Shape'/ 
                                               children=[
+                                              Comment(' Shape USE=\'r_clavicle_Shape\'/ '),
                                               Transform(USE='r_sternoclavicular_JointShape'),
                                               Shape(USE='r_clavicle_Segment'),
                                               HAnimSite(DEF='hanim_r_clavicale_pt',name='r_clavicale_pt',translation=(-0.03,1.2,0.04),
                                                 children=[
                                                 Transform(USE='r_clavicale_pt_SiteShape')]),
                                               Shape(USE='r_sternoclavicular-to-r_clavicale')]),
-                                            HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.1229,1.19182,-0.0129),llimit=[0,0,0],ulimit=[0,0,0],
+                                            HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.1229,1.19182,-0.0129),
                                               children=[
                                               HAnimSegment(DEF='hanim_r_scapula',name='r_scapula',
-                                                #  Shape USE='r_scapula_Shape'/ 
                                                 children=[
+                                                Comment(' Shape USE=\'r_scapula_Shape\'/ '),
                                                 Transform(USE='r_acromioclavicular_JointShape'),
                                                 Shape(USE='r_scapula_Segment'),
                                                 HAnimSite(DEF='hanim_r_acromion_pt',name='r_acromion',translation=(-0.15,1.222,-0.02),
@@ -4192,11 +4198,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   children=[
                                                   Transform(USE='r_axilla_posterior_folds_pt_SiteShape')]),
                                                 Shape(USE='r_acromioclavicular-to-r_axilla_posterior_folds')]),
-                                              HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1647,1.17855,-0.00327),llimit=[0,0,0],ulimit=[0,0,0],
+                                              HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1647,1.17855,-0.00327),
                                                 children=[
                                                 HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
-                                                  #  Shape USE='r_upperarm_Shape'/ 
                                                   children=[
+                                                  Comment(' Shape USE=\'r_upperarm_Shape\'/ '),
                                                   Transform(USE='r_shoulder_JointShape'),
                                                   Shape(USE='r_upperarm_Segment'),
                                                   HAnimSite(DEF='hanim_r_humeral_lateral_epicondyles_pt',name='r_humeral_lateral_epicondyles_pt',translation=(-0.2,0.95,-0.03),
@@ -4215,11 +4221,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     children=[
                                                     Transform(USE='r_bideltoid_pt_SiteShape')]),
                                                   Shape(USE='r_shoulder-to-r_bideltoid')]),
-                                                HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817,0.9288,-0.00564),llimit=[0,0,0],ulimit=[0,0,0],
+                                                HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817,0.9288,-0.00564),
                                                   children=[
                                                   HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
-                                                    #  Shape USE='r_forearm_Shape'/ 
                                                     children=[
+                                                    Comment(' Shape USE=\'r_forearm_Shape\'/ '),
                                                     Transform(USE='r_elbow_JointShape'),
                                                     Shape(USE='r_forearm_Segment'),
                                                     HAnimSite(DEF='hanim_r_radial_styloid_pt',name='r_radial_styloid',translation=(-0.18,0.725,0.025),
@@ -4230,11 +4236,11 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       children=[
                                                       Transform(USE='r_olecranon_pt_SiteShape')]),
                                                     Shape(USE='r_elbow-to-SiteName')]),
-                                                  HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1816,0.7242,-0.005),llimit=[0,0,0],ulimit=[0,0,0],
+                                                  HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1816,0.7242,-0.005),
                                                     children=[
                                                     HAnimSegment(DEF='hanim_r_carpal',name='r_carpal',
-                                                      #  Shape USE='r_carpal_Shape'/ 
                                                       children=[
+                                                      Comment(' Shape USE=\'r_carpal_Shape\'/ '),
                                                       Transform(USE='r_radiocarpal_JointShape'),
                                                       Shape(USE='r_carpal-to-r_midcarpal_1_Segment'),
                                                       Shape(USE='r_carpal-to-r_midcarpal_2_Segment'),
@@ -4244,76 +4250,76 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         children=[
                                                         Transform(USE='r_ulnar_styloid_pt_SiteShape')]),
                                                       Shape(USE='r_radiocarpal-to-r_ulnar_styloid')]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18097,0.70605,0.0193),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18097,0.70605,0.0193),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_trapezium',name='r_trapezium',
-                                                        #  Shape USE='r_trapezium_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'r_trapezium_Shape\'/ '),
                                                         Transform(USE='r_midcarpal_1_JointShape'),
                                                         Shape(USE='r_trapezium-to-r_carpometacarpal_1_Segment'),
                                                         Shape(USE='r_trapezium-to-r_midcarpal_4_5_Segment')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.18,0.69255,0.02598),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.18,0.69255,0.02598),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_1',name='r_metacarpal_1',
-                                                          #  Shape USE='r_metacarpal_1_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'r_metacarpal_1_Shape\'/ '),
                                                           Transform(USE='r_carpometacarpal_1_JointShape'),
                                                           Shape(USE='r_metacarpal_1_Segment'),
                                                           HAnimSite(DEF='hanim_r_metacarpal_phalanx_2_pt',name='r_metacarpal_phalanx_2',translation=(-0.2,0.665,0.012),
                                                             children=[
                                                             Transform(USE='r_metacarpal_phalanx_2_pt_SiteShape')]),
                                                           Shape(USE='r_carpometacarpal_1-to-r_metacarpal_phalanx_2')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065,0.67275,0.03577),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065,0.67275,0.03577),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_1',name='r_carpal_proximal_phalanx_1',
-                                                            #  Shape USE='r_carpal_proximal_phalanx_1_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'r_carpal_proximal_phalanx_1_Shape\'/ '),
                                                             Transform(USE='r_metacarpophalangeal_1_JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_1_Segment')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227,0.654,0.0496),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227,0.654,0.0496),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_1',name='r_carpal_distal_phalanx_1',
-                                                              #  Shape USE='r_carpal_distal_phalanx_1_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_carpal_distal_phalanx_1_Shape\'/ '),
                                                               Transform(USE='r_carpal_interphalangeal_1_JointShape'),
                                                               Shape(USE='r_carpal_distal_phalanx_1_Segment'),
                                                               HAnimSite(DEF='hanim_r_carpal_distal_phalanx_1_tip',name='r_carpal_distal_phalanx_1',translation=(-0.18,0.64,0.06),
                                                                 children=[
                                                                 Transform(USE='r_carpal_distal_phalanx_1_tip_SiteShape')]),
                                                               Shape(USE='r_carpal_interphalangeal_1-to-r_carpal_distal_phalanx_1_tip')])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18097,0.70695,0.0084),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18097,0.70695,0.0084),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_trapezoid',name='r_trapezoid',
-                                                        #  Shape USE='r_trapezoid_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'r_trapezoid_Shape\'/ '),
                                                         Transform(USE='r_midcarpal_2_JointShape'),
                                                         Shape(USE='r_trapezoid_Segment')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.1809,0.6876,0.0097),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.1809,0.6876,0.0097),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_2',name='r_metacarpal_2',
-                                                          #  Shape USE='r_metacarpal_2_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'r_metacarpal_2_Shape\'/ '),
                                                           Transform(USE='r_carpometacarpal_2_JointShape'),
                                                           Shape(USE='r_metacarpal_2_Segment')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335,0.6372,0.01507),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335,0.6372,0.01507),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_2',name='r_carpal_proximal_phalanx_2',
-                                                            #  Shape USE='r_carpal_proximal_phalanx_2_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'r_carpal_proximal_phalanx_2_Shape\'/ '),
                                                             Transform(USE='r_metacarpophalangeal_2_JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_2_Segment')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813,0.6068,0.01418),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813,0.6068,0.01418),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_2',name='r_carpal_middle_phalanx_2',
-                                                              #  Shape USE='r_carpal_middle_phalanx_2_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_carpal_middle_phalanx_2_Shape\'/ '),
                                                               Transform(USE='r_carpal_proximal_interphalangeal_2_JointShape'),
                                                               Shape(USE='r_carpal_middle_phalanx_2_Segment')]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1803,0.5816,0.01338),llimit=[0,0,0],ulimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1803,0.5816,0.01338),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_2',name='r_carpal_distal_phalanx_2',
-                                                                #  Shape USE='r_carpal_distal_phalanx_2_Shape'/ 
                                                                 children=[
+                                                                Comment(' Shape USE=\'r_carpal_distal_phalanx_2_Shape\'/ '),
                                                                 Transform(USE='r_carpal_distal_interphalangeal_2_JointShape'),
                                                                 Shape(USE='r_carpal_distal_phalanx_2_Segment'),
                                                                 HAnimSite(DEF='hanim_r_dactylion_pt',name='r_dactylion',translation=(-0.17,0.558,0.017),
@@ -4324,130 +4330,129 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   children=[
                                                                   Transform(USE='r_carpal_distal_phalanx_1_tip_SiteShape')]),
                                                                 Shape(USE='r_carpal_distal_interphalangeal_2-to-r_carpal_distal_phalanx_2_tip')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.004797),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.004797),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_capitate',name='r_capitate',
-                                                        #  Shape USE='r_capitate_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'r_capitate_Shape\'/ '),
                                                         Transform(USE='r_midcarpal_3_JointShape'),
                                                         Shape(USE='r_capitate_Segment')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.00625),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.00625),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_3',name='r_metacarpal_3',
-                                                          #  Shape USE='r_metacarpal_3_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'r_metacarpal_3_Shape\'/ '),
                                                           Transform(USE='r_carpometacarpal_3_JointShape'),
                                                           Shape(USE='r_metacarpal_3_Segment'),
                                                           HAnimSite(DEF='hanim_r_metacarpal_phalanx_3_pt',name='r_metacarpal_phalanx_3',translation=(-0.2,0.665,0.016),
                                                             children=[
                                                             Transform(USE='r_metacarpal_phalanx_3_pt_SiteShape')]),
                                                           Shape(USE='r_carpometacarpal_3-to-r_metacarpal_phalanx_3')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.1833,0.63495,-0.0039),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.1833,0.63495,-0.0039),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_3',name='r_carpal_proximal_phalanx_3',
-                                                            #  Shape USE='r_carpal_proximal_phalanx_3_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'r_carpal_proximal_phalanx_3_Shape\'/ '),
                                                             Transform(USE='r_carpal_proximal_phalanx_3_JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_3_Segment')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813,0.6032,-0.0035),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813,0.6032,-0.0035),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_3',name='r_carpal_middle_phalanx_3',
-                                                              #  Shape USE='r_carpal_middle_phalanx_3_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_carpal_middle_phalanx_3_Shape\'/ '),
                                                               Transform(USE='r_carpal_proximal_interphalangeal_3_JointShape'),
                                                               Shape(USE='r_carpal_middle_phalanx_3_Segment')]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.18029,0.5753,-0.00375),llimit=[0,0,0],ulimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.18029,0.5753,-0.00375),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_3',name='r_carpal_distal_phalanx_3',
-                                                                #  Shape USE='r_carpal_distal_phalanx_3_Shape'/ 
                                                                 children=[
+                                                                Comment(' Shape USE=\'r_carpal_distal_phalanx_3_Shape\'/ '),
                                                                 Transform(USE='r_carpal_distal_interphalangeal_3_JointShape'),
                                                                 Shape(USE='r_carpal_distal_phalanx_3_Segment'),
                                                                 HAnimSite(DEF='hanim_r_carpal_distal_phalanx_3_tip',name='r_carpal_distal_phalanx_3',translation=(-0.17,0.555,-0.006),
                                                                   children=[
                                                                   Transform(USE='r_carpal_distal_phalanx_3_tip_SiteShape')]),
                                                                 Shape(USE='r_carpal_distal_interphalangeal_3-to-r_carpal_distal_phalanx_3_tip')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70583,-0.02574),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70583,-0.02574),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_hamate',name='r_hamate',
-                                                        #  Shape USE='r_hamate_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'r_hamate_Shape\'/ '),
                                                         Transform(USE='r_midcarpal_4_5_JointShape'),
                                                         Shape(USE='r_hamate-to-r_carpometacarpal_4_Segment'),
                                                         Shape(USE='r_hamate-to-r_carpometacarpal_5_Segment')]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625,-0.01992),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625,-0.01992),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_4',name='r_metacarpal_4',
-                                                          #  Shape USE='r_metacarpal_4_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'r_metacarpal_4_Shape\'/ '),
                                                           Transform(USE='r_carpometacarpal_4_JointShape'),
                                                           Shape(USE='r_metacarpal_4_Segment')]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.1833,0.63405,-0.02144),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.1833,0.63405,-0.02144),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_4',name='r_carpal_proximal_phalanx_4',
-                                                            #  Shape USE='r_carpal_proximal_phalanx_4_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'r_carpal_proximal_phalanx_4_Shape\'/ '),
                                                             Transform(USE='r_metacarpophalangeal_4_JointShape'),
                                                             Shape(USE='r_carpal_proximal_phalanx_4_Segment')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813,0.6066,-0.02064),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813,0.6066,-0.02064),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_4',name='r_carpal_middle_phalanx_4',
-                                                              #  Shape USE='r_carpal_middle_phalanx_4_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_carpal_middle_phalanx_4_Shape\'/ '),
                                                               Transform(USE='r_carpal_proximal_interphalangeal_4_JointShape'),
                                                               Shape(USE='r_carpal_middle_phalanx_4_Segment')]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.18029,0.5807,-0.01978),llimit=[0,0,0],ulimit=[0,0,0],
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.18029,0.5807,-0.01978),
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_4',name='r_carpal_distal_phalanx_4',
-                                                                #  Shape USE='r_carpal_distal_phalanx_4_Shape'/ 
                                                                 children=[
+                                                                Comment(' Shape USE=\'r_carpal_distal_phalanx_4_Shape\'/ '),
                                                                 Transform(USE='r_carpal_distal_interphalangeal_4_JointShape'),
                                                                 Shape(USE='r_carpal_distal_phalanx_4_Segment'),
                                                                 HAnimSite(DEF='hanim_r_carpal_distal_phalanx_4_tip',name='r_carpal_distal_phalanx_4',translation=(-0.172,0.559,-0.024),
                                                                   children=[
                                                                   Transform(USE='r_carpal_distal_phalanx_4_tip_SiteShape')]),
                                                                 Shape(USE='r_carpal_distal_interphalangeal_4-to-r_carpal_distal_phalanx_4_tip')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827,-0.03278),llimit=[0,0,0],ulimit=[0,0,0],
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827,-0.03278),
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_5',name='r_metacarpal_5',
-                                                        #  Shape USE='r_metacarpal_5_Shape'/ 
                                                         children=[
+                                                        Comment(' Shape USE=\'r_metacarpal_5_Shape\'/ '),
                                                         Transform(USE='r_carpometacarpal_5_JointShape'),
                                                         Shape(USE='r_metacarpal_5_Segment'),
                                                         HAnimSite(DEF='hanim_r_metacarpal_phalanx_5_pt',name='r_metacarpal_phalanx_5',translation=(-0.2,0.665,-0.036),
                                                           children=[
                                                           Transform(USE='r_metacarpal_phalanx_5_pt_SiteShape')]),
                                                         Shape(USE='r_carpometacarpal_5-to-r_metacarpal_phalanx_5')]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0371),llimit=[0,0,0],ulimit=[0,0,0],
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0371),
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_5',name='r_carpal_proximal_phalanx_5',
-                                                          #  Shape USE='r_carpal_proximal_phalanx_5_Shape'/ 
                                                           children=[
+                                                          Comment(' Shape USE=\'r_carpal_proximal_phalanx_5_Shape\'/ '),
                                                           Transform(USE='r_metacarpophalangeal_5_JointShape'),
                                                           Shape(USE='r_carpal_proximal_phalanx_5_Segment')]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.1813,0.621,-0.03715),llimit=[0,0,0],ulimit=[0,0,0],
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.1813,0.621,-0.03715),
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_5',name='r_carpal_middle_phalanx_5',
-                                                            #  Shape USE='r_carpal_middle_phalanx_5_Shape'/ 
                                                             children=[
+                                                            Comment(' Shape USE=\'r_carpal_middle_phalanx_5_Shape\'/ '),
                                                             Transform(USE='r_carpal_proximal_interphalangeal_5_JointShape'),
                                                             Shape(USE='r_carpal_middle_phalanx_5_Segment')]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045,0.602325,-0.03697),llimit=[0,0,0],ulimit=[0,0,0],
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045,0.602325,-0.03697),
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_5',name='r_carpal_distal_phalanx_5',
-                                                              #  Shape USE='r_carpal_distal_phalanx_5_Shape'/ 
                                                               children=[
+                                                              Comment(' Shape USE=\'r_carpal_distal_phalanx_5_Shape\'/ '),
                                                               Transform(USE='r_carpal_distal_interphalangeal_5_JointShape'),
                                                               Shape(USE='r_carpal_distal_phalanx_5_tip_Segment'),
                                                               HAnimSite(DEF='hanim_r_carpal_distal_phalanx_5_tip',name='r_carpal_distal_phalanx_5',translation=(-0.172,0.58,-0.039),
                                                                 children=[
                                                                 Transform(USE='r_carpal_distal_phalanx_5_tip_SiteShape')]),
-                                                              Shape(USE='r_carpal_distal_interphalangeal_5-to-r_carpal_distal_phalanx_5_tip')])])])])])])])])])])])])])])])])])])])])])])])])])])])]),],
-      #  MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'> <MetadataString name='authorName' value='"Jin Hoon Lee and Min Joo Lee"","" Chul Hee Jung and Myeong Won Lee"'/> <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/> <MetadataString name='creationDate' value='31 March 2011'/> <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/> <MetadataString name='modificationDate' value='25 March 2024'/> <MetadataString name='gender' value='female'/> <MetadataFloat name='height' value='1.5'/> <MetadataString name='humanoidVersion' value='2.0'/> </MetadataSet ),
+                                                              Shape(USE='r_carpal_distal_interphalangeal_5-to-r_carpal_distal_phalanx_5_tip')])])])])])])])])])])])])])])])])])])])])])])])])])])])])],),
     Group(DEF='DefaultAnimation_loa4',
       children=[
       TimeSensor(DEF='DefaultTimer',cycleInterval=0.0,loop=True),
-      #  indention-to-match Joint hierarchy 
+      Comment(' indention-to-match Joint hierarchy '),
       PositionInterpolator(DEF='Default_humanoid_root_TranslationInterpolator',key=[0,0.5,1],keyValue=[(0,0,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Default_humanoid_root_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Default_sacroiliac_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
@@ -4595,7 +4600,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Default_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Default_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Default_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_sacroiliac_RotationInterpolator'),
@@ -4743,7 +4748,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='DefaultTimer',toField='set_fraction',toNode='Default_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Default_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Default_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Default_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -4894,7 +4899,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Group(DEF='TestAnimation_loa4',
       children=[
       TimeSensor(DEF='TestTimer',cycleInterval=0.0,loop=True),
-      #  indention to match Joint hierarchy 
+      Comment(' indention to match Joint hierarchy '),
       PositionInterpolator(DEF='Test_humanoid_root_TranslationInterpolator',key=[0,0.5,1],keyValue=[(0,0,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Test_humanoid_root_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Test_sacroiliac_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
@@ -5042,7 +5047,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Test_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Test_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Test_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_sacroiliac_RotationInterpolator'),
@@ -5190,7 +5195,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='TestTimer',toField='set_fraction',toNode='Test_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Test_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Test_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Test_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -5339,8 +5344,8 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='value_changed',fromNode='Test_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Test_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
     Group(DEF='Pitch1Animation_loa4',
-      #  Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor. 
       children=[
+      Comment(' Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF=\'skullbase_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0, 1 0 0 1, 0 0 1 0\'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor. '),
       TimeSensor(DEF='Pitch1Timer',cycleInterval=0.0,loop=True),
       PositionInterpolator(DEF='Pitch1_humanoid_root_TranslationInterpolator',key=[0,0.02,0.04,0.06,0.08,0.1,1],keyValue=[(0,0,0),(0,0,0),(0.15,0,0),(0,0,0),(-0.15,0,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Pitch1_humanoid_root_RotationInterpolator',key=[0,0.08,0.12,0.15,0.18,0.2,1],keyValue=[(0,0,1,0),(0,0,1,0),(1,0,0,0.5),(0,0,1,0),(1,0,0,-0.5),(0,0,1,0),(0,0,1,0)]),
@@ -5489,7 +5494,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Pitch1_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch1_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_sacroiliac_RotationInterpolator'),
@@ -5637,7 +5642,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch1Timer',toField='set_fraction',toNode='Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Pitch1_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch1_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch1_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -5935,7 +5940,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Pitch2_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_sacroiliac_RotationInterpolator'),
@@ -6083,7 +6088,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Pitch2Timer',toField='set_fraction',toNode='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Pitch2_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch2_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Pitch2_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -6232,8 +6237,8 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='value_changed',fromNode='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
     Group(DEF='Yaw1Animation_loa4',
-      #  Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model's +X direction, the model left over the left shoulder. 
       children=[
+      Comment(' Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF=\'skullbase_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0, 0 1 0 1, 0 0 1 0\'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model\'s +X direction, the model left over the left shoulder. '),
       TimeSensor(DEF='Yaw1Timer',cycleInterval=0.0,loop=True),
       PositionInterpolator(DEF='Yaw1_humanoid_root_TranslationInterpolator',key=[0,0.02,0.04,0.06,0.08,0.1,1],keyValue=[(0,0,0),(0,0,0),(0,0.15,0),(0,0,0),(0,-0.15,0),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Yaw1_humanoid_root_RotationInterpolator',key=[0,0.08,0.12,0.15,0.18,0.2,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,1,0,0.5),(0,0,1,0),(0,1,0,-0.5),(0,0,1,0),(0,0,1,0)]),
@@ -6382,7 +6387,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Yaw1_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw1_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.98,0.985,1],keyValue=[(0,0,1,0),(0,1,0,0.35),(0,1,0,-0.35),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_sacroiliac_RotationInterpolator'),
@@ -6530,7 +6535,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw1Timer',toField='set_fraction',toNode='Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Yaw1_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw1_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw1_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -6828,7 +6833,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Yaw2_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_sacroiliac_RotationInterpolator'),
@@ -6976,7 +6981,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Yaw2Timer',toField='set_fraction',toNode='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Yaw2_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw2_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Yaw2_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -7125,8 +7130,8 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='value_changed',fromNode='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
     Group(DEF='Roll1Animation_loa4',
-      #  Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model's +X direction, the model left toward the left shoulder. 
       children=[
+      Comment(' Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF=\'skullbase_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0, 0 0 1 1, 0 0 1 0\'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model\'s +X direction, the model left toward the left shoulder. '),
       TimeSensor(DEF='Roll1Timer',cycleInterval=0.0,loop=True),
       PositionInterpolator(DEF='Roll1_humanoid_root_TranslationInterpolator',key=[0,0.02,0.04,0.06,0.08,0.1,1],keyValue=[(0,0,0),(0,0,0),(0,0,0.15),(0,0,0),(0,0,-0.15),(0,0,0),(0,0,0)]),
       OrientationInterpolator(DEF='Roll1_humanoid_root_RotationInterpolator',key=[0,0.08,0.12,0.15,0.18,0.2,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0.5),(0,0,1,0),(0,0,1,-0.5),(0,0,1,0),(0,0,1,0)]),
@@ -7275,7 +7280,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Roll1_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Roll1_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_sacroiliac_RotationInterpolator'),
@@ -7423,7 +7428,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='Roll1Timer',toField='set_fraction',toNode='Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Roll1_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Roll1_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Roll1_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -8018,7 +8023,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Group(DEF='WalkAnimation_loa4',
       children=[
       TimeSensor(DEF='WalkTimer',cycleInterval=0.0,loop=True),
-      #  indention to match Joint hierarchy 
+      Comment(' indention to match Joint hierarchy '),
       PositionInterpolator(DEF='Walk_humanoid_root_TranslationInterpolator',key=[0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1],keyValue=[(0,-0.00928,0),(0,-0.003858,0),(0,-0.008847,0),(0,-0.01486,0),(0,-0.02641,0),(0,-0.03934,0),(0,-0.0502,0),(0,-0.07469,0),(0,-0.02732,0),(0,-0.01608,0),(0,-0.01129,0),(0,-0.005819,0),(0,-0.002004,0),(0,-0.002579,0),(0,-0.0143,0),(0,-0.03799,0),(0,-0.05648,0),(0,-0.045,0),(0,-0.00928,0)]),
       OrientationInterpolator(DEF='Walk_humanoid_root_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Walk_sacroiliac_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,-1,0.1056),(0,0,1,0.09018),(0,0,-1,0.1056)]),
@@ -8166,7 +8171,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Walk_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Walk_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_sacroiliac_RotationInterpolator'),
@@ -8314,7 +8319,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='WalkTimer',toField='set_fraction',toNode='Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Walk_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Walk_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Walk_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -8465,7 +8470,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Group(DEF='RunAnimation_loa4',
       children=[
       TimeSensor(DEF='RunTimer',loop=True),
-      #  indention to match Joint hierarchy 
+      Comment(' indention to match Joint hierarchy '),
       PositionInterpolator(DEF='Run_humanoid_root_TranslationInterpolator',key=[0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1],keyValue=[(0,-0.01,0),(0,-0.037,0),(0,-0.049,0),(0,-0.037,0),(0,-0.01,0),(0,-0.037,0),(0,-0.049,0),(0,-0.037,0),(0,-0.01,0)]),
       OrientationInterpolator(DEF='Run_humanoid_root_RotationInterpolator',key=[0,0.25,0.5,0.75,1],keyValue=[(1,0,0,0.06),(1,0,0,0.167),(1,0,0,0.06),(1,0,0,0.168),(1,0,0,0.06)]),
       OrientationInterpolator(DEF='Run_sacroiliac_RotationInterpolator',key=[0,0.2182,0.4909,0.7455,1],keyValue=[(0,-1,0,0.125),(0,0,1,0),(0,1,0,0.125),(0,0,1,0),(0,-1,0,0.125)]),
@@ -8613,7 +8618,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       OrientationInterpolator(DEF='Run_r_metacarpophalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Run_r_carpal_proximal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
       OrientationInterpolator(DEF='Run_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.5,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0)]),
-      #  Timer to Interpolators 
+      Comment(' Timer to Interpolators '),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_humanoid_root_TranslationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_humanoid_root_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_sacroiliac_RotationInterpolator'),
@@ -8761,7 +8766,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_r_metacarpophalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_r_carpal_proximal_interphalangeal_5_RotationInterpolator'),
       ROUTE(fromField='fraction_changed',fromNode='RunTimer',toField='set_fraction',toNode='Run_r_carpal_distal_interphalangeal_5_RotationInterpolator'),
-      #  Interpolators to Joints 
+      Comment(' Interpolators to Joints '),
       ROUTE(fromField='value_changed',fromNode='Run_humanoid_root_TranslationInterpolator',toField='set_translation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Run_humanoid_root_RotationInterpolator',toField='set_rotation',toNode='hanim_humanoid_root'),
       ROUTE(fromField='value_changed',fromNode='Run_sacroiliac_RotationInterpolator',toField='set_rotation',toNode='hanim_sacroiliac'),
@@ -10241,7 +10246,7 @@ newModel=X3D(profile='Immersive',version='4.0',
       ROUTE(fromField='value_changed',fromNode='Kick2_r_metacarpophalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_metacarpophalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Kick2_r_carpal_proximal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_proximal_interphalangeal_5'),
       ROUTE(fromField='value_changed',fromNode='Kick2_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5')]),
-    #  Ball for Kick2 not included Group> <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'> <Shape DEF='ball_Shape'> <Appearance DEF='ball_Appearance'> <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/> </Appearance> <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'> <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/> </IndexedFaceSet> </Shape> <Viewpoint DEF='ballView_1' description='Ball View'/> </Transform> <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/> <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/> </Group 
+    Comment(' Ball for Kick2 not included Group> <Transform DEF=\'SBall\' rotation=\'0.7 0 0.7 0.1\' scale=\'0.23 0.23 0.23\' translation=\'-0.916 0.37 -0.92\'> <Shape DEF=\'ball_Shape\'> <Appearance DEF=\'ball_Appearance\'> <Material DEF=\'ball_Material\' diffuseColor=\'0.3 0.3 1\' emissiveColor=\'0.3 0.3 0.33\'/> </Appearance> <IndexedFaceSet DEF=\'ball_IndexedFaceSet\' coordIndex=\'0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1\'> <Coordinate DEF=\'Ball_Coordinates\' point=\'0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0\'/> </IndexedFaceSet> </Shape> <Viewpoint DEF=\'ballView_1\' description=\'Ball View\'/> </Transform> <PositionInterpolator DEF=\'ball_TranslationInterpolator\' key=\'0 0.4 0.409 1\' keyValue=\'-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10\'/> <OrientationInterpolator DEF=\'ball_RotationInterpolator\' key=\'0 0.4 0.41 0.71 1\' keyValue=\'1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3\'/> <ROUTE fromField=\'fraction_changed\' fromNode=\'Kick2Timer\' toField=\'set_fraction\' toNode=\'ball_TranslationInterpolator\'/> <ROUTE fromField=\'value_changed\' fromNode=\'ball_TranslationInterpolator\' toField=\'set_translation\' toNode=\'SBall\'/> <ROUTE fromField=\'fraction_changed\' fromNode=\'Kick2Timer\' toField=\'set_fraction\' toNode=\'ball_RotationInterpolator\'/> <ROUTE fromField=\'value_changed\' fromNode=\'ball_RotationInterpolator\' toField=\'set_rotation\' toNode=\'SBall\'/> </Group '),
     Group(DEF='TimerControls',
       children=[
       ROUTE(fromField='touchTime',fromNode='Default_Touch',toField='set_stopTime',toNode='TestTimer'),
@@ -10880,7 +10885,9 @@ newModel=X3D(profile='Immersive',version='4.0',
     OrientationInterpolator(DEF='Default_r_carpal_distal_interphalangeal_5_RotationInterpolatorTest_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch1_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch2_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw1_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw2_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll1_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll2_r_carpal_distal_interphalangeal_5_RotationInterpolatorWalk_r_carpal_distal_interphalangeal_5_RotationInterpolatorRun_r_carpal_distal_interphalangeal_5_RotationInterpolatorJump_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick1_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick2_r_carpal_distal_interphalangeal_5_RotationInterpolator',key=[0,0.03846154,0.07692308,0.07692308,0.115384616,0.15384616,0.15384616,0.1923077,0.23076923,0.23076923,0.26923078,0.30769232,0.30769232,0.38307694,0.38346153,0.3846154,0.3846154,0.42307693,0.46153846,0.46153846,0.5,0.53846157,0.53846157,0.5769231,0.61538464,0.61538464,0.65384614,0.6923077,0.6923077,0.7307692,0.7692308,0.7692308,0.8076923,0.84615386,0.84615386,0.88461536,0.9230769,0.9230769,0.96153843,0.9807692,1],keyValue=[(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,1,0,0.35),(0,1,0,-0.35),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,0),(0,0,1,1.5),(0,0,1,0)]),
     ROUTE(fromField='value_changed',fromNode='Default_r_carpal_distal_interphalangeal_5_RotationInterpolatorTest_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch1_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch2_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw1_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw2_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll1_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll2_r_carpal_distal_interphalangeal_5_RotationInterpolatorWalk_r_carpal_distal_interphalangeal_5_RotationInterpolatorRun_r_carpal_distal_interphalangeal_5_RotationInterpolatorJump_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick1_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick2_r_carpal_distal_interphalangeal_5_RotationInterpolator',toField='set_rotation',toNode='hanim_r_carpal_distal_interphalangeal_5'),
     ROUTE(fromField='fraction_changed',fromNode='ShinyTimer',toField='set_fraction',toNode='Default_r_carpal_distal_interphalangeal_5_RotationInterpolatorTest_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch1_r_carpal_distal_interphalangeal_5_RotationInterpolatorPitch2_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw1_r_carpal_distal_interphalangeal_5_RotationInterpolatorYaw2_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll1_r_carpal_distal_interphalangeal_5_RotationInterpolatorRoll2_r_carpal_distal_interphalangeal_5_RotationInterpolatorWalk_r_carpal_distal_interphalangeal_5_RotationInterpolatorRun_r_carpal_distal_interphalangeal_5_RotationInterpolatorJump_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick1_r_carpal_distal_interphalangeal_5_RotationInterpolatorKick2_r_carpal_distal_interphalangeal_5_RotationInterpolator')])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

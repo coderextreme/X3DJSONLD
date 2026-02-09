@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -71,6 +75,7 @@ newModel=X3D(profile='Immersive',version='4.0',
           children=[
           Shape(DEF='Arch',
             # note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
+
             geometry=IndexedFaceSet(DEF='ArchIndex',convex=False,solid=False,
               coord=Coordinate(DEF='ArchChord')),
             appearance=Appearance(
@@ -83,9 +88,13 @@ newModel=X3D(profile='Immersive',version='4.0',
         Comment(' This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs '),
         Script(DEF='ArchPrototypeScript',url=["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"],
           # INPUT PARAMETERS
+
           # General parameters
+
           # Parameters to create to create shapes related to arch: put true to apply
+
           # OUTPUT PARAMETERS
+
           field(accessType='initializeOnly',appinfo='user or default input for clearSpanWidth parameter',name='clearSpanWidth',type='SFFloat'),
           field(accessType='initializeOnly',appinfo='user or default input for riseHeight parameter',name='riseHeight',type='SFFloat'),
           field(accessType='initializeOnly',appinfo='user or default input for depth parameter',name='depth',type='SFFloat'),
@@ -136,6 +145,7 @@ ecmascript:
     Comment(' Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) '),
     Inline(DEF='CoordinateAxes',url=["../data/CoordinateAxes.x3d"])])
 )
+
 ### X3D model conversion complete ###
 
 ####################################################################################################

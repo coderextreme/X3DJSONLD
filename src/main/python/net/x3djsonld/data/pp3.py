@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -43,17 +47,16 @@ newModel=X3D(profile='Immersive',version='4.0',
       ProtoBody=ProtoBody(
         children=[
         Group(
-          # left
           children=[
+          Comment('left'),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(
               appearance=Appearance(
                 material=Material(diffuseColor=(0.7,1,0),transparency=0.5)),
-              geometry=Extrusion(creaseAngle=0.785,crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)],spine=[(-2.5,0,0),(-2.0,0,0),(-1.5,0,0)]))]
-            # <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/>
-            ),
-          # right
+              geometry=Extrusion(creaseAngle=0.785,crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)],spine=[(-2.5,0,0),(-2.0,0,0),(-1.5,0,0)])),
+            Comment('<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string=\'"l"\'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/>'),],),
+          Comment('right'),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(
@@ -68,7 +71,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=Text(DEF='RightString',string=["r"]))]),
             StringSensor(DEF='RightSensor',enabled=False),
             TouchSensor(description='touch to activate',DEF='RightTouch')]),
-          # up
+          Comment('up'),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(
@@ -83,16 +86,15 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=Text(DEF='UpString',string=["u"]))]),
             StringSensor(DEF='UpSensor',enabled=False),
             TouchSensor(description='touch to activate',DEF='UpTouch')]),
-          # down
+          Comment('down'),
           Transform(scale=(0.5,0.5,0.5),
             children=[
             Shape(
               appearance=Appearance(
                 material=Material(diffuseColor=(0.7,1,0),transparency=0.5)),
-              geometry=Extrusion(creaseAngle=0.785,crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)],spine=[(0,-2.5,0),(0,-2.0,0),(0,-1.5,0)]))]
-            # <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>
-            ),
-          # center
+              geometry=Extrusion(creaseAngle=0.785,crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)],spine=[(0,-2.5,0),(0,-2.0,0),(0,-1.5,0)])),
+            Comment('<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string=\'"d"\'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description=\'touch to activate\' DEF="DownTouch" enabled="true"/>'),],),
+          Comment('center'),
           Transform(
             children=[
             Shape(
@@ -175,7 +177,9 @@ function set_centerstring(centerstr) {
     Transform(translation=(0,2.5,0),
       children=[
       ProtoInstance(name='Process')])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

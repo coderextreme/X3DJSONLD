@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -49,11 +53,11 @@ newModel=X3D(profile='Immersive',version='4.0',
       ProtoInterface=ProtoInterface(
         field=[
         field(accessType='initializeOnly',appinfo='required: insert Viewpoint DEF or USE node for view of interest',name='ViewpointNode',type='SFNode',
-          #  NULL node, ProtoInstance must provide 
-          ),
+          children=[
+          Comment(' NULL node, ProtoInstance must provide '),],),
         field(accessType='initializeOnly',appinfo='required: insert NavigationInfo DEF or USE node of interest',name='NavigationInfoNode',type='SFNode',
-          #  NULL node, ProtoInstance must provide 
-          ),
+          children=[
+          Comment(' NULL node, ProtoInstance must provide '),],),
         field(accessType='inputOutput',appinfo='whether or not frustum geometry is rendered',name='visible',type='SFBool',value=True),
         field(accessType='inputOutput',appinfo='RGB color of ViewFrustum outline, default value 0.9 0.9 0.9',name='lineColor',type='SFColor',value=(0.9,0.9,0.9)),
         field(accessType='inputOutput',appinfo='RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8',name='frustumColor',type='SFColor',value=(0.8,0.8,0.8)),
@@ -92,11 +96,11 @@ newModel=X3D(profile='Immersive',version='4.0',
           field(accessType='inputOutput',appinfo='Whether or not frustum geometry is rendered',name='visible',type='SFBool'),
           field(accessType='outputOnly',appinfo='Adjust Switch selection to make geometry visible or not',name='visibilitySwitchSelection',type='SFInt32'),
           field(accessType='initializeOnly',name='ViewpointNode',type='SFNode',
-            #  initialization node (if any) goes here 
-            ),
+            children=[
+            Comment(' initialization node (if any) goes here '),],),
           field(accessType='initializeOnly',name='NavigationInfoNode',type='SFNode',
-            #  initialization node (if any) goes here 
-            ),
+            children=[
+            Comment(' initialization node (if any) goes here '),],),
           field(accessType='initializeOnly',name='FrustumCoordinate',type='SFNode',
             children=[
             Coordinate(USE='FrustumCoordinate')]),
@@ -129,7 +133,7 @@ ecmascript:
         ROUTE(fromField='spine_changed',fromNode='GeometryComputationScript',toField='set_spine',toNode='FrustumExtrusion'),
         ROUTE(fromField='scale_changed',fromNode='GeometryComputationScript',toField='set_scale',toNode='FrustumExtrusion'),
         ROUTE(fromField='point_changed',fromNode='GeometryComputationScript',toField='point',toNode='FrustumCoordinate')])),
-    #  Example use is in separate scene 
+    Comment(' Example use is in separate scene '),
     Anchor(description='ViewFrustum Example',url=["ViewFrustumExample.x3d"],
       children=[
       Shape(
@@ -137,7 +141,9 @@ ecmascript:
           material=Material(diffuseColor=(0.8,0.4,0))),
         geometry=Text(string=["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"],
           fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],size=0.8)))])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

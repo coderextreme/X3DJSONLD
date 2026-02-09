@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -29,17 +33,17 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
-    meta(content='asmallbox.x3d',name='title'),
-    meta(content='John Carlson',name='creator'),
-    meta(content='manual',name='generator'),
-    meta(content='https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d',name='identifier'),
-    meta(content='a box',name='description')]),
+    meta(name='title',content='asmallbox.x3d'),
+    meta(name='creator',content='John Carlson'),
+    meta(name='generator',content='manual'),
+    meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d'),
+    meta(name='description',content='a box')]),
   Scene=Scene(
     children=[
     ProtoDeclare(name='anyShape',
       ProtoInterface=ProtoInterface(
         field=[
-        field(accessType='inputOutput',name='myShape',type='MFNode',
+        field(name='myShape',accessType='inputOutput',type='MFNode',
           children=[
           Shape(
             geometry=Sphere(),)])]),
@@ -52,7 +56,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     ProtoDeclare(name='one',
       ProtoInterface=ProtoInterface(
         field=[
-        field(accessType='inputOutput',name='myShape',type='MFNode',
+        field(name='myShape',accessType='inputOutput',type='MFNode',
           children=[
           Shape(
             geometry=Cylinder(),)])]),
@@ -71,6 +75,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         Shape(
           geometry=Box(),)])])])
 )
+
 ### X3D model conversion complete ###
 
 ####################################################################################################

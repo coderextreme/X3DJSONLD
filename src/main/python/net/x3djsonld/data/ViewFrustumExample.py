@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -62,12 +66,12 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(accessType='inputOutput',appinfo='transparency of ViewFrustum hull geometry, default value 0.5',name='transparency',type='SFFloat'),
       field(accessType='inputOutput',appinfo='assumed ratio height/width, default value 0.75',name='aspectRatio',type='SFFloat'),
       field(accessType='initializeOnly',appinfo='debug support, default false',name='trace',type='SFBool')]),
-    #  Example use 
+    Comment(' Example use '),
     ProtoInstance(name='ViewFrustum',
       fieldValue=[
       fieldValue(name='ViewpointNode',
-        #  prefer empty description to prevent entry in player's ViewpointList 
         children=[
+        Comment(' prefer empty description to prevent entry in player\'s ViewpointList '),
         Viewpoint(description='ViewFrustum ViewpointNode')]),
       fieldValue(name='NavigationInfoNode',
         children=[
@@ -77,12 +81,14 @@ newModel=X3D(profile='Immersive',version='4.0',
       fieldValue(name='frustumColor',value=(0.8,0.8,0.8)),
       fieldValue(name='transparency',value=0.75),
       fieldValue(name='trace',value=True)]),
-    #  Visualization assists 
+    Comment(' Visualization assists '),
     Inline(DEF='GridXZ',url=["GridXZ_20x20Fixed.x3d"]),
     Transform(scale=(5,5,5),
       children=[
       Inline(DEF='CoordinateAxes',url=["CoordinateAxes.x3d"])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -55,14 +59,16 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     WorldInfo(title='HAnimModelHandLeft.x3d'),
     HAnimHumanoid(DEF='hanim_Hand_Left',loa=4,name='Hand_Left',version='2.0',
+      children=[
+      Comment(' original HAnimHumanoid info=\'"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"\' '),],
       metadata=MetadataSet(name='HAnimHumanoid.info',reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid',
         value=[
         MetadataString(name='authorName',value=['Kwan-Hee YOO, Don Brutzman and Joe Williams'])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
-        #  Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model 
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',
         children=[
-        HAnimJoint(DEF='hanim_l_radiocarpal',description='connection joint of hand to leg above',name='l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0],
+        Comment(' Might consider putting a HAnimSegment here, but that doesn\'t help with re-use of this hand model '),
+        HAnimJoint(DEF='hanim_l_radiocarpal',description='connection joint of hand to leg above',name='l_radiocarpal',
           children=[
           HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
             children=[
@@ -87,8 +93,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 material=Material(emissiveColor=(1,1,1))),
               geometry=IndexedLineSet(DEF='RCToMC45',coordIndex=[0,1],
                 coord=Coordinate(point=[(0,0,0),(-0.1,0.1,0)])))]),
-          #  MC1 
-          HAnimJoint(DEF='hanim_l_midcarpal_1',center=(0.14,0.09,0),name='l_midcarpal_1',ulimit=[0,0,0],llimit=[0,0,0],
+          Comment(' MC1 '),
+          HAnimJoint(DEF='hanim_l_midcarpal_1',center=(0.14,0.09,0),name='l_midcarpal_1',
             children=[
             HAnimSegment(DEF='hanim_l_trapezium',name='l_trapezium',
               children=[
@@ -108,8 +114,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC1toCMC1',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.1,0.1,0),(0.1,0.2,0)])))]),
-            #  thumb finger 
-            HAnimJoint(DEF='hanim_l_carpometacarpal_1',center=(0.2,0.15,0),name='l_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' thumb finger '),
+            HAnimJoint(DEF='hanim_l_carpometacarpal_1',center=(0.2,0.15,0),name='l_carpometacarpal_1',
               children=[
               HAnimSegment(DEF='hanim_l_metacarpal_1',name='l_metacarpal_1',
                 children=[
@@ -121,7 +127,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC1toMCP1',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.2,0.15,0),(0.3,0.3,0)])))]),
-              HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',center=(0.3,0.3,0),name='l_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',center=(0.3,0.3,0),name='l_metacarpophalangeal_1',
                 children=[
                 HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_1',name='l_carpal_proximal_phalanx_1',
                   children=[
@@ -133,7 +139,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP11toIP1',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.3,0.3,0),(0.35,0.4,0)])))]),
-                HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',center=(0.35,0.4,0),name='l_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',center=(0.35,0.4,0),name='l_carpal_interphalangeal_1',
                   children=[
                   HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_1',name='l_carpal_distal_phalanx_1',
                     children=[
@@ -145,8 +151,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='fingertip_l_carpal_interphalangeal_1',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.35,0.4,0),(0.36,0.45,0)])))])])])])]),
-          #  MC2 
-          HAnimJoint(DEF='hanim_l_midcarpal_2',center=(0.07,0.07,0),name='l_midcarpal_2',ulimit=[0,0,0],llimit=[0,0,0],
+          Comment(' MC2 '),
+          HAnimJoint(DEF='hanim_l_midcarpal_2',center=(0.07,0.07,0),name='l_midcarpal_2',
             children=[
             HAnimSegment(DEF='hanim_l_trapezoid',name='l_trapezoid',
               children=[
@@ -158,8 +164,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC2toCMC2',coordIndex=[0,1],
                   coord=Coordinate(point=[(-0.1,0.1,0),(-0.1,0.2,0)])))]),
-            #  index finger 
-            HAnimJoint(DEF='hanim_l_carpometacarpal_2',center=(0.1,0.2,0),name='l_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' index finger '),
+            HAnimJoint(DEF='hanim_l_carpometacarpal_2',center=(0.1,0.2,0),name='l_carpometacarpal_2',
               children=[
               HAnimSegment(DEF='hanim_l_metacarpal_2',name='l_metacarpal_2',
                 children=[
@@ -171,7 +177,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC2toMCP2',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.1,0.2,0),(0.15,0.5,0)])))]),
-              HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',center=(0.15,0.5,0),name='l_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',center=(0.15,0.5,0),name='l_metacarpophalangeal_2',
                 children=[
                 HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_2',name='l_carpal_proximal_phalanx_2',
                   children=[
@@ -183,7 +189,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP2toPIP2',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.15,0.5,0),(0.2,0.7,0)])))]),
-                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',center=(0.2,0.7,0),name='l_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',center=(0.2,0.7,0),name='l_carpal_proximal_interphalangeal_2',
                   children=[
                   HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_2',name='l_carpal_middle_phalanx_2',
                     children=[
@@ -195,7 +201,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP2toDIP2',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.2,0.7,0),(0.24,0.87,0)])))]),
-                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',center=(0.24,0.87,0),name='l_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',center=(0.24,0.87,0),name='l_carpal_distal_interphalangeal_2',
                     children=[
                     HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_2',name='l_carpal_distal_phalanx_2',
                       children=[
@@ -207,8 +213,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_l_carpal_distal_interphalangeal_2',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.24,0.87,0),(0.26,0.93,0)])))])])])])])]),
-          #  MC3 
-          HAnimJoint(DEF='hanim_l_midcarpal_3',center=(0.0,0.07,0),name='l_midcarpal_3',ulimit=[0,0,0],llimit=[0,0,0],
+          Comment(' MC3 '),
+          HAnimJoint(DEF='hanim_l_midcarpal_3',center=(0.0,0.07,0),name='l_midcarpal_3',
             children=[
             HAnimSegment(DEF='hanim_l_capitate',name='l_capitate',
               children=[
@@ -220,8 +226,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC3toCMC3',coordIndex=[0,1],
                   coord=Coordinate(point=[(0.0,0.07,0),(0.0,0.2,0)])))]),
-            #  Middle fingle 
-            HAnimJoint(DEF='hanim_l_carpometacarpal_3',center=(0.0,0.2,0),name='l_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' Middle fingle '),
+            HAnimJoint(DEF='hanim_l_carpometacarpal_3',center=(0.0,0.2,0),name='l_carpometacarpal_3',
               children=[
               HAnimSegment(DEF='hanim_l_metacarpal_3',name='l_metacarpal_3',
                 children=[
@@ -233,7 +239,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC3toMCP3',coordIndex=[0,1],
                     coord=Coordinate(point=[(0.0,0.2,0),(0.03,0.5,0)])))]),
-              HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',center=(0.03,0.5,0),name='l_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',center=(0.03,0.5,0),name='l_metacarpophalangeal_3',
                 children=[
                 HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_3',name='l_carpal_proximal_phalanx_3',
                   children=[
@@ -245,7 +251,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP3toPIP3',coordIndex=[0,1],
                       coord=Coordinate(point=[(0.03,0.5,0),(0.05,0.75,0)])))]),
-                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',center=(0.05,0.75,0),name='l_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',center=(0.05,0.75,0),name='l_carpal_proximal_interphalangeal_3',
                   children=[
                   HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_3',name='l_carpal_middle_phalanx_3',
                     children=[
@@ -257,7 +263,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP3toDIP3',coordIndex=[0,1],
                         coord=Coordinate(point=[(0.05,0.75,0),(0.08,0.96,0)])))]),
-                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',center=(0.08,0.96,0),name='l_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',center=(0.08,0.96,0),name='l_carpal_distal_interphalangeal_3',
                     children=[
                     HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_3',name='l_carpal_distal_phalanx_3',
                       children=[
@@ -269,8 +275,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_l_carpal_distal_interphalangeal_3',coordIndex=[0,1],
                           coord=Coordinate(point=[(0.08,0.96,0),(0.09,1.05,0)])))])])])])])]),
-          #  MC45 
-          HAnimJoint(DEF='hanim_l_midcarpal_4_5',center=(-0.1,0.1,0),name='l_midcarpal_4_5',ulimit=[0,0,0],llimit=[0,0,0],
+          Comment(' MC45 '),
+          HAnimJoint(DEF='hanim_l_midcarpal_4_5',center=(-0.1,0.1,0),name='l_midcarpal_4_5',
             children=[
             HAnimSegment(DEF='hanim_l_hamate',name='l_hamate',
               children=[
@@ -287,8 +293,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                   material=Material(emissiveColor=(1,1,1))),
                 geometry=IndexedLineSet(DEF='MC45toCMC5',coordIndex=[0,1],
                   coord=Coordinate(point=[(-0.1,0.1,0),(-0.15,0.17,0)])))]),
-            #  ring finger 
-            HAnimJoint(DEF='hanim_l_carpometacarpal_4',center=(-0.1,0.2,0),name='l_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' ring finger '),
+            HAnimJoint(DEF='hanim_l_carpometacarpal_4',center=(-0.1,0.2,0),name='l_carpometacarpal_4',
               children=[
               HAnimSegment(DEF='hanim_l_metacarpal_4',name='l_metacarpal_4',
                 children=[
@@ -300,7 +306,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC4toMCP4',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.1,0.2,0),(-0.1,0.47,0)])))]),
-              HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',center=(-0.1,0.47,0),name='l_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',center=(-0.1,0.47,0),name='l_metacarpophalangeal_4',
                 children=[
                 HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_4',name='l_carpal_proximal_phalanx_4',
                   children=[
@@ -312,7 +318,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP4toPIP4',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.1,0.47,0),(-0.1,0.7,0)])))]),
-                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',center=(-0.1,0.7,0),name='l_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',center=(-0.1,0.7,0),name='l_carpal_proximal_interphalangeal_4',
                   children=[
                   HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_4',name='l_carpal_middle_phalanx_4',
                     children=[
@@ -324,7 +330,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP4toDIP4',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.1,0.7,0),(-0.1,0.93,0)])))]),
-                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',center=(-0.1,0.93,0),name='l_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',center=(-0.1,0.93,0),name='l_carpal_distal_interphalangeal_4',
                     children=[
                     HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_4',name='l_carpal_distal_phalanx_4',
                       children=[
@@ -336,8 +342,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_l_carpal_distal_interphalangeal_4',coordIndex=[0,1],
                           coord=Coordinate(point=[(-0.1,0.93,0),(-0.1,1.0,0)])))])])])])]),
-            #  pinky finger 
-            HAnimJoint(DEF='hanim_l_carpometacarpal_5',center=(-0.15,0.17,0),name='l_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0],
+            Comment(' pinky finger '),
+            HAnimJoint(DEF='hanim_l_carpometacarpal_5',center=(-0.15,0.17,0),name='l_carpometacarpal_5',
               children=[
               HAnimSegment(DEF='hanim_l_metacarpal_5',name='l_metacarpal_5',
                 children=[
@@ -349,7 +355,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     material=Material(emissiveColor=(1,1,1))),
                   geometry=IndexedLineSet(DEF='CMC5toMCP5',coordIndex=[0,1],
                     coord=Coordinate(point=[(-0.15,0.17,0),(-0.2,0.4,0)])))]),
-              HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',center=(-0.2,0.4,0),name='l_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
+              HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',center=(-0.2,0.4,0),name='l_metacarpophalangeal_5',
                 children=[
                 HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_5',name='l_carpal_proximal_phalanx_5',
                   children=[
@@ -361,7 +367,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       material=Material(emissiveColor=(1,1,1))),
                     geometry=IndexedLineSet(DEF='MCP5toPIP5',coordIndex=[0,1],
                       coord=Coordinate(point=[(-0.2,0.4,0),(-0.23,0.63,0)])))]),
-                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',center=(-0.23,0.63,0),name='l_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
+                HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',center=(-0.23,0.63,0),name='l_carpal_proximal_interphalangeal_5',
                   children=[
                   HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_5',name='l_carpal_middle_phalanx_5',
                     children=[
@@ -373,7 +379,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         material=Material(emissiveColor=(1,1,1))),
                       geometry=IndexedLineSet(DEF='PIP5toDIP5',coordIndex=[0,1],
                         coord=Coordinate(point=[(-0.23,0.63,0),(-0.25,0.79,0)])))]),
-                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',center=(-0.25,0.79,0),name='l_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
+                  HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',center=(-0.25,0.79,0),name='l_carpal_distal_interphalangeal_5',
                     children=[
                     HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_5',name='l_carpal_distal_phalanx_5',
                       children=[
@@ -384,34 +390,33 @@ newModel=X3D(profile='Immersive',version='4.0',
                         appearance=Appearance(
                           material=Material(emissiveColor=(1,1,1))),
                         geometry=IndexedLineSet(DEF='fingertip_l_carpal_distal_interphalangeal_5',coordIndex=[0,1],
-                          coord=Coordinate(point=[(-0.25,0.79,0),(-0.26,0.85,0)])))])])])])])])])]),],
-      #  original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' 
+                          coord=Coordinate(point=[(-0.25,0.79,0),(-0.26,0.85,0)])))])])])])])])])])],
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_midcarpal_1',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_midcarpal_2',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_midcarpal_3',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_midcarpal_4_5',ulimit=[0,0,0],llimit=[0,0,0]),
-      HAnimJoint(USE='hanim_l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0])],
+      HAnimJoint(USE='hanim_humanoid_root'),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_2'),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_3'),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_4'),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_5'),
+      HAnimJoint(USE='hanim_l_carpal_interphalangeal_1'),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_2'),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_3'),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_4'),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_5'),
+      HAnimJoint(USE='hanim_l_carpometacarpal_1'),
+      HAnimJoint(USE='hanim_l_carpometacarpal_2'),
+      HAnimJoint(USE='hanim_l_carpometacarpal_3'),
+      HAnimJoint(USE='hanim_l_carpometacarpal_4'),
+      HAnimJoint(USE='hanim_l_carpometacarpal_5'),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_1'),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_2'),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_3'),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_4'),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_5'),
+      HAnimJoint(USE='hanim_l_midcarpal_1'),
+      HAnimJoint(USE='hanim_l_midcarpal_2'),
+      HAnimJoint(USE='hanim_l_midcarpal_3'),
+      HAnimJoint(USE='hanim_l_midcarpal_4_5'),
+      HAnimJoint(USE='hanim_l_radiocarpal')],
       segments=[
       HAnimSegment(USE='hanim_l_capitate'),
       HAnimSegment(USE='hanim_l_carpal'),
@@ -437,7 +442,9 @@ newModel=X3D(profile='Immersive',version='4.0',
       HAnimSegment(USE='hanim_l_metacarpal_5'),
       HAnimSegment(USE='hanim_l_trapezium'),
       HAnimSegment(USE='hanim_l_trapezoid')],)])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

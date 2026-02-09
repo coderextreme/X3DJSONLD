@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -35,7 +39,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     component(name='CubeMapTexturing',level=1),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    Comment('<component name=\'Shape\' level=\'4\'></component>'),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(name='title',content='geo.x3d'),
@@ -47,7 +51,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     NavigationInfo(type=["ANY","EXAMINE","FLY","LOOKAT"]),
     Viewpoint(DEF='Tour',description='Tour Views'),
-    # Viewpoint position='0 0 4' description='sphere in road'/
+    Comment('Viewpoint position=\'0 0 4\' description=\'sphere in road\'/'),
     Background(backUrl=["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"],bottomUrl=["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"],frontUrl=["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"],leftUrl=["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"],rightUrl=["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"],topUrl=["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]),
     Transform(
       children=[
@@ -87,7 +91,9 @@ newModel=X3D(profile='Immersive',version='4.0',
             parts=[
             ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
             ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT')])]))])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

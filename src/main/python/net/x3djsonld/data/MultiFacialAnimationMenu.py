@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -72,10 +76,10 @@ newModel=X3D(profile='Immersive',version='4.0',
       children=[
       HAnimHumanoid(DEF='hanim0_humanoid',name='humanoid',version='2.0',
         skeleton=[
-        HAnimJoint(DEF='hanim0_humanoid_root',name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
+        HAnimJoint(DEF='hanim0_humanoid_root',name='humanoid_root',
           children=[
           HAnimSegment(DEF='hanim0_sacrum',name='sacrum'),
-          HAnimJoint(DEF='hanim0_skullbase',name='skullbase',ulimit=[0,0,0],llimit=[0,0,0],
+          HAnimJoint(DEF='hanim0_skullbase',name='skullbase',
             children=[
             HAnimSegment(DEF='hanim_sacrum',name='sacrum',
               children=[
@@ -1857,10 +1861,10 @@ newModel=X3D(profile='Immersive',version='4.0',
               HAnimDisplacer(DEF='Upper_teeth_MorphInterpolator_JinSquint',name='upper_teeth_morphinterpolator'),
               HAnimDisplacer(DEF='Upper_teeth_MorphInterpolator_JinUpperLidRaiser',name='upper_teeth_morphinterpolator'),
               HAnimDisplacer(DEF='Upper_teeth_MorphInterpolator_JinUpperLipRaiser',name='upper_teeth_morphinterpolator'),
-              HAnimDisplacer(DEF='Upper_teeth_MorphInterpolator_JinWink',name='upper_teeth_morphinterpolator')])])]),],
+              HAnimDisplacer(DEF='Upper_teeth_MorphInterpolator_JinWink',name='upper_teeth_morphinterpolator')])])])],
         joints=[
-        HAnimJoint(USE='hanim0_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
-        HAnimJoint(USE='hanim0_skullbase',ulimit=[0,0,0],llimit=[0,0,0])],)]),
+        HAnimJoint(USE='hanim0_humanoid_root'),
+        HAnimJoint(USE='hanim0_skullbase')],)]),
     ROUTE(fromField='value_changed',fromNode='AnimationAdapter_JinBlink',toField='weight',toNode='Lower_teeth_MorphInterpolator_JinBlink'),
     ROUTE(fromField='value_changed',fromNode='AnimationAdapter_JinBlink',toField='weight',toNode='Tongue_MorphInterpolator_JinBlink'),
     ROUTE(fromField='value_changed',fromNode='AnimationAdapter_JinBlink',toField='weight',toNode='Upper_teeth_MorphInterpolator_JinBlink'),
@@ -3151,7 +3155,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     ROUTE(fromField='value_changed',fromNode='AnimationAdapter_JinWink',toField='weight',toNode='Right_upper_eyelid_MorphInterpolator_JinWink'),
     ROUTE(fromField='value_changed',fromNode='AnimationAdapter_JinWink',toField='weight',toNode='Right_upper_vermillion_lip_MorphInterpolator_JinWink'),
     ROUTE(fromField='value_changed',fromNode='AnimationAdapter_JinWink',toField='weight',toNode='__2_MorphInterpolator_JinWink'),
-    #  Viewpoint and any other scene setup 
+    Comment(' Viewpoint and any other scene setup '),
     WorldInfo(title='MultiFacialAnimationMenu.x3d'),
     Viewpoint(position=(0,20,110)),
     ProtoDeclare(name='MenuItem',
@@ -3710,7 +3714,9 @@ ecmascript:
         children=[
         ScalarInterpolator(USE='AnimationAdapter_JinLipCornerPuller'),
         ScalarInterpolator(USE='AnimationAdapter_JinDimpler')])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

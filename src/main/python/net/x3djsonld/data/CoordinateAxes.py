@@ -22,6 +22,10 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
@@ -45,14 +49,14 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     WorldInfo(title='CoordinateAxes.x3d'),
     Collision(DEF='DoNotCollideWithVisualizationWidget',
-      #  Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. 
-      #  This NavigationInfo allows examine mode and will be overridden by any parent scene. 
-      #  Each arrow goes from +1m to -1m to allow linear scaling to fit a scene 
-      #  Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user 
       children=[
+      Comment(' Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph. '),
+      Comment(' This NavigationInfo allows examine mode and will be overridden by any parent scene. '),
+      Comment(' Each arrow goes from +1m to -1m to allow linear scaling to fit a scene '),
+      Comment(' Note each label rotates about the scene\'s vertical Y axis for consistency, enabling local orientation by user '),
       Group(
-        #  Vertical Y arrow and label 
         children=[
+        Comment(' Vertical Y arrow and label '),
         Group(DEF='ArrowGreen',
           children=[
           Shape(
@@ -74,8 +78,8 @@ newModel=X3D(profile='Immersive',version='4.0',
               geometry=Text(string=["Y"],
                 fontStyle=FontStyle(DEF='LABEL_FONT',family=["SANS"],justify=["MIDDLE","MIDDLE"],size=.2)))])])]),
       Transform(rotation=(0,0,1,-1.57079),
-        #  Horizontal X arrow and label 
         children=[
+        Comment(' Horizontal X arrow and label '),
         Group(
           children=[
           Group(DEF='ArrowRed',
@@ -90,8 +94,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=Cone(USE='ArrowCone'),
                 appearance=Appearance(USE='Red'))])]),
           Transform(rotation=(0,0,1,1.57079),translation=(.072,1.1,0),
-            #  note label rotated back to original coordinate frame 
             children=[
+            Comment(' note label rotated back to original coordinate frame '),
             Billboard(
               children=[
               Shape(
@@ -99,8 +103,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=Text(string=["X"],
                   fontStyle=FontStyle(USE='LABEL_FONT')))])])])]),
       Transform(rotation=(1,0,0,1.57079),
-        #  Perpendicular Z arrow and label, note right-hand rule 
         children=[
+        Comment(' Perpendicular Z arrow and label, note right-hand rule '),
         Group(
           children=[
           Group(DEF='ArrowBlue',
@@ -115,15 +119,17 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=Cone(USE='ArrowCone'),
                 appearance=Appearance(USE='Blue'))])]),
           Transform(rotation=(1,0,0,-1.57079),translation=(0,1.1,.072),
-            #  note label rotated back to original coordinate frame 
             children=[
+            Comment(' note label rotated back to original coordinate frame '),
             Billboard(
               children=[
               Shape(
                 appearance=Appearance(USE='LABEL_APPEARANCE'),
                 geometry=Text(string=["Z"],
                   fontStyle=FontStyle(USE='LABEL_FONT')))])])])])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics

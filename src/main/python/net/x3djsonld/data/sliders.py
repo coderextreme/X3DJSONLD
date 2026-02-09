@@ -22,18 +22,22 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
+# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
+#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
+# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
+#
 ####################################################################################################
 
 from x3d import *
 
-newModel=X3D(profile='Full',version='4.0',
+newModel=X3D(profile='Full',version='4.1',
   head=head(
     children=[
     component(level=1,name='Scripting'),
     component(name='EnvironmentalEffects',level=3),
     component(name='Texturing',level=1),
     component(name='Rendering',level=1),
-    # <component name='Shape' level='4'></component>
+    Comment('<component name=\'Shape\' level=\'4\'></component>'),
     component(name='Grouping',level=3),
     component(name='Core',level=1),
     meta(content='sliders.x3d',name='title'),
@@ -54,8 +58,8 @@ newModel=X3D(profile='Full',version='4.0',
         DirectionalLight(ambientIntensity=.2,direction=(-1,-.1,-1)),
         Viewpoint(description='My Overview',fieldOfView=1.570796,position=(0,1.75,60)),
         Group(
-          #  Arrow X 
           children=[
+          Comment(' Arrow X '),
           Transform(translation=(25,0,0),rotation=(0,0,-1,1.57),
             children=[
             Shape(
@@ -68,7 +72,7 @@ newModel=X3D(profile='Full',version='4.0',
               geometry=Cone(DEF='Tip',bottomRadius=.8,height=3),
               appearance=Appearance(
                 material=Material(USE='RED')))]),
-          #  Arrow Y 
+          Comment(' Arrow Y '),
           Transform(translation=(0,25,0),
             children=[
             Shape(
@@ -81,7 +85,7 @@ newModel=X3D(profile='Full',version='4.0',
               geometry=Cone(USE='Tip'),
               appearance=Appearance(
                 material=Material(USE='GREEN')))]),
-          #  Arrow Z 
+          Comment(' Arrow Z '),
           Transform(translation=(0,0,25),rotation=(1,0,0,1.57),
             children=[
             Shape(
@@ -94,7 +98,8 @@ newModel=X3D(profile='Full',version='4.0',
               geometry=Cone(USE='Tip'),
               appearance=Appearance(
                 material=Material(USE='BLUE')))])]),
-        #  the model that is being reviewed by the users of this scene 
+        # the model that is being reviewed by the users of this scene
+
         Transform(DEF='FlowerTransform',
           children=[
           Transform(
@@ -206,7 +211,8 @@ ecmascript:
                 fontStyle=FontStyle(size=0.09)),
               appearance=Appearance(
                 material=Material(diffuseColor=(1,1,0))))])]),
-        #  The slider parameters 
+        # The slider parameters
+
         ProtoDeclare(name='SliderProto',
           ProtoInterface=ProtoInterface(
             field=[
@@ -342,7 +348,9 @@ function newTranslation(value) {
       Layer(pickable=True,objectType=["ALL"],
         children=[
         Viewpoint(description='My Humanoids',fieldOfView=1.570796,position=(0,1.75,80))])])])
-) # X3D model complete
+)
+
+### X3D model conversion complete ###
 
 ####################################################################################################
 # Self-test diagnostics
